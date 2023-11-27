@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	@Override
+	public int getGrazeLength() {
+		return 551;
+	}
+
+	@Override
 	public int wadeDepth() {
 		return 1;
 	}

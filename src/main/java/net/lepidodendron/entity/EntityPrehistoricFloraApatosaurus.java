@@ -278,7 +278,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getDrinkCooldown() {
-		return 400;
+		return 800;
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {

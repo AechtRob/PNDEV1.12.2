@@ -62,6 +62,14 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 10.0F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public int getWalkCycleLength() {
 		return 50;
 	}
