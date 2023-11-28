@@ -179,9 +179,9 @@ public class ModelAstraspis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.Astraspis.offsetY = -0.15F;
-        this.Astraspis.offsetX = -0.125F;
-        this.Astraspis.rotateAngleY = (float) Math.toRadians(90);
+        this.Astraspis.offsetZ = -0.05F;
+        this.Astraspis.offsetY = -0.18F;
+        this.Astraspis.rotateAngleX = (float) Math.toRadians(90);
         this.Astraspis.render(0.01F);
         this.resetToDefaultPose();
     }
@@ -196,7 +196,7 @@ public class ModelAstraspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Astraspis.offsetY = 1.2F;
+        //this.Astraspis.offsetY = 1.2F;
 
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5};
         float speed = 0.5F;
@@ -210,7 +210,7 @@ public class ModelAstraspis extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Astraspis.rotateAngleZ = (float) Math.toRadians(90);
-                this.Astraspis.offsetY = 1.2F;
+                //this.Astraspis.offsetY = 1.2F;
                 this.bob(Astraspis, -speed*0.5F, 5F, false, f2, 1);
             }
         }

@@ -175,9 +175,9 @@ public class ModelAteleaspis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.head.offsetY = -0.15F;
-        this.head.offsetX = -0.125F;
-        this.head.rotateAngleY = (float) Math.toRadians(90);
+        this.head.offsetY = -0.20F;
+        //this.head.offsetX = -0.125F;
+        this.head.rotateAngleX = (float) Math.toRadians(90);
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
@@ -192,7 +192,7 @@ public class ModelAteleaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.05F;
+        //this.head.offsetY = 1.05F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body, this.body2, this.body3};
@@ -227,7 +227,7 @@ public class ModelAteleaspis extends AdvancedModelBase {
             this.swing(finR, (float) (speed * 0.75), 0.12F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = 1.0F;
+                this.head.offsetY = -0.05F;
                 this.bob(head, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }
