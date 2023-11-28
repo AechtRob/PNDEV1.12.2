@@ -338,49 +338,71 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
 
 
                     // ********************************************************************
-                    if (itemRender) { //standard items
+                    if (itemRender) { //just render the Taxidermy Kit itself
                         itemRender = true;
 
-                        GlStateManager.alphaFunc(516, 0.1F);
-                        GlStateManager.enableBlend();
-                        RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-                        //GlStateManager.pushMatrix();
+                        float scale = 2.75F;
+                        float yy = 0.25F;
+                        if (entity != null && entity.hasWorld()) {
+                            //TileEntity te = world.getTileEntity(pos);
+                            //if (te != null) {
+                                //if (te instanceof BlockTaxidermyTable.TileEntityTaxidermyTable) {
+                                    //BlockTaxidermyTable.TileEntityTaxidermyTable tee = (BlockTaxidermyTable.TileEntityTaxidermyTable) te;
+                                    //ItemStack itemstack = ItemStack.EMPTY;
+//                                    if (!((BlockTaxidermyTable.TileEntityTaxidermyTable) te).getStackInSlot(1).isEmpty()) {
+//                                        itemstack = tee.getStackInSlot(1);
+//                                    }
+//                                    if (!(itemstack.isEmpty() || tee.isEmpty())) {
 
-                        float scale = 0.6666F;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + 0.02, z + 0.5);
-                            GlStateManager.scale(scale, scale, scale);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + 0.98, z + 0.5);
-                            GlStateManager.scale(scale, scale, scale);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + 0.98);
-                            GlStateManager.scale(scale, scale, scale);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + 0.02);
-                            GlStateManager.scale(scale, scale, scale);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + 0.98, y + 0.5, z + 0.5);
-                            GlStateManager.scale(scale, scale, scale);
-                            GlStateManager.rotate(90, 0F, 1F, 0F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + 0.02, y + 0.5, z + 0.5);
-                            GlStateManager.scale(scale, scale, scale);
-                            GlStateManager.rotate(90, 0F, 1F, 0F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                        IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
-                        //model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.FIXED, false);
-                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
-                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+                                        GlStateManager.enableRescaleNormal();
+                                        //GlStateManager.enableAlpha();
+                                        GlStateManager.alphaFunc(516, 0.1F);
+                                        GlStateManager.enableBlend();
+                                        RenderHelper.enableStandardItemLighting();
+                                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+                                        GlStateManager.pushMatrix();
 
+                                        double dd = 0.30D;
+                                        if (facing == EnumFacing.NORTH) {
+                                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
+                                            GlStateManager.rotate(180F, 0, 1, 0);
+                                        }
+                                        if (facing == EnumFacing.SOUTH) {
+                                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
+                                            //GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
+                                        }
+                                        if (facing == EnumFacing.EAST) {
+                                            GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
+                                            GlStateManager.rotate(90F, 0, 1, 0);
+                                        }
+                                        if (facing == EnumFacing.WEST) {
+                                            GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
+                                            GlStateManager.rotate(270F, 0, 1, 0);
+                                        }
+                                        if (facing == EnumFacing.UP) {
+                                            GlStateManager.translate(x + 0.5, y - 0.175, z + 0.5);
+                                            GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
+                                        }
+                                        if (facing == EnumFacing.DOWN) {
+                                            GlStateManager.translate(x + 0.5, y + 0.575, z + 0.5);
+                                            GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
+                                        }
+                                        GlStateManager.scale(scale, scale, scale);
+
+                                        IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
+                                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
+                                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+
+                                        GlStateManager.popMatrix();
+                                        GlStateManager.disableRescaleNormal();
+                                        //GlStateManager.disableAlpha();
+                                        GlStateManager.disableBlend();
+                                        //hasResult = true;
+                                    //}
+                                //}
+                            //}
+                        }
                     }
 
                     if (itemRender) {

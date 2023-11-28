@@ -250,7 +250,6 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 		return LepidodendronMod.ARCHOSAURUS_LOOT;
 	}
 
-
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {

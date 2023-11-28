@@ -402,6 +402,7 @@ public class RenderDisplays {
     public static final ModelHerrerasaurus modelHerrerasaurus = new ModelHerrerasaurus ();
     public static final ModelHibernaspis modelHibernaspis = new ModelHibernaspis ();
     public static final ModelHolonema modelHolonema = new ModelHolonema ();
+    public static final ModelHylonomus modelHylonomus = new ModelHylonomus ();
     public static final ModelHyneria modelHyneria = new ModelHyneria ();
     public static final ModelHyperodapedon modelHyperodapedon = new ModelHyperodapedon ();
     public static final ModelIniopteryx modelIniopteryx = new ModelIniopteryx ();
