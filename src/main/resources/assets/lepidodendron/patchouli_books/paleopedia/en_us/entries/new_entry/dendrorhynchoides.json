@@ -11,13 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Anurognathinae"
 		},
-        	{
-            "type": "entity",
-            "name": "D. curvidentatus",
-            "entity": "lepidodendron:prehistoric_flora_dendrorhynchoides",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/dendrorhynchoides.png"],
+			"title": "D. curvidentatus",
+			"text": ""
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dendrorhynchoides",
 			"type": "text",
@@ -25,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_dendrorhynchoides"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_dendrorhynchoides"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_dendrorhynchoides"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_dendrorhynchoides"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_dendrorhynchoides"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
 		}
 	]
 }

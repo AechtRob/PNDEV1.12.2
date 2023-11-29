@@ -11,13 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Batrachognathinae"
 		},
-        	{
-            "type": "entity",
-            "name": "C. rong",
-            "entity": "lepidodendron:prehistoric_flora_cascocauda",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cascocauda.png"],
+			"title": "C. rong",
+			"text": ""
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cascocauda",
 			"type": "text",
@@ -25,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_cascocauda"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_cascocauda"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_cascocauda"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_cascocauda"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_cascocauda"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
 		}
 	]
 }
