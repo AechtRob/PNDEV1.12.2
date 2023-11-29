@@ -26,6 +26,7 @@ public class RenderBobasatrania extends RenderLiving<EntityPrehistoricFloraBobas
     protected void applyRotations(EntityPrehistoricFloraBobasatrania entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+
     protected void preRenderCallback(EntityPrehistoricFloraBobasatrania entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {
