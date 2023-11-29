@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDorypterus;
 import net.lepidodendron.entity.model.entity.ModelDorypterus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -14,6 +15,8 @@ public class RenderDorypterus extends RenderLiving<EntityPrehistoricFloraDorypte
         super(mgr, new ModelDorypterus(), 0.0f);
     }
 
+    public static float getScaler() {return 0.076F;}
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDorypterus entity) {
         return RenderDorypterus.TEXTURE;
@@ -22,6 +25,13 @@ public class RenderDorypterus extends RenderLiving<EntityPrehistoricFloraDorypte
     @Override
     protected void applyRotations(EntityPrehistoricFloraDorypterus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+    }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraDorypterus entity, float f) {
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.0F;
     }
 
 }
