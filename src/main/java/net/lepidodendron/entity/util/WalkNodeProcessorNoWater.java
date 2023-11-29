@@ -388,9 +388,9 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
         PathNodeType pathnodetype = this.getPathNodeTypeRaw(blockaccessIn, x, y, z);
 
         if (y >= 1 ) {
-            if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
-                if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
-                    if (currentEntity != null) {
+            if (currentEntity != null) {
+                if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
+                    if (currentEntity.world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
                         if (currentEntity.width > 1) {
                             if (
                                     blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
@@ -405,12 +405,16 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
                                 pathnodetype = PathNodeType.BLOCKED;
                             }
                         }
-                    } else {
-                        pathnodetype = PathNodeType.BLOCKED;
+                        else {
+                            pathnodetype = PathNodeType.BLOCKED;
+                        }
                     }
                 } else {
                     pathnodetype = PathNodeType.BLOCKED;
                 }
+            }
+            else {
+                pathnodetype = PathNodeType.BLOCKED;
             }
         }
         //if (blockaccessIn.getBlockState(new BlockPos(x, y , z)).getBlock() instanceof BlockPalisadePF)
@@ -419,20 +423,25 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
         //}
         if (pathnodetype == PathNodeType.OPEN && y >= 1)
         {
-            if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
-                Block block = blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getBlock();
-                PathNodeType pathnodetype1 = this.getPathNodeTypeRaw(blockaccessIn, x, y - 1, z);
-                pathnodetype = pathnodetype1 != PathNodeType.WALKABLE && pathnodetype1 != PathNodeType.OPEN && pathnodetype1 != PathNodeType.WATER && pathnodetype1 != PathNodeType.LAVA ? PathNodeType.WALKABLE : PathNodeType.OPEN;
+            if (currentEntity != null) {
+                if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
+                    Block block = blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getBlock();
+                    PathNodeType pathnodetype1 = this.getPathNodeTypeRaw(blockaccessIn, x, y - 1, z);
+                    pathnodetype = pathnodetype1 != PathNodeType.WALKABLE && pathnodetype1 != PathNodeType.OPEN && pathnodetype1 != PathNodeType.WATER && pathnodetype1 != PathNodeType.LAVA ? PathNodeType.WALKABLE : PathNodeType.OPEN;
 
-                if (pathnodetype1 == PathNodeType.DAMAGE_FIRE || block == Blocks.MAGMA) {
-                    pathnodetype = PathNodeType.DAMAGE_FIRE;
+                    if (pathnodetype1 == PathNodeType.DAMAGE_FIRE || block == Blocks.MAGMA) {
+                        pathnodetype = PathNodeType.DAMAGE_FIRE;
+                    }
+
+                    if (pathnodetype1 == PathNodeType.DAMAGE_CACTUS) {
+                        pathnodetype = PathNodeType.DAMAGE_CACTUS;
+                    }
+
+                    if (pathnodetype1 == PathNodeType.DAMAGE_OTHER) pathnodetype = PathNodeType.DAMAGE_OTHER;
                 }
-
-                if (pathnodetype1 == PathNodeType.DAMAGE_CACTUS) {
-                    pathnodetype = PathNodeType.DAMAGE_CACTUS;
+                else {
+                    pathnodetype = PathNodeType.BLOCKED;
                 }
-
-                if (pathnodetype1 == PathNodeType.DAMAGE_OTHER) pathnodetype = PathNodeType.DAMAGE_OTHER;
             }
             else {
                 pathnodetype = PathNodeType.BLOCKED;

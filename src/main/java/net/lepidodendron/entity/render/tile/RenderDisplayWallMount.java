@@ -131,6 +131,9 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 if (itemstack.getTagCompound().hasKey("PNVariant")) {
                                     PNVariant = itemstack.getTagCompound().getString("PNVariant");
                                 }
+                                if (getVariantFromNBT(itemstack) != null) {
+                                    PNVariant = getVariantFromNBT(itemstack);
+                                }
                             }
 
                             Method method = testAndGetMethod(classEntity, "offsetWall", params);
@@ -444,6 +447,24 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             classOut = findEntity(stringDNA);
         }
         return classOut;
+    }
+
+    @Nullable
+    public String getVariantFromNBT(ItemStack stack) {
+        if (!stack.hasTagCompound()) {
+            return null;
+        }
+        if (!stack.getTagCompound().hasKey("PFMob")) {
+            return null;
+        }
+        NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+        String stringDNA = (blockNBT.getString("id"));
+        if (stringDNA != null) {
+            if (stringDNA.indexOf("@") >= 1) {
+                return stringDNA.substring(stringDNA.indexOf("@")+1);
+            }
+        }
+        return null;
     }
 
     @Nullable

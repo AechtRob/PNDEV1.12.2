@@ -31,7 +31,7 @@ public class RenderCotylorhynchus extends RenderLiving<EntityPrehistoricFloraCot
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCotylorhynchus entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 1.0F;
     }

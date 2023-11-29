@@ -446,6 +446,7 @@ public class RenderDisplays {
     public static final ModelPoraspis modelPoraspis = new ModelPoraspis();
     public static final ModelPristerognathus modelPristerognathus = new ModelPristerognathus();
     public static final ModelPromissum modelPromissum = new ModelPromissum();
+    public static final ModelProconodontus modelProconodontus = new ModelProconodontus();
     public static final ModelPsarolepis modelPsarolepis = new ModelPsarolepis();
     public static final ModelPteraspis modelPteraspis = new ModelPteraspis();
     public static final ModelRebellatrix modelRebellatrix = new ModelRebellatrix();

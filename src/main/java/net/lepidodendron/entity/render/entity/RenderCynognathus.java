@@ -29,7 +29,7 @@ public class RenderCynognathus extends RenderLiving<EntityPrehistoricFloraCynogn
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCynognathus entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.3F;
     }
