@@ -402,6 +402,10 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    public void renderStaticBook(float f) {
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

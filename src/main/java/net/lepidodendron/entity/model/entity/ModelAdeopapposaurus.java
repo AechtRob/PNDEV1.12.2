@@ -364,6 +364,27 @@ public class ModelAdeopapposaurus extends AdvancedModelBaseExtended {
 
     }
 
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -0.50F;
+        this.Root.offsetX = 0.0F;
+        this.Root.rotateAngleY = (float)Math.toRadians(0);
+        this.Root.rotateAngleX = (float)Math.toRadians(0);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
+        this.Root.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
+
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
