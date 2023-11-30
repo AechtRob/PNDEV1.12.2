@@ -279,19 +279,17 @@ public class ModelEbenaqua extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Ebanaqua.render(f5 * 0.065F);
+        this.Ebanaqua.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
+        this.Ebanaqua.offsetY = -0.15F;
+        this.Ebanaqua.offsetX = -0.25F;
         this.Ebanaqua.rotateAngleY = (float) Math.toRadians(90);
         this.Ebanaqua.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -302,7 +300,7 @@ public class ModelEbenaqua extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Ebanaqua.offsetY = 1.3F;
+        this.Ebanaqua.offsetY = -0.8F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body1, this.Body2, this.Body3,this.Body4,this.Body5};
@@ -317,7 +315,7 @@ public class ModelEbenaqua extends AdvancedModelBase {
             this.walk(Jaw, (float) (speed * 0.75), 0.5F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Ebanaqua.rotateAngleZ = (float) Math.toRadians(90);
-                this.Ebanaqua.offsetY = 1.35F;
+                this.Ebanaqua.offsetY = -0.5F;
                 this.bob(Ebanaqua, -speed, 5F, false, f2, 1);
             }
         }

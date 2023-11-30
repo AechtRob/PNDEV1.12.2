@@ -171,19 +171,15 @@ public class ModelFalcatus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetX = -0.06F;
+        this.body.offsetX = -0.035F;
         this.body.offsetY = 0.03F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -195,7 +191,7 @@ public class ModelFalcatus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.body.offsetY = 1.4F;
-        this.body.offsetZ = -0.2F;
+        this.body.offsetZ = -0.65F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.tail1, this.tail2, this.tail3};
         float speed = 0.4F;
@@ -216,9 +212,10 @@ public class ModelFalcatus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                //this.body.offsetY = 1.4F;
+
+                this.body.offsetY = 1.25F;
                 this.body.offsetZ = -0.2F;
-                this.bob(body, -speed, 5F, false, f2, 1);
+                this.bob(body, -speed, 2F, false, f2, 1);
             }
         }
     }

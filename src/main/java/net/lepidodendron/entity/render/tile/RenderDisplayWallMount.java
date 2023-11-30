@@ -124,7 +124,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             ResourceLocation textureDisplay = null;
                             ResourceLocation textureDisplayTransparent = null;
                             ModelBase modelDisplay = null;
-                            float getScaler = 0;
+                            float getScaler = 0.0F;
+                            float widthSupport = 0.0F;
 
                             //Is there a variant included?
                             if (itemstack.hasTagCompound()) {
@@ -306,6 +307,16 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
+                            method = testAndGetMethod(classEntity, "widthSupport", params);
+                            if (method != null) {
+                                try {
+                                    widthSupport = (float) method.invoke(null, PNVariant);
+                                } catch (Exception e) {
+                                    widthSupport = 0;
+                                }
+                            } else {
+                                widthSupport = 0;
+                            }
 
 
                             if (!itemRender) {
@@ -315,7 +326,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                         offsetWall, 0, 0,
                                         upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
                                         lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,
-                                        false);
+                                        false, widthSupport);
                                 } catch (Exception e) {
                                     itemRender = true;
                                 }
@@ -326,7 +337,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                             offsetWall, 0, 0,
                                             upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
                                             lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,
-                                            true);
+                                            true, widthSupport);
                                     } catch (Exception e) {
                                         //Ignore this if there are no transparent parts
                                     }
@@ -498,8 +509,12 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
            double lowerfrontlineoffsetperpendiular,
            double lowerbacklineoffset,
            double lowerbacklineoffsetperpendiular,
-           boolean transparent
+           boolean transparent, float widthSupport
     ) {
+
+        if (widthSupport <= 0.0F) {
+            widthSupport = 0.04F;
+        }
 
         //net.minecraft.util.math.Vec3d cameraPos = rendererDispatcher.entity.getPositionVector();
         float renderLimit = LepidodendronConfig.taxidermyRenderRange;
@@ -530,33 +545,15 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             if (renderMethod != null) {
                 if (!transparent) {
                     if (upperfrontverticallinedepth > 0) {
-                        GL11.glPushMatrix();
-                        GL11.glLineWidth(5);
-                        GL11.glDisable(GL11.GL_TEXTURE_2D);
-                        GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-                        GL11.glBegin(GL11.GL_LINES);
                         float xoffsetter = (float) ((upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1, (float) z + 0.5F + zoffsetter);
-                        GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1 - (float) upperfrontverticallinedepth, (float) z + 0.5F + zoffsetter);
-                        GL11.glEnd();
-                        GL11.glEnable(GL11.GL_TEXTURE_2D);
-                        GL11.glPopMatrix();
+                        renderSupports(x, y - (float)upperfrontverticallinedepth, z, xoffsetter, zoffsetter, (float)upperfrontverticallinedepth, widthSupport);
                     }
 
                     if (upperbackverticallinedepth > 0) {
-                        GL11.glPushMatrix();
-                        GL11.glLineWidth(5);
-                        GL11.glDisable(GL11.GL_TEXTURE_2D);
-                        GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-                        GL11.glBegin(GL11.GL_LINES);
                         float xoffsetter = (float) ((upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((upperbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + 1, (float) z + 0.5F - zoffsetter);
-                        GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + 1 - (float) upperbackverticallinedepth, (float) z + 0.5F - zoffsetter);
-                        GL11.glEnd();
-                        GL11.glEnable(GL11.GL_TEXTURE_2D);
-                        GL11.glPopMatrix();
+                        renderSupports(x, y - (float)upperbackverticallinedepth, z, -xoffsetter, -zoffsetter, (float)upperbackverticallinedepth, widthSupport);
                     }
 
                     setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
@@ -608,33 +605,15 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             if (renderMethod != null) {
                 if (!transparent) {
                     if (lowerfrontverticallinedepth > 0) {
-                        GL11.glPushMatrix();
-                        GL11.glLineWidth(5);
-                        GL11.glDisable(GL11.GL_TEXTURE_2D);
-                        GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-                        GL11.glBegin(GL11.GL_LINES);
                         float xoffsetter = (float) ((lowerfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (lowerfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((lowerfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (lowerfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
-                        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) lowerfrontverticallinedepth, (float) z + 0.5F + zoffsetter);
-                        GL11.glEnd();
-                        GL11.glEnable(GL11.GL_TEXTURE_2D);
-                        GL11.glPopMatrix();
+                        renderSupports(x, y, z, xoffsetter, zoffsetter, (float)lowerfrontverticallinedepth, widthSupport);
                     }
 
                     if (lowerbackverticallinedepth > 0) {
-                        GL11.glPushMatrix();
-                        GL11.glLineWidth(5);
-                        GL11.glDisable(GL11.GL_TEXTURE_2D);
-                        GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-                        GL11.glBegin(GL11.GL_LINES);
                         float xoffsetter = (float) ((lowerbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (lowerbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((lowerbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (lowerbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y, (float) z + 0.5F - zoffsetter);
-                        GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + (float) lowerbackverticallinedepth, (float) z + 0.5F - zoffsetter);
-                        GL11.glEnd();
-                        GL11.glEnable(GL11.GL_TEXTURE_2D);
-                        GL11.glPopMatrix();
+                        renderSupports(x, y, z, -xoffsetter, -zoffsetter, (float)lowerbackverticallinedepth, widthSupport);
                     }
 
                     setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
@@ -696,5 +675,56 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         } catch (NoSuchMethodException | SecurityException e) {
         }
         return methodToFind;
+    }
+
+    public void renderSupports(float x, float y, float z, float xoffsetter, float zoffsetter, float length, float width) {
+
+        ///New triangles method:
+        GL11.glPushMatrix();
+        GL11.glDisable(GL11.GL_TEXTURE_2D);
+        //GL11.glEnable(GL11.GL_DEPTH_SCALE);
+
+        GL11.glBegin(GL11.GL_TRIANGLES);
+        GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+
+        //face1:
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+
+        //face2:
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+
+        //face3:
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+
+        //face4:
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+
+        GL11.glEnd();
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        GL11.glPopMatrix();
     }
 }
