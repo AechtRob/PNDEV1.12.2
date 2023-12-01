@@ -61,6 +61,11 @@ public class RenderWukongopterus extends RenderLiving<EntityPrehistoricFloraWuko
         if (s != null &&
                 (("Sun Wu Kong".equalsIgnoreCase(s))
                         || ("Sun WuKong".equalsIgnoreCase(s))
+                        || ("Goku".equalsIgnoreCase(s))
+                        || ("Son Goku".equalsIgnoreCase(s))
+                        || ("Sun Gokong".equalsIgnoreCase(s))
+                        || ("Son Oh Gong".equalsIgnoreCase(s))
+                        || ("Ton Ngo Khong".equalsIgnoreCase(s))
                         || ("monkey king".equalsIgnoreCase(s))
                         || ("king monkey".equalsIgnoreCase(s))
                         || ("monkey".equalsIgnoreCase(s))
