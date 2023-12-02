@@ -254,19 +254,21 @@ public class ModelJonkeria extends AdvancedModelBaseExtended {
         this.body1.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.jaw1.rotateAngleX = (float) Math.toRadians(33);
         this.neck2.rotateAngleX = (float) Math.toRadians(-13);
         this.neck3.rotateAngleX = (float) Math.toRadians(-2);
+        this.neck1.offsetY = -0.055F;
         this.neck1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.body1.offsetY = -0.147F;
+        this.body1.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
