@@ -230,21 +230,6 @@ public class ModelEorhynchochelys extends AdvancedModelBaseExtended {
         this.body.render(f5);
     }
 
-    public void renderStaticPlinth(float f) {
-        this.body.offsetZ = -0.12F;
-        this.head.rotateAngleY = (float)Math.toRadians(-17.5);
-        this.neck2.rotateAngleY = (float)Math.toRadians(-22.5);
-        this.neck.rotateAngleY = (float)Math.toRadians(-17.5);
-        this.tail.rotateAngleY = (float)Math.toRadians(12.5);
-        this.tail2.rotateAngleY = (float)Math.toRadians(25);
-        this.tail3.rotateAngleY = (float)Math.toRadians(17.5);
-        this.tail4.rotateAngleY = (float)Math.toRadians(32.5);
-        this.tail5.rotateAngleY = (float)Math.toRadians(32.5);
-        this.tail6.rotateAngleY = (float)Math.toRadians(27.5);
-        this.lowerjaw.rotateAngleX = (float)Math.toRadians(22.5);
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body3, 0.0873F, 0.0F, 0.0F);
         this.setRotateAngle(backleftleg, -0.521F, -0.8538F, 0.8763F);

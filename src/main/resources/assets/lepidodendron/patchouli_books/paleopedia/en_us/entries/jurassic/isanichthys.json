@@ -2,14 +2,14 @@
 	"name": "Isanichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/isanichthys_icon.png",
-	"category": "lepidodendron:cretaceous_animal",
+	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_isanichthys",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_isanichthys",
 			"title": "Isanichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Actinopterygii $(br)>Lepisosteiformes"
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous(br2)>Actinopterygii $(br)>Lepisosteiformes"
 		},
 		{
 			"type": "image",

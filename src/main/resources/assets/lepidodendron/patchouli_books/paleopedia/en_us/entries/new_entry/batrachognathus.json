@@ -11,13 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Batrachognathinae"
 		},
-        	{
-            "type": "entity",
-            "name": "B. volans",
-            "entity": "lepidodendron:prehistoric_flora_batrachognathus",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/batrachognathus.png"],
+			"title": "B. volans",
+			"text": ""
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_batrachognathus",
 			"type": "text",
@@ -25,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_batrachognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_batrachognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_batrachognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_batrachognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_batrachognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
 		}
 	]
 }

@@ -61,6 +61,7 @@ public class LepidodendronConfig {
     public static boolean doMeteorites = true;
     public static boolean doMeteoritesGriefing = true;
     public static boolean doGuanoGriefing = true;
+    public static boolean doGuanoBats = true;
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
@@ -473,6 +474,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doGuanoGriefing", doGuanoGriefing);
         prop.setComment("Make some appropriate flying creatures drop guano ambiently, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
         doGuanoGriefing = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doGuanoBats", doGuanoBats);
+        prop.setComment("Make vanilla bats drop guano ambiently while roosting, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
+        doGuanoBats = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doReSpawner", doReSpawner);

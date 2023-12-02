@@ -17,6 +17,8 @@ public class RenderAcutiramus extends RenderLiving<EntityPrehistoricFloraAcutira
         super(mgr, new ModelAcutiramus(), 0.5f);
     }
 
+    public static float getScaler() {return 0.68F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcutiramus entity) {
         float scale = entity.getAgeScale();
@@ -37,7 +39,7 @@ public class RenderAcutiramus extends RenderLiving<EntityPrehistoricFloraAcutira
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAcutiramus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

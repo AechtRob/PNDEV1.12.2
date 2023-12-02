@@ -1041,7 +1041,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         this.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase)this).HURT_ANIMATION);
                     }
-                    if (this instanceof EntityPrehistoricFloraLandWadingBase) {
+                    else if (this instanceof EntityPrehistoricFloraLandWadingBase) {
                         this.setAnimation(((EntityPrehistoricFloraLandWadingBase)this).HURT_ANIMATION);
                     }
                     else if (this instanceof EntityPrehistoricFloraPanguraptor) {

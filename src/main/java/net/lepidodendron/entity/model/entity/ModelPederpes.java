@@ -256,11 +256,7 @@ public class ModelPederpes extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-    public void renderStaticPlinth(float f) {
-        this.body.offsetZ = -0.07F;
-        this.body.render(0.01F);
-        resetToDefaultPose();
-    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body_r1, -0.1309F, 0.0F, 0.0F);
         this.setRotateAngle(head, -0.1745F, -0.2182F, 0.0F);
@@ -299,6 +295,7 @@ public class ModelPederpes extends AdvancedModelBaseExtended {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

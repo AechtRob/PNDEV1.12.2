@@ -93,7 +93,7 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Bat poo
 	public void guano(LivingEvent.LivingUpdateEvent event) {
-		if (event.getEntity() instanceof EntityBat) {
+		if (event.getEntity() instanceof EntityBat && LepidodendronConfig.doGuanoBats) {
 			EntityBat bat = (EntityBat) event.getEntity();
 			if (bat.world.rand.nextInt(6000) == 0 && (!bat.world.isRemote)
 					&& bat.getIsBatHanging() && bat.world.isAirBlock(bat.getPosition().down())) {

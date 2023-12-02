@@ -29,7 +29,7 @@ public class RenderHyperodapedon extends RenderLiving<EntityPrehistoricFloraHype
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHyperodapedon entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

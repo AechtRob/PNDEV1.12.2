@@ -2,14 +2,14 @@
 	"name": "Pachydiscus",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_pachydiscus",
-	"category": "lepidodendron:cretaceous_animal",
+	"category": "lepidodendron:cretaceouslate_animal",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
 			"title": "Pachydiscus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous - Paleogene$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Pachydiscidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous - Paleocene$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Pachydiscidae"
 		},
 		{
 			"type": "image",

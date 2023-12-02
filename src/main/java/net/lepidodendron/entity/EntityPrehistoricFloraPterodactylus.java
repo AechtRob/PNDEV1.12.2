@@ -192,11 +192,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		}
 		if (this.getAttachmentPos() != null) {
 			if (this.getAttachmentFacing() == EnumFacing.UP) {
-				//Walking:
-				if (this.getIsFast()) {
-					return 0.3F;
-				}
-				return 0.196F;
+				return 0.266F;
 			}
 		}
 		//Otherwise we are flying:

@@ -70,6 +70,14 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 0.5F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public int wadeDepth() {
 		return (int) (5F * this.getAgeScale());
 	}
@@ -270,7 +278,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getDrinkCooldown() {
-		return 400;
+		return 800;
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {

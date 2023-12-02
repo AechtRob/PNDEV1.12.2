@@ -214,19 +214,17 @@ public class ModelGnathorhiza extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodymiddlefront.render(f5 * 0.2F);
+        this.Bodymiddlefront.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Bodymiddlefront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodymiddlefront.offsetX = -0.05F;
+        this.Bodymiddlefront.offsetY = -0.05F;
         this.Bodymiddlefront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -237,7 +235,7 @@ public class ModelGnathorhiza extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodymiddlefront.offsetY = 1.4F;
+        this.Bodymiddlefront.offsetY = 0.6F;
 
         AdvancedModelRenderer[] finPectoralLeft = {this.Leftpectoralfinbase, this.Leftpectoralfinmiddle, this.Leftpectoralfinend};
         AdvancedModelRenderer[] finPectoralRight = {this.Rightpectoralfinbase, this.Rightpectoralfinmiddle, this.Rightpectoralfinend};
@@ -252,7 +250,7 @@ public class ModelGnathorhiza extends AdvancedModelBase {
         if (!((EntityPrehistoricFloraGnathorhiza) e).isReallyInWater()) {
             speed = 0.4f;
             this.Bodymiddlefront.bob(speed, 0.35F, false, f2, 1F);
-            this.Bodymiddlefront.offsetY = 1.35F;
+            this.Bodymiddlefront.offsetY = 1.1F;
         }
 
 

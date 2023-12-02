@@ -2,14 +2,14 @@
 	"name": "Parapuzosia",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_parapuzosia",
-	"category": "lepidodendron:cretaceous_animal",
+	"category": "lepidodendron:cretaceouslate_animal",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
 			"title": "Parapuzosia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
+			"text": "$(l)Temporal Range:$() Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
 		},
 		{
 			"type": "image",

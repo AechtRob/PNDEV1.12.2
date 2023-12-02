@@ -60,6 +60,14 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 5.0F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public int getWalkCycleLength() {
 		return 40;
 	}

@@ -11,13 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Anurognathidae $(br)>Anurognathinae"
 		},
-        	{
-            "type": "entity",
-            "name": "A. ammoni",
-            "entity": "lepidodendron:prehistoric_flora_anurognathus",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/anurognathus.png"],
+			"title": "A. ammoni",
+			"text": ""
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anurognathus",
 			"type": "text",
@@ -25,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_anurognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_anurognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_anurognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_anurognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_anurognathus"
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
 		}
 	]
 }

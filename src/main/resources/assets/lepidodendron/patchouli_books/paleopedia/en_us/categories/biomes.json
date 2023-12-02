@@ -1,6 +1,0 @@
-{
-    "name": "Biomes",
-    "description": "$(l)Where in the World am I?$()$(br)This category is all about Biomes!",
-    "icon": "paleopedia:textures/category_icon/icon_biome.png",
-    "sortnum": 15
-}

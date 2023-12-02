@@ -281,6 +281,14 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 1.0F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT), DietString.SEED);
 	}

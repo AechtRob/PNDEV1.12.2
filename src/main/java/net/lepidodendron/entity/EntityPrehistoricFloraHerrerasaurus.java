@@ -6,11 +6,17 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderHerrerasaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -32,13 +38,11 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraHerrerasaurus(World world) {
 		super(world);
@@ -47,7 +51,6 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 		maxWidth = 0.85F;
 		maxHeight = 1.82F;
 		maxHealthAgeable = 56.0D;
-		NOISE_ANIMATION = Animation.create(25);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -68,12 +71,12 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, MAKE_NEST_ANIMATION, DRINK_ANIMATION, NOISE_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, HURT_ANIMATION};
 	}
 
 	@Override
 	public int getDrinkLength() {
-		return 60;
+		return 80;
 	}
 
 	@Override
@@ -82,7 +85,7 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public int getRoarLength() {
+	public int getNoiseLength() {
 		return 30;
 	}
 
@@ -116,7 +119,7 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.580F;
+		float speedBase = 0.420F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -124,7 +127,7 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+			speedBase = speedBase * 2.55F;
 		}
 		return speedBase;
 	}
@@ -132,29 +135,6 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 	@Override
 	public int getTalkInterval() {
 		return 500;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			//if (rand.nextInt(6) != 0) {
-				SoundEvent soundevent = this.getAmbientAmbientSound();
-				if (soundevent != null) {
-					if (this.getAnimation() == NO_ANIMATION) {
-						this.setAnimation(NOISE_ANIMATION);
-						//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-						this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-					}
-				}
-			//}
-		}
 	}
 
 	@Override
@@ -198,8 +178,6 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 		return ArrayUtils.addAll(DietString.MEAT);
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -221,12 +199,7 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:herrerasaurus_roar"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:herrerasaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:herrerasaurus_idle"));
 	}
 
 	@Override
@@ -310,5 +283,65 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 		}
 		return LepidodendronMod.HERRERASAURUS_LOOT;
 	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.2;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderHerrerasaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelHerrerasaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderHerrerasaurus.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_HERRERASAURUS;
+	}
+
 
 }

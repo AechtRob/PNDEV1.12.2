@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -236,19 +235,17 @@ public class ModelDorypterus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Dorypterus.render(f5 * 0.076F);
+        this.Dorypterus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
+        this.Dorypterus.offsetX = -0.1F;
+        this.Dorypterus.offsetY = -0.15F;
         this.Dorypterus.rotateAngleY = (float) Math.toRadians(90);
         this.Dorypterus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -259,7 +256,7 @@ public class ModelDorypterus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Dorypterus.offsetY = 1.35F;
+        //this.Dorypterus.offsetY = 1.35F;
 
         AdvancedModelRenderer[] fishTail = {this.Body1, this.Body2, this.Body3, this.Body4, this.Body5};
         float speed = 0.6F;
@@ -281,7 +278,7 @@ public class ModelDorypterus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Dorypterus.rotateAngleZ = (float) Math.toRadians(90);
-                this.Dorypterus.offsetY = 1.40F;
+                this.Dorypterus.offsetY = 0.05F;
                 this.bob(Dorypterus, -speed, 5F, false, f2, 1);
             }
         }

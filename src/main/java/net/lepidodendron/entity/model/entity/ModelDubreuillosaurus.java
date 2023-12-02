@@ -402,6 +402,10 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    public void renderStaticBook(float f) {
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -4520,6 +4524,30 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
 
     }
 
+    public void animGraze(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        EntityPrehistoricFloraDubreuillosaurus entity = (EntityPrehistoricFloraDubreuillosaurus) entitylivingbaseIn;
+
+        int animCycle = 40;
+
+
+        //animGraze2(tickAnim);
+        //animGraze3(tickAnim);
+    }
+
+    public void animGraze2(double tickAnim) {
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+
+    }
+
+    public void animGraze3(double tickAnim) {
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+
+    }
+
     @Override
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
@@ -4558,6 +4586,9 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //Ambient
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) {
+            animGraze(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         
     }

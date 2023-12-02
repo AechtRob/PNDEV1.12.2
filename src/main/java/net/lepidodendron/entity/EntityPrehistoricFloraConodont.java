@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
@@ -13,6 +14,8 @@ import net.lepidodendron.entity.render.entity.RenderConodont;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
@@ -37,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -143,6 +146,37 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	@Override
 	public boolean hasPNVariants() {
 		return true;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case IOWAGNATHUS: default:
+				return ModTriggers.CLICK_IOWAGNATHUS;
+
+			case PROCONODONTUS:
+				return ModTriggers.CLICK_PROCONODONTUS;
+
+			case CLARKINA:
+				return ModTriggers.CLICK_CLARKINA;
+
+			case OZARKODINA:
+				return ModTriggers.CLICK_OZARKODINA;
+
+			case MISIKELLA:
+				return ModTriggers.CLICK_MISIKELLA;
+
+			case HINDEODUS:
+				return ModTriggers.CLICK_HINDEODUS;
+
+			case PROMISSUM:
+				return ModTriggers.CLICK_PROMISSUM;
+
+			case CLYDAGNATHUS:
+				return ModTriggers.CLICK_CLYDAGNATHUS;
+
+		}
 	}
 
 	public enum Type
@@ -474,6 +508,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			this.setPNType(EntityPrehistoricFloraConodont.Type.getTypeFromString(compound.getString("PNType")));
 		}
 	}
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) {
@@ -602,30 +637,24 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
-			case PROMISSUM:
-			default:
-				return RenderDisplays.modelPalaeodictyopteraSmall;
+			case PROCONODONTUS: default:
+				return RenderDisplays.modelProconodontus;
 
 			case CLYDAGNATHUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
-
-			case PROCONODONTUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
-
-			case OZARKODINA:
-				return RenderDisplays.modelPalaeodictyopteraLarge;
-
-			case IOWAGNATHUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
-
-			case HINDEODUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
 
 			case CLARKINA:
-				return RenderDisplays.modelPalaeodictyopteraSmall;
 
 			case MISIKELLA:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
+
+			case OZARKODINA:
+
+			case HINDEODUS:
+				return RenderDisplays.modelClydagnathus;
+
+			case PROMISSUM:
+
+			case IOWAGNATHUS:
+				return RenderDisplays.modelPromissum;
 		}
 	}
 
