@@ -2918,15 +2918,11 @@
 "herrerasaurus_idle": {
     "sounds": [
       {
-        "name": "lepidodendron:herrerasaurus_living04",
+        "name": "lepidodendron:herrerasaurus_living01",
         "stream": false
       },
       {
-        "name": "lepidodendron:herrerasaurus_living05",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:herrerasaurus_living06",
+        "name": "lepidodendron:herrerasaurus_living02",
         "stream": false
       }
     ]
@@ -2940,14 +2936,6 @@
       {
         "name": "lepidodendron:herrerasaurus_hurt02",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:herrerasaurus_hurt03",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:herrerasaurus_hurt04",
-        "stream": false
       }
     ]
   },
@@ -2959,22 +2947,7 @@
       }
     ]
   },
-  "herrerasaurus_roar": {
-    "sounds": [
-      {
-        "name": "lepidodendron:herrerasaurus_living01",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:herrerasaurus_living02",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:herrerasaurus_living03",
-        "stream": false
-      }
-    ]
-  },
+
 "cynognathus_idle": {
     "sounds": [
       {
