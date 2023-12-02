@@ -4989,6 +4989,13 @@ public class RenderHandler {
                 return new RenderDorygnathus(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDicraeosaurus.class, new IRenderFactory<EntityPrehistoricFloraDicraeosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDicraeosaurus> createRenderFor(RenderManager manager) {
+                return new RenderDicraeosaurus(manager);
+            }
+        });
         
         
         
