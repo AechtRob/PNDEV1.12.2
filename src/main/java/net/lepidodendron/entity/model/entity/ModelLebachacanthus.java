@@ -196,25 +196,23 @@ public class ModelLebachacanthus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.59F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.rotateAngleX = (float) Math.toRadians(-15);
         this.body2.rotateAngleX = (float) Math.toRadians(5);
         this.body3.rotateAngleX = (float) Math.toRadians(7.5);
         this.body4.rotateAngleX = (float) Math.toRadians(7.5);
         this.body5.rotateAngleX = (float) Math.toRadians(10);
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.1F;
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -226,7 +224,7 @@ public class ModelLebachacanthus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 0.5F;
+        //this.body.offsetY = 0.5F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.body6, this.body7};
 
@@ -268,7 +266,7 @@ public class ModelLebachacanthus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 0.55F;
+            this.body.offsetY = 0.05F;
             this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
 
