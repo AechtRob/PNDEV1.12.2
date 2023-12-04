@@ -15,6 +15,8 @@ public class RenderLaminacaris extends RenderLiving<EntityPrehistoricFloraLamina
         super(mgr, new ModelLaminacaris(), 0.2f);
     }
 
+    public static float getScaler() {return 0.51F * 1.3F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraLaminacaris entity) {
         return RenderLaminacaris.TEXTURE;
@@ -27,7 +29,10 @@ public class RenderLaminacaris extends RenderLiving<EntityPrehistoricFloraLamina
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLaminacaris entity, float f) {
-        GlStateManager.scale(1.3, 1.3, 1.3);
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.35F;
     }
 
 }

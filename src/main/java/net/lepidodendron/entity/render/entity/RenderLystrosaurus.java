@@ -29,7 +29,8 @@ public class RenderLystrosaurus extends RenderLiving<EntityPrehistoricFloraLystr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLystrosaurus entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

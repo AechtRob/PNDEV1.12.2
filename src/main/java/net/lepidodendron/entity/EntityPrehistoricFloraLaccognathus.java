@@ -6,9 +6,15 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderLaccognathus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.util.DamageSource;
@@ -25,7 +31,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSwimmingAmphibianBase {
+public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -296,5 +302,65 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSw
 		this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
 		this.limbSwing += this.limbSwingAmount;
 	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.10;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderLaccognathus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelLaccognathus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderLaccognathus.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_LACCOGNATHUS;
+	}
+
 
 }

@@ -29,6 +29,7 @@ public class SpawnerConfigsJurassic {
     public static String[] dimJurassicMobsTaigaBeachPF = new String[]{"lepidodendron:prehistoric_flora_aetheolepis:0:20:3","lepidodendron:prehistoric_flora_aphnelepis:0:30:3","lepidodendron:prehistoric_flora_chilesaurus:5:15:1","lepidodendron:prehistoric_flora_cryolophosaurus:3:-10:1","lepidodendron:prehistoric_flora_dragonfly:7:50:8","lepidodendron:prehistoric_flora_glacialisaurus:4:10:1","lepidodendron:prehistoric_flora_harvestman:4:50:1","lepidodendron:prehistoric_flora_jewel_beetle:5:40:1","lepidodendron:prehistoric_flora_megapnosaurus:5:8:1","lepidodendron:prehistoric_flora_orb_weaver:3:50:1","lepidodendron:prehistoric_flora_oreochima:0:70:3","lepidodendron:prehistoric_flora_roachoid_forest:5:60:5","lepidodendron:prehistoric_flora_scorpion_fly:3:40:1","lepidodendron:prehistoric_flora_siderops:1:10:3","lepidodendron:prehistoric_flora_snail_land:3:35:1","lepidodendron:prehistoric_flora_tritylodon:4:20:1","lepidodendron:prehistoric_flora_uarbryichthys:5:30:3"};
     public static String[] dimJurassicMobsWindsweptPF = new String[0];
     public static String[] dimJurassicMobsCalderaRimPF = new String[0];
+    public static String[] dimJurassicMobsCalderaRimRoostPF = new String[0];
     public static String[] dimJurassicMobsCalderaSwampPF = new String[0];
     public static String[] dimJurassicMobsCalderaLandPF = new String[0];
 
@@ -61,6 +62,7 @@ public class SpawnerConfigsJurassic {
     public static String[] dimJurassicTrapAirTaigaBeachPF = new String[]{"lepidodendron:prehistoric_flora_aetheolepis:0:20:3","lepidodendron:prehistoric_flora_aphnelepis:0:30:3","lepidodendron:prehistoric_flora_chilesaurus:5:15:1","lepidodendron:prehistoric_flora_cryolophosaurus:3:-10:1","lepidodendron:prehistoric_flora_dragonfly:7:50:8","lepidodendron:prehistoric_flora_glacialisaurus:4:10:1","lepidodendron:prehistoric_flora_harvestman:4:50:1","lepidodendron:prehistoric_flora_jewel_beetle:5:40:1","lepidodendron:prehistoric_flora_megapnosaurus:5:8:1","lepidodendron:prehistoric_flora_orb_weaver:3:50:1","lepidodendron:prehistoric_flora_oreochima:0:70:3","lepidodendron:prehistoric_flora_roachoid_forest:5:60:5","lepidodendron:prehistoric_flora_scorpion_fly:3:40:1","lepidodendron:prehistoric_flora_siderops:1:10:3","lepidodendron:prehistoric_flora_snail_land:3:35:1","lepidodendron:prehistoric_flora_tritylodon:4:20:1","lepidodendron:prehistoric_flora_uarbryichthys:5:30:3"};
     public static String[] dimJurassicTrapAirWindsweptPF = new String[0];
     public static String[] dimJurassicTrapAirCalderaRimPF = new String[0];
+    public static String[] dimJurassicTrapAirCalderaRimRoostPF = new String[0];
     public static String[] dimJurassicTrapAirCalderaSwampPF = new String[0];
     public static String[] dimJurassicTrapAirCalderaLandPF = new String[0];
     //LandTraps:
@@ -91,6 +93,7 @@ public class SpawnerConfigsJurassic {
     public static String[] dimJurassicTrapGroundTaigaBeachPF = new String[]{"lepidodendron:prehistoric_flora_aetheolepis:0:20:3","lepidodendron:prehistoric_flora_aphnelepis:0:30:3","lepidodendron:prehistoric_flora_chilesaurus:5:15:1","lepidodendron:prehistoric_flora_cryolophosaurus:3:-10:1","lepidodendron:prehistoric_flora_dragonfly:7:50:8","lepidodendron:prehistoric_flora_glacialisaurus:4:10:1","lepidodendron:prehistoric_flora_harvestman:4:50:1","lepidodendron:prehistoric_flora_jewel_beetle:5:40:1","lepidodendron:prehistoric_flora_megapnosaurus:5:8:1","lepidodendron:prehistoric_flora_orb_weaver:3:50:1","lepidodendron:prehistoric_flora_oreochima:0:70:3","lepidodendron:prehistoric_flora_roachoid_forest:5:60:5","lepidodendron:prehistoric_flora_scorpion_fly:3:40:1","lepidodendron:prehistoric_flora_siderops:1:10:3","lepidodendron:prehistoric_flora_snail_land:3:35:1","lepidodendron:prehistoric_flora_tritylodon:4:20:1","lepidodendron:prehistoric_flora_uarbryichthys:5:30:3"};
     public static String[] dimJurassicTrapGroundWindsweptPF = new String[0];
     public static String[] dimJurassicTrapGroundCalderaRimPF = new String[0];
+    public static String[] dimJurassicTrapGroundCalderaRimRoostPF = new String[0];
     public static String[] dimJurassicTrapGroundCalderaSwampPF = new String[0];
     public static String[] dimJurassicTrapGroundCalderaLandPF = new String[0];
     //WaterTraps:
@@ -121,6 +124,7 @@ public class SpawnerConfigsJurassic {
     public static String[] dimJurassicTrapWaterTaigaBeachPF = new String[]{"lepidodendron:prehistoric_flora_aetheolepis:0:20:3","lepidodendron:prehistoric_flora_aphnelepis:0:30:3","lepidodendron:prehistoric_flora_chilesaurus:5:15:1","lepidodendron:prehistoric_flora_cryolophosaurus:3:-10:1","lepidodendron:prehistoric_flora_dragonfly:7:50:8","lepidodendron:prehistoric_flora_glacialisaurus:4:10:1","lepidodendron:prehistoric_flora_harvestman:4:50:1","lepidodendron:prehistoric_flora_jewel_beetle:5:40:1","lepidodendron:prehistoric_flora_megapnosaurus:5:8:1","lepidodendron:prehistoric_flora_orb_weaver:3:50:1","lepidodendron:prehistoric_flora_oreochima:0:70:3","lepidodendron:prehistoric_flora_roachoid_forest:5:60:5","lepidodendron:prehistoric_flora_scorpion_fly:3:40:1","lepidodendron:prehistoric_flora_siderops:1:10:3","lepidodendron:prehistoric_flora_snail_land:3:35:1","lepidodendron:prehistoric_flora_tritylodon:4:20:1","lepidodendron:prehistoric_flora_uarbryichthys:5:30:3"};
     public static String[] dimJurassicTrapWaterWindsweptPF = new String[0];
     public static String[] dimJurassicTrapWaterCalderaRimPF = new String[0];
+    public static String[] dimJurassicTrapWaterCalderaRimRoostPF = new String[0];
     public static String[] dimJurassicTrapWaterCalderaSwampPF = new String[0];
     public static String[] dimJurassicTrapWaterCalderaLandPF = new String[0];
 
@@ -152,6 +156,7 @@ public class SpawnerConfigsJurassic {
     public static String[] dimJurassicMobsTaigaBeachFA = new String[0];
     public static String[] dimJurassicMobsWindsweptFA = new String[0];
     public static String[] dimJurassicMobsCalderaRimFA = new String[0];
+    public static String[] dimJurassicMobsCalderaRimRoostFA = new String[0];
     public static String[] dimJurassicMobsCalderaSwampFA = new String[0];
     public static String[] dimJurassicMobsCalderaLandFA = new String[0];
 
@@ -183,6 +188,7 @@ public class SpawnerConfigsJurassic {
     public static String[] dimJurassicMobsTaigaBeachReborn = new String[0];
     public static String[] dimJurassicMobsWindsweptReborn = new String[0];
     public static String[] dimJurassicMobsCalderaRimReborn = new String[0];
+    public static String[] dimJurassicMobsCalderaRimRoostReborn = new String[0];
     public static String[] dimJurassicMobsCalderaSwampReborn = new String[0];
     public static String[] dimJurassicMobsCalderaLandReborn = new String[0];
 
