@@ -412,6 +412,7 @@ public class RenderDisplays {
     public static final ModelLaminacaris modelLaminacaris = new ModelLaminacaris();
     public static final ModelLebachacanthus modelLebachacanthus = new ModelLebachacanthus();
     public static final ModelLimnoscelis modelLimnoscelis = new ModelLimnoscelis();
+    public static final ModelLimusaurus modelLimusaurus = new ModelLimusaurus();
     public static final ModelLisowicia modelLisowicia = new ModelLisowicia();
     public static final ModelListracanthus modelListracanthus = new ModelListracanthus();
     public static final ModelLonchidion modelLonchidion = new ModelLonchidion();
