@@ -8797,5 +8797,97 @@
         "stream": false
       }
     ]
+  },
+
+  "dubreuillosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dubreuillosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dubreuillosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dubreuillosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dubreuillosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "dubreuillosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dubreuillosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dubreuillosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dubreuillosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dubreuillosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dubreuillosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "shunosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shunosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shunosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shunosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shunosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "shunosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shunosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shunosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shunosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "shunosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shunosaurus_death",
+        "stream": false
+      }
+    ]
   }
+  
+  
 }

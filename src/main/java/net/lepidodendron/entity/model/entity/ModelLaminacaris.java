@@ -496,21 +496,16 @@ public class ModelLaminacaris extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.51F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetX = -0.08F;
-        this.body.offsetZ = 0.01F;
+
+    public void renderStaticFloor(float f) {
+        this.body.offsetY = -0.36F;
+        this.body.offsetZ = -0.06F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -521,7 +516,7 @@ public class ModelLaminacaris extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.68F;
+        //this.body.offsetY = 0.68F;
         this.body.offsetZ = -0.15F;
 
         float speed = 0.4F;
@@ -606,7 +601,7 @@ public class ModelLaminacaris extends AdvancedModelBase {
             this.chainWave(bodyF, 0.23F, 0.17f, -3, f2, 0.6F);
 
             if (!e.isInWater()) {
-                this.body.offsetY = 0.7F;
+                this.body.offsetY = 0.02F;
                 this.bob(body, -speed * 1.5F, 2.5F, false, f2, 1);
             }
             else {

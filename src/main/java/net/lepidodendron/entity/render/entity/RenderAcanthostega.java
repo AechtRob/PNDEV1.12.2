@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAcanthostega extends RenderLiving<EntityPrehistoricFloraAcanthostega> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acanthostega.png");
+    public static float getScaler() {
+        return 0.22F;
+    }
 
     public RenderAcanthostega(RenderManager mgr) {
         super(mgr, new ModelAcanthostega(), 0.4f);
@@ -27,7 +30,7 @@ public class RenderAcanthostega extends RenderLiving<EntityPrehistoricFloraAcant
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAcanthostega entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.30F;
     }
