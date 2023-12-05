@@ -8960,5 +8960,42 @@
         "stream": false
       }
     ]
+  },
+
+  "anchisaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchisaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchisaurus_living02",
+        "stream": false
+      }
+    ]
+  },
+  "anchisaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchisaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchisaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchisaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "anchisaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchisaurus_death",
+        "stream": false
+      }
+    ]
   }
 }
