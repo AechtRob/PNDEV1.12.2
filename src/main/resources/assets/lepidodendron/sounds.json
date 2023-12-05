@@ -8887,7 +8887,78 @@
         "stream": false
       }
     ]
+  },
+
+  "tianyulong_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tianyulong_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_living07",
+        "stream": false
+      }
+    ]
+  },
+  "tianyulong_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tianyulong_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "tianyulong_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tianyulong_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tianyulong_alarm03",
+        "stream": false
+      }
+    ]
+  },
+  "tianyulong_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tianyulong_death",
+        "stream": false
+      }
+    ]
   }
-  
-  
 }

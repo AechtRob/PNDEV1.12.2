@@ -366,7 +366,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.BUG);
 	}
   
 	public boolean panics() {
