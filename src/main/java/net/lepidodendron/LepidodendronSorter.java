@@ -4192,10 +4192,12 @@ public class LepidodendronSorter {
     public static final int zircon_ore = 4188;
     public static final int zosterophyllum = 4189;
     public static final int zosterophyllum_spore = 4190;
+
     public static final int advancement_placeholder = 4191;
 
     public static final int dicraeosaurus_raw = 4192;
     public static final int eggs_dicraeosaurus = 4193;
 
 
+    public static final int dubreuillosaurus_raw = 4192;
 }
