@@ -481,6 +481,7 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+
         resetToDefaultPose();
     }
 
