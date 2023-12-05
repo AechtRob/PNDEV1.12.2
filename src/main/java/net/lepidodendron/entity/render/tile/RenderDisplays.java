@@ -477,5 +477,6 @@ public class RenderDisplays {
     public static final ModelXenacanthus modelXenacanthus = new ModelXenacanthus();
     public static final ModelAdeopapposaurus modelAdeopapposaurus = new ModelAdeopapposaurus();
     public static final ModelDicraeosaurus modelDicraeosaurus = new ModelDicraeosaurus();
+    public static final ModelHeterodontosaurus modelHeterodontosaurus = new ModelHeterodontosaurus();
 
 }
