@@ -4996,6 +4996,13 @@ public class RenderHandler {
                 return new RenderDicraeosaurus(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHeterodontosaurus.class, new IRenderFactory<EntityPrehistoricFloraHeterodontosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHeterodontosaurus> createRenderFor(RenderManager manager) {
+                return new RenderHeterodontosaurus(manager);
+            }
+        });
         
         
         

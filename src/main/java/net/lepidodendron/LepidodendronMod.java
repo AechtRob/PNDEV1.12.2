@@ -2074,7 +2074,13 @@ public class LepidodendronMod {
 	public static final int ENTITY_DORYGNATHUS = 832;
 	public static final ResourceLocation DORYGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dorygnathus"));
 	public static final ResourceLocation DORYGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dorygnathus_young"));
+
+
 	public static final int ENTITY_GUANO_BALL = 833;
+
+	public static final int ENTITY_HETERODONTOSAURUS = 834;
+	public static final ResourceLocation HETERODONTOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterodontosaurus"));
+	public static final ResourceLocation HETERODONTOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterodontosaurus_young"));
 
 
 

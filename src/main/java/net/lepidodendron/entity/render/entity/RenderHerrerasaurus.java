@@ -29,7 +29,8 @@ public class RenderHerrerasaurus extends RenderLiving<EntityPrehistoricFloraHerr
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHerrerasaurus entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.01f) {scale = 0.01f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.6F;
     }
