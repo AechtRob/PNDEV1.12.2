@@ -15,8 +15,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderDubreuillosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -26,6 +28,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -59,9 +62,95 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	@Override
-	public int getGrazeLength() {
+	public int getDrinkLength() {
 		return 551;
 	}
+
+	@Override
+	public int getDrinkCooldown() {
+		return 3200;
+	}
+
+	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
+		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
+			return false;
+		}
+
+		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
+			return false;
+		}
+
+		return true;
+	}
+
+	@Override
+	public boolean isDrinking()
+	{
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this).up();
+
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& this.onGround
+				&& this.isReallyInWater()
+				&& this.isBlockWadable(this.world, entityPos.down())
+				&&
+				(
+						(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
+
+								|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
+
+								|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
+
+								|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
+				)
+		);
+		if (test) {
+			//Which one is water?
+			EnumFacing facing = null;
+			if (this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.NORTH;
+			}
+			else if (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.SOUTH;
+			}
+			else if (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.EAST;
+			}
+			else if (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.WEST;
+			}
+			if (facing != null) {
+				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test;
+	}
+
 
 	@Override
 	public int wadeDepth() {
