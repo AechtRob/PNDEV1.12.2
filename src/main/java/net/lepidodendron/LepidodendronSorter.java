@@ -4196,6 +4196,8 @@ public class LepidodendronSorter {
 
     public static final int dicraeosaurus_raw = 4192;
     public static final int eggs_dicraeosaurus = 4193;
+    public static final int heterodontosaurus_raw = 4194;
+    public static final int eggs_heterodontosaurus = 4195;
 
 
 }
