@@ -2,14 +2,14 @@
 	"name": "Pachydesmoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_pachydesmoceras",
-	"category": "lepidodendron:cretaceous_animal",
+	"category": "lepidodendron:cretaceousearly_animal",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_pachydesmoceras",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_ammonite_pachydesmoceras",
 			"title": "Pachydesmoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
+			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonitida$(br)>Desmoceratidae"
 		},
 		{
 			"type": "image",

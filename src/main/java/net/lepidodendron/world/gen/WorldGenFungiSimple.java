@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -72,7 +73,7 @@ public class WorldGenFungiSimple extends WorldGenerator
             && (!worldIn.provider.isNether() || blockpos.getY() < 254) && fungus.canPlaceBlockAt(worldIn, blockpos))
 			{
 				if (fungus.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-					worldIn.setBlockState(blockpos, fungus.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, fungus.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 					flag = true;
 				}
             }

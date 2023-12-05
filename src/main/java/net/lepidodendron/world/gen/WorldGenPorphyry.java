@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockStonePorphyry;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,7 +29,7 @@ public class WorldGenPorphyry extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
 				worldIn.setBlockToAir(blockpos);
 				flag = true;
             }
@@ -45,7 +46,7 @@ public class WorldGenPorphyry extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -60,7 +61,7 @@ public class WorldGenPorphyry extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -75,7 +76,7 @@ public class WorldGenPorphyry extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -90,7 +91,7 @@ public class WorldGenPorphyry extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockStonePorphyry.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 	                flag = true;
 	            }

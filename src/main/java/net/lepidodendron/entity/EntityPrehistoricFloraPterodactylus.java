@@ -192,11 +192,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		}
 		if (this.getAttachmentPos() != null) {
 			if (this.getAttachmentFacing() == EnumFacing.UP) {
-				//Walking:
-				if (this.getIsFast()) {
-					return 0.3F;
-				}
-				return 0.196F;
+				return 0.266F;
 			}
 		}
 		//Otherwise we are flying:
@@ -336,17 +332,6 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3
 		return 0; //Small eggs
-	}
-
-	@Override
-	public ResourceLocation getEggTexture(@Nullable String variantIn) {
-		String entityString = this.getEntityString();
-		entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-		ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
-		if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
-			return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
-		}
-		return resourceLocation;
 	}
 
 	//Rendering taxidermy:

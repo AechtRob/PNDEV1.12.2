@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockThamnobeatricea;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -44,7 +45,7 @@ public class ProcedureWorldGenThamnobeatricea extends ElementsLepidodendronMod.M
 			//Tree height: 1-5 blocks
 			TreeHeight = 1 + Math.round(Math.random() * 4D);
 
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockThamnobeatricea.block.getDefaultState(), 3);
 
 			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 			$_dependencies.put("x", x);

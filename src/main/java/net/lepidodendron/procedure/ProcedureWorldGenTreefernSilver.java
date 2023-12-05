@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockTreefernSilverLog;
 import net.lepidodendron.block.BlockTreefernSilverShoot;
 import net.lepidodendron.block.BlockTreefernSilverShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -62,7 +63,7 @@ public class ProcedureWorldGenTreefernSilver extends ElementsLepidodendronMod.Mo
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockTreefernSilverLog.block, EnumFacing.DOWN);
 				counter = counter + 1;
 			}
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernSilverShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernSilverShoot.block.getDefaultState(), 3);
 			BlockTreefernSilverShootPlaceable.block.onBlockAdded(world, new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernSilverShoot.block.getDefaultState());
 		}
 			

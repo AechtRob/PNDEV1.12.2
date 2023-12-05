@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockAgathisLeaves;
 import net.lepidodendron.block.BlockAgathisLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -678,7 +679,7 @@ public class ProcedureWorldGenAgathisNoCheck extends ElementsLepidodendronMod.Mo
 									&& ((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getBlock() != Blocks.DIRT.getStateFromMeta(2).getBlock())
 									&& (((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.GROUND) || ((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.GRASS))
 									) {
-										world.setBlockState(new BlockPos((int) x + xct, (int) y + yct + 1, (int) z + zct), Blocks.DIRT.getStateFromMeta(2), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) y + yct + 1, (int) z + zct), Blocks.DIRT.getStateFromMeta(2), 3);
 									}
 								}
 								else {
@@ -686,7 +687,7 @@ public class ProcedureWorldGenAgathisNoCheck extends ElementsLepidodendronMod.Mo
 										{
 											BlockPos _bp = new BlockPos((int) x + xct, (int) y + yct, (int) z + zct);
 											IBlockState _bs = Blocks.DIRT.getStateFromMeta(2);
-											world.setBlockState(_bp, _bs, 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,_bp, _bs, 3);
 										}
 									}
 								}

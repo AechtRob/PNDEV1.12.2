@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLophosoria;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.util.EnumFacing;
@@ -30,7 +31,7 @@ public class WorldGenLophosoria extends WorldGenerator
                 && worldIn.getBlockState(blockpos.down()).getBlockFaceShape(worldIn, blockpos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
             )
             {
-                worldIn.setBlockState(blockpos, BlockLophosoria.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLophosoria.block.getDefaultState(), 2);
                 BlockLophosoria.block.onBlockAdded(worldIn, blockpos, BlockLophosoria.block.getDefaultState());
                 flag = true;
             }

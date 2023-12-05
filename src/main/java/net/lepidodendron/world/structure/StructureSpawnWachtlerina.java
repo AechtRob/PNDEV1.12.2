@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockWachtlerina;
 import net.lepidodendron.block.BlockWachtlerina2;
 import net.lepidodendron.block.BlockWachtlerina3;
 import net.lepidodendron.block.BlockWachtlerina4;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -173,10 +174,10 @@ public class StructureSpawnWachtlerina extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo.up(3));
 					}
 					//System.err.println("Spawning BlockWachtlerina at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockWachtlerina.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockWachtlerina2.block.getDefaultState());
-					world.setBlockState(spawnTo.up(2), BlockWachtlerina3.block.getDefaultState());
-					world.setBlockState(spawnTo.up(3), BlockWachtlerina4.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockWachtlerina.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockWachtlerina2.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockWachtlerina3.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockWachtlerina4.block.getDefaultState());
 				}
 
 			}

@@ -229,19 +229,14 @@ public class ModelBobasatrania extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bobasatrania.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Bobasatrania.rotateAngleY = (float) Math.toRadians(90);
-        this.Bobasatrania.offsetX = -0.09F;
+        this.Bobasatrania.offsetX = -0.025F;
         this.Bobasatrania.offsetY = -0.13F;
-        this.Bobasatrania.offsetZ = 0.07F;
+        this.Bobasatrania.offsetZ = 0.02F;
         this.Bobasatrania.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

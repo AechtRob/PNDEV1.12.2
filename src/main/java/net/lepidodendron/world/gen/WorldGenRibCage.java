@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockRibCage;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.tileentity.TileEntity;
@@ -37,7 +38,7 @@ public class WorldGenRibCage extends WorldGenerator
                 && worldIn.getBlockState(blockpos.down()).getBlockFaceShape(worldIn, blockpos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
             )
             {
-                worldIn.setBlockState(blockpos, BlockRibCage.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRibCage.block.getDefaultState(), 2);
                 TileEntity te = worldIn.getTileEntity(blockpos);
                 if (te != null) {
                     if (te instanceof BlockRibCage.TileEntityCustom) {

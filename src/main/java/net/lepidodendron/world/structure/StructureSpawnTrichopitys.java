@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockTrichopitys;
 import net.lepidodendron.block.BlockTrichopitysCentre;
 import net.lepidodendron.block.BlockTrichopitysTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -147,9 +148,9 @@ public class StructureSpawnTrichopitys extends ElementsLepidodendronMod.ModEleme
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockTrichopitys.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockTrichopitysCentre.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockTrichopitysTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockTrichopitys.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockTrichopitysCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockTrichopitysTop.block.getDefaultState(), 3);
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLichen;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -54,7 +55,7 @@ public class LichenGenerator extends WorldGenerator
 		            if (BlockLichen.BlockCustom.canPlaceAt(worldIn, pos, enumfacing)
 		            	&& worldIn.canSeeSky(pos))
 		            {
-		                worldIn.setBlockState(pos, this.state.withProperty(FACING, enumfacing), 3);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, this.state.withProperty(FACING, enumfacing), 3);
 		                return true;
 		            }
 		        }

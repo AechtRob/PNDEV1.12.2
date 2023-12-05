@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockTreefernBlackLog;
 import net.lepidodendron.block.BlockTreefernBlackShoot;
 import net.lepidodendron.block.BlockTreefernBlackShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBlack;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -130,14 +131,14 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
                             $_dependencies.put("world", worldIn);
                             $_dependencies.put("SaplingSpawn", false);
                             if (rand.nextInt(2) == 0) {
-                                worldIn.setBlockState(blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                                 BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
                             else if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && blockpos.getY() + (rand.nextInt(7) - 3) > 95)) {
                                 ProcedureWorldGenTreefernBlack.executeProcedure($_dependencies);
                             }
                             else {
-                                worldIn.setBlockState(blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                                 BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
                         }

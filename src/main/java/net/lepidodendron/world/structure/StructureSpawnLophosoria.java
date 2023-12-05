@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockLophosoria;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -180,7 +181,7 @@ public class StructureSpawnLophosoria extends ElementsLepidodendronMod.ModElemen
 			
 						Block block = world.getBlockState(new BlockPos((int) x, (int) (y), (int) z)).getBlock();
 						if (BlockLophosoria.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockLophosoria.block.getDefaultState(), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockLophosoria.block.getDefaultState(), 2);
 							BlockLophosoria.block.onBlockAdded(world, new BlockPos((int) x, (int) y, (int) z), BlockLophosoria.block.getDefaultState());
 						}
 					}

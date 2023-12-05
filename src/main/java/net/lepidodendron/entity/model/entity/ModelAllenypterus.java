@@ -213,21 +213,17 @@ public class ModelAllenypterus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Allenypterus.render(f5 * 0.125F);
+        this.Allenypterus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+    public void renderStaticWall(float f) {
         this.Allenypterus.rotateAngleY = (float) Math.toRadians(90);
         this.Allenypterus.offsetX = -0.01F;
         this.Allenypterus.offsetY = -0.19F;
         this.Allenypterus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -238,7 +234,7 @@ public class ModelAllenypterus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Allenypterus.offsetY = 1.3F;
+        //this.Allenypterus.offsetY = 1.3F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4};
@@ -275,7 +271,7 @@ public class ModelAllenypterus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Allenypterus.rotateAngleZ = (float) Math.toRadians(90);
-                this.Allenypterus.offsetY = 1.3F;
+                //this.Allenypterus.offsetY = 1.3F;
                 this.bob(Allenypterus, -speed, 2F, false, f2, 1);
                 this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
             }

@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -533,16 +534,16 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 							if (counter >= TrunkHeight) {
 								PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
 								if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
-									world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
 								}
 								if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
-									world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 								}
 								if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
-									world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
 								}
 								if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
-									world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
 								}
 							}
 							Upplaced = true;
@@ -565,16 +566,16 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 								if (counter >= TrunkHeight) {
 									PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
 									if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
-										world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
 									}
 									if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
-										world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 									}
 									if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
-										world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
 									}
 									if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
-										world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
 									}
 								}
 								Upplaced = true;
@@ -597,16 +598,16 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 									if (counter >= TrunkHeight) {
 										PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
 										if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
-											world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
 										}
 										if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
-											world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 										}
 										if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
-											world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
 										}
 										if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
-											world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
 										}
 									}
 									Upplaced = true;
@@ -628,16 +629,16 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 									if (counter >= TrunkHeight) {
 										PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
 										if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
-											world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
 										}
 										if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
-											world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 										}
 										if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
-											world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
 										}
 										if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
-											world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
 										}
 									}
 									Upplaced = true;
@@ -910,16 +911,16 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 						PlaceBlock(pos, world, BlockRattanStem.block, facing);
 						PlaceBlock(pos.up(), world, BlockRattanShoot.block, EnumFacing.UP);
 						if (Math.random() > 0.4 && world.isAirBlock(pos.east())) {
-							world.setBlockState(pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.EAST), 3);
 						}
 						if (Math.random() > 0.4 && world.isAirBlock(pos.south())) {
-							world.setBlockState(pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 						}
 						if (Math.random() > 0.4 && world.isAirBlock(pos.west())) {
-							world.setBlockState(pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.WEST), 3);
 						}
 						if (Math.random() > 0.4 && world.isAirBlock(pos.north())) {
-							world.setBlockState(pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockRattanFruitBunch.block.getDefaultState().withProperty(BlockRattanFruitBunch.BlockCustom.FACING, EnumFacing.NORTH), 3);
 						}
 						counter = TrunkHeight;
 						PlaceSegment(facing, counter, TrunkHeight, world, pos.up());
@@ -1117,7 +1118,7 @@ public class ProcedureWorldGenRattan extends ElementsLepidodendronMod.ModElement
 	
 		Block block = world.getBlockState(pos).getBlock();
 		if (canPlace(pos, world)) {
-			world.setBlockState(pos, blockPlace.getDefaultState().withProperty(FACING, facing), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos, blockPlace.getDefaultState().withProperty(FACING, facing), 3);
 		}
 		
 	}

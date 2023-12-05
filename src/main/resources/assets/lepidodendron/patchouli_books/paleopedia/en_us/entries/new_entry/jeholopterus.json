@@ -1,0 +1,46 @@
+{
+	"name": "Jeholopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/jeholopterus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_jeholopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jeholopterus",
+			"title": "Jeholopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Anurognathinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/jeholopterus.png"],
+			"title": "J. ninchengensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jeholopterus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@jeholopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@jeholopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@jeholopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@jeholopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@jeholopterus"
+		}
+	]
+}

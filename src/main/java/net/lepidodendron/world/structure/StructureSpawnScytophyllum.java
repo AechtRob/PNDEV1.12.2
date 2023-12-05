@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockScytophyllum;
 import net.lepidodendron.block.BlockScytophyllumTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -156,8 +157,8 @@ public class StructureSpawnScytophyllum extends ElementsLepidodendronMod.ModElem
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockScytophyllum.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockScytophyllumTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockScytophyllum.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockScytophyllumTop.block.getDefaultState(), 3);
 			}
 		}
 	}

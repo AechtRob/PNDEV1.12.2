@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockSurangephyllum;
 import net.lepidodendron.block.BlockSurangephyllumTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,8 +29,8 @@ public class WorldGenSurangephyllum extends WorldGenerator
             )
             
             {
-                worldIn.setBlockState(blockpos, BlockSurangephyllum.block.getDefaultState(), 2);
-                worldIn.setBlockState(blockpos.up(), BlockSurangephyllumTop.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSurangephyllum.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSurangephyllumTop.block.getDefaultState(), 2);
                 flag = true;
             }
         }

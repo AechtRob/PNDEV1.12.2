@@ -25,6 +25,7 @@ public class RenderBelantsea extends RenderLiving<EntityPrehistoricFloraBelantse
     protected void applyRotations(EntityPrehistoricFloraBelantsea entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+
     protected void preRenderCallback(EntityPrehistoricFloraBelantsea entity, float f) {
         float scale = this.getScaler();
         if (scale < 0.1f) {

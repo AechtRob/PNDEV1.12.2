@@ -242,22 +242,18 @@ public class ModelHolonema extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.headshield.render(f5 * 0.4F);
+        this.headshield.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.headshield.rotateAngleY = (float) Math.toRadians(90);
         this.headshield.offsetX = -0.1F;
-        this.headshield.offsetY = -0F;
-        this.headshield.offsetZ = 0.02F;
+        this.headshield.offsetY = -0.2F;
+        this.headshield.offsetZ = 0.01F;
         this.headshield.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -269,7 +265,7 @@ public class ModelHolonema extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.headshield.offsetZ = -0.4F;
-        this.headshield.offsetY = 0.7F;
+        this.headshield.offsetY = -0.2F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body, this.tail, this.tail2, this.tail3, this.tail4};
@@ -333,7 +329,7 @@ public class ModelHolonema extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.headshield.offsetY = 0.9F;
+                this.headshield.offsetY = 0.0F;
                 this.bob(headshield, -speed, 1F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);

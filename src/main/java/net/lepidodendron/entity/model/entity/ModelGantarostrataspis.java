@@ -164,23 +164,19 @@ public class ModelGantarostrataspis extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 
-        this.Gantarostrataspis.render(f5 * 0.21F);
+        this.Gantarostrataspis.render(f5);
 
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Gantarostrataspis.rotateAngleY = (float) Math.toRadians(90);
+
+    public void renderStaticWall(float f) {
+        this.Gantarostrataspis.rotateAngleX = (float) Math.toRadians(90);
         this.Gantarostrataspis.offsetX = -0.02F;
-        this.Gantarostrataspis.offsetY = 0F;
-        this.Gantarostrataspis.offsetZ = 0.02F;
+        this.Gantarostrataspis.offsetY = -0.2F;
+        //this.Gantarostrataspis.offsetZ = 0.02F;
         this.Gantarostrataspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -191,7 +187,7 @@ public class ModelGantarostrataspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Gantarostrataspis.offsetY = 1.15F;
+        //this.Gantarostrataspis.offsetY = 1.15F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tailfin};
@@ -204,7 +200,7 @@ public class ModelGantarostrataspis extends AdvancedModelBase {
             this.chainSwing(fishTail, speed, 0.4F, -3, f2, 0.8F);
             this.swing(Gantarostrataspis, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
-                this.Gantarostrataspis.offsetY = 1.2F;
+                this.Gantarostrataspis.offsetY = 0.05F;
                 this.bob(Gantarostrataspis, -speed, 5F, false, f2, 1);
             }
         }

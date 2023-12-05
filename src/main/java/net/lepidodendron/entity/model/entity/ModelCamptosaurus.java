@@ -6831,22 +6831,22 @@ public class ModelCamptosaurus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 10) {
             xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-            yy = -1.75 + (((tickAnim - 0) / 10) * (-1.25-(-1.75)));
+            yy = -1 + (((tickAnim - 0) / 10) * (-1.25-(-1)));
             zz = 0 + (((tickAnim - 0) / 10) * (-2.25-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 20) {
             xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
-            yy = -1.25 + (((tickAnim - 10) / 10) * (-1.75-(-1.25)));
+            yy = -1.25 + (((tickAnim - 10) / 10) * (-1-(-1.25)));
             zz = -2.25 + (((tickAnim - 10) / 10) * (0-(-2.25)));
         }
         else if (tickAnim >= 20 && tickAnim < 30) {
             xx = 0 + (((tickAnim - 20) / 10) * (0-(0)));
-            yy = -1.75 + (((tickAnim - 20) / 10) * (-1.25-(-1.75)));
+            yy = -1 + (((tickAnim - 20) / 10) * (-1.25-(-1)));
             zz = 0 + (((tickAnim - 20) / 10) * (-2.25-(0)));
         }
         else if (tickAnim >= 30 && tickAnim < 40) {
             xx = 0 + (((tickAnim - 30) / 10) * (0-(0)));
-            yy = -1.25 + (((tickAnim - 30) / 10) * (-1.75-(-1.25)));
+            yy = -1.25 + (((tickAnim - 30) / 10) * (-1-(-1.25)));
             zz = -2.25 + (((tickAnim - 30) / 10) * (0-(-2.25)));
         }
         else {
@@ -6897,6 +6897,41 @@ public class ModelCamptosaurus extends AdvancedModelBaseExtended {
             zz = 0;
         }
         this.setRotateAngle(LegL, LegL.rotateAngleX + (float) Math.toRadians(xx), LegL.rotateAngleY + (float) Math.toRadians(yy), LegL.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 26) {
+            xx = 0 + (((tickAnim - 20) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 6) * (1-(0)));
+            zz = 0 + (((tickAnim - 20) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 26 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 26) / 4) * (0-(0)));
+            yy = 1 + (((tickAnim - 26) / 4) * (0-(1)));
+            zz = 0 + (((tickAnim - 26) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 35) {
+            xx = 0 + (((tickAnim - 30) / 5) * (0-(0)));
+            yy = 0 + (((tickAnim - 30) / 5) * (1.25-(0)));
+            zz = 0 + (((tickAnim - 30) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 35 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 35) / 5) * (0-(0)));
+            yy = 1.25 + (((tickAnim - 35) / 5) * (0-(1.25)));
+            zz = 0 + (((tickAnim - 35) / 5) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.LegL.rotationPointX = this.LegL.rotationPointX + (float)(xx);
+        this.LegL.rotationPointY = this.LegL.rotationPointY - (float)(yy);
+        this.LegL.rotationPointZ = this.LegL.rotationPointZ + (float)(zz);
 
 
 
@@ -7065,6 +7100,41 @@ public class ModelCamptosaurus extends AdvancedModelBaseExtended {
             zz = 0;
         }
         this.setRotateAngle(LegR, LegR.rotateAngleX + (float) Math.toRadians(xx), LegR.rotateAngleY + (float) Math.toRadians(yy), LegR.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 6) {
+            xx = 0 + (((tickAnim - 0) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 6) * (1-(0)));
+            zz = 0 + (((tickAnim - 0) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 6 && tickAnim < 9) {
+            xx = 0 + (((tickAnim - 6) / 3) * (0-(0)));
+            yy = 1 + (((tickAnim - 6) / 3) * (0.06-(1)));
+            zz = 0 + (((tickAnim - 6) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 14) {
+            xx = 0 + (((tickAnim - 9) / 5) * (0-(0)));
+            yy = 0.06 + (((tickAnim - 9) / 5) * (1.16-(0.06)));
+            zz = 0 + (((tickAnim - 9) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 14 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 14) / 6) * (0-(0)));
+            yy = 1.16 + (((tickAnim - 14) / 6) * (0-(1.16)));
+            zz = 0 + (((tickAnim - 14) / 6) * (0-(0)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 20) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 20) * (0-(0)));
+            zz = 0 + (((tickAnim - 20) / 20) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.LegR.rotationPointX = this.LegR.rotationPointX + (float)(xx);
+        this.LegR.rotationPointY = this.LegR.rotationPointY - (float)(yy);
+        this.LegR.rotationPointZ = this.LegR.rotationPointZ + (float)(zz);
 
 
 

@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockJerseyanthusFlower;
 import net.lepidodendron.block.BlockJerseyanthusLeaves;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -98,7 +99,7 @@ public class ProcedureWorldGenJerseyanthus extends ElementsLepidodendronMod.ModE
 		if (world.getBlockState(pos).getBlock() == BlockJerseyanthusLeaves.block && world.rand.nextInt(3) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {
-			world.setBlockState(pos.up(), BlockJerseyanthusFlower.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockJerseyanthusFlower.block.getDefaultState(), 3);
 			TileEntity tileEntity = world.getTileEntity(pos.up());
 			if (tileEntity instanceof BlockJerseyanthusFlower.TileEntityCustom) {
 				tileEntity.getTileData().setBoolean("decayable", (true));

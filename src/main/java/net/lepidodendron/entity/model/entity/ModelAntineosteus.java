@@ -230,12 +230,19 @@ public class ModelAntineosteus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Antineosteus.render(f5 * 0.80F);
+        this.Antineosteus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+    public void renderStaticWall(float f) {
+        //this.Cephalon.offsetY = -0.25F;
+        //this.Cephalon.offsetX = -0.15F;
+        //this.Cephalon.offsetZ = 0.025F;
+        this.Jaw.rotateAngleX = (float) Math.toRadians(26);
+        this.Cephalon.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
         this.Antineosteus.rotateAngleY = (float) Math.toRadians(90);
         this.Bodysegment1.rotateAngleX = (float) Math.toRadians(-10);
         this.Bodysegment2.rotateAngleX = (float) Math.toRadians(7.5);
@@ -249,10 +256,13 @@ public class ModelAntineosteus extends AdvancedModelBase {
         this.PectoralfinR.rotateAngleZ = (float) Math.toRadians(-40);
         this.AnalfinL.rotateAngleZ = (float) Math.toRadians(+37.5);
         this.AnalfinR.rotateAngleZ = (float) Math.toRadians(-37.5);
+        this.Antineosteus.offsetY = -0.25F;
+        this.Antineosteus.offsetX = -0.15F;
+        this.Antineosteus.offsetZ = 0.025F;
         this.Antineosteus.render(0.01F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -264,7 +274,7 @@ public class ModelAntineosteus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.Antineosteus.offsetZ = -0.4F;
-        this.Antineosteus.offsetY = 0.2F;
+        //this.Antineosteus.offsetY = 0.2F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Bodysegment2, this.Bodysegment3, this.Bodysegment4, this.Bodysegment5, this.Bodysegment6};
@@ -314,7 +324,7 @@ public class ModelAntineosteus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Antineosteus.offsetY = 0.2F;
+                //this.Antineosteus.offsetY = 0.2F;
                 this.bob(Antineosteus, -speed, 1F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);

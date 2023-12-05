@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockLomatia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -147,7 +148,7 @@ public class StructureSpawnLomatia extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo.up());
 				}
 
-				world.setBlockState(spawnTo, BlockLomatia.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockLomatia.block.getDefaultState(), 3);
 				BlockLomatia.block.onBlockAdded(world, spawnTo, BlockLomatia.block.getDefaultState());
 			}
 		}

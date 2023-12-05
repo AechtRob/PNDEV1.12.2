@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockCycadopterisLog;
 import net.lepidodendron.block.BlockCycadopterisShoot;
 import net.lepidodendron.block.BlockCycadopterisShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenCycadopterisShoot extends WorldGenerator
             
             {
                 if (rand.nextInt(3) != 0) {
-                    worldIn.setBlockState(blockpos, BlockCycadopterisShootPlaceable.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCycadopterisShootPlaceable.block.getDefaultState(), 2);
                 }
                 else {
                     if (worldIn.getBlockState(blockpos.north()).getBlock() != BlockCycadopterisLog.block
@@ -45,13 +46,13 @@ public class WorldGenCycadopterisShoot extends WorldGenerator
                         int ii = rand.nextInt(2);
                         int iii = 0;
                         while (iii <= ii) {
-                            worldIn.setBlockState(blockpos.up(iii), BlockCycadopterisLog.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(iii), BlockCycadopterisLog.block.getDefaultState(), 2);
                             iii += 1;
                         }
-                        worldIn.setBlockState(blockpos.up(iii), BlockCycadopterisShoot.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(iii), BlockCycadopterisShoot.block.getDefaultState(), 2);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockCycadopterisShootPlaceable.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCycadopterisShootPlaceable.block.getDefaultState(), 2);
                     }
                 }
                 flag = true;

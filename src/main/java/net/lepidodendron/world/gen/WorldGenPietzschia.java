@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPietzschia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -22,7 +23,7 @@ public class WorldGenPietzschia extends WorldGenerator
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPietzschia.block.canPlaceBlockAt(worldIn, blockpos)
             	)
             {
-                worldIn.setBlockState(blockpos, BlockPietzschia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPietzschia.block.getDefaultState(), 2);
                 flag = true;
             }
         }

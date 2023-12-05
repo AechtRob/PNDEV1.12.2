@@ -13,6 +13,7 @@ import net.lepidodendron.world.lootconditions.EntityInDimensionID;
 import net.lepidodendron.world.lootconditions.EntityInDimensionName;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -2070,6 +2071,18 @@ public class LepidodendronMod {
 	public static final ResourceLocation WUKONGOPTERUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_young"));
 	public static final ResourceLocation WUKONGOPTERUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_f"));
 	public static final ResourceLocation WUKONGOPTERUS_LOOT_F_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wukongopterus_young_f"));
+	public static final int ENTITY_DORYGNATHUS = 832;
+	public static final ResourceLocation DORYGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dorygnathus"));
+	public static final ResourceLocation DORYGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dorygnathus_young"));
+	public static final int ENTITY_GUANO_BALL = 833;
+	public static final int ENTITY_HETERODONTOSAURUS = 834;
+	public static final ResourceLocation HETERODONTOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterodontosaurus"));
+	public static final ResourceLocation HETERODONTOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterodontosaurus_young"));
+	public static final int ENTITY_TIANYULONG = 835;
+	public static final ResourceLocation TIANYULONG_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tianyulong"));
+	public static final ResourceLocation TIANYULONG_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tianyulong_young"));
+
+
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

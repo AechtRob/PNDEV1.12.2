@@ -1052,23 +1052,6 @@ public class ModelArthropleura extends AdvancedModelBaseExtended {
         this.Arthropleura.render(f5);
     }
 
-    public void renderStaticPlinth(float f) {
-        this.setRotateAngle(FrontSegment3, -0.2182F, (float) Math.toRadians(90), 0.0F);
-        this.setRotateAngle(FrontSegment4, -0.0873F, -0.1309F, 0.0F);
-        this.setRotateAngle(HeadSegment, 0.1745F, -0.1309F, 0.0F);
-        this.setRotateAngle(FrontSegment2, 0.0873F, 0.0873F, 0.0F);
-        this.setRotateAngle(Back2, 0.0873F, 0.1309F, 0.0F);
-        this.setRotateAngle(Back, 0.0437F, 0.0897F, 0.0017F);
-        this.setRotateAngle(BackSegment1, 0.0F, 0.0873F, 0.0F);
-        this.setRotateAngle(BackSegment2, 0.0F, 0.0873F, 0.0F);
-        this.setRotateAngle(BackSegment3, 0.0F, 0.1309F, 0.0F);
-        this.setRotateAngle(AnalSegment, 0.0F, 0.2182F, 0.0F);
-        this.Arthropleura.offsetY = -0.06F;
-        this.Arthropleura.offsetX = -0.14F;
-        this.Arthropleura.offsetZ = 0.2F;
-        this.Arthropleura.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(FrontSegment3, -0.2182F, (float) Math.toRadians(90), 0.0F);
         this.setRotateAngle(FrontSegment4, -0.0873F, -0.1309F, 0.0F);

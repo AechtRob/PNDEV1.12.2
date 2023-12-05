@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockDiskagma;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.util.EnumFacing;
@@ -27,7 +28,7 @@ public class WorldGenDiskagma extends WorldGenerator
             && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockDiskagma.block.canPlaceBlockAt(worldIn, blockpos))
 			{
 				if (BlockDiskagma.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-					worldIn.setBlockState(blockpos, BlockDiskagma.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDiskagma.block.getDefaultState(), 2);
 					flag = true;
 				}
             }

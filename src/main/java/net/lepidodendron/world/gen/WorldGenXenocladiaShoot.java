@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockWattiezaSapling;
 import net.lepidodendron.block.BlockXenocladiaShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -27,7 +28,7 @@ public class WorldGenXenocladiaShoot extends WorldGenerator
             	&& (worldIn.getBlockState(blockpos.south().west()).getBlock() != BlockXenocladiaShootPlaceable.block)
             	)
             {
-                worldIn.setBlockState(blockpos, BlockXenocladiaShootPlaceable.block.getDefaultState(), 3);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockXenocladiaShootPlaceable.block.getDefaultState(), 3);
                 flag = true;
             }
         }

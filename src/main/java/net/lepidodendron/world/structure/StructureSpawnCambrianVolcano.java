@@ -4,6 +4,7 @@ package net.lepidodendron.world.structure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -99,37 +100,37 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 								if (bs.getMaterial() != Material.ROCK || !world.isBlockFullCube(bp) || bs.getBlock().isReplaceable(world, bp)) {
 									//Lava column:
 									if (xct == 0 && zct == 0) {
-										world.setBlockState(bp, Blocks.FLOWING_LAVA.getDefaultState(), 2);
+										Functions.setBlockStateAndCheckForDoublePlant(world,bp, Blocks.FLOWING_LAVA.getDefaultState(), 2);
 									}
 									else {
 										if (bsd.getMaterial() == Material.ROCK || bsd.getMaterial() == Material.GROUND || bsd.getMaterial() == Material.SAND) {
 											double lavaBlockChance = (double) ((double) yct / (double) coneRadius);
 											if (Math.random() > lavaBlockChance) {
 												if (Math.random() > 0.1) {
-													world.setBlockState(bp, Blocks.STONE.getStateFromMeta(0), 2);
+													Functions.setBlockStateAndCheckForDoublePlant(world,bp, Blocks.STONE.getStateFromMeta(0), 2);
 												} else {
 													if ((bp.getY() < world.getSeaLevel()) && (Math.random() / lavaBlockChance > 0.6)) {
-														world.setBlockState(bp, Blocks.SAND.getStateFromMeta(0), 2);
+														Functions.setBlockStateAndCheckForDoublePlant(world,bp, Blocks.SAND.getStateFromMeta(0), 2);
 													} else {
-														world.setBlockState(bp, Blocks.STONE.getStateFromMeta(1), 2);
+														Functions.setBlockStateAndCheckForDoublePlant(world,bp, Blocks.STONE.getStateFromMeta(1), 2);
 													}
 												}
 											} else {
 												if (Math.random() > 0.1) {
-													world.setBlockState(bp, BlockLavaRock.block.getDefaultState(), 2);
+													Functions.setBlockStateAndCheckForDoublePlant(world,bp, BlockLavaRock.block.getDefaultState(), 2);
 												} else { //Ashes:
 													double randomiser = Math.random();
 													if (randomiser > 0.70) {
-														world.setBlockState(bp, BlockVolcanicAsh.block.getDefaultState(), 2);
+														Functions.setBlockStateAndCheckForDoublePlant(world,bp, BlockVolcanicAsh.block.getDefaultState(), 2);
 													} else {
 														if (Math.random() > 0.40) {
-															world.setBlockState(bp, BlockVolcanicAshLight.block.getDefaultState(), 2);
+															Functions.setBlockStateAndCheckForDoublePlant(world,bp, BlockVolcanicAshLight.block.getDefaultState(), 2);
 														} else {
 															if (Math.random() > 0.10) {
-																world.setBlockState(bp, BlockVolcanicAshDark.block.getDefaultState(), 2);
+																Functions.setBlockStateAndCheckForDoublePlant(world,bp, BlockVolcanicAshDark.block.getDefaultState(), 2);
 															}
 															else {
-																world.setBlockState(bp, BlockSulphurOre.block.getDefaultState(), 2);
+																Functions.setBlockStateAndCheckForDoublePlant(world,bp, BlockSulphurOre.block.getDefaultState(), 2);
 															}
 														}
 													}
@@ -165,7 +166,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 					zct = -radiusLake;
 					while (zct <= radiusLake) {
 						if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) radiusLake, 2)) {
-							world.setBlockState(posLake.add(xct, yct + 33, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,posLake.add(xct, yct + 33, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
 						}
 						zct +=1;
 					}
@@ -178,7 +179,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 						zct = -(radiusLake - 3);
 						while (zct <= (radiusLake - 3)) {
 							if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) (radiusLake - 3), 2)) {
-								world.setBlockState(posLake.add(xct, yct + 32, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,posLake.add(xct, yct + 32, zct), Blocks.FLOWING_LAVA.getDefaultState(), 3);
 							}
 							zct += 1;
 						}
@@ -193,7 +194,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 						while (zct <= (radiusLake - 5)) {
 							if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) (radiusLake - 5), 2)) {
 								if (Math.random() > 0.8 && world.getBlockState(posLake.add(xct, yct + 31, zct)).getMaterial() != Material.LAVA) {
-									world.setBlockState(posLake.add(xct, yct + 31, zct), Blocks.DIAMOND_ORE.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,posLake.add(xct, yct + 31, zct), Blocks.DIAMOND_ORE.getDefaultState(), 3);
 								}
 							}
 							zct += 1;
@@ -208,7 +209,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 						while (zct <= (radiusLake - 7)) {
 							if ((Math.pow((int) xct, 2) + Math.pow((int) zct, 2)) <= Math.pow((int) (radiusLake - 7), 2)) {
 								if (Math.random() > 0.8 && world.getBlockState(posLake.add(xct, yct + 30, zct)).getMaterial() != Material.LAVA) {
-									world.setBlockState(posLake.add(xct, yct + 30, zct), Blocks.DIAMOND_ORE.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,posLake.add(xct, yct + 30, zct), Blocks.DIAMOND_ORE.getDefaultState(), 3);
 								}
 							}
 							zct += 1;

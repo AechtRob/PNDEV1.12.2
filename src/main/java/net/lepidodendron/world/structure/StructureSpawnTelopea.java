@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockTelopea;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -147,7 +148,7 @@ public class StructureSpawnTelopea extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo.up());
 				}
 
-				world.setBlockState(spawnTo, BlockTelopea.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockTelopea.block.getDefaultState(), 3);
 				BlockTelopea.block.onBlockAdded(world, spawnTo, BlockTelopea.block.getDefaultState());
 			}
 		}

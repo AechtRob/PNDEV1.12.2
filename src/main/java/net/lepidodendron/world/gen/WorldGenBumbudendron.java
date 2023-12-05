@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockBumbudendronLand;
 import net.lepidodendron.block.BlockBumbudendronWater;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -21,12 +22,12 @@ public class WorldGenBumbudendron extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBumbudendronLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockBumbudendronLand.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockBumbudendronLand.block.getDefaultState(), 2);
                 flag = true;
             }
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBumbudendronWater.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                worldIn.setBlockState(blockpos, BlockBumbudendronWater.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockBumbudendronWater.block.getDefaultState(), 2);
                 flag = true;
             }
         }

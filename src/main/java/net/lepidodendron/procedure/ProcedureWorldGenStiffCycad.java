@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockStiffCycadLog;
 import net.lepidodendron.block.BlockStiffCycadShoot;
 import net.lepidodendron.block.BlockStiffCycadShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -68,8 +69,8 @@ public class ProcedureWorldGenStiffCycad extends ElementsLepidodendronMod.ModEle
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockStiffCycadShootPlaceable.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockStiffCycadShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockStiffCycadShootPlaceable.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockStiffCycadShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}
@@ -79,8 +80,8 @@ public class ProcedureWorldGenStiffCycad extends ElementsLepidodendronMod.ModEle
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockStiffCycadShoot.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockStiffCycadShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockStiffCycadShoot.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockStiffCycadShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}

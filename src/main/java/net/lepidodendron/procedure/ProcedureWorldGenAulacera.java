@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockAulacera;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -46,7 +47,7 @@ public class ProcedureWorldGenAulacera extends ElementsLepidodendronMod.ModEleme
 
 			int ii = 0;
 			while (ii <= TreeHeight && BlockAulacera.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + ii, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + ii, (int) z), BlockAulacera.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + ii, (int) z), BlockAulacera.block.getDefaultState(), 3);
 				ii += 1;
 			}
 				

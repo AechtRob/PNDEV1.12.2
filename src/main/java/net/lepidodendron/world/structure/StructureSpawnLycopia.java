@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockLycopia;
 import net.lepidodendron.block.BlockLycopiaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -150,8 +151,8 @@ public class StructureSpawnLycopia extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockLycopia.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockLycopiaTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockLycopia.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockLycopiaTop.block.getDefaultState(), 3);
 			}
 		}
 	}

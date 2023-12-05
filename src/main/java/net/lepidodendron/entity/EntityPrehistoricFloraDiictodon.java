@@ -359,6 +359,10 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 
 	public static BlockPos buildBurrow(World world, BlockPos pos, boolean large) {
 
+		if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			return pos;
+		}
+
 		BlockPos posNest = pos;
 		int i = world.rand.nextInt(4);
 		BlockPos pos1 = pos.down();

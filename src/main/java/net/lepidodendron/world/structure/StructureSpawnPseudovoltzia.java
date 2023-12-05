@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -167,11 +168,11 @@ public class StructureSpawnPseudovoltzia extends ElementsLepidodendronMod.ModEle
 						world.setBlockToAir(spawnTo.up(4));
 					}
 					//System.err.println("Spawning BlockPseudovoltzia at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockPseudovoltzia.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockPseudovoltzia2.block.getDefaultState());
-					world.setBlockState(spawnTo.up(2), BlockPseudovoltzia3.block.getDefaultState());
-					world.setBlockState(spawnTo.up(3), BlockPseudovoltzia4.block.getDefaultState());
-					world.setBlockState(spawnTo.up(4), BlockPseudovoltzia5.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPseudovoltzia.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockPseudovoltzia2.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockPseudovoltzia3.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockPseudovoltzia4.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(4), BlockPseudovoltzia5.block.getDefaultState());
 				}
 
 			}

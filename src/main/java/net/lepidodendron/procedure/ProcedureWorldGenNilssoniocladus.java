@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -1054,7 +1055,7 @@ public class ProcedureWorldGenNilssoniocladus extends ElementsLepidodendronMod.M
 	
 		Block block = world.getBlockState(pos).getBlock();
 		if (canPlace(pos, world)) {
-			world.setBlockState(pos, blockPlace.getDefaultState().withProperty(FACING, facing), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos, blockPlace.getDefaultState().withProperty(FACING, facing), 3);
 		}
 		
 	}

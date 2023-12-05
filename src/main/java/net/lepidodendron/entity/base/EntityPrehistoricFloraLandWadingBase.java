@@ -1,6 +1,8 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateGroundWade;
@@ -11,7 +13,6 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.NodeProcessor;
@@ -33,9 +34,11 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     public ChainBuffer tailBuffer;
     private int jumpTicks;
     private int inPFLove;
+    public Animation HURT_ANIMATION;
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
+        this.setPathPriority(PathNodeType.WATER, 10F);
         if (world != null) {
             if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
                 this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
@@ -47,6 +50,11 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                 this.navigator = new PathNavigateAmphibian(this, world);
             }
         }
+        HURT_ANIMATION = Animation.create(this.getHurtLength());
+    }
+
+    public int getHurtLength() {
+        return 30;
     }
     
     @Override
@@ -63,11 +71,29 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     }
 
     @Override
+    public Animation[] getAnimations() {
+        return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
+    }
+
+    @Override
     public boolean isSwimmingInWater() {
         return false;
     }
 
     public abstract int wadeDepth();
+
+    @Override
+    protected float getJumpUpwardsMotion()
+    {
+        if (this.isReallyInWater()) {
+            //Assists to jump out of water:
+            if (this.getIsFast()) {
+                return 0.55F;
+            }
+            return 0.52F;
+        }
+        return super.getJumpUpwardsMotion();
+    }
 
     @Override
     protected void doBlockCollisions() {
@@ -88,10 +114,20 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                         blockpos$pooledmutableblockpos2.setPos(i, j, k);
                         IBlockState iblockstate = this.world.getBlockState(blockpos$pooledmutableblockpos2);
 
-                        if (iblockstate.getBlock() == Blocks.WATERLILY) {
-                            this.world.destroyBlock(new BlockPos(i, j, k), true);
+                        boolean blockDestroyed = false;
+                        if (!this.world.isRemote) {
+                            if (matchBlock(iblockstate.getBlock().getRegistryName().toString())) {
+                                this.world.destroyBlock(new BlockPos(i, j, k), true);
+                                blockDestroyed = true;
+                            }
+                            if (this.isJumping) {
+                                if (matchBlock( this.world.getBlockState(new BlockPos(i, j + 1, k)).getBlock().getRegistryName().toString())) {
+                                    this.world.destroyBlock(new BlockPos(i, j + 1, k), true);
+                                    blockDestroyed = true;
+                                }
+                            }
                         }
-                        else {
+                        if (!blockDestroyed) {
                             try {
                                 iblockstate.getBlock().onEntityCollision(this.world, blockpos$pooledmutableblockpos2, iblockstate, this);
                                 this.onInsideBlock(iblockstate);
@@ -112,13 +148,43 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         blockpos$pooledmutableblockpos2.release();
     }
 
+    public static boolean matchBlock(String blockName) {
+
+        String[] var2 = LepidodendronConfig.genWadeableBreaks;
+        int var3 = var2.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            String checkBlock = var2[var4];
+            if (checkBlock.equalsIgnoreCase(blockName)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public boolean isBlockWadable(IBlockAccess world, BlockPos pos) {
-        if (world instanceof World)
-        if (!((World)world).isBlockLoaded(pos)) {
-            return false;
+        if (world instanceof World) {
+            if (!((World) world).isBlockLoaded(pos)) {
+                return false;
+            }
+        }
+        //First we need to go downwards and start from the bottom as mobs sink:
+        int yy = 0;
+        while (pos.add(0, -yy,0).getY() > 0) {
+            if (world.getBlockState(pos.add(0, -yy,0)).getMaterial().blocksMovement()) {
+                break;
+            }
+            yy++;
+        }
+        if (yy > 0) {
+            pos = pos.add(0, -(yy - 1), 0);
+        }
+        if (world.getBlockState(pos).getMaterial() != Material.WATER) {
+            return true;
         }
         boolean flag = false;
-        for (int i = 0; i < this.wadeDepth() ; i++) {
+        for (int i = 1; i <= this.wadeDepth() ; i++) {
             IBlockState state = world.getBlockState(pos.up(i));
             if (state.getMaterial() != Material.WATER
                     && state.getMaterial() != Material.LAVA

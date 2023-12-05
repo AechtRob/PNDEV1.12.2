@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockThucydia;
 import net.lepidodendron.block.BlockThucydia2;
 import net.lepidodendron.block.BlockThucydia3;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -171,9 +172,9 @@ public class StructureSpawnThucydia extends ElementsLepidodendronMod.ModElement 
 						world.setBlockToAir(spawnTo.up(2));
 					}
 					//System.err.println("Spawning BlockThucydia at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockThucydia.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockThucydia2.block.getDefaultState());
-					world.setBlockState(spawnTo.up(2), BlockThucydia3.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockThucydia.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockThucydia2.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockThucydia3.block.getDefaultState());
 				}
 
 			}

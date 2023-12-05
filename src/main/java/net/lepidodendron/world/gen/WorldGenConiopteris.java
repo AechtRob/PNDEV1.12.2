@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockConiopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.util.EnumFacing;
@@ -31,7 +32,7 @@ public class WorldGenConiopteris extends WorldGenerator
                 && BlockConiopteris.block.canPlaceBlockAt(worldIn, blockpos)
             )
             {
-                worldIn.setBlockState(blockpos, BlockConiopteris.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockConiopteris.block.getDefaultState(), 2);
                 BlockConiopteris.block.onBlockAdded(worldIn, blockpos, BlockConiopteris.block.getDefaultState());
                 flag = true;
             }

@@ -141,19 +141,18 @@ public class ModelDaedalichthys extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.head.render(f5 * 0.128F * 1.4F);
+        this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
+        this.head.offsetY = -0.1825F;
+        this.head.offsetX = -0.050F;
+        this.head.offsetZ = 0.008F;
         this.head.rotateAngleY = (float) Math.toRadians(90);
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -164,7 +163,7 @@ public class ModelDaedalichthys extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.2F;
+        //this.head.offsetY = 1.2F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3};
         float speed = 0.46F;
@@ -186,7 +185,7 @@ public class ModelDaedalichthys extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.head.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = 1.20F;
+                //this.head.offsetY = 1.20F;
                 this.bob(head, -speed, 5F, false, f2, 1);
             }
         }

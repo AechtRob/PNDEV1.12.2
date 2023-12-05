@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.pathfinding.Path;
@@ -44,7 +45,7 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
     }
 
     public boolean isTooDeep(BlockPos pos) {
-        return entity.isBlockWadable(entity.world, pos);
+        return !entity.isBlockWadable(entity.world, pos);
     }
 
     @Override
@@ -125,7 +126,7 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public boolean shouldContinueExecuting() {
-        return false;
+        return !this.entity.getNavigator().noPath();
     }
 
     public boolean isAtBottom(BlockPos blockpos) {
@@ -142,12 +143,14 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
         //System.err.println("Find Water Target");
         Random rand = this.EntityPrehistoricFloraLandWadingBase.getRNG();
         if (this.EntityPrehistoricFloraLandWadingBase.getAttackTarget() == null) {
-            for (int i = 0; i < dist; i++) {
-                Vec3d randPos = this.EntityPrehistoricFloraLandWadingBase.getPositionVector().add(rand.nextInt(dist + 1) - (int) (dist/2), rand.nextInt(dist + 1) - (int) (dist/2), rand.nextInt(dist + 1) - (int) (dist/2));
+            for (int i = 0; i < dist * 2; i++) {
+                Vec3d randPos = this.EntityPrehistoricFloraLandWadingBase.getPositionVector().add(rand.nextInt(dist + 1) - (int) (dist/2), 0, rand.nextInt(dist + 1) - (int) (dist/2));
+                BlockPos topBlock = ChunkGenSpawner.getTopSolidOrLiquidBlockIncludingLeaves(new BlockPos(randPos), entity.world);
+                randPos = new Vec3d(randPos.x, topBlock.getY(), randPos.z);
                 if (this.EntityPrehistoricFloraLandWadingBase.world.isBlockLoaded(new BlockPos(randPos))) {
                     //Use targets which are at the bottom:
                     if (this.EntityPrehistoricFloraLandWadingBase.world.getBlockState(new BlockPos(randPos)).getMaterial() != Material.WATER) {
-                        break;
+                        continue;
                     }
                     if (!(randPos.y < 1 || randPos.y >= 254)) {
                         randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
@@ -179,7 +182,7 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
         }
         //Try to return ANY target:
         for (int i = 0; i < 10; i++) {
-            Vec3d vec3d = RandomPositionGenerator.findRandomTarget(this.entity, 16, 16);
+            Vec3d vec3d = RandomPositionGenerator.findRandomTarget(this.entity, dist, dist);
             if (vec3d != null) {
                 if (!(vec3d.y < 1 || vec3d.y >= 254)) {
                     return vec3d;

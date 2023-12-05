@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/shrubby_cycad_inventory",
+    "particle": "lepidodendron:items/shrubby_cycad_inventory"
+  }
+}

@@ -333,15 +333,16 @@ public class ModelBrochoadmones extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Brochoadmones.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+    public void renderStaticWall(float f) {
         this.Brochoadmones.rotateAngleY = (float) Math.toRadians(90);
+        this.Brochoadmones.offsetY = -0.2F;
+        this.Brochoadmones.offsetX = -0.15F;
+        this.Brochoadmones.offsetZ = 0.07F;
         this.Brochoadmones.render(0.01F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

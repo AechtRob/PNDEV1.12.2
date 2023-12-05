@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCaytoniales;
 import net.lepidodendron.block.BlockCaytoniales2;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -38,11 +39,11 @@ public class WorldGenCaytoniales extends WorldGenerator
             {
 
                 if (flag1 == 0) {
-                    worldIn.setBlockState(blockpos, BlockCaytoniales.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCaytoniales.block.getDefaultState(), 2);
                     BlockCaytoniales.block.onBlockAdded(worldIn, blockpos, BlockCaytoniales.block.getDefaultState());
                 }
                 else {
-                    worldIn.setBlockState(blockpos, BlockCaytoniales2.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCaytoniales2.block.getDefaultState(), 2);
                     BlockCaytoniales2.block.onBlockAdded(worldIn, blockpos, BlockCaytoniales2.block.getDefaultState());
                 }
 

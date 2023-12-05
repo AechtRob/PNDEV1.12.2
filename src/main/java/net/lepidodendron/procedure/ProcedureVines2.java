@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCallistophytales;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -27,7 +28,7 @@ public class ProcedureVines2 extends ElementsLepidodendronMod.ModElement {
 			vinecounter = 0;
 			while ((world.isAirBlock(new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz - 1))) && ((yy - vinecounter) > 0)) {
 				try {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz - 1), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(true)).withProperty(WEST, Boolean.valueOf(false)), 2);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz - 1), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(true)).withProperty(WEST, Boolean.valueOf(false)), 2);
 			}
 			catch (Exception e) {}
 				vinecounter = vinecounter + 1;
@@ -38,7 +39,7 @@ public class ProcedureVines2 extends ElementsLepidodendronMod.ModElement {
 			vinecounter = 0;
 			while ((world.isAirBlock(new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz + 1))) && ((yy - vinecounter) > 0)) {
 				try {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz + 1), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(true)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)), 2);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz + 1), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(true)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)), 2);
 			}
 			catch (Exception e) {}
 				vinecounter = vinecounter + 1;
@@ -49,7 +50,7 @@ public class ProcedureVines2 extends ElementsLepidodendronMod.ModElement {
 			vinecounter = 0;
 			while ((world.isAirBlock(new BlockPos((int) xx + 1, (int) (yy - vinecounter), (int) zz))) && ((yy - vinecounter) > 0)) {
 				try {
-				world.setBlockState(new BlockPos((int) xx + 1, (int) (yy - vinecounter), (int) zz), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(true)), 2);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx + 1, (int) (yy - vinecounter), (int) zz), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(true)), 2);
 			}
 			catch (Exception e) {}
 				vinecounter = vinecounter + 1;
@@ -60,7 +61,7 @@ public class ProcedureVines2 extends ElementsLepidodendronMod.ModElement {
 			vinecounter = 0;
 			while ((world.isAirBlock(new BlockPos((int) xx - 1, (int) (yy - vinecounter), (int) zz))) && ((yy - vinecounter) > 0)) {
 				try {
-				world.setBlockState(new BlockPos((int) xx - 1, (int) (yy - vinecounter), (int) zz), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(true)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)), 2);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx - 1, (int) (yy - vinecounter), (int) zz), BlockCallistophytales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(true)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)), 2);
 			}
 			catch (Exception e) {}
 				vinecounter = vinecounter + 1;

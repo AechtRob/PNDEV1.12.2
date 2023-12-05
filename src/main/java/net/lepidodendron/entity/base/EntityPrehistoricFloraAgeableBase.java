@@ -8,10 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
-import net.lepidodendron.entity.util.EnumCreatureAttributePN;
-import net.lepidodendron.entity.util.IBluffer;
-import net.lepidodendron.entity.util.IPrehistoricDiet;
-import net.lepidodendron.entity.util.ShoalingHelper;
+import net.lepidodendron.entity.util.*;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.Block;
@@ -82,6 +79,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
     public Animation MAKE_NEST_ANIMATION;
+    public static Animation HIDE_ANIMATION;
     private Animation currentAnimation;
     private EntityPrehistoricFloraAgeableBase shoalLeader;
     private int inPFLove;
@@ -94,6 +92,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private int alarmCooldown;
     private int warnCooldown;
     public int ticksExistedAnimated;
+    public boolean wasWarning;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -354,8 +353,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public ResourceLocation getEggTexture(@Nullable String variantIn) {
         String entityString = this.getEntityString();
+        ResourceLocation resourceLocation;
         entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-        ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        if (variantIn == null) {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        }
+        else {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
+        }
         if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
             return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
         }
@@ -1036,6 +1041,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         this.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase)this).HURT_ANIMATION);
                     }
+                    else if (this instanceof EntityPrehistoricFloraLandWadingBase) {
+                        this.setAnimation(((EntityPrehistoricFloraLandWadingBase)this).HURT_ANIMATION);
+                    }
                     else if (this instanceof EntityPrehistoricFloraPanguraptor) {
                         this.setAnimation(((EntityPrehistoricFloraPanguraptor)this).HURT_ANIMATION);
                     }
@@ -1326,12 +1334,19 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
-                    if (this instanceof IBluffer) { //They panic instead
+                    if (this instanceof IWarnOnly) { //They do nothing
+                        this.setWarnTarget(null);
+                        this.setWarnCooldown(0);
+                    }
+                    else if (this instanceof IBluffer) { //They panic instead
                         this.setRevengeTarget(this.getWarnTarget());
                         this.setWarnCooldown(0);
                     }
-                    else {
+                    else { //They attack
                         this.setAttackTarget(this.getWarnTarget());
+                        if (this instanceof IWarnOnlyButHit) { //These only attack if you are next to them
+                            this.wasWarning = true;
+                        }
                         this.setOneHit(true);
                         this.setWarnCooldown(0);
                     }
@@ -1340,6 +1355,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setWarnTarget(null);
                     this.setWarnCooldown(0);
                 }
+            }
+        }
+
+        if (this.getAttackTarget() != null && this.wasWarning) {
+            if (this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
+                this.setAttackTarget(null);
             }
         }
 

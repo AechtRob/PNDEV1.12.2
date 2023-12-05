@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockGordonopterisLog;
 import net.lepidodendron.block.BlockGordonopterisShoot;
 import net.lepidodendron.block.BlockGordonopterisShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -63,7 +64,7 @@ public class ProcedureWorldGenGordonopteris extends ElementsLepidodendronMod.Mod
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockGordonopterisLog.block, EnumFacing.DOWN);
 				counter = counter + 1;
 			}
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockGordonopterisShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockGordonopterisShoot.block.getDefaultState(), 3);
 		}
 			
 	}

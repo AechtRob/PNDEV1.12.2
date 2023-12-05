@@ -5,6 +5,7 @@ import net.lepidodendron.block.BlockNoeggerathialesLog;
 import net.lepidodendron.block.BlockNoeggerathialesShoot;
 import net.lepidodendron.block.BlockNoeggerathialesShootPlaceable;
 import net.lepidodendron.block.BlockNoeggerathialesSide;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -67,15 +68,15 @@ public class ProcedureWorldGenNoeggerathiales extends ElementsLepidodendronMod.M
 				counter = counter + 1;
 				}
 
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockNoeggerathialesShoot.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).north(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).south(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).east(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).west(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).north().east(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).south().east(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).north().west(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z).south().west(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockNoeggerathialesShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).north(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).south(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).east(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).west(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).north().east(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).south().east(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).north().west(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z).south().west(), BlockNoeggerathialesSide.block.getDefaultState(), 3);
 
 		}
 			

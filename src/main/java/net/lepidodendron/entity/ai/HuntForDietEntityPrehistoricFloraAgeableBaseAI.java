@@ -1,10 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.*;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -88,6 +85,11 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                             targetOK = false; //Eurypterids and fish don't attack players on land:
                         }
                     }
+                    if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
+                        if (isTooDeepforWading(entityChooser)) {
+                            targetOK = false; //Eurypterids and fish don't attack players on land:
+                        }
+                    }
                     if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.entity.getEntityBoundingBox().getAverageEdgeLength() * this.minSize)
                     ) {
                         //this.entity.setIsFast(false);
@@ -97,6 +99,11 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
+                    }
+                    if (entityChooser instanceof EntityPrehistoricFloraAgeableBase) {
+                        if (((EntityPrehistoricFloraAgeableBase)entityChooser).getAnimation() != null && ((EntityPrehistoricFloraAgeableBase)entityChooser).getAnimation() == EntityPrehistoricFloraAgeableBase.HIDE_ANIMATION) {
+                            targetOK = false;
+                        }
                     }
                     if ((!this.cannibal) && (entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
                     ) { //Disallow cannibalism!
@@ -264,6 +271,67 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 //        }
 
         return super.shouldContinueExecuting();
+    }
+
+    public boolean isTooDeepforWading(Entity entity) {
+        if (entity instanceof EntityPrehistoricFloraLandBase) {
+            if (!((EntityPrehistoricFloraLandBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraAgeableFishBase) {
+            if (!((EntityPrehistoricFloraAgeableFishBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraEurypteridBase) {
+            if (!((EntityPrehistoricFloraEurypteridBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraFishBase) {
+            if (!((EntityPrehistoricFloraFishBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraSwimmingAmphibianBase) {
+            if (!((EntityPrehistoricFloraSwimmingAmphibianBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+            if (!((EntityPrehistoricFloraSwimmingBottomWalkingWaterBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraNautiloidBase) {
+            if (!((EntityPrehistoricFloraNautiloidBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+            if (!((EntityPrehistoricFloraTrilobiteSwimBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraWalkingAmphibianBase) {
+            if (!((EntityPrehistoricFloraWalkingAmphibianBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (!entity.isInWater()) {
+            return false;
+        }
+        int i = 0;
+        BlockPos pos = entity.getPosition();
+        while (pos.down(i).getY() >= 0 && this.entity.world.getBlockState(pos.down(i)).getMaterial() == Material.WATER) {
+            i++;
+        }
+        i = i - 1;
+        if (pos.down(i).getY() <= 0) {
+            return true;
+        }
+        return !((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, pos.down(i));
     }
 
     public boolean isInWaterforHunting(Entity entity) {

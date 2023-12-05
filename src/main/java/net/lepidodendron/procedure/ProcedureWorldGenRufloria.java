@@ -5,6 +5,7 @@ import net.lepidodendron.block.BlockRufloriaLog;
 import net.lepidodendron.block.BlockRufloriaShoot;
 import net.lepidodendron.block.BlockRufloriaShootCentre;
 import net.lepidodendron.block.BlockRufloriaShootTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -71,9 +72,9 @@ public class ProcedureWorldGenRufloria extends ElementsLepidodendronMod.ModEleme
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) yy + 1, (int) z)), world, new BlockPos((int) x, (int) yy + 1, (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) yy + 2, (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) yy + 2, (int) z)), world, new BlockPos((int) x, (int) yy + 2, (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) yy, (int) z), BlockRufloriaShoot.block.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) yy + 1, (int) z), BlockRufloriaShootCentre.block.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) yy + 2, (int) z), BlockRufloriaShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) yy, (int) z), BlockRufloriaShoot.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) yy + 1, (int) z), BlockRufloriaShootCentre.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) yy + 2, (int) z), BlockRufloriaShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}

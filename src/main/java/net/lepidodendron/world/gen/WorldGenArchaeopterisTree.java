@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockThucydia;
 import net.lepidodendron.procedure.ProcedureWorldGenArchaeopteris;
 import net.lepidodendron.procedure.ProcedureWorldGenArchaeopterisStunted;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -97,7 +98,7 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
                             )
                     ) {
-                        worldIn.setBlockState(position, BlockThucydia.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position, BlockThucydia.block.getDefaultState(), 2);
                         BlockThucydia.block.onBlockAdded(worldIn, position, BlockThucydia.block.getDefaultState());
                     }
                     else {

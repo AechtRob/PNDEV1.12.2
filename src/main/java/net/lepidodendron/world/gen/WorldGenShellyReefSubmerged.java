@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockCoralBleached;
 import net.lepidodendron.block.BlockShelly;
 import net.lepidodendron.block.BlockSpongeReef;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -30,17 +31,17 @@ public class WorldGenShellyReefSubmerged extends WorldGenerator
             {
                 if (worldIn.getBiome(position) instanceof BiomeJurassic) {
                     if (((BiomeJurassic)((BiomeJurassic) worldIn.getBiome(position))).getBiomeType() == EnumBiomeTypeJurassic.IslandWhite && rand.nextInt(16) == 0) {
-                        worldIn.setBlockState(blockpos.down(), ShellyReefGenerator.getShellyState(BlockCoralBleached.block.getDefaultState(), rand), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), ShellyReefGenerator.getShellyState(BlockCoralBleached.block.getDefaultState(), rand), 2);
                     }
                     else if (((BiomeJurassic)((BiomeJurassic) worldIn.getBiome(position))).getBiomeType() == EnumBiomeTypeJurassic.IslandWhite && rand.nextInt(8) == 0) {
-                        worldIn.setBlockState(blockpos.down(), ShellyReefGenerator.getShellyState(BlockSpongeReef.block.getDefaultState(), rand), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), ShellyReefGenerator.getShellyState(BlockSpongeReef.block.getDefaultState(), rand), 2);
                     }
                     else {
-                        worldIn.setBlockState(blockpos.down(), ShellyReefGenerator.getShellyState(BlockShelly.block.getDefaultState(), rand), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), ShellyReefGenerator.getShellyState(BlockShelly.block.getDefaultState(), rand), 2);
                     }
                 }
                 else {
-                    worldIn.setBlockState(blockpos.down(), ShellyReefGenerator.getShellyState(BlockShelly.block.getDefaultState(), rand), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), ShellyReefGenerator.getShellyState(BlockShelly.block.getDefaultState(), rand), 2);
                 }
                 flag = true;
             }

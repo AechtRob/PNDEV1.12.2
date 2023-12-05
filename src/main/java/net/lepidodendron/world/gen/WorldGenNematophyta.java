@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockNematophyta;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.util.EnumFacing;
@@ -27,7 +28,7 @@ public class WorldGenNematophyta extends WorldGenerator
             && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNematophyta.block.canPlaceBlockAt(worldIn, blockpos))
 			{
 				if (BlockNematophyta.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-					worldIn.setBlockState(blockpos, BlockNematophyta.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockNematophyta.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 					flag = true;
 				}
             }

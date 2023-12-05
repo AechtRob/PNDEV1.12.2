@@ -15,6 +15,10 @@ public class RenderCobelodus extends RenderLiving<EntityPrehistoricFloraCobelodu
         super(mgr, new ModelCobelodus(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.5F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCobelodus entity) {
         return RenderCobelodus.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderCobelodus extends RenderLiving<EntityPrehistoricFloraCobelodu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCobelodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

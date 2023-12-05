@@ -111,20 +111,16 @@ public class ModelClydagnathus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetX = -0.3F;
-        this.head.offsetY = -0.2F;
-        this.head.offsetZ = 0.01F;
+        this.head.offsetX = -0.25F; //Clydagnathus
+        this.head.offsetY = -0.2F; //Clydagnathus
+        this.head.offsetZ = 0.24F; //Clydagnathus
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

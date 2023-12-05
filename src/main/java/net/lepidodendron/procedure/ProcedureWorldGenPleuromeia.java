@@ -5,6 +5,7 @@ import net.lepidodendron.block.BlockPleuromeiaShoot;
 import net.lepidodendron.block.BlockPleuromeiaShootTopFlower;
 import net.lepidodendron.block.BlockPleuromeiaShootTopNoflower;
 import net.lepidodendron.block.BlockPleuromeiaStem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -66,12 +67,12 @@ public class ProcedureWorldGenPleuromeia extends ElementsLepidodendronMod.ModEle
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockPleuromeiaShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockPleuromeiaShoot.block.getDefaultState(), 3);
 					if (Math.random()>0.6) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockPleuromeiaShootTopFlower.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockPleuromeiaShootTopFlower.block.getDefaultState(), 3);
 				    	}
 			    	else {
-			    		world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockPleuromeiaShootTopNoflower.block.getDefaultState(), 3);
+			    		Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockPleuromeiaShootTopNoflower.block.getDefaultState(), 3);
 			    	} 
 				}
 			}

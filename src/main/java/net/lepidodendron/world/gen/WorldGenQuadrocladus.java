@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockQuadrocladus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenQuadrocladus extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockQuadrocladus.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockQuadrocladus.block.getDefaultState(), 2);
                 BlockQuadrocladus.block.onBlockAdded(worldIn, blockpos, BlockQuadrocladus.block.getDefaultState());
 
                 flag = true;

@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -26,24 +27,24 @@ public class WorldGenPuddlesLava extends WorldGenerator
             	&& worldIn.getBlockState(blockpos.down()).getMaterial() == Material.ROCK
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.FLOWING_LAVA.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.FLOWING_LAVA.getDefaultState(), 2);
                 BlockPos blockpos1;
 
                 blockpos1 = blockpos.down().north();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    worldIn.setBlockState(blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
                 }
                 blockpos1 = blockpos.down().south();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    worldIn.setBlockState(blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
                 }
                 blockpos1 = blockpos.down().east();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    worldIn.setBlockState(blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
                 }
                 blockpos1 = blockpos.down().west();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    worldIn.setBlockState(blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
                 }
 
                 flag = true;

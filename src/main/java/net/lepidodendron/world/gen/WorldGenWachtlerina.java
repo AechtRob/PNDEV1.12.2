@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockWachtlerina;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenWachtlerina extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockWachtlerina.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockWachtlerina.block.getDefaultState(), 2);
                 BlockWachtlerina.block.onBlockAdded(worldIn, blockpos, BlockWachtlerina.block.getDefaultState());
 
                 flag = true;

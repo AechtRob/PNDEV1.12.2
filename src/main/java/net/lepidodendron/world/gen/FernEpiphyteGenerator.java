@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockBirdsnestFern;
 import net.lepidodendron.block.BlockFernEpiphyte;
 import net.lepidodendron.block.BlockLeptopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -109,14 +110,14 @@ public class FernEpiphyteGenerator extends WorldGenerator
 					if (this.FernEpiphyte == BlockFernEpiphyte.block) { //NSEW only
 						if ( BlockFernEpiphyte.BlockCustom.canPlaceAt(worldIn, new BlockPos(j, k, l), enumfacing)
 								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							return true;
 						}
 					}
 					else { //NSEWU
 						if (this.FernEpiphyte.canPlaceBlockOnSide(worldIn, pos, enumfacing)
 								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							return true;
 						}
 					}

@@ -5,6 +5,7 @@ import net.lepidodendron.block.BlockTaxodiumKnee;
 import net.lepidodendron.block.BlockTaxodiumLeaves;
 import net.lepidodendron.block.BlockTaxodiumLog;
 import net.lepidodendron.block.BlockTaxodiumSapling;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -683,7 +684,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 										|| ((world.getBlockState(pos)).getMaterial() == Material.PLANTS)
 										|| ((world.getBlockState(pos)).getMaterial() == Material.LEAVES)
 								) {
-									world.setBlockState(pos, BlockTaxodiumKnee.block.getDefaultState(),3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockTaxodiumKnee.block.getDefaultState(),3);
 
 								}
 								if ((Math.random() > 0.85) && (world.getBlockState(pos.up()).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.up()), world, pos.up()))
@@ -693,7 +694,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 										|| ((world.getBlockState(pos.up())).getMaterial() == Material.PLANTS)
 										|| ((world.getBlockState(pos.up())).getMaterial() == Material.LEAVES)
 								) { //Chance of double height:
-									world.setBlockState(pos.up(), BlockTaxodiumKnee.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockTaxodiumKnee.block.getDefaultState(), 3);
 									if ((Math.random() > 0.85) && (world.getBlockState(pos.up(2)).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.up(2)), world, pos.up(2)))
 											|| ((world.getBlockState(pos.up(2))).getMaterial() == Material.VINE)
 											|| ((world.getBlockState(pos.up(2))).getMaterial() == Material.SNOW)
@@ -701,7 +702,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 											|| ((world.getBlockState(pos.up(2))).getMaterial() == Material.PLANTS)
 											|| ((world.getBlockState(pos.up(2))).getMaterial() == Material.LEAVES)
 									) { //Chance of triple height:
-										world.setBlockState(pos.up(2), BlockTaxodiumKnee.block.getDefaultState(), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(2), BlockTaxodiumKnee.block.getDefaultState(), 3);
 										ProcedureTreeLog.executeProcedure((int) pos.getX(), y, (int) pos.getZ(), world, BlockTaxodiumLog.block, EnumFacing.NORTH);
 									}
 								}
@@ -729,7 +730,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 											|| ((world.getBlockState(pos)).getMaterial() == Material.PLANTS)
 											|| ((world.getBlockState(pos)).getMaterial() == Material.LEAVES)
 									) {
-										world.setBlockState(pos, BlockTaxodiumKnee.block.getDefaultState(), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockTaxodiumKnee.block.getDefaultState(), 3);
 										if ((Math.random() > 0.85) && (world.getBlockState(pos.up()).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.up()), world, pos.up()))
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.VINE)
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.SNOW)
@@ -737,7 +738,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.PLANTS)
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.LEAVES)
 										) { //Chance of double height:
-											world.setBlockState(pos.up(), BlockTaxodiumKnee.block.getDefaultState(), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockTaxodiumKnee.block.getDefaultState(), 3);
 										}
 									}
 								}
@@ -765,7 +766,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 											|| ((world.getBlockState(pos)).getMaterial() == Material.PLANTS)
 											|| ((world.getBlockState(pos)).getMaterial() == Material.LEAVES)
 									) {
-										world.setBlockState(pos, BlockTaxodiumKnee.block.getDefaultState(), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockTaxodiumKnee.block.getDefaultState(), 3);
 										if ((Math.random() > 0.85) && (world.getBlockState(pos.up()).getBlock().canBeReplacedByLeaves(world.getBlockState(pos.up()), world, pos.up()))
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.VINE)
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.SNOW)
@@ -773,7 +774,7 @@ public class ProcedureWorldGenTaxodium extends ElementsLepidodendronMod.ModEleme
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.PLANTS)
 												|| ((world.getBlockState(pos.up())).getMaterial() == Material.LEAVES)
 										) { //Chance of double height:
-											world.setBlockState(pos.up(), BlockTaxodiumKnee.block.getDefaultState(), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockTaxodiumKnee.block.getDefaultState(), 3);
 										}
 									}
 								}

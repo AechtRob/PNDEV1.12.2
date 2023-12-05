@@ -1,7 +1,9 @@
 package net.lepidodendron;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraGuanoBall;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
@@ -13,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -36,6 +39,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -67,6 +72,13 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
+	@SubscribeEvent //Default to standard attack behaviour
+	public void attackTargetSet(LivingSetAttackTargetEvent event) {
+		  if (event.getEntity() instanceof EntityPrehistoricFloraAgeableBase) {
+			  ((EntityPrehistoricFloraAgeableBase)event.getEntity()).wasWarning = false;
+		  }
+	}
+
 	@SubscribeEvent //Some instructions for use of rideables
 	public void playerMounted(EntityMountEvent event) {
 		Entity entity = event.getEntityMounting();
@@ -75,6 +87,19 @@ public class LepidodendronEventSubscribers {
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
 				player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
 				player.sendMessage(new TextComponentString("Left control panel: read battery; right control panel: add/remove battery"));
+			}
+		}
+	}
+
+	@SubscribeEvent //Bat poo
+	public void guano(LivingEvent.LivingUpdateEvent event) {
+		if (event.getEntity() instanceof EntityBat && LepidodendronConfig.doGuanoBats) {
+			EntityBat bat = (EntityBat) event.getEntity();
+			if (bat.world.rand.nextInt(6000) == 0 && (!bat.world.isRemote)
+					&& bat.getIsBatHanging() && bat.world.isAirBlock(bat.getPosition().down())) {
+				EntityPrehistoricFloraGuanoBall guanoBall = new EntityPrehistoricFloraGuanoBall(bat.world, bat.posX, bat.posY - 0.5, bat.posZ);
+				guanoBall.setFromMob(true);
+				bat.world.spawnEntity(guanoBall);
 			}
 		}
 	}
@@ -280,29 +305,30 @@ public class LepidodendronEventSubscribers {
 					}
 				}
 			}
-		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
-				&& event.getHand() == EnumHand.MAIN_HAND) {
-			TileEntity te = event.getWorld().getTileEntity(event.getPos());
-			if (te != null) {
-				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
-					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
-					if (tee.hasItem()) {
-						if (!(event.getWorld().isRemote)) {
-							ItemStack itemstack = tee.getStackInSlot(0);
-							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-
-							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
-							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-							event.getEntityPlayer().swingArm(event.getHand());
-						}
-						tee.setDisplay(ItemStack.EMPTY);
-						//return;
-						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
-						event.setCanceled(true);
-					}
-				}
-			}
 		}
+//		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
+//				&& event.getHand() == EnumHand.MAIN_HAND) {
+//			TileEntity te = event.getWorld().getTileEntity(event.getPos());
+//			if (te != null) {
+//				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
+//					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
+//					if (tee.hasItem()) {
+//						if (!(event.getWorld().isRemote)) {
+//							ItemStack itemstack = tee.getStackInSlot(0);
+//							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
+//
+//							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
+//							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+//							event.getEntityPlayer().swingArm(event.getHand());
+//						}
+//						tee.setDisplay(ItemStack.EMPTY);
+//						//return;
+//						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
+//						event.setCanceled(true);
+//					}
+//				}
+//			}
+//		}
 		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTaxidermyTable.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			TileEntity te = event.getWorld().getTileEntity(event.getPos());

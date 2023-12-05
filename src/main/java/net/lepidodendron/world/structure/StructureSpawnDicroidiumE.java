@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockDicroidiumE;
 import net.lepidodendron.block.BlockDicroidiumECentre;
 import net.lepidodendron.block.BlockDicroidiumETop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -149,9 +150,9 @@ public class StructureSpawnDicroidiumE extends ElementsLepidodendronMod.ModEleme
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockDicroidiumE.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockDicroidiumECentre.block.getDefaultState(), 3);
-				world.setBlockState((spawnTo.up()).up(), BlockDicroidiumETop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockDicroidiumE.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockDicroidiumECentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,(spawnTo.up()).up(), BlockDicroidiumETop.block.getDefaultState(), 3);
 
 			}
 		}

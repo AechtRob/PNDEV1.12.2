@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ public class WorldGenMossStone extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
 				worldIn.setBlockToAir(blockpos);
 				flag = true;
             }
@@ -45,7 +46,7 @@ public class WorldGenMossStone extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -60,7 +61,7 @@ public class WorldGenMossStone extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -75,7 +76,7 @@ public class WorldGenMossStone extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -90,7 +91,7 @@ public class WorldGenMossStone extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 	                flag = true;
 	            }

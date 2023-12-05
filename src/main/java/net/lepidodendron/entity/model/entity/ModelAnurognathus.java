@@ -1160,8 +1160,6 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
 
     }
 
-
-
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraAnurognathid e = (EntityPrehistoricFloraAnurognathid) entity;
         animator.update(entity);

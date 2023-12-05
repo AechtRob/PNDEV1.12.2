@@ -115,21 +115,15 @@ public class ModelArandaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-
         this.Bodyhead.render(f5);
 
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Bodyhead.rotateAngleY = (float) Math.toRadians(90);
         this.Bodyhead.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -140,7 +134,7 @@ public class ModelArandaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyhead.offsetY = 1.0F;
+        this.Bodyhead.offsetY = 0.5F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
@@ -154,7 +148,7 @@ public class ModelArandaspis extends AdvancedModelBase {
             this.swing(Bodyhead, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Bodyhead.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodyhead.offsetY = 1.315F;
+                this.Bodyhead.offsetY = 1.25F;
                 this.bob(Bodyhead, -speed, 5F, false, f2, 1);
             }
         }

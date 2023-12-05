@@ -20,10 +20,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -42,10 +39,11 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 	public ChainBuffer tailBuffer;
 
 	private int inPFLove;
-	public Animation HIDE_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	public Animation TAIL_ANIMATION;
 	private int standCooldown;
+
+	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
 
 	public EntityPrehistoricFloraGargoyleosaurus(World world) {
 		super(world);
@@ -53,7 +51,7 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 		minWidth = 0.3F;
 		maxWidth = 0.9F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 40.0D;
 		ALERT_ANIMATION = Animation.create(80);
 		TAIL_ANIMATION = Animation.create(50);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
@@ -96,18 +94,19 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 		else {
 			result = super.attackEntityFrom(ds, i);
 		}
-		if (result && ds.getTrueSource() instanceof EntityLivingBase) {
+		if (result && ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() != HIDE_ANIMATION) {
 			this.setAnimation(HIDE_ANIMATION);
 		}
-		/*
+
 		if (entityIn instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entityIn;
 			if (player.getHeldItem(getActiveHand()).isEmpty()) {
-				entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-				this.setAnimation(HIDE_ANIMATION);
+				entityIn.attackEntityFrom(SPIKY, (float) 2);
 			}
 		}
- 		*/
+		if (ds.getTrueSource() instanceof EntityLivingBase && !(entityIn instanceof EntityPlayer)) {
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
+		}
 
 		return result;
 	}

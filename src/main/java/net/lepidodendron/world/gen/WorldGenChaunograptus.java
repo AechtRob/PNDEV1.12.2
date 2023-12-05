@@ -29,48 +29,48 @@ public class WorldGenChaunograptus extends WorldGenerator {
 				int orientation = rand.nextInt(4);
 				if (orientation == 0) { //North
 					if (BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.NORTH)) {
-						worldIn.setBlockState(blockpos, BlockChaunograptus.block.getDefaultState().withProperty(SOUTH, true), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockChaunograptus.block.getDefaultState().withProperty(SOUTH, true), 2);
 						flag = true;
 						//Extend downwards:
 						int yct = 1;
 						while (isWaterBlock(worldIn, blockpos.down(yct)) && blockpos.down(yct).getY() > 1 && BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos.down(yct), EnumFacing.NORTH)) {
-							worldIn.setBlockState(blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(SOUTH, true), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(SOUTH, true), 2);
 							yct += 1;
 						}
 					}
 				} else {
 					if (orientation == 1) { //South
 						if (BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.SOUTH)) {
-							worldIn.setBlockState(blockpos, BlockChaunograptus.block.getDefaultState().withProperty(NORTH, true), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockChaunograptus.block.getDefaultState().withProperty(NORTH, true), 2);
 							flag = true;
 							//Extend downwards:
 							int yct = 1;
 							while (isWaterBlock(worldIn, blockpos.down(yct)) && blockpos.down(yct).getY() > 1 && BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos.down(yct), EnumFacing.SOUTH)) {
-								worldIn.setBlockState(blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(NORTH, true), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(NORTH, true), 2);
 								yct += 1;
 							}
 						}
 					} else {
 						if (orientation == 2) { //West
 							if (BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.WEST)) {
-								worldIn.setBlockState(blockpos, BlockChaunograptus.block.getDefaultState().withProperty(EAST, true), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockChaunograptus.block.getDefaultState().withProperty(EAST, true), 2);
 								flag = true;
 								//Extend downwards:
 								int yct = 1;
 								while (isWaterBlock(worldIn, blockpos.down(yct)) && blockpos.down(yct).getY() > 1 && BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos.down(yct), EnumFacing.WEST)) {
-									worldIn.setBlockState(blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(EAST, true), 2);
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(EAST, true), 2);
 									yct += 1;
 								}
 							}
 						} else {
 							if (orientation == 3) { //East
 								if (BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.EAST)) {
-									worldIn.setBlockState(blockpos, BlockChaunograptus.block.getDefaultState().withProperty(WEST, true), 2);
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockChaunograptus.block.getDefaultState().withProperty(WEST, true), 2);
 									flag = true;
 									//Extend downwards:
 									int yct = 1;
 									while (isWaterBlock(worldIn, blockpos.down(yct)) && blockpos.down(yct).getY() > 1 && BlockChaunograptus.block.canPlaceBlockOnSide(worldIn, blockpos.down(yct), EnumFacing.EAST)) {
-										worldIn.setBlockState(blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(WEST, true), 2);
+										Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(yct), BlockChaunograptus.block.getDefaultState().withProperty(WEST, true), 2);
 										yct += 1;
 									}
 								}

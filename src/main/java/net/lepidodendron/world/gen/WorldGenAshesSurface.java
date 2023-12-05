@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockLavaRock;
 import net.lepidodendron.block.BlockVolcanicAsh;
 import net.lepidodendron.block.BlockVolcanicAshDark;
 import net.lepidodendron.block.BlockVolcanicAshLight;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -79,7 +80,7 @@ public class WorldGenAshesSurface extends WorldGenerator
                         	if (Math.random() > 0.85) {
                         		blockIn = BlockVolcanicAshDark.block;
                         	}
-                            worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 4);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
                         }
                     }
 

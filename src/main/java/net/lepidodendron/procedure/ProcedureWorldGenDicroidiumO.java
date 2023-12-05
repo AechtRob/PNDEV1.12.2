@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDicroidiumOLeaves;
 import net.lepidodendron.block.BlockDicroidiumOLog;
 import net.lepidodendron.block.BlockDicroidiumOStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -286,7 +287,7 @@ public class ProcedureWorldGenDicroidiumO extends ElementsLepidodendronMod.ModEl
 		if (!block.canBeReplacedByLeaves(world.getBlockState(blockpos), world,blockpos)) {
 			return;
 		}
-		world.setBlockState(blockpos, state, 2);
+		Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state, 2);
 		if (!world.isRemote) {
 			TileEntity _tileEntity = world.getTileEntity(blockpos);
 			IBlockState _bs = world.getBlockState(blockpos);

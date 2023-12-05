@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
@@ -38,7 +39,7 @@ public class WorldGenSnow extends WorldGenerator
                     int ii = worldIn.getBlockState(blockpos).getValue(LAYERS);
                     ii = ii + 1;
                     if (ii <= 8) {
-                        worldIn.setBlockState(blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, Integer.valueOf(ii)), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, Integer.valueOf(ii)), 2);
                         flag = true;
                     }
                 }
@@ -49,7 +50,7 @@ public class WorldGenSnow extends WorldGenerator
                             && (canPlaceBlockAtSeaIce(worldIn, blockpos))
                             && (worldIn.canSeeSky(blockpos))
                     ) {
-                        worldIn.setBlockState(blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
                         flag = true;
                     }
                 }
@@ -58,7 +59,7 @@ public class WorldGenSnow extends WorldGenerator
                             && (canPlaceBlockAt(worldIn, blockpos))
                             && (worldIn.canSeeSky(blockpos))
                     ) {
-                        worldIn.setBlockState(blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
                         flag = true;
                     }
                 }

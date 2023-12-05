@@ -37,7 +37,7 @@ public class WorldGenPhoenicopsis extends WorldGenerator
 
                     //Grow:
                     //if (Math.random() > 0.3) {
-                    //    worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                    //    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                     //}
                     //else {
                         HashMap<String, Object> $_dependencies = new HashMap<>();
@@ -76,7 +76,7 @@ public class WorldGenPhoenicopsis extends WorldGenerator
                             && worldIn.isAirBlock(blockpos.up()) && worldIn.isAirBlock((blockpos.up(2))) && worldIn.isAirBlock((blockpos.up(3))) && worldIn.isAirBlock((blockpos.up(4)))) {
 
                         //if (Math.random() > 0.3) {
-                        //    worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                        //    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                        // }
                         //else {
                             HashMap<String, Object> $_dependencies = new HashMap<>();

@@ -2,14 +2,14 @@
 	"name": "Makarkinia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kalligrammatid_makarkinia_icon.png",
-	"category": "lepidodendron:cretaceous_animal",
+	"category": "lepidodendron:cretaceousearly_animal",
 	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_makarkinia",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_makarkinia",
 			"title": "Makarkinia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
 		},
 		{
 			"type": "image",

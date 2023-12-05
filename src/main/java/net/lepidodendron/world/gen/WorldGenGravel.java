@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ public class WorldGenGravel extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.GRAVEL.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.GRAVEL.getDefaultState(), 2);
                 flag = true;
             }
         }
@@ -54,7 +55,7 @@ public class WorldGenGravel extends WorldGenerator
                     && blockpos.getY() < maxHeight + rand.nextInt(8) - 4
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.GRAVEL.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.GRAVEL.getDefaultState(), 2);
                 flag = true;
             }
         }

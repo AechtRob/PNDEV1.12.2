@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockBuriadia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenBuriadia extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockBuriadia.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockBuriadia.block.getDefaultState(), 2);
                 BlockBuriadia.block.onBlockAdded(worldIn, blockpos, BlockBuriadia.block.getDefaultState());
 
                 flag = true;

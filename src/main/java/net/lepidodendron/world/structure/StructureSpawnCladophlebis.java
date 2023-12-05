@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockCladophlebis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -179,7 +180,7 @@ public class StructureSpawnCladophlebis extends ElementsLepidodendronMod.ModElem
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockCladophlebis.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockCladophlebis.block.getDefaultState(), 3);
 				BlockCladophlebis.block.onBlockAdded(world, spawnTo, BlockCladophlebis.block.getDefaultState());
 
 			}

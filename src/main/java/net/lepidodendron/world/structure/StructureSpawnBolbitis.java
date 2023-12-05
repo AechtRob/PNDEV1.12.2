@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBolbitis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -163,7 +164,7 @@ public class StructureSpawnBolbitis extends ElementsLepidodendronMod.ModElement 
 				BlockPos spawnTo = new BlockPos(i, j + 1, k);
 				{
 
-					world.setBlockState(spawnTo, BlockBolbitis.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBolbitis.block.getDefaultState(), 3);
 
 				}
 

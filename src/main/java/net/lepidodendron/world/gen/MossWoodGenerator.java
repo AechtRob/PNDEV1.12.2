@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockAncientMoss;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -77,7 +78,7 @@ public class MossWoodGenerator extends WorldGenerator
 		            if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
 		            	&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD)
 		            {
-		                worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 		                return true;
 		            }
 		        }

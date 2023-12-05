@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockOrontium;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -151,7 +152,7 @@ public class StructureSpawnOrontium extends ElementsLepidodendronMod.ModElement 
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
 					
-					world.setBlockState(spawnTo, BlockOrontium.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockOrontium.block.getDefaultState(), 3);
 					//System.err.println("Spawned " + i + " " + j + " " + k);
 				}
 

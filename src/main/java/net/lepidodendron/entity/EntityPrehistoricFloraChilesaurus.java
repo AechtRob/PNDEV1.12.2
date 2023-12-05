@@ -11,6 +11,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.util.IWarnOnlyButHit;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -42,7 +43,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, IWarnOnlyButHit {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -58,7 +59,7 @@ public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.20F;
 		maxWidth = 0.95F;
 		maxHeight = 0.95F;
-		maxHealthAgeable = 33.0D;
+		maxHealthAgeable = 30.0D;
 		STAND_ANIMATION = Animation.create(50);
 		LOOK_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -72,6 +73,11 @@ public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLan
 				|| animation == GRAZE_ANIMATION
 				|| animation == STAND_ANIMATION
 				|| animation == LOOK_ANIMATION;
+	}
+
+	@Override
+	public int warnDistance() {
+		return 6;
 	}
 
 	@Override
@@ -239,7 +245,7 @@ public class EntityPrehistoricFloraChilesaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockThrombolite;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -65,7 +66,7 @@ public class WorldGenThrombolite extends WorldGenerator
                         if (Math.random() > 0.2 && blockpos.distanceSq(position) <= (double)(f * f))
                         {
                         	Block blockIn = BlockThrombolite.block;
-                            worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 4);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
                         }
                     }
 

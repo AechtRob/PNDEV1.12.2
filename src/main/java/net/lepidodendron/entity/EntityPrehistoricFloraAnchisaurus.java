@@ -45,7 +45,6 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int inPFLove;
-	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_LEFT_ANIMATION;
 	public Animation SCRATCH_RIGHT_ANIMATION;
 	public Animation LOOK_ANIMATION;
@@ -60,8 +59,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.18F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 30.0D;
-		STAND_ANIMATION = Animation.create(145);
+		maxHealthAgeable = 24.0D;
 		NOISE_ANIMATION = Animation.create(20);
 		SCRATCH_LEFT_ANIMATION = Animation.create(60);
 		SCRATCH_RIGHT_ANIMATION = Animation.create(60);
@@ -103,7 +101,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, GRAZE_ANIMATION, SCRATCH_RIGHT_ANIMATION, LOOK_ANIMATION, SCRATCH_LEFT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, GRAZE_ANIMATION, SCRATCH_RIGHT_ANIMATION, LOOK_ANIMATION, SCRATCH_LEFT_ANIMATION};
 	}
 
 	@Override
@@ -185,7 +183,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == SCRATCH_LEFT_ANIMATION || this.getAnimation() == SCRATCH_RIGHT_ANIMATION || this.getAnimation() == LOOK_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == SCRATCH_LEFT_ANIMATION || this.getAnimation() == SCRATCH_RIGHT_ANIMATION || this.getAnimation() == LOOK_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -271,7 +269,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
@@ -316,7 +314,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anchisaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:anchisaurus_idle"));
 	}
 
 	@Override
@@ -415,7 +413,15 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 				}
 				this.standCooldown = 2000;
 			}
-			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_RIGHT_ANIMATION && this.getAnimationTick() == SCRATCH_RIGHT_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
+			if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_LEFT_ANIMATION && this.getAnimationTick() == SCRATCH_LEFT_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
+			if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION && this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}

@@ -1912,6 +1912,13 @@ public class LepidodendronConfigPlants {
     public static int minheightMarattia = 1;
     public static int maxheightMarattia = 90;
     public static double multiplierMarattia = 1;
+    public static boolean genShrubbyCycad = false;
+    public static String[] genShrubbyCycadBlacklistBiomes = new String[0];
+    public static String[] genShrubbyCycadOverrideBiomes = new String[0];
+    public static int[] dimShrubbyCycad = new int[]{0};
+    public static int minheightShrubbyCycad = 1;
+    public static int maxheightShrubbyCycad = 0;
+    public static double multiplierShrubbyCycad = 1;
     public static boolean genLophosoria = false;
     public static String[] genLophosoriaBlacklistBiomes = new String[0];
     public static String[] genLophosoriaOverrideBiomes = new String[0];
@@ -9536,6 +9543,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lophosoria", "multiplierLophosoria", multiplierLophosoria);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierLophosoria = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen ShrubbyCycad", "genShrubbyCycad", genShrubbyCycad);
+        prop.setComment("Set to true to generate ShrubbyCycad naturally [default: false]");
+        genShrubbyCycad = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ShrubbyCycad", "genShrubbyCycadBlacklistBiomes", genShrubbyCycadBlacklistBiomes);
+        prop.setComment("List of biomes ShrubbyCycad are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genShrubbyCycadBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ShrubbyCycad", "genShrubbyCycadOverrideBiomes", genShrubbyCycadOverrideBiomes);
+        prop.setComment("List of biomes ShrubbyCycad are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genShrubbyCycadOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen ShrubbyCycad", "dimShrubbyCycad", dimShrubbyCycad);
+        prop.setComment("List of dimension IDs ShrubbyCycad can generate in [default: 0]");
+        dimShrubbyCycad = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ShrubbyCycad", "minheightShrubbyCycad", minheightShrubbyCycad);
+        prop.setComment("Minimum height that ShrubbyCycad can generate (1 to 250) [default: 1]");
+        minheightShrubbyCycad = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ShrubbyCycad", "maxheightShrubbyCycad", maxheightShrubbyCycad);
+        prop.setComment("Maximum height that ShrubbyCycad can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightShrubbyCycad = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ShrubbyCycad", "multiplierShrubbyCycad", multiplierShrubbyCycad);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierShrubbyCycad = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Marattia", "genMarattia", genMarattia);

@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -37,12 +38,12 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
         IBlockState checkState = worldIn.getBlockState(checkPos);
         if (checkState.isSideSolid(worldIn, checkPos, EnumFacing.UP)) {
             if (canBeWater) {
-                worldIn.setBlockState(blockpos.add(0, offsetY, 0), state, 4);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.add(0, offsetY, 0), state, 4);
                 return true;
             }
             else { //Must not be water:
                 if (worldIn.getBlockState(blockpos.add(0, offsetY, 0)).getMaterial() != Material.WATER) {
-                    worldIn.setBlockState(blockpos.add(0, offsetY, 0), state, 4);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.add(0, offsetY, 0), state, 4);
                     return true;
                 }
             }

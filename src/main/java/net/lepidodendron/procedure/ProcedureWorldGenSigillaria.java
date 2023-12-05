@@ -4,6 +4,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -151,9 +152,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 						block = world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z)), world, new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z))) {
 							//System.err.println("Placed Shoot1");
-							world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter, (int) z), BlockSigillariaShoot.block.getDefaultState(), 3);
-							world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 1, (int) z), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-							world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z), BlockSigillariaShootTop.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter, (int) z), BlockSigillariaShoot.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter + 1, (int) z), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z), BlockSigillariaShootTop.block.getDefaultState(), 3);
 						}
 						//else System.err.println("Shoot not placed A");
 					}
@@ -243,9 +244,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 								block = world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z - 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z - 1)), world, new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z - 1))) {
 									//System.err.println("Placed Shoot2");
-									world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter, (int) z - 1), BlockSigillariaShoot.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 1, (int) z - 1), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z - 1), BlockSigillariaShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter, (int) z - 1), BlockSigillariaShoot.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter + 1, (int) z - 1), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z - 1), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								}
 								//else System.err.println("Shoot not placed D");
 							}
@@ -307,9 +308,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 								block = world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z + 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z + 1)), world, new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z + 1))) {
 									//System.err.println("Placed Shoot3");
-									world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter, (int) z + 1), BlockSigillariaShoot.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 1, (int) z + 1), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z + 1), BlockSigillariaShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter, (int) z + 1), BlockSigillariaShoot.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter + 1, (int) z + 1), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z + 1), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								} 
 								//else System.err.println("Shoot not placed G");
 							}
@@ -422,9 +423,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 								block = world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)), world, new BlockPos((int) xx, (int) yy + 2, (int) zz))) {
 									//System.err.println("Placed Shoot4");
-									world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
 									}
 									//else System.err.println("Shoot not placed J");
 								}
@@ -495,9 +496,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 								block = world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) yy + 2, (int) zz)), world, new BlockPos((int) xx, (int) yy + 2, (int) zz))) {
 								//System.err.println("Placed Shoot5");
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								}
 								//else System.err.println("Shoot not placed M");
 							}
@@ -585,9 +586,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 								block = world.getBlockState(new BlockPos((int) x - 1, (int) TrunkHeight + y + counter + 2, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) TrunkHeight + y + counter + 2, (int) z)), world, new BlockPos((int) x - 1, (int) TrunkHeight + y + counter + 2, (int) z))) {
 									//System.err.println("Placed Shoot6");
-									world.setBlockState(new BlockPos((int) x - 1, (int) TrunkHeight + y + counter, (int) z), BlockSigillariaShoot.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x - 1, (int) TrunkHeight + y + counter + 1, (int) z), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x - 1, (int) TrunkHeight + y + counter + 2, (int) z), BlockSigillariaShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) TrunkHeight + y + counter, (int) z), BlockSigillariaShoot.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) TrunkHeight + y + counter + 1, (int) z), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) TrunkHeight + y + counter + 2, (int) z), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								}
 								//else System.err.println("Shoot not placed P");
 							}
@@ -649,9 +650,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 								block = world.getBlockState(new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 2, (int) z)).getBlock();
 									if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 2, (int) z)), world, new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 2, (int) z))) {
 									//System.err.println("Placed Shoot7");
-									world.setBlockState(new BlockPos((int) x + 1, (int) TrunkHeight + y + counter, (int) z), BlockSigillariaShoot.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 1, (int) z), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-									world.setBlockState(new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 2, (int) z), BlockSigillariaShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) TrunkHeight + y + counter, (int) z), BlockSigillariaShoot.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 1, (int) z), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) TrunkHeight + y + counter + 2, (int) z), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								}
 								//else System.err.println("Shoot not placed S");
 							}
@@ -767,9 +768,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 							block = world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)), world, new BlockPos((int) xx, (int) yy + 2, (int) zz))) {
 								//System.err.println("Placed Shoot8");
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								}
 								//else System.err.println("Shoot not placed V");
 							}
@@ -841,9 +842,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 							block = world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz)), world, new BlockPos((int) xx, (int) yy + 2, (int) zz))) {
 								//System.err.println("Placed Shoot9");
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
-								world.setBlockState(new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSigillariaShoot.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 1, (int) zz), BlockSigillariaShootCentre.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy + 2, (int) zz), BlockSigillariaShootTop.block.getDefaultState(), 3);
 								}
 								//else System.err.println("Shoot not placed Y");
 							}

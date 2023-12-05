@@ -16,6 +16,8 @@ public class RenderAntineosteus extends RenderLiving<EntityPrehistoricFloraAntin
         super(mgr, new ModelAntineosteus(), 0.25f);
     }
 
+    public static float getScaler() {return 0.80F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAntineosteus entity) {
         float scale = entity.getAgeScale();
@@ -33,7 +35,7 @@ public class RenderAntineosteus extends RenderLiving<EntityPrehistoricFloraAntin
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAntineosteus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.18F;

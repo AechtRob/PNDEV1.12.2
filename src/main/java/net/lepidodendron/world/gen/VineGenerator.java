@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
@@ -70,19 +71,19 @@ public class VineGenerator extends WorldGenerator
 							this.state = BlockActinideaFruit.block.getDefaultState();
 						}
 						if (enumfacing == EnumFacing.NORTH) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.SOUTH, true), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockVine.SOUTH, true), 3);
 							return true;
 						}
 						if (enumfacing == EnumFacing.EAST) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.WEST, true), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockVine.WEST, true), 3);
 							return true;
 						}
 						if (enumfacing == EnumFacing.SOUTH) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.NORTH, true), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockVine.NORTH, true), 3);
 							return true;
 						}
 						if (enumfacing == EnumFacing.WEST) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.EAST, true), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockVine.EAST, true), 3);
 							return true;
 						}
 

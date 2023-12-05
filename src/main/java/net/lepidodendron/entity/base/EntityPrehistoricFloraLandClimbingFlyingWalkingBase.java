@@ -3,6 +3,8 @@ package net.lepidodendron.entity.base;
 import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.EntityPrehistoricFloraGuanoBall;
+import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
@@ -435,6 +437,13 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     @Override
     public void onLivingUpdate() {
+
+        if ((this instanceof IGuano) && this.rand.nextInt(6000) == 0 && (!this.world.isRemote)
+            && this.getAttachmentFacing() != EnumFacing.UP && this.world.isAirBlock(this.getPosition().down())) {
+            EntityPrehistoricFloraGuanoBall guanoBall = new EntityPrehistoricFloraGuanoBall(this.world, this.posX, this.posY - 0.5, this.posZ);
+            guanoBall.setFromMob(true);
+            this.world.spawnEntity(guanoBall);
+        }
 
         if (this.getFlyTarget() != null) {
             if (this.isReallyFlying() && this.motionY < 0.0D && this.sitCooldown > 0) {

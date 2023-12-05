@@ -465,32 +465,7 @@ public class ModelElginia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.elginia.render(f5);
     }
-    public void renderStaticPlinth(float f) {
-        this.setRotateAngle(lowerbody, -0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(backrightleg, -0.4363F, 0.0F, 0.0F);
-        this.setRotateAngle(backrightleg2, 0.8727F, 0.0F, 0.0F);
-        this.setRotateAngle(backrightleg3, 0.3927F, 0.0F, 0.0F);
-        this.setRotateAngle(backleftleg4, 0.4363F, 0.0F, 0.0F);
-        this.setRotateAngle(backleftleg5, 0.3927F, 0.0F, 0.0F);
-        this.setRotateAngle(backleftleg6, -0.6109F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, -0.1329F, 0.173F, -0.023F);
-        this.setRotateAngle(tail2, -0.264F, 0.1264F, -0.0341F);
-        this.setRotateAngle(tail3, -0.2214F, 0.1704F, -0.0381F);
-        this.setRotateAngle(upperbody, 0.3518F, -0.123F, -0.045F);
-        this.setRotateAngle(frontrightleg, 0.0F, -0.4363F, 0.0F);
-        this.setRotateAngle(frontrightleg2, -0.3927F, 0.3054F, 0.0F);
-        this.setRotateAngle(frontrightleg3, 0.3054F, 0.0F, 0.0F);
-        this.setRotateAngle(frontleftleg4, 0.0F, -0.48F, 0.0F);
-        this.setRotateAngle(frontleftleg5, 0.3927F, 0.2618F, 0.0F);
-        this.setRotateAngle(frontleftleg6, -0.2618F, 0.0F, 0.0F);
-        this.setRotateAngle(neck, 0.2256F, -0.2555F, -0.0579F);
-        this.setRotateAngle(head, 0.2182F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.3927F, 0.0F, 0.0F);
-        this.setRotateAngle(body, -0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(body, -0.1745F, 0.0F, 0.0F);
-        this.elginia.render(0.01F);
-        resetToDefaultPose();
-    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(lowerbody, -0.1745F, 0.0F, 0.0F);
         this.setRotateAngle(backrightleg, -0.4363F, 0.0F, 0.0F);

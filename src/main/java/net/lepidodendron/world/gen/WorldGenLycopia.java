@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLycopia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -35,7 +36,7 @@ public class WorldGenLycopia extends WorldGenerator
                         || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.CLAY)
                     )
                 ) {
-                    worldIn.setBlockState(blockpos, BlockLycopia.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLycopia.block.getDefaultState(), 2);
                     BlockLycopia.block.onBlockAdded(worldIn, blockpos, BlockLycopia.block.getDefaultState());
                     flag = true;
                 }
@@ -67,7 +68,7 @@ public class WorldGenLycopia extends WorldGenerator
                             || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.CLAY)
                         )
                     ) {
-                        worldIn.setBlockState(blockpos, BlockLycopia.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLycopia.block.getDefaultState(), 2);
                         BlockLycopia.block.onBlockAdded(worldIn, blockpos, BlockLycopia.block.getDefaultState());
                         flag = true;
                     }

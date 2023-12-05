@@ -2110,6 +2110,7 @@ public class ModelTorvosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightArm3, rightArm3.rotateAngleX + (float) Math.toRadians(xx), rightArm3.rotateAngleY + (float) Math.toRadians(yy), rightArm3.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
+
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraTorvosaurus entity = (EntityPrehistoricFloraTorvosaurus) entitylivingbaseIn;
 
@@ -5590,7 +5591,7 @@ public class ModelTorvosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.IDLE2_ANIMATION) {
             animYawn(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        
+
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {

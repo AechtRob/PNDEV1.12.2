@@ -1,0 +1,47 @@
+{
+	"name": "Wukongopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/wukongopterus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_wukongopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wukongopterus",
+			"title": "Wukongopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Wukongopteridae $(br)>Wukongopterinae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. lii",
+            "entity": "lepidodendron:prehistoric_flora_wukongopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wukongopterus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		}
+	]
+}

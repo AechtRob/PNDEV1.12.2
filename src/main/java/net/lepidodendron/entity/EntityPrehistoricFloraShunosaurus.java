@@ -281,6 +281,14 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public float getMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 1.0F;
+		}
+		return super.getMaxTurnDistancePerTick();
+	}
+
+	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.FRUIT), DietString.SEED);
 	}
@@ -484,26 +492,26 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:shunosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:shunosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:shunosaurus_death"));
 	}
 
 	@Nullable
 	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
+				.getObject(new ResourceLocation("lepidodendron:shunosaurus_roar"));
 	}
 
 	@Override

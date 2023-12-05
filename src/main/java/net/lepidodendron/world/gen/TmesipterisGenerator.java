@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockTmesipteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -70,7 +71,7 @@ public class TmesipterisGenerator extends WorldGenerator
 		            if (BlockTmesipteris.BlockCustom.canPlaceAt(worldIn, new BlockPos(j, k, l), enumfacing)
 		            	&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD)
 		            {
-		                worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 3);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 3);
 		                return true;
 		            }
 		        }

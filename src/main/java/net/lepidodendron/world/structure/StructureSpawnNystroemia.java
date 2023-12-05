@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockNystroemia;
 import net.lepidodendron.block.BlockNystroemiaCentre;
 import net.lepidodendron.block.BlockNystroemiaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -149,9 +150,9 @@ public class StructureSpawnNystroemia extends ElementsLepidodendronMod.ModElemen
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockNystroemia.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockNystroemiaCentre.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockNystroemiaTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockNystroemia.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockNystroemiaCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockNystroemiaTop.block.getDefaultState(), 3);
 			}
 		}
 	}

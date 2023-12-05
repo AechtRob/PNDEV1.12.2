@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPalissya;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenPalissya extends WorldGenerator
             )
             {
 
-                worldIn.setBlockState(blockpos, BlockPalissya.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPalissya.block.getDefaultState(), 2);
                 BlockPalissya.block.onBlockAdded(worldIn, blockpos, BlockPalissya.block.getDefaultState());
 
                 flag = true;

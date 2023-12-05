@@ -362,8 +362,55 @@ public class ModelAcutiramus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.68F);
+        this.body.render(f5);
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(eyeL_r1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(eyeR_r1, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cheliceraL, 0.3054F, -0.3054F, 0.0F);
+        this.setRotateAngle(cheliceraL_r1, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(clawbaseL, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(clawnotmoveL_r1, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(clawmovespineL_r1, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cheliceraR, 0.3491F, 0.3054F, 0.0F);
+        this.setRotateAngle(cheliceraR_r1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(clawbaseR, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(clawnotmovespineR_r1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(clawR, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(clawmoveR_r1, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(legR1_r1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(legR3_r1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(legR5, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(legR5_ptery2_r1, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(legR4_r1, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(legL1_r1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(legL3_r1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(legL4_r1, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(legL5_ptery2_r1, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(opisthosoma, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(coxa2_r1, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA3, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteA4, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteB, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteC, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteD, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteD2, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteE, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteE2, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(tergiteF, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(telson, 0.3491F, 0.0F, 0.0F);
+
+        this.body.offsetY = -0.42F;
+        this.body.offsetZ = -0.03F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -374,7 +421,7 @@ public class ModelAcutiramus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.1F;
+        this.body.offsetY = -0.425F;
 
         float speedMultiplier = 1F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
@@ -497,8 +544,8 @@ public class ModelAcutiramus extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.2F;
-                this.bob(body, -speed * 1.5F, 2F, false, f2, 1);
+                this.body.offsetY = -0.15F;
+                this.bob(body, -speed * 1.5F, 1F, false, f2, 1);
                 this.chainSwing(fishBody, speed, 0.1F, -2, f2, 1);
             }
         }

@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -482,7 +483,7 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 						&& (world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockFluidBase
 						|| world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockLiquid)
 				)) {
-					world.setBlockState(new BlockPos(x, (y + c), z), BlockBrownAscendingAlgae.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y + c), z), BlockBrownAscendingAlgae.block.getDefaultState());
 					c += 1;
 				}
 			}
@@ -492,7 +493,7 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 						&& (world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockFluidBase
 						|| world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockLiquid)
 				)) {
-					world.setBlockState(new BlockPos(x, (y + c), z), BlockGreenStemmedAlgae.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y + c), z), BlockGreenStemmedAlgae.block.getDefaultState());
 					c += 1;
 				}
 			}
@@ -502,7 +503,7 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 						&& (world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockFluidBase
 						|| world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockLiquid)
 				)) {
-					world.setBlockState(new BlockPos(x, (y + c), z), BlockCrinoidPhyllocrinus.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y + c), z), BlockCrinoidPhyllocrinus.block.getDefaultState());
 					c += 1;
 				}
 			}
@@ -512,7 +513,7 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 						&& (world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockFluidBase
 						|| world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockLiquid)
 				)) {
-					world.setBlockState(new BlockPos(x, (y + c), z), BlockCrinoidEugeniacrinites.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y + c), z), BlockCrinoidEugeniacrinites.block.getDefaultState());
 					c += 1;
 				}
 			}
@@ -522,7 +523,7 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 						&& (world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockFluidBase
 						|| world.getBlockState(new BlockPos(x, (y + c), z)).getBlock() instanceof BlockLiquid)
 				)) {
-					world.setBlockState(new BlockPos(x, (y + c), z), BlockCrinoidBalanocrinus.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, (y + c), z), BlockCrinoidBalanocrinus.block.getDefaultState());
 					c += 1;
 				}
 			}
@@ -532,100 +533,100 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 			BlockPos pos = new BlockPos(x, y, z).add(random.nextInt(3) - 1, random.nextInt(3) - 1, random.nextInt(3) - 1);
 			//Algae:
 			if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.UP)) {
-				world.setBlockState(pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.UP));
 			}
 			if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.SOUTH)) {
-				world.setBlockState(pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 			if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.NORTH)) {
-				world.setBlockState(pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 			if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.WEST)) {
-				world.setBlockState(pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
 			}
 			if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.EAST)) {
-				world.setBlockState(pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
 			}
 
 
 			if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.UP)) {
-				world.setBlockState(pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.UP));
 			}
 			if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.SOUTH)) {
-				world.setBlockState(pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 			if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.NORTH)) {
-				world.setBlockState(pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 			if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.WEST)) {
-				world.setBlockState(pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
 			}
 			if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos, EnumFacing.EAST)) {
-				world.setBlockState(pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
 			}
 
 			if (random.nextInt(5) == 0 && BlockRedLeafyAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.UP)) {
-				world.setBlockState(pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.UP));
 			}
 			if (random.nextInt(5) == 0 && BlockRedLeafyAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.SOUTH)) {
-				world.setBlockState(pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 			if (random.nextInt(5) == 0 && BlockRedLeafyAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.NORTH)) {
-				world.setBlockState(pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 			if (random.nextInt(5) == 0 && BlockRedLeafyAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.WEST)) {
-				world.setBlockState(pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.WEST));
 			}
 			if (random.nextInt(5) == 0 && BlockRedLeafyAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.EAST)) {
-				world.setBlockState(pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedLeafyAlgae.block.getDefaultState().withProperty(BlockRedLeafyAlgae.BlockCustom.FACING, EnumFacing.EAST));
 			}
 
 			if (random.nextInt(5) == 0 && BlockRedTuftedAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.UP)) {
-				world.setBlockState(pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.UP));
 			}
 			if (random.nextInt(5) == 0 && BlockRedTuftedAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.NORTH)) {
-				world.setBlockState(pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 			if (random.nextInt(5) == 0 && BlockRedTuftedAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.SOUTH)) {
-				world.setBlockState(pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 			if (random.nextInt(5) == 0 && BlockRedTuftedAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.WEST)) {
-				world.setBlockState(pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.WEST));
 			}
 			if (random.nextInt(5) == 0 && BlockRedTuftedAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.EAST)) {
-				world.setBlockState(pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockRedTuftedAlgae.block.getDefaultState().withProperty(BlockRedTuftedAlgae.BlockCustom.FACING, EnumFacing.EAST));
 			}
 
 			if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.UP)) {
-				world.setBlockState(pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.UP));
 			}
 			if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.SOUTH)) {
-				world.setBlockState(pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 			if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.NORTH)) {
-				world.setBlockState(pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 			if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.WEST)) {
-				world.setBlockState(pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.EAST));
 			}
 			if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.EAST)) {
-				world.setBlockState(pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.WEST));
 			}
 
 			if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.UP)) {
-				world.setBlockState(pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.UP));
 			}
 			if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.SOUTH)) {
-				world.setBlockState(pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 			if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.NORTH)) {
-				world.setBlockState(pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 			if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.WEST)) {
-				world.setBlockState(pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.WEST));
 			}
 			if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos, EnumFacing.EAST)) {
-				world.setBlockState(pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.EAST));
 			}
 		}
 

@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockPsilophyton;
 import net.lepidodendron.block.BlockPsilophytonSpore;
 import net.lepidodendron.block.BlockPsilophytonStem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -22,11 +23,11 @@ public class WorldGenPsilophyton extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPsilophyton.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockPsilophyton.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPsilophyton.block.getDefaultState(), 2);
 				if ((Math.random() > 0.7)) {
 					if ((Math.random() > 0.7)) {
-						worldIn.setBlockState(blockpos, BlockPsilophytonStem.block.getDefaultState(), 2);
-						worldIn.setBlockState(blockpos.up(), BlockPsilophytonSpore.block.getDefaultState(), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPsilophytonStem.block.getDefaultState(), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockPsilophytonSpore.block.getDefaultState(), 2);
 					}
 	        	}
                 flag = true;

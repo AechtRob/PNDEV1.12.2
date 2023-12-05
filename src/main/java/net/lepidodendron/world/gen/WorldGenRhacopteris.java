@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockRhacopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -32,7 +33,7 @@ public class WorldGenRhacopteris extends WorldGenerator
             {
 
 
-                worldIn.setBlockState(blockpos, BlockRhacopteris.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRhacopteris.block.getDefaultState(), 2);
                 BlockRhacopteris.block.onBlockAdded(worldIn, blockpos, BlockRhacopteris.block.getDefaultState());
                 
 

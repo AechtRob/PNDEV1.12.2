@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockRhyniaLand;
 import net.lepidodendron.block.BlockRhyniaLandSpore;
 import net.lepidodendron.block.BlockRhyniaWater;
 import net.lepidodendron.block.BlockRhyniaWaterSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -23,17 +24,17 @@ public class WorldGenRhynia extends WorldGenerator
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockRhyniaLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockRhyniaLand.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRhyniaLand.block.getDefaultState(), 2);
 				if ((Math.random() > 0.7)) {
-					worldIn.setBlockState(blockpos, BlockRhyniaLandSpore.block.getDefaultState(), 2);
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRhyniaLandSpore.block.getDefaultState(), 2);
 	        	}
                 flag = true;
             }
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockRhyniaWater.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                worldIn.setBlockState(blockpos, BlockRhyniaWater.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRhyniaWater.block.getDefaultState(), 2);
                 if ((Math.random() > 0.7)) {
-                    worldIn.setBlockState(blockpos, BlockRhyniaWaterSpore.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRhyniaWaterSpore.block.getDefaultState(), 2);
                 }
                 flag = true;
             }

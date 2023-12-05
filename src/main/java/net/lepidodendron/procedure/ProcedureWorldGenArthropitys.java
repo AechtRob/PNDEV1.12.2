@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockArthropitysLeaves;
 import net.lepidodendron.block.BlockArthropitysLog;
 import net.lepidodendron.block.BlockArthropitysStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -445,7 +446,7 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 
 	public static void addStrobilus(int x, int y, int z, World world) {
 		if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos(x, y + 1, z)))) {
-			world.setBlockState(new BlockPos(x, y + 1, z), BlockArthropitysStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + 1, z), BlockArthropitysStrobilus.block.getDefaultState(), 3);
 			if (!world.isRemote) {
 				BlockPos _bp = new BlockPos(x, y + 1, z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);

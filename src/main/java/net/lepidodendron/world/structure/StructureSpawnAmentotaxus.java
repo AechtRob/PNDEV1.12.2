@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockAmentotaxus;
 import net.lepidodendron.block.BlockAmentotaxus2;
 import net.lepidodendron.block.BlockAmentotaxus3;
 import net.lepidodendron.block.BlockAmentotaxus4;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -177,10 +178,10 @@ public class StructureSpawnAmentotaxus extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo.up(3));
 					}
 					//System.err.println("Spawning BlockAmentotaxus at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockAmentotaxus.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockAmentotaxus2.block.getDefaultState());
-					world.setBlockState(spawnTo.up(2), BlockAmentotaxus3.block.getDefaultState());
-					world.setBlockState(spawnTo.up(3), BlockAmentotaxus4.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockAmentotaxus.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockAmentotaxus2.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockAmentotaxus3.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(3), BlockAmentotaxus4.block.getDefaultState());
 				}
 
 			}

@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockValmeyerodendronLog;
 import net.lepidodendron.block.BlockValmeyerodendronStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
@@ -68,7 +69,7 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 				//Just trunk up:
 				block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
 				}
 			}
 			else {
@@ -77,7 +78,7 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 					if (world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z)).getBlock() == BlockValmeyerodendronLog.block) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
 							if (!world.isRemote) {
 								BlockPos _bp = new BlockPos((int)  x, (int) y + counter, (int) z);
 								TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -95,7 +96,7 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 						//Just trunk up:
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
 						}
 						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 						$_dependencies.put("x", (int) x);
@@ -111,7 +112,7 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 						//Branch here:
 						//Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 						//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-						//	world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
+						//	Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
 						//}
 						//Which way?
 						if (Math.random() > 0.5) {
@@ -127,11 +128,11 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 								&& (world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock() != BlockValmeyerodendronLog.block)
 								)
 							{
-								world.setBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter - 1, (int) z - 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-									world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x);
 									$_dependencies.put("y", (int) y);
@@ -156,11 +157,11 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 							{
 							
 							//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter - 1, (int) z + 1))) {
-								world.setBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter - 1, (int) z + 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-									world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x);
 									$_dependencies.put("y", (int) y);
@@ -187,11 +188,11 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 							{
 							
 							//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter - 1, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter - 1, (int) z))) {
-								world.setBlockState(new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter - 1, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z ))) {
-									world.setBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x - 1);
 									$_dependencies.put("y", (int) y);
@@ -214,11 +215,11 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 								)
 							{
 							//if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter - 1, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter - 1, (int) z))) {
-								world.setBlockState(new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter - 1, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z ))) {
-									world.setBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockValmeyerodendronLog.block.getDefaultState(), 3);		
 									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 									$_dependencies.put("x", (int) x + 1);
 									$_dependencies.put("y", (int) y);
@@ -242,7 +243,7 @@ public class ProcedureWorldGenValmeyerodendronBranch extends ElementsLepidodendr
 		if (world.getBlockState(new BlockPos((int) x, (int) y + counter - 1, (int) z)).getBlock() == BlockValmeyerodendronLog.block) {
 			block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockValmeyerodendronStrobilus.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int)  x, (int) y + counter, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);

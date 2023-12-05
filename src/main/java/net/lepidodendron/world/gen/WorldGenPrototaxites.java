@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPrototaxites;
 import net.lepidodendron.block.BlockPrototaxitesStem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -21,15 +22,15 @@ public class WorldGenPrototaxites extends WorldGenerator
 
             if (worldIn.canBlockSeeSky(blockpos.up()) && blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrototaxites.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockPrototaxites.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrototaxites.block.getDefaultState(), 2);
 
                	//Perhaps a fruiting one....
                 if (Math.random() > 0.7) {
-                    worldIn.setBlockState(blockpos, BlockPrototaxitesStem.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrototaxitesStem.block.getDefaultState(), 2);
                     int p = rand.nextInt(4) + 1;
                     int pp = 1;
                     while (pp < p) {
-                        worldIn.setBlockState(blockpos.up(pp), BlockPrototaxitesStem.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(pp), BlockPrototaxitesStem.block.getDefaultState(), 2);
                         pp = pp + 1;
                     }
                 }
