@@ -6077,6 +6077,11 @@ public class ModelHeterodontosaurus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 13) / 1) * (0-(0)));
             zz = 0 + (((tickAnim - 13) / 1) * (0-(0)));
         }
+        else if (tickAnim >= 14 && tickAnim < 15) {
+            xx = 10.08 + (((tickAnim - 14) / 1) * (10.08-(10.08)));
+            yy = 0 + (((tickAnim - 14) / 1) * (0-(0)));
+            zz = 0 + (((tickAnim - 14) / 1) * (0-(0)));
+        }
         else {
             xx = 0;
             yy = 0;

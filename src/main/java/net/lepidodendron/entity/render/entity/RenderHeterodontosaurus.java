@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraApatosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraHeterodontosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraHeterodontosaurus;
 import net.lepidodendron.entity.model.entity.ModelHeterodontosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -67,6 +65,7 @@ public class RenderHeterodontosaurus extends RenderLiving<EntityPrehistoricFlora
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHeterodontosaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }
