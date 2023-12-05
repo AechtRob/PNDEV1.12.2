@@ -137,8 +137,12 @@ public class ItemGuano extends ElementsLepidodendronMod.ModElement {
 						}
 					}
 					else {
-						//We spplied bonemeal
+						//We applied bonemeal
 						playerIn.addStat(StatList.getObjectUseStats(this));
+						if (!worldIn.isRemote)
+						{
+							worldIn.playEvent(2005, blockpos.offset(facing.getOpposite()), 0);
+						}
 						return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 					}
 				}

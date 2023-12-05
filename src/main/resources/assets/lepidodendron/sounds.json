@@ -8888,6 +8888,18 @@
       }
     ]
   },
+  "shunosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shunosaurus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shunosaurus_threat02",
+        "stream": false
+      }
+    ]
+  },
 
   "tianyulong_idle": {
     "sounds": [

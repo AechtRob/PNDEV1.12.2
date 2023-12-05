@@ -1270,6 +1270,8 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "shunosaurus_hurt")));
 		sounds.put(new ResourceLocation("lepidodendron", "shunosaurus_death"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "shunosaurus_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "shunosaurus_roar"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "shunosaurus_roar")));
 
 		sounds.put(new ResourceLocation("lepidodendron", "tianyulong_idle"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "tianyulong_idle")));
