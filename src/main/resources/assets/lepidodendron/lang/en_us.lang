@@ -8359,4 +8359,5 @@ item.pf_eggs_miragaia.name=Miragaia Eggs
 item.pf_eggs_dorygnathus.name=Dorygnathus Eggs
 item.pf_eggs_elaphrosaurus.name=Elaphrosaurus Eggs
 tile.pf_guano.name=Guano
+tile.pf_guano_block.name=Guano
 item.pf_guano_item.name=Guano

@@ -2,84 +2,96 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.item.ItemGuano;
 import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSnow;
+import net.minecraft.block.BlockSnowBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockGuano extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:guano")
+public class BlockGuanoBlock extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:guano_block")
 	public static final Block block = null;
-	public BlockGuano(ElementsLepidodendronMod instance) {
+	public BlockGuanoBlock(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.guano);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("guano"));
-		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("guano_block"));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
-//	@SideOnly(Side.CLIENT)
-//	@Override
-//	public void registerModels(ModelRegistryEvent event) {
-////		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-////				new ModelResourceLocation("lepidodendron:guano", "inventory"));
-//	}
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerModels(ModelRegistryEvent event) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation("lepidodendron:guano_block", "inventory"));
+	}
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
 	public static final PropertyBool EAST = PropertyBool.create("east");
 	public static final PropertyBool SOUTH = PropertyBool.create("south");
 	public static final PropertyBool WEST = PropertyBool.create("west");
 
-	public static class BlockCustom extends BlockSnow {
+	public static class BlockCustom extends BlockSnowBlock {
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_guano");
+			setTranslationKey("pf_guano_block");
 			setSoundType(SoundType.SLIME);
 			setHarvestLevel("shovel", 0);
 			setCreativeTab(null);
 			setDefaultSlipperiness(0.8f);
 			setHardness(0.1F);
-			setLightOpacity(0);
 			this.setTickRandomly(false);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
 		}
 
-		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, new IProperty[]{NORTH, EAST, SOUTH, WEST, LAYERS});
+		public IBlockState getStateFromMeta(int meta) {
+			return this.getDefaultState();
 		}
 
-		@Override
-		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-			drops.add(new ItemStack(ItemGuanoBall.block, state.getValue(LAYERS)));
+		public int getMetaFromState(IBlockState state) {
+			return 0;
+		}
+
+		protected BlockStateContainer createBlockState()
+		{
+			return new BlockStateContainer(this, new IProperty[] {NORTH, EAST, SOUTH, WEST});
+		}
+
+		public Item getItemDropped(IBlockState state, Random rand, int fortune)
+		{
+			return ItemGuanoBall.block;
+		}
+
+		public int quantityDropped(Random random)
+		{
+			return 8;
 		}
 
 		@Override
@@ -115,32 +127,8 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		protected ItemStack getSilkTouchDrop(IBlockState state) {
-			if (state.getValue(LAYERS) == 8) {
-				return new ItemStack(BlockGuanoBlock.block, 1);
-			}
-			return new ItemStack(ItemGuano.block, state.getValue(LAYERS));
-		}
-
-		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			if (state.getValue(LAYERS) == 8) {
-				return new ItemStack(BlockGuanoBlock.block, 1);
-			}
-			return new ItemStack(ItemGuano.block, 1);
-		}
-
-		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-		}
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Has a bonemeal-effect: shift-click to place as normal");
-				super.addInformation(stack, player, tooltip, advanced);
-			}
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+		{
 		}
 	}
 }
