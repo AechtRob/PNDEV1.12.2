@@ -8,6 +8,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -30,15 +31,27 @@ public abstract class BlockLeavesPF extends BlockLeaves implements IAdvancementG
 		this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 	}
 
-	public boolean isOpaqueCube(IBlockState state)
-	{
-		return false;
+	public boolean hasNonFancyOption() {
+		return true;
 	}
 
+	@Override
 	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getRenderLayer()
 	{
-		return BlockRenderLayer.CUTOUT_MIPPED;
+		if (!hasNonFancyOption()) {
+			return BlockRenderLayer.CUTOUT_MIPPED;
+		}
+		return Minecraft.getMinecraft().gameSettings.fancyGraphics ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
+	}
+
+	@Override
+	public boolean isOpaqueCube(IBlockState state)
+	{
+		if (!hasNonFancyOption()) {
+			return false;
+		}
+		return !Minecraft.getMinecraft().gameSettings.fancyGraphics;
 	}
 
 	@Override
@@ -88,7 +101,10 @@ public abstract class BlockLeavesPF extends BlockLeaves implements IAdvancementG
 	@SideOnly(Side.CLIENT)
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
 	{
-		return true;
+		if (!hasNonFancyOption()) {
+			return true;
+		}
+		return !Minecraft.getMinecraft().gameSettings.fancyGraphics && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : true;
 	}
 
 }

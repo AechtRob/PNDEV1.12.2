@@ -1,0 +1,37 @@
+{
+    "multipart": [
+        {   "apply": { "model": "lepidodendron:guano" }},
+        {   "when": { "north": true },
+            "apply": [
+                { "model": "lepidodendron:guano_side_1" },
+                { "model": "lepidodendron:guano_side_2" },
+                { "model": "lepidodendron:guano_side_3" },
+                { "model": "lepidodendron:guano_side_4" }
+            ]
+        },
+        {   "when": { "east": true },
+            "apply": [
+                { "model": "lepidodendron:guano_side_1", "y": 90 },
+                { "model": "lepidodendron:guano_side_2", "y": 90 },
+                { "model": "lepidodendron:guano_side_3", "y": 90 },
+                { "model": "lepidodendron:guano_side_4", "y": 90 }
+            ]
+        },
+        {   "when": { "south": true },
+            "apply": [
+                { "model": "lepidodendron:guano_side_1", "y": 180 },
+                { "model": "lepidodendron:guano_side_2", "y": 180 },
+                { "model": "lepidodendron:guano_side_3", "y": 180 },
+                { "model": "lepidodendron:guano_side_4", "y": 180 }
+            ]
+        },
+        {   "when": { "west": true },
+            "apply": [
+                { "model": "lepidodendron:guano_side_1", "y": 270 },
+                { "model": "lepidodendron:guano_side_2", "y": 270 },
+                { "model": "lepidodendron:guano_side_3", "y": 270 },
+                { "model": "lepidodendron:guano_side_4", "y": 270 }
+            ]
+        }
+    ]
+}

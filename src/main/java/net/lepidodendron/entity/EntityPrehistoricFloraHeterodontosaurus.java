@@ -49,6 +49,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 
 	public Animation STAND_ANIMATION;
 	public Animation DIG_ANIMATION;
+	public Animation CHATTER_ANIMATION;
 	private int standCooldown;
 	private boolean screaming;
 	private int alarmCooldown;
@@ -65,8 +66,9 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 10.0D;
-		STAND_ANIMATION = Animation.create(115);
-		DIG_ANIMATION = Animation.create(90);
+		STAND_ANIMATION = Animation.create(60);
+		DIG_ANIMATION = Animation.create(50);
+		CHATTER_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -277,7 +279,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 
 	@Override
 	public int getRoarLength() {
-		return 40;
+		return 20;
 	}
 
 	@Override
@@ -313,13 +315,13 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 				speedBase = speedBase * 1.8F; //The moving part of the hop animation
 			}
 		}
-		return speedBase;
+		return speedBase * 1.6F;
 	}
 
 	public boolean getMovingOnLand() {
-		int animCycle = 20;
+		int animCycle = 10;
 		double tickAnim = (this.ticksExisted + this.getTickOffset()) - (int) (Math.floor((double) (this.ticksExisted + this.getTickOffset()) / (double) animCycle) * (double) animCycle);
-		if ((tickAnim >= 6 && tickAnim <= 18)) {
+		if ((tickAnim >= 3 && tickAnim <= 9)) {
 			return true;
 		} else {
 			return false;
@@ -364,7 +366,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.PLANTS, DietString.BUG);
 	}
   
 	public boolean panics() {
@@ -442,7 +444,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, DIG_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{CHATTER_ANIMATION, DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, DIG_ANIMATION, STAND_ANIMATION};
 	}
 
 	@Override
@@ -473,6 +475,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 		//System.err.println("looking for alarm sound");
 		if (soundevent != null) {
 			//System.err.println("playing alarm sound");
+			this.setAnimation(CHATTER_ANIMATION);
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.alarmCooldown = 20;
 		}

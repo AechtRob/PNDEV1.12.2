@@ -333,10 +333,10 @@ public class ModelLimusaurus extends AdvancedModelBaseExtended {
 
         EntityPrehistoricFloraLimusaurus entityLimusaurus = (EntityPrehistoricFloraLimusaurus) e;
 
-//        this.faceTarget(f3, f4, 12, Neck1);
-//        this.faceTarget(f3, f4, 12, Neck2);
-//        this.faceTarget(f3, f4, 12, Neck3);
-//        this.faceTarget(f3, f4, 12, Head);
+        this.faceTarget(f3, f4, 12, Neck);
+        this.faceTarget(f3, f4, 12, Neck2);
+        this.faceTarget(f3, f4, 12, Neck3);
+        this.faceTarget(f3, f4, 12, Head);
 
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2, this.Tail3, this.Tail4};
         AdvancedModelRenderer[] Neck = {this.Chest, this.Neck, this.Neck2, this.Neck3, this.Head};

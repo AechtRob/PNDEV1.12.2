@@ -5003,7 +5003,12 @@ public class RenderHandler {
                 return new RenderHeterodontosaurus(manager);
             }
         });
-        
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTianyulong.class, new IRenderFactory<EntityPrehistoricFloraTianyulong>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTianyulong> createRenderFor(RenderManager manager) {
+                return new RenderTianyulong(manager);
+            }
+        });
         
         
         
