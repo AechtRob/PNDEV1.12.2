@@ -59,14 +59,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 10.0F;
-		}
-		return super.getMaxTurnDistancePerTick();
+		setgetMaxTurnDistancePerTick(10.0F);
 	}
 
 	@Override

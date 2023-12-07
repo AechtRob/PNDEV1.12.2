@@ -53,6 +53,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		setgetMaxTurnDistancePerTick(10.0F);
 	}
 
 	@Override
@@ -85,11 +86,6 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	@Override
 	public int getRoarLength() {
 		return 50;
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		return 10.0F;
 	}
 
 	public static String getPeriod() {return "late Triassic";}

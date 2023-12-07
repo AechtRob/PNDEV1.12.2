@@ -57,14 +57,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 			tailBuffer = new ChainBuffer();
 		}
 		NOISE_ANIMATION = Animation.create(this.getRoarLength());
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 5.0F;
-		}
-		return super.getMaxTurnDistancePerTick();
+		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
 	@Override

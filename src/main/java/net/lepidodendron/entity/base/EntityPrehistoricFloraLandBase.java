@@ -415,10 +415,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return false;
     }
 
-    public float getMaxTurnDistancePerTick() {
-        return 20.0F;
-    }
-
     public boolean isNotColliding() {
         return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
     }
@@ -1027,7 +1023,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     return;
                 }
 
-                float turn = (EntityBase.getMaxTurnDistancePerTick());
+                float turn = (EntityBase.getgetMaxTurnDistancePerTick());
                 float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
                 if (this.EntityBase.getAnimation() != DRINK_ANIMATION && this.EntityBase.getAnimation() != GRAZE_ANIMATION
                         && this.EntityBase.getIsMoving()) {

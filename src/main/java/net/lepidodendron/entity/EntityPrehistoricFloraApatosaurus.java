@@ -67,15 +67,9 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			tailBuffer = new ChainBuffer();
 		}
 		NOISE_ANIMATION = Animation.create(40);
+		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 0.5F;
-		}
-		return super.getMaxTurnDistancePerTick();
-	}
 
 	@Override
 	public int wadeDepth() {
@@ -245,7 +239,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
-		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0, this.wadeDepth()));
+		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this));

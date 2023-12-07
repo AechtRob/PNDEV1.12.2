@@ -28,6 +28,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehistoricFloraLandBase {
 
     @SideOnly(Side.CLIENT)
@@ -38,18 +40,18 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
-        this.setPathPriority(PathNodeType.WATER, 10F);
         if (world != null) {
             if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
                 this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
             }
-            if (isBlockWadable(this.world, this.getPosition()) && (!(this.navigator instanceof PathNavigateGroundWade))) {
+            if (isBlockWadable(this.world, this.getPosition(), this) && (!(this.navigator instanceof PathNavigateGroundWade))) {
                 this.navigator = new PathNavigateGroundWade(this, world);
             }
-            else if ((!(isBlockWadable(this.world, this.getPosition()))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
+            else if ((!(isBlockWadable(this.world, this.getPosition(), this))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
                 this.navigator = new PathNavigateAmphibian(this, world);
             }
         }
+        this.setPathPriority(PathNodeType.WATER, 10F);
         HURT_ANIMATION = Animation.create(this.getHurtLength());
     }
 
@@ -62,12 +64,13 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
             this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
         }
-        if (isBlockWadable(this.world, this.getPosition()) && (!(this.navigator instanceof PathNavigateGroundWade))) {
+        if (isBlockWadable(this.world, this.getPosition(), this) && (!(this.navigator instanceof PathNavigateGroundWade))) {
             this.navigator = new PathNavigateGroundWade(this, world);
         }
-        else if ((!(isBlockWadable(this.world, this.getPosition()))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
+        else if ((!(isBlockWadable(this.world, this.getPosition(), this))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
             this.navigator = new PathNavigateAmphibian(this, world);
         }
+        this.setPathPriority(PathNodeType.WATER, 10F);
     }
 
     @Override
@@ -163,22 +166,38 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         return false;
     }
 
-    public boolean isBlockWadable(IBlockAccess world, BlockPos pos) {
+    public boolean isBlockWadable(IBlockAccess world, BlockPos pos, @Nullable EntityPrehistoricFloraLandWadingBase entityIn) {
         if (world instanceof World) {
             if (!((World) world).isBlockLoaded(pos)) {
                 return false;
             }
         }
-        //First we need to go downwards and start from the bottom as mobs sink:
-        int yy = 0;
-        while (pos.add(0, -yy,0).getY() > 0) {
-            if (world.getBlockState(pos.add(0, -yy,0)).getMaterial().blocksMovement()) {
-                break;
+        //First we need to go downwards and start from the bottom as mobs sink, provided the mob is not already at the bottom:
+        if (entityIn != null) {
+            if (!entityIn.onGround) {
+                int yy = 0;
+                while (pos.add(0, -yy, 0).getY() > 0) {
+                    if (world.getBlockState(pos.add(0, -yy, 0)).getMaterial().blocksMovement()) {
+                        break;
+                    }
+                    yy++;
+                }
+                if (yy > 0) {
+                    pos = pos.add(0, -(yy - 1), 0);
+                }
             }
-            yy++;
         }
-        if (yy > 0) {
-            pos = pos.add(0, -(yy - 1), 0);
+        else {
+            int yy = 0;
+            while (pos.add(0, -yy, 0).getY() > 0) {
+                if (world.getBlockState(pos.add(0, -yy, 0)).getMaterial().blocksMovement()) {
+                    break;
+                }
+                yy++;
+            }
+            if (yy > 0) {
+                pos = pos.add(0, -(yy - 1), 0);
+            }
         }
         if (world.getBlockState(pos).getMaterial() != Material.WATER) {
             return true;
@@ -617,7 +636,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
                     return;
                 }
 
-                float turn = (EntityBase.getMaxTurnDistancePerTick());
+                float turn = (EntityBase.getgetMaxTurnDistancePerTick());
                 float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
                 this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
                 //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getAISpeedLand()));

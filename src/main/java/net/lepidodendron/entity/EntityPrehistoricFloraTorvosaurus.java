@@ -59,14 +59,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 15.0F;
-		}
-		return super.getMaxTurnDistancePerTick();
+		setgetMaxTurnDistancePerTick(15.0F);
 	}
 
 	@Override
