@@ -710,13 +710,13 @@ public class ModelApatosaurus extends AdvancedModelBaseExtended {
 
         EntityPrehistoricFloraApatosaurus apato = (EntityPrehistoricFloraApatosaurus) e;
 
-        this.faceTarget(f3, f4, 6, neck1);
-        this.faceTarget(f3, f4, 6, neck2);
-        this.faceTarget(f3, f4, 6, neck3);
-        this.faceTarget(f3, f4, 4, neck4);
-        this.faceTarget(f3, f4, 4, neck5);
-        this.faceTarget(f3, f4, 4, neck6);
-        this.faceTarget(f3, f4, 4, head);
+        this.faceTarget(f3, f4, 12, neck1);
+        this.faceTarget(f3, f4, 12, neck2);
+        this.faceTarget(f3, f4, 12, neck3);
+        this.faceTarget(f3, f4, 8, neck4);
+        this.faceTarget(f3, f4, 8, neck5);
+        this.faceTarget(f3, f4, 8, neck6);
+        this.faceTarget(f3, f4, 8, head);
 
         boolean isBaby = apato.getJuvenile();
 

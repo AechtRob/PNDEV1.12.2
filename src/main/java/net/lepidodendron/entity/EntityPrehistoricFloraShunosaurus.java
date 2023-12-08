@@ -69,6 +69,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 		}
 		IDLE_1 = Animation.create(80);
 		IDLE_2 = Animation.create(160);
+		setgetMaxTurnDistancePerTick(10.0F);
 	}
 
 	@Override
@@ -278,14 +279,6 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 1.0F;
-		}
-		return super.getMaxTurnDistancePerTick();
 	}
 
 	@Override

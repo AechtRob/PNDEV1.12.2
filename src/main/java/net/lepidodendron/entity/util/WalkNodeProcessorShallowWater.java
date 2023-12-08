@@ -305,6 +305,10 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         {
             return PathNodeType.FENCE;
         }
+        if (enumset.contains(PathNodeType.WATER) && pathnodetype != PathNodeType.BLOCKED)
+        {
+            return PathNodeType.WATER;
+        }
         else
         {
             PathNodeType pathnodetype1 = PathNodeType.BLOCKED;
@@ -391,7 +395,7 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         if (y >= 1) {
             if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
                 EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
-                if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z))) {
+                if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z), null)) {
                     pathnodetype = PathNodeType.BLOCKED;
                 }
             }
@@ -400,7 +404,7 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
                 if (this.currentEntity != null) {
                     if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
                         EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
-                        if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z))) {
+                        if (!wader.isBlockWadable(blockaccessIn, new BlockPos(x, y, z), null)) {
                             pathnodetype = PathNodeType.BLOCKED;
                         }
                     }
@@ -513,7 +517,7 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         }
         if (this.currentEntity instanceof EntityPrehistoricFloraLandWadingBase) {
             EntityPrehistoricFloraLandWadingBase wader = (EntityPrehistoricFloraLandWadingBase) this.currentEntity;
-            if (!wader.isBlockWadable(worldIn, blockpos)) {
+            if (!wader.isBlockWadable(worldIn, blockpos, null)) {
                 return PathNodeType.BLOCKED;
             }
         }

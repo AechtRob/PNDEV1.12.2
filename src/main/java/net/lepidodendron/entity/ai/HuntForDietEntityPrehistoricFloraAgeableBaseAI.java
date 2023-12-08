@@ -331,7 +331,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
         if (pos.down(i).getY() <= 0) {
             return true;
         }
-        return !((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, pos.down(i));
+        return !((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, pos.down(i), null);
     }
 
     public boolean isInWaterforHunting(Entity entity) {

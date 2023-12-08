@@ -7318,7 +7318,6 @@
     ]
   },
 
-
   "stegosaurus_idle": {
     "sounds": [
       {
@@ -9006,6 +9005,67 @@
     "sounds": [
       {
         "name": "lepidodendron:anchisaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "miragaia_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:miragaia_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_living04",
+        "stream": false
+      }
+    ]
+  },
+  "miragaia_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:miragaia_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "miragaia_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:miragaia_death",
+        "stream": false
+      }
+    ]
+  },
+  "miragaia_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:miragaia_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:miragaia_threat03",
         "stream": false
       }
     ]

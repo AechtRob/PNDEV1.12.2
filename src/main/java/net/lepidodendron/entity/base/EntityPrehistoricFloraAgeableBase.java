@@ -93,6 +93,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private int warnCooldown;
     public int ticksExistedAnimated;
     public boolean wasWarning;
+    private float getMaxTurnDistancePerTick;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -104,6 +105,27 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+        getMaxTurnDistancePerTick = 20.0F;
+    }
+
+    public void setgetMaxTurnDistancePerTick(float turn) {
+        this.getMaxTurnDistancePerTick = turn;
+    }
+
+    public float getgetMaxTurnDistancePerTick() {
+        if (this.getIsFast()) {
+            return 20.0F;
+        }
+        if (!this.getNavigator().noPath()) {
+            if (this.getDistance(
+                    this.getNavigator().getPath().getFinalPathPoint().x,
+                    this.posY,
+                    this.getNavigator().getPath().getFinalPathPoint().z)
+                < this.width * 1.5) {
+                return 20.0F;
+            }
+        }
+        return this.getMaxTurnDistancePerTick;
     }
 
     public int warnDistance() {

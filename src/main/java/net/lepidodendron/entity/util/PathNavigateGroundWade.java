@@ -51,7 +51,7 @@ public class PathNavigateGroundWade extends PathNavigate
                             || this.world.getBlockState(blockpos).getMaterial() == Material.WATER)
                     ; blockpos = blockpos.down())
             {
-                ;
+
             }
 
             if (blockpos.getY() > 0)
