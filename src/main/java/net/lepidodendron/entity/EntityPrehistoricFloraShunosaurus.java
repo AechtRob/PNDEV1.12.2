@@ -59,9 +59,9 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraShunosaurus(World world) {
 		super(world);
-		setSize(2F, 3F);
+		setSize(1.95F, 3F);
 		minWidth = 0.2F;
-		maxWidth = 2F;
+		maxWidth = 1.95F;
 		maxHeight = 3F;
 		maxHealthAgeable = 85;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -70,6 +70,14 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 		IDLE_1 = Animation.create(80);
 		IDLE_2 = Animation.create(160);
 		setgetMaxTurnDistancePerTick(10.0F);
+	}
+
+	@Override
+	public float getgetMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 2.0F;
+		}
+		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
@@ -218,7 +226,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.28F;
+		float speedBase = 0.38F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -274,7 +282,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityLookIdleAI(this));
+		tasks.addTask(11, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
