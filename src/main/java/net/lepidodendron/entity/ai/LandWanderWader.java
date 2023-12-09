@@ -108,10 +108,13 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
                     this.EntityPrehistoricFloraLandWadingBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, 1.0);
                     this.mustUpdate = false;
+                    this.ticksAI = 600;
                     return true;
                 }
             }
             else {
+                this.mustUpdate = false;
+                this.ticksAI = 600;
                 return true;
             }
         }
@@ -121,6 +124,11 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public boolean shouldContinueExecuting() {
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.EntityPrehistoricFloraLandWadingBase.getNavigator().clearPath();
+            return false;
+        }
         this.maxDepth = this.EntityPrehistoricFloraLandWadingBase.wadeDepth();
         return !this.entity.getNavigator().noPath();
     }
