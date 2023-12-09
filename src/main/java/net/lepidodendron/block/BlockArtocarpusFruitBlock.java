@@ -29,12 +29,15 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -63,7 +66,7 @@ public class BlockArtocarpusFruitBlock extends ElementsLepidodendronMod.ModEleme
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:artocarpus_fruit_block", "inventory"));
 	}
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IShearable {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setTranslationKey("pf_artocarpus_fruit_block");
@@ -208,6 +211,16 @@ public class BlockArtocarpusFruitBlock extends ElementsLepidodendronMod.ModEleme
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
 			return BlockFaceShape.UNDEFINED;
 		}
-	    
+
+		@Override
+		public boolean isShearable(@Nonnull ItemStack item, IBlockAccess world, BlockPos pos) {
+			return true;
+		}
+
+		@Nonnull
+		@Override
+		public List<ItemStack> onSheared(@Nonnull ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
+		}
 	}
 }
