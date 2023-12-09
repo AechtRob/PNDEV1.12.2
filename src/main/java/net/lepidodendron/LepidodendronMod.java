@@ -13,7 +13,6 @@ import net.lepidodendron.world.lootconditions.EntityInDimensionID;
 import net.lepidodendron.world.lootconditions.EntityInDimensionName;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -2115,6 +2114,7 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(new LepidodendronHoeHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronBucketHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronGlassBottleSubscribers());
+		MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
 
 		ModTriggers.registerTriggers();
 		LootConditionManager.registerCondition(new EntityInDimensionName.Serializer());

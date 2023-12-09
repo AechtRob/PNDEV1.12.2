@@ -3,12 +3,16 @@ package net.lepidodendron.util;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -16,11 +20,94 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 public class Functions {
+
+    public static IBlockState getPortalBlockState(int lastDimension) {
+        IBlockState portalBlockState = null;
+        if (lastDimension != 1) {
+            portalBlockState = Blocks.STONE.getStateFromMeta(0);
+        }
+        if (lastDimension == -1) {
+            portalBlockState = Blocks.OBSIDIAN.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimPrecambrian) {
+            portalBlockState = BlockStromatoliteSticky.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimCambrian) {
+            portalBlockState = Blocks.SPONGE.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimOrdovician) {
+            portalBlockState = BlockCoralSticky.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimSilurian) {
+            portalBlockState = BlockPrototaxitesBlock.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimDevonian) {
+            portalBlockState = BlockArchaeopterisPlanks.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimCarboniferous) {
+            portalBlockState = BlockCalamitesPlanks.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimPermian) {
+            portalBlockState = BlockGlossopterisPlanks.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimTriassic) {
+            portalBlockState = BlockDicroidiumFPlanks.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimJurassic) {
+            portalBlockState = BlockGinkgoPlanks.block.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimCretaceousEarly) {
+            portalBlockState = BlockAraucariaPlanks.block.getDefaultState();
+        }
+        return portalBlockState;
+    }
+
+    public static IBlockState getPortalState(int lastDimension) {
+        IBlockState portalState = null;
+        if (lastDimension != 1) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:overworld_portal")).getDefaultState();
+        }
+        if (lastDimension == -1) {
+            portalState = Blocks.PORTAL.getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimPrecambrian) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:precambrian_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimCambrian) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:cambrian_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimOrdovician) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:ordovician_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimSilurian) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:silurian_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimDevonian) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:devonian_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimCarboniferous) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:carboniferous_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimPermian) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:permian_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimTriassic) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:triassic_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimJurassic) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:jurassic_portal")).getDefaultState();
+        }
+        if (lastDimension == LepidodendronConfig.dimCretaceousEarly) {
+            portalState = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("lepidodendron:cretaceous_early_portal")).getDefaultState();
+        }
+        return portalState;
+    }
 
     public static boolean isWater(World world, BlockPos pos) {
         IBlockState state = world.getBlockState(pos);

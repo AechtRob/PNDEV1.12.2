@@ -12,6 +12,7 @@ public class ModTriggers
 {
 
     public static final CustomTrigger WELCOME = new CustomTrigger("pf_book_craft_prompt");
+    public static final CustomTrigger ENTER_OVERWORLD = new CustomTrigger("enter_pf_overworld");
     public static final CustomTrigger ENTER_PRECAMBRIAN = new CustomTrigger("enter_pf_precambrian");
     public static final CustomTrigger ENTER_CAMBRIAN = new CustomTrigger("enter_pf_cambrian");
     public static final CustomTrigger ENTER_ORDOVICIAN = new CustomTrigger("enter_pf_ordovician");
