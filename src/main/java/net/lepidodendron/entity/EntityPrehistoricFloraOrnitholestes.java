@@ -35,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraOrnitholestes extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,17 +47,17 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	public Animation HURT_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraGuanlong(World world) {
+	public EntityPrehistoricFloraOrnitholestes(World world) {
 		super(world);
-		setSize(0.8F, 1.25F);
+		setSize(0.8F, 0.9F);
 		minWidth = 0.20F;
 		maxWidth = 0.8F;
-		maxHeight = 1.25F;
-		maxHealthAgeable = 32.0D;
-		SCRATCH_ANIMATION = Animation.create(80);
-		STAND_ANIMATION = Animation.create(80);
+		maxHeight = 0.9F;
+		maxHealthAgeable = 25.0D;
+		SCRATCH_ANIMATION = Animation.create(60);
+		STAND_ANIMATION = Animation.create(70);
 		HURT_ANIMATION = Animation.create(15);
-		NOISE_ANIMATION = Animation.create(20);
+		NOISE_ANIMATION = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -266,24 +266,24 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:ornitholestes_roar"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:ornitholestes_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_death"));
+	            .getObject(new ResourceLocation("lepidodendron:ornitholestes_death"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
+				.getObject(new ResourceLocation("lepidodendron:ornitholestes_idle"));
 	}
 
 	@Override
@@ -357,15 +357,14 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_GUANLONG;
+		return ModTriggers.CLICK_ORNITHOLESTES;
 	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.GUANLONG_LOOT_YOUNG;
+			return LepidodendronMod.ORNITHOLESTES_LOOT_YOUNG;
 		}
-		return LepidodendronMod.GUANLONG_LOOT;
+		return LepidodendronMod.ORNITHOLESTES_LOOT;
 	}
 
 	//Rendering taxidermy:

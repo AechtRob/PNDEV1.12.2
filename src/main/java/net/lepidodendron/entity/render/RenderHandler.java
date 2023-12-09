@@ -5009,6 +5009,13 @@ public class RenderHandler {
                 return new RenderTianyulong(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOrnitholestes.class, new IRenderFactory<EntityPrehistoricFloraOrnitholestes>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOrnitholestes> createRenderFor(RenderManager manager) {
+                return new RenderOrnitholestes(manager);
+            }
+        });
         
         
         
