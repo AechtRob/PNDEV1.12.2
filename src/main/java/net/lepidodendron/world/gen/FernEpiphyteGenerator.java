@@ -95,6 +95,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
             int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
 
             if (k >= worldIn.getSeaLevel() && this.FernEpiphyte.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
+				&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
 				//figure out a position and facing to place this at!

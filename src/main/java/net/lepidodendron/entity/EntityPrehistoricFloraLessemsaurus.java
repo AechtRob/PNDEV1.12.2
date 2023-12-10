@@ -53,6 +53,15 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		setgetMaxTurnDistancePerTick(10.0F);
+	}
+
+	@Override
+	public float getgetMaxTurnDistancePerTick() {
+		if (!this.getIsFast()) {
+			return 2.0F;
+		}
+		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
@@ -85,11 +94,6 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	@Override
 	public int getRoarLength() {
 		return 50;
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		return 10.0F;
 	}
 
 	public static String getPeriod() {return "late Triassic";}
@@ -190,7 +194,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityLookIdleAI(this));
+		tasks.addTask(11, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

@@ -99,6 +99,8 @@ public class LepidodendronConfig {
     public static boolean doSpawnsPrehistoricFloraDefault = true;
     public static boolean doSpawnsFossilsArcheology = false;
     public static boolean doSpawnsReborn = false;
+    public static boolean globalHomePortals = false;
+    public static boolean oneWayPortals = true;
 
     public static boolean doMultiplyMobs = false;
 
@@ -761,6 +763,14 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "genPalaeontologist", genPalaeontologist);
         prop.setComment("Percentage chance that a Palaeontologist house will generate in a village. [default: 30]");
         genPalaeontologist = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "portalsHomeGlobally", globalHomePortals);
+        prop.setComment("Overworld portals can also be used to escape from non-Prehistoric Nature dimensions. [default: false]");
+        globalHomePortals = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "portalsOneWay", oneWayPortals);
+        prop.setComment("Portals generate one-way counterparts on both sides; but only when used between Prehistoric Nature dimensions and the overworld. [default: true]");
+        oneWayPortals = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "doSpawnsPrehistoricFloraDefault", doSpawnsPrehistoricFloraDefault);

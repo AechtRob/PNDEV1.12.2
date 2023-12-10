@@ -5,14 +5,20 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderPlateosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
@@ -36,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -590,6 +596,11 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PLATEOSAURUS;
+	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
@@ -598,5 +609,24 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		}
 		return LepidodendronMod.PLATEOSAURUS_LOOT;
 	}
-
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 1.4;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 1.0;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -1.2;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderPlateosaurus.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelPlateosaurus;}
+	public static float getScaler(@Nullable String variant) {return RenderPlateosaurus.getScaler();}
 }

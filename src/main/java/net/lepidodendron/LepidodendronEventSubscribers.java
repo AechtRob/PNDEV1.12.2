@@ -645,6 +645,13 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 
+		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.STONE)) {
+			if (event.getItemStack().getMetadata() == 0) {
+				List<String> tt = event.getToolTip();
+				tt.add("NOTE: Used to build a portal back to the Overworld");
+			}
+		}
+
 		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
 			List<String> tt = event.getToolTip();
 			if (!Loader.isModLoaded("pncambrian")) {

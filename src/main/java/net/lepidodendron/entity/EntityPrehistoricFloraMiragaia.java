@@ -493,26 +493,26 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:miragaia_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:miragaia_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:postosuchus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:miragaia_death"));
 	}
 
 	@Nullable
 	@Override
 	public SoundEvent getRoarSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:postosuchus_roar"));
+				.getObject(new ResourceLocation("lepidodendron:miragaia_roar"));
 	}
 
 	@Override

@@ -57,14 +57,15 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 			tailBuffer = new ChainBuffer();
 		}
 		NOISE_ANIMATION = Animation.create(this.getRoarLength());
+		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
 	@Override
-	public float getMaxTurnDistancePerTick() {
+	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 5.0F;
+			return 1.0F;
 		}
-		return super.getMaxTurnDistancePerTick();
+		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
@@ -226,7 +227,7 @@ public class EntityPrehistoricFloraStegosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(10, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

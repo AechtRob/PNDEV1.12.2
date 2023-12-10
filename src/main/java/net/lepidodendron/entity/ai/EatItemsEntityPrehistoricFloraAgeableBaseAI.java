@@ -140,7 +140,7 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
             }
         }
         if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
-            if (item.isInWater() && !(((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, item.getPosition()))) {
+            if (item.isInWater() && !(((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, item.getPosition(), (EntityPrehistoricFloraLandWadingBase)this.entity))) {
                 return true;
             }
         }

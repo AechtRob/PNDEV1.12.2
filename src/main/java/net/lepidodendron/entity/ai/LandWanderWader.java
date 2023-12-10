@@ -3,12 +3,17 @@ package net.lepidodendron.entity.ai;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraftforge.fluids.BlockFluidBase;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 //public class FishWander extends EntityAIBase {
@@ -30,22 +35,10 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
         this.animation = animation;
         this.waterPreference = waterPreference;
         this.executionChance = executionchance;
-        this.maxDepth = 0;
-    }
-
-    public LandWanderWader(EntityPrehistoricFloraLandWadingBase EntityPrehistoricFloraLandWadingBase, Animation animation, double waterPreference, int executionchance, int maxDepth)
-    {
-        super(EntityPrehistoricFloraLandWadingBase);
-        setMutexBits(1);
-        this.EntityPrehistoricFloraLandWadingBase = EntityPrehistoricFloraLandWadingBase;
-        this.animation = animation;
-        this.waterPreference = waterPreference;
-        this.executionChance = executionchance;
-        this.maxDepth = maxDepth;
     }
 
     public boolean isTooDeep(BlockPos pos) {
-        return !entity.isBlockWadable(entity.world, pos);
+        return !entity.isBlockWadable(entity.world, pos, null);
     }
 
     @Override
@@ -61,18 +54,20 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public void startExecuting() {
+        this.maxDepth = this.EntityPrehistoricFloraLandWadingBase.wadeDepth();
         super.startExecuting();
     }
 
     @Override
     public void updateTask() {
+        this.maxDepth = this.EntityPrehistoricFloraLandWadingBase.wadeDepth();
         super.updateTask();
 
     }
 
     @Override
     public boolean shouldExecute() {
-
+        this.maxDepth = this.EntityPrehistoricFloraLandWadingBase.wadeDepth();
         if (entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
             return false;
         }
@@ -113,10 +108,13 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
                     this.EntityPrehistoricFloraLandWadingBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, 1.0);
                     this.mustUpdate = false;
+                    this.ticksAI = 600;
                     return true;
                 }
             }
             else {
+                this.mustUpdate = false;
+                this.ticksAI = 600;
                 return true;
             }
         }
@@ -126,6 +124,12 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public boolean shouldContinueExecuting() {
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.EntityPrehistoricFloraLandWadingBase.getNavigator().clearPath();
+            return false;
+        }
+        this.maxDepth = this.EntityPrehistoricFloraLandWadingBase.wadeDepth();
         return !this.entity.getNavigator().noPath();
     }
 
@@ -197,7 +201,7 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
         //Vec3d blockpos1;
         if (this.EntityPrehistoricFloraLandWadingBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
-                Vec3d vec3d = this.entity.getRNG().nextFloat() >= this.probability ? RandomPositionGenerator.getLandPos(this.entity, 10, 7) : RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
+                Vec3d vec3d = this.entity.getRNG().nextFloat() >= this.probability ? this.getLandPos(this.entity, 12, 8, true) : this.getLandPos(this.entity, 12, 8, false);
                 if (vec3d != null) {
                     if (!(vec3d.y < 1 || vec3d.y >= 254)) {
                         return vec3d;
@@ -209,6 +213,34 @@ public class LandWanderWader extends AnimationAINoAnimation<EntityPrehistoricFlo
             return this.EntityPrehistoricFloraLandWadingBase.getAttackTarget().getPositionVector();
         }
         return null;
+    }
+
+    @Nullable
+    public Vec3d getLandPos(EntityCreature entity, int xz, int y, boolean excludeWater) {
+        Vec3d vec3d = null;
+        for (int k = 0; k < 32; ++k) {
+            int l = entity.world.rand.nextInt(2 * xz + 1) - xz;
+            int i1 = entity.world.rand.nextInt(2 * y + 1) - y;
+            int j1 = entity.world.rand.nextInt(2 * xz + 1) - xz;
+            BlockPos pos = new BlockPos(entity.posX + l, entity.posY + i1, entity.posZ + j1);
+            if (!entity.world.isBlockLoaded(pos)) {
+                continue;
+            }
+            //pos = ChunkGenSpawner.getTopSolidBlock(pos, entity.world).up();
+            IBlockState state = entity.world.getBlockState(pos);
+            if (excludeWater && isTooDeep(pos) &&
+                    (state.getBlock() instanceof BlockFluidBase || state.getBlock() instanceof BlockLiquid
+                    || state.getMaterial() == Material.WATER)) {
+                continue;
+            }
+            if ((!excludeWater) && state.getMaterial() == Material.WATER && (!isTooDeep(pos))) {
+                return new Vec3d(entity.posX + l, entity.posY + i1, entity.posZ + j1);
+            }
+            if (entity.getNavigator().canEntityStandOnPos(pos)) {
+                vec3d = new Vec3d(entity.posX + l, entity.posY + i1, entity.posZ + j1);
+            }
+        }
+        return vec3d;
     }
 
 }

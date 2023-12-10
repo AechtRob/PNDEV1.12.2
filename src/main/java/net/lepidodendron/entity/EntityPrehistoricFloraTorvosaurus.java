@@ -59,14 +59,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 15.0F;
-		}
-		return super.getMaxTurnDistancePerTick();
+		setgetMaxTurnDistancePerTick(15.0F);
 	}
 
 	@Override
@@ -220,7 +213,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(10, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

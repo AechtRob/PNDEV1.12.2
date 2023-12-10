@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemGuano;
 import net.lepidodendron.item.ItemGuanoBall;
@@ -13,6 +14,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -24,8 +26,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -68,9 +73,8 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
 		}
 
-		protected BlockStateContainer createBlockState()
-		{
-			return new BlockStateContainer(this, new IProperty[] {NORTH, EAST, SOUTH, WEST, LAYERS});
+		protected BlockStateContainer createBlockState() {
+			return new BlockStateContainer(this, new IProperty[]{NORTH, EAST, SOUTH, WEST, LAYERS});
 		}
 
 		@Override
@@ -80,7 +84,7 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-			if (worldIn.getBlockState(pos.down()).getBlock() == BlockGuano.block) {
+			if (worldIn.getBlockState(pos.down()).getBlock() == BlockGuanoBlock.block || worldIn.getBlockState(pos.down()).getBlock() == BlockGuano.block) {
 				return super.getActualState(state, worldIn, pos).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false);
 			}
 			boolean north = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.NORTH);
@@ -112,17 +116,31 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected ItemStack getSilkTouchDrop(IBlockState state) {
+			if (state.getValue(LAYERS) == 8) {
+				return new ItemStack(BlockGuanoBlock.block, 1);
+			}
 			return new ItemStack(ItemGuano.block, state.getValue(LAYERS));
 		}
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			if (state.getValue(LAYERS) == 8) {
+				return new ItemStack(BlockGuanoBlock.block, 1);
+			}
 			return new ItemStack(ItemGuano.block, 1);
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-		{
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Has a bonemeal-effect: shift-click to place as normal");
+				super.addInformation(stack, player, tooltip, advanced);
+			}
 		}
 	}
 }

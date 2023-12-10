@@ -66,14 +66,15 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 			tailBuffer = new ChainBuffer();
 		}
 		NOISE_ANIMATION = Animation.create(35);
+		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
 	@Override
-	public float getMaxTurnDistancePerTick() {
+	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
 			return 0.5F;
 		}
-		return super.getMaxTurnDistancePerTick();
+		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
@@ -198,7 +199,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.395F;
+		float speedBase = 0.398F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -208,7 +209,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.4F;
+			speedBase = speedBase * 1.7F;
 		}
 		return speedBase;
 	}
@@ -242,10 +243,10 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
-		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0, this.wadeDepth()));
+		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(10, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

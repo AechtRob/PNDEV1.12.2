@@ -183,7 +183,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.95F;
+			speedBase = speedBase * 2.5F;
 		}
 		return speedBase;
 	}
