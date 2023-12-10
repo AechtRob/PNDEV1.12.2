@@ -117,7 +117,7 @@ public class BlockTicoaLog extends ElementsLepidodendronMod.ModElement {
 	        
 			Boolean leavesattached = false;
 
-			if ((block1 == BlockTicoaShoot.block) || (block1 == BlockTicoaShootPlaceable.block)) {
+			if ((block1 == BlockTicoaShoot.block) || (block1 == BlockTicoaShootPlaceable.block) || (block1 == BlockTicoaShootCone.block)) {
 				leavesattached = true;
 	    	}
 			
