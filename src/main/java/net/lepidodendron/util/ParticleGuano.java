@@ -25,7 +25,6 @@ public class ParticleGuano extends ParticleBreaking {
         {
             ParticleGuano particle = new ParticleGuano(worldIn, xCoordIn, yCoordIn, zCoordIn, xSpeedIn, ySpeedIn, zSpeedIn);
             particle.setRBGColorF(0.7539F, 0.7266F, 0.6875F);
-            //particle.setRBGColorF(1.0F, 0.0F, 0.0F);
             return particle;
         }
 
