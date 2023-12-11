@@ -228,20 +228,15 @@ public class ModelMixopterus extends AdvancedModelBase {
         this.carapace.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.carapace.rotateAngleY = (float) Math.toRadians(90);
-        this.carapace.offsetX = -0.06F;
-        this.carapace.offsetY = 0F;
-        this.carapace.offsetZ = -0.02F;
+    public void renderStaticWall(float f) {
+        this.carapace.rotateAngleX = (float) Math.toRadians(90);
+        //this.carapace.offsetX = -0.06F;
+        this.carapace.offsetY = -0.225F;
+        //this.carapace.offsetZ = -0.02F;
         this.carapace.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

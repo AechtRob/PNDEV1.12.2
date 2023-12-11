@@ -222,22 +222,18 @@ public class ModelMcnamaraspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Body1.render(f5 * 0.135F);
+        this.Body1.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Body1.rotateAngleY = (float) Math.toRadians(90);
         this.Body1.offsetX = -0.06F;
         this.Body1.offsetY = -0.06F;
         this.Body1.offsetZ = 0.07F;
         this.Body1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -248,7 +244,7 @@ public class ModelMcnamaraspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Body1.offsetY = 1.3F;
+        //this.Body1.offsetY = 1.3F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
@@ -272,7 +268,7 @@ public class ModelMcnamaraspis extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Body1.rotateAngleZ = (float) Math.toRadians(90);
-                this.Body1.offsetY = 1.45F;
+                this.Body1.offsetY = 0.15F;
                 this.bob(Body1, -speed, 5F, false, f2, 1);
             }
         }

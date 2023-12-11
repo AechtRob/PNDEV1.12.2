@@ -346,22 +346,18 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body4.render(f5 * 1.375F);
+        this.body4.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.neck.offsetY = -0.001F;
         this.upperjaw.rotateAngleX = (float) Math.toRadians(0);
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
         this.head.rotateAngleX = (float) Math.toRadians(-15);
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -372,7 +368,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body4.offsetY = -0.50F; //72
+        //this.body4.offsetY = -0.50F; //72
         //this.body4.offsetZ = -1F; //72
 
         EntityPrehistoricFloraMetoposaurus Metoposaurus = (EntityPrehistoricFloraMetoposaurus) e;

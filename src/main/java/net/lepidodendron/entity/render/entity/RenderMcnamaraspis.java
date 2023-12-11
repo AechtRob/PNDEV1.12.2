@@ -15,6 +15,8 @@ public class RenderMcnamaraspis extends RenderLiving<EntityPrehistoricFloraMcnam
         super(mgr, new ModelMcnamaraspis(), 0.0f);
     }
 
+    public static float getScaler() {return 0.135F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMcnamaraspis entity) {
         return RenderMcnamaraspis.TEXTURE;
@@ -27,10 +29,10 @@ public class RenderMcnamaraspis extends RenderLiving<EntityPrehistoricFloraMcnam
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMcnamaraspis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
-        //this.shadowSize = entity.width * scale * 0.3f;
+        this.shadowSize = entity.width * scale * 0.0F;
     }
 
 }

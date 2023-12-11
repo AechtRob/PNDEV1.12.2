@@ -31,7 +31,7 @@ public class RenderMoschops extends RenderLiving<EntityPrehistoricFloraMoschops>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMoschops entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.50F;
     }
