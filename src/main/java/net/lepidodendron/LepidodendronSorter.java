@@ -4199,5 +4199,7 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 4195;
     public static final int zosterophyllum_spore = 4196;
     public static final int advancement_placeholder = 4197;
+    public static final int ornitholestes_raw = 4198;
+    public static final int egg_ornitholestes = 4199;
 
 }

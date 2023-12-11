@@ -2080,6 +2080,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_TIANYULONG = 835;
 	public static final ResourceLocation TIANYULONG_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tianyulong"));
 	public static final ResourceLocation TIANYULONG_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tianyulong_young"));
+	public static final int ENTITY_ORNITHOLESTES = 836;
+	public static final ResourceLocation ORNITHOLESTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ornitholestes"));
+	public static final ResourceLocation ORNITHOLESTES_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ornitholestes_young"));
 
 
 

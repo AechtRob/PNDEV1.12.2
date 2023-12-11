@@ -480,4 +480,6 @@ public class RenderDisplays {
     public static final ModelHeterodontosaurus modelHeterodontosaurus = new ModelHeterodontosaurus();
     public static final ModelTianyulong modelTianyulong = new ModelTianyulong();
 
+    public static final ModelOrnitholestes modelOrnitholestes = new ModelOrnitholestes();
+
 }
