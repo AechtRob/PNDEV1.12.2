@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraOrodus extends EntityPrehistoricFloraAgeableF
 
 	public EntityPrehistoricFloraOrodus(World world) {
 		super(world);
-		setSize(0.99F, 0.89F);
+		setSize(0.86F, 0.79F);
 		minWidth = 0.1F;
-		maxWidth = 0.99F;
-		maxHeight = 0.89F;
+		maxWidth = 0.86F;
+		maxHeight = 0.79F;
 		maxHealthAgeable = 24.0D;
 	}
 

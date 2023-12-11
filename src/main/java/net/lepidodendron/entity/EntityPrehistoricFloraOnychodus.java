@@ -44,10 +44,10 @@ public class EntityPrehistoricFloraOnychodus extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraOnychodus(World world) {
 		super(world);
-		setSize(0.92F, 0.9F);
+		setSize(0.92F, 0.795F);
 		minWidth = 0.1F;
 		maxWidth = 0.92F;
-		maxHeight = 0.9F;
+		maxHeight = 0.795F;
 		maxHealthAgeable = 28.0D;
 	}
 

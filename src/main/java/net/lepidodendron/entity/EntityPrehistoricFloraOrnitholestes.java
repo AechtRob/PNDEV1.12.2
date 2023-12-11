@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraOrnitholestes extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraOrnitholestes(World world) {
 		super(world);
-		setSize(0.8F, 0.9F);
+		setSize(0.5F, 0.9F);
 		minWidth = 0.20F;
-		maxWidth = 0.8F;
+		maxWidth = 0.5F;
 		maxHeight = 0.9F;
 		maxHealthAgeable = 25.0D;
 		SCRATCH_ANIMATION = Animation.create(60);

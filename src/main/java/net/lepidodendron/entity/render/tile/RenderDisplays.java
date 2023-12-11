@@ -350,6 +350,11 @@ public class RenderDisplays {
     public static final ModelYunguisaurus modelYunguisaurus = new ModelYunguisaurus();
     public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
+    public static final ModelAdeopapposaurus modelAdeopapposaurus = new ModelAdeopapposaurus();
+    public static final ModelDicraeosaurus modelDicraeosaurus = new ModelDicraeosaurus();
+    public static final ModelHeterodontosaurus modelHeterodontosaurus = new ModelHeterodontosaurus();
+    public static final ModelTianyulong modelTianyulong = new ModelTianyulong();
+    public static final ModelOrnitholestes modelOrnitholestes = new ModelOrnitholestes();
 
 
     //When they are fixed they will turn purple:
@@ -475,11 +480,5 @@ public class RenderDisplays {
     public static final ModelVivaxosaurus modelVivaxosaurus = new ModelVivaxosaurus();
     public static final ModelWeigeltisaurid modelWeigeltisaurid = new ModelWeigeltisaurid();
     public static final ModelXenacanthus modelXenacanthus = new ModelXenacanthus();
-    public static final ModelAdeopapposaurus modelAdeopapposaurus = new ModelAdeopapposaurus();
-    public static final ModelDicraeosaurus modelDicraeosaurus = new ModelDicraeosaurus();
-    public static final ModelHeterodontosaurus modelHeterodontosaurus = new ModelHeterodontosaurus();
-    public static final ModelTianyulong modelTianyulong = new ModelTianyulong();
-
-    public static final ModelOrnitholestes modelOrnitholestes = new ModelOrnitholestes();
 
 }

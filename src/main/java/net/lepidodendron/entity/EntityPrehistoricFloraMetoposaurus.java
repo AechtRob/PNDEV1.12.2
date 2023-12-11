@@ -53,10 +53,10 @@ public class EntityPrehistoricFloraMetoposaurus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraMetoposaurus(World world) {
 		super(world);
-		setSize(1.22F, 0.98F);
+		setSize(1.22F, 0.72F);
 		minWidth = 0.1F;
 		maxWidth = 1.22F;
-		maxHeight = 0.98F;
+		maxHeight = 0.72F;
 		maxHealthAgeable = 24.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
