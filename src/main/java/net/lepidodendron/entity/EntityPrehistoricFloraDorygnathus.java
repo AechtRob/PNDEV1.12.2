@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getEatLength() {
+		return 20;
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		//No need for sideways transitions, but added ambient animations
 		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION, ALERT_ANIMATION, PREEN_ANIMATION};
@@ -246,12 +251,12 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getRoarLength() {
-		return 12;
+		return 10;
 	}
 
 	@Override
 	public int getAttackLength() {
-		return 12;
+		return 8;
 	}
 
 	@Override
