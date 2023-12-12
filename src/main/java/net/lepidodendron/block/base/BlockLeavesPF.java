@@ -15,6 +15,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -51,7 +52,10 @@ public abstract class BlockLeavesPF extends BlockLeaves implements IAdvancementG
 		if (!hasNonFancyOption()) {
 			return false;
 		}
-		return !Minecraft.getMinecraft().gameSettings.fancyGraphics;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			return !Minecraft.getMinecraft().gameSettings.fancyGraphics;
+		}
+		return false;
 	}
 
 	@Override
