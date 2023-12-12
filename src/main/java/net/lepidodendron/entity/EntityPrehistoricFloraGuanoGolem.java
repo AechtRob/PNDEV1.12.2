@@ -10,14 +10,12 @@ import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityGolem;
-import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -31,15 +29,10 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 		this.setSize(0.95F, 2.2F);
 	}
 
-	public static void registerFixesSnowman(DataFixer fixer)
-	{
-		EntityLiving.registerFixesMob(fixer, EntitySnowman.class);
-	}
-
 	protected void initEntityAI()
 	{
-		this.tasks.addTask(1, new EntityAIAttackRanged(this, 0.7D, 20, 10.0F));
-		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.5D, 1.0000001E-5F));
+		this.tasks.addTask(1, new EntityAIAttackRanged(this, 1.0D, 20, 10.0F));
+		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.6D, 1.0000001E-5F));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityLiving.class, 10, true, false, IMob.MOB_SELECTOR));
@@ -49,8 +42,8 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(18.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.055D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.60D);
 	}
 
 	public void onLivingUpdate()
@@ -59,6 +52,17 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 
 		if (!this.world.isRemote)
 		{
+			if (this.getRevengeTarget() != null) {
+				if (this.getRevengeTarget() instanceof EntityPrehistoricFloraGuanoGolem || this.getRevengeTarget().isDead) {
+					this.setRevengeTarget(null);
+				}
+			}
+			if (this.getAttackTarget() != null) {
+				if (this.getAttackTarget() instanceof EntityPrehistoricFloraGuanoGolem || this.getAttackTarget().isDead) {
+					this.setAttackTarget(null);
+				}
+			}
+
 			int i = MathHelper.floor(this.posX);
 			int j = MathHelper.floor(this.posY);
 			int k = MathHelper.floor(this.posZ);
