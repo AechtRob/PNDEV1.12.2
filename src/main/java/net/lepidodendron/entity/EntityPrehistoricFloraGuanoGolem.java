@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	protected void initEntityAI()
 	{
 		this.tasks.addTask(1, new EntityAIAttackRanged(this, 1.0D, 20, 10.0F));
-		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.6D, 1.0000001E-5F));
+		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.6D));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityLiving.class, 10, true, false, IMob.MOB_SELECTOR));
