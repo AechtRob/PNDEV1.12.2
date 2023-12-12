@@ -39,6 +39,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
@@ -61,6 +62,19 @@ import java.util.List;
 import java.util.Random;
 
 public class LepidodendronEventSubscribers {
+
+	@SubscribeEvent //Give the Palaeopedia on first join:
+	public void killedEntity(LivingDropsEvent event) {
+		if (event.getEntity().getClass() == EntityBat.class) {
+			int chancer = 30;
+			if (event.getLootingLevel() > 0) {
+				chancer = (int)Math.ceil(30.0D / ((double)event.getLootingLevel() + 1));
+			}
+			if (event.getEntity().getEntityWorld().rand.nextInt(chancer) == 0) {
+				event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemBatHeadItem.block, 1)));
+			}
+		}
+	}
 
   	@SubscribeEvent //Give the Palaeopedia on first join:
 	public void playerJoined(EntityJoinWorldEvent event) {

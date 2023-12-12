@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
 
     protected void onImpact(RayTraceResult result)
     {
-        if (result.entityHit != null)
+        if (result.entityHit != null && !(result.entityHit instanceof EntityPrehistoricFloraGuanoGolem))
         {
             if (this.isFromMob && (!(result.entityHit instanceof EntityPlayer))) {
                 return;
@@ -129,11 +129,12 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
                     added = true;
                 }
                 else if (i >= 8 && (this.isFromMob)) {
-                    if (!this.world.isRemote) {
-                        EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemGuanoBall.block, (int) (1)));
-                        entityToSpawn.setPickupDelay(10);
-                        world.spawnEntity(entityToSpawn);
-                    }
+                    //Do nothing, so as to avoid buildup, and do not keep adding items to the world because of lag.....
+//                    if (!this.world.isRemote) {
+//                        EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemGuanoBall.block, (int) (1)));
+//                        entityToSpawn.setPickupDelay(10);
+//                        world.spawnEntity(entityToSpawn);
+//                    }
                     added = true;
                 }
             }
