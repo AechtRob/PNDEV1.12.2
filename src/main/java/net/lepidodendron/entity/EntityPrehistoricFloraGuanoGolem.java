@@ -38,8 +38,8 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 
 	protected void initEntityAI()
 	{
-		this.tasks.addTask(1, new EntityAIAttackRanged(this, 1.25D, 20, 10.0F));
-		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D, 1.0000001E-5F));
+		this.tasks.addTask(1, new EntityAIAttackRanged(this, 0.7D, 20, 10.0F));
+		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.5D, 1.0000001E-5F));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityLiving.class, 10, true, false, IMob.MOB_SELECTOR));
@@ -48,8 +48,9 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(12.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(18.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.055D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
 
 	public void onLivingUpdate()
@@ -67,26 +68,21 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 				this.attackEntityFrom(DamageSource.DROWN, 1.0F);
 			}
 
-			if (this.world.getBiome(new BlockPos(i, 0, k)).getTemperature(new BlockPos(i, j, k)) > 1.0F)
-			{
-				this.attackEntityFrom(DamageSource.ON_FIRE, 1.0F);
-			}
-
 			if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this))
 			{
 				return;
 			}
 
-			for (int l = 0; l < 4; ++l)
-			{
-				i = MathHelper.floor(this.posX + (double)((float)(l % 2 * 2 - 1) * 0.25F));
-				j = MathHelper.floor(this.posY);
-				k = MathHelper.floor(this.posZ + (double)((float)(l / 2 % 2 * 2 - 1) * 0.25F));
-				BlockPos blockpos = new BlockPos(i, j, k);
+			if (world.getGameRules().getBoolean("mobGriefing")) {
+				for (int l = 0; l < 4; ++l) {
+					i = MathHelper.floor(this.posX + (double) ((float) (l % 2 * 2 - 1) * 0.25F));
+					j = MathHelper.floor(this.posY);
+					k = MathHelper.floor(this.posZ + (double) ((float) (l / 2 % 2 * 2 - 1) * 0.25F));
+					BlockPos blockpos = new BlockPos(i, j, k);
 
-				if (this.world.getBlockState(blockpos).getMaterial() == Material.AIR && this.world.getBiome(blockpos).getTemperature(blockpos) < 0.8F && BlockGuano.block.canPlaceBlockAt(this.world, blockpos))
-				{
-					this.world.setBlockState(blockpos, BlockGuano.block.getDefaultState());
+					if (this.world.getBlockState(blockpos).getMaterial() == Material.AIR && BlockGuano.block.canPlaceBlockAt(this.world, blockpos)) {
+						this.world.setBlockState(blockpos, BlockGuano.block.getDefaultState());
+					}
 				}
 			}
 		}
