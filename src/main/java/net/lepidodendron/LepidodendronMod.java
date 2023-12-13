@@ -1,8 +1,10 @@
 package net.lepidodendron;
 
+import net.lepidodendron.block.BlockBatHead;
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
+import net.lepidodendron.item.ItemBatHeadItem;
 import net.lepidodendron.item.crafting.RecipeCookedMeatsandSeeds;
 import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
@@ -12,14 +14,24 @@ import net.lepidodendron.world.lootconditions.EntityInBiomes;
 import net.lepidodendron.world.lootconditions.EntityInDimensionID;
 import net.lepidodendron.world.lootconditions.EntityInDimensionName;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDispenser;
 import net.minecraft.block.SoundType;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Bootstrap;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntitySkull;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.datafix.FixTypes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.conditions.LootConditionManager;
@@ -2083,6 +2095,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_ORNITHOLESTES = 836;
 	public static final ResourceLocation ORNITHOLESTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ornitholestes"));
 	public static final ResourceLocation ORNITHOLESTES_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ornitholestes_young"));
+	public static final int ENTITY_GUANO_GOLEM = 837;
+	public static final ResourceLocation GUANO_GOLEM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/guano_golem"));
 
 
 
@@ -2133,6 +2147,41 @@ public class LepidodendronMod {
 
 		RecipeOresAndBlocks.registerSmelting();
 		RecipeCookedMeatsandSeeds.registerSmelting();
+
+		BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(ItemBatHeadItem.block, new Bootstrap.BehaviorDispenseOptional()
+		{
+			protected ItemStack dispenseStack(IBlockSource source, ItemStack stack)
+			{
+				World world = source.getWorld();
+				EnumFacing enumfacing = (EnumFacing)source.getBlockState().getValue(BlockDispenser.FACING);
+				BlockPos blockpos = source.getBlockPos().offset(enumfacing);
+				BlockBatHead.BlockCustom bathead = (BlockBatHead.BlockCustom)BlockBatHead.block;
+				this.successful = true;
+
+				if (world.isAirBlock(blockpos) && bathead.canDispenserPlace(world, blockpos))
+				{
+					if (!world.isRemote)
+					{
+						world.setBlockState(blockpos, BlockBatHead.block.getDefaultState().withProperty(BlockBatHead.FACING, EnumFacing.UP), 3);
+						TileEntity tileentity = world.getTileEntity(blockpos);
+
+						if (tileentity instanceof BlockBatHead.TileEntityCustom)
+						{
+							((TileEntitySkull)tileentity).setSkullRotation(enumfacing.getOpposite().getHorizontalIndex() * 4);
+							bathead.trySpawnGolem(world, blockpos);
+						}
+
+						stack.shrink(1);
+					}
+				}
+				else if (ItemArmor.dispenseArmor(source, stack).isEmpty())
+				{
+					this.successful = false;
+				}
+
+				return stack;
+			}
+		});
 	}
 
 	@Mod.EventHandler

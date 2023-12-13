@@ -317,6 +317,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_griphognathus", EntityPrehistoricFloraGriphognathus.class, LepidodendronMod.ENTITY_GRIPHOGNATHUS, 48,-11581645,-4806240);
         registerEntity("prehistoric_flora_groenlandaspis", EntityPrehistoricFloraGroenlandaspis.class, LepidodendronMod.ENTITY_GROENLANDASPIS, 48,-4566515,-3695488);
         registerEntity("prehistoric_flora_guanlong", EntityPrehistoricFloraGuanlong.class, LepidodendronMod.ENTITY_GUANLONG, 84,-13755111 ,-4310338);
+        registerEntity("prehistoric_flora_guano_golem", EntityPrehistoricFloraGuanoGolem.class, LepidodendronMod.ENTITY_GUANO_GOLEM, 64,-1844266,-7370880);
         registerEntity("prehistoric_flora_guiyu", EntityPrehistoricFloraGuiyu.class, LepidodendronMod.ENTITY_GUIYU, 64,-6249049,-1);
         registerEntity("prehistoric_flora_gymnotrachelus", EntityPrehistoricFloraGymnotrachelus.class, LepidodendronMod.ENTITY_GYMNOTRACHELUS, 64,-7630952,-4407074);
         registerEntity("prehistoric_flora_gyracanthides", EntityPrehistoricFloraGyracanthides.class, LepidodendronMod.ENTITY_GYRACANTHIDES, 64,-9019075,-6062013);
