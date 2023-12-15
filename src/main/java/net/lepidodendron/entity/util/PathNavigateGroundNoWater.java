@@ -11,6 +11,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
+
 public class PathNavigateGroundNoWater extends PathNavigate
 {
     private boolean shouldAvoidSun;
@@ -37,6 +39,7 @@ public class PathNavigateGroundNoWater extends PathNavigate
         return new Vec3d(this.entity.posX, (double)this.getPathablePosY(), this.entity.posZ);
     }
 
+    @Nullable
     public Path getPathToPos(BlockPos pos)
     {
         if (this.world.getBlockState(pos).getMaterial() == Material.AIR)
@@ -73,7 +76,12 @@ public class PathNavigateGroundNoWater extends PathNavigate
             {
                 ;
             }
-
+            if (blockpos1.getY() > 254) {
+                return null;
+            }
+            if (!world.isBlockLoaded(blockpos1)) {
+                return null;
+            }
             return super.getPathToPos(blockpos1);
         }
     }
