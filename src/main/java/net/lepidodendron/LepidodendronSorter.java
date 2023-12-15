@@ -4203,4 +4203,10 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 4199;
     public static final int advancement_placeholder = 4200;
 
+    public static final int diplodocus_raw = 4201;
+    public static final int brachiosaurus_raw = 4202;
+
+    public static final int eggs_diplodocus = 4203;
+    public static final int eggs_brachiosaurus = 4204;
+
 }
