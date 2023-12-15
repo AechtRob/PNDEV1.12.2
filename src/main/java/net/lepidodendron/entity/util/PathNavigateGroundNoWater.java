@@ -76,7 +76,7 @@ public class PathNavigateGroundNoWater extends PathNavigate
             {
                 ;
             }
-            if (blockpos1.getY() > 254) {
+            if (blockpos1.getY() >= this.world.getHeight()) {
                 return null;
             }
             if (!world.isBlockLoaded(blockpos1)) {
