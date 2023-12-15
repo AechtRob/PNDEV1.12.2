@@ -5011,6 +5011,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiplodocus.class, new IRenderFactory<EntityPrehistoricFloraDiplodocus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDiplodocus> createRenderFor(RenderManager manager) {
+                return new RenderDiplodocus(manager);
+            }
+        });
+
 
         
         

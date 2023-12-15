@@ -58,17 +58,17 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraDiplodocus(World world) {
 		super(world);
-		setSize(3.0F, 6F);
+		setSize(3.0F, 4.5F);
 		stepHeight = 2;
 		minWidth = 0.8F;
 		maxWidth = 3.0F;
-		maxHeight = 6F;
+		maxHeight = 4.5F;
 		maxHealthAgeable = 200.0D;
 		TAIL_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		NOISE_ANIMATION = Animation.create(40);
+		NOISE_ANIMATION = Animation.create(120);
 		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
@@ -98,22 +98,22 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getWalkCycleLength() {
-		return 40;
+		return 50;
 	}
 
 	@Override
 	public int getFootstepOffset() {
-		return 6;
+		return 10;
 	}
 
 	@Override
 	public int tetrapodWalkFootstepOffset() {
-		return 15;
+		return 60;
 	}
 
 	@Override
 	public int getRunCycleLength() {
-		return 35;
+		return 30;
 	}
 
 	@Override
@@ -128,7 +128,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getGrazeLength() {
-		return 80;
+		return 175;
 	}
 
 	@Override
@@ -180,7 +180,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getRoarLength() {
-		return 60;
+		return 120;
 	}
 
 	@Override
@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.4F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -276,7 +276,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getDrinkLength() {
-		return 160;
+		return 275;
 	}
 
 	@Override
@@ -377,59 +377,14 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
+		int x = 8;
+		int y = 6;
+		for (int xx = 0; xx < x; xx++) {
+			for (int yy = 0; yy < y; yy++) {
+				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
+					return false;
+				}
+			}
 		}
 		return true;
 	}
