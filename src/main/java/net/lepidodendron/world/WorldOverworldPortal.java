@@ -6,12 +6,14 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.ParticlePNPortal;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockPattern;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -741,6 +743,31 @@ public class WorldOverworldPortal extends ElementsLepidodendronMod.ModElement {
 						(net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 								.getObject(new ResourceLocation(("block.portal.ambient"))),
 						SoundCategory.BLOCKS, 0.5f, random.nextFloat() * 0.4F + 0.8F, false);
+
+
+			for (int i = 0; i < 4; ++i)
+			{
+				double d0 = (double)((float)pos.getX() + random.nextFloat());
+				double d1 = (double)((float)pos.getY() + random.nextFloat());
+				double d2 = (double)((float)pos.getZ() + random.nextFloat());
+				double d3 = ((double)random.nextFloat() - 0.5D) * 0.5D;
+				double d4 = ((double)random.nextFloat() - 0.5D) * 0.5D;
+				double d5 = ((double)random.nextFloat() - 0.5D) * 0.5D;
+				int j = random.nextInt(2) * 2 - 1;
+
+				if (world.getBlockState(pos.west()).getBlock() != this && world.getBlockState(pos.east()).getBlock() != this)
+				{
+					d0 = (double)pos.getX() + 0.5D + 0.25D * (double)j;
+					d3 = (double)(random.nextFloat() * 2.0F * (float)j);
+				}
+				else
+				{
+					d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
+					d5 = (double)(random.nextFloat() * 2.0F * (float)j);
+				}
+
+				Minecraft.getMinecraft().effectRenderer.addEffect(ParticlePNPortal.PortalParticleFactory.createParticle(world, d0, d1, d2, d3, d4, d5, 0.9258F, 0.9023F, 0.8164F));
+			}
 		}
 
 		public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {

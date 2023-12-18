@@ -15,6 +15,8 @@ public class RenderMelosaurus extends RenderLiving<EntityPrehistoricFloraMelosau
         super(mgr, new ModelMelosaurus(), 0.3f);
     }
 
+    public static float getScaler() {return 0.63F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMelosaurus entity) {
         return RenderMelosaurus.TEXTURE;
@@ -27,7 +29,8 @@ public class RenderMelosaurus extends RenderLiving<EntityPrehistoricFloraMelosau
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMelosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

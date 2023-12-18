@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 2.0F;
+			return 8.0F;
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}

@@ -15,6 +15,8 @@ public class RenderOrnithoprion extends RenderLiving<EntityPrehistoricFloraOrnit
         super(mgr, new ModelOrnithoprion(), 0.0f);
     }
 
+    public static float getScaler() {return 0.342F * 0.5F * 1.2F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOrnithoprion entity) {
         return RenderOrnithoprion.TEXTURE;
@@ -27,7 +29,8 @@ public class RenderOrnithoprion extends RenderLiving<EntityPrehistoricFloraOrnit
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOrnithoprion entity, float f) {
-        float scale = entity.getAgeScale() * 0.5F * 1.2F;
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

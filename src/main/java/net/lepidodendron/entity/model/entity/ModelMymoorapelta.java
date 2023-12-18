@@ -641,17 +641,42 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
         this.leftArm.setScale(0,0,0);
         this.rightArm.scaleChildren = true;
         this.leftArm.scaleChildren = true;
-        this.chest.offsetY = -0.05F;
+        this.chest.offsetY = 0.0F;
         this.chest.offsetX = 0.0F;
-        this.chest.offsetZ = 0.15F;
+        this.chest.offsetZ = 0.05F;
         this.chest.render(0.01F);
         this.rightArm.setScale(1,1,1);
         this.leftArm.setScale(1,1,1);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-        resetToDefaultPose();
+        this.setRotateAngle(hips, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(body, 0.0F, -0.05F, -0.025F);
+        this.setRotateAngle(chest, 0.0F, -0.1F, -0.05F);
+        this.setRotateAngle(neck1, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.3F, 0.3F, 0.0F);
+        this.setRotateAngle(leftArm, 0.5F, 0.3F, -0.2F);
+        this.setRotateAngle(leftArm2, -1.2F, 0.1F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm4, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.3F, -0.2F, 0.3F);
+        this.setRotateAngle(rightArm2, -1.0F, -0.1F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.7F, -0.05F, -0.1F);
+        this.setRotateAngle(rightArm4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.2F, -0.3F, -0.1F);
+        this.setRotateAngle(leftLeg2, 0.3F, 0.0F, 0.15F);
+        this.setRotateAngle(rightLeg, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(rightLeg2, 0.55F, 0.1F, -0.3F);
+        this.hips.offsetZ = -0.05F;
+        this.hips.offsetY = -0.12F;
+        this.hips.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

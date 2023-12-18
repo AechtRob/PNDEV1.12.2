@@ -15,6 +15,8 @@ public class RenderOrodus extends RenderLiving<EntityPrehistoricFloraOrodus> {
         super(mgr, new ModelOrodus(), 0.0f);
     }
 
+    public static float getScaler() {return 0.475F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOrodus entity) {
         return RenderOrodus.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderOrodus extends RenderLiving<EntityPrehistoricFloraOrodus> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOrodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

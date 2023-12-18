@@ -15,6 +15,8 @@ public class RenderMegactenopetalus extends RenderLiving<EntityPrehistoricFloraM
         super(mgr, new ModelMegactenopetalus(), 0.0f);
     }
 
+    public static float getScaler() {return 0.825F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMegactenopetalus entity) {
         return RenderMegactenopetalus.TEXTURE;
@@ -27,7 +29,8 @@ public class RenderMegactenopetalus extends RenderLiving<EntityPrehistoricFloraM
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMegactenopetalus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

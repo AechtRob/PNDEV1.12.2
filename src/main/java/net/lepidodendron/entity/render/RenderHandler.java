@@ -2217,12 +2217,6 @@ public class RenderHandler {
                 return new RenderMeganeuraNymph(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMeteor.class, new IRenderFactory<EntityPrehistoricFloraMeteor>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraMeteor> createRenderFor(RenderManager manager) {
-                return new RenderMeteor(manager);
-            }
-        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLochmanolenellus.class, new IRenderFactory<EntityPrehistoricFloraLochmanolenellus>() {
         @Override
         public Render<? super EntityPrehistoricFloraLochmanolenellus> createRenderFor(RenderManager manager) {
@@ -5009,9 +5003,25 @@ public class RenderHandler {
                 return new RenderTianyulong(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOrnitholestes.class, new IRenderFactory<EntityPrehistoricFloraOrnitholestes>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOrnitholestes> createRenderFor(RenderManager manager) {
+                return new RenderOrnitholestes(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiplodocus.class, new IRenderFactory<EntityPrehistoricFloraDiplodocus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDiplodocus> createRenderFor(RenderManager manager) {
+                return new RenderDiplodocus(manager);
+            }
+        });
+
+
         
         
-        
+        //Specials:
         RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {
             @Override
             public Render<? super EntityPNBoat> createRenderFor(RenderManager manager) {
@@ -5034,6 +5044,18 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraGuanoBall> createRenderFor(RenderManager manager) {
                 return new RenderSnowball(manager, ItemGuanoBall.block, Minecraft.getMinecraft().getRenderItem());
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMeteor.class, new IRenderFactory<EntityPrehistoricFloraMeteor>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMeteor> createRenderFor(RenderManager manager) {
+                return new RenderMeteor(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGuanoGolem.class, new IRenderFactory<EntityPrehistoricFloraGuanoGolem>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGuanoGolem> createRenderFor(RenderManager manager) {
+                return new RenderGuanoGolem(manager);
             }
         });
 
@@ -5190,6 +5212,7 @@ public class RenderHandler {
 
         //Misc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRibCage.TileEntityCustom.class, new RenderRibCage());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockBatHead.TileEntityCustom.class, new RenderBatHead());
 
 
     }

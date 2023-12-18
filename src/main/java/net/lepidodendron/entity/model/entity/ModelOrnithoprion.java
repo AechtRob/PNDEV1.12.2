@@ -165,21 +165,17 @@ public class ModelOrnithoprion extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.ornithoprion.render(f5 * 0.342F);
+        this.ornithoprion.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.ornithoprion.rotateAngleY = (float) Math.toRadians(90);
         this.ornithoprion.offsetX = -0.09F;
         this.ornithoprion.offsetY = -0.2F;
         this.ornithoprion.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -191,7 +187,7 @@ public class ModelOrnithoprion extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.ornithoprion.offsetY = 1.0F;
+        //this.ornithoprion.offsetY = 1.0F;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
 
@@ -228,7 +224,7 @@ public class ModelOrnithoprion extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.ornithoprion.rotateAngleZ = (float) Math.toRadians(90);
-            this.ornithoprion.offsetY = 0.95F;
+            this.ornithoprion.offsetY = -0.05F;
             this.bob(ornithoprion, -speed * 3.9F, 1.2F, false, f2, 1);
             this.chainWave(fishTail, speed * 2.6F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 2.6F, 0.28F, -0.55, f2, 0.4F * still);

@@ -8364,3 +8364,6 @@ item.pf_eggs_elaphrosaurus.name=Elaphrosaurus Eggs
 tile.pf_guano.name=Guano
 tile.pf_guano_block.name=Guano
 item.pf_guano_item.name=Guano
+entity.prehistoric_flora_guano_golem.name=Guano Demon
+item.pf_bat_head_item.name=Bat Head
+tile.pf_bat_head.name=Bat Head
