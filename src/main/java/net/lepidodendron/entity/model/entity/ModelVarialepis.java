@@ -213,19 +213,58 @@ public class ModelVarialepis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.varialepis.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.varialepis.rotateAngleY = (float) Math.toRadians(90);
-        this.varialepis.offsetX = 0.01F;
-        this.varialepis.offsetY = -0.22F;
-        this.varialepis.offsetZ = 0F;
+
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(varialepis, 0.0F, 1.6F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.varialepis.offsetZ = -0.32F;
+        this.varialepis.offsetX = -0.05F;
+        this.varialepis.offsetY = -0.2F;
         this.varialepis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, 0.1F, 0.15F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.varialepis.offsetY = -0.1F;
+        this.varialepis.offsetX = -0.0F;
+        this.varialepis.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.varialepis.offsetY = -0.50F;
+        this.varialepis.offsetX = 0.0F;
+        this.varialepis.rotateAngleY = (float)Math.toRadians(130);
+        this.varialepis.rotateAngleX = (float)Math.toRadians(9);
+        this.varialepis.rotateAngleZ = (float)Math.toRadians(-2);
+        this.varialepis.scaleChildren = true;
+        float scaler = 1.1F;
+        this.varialepis.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.1F, 0.1F, 0.15F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        //End of pose, now render the model:
+        this.varialepis.render(f);
+        //Reset rotations, positions and sizing:
+        this.varialepis.setScale(1.0F, 1.0F, 1.0F);
+        this.varialepis.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

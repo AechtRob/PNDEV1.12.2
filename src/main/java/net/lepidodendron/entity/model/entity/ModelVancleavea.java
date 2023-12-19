@@ -363,21 +363,42 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.neck1.offsetZ = -0.3F;
-        this.head.rotateAngleX = (float)Math.toRadians(2.5);
-        this.neck1.rotateAngleX = (float)Math.toRadians(0);
-        this.neck2.rotateAngleX = (float)Math.toRadians(20);
-        this.lowerjaw.rotateAngleX = (float)Math.toRadians(25);
-        this.neck1.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(neck1, -0.2F, -0.4F, 0.0F);
+        this.setRotateAngle(neck2, 0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.3F, 0.4F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.neck1.offsetY = 0.0F;
+        this.neck1.offsetX = 0.0F;
+        this.neck1.offsetZ = -0.0F;
+        this.neck1.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(neck1, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(forelegL, 0.5F, 0.0F, -0.3F);
+        this.setRotateAngle(forelegL3, 0.0F, 0.0F, 0.9F);
+        this.setRotateAngle(forelegR, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(forelegR3, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(hindlegL, 0.0F, 0.0F, -0.6F);
+        this.setRotateAngle(hindlegL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindlegL3, 0.0F, 0.0F, 0.6F);
+        this.setRotateAngle(hindlegR, 0.5F, 0.0F, 0.6F);
+        this.setRotateAngle(hindlegR2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindlegR3, 0.5F, -0.3F, -0.6F);
+        this.body.offsetY = -0.095F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -357,6 +357,7 @@ public class RenderDisplays {
     public static final ModelOrnitholestes modelOrnitholestes = new ModelOrnitholestes();
     public static final ModelEffigia modelEffigia = new ModelEffigia();
     public static final ModelMymoorapelta modelMymoorapelta = new ModelMymoorapelta();
+    public static final ModelElaphrosaurus modelElaphrosaurus = new ModelElaphrosaurus();
 
 
     //When they are fixed they will turn purple:
