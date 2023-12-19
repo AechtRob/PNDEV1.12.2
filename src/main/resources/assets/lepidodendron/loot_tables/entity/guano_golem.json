@@ -1,6 +1,7 @@
 {
     "pools": [
         {
+            "name": "guano_golem",
             "rolls": 1,
             "entries": [
                 {

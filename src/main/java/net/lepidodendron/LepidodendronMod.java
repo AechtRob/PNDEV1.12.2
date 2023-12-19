@@ -2098,6 +2098,14 @@ public class LepidodendronMod {
 	public static final int ENTITY_GUANO_GOLEM = 837;
 	public static final ResourceLocation GUANO_GOLEM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/guano_golem"));
 
+	public static final int ENTITY_DIPLODOCUS = 838;
+	public static final ResourceLocation DIPLODOCUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diplodocus"));
+	public static final ResourceLocation DIPLODOCUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diplodocus_young"));
+
+	public static final int ENTITY_BRACHIOSAURUS = 839;
+	public static final ResourceLocation BRACHIOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/brachiosaurus"));
+	public static final ResourceLocation BRACHIOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/brachiosaurus_young"));
+
 
 
 	@Mod.EventHandler

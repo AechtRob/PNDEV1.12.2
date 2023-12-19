@@ -87,10 +87,23 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 			if (worldIn.getBlockState(pos.down()).getBlock() == BlockGuanoBlock.block || worldIn.getBlockState(pos.down()).getBlock() == BlockGuano.block) {
 				return super.getActualState(state, worldIn, pos).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false);
 			}
-			boolean north = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.NORTH);
-			boolean east = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.EAST);
-			boolean south = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.SOUTH);
-			boolean west = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.WEST);
+			boolean north = false;
+			boolean east = false;
+			boolean south = false;
+			boolean west = false;
+			if (worldIn.getBlockState(pos.down()).getBlock() != null) {
+				if (!worldIn.isAirBlock(pos.down())) {
+					try {
+						north = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.NORTH);
+						east = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.EAST);
+						south = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.SOUTH);
+						west = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.WEST);
+					} catch (Exception e) {
+						//Do nothing:
+					}
+				}
+			}
+
 			return super.getActualState(state, worldIn, pos).withProperty(NORTH, north).withProperty(EAST, east).withProperty(SOUTH, south).withProperty(WEST, west);
 		}
 
