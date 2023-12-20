@@ -547,13 +547,13 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     if (upperfrontverticallinedepth > 0) {
                         float xoffsetter = (float) ((upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        renderSupports(x, y - (float)upperfrontverticallinedepth, z, xoffsetter, zoffsetter, (float)upperfrontverticallinedepth, widthSupport);
+                        renderSupports(x, y + 1, z, xoffsetter, zoffsetter, -(float)upperfrontverticallinedepth, widthSupport);
                     }
 
                     if (upperbackverticallinedepth > 0) {
                         float xoffsetter = (float) ((upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((upperbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        renderSupports(x, y - (float)upperbackverticallinedepth, z, -xoffsetter, -zoffsetter, (float)upperbackverticallinedepth, widthSupport);
+                        renderSupports(x, y + 1, z, -xoffsetter, -zoffsetter, -(float)upperbackverticallinedepth, widthSupport);
                     }
 
                     setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
