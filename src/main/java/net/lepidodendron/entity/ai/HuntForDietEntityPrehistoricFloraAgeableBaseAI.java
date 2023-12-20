@@ -11,6 +11,7 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -143,19 +144,21 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     }
                     if (resourcelocation != null) {
                         LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE);
-
-                        for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
-                            //Loop over the itemstack to see what it is:
-                            String[] oreDictList = this.entity.getFoodOreDicts();
-                            for (String oreDict : oreDictList) {
-                                if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
-                                    dietOK = true;
+                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE).withDamageSource(DamageSource.GENERIC).withPlayer(null);
+                        List<ItemStack> itemstackpool = loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build());
+                        if (!itemstackpool.isEmpty()) {
+                            for (ItemStack itemstack : itemstackpool) {
+                                //Loop over the itemstacks to see what the drops are:
+                                String[] oreDictList = this.entity.getFoodOreDicts();
+                                for (String oreDict : oreDictList) {
+                                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
+                                        dietOK = true;
+                                        break;
+                                    }
+                                }
+                                if (dietOK) {
                                     break;
                                 }
-                            }
-                            if (dietOK) {
-                                break;
                             }
                         }
                     }

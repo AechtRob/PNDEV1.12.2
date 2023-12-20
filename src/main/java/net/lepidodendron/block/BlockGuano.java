@@ -98,7 +98,9 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 						east = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.EAST);
 						south = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.SOUTH);
 						west = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.WEST);
-					} catch (Exception e) {
+					} catch (Throwable e) {
+						System.err.println("Error in state: " + worldIn.getBlockState(pos.down()));
+						System.err.println("Pos: " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " ");
 						//Do nothing:
 					}
 				}
