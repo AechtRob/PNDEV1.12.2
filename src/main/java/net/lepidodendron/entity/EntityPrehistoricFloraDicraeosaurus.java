@@ -206,7 +206,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.375F;
+		float speedBase = 0.365F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -251,7 +251,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(5, new GrappleAI(this, 1.0D, false, 163, this.getGrappleAnimation(), 0.1));
 		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
-		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.2D, 0));
+		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.1D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this, true));
