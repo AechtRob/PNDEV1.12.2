@@ -9239,5 +9239,70 @@
         "stream": false
       }
     ]
+  },
+
+  "heterodontosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "heterodontosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "heterodontosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "heterodontosaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm04",
+        "stream": false
+      }
+    ]
   }
 }
