@@ -7615,7 +7615,6 @@
     ]
   },
 
-
   "yangchuanosaurus_idle": {
     "sounds": [
       {
@@ -9066,6 +9065,242 @@
       },
       {
         "name": "lepidodendron:miragaia_threat03",
+        "stream": false
+      }
+    ]
+  },
+
+  "torvosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:torvosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:torvosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:torvosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "torvosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:torvosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:torvosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:torvosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "torvosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:torvosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "torvosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:torvosaurus_hiss01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:torvosaurus_hiss02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:torvosaurus_hiss03",
+        "stream": false
+      }
+    ]
+  },
+
+  "ornitholestes_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ornitholestes_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_living04",
+        "stream": false
+      }
+    ]
+  },
+  "ornitholestes_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ornitholestes_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "ornitholestes_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ornitholestes_death",
+        "stream": false
+      }
+    ]
+  },
+  "ornitholestes_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ornitholestes_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ornitholestes_living04",
+        "stream": false
+      }
+    ]
+  },
+
+  "diplodocus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:diplodocus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:diplodocus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "diplodocus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:diplodocus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:diplodocus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:diplodocus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "diplodocus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:diplodocus_death",
+        "stream": false
+      }
+    ]
+  },
+  "diplodocus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:diplodocus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:diplodocus_living03",
+        "stream": false
+      }
+    ]
+  },
+
+  "heterodontosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "heterodontosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "heterodontosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "heterodontosaurus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:heterodontosaurus_alarm04",
         "stream": false
       }
     ]
