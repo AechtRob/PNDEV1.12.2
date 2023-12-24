@@ -358,6 +358,8 @@ public class RenderDisplays {
     public static final ModelEffigia modelEffigia = new ModelEffigia();
     public static final ModelMymoorapelta modelMymoorapelta = new ModelMymoorapelta();
     public static final ModelElaphrosaurus modelElaphrosaurus = new ModelElaphrosaurus();
+    public static final ModelRhamphorhynchus modelRhamphorhynchus = new ModelRhamphorhynchus();
+    public static final ModelDiplodocus modelDiplodocus = new ModelDiplodocus ();
 
 
     //When they are fixed they will turn purple:
@@ -483,6 +485,5 @@ public class RenderDisplays {
     public static final ModelVivaxosaurus modelVivaxosaurus = new ModelVivaxosaurus();
     public static final ModelWeigeltisaurid modelWeigeltisaurid = new ModelWeigeltisaurid();
     public static final ModelXenacanthus modelXenacanthus = new ModelXenacanthus();
-    public static final ModelDiplodocus modelDiplodocus = new ModelDiplodocus ();
 
 }

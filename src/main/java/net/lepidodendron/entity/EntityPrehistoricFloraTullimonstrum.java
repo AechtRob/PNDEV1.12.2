@@ -313,6 +313,7 @@ public class EntityPrehistoricFloraTullimonstrum extends EntityPrehistoricFloraF
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelTullimonstrum;}
 	public static float getScaler(@Nullable String variant) {return RenderTullimonstrum.getScaler();}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 	@Override
 	public void eatItem(ItemStack stack) {

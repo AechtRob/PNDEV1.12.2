@@ -416,18 +416,134 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.6F, -0.0F, -0.2F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, -0.0F, 0.4F, -0.4F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wingleft3, -1.3F, 0.0F, 0.5F);
+        this.setRotateAngle(wingleft4, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(handleft, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(wingright1, 0.0F, -0.4F, 0.4F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright3, -1.3F, 0.0F, -0.5F);
+        this.setRotateAngle(wingright4, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(handright, 0.0F,0.0F, 0.0F);
+        this.upperlegleft.setScale(0,0,0);
+        this.upperlegright.setScale(0,0,0);
+        this.upperlegleft.scaleChildren = true;
+        this.upperlegright.scaleChildren = true;
+        this.upperlegleft.setScale(1,1,1);
+        this.upperlegright.setScale(1,1,1);
+        this.root.offsetY = -0.15F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = -0.24F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.root.offsetZ = -0.3F;
-        this.jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.root.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(chest, -0.08F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(neck1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.3F, -0.05F, 0.0F);
+        this.setRotateAngle(head, 0.6F, -0.1F, -0.2F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(upperlegright, -0.3F, 0.0F, 0.4F);
+        this.setRotateAngle(lowerlegright, 0.0F, 0.0F, -0.4F);
+        this.setRotateAngle(upperlegleft, 0.5F, 0.0F, -0.4F);
+        this.setRotateAngle(footright, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, 0.0F, 0.28F, 0.0F);
+        this.setRotateAngle(wingleft2, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft4, 1.1F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright1, -0.05F, 0.28F, 0.08F);
+        this.setRotateAngle(wingright2, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright4, 0.9F, 0.0F, 0.0F);
+        this.root.offsetY = 0.03F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(chest, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(head, 0.6F, 0.1F, 0.2F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegright, 0.4F, 0.0F, 1.3F);
+        this.setRotateAngle(lowerlegright, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegleft, 0.4F, 0.0F, -1.3F);
+        this.setRotateAngle(lowerlegleft, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(footleft, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, -0.0F, 0.0F, -0.4F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wingleft3, -1.5F, 0.0F, 0.5F);
+        this.setRotateAngle(wingleft4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(handleft, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright3, -1.5F, 0.0F, -0.5F);
+        this.setRotateAngle(wingright4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(handright, 0.0F,0.0F, 1.5F);
+        this.root.offsetY = -0.0F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0F;
+        this.root.offsetX = 0F;
+        this.root.rotateAngleY = (float)Math.toRadians(0);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 1.0F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(footleft, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingright4, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

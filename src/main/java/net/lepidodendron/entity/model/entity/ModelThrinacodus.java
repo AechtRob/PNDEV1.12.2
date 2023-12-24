@@ -148,27 +148,35 @@ public class ModelThrinacodus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Thrinacodus.render(f5 * 0.12F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Thrinacodus.rotateAngleY = (float) Math.toRadians(90);
-        this.Jaw.rotateAngleX = (float) Math.toRadians(20);
-        this.Thrinacodus.rotateAngleY = (float) Math.toRadians(50);
-        this.Body.rotateAngleY = (float) Math.toRadians(15);
-        this.Body2.rotateAngleY = (float) Math.toRadians(10);
-        this.Tail1.rotateAngleY = (float) Math.toRadians(10);
-        this.Tail2.rotateAngleY = (float) Math.toRadians(18);
-        this.Tail3.rotateAngleY = (float) Math.toRadians(20);
-        this.Tail4.rotateAngleY = (float) Math.toRadians(20);
-        this.Thrinacodus.offsetX = -0.3F;
-        this.Thrinacodus.offsetY = -0.2F;
-        this.Thrinacodus.offsetZ = -0.07F;
+        this.setRotateAngle(Head, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail1, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Thrinacodus.offsetY = -0.4F;
+        this.Thrinacodus.offsetX = -0.15F;
+        this.Thrinacodus.offsetZ = -0.75F;
         this.Thrinacodus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Thrinacodus, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.Thrinacodus.offsetZ = -0.25F;
+        this.Thrinacodus.offsetY = -0.1F;
+        this.Thrinacodus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

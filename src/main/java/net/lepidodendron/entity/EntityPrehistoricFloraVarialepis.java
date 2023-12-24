@@ -194,7 +194,7 @@ public class EntityPrehistoricFloraVarialepis extends EntityPrehistoricFloraFish
 	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.4;}
 	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -1.0;}
-	public static double lowerbacklineoffset(@Nullable String variant) {return 0.02;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0;}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderVarialepis.TEXTURE;}

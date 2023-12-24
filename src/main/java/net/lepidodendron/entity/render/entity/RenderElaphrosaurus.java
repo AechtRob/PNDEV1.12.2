@@ -26,6 +26,7 @@ public class RenderElaphrosaurus extends RenderLiving<EntityPrehistoricFloraElap
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraElaphrosaurus entity) {
         return RenderElaphrosaurus.TEXTURE;
     }
+    @Override
     public void doRender(EntityPrehistoricFloraElaphrosaurus entity, double x, double y, double z, float entityYaw, float partialTicks) {
         @SuppressWarnings("deprecation")
         Class clazz = sun.reflect.Reflection.getCallerClass(4);
