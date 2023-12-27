@@ -20,6 +20,7 @@ public enum EnumBiomeTypeJurassic implements IStringSerializable {
     Mire("mire"),
     Lake("lake"),
     River("river"),
+    Desert("desert"),
     Ocean("ocean");
 
     private final String name;
