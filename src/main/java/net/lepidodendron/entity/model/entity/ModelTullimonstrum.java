@@ -145,19 +145,47 @@ public class ModelTullimonstrum extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bone.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.bone.rotateAngleY = (float) Math.toRadians(90);
-        this.bone.offsetX = 0.02F;
-        this.bone.offsetY = -0.19F;
-        this.bone.offsetZ = 0.07F;
+    public void renderStaticWall(float f) {
+        this.bone.rotateAngleY = (float) Math.toRadians(30);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(proboscis, 0.2F, -0.05F, 0.0F);
+        this.setRotateAngle(bone2, 0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(bone3, 0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(bone4, 0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(bone5, 0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(bone6, -0.1F, -0.05F, 0.0F);
+        this.setRotateAngle(bone7, -0.2F, -0.05F, 0.0F);
+        this.setRotateAngle(bone8, -0.3F, -0.05F, 0.0F);
+        this.setRotateAngle(bone9, -0.3F, -0.05F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.bone.offsetY = -0.22F;
+        this.bone.offsetX = 0.0F;
+        this.bone.offsetZ = -0.2F;
         this.bone.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone, 0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(proboscis, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(bone2, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone4, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone5, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone6, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(bone7, -0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(bone8, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(bone9, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.bone.offsetY = -0.2F;
+        this.bone.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

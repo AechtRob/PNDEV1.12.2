@@ -10,7 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTurrisaspis extends RenderLiving<EntityPrehistoricFloraTurrisaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/turrisaspis.png");
-
+    public static float getScaler() {
+        return 0.5F * 0.275F;
+    }
     public RenderTurrisaspis(RenderManager mgr) {
         super(mgr, new ModelTurrisaspis(), 0.0f);
     }
