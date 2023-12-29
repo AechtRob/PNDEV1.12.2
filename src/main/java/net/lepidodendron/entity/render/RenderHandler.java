@@ -5018,6 +5018,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMamenchisaurus.class, new IRenderFactory<EntityPrehistoricFloraMamenchisaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMamenchisaurus> createRenderFor(RenderManager manager) {
+                return new RenderMamenchisaurus(manager);
+            }
+        });
+
 
         
         
