@@ -223,7 +223,7 @@ public class EntityPrehistoricFloraTraquairius extends EntityPrehistoricFloraFis
 		return 0.02;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.1;
+		return 0.13;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

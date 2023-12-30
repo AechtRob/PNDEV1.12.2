@@ -360,6 +360,9 @@ public class RenderDisplays {
     public static final ModelElaphrosaurus modelElaphrosaurus = new ModelElaphrosaurus();
     public static final ModelRhamphorhynchus modelRhamphorhynchus = new ModelRhamphorhynchus();
     public static final ModelDiplodocus modelDiplodocus = new ModelDiplodocus ();
+    public static final ModelEudimorphodon modelEudimorphodon = new ModelEudimorphodon ();
+    public static final ModelCaelestiventus modelCaelestiventus = new ModelCaelestiventus ();
+    public static final ModelDilophosaurus modelDilophosaurus = new ModelDilophosaurus ();
 
 
     //When they are fixed they will turn purple:

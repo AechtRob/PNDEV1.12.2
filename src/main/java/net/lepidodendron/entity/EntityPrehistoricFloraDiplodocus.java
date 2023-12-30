@@ -686,7 +686,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		return 3.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 5.0;
+		return 5.8;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;

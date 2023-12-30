@@ -172,24 +172,31 @@ public class ModelTartuosteus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Tartuosteus.render(f5 * 0.4f);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Tartuosteus.rotateAngleY = (float) Math.toRadians(60.3);
-        this.Tartuosteus.rotateAngleX = (float) Math.toRadians(-30);
-        this.Tartuosteus.rotateAngleZ = (float) Math.toRadians(-26);
-        this.Body2.rotateAngleY = (float) Math.toRadians(7.5);
-        this.Body3.rotateAngleY = (float) Math.toRadians(12.5);
-        this.Body4.rotateAngleY = (float) Math.toRadians(20);
-        this.Body5.rotateAngleY = (float) Math.toRadians(27.5);
-        this.Tartuosteus.offsetX = -0.09F;
-        this.Tartuosteus.offsetY = -0.19F;
+    public void renderStaticWall(float f) {
+        this.Tartuosteus.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(Head, 0.0F, -0.15F, 0.7F);
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.05F, 0.0F);
+        this.Tartuosteus.offsetY = -0.18F;
+        this.Tartuosteus.offsetX = -0.1F;
+        this.Tartuosteus.offsetZ = -0.12F;
         this.Tartuosteus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Tartuosteus, 0.05F, 0.1F, -0.1F);
+        this.setRotateAngle(Body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3F, 0.0F);
+        this.Tartuosteus.offsetZ = -0.1F;
+        this.Tartuosteus.offsetY = -0.28F;
+        this.Tartuosteus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
