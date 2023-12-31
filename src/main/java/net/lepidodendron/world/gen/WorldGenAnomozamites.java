@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockAnomozamitesLog;
 import net.lepidodendron.block.BlockAnomozamitesSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenAnomozamites;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -39,7 +40,7 @@ public class WorldGenAnomozamites extends WorldGenerator
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAnomozamitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAnomozamitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockAnomozamitesLog.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockAnomozamitesLog.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockAnomozamitesLog.block)
@@ -84,7 +85,7 @@ public class WorldGenAnomozamites extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAnomozamitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAnomozamitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockAnomozamitesLog.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockAnomozamitesLog.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockAnomozamitesLog.block)

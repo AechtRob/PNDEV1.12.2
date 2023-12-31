@@ -2106,6 +2106,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation BRACHIOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/brachiosaurus"));
 	public static final ResourceLocation BRACHIOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/brachiosaurus_young"));
 
+	public static final int ENTITY_MAMENCHISAURUS = 840;
+	public static final ResourceLocation MAMENCHISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mamenchisaurus"));
+	public static final ResourceLocation MAMENCHISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mamenchisaurus_young"));
+
 
 
 	@Mod.EventHandler

@@ -541,19 +541,42 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         }
 
         if (facing == EnumFacing.DOWN) {
+            if (!transparent) {
+                //Arrow to show location:
+                if (ClientProxyLepidodendronMod.keyB.isKeyDown()) {
+                    GL11.glPushMatrix();
+                    GL11.glLineWidth(12);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glColor3ub((byte) 255, (byte) 0, (byte) 0);
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y + 1 - 0.125F, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y + 1 - 1.5F, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y + 1 - 0.125F, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F + 0.5F, (float) y + 1 - 0.5F, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y + 1 - 0.125F, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F - 0.5F, (float) y + 1 - 0.5F, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    GL11.glPopMatrix();
+                }
+            }
             Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
             if (renderMethod != null) {
                 if (!transparent) {
                     if (upperfrontverticallinedepth > 0) {
                         float xoffsetter = (float) ((upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        renderSupports(x, y - (float)upperfrontverticallinedepth, z, xoffsetter, zoffsetter, (float)upperfrontverticallinedepth, widthSupport);
+                        renderSupports(x, y + 1, z, xoffsetter, zoffsetter, -(float)upperfrontverticallinedepth, widthSupport);
                     }
 
                     if (upperbackverticallinedepth > 0) {
                         float xoffsetter = (float) ((upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                         float zoffsetter = (float) ((upperbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
-                        renderSupports(x, y - (float)upperbackverticallinedepth, z, -xoffsetter, -zoffsetter, (float)upperbackverticallinedepth, widthSupport);
+                        renderSupports(x, y + 1, z, -xoffsetter, -zoffsetter, -(float)upperbackverticallinedepth, widthSupport);
                     }
 
                     setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
@@ -688,40 +711,40 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
 
         //face1:
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y, (float) z + 0.5F + zoffsetter - (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter - (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
 
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter - (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
 
         //face2:
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter + (width/2F));
 
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter + (width/2F));
 
         //face3:
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y, (float) z + 0.5F + zoffsetter - (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
 
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter - (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
 
         //face4:
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter - (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
 
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter + width);
-        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + width, (float) y + (float) length, (float) z + 0.5F + zoffsetter);
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter + (width/2F));
+        GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter + (width/2F), (float) y + (float) length, (float) z + 0.5F + zoffsetter - (width/2F));
 
         GL11.glEnd();
         GL11.glEnable(GL11.GL_TEXTURE_2D);

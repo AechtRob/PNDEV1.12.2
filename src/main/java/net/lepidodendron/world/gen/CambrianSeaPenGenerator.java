@@ -84,7 +84,7 @@ public class CambrianSeaPenGenerator extends WorldGenerator
 		if (!dimensionCriteria)
 			return true;
 
-		int bound = 8;
+		int bound = 4;
 
 		for (int i = 0; i < 24; ++i)
 		{

@@ -1,7 +1,9 @@
 package net.lepidodendron.world.biome.triassic;
 
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.BiomeDecoratorPN;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeDecorator;
 
 public abstract class BiomeTriassic extends Biome {
     public BiomeTriassic(BiomeProperties properties) {
@@ -14,5 +16,10 @@ public abstract class BiomeTriassic extends Biome {
 
     public abstract EnumBiomeTypeTriassic getBiomeType();
 
+    @Override
+    public BiomeDecorator createBiomeDecorator()
+    {
+        return getModdedBiomeDecorator(new BiomeDecoratorPN());
+    }
 
 }

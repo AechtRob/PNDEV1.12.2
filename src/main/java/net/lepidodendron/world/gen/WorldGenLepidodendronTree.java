@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenLepidodendron;
 import net.lepidodendron.procedure.ProcedureWorldGenLepidodendronYoung1;
 import net.lepidodendron.procedure.ProcedureWorldGenLepidodendronYoung2;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -78,7 +79,7 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
                 }
             }
 
-            if (!flag || (position.getY() > worldIn.getSeaLevel()+20))
+            if (!flag || (position.getY() > Functions.getAdjustedSeaLevel(worldIn, position)+20))
             {
                 return false;
             }
@@ -109,7 +110,7 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
 					 
 				}
 				
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());

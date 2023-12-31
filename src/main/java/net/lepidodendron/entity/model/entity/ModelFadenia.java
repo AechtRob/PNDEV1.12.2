@@ -294,7 +294,6 @@ public class ModelFadenia extends AdvancedModelBase {
         this.setRotateAngle(body4, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(body5, 0.0F, 0.48F, 0.0F);
         this.head.offsetY = -0.4F;
-        this.head.offsetX = -0.08F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }

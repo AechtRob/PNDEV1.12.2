@@ -54,10 +54,11 @@ public class ShellyReefGenerator extends WorldGenerator
 		for (int i = 0; i < 32; ++i)
 		{
 			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
-			int k = worldIn.getSeaLevel() + rand.nextInt(4) - rand.nextInt(4);
+			//int k = Functions.getAdjustedSeaLevel(worldIn, blockpos) + rand.nextInt(4) - rand.nextInt(4);
 			int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
+			int k = Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) + rand.nextInt(4) - rand.nextInt(4);
 
-			if (k == worldIn.getSeaLevel() - 2) {
+			if (k == Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 2) {
 
 				if (this.reef.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 					&& (Functions.isWater(worldIn, new BlockPos(j, k, l)))

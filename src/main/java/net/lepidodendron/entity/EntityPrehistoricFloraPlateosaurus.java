@@ -193,7 +193,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		//if (this.getAnimation() == STAND_ANIMATION) {
 		//	return 0.0F; //Is rearing
 		//}
-		return speedBase;
+		return speedBase * 1.15F;
 	}
 
 	@Override

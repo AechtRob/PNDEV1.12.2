@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenAlethopteris;
 import net.lepidodendron.procedure.ProcedureWorldGenPitys;
 import net.lepidodendron.procedure.ProcedureWorldGenWalchia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -78,7 +79,7 @@ public class WorldGenWalchiaTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());
@@ -90,7 +91,7 @@ public class WorldGenWalchiaTree extends WorldGenAbstractTree
                     ){
                         $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris
                     }
-					if (position.getY() > (worldIn.getSeaLevel()+17) + (rand.nextInt(7) - 3)) {
+					if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position)+17) + (rand.nextInt(7) - 3)) {
 						ProcedureWorldGenWalchia.executeProcedure($_dependencies);
 					}
                     else if (position.getY() > 120 + (rand.nextInt(9) - 4)

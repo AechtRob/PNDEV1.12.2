@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenCalamites;
 import net.lepidodendron.procedure.ProcedureWorldGenZygopteridaceae;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -107,7 +108,7 @@ public class WorldGenCalamites extends WorldGenAbstractTree
 					 
 				}
 				
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());
@@ -119,7 +120,7 @@ public class WorldGenCalamites extends WorldGenAbstractTree
 					$_dependencies.put("parenty", position.getY());
 					$_dependencies.put("parentz", position.getZ());
 					$_dependencies.put("SaplingSpawn", false);
-					if (position.getY() > (worldIn.getSeaLevel()+15)) {
+					if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position)+15)) {
 						ProcedureWorldGenZygopteridaceae.executeProcedure($_dependencies);
 					}
 					else {

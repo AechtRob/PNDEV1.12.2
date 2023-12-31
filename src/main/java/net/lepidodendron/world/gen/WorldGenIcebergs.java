@@ -36,8 +36,8 @@ public class WorldGenIcebergs extends WorldGenerator {
         for (int a = 0; a < count; a++) {
             int ii = i2 + rand.nextInt(16) + 8;
             int kk = k2 + rand.nextInt(16) + 8;
-            int height = worldIn.getSeaLevel() + 1;
-            while (height >= worldIn.getSeaLevel() - 1) {
+            int height = Functions.getAdjustedSeaLevel(worldIn, position) + 1;
+            while (height >= Functions.getAdjustedSeaLevel(worldIn, position) - 1) {
                 if (
                         (!worldIn.isAirBlock(new BlockPos(ii, height, kk)))
                 )
@@ -74,7 +74,7 @@ public class WorldGenIcebergs extends WorldGenerator {
                         if (Math.random() > 0.85) {
                             blockIn = Blocks.PACKED_ICE;
                         }
-                        if (blockpos.getY() <= worldIn.getSeaLevel()) {
+                        if (blockpos.getY() <= Functions.getAdjustedSeaLevel(worldIn, blockpos)) {
                             blockIn = Blocks.PACKED_ICE;
                         }
                         Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 2);

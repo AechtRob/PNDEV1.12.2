@@ -14,13 +14,13 @@ public class WorldGenOmphalophloios extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
         boolean flag = false;
-        if (position.getY() <= worldIn.getSeaLevel()+20) {
+        if (position.getY() <= Functions.getAdjustedSeaLevel(worldIn, position)+20) {
         	
 	        for (int i = 0; i < 24; ++i)
 	        {
 	            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 	
-	            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockOmphalophloiosSapling.block.canPlaceBlockAt(worldIn, blockpos))
+	            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockOmphalophloiosSapling.block.canPlaceBlockAt(worldIn, blockpos))
 	            {
 	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockOmphalophloiosBase.block.getDefaultState(), 2);
 					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockOmphalophloiosPlaceable.block.getDefaultState(), 2);

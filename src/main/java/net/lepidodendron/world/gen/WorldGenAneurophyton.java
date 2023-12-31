@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockAneurophytonLog;
 import net.lepidodendron.block.BlockAneurophytonSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenAneurophyton;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -22,7 +23,7 @@ public class WorldGenAneurophyton extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(7) - rand.nextInt(7), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(7) - rand.nextInt(7));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAneurophytonSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAneurophytonSapling.block.canPlaceBlockAt(worldIn, blockpos)
             	&& (worldIn.getBlockState(blockpos.east()).getBlock() != BlockAneurophytonLog.block)
             	&& (worldIn.getBlockState(blockpos.west()).getBlock() != BlockAneurophytonLog.block)
             	&& (worldIn.getBlockState(blockpos.north()).getBlock() != BlockAneurophytonLog.block)

@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockEmplectopterisLog;
 import net.lepidodendron.block.BlockEmplectopterisSapling;
 import net.lepidodendron.block.BlockEmplectopterisShoot;
 import net.lepidodendron.procedure.ProcedureWorldGenEmplectopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -24,7 +25,7 @@ public class WorldGenEmplectopteris extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(7) - rand.nextInt(7), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(7) - rand.nextInt(7));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && (!worldIn.isAirBlock(blockpos.down())) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && (!worldIn.isAirBlock(blockpos.down())) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
                     (
                         (BlockEmplectopterisSapling.block.canPlaceBlockAt(worldIn, blockpos) && worldIn.getBlockState(blockpos.down()) != BlockEmplectopterisShoot.block)
                         ||

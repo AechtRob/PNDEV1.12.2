@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockLadiniaLog;
 import net.lepidodendron.block.BlockLadiniaSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenLadinia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class WorldGenLadinia extends WorldGenerator
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLadiniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLadiniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockLadiniaLog.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockLadiniaLog.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockLadiniaLog.block)
@@ -74,7 +75,7 @@ public class WorldGenLadinia extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLadiniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLadiniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockLadiniaLog.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockLadiniaLog.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockLadiniaLog.block)

@@ -20,7 +20,7 @@ public class WorldGenSurfaceToxicMud extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= worldIn.getSeaLevel() - 1) && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getMaterial() == Material.WATER)
+            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 1) && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getMaterial() == Material.WATER)
             	&& (
             		((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
             		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)

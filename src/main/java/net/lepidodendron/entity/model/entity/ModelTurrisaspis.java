@@ -215,18 +215,32 @@ public class ModelTurrisaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5 * 0.14F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
-        this.Body.offsetX = -0.14F;
-        this.Body.offsetY = 0.08F;
+        this.setRotateAngle(Segment1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Segment2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Segment4, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetY = 0.03F;
+        this.Body.offsetX = -0.15F;
+        this.Body.offsetZ = -0.55F;
         this.Body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Segment1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Segment2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Segment4, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetZ = -0.08F;
+        this.Body.offsetX = -0.027F;
+        this.Body.offsetY = 0.2F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

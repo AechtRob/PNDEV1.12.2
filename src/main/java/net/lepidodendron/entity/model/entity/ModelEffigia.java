@@ -339,6 +339,46 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.50F;
+        this.body.offsetX = 0.0F;
+        this.body.rotateAngleY = (float)Math.toRadians(130);
+        this.body.rotateAngleX = (float)Math.toRadians(9);
+        this.body.rotateAngleZ = (float)Math.toRadians(-2);
+        this.body.scaleChildren = true;
+        float scaler = 1.1F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyback, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodymiddle, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, -0.05F, -0.3F, 0.0F);
+        this.setRotateAngle(tail4, -0.05F, -0.3F, 0.0F);
+        this.setRotateAngle(neck, -0.4F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(neck3, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(legL4, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(legR, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(legR4, -0.9F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

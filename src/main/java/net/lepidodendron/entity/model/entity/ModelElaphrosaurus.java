@@ -331,15 +331,102 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Neckbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlebase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlefront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.0F, 0.0F, 0.0F);
+        this.Bodyfront.offsetY = 0.0F;
+        this.Bodyfront.offsetX = 0.0F;
+        this.Bodyfront.offsetZ = 0.0F;
+        this.Bodyfront.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.38F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, -0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.08F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckbase, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlebase, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlefront, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckfront, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailend, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightankle, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfoot, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(Righttoes, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftankle, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfoot, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefttoes, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.2F, -0.2F, -0.7F);
+        this.setRotateAngle(Rightlowerarm, -0.4F, -0.4F, 0.0F);
+        this.setRotateAngle(Righthand, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.2F, -0.2F, 0.7F);
+        this.setRotateAngle(Leftlowerarm, -0.4F, 0.4F, 0.0F);
+        this.setRotateAngle(Lefthand, 0.05F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.12F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.3F;
+        this.root.offsetX = 0.0F;
+        this.root.rotateAngleY = (float)Math.toRadians(150);
+        this.root.rotateAngleX = (float)Math.toRadians(5);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 0.6F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, -0.38F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, -0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.08F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckbase, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlebase, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlefront, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckfront, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailend, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightankle, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfoot, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(Righttoes, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftankle, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfoot, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefttoes, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.2F, -0.2F, -0.7F);
+        this.setRotateAngle(Rightlowerarm, -0.4F, -0.4F, 0.0F);
+        this.setRotateAngle(Righthand, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.2F, -0.2F, 0.7F);
+        this.setRotateAngle(Leftlowerarm, -0.4F, 0.4F, 0.0F);
+        this.setRotateAngle(Lefthand, 0.05F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
@@ -4834,15 +4921,20 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             yy = -1.47535 + (((tickAnim - 0) / 20) * (0.32762-(-1.47535)));
             zz = 6.074 + (((tickAnim - 0) / 20) * (9.093-(6.074)));
         }
-        else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 18.89629 + (((tickAnim - 20) / 15) * (0.56725-(18.89629)));
-            yy = 0.32762 + (((tickAnim - 20) / 15) * (-8.64428-(0.32762)));
-            zz = 9.093 + (((tickAnim - 20) / 15) * (1.04822-(9.093)));
+        else if (tickAnim >= 20 && tickAnim < 30) {
+            xx = 18.89629 + (((tickAnim - 20) / 10) * (7.10038-(18.89629)));
+            yy = 0.32762 + (((tickAnim - 20) / 10) * (-5.51453-(0.32762)));
+            zz = 9.093 + (((tickAnim - 20) / 10) * (0.12801-(9.093)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 35) {
+            xx = 7.10038 + (((tickAnim - 30) / 5) * (0.79581-(7.10038)));
+            yy = -5.51453 + (((tickAnim - 30) / 5) * (-8.69005-(-5.51453)));
+            zz = 0.12801 + (((tickAnim - 30) / 5) * (-0.4684-(0.12801)));
         }
         else if (tickAnim >= 35 && tickAnim < 40) {
-            xx = 0.56725 + (((tickAnim - 35) / 5) * (-11.17172-(0.56725)));
-            yy = -8.64428 + (((tickAnim - 35) / 5) * (-1.47535-(-8.64428)));
-            zz = 1.04822 + (((tickAnim - 35) / 5) * (6.074-(1.04822)));
+            xx = 0.79581 + (((tickAnim - 35) / 5) * (-11.17172-(0.79581)));
+            yy = -8.69005 + (((tickAnim - 35) / 5) * (-1.47535-(-8.69005)));
+            zz = -0.4684 + (((tickAnim - 35) / 5) * (6.074-(-0.4684)));
         }
         else {
             xx = 0;
@@ -4858,14 +4950,14 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = -0.175 + (((tickAnim - 20) / 15) * (0.175-(-0.175)));
-            yy = -1.475 + (((tickAnim - 20) / 15) * (1.465-(-1.475)));
-            zz = 0 + (((tickAnim - 20) / 15) * (0-(0)));
+            xx = -0.175 + (((tickAnim - 20) / 15) * (-0.005-(-0.175)));
+            yy = -1.475 + (((tickAnim - 20) / 15) * (-1.135-(-1.475)));
+            zz = 0 + (((tickAnim - 20) / 15) * (-0.2-(0)));
         }
         else if (tickAnim >= 35 && tickAnim < 40) {
-            xx = 0.175 + (((tickAnim - 35) / 5) * (0-(0.175)));
-            yy = 1.465 + (((tickAnim - 35) / 5) * (-1.6-(1.465)));
-            zz = 0 + (((tickAnim - 35) / 5) * (0-(0)));
+            xx = -0.005 + (((tickAnim - 35) / 5) * (0-(-0.005)));
+            yy = -1.135 + (((tickAnim - 35) / 5) * (-1.6-(-1.135)));
+            zz = -0.2 + (((tickAnim - 35) / 5) * (0-(-0.2)));
         }
         else {
             xx = 0;
@@ -4950,12 +5042,12 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             zz = -2.53782 + (((tickAnim - 20) / 7) * (0-(-2.53782)));
         }
         else if (tickAnim >= 27 && tickAnim < 35) {
-            xx = -31 + (((tickAnim - 27) / 8) * (-36.43-(-31)));
+            xx = -31 + (((tickAnim - 27) / 8) * (-42.43-(-31)));
             yy = 0 + (((tickAnim - 27) / 8) * (0-(0)));
             zz = 0 + (((tickAnim - 27) / 8) * (0-(0)));
         }
         else if (tickAnim >= 35 && tickAnim < 40) {
-            xx = -36.43 + (((tickAnim - 35) / 5) * (-0.25-(-36.43)));
+            xx = -42.43 + (((tickAnim - 35) / 5) * (-0.25-(-42.43)));
             yy = 0 + (((tickAnim - 35) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 35) / 5) * (0-(0)));
         }
@@ -5000,12 +5092,12 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             zz = -2.16635 + (((tickAnim - 10) / 10) * (-2.94174-(-2.16635)));
         }
         else if (tickAnim >= 20 && tickAnim < 35) {
-            xx = 58.01511 + (((tickAnim - 20) / 15) * (68.58-(58.01511)));
+            xx = 58.01511 + (((tickAnim - 20) / 15) * (79.83-(58.01511)));
             yy = -0.58861 + (((tickAnim - 20) / 15) * (0-(-0.58861)));
             zz = -2.94174 + (((tickAnim - 20) / 15) * (0-(-2.94174)));
         }
         else if (tickAnim >= 35 && tickAnim < 40) {
-            xx = 68.58 + (((tickAnim - 35) / 5) * (17.30651-(68.58)));
+            xx = 79.83 + (((tickAnim - 35) / 5) * (17.30651-(79.83)));
             yy = 0 + (((tickAnim - 35) / 5) * (4.16643-(0)));
             zz = 0 + (((tickAnim - 35) / 5) * (-5.31537-(0)));
         }
@@ -5030,12 +5122,12 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
         else if (tickAnim >= 20 && tickAnim < 35) {
             xx = 0.1 + (((tickAnim - 20) / 15) * (-0.06-(0.1)));
             yy = 0.575 + (((tickAnim - 20) / 15) * (-0.21-(0.575)));
-            zz = 0 + (((tickAnim - 20) / 15) * (-0.215-(0)));
+            zz = 0 + (((tickAnim - 20) / 15) * (0.26-(0)));
         }
         else if (tickAnim >= 35 && tickAnim < 40) {
             xx = -0.06 + (((tickAnim - 35) / 5) * (0-(-0.06)));
             yy = -0.21 + (((tickAnim - 35) / 5) * (-0.175-(-0.21)));
-            zz = -0.215 + (((tickAnim - 35) / 5) * (0.075-(-0.215)));
+            zz = 0.26 + (((tickAnim - 35) / 5) * (0.075-(0.26)));
         }
         else {
             xx = 0;
@@ -5073,13 +5165,13 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 15) {
-            xx = -0.175 + (((tickAnim - 0) / 15) * (-0.175-(-0.175)));
-            yy = -1.475 + (((tickAnim - 0) / 15) * (1.34-(-1.475)));
+            xx = -0.175 + (((tickAnim - 0) / 15) * (0-(-0.175)));
+            yy = -1.475 + (((tickAnim - 0) / 15) * (-1.375-(-1.475)));
             zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 20) {
-            xx = -0.175 + (((tickAnim - 15) / 5) * (0-(-0.175)));
-            yy = 1.34 + (((tickAnim - 15) / 5) * (-1.6-(1.34)));
+            xx = 0 + (((tickAnim - 15) / 5) * (0-(0)));
+            yy = -1.375 + (((tickAnim - 15) / 5) * (-1.6-(-1.375)));
             zz = 0 + (((tickAnim - 15) / 5) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 40) {
@@ -5129,13 +5221,13 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 15) {
             xx = 0.08 + (((tickAnim - 0) / 15) * (-0.005-(0.08)));
-            yy = -0.215 + (((tickAnim - 0) / 15) * (0.34-(-0.215)));
-            zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
+            yy = -0.215 + (((tickAnim - 0) / 15) * (1.115-(-0.215)));
+            zz = 0 + (((tickAnim - 0) / 15) * (-0.2-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 20) {
             xx = -0.005 + (((tickAnim - 15) / 5) * (0-(-0.005)));
-            yy = 0.34 + (((tickAnim - 15) / 5) * (0-(0.34)));
-            zz = 0 + (((tickAnim - 15) / 5) * (0-(0)));
+            yy = 1.115 + (((tickAnim - 15) / 5) * (0-(1.115)));
+            zz = -0.2 + (((tickAnim - 15) / 5) * (0-(-0.2)));
         }
         else if (tickAnim >= 20 && tickAnim < 30) {
             xx = 0 + (((tickAnim - 20) / 10) * (0-(0)));
@@ -5165,12 +5257,12 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 7) * (0-(0)));
         }
         else if (tickAnim >= 7 && tickAnim < 15) {
-            xx = -31 + (((tickAnim - 7) / 8) * (-36.43-(-31)));
+            xx = -31 + (((tickAnim - 7) / 8) * (-41.18-(-31)));
             yy = 0 + (((tickAnim - 7) / 8) * (0-(0)));
             zz = 0 + (((tickAnim - 7) / 8) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 20) {
-            xx = -36.43 + (((tickAnim - 15) / 5) * (-0.25-(-36.43)));
+            xx = -41.18 + (((tickAnim - 15) / 5) * (-0.25-(-41.18)));
             yy = 0 + (((tickAnim - 15) / 5) * (0-(0)));
             zz = 0 + (((tickAnim - 15) / 5) * (0-(0)));
         }
@@ -5356,10 +5448,9 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
         }
         this.setRotateAngle(Lefttoes, Lefttoes.rotateAngleX + (float) Math.toRadians(xx), Lefttoes.rotateAngleY + (float) Math.toRadians(yy), Lefttoes.rotateAngleZ + (float) Math.toRadians(zz));
 
-
     }
 
-        public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraElaphrosaurus e = (EntityPrehistoricFloraElaphrosaurus) entity;
         animator.update(entity);
 

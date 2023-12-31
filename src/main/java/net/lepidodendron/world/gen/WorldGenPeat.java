@@ -31,7 +31,7 @@ public class WorldGenPeat extends WorldGenerator
                 }
             }
 
-            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= worldIn.getSeaLevel() - 1) && worldIn.isAirBlock(blockpos)
+            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 1) && worldIn.isAirBlock(blockpos)
             	&& (
             		((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
             		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)

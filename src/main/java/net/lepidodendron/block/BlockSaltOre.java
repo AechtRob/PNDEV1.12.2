@@ -2,9 +2,12 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSalt;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
@@ -54,13 +57,19 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
-		if (dimID == 0)
+		if (dimID == 0 || dimID == LepidodendronConfig.dimJurassic)
 			dimensionCriteria = true;
 
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		boolean biomeCriteria = false;
-		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
+		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY) && dimID == 0)
 			biomeCriteria = true;
+
+		if (biome instanceof BiomeJurassic) {
+			if (((BiomeJurassic)biome).getBiomeType() == EnumBiomeTypeJurassic.Desert) {
+				biomeCriteria = true;
+			}
+		}
 
 		if ((!dimensionCriteria) || (!biomeCriteria))
 			return;

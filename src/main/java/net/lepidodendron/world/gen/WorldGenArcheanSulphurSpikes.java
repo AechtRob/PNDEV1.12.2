@@ -25,7 +25,7 @@ public class WorldGenArcheanSulphurSpikes extends WorldGenerator
         BlockPos blockpos = position.add(rand.nextInt(7) - rand.nextInt(7), 0, rand.nextInt(7) - rand.nextInt(7));
         blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn);
 
-        if (blockpos.getY() >= worldIn.getSeaLevel() - 6
+        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 6
                 && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getMaterial() == Material.WATER)
                 && (!worldIn.provider.isNether() || blockpos.getY() < 254)
             )

@@ -19,7 +19,7 @@ public class WorldGenLeclercqia extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLeclercqia.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLeclercqia.block.canPlaceBlockAt(worldIn, blockpos))
             {
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLeclercqia.block.getDefaultState(), 2);
                 flag = true;

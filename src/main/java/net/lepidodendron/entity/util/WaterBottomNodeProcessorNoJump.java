@@ -14,6 +14,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -384,6 +385,12 @@ public class WaterBottomNodeProcessorNoJump extends NodeProcessor
 
     public PathNodeType getPathNodeType(IBlockAccess blockaccessIn, int x, int y, int z)
     {
+        if (blockaccessIn instanceof World) {
+            if (!((World) blockaccessIn).isBlockLoaded(new BlockPos(x, y, z))) {
+                return PathNodeType.BLOCKED;
+            }
+        }
+
         PathNodeType pathnodetype = this.getPathNodeTypeRaw(blockaccessIn, x, y, z);
 
         if (pathnodetype == PathNodeType.OPEN && y >= 1)
@@ -445,6 +452,12 @@ public class WaterBottomNodeProcessorNoJump extends NodeProcessor
 
     protected PathNodeType getPathNodeTypeRaw(IBlockAccess p_189553_1_, int p_189553_2_, int p_189553_3_, int p_189553_4_)
     {
+        if (p_189553_1_ instanceof World) {
+            if (!((World) p_189553_1_).isBlockLoaded(new BlockPos(p_189553_2_, p_189553_3_, p_189553_4_))) {
+                return PathNodeType.BLOCKED;
+            }
+        }
+
         BlockPos blockpos = new BlockPos(p_189553_2_, p_189553_3_, p_189553_4_);
         IBlockState iblockstate = p_189553_1_.getBlockState(blockpos);
         Block block = iblockstate.getBlock();

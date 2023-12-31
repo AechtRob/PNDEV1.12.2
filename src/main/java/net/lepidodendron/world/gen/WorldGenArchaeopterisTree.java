@@ -83,7 +83,7 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp"));
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());
