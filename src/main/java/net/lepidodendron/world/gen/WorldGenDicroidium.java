@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockDicroidiumStem;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidium;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -96,7 +97,7 @@ public class WorldGenDicroidium extends WorldGenAbstractTree
                     }
                 }
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1
                     && (worldIn.getBlockState(position.east()).getBlock() != BlockDicroidiumStem.block)
                     && (worldIn.getBlockState(position.west()).getBlock() != BlockDicroidiumStem.block)
                     && (worldIn.getBlockState(position.north()).getBlock() != BlockDicroidiumStem.block)

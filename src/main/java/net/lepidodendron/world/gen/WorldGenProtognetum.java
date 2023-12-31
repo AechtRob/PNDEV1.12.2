@@ -14,11 +14,18 @@ public class WorldGenProtognetum extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        return generate(worldIn, rand, position, false);
+        return generate(worldIn, rand, position, false, 0);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater) {
+        return generate(worldIn, rand, position, needsWater, 0);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, int minHeight)
     {
+        if (minHeight == 0) {
+            minHeight = Functions.getAdjustedSeaLevel(worldIn, position) - 4;
+        }
         boolean flag = false;
         int k = 24;
         if (needsWater) k = 256;
@@ -30,7 +37,7 @@ public class WorldGenProtognetum extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(8) - rand.nextInt(8), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockProtognetum.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() > minHeight + (rand.nextInt(5) - 2) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockProtognetum.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 {

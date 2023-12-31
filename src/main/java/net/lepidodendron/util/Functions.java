@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockLiquid;
@@ -18,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -26,6 +28,16 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class Functions {
+
+    public static int getAdjustedSeaLevel(World world, BlockPos pos) {
+        Biome biome = world.getBiome(pos);
+        if (biome instanceof BiomeJurassic) {
+            if (((BiomeJurassic)biome).getBiomeType() == EnumBiomeTypeJurassic.Desert) {
+                return 42;
+            }
+        }
+        return world.getSeaLevel();
+    }
 
     public static IBlockState getPortalBlockState(int lastDimension) {
         IBlockState portalBlockState = null;

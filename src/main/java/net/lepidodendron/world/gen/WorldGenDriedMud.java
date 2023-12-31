@@ -24,7 +24,7 @@ public class WorldGenDriedMud extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(7) - rand.nextInt(7), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(7) - rand.nextInt(7));
 
-            if (nearSea && (blockpos.getY() - rand.nextInt(3)) > worldIn.getSeaLevel()) {
+            if (nearSea && (blockpos.getY() - rand.nextInt(3)) > Functions.getAdjustedSeaLevel(worldIn, blockpos)) {
 				continue;
 			}
 

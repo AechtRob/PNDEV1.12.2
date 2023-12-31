@@ -24,7 +24,7 @@ public class WorldGenMud extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
 
-            if (nearSea && (blockpos.getY() - rand.nextInt(3)) > worldIn.getSeaLevel()) {
+            if (nearSea && (blockpos.getY() - rand.nextInt(3)) > Functions.getAdjustedSeaLevel(worldIn, blockpos)) {
 				continue;
 			}
 

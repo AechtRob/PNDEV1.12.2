@@ -20,12 +20,12 @@ public class WorldGenBumbudendron extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBumbudendronLand.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBumbudendronLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockBumbudendronLand.block.getDefaultState(), 2);
                 flag = true;
             }
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBumbudendronWater.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBumbudendronWater.block.canPlaceBlockAt(worldIn, blockpos))
             {
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockBumbudendronWater.block.getDefaultState(), 2);
                 flag = true;

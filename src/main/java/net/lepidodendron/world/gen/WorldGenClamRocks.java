@@ -22,13 +22,13 @@ public class WorldGenClamRocks extends WorldGenerator
             position = position.down();
         }
 
-        if (worldIn.getBlockState(position.up() ).getMaterial() != Material.WATER || position.getY() < (worldIn.getSeaLevel() - 7) || position.getY() >= worldIn.getSeaLevel()) {
+        if (worldIn.getBlockState(position.up() ).getMaterial() != Material.WATER || position.getY() < (Functions.getAdjustedSeaLevel(worldIn, position) - 7) || position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)) {
             return false;
         }
 
         int startY = position.getY();
         position = position.down(5); //start under the surface to capture any terrain weirdnesses
-        int heightRocks = (worldIn.getSeaLevel() - position.getY()) + (rand.nextInt(5) - 3);
+        int heightRocks = (Functions.getAdjustedSeaLevel(worldIn, position) - position.getY()) + (rand.nextInt(5) - 3);
         //System.err.println("position: " + position.getX() + " " + position.getY() + " " + position.getZ());
         //System.err.println("heightRocks: " + heightRocks);
         int radius = rand.nextInt(4) + 1;
@@ -52,7 +52,7 @@ public class WorldGenClamRocks extends WorldGenerator
                         BlockPos posPlace = pos.add(xCt, 0, zCt);
                         IBlockState state = worldIn.getBlockState(posPlace.down());
                         if (state.getBlockFaceShape(worldIn, posPlace.down(), EnumFacing.UP) == BlockFaceShape.SOLID && !skipper) {
-                            if (rand.nextInt(6) == 0 && posPlace.getY() >= worldIn.getSeaLevel()) {
+                            if (rand.nextInt(6) == 0 && posPlace.getY() >= Functions.getAdjustedSeaLevel(worldIn, posPlace)) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, Blocks.GRAVEL.getDefaultState());
                             }
                             else {
@@ -82,7 +82,7 @@ public class WorldGenClamRocks extends WorldGenerator
                         BlockPos posPlace = pos.add(xCt, 0, zCt);
                         IBlockState state = worldIn.getBlockState(posPlace.down());
                         if (state.getBlockFaceShape(worldIn, posPlace.down(), EnumFacing.UP) == BlockFaceShape.SOLID && !skipper) {
-                            if (rand.nextInt(6) == 0 && posPlace.getY() >= worldIn.getSeaLevel()) {
+                            if (rand.nextInt(6) == 0 && posPlace.getY() >= Functions.getAdjustedSeaLevel(worldIn, posPlace)) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,posPlace, Blocks.GRAVEL.getDefaultState());
                             }
                             else {

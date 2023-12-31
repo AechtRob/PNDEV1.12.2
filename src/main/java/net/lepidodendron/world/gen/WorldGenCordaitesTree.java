@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenCordaites;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -77,7 +78,7 @@ public class WorldGenCordaitesTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     HashMap<String, Object> $_dependencies = new HashMap<>();
 					$_dependencies.put("x", position.getX());

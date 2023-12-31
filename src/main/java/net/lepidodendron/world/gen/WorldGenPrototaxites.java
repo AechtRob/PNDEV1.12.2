@@ -20,7 +20,7 @@ public class WorldGenPrototaxites extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(2) - rand.nextInt(2), rand.nextInt(2) - rand.nextInt(2), rand.nextInt(2) - rand.nextInt(2));
 
-            if (worldIn.canBlockSeeSky(blockpos.up()) && blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrototaxites.block.canPlaceBlockAt(worldIn, blockpos))
+            if (worldIn.canBlockSeeSky(blockpos.up()) && blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrototaxites.block.canPlaceBlockAt(worldIn, blockpos))
             {
                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrototaxites.block.getDefaultState(), 2);
 

@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPhoenicopsisSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenPhoenicopsis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +30,7 @@ public class WorldGenPhoenicopsis extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPhoenicopsisSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPhoenicopsisSapling.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 if ((worldIn.canSeeSky(blockpos))

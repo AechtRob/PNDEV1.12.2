@@ -31,7 +31,7 @@ public class WorldGenThamnobeatriceaSponge extends WorldGenerator
 
             //System.err.println("Generator running 1");
 
-            if (blockpos.getY() < worldIn.getSeaLevel() && isSoil) {
+            if (blockpos.getY() < Functions.getAdjustedSeaLevel(worldIn, blockpos) && isSoil) {
 
                 //System.err.println("Generator running 2");
 

@@ -27,7 +27,7 @@ public class WorldGenSwampHorsetail extends WorldGenerator
             BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
             IBlockState iblockstate = worldIn.getBlockState(blockpos.down());
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSwampHorsetailLand.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSwampHorsetailLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSwampHorsetailLand.block.getDefaultState(), 2);
 				if ((Math.random() > 0.5)) {
@@ -35,7 +35,7 @@ public class WorldGenSwampHorsetail extends WorldGenerator
 	        	}
                 flag = true;
             }
-            else if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemSwampHorsetailItem.canSurviveAt(worldIn, blockpos)  && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))
+            else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemSwampHorsetailItem.canSurviveAt(worldIn, blockpos)  && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))
             {
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSwampHorsetailWater.block.getDefaultState(), 2);
                 if ((Math.random() > 0.5)) {

@@ -20,7 +20,7 @@ public class WorldGenFlabellopteris extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFlabellopteris.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFlabellopteris.block.canPlaceBlockAt(worldIn, blockpos))
             {
             	if (Math.random() < 0.7) {
 					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockFlabellopteris.block.getDefaultState(), 2);

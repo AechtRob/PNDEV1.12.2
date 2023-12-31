@@ -36,7 +36,7 @@ public class WorldGenReef extends WorldGenerator
         int zct = 0;
         EnumFacing facing = EnumFacing.NORTH;
         BlockPos pos;
-        while ((layer <= startRadius) && (position.getY() + layer) < worldIn.getSeaLevel()) {
+        while ((layer <= startRadius) && (position.getY() + layer) < Functions.getAdjustedSeaLevel(worldIn, position)) {
             reefChance = 0.9D - (((double)layer - 1D) * (0.8D/(double)startRadius));
             layerRadius = (startRadius - layer + 1);
             xct = - layerRadius;
@@ -73,7 +73,7 @@ public class WorldGenReef extends WorldGenerator
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, state.withProperty(BlockCoral.FACING, facing));
                             }
                             //Always a chance to grow straight up:
-                            if ((Math.random() > 0.65) && (position.getY() + layer + 1) < worldIn.getSeaLevel()) {
+                            if ((Math.random() > 0.65) && (position.getY() + layer + 1) < Functions.getAdjustedSeaLevel(worldIn, pos)) {
                                 if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(), state.getBlock().getDefaultState());
                                 }
@@ -93,7 +93,7 @@ public class WorldGenReef extends WorldGenerator
                                     }
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(), state.withProperty(BlockCoral.FACING, facing));
                                 }
-                                if ((Math.random() > 0.65) && (position.getY() + layer + 2) < worldIn.getSeaLevel()) {
+                                if ((Math.random() > 0.65) && (position.getY() + layer + 2) < Functions.getAdjustedSeaLevel(worldIn, position)) {
                                     if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
                                         Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), state.getBlock().getDefaultState());
                                     }

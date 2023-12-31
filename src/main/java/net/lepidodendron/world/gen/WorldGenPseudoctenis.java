@@ -20,15 +20,15 @@ public class WorldGenPseudoctenis extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 8;
+        int offset = 4;
         if (needsWater) {
-            offset = 3;
+            offset = 2;
         }
         for (int i = 0; i < 8; ++i)
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(8) - rand.nextInt(8), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPseudoctenis.block.canPlaceBlockAt(worldIn, blockpos) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPseudoctenis.block.canPlaceBlockAt(worldIn, blockpos) &&
                     (
                         (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
                             || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.CLAY)

@@ -1,7 +1,9 @@
 package net.lepidodendron.world.biome.carboniferous;
 
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.world.BiomeDecoratorPN;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeDecorator;
 
 public abstract class BiomeCarboniferous extends Biome {
     public BiomeCarboniferous(BiomeProperties properties) {
@@ -13,5 +15,11 @@ public abstract class BiomeCarboniferous extends Biome {
     }
 
     public abstract EnumBiomeTypeCarboniferous getBiomeType();
+
+    @Override
+    public BiomeDecorator createBiomeDecorator()
+    {
+        return getModdedBiomeDecorator(new BiomeDecoratorPN());
+    }
 
 }

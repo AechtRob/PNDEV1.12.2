@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockEquisitesSapling;
 import net.lepidodendron.block.BlockEquisitesStem;
 import net.lepidodendron.procedure.ProcedureWorldGenEquisites;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +30,7 @@ public class WorldGenEquisetites extends WorldGenerator
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockEquisitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockEquisitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockEquisitesStem.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockEquisitesStem.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockEquisitesStem.block)
@@ -64,7 +65,7 @@ public class WorldGenEquisetites extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockEquisitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockEquisitesSapling.block.canPlaceBlockAt(worldIn, blockpos)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockEquisitesStem.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockEquisitesStem.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockEquisitesStem.block)

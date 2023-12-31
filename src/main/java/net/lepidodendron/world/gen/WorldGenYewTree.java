@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenBushyAraucaria;
 import net.lepidodendron.procedure.ProcedureWorldGenYew;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -78,7 +79,7 @@ public class WorldGenYewTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());
@@ -86,7 +87,7 @@ public class WorldGenYewTree extends WorldGenAbstractTree
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
                     Biome biome = worldIn.getBiome(position);
-					if (biome instanceof BiomeJurassic && position.getY() > worldIn.getSeaLevel() + 5) {
+					if (biome instanceof BiomeJurassic && position.getY() > Functions.getAdjustedSeaLevel(worldIn, position) + 5) {
                         ProcedureWorldGenBushyAraucaria.executeProcedure($_dependencies);
                     }
                     else {

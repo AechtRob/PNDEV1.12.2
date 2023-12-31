@@ -1,7 +1,9 @@
 package net.lepidodendron.world.biome.cretaceous;
 
 import net.lepidodendron.util.EnumBiomeTypeCretaceous;
+import net.lepidodendron.world.BiomeDecoratorPN;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeDecorator;
 
 public abstract class BiomeCretaceous extends Biome {
     public BiomeCretaceous(BiomeProperties properties) {
@@ -14,5 +16,10 @@ public abstract class BiomeCretaceous extends Biome {
 
     public abstract EnumBiomeTypeCretaceous getBiomeType();
 
+    @Override
+    public BiomeDecorator createBiomeDecorator()
+    {
+        return getModdedBiomeDecorator(new BiomeDecoratorPN());
+    }
 
 }

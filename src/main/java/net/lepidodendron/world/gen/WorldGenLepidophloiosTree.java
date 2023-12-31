@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.procedure.ProcedureWorldGenLepidophloios;
 import net.lepidodendron.procedure.ProcedureWorldGenLepidophloiosYoung;
 import net.lepidodendron.procedure.ProcedureWorldGenPsaronius;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -82,7 +83,7 @@ public class WorldGenLepidophloiosTree extends WorldGenAbstractTree
 					);
 					
 				
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());
@@ -92,7 +93,7 @@ public class WorldGenLepidophloiosTree extends WorldGenAbstractTree
 					$_dependencies.put("vines", true);
 					$_dependencies.put("vines2", true);
 					$_dependencies.put("SaplingSpawn", false);
-					if (position.getY() > (worldIn.getSeaLevel()+15)) {
+					if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position)+15)) {
 						ProcedureWorldGenPsaronius.executeProcedure($_dependencies);
 					}
 					else {

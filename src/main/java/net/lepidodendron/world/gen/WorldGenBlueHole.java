@@ -44,7 +44,7 @@ public class WorldGenBlueHole extends WorldGenerator
         while (holeCheck && xct <= layerRadius) {
             zct = - layerRadius;
             while (holeCheck && zct <= layerRadius) {
-                if (worldIn.getBlockState(new BlockPos(position.getX(), worldIn.getSeaLevel() - 1, position.getZ())).getMaterial() != Material.WATER) {
+                if (worldIn.getBlockState(new BlockPos(position.getX(), Functions.getAdjustedSeaLevel(worldIn, pos) - 1, position.getZ())).getMaterial() != Material.WATER) {
                     holeCheck = false;
                 }
                 zct += 1;
@@ -68,7 +68,7 @@ public class WorldGenBlueHole extends WorldGenerator
                             if (Math.random() > 0.5) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1, Blocks.WATER.getDefaultState());
                                 //Rugosa coral round the edge:
-                                if ((pos.getY() < (worldIn.getSeaLevel()-15))
+                                if ((pos.getY() < (Functions.getAdjustedSeaLevel(worldIn, pos)-15))
                                     && (worldIn.provider.getDimension() == LepidodendronConfig.dimDevonian)) {
                                     for (EnumFacing enumfacing1 : BlockRugosa5.BlockCustom.FACING.getAllowedValues()) {
                                         BlockPos pos2 = pos1.up();

@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockCtenisLog;
 import net.lepidodendron.block.BlockCtenisSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenCtenis;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -22,16 +23,16 @@ public class WorldGenCtenis extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 7;
+        int offset = 4;
         if (needsWater) {
-            offset = 6;
+            offset = 2;
         }
         for (int i = 0; i < 24; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCtenisSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCtenisSapling.block.canPlaceBlockAt(worldIn, blockpos)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockCtenisLog.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockCtenisLog.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockCtenisLog.block)
@@ -74,7 +75,7 @@ public class WorldGenCtenis extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCtenisSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCtenisSapling.block.canPlaceBlockAt(worldIn, blockpos)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockCtenisLog.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockCtenisLog.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockCtenisLog.block)

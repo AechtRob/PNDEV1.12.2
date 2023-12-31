@@ -51,7 +51,7 @@ public class WorldGenRockPilesPangaen extends WorldGenerator
                     return false;
                 }
 
-                if (position.getY() <= 109 && position.getY() >= (worldIn.getSeaLevel() + 4)
+                if (position.getY() <= 109 && position.getY() >= (Functions.getAdjustedSeaLevel(worldIn, position) + 4)
                         && (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau")
                         || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_broken")
                         || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_canyons")

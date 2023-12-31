@@ -23,13 +23,13 @@ public class WorldGenIrania extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockIraniaLand.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockIraniaLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockIraniaLand.block.getDefaultState(), 2);
                 BlockIraniaLand.BlockCustom.onBlockAddedWorldgen(worldIn, blockpos, BlockIraniaLand.block.getDefaultState());
                 flag = true;
             }
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && (!worldIn.provider.isNether() || blockpos.getY() < 254))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && (!worldIn.provider.isNether() || blockpos.getY() < 254))
             {
                 BlockPos blockpos1 = blockpos.up();
                 IBlockState iblockstate = worldIn.getBlockState(blockpos);
