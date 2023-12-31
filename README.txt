@@ -1,24 +1,53 @@
-Prehistoric Nature is a closed source mod, owned by Aecht_Rob, licensed as All Rights Reserved for all versions. This type of licence is briefly explained and/or modified as below. The following does not circumscribe, define or describe an "All Rights Reserved" licence but is intended as a help for some salient points to be quickly understood, but, where they do restrict or loosen the licence, are intended to do so:
+-------------------------------------------
+Source installation information for modders
+-------------------------------------------
+This code follows the Minecraft Forge installation methodology. It will apply
+some small patches to the vanilla MCP source code, giving you and it access 
+to some of the data and functions you need to build a successful mod.
 
-You are not allowed to create add-in or companion mods relying on this mod's protected content without explicit prior permission from the mod Owner. All content which does not already belong to Mojang/Microsoft is claimed as the mod Owner's property with no exceptions or limit. This includes and is not limited to: IP in methods, know-how, palaeontological research conclusions and organism realisations and concepts (where not founded on prior third party or public domain work), designs, concepts, gameplay innovations, coding techniques, graphics, sounds, models, all code, and everything else able to be owned.
+Note also that the patches are built against "unrenamed" MCP source code (aka
+srgnames) - this means that you will not be able to read them directly against
+normal code.
 
-You cannot port this mod to any other version, platform, game or medium. You cannot make substantively derivative works using or based on anything inside this mod without prior permission. Distribution of the mod is per the terms of use of CurseForge.
+Source pack installation information:
 
-You can include the mod in a public modpack provided that it is acknowledged.
+Standalone source installation
+==============================
 
-You can make language packs or resourcepacks for the mod and publish those.
+See the Forge Documentation online for more detailed instructions:
+http://mcforge.readthedocs.io/en/latest/gettingstarted/
 
-You can include the mod in videos or other media provided that the mod is credited properly, and subject to all normal provisions of this type of licence.
+Step 1: Open your command-line and browse to the folder where you extracted the zip file.
 
-You may include images from our mod in media primarily intended as publicity for your own work, provided that these are incidental and provided that you credit our mod in doing so, and provided the following exception does not apply:
+Step 2: You're left with a choice.
+If you prefer to use Eclipse:
+1. Run the following command: "gradlew genEclipseRuns" (./gradlew genEclipseRuns if you are on Mac/Linux)
+2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
+   or run "gradlew eclipse" to generate the project.
+(Current Issue)
+4. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment
+5. Edit MOD_CLASSES to show [modid]%%[Path]; 2 times rather then the generated 4.
 
-You may not include anything from our mod in your own publicity where you are primarily receiving prima-facie taxable income for the direct distribution of your own work, whether as early-access, advanced-access, pre-release, costs-covering, or any similar scheme amounting to charging for access (this includes selling mods or work directly as well as via schemes such as via Patreon or ad-revenue-based methods). This applies no matter what medium your own work is in. For example you can't use our mod content to advertise your own mod if you are selling access to your mod; you can't use screenshots from our mod in publicity for a magzine if you are selling that magazine; etc. 
+If you prefer to use IntelliJ:
+1. Open IDEA, and import project.
+2. Select your build.gradle file and have it import.
+3. Run the following command: "gradlew genIntellijRuns" (./gradlew genIntellijRuns if you are on Mac/Linux)
+4. Refresh the Gradle Project in IDEA if required.
 
-None of the above paragraph is intended to alter the aplicability of "fair use" of this mod, but is intended to explain it a little, under which uses deemed commercial are not generously accepted.
+If at any point you are missing libraries in your IDE, or you've run into problems you can run "gradlew --refresh-dependencies" to refresh the local cache. "gradlew clean" to reset everything {this does not affect your code} and then start the processs again.
 
-You cannot share any content anywhere public containing unreleased mod content, from Alpha or Beta releases, or from any showcases or previews we share on our own Discord, unless you have the mod Owner's prior permission.
+Should it still not work, 
+Refer to #ForgeGradle on EsperNet for more information about the gradle environment.
+or the Forge Project Discord discord.gg/UvedJ9m
 
-It is your responsibility to check the licence currently in force for all versions by checking that bundled with the latest update.
+Forge source installation
+=========================
+MinecraftForge ships with this code and installs it as part of the forge
+installation process, no further action is required on your part.
 
-Email contact: udder7@hotmail.com
-Discord: https://discord.gg/snzaYpu Aecht_Rob
+LexManos' Install Video
+=======================
+https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
+
+For more details update more often refer to the Forge Forums:
+http://www.minecraftforge.net/forum/index.php/topic,14048.0.html
