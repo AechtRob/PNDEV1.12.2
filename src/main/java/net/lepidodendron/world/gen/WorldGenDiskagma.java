@@ -22,7 +22,7 @@ public class WorldGenDiskagma extends WorldGenerator
 
         for (int i = 0; i < 16; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
+            BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(4) - rand.nextInt(4));
 
             if (worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
             && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockDiskagma.block.canPlaceBlockAt(worldIn, blockpos))

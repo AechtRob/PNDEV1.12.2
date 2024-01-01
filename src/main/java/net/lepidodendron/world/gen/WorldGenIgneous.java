@@ -44,7 +44,7 @@ public class WorldGenIgneous extends WorldGenerator
 
                     if (material != Material.GRASS && material != Material.ROCK
                     	&& material != Material.GROUND && material != Material.SAND
-                        && position.getY() <= worldIn.getSeaLevel())
+                        && position.getY() <= Functions.getAdjustedSeaLevel(worldIn, position))
                     {
                         break label50;
                     }

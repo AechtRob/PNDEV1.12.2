@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenNoeggerathiales;
 import net.lepidodendron.procedure.ProcedureWorldGenSigillaria;
 import net.lepidodendron.procedure.ProcedureWorldGenWalchia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -83,7 +84,7 @@ public class WorldGenSigillaria extends WorldGenAbstractTree
 					);
 					
 				
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());
@@ -95,7 +96,7 @@ public class WorldGenSigillaria extends WorldGenAbstractTree
                     ){
                         $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris etc.
                     }
-					if (position.getY() > (worldIn.getSeaLevel()+20)) {
+					if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position)+20)) {
                         if ((worldIn.provider.getDimension() != LepidodendronConfig.dimCarboniferous)
                         ){
                             ProcedureWorldGenNoeggerathiales.executeProcedure($_dependencies);

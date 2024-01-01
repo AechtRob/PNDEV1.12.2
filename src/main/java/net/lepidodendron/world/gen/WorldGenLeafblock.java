@@ -22,6 +22,9 @@ public class WorldGenLeafblock extends WorldGenerator
 
     public boolean generate(BlockBush placechecker, IBlockState leafState, IBlockState logState, World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, boolean ignoreGround)
     {
+        if (minHeight == 0) {
+            minHeight = Functions.getAdjustedSeaLevel(worldIn, position) - 4;
+        }
         boolean flag = false;
 
         for (int i = 0; i < 48; ++i)
@@ -30,7 +33,7 @@ public class WorldGenLeafblock extends WorldGenerator
 
             if (!ignoreGround) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && placechecker.canBlockStay(worldIn, blockpos, placechecker.getDefaultState())
+                if (worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && placechecker.canBlockStay(worldIn, blockpos, placechecker.getDefaultState())
                         && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                         && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
                 ) {
@@ -58,7 +61,7 @@ public class WorldGenLeafblock extends WorldGenerator
                 }
             }
             else { //can spawn on any flat surface
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.getBlockState(blockpos.down()).getBlockFaceShape(worldIn, blockpos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
+                if (worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.getBlockState(blockpos.down()).getBlockFaceShape(worldIn, blockpos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
                         && worldIn.canSeeSky(blockpos)
                         && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                         && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))

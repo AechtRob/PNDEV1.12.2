@@ -43,7 +43,7 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
         BlockPos pos;
         //Height calcs:
         int yy = 0;
-        yy = Math.min(position.getY() + 4, worldIn.getSeaLevel()+2);
+        yy = Math.min(position.getY() + 4, Functions.getAdjustedSeaLevel(worldIn, position)+2);
         boolean reef = false;
         //System.err.println("Reef start");
 
@@ -71,9 +71,9 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
                             //System.err.println("Block1 at " + pos.getX() + " "  + pos.getY() + " " + pos.getZ() + " : " + worldIn.getBlockState(pos).getBlock());
 
                             //Always a chance to grow straight up:
-                            if ((Math.random() > 0.45) && (position.getY() + layer + 1) < worldIn.getSeaLevel()+2) {
+                            if ((Math.random() > 0.45) && (position.getY() + layer + 1) < Functions.getAdjustedSeaLevel(worldIn, position)+2) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(), BlockStromatolite.block.getDefaultState(),3);
-                                if ((Math.random() > 0.45) && (position.getY() + layer + 2) < worldIn.getSeaLevel()+2) {
+                                if ((Math.random() > 0.45) && (position.getY() + layer + 2) < Functions.getAdjustedSeaLevel(worldIn, position)+2) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), BlockStromatolite.block.getDefaultState(),3);
                                 }
                             }

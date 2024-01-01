@@ -24,7 +24,7 @@ public class WorldGenSigillariaSmall extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSigillariaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSigillariaSapling.block.canPlaceBlockAt(worldIn, blockpos)
             	&& (worldIn.getBlockState(blockpos.east()).getBlock() != BlockSigillariaStem.block)
             	&& (worldIn.getBlockState(blockpos.west()).getBlock() != BlockSigillariaStem.block)
             	&& (worldIn.getBlockState(blockpos.north()).getBlock() != BlockSigillariaStem.block)

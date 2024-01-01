@@ -35,11 +35,11 @@ public class VineGenerator extends WorldGenerator
     {
         for (int i = 0; i < 64; ++i)
         {
-            int j = position.getX() + rand.nextInt(8) - rand.nextInt(8);
+            int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
             int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-            int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
+            int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
-            if (k >= worldIn.getSeaLevel() && this.Vine.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
+            if (k >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k, l)) && this.Vine.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){

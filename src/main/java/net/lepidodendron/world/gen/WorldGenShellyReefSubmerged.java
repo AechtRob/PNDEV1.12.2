@@ -24,7 +24,7 @@ public class WorldGenShellyReefSubmerged extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if ((!worldIn.provider.isNether()) && (blockpos.getY() <= worldIn.getSeaLevel() - 1) && (blockpos.getY() >= worldIn.getSeaLevel() - 6)
+            if ((!worldIn.provider.isNether()) && (blockpos.getY() <= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 1) && (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 6)
             	&& worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND
                 && worldIn.getBlockState(blockpos).getMaterial() == Material.WATER
             	)

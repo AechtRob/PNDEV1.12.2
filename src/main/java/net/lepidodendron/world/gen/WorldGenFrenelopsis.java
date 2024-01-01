@@ -15,12 +15,15 @@ public class WorldGenFrenelopsis extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight)
     {
+        if (minHeight == 0) {
+            minHeight = Functions.getAdjustedSeaLevel(worldIn, position) - 4;
+        }
         boolean flag = false;
 
         for (int i = 0; i < 6; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFrenelopsis.block.canPlaceBlockAt(worldIn, blockpos) &&
+            BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
+            if (worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFrenelopsis.block.canPlaceBlockAt(worldIn, blockpos) &&
                 (
                     (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
                         || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND)

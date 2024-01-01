@@ -66,7 +66,7 @@ public class RecipeCookedMeatsandSeeds  {
 			if (stack.getItem() != new ItemStack(BlockAraucarioxylonLog.block, 1).getItem()
 					&& stack.getItem() !=  new ItemStack(BlockSciadopitysLog.block, 1).getItem()
 					&& stack.getItem() !=  new ItemStack(BlockHymenaeaLog.block, 1).getItem()) {
-				GameRegistry.addSmelting(stack, new ItemStack(Items.COAL, 1), 0.15F);
+				GameRegistry.addSmelting(stack, new ItemStack(Items.COAL, 1, 1), 0.15F);
 			}
 		}
 

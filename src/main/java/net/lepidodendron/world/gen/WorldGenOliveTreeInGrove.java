@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenOlive;
 import net.lepidodendron.procedure.ProcedureWorldGenOliveDead;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.BiomeOliveGrove;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.state.IBlockState;
@@ -36,7 +37,7 @@ public class WorldGenOliveTreeInGrove extends WorldGenerator
                     IBlockState state = worldIn.getBlockState(down);
                     boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling) Blocks.SAPLING);
 
-                    if (positionTree.getY() >= worldIn.getSeaLevel() - 4 && isSoil && positionTree.getY() < worldIn.getHeight() - 1) {
+                    if (positionTree.getY() >= Functions.getAdjustedSeaLevel(worldIn, positionTree) - 4 && isSoil && positionTree.getY() < worldIn.getHeight() - 1) {
                         java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
                         $_dependencies.put("x", positionTree.getX());
                         $_dependencies.put("y", positionTree.getY());

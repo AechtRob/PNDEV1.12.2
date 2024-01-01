@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenNypa;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -72,7 +73,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                     }
                 }
 
-                if (!flag || (position.getY() > worldIn.getSeaLevel()+20))
+                if (!flag || (position.getY() > Functions.getAdjustedSeaLevel(worldIn, position)+20))
                 {
                     result = false;
                 }
@@ -86,7 +87,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                             (state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling) Blocks.SAPLING)
                                     || state.getMaterial() == Material.SAND || state.getMaterial() == Material.CLAY);
 
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && isSoil && blockpos.getY() < worldIn.getHeight() - i - 1) {
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && isSoil && blockpos.getY() < worldIn.getHeight() - i - 1) {
                         java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
@@ -116,7 +117,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                             }
                         }
 
-                        if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && isSoil && blockpos.getY() < worldIn.getHeight() - i - 1) {
+                        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && isSoil && blockpos.getY() < worldIn.getHeight() - i - 1) {
                             java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());

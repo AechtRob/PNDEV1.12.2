@@ -119,6 +119,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Desert
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
 				biomeCriteria = true;
 			}
@@ -158,6 +159,8 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_creek_fog")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
 			GenChance = 192;
 		}

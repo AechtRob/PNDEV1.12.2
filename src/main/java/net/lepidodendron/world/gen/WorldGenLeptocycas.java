@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockLeptocycasLog;
 import net.lepidodendron.block.BlockLeptocycasSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenLeptocycas;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -20,16 +21,16 @@ public class WorldGenLeptocycas extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 7;
+        int offset = 4;
         if (needsWater) {
-            offset = 6;
+            offset = 2;
         }
         for (int i = 0; i < 32; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLeptocycasSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLeptocycasSapling.block.canPlaceBlockAt(worldIn, blockpos)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockLeptocycasLog.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockLeptocycasLog.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockLeptocycasLog.block)
@@ -72,7 +73,7 @@ public class WorldGenLeptocycas extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLeptocycasSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockLeptocycasSapling.block.canPlaceBlockAt(worldIn, blockpos)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockLeptocycasLog.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockLeptocycasLog.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockLeptocycasLog.block)

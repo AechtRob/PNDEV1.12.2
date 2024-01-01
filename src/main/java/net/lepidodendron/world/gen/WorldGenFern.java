@@ -17,13 +17,16 @@ public class WorldGenFern extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight)
     {
+        if (minHeight == 0) {
+            minHeight = Functions.getAdjustedSeaLevel(worldIn, position) - 4;
+        }
         boolean flag = false;
 
         for (int i = 0; i < 32; ++i)
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && Blocks.TALLGRASS.getStateFromMeta(2).getBlock().canPlaceBlockAt(worldIn, blockpos)
+            if (worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && Blocks.TALLGRASS.getStateFromMeta(2).getBlock().canPlaceBlockAt(worldIn, blockpos)
                 && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                 && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2)))
             {

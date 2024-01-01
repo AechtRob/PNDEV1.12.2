@@ -25,7 +25,7 @@ public class WorldGenLavaFlow extends WorldGenerator
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
             if (worldIn.isAirBlock(blockpos) && worldIn.getBlockState(blockpos.down()).getBlock() == BlockLavaRock.block
-                && blockpos.getY() > (worldIn.getSeaLevel() + rand.nextInt(10)+altitude))
+                && blockpos.getY() > (Functions.getAdjustedSeaLevel(worldIn, blockpos) + rand.nextInt(10)+altitude))
             {
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.FLOWING_LAVA.getDefaultState(), 2);
                 if (worldIn.isAirBlock(blockpos.west()) && worldIn.getBlockState(blockpos.west().down()).getBlock() == BlockLavaRock.block) {

@@ -1,7 +1,9 @@
 package net.lepidodendron.world.biome.devonian;
 
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
+import net.lepidodendron.world.BiomeDecoratorPN;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeDecorator;
 
 public abstract class BiomeDevonian extends Biome {
     public BiomeDevonian(BiomeProperties properties) {
@@ -13,5 +15,11 @@ public abstract class BiomeDevonian extends Biome {
     }
 
     public abstract EnumBiomeTypeDevonian getBiomeType();
+
+    @Override
+    public BiomeDecorator createBiomeDecorator()
+    {
+        return getModdedBiomeDecorator(new BiomeDecoratorPN());
+    }
 
 }

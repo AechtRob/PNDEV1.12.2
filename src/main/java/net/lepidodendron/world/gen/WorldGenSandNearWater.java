@@ -17,7 +17,7 @@ public class WorldGenSandNearWater extends WorldGenerator {
         for (int i = 0; i < 64; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && (blockpos.getY() < worldIn.getSeaLevel() + 1) && worldIn.isAirBlock(blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && (blockpos.getY() < Functions.getAdjustedSeaLevel(worldIn, blockpos) + 1) && worldIn.isAirBlock(blockpos)
                     && (!worldIn.provider.isNether() || blockpos.getY() < 254)
 
                     && (

@@ -29,7 +29,7 @@ public class WorldGenXihuphyllum extends WorldGenerator
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockXihuphyllum.block.canPlaceBlockAt(worldIn, blockpos) &&
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockXihuphyllum.block.canPlaceBlockAt(worldIn, blockpos) &&
                     (
                         (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
                                 || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND)
@@ -61,7 +61,7 @@ public class WorldGenXihuphyllum extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockXihuphyllum.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockXihuphyllum.block.canPlaceBlockAt(worldIn, blockpos)
                         && (
                         (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
                         || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND)

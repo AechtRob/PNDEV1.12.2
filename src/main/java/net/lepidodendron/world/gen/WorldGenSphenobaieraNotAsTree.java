@@ -1,7 +1,8 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockCzekanowskiaSapling;
-import net.lepidodendron.procedure.ProcedureWorldGenCzekanowskia;
+import net.lepidodendron.block.BlockSahnioxylonSapling;
+import net.lepidodendron.block.BlockSahnioxylonShootPlaceable;
+import net.lepidodendron.procedure.ProcedureWorldGenSphenobaiera;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -11,18 +12,25 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import java.util.HashMap;
 import java.util.Random;
 
-public class WorldGenCzekanowskia extends WorldGenerator
+public class WorldGenSphenobaieraNotAsTree extends WorldGenerator
 {
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        return true;
+        return generate(worldIn, rand, position, false, 0);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater) {
+        return generate(worldIn, rand, position, needsWater, 0);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, int minHeight)
     {
+        if (minHeight == 0) {
+            minHeight = Functions.getAdjustedSeaLevel(worldIn, position) - 4;
+        }
         boolean flag = false;
-        int offset = 5;
+        int offset = 4;
         if (needsWater) {
             offset = 2;
         }
@@ -30,24 +38,24 @@ public class WorldGenCzekanowskia extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockCzekanowskiaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() > minHeight + (rand.nextInt(5) - 2) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSahnioxylonSapling.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 if ((worldIn.canSeeSky(blockpos))
                     && worldIn.isAirBlock(blockpos.up()) && worldIn.isAirBlock((blockpos.up(2))) && worldIn.isAirBlock((blockpos.up(3))) && worldIn.isAirBlock((blockpos.up(4)))) {
 
                     //Grow:
-                    //if (Math.random() > 0.3) {
-                    //    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
-                    //}
-                    //else {
+                    if (Math.random() > 0.3) {
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                    }
+                    else {
                         HashMap<String, Object> $_dependencies = new HashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
                         $_dependencies.put("world", worldIn);
-                        ProcedureWorldGenCzekanowskia.executeProcedure($_dependencies);
-                    //}
+                        ProcedureWorldGenSphenobaiera.executeProcedure($_dependencies);
+                    }
                 }
                 flag = true;
             }
@@ -75,17 +83,17 @@ public class WorldGenCzekanowskia extends WorldGenerator
                     if ((worldIn.canSeeSky(blockpos))
                             && worldIn.isAirBlock(blockpos.up()) && worldIn.isAirBlock((blockpos.up(2))) && worldIn.isAirBlock((blockpos.up(3))) && worldIn.isAirBlock((blockpos.up(4)))) {
 
-                        //if (Math.random() > 0.3) {
-                        //    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
-                       // }
-                        //else {
+                        if (Math.random() > 0.3) {
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                        }
+                        else {
                             HashMap<String, Object> $_dependencies = new HashMap<>();
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());
                             $_dependencies.put("world", worldIn);
-                            ProcedureWorldGenCzekanowskia.executeProcedure($_dependencies);
-                        //}
+                            ProcedureWorldGenSphenobaiera.executeProcedure($_dependencies);
+                        }
                     }
                     flag = true;
                 }

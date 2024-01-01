@@ -20,9 +20,9 @@ public class WorldGenLophosoria extends WorldGenerator
 
         for (int i = 0; i < 30; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(3) - rand.nextInt(3));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
             	(
             		(worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
             		|| (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GRASS)            		

@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockFurculaLog;
 import net.lepidodendron.block.BlockFurculaSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenFurcula;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -21,7 +22,7 @@ public class WorldGenFurcula extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFurculaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockFurculaSapling.block.canPlaceBlockAt(worldIn, blockpos)
             	&& (worldIn.getBlockState(blockpos.east()).getBlock() != BlockFurculaLog.block)
             	&& (worldIn.getBlockState(blockpos.west()).getBlock() != BlockFurculaLog.block)
             	&& (worldIn.getBlockState(blockpos.north()).getBlock() != BlockFurculaLog.block)

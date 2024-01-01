@@ -26,7 +26,7 @@ public class WorldGenPachypteris extends WorldGenerator
 
             int yy = canSurviveAt(worldIn, blockpos);
 
-            if (blockpos.getY() >= worldIn.getSeaLevel() - 6 && yy != 0)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 6 && yy != 0)
             {
                 BlockPos pos = new BlockPos(blockpos.getX(), yy + 1, blockpos.getZ());
                 if (isWaterBlock(worldIn, pos.up()) && isWaterBlock(worldIn, pos) && isWaterBlock(worldIn, pos.up(2))

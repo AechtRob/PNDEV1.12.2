@@ -22,9 +22,9 @@ public class WorldGenChaunograptus extends WorldGenerator {
 		boolean flag = false;
 
 		for (int i = 0; i < 48; ++i) {
-			BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
+			BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(4) - rand.nextInt(4));
 			//System.err.println("testing Y " + blockpos.getY());
-			if (blockpos.getY() <= worldIn.getSeaLevel() - 2 && isWaterBlock(worldIn, blockpos)
+			if (blockpos.getY() <= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 2 && isWaterBlock(worldIn, blockpos)
 					&& !worldIn.provider.isNether() ) {
 				int orientation = rand.nextInt(4);
 				if (orientation == 0) { //North
