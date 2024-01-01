@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockSahnioxylonSapling;
 import net.lepidodendron.block.BlockSahnioxylonShootPlaceable;
+import net.lepidodendron.block.BlockThinnfeldiaLog;
 import net.lepidodendron.procedure.ProcedureWorldGenThinnfeldia;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
@@ -38,7 +39,25 @@ public class WorldGenThinnfeldia extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() > minHeight + (rand.nextInt(5) - 2) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSahnioxylonSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            boolean space = true;
+            int yy = 0;
+            while (yy < 4 && space) {
+                int xx = -2;
+                while (xx <= 2 && space) {
+                    int zz = -2;
+                    while (zz <= 2 && space) {
+                        if (worldIn.getBlockState(blockpos.add(xx, yy, zz)).getBlock() == BlockThinnfeldiaLog.block) {
+                            space = false;
+                            break;
+                        }
+                        zz++;
+                    }
+                    xx++;
+                }
+                yy ++;
+            }
+
+            if (space && blockpos.getY() > minHeight + (rand.nextInt(5) - 2) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSahnioxylonSapling.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 if ((worldIn.canSeeSky(blockpos))

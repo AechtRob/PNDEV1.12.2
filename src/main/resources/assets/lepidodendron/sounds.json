@@ -9304,5 +9304,119 @@
         "stream": false
       }
     ]
+  },
+
+  "dicraeosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dicraeosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dicraeosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dicraeosaurus_living04",
+        "stream": false
+      }
+    ]
+  },
+  "dicraeosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dicraeosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dicraeosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dicraeosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dicraeosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dicraeosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "dicraeosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dicraeosaurus_living01",
+        "stream": false
+      }
+    ]
+  },
+
+  "mamenchisaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:mamenchisaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_living08",
+        "stream": false
+      }
+    ]
+  },
+  "mamenchisaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:mamenchisaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "mamenchisaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:mamenchisaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "mamenchisaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:mamenchisaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:mamenchisaurus_living04",
+        "stream": false
+      }
+    ]
   }
 }

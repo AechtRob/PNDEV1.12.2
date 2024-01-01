@@ -39,8 +39,6 @@ public class ProcedureWorldGenThinnfeldia extends ElementsLepidodendronMod.ModEl
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		double TreeHeight = 0;
-		double counter = 0;
 
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
 		if ((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))
