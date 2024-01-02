@@ -80,6 +80,11 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    @Override
+    public float getEyeHeight() {
+        return 0.15F;
+    }
+
     public void eatItem(ItemStack stack) {
         if (stack != null && stack.getItem() != null) {
             float itemHealth = 0.5F; //Default minimal nutrition
