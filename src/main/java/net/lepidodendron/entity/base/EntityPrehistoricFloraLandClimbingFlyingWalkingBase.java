@@ -50,6 +50,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     protected static final DataParameter<EnumFacing> SIT_FACE = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FACING);
     private static final DataParameter<Boolean> HEADCOLLIDED = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Float> FLYPROGRESS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FLOAT);
+    private static final DataParameter<Boolean> ISHOMING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
 
     public int sitCooldown = 0;
 
@@ -242,6 +243,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(SITTING, false);
+        this.dataManager.register(ISHOMING, false);
         this.dataManager.register(FLYPROGRESS, 0F);
         this.dataManager.register(SIT_FACE, EnumFacing.DOWN);
         this.dataManager.register(SIT_BLOCK_POS, Optional.absent());
@@ -252,6 +254,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setHeadCollided(compound.getBoolean("headcollided"));
+        this.setHoming(compound.getBoolean("homing"));
         this.climbingpause = compound.getInteger("climbingpause");
         this.dataManager.set(SIT_FACE, EnumFacing.byIndex(compound.getByte("SitFace")));
         this.sitCooldown = compound.getInteger("SitCooldown");
@@ -287,6 +290,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
         compound.setBoolean("headcollided", this.getHeadCollided());
+        compound.setBoolean("homing", this.getHoming());
         compound.setInteger("climbingpause", climbingpause);
         compound.setBoolean("Sitting", this.isSitting);
         compound.setByte("SitFace", (byte) this.dataManager.get(SIT_FACE).getIndex());
@@ -320,7 +324,17 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     public void setHeadCollided(boolean collided)
     {
-        this.dataManager.set(HEADCOLLIDED, collided);
+        this.dataManager.set(ISHOMING, collided);
+    }
+
+    public boolean getHoming()
+    {
+        return this.dataManager.get(HEADCOLLIDED);
+    }
+
+    public void setHoming(boolean collided)
+    {
+        this.dataManager.set(ISHOMING, collided);
     }
 
     /**
@@ -465,6 +479,13 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
         if (this.getAttachmentFacing() == EnumFacing.UP) {
             this.setHomePos(this.getPosition());
+            this.setHoming(false);
+        }
+
+        //If it's close to the home point z and x then it can stop homing:
+        if (this.getHoming() && this.getHomePos().distanceSqToCenter(this.posX, this.getHomePos().getY(), this.posZ) < 10 ) {
+            //This is close enough hopefully
+            this.setHoming(false);
         }
 
         if ((this instanceof IGuano) && this.rand.nextInt(6000) == 0 && (!this.world.isRemote)
