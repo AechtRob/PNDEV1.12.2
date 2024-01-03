@@ -5025,6 +5025,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBrachiosaurus.class, new IRenderFactory<EntityPrehistoricFloraBrachiosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBrachiosaurus> createRenderFor(RenderManager manager) {
+                return new RenderBrachiosaurus(manager);
+            }
+        });
+
 
         
         

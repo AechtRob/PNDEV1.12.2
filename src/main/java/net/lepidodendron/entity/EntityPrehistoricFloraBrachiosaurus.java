@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	public EntityPrehistoricFloraBrachiosaurus(World world) {
 		super(world);
 		setSize(3.0F, 6F);
-		stepHeight = 2;
+		stepHeight = 4;
 		minWidth = 0.8F;
 		maxWidth = 3.0F;
 		maxHeight = 6F;
@@ -613,7 +613,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(15.0, 15.00, 15.0);
+			return this.getEntityBoundingBox().grow(25.0, 45.00, 25.0);
 		}
 		return this.getEntityBoundingBox();
 	}
