@@ -14,6 +14,9 @@ public class RenderStensioella extends RenderLiving<EntityPrehistoricFloraStensi
     public RenderStensioella(RenderManager mgr) {
         super(mgr, new ModelStensioella(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.65F * 0.296F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraStensioella entity) {

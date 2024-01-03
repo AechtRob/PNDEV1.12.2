@@ -215,10 +215,10 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 		return -1.36;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 3;
+		return 2;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 2.7;
+		return 1.5;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 1.3;
