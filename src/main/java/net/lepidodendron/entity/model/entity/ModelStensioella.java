@@ -181,17 +181,39 @@ public class ModelStensioella extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5 * 0.2F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetX = -0.08F;
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(head, 1.5F, 0.0F, 1.55F);
+        this.head.offsetY = -0.0F;
+        this.head.offsetX = -0.07F;
+        this.head.offsetZ = -0.4F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.1F, -0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(frontLeftFin, 0.2F, 0.0F, -0.3F);
+        this.setRotateAngle(frontRightFin, 0.2F, 0.0F, 0.3F);
+        this.head.offsetY = -0.1F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(head, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(frontLeftFin, -0.2F, 0.0F, 0.3F);
+        this.setRotateAngle(frontRightFin, -0.2F, 0.0F, -0.3F);
+        this.head.offsetY = 0.1F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

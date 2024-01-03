@@ -299,18 +299,91 @@ public class ModelEudimorphodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.chest.render(f5 * this.scaler);
     }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head1, 0.6F, -0.0F, -0.2F);
+        this.setRotateAngle(jaw1, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(wing1L, -0.0F, 0.4F, -0.4F);
+        this.setRotateAngle(wing2L, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wing3L, -1.3F, 0.0F, 0.5F);
+        this.setRotateAngle(wing4L, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(handL, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(wing1R, 0.0F, -0.4F, 0.4F);
+        this.setRotateAngle(wing2R, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wing3R, -1.3F, 0.0F, -0.5F);
+        this.setRotateAngle(wing4R, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(handR, 0.0F,0.0F, 0.0F);
+        this.chest.offsetY = -0.15F;
+        this.chest.offsetX = 0.0F;
+        this.chest.offsetZ = -0.35F;
+        this.chest.render(0.01F);
+        resetToDefaultPose();
+    }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.chest.offsetZ = -0.3F;
-        this.jaw1.rotateAngleX = (float) Math.toRadians(20);
-        this.chest.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head1, 0.4F, 0.0F, 0.3F);
+        this.setRotateAngle(jaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.2F, 0.0F, 1.3F);
+        this.setRotateAngle(lowerlegR, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(footR, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegL, 0.2F, 0.0F, -1.3F);
+        this.setRotateAngle(lowerlegL, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(footL, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(wing1R, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(wing2R, 0.0F, 0.0F, 1.2F);
+        this.setRotateAngle(wing3R, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wing4R, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(handR, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(wing1L, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(wing2L, 0.0F, 0.0F, -1.2F);
+        this.setRotateAngle(wing3L, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wing4L, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(handL, 0.0F, 0.0F, 0.7F);
+        this.chest.offsetY = 0.27F;
+        this.chest.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(chest, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(head1, 0.6F, 0.1F, 0.2F);
+        this.setRotateAngle(jaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.4F, 0.0F, 1.3F);
+        this.setRotateAngle(lowerlegR, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(footR, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegL, 0.4F, 0.0F, -1.3F);
+        this.setRotateAngle(lowerlegL, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(footL, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(wing1L, -0.0F, 0.0F, -0.4F);
+        this.setRotateAngle(wing2L, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wing3L, -1.5F, 0.0F, 0.5F);
+        this.setRotateAngle(wing4L, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(handL, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(wing1R, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(wing2R, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wing3R, -1.5F, 0.0F, -0.5F);
+        this.setRotateAngle(wing4R, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(handR, 0.0F,0.0F, 1.5F);
+        this.chest.offsetY = -0.0F;
+        this.chest.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

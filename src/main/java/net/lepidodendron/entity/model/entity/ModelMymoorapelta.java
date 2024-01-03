@@ -683,9 +683,9 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
         //Rotations, positions and sizing:
         this.hips.offsetY = -0.50F;
         this.hips.offsetX = 0.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(130);
-        this.hips.rotateAngleX = (float)Math.toRadians(9);
-        this.hips.rotateAngleZ = (float)Math.toRadians(-2);
+        this.hips.rotateAngleY = (float)Math.toRadians(100);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
         float scaler = 1.1F;
         this.hips.setScale(scaler, scaler, scaler);

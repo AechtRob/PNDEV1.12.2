@@ -13,6 +13,9 @@ public class RenderSquatinactis extends RenderLiving<EntityPrehistoricFloraSquat
     public RenderSquatinactis(RenderManager mgr) {
         super(mgr, new ModelSquatinactis(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.7F * 0.43F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSquatinactis entity) {

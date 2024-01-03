@@ -733,7 +733,7 @@ public class ModelAmplectobelua extends AdvancedModelBase {
         this.setRotateAngle(tailR2, 0.0F, 0.5236F, 0.2618F);
         this.setRotateAngle(tailR3, 0.0F, -0.1745F, 0.0F);
         this.body.rotateAngleY=(float)Math.toRadians(90);
-        this.body.offsetY=-0.6F;
+        this.body.offsetY=-0.5F;
         this.body.offsetX=-0.1F;
         this.body.offsetZ=0F;
         this.body.render(0.01F);
