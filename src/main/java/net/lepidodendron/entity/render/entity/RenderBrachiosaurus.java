@@ -18,7 +18,7 @@ public class RenderBrachiosaurus extends RenderLiving<EntityPrehistoricFloraBrac
     }
 
     public static float getScaler() {
-        return 1.15F;
+        return 0.8F;
     }
 
     @Override
