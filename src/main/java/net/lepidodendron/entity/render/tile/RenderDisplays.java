@@ -489,5 +489,6 @@ public class RenderDisplays {
     public static final ModelWeigeltisaurid modelWeigeltisaurid = new ModelWeigeltisaurid();
     public static final ModelXenacanthus modelXenacanthus = new ModelXenacanthus();
     public static final ModelMamenchisaurus modelMamenchisaurus = new ModelMamenchisaurus();
+    public static final ModelBrachiosaurus modelBrachiosaurus = new ModelBrachiosaurus();
 
 }
