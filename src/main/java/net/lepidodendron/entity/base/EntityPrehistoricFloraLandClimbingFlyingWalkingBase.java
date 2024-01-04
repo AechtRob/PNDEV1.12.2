@@ -46,9 +46,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     private static final DataParameter<Boolean> SITTING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> SIT_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
+    protected static final DataParameter<Optional<BlockPos>> LAST_LAND = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
     protected static final DataParameter<EnumFacing> SIT_FACE = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FACING);
     private static final DataParameter<Boolean> HEADCOLLIDED = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Float> FLYPROGRESS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FLOAT);
+    private static final DataParameter<Boolean> ISHOMING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
 
     public int sitCooldown = 0;
 
@@ -241,15 +243,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(SITTING, false);
+        this.dataManager.register(ISHOMING, false);
         this.dataManager.register(FLYPROGRESS, 0F);
         this.dataManager.register(SIT_FACE, EnumFacing.DOWN);
         this.dataManager.register(SIT_BLOCK_POS, Optional.absent());
+        this.dataManager.register(LAST_LAND, Optional.absent());
         this.dataManager.register(HEADCOLLIDED, false);
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setHeadCollided(compound.getBoolean("headcollided"));
+        this.setHoming(compound.getBoolean("homing"));
         this.climbingpause = compound.getInteger("climbingpause");
         this.dataManager.set(SIT_FACE, EnumFacing.byIndex(compound.getByte("SitFace")));
         this.sitCooldown = compound.getInteger("SitCooldown");
@@ -264,6 +269,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         } else {
             this.dataManager.set(SIT_BLOCK_POS, Optional.absent());
         }
+        if (compound.hasKey("HomePosX")) {
+            int i = compound.getInteger("HomePosX");
+            int j = compound.getInteger("HomePosY");
+            int k = compound.getInteger("HomePosZ");
+            this.dataManager.set(LAST_LAND, Optional.of(new BlockPos(i, j, k)));
+        } else {
+            this.dataManager.set(LAST_LAND, Optional.absent());
+        }
         if (compound.hasKey("TargetPosX")) {
             int i = compound.getInteger("TargetPosX");
             int j = compound.getInteger("TargetPosY");
@@ -277,6 +290,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
         compound.setBoolean("headcollided", this.getHeadCollided());
+        compound.setBoolean("homing", this.getHoming());
         compound.setInteger("climbingpause", climbingpause);
         compound.setBoolean("Sitting", this.isSitting);
         compound.setByte("SitFace", (byte) this.dataManager.get(SIT_FACE).getIndex());
@@ -288,6 +302,12 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             compound.setInteger("PosX", blockpos1.getX());
             compound.setInteger("PosY", blockpos1.getY());
             compound.setInteger("PosZ", blockpos1.getZ());
+        }
+        BlockPos blockpos3 = this.getHomePos();
+        if (blockpos3 != null) {
+            compound.setInteger("HomePosX", blockpos3.getX());
+            compound.setInteger("HomePosY", blockpos3.getY());
+            compound.setInteger("HomePosZ", blockpos3.getZ());
         }
         BlockPos blockpos2 = this.getFlyTarget();
         if (blockpos2 != null) {
@@ -304,7 +324,17 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     public void setHeadCollided(boolean collided)
     {
-        this.dataManager.set(HEADCOLLIDED, collided);
+        this.dataManager.set(ISHOMING, collided);
+    }
+
+    public boolean getHoming()
+    {
+        return this.dataManager.get(HEADCOLLIDED);
+    }
+
+    public void setHoming(boolean collided)
+    {
+        this.dataManager.set(ISHOMING, collided);
     }
 
     /**
@@ -378,6 +408,15 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.dataManager.set(SIT_BLOCK_POS, Optional.fromNullable(pos));
     }
 
+    @Nullable
+    public BlockPos getHomePos() {
+        return this.dataManager.get(LAST_LAND).orNull();
+    }
+
+    public void setHomePos(@Nullable BlockPos pos) {
+        this.dataManager.set(LAST_LAND, Optional.fromNullable(pos));
+    }
+
     @Override
     public boolean attackEntityFrom(DamageSource ds, float f) {
         if (ds == DamageSource.IN_WALL) {
@@ -437,6 +476,17 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     @Override
     public void onLivingUpdate() {
+
+        if (this.getAttachmentFacing() == EnumFacing.UP) {
+            this.setHomePos(this.getPosition());
+            this.setHoming(false);
+        }
+
+        //If it's close to the home point z and x then it can stop homing:
+        if (this.getHoming() && this.getHomePos().distanceSqToCenter(this.posX, this.getHomePos().getY(), this.posZ) < 10 ) {
+            //This is close enough hopefully
+            this.setHoming(false);
+        }
 
         if ((this instanceof IGuano) && this.rand.nextInt(6000) == 0 && (!this.world.isRemote)
             && this.getAttachmentFacing() != EnumFacing.UP && this.world.isAirBlock(this.getPosition().down())) {
@@ -575,7 +625,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                     //It is walking:
                     sitTickCt++;
                     sitCooldown = 150;
-
                 }
                 else if (world.isSideSolid(pos, this.getAttachmentFacing())) {
                     sitTickCt++;
