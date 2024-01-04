@@ -10,8 +10,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderDiplodocus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -19,7 +17,6 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -78,7 +75,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 0.5F;
+			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}

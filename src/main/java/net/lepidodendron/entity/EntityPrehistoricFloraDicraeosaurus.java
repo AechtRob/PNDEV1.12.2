@@ -11,7 +11,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderDicraeosaurus;
-import net.lepidodendron.entity.render.entity.RenderDiplodocus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -81,7 +80,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 8.0F;
+			return 8.0F + (12.0F - (12.0F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}
