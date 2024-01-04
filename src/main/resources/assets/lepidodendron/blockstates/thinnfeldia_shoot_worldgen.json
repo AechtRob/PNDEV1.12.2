@@ -1,0 +1,58 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {"model": "lepidodendron:thinnfeldia_shoot_side", "weight": 3},
+        {"model": "lepidodendron:thinnfeldia_shoot_side_flower"}
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {"model": "lepidodendron:thinnfeldia_shoot_side", "y": 90, "weight": 3},
+        {"model": "lepidodendron:thinnfeldia_shoot_side_flower", "y": 90}
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {"model": "lepidodendron:thinnfeldia_shoot_side", "y": 180, "weight": 3},
+        {"model": "lepidodendron:thinnfeldia_shoot_side_flower", "y": 180}
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {"model": "lepidodendron:thinnfeldia_shoot_side", "y": 270, "weight": 3},
+        {"model": "lepidodendron:thinnfeldia_shoot_side_flower", "y": 270}
+      ]
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": [
+        {"model": "lepidodendron:thinnfeldia_shoot", "weight": 3},
+        {"model": "lepidodendron:thinnfeldia_shoot_flower"}
+      ]
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": [
+        {"model": "lepidodendron:thinnfeldia_shoot", "x": 180, "weight": 3},
+        {"model": "lepidodendron:thinnfeldia_shoot_flower", "x": 180}
+      ]
+    }
+  ]
+}
