@@ -14,7 +14,9 @@ public class RenderCaelestiventus extends RenderLiving<EntityPrehistoricFloraCae
     public RenderCaelestiventus(RenderManager mgr) {
         super(mgr, new ModelCaelestiventus(), 0.15f);
     }
-
+    public static float getScaler() {
+        return 0.7F * 0.45F;
+    }
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCaelestiventus entity) {
         return RenderCaelestiventus.TEXTURE;

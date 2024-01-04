@@ -143,6 +143,11 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
     }
 
     @Override
+    public float getEyeHeight() {
+        return 0.15F;
+    }
+
+    @Override
     public void selectNavigator () {
         if (this.isReallyFlying()) {
             if ((!(this.moveHelper instanceof EntityPrehistoricFloraAgeableFlyingBase.FlyingMoveHelper))

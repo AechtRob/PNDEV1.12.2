@@ -336,18 +336,40 @@ public class ModelStagonolepis extends AdvancedModelBaseExtended {
         this.Stagonolepis.render(f5 * 0.727f);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.neck.offsetY = -0.04F;
+    public void renderStaticWall(float f) {
+        this.neck.offsetY = -0.07F;
         this.jaw.rotateAngleX = (float) Math.toRadians(32.5);
         this.head.rotateAngleX = (float) Math.toRadians(-12.5);
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body3, -0.1F, 0.1F, 0.05F);
+        this.setRotateAngle(tail, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(leftBackLeg, -0.2F, 0.0F, -0.2F);
+        this.setRotateAngle(leftBjoint, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(leftBfoot, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackLeg, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBjoint, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBfoot, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1F, -0.05F);
+        this.setRotateAngle(body2, 0.18F, -0.1F, 0.05F);
+        this.setRotateAngle(neck, -0.05F, 0.1F, -0.05F);
+        this.setRotateAngle(head, 0.0F, 0.1F, -0.05F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFrontLeg, 0.3F, 0.5F, -0.6F);
+        this.setRotateAngle(LeftFjoint, 0.2F, -0.3F, 0.38F);
+        this.setRotateAngle(LeftFFoot, 0.5F, 0.0F, 0.2F);
+        this.setRotateAngle(rightFrontLeg, -0.4F, -0.3F, 0.7F);
+        this.setRotateAngle(RightFjoint, -0.3F, 0.3F, -0.3F);
+        this.setRotateAngle(RightFFoot, 0.8F, 0.3F, -0.3F);
+        this.Stagonolepis.offsetY = -0.127F;
+        this.Stagonolepis.offsetZ = -0.04F;
+        this.Stagonolepis.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

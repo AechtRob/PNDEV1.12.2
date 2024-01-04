@@ -386,6 +386,7 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
         this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(tail3, 0.0F, -0.4F, 0.0F);
         this.setRotateAngle(tail4, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.4F, 0.0F);
         this.setRotateAngle(forelegL, 0.5F, 0.0F, -0.3F);
         this.setRotateAngle(forelegL3, 0.0F, 0.0F, 0.9F);
         this.setRotateAngle(forelegR, -0.2F, 0.0F, 0.0F);

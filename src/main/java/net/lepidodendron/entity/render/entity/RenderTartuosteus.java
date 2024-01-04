@@ -14,6 +14,9 @@ public class RenderTartuosteus extends RenderLiving<EntityPrehistoricFloraTartuo
     public RenderTartuosteus(RenderManager mgr) {
         super(mgr, new ModelTartuosteus(), 0.05f);
     }
+    public static float getScaler() {
+        return 0.52F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTartuosteus entity) {

@@ -257,7 +257,7 @@ public class EntityPrehistoricFloraAngustidontus extends EntityPrehistoricFloraA
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.86;
+		return 0.6;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;

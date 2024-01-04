@@ -347,22 +347,81 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Yunguisaurus.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.neck2.offsetZ = -0.3F;
-        this.head.rotateAngleY = (float)Math.toRadians(20);
-        this.neck3.rotateAngleY = (float)Math.toRadians(-10);
-        this.neck4.rotateAngleY = (float)Math.toRadians(-12.5);
-        this.neck5.rotateAngleY = (float)Math.toRadians(-7.5);
-        this.lowerjaw.rotateAngleX = (float)Math.toRadians(37.5);
-        this.neck2.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.neck.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.04F;
+        this.neck.offsetX = 0.0F;
+        this.neck.offsetZ = 0.0F;
+        this.neck.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.05F, -0.07F, 0.0F);
+        this.setRotateAngle(neck2, -0.05F, -0.08F, 0.0F);
+        this.setRotateAngle(neck3, -0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(neck4, -0.05F, -0.17F, 0.0F);
+        this.setRotateAngle(neck5, -0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(head, -0.1F, -0.23F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontflipper, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(leftfrontflipperbase, 0.0F, 0.05F, 0.05F);
+        this.setRotateAngle(leftfrontflippertip, 0.0F, -0.08F, 0.02F);
+        this.setRotateAngle(rightfrontflipper, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(rightfrontflipperbase, 0.0F, -0.05F, 0.05F);
+        this.setRotateAngle(rightfrontflippertip, 0.0F, 0.08F, 0.02F);
+        this.setRotateAngle(tail, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.1F, -0.05F);
+        this.setRotateAngle(tail3, 0.1F, 0.1F, -0.05F);
+        this.setRotateAngle(tail4, 0.1F, 0.1F, -0.1F);
+        this.setRotateAngle(tail5, 0.1F, 0.2F, -0.1F);
+        this.setRotateAngle(tail6, 0.1F, 0.2F, -0.1F);
+        this.setRotateAngle(leftbackflipper, 0.0F, -0.3F, 0.2F);
+        this.setRotateAngle(leftbackflipperbase, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(leftbackflippertip, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(rightbackflipper, 0.0F, 0.3F, -0.2F);
+        this.setRotateAngle(rightbackflipperbase, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(rightbackflippertip, 0.0F, 0.4F, 0.0F);
+        this.Yunguisaurus.offsetY = -0.5F;
+        this.Yunguisaurus.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.8F);
+        this.setRotateAngle(neck, 0.0F, -0.1F, -0.1F);
+        this.setRotateAngle(neck2, 0.0F, -0.1F, -0.1F);
+        this.setRotateAngle(neck3, 0.0F, -0.1F, -0.1F);
+        this.setRotateAngle(neck4, 0.0F, -0.1F, -0.1F);
+        this.setRotateAngle(neck5, 0.0F, -0.1F, -0.1F);
+        this.setRotateAngle(head, 0.0F, -0.1F, -0.1F);
+        this.setRotateAngle(lowerjaw, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontflipper, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(leftfrontflipperbase, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftfrontflippertip, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(rightfrontflipper, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(rightfrontflipperbase, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(rightfrontflippertip, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(tail, 0.0F, 0.05F, 0.03F);
+        this.setRotateAngle(tail2, 0.0F, 0.05F, 0.03F);
+        this.setRotateAngle(tail3, 0.0F, 0.05F, 0.03F);
+        this.setRotateAngle(tail4, 0.0F, 0.05F, 0.03F);
+        this.setRotateAngle(tail5, 0.0F, 0.05F, 0.03F);
+        this.setRotateAngle(tail6, 0.0F, 0.05F, 0.03F);
+        this.setRotateAngle(leftbackflipper, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(leftbackflipperbase, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(leftbackflippertip, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(rightbackflipper, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(rightbackflipperbase, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(rightbackflippertip, 0.0F, 0.0F, -0.1F);
+        this.Yunguisaurus.offsetY = 0.0F;
+        this.Yunguisaurus.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void renderStaticBook(float f) {
@@ -376,7 +435,32 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         float scaler = 0.48F;
         this.Yunguisaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.8F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontflipper, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontflipperbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontflippertip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfrontflipper, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfrontflipperbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfrontflippertip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftbackflipper, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftbackflipperbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftbackflippertip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightbackflipper, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightbackflipperbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightbackflippertip, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Yunguisaurus.render(f);
         //Reset rotations, positions and sizing:

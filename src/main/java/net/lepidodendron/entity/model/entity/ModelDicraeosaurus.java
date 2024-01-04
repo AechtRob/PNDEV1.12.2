@@ -560,16 +560,23 @@ public class ModelDicraeosaurus extends AdvancedModelBaseExtended {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.chest.rotateAngleY = (float) Math.toRadians(180);
+        this.upperarmR.setScale(0,0,0);
+        this.upperarmL.setScale(0,0,0);
+        this.upperarmR.scaleChildren = true;
+        this.upperarmL.scaleChildren = true;
+        this.setRotateAngle(neck, 0.05F, 0.0F, -0.01F);
+        this.setRotateAngle(neck2, 0.05F, 0.0F, -0.02F);
+        this.setRotateAngle(neck3, -0.05F, 0.0F, -0.03F);
+        this.setRotateAngle(neck4, -0.05F, 0.0F, -0.04F);
+        this.setRotateAngle(head, -0.05F, 0.0F, -0.05F);
         this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.chest.offsetY = 0.0F;
+        this.chest.offsetY = -0.1F;
         this.chest.offsetX = 0.0F;
-        this.chest.offsetZ = 0.0F;
+        this.chest.offsetZ = -0.21F;
         this.chest.render(0.01F);
+        this.upperarmR.setScale(1,1,1);
+        this.upperarmL.setScale(1,1,1);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {

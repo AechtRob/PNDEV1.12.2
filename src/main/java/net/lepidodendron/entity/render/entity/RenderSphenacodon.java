@@ -14,6 +14,9 @@ public class RenderSphenacodon extends RenderLiving<EntityPrehistoricFloraSphena
     public RenderSphenacodon(RenderManager mgr) {
         super(mgr, new ModelSphenacodon(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.73f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSphenacodon entity) {

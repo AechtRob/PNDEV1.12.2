@@ -15,6 +15,10 @@ public class RenderStagonolepis extends RenderLiving<EntityPrehistoricFloraStago
         super(mgr, new ModelStagonolepis(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.7F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraStagonolepis entity) {
         return RenderStagonolepis.TEXTURE;
