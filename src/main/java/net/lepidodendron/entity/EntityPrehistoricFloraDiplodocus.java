@@ -10,7 +10,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderApatosaurus;
 import net.lepidodendron.entity.render.entity.RenderDiplodocus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
@@ -77,7 +76,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 0.5F;
+			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}

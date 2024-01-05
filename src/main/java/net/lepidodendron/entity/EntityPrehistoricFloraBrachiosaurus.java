@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if (!this.getIsFast()) {
-			return 0.5F;
+			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}

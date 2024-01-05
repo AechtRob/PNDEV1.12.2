@@ -65,6 +65,16 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int getEatLength() {
+		return 55;
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 20;
+	}
+
+	@Override
 	public int getDrinkLength() {
 		return 70;
 	}
@@ -104,7 +114,7 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.399F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
