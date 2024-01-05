@@ -373,7 +373,7 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return 0.05;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.9;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;

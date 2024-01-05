@@ -14,7 +14,7 @@ public class RenderRebellatrix extends RenderLiving<EntityPrehistoricFloraRebell
     public RenderRebellatrix(RenderManager mgr) {
         super(mgr, new ModelRebellatrix(), 0.0f);
     }
-
+    public static float getScaler() {return 0.343F; }
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraRebellatrix entity) {
         return RenderRebellatrix.TEXTURE;

@@ -8,6 +8,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderRebellatrix;
+import net.lepidodendron.entity.render.entity.RenderScaumenacia;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -229,6 +233,55 @@ public class EntityPrehistoricFloraRebellatrix extends EntityPrehistoricFloraAge
 		}
 		return LepidodendronMod.REBELLATRIX_LOOT;
 	}
-
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.55;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.55;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.12;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.3;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.03;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.2;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderRebellatrix.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelRebellatrix;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderRebellatrix.getScaler();
+	}
 }
 
