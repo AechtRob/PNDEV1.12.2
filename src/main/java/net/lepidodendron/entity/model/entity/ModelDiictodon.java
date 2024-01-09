@@ -201,7 +201,7 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.hips.offsetY = 0.2F;
+        this.hips.offsetY = 0.0F;
         this.hips.render(0.01F);
         resetToDefaultPose();
     }

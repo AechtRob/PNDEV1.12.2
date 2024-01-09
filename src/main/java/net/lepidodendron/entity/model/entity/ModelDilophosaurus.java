@@ -681,7 +681,7 @@ public class ModelDilophosaurus extends AdvancedModelBaseExtended {
         //Rotations, positions and sizing:
         this.Dilophosaurus.offsetY = 0.3F;
         this.Dilophosaurus.offsetX = 0.0F;
-        this.Dilophosaurus.rotateAngleY = (float)Math.toRadians(190);
+        this.Dilophosaurus.rotateAngleY = (float)Math.toRadians(0);
         this.Dilophosaurus.rotateAngleX = (float)Math.toRadians(0);
         this.Dilophosaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Dilophosaurus.scaleChildren = true;

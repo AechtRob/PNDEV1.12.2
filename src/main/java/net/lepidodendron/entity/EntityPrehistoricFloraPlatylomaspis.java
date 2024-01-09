@@ -4,13 +4,20 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderPlatylomaspis;
+import net.lepidodendron.entity.render.entity.RenderPsarolepis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -33,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraPlatylomaspis extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraPlatylomaspis extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -387,10 +394,32 @@ public class EntityPrehistoricFloraPlatylomaspis extends EntityPrehistoricFloraF
 		return super.attackEntityFrom(source, amount);
 
 	}
-
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {return ModTriggers.CLICK_PLATYLOMASPIS;}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.PLATYLOMASPIS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.2;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderPlatylomaspis.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelPlatylomaspis;}
+	public static float getScaler(@Nullable String variant) {return RenderPlatylomaspis.getScaler();}
 }

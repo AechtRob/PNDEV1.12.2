@@ -122,7 +122,7 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.27F;
+			speedBase = speedBase * 1.6F;
 		}
 		return speedBase;
 	}

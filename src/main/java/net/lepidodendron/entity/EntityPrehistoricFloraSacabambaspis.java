@@ -172,9 +172,7 @@ public class EntityPrehistoricFloraSacabambaspis extends EntityPrehistoricFloraF
 	}
 	@Nullable
 	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_SACABAMBASPIS;
-	}
+	public CustomTrigger getModTrigger() {return ModTriggers.CLICK_SACABAMBASPIS;}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.SACABAMBASPIS_LOOT;

@@ -4,11 +4,14 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderPteraspis;
 import net.lepidodendron.entity.render.entity.RenderScaumenacia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -22,7 +25,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPteraspis extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraPteraspis extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -172,7 +175,11 @@ public class EntityPrehistoricFloraPteraspis extends EntityPrehistoricFloraFishB
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.PTERASPIS_LOOT;
 	}
-
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PTERASPIS;
+	}
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
