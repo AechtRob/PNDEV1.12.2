@@ -303,7 +303,7 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.75;
+		return 0.85;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;
