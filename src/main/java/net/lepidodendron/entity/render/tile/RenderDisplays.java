@@ -16,6 +16,7 @@ public class RenderDisplays {
     public static final ModelAngelina modelAngelina = new ModelAngelina();
     public static final ModelAngustidontus modelAngustidontus = new ModelAngustidontus();
     public static final ModelAnomalocaris modelAnomalocaris = new ModelAnomalocaris();
+    public static final ModelAnurognathus modelAnurognathus = new ModelAnurognathus();
     public static final ModelAnteosaurus modelAnteosaurus = new ModelAnteosaurus();
     public static final ModelApatosaurus modelApatosaurus = new ModelApatosaurus();
     public static final ModelAphnelepis modelAphnelepis = new ModelAphnelepis();
@@ -32,6 +33,7 @@ public class RenderDisplays {
     public static final ModelBarameda modelBarameda = new ModelBarameda();
     public static final ModelBarbclabornia modelBarbclabornia = new ModelBarbclabornia();
     public static final ModelBatrachotomus modelBatrachotomus = new ModelBatrachotomus();
+    public static final ModelBatrachognathus modelBatrachognathus = new ModelBatrachognathus();
     public static final ModelBavariscyllium modelBavariscyllium = new ModelBavariscyllium();
     public static final ModelBeishanichthys modelBeishanichthys = new ModelBeishanichthys();
     public static final ModelBelonostomus modelBelonostomus = new ModelBelonostomus();
@@ -49,6 +51,7 @@ public class RenderDisplays {
     public static final ModelCamuropiscis modelCamuropiscis = new ModelCamuropiscis();
     public static final ModelCancrinos modelCancrinos = new ModelCancrinos();
     public static final ModelCarcinosoma modelCarcinosoma = new ModelCarcinosoma();
+    public static final ModelCascocauda modelCascocauda = new ModelCascocauda();
     public static final ModelCarolinites modelCarolinites = new ModelCarolinites();
     public static final ModelCarolowilhelmina modelCarolowilhelmina = new ModelCarolowilhelmina();
     public static final ModelCaryosyntrips modelCaryosyntrips = new ModelCaryosyntrips();
@@ -90,6 +93,7 @@ public class RenderDisplays {
     public static final ModelDatheosaurus modelDatheosaurus = new ModelDatheosaurus();
     public static final ModelDeltoptychius modelDeltoptychius = new ModelDeltoptychius();
     public static final ModelDendrocystites modelDendrocystites = new ModelDendrocystites();
+    public static final ModelDendrorhynchoides modelDendrorhynchoides = new ModelDendrorhynchoides();
     public static final ModelDesmatosuchus modelDesmatosuchus = new ModelDesmatosuchus();
     public static final ModelDicranurus modelDicranurus = new ModelDicranurus();
     public static final ModelDiictodon modelDiictodon = new ModelDiictodon();
@@ -130,6 +134,7 @@ public class RenderDisplays {
     public static final ModelForeyia modelForeyia = new ModelForeyia();
     public static final ModelFurca modelFurca = new ModelFurca();
     public static final ModelGasosaurus modelGasosaurus = new ModelGasosaurus();
+    public static final ModelGargoyleosaurus modelGargoyleosaurus = new ModelGargoyleosaurus();
     public static final ModelGemuendina modelGemuendina = new ModelGemuendina();
     public static final ModelGeosaurus modelGeosaurus = new ModelGeosaurus();
     public static final ModelGephyrostegus modelGephyrostegus = new ModelGephyrostegus();
@@ -167,6 +172,7 @@ public class RenderDisplays {
     public static final ModelIvoites modelIvoites = new ModelIvoites();
     public static final ModelJamoytius modelJamoytius = new ModelJamoytius();
     public static final ModelJeholotriton modelJeholotriton = new ModelJeholotriton();
+    public static final ModelJeholopterus modelJeholopterus = new ModelJeholopterus();
     public static final ModelKaibabvenator modelKaibabvenator = new ModelKaibabvenator();
     public static final ModelKalligrammatid modelKalligrammatid = new ModelKalligrammatid();
     public static final ModelKayentatherium modelKayentatherium = new ModelKayentatherium();
@@ -463,6 +469,7 @@ public class RenderDisplays {
     public static final ModelPlatysomus modelPlatysomus = new ModelPlatysomus();
     public static final ModelPoraspis modelPoraspis = new ModelPoraspis();
     public static final ModelPristerognathus modelPristerognathus = new ModelPristerognathus();
+    public static final ModelProceratosaurus modelProceratosaurus = new ModelProceratosaurus();
     public static final ModelPromissum modelPromissum = new ModelPromissum();
     public static final ModelProconodontus modelProconodontus = new ModelProconodontus();
     public static final ModelPsarolepis modelPsarolepis = new ModelPsarolepis();

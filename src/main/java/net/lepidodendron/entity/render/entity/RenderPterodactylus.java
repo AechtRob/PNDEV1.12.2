@@ -11,7 +11,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPterodactylus> {
-    public static final ResourceLocation TEXTURE_PTERODACTYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pterodactylus.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pterodactylus.png");
 
     public RenderPterodactylus(RenderManager mgr) {
         super(mgr, new ModelPterodactylus(), 0.5F);
@@ -19,6 +19,11 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
 
     public static float getScaler() {
         return 0.35F;
+    }
+
+    @Override
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraPterodactylus entity) {
+        return TEXTURE;
     }
 
     @Override
@@ -52,10 +57,7 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
         }
     }
 
-    @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraPterodactylus entity) {
-        return TEXTURE_PTERODACTYLUS;
-    }
+
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraPterodactylus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
