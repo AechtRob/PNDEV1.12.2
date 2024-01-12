@@ -94,6 +94,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public int ticksExistedAnimated;
     public boolean wasWarning;
     private float getMaxTurnDistancePerTick;
+    public int homeCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -178,6 +179,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public float getUnSneakRange() {
         return this.getSneakRange() * 0.5F;
     }
+
+    public int getHomeCooldown() { return this.homeCooldown;}
 
     @Override
     public void onUpdate() {
@@ -944,6 +947,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
+        compound.setInteger("homeCooldown", this.homeCooldown);
         compound.setBoolean("juvenile", this.getJuvenile());
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
@@ -965,6 +969,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.inPFLove = compound.getInteger("InPFLove");
         this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
+        this.homeCooldown = compound.getInteger("homeCooldown");
         this.setJuvenile(compound.getBoolean("juvenile"));
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
@@ -1234,6 +1239,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);
+            }
+        }
+
+        if (this.homeCooldown > 0) {
+            this.homeCooldown -= rand.nextInt(3) + 1;
+        }
+        if (this.homeCooldown < 0) {
+            this.homeCooldown = 0;
+        }
+
+        if ((!this.world.isRemote) && this.getNestLocation() != null) {
+            if (this.world.isBlockLoaded(this.getNestLocation())) {
+                if (this.isMyNest(this.world, this.getNestLocation())) {
+                    if (this.getNestLocation().distanceSq(this.posX, this.posY, this.posZ) <= 9) {
+                        this.homeCooldown = 12000; //~5 game minutes of non-tethered movement (note the decrements are not in 1s)
+                    }
+                }
             }
         }
     }

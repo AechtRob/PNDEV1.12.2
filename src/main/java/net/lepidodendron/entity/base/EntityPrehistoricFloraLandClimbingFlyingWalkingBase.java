@@ -118,14 +118,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         return false; //default
     }
 
-    /**means they won't fly far from their nests and will return to them periodically (if they have them)
-     *
-     * @return
-     */
-    public boolean nestTethered() {
-        return false; //default
-    }
-
     public int climbsFor() {
         return 100;
     }
