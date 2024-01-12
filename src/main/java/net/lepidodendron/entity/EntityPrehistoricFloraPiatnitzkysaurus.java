@@ -10,8 +10,12 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderPiatnitzkysaurus;
+import net.lepidodendron.entity.render.entity.RenderPoraspis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -358,15 +362,9 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		return 0.2;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderMegalosaurus.TEXTURE;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelMegalosaurus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderMegalosaurus.getScaler();
-//	}
-}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderPiatnitzkysaurus.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelPiatnitzkysaurus;}
+	public static float getScaler(@Nullable String variant) {return RenderPiatnitzkysaurus.getScaler();}
+	}

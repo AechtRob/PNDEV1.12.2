@@ -130,18 +130,27 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.platycaraspis.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.platycaraspis.rotateAngleY = (float) Math.toRadians(90);
-        this.platycaraspis.offsetX = -0.07F;
-        this.platycaraspis.offsetZ = 0.01F;
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(platycaraspis, 1.6F, 0.0F, -0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.05F, 0.0F);
+        this.platycaraspis.offsetY = -0.15F;
+        this.platycaraspis.offsetX = -0.0F;
+        this.platycaraspis.offsetZ = -0.35F;
         this.platycaraspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(platycaraspis, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.2F, 0.0F);
+        this.platycaraspis.offsetY = -0.0F;
+        this.platycaraspis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

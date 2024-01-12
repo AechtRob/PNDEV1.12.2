@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSemionotus extends RenderLiving<EntityPrehistoricFloraSemionotus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/semionotus.png");
-
+    public static float getScaler() {
+        return 0.5F * 0.385F;
+    }
     public RenderSemionotus(RenderManager mgr) {
         super(mgr, new ModelSemionotus(), 0.0f);
     }

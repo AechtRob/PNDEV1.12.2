@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPsarolepis extends RenderLiving<EntityPrehistoricFloraPsarolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/psarolepis.png");
-
+    public static float getScaler() {
+        return 0.189f;
+    }
     public RenderPsarolepis(RenderManager mgr) {
         super(mgr, new ModelPsarolepis(), 0.0f);
     }

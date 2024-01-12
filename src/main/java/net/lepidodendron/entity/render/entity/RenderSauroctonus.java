@@ -14,6 +14,9 @@ public class RenderSauroctonus extends RenderLiving<EntityPrehistoricFloraSauroc
     public RenderSauroctonus(RenderManager mgr) {
         super(mgr, new ModelSauroctonus(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.47f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSauroctonus entity) {
