@@ -1353,6 +1353,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MIRAGAIA = new CustomTrigger("pf_book_miragaia");
     public static final CustomTrigger CLICK_DORYGNATHUS = new CustomTrigger("pf_book_dorygnathus");
     public static final CustomTrigger CLICK_ELAPHROSAURUS = new CustomTrigger("pf_book_elaphrosaurus");
+    public static final CustomTrigger CLICK_YIQI = new CustomTrigger("pf_book_yiqi");
 
 
 
@@ -2699,6 +2700,7 @@ public class ModTriggers
             CLICK_MIRAGAIA,
             CLICK_DORYGNATHUS,
             CLICK_ELAPHROSAURUS,
+            CLICK_YIQI,
 
 
 

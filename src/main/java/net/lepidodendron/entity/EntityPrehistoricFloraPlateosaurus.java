@@ -86,6 +86,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		this.standCooldown = rand.nextInt(2000);
 		return livingdata;
 	}
+
 	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
@@ -256,8 +257,6 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;

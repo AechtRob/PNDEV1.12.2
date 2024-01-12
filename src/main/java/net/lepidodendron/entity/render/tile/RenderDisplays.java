@@ -353,6 +353,7 @@ public class RenderDisplays {
     public static final ModelXinpusaurus modelXinpusaurus = new ModelXinpusaurus();
     public static final ModelXuanhuaceratops modelXuanhuaceratops = new ModelXuanhuaceratops();
     public static final ModelYinlong modelYinlong = new ModelYinlong();
+    public static final ModelYiQi modelYiQi = new ModelYiQi();
     public static final ModelYunguisaurus modelYunguisaurus = new ModelYunguisaurus();
     public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();

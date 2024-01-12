@@ -479,6 +479,7 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
         this.setRotateAngle(Upperjawslopefront_r1, 0.4482F, 0.0F, 0.0F);
         this.setRotateAngle(Upperjawslopebase_r1, 0.1742F, 0.0F, 0.0F);
