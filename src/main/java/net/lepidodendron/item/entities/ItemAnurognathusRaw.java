@@ -35,7 +35,7 @@ public class ItemAnurognathusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid_anurognathus", ItemAnurognathusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid@anurognathus", ItemAnurognathusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAnurognathusRaw.block);
 		OreDictionary.registerOre("pnfurnaceMeat", ItemAnurognathusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemAnurognathusRaw.block);

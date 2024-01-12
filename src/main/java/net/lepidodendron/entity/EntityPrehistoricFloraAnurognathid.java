@@ -8,7 +8,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderAnurognathid;
-import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.item.entities.spawneggs.*;
@@ -839,7 +838,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	}
 
 	public static float getScaler(@Nullable String variant) {
-		return RenderPalaeodictyoptera.getScaler(EntityPrehistoricFloraPalaeodictyoptera.Type.getTypeFromString(variant));
+		return RenderAnurognathid.getScaler(EntityPrehistoricFloraAnurognathid.Type.getTypeFromString(variant));
 	}
 
 }
