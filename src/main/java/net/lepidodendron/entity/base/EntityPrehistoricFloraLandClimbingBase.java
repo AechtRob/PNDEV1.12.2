@@ -301,6 +301,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                 && state.getMaterial() != MaterialLatex.LATEX
                 && (!(state.getBlock() instanceof BlockFluidBase))
                 && (!(state.getBlock() instanceof BlockLiquid))
+                && (world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()).getBlock().isPassable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()))
             )
             {
                 //Randomise the order of priority in checking, to deal with climbing at corners:
@@ -542,7 +543,8 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     }
 
     public boolean isColllidedDirection(EnumFacing facing) {
-        if (this.world.isRemote || !this.collidedHorizontally) {
+        if (this.world.isRemote || (!this.collidedHorizontally)
+            || (!world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()).getBlock().isPassable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()))) {
             return false;
         }
         if (this.getEntityBoundingBox() != null) {

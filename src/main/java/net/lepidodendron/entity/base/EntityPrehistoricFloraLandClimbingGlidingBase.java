@@ -14,6 +14,7 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityMoveHelper;
@@ -23,16 +24,19 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.Path;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends EntityPrehistoricFloraLandClimbingBase {
@@ -40,14 +44,30 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int animationTick;
+	private int launchCooldown;
 	private Animation animation = NO_ANIMATION;
 	private static final DataParameter<Boolean> ISFLYING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingGlidingBase.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> ISLAUNCHING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingGlidingBase.class, DataSerializers.BOOLEAN);
 
 	public EntityPrehistoricFloraLandClimbingGlidingBase(World world) {
 		super(world);
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		this.launchCooldown = 0;
+		return super.attackEntityFrom(ds, i);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		if (this.getLaunchCooldown() < 0) {
+			this.launchCooldown = rand.nextInt(this.getLaunchCooldown()) + 100;
+		}
+		return livingdata;
 	}
 
 	@Override
@@ -79,6 +99,11 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		}
 	}
 
+	public int getLaunchCooldown() {
+		//When set to zero will not launch itself from the ground
+		return 0;
+	}
+
 	public boolean getIsFlying() {
 		return (Boolean)this.dataManager.get(ISFLYING).booleanValue();
 	}
@@ -87,21 +112,32 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		this.dataManager.set(ISFLYING, isFlying);
 	}
 
+	public boolean getIsLaunching() {
+		return (Boolean)this.dataManager.get(ISLAUNCHING).booleanValue();
+	}
+
+	public void setIsLaunching(boolean isLaunching) {
+		this.dataManager.set(ISLAUNCHING, isLaunching);
+	}
+
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataManager.register(ISFLYING, false);
+		this.dataManager.register(ISLAUNCHING, false);
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
 		compound.setBoolean("isFlying", this.getIsFlying());
+		compound.setInteger("launchCooldown", this.launchCooldown);
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.setIsFlying(compound.getBoolean("isFlying"));
+		this.launchCooldown = compound.getInteger("launchCooldown");
 	}
 
 	@Override
@@ -109,8 +145,41 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	{
 		super.onLivingUpdate();
 
-		this.setIsFlying(((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
+		if (this.launchCooldown > 0) {
+			this.launchCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.launchCooldown < 0) {
+			this.launchCooldown = 0;
+		}
 
+		if (!this.world.isRemote) {
+			if (this.getLaunchCooldown() > 0 && this.launchCooldown == 0
+					&& (!this.getIsFast())
+					&& (!this.getIsFlying())
+					&& (!this.getIsClimbing())
+					&& (this.getIsMoving())
+					&& this.onGround
+					&& this.getAnimation() == NO_ANIMATION
+					&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
+			) {
+				this.motionY = this.launchSpeed();
+				this.motionX = -(this.launchSpeed()) * (double)MathHelper.sin(this.rotationYaw * 0.017453292F);
+				this.motionZ = (this.launchSpeed()) * (double)MathHelper.cos(this.rotationYaw * 0.017453292F);
+				this.setIsLaunching(true);
+				this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
+			}
+
+			if (this.motionY <= 0) {
+				this.setIsLaunching(false);
+			}
+		}
+
+		this.setIsFlying(((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.getIsLaunching()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
+
+	}
+
+	public double launchSpeed() {
+		return 1.0;
 	}
 
 	@Override

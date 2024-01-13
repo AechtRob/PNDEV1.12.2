@@ -5032,6 +5032,12 @@ public class RenderHandler {
                 return new RenderYiQi(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeopteryx.class, new IRenderFactory<EntityPrehistoricFloraArchaeopteryx>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeopteryx> createRenderFor(RenderManager manager) {
+                return new RenderArchaeopteryx(manager);
+            }
+        });
 
 
         
