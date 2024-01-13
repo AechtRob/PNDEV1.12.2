@@ -14,7 +14,7 @@ public class RenderYiQi extends RenderLiving<EntityPrehistoricFloraYiQi> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yiqi.png");
 
     public static float getScaler() {
-        return 0.15f;
+        return 0.185f;
     }
 
     public RenderYiQi(RenderManager mgr) {
@@ -65,22 +65,12 @@ public class RenderYiQi extends RenderLiving<EntityPrehistoricFloraYiQi> {
             case DOWN:
             default:
                 break;
-            case EAST:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
+
+            case EAST: case SOUTH: case WEST: case NORTH:
+                GlStateManager.translate(0.0F, 0.05F, -0.1775F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
-            case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
-                break;
-            case WEST:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
-                break;
-            case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, 0.0F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
-                break;
+
             case UP:
                 GlStateManager.translate(0.0F, 0.5F, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);

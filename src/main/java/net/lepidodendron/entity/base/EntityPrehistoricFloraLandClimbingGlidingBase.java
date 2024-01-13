@@ -131,26 +131,6 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	}
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
-	}
-
-	@Override
-	public void setAnimationTick(int tick) {
-		animationTick = tick;
-	}
-
-	@Override
-	public Animation getAnimation() {
-		return null;
-	}
-
-	@Override
-	public void setAnimation(Animation animation) {
-		this.animation = animation;
-	}
-
-	@Override
 	public boolean isAIDisabled() {
 		return false;
 	}

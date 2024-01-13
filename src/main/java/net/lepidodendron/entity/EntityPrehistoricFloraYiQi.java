@@ -18,6 +18,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
@@ -43,7 +44,7 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;
-		STAND_ANIMATION = Animation.create(140);
+		STAND_ANIMATION = Animation.create(89);
 	}
 
 	@Override
@@ -89,8 +90,19 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, MAKE_NEST_ANIMATION};
 	}
 
+	@Override
 	public int getRoarLength() {
 		return 40;
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 16;
+	}
+
+	@Override
+	public int getEatLength() {
+		return 30;
 	}
 
 	@Override
@@ -111,9 +123,14 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 			return 0.0F;
 		}
 		if (this.getIsFast() && (!this.getIsClimbing()) && (!this.getIsFlying())) {
-			return 0.425F;
+			return 0.485F;
 		}
 		return 0.275F;
+	}
+
+	public AxisAlignedBB getAttackBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
 	}
 
 	@Override
@@ -128,7 +145,7 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 
 		//random idle animations
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& !this.getIsMoving() && !this.getIsFlying() && !this.getIsClimbing() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 2000;
 		}
