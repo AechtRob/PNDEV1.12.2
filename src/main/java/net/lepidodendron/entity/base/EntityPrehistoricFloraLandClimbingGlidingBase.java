@@ -50,10 +50,6 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		enablePersistence();
 	}
 
-	public float getClimbSpeed() {
-		return 1.0F;
-	}
-
 	@Override
 	public void selectNavigator () {
 		if (this.getIsFlying()) {

@@ -63,6 +63,10 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         return livingdata;
     }
 
+    public float getClimbSpeed() {
+        return 1.0F;
+    }
+
     public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
         if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block
             ||  this.world.getBlockState(this.getPosition()).getBlock() == BlockCageSmall.block) {
@@ -704,7 +708,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
                     if (this.getIsClimbing() && (!(this.getHeadCollided())))
                     {
-                        this.motionY = 0.2D;
+                        this.motionY = 0.2D * this.getClimbSpeed();
                     }
 
                     if (this.isPotionActive(MobEffects.LEVITATION) && (!(this.getHeadCollided())))

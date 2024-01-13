@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandCli
 	}
 
 	@Override
+	public float getClimbSpeed() {
+		return 0.7F;
+	}
+
+	@Override
 	public int getClimbCooldown() {
 		return 20 + rand.nextInt(40);
 	}
