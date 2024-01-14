@@ -45,6 +45,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int launchCooldown;
+	private int launchProgress;
 	private Animation animation = NO_ANIMATION;
 	private static final DataParameter<Boolean> ISFLYING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingGlidingBase.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Boolean> ISLAUNCHING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingGlidingBase.class, DataSerializers.BOOLEAN);
@@ -58,6 +59,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		this.launchCooldown = 0;
+		this.launchProgress = 0;
 		return super.attackEntityFrom(ds, i);
 	}
 
@@ -67,6 +69,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		if (this.getLaunchCooldown() < 0) {
 			this.launchCooldown = rand.nextInt(this.getLaunchCooldown()) + 100;
 		}
+		this.launchProgress = 0;
 		return livingdata;
 	}
 
@@ -132,12 +135,14 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 		super.writeEntityToNBT(compound);
 		compound.setBoolean("isFlying", this.getIsFlying());
 		compound.setInteger("launchCooldown", this.launchCooldown);
+		compound.setInteger("launchProgress", this.launchProgress);
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.setIsFlying(compound.getBoolean("isFlying"));
 		this.launchCooldown = compound.getInteger("launchCooldown");
+		this.launchProgress = compound.getInteger("launchProgress");
 	}
 
 	@Override
@@ -152,6 +157,13 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			this.launchCooldown = 0;
 		}
 
+		if (this.launchProgress > 0) {
+			this.launchProgress --;
+		}
+		if (this.launchProgress < 0) {
+			this.launchProgress = 0;
+		}
+
 		if (!this.world.isRemote) {
 			if (this.getLaunchCooldown() > 0 && this.launchCooldown == 0
 					&& (!this.getIsFast())
@@ -162,19 +174,20 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					&& this.getAnimation() == NO_ANIMATION
 					&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
 			) {
-				this.motionY = this.launchSpeed();
+				//this.motionY = this.launchSpeed();
 				this.motionX = -(this.launchSpeed()) * (double)MathHelper.sin(this.rotationYaw * 0.017453292F);
 				this.motionZ = (this.launchSpeed()) * (double)MathHelper.cos(this.rotationYaw * 0.017453292F);
 				this.setIsLaunching(true);
+				this.launchProgress = 50;
 				this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
 			}
 
-			if (this.motionY <= 0) {
+			if (this.launchProgress <= 0) {
 				this.setIsLaunching(false);
 			}
 		}
 
-		this.setIsFlying(((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.getIsLaunching()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
+		this.setIsFlying(this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
 
 	}
 
@@ -338,7 +351,12 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 									this.motionY -= 0.08D;
 								}
 								else {
-									this.motionY = -0.035D;
+									if (this.getIsLaunching()) {
+										this.motionY = 0.045D;
+									}
+									else {
+										this.motionY = -0.035D;
+									}
 								}
 							}
 							if (this.getHeadCollided()) {

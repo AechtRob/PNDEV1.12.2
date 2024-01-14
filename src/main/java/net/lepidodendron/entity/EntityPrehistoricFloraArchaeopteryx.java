@@ -49,16 +49,14 @@ public class EntityPrehistoricFloraArchaeopteryx extends EntityPrehistoricFloraL
 		DISPLAY_ANIMATION = Animation.create(45);
 	}
 
-
-
 	@Override
 	public double launchSpeed() {
-		return 0.525;
+		return 0.325;
 	}
 
 	@Override
 	public int getLaunchCooldown() {
-		return 600;
+		return 1200;
 	}
 
 	@Override
