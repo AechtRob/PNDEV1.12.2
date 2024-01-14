@@ -60,6 +60,9 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		this.launchCooldown = 0;
 		this.launchProgress = 0;
+		if (this.getIsFlying() && (ds == DamageSource.IN_WALL || ds == DamageSource.FLY_INTO_WALL)) {
+			return false;
+		}
 		return super.attackEntityFrom(ds, i);
 	}
 
