@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPoraspis extends RenderLiving<EntityPrehistoricFloraPoraspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poraspis.png");
-
+    public static float getScaler() {
+        return 0.7F * 0.39F;
+    }
     public RenderPoraspis(RenderManager mgr) {
         super(mgr, new ModelPoraspis(), 0.0f);
     }

@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPlatysomus extends RenderLiving<EntityPrehistoricFloraPlatysomus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platysomus.png");
-
+    public static float getScaler() {
+        return 0.7F * 0.22F;
+    }
     public RenderPlatysomus(RenderManager mgr) {
         super(mgr, new ModelPlatysomus(), 0.0f);
     }

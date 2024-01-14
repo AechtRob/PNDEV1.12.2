@@ -217,18 +217,23 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Platylomaspis.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Platylomaspis.rotateAngleY = (float) Math.toRadians(90);
-        this.Platylomaspis.offsetX = -0.06F;
-        this.Platylomaspis.offsetZ = 0.F;
+        this.Platylomaspis.offsetY = -0.03F;
+        this.Platylomaspis.offsetX = -0.05F;
+        this.Platylomaspis.offsetZ = -0.37F;
         this.Platylomaspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Platylomaspis, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail, 0.2F, -0.1F, 0.0F);
+        this.Platylomaspis.offsetY = 0.1F;
+        this.Platylomaspis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -262,7 +267,7 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
             }
         }
         else {
-            this.Platylomaspis.offsetY = 1.25F;
+            this.Platylomaspis.offsetY = -0.25F;
         }
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);

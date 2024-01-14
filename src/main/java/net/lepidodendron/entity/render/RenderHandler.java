@@ -4990,7 +4990,6 @@ public class RenderHandler {
                 return new RenderDicraeosaurus(manager);
             }
         });
-
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHeterodontosaurus.class, new IRenderFactory<EntityPrehistoricFloraHeterodontosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraHeterodontosaurus> createRenderFor(RenderManager manager) {
@@ -5003,32 +5002,40 @@ public class RenderHandler {
                 return new RenderTianyulong(manager);
             }
         });
-
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOrnitholestes.class, new IRenderFactory<EntityPrehistoricFloraOrnitholestes>() {
             @Override
             public Render<? super EntityPrehistoricFloraOrnitholestes> createRenderFor(RenderManager manager) {
                 return new RenderOrnitholestes(manager);
             }
         });
-
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiplodocus.class, new IRenderFactory<EntityPrehistoricFloraDiplodocus>() {
             @Override
             public Render<? super EntityPrehistoricFloraDiplodocus> createRenderFor(RenderManager manager) {
                 return new RenderDiplodocus(manager);
             }
         });
-
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMamenchisaurus.class, new IRenderFactory<EntityPrehistoricFloraMamenchisaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraMamenchisaurus> createRenderFor(RenderManager manager) {
                 return new RenderMamenchisaurus(manager);
             }
         });
-
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBrachiosaurus.class, new IRenderFactory<EntityPrehistoricFloraBrachiosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraBrachiosaurus> createRenderFor(RenderManager manager) {
                 return new RenderBrachiosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraYiQi.class, new IRenderFactory<EntityPrehistoricFloraYiQi>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraYiQi> createRenderFor(RenderManager manager) {
+                return new RenderYiQi(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeopteryx.class, new IRenderFactory<EntityPrehistoricFloraArchaeopteryx>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeopteryx> createRenderFor(RenderManager manager) {
+                return new RenderArchaeopteryx(manager);
             }
         });
 

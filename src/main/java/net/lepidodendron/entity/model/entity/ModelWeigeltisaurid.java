@@ -7,6 +7,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraCoelurosauravus;
 import net.lepidodendron.entity.EntityPrehistoricFloraGlaurung;
 import net.lepidodendron.entity.EntityPrehistoricFloraRautiania;
 import net.lepidodendron.entity.EntityPrehistoricFloraWeigeltisaurus;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
@@ -204,24 +205,32 @@ public class ModelWeigeltisaurid extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        if (e instanceof EntityPrehistoricFloraRautiania) {
-            this.body.offsetY = 1.45F;
-        }
-        else if (e instanceof EntityPrehistoricFloraCoelurosauravus) {
-            this.body.offsetY = 1.45F;
-        }
-        else if (e instanceof EntityPrehistoricFloraGlaurung) {
-            this.body.offsetY = 1.45F;
-        }
-        else { //Weigeltisaurus
-            this.body.offsetY = 1.45F;
-        }
-
-        EntityPrehistoricFloraWeigeltisaurus ee = (EntityPrehistoricFloraWeigeltisaurus) e;
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.pelvis};
-        ee.tailBuffer.applyChainSwingBuffer(Tail);
+
+        EntityPrehistoricFloraLandClimbingGlidingBase ee = (EntityPrehistoricFloraLandClimbingGlidingBase) e;
+
+        if (e instanceof EntityPrehistoricFloraRautiania) {
+            this.body.offsetY = 1.45F;
+            EntityPrehistoricFloraRautiania eee = (EntityPrehistoricFloraRautiania) e;
+            eee.tailBuffer.applyChainSwingBuffer(Tail);
+        }
+        else if (e instanceof EntityPrehistoricFloraCoelurosauravus) {
+            this.body.offsetY = 1.45F;
+            EntityPrehistoricFloraCoelurosauravus eee = (EntityPrehistoricFloraCoelurosauravus) e;
+            eee.tailBuffer.applyChainSwingBuffer(Tail);
+        }
+        else if (e instanceof EntityPrehistoricFloraGlaurung) {
+            this.body.offsetY = 1.45F;
+            EntityPrehistoricFloraGlaurung eee = (EntityPrehistoricFloraGlaurung) e;
+            eee.tailBuffer.applyChainSwingBuffer(Tail);
+        }
+        else { //Weigeltisaurus
+            this.body.offsetY = 1.45F;
+            EntityPrehistoricFloraWeigeltisaurus eee = (EntityPrehistoricFloraWeigeltisaurus) e;
+            eee.tailBuffer.applyChainSwingBuffer(Tail);
+        }
 
         this.faceTarget(f3, f4, 2, neck);
         this.faceTarget(f3, f4, 1, head);
@@ -321,7 +330,7 @@ public class ModelWeigeltisaurid extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraWeigeltisaurus e = (EntityPrehistoricFloraWeigeltisaurus) entity;
+        EntityPrehistoricFloraLandClimbingGlidingBase e = (EntityPrehistoricFloraLandClimbingGlidingBase) entity;
         animator.update(entity);
         this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);

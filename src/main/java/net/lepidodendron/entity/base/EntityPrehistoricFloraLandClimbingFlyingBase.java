@@ -403,7 +403,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             }
 
             if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
-                if (checkFlyConditions() || rand.nextInt(3000) == 0) {
+                if (checkFlyConditions() || rand.nextInt(250) == 0) {
                     this.setFlying();
                 }
             }

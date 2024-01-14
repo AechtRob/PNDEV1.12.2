@@ -9418,5 +9418,115 @@
         "stream": false
       }
     ]
+  },
+
+  "yiqi_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yi_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_living06",
+        "stream": false
+      }
+    ]
+  },
+  "yiqi_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yi_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:yi_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "yiqi_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:yi_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "archaeopteryx_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeopteryx_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_living07",
+        "stream": false
+      }
+    ]
+  },
+  "archaeopteryx_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeopteryx_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeopteryx_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "archaeopteryx_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeopteryx_death",
+        "stream": false
+      }
+    ]
   }
 }

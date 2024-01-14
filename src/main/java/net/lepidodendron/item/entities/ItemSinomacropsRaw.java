@@ -35,7 +35,7 @@ public class ItemSinomacropsRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid_sinomacrops", ItemSinomacropsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid@sinomacrops", ItemSinomacropsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSinomacropsRaw.block);
 		OreDictionary.registerOre("pnfurnaceMeat", ItemSinomacropsRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemSinomacropsRaw.block);

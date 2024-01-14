@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.entity.RenderRhamphorhynchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IGuano;
@@ -66,6 +65,11 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	public Animation[] getAnimations() {
 		//No need for sideways transitions, but added ambient animations
 		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION, ALERT_ANIMATION, PREEN_ANIMATION};
+	}
+
+	@Override
+	public boolean homesToNest() {
+		return true;
 	}
 
 	@Override
@@ -328,6 +332,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		tasks.addTask(1, new EntityAISwimming(this));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
+
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, true));

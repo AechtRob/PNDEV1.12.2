@@ -802,6 +802,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_diplodocus", EntityPrehistoricFloraDiplodocus.class, LepidodendronMod.ENTITY_DIPLODOCUS, 164,-8362673,-12304329);
         registerEntity("prehistoric_flora_brachiosaurus", EntityPrehistoricFloraBrachiosaurus.class, LepidodendronMod.ENTITY_BRACHIOSAURUS, 164,-4422811,-6724531);
         registerEntity("prehistoric_flora_mamenchisaurus", EntityPrehistoricFloraMamenchisaurus.class, LepidodendronMod.ENTITY_MAMENCHISAURUS, 164,-526862,-13619409);
+        registerEntity("prehistoric_flora_yiqi", EntityPrehistoricFloraYiQi.class, LepidodendronMod.ENTITY_YIQI, 48,0,0);
+        registerEntity("prehistoric_flora_archaeopteryx", EntityPrehistoricFloraArchaeopteryx.class, LepidodendronMod.ENTITY_ARCHAEOPTERYX, 48,0,0);
 
 
 

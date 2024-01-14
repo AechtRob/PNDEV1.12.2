@@ -650,19 +650,6 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
                         this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
                         this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
                     }
-
-                    return;
-                }
-
-                if (diplo.getIsFast()) { //Running
-                    float speed = masterSpeed / 2F;
-                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
-
-                } else { //Walking
-                    float speed = masterSpeed / 1.50F;
-                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
                 }
             } else {
                 //Swimming pose:
