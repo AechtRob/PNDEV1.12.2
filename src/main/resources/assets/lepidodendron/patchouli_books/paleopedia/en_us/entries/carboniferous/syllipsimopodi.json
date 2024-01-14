@@ -1,5 +1,5 @@
 {
-	"name": "Syllipsimopodi",
+	"name": "Gordoniconus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/syllipsimopodi_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
@@ -7,20 +7,20 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_syllipsimopodi",
-			"title": "Syllipsimopodi",
+			"title": "Gordoniconus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cephalopoda$(br)>Vampyropoda"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cephalopoda$(br)>Coleoidea"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/syllipsimopodi.png"],
-			"title": "S. bideni",
+			"title": "G. beargulchensis",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_syllipsimopodi",
 			"type": "text",
-			"text": "Syllipsimopodi is an early cephalopod from the Carboniferous period. It was a vampyropod, meaning that it was closely related to vampire squids and octopi. They had 10 arms, with 2 of them being much longer than the others."
+			"text": "Gordoniconus is an early cephalopod from the Carboniferous period. It was a coleoid, meaning that it was closely related to cuttlefish and octopi. They had 10 arms, with 2 of them being much longer than the others."
 		},
 		{
 			"type": "lepidodendron:diet",
