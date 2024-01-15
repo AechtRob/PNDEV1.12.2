@@ -24,8 +24,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -33,7 +31,6 @@ import javax.annotation.Nullable;
 public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
-	@SideOnly(Side.CLIENT)
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 

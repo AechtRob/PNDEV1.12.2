@@ -216,7 +216,7 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
             }
             else
             {
-                if (pathpoint == null && p_186332_4_ > 0 && pathnodetype != PathNodeType.FENCE && pathnodetype != PathNodeType.TRAPDOOR)
+                if (pathpoint == null && p_186332_4_ > 0 && (pathnodetype != PathNodeType.FENCE || p_186332_4_ > 1) && pathnodetype != PathNodeType.TRAPDOOR)
                 {
                     pathpoint = this.getSafePoint(x, y + 1, z, p_186332_4_ - 1, p_186332_5_, facing);
 
@@ -524,11 +524,35 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         PathNodeType type = block.getAiPathNodeType(iblockstate, worldIn, blockpos, this.currentEntity);
         if (type != null) return type;
 
-        if (isTree && worldIn.isAirBlock(blockpos) && worldIn.isAirBlock(blockpos.down()) && worldIn.isAirBlock(blockpos.down(2)))
+        if (isTree && worldIn.getBlockState(blockpos).getBlock().isPassable(worldIn, blockpos)
+                && worldIn.getBlockState(blockpos.down()).getBlock().isPassable(worldIn, blockpos.down())
+                && worldIn.getBlockState(blockpos.down()).getBlock().isPassable(worldIn, blockpos.down(2)))
         {
             //System.err.println("Testing blocked");
             return PathNodeType.BLOCKED;
         }
+
+//        if (worldIn.getBlockState(blockpos).getBlock().isPassable(worldIn, blockpos)
+//                && worldIn.getBlockState(blockpos.down()).getBlock().isPassable(worldIn, blockpos.down())) {
+//            boolean allFallable = true;
+//            int fallDist;
+//            for (fallDist = 0; fallDist <= this.currentEntity.getMaxFallHeight(); fallDist ++) {
+//                if (blockpos.getY() - fallDist > 0) {
+//                    if ((!worldIn.getBlockState(blockpos.down(fallDist)).getBlock().isPassable(worldIn, blockpos.down(fallDist)))
+//                        && worldIn.getBlockState(blockpos.down(fallDist)).getMaterial() != Material.WATER) {
+//                        allFallable = false;
+//                        break;
+//                    }
+//                }
+//            }
+//            if (blockpos.getY() - fallDist - 1 > 0) {
+//                if ((allFallable) && fallDist > this.currentEntity.getMaxFallHeight() && (worldIn.getBlockState(blockpos.down(fallDist + 1)).getBlock().isPassable(worldIn, blockpos.down(fallDist + 1)))
+//                        && worldIn.getBlockState(blockpos.down(fallDist + 1)).getMaterial() != Material.WATER) {
+//                    return PathNodeType.BLOCKED;
+//                }
+//            }
+//        }
+
         if (material == Material.AIR)
         {
             return PathNodeType.OPEN;

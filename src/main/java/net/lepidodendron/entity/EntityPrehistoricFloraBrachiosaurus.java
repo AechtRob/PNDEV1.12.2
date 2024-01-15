@@ -608,6 +608,19 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public void fall(float distance, float damageMultiplier) {
+		if (distance <= 6) {
+			return;
+		}
+		super.fall(distance, damageMultiplier);
+	}
+
+	@Override
+	public int getMaxFallHeight() {
+		return 4;
+	}
+
+	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
