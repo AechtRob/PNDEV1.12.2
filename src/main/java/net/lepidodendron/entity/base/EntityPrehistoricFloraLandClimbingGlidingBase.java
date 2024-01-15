@@ -178,8 +178,8 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
 			) {
 				//this.motionY = this.launchSpeed();
-				this.motionX = -(this.launchSpeed()) * (double)MathHelper.sin(this.rotationYaw * 0.017453292F);
-				this.motionZ = (this.launchSpeed()) * (double)MathHelper.cos(this.rotationYaw * 0.017453292F);
+				//this.motionX = -(this.launchSpeed()) * (double)MathHelper.sin(this.rotationYaw * 0.017453292F);
+				//this.motionZ = (this.launchSpeed()) * (double)MathHelper.cos(this.rotationYaw * 0.017453292F);
 				this.setIsLaunching(true);
 				this.launchProgress = 50;
 				this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
