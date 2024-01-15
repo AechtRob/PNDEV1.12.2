@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
+		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
 			return 8.0F + (12.0F - (12.0F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();

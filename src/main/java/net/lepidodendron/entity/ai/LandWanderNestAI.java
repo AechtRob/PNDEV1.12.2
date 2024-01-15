@@ -86,7 +86,20 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
             World world = this.PrehistoricFloraAgeableBase.world;
 
             if (!this.PrehistoricFloraAgeableBase.isLayableNest(world,  pos)) {
-                if (this.PrehistoricFloraAgeableBase.getRNG().nextFloat() < 0.033F) {
+                //Is one beside this OK?
+                if (this.PrehistoricFloraAgeableBase.isLayableNest(world, pos.north())) {
+                    pos = pos.north();
+                }
+                else if (this.PrehistoricFloraAgeableBase.isLayableNest(world, pos.east())) {
+                    pos = pos.east();
+                }
+                else if (this.PrehistoricFloraAgeableBase.isLayableNest(world, pos.south())) {
+                    pos = pos.south();
+                }
+                else if (this.PrehistoricFloraAgeableBase.isLayableNest(world, pos.west())) {
+                    pos = pos.west();
+                }
+                else if (this.PrehistoricFloraAgeableBase.getRNG().nextFloat() < 0.033F) {
                     this.PrehistoricFloraAgeableBase.getNavigator().clearPath();
                 }
             }
@@ -100,7 +113,22 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
 
         }
         else {
-            vec3 = this.findRandomBlockTarget(32);
+            //Path is null, but am I just a fatty who's on top of it nearly?
+            if (this.PrehistoricFloraAgeableBase.isLayableNest(this.PrehistoricFloraAgeableBase.world, this.PrehistoricFloraAgeableBase.getPosition().north())) {
+                this.PrehistoricFloraAgeableBase.moveToBlockPosAndAngles(this.PrehistoricFloraAgeableBase.getPosition().north(), this.PrehistoricFloraAgeableBase.rotationYaw, this.PrehistoricFloraAgeableBase.rotationPitch);
+            }
+            else if (this.PrehistoricFloraAgeableBase.isLayableNest(this.PrehistoricFloraAgeableBase.world, this.PrehistoricFloraAgeableBase.getPosition().east())) {
+                this.PrehistoricFloraAgeableBase.moveToBlockPosAndAngles(this.PrehistoricFloraAgeableBase.getPosition().east(), this.PrehistoricFloraAgeableBase.rotationYaw, this.PrehistoricFloraAgeableBase.rotationPitch);
+            }
+            else if (this.PrehistoricFloraAgeableBase.isLayableNest(this.PrehistoricFloraAgeableBase.world, this.PrehistoricFloraAgeableBase.getPosition().south())) {
+                this.PrehistoricFloraAgeableBase.moveToBlockPosAndAngles(this.PrehistoricFloraAgeableBase.getPosition().south(), this.PrehistoricFloraAgeableBase.rotationYaw, this.PrehistoricFloraAgeableBase.rotationPitch);
+            }
+            else if (this.PrehistoricFloraAgeableBase.isLayableNest(this.PrehistoricFloraAgeableBase.world, this.PrehistoricFloraAgeableBase.getPosition().west())) {
+                this.PrehistoricFloraAgeableBase.moveToBlockPosAndAngles(this.PrehistoricFloraAgeableBase.getPosition().west(), this.PrehistoricFloraAgeableBase.rotationYaw, this.PrehistoricFloraAgeableBase.rotationPitch);
+            }
+            else {
+                vec3 = this.findRandomBlockTarget(32);
+            }
         }
 
         if (vec3 != null) {

@@ -114,7 +114,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public float getgetMaxTurnDistancePerTick() {
-        if (this.getIsFast()) {
+        if (this.getIsFast() || this.getLaying() || this.isInLove()) {
             return 20.0F;
         }
         if (!this.getNavigator().noPath()) {

@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
+		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
 			return 2.0F + (18.0F - (18.0F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();

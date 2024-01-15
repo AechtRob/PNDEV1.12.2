@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
+		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
 			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();

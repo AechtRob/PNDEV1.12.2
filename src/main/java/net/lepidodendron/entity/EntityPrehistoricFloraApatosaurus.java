@@ -75,7 +75,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
+		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
 			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
@@ -248,7 +248,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(6, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
