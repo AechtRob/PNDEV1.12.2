@@ -6,11 +6,14 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderProceratosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -35,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -184,7 +187,7 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase*2.3F;
+			speedBase = speedBase * 3.3F;
 		}
 		return speedBase;
 	}
@@ -413,4 +416,9 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 		return RenderProceratosaurus.getScaler();
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PROCERATOSAURUS;
+	}
 }

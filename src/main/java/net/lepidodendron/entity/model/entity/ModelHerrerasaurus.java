@@ -78,8 +78,8 @@ public class ModelHerrerasaurus extends AdvancedModelBaseExtended {
     private ModelAnimator animator;
 
     public ModelHerrerasaurus() {
-        this.textureWidth = 92;
-        this.textureHeight = 92;
+        this.textureWidth = 128;
+        this.textureHeight = 128;
 
         this.root = new AdvancedModelRendererExtended(this);
         this.root.setRotationPoint(0.0F, -1.25F, 0.0F);
