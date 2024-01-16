@@ -333,6 +333,7 @@ public class RenderDisplays {
     public static final ModelTiktaalik modelTiktaalik = new ModelTiktaalik();
     public static final ModelTitanicthys modelTitanicthys = new ModelTitanicthys();
     public static final ModelTomlinsonus modelTomlinsonus = new ModelTomlinsonus();
+    public static final ModelTorvosaurus modelTorvosaurus = new ModelTorvosaurus();
     public static final ModelTrachymetopon modelTrachymetopon = new ModelTrachymetopon();
     public static final ModelTribrachiodemas modelTribrachiodemas= new ModelTribrachiodemas();
     public static final ModelTritylodon modelTritylodon = new ModelTritylodon();
@@ -382,6 +383,7 @@ public class RenderDisplays {
     public static final ModelAcrolepis modelAcrolepis = new ModelAcrolepis();
     public static final ModelAlbertonia modelAlbertonia = new ModelAlbertonia();
     public static final ModelAllenypterus modelAllenypterus = new ModelAllenypterus();
+    public static final ModelAllosaurus modelAllosaurus = new ModelAllosaurus();
     public static final ModelAntineosteus modelAntineosteus = new ModelAntineosteus();
     public static final ModelArandaspis modelArandaspis = new ModelArandaspis();
     public static final ModelArchosaurus modelArchosaurus = new ModelArchosaurus();
