@@ -12,11 +12,9 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -24,6 +22,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -41,6 +40,7 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 	public Animation RELAX_ANIMATION;
 	public Animation YAWN_ANIMATION;
 	public Animation SNIFF_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraInostrancevia(World world) {
 		super(world);
@@ -56,6 +56,24 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(2000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
 	@Override
@@ -153,7 +171,7 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 			return 0.0F; //Is drinking
 		}
 		else if (this.getIsFast()) {
-			speedBase = speedBase * 1.85F;
+			speedBase = speedBase * 2.265F;
 		}
 		return speedBase;
 	}
@@ -191,10 +209,11 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestInBlockAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -268,6 +287,13 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -294,6 +320,41 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 		return LepidodendronMod.INOSTRANCEVIA_LOOT;
 	}
 
+	@Override
+	public void onEntityUpdate() {
+
+		super.onEntityUpdate();
+		//random idle animations
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			int next = rand.nextInt(3);
+			switch (next) {
+				case 0: default:
+					this.setAnimation(RELAX_ANIMATION);
+					break;
+				case 1:
+					this.setAnimation(SNIFF_ANIMATION);
+					break;
+				case 2:
+					this.setAnimation(YAWN_ANIMATION);
+					break;
+			}
+			this.standCooldown = 2000;
+		}
+
+		if ((!this.world.isRemote) && this.getAnimation() == RELAX_ANIMATION && this.getAnimationTick() == RELAX_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == SNIFF_ANIMATION && this.getAnimationTick() == SNIFF_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == YAWN_ANIMATION && this.getAnimationTick() == YAWN_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+	}
 
 	@Nullable
 	@Override

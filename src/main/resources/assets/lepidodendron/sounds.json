@@ -775,12 +775,20 @@
     ]
   },
   
-  "inostrancevia_idle": {
+  "inostrancevia_roar": {
     "sounds": [
       {
         "name": "lepidodendron:inostrancevia_living01",
         "stream": false
       },
+      {
+        "name": "lepidodendron:inostrancevia_living05",
+        "stream": false
+      }
+    ]
+  },
+  "inostrancevia_idle": {
+    "sounds": [
       {
         "name": "lepidodendron:inostrancevia_living02",
         "stream": false
@@ -791,10 +799,6 @@
       },
       {
         "name": "lepidodendron:inostrancevia_living04",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:inostrancevia_living05",
         "stream": false
       }
     ]
