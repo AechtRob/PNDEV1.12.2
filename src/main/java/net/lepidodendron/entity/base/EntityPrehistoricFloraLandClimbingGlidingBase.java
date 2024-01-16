@@ -58,6 +58,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
+		//Dont understand why these sometimes get inside blocks, but this just fixes it anyway....
 		if (ds == DamageSource.IN_WALL) {
 			if (this.getIsClimbing()) {
 				if (!this.world.getBlockState(this.getPosition().offset(this.getClimbFacing())).causesSuffocation()) {
@@ -78,6 +79,23 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
 					return false;
 				}
+			} else if (!this.world.getBlockState(this.getPosition().offset(this.getAdjustedHorizontalFacing().getOpposite())).causesSuffocation()) {
+				int xOffset = 0;
+				int zOffset = 0;
+				if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.NORTH) {
+					zOffset = -1;
+				}
+				if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.SOUTH) {
+					zOffset = 1;
+				}
+				if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.EAST) {
+					xOffset = 1;
+				}
+				if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.WEST) {
+					xOffset = -1;
+				}
+				this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+				return false;
 			} else { //Test horizontals:
 				for (int ii = 0; ii <= 3; ii++) {
 					if (!this.world.getBlockState(this.getPosition().offset(EnumFacing.byHorizontalIndex(ii))).causesSuffocation()) {
