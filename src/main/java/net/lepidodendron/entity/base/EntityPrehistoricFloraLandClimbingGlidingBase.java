@@ -175,11 +175,8 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					&& (this.getIsMoving())
 					&& this.onGround
 					&& this.getAnimation() == NO_ANIMATION
-					&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
+					//&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
 			) {
-				//this.motionY = this.launchSpeed();
-				//this.motionX = -(this.launchSpeed()) * (double)MathHelper.sin(this.rotationYaw * 0.017453292F);
-				//this.motionZ = (this.launchSpeed()) * (double)MathHelper.cos(this.rotationYaw * 0.017453292F);
 				this.setIsLaunching(true);
 				this.launchProgress = 50;
 				this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
@@ -190,12 +187,8 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			}
 		}
 
-		this.setIsFlying(this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
+		this.setIsFlying((!this.collidedHorizontally) && this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
 
-	}
-
-	public double launchSpeed() {
-		return 1.0;
 	}
 
 	@Override

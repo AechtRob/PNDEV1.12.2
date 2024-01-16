@@ -47,11 +47,6 @@ public class EntityPrehistoricFloraArchaeopteryx extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public double launchSpeed() {
-		return 0.325;
-	}
-
-	@Override
 	public int getLaunchCooldown() {
 		return 1200;
 	}
