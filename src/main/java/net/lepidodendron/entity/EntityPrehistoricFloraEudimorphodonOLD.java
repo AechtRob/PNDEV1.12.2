@@ -9,7 +9,7 @@
 //import net.lepidodendron.entity.ai.*;
 //import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 //import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
-//import net.lepidodendron.entity.render.entity.RenderCaelestiventus;
+//import net.lepidodendron.entity.render.entity.RenderEudimorphodon;
 //import net.lepidodendron.entity.render.tile.RenderDisplays;
 //import net.lepidodendron.util.CustomTrigger;
 //import net.lepidodendron.util.ModTriggers;
@@ -36,19 +36,19 @@
 //
 //import javax.annotation.Nullable;
 //
-//public class EntityPrehistoricFloraCaelestiventusOLD extends EntityPrehistoricFloraAgeableFlyingBase implements IAdvancementGranter {
+//public class EntityPrehistoricFloraEudimorphodonOLD extends EntityPrehistoricFloraAgeableFlyingBase implements IAdvancementGranter {
 //
 //	public BlockPos currentTarget;
 //	@SideOnly(Side.CLIENT)
 //	public ChainBuffer chainBuffer;
 //
-//	public EntityPrehistoricFloraCaelestiventusOLD(World world) {
+//	public EntityPrehistoricFloraEudimorphodonOLD(World world) {
 //		super(world);
-//		setSize(0.62F, 0.72F);
+//		setSize(0.52F, 0.65F);
 //		minWidth = 0.12F;
-//		maxWidth = 0.62F;
-//		maxHeight = 0.72F;
-//		maxHealthAgeable = 18.0D;
+//		maxWidth = 0.52F;
+//		maxHeight = 0.65F;
+//		maxHealthAgeable = 12.0D;
 //	}
 //
 //	@Override
@@ -86,11 +86,11 @@
 //	}
 //
 //	public float getAISpeedLand() {
-//		float speedBase = 0.285F;
+//		float speedBase = 0.325F;
 //		if (this.getTicks() < 0) {
 //			return 0.0F; //Is laying eggs
 //		}
-//		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+//		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 //			return 0.0F;
 //		}
 //		if (this.getIsFast()) {
@@ -107,7 +107,7 @@
 //	}
 //
 //	protected double getAISpeedFly() {
-//		return 0.385D;
+//		return 0.315D;
 //	}
 //
 //	@Override
@@ -127,12 +127,12 @@
 //
 //	@Override
 //	public int flyLength() {
-//		return 3600;
+//		return 2400;
 //	}
 //
 //	@Override
 //	public int walkLength() {
-//		return 600;
+//		return 1200;
 //	}
 //
 //	@Override
@@ -171,20 +171,18 @@
 //		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 //		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 //		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-//		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //	}
 //
 //	@Override
 //	public String[] getFoodOreDicts() {
-//		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.MEAT, DietString.FISH), DietString.ROTTEN);
+//		return ArrayUtils.addAll(DietString.FISH, DietString.CRUSTACEAN);
 //	}
 //
 //	@Override
 //	public boolean panics() {
 //		return true;
 //	}
-//
-//
 //
 //	@Override
 //	public EnumCreatureAttribute getCreatureAttribute() {
@@ -207,19 +205,19 @@
 //	@Override
 //	public SoundEvent getAmbientSound() {
 //	    return (SoundEvent) SoundEvent.REGISTRY
-//	            .getObject(new ResourceLocation("lepidodendron:caelestiventus_idle"));
+//	            .getObject(new ResourceLocation("lepidodendron:eudimorphodon_idle"));
 //	}
 //
 //	@Override
 //	public SoundEvent getHurtSound(DamageSource ds) {
 //	    return (SoundEvent) SoundEvent.REGISTRY
-//	            .getObject(new ResourceLocation("lepidodendron:caelestiventus_hurt"));
+//	            .getObject(new ResourceLocation("lepidodendron:eudimorphodon_hurt"));
 //	}
 //
 //	@Override
 //	public SoundEvent getDeathSound() {
 //	    return (SoundEvent) SoundEvent.REGISTRY
-//	            .getObject(new ResourceLocation("lepidodendron:caelestiventus_death"));
+//	            .getObject(new ResourceLocation("lepidodendron:eudimorphodon_death"));
 //	}
 //
 //	@Override
@@ -286,14 +284,14 @@
 //	@Nullable
 //	@Override
 //	public CustomTrigger getModTrigger() {
-//		return ModTriggers.CLICK_CAELESTIVENTUS;
+//		return ModTriggers.CLICK_EUDIMORPHODON;
 //	}
 //	@Nullable
 //	protected ResourceLocation getLootTable() {
 //		if (!this.isPFAdult()) {
-//			return LepidodendronMod.CAELESTIVENTUS_LOOT_YOUNG;
+//			return LepidodendronMod.EUDIMORPHODON_LOOT_YOUNG;
 //		}
-//		return LepidodendronMod.CAELESTIVENTUS_LOOT;
+//		return LepidodendronMod.EUDIMORPHODON_LOOT;
 //	}
 //	//Rendering taxidermy:
 //	//--------------------
@@ -304,7 +302,7 @@
 //		return 0.0;
 //	}
 //	public static double upperbackverticallinedepth(@Nullable String variant) {
-//		return 0.7;
+//		return 0.66;
 //	}
 //	public static double upperfrontlineoffset(@Nullable String variant) {
 //		return 0.0;
@@ -322,13 +320,13 @@
 //		return 0.0;
 //	}
 //	public static double lowerbackverticallinedepth(@Nullable String variant) {
-//		return 1.0;
+//		return 0.0;
 //	}
 //	public static double lowerfrontlineoffset(@Nullable String variant) {
 //		return 0.0;
 //	}
 //	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
+//		return -0.0;
 //	}
 //	public static double lowerbacklineoffset(@Nullable String variant) {
 //		return 0.0;
@@ -338,13 +336,13 @@
 //	}
 //	@SideOnly(Side.CLIENT)
 //	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderCaelestiventus.TEXTURE;
+//		return RenderEudimorphodon.TEXTURE;
 //	}
 //	@SideOnly(Side.CLIENT)
 //	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelCaelestiventus;
+//		return RenderDisplays.modelEudimorphodon;
 //	}
 //	public static float getScaler(@Nullable String variant) {
-//		return RenderCaelestiventus.getScaler();
+//		return RenderEudimorphodon.getScaler();
 //	}
 //}

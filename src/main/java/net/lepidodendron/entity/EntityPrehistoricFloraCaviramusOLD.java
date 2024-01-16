@@ -5,17 +5,11 @@
 //import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 //import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 //import net.lepidodendron.LepidodendronMod;
-//import net.lepidodendron.block.base.IAdvancementGranter;
 //import net.lepidodendron.entity.ai.*;
 //import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 //import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
-//import net.lepidodendron.entity.render.entity.RenderCaelestiventus;
-//import net.lepidodendron.entity.render.tile.RenderDisplays;
-//import net.lepidodendron.util.CustomTrigger;
-//import net.lepidodendron.util.ModTriggers;
 //import net.minecraft.block.BlockDirectional;
 //import net.minecraft.block.properties.PropertyDirection;
-//import net.minecraft.client.model.ModelBase;
 //import net.minecraft.entity.Entity;
 //import net.minecraft.entity.EntityLivingBase;
 //import net.minecraft.entity.EnumCreatureAttribute;
@@ -36,24 +30,24 @@
 //
 //import javax.annotation.Nullable;
 //
-//public class EntityPrehistoricFloraCaelestiventusOLD extends EntityPrehistoricFloraAgeableFlyingBase implements IAdvancementGranter {
+//public class EntityPrehistoricFloraCaviramusOLD extends EntityPrehistoricFloraAgeableFlyingBase {
 //
 //	public BlockPos currentTarget;
 //	@SideOnly(Side.CLIENT)
 //	public ChainBuffer chainBuffer;
 //
-//	public EntityPrehistoricFloraCaelestiventusOLD(World world) {
+//	public EntityPrehistoricFloraCaviramusOLD(World world) {
 //		super(world);
 //		setSize(0.62F, 0.72F);
 //		minWidth = 0.12F;
 //		maxWidth = 0.62F;
 //		maxHeight = 0.72F;
-//		maxHealthAgeable = 18.0D;
+//		maxHealthAgeable = 16.0D;
 //	}
 //
 //	@Override
 //	public int flightHeight() {
-//		return 15;
+//		return 25;
 //	}
 //
 //	public static String getPeriod() {return "Triassic";}
@@ -86,11 +80,11 @@
 //	}
 //
 //	public float getAISpeedLand() {
-//		float speedBase = 0.285F;
+//		float speedBase = 0.325F;
 //		if (this.getTicks() < 0) {
 //			return 0.0F; //Is laying eggs
 //		}
-//		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+//		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 //			return 0.0F;
 //		}
 //		if (this.getIsFast()) {
@@ -107,7 +101,7 @@
 //	}
 //
 //	protected double getAISpeedFly() {
-//		return 0.385D;
+//		return 0.315D;
 //	}
 //
 //	@Override
@@ -127,12 +121,12 @@
 //
 //	@Override
 //	public int flyLength() {
-//		return 3600;
+//		return 2400;
 //	}
 //
 //	@Override
 //	public int walkLength() {
-//		return 600;
+//		return 1200;
 //	}
 //
 //	@Override
@@ -170,13 +164,13 @@
 //		tasks.addTask(10, new EntityLookIdleAI(this));
 //		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 //		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-//		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-//		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(2, new EntityHurtByTargetSmallerThanMeAI(this, false));
 //	}
 //
 //	@Override
 //	public String[] getFoodOreDicts() {
-//		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.MEAT, DietString.FISH), DietString.ROTTEN);
+//		return ArrayUtils.addAll(DietString.FRUIT, DietString.BUG);
 //	}
 //
 //	@Override
@@ -207,19 +201,19 @@
 //	@Override
 //	public SoundEvent getAmbientSound() {
 //	    return (SoundEvent) SoundEvent.REGISTRY
-//	            .getObject(new ResourceLocation("lepidodendron:caelestiventus_idle"));
+//	            .getObject(new ResourceLocation("lepidodendron:caviramus_idle"));
 //	}
 //
 //	@Override
 //	public SoundEvent getHurtSound(DamageSource ds) {
 //	    return (SoundEvent) SoundEvent.REGISTRY
-//	            .getObject(new ResourceLocation("lepidodendron:caelestiventus_hurt"));
+//	            .getObject(new ResourceLocation("lepidodendron:caviramus_hurt"));
 //	}
 //
 //	@Override
 //	public SoundEvent getDeathSound() {
 //	    return (SoundEvent) SoundEvent.REGISTRY
-//	            .getObject(new ResourceLocation("lepidodendron:caelestiventus_death"));
+//	            .getObject(new ResourceLocation("lepidodendron:caviramus_death"));
 //	}
 //
 //	@Override
@@ -236,7 +230,7 @@
 //	@Override
 //	public void onLivingUpdate() {
 //		super.onLivingUpdate();
-//		//this.renderYawOffset = this.rotationYaw;
+//		////this.renderYawOffset = this.rotationYaw;
 //
 //		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 //			launchAttack();
@@ -283,68 +277,13 @@
 //		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 //		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 //	}
-//	@Nullable
-//	@Override
-//	public CustomTrigger getModTrigger() {
-//		return ModTriggers.CLICK_CAELESTIVENTUS;
-//	}
+//
 //	@Nullable
 //	protected ResourceLocation getLootTable() {
 //		if (!this.isPFAdult()) {
-//			return LepidodendronMod.CAELESTIVENTUS_LOOT_YOUNG;
+//			return LepidodendronMod.CAVIRAMUS_LOOT_YOUNG;
 //		}
-//		return LepidodendronMod.CAELESTIVENTUS_LOOT;
+//		return LepidodendronMod.CAVIRAMUS_LOOT;
 //	}
-//	//Rendering taxidermy:
-//	//--------------------
-//	public static double offsetWall(@Nullable String variant) {
-//		return -0.45;
-//	}
-//	public static double upperfrontverticallinedepth(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbackverticallinedepth(@Nullable String variant) {
-//		return 0.7;
-//	}
-//	public static double upperfrontlineoffset(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbacklineoffset(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double lowerbackverticallinedepth(@Nullable String variant) {
-//		return 1.0;
-//	}
-//	public static double lowerfrontlineoffset(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double lowerbacklineoffset(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderCaelestiventus.TEXTURE;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelCaelestiventus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderCaelestiventus.getScaler();
-//	}
+//
 //}

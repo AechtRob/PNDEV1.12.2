@@ -51,12 +51,12 @@ public class EntityLookIdleAI extends EntityAIBase
                 return false;
             }
         }
-        if (this.idleEntity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
-            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.idleEntity;
-            if (flybase.isReallyFlying()) {
-                return false;
-            }
-        }
+//        if (this.idleEntity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+//            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.idleEntity;
+//            if (flybase.isReallyFlying()) {
+//                return false;
+//            }
+//        }
 
         if (this.idleEntity instanceof EntityPrehistoricFloraLandClimbingFlyingBase) {
             EntityPrehistoricFloraLandClimbingFlyingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingBase) this.idleEntity;

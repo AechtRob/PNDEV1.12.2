@@ -3853,24 +3853,6 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraCaviramus) {
-		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_CAVIRAMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-		}
-		event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-		event.setCanceled(true);
-		return;
-		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraEudimorphodon) {
-		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_EUDIMORPHODON.trigger((EntityPlayerMP) event.getEntityPlayer());
-		}
-		event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-		event.setCanceled(true);
-		return;
-		}
 		else if (event.getTarget() instanceof EntityPrehistoricFloraItalophlebia) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_ITALOPHLEBIA.trigger((EntityPlayerMP) event.getEntityPlayer());

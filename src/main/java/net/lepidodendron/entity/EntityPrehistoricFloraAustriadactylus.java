@@ -220,7 +220,7 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 				else if (this.getAnimation() == UNFLY_ANIMATION) {
 					return (speedBase + speedBase) - (speedBase * ((float) this.getAnimationTick() / (float) this.UNFLY_ANIMATION.getDuration()));
 				}
-				return 0.24F;
+				return speedBase;
 			}
 		}
 		//Otherwise we are flying:

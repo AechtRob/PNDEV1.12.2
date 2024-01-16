@@ -369,7 +369,7 @@ public class RenderDisplays {
     public static final ModelElaphrosaurus modelElaphrosaurus = new ModelElaphrosaurus();
     public static final ModelRhamphorhynchus modelRhamphorhynchus = new ModelRhamphorhynchus();
     public static final ModelDiplodocus modelDiplodocus = new ModelDiplodocus ();
-    public static final ModelEudimorphodon modelEudimorphodon = new ModelEudimorphodon ();
+    public static final ModelEudimorphodon modelEudimorphodon = new ModelEudimorphodon();
     public static final ModelCaelestiventus modelCaelestiventus = new ModelCaelestiventus ();
     public static final ModelDilophosaurus modelDilophosaurus = new ModelDilophosaurus ();
     public static final ModelPromexyele modelPromexyele = new ModelPromexyele ();

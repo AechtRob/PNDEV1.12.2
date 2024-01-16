@@ -2,7 +2,6 @@ package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicates;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.util.ICurious;
@@ -86,12 +85,12 @@ public class EntityWatchClosestAI extends EntityAIBase
                 return false;
             }
         }
-        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
-            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.entity;
-            if (flybase.isReallyFlying()) {
-                return false;
-            }
-        }
+//        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+//            EntityPrehistoricFloraAgeableFlyingBase flybase = (EntityPrehistoricFloraAgeableFlyingBase) this.entity;
+//            if (flybase.isReallyFlying()) {
+//                return false;
+//            }
+//        }
         if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
             EntityPrehistoricFloraLandClimbingFlyingWalkingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
             if (flybase.isReallyFlying()) {
