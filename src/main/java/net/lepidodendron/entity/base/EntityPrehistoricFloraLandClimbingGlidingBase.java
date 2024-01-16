@@ -172,8 +172,9 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					&& (!this.getIsFast())
 					&& (!this.getIsFlying())
 					&& (!this.getIsClimbing())
-					&& (this.getIsMoving())
+					//&& (this.getIsMoving())
 					&& this.onGround
+					&& (!this.collidedHorizontally)
 					&& this.getAnimation() == NO_ANIMATION
 					//&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
 			) {
@@ -187,7 +188,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 			}
 		}
 
-		this.setIsFlying((!this.collidedHorizontally) && this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping)));
+		this.setIsFlying((!this.collidedHorizontally) && (this.getIsLaunching() || ((!this.getIsClimbing()) && (!this.getHeadCollided()) && (!this.isReallyInWater()) && (!this.isOnGround()) && (!this.isJumping))));
 
 	}
 
@@ -485,29 +486,29 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 						double Xoffset = EntityPrehistoricFloraLandClimbingGlidingBase.this.posX - EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition().getX();
 						double Zoffset = EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ - EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition().getZ();
 
-						EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, EntityPrehistoricFloraLandClimbingGlidingBase.this.posY, vec3.getZ() + 0.5D + Zoffset, 0.3);
+						EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(vec3.getX() + Xoffset, EntityPrehistoricFloraLandClimbingGlidingBase.this.posY, vec3.getZ() + Zoffset, 0.3);
 
 						return true;
 					}
 					else {
 						int ii = rand.nextInt(4);
-						vec3 = EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition();
-						double Xoffset = EntityPrehistoricFloraLandClimbingGlidingBase.this.posX - EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition().getX();
-						double Zoffset = EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ - EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition().getZ();
+						//vec3 = EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition();
+						//double Xoffset = EntityPrehistoricFloraLandClimbingGlidingBase.this.posX - EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition().getX();
+						//double Zoffset = EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ - EntityPrehistoricFloraLandClimbingGlidingBase.this.getPosition().getZ();
 
 
 						switch (ii) {
 							case 0:
-								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(vec3.getX() + 1D + 0.5D + Xoffset, 0, 0 + Zoffset, 0.2);
+								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(EntityPrehistoricFloraLandClimbingGlidingBase.this.posX + 1D, 0, EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ, 0.2);
 								return true;
 							case 1:
-								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(vec3.getX() - 1D + 0.5D + Xoffset, 0, 0 + Zoffset, 0.2);
+								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(EntityPrehistoricFloraLandClimbingGlidingBase.this.posX - 1D, 0, EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ, 0.2);
 								return true;
 							case 2:
-								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(0 + Xoffset, 0, vec3.getZ() + 1D + 0.5D + Zoffset, 0.2);
+								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(EntityPrehistoricFloraLandClimbingGlidingBase.this.posX, 0, EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ + 1D, 0.2);
 								return true;
 							case 3:
-								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(0 + Xoffset, 0, vec3.getZ() - 1D + 0.5D + Zoffset, 0.2);
+								EntityPrehistoricFloraLandClimbingGlidingBase.this.getNavigator().tryMoveToXYZ(EntityPrehistoricFloraLandClimbingGlidingBase.this.posX, 0, EntityPrehistoricFloraLandClimbingGlidingBase.this.posZ - 1D, 0.2);
 								return true;
 						}
 					}
