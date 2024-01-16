@@ -440,7 +440,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		return test && test2;
 	}
 
-
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
