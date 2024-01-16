@@ -779,7 +779,7 @@ public class ModelCeratosaurus extends AdvancedModelBaseExtended {
         EntityCerato.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (EntityCerato.getAnimation() == EntityCerato.LAY_ANIMATION) {
-            this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
+            this.chainSwing(Neck, 0.5F, 0.05F, 0.5, f2, 0.7F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
