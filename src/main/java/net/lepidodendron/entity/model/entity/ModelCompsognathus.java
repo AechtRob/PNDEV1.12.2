@@ -544,6 +544,7 @@ public class ModelCompsognathus extends AdvancedModelBaseExtended {
         this.Compsognathus.rotateAngleY = (float)Math.toRadians(200);
         this.Compsognathus.rotateAngleX = (float)Math.toRadians(8);
         this.Compsognathus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Compsognathus.scaleChildren = true;
         float scaler = 1.0F;
         this.Compsognathus.setScale(scaler, scaler, scaler);
         //Start of pose:

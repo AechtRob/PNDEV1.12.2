@@ -481,6 +481,16 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = 0.3F;
+        this.Hips.offsetX = 0.9F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(-150);
+        this.Hips.rotateAngleX = (float)Math.toRadians(6);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(-2);
+        this.Hips.scaleChildren = true;
+        float scaler = 0.7F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
         this.setRotateAngle(Upperjawslopefront_r1, 0.4482F, 0.0F, 0.0F);
         this.setRotateAngle(Upperjawslopebase_r1, 0.1742F, 0.0F, 0.0F);
         this.setRotateAngle(Upperjawfront_r1, -0.1107F, 0.0F, 0.0F);
@@ -526,15 +536,15 @@ public class ModelDubreuillosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Leftarm3, 0.1173F, 0.0F, 0.1955F);
         this.setRotateAngle(Leftarm2, -1.0475F, 0.0F, 0.0F);
         this.setRotateAngle(Leftarm1, 0.5665F, 0.1955F, 0.0F);
-        this.setRotateAngle(Hips, -0.0128F, 0.3054F, -0.0039F);
         this.setRotateAngle(Headbase, 0.3658F, -0.0407F, -0.0156F);
         this.setRotateAngle(Head, -0.0399F, 0.1271F, -0.0942F);
         this.setRotateAngle(Bodymiddle, 0.0483F, -0.2179F, -0.0104F);
         this.setRotateAngle(Bodyfront, 0.0209F, -0.2622F, 0.0254F);
-        this.Hips.offsetY = -0.102F;
-        this.Hips.render(0.01F);
-        this.Hips.rotateAngleY = (float)Math.toRadians(0);
-        this.Hips.rotateAngleX = (float)Math.toRadians(50);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
         resetToDefaultPose();
     }
 
