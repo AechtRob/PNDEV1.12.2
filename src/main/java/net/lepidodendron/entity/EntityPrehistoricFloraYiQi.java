@@ -122,7 +122,7 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 		if (this.getIsFast() && (!this.getIsClimbing()) && (!this.getIsFlying())) {
 			return 0.485F;
 		}
-		return 0.275F;
+		return 0.325F;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {

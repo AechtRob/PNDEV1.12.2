@@ -5906,7 +5906,7 @@ public class ModelYiQi extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        this.setRotateAngle(root, root.rotateAngleX + (float) Math.toRadians(Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360+90))*+13.5), root.rotateAngleY + (float) Math.toRadians(0), root.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(root, root.rotateAngleX + (float) Math.toRadians(Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360+90))+13.5), root.rotateAngleY + (float) Math.toRadians(0), root.rotateAngleZ + (float) Math.toRadians(0));
 
 
         this.setRotateAngle(UpperLegL, UpperLegL.rotateAngleX + (float) Math.toRadians(27.4224+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*720))*-5), UpperLegL.rotateAngleY + (float) Math.toRadians(-7.9716), UpperLegL.rotateAngleZ + (float) Math.toRadians(-6.0573));
@@ -5936,7 +5936,7 @@ public class ModelYiQi extends AdvancedModelBaseExtended {
         this.setRotateAngle(WingR, WingR.rotateAngleX + (float) Math.toRadians(0), WingR.rotateAngleY + (float) Math.toRadians(0), WingR.rotateAngleZ + (float) Math.toRadians(-60));
 
 
-        this.setRotateAngle(LowerArmR, LowerArmR.rotateAngleX + (float) Math.toRadians(Math.cos((Math.PI/180)*((((double)tickAnim/20D))*1440*2-90))*+83.3246), LowerArmR.rotateAngleY + (float) Math.toRadians(-2.7701+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-90))*-2.5), LowerArmR.rotateAngleZ + (float) Math.toRadians(-12.52+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-60))*5));
+        this.setRotateAngle(LowerArmR, LowerArmR.rotateAngleX + (float) Math.toRadians(Math.cos((Math.PI/180)*((((double)tickAnim/20D))*1440*2-90))+83.3246), LowerArmR.rotateAngleY + (float) Math.toRadians(-2.7701+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-90))*-2.5), LowerArmR.rotateAngleZ + (float) Math.toRadians(-12.52+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-60))*5));
 
 
         this.setRotateAngle(HandR, HandR.rotateAngleX + (float) Math.toRadians(-67.5), HandR.rotateAngleY + (float) Math.toRadians(0), HandR.rotateAngleZ + (float) Math.toRadians(0));
@@ -5951,7 +5951,7 @@ public class ModelYiQi extends AdvancedModelBaseExtended {
         this.setRotateAngle(WingL, WingL.rotateAngleX + (float) Math.toRadians(0), WingL.rotateAngleY + (float) Math.toRadians(0), WingL.rotateAngleZ + (float) Math.toRadians(60));
 
 
-        this.setRotateAngle(LowerArmL, LowerArmL.rotateAngleX + (float) Math.toRadians(Math.cos((Math.PI/180)*((((double)tickAnim/20D))*1440*2-90))*+83.3246), LowerArmL.rotateAngleY + (float) Math.toRadians(2.7701+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-90))*-2.5), LowerArmL.rotateAngleZ + (float) Math.toRadians(12.52+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-60))*5));
+        this.setRotateAngle(LowerArmL, LowerArmL.rotateAngleX + (float) Math.toRadians(Math.cos((Math.PI/180)*((((double)tickAnim/20D))*1440*2-90))+83.3246), LowerArmL.rotateAngleY + (float) Math.toRadians(2.7701+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-90))*-2.5), LowerArmL.rotateAngleZ + (float) Math.toRadians(12.52+Math.cos((Math.PI/180)*((((double)tickAnim/20D))*360-60))*5));
 
 
         this.setRotateAngle(HandL, HandL.rotateAngleX + (float) Math.toRadians(-67.5), HandL.rotateAngleY + (float) Math.toRadians(0), HandL.rotateAngleZ + (float) Math.toRadians(0));
@@ -5988,7 +5988,6 @@ public class ModelYiQi extends AdvancedModelBaseExtended {
 
 
         this.setRotateAngle(FootL2, FootL2.rotateAngleX + (float) Math.toRadians(17.5), FootL2.rotateAngleY + (float) Math.toRadians(0), FootL2.rotateAngleZ + (float) Math.toRadians(0));
-
 
     }
 
