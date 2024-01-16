@@ -14,7 +14,6 @@ import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -208,10 +207,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 		if (isLayableNest(world, pos)) {
 			return true;
 		}
-		if (world.isAirBlock(pos) && world.getBlockState(pos.down()).getMaterial() == Material.LEAVES) {
-			return world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID;
-		}
-		return false;
+		return world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID;
 	}
 
 	@Override
