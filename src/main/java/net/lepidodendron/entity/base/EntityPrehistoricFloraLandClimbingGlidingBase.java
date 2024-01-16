@@ -58,6 +58,49 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
+		if (ds == DamageSource.IN_WALL) {
+			if (this.getIsClimbing()) {
+				if (!this.world.getBlockState(this.getPosition().offset(this.getClimbFacing())).causesSuffocation()) {
+					int xOffset = 0;
+					int zOffset = 0;
+					if (this.getClimbFacing() == EnumFacing.NORTH) {
+						zOffset = -1;
+					}
+					if (this.getClimbFacing() == EnumFacing.SOUTH) {
+						zOffset = 1;
+					}
+					if (this.getClimbFacing() == EnumFacing.EAST) {
+						xOffset = 1;
+					}
+					if (this.getClimbFacing() == EnumFacing.WEST) {
+						xOffset = -1;
+					}
+					this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+					return false;
+				}
+			} else { //Test horizontals:
+				for (int ii = 0; ii <= 3; ii++) {
+					if (!this.world.getBlockState(this.getPosition().offset(EnumFacing.byHorizontalIndex(ii))).causesSuffocation()) {
+						int xOffset = 0;
+						int zOffset = 0;
+						if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.NORTH) {
+							zOffset = -1;
+						}
+						if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.SOUTH) {
+							zOffset = 1;
+						}
+						if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.EAST) {
+							xOffset = 1;
+						}
+						if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.WEST) {
+							xOffset = -1;
+						}
+						this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+						return false;
+					}
+				}
+			}
+		}
 		this.launchCooldown = 0;
 		this.launchProgress = 0;
 		if (this.getIsFlying() && (ds == DamageSource.IN_WALL || ds == DamageSource.FLY_INTO_WALL)) {
