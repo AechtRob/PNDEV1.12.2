@@ -1,0 +1,57 @@
+{
+	"name": "Guanlong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/guanlong_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_guanlong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_guanlong",
+			"title": "Guanlong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Proceratosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. wucaii",
+            "entity": "lepidodendron:prehistoric_flora_guanlong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guanlong",
+			"type": "text",
+			"text": "Guanlong wucaii was a species of proceratosaurid theropod that lived during the Oxfordian stage of the Late Jurassic (around 160 million years ago). Its remains have been found at the Shishugou Formation in the Dzungaria area of China, and its name translates to \"crown dragon\" in Chinese. Guanlong and other proceratosaurids were some of the earliest known tyrannosauroids. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guanlong",
+			"type": "text",
+			"text": "A far cry from the lumbering giant tyrannosaurids of the Late Cretaceous, these animals were relatively small and lightly built predators that likely fed on smaller game. Guanlong's most visually striking feature was the elongated bony crest running down the middle of its skull. The purpose of this crest is unknown, but one of its functions is likely to have been display. And while no currently known Guanlong specimen preserves any integument,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_guanlong",
+			"type": "text",
+			"text": "the presence of a coat of primitive feathers in its close relative Dilong suggests it likely had them. Studies of the two known specimens of Guanlong have revealed interesting things about its life history: The juvenile specimen was around 6 years old when it died, but apparently still had some growing to do. The adult specimen on the other hand was around 12 years old when it died, and examination of its bones suggests that it stopped growing when it was around 7 years old. This means Guanlong took roughly 7 years to reach full adulthood."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_guanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_guanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_guanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_guanlong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_guanlong"
+		}
+	]
+}

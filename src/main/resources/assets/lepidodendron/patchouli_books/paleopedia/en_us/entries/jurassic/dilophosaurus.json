@@ -1,0 +1,67 @@
+{
+	"name": "Dilophosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/dilophosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dilophosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dilophosaurus",
+			"title": "Dilophosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Neotheropoda"
+		},
+        	{
+            "type": "entity",
+            "name": "D. wetherilli",
+            "entity": "lepidodendron:prehistoric_flora_dilophosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dilophosaurus",
+			"type": "text",
+			"text": "Dilophosaurus wetherilli is a Neotheropod dinosaur from the Early Jurassic of North America. At 7 m in length, this fairly large theropod dinosaur is by far one of the most famous of Jurassic predators. The skull of this animal was proportionally large compared to body size, was slender, possessed a deep \"notch\" between the premaxillary and maxillary bones and, most famous of it, "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dilophosaurus",
+			"type": "text",
+			"text": "two large crests once thought to be thinner and frail, now thought to be more robust. A resting impression from a Dilophosaurus-like animal show potential imprints of downy feather-like integument in at least a part of the belly, however this interpretation is not universally accepted as some argue they might be sedimentation artifacts instead. It was once believed Dilophosaurus to have been mostly a scavenger from the shape of the head,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dilophosaurus",
+			"type": "text",
+			"text": " which was thought to have been inadequate for a strong bite; quite contested in the past, this interpretation has been discredited even more in 2021, when a new analysis of the bones of the animal recovered a much stronger bite force able to puncture through bones. The animal had a breathing apparatus closer to modern birds, being unidirectional, suggesting a high metabolism characteristic of an agile active hunter."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dilophosaurus",
+			"type": "text",
+			"text": "The animal in the past was classified alongside Coelophysis and then was placed inside Ceratosauria; today we classify this animal as potentially sister to Averostra, however it is still disputed. Dilophosaurus, meaning \"dual crested lizard\", was described in 1970 by Samuel Paul Welles based on three skeletons found in the 40s in Arizona."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dilophosaurus",
+			"type": "text",
+			"text": "Most of the animal's fame today is due to its appearance in the Jurassic Park franchise, most famously depicted as a small frilled animal that used venom to blind its victim before the kill; There is no evidence Dilophosaurus possessed neither venom spitting capabilities or a frill around the head."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dilophosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dilophosaurus"
+		}
+	]
+}
