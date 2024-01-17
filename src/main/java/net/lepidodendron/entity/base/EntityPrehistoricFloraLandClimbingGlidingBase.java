@@ -241,6 +241,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					//&& (!this.world.getBlockState(this.getPosition().up()).causesSuffocation())
 			) {
 				this.setIsLaunching(true);
+				this.motionY = this.getJumpUpwardsMotion();
 				this.launchProgress = 50;
 				this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
 			}
