@@ -75,15 +75,14 @@ public class LepidodendronEventSubscribers {
 				//We are travelling to the Nether from here:
 				Entity entityIn = event.getEntity();
 				World worldIn = entityIn.getEntityWorld();
-				int DIMID = -1;
 
 			 	if (event.getEntity().getEntityWorld().provider.getDimensionType().getId() == 0) {
 					if (!worldIn.isRemote && !entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn instanceof EntityPlayerMP) {
 						EntityPlayerMP thePlayer = (EntityPlayerMP) entityIn;
-						if (thePlayer.dimension != DIMID) {
+						if (thePlayer.dimension != event.getDimension()) {
 							thePlayer.timeUntilPortal = 10;
 							ReflectionHelper.setPrivateValue(EntityPlayerMP.class, thePlayer, true, "invulnerableDimensionChange", "field_184851_cj");
-							WorldOverworldPortal.BlockCustomPortal.transferPlayerToDimensionPN(thePlayer.server.getPlayerList(), thePlayer, DIMID, WorldOverworldPortal.BlockCustomPortal.getTeleporterForDimension(thePlayer, entityIn.getPosition(), DIMID));
+							WorldOverworldPortal.BlockCustomPortal.transferPlayerToDimensionPN(thePlayer.server.getPlayerList(), thePlayer, event.getDimension(), WorldOverworldPortal.BlockCustomPortal.getTeleporterForDimension(thePlayer, entityIn.getPosition(), event.getDimension()));
 						}
 					}
 					event.setCanceled(true);
