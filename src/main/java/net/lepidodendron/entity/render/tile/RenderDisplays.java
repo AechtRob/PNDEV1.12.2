@@ -109,6 +109,7 @@ public class RenderDisplays {
     public static final ModelDragonfly modelDragonfly = new ModelDragonfly();
     public static final ModelDryosaurus modelDryosaurus = new ModelDryosaurus();
     public static final ModelDubreuillosaurus modelDubreuillosaurus = new ModelDubreuillosaurus();
+    public static final ModelDubreuillosaurus modelDubreuillosaurusBook = new ModelDubreuillosaurus();
     public static final ModelDunkleosteus modelDunkleosteus = new ModelDunkleosteus();
     public static final ModelDunyu modelDunyu = new ModelDunyu();
     public static final ModelDuslia modelDuslia = new ModelDuslia();
@@ -376,6 +377,7 @@ public class RenderDisplays {
     public static final ModelPromexyele modelPromexyele = new ModelPromexyele ();
     public static final ModelNotostracan modelNotostracan = new ModelNotostracan ();
     public static final ModelYangchuanosaurus modelYangchuanosaurus = new ModelYangchuanosaurus ();
+    public static final ModelYangchuanosaurus modelYangchuanosaurusBook = new ModelYangchuanosaurus ();
     public static final ModelPiatnitzkysaurus modelPiatnitzkysaurus = new ModelPiatnitzkysaurus ();
 
 
