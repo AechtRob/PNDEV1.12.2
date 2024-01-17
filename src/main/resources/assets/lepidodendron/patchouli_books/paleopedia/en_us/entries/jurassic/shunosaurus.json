@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_shunosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Shunosaurus was a genus of sauropod that lived during the Late Jurassic, around 159 million years ago. Its fossils have been found in the Sichuan province of China, specifically at the Xiashaximiao Formation, near the city of Zigong. Shunosaurus's name means \"Shu lizard\", referencing an ancient name for what is now the Sichuan province. This sauropod is easily recognizable by its relatively short neck (though not quite as short as that of the South American "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shunosaurus",
+			"type": "text",
+			"text": "Brachytrachelopan), and the small bony club on the end of its tail. The animal's proportionately short neck suggests it may have been a low browser, and as for what exactly it was eating, its teeth indicate that it could efficiently process tough plant matter. The tail club was likely used for self-defence against predators. As for Shunosaurus's exact classification, it is thought to have been quite basal within Eusauropoda, perhaps somewhat close to the Australian Rhoetosaurus."
 		},
 		{
 			"type": "lepidodendron:diet",

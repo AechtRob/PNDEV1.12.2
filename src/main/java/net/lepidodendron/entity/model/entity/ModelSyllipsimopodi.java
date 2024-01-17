@@ -215,7 +215,7 @@ public class ModelSyllipsimopodi extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.body.offsetY = 1.3F;
+        this.body.offsetY = 1.15F;
         this.body.rotateAngleY = (float) Math.toRadians(180);
         //this.body.offsetZ = -1F;
 
@@ -236,7 +236,7 @@ public class ModelSyllipsimopodi extends AdvancedModelBaseExtended {
             speed = 0.5F;
         }
 
-        this.chainWave(head, speed, 0.15F, 0, f2, 1F);
+        this.chainWave(head, speed, 0.05F, 0, f2, 1F);
 
         //Left middle:
         this.chainSwing(centerLeftT, speed, -0.3F, -2, f2, 1F);

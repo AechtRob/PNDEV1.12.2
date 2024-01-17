@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_anchisaurus",
 			"type": "text",
-			"text": ""
+			"text": "Anchisaurus was a small sauropodomorph dinosaur that lived during the Early Jurassic (around 200 - 195 million years ago). Its remains have mostly been found in the red sandstones of the Portland Formation of the northeastern USA (specifically in Connecticut and Massachusetts). During the Early Jurassic, the Portland Formation was an arid environment with distinctive wet seasons and dry seasons."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anchisaurus",
+			"type": "text",
+			"text": "Anchisaurus size estimates vary somewhat: They are typically estimated between around 2.2 - 4 metres (7.2 - 13.1 feet) long and around 20 - 27 kg (44 - 59.5 lbs) in weight. However, some fossilized trackways (of the ichnotaxa Otozoum and Eubrontes) tentatively attributed to Anchisaurus suggest that some exceptional individuals may have reached lengths of up to 6 metres (19.7 feet), though this remains unconfirmed."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anchisaurus",
+			"type": "text",
+			"text": "Anchisaurus was a herbivorous animal that used spoon-shaped teeth and swallowed gastroliths (gizzard stones) to help break down its food. It was a facultative biped, with front legs that in addition to quadrupedal walking, could be turned inwards for grasping."
 		},
 		{
 			"type": "lepidodendron:diet",

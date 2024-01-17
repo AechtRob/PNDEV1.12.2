@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_torvosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Torvosaurus was a famous Megalosaurine theropod dinosaur from the Jurassic Period. Its fossils have been found in the US, Portugal and Germany, and possibly England, Tanzania, Spain and Uruguay, specifically in formations like the Morrison in the US and Lourinhã in Portugal. Both formations contain famous dinosaurs like Allosaurus, Stegosaurus, "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_torvosaurus",
+			"type": "text",
+			"text": "Barosaurus, Diplodocus and Dryosaurus. It was one of the largest Jurassic theropods, being 10 metres long and about 3 metres tall. It was first discovered by Elmer Riggs in 1899 in Wyoming. It had a large, boxy head filled with long sharp teeth to slice through the meat of its prey like knives. It certainly would have been the top predator of its time alongside Allosaurus."
 		},
 		{
 			"type": "lepidodendron:diet",

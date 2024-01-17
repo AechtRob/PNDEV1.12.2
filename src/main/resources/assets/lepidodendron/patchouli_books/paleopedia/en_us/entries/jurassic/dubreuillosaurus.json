@@ -1,0 +1,62 @@
+{
+	"name": "Dubreuillosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/dubreuillosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dubreuillosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dubreuillosaurus",
+			"title": "Dubreuillosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Theropoda $(br)>Megalosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. valesdunensis",
+            "entity": "lepidodendron:prehistoric_flora_dubreuillosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dubreuillosaurus",
+			"type": "text",
+			"text": "Dubreuillosaurus is a species of Megalosaurid from the Middle Jurassic of France. The animal, growing potentially up to 9 m long, was a rather large theropod for its time and area. Differentiating this animal from other species in the family is the unusually long skull, around three times as long as it was tall and the lack of any type of crests, although that might've been influenced by the immature nature of the only known specimen."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dubreuillosaurus",
+			"type": "text",
+			"text": "Dubreuillosaurus lived in what were at the time a system of islands and its remains were found in sediments associated with coastal environments, which prompted the classification of this animal as a piscivore or at least in part feeding on marine prey, one of the potential reasons to explain the rather long skull. The only known specimen was discovered in Bathonian layers of the Calcaire de Caen"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dubreuillosaurus",
+			"type": "text",
+			"text": "and is composed of a majority of the skull associated with some postcranial remains, the subadult individual was estimated to have been 5 m long when it died, making it one of the most completely known Megalosaurids to date, with only Eustreptospondylus rivaling it. The original remains of Dubreuillosaurus were partly excavated and reported in 1994, however, by the time official excavations started 4 years later, the rocks of the quarry containing the rest of the specimen had already been crushed and spread by bulldozers,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dubreuillosaurus",
+			"type": "text",
+			"text": "requiring the team to sieve the rubble over years of work to recover the remaining bone fragments, over just a few centimetres long, to then reconstruct the rest of the known skeleton from. The genus was originally named as a species of Poekilopleuron prior to the reassembling of the specimen being completed, but the assignment was tentative and uncertain, suspicion later turned true when it was reassigned to its own genus in 2005."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dubreuillosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dubreuillosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dubreuillosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dubreuillosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dubreuillosaurus"
+		}
+	]
+}
