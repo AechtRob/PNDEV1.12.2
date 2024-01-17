@@ -76,6 +76,7 @@ public class RenderDisplays {
     public static final ModelCoelophysis modelCoelophysis = new ModelCoelophysis();
     public static final ModelCometicercus modelCometicercus = new ModelCometicercus();
     public static final ModelCompsognathus modelCompsognathus = new ModelCompsognathus();
+    public static final ModelCompsognathus modelCompsognathusBook = new ModelCompsognathus();
     public static final ModelConcavicaris modelConcavicaris = new ModelConcavicaris();
     public static final ModelCongophiopsis modelCongophiopsis = new ModelCongophiopsis();
     public static final ModelCongopycnodus modelCongopycnodus = new ModelCongopycnodus();
