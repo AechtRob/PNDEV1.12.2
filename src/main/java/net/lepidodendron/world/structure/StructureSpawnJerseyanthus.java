@@ -28,7 +28,7 @@ public class StructureSpawnJerseyanthus extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimJerseyanthus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genJerseyanthus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genJerseyanthus && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
