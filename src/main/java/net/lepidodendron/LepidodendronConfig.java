@@ -101,7 +101,7 @@ public class LepidodendronConfig {
     public static boolean doSpawnsReborn = false;
     public static boolean globalHomePortals = false;
     public static boolean oneWayPortals = true;
-    public static boolean oneWayPortalsNether = true;
+    public static boolean oneWayPortalsNether = false;
 
     public static boolean doMultiplyMobs = false;
 
@@ -774,7 +774,7 @@ public class LepidodendronConfig {
         oneWayPortals = prop.getBoolean();
         propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "portalsOneWayNether", oneWayPortalsNether);
-        prop.setComment("Extend the portal behaviour to Nether Portals [default: true]");
+        prop.setComment("Extend the portal behaviour to Nether Portals [default: false]");
         oneWayPortalsNether = prop.getBoolean();
         propOrder.add(prop.getName());
 
