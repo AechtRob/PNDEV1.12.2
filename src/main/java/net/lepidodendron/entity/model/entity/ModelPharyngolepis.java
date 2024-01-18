@@ -198,18 +198,22 @@ public class ModelPharyngolepis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 * 0.204F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetX = -0.16F;
-        this.body.offsetY = -0.19F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.12F;
+        this.body.offsetZ = -0.27F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.body.offsetY = -0.15F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

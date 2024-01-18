@@ -681,16 +681,16 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.50F;
-        this.hips.offsetX = 0.0F;
-        this.hips.rotateAngleY = (float)Math.toRadians(100);
+        this.hips.offsetY = -0.05F;
+        this.hips.offsetX = 0.35F;
+        this.hips.rotateAngleY = (float)Math.toRadians(150);
         this.hips.rotateAngleX = (float)Math.toRadians(0);
         this.hips.rotateAngleZ = (float)Math.toRadians(0);
         this.hips.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.8F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(hips, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(hips, 0.0F, -2.9F, -0.0F);
         this.setRotateAngle(body, 0.0F, -0.05F, -0.025F);
         this.setRotateAngle(chest, 0.0F, -0.1F, -0.05F);
         this.setRotateAngle(neck1, 0.0F, -0.15F, 0.0F);

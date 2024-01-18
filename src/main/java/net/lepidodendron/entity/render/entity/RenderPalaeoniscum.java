@@ -9,6 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPalaeoniscum extends RenderLiving<EntityPrehistoricFloraPalaeoniscum> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoniscum.png");
+    public static float getScaler() {
+        return 0.14F;
+    }
 
     public RenderPalaeoniscum(RenderManager mgr) {
         super(mgr, new ModelPalaeoniscum(), 0.0f);
