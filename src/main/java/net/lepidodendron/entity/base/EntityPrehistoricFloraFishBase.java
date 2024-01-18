@@ -49,9 +49,9 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
 
 
-    private EntityPrehistoricFloraFishBase shoalLeader;
-    private int inPFLove;
-    private int alarmCooldown;
+    public EntityPrehistoricFloraFishBase shoalLeader;
+    public int inPFLove;
+    public int alarmCooldown;
 
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);

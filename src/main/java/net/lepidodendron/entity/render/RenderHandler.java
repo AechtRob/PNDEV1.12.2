@@ -5038,6 +5038,12 @@ public class RenderHandler {
                 return new RenderArchaeopteryx(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDimorphodon.class, new IRenderFactory<EntityPrehistoricFloraDimorphodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDimorphodon> createRenderFor(RenderManager manager) {
+                return new RenderDimorphodon(manager);
+            }
+        });
 
 
         

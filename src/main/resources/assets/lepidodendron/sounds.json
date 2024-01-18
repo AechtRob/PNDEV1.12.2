@@ -9532,5 +9532,62 @@
         "stream": false
       }
     ]
+  },
+
+  "dimorphodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dimorphodon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dimorphodon_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dimorphodon_living08",
+        "stream": false
+      }
+    ]
+  },
+  "dimorphodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dimorphodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dimorphodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dimorphodon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dimorphodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dimorphodon_death",
+        "stream": false
+      }
+    ]
+  },
+  "dimorphodon_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dimorphodon_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dimorphodon_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dimorphodon_alarm03",
+        "stream": false
+      }
+    ]
   }
 }

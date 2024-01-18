@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraProganochelys extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation HIDE_ANIMATION;
 
 	public EntityPrehistoricFloraProganochelys(World world) {

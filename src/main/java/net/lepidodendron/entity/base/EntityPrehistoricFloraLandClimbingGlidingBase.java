@@ -45,7 +45,7 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int launchCooldown;
-	private int launchProgress;
+	public int launchProgress;
 	private Animation animation = NO_ANIMATION;
 	private static final DataParameter<Boolean> ISFLYING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingGlidingBase.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Boolean> ISLAUNCHING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingGlidingBase.class, DataSerializers.BOOLEAN);
@@ -243,7 +243,9 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 				this.setIsLaunching(true);
 				this.motionY = this.getJumpUpwardsMotion();
 				this.launchProgress = 50;
-				this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
+				if (this.getLaunchCooldown() > 0) {
+					this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
+				}
 			}
 
 			if (this.launchProgress <= 0) {

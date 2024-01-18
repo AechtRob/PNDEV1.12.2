@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:advancement_placeholder"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_dimorphodon.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_dimorphodon.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_dimorphodon"
+		}
+	}
+}

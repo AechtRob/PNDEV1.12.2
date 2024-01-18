@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;

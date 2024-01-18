@@ -36,7 +36,6 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     @SideOnly(Side.CLIENT)
     public ChainBuffer tailBuffer;
     private int jumpTicks;
-    private int inPFLove;
     public Animation HURT_ANIMATION;
 
     public EntityPrehistoricFloraLandWadingBase(World world) {

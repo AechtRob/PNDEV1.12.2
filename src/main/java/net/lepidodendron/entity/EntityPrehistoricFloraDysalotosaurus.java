@@ -27,7 +27,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public ChainBuffer tailBuffer;
 	private int alarmCooldown;
 

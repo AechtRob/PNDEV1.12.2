@@ -42,12 +42,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     public int sitCooldown = 0;
     public int sitTickCt = 0;
-    //public float flyProgress;
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private int inPFLove;
-    private int climbingpause;
+    public int climbingpause;
 
     public EntityPrehistoricFloraLandClimbingFlyingBase(World world) {
         super(world);

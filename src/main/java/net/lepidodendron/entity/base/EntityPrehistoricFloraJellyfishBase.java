@@ -46,11 +46,11 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
-    private int rotationStage;
+    public int rotationStage;
     private int jumpTicks;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraJellyfishBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraJellyfishBase.class, DataSerializers.VARINT);
-    private int inPFLove;
+    public int inPFLove;
 
     public EntityPrehistoricFloraJellyfishBase(World world) {
         super(world);

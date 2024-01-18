@@ -2118,6 +2118,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation ARCHAEOPTERYX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaeopteryx"));
 	public static final ResourceLocation ARCHAEOPTERYX_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaeopteryx_young"));
 
+	public static final int ENTITY_DIMORPHODON = 843;
+	public static final ResourceLocation DIMORPHODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dimorphodon"));
+	public static final ResourceLocation DIMORPHODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dimorphodon_young"));
+
 
 
 	@Mod.EventHandler

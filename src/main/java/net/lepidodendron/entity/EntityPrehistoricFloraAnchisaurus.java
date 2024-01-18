@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation SCRATCH_LEFT_ANIMATION;
 	public Animation SCRATCH_RIGHT_ANIMATION;
 	public Animation LOOK_ANIMATION;

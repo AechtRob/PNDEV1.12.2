@@ -59,9 +59,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private int inPFLove;
-    private int climbingpause;
-    private BlockPos targetBlock;
+    public int climbingpause;
+    public BlockPos targetBlock;
     public Animation FLY_ANIMATION;
     public Animation UNFLY_ANIMATION;
 

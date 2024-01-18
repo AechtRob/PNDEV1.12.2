@@ -242,6 +242,9 @@ public class EntityPrehistoricFloraArchaeopteryx extends EntityPrehistoricFloraL
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.ARCHAEOPTERYX_LOOT_YOUNG;
+		}
 		return LepidodendronMod.ARCHAEOPTERYX_LOOT;
 	}
 

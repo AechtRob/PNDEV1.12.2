@@ -39,7 +39,6 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     private static final DataParameter<EnumFacing> CLIMBINGFACING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.FACING);
     private static final DataParameter<Integer> CLIMBINGCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> HEADBLOCKCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.VARINT);
-    private int inPFLove;
 
     public EntityPrehistoricFloraLandClimbingBase(World world) {
         super(world);

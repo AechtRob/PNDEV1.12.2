@@ -57,7 +57,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
 
-    private int inPFLove;
+    public int inPFLove;
 
     private EntityPrehistoricFloraTrilobiteBottomBase shoalLeader;
     private int alarmCooldown;

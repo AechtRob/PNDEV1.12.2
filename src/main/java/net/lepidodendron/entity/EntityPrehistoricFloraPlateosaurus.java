@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation STAND_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	public Animation NOISE2_ANIMATION;

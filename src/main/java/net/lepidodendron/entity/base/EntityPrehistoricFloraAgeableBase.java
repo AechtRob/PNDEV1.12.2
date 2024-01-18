@@ -81,19 +81,19 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation MAKE_NEST_ANIMATION;
     public static Animation HIDE_ANIMATION;
     private Animation currentAnimation;
-    private EntityPrehistoricFloraAgeableBase shoalLeader;
-    private int inPFLove;
+    public EntityPrehistoricFloraAgeableBase shoalLeader;
+    public int inPFLove;
     public int canGrow;
-    private boolean laying;
-    private EntityItem eatTarget;
-    private EntityLivingBase warnTarget;
-    private EntityLiving grappleTarget;
+    public boolean laying;
+    public EntityItem eatTarget;
+    public EntityLivingBase warnTarget;
+    public EntityLiving grappleTarget;
     public boolean willGrapple;
-    private int alarmCooldown;
-    private int warnCooldown;
+    public int alarmCooldown;
+    public int warnCooldown;
     public int ticksExistedAnimated;
     public boolean wasWarning;
-    private float getMaxTurnDistancePerTick;
+    public float getMaxTurnDistancePerTick;
     public int homeCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {

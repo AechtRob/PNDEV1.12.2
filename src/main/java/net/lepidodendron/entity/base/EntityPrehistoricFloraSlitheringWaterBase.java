@@ -54,16 +54,16 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 	private int jumpTicks;
-	private int slitherStage;
-	private boolean slitherState;
-	private int rotationStage;
-	private int slitherTickCycle;
+	public int slitherStage;
+	public boolean slitherState;
+	public int rotationStage;
+	public int slitherTickCycle;
 	private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.VARINT);
 	private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.BOOLEAN);
 
-	private int inPFLove;
+	public int inPFLove;
 
 	public EnumCreatureAttributePN getPNCreatureAttribute() {
 		if (getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD) {

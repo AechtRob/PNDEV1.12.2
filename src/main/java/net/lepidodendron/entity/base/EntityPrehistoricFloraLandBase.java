@@ -60,7 +60,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public Animation EAT_ANIMATION;
     public Animation DRINK_ANIMATION;
     public Animation GRAZE_ANIMATION;
-    private int inPFLove;
 
     public EntityPrehistoricFloraLandBase(World world) {
         super(world);

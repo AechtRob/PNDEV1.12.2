@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation NOISE2_ANIMATION;
