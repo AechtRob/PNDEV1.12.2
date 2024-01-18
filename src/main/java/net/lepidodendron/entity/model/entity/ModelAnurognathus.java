@@ -325,7 +325,7 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r11, 0.0F, 0.4363F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0F, -0.4363F, 0.0F);
         this.setRotateAngle(cube_r1, -1.6624F, 0.0F, 0.0F);
-        this.main.offsetY = -0.175F;
+        this.main.offsetY = -0.5F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
@@ -363,7 +363,10 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r11, 0.0F, 0.4363F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0F, -0.4363F, 0.0F);
         this.setRotateAngle(cube_r1, -1.6624F, 0.0F, 0.0F);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.rotateAngleY = (float)Math.toRadians(180);
         this.main.offsetY = -0.175F;
+        this.main.offsetZ = -0.04F;
         this.main.render(0.01F);
         resetToDefaultPose();
 
@@ -404,7 +407,8 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r11, 0.0F, 0.4363F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0F, -0.4363F, 0.0F);
         this.setRotateAngle(cube_r1, -1.6624F, 0.0F, 0.0F);
-        this.main.offsetY = -0.175F;
+        this.main.offsetY = -0.76F;
+        this.main.offsetZ = 0.02F;
         this.main.render(0.01F);
         resetToDefaultPose();
 

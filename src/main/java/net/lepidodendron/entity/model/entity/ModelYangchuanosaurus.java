@@ -592,13 +592,13 @@ public class ModelYangchuanosaurus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.50F;
+        this.root.offsetY = -0.20F;
         this.root.offsetX = 0.0F;
-        this.root.rotateAngleY = (float)Math.toRadians(130);
-        this.root.rotateAngleX = (float)Math.toRadians(9);
+        this.root.rotateAngleY = (float)Math.toRadians(220);
+        this.root.rotateAngleX = (float)Math.toRadians(12);
         this.root.rotateAngleZ = (float)Math.toRadians(-2);
         this.root.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Hips, -0.35F, 0.0F, 0.0F);
