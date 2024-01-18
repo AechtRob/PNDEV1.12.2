@@ -34,7 +34,7 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
             {
                 return;
             }
-            RenderDisplays.modelRhamphorhynchus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelRhamphorhynchusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

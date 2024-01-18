@@ -269,19 +269,26 @@ public class ModelPalaeoniscum extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Palaeoniscum.render(f5 * 0.15F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Palaeoniscum.rotateAngleY = (float) Math.toRadians(90);
-        this.Jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.Palaeoniscum.offsetX = -0.3F;
-        this.Palaeoniscum.offsetY = -0.08F;
+        this.Palaeoniscum.offsetY = -0.1F;
+        this.Palaeoniscum.offsetX = -0.27F;
+        this.Palaeoniscum.offsetZ = -0.55F;
         this.Palaeoniscum.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Palaeoniscum, 0.0F, -0.1F, 0.1F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.1F, 0.0F);
+        this.Palaeoniscum.offsetY = -0.0F;
+        this.Palaeoniscum.offsetZ = -0.2F;
+        this.Palaeoniscum.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

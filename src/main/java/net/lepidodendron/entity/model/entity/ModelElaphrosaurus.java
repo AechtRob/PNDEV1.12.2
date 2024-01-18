@@ -382,13 +382,13 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.3F;
+        this.root.offsetY = 0.4F;
         this.root.offsetX = 0.0F;
         this.root.rotateAngleY = (float)Math.toRadians(150);
         this.root.rotateAngleX = (float)Math.toRadians(5);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.7F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Hips, -0.38F, 0.0F, 0.0F);

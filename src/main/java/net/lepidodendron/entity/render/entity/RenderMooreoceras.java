@@ -14,6 +14,9 @@ public class RenderMooreoceras extends RenderLiving<EntityPrehistoricFloraMooreo
     public RenderMooreoceras(RenderManager mgr) {
         super(mgr, new ModelMooreoceras(), 0.1f);
     }
+    public static float getScaler() {
+        return 0.225F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMooreoceras entity) {

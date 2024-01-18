@@ -207,8 +207,8 @@ public class ModelRebellatrix extends AdvancedModelBase {
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetY = -0.16F;
-        this.body.offsetX = -0.04F;
-        this.body.offsetZ = -0.25F;
+        this.body.offsetX = -0.12F;
+        this.body.offsetZ = -0.19F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }

@@ -190,18 +190,25 @@ public class ModelParexus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bodyfront.render(f5 * 0.155F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetX = -0.09F;
-        this.Bodyfront.offsetY = -0.09F;
+        this.Bodyfront.offsetY = -0.15F;
+        this.Bodyfront.offsetX = -0.1F;
+        this.Bodyfront.offsetZ = -0.48F;
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.1F, 0.0F);
+        this.Bodyfront.offsetY = -0.12F;
+        this.Bodyfront.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

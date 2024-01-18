@@ -185,6 +185,41 @@ public class ModelMooreoceras extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 * 0.21F);
     }
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.23F;
+        this.body.offsetX = -0.23F;
+        this.body.offsetZ = -0.03F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(arm1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm2, -0.2F, 0.0F, 0.4F);
+        this.setRotateAngle(armb2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm3, 0.2F, 0.0F, -0.4F);
+        this.setRotateAngle(armb3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm4, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb4, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm5, 0.2F, 0.F, -1.5F);
+        this.setRotateAngle(armb5, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb6, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm7, -0.2F, 0.0F, -0.2F);
+        this.setRotateAngle(armb7, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm8, 0.2F, 0.0F, 0.4F);
+        this.setRotateAngle(armb8, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm9, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armb9, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(arm10, 0.2F, 0.0F, 1.5F);
+        this.setRotateAngle(armb10, 0.2F, 0.0F, 0.0F);
+        this.body.offsetY = -0.028F;
+        this.body.offsetZ = -0.2F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

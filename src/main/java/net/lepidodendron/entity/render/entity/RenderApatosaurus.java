@@ -39,7 +39,7 @@ public class RenderApatosaurus extends RenderLiving<EntityPrehistoricFloraApatos
             {
                 return;
             }
-            RenderDisplays.modelApatosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelApatosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();
