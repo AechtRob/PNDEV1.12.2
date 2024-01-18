@@ -751,10 +751,10 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	}
 
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.4;
@@ -766,26 +766,28 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0.F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 1.2;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.6F;
+		return -0.F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
+
+	public static float widthSupport(@Nullable String variant) {return 0.03F;}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
