@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraAdeopapposaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraBrachiosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
@@ -586,12 +585,16 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        
+
+        this.root.offsetY = -0.175F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        
+
+        this.root.offsetY = -0.175F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticBook(float f) {

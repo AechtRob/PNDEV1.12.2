@@ -357,10 +357,16 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
+
+        this.base.offsetY = -0.175F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+
+        this.base.offsetY = -0.175F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
 

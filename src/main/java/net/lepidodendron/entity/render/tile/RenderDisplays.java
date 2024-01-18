@@ -48,6 +48,7 @@ public class RenderDisplays {
     public static final ModelBunostegos modelBunostegos = new ModelBunostegos();
     public static final ModelCacops modelCacops = new ModelCacops();
     public static final ModelCamarasaurus modelCamarasaurus = new ModelCamarasaurus();
+    public static final ModelCamarasaurus modelCamarasaurusBook = new ModelCamarasaurus();
     public static final ModelCampbellodus modelCampbellodus = new ModelCampbellodus();
     public static final ModelCamptosaurus modelCamptosaurus = new ModelCamptosaurus();
     public static final ModelCamuropiscis modelCamuropiscis = new ModelCamuropiscis();
@@ -110,6 +111,7 @@ public class RenderDisplays {
     public static final ModelDragonfly modelDragonfly = new ModelDragonfly();
     public static final ModelDryosaurus modelDryosaurus = new ModelDryosaurus();
     public static final ModelDubreuillosaurus modelDubreuillosaurus = new ModelDubreuillosaurus();
+    public static final ModelDubreuillosaurus modelDubreuillosaurusBook = new ModelDubreuillosaurus();
     public static final ModelDunkleosteus modelDunkleosteus = new ModelDunkleosteus();
     public static final ModelDunyu modelDunyu = new ModelDunyu();
     public static final ModelDuslia modelDuslia = new ModelDuslia();
@@ -382,12 +384,14 @@ public class RenderDisplays {
     public static final ModelPromexyele modelPromexyele = new ModelPromexyele ();
     public static final ModelNotostracan modelNotostracan = new ModelNotostracan ();
     public static final ModelYangchuanosaurus modelYangchuanosaurus = new ModelYangchuanosaurus ();
+    public static final ModelYangchuanosaurus modelYangchuanosaurusBook = new ModelYangchuanosaurus ();
     public static final ModelPiatnitzkysaurus modelPiatnitzkysaurus = new ModelPiatnitzkysaurus ();
     public static final ModelAcanthodes modelAcanthodes = new ModelAcanthodes();
     public static final ModelAcrolepis modelAcrolepis = new ModelAcrolepis();
     public static final ModelAlbertonia modelAlbertonia = new ModelAlbertonia();
     public static final ModelAllenypterus modelAllenypterus = new ModelAllenypterus();
     public static final ModelAllosaurus modelAllosaurus = new ModelAllosaurus();
+    public static final ModelAllosaurus modelAllosaurusBook = new ModelAllosaurus();
     public static final ModelAntineosteus modelAntineosteus = new ModelAntineosteus();
     public static final ModelArandaspis modelArandaspis = new ModelArandaspis();
     public static final ModelArchosaurus modelArchosaurus = new ModelArchosaurus();
@@ -510,5 +514,7 @@ public class RenderDisplays {
     public static final ModelMamenchisaurus modelMamenchisaurus = new ModelMamenchisaurus();
     public static final ModelBrachiosaurus modelBrachiosaurus = new ModelBrachiosaurus();
     public static final ModelMooreoceras modelMooreoceras = new ModelMooreoceras();
+    public static final ModelBrachiosaurus modelBrachiosaurusBook = new ModelBrachiosaurus();
+
 
 }

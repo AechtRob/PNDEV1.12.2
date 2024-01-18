@@ -444,7 +444,79 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
-
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Root.offsetY = -0.2F;
+        this.Root.offsetX = 0.2F;
+        this.Root.rotateAngleY = (float)Math.toRadians(80);
+        this.Root.rotateAngleX = (float)Math.toRadians(30);
+        this.Root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Root.scaleChildren = true;
+        float scaler = 1.0F;
+        this.Root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Upperjawslopefront_r1, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawslopebase_r1, 0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawfront_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjaw, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperfrontteeth_r1, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperbackteeth_r1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Throatpouch2, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(Throatpouch1, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Throat, -0.288F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail6, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Root, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg3, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg2, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightleg1, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightcrestorbit_r1, 0.2523F, -0.4782F, -0.3646F);
+        this.setRotateAngle(Rightcrestmiddleextra_r1, -0.0036F, 0.0197F, -0.1243F);
+        this.setRotateAngle(Rightcrestfrontextra_r1, 0.2037F, -0.244F, -0.0957F);
+        this.setRotateAngle(Rightcrestbaseextra_r1, 0.5337F, -0.5029F, -0.1452F);
+        this.setRotateAngle(Rightarm3, 0.0F, 0.0F, -0.2182F);
+        this.setRotateAngle(Rightarm2, -1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightarm1, 1.0472F, -0.0436F, -0.0785F);
+        this.setRotateAngle(Neckbaseextra_r1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck4, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Masseterupper_r1, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(Masseterlower_r1, 0.6379F, 0.0F, 0.0F);
+        this.setRotateAngle(Masseter_r1, -0.6379F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawslopefront_r1, -0.1553F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawslopebase_r1, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawmiddle_r1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawfront_r1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.2723F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg5, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg4, 1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg3, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg2, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftleg1, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftcrestorbit_r1, 0.2523F, 0.4782F, 0.3646F);
+        this.setRotateAngle(Leftcrestmiddleextra_r1, -0.0036F, -0.0197F, 0.1243F);
+        this.setRotateAngle(Leftcrestfrontextra_r1, 0.2037F, 0.244F, 0.0957F);
+        this.setRotateAngle(Leftcrestbaseextra_r1, 0.5337F, 0.5029F, 0.1452F);
+        this.setRotateAngle(Leftarm3, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(Leftarm2, -1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftarm1, 1.0472F, 0.0436F, 0.0785F);
+        this.setRotateAngle(Hips, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Headslope_r1, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.1745F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Root.render(f);
+        //Reset rotations, positions and sizing:
+        this.Root.setScale(1.0F, 1.0F, 1.0F);
+        this.Root.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void renderStaticWall(float f) {
         this.setRotateAngle(Upperjawslopefront_r1, 0.6545F, 0.0F, 0.0F);
         this.setRotateAngle(Upperjawslopebase_r1, 0.0175F, 0.0F, 0.0F);
