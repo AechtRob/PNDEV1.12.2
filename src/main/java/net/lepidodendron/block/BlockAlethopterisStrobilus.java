@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:alethopteris_strobilus")
+	@GameRegistry.ObjectHolder("lepidodendron:alethopteris_strobilus_bottom")
 	public static final Block block = null;
 	public BlockAlethopterisStrobilus(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.alethopteris_strobilus);
@@ -56,7 +56,7 @@ public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElem
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("alethopteris_strobilus"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("alethopteris_strobilus_bottom"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -64,14 +64,14 @@ public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:alethopteris_strobilus", "inventory"));
+				new ModelResourceLocation("lepidodendron:alethopteris_strobilus_bottom", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:alethopteris_strobilus", BlockAlethopterisStrobilus.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:alethopteris_sapling", BlockAlethopterisStrobilus.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAlethopterisStrobilus.block);
 		OreDictionary.registerOre("plant", BlockAlethopterisStrobilus.block);
 	}
