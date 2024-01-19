@@ -5,7 +5,8 @@
 		"particle": "lepidodendron:blocks/alethopteris_shoot_b_c",
 		"w": "lepidodendron:blocks/alethopteris_shoot_b_c",
 		"ee": "lepidodendron:blocks/alethopteris_shoot_b_e",
-		"ww": "lepidodendron:blocks/alethopteris_shoot_b_w"
+		"ww": "lepidodendron:blocks/alethopteris_shoot_b_w",
+		"d": "lepidodendron:blocks/alethopteris_shoot_under"
 	},
 	"elements": [
 		{
@@ -66,6 +67,26 @@
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#ee"},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#ww"}
+			}
+		},
+		{
+			"name": "dn",
+			"from": [8, 0, 0],
+			"to": [8, -16, 16],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#d"},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#d"}
+			}
+		},
+		{
+			"name": "de",
+			"from": [0, 0, 8],
+			"to": [16, -16, 8],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#d"},
+				"south": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#d"}
 			}
 		}
 	]
