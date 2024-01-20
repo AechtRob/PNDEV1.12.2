@@ -74,26 +74,36 @@ public class WorldGenRockPiles extends WorldGenerator
 
                     for (BlockPos blockpos : BlockPos.getAllInBox(position.add(-j, -k, -l), position.add(j, k, l)))
                     {
-                        if (blockpos.distanceSq(position) <= (double)(f * f))
-                        {
-                        	Block blockIn = Blocks.STONE;
-                        	if (Math.random() > 0.65) {
-                        		blockIn = Blocks.COBBLESTONE;
-                                if (mossy && Math.random() > 0.5) {
-                                    blockIn = Blocks.MOSSY_COBBLESTONE;
+                        if (worldIn.isBlockLoaded(blockpos)) {
+                            if (blockpos.distanceSq(position) <= (double) (f * f)) {
+                                Block blockIn = Blocks.STONE;
+                                if (Math.random() > 0.65) {
+                                    blockIn = Blocks.COBBLESTONE;
+                                    if (mossy && Math.random() > 0.5) {
+                                        blockIn = Blocks.MOSSY_COBBLESTONE;
+                                    }
                                 }
-                        	}
-                        	if (Math.random() > 0.85) {
-                        		blockIn = Blocks.GRAVEL;
-                        	}
-                        	if (Math.random() > 0.85) {
-                        		blockIn = Blocks.SAND;
-                        	}
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
+                                if (Math.random() > 0.85) {
+                                    blockIn = Blocks.GRAVEL;
+                                }
+                                if (Math.random() > 0.85) {
+                                    blockIn = Blocks.SAND;
+                                }
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn.getDefaultState(), 16);
+                            }
                         }
                     }
 
-                    position = position.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+                    BlockPos startpos2 = position;
+                    for (int tries = 0; tries <= 100; tries ++) {
+                        startpos2 = position.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+                        if (worldIn.isBlockLoaded(startpos2)) {
+                            break;
+                        }
+                        startpos2 = position.add(0, 0 - rand.nextInt(2), 0);
+                    }
+                    position = startpos2;
+
                 }
 
                 return true;

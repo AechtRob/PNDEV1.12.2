@@ -14,7 +14,21 @@ public class ProcedureTreeLeaf extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static void executeProcedure(int x, int y, int z, World world, Block blockLeaf) {
-
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x + 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x - 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z + 1))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z - 1))) {
+			return;
+		}
 		Block block = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock();
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world,

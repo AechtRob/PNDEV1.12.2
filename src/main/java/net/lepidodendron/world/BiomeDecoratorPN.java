@@ -67,22 +67,26 @@ public class BiomeDecoratorPN extends BiomeDecorator {
                 int l = random.nextInt(16) + 8;
                 WorldGenAbstractTree worldgenabstracttree = biomeIn.getRandomTreeFeature(random);
                 //Exceptions for large trees here to help centre them on the chunks and avoid cascading lag:
-                if (worldgenabstracttree instanceof WorldGenBushyAraucariaTree
-                        || worldgenabstracttree instanceof WorldGenArchaeopterisTree
+                if (worldgenabstracttree instanceof WorldGenArchaeopterisTree
                         || worldgenabstracttree instanceof WorldGenArchaeopterisTreeWaterDeep
                         || worldgenabstracttree instanceof WorldGenAraucaritesTree
                         || worldgenabstracttree instanceof WorldGenMonkeyPuzzleAraucariaTree
+                        || worldgenabstracttree instanceof WorldGenTietea
+                        || worldgenabstracttree instanceof WorldGenPsaronius
                         || worldgenabstracttree instanceof WorldGenAraucarioxylonTree
                         || worldgenabstracttree instanceof WorldGenAraucarioxylonTreeWaterDeep
                         || worldgenabstracttree instanceof WorldGenHoopTree
+                        || worldgenabstracttree instanceof WorldGenGinkgoTree
+                        || worldgenabstracttree instanceof WorldGenGinkgoitesTree
                         || worldgenabstracttree instanceof WorldGenTallAraucariaTree
                         || worldgenabstracttree instanceof WorldGenYewTree) {
                     k6 = random.nextInt(8) + 12;
                     l = random.nextInt(8) + 12;
                 }
-                if (worldgenabstracttree instanceof WorldGenPagiophyllumTree) {
-                    k6 = random.nextInt(4) + 14;
-                    l = random.nextInt(4) + 14;
+                if (worldgenabstracttree instanceof WorldGenPagiophyllumTree
+                        || worldgenabstracttree instanceof WorldGenBushyAraucariaTree) {
+                    k6 = 16;
+                    l = 16;
                 }
                 worldgenabstracttree.setDecorationDefaults();
                 BlockPos blockpos = worldIn.getHeight(this.chunkPos.add(k6, 0, l));

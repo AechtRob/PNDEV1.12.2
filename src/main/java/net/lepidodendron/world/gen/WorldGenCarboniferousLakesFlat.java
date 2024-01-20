@@ -149,7 +149,7 @@ public class WorldGenCarboniferousLakesFlat extends WorldGenerator
                         if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3)))
                         {
                             int flag = net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2| 16 : 2; //Forge: With bit 5 unset, it will notify neighbors and load adjacent chunks.
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), flag); //Forge
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), 16); //Forge
                         }
                     }
                 }

@@ -191,6 +191,7 @@ public class Functions {
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state, int flags) {
+
         if (worldIn.getBlockState(pos).getBlock() instanceof BlockDoublePlant) {
             if (worldIn.getBlockState(pos.up()).getBlock() instanceof BlockDoublePlant) {
                 if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER

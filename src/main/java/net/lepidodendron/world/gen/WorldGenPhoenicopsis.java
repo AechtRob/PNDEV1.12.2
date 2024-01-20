@@ -22,9 +22,9 @@ public class WorldGenPhoenicopsis extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 8;
+        int offset = 5;
         if (needsWater) {
-            offset = 5;
+            offset = 3;
         }
         for (int i = 0; i < 36; ++i)
         {
