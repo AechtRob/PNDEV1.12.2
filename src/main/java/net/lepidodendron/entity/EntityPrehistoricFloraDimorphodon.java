@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getLaunchCooldown() {
+		return 24000;
+	}
+
+	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		boolean result = super.attackEntityFrom(ds, i);
 		if (ds.getTrueSource() instanceof EntityLivingBase && !this.world.isRemote) {

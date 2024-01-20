@@ -67,7 +67,7 @@ public class RenderDimorphodon extends RenderLiving<EntityPrehistoricFloraDimorp
                 break;
 
             case EAST: case SOUTH: case WEST: case NORTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.74F);
+                GlStateManager.translate(0.0F, -0.25F, -0.74F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
 
