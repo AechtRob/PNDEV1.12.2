@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public Animation TAIL_ANIMATION;
+	//public Animation TAIL_ANIMATION;
 	private int standCooldown;
 	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
@@ -64,8 +64,8 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		minWidth = 0.8F;
 		maxWidth = 3.0F;
 		maxHeight = 6F;
-		maxHealthAgeable = 200.0D;
-		TAIL_ANIMATION = Animation.create(80);
+		maxHealthAgeable = 220.0D;
+//		TAIL_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -129,7 +129,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getGrazeLength() {
-		return 80;
+		return 252;
 	}
 
 	@Override
@@ -150,7 +150,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TAIL_ANIMATION};
+		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}
 
 	@Override
@@ -176,17 +176,17 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 30;
+		return 20;
 	}
 
 	@Override
 	public int getRoarLength() {
-		return 60;
+		return 86;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 140;
+		return 131;
 	}
 
 	@Override
@@ -211,7 +211,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
 			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
-			|| this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == TAIL_ANIMATION) {
+			|| this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -277,7 +277,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getDrinkLength() {
-		return 160;
+		return 190;
 	}
 
 	@Override
@@ -669,17 +669,17 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(TAIL_ANIMATION);
-			this.standCooldown = 3000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 3000;
-			this.setAnimation(NO_ANIMATION);
-		}
+//		//Sometimes stand up and look around:
+//		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+//				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+//			this.setAnimation(TAIL_ANIMATION);
+//			this.standCooldown = 3000;
+//		}
+//		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+//		if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
+//			this.standCooldown = 3000;
+//			this.setAnimation(NO_ANIMATION);
+//		}
 
 		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
 		{
