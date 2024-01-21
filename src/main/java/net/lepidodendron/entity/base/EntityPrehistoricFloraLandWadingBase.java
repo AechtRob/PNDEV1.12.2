@@ -86,6 +86,11 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     public abstract int wadeDepth();
 
     @Override
+    public int getMaxFallHeight() {
+        return 4;
+    }
+
+    @Override
     protected float getJumpUpwardsMotion()
     {
         if (this.isReallyInWater()) {
@@ -234,6 +239,14 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     }
 
     @Override
+    public void fall(float distance, float damageMultiplier) {
+        if (distance <= this.getMaxFallHeight()) {
+            return;
+        }
+        super.fall(distance, damageMultiplier);
+    }
+
+    @Override
     public void onEntityUpdate() {
         super.onEntityUpdate();
     }
@@ -306,6 +319,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         if (!this.world.isRemote) {
             selectNavigator();
         }
+
 
         //Updated from vanilla to allow underwater jumping:
         if (this.jumpTicks > 0)

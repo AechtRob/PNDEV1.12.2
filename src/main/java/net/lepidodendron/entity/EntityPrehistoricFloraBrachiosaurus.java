@@ -10,7 +10,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderBrachiosaurus;
+import net.lepidodendron.entity.render.entity.RenderApatosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -59,17 +59,17 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraBrachiosaurus(World world) {
 		super(world);
-		setSize(3.0F, 6F);
-		stepHeight = 4;
+		setSize(2.95F, 6F);
+		stepHeight = 2;
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.95F;
 		maxHeight = 6F;
-		maxHealthAgeable = 220.0D;
-//		TAIL_ANIMATION = Animation.create(80);
+		maxHealthAgeable = 200.0D;
+		//TAIL_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		NOISE_ANIMATION = Animation.create(40);
+		NOISE_ANIMATION = Animation.create(86);
 		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
@@ -176,7 +176,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 30;
 	}
 
 	@Override
@@ -205,17 +205,19 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.4F;
+		float speedBase = 0.45F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
 			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
-			|| this.getAnimation() == GRAZE_ANIMATION) {
+			|| this.getAnimation() == GRAZE_ANIMATION
+				//|| this.getAnimation() == TAIL_ANIMATION
+		) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.4F;
+			speedBase = speedBase * 1.3F;
 		}
 		return speedBase;
 	}
@@ -248,7 +250,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(6, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -528,24 +530,24 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_roar"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:brachiosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:apatosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_death"));
 	}
 
 	@Override
@@ -611,23 +613,10 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public void fall(float distance, float damageMultiplier) {
-		if (distance <= 6) {
-			return;
-		}
-		super.fall(distance, damageMultiplier);
-	}
-
-	@Override
-	public int getMaxFallHeight() {
-		return 4;
-	}
-
-	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(25.0, 45.00, 25.0);
+			return this.getEntityBoundingBox().grow(15.0, 15.00, 15.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -705,16 +694,17 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_BRACHIOSAURUS;
+		return ModTriggers.CLICK_APATOSAURUS;
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.BRACHIOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.APATOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.BRACHIOSAURUS_LOOT;
+		return LepidodendronMod.APATOSAURUS_LOOT;
 	}
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
@@ -739,33 +729,32 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 3.5;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 2.5;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.5;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.3;
+		return -2.5;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
+		return -2.9;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.1;
+		return 6.0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderBrachiosaurus.TEXTURE;
+		return RenderApatosaurus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelBrachiosaurus;
+		return RenderDisplays.modelApatosaurus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderBrachiosaurus.getScaler();
+		return RenderApatosaurus.getScaler();
 	}
-
 }

@@ -58,10 +58,10 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraDiplodocus(World world) {
 		super(world);
-		setSize(3.0F, 4.5F);
+		setSize(2.95F, 4.5F);
 		stepHeight = 2;
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.95F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 200.0D;
 		IDLE2_ANIMATION = Animation.create(460);
