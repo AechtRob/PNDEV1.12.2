@@ -252,9 +252,9 @@ public class ModelPalaeodictyopteraMedium extends AdvancedModelBase {
         this.walk(antennaR, 0.3F, 0.15F, false,0,0.1F, f2, 1F);
         this.swing(antennaL, 0.3F, -0.25F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaR, 0.3F, 0.25F, false, 0, 0.1F, f2, 0.8F);
-        this.swing(mouth, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
-        this.swing(cerciL, 0.12F, -0.4F, false, 0, -0.1F, f2, 0.8F);
-        this.swing(cerciR, 0.12F, 0.4F, false, 0, 0.1F, f2, 0.8F);
+        //this.swing(mouth, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        this.swing(cerciL, 0.12F, -0.3F, false, 0, -0.1F, f2, 0.8F);
+        this.swing(cerciR, 0.12F, 0.3F, false, 0, 0.1F, f2, 0.8F);
 
     }
 }
