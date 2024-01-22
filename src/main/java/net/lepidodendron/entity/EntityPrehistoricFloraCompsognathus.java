@@ -313,7 +313,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.EGGS, DietString.BUG);
+		return ArrayUtils.addAll(DietString.MEAT, ArrayUtils.addAll(DietString.EGGS, DietString.BUG));
 	}
 
 	@Override
