@@ -41,7 +41,21 @@ public class ProcedureTreeLeaf extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static void executeProcedure(BlockPos pos, World world, Block blockLeaf) {
-
+		if (!world.isBlockLoaded(pos)) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.east())) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.north())) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.south())) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.west())) {
+			return;
+		}
 		Block block = world.getBlockState(pos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(pos), world,
 				pos)) {

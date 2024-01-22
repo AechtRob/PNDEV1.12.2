@@ -9589,5 +9589,86 @@
         "stream": false
       }
     ]
+  },
+
+  "anchiornis_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchiornis_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_living05",
+        "stream": false
+      }
+    ]
+  },
+  "anchiornis_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchiornis_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "anchiornis_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchiornis_death",
+        "stream": false
+      }
+    ]
+  },
+  "anchiornis_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchiornis_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_alarm03",
+        "stream": false
+      }
+    ]
+  },
+  "anchiornis_threat": {
+    "sounds": [
+      {
+        "name": "lepidodendron:anchiornis_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:anchiornis_threat03",
+        "stream": false
+      }
+    ]
   }
 }

@@ -5044,6 +5044,12 @@ public class RenderHandler {
                 return new RenderDimorphodon(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnchiornis.class, new IRenderFactory<EntityPrehistoricFloraAnchiornis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAnchiornis> createRenderFor(RenderManager manager) {
+                return new RenderAnchiornis(manager);
+            }
+        });
 
 
         
