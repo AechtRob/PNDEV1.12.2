@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
@@ -64,7 +65,7 @@ public class BlockGuanoBlock extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_guano_block");
 			setSoundType(SoundType.SLIME);
 			setHarvestLevel("shovel", 0);
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMisc.tab);
 			setDefaultSlipperiness(0.8f);
 			setHardness(0.1F);
 			this.setTickRandomly(false);

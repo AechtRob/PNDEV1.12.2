@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGuano;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -42,7 +43,7 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(18.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.15D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.60D);
 	}
 
@@ -107,8 +108,17 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 		double d3 = target.posZ - this.posZ;
 		float f = MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F;
 		entityguanoball.shoot(d1, d2 + (double)f, d3, 1.6F, 12.0F);
-		this.playSound(SoundEvents.ENTITY_SNOWMAN_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		SoundEvent soundevent = this.getShootSound();
+		if (soundevent != null) {
+			this.playSound(soundevent, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		}
 		this.world.spawnEntity(entityguanoball);
+	}
+
+	@Nullable
+	public SoundEvent getShootSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:guano_golem_shoot"));
 	}
 
 	public float getEyeHeight()
@@ -119,7 +129,8 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	@Nullable
 	protected SoundEvent getAmbientSound()
 	{
-		return SoundEvents.ENTITY_SNOWMAN_AMBIENT;
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:guano_golem_idle"));
 	}
 
 	@Nullable
@@ -131,7 +142,23 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	@Nullable
 	protected SoundEvent getDeathSound()
 	{
-		return SoundEvents.ENTITY_SNOWMAN_DEATH;
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:guano_golem_death"));
+	}
+
+	protected void playStepSound(BlockPos pos, Block blockIn)
+	{
+		SoundEvent soundevent = this.getStepSound();
+		if (soundevent != null) {
+			this.playSound(soundevent, 1.0F, 1.0F);
+		}
+	}
+
+	@Nullable
+	protected SoundEvent getStepSound()
+	{
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:guano_golem_walk"));
 	}
 
 	public void setSwingingArms(boolean swingingArms)

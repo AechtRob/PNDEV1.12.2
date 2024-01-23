@@ -9670,5 +9670,58 @@
         "stream": false
       }
     ]
+  },
+
+  "guano_golem_shoot": {
+    "sounds": [
+      {
+        "name": "lepidodendron:guano_golem_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "guano_golem_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:guano_golem_death",
+        "stream": false
+      }
+    ]
+  },
+  "guano_golem_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:guano_golem_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:guano_golem_living02",
+        "stream": false
+      }
+    ]
+  },
+  "guano_golem_walk": {
+    "sounds": [
+      {
+        "name": "lepidodendron:guano_golem_walk01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:guano_golem_walk02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:guano_golem_walk03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:guano_golem_walk04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:guano_golem_walk05",
+        "stream": false
+      }
+    ]
   }
 }
