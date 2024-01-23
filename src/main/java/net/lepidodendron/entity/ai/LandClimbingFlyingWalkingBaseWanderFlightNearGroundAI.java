@@ -46,6 +46,11 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
             return false;
         }
 
+        if ( this.entity.getNestLocation() != null && this.entity.homesToNest() && this.entity.isSearchingNest() && !(this.entity.ticksFreeflight > 0)) {
+            //If it homes to nest and had exhausted its free flight, don't do this AI unless it is also close now:
+            return false;
+        }
+
         int i = 0;
         boolean overWater = false;
         while (i <= 40) {

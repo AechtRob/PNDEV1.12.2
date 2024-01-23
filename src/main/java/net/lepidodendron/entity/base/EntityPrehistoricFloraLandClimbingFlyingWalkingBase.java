@@ -59,6 +59,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
+    public int ticksFreeflight;
     public int climbingpause;
     public BlockPos targetBlock;
     public Animation FLY_ANIMATION;
@@ -75,6 +76,29 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
         FLY_ANIMATION = Animation.create(this.flyTransitionLength());
         UNFLY_ANIMATION = Animation.create(this.unflyTransitionLength());
+    }
+
+    public double nestDist() {
+        if (this.getNestLocation() != null) {
+            double d0 = (double)(this.getNestLocation().getX() + 0.5 - this.posX);
+            double d1 = (double)(this.getNestLocation().getY() + 0.5 - this.posY);
+            double d2 = (double)(this.getNestLocation().getZ() + 0.5 - this.posZ);
+            return Math.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+        }
+        return 0;
+    }
+
+    public double nestDistHorizontal() {
+        if (this.getNestLocation() != null) {
+            double d0 = (double)(this.getNestLocation().getX() + 0.5 - this.posX);
+            double d2 = (double)(this.getNestLocation().getZ() + 0.5 - this.posZ);
+            return Math.sqrt(d0 * d0 + d2 * d2);
+        }
+        return 0;
+    }
+
+    public boolean isSearchingNest() {
+        return nestDistHorizontal() < 16;
     }
 
     public abstract int flyTransitionLength();
@@ -123,6 +147,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     public int pausesClimbFor() {
         return 100;
+    }
+
+    public int fliesAwayFromNestFor() {
+        return 2400; //2 minutes
     }
 
     @Override
@@ -234,6 +262,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setHeadCollided(false);
+        this.ticksFreeflight = this.fliesAwayFromNestFor();
         this.climbingpause = -this.climbsFor() + rand.nextInt(this.climbsFor() + this.pausesClimbFor());
         return livingdata;
     }
@@ -258,6 +287,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.sidewaysTries = compound.getInteger("sidewaysTries");
         this.setTickOffset(compound.getInteger("TickOffset"));
         this.sitTickCt = compound.getInteger("SitTickCt");
+        this.ticksFreeflight = compound.getInteger("ticksFreeflight");
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
             int j = compound.getInteger("PosY");
@@ -286,6 +316,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         compound.setInteger("SitCooldown", sitCooldown);
         compound.setInteger("sidewaysTries", sidewaysTries);
         compound.setInteger("SitTickCt", sitTickCt);
+        compound.setInteger("ticksFreeflight", ticksFreeflight);
         BlockPos blockpos1 = this.getAttachmentPos();
         if (blockpos1 != null) {
             compound.setInteger("PosX", blockpos1.getX());
@@ -526,8 +557,19 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
 
         boolean flying = isReallyFlying();
+
         if (sitCooldown > 0) {
             sitCooldown--;
+        }
+
+        if (this.nestDist() < 4) {
+            this.ticksFreeflight = this.fliesAwayFromNestFor();
+        }
+        else if (ticksFreeflight > 0) {
+            ticksFreeflight = ticksFreeflight - rand.nextInt(3);
+        }
+        if (ticksFreeflight < 0) {
+            ticksFreeflight = 0;
         }
 
         if (!world.isRemote) {
@@ -950,6 +992,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             if (flier.getAttachmentFacing() != EnumFacing.DOWN) {
                 return false;
             }
+            else if (flier.homesToNest() && !(flier.ticksFreeflight > 0) && flier.getNestLocation() != null) {
+                //If it homes to nest and had exhausted its free flight, don't do this AI:
+                return false;
+            }
 
             IBlockState state = flier.world.getBlockState(flier.getPosition().down());
             if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
@@ -1025,6 +1071,137 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                 return true;
             }
             return !BiomeDictionary.hasType(world.getBiome(pos), BiomeDictionary.Type.OCEAN);
+        }
+
+    }
+
+    public class AgeableClimbingFlyingWalkingFlyHighSearchNest extends EntityAIBase {
+
+        private final EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier;
+
+        public AgeableClimbingFlyingWalkingFlyHighSearchNest(EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier) {
+            this.flier = flier;
+        }
+
+        @Override
+        public boolean shouldExecute() {
+
+            if (flier.getAttachmentFacing() != EnumFacing.DOWN) {
+                return false;
+            }
+            else if (!(flier.homesToNest() && !(flier.ticksFreeflight > 0))) {
+                //If it homes to nest and had exhausted its free flight, don't do this AI:
+                return false;
+            }
+
+            if (flier.getNestLocation() == null) {
+                return false;
+            }
+
+            IBlockState state = flier.world.getBlockState(flier.getPosition().down());
+            if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
+            ) {
+                flier.setFlyTarget(null);
+                return false;
+            }
+
+            if (flier.getFlyTarget() != null && (flier.getDistanceSquared(new Vec3d(flier.getFlyTarget().getX(), flier.posY, flier.getFlyTarget().getZ())) > 3 || EntityPrehistoricFloraLandClimbingFlyingWalkingBase.isTargetBlocked(flier, new Vec3d(flier.getFlyTarget())))) {
+                flier.setFlyTarget(null);
+            }
+
+            if (flier.getEatTarget() != null) {
+                flier.setFlyTarget(flier.getEatTarget().getPosition());
+            }
+
+            if (flier.getFlyTarget() == null) {
+                BlockPos randPos = null;
+                randPos = this.getNestHomingTarget();
+
+                if (randPos == null) {
+                    return false;
+                }
+                else {
+                    flier.setFlyTarget(randPos);
+                    return true;
+                }
+            }
+            else {
+                return (flier.getFlyTarget() != null); //is not null
+            }
+        }
+
+        @Override
+        public boolean shouldContinueExecuting() {
+            return flier.getFlyTarget() != null && !EntityPrehistoricFloraLandClimbingFlyingWalkingBase.isTargetBlocked(flier, new Vec3d(flier.getFlyTarget()));
+        }
+
+        @Nullable
+        public BlockPos getNestHomingTarget() {
+            if (flier.getAttackTarget() == null) {
+                return getTargetForNest();
+            }
+            else {
+                BlockPos pos = new BlockPos((int) flier.getAttackTarget().posX, (int) flier.getAttackTarget().posY, (int) flier.getAttackTarget().posZ);
+                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR) {
+                    return pos;
+                }
+            }
+            return flier.getPosition();
+        }
+
+        @Nullable
+        public BlockPos getTargetForNest(){
+            BlockPos pos = null;
+            if (flier.getNestLocation() == null) {
+                for (int i = 0; i < 24; i++) {
+                    pos = getInterimBlockTarget(flier);
+                    if (pos != null) {
+                        BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
+                        pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
+                        if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                                && !isTargetBlocked(flier, new Vec3d(pos))) {
+                            return pos;
+                        }
+                    }
+                }
+                return pos; //It has no known nest so it just flies like normal
+            }
+            for (int i = 0; i < 24; i++) {
+                if (flier.nestDist() < 32 && flier.getNestLocation() != null) {
+                    return flier.getNestLocation();
+                }
+                //Otherwise just move in the right direction:
+                //North-South:
+                int northsouth = (int) Math.round(flier.posZ - (flier.getNestLocation().getZ() + 0.5));
+                byte ns = 0;
+                if (northsouth < 0) {
+                    ns = 1;
+                }
+                if (northsouth > 0) {
+                    ns = -1;
+                }
+                northsouth = Math.min(Math.abs(northsouth), 16);
+
+                int eastwest = (int) Math.round(flier.posX - (flier.getNestLocation().getX() + 0.5));
+                byte ew = 0;
+                if (eastwest < 0) {
+                    ew = 1;
+                }
+                if (eastwest > 0) {
+                    ew = -1;
+                }
+                eastwest = Math.min(Math.abs(eastwest), 16);
+
+                if (northsouth > 0) {
+                    northsouth = flier.rand.nextInt(northsouth) * ns;
+                }
+                if (eastwest > 0) {
+                    eastwest = flier.rand.nextInt(eastwest) * ew;
+                }
+
+                return flier.getPosition().add(eastwest, 0, northsouth);
+            }
+            return pos;
         }
 
     }

@@ -340,6 +340,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean placesNest() {return false;}
 
     public boolean isHomeableNest (World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
 
@@ -360,6 +363,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isMyNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
@@ -401,6 +407,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isLayableNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         //is empty of eggs, and either belongs to me or is empty:
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
@@ -417,6 +426,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean nestBlockMatch(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (this.isNestMound()) {
             boolean match = false;
             if (!match) {
