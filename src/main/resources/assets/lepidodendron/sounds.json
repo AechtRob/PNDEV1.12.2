@@ -9723,5 +9723,71 @@
         "stream": false
       }
     ]
+  },
+
+  "brachiosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:brachiosaurid_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_living08",
+        "stream": false
+      }
+    ]
+  },
+  "brachiosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:brachiosaurid_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:brachiosaurid_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "brachiosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:brachiosaurid_death",
+        "stream": false
+      }
+    ]
   }
+
 }

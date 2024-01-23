@@ -530,24 +530,24 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:apatosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:brachiosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:apatosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_death"));
 	}
 
 	@Override
