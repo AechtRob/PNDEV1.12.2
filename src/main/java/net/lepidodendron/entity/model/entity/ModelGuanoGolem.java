@@ -18,12 +18,18 @@ public class ModelGuanoGolem extends AdvancedModelBase {
     private final AdvancedModelRenderer drip12;
     private final AdvancedModelRenderer rightHand;
     private final AdvancedModelRenderer field_78193_e_r1;
+    private final AdvancedModelRenderer field_78193_e_r2;
+    private final AdvancedModelRenderer drip14;
+    private final AdvancedModelRenderer drip18;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer drip3;
     private final AdvancedModelRenderer drip4;
     private final AdvancedModelRenderer drip13;
+    private final AdvancedModelRenderer drip16;
     private final AdvancedModelRenderer leftHand;
-    private final AdvancedModelRenderer field_78193_e_r2;
+    private final AdvancedModelRenderer field_78193_e_r3;
+    private final AdvancedModelRenderer drip15;
+    private final AdvancedModelRenderer drip17;
     private final AdvancedModelRenderer bottomBody;
     private final AdvancedModelRenderer drip5;
     private final AdvancedModelRenderer drip6;
@@ -96,17 +102,43 @@ public class ModelGuanoGolem extends AdvancedModelBase {
         this.drip12.cubeList.add(new ModelBox(drip12, 41, 38, 4.0F, -10.5F, -6.0F, 1, 4, 1, 0.0F, false));
 
         this.rightHand = new AdvancedModelRenderer(this);
-        this.rightHand.setRotationPoint(-5.5F, 9.1667F, -8.8333F);
+        this.rightHand.setRotationPoint(-6.5F, 9.1667F, -8.8333F);
         this.root.addChild(rightHand);
-
+        this.rightHand.cubeList.add(new ModelBox(rightHand, 28, 24, -2.5F, 7.8333F, 0.8333F, 1, 4, 1, 0.0F, false));
+        this.rightHand.cubeList.add(new ModelBox(rightHand, 41, 38, -2.5F, 7.8333F, -2.1667F, 1, 3, 1, 0.0F, false));
+        this.rightHand.cubeList.add(new ModelBox(rightHand, 28, 24, -0.5F, 7.8333F, -3.1667F, 1, 2, 1, 0.0F, false));
 
         this.field_78193_e_r1 = new AdvancedModelRenderer(this);
-        this.field_78193_e_r1.setRotationPoint(10.5F, -2.1667F, 0.8333F);
+        this.field_78193_e_r1.setRotationPoint(-2.5F, -2.1667F, 0.8333F);
         this.rightHand.addChild(field_78193_e_r1);
         this.setRotateAngle(field_78193_e_r1, 0.0F, 0.0F, 1.5708F);
-        this.field_78193_e_r1.cubeList.add(new ModelBox(field_78193_e_r1, 0, 0, 15.0F, 8.0F, -5.0F, 2, 5, 7, 0.0F, false));
-        this.field_78193_e_r1.cubeList.add(new ModelBox(field_78193_e_r1, 67, 7, 10.0F, 9.0F, -3.0F, 5, 3, 5, 0.0F, false));
-        this.field_78193_e_r1.cubeList.add(new ModelBox(field_78193_e_r1, 38, 0, 0.0F, 8.0F, -4.0F, 10, 5, 7, 0.0F, false));
+        this.field_78193_e_r1.cubeList.add(new ModelBox(field_78193_e_r1, 64, 31, -1.0F, -4.0F, -4.0F, 1, 4, 7, 0.0F, false));
+
+        this.field_78193_e_r2 = new AdvancedModelRenderer(this);
+        this.field_78193_e_r2.setRotationPoint(10.5F, -2.1667F, 0.8333F);
+        this.rightHand.addChild(field_78193_e_r2);
+        this.setRotateAngle(field_78193_e_r2, 0.0F, 0.0F, 1.5708F);
+        this.field_78193_e_r2.cubeList.add(new ModelBox(field_78193_e_r2, 0, 0, 15.0F, 8.0F, -5.0F, 2, 5, 7, 0.0F, false));
+        this.field_78193_e_r2.cubeList.add(new ModelBox(field_78193_e_r2, 67, 7, 10.0F, 9.0F, -3.0F, 5, 3, 5, 0.0F, false));
+        this.field_78193_e_r2.cubeList.add(new ModelBox(field_78193_e_r2, 38, 0, 0.0F, 8.0F, -4.0F, 10, 5, 7, 0.0F, false));
+
+        this.drip14 = new AdvancedModelRenderer(this);
+        this.drip14.setRotationPoint(2.5F, 7.3333F, -2.1667F);
+        this.rightHand.addChild(drip14);
+        this.drip14.cubeList.add(new ModelBox(drip14, 28, 24, -6.0F, -9.5F, -1.0F, 1, 2, 1, 0.0F, true));
+        this.drip14.cubeList.add(new ModelBox(drip14, 28, 24, -6.0F, -9.5F, 5.0F, 1, 2, 1, 0.0F, true));
+        this.drip14.cubeList.add(new ModelBox(drip14, 27, 23, -6.0F, -9.5F, 1.0F, 1, 2, 2, 0.0F, true));
+        this.drip14.cubeList.add(new ModelBox(drip14, 28, 24, -6.0F, -9.5F, 3.0F, 1, 2, 1, 0.0F, true));
+        this.drip14.cubeList.add(new ModelBox(drip14, 77, 19, -6.0F, -9.5F, 0.0F, 1, 4, 1, 0.0F, true));
+        this.drip14.cubeList.add(new ModelBox(drip14, 41, 38, -6.0F, -9.5F, 4.0F, 1, 3, 1, 0.0F, true));
+
+        this.drip18 = new AdvancedModelRenderer(this);
+        this.drip18.setRotationPoint(-2.5F, 22.3333F, 12.8333F);
+        this.rightHand.addChild(drip18);
+        this.drip18.cubeList.add(new ModelBox(drip18, 28, 24, 2.0F, -24.5F, -17.0F, 1, 1, 1, 0.0F, true));
+        this.drip18.cubeList.add(new ModelBox(drip18, 28, 24, 0.0F, -24.5F, -17.0F, 1, 2, 1, 0.0F, true));
+        this.drip18.cubeList.add(new ModelBox(drip18, 28, 24, 3.0F, -24.5F, -17.0F, 1, 4, 1, 0.0F, true));
+        this.drip18.cubeList.add(new ModelBox(drip18, 41, 38, 1.0F, -24.5F, -17.0F, 1, 3, 1, 0.0F, true));
 
         this.head = new AdvancedModelRenderer(this);
         this.head.setRotationPoint(0.0F, -1.0F, -10.5F);
@@ -154,18 +186,54 @@ public class ModelGuanoGolem extends AdvancedModelBase {
         this.drip13.cubeList.add(new ModelBox(drip13, 41, 38, 10.5F, 6.5F, 6.0F, 1, 2, 1, 0.0F, true));
         this.drip13.cubeList.add(new ModelBox(drip13, 41, 38, 14.5F, 6.5F, 8.0F, 1, 2, 1, 0.0F, true));
 
+        this.drip16 = new AdvancedModelRenderer(this);
+        this.drip16.setRotationPoint(-2.0F, 19.5F, 22.5F);
+        this.head.addChild(drip16);
+        this.drip16.cubeList.add(new ModelBox(drip16, 28, 24, 7.0F, -24.5F, -17.0F, 1, 2, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 28, 24, -2.0F, -24.5F, -17.0F, 1, 2, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 28, 24, -4.0F, -24.5F, -17.0F, 1, 2, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 27, 23, 4.0F, -24.5F, -17.0F, 2, 2, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 28, 24, 0.0F, -24.5F, -17.0F, 1, 2, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 28, 24, 6.0F, -24.5F, -17.0F, 1, 4, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 28, 24, -3.0F, -24.5F, -17.0F, 1, 4, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 27, 23, 1.0F, -24.5F, -17.0F, 2, 4, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 41, 38, 3.0F, -24.5F, -17.0F, 1, 3, 1, 0.0F, true));
+        this.drip16.cubeList.add(new ModelBox(drip16, 41, 38, -1.0F, -24.5F, -17.0F, 1, 3, 1, 0.0F, true));
+
         this.leftHand = new AdvancedModelRenderer(this);
         this.leftHand.setRotationPoint(6.5F, 9.1667F, -8.8333F);
         this.root.addChild(leftHand);
+        this.leftHand.cubeList.add(new ModelBox(leftHand, 28, 24, 1.5F, 7.8333F, 0.8333F, 1, 4, 1, 0.0F, false));
+        this.leftHand.cubeList.add(new ModelBox(leftHand, 41, 38, 1.5F, 7.8333F, -1.1667F, 1, 3, 1, 0.0F, false));
+        this.leftHand.cubeList.add(new ModelBox(leftHand, 28, 24, -0.5F, 7.8333F, -3.1667F, 1, 3, 1, 0.0F, false));
+        this.leftHand.cubeList.add(new ModelBox(leftHand, 28, 24, 1.5F, 7.8333F, -3.1667F, 1, 1, 1, 0.0F, false));
 
+        this.field_78193_e_r3 = new AdvancedModelRenderer(this);
+        this.field_78193_e_r3.setRotationPoint(-1.5F, -2.1667F, 0.8333F);
+        this.leftHand.addChild(field_78193_e_r3);
+        this.setRotateAngle(field_78193_e_r3, 0.0F, 0.0F, 1.5708F);
+        this.field_78193_e_r3.cubeList.add(new ModelBox(field_78193_e_r3, 0, 31, 15.0F, -4.0F, -5.0F, 2, 5, 7, 0.0F, false));
+        this.field_78193_e_r3.cubeList.add(new ModelBox(field_78193_e_r3, 0, 71, 10.0F, -3.0F, -3.0F, 5, 3, 5, 0.0F, false));
+        this.field_78193_e_r3.cubeList.add(new ModelBox(field_78193_e_r3, 44, 60, -1.0F, -4.0F, -4.0F, 1, 4, 7, 0.0F, false));
+        this.field_78193_e_r3.cubeList.add(new ModelBox(field_78193_e_r3, 44, 60, 0.0F, -4.0F, -4.0F, 10, 5, 7, 0.0F, false));
 
-        this.field_78193_e_r2 = new AdvancedModelRenderer(this);
-        this.field_78193_e_r2.setRotationPoint(-1.5F, -2.1667F, 0.8333F);
-        this.leftHand.addChild(field_78193_e_r2);
-        this.setRotateAngle(field_78193_e_r2, 0.0F, 0.0F, 1.5708F);
-        this.field_78193_e_r2.cubeList.add(new ModelBox(field_78193_e_r2, 0, 31, 15.0F, -4.0F, -5.0F, 2, 5, 7, 0.0F, false));
-        this.field_78193_e_r2.cubeList.add(new ModelBox(field_78193_e_r2, 0, 71, 10.0F, -3.0F, -3.0F, 5, 3, 5, 0.0F, false));
-        this.field_78193_e_r2.cubeList.add(new ModelBox(field_78193_e_r2, 44, 60, 0.0F, -4.0F, -4.0F, 10, 5, 7, 0.0F, false));
+        this.drip15 = new AdvancedModelRenderer(this);
+        this.drip15.setRotationPoint(-10.5F, 7.3333F, -2.1667F);
+        this.leftHand.addChild(drip15);
+        this.drip15.cubeList.add(new ModelBox(drip15, 28, 24, 13.0F, -9.5F, -1.0F, 1, 2, 1, 0.0F, false));
+        this.drip15.cubeList.add(new ModelBox(drip15, 28, 24, 13.0F, -9.5F, 5.0F, 1, 2, 1, 0.0F, false));
+        this.drip15.cubeList.add(new ModelBox(drip15, 1, 27, 13.0F, -9.5F, 1.0F, 1, 2, 2, 0.0F, false));
+        this.drip15.cubeList.add(new ModelBox(drip15, 28, 24, 13.0F, -9.5F, 3.0F, 1, 2, 1, 0.0F, false));
+        this.drip15.cubeList.add(new ModelBox(drip15, 41, 24, 13.0F, -9.5F, 0.0F, 1, 4, 1, 0.0F, false));
+        this.drip15.cubeList.add(new ModelBox(drip15, 41, 38, 13.0F, -9.5F, 4.0F, 1, 3, 1, 0.0F, false));
+
+        this.drip17 = new AdvancedModelRenderer(this);
+        this.drip17.setRotationPoint(-0.5F, 22.3333F, 12.8333F);
+        this.leftHand.addChild(drip17);
+        this.drip17.cubeList.add(new ModelBox(drip17, 28, 24, 0.0F, -24.5F, -17.0F, 1, 2, 1, 0.0F, true));
+        this.drip17.cubeList.add(new ModelBox(drip17, 28, 24, 2.0F, -24.5F, -17.0F, 1, 4, 1, 0.0F, true));
+        this.drip17.cubeList.add(new ModelBox(drip17, 41, 38, 1.0F, -24.5F, -17.0F, 1, 3, 1, 0.0F, true));
+        this.drip17.cubeList.add(new ModelBox(drip17, 41, 38, -1.0F, -24.5F, -17.0F, 1, 3, 1, 0.0F, true));
 
         this.bottomBody = new AdvancedModelRenderer(this);
         this.bottomBody.setRotationPoint(0.0F, 23.5F, 1.0F);
