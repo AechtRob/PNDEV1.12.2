@@ -563,13 +563,13 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
 
         if (this.nestDist() < 4) {
-            this.ticksFreeflight = this.fliesAwayFromNestFor();
+            this.ticksFreeflight = this.fliesAwayFromNestFor(); //Reset it if it's more or less home
         }
-        else if (ticksFreeflight > 0) {
-            ticksFreeflight = ticksFreeflight - rand.nextInt(3);
+        else if (this.ticksFreeflight > 0) {
+            this.ticksFreeflight = this.ticksFreeflight - rand.nextInt(3);
         }
-        if (ticksFreeflight < 0) {
-            ticksFreeflight = 0;
+        if (this.ticksFreeflight < 0) {
+            this.ticksFreeflight = 0;
         }
 
         if (!world.isRemote) {
@@ -992,10 +992,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             if (flier.getAttachmentFacing() != EnumFacing.DOWN) {
                 return false;
             }
-            else if (flier.homesToNest() && !(flier.ticksFreeflight > 0) && flier.getNestLocation() != null) {
-                //If it homes to nest and had exhausted its free flight, don't do this AI:
-                return false;
-            }
+//            else if (flier.homesToNest() && !(flier.ticksFreeflight > 0) && flier.getNestLocation() != null) {
+//                //If it homes to nest and had exhausted its free flight, don't do this AI:
+//                return false;
+//            }
 
             IBlockState state = flier.world.getBlockState(flier.getPosition().down());
             if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
@@ -1041,7 +1041,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             }
             else {
                 BlockPos pos = new BlockPos((int) flier.getAttackTarget().posX, (int) flier.getAttackTarget().posY, (int) flier.getAttackTarget().posZ);
-                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR) {
+                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                    || pos == flier.getNestLocation()) {
                     return pos;
                 }
             }
@@ -1051,120 +1052,24 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         @Nullable
         public BlockPos getFlyTarget(){
             BlockPos pos = null;
-            for (int i = 0; i < 24; i++) {
-                pos = getInterimBlockTarget(flier);
-                if (pos != null) {
-                    BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
-                    pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
-                    if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
-                            && seaCheck(pos)
-                            && !isTargetBlocked(flier, new Vec3d(pos))) {
-                        return pos;
-                    }
-                }
-            }
-            return pos;
-        }
-
-        public boolean seaCheck(BlockPos pos) {
-            if (!this.avoidsSea) {
-                return true;
-            }
-            return !BiomeDictionary.hasType(world.getBiome(pos), BiomeDictionary.Type.OCEAN);
-        }
-
-    }
-
-    public class AgeableClimbingFlyingWalkingFlyHighSearchNest extends EntityAIBase {
-
-        private final EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier;
-
-        public AgeableClimbingFlyingWalkingFlyHighSearchNest(EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier) {
-            this.flier = flier;
-        }
-
-        @Override
-        public boolean shouldExecute() {
-
-            if (flier.getAttachmentFacing() != EnumFacing.DOWN) {
-                return false;
-            }
-            else if (!(flier.homesToNest() && !(flier.ticksFreeflight > 0))) {
-                //If it homes to nest and had exhausted its free flight, don't do this AI:
-                return false;
-            }
-
-            if (flier.getNestLocation() == null) {
-                return false;
-            }
-
-            IBlockState state = flier.world.getBlockState(flier.getPosition().down());
-            if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
-            ) {
-                flier.setFlyTarget(null);
-                return false;
-            }
-
-            if (flier.getFlyTarget() != null && (flier.getDistanceSquared(new Vec3d(flier.getFlyTarget().getX(), flier.posY, flier.getFlyTarget().getZ())) > 3 || EntityPrehistoricFloraLandClimbingFlyingWalkingBase.isTargetBlocked(flier, new Vec3d(flier.getFlyTarget())))) {
-                flier.setFlyTarget(null);
-            }
-
-            if (flier.getEatTarget() != null) {
-                flier.setFlyTarget(flier.getEatTarget().getPosition());
-            }
-
-            if (flier.getFlyTarget() == null) {
-                BlockPos randPos = null;
-                randPos = this.getNestHomingTarget();
-
-                if (randPos == null) {
-                    return false;
-                }
-                else {
-                    flier.setFlyTarget(randPos);
-                    return true;
-                }
-            }
-            else {
-                return (flier.getFlyTarget() != null); //is not null
-            }
-        }
-
-        @Override
-        public boolean shouldContinueExecuting() {
-            return flier.getFlyTarget() != null && !EntityPrehistoricFloraLandClimbingFlyingWalkingBase.isTargetBlocked(flier, new Vec3d(flier.getFlyTarget()));
-        }
-
-        @Nullable
-        public BlockPos getNestHomingTarget() {
-            if (flier.getAttackTarget() == null) {
-                return getTargetForNest();
-            }
-            else {
-                BlockPos pos = new BlockPos((int) flier.getAttackTarget().posX, (int) flier.getAttackTarget().posY, (int) flier.getAttackTarget().posZ);
-                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR) {
-                    return pos;
-                }
-            }
-            return flier.getPosition();
-        }
-
-        @Nullable
-        public BlockPos getTargetForNest(){
-            BlockPos pos = null;
-            if (flier.getNestLocation() == null) {
+            if (flier.getNestLocation() == null
+                    || (flier.homesToNest() && flier.ticksFreeflight > 0)) {
                 for (int i = 0; i < 24; i++) {
                     pos = getInterimBlockTarget(flier);
                     if (pos != null) {
                         BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
                         pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
                         if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                                && seaCheck(pos)
                                 && !isTargetBlocked(flier, new Vec3d(pos))) {
                             return pos;
                         }
                     }
                 }
                 return pos; //It has no known nest so it just flies like normal
+            }
+            if (flier.isSearchingNest()) {
+                return flier.getNestLocation();
             }
             for (int i = 0; i < 24; i++) {
                 if (flier.nestDist() < 32 && flier.getNestLocation() != null) {
@@ -1199,9 +1104,22 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                     eastwest = flier.rand.nextInt(eastwest) * ew;
                 }
 
-                return flier.getPosition().add(eastwest, 0, northsouth);
+                pos = flier.getPosition().add(eastwest, 0, northsouth);
+                BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
+                pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
+                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                        && !isTargetBlocked(flier, new Vec3d(pos))) {
+                    return pos;
+                }
             }
             return pos;
+        }
+
+        public boolean seaCheck(BlockPos pos) {
+            if (!this.avoidsSea) {
+                return true;
+            }
+            return !BiomeDictionary.hasType(world.getBiome(pos), BiomeDictionary.Type.OCEAN);
         }
 
     }

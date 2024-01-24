@@ -687,6 +687,9 @@ public class ModelRhamphorhynchus extends AdvancedModelBaseExtended {
                     animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
+            else { //Flying regular but stright upwards
+                animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            }
         }
         else if (ee.getAttachmentPos() != null) {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {

@@ -8,6 +8,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,14 +47,21 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
             return false;
         }
 
-        if ( this.entity.getNestLocation() != null && this.entity.homesToNest() && this.entity.isSearchingNest() && !(this.entity.ticksFreeflight > 0)) {
-            //If it homes to nest and had exhausted its free flight, don't do this AI unless it is also close now:
-            return false;
-        }
+//        if (this.entity.getNestLocation() != null && this.entity.homesToNest() && !(this.entity.ticksFreeflight > 0)) {
+//            //If it homes to nest and had exhausted its free flight, don't do this AI unless it is also close now:
+//            return false;
+//        }
 
         int i = 0;
         boolean overWater = false;
         while (i <= 40) {
+            //If we are homing, let that take precedence:
+            if (this.entity.homesToNest() && (!(this.entity.ticksFreeflight > 0))) {
+                target = getTargetForNest();
+                if (target != null) {
+                    break;
+                }
+            }
             overWater = false;
             if (this.entity.world.rand.nextInt(15) != 0 && this.likesLogs) {
                 target = getLogTarget();
@@ -78,6 +86,56 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
         Material material = this.entity.world.getBlockState(new BlockPos(target)).getMaterial();
         Material material1 = this.entity.world.getBlockState(new BlockPos(target).up()).getMaterial();
         return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) &&  this.entity.getAttachmentPos() == null;
+    }
+
+    @Nullable
+    public BlockPos getTargetForNest(){
+        BlockPos pos = null;
+        if (this.entity.isSearchingNest()) {
+            return this.entity.getNestLocation();
+        }
+        for (int i = 0; i < 24; i++) {
+            if (this.entity.nestDist() < 32 && this.entity.getNestLocation() != null) {
+                return this.entity.getNestLocation();
+            }
+            //Otherwise just move in the right direction:
+            //North-South:
+            int northsouth = (int) Math.round(this.entity.posZ - (this.entity.getNestLocation().getZ() + 0.5));
+            byte ns = 0;
+            if (northsouth < 0) {
+                ns = 1;
+            }
+            if (northsouth > 0) {
+                ns = -1;
+            }
+            northsouth = Math.min(Math.abs(northsouth), 16);
+
+            int eastwest = (int) Math.round(this.entity.posX - (this.entity.getNestLocation().getX() + 0.5));
+            byte ew = 0;
+            if (eastwest < 0) {
+                ew = 1;
+            }
+            if (eastwest > 0) {
+                ew = -1;
+            }
+            eastwest = Math.min(Math.abs(eastwest), 16);
+
+            if (northsouth > 0) {
+                northsouth = this.entity.world.rand.nextInt(northsouth) * ns;
+            }
+            if (eastwest > 0) {
+                eastwest = this.entity.world.rand.nextInt(eastwest) * ew;
+            }
+
+            pos = this.entity.getPosition().add(eastwest, 0, northsouth);
+            BlockPos ground = this.entity.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
+            pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + this.entity.world.rand.nextInt(5) - 2), pos.getZ());
+            if (this.entity.world.getBlockState(pos).getMaterial() == Material.AIR
+                    && !this.entity.isTargetBlocked(this.entity, new Vec3d(pos))) {
+                return pos;
+            }
+        }
+        return pos;
     }
 
     public boolean shouldContinueExecuting() {

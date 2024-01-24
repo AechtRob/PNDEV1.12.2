@@ -20,6 +20,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -1127,10 +1128,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
-                                                                if (Math.random() > 0.8) { // 1:5 chance of nest coming too
+                                                                if (Math.random() > 0.8 || ((EntityPrehistoricFloraLandBase)entity).homesToNest()) { // 1:5 chance of nest coming too
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                     if (EntityLandBase.hasNest()) {
-                                                                        if (!EntityLandBase.isNestMound()) {
+                                                                        if ((!EntityLandBase.isNestMound()) && world.getBlockState(spawnPos).getBlock() != BlockNest.block
+                                                                                && BlockNest.block.canPlaceBlockAt(world, spawnPos)) {
                                                                             //Spawn a nest under the mob:
                                                                             world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
                                                                             TileEntity te = world.getTileEntity(spawnPos);
@@ -1140,6 +1142,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
                                                                                     if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        stack.setCount(1);
+                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
@@ -1153,6 +1159,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
                                                                                         // Mounds always contain eggs:
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        stack.setCount(1);
+                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
