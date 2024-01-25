@@ -2,14 +2,11 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
-import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockChest;
-import net.minecraft.block.BlockTorch;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -138,12 +135,12 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
 
         }
 
-        if (blockstateIn.getBlock() == Blocks.TORCH && Functions.decoLoaded()) {
-            EnumFacing facing = blockstateIn.getValue(BlockTorch.FACING);
-            if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
-                return BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, facing);
-            }
-        }
+//        if (blockstateIn.getBlock() == Blocks.TORCH && Functions.decoLoaded()) {
+//            EnumFacing facing = blockstateIn.getValue(BlockTorch.FACING);
+//            if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
+//                return BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, facing);
+//            }
+//        }
 
         int colour = LepidodendronConfig.digsiteTentColour;
         if (colour < -2 || colour > 15) {

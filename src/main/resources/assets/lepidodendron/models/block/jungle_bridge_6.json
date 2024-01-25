@@ -1,7 +1,0 @@
-{
-  "parent": "lepidodendron:block/bridge",
-  "textures": {
-    "wood": "blocks/planks_jungle",
-    "metal": "lepidodendron:blocks/baltic_amber"
-  }
-}

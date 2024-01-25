@@ -3,7 +3,9 @@ package net.lepidodendron.pfvillagers.village;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
@@ -45,6 +47,56 @@ public class GenPalaeontologistHouse extends WorldGenerator {
         }
     }
 
+    public static void fillUnderHouse(Biome biome, World world, BlockPos pos, int x, int z) {
+        byte xxx = 1;
+        byte zzz = 1;
+        if (x < 1) {
+            xxx = -1;
+        }
+        if (z < 1) {
+            zzz = -1;
+        }
+        int xx = 0;
+        while (xx <= Math.abs(x)) {
+            int zz = 0;
+            while (zz <= Math.abs(z)) {
+                if (world.getBlockState(pos.add(xx * xxx, 0, zz * zzz)) == PalaeontologisthouseBlocks.getBiomeSpecificBlockState(Blocks.COBBLESTONE.getDefaultState(), biome)
+                    || world.getBlockState(pos.add(xx * xxx, 0, zz * zzz)) == PalaeontologisthouseBlocks.getBiomeSpecificBlockState(Blocks.PLANKS.getDefaultState(), biome)
+                        || world.getBlockState(pos.add(xx * xxx, 0, zz * zzz)) == PalaeontologisthouseBlocks.getBiomeSpecificBlockState(Blocks.OAK_STAIRS.getDefaultState(), biome)
+                    || world.getBlockState(pos.add(xx * xxx, 0, zz * zzz)) == PalaeontologisthouseBlocks.getBiomeSpecificBlockState(Blocks.OAK_FENCE.getDefaultState(), biome))
+                {
+                    int yy = 1;
+                    BlockPos pos1 = pos.add(xx * xxx, 0, zz * zzz);
+                    while (pos1.getY() - yy > 0
+                            && (world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.WATER
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.PLANTS
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.LEAVES
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.ICE
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.PACKED_ICE
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.VINE
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.CACTUS
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.SNOW
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.CRAFTED_SNOW
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.LAVA
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.CORAL
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.FIRE
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.CAKE
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.CARPET
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.CLOTH
+                            || world.getBlockState(pos1.add(0, -yy, 0)).getMaterial() == Material.WEB
+                            || world.isAirBlock(pos1.add(0, -yy, 0)))
+                    ) {
+                        world.setBlockState(pos1.add(0, -yy, 0), PalaeontologisthouseBlocks.getBiomeSpecificBlockState(Blocks.COBBLESTONE.getDefaultState(), biome));
+                        yy ++;
+                    }
+                }
+                //world.setBlockState(pos.add(xx * xxx, -1, zz * zzz), Blocks.OBSIDIAN.getDefaultState());
+                zz ++;
+            }
+            xx ++;
+        }
+    }
+
     @Override
     public boolean generate(World worldIn, Random rand, BlockPos position) {
         if (worldIn == null) {
@@ -64,16 +116,20 @@ public class GenPalaeontologistHouse extends WorldGenerator {
         Biome biome = worldIn.getBiome(position);
 
         if (rotation == Rotation.NONE) {
-            template.addBlocksToWorld(worldIn, position.up(3).north(template.getSize().getZ()), new PalaeontologisthouseBlocks(position.up(3), settings, LepidodendronMod.PALAEONTOLOGIST_LOOT, biome, facing.getOpposite()), settings, 2);
+            template.addBlocksToWorld(worldIn, position.up(3).north(template.getSize().getZ() - 1), new PalaeontologisthouseBlocks(position.up(3), settings, LepidodendronMod.PALAEONTOLOGIST_LOOT, biome, facing.getOpposite()), settings, 2);
+            fillUnderHouse(biome, worldIn, position.up(3).east(template.getSize().getZ() + 2), -(template.getSize().getX() - 3), -(template.getSize().getZ() - 2));
         }
         if (rotation == Rotation.CLOCKWISE_90) {
             template.addBlocksToWorld(worldIn, position.up(3).east(template.getSize().getZ()), new PalaeontologisthouseBlocks(position.up(3), settings, LepidodendronMod.PALAEONTOLOGIST_LOOT, biome, facing.getOpposite()), settings, 2);
+            fillUnderHouse(biome, worldIn, position.up(3).east(template.getSize().getZ() + 2).north(), (template.getSize().getZ() - 2), -(template.getSize().getX() - 3));
         }
         if (rotation == Rotation.CLOCKWISE_180) {
             template.addBlocksToWorld(worldIn, position.up(3).south(template.getSize().getZ()), new PalaeontologisthouseBlocks(position.up(3), settings, LepidodendronMod.PALAEONTOLOGIST_LOOT, biome, facing.getOpposite()), settings, 2);
+            fillUnderHouse(biome, worldIn, position.up(3).east(template.getSize().getZ() + 2).north(), (template.getSize().getX() - 3), (template.getSize().getZ() - 2));
         }
         if (rotation == Rotation.COUNTERCLOCKWISE_90) {
             template.addBlocksToWorld(worldIn, position.up(3).west(template.getSize().getZ()-1), new PalaeontologisthouseBlocks(position.up(3), settings, LepidodendronMod.PALAEONTOLOGIST_LOOT, biome, facing.getOpposite()), settings, 2);
+            fillUnderHouse(biome, worldIn, position.up(3).north(template.getSize().getX() - 2), -(template.getSize().getZ() - 2), (template.getSize().getX() - 3));
         }
 
         //System.err.println("Spawn " + rotation + " house at " + position.getX() + " " + position.getZ());

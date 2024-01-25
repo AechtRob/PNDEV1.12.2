@@ -1,6 +1,0 @@
-{
-  "parent": "lepidodendron:block/bench",
-  "textures": {
-    "wood": "lepidodendron:blocks/plane_planks"
-  }
-}

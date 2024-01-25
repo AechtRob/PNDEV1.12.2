@@ -1,7 +1,0 @@
-{
-  "parent": "lepidodendron:block/bridge_side",
-  "textures": {
-    "wood": "lepidodendron:blocks/calamites_fibre",
-    "metal": "lepidodendron:blocks/calamites_fibre"
-  }
-}

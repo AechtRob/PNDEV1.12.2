@@ -784,7 +784,7 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 					if (world.getBlockState(getTopBlockForDig(fencePos, world).up()).getBlock() == BlockPandanFence.block) {
 						BlockPos addPos = getTopBlockForDig(fencePos, world).up();
 						if (lights == 0) {
-							if (Functions.decoLoaded()) {
+//							if (Functions.decoLoaded()) {
 								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(), BlockPandanFence.block.getDefaultState());
 								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2), BlockPandanFence.block.getDefaultState());
 								if (world.getBlockState(addPos.up(3).north()).getBlock().isReplaceable(world, addPos.up(3).north())) {
@@ -811,10 +811,10 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 								if (world.getBlockState(addPos.up(2).west()).getBlock().isReplaceable(world, addPos.up(2).west())) {
 									Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(2).west(), BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, EnumFacing.DOWN));
 								}
-							}
-							else {
-								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(), Blocks.TORCH.getDefaultState());
-							}
+//							}
+//							else {
+//								Functions.setBlockStateAndCheckForDoublePlant(world,addPos.up(), Blocks.TORCH.getDefaultState());
+//							}
 						}
 					}
 					lights++;
