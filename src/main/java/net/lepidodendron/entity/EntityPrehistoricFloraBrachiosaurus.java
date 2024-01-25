@@ -205,7 +205,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.45F;
+		float speedBase = 0.39F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

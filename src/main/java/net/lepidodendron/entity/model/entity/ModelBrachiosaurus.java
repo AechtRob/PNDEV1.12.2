@@ -685,17 +685,6 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
 
                     return;
                 }
-
-                if (brachiosaurus.getIsFast()) { //Running
-                    float speed = masterSpeed / 2F;
-                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
-
-                } else { //Walking
-                    float speed = masterSpeed / 1.50F;
-                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
-                }
             } else {
                 //Swimming pose:
                 if (f3 == 0.0F) { //static in water

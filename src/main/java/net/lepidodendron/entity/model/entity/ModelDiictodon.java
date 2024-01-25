@@ -199,9 +199,20 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
-
     public void renderStaticFloor(float f) {
-        this.hips.offsetY = 0.0F;
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(neck, -0.15F, 0.2F, 0.1F);
+        this.setRotateAngle(head, -0.1F, 0.05F, 0.05F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.2F);
+        this.setRotateAngle(rightleg1, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(rightleg2, 1.0F, 0.1F, 0.0F);
+        this.setRotateAngle(rightleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm1, 0.0F, 1.2F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.5F, -0.9F, 0.0F);
+        this.setRotateAngle(leftarm3, 0.4F, 0.0F, 0.0F);
+        this.hips.offsetY = 0.037F;
         this.hips.render(0.01F);
         resetToDefaultPose();
     }

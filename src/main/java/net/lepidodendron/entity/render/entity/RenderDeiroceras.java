@@ -14,7 +14,7 @@ public class RenderDeiroceras extends RenderLiving<EntityPrehistoricFloraDeiroce
     public RenderDeiroceras(RenderManager mgr) {
         super(mgr, new ModelDeiroceras(), 0.6f);
     }
-
+    public static float getScaler() {return 0.65F; }
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDeiroceras entity) {
         return RenderDeiroceras.TEXTURE;

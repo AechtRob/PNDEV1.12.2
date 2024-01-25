@@ -42,7 +42,7 @@ public class ItemMooreocerasRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pndietNautiloid", ItemMooreocerasRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem{
+	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_mooreoceras_raw");

@@ -39,7 +39,7 @@ public class RenderPlateosaurus extends RenderLiving<EntityPrehistoricFloraPlate
             {
                 return;
             }
-            RenderDisplays.modelPlateosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelPlateosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

@@ -227,9 +227,14 @@ public class ModelRobertia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
-
     public void renderStaticFloor(float f) {
-        this.hips.offsetY = 0.2F;
+        this.setRotateAngle(hips, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.15F, 0.0F, 0.0F);
+        this.hips.offsetY = 0.158F;
+        this.hips.offsetZ = -0.0F;
         this.hips.render(0.01F);
         resetToDefaultPose();
     }

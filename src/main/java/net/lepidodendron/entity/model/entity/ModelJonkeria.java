@@ -264,7 +264,30 @@ public class ModelJonkeria extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.body1.offsetY = -0.147F;
+        this.setRotateAngle(body1, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(chest1, 0.09F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(neck2, -0.15F, 0.05F, 0.0F);
+        this.setRotateAngle(neck3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(head1, 0.15F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(basin1, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg1, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(leg1, 1.8F, 0.35F, -0.35F);
+        this.setRotateAngle(feet1, 1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(leg2, 1.8F, -0.35F, 0.35F);
+        this.setRotateAngle(feet2, 1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 0.4F, 0.0F, 0.8F);
+        this.setRotateAngle(arm1, -1.6F, -0.4F, -0.7F);
+        this.setRotateAngle(hand1, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm2, 0.4F, 0.0F, -0.8F);
+        this.setRotateAngle(arm2, -1.6F, 0.4F, 0.7F);
+        this.setRotateAngle(hand2, 1.3F, 0.0F, 0.0F);
+        this.body1.offsetY = -0.07F;
         this.body1.render(0.01F);
         this.resetToDefaultPose();
     }

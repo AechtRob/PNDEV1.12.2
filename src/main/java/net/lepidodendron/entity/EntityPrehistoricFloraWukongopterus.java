@@ -570,7 +570,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.5;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -587,9 +587,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
-	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.1;}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
@@ -615,7 +613,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	}
 	public static float getScaler(@Nullable String variant) {
 		if (variant.equalsIgnoreCase("female")) {
-			return RenderWukongopterus.getScaler() * 0.85F;
+			return RenderWukongopterus.getScaler() * 1.0F;
 		}
 		return RenderWukongopterus.getScaler();
 	}
