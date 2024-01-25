@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM = IDLE1 =  BOOMINGCALL, NOISE_ANIM = THREAT, IDLESCRATCH = SCRATCH
 	@Override
 	public int getRoarLength() {
-		return 80;
+		return 100;
 	} //Idle
 
 	@Override
@@ -242,25 +242,25 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:sinraptor_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:sinraptor_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:sinraptor_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:sinraptor_death"));
 	}
 
 	@Override

@@ -9788,6 +9788,54 @@
         "stream": false
       }
     ]
-  }
+  },
 
+  "sinraptor_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sinraptor_boom01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sinraptor_boom02",
+        "stream": false
+      }
+    ]
+  },
+  "sinraptor_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sinraptor_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sinraptor_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sinraptor_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "sinraptor_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sinraptor_death",
+        "stream": false
+      }
+    ]
+  },
+  "sinraptor_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sinraptor_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sinraptor_threat02",
+        "stream": false
+      }
+    ]
+  }
 }
