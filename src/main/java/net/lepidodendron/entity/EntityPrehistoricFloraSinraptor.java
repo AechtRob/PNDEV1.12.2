@@ -110,13 +110,13 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	//TODO Animations needed: walk, run, attack, eat, nest, lay, ROAR_ANIM = IDLE1 =  BOOMINGCALL, NOISE_ANIM = THREAT, IDLESCRATCH = SCRATCH
 	@Override
 	public int getRoarLength() {
-		return 100;
-	} //Idle
+		return 80;
+	}
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
-	} //Roar
+		return 100;
+	}
 
 	@Override
 	public boolean hasNest() {
