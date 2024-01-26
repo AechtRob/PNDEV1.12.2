@@ -1,7 +1,7 @@
 {
 	"name": "Herrerasaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/herrerasaurus_icon.png",
+	"icon": "paleopedia:textures/herrerasaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_herrerasaurus",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Herrerasauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/herrerasaurus.png"],
-			"title": "H. ischigualastensis",
-			"text": ""
+			"type": "entity",
+			"name": "H. ischigualastensis",
+			"entity": "lepidodendron:prehistoric_flora_herrerasaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",

@@ -38,7 +38,7 @@ public class RenderEffigia extends RenderLiving<EntityPrehistoricFloraEffigia> {
             {
                 return;
             }
-            RenderDisplays.modelEffigia.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelEffigiaBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

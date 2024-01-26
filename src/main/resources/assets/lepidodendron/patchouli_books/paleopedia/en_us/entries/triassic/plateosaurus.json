@@ -1,7 +1,7 @@
 {
 	"name": "Plateosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/plateosaurus_icon.png",
+	"icon": "paleopedia:textures/plateosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_plateosaurus",
 	"pages": [
@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Plateosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/plateosaurus.png"],
-			"title": "P. trossingensis",
-			"text": ""
+			"type": "entity",
+			"name": "P. trossingensis",
+			"entity": "lepidodendron:prehistoric_flora_plateosaurus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_plateosaurus",

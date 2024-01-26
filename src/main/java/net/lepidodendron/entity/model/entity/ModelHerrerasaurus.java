@@ -540,22 +540,22 @@ public class ModelHerrerasaurus extends AdvancedModelBaseExtended {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.50F;
-        this.root.offsetX = 0.0F;
-        this.root.rotateAngleY = (float)Math.toRadians(130);
-        this.root.rotateAngleX = (float)Math.toRadians(9);
-        this.root.rotateAngleZ = (float)Math.toRadians(-2);
+        this.root.offsetY = 0.3F;
+        this.root.offsetX = 0.58F;
+        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.75F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(hips, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(body, 0.2F, 0.00F, 0.0F);
         this.setRotateAngle(chest, -0.1F, 0.0F, 0.0F);
-        this.setRotateAngle(neck, -0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(neck2, -0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(neck3, -0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(Head, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(neck2, -0.2F, -0.4F, -0.1F);
+        this.setRotateAngle(neck3, -0.2F, -0.5F, -0.1F);
+        this.setRotateAngle(Head, 0.7F, -0.5F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tail1, -0.1F, 0.1F, 0.0F);
         this.setRotateAngle(tail2, -0.1F, 0.2F, 0.0F);
