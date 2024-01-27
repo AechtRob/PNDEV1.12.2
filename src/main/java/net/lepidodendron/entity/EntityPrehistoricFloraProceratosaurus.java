@@ -43,7 +43,6 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation STAND_ANIMATION;
@@ -83,20 +82,6 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
 
 		//Alert animation
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
@@ -193,15 +178,6 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public int getTalkInterval() {
-		return 700;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 200;
-	}
-
-	@Override
 	public int getAdultAge() {
 		return 64000;
 	}
@@ -267,24 +243,19 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:panguraptor_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_death"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:proceratosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:panguraptor_death"));
 	}
 
 	@Override

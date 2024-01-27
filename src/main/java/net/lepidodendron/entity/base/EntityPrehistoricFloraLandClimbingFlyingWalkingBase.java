@@ -756,6 +756,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.renderYawOffset = this.rotationYaw;
     }
 
+    @Override
+    protected float getSoundVolume() {
+        if (this.isReallyFlying()) {
+            return super.getSoundVolume() * 2F;
+        }
+        return super.getSoundVolume();
+    }
+
     public boolean checkFlyConditions() {
         return true;
     }

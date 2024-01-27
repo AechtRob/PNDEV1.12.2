@@ -9837,5 +9837,18 @@
         "stream": false
       }
     ]
+  },
+
+  "proceratosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:proceratosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:proceratosaurus_living02",
+        "stream": false
+      }
+    ]
   }
 }
