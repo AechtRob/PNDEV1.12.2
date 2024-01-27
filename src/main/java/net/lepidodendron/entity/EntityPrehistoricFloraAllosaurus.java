@@ -116,16 +116,15 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 		return 40;
 	}
 
-
 	@Override
 	public int getRoarLength() {
 		return 80;
-	} //Idle
+	}
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
-	} //Roar
+		return 60;
+	}
 
 	@Override
 	public boolean hasNest() {
@@ -263,13 +262,13 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:allosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:allosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
 	}
 
 	@Override

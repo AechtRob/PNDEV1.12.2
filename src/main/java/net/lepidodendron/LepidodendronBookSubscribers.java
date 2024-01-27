@@ -185,6 +185,18 @@ public class LepidodendronBookSubscribers {
 		}
 	}
 
+	public static String getHomingString(Entity entity, boolean click) {
+
+		String homingString = "";
+
+		if (entity instanceof EntityPrehistoricFloraLandBase) {
+			if (((EntityPrehistoricFloraLandBase) entity).homesToNest()) {
+				homingString = "Returns to its nest at certain times.";
+			}
+		}
+		return homingString;
+	}
+
 	public static String getNestString(Entity entity, boolean click) {
 
 		String nestString = "";

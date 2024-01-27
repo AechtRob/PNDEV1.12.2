@@ -9850,5 +9850,47 @@
         "stream": false
       }
     ]
+  },
+
+  "allosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:allosaurus_boom01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:allosaurus_boom02",
+        "stream": false
+      }
+    ]
+  },
+  "allosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:allosaurus_roar01",
+        "stream": false
+      }
+    ]
+  },
+
+  "ceratosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:ceratosaurus_boom01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ceratosaurus_boom02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ceratosaurus_boom03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:ceratosaurus_boom04",
+        "stream": false
+      }
+    ]
   }
 }
