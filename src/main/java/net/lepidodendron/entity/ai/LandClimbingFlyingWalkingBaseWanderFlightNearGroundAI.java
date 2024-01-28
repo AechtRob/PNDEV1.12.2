@@ -154,7 +154,6 @@ public class LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI extends Entit
             this.entity.getMoveHelper().setMoveTo((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 1D);
             if (this.entity.getAttackTarget() == null) {
                 this.entity.getLookHelper().setLookPosition((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 180.0F, 20.0F);
-
             }
         }
     }
