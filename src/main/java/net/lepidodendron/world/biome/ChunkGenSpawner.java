@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraDragonfly;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.util.*;
@@ -20,7 +21,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -1143,9 +1143,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
-                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                        stack.setCount(1);
-                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+//                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+//                                                                                        stack.setCount(1);
+//                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
@@ -1160,9 +1160,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         // Mounds always contain eggs:
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
-                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                        stack.setCount(1);
-                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+//                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+//                                                                                        stack.setCount(1);
+//                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
@@ -1204,6 +1204,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
                                                                         }
                                                                     }
+
+                                                                    if (mobToSpawn.equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
+                                                                        nbtStr = "{PNType:\"" + EntityPrehistoricFloraDragonfly.Type.byId(rand.nextInt(EntityPrehistoricFloraDragonfly.Type.values().length) + 1) + "\"}";
+                                                                    }
+
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
                                                                         EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, spawnPos.getX() + ((world.rand.nextFloat() - 0.5F)/10F), (spawnPos.getY() + offsetter), spawnPos.getZ() + ((world.rand.nextFloat() - 0.5F)/10F));

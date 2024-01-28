@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "lepidodendron:blocks/dominican_amber",
     "top": "lepidodendron:blocks/dominican_amber",
-    "side": "lepidodendron:blocksdominican_amber"
+    "side": "lepidodendron:blocks/dominican_amber"
   }
 }
