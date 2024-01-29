@@ -834,6 +834,20 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
             }
 
+            //Force it to recognise a nest if applicable
+            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                EntityPrehistoricFloraAgeableBase ageable = (EntityPrehistoricFloraAgeableBase) entity;
+                if (ageable.isHomeableNest(worldIn, ageable.getPosition())) {
+                    ageable.setNestLocation(ageable.getPosition());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down())) {
+                    ageable.setNestLocation(ageable.getPosition().down());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down(2))) {
+                    ageable.setNestLocation(ageable.getPosition().down(2));
+                }
+            }
+
             //Exceptions for variants:
 //            if (entity instanceof EntityPrehistoricFloraPalaeodictyoptera && !variantStr.equalsIgnoreCase("")) {
 //                EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) entity;

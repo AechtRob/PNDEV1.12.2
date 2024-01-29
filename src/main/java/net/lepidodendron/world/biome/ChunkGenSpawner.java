@@ -21,6 +21,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -1056,6 +1057,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             weighter = weighter * 1.35;
                                                         }
 
+                                                        //Deal with reducing desert spawns on land:
+                                                        else if (LowerSpawnBiomes && locationID == 1) {
+                                                            weighter = weighter * 1.25;
+                                                        }
+
                                                         if ((Math.random() * weighter) <= (double) weight) {
                                                             //System.err.println("Trying......");
 //                                                            if (entity instanceof EntityPrehistoricFloraKalbarria) {
@@ -1116,6 +1122,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         if (rand.nextInt(3) == 0) {
                                                                             spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
                                                                         }
+                                                                        offsetter = 0;
                                                                         world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
                                                                         TileEntity te = world.getTileEntity(pos1);
                                                                         if (te != null) {
@@ -1135,6 +1142,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     if (rand.nextInt(3) == 0) {
                                                                         spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
                                                                     }
+                                                                    offsetter = 0;
                                                                     world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
                                                                     TileEntity te = world.getTileEntity(pos1);
                                                                     if (te != null) {
@@ -1147,7 +1155,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
                                                                 if (Math.random() > 0.8 || ((EntityPrehistoricFloraLandBase)entity).homesToNest()) { // 1:5 chance of nest coming too
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
-                                                                    if (EntityLandBase.hasNest()) {
+                                                                    if (EntityLandBase.hasNest() ) {
                                                                         if ((!EntityLandBase.isNestMound()) && world.getBlockState(spawnPos).getBlock() != BlockNest.block
                                                                                 && BlockNest.block.canPlaceBlockAt(world, spawnPos)) {
                                                                             //Spawn a nest under the mob:
@@ -1160,9 +1168,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
-//                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-//                                                                                        stack.setCount(1);
-//                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        stack.setCount(1);
+                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
@@ -1177,9 +1185,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         // Mounds always contain eggs:
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
-//                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-//                                                                                        stack.setCount(1);
-//                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        stack.setCount(1);
+                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
