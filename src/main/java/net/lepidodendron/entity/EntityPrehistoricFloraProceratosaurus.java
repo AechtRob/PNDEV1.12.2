@@ -249,13 +249,13 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:panguraptor_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:panguraptor_death"));
+	            .getObject(new ResourceLocation("lepidodendron:proceratosaurus_death"));
 	}
 
 	@Override

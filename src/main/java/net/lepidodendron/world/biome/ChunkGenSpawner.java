@@ -74,6 +74,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             boolean TriassicCanyons = false;
             boolean Creeks = false;
             boolean Deserts = false;
+            boolean LowerSpawnBiomes = false;
             String[] MobString = new String[0];
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
@@ -84,26 +85,42 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {
                     TriassicCanyons = true;
                 }
-                //if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
-                    //That one is named differently :/
-                    if (biome.getRegistryName().toString().startsWith("lepidodendron:")
-                        && biome.getRegistryName().toString().indexOf("creek") > 0) {
-                        Creeks = true;
-                    }
-                    if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+
+                if (biome.getRegistryName().toString().startsWith("lepidodendron:")
+                    && biome.getRegistryName().toString().indexOf("creek") > 0) {
+                    Creeks = true;
+                }
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
-                    ){
-                        Creeks = true;
-                    }
-                //}
-                if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
-                    //That one is named differently :/
-                    if (biome.getRegistryName().toString().startsWith("lepidodendron:")
-                            && biome.getRegistryName().toString().indexOf("desert") > 0) {
-                        Deserts = true;
-                    }
+                ){
+                    Creeks = true;
                 }
+
+                if (biome.getRegistryName().toString().startsWith("lepidodendron:")
+                        && biome.getRegistryName().toString().indexOf("desert") > 0) {
+                    Deserts = true;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_plain")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_plain_flat")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_boulders")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_fern_pasture")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_garrigue")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ginkgo_parkland")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_helper")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
+                    ) {
+                    LowerSpawnBiomes = true;
+                }
+
             } else {
                 MobString = mobList;
             }
