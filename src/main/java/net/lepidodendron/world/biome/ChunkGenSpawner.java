@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraDragonfly;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.util.*;
@@ -20,6 +21,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -73,6 +75,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             boolean TriassicCanyons = false;
             boolean Creeks = false;
             boolean Deserts = false;
+            boolean LowerSpawnBiomes = false;
             String[] MobString = new String[0];
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
@@ -83,26 +86,42 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {
                     TriassicCanyons = true;
                 }
-                //if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
-                    //That one is named differently :/
-                    if (biome.getRegistryName().toString().startsWith("lepidodendron:")
-                        && biome.getRegistryName().toString().indexOf("creek") > 0) {
-                        Creeks = true;
-                    }
-                    if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+
+                if (biome.getRegistryName().toString().startsWith("lepidodendron:")
+                    && biome.getRegistryName().toString().indexOf("creek") > 0) {
+                    Creeks = true;
+                }
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
-                    ){
-                        Creeks = true;
-                    }
-                //}
-                if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:lepidodendron:triassic_creek")) {
-                    //That one is named differently :/
-                    if (biome.getRegistryName().toString().startsWith("lepidodendron:")
-                            && biome.getRegistryName().toString().indexOf("desert") > 0) {
-                        Deserts = true;
-                    }
+                ){
+                    Creeks = true;
                 }
+
+                if (biome.getRegistryName().toString().startsWith("lepidodendron:")
+                        && biome.getRegistryName().toString().indexOf("desert") > 0) {
+                    Deserts = true;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_plain")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_plain_flat")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_boulders")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_fern_pasture")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_garrigue")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ginkgo_parkland")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_helper")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
+                    ) {
+                    LowerSpawnBiomes = true;
+                }
+
             } else {
                 MobString = mobList;
             }
@@ -287,8 +306,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         while ((yct <= 0) && (!waterCriteria)) {
                                                                             zct = -3;
                                                                             while ((zct < 4) && (!waterCriteria)) {
-                                                                                if ((world.getBlockState(new BlockPos(i + xct, j + yct, k + zct))).getMaterial() == Material.WATER) {
-                                                                                    waterCriteria = true;
+                                                                                if (world.isBlockLoaded(new BlockPos(i + xct, j + yct, k + zct))) {
+                                                                                    if ((world.getBlockState(new BlockPos(i + xct, j + yct, k + zct))).getMaterial() == Material.WATER) {
+                                                                                        waterCriteria = true;
+                                                                                    }
                                                                                 }
                                                                                 zct = zct + 1;
                                                                             }
@@ -435,7 +456,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 while (xx <= 4 && posCheck) {
                                                                     int zz = -4;
                                                                     while (zz <= 4 && posCheck) {
-                                                                        if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                        if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                                posCheck = false;
+                                                                            }
+                                                                        }
+                                                                        else {
                                                                             posCheck = false;
                                                                         }
                                                                         zz = zz + 1;
@@ -616,7 +642,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 while (xx <= 1 && posCheck) {
                                                                     int zz = -1;
                                                                     while (zz <= 1 && posCheck) {
-                                                                        if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                        if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                                posCheck = false;
+                                                                            }
+                                                                        }
+                                                                        else {
                                                                             posCheck = false;
                                                                         }
                                                                         zz = zz + 1;
@@ -651,7 +682,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 while (xx <= 2 && posCheck) {
                                                                     int zz = -2;
                                                                     while (zz <= 2 && posCheck) {
-                                                                        if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                        if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                                posCheck = false;
+                                                                            }
+                                                                        }
+                                                                        else {
                                                                             posCheck = false;
                                                                         }
                                                                         zz = zz + 1;
@@ -815,7 +851,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 while (xx <= 4 && posCheck) {
                                                                     int zz = -4;
                                                                     while (zz <= 4 && posCheck) {
-                                                                        if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                        if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                                posCheck = false;
+                                                                            }
+                                                                        }
+                                                                        else {
                                                                             posCheck = false;
                                                                         }
                                                                         zz = zz + 1;
@@ -956,7 +997,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             while (xx <= 4 && posCheck) {
                                                                 int zz = -4;
                                                                 while (zz <= 4 && posCheck) {
-                                                                    if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                    if (world.isBlockLoaded(pos1.add(xx, 0, zz))) {
+                                                                        if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                            posCheck = false;
+                                                                        }
+                                                                    }
+                                                                    else {
                                                                         posCheck = false;
                                                                     }
                                                                     zz = zz + 1;
@@ -1011,6 +1057,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             weighter = weighter * 1.35;
                                                         }
 
+                                                        //Deal with reducing desert spawns on land:
+                                                        else if (LowerSpawnBiomes && locationID == 1) {
+                                                            weighter = weighter * 1.25;
+                                                        }
+
                                                         if ((Math.random() * weighter) <= (double) weight) {
                                                             //System.err.println("Trying......");
 //                                                            if (entity instanceof EntityPrehistoricFloraKalbarria) {
@@ -1048,17 +1099,36 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             if (entity instanceof EntityPrehistoricFloraDiictodon) {
                                                                 EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                 if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen)) {
-                                                                    //Spawn a nest and burrow for it:
-                                                                    //Buildburrow:
-                                                                    BlockPos pos1 = EntityPrehistoricFloraDiictodon.buildBurrow(world, spawnPos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
-                                                                    if (rand.nextInt(3) == 0) {
-                                                                        spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
+
+                                                                    boolean isLoaded = true;
+                                                                    int x = -6;
+                                                                    while (x <= 6) {
+                                                                        int z = -6;
+                                                                        while (z <= 6) {
+                                                                            BlockPos pos2 = new BlockPos(spawnPos.getX() + x, 0, spawnPos.getZ() + z);
+                                                                            if (!world.isBlockLoaded(pos2)) {
+                                                                                isLoaded = false;
+                                                                                break;
+                                                                            }
+                                                                            z ++;
+                                                                        }
+                                                                        x ++;
                                                                     }
-                                                                    world.setBlockState(pos1, BlockNest.block.getDefaultState());
-                                                                    TileEntity te = world.getTileEntity(pos1);
-                                                                    if (te != null) {
-                                                                        if (te instanceof BlockNest.TileEntityNest) {
-                                                                            te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+
+                                                                    if (isLoaded) {
+                                                                        //Spawn a nest and burrow for it:
+                                                                        //Buildburrow:
+                                                                        BlockPos pos1 = EntityPrehistoricFloraDiictodon.buildBurrow(world, spawnPos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
+                                                                        if (rand.nextInt(3) == 0) {
+                                                                            spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
+                                                                        }
+                                                                        offsetter = 0;
+                                                                        world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
+                                                                        TileEntity te = world.getTileEntity(pos1);
+                                                                        if (te != null) {
+                                                                            if (te instanceof BlockNest.TileEntityNest) {
+                                                                                te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                            }
                                                                         }
                                                                     }
                                                                 }
@@ -1072,7 +1142,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     if (rand.nextInt(3) == 0) {
                                                                         spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
                                                                     }
-                                                                    world.setBlockState(pos1, BlockNest.block.getDefaultState());
+                                                                    offsetter = 0;
+                                                                    world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
                                                                     TileEntity te = world.getTileEntity(pos1);
                                                                     if (te != null) {
                                                                         if (te instanceof BlockNest.TileEntityNest) {
@@ -1082,12 +1153,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
-                                                                if (Math.random() > 0.8) { // 1:5 chance of nest coming too
+                                                                if (Math.random() > 0.8 || ((EntityPrehistoricFloraLandBase)entity).homesToNest()) { // 1:5 chance of nest coming too
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
-                                                                    if (EntityLandBase.hasNest()) {
-                                                                        if (!EntityLandBase.isNestMound()) {
+                                                                    if (EntityLandBase.hasNest() ) {
+                                                                        if ((!EntityLandBase.isNestMound()) && world.getBlockState(spawnPos).getBlock() != BlockNest.block
+                                                                                && BlockNest.block.canPlaceBlockAt(world, spawnPos)) {
                                                                             //Spawn a nest under the mob:
-                                                                            world.setBlockState(spawnPos, BlockNest.block.getDefaultState());
+                                                                            world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
                                                                             TileEntity te = world.getTileEntity(spawnPos);
                                                                             if (te != null) {
                                                                                 if (te instanceof BlockNest.TileEntityNest) {
@@ -1095,12 +1167,16 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
                                                                                     if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        stack.setCount(1);
+                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
                                                                         } else { //Mound nests:
                                                                             if (EntityLandBase.nestBlockMatch(world, spawnPos)) {
-                                                                                world.setBlockState(spawnPos, BlockNest.block.getDefaultState());
+                                                                                world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
                                                                                 TileEntity te = world.getTileEntity(spawnPos);
                                                                                 if (te != null) {
                                                                                     if (te instanceof BlockNest.TileEntityNest) {
@@ -1108,6 +1184,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
                                                                                         // Mounds always contain eggs:
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        stack.setCount(1);
+                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                                     }
                                                                                 }
                                                                             }
@@ -1149,6 +1229,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             nbtStr = "{Gender:" + rand.nextInt(2) + "," + nbtStr.substring(1);
                                                                         }
                                                                     }
+
+                                                                    if (mobToSpawn.equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
+                                                                        nbtStr = "{PNType:\"" + EntityPrehistoricFloraDragonfly.Type.byId(rand.nextInt(EntityPrehistoricFloraDragonfly.Type.values().length) + 1) + "\"}";
+                                                                    }
+
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
                                                                         EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, spawnPos.getX() + ((world.rand.nextFloat() - 0.5F)/10F), (spawnPos.getY() + offsetter), spawnPos.getZ() + ((world.rand.nextFloat() - 0.5F)/10F));

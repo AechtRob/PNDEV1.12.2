@@ -63,9 +63,9 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
-    private int inPFLove;
-    private boolean laying;
-    private EntityItem eatTarget;
+    public int inPFLove;
+    public boolean laying;
+    public EntityItem eatTarget;
 
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);

@@ -95,6 +95,13 @@ public class LandWanderAvoidWaterAI extends AnimationAINoAnimation<EntityPrehist
     {
         Vec3d vecRnd = RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
         Vec3d vec3d = null;
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (flier.getNestLocation() != null && flier.isSearchingNest() && flier.homesToNest() && (!(flier.ticksFreeflight > 0))) {
+                vec3d = new Vec3d(flier.getNestLocation().getX() + 0.5, flier.getNestLocation().getY(), flier.getNestLocation().getZ() + 0.5);
+                return vec3d;
+            }
+        }
         if (this.entity.isSwimmingInWater())
         {
             for (int i = 0; i < 16; i++) {

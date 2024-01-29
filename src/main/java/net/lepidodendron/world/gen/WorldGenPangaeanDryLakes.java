@@ -174,17 +174,20 @@ public class WorldGenPangaeanDryLakes extends WorldGenerator
                         if (worldIn.getBlockState(position.add(k2, 2, l3)).getMaterial() == Material.WATER
                         )
                         {
-                            worldIn.setBlockToAir(position.add(k2, 2, l3)); //Forge
+                            //worldIn.setBlockToAir(position.add(k2, 2, l3)); //Forge
+                            worldIn.setBlockState(position.add(k2, 2, l3), Blocks.AIR.getDefaultState(), 16);
                         }
                         if (worldIn.getBlockState(position.add(k2, 1, l3)).getMaterial() == Material.WATER
                         )
                         {
-                            worldIn.setBlockToAir(position.add(k2, 1, l3)); //Forge
+                            //worldIn.setBlockToAir(position.add(k2, 1, l3)); //Forge
+                            worldIn.setBlockState(position.add(k2, 1, l3), Blocks.AIR.getDefaultState(), 16);
                         }
                         if (worldIn.getBlockState(position.add(k2, 0, l3)).getMaterial() == Material.WATER
                         )
                         {
-                            worldIn.setBlockToAir(position.add(k2, 0, l3)); //Forge
+                            //worldIn.setBlockToAir(position.add(k2, 0, l3)); //Forge
+                            worldIn.setBlockState(position.add(k2, 0, l3), Blocks.AIR.getDefaultState(), 16);
                         }
                     }
                 }

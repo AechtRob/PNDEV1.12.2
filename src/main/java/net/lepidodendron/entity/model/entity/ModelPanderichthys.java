@@ -197,18 +197,30 @@ public class ModelPanderichthys extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.4715F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetX = -0.09F;
-        this.body.offsetZ = 0.03F;
+    public void renderStaticWall(float f) {
+        this.body2.setScale(0,0,0);
+        this.body2.scaleChildren = true;
+        this.body.offsetY = -0.22F;
+        this.body.offsetX = -0.0F;
+        this.body.offsetZ = -0.17F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.body2.setScale(1,1,1);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(upperjaw, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, -0.15F, -0.1F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.2F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.3F, 0.0F);
+        this.body.offsetY = -0.2F;
+        this.body.offsetZ = -0.04F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

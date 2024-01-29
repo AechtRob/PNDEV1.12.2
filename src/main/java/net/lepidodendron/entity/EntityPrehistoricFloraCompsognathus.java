@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;
@@ -313,7 +313,7 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.EGGS, DietString.BUG);
+		return ArrayUtils.addAll(DietString.MEAT, ArrayUtils.addAll(DietString.EGGS, DietString.BUG));
 	}
 
 	@Override

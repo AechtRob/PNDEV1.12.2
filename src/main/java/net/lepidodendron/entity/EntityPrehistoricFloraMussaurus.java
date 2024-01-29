@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 	public int ambientSoundTime;

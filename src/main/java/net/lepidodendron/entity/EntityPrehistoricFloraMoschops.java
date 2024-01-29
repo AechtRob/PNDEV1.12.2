@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraMoschops extends EntityPrehistoricFloraLandBa
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 
 	public EntityPrehistoricFloraMoschops(World world) {
 		super(world);

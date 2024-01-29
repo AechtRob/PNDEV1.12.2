@@ -175,7 +175,7 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.MEAT);
+		return ArrayUtils.addAll(DietString.MEAT, DietString.BONE);
 	}
 
 	@Override

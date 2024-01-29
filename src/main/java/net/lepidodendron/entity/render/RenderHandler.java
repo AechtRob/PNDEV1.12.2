@@ -5038,6 +5038,18 @@ public class RenderHandler {
                 return new RenderArchaeopteryx(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDimorphodon.class, new IRenderFactory<EntityPrehistoricFloraDimorphodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDimorphodon> createRenderFor(RenderManager manager) {
+                return new RenderDimorphodon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnchiornis.class, new IRenderFactory<EntityPrehistoricFloraAnchiornis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAnchiornis> createRenderFor(RenderManager manager) {
+                return new RenderAnchiornis(manager);
+            }
+        });
 
 
         
@@ -5200,9 +5212,6 @@ public class RenderHandler {
         //Nests and land eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNest.TileEntityNest.class, new RenderNest());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEggs.TileEntityCustom.class, new RenderEggsLand());
-
-        //Rope barrier:
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockRopeBarrier.TileEntityRopeBarrier.class, new RenderRopeBarrier());
 
         //Display cases:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDisplayCase.TileEntityDisplayCase.class, new RenderDisplayCase());

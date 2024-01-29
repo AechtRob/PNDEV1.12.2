@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
-import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
@@ -603,6 +602,9 @@ public class ModelDorygnathus extends AdvancedModelBaseExtended {
                 else { //Flying regular
                     animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
+            }
+            else { //Flying regular but straight upwards
+                animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
         }
         else if (ee.getAttachmentPos() != null) {

@@ -122,18 +122,26 @@ public class ModelParatarrasius extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone3.render(f5 * 0.1F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.bone3.rotateAngleY = (float) Math.toRadians(90);
-        this.bone3.offsetX = -0.1F;
         this.bone3.offsetY = -0.2F;
+        this.bone3.offsetX = -0.12F;
+        this.bone3.offsetZ = -0.6F;
         this.bone3.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bone2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(bone4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(bone5, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(bone6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bone7, 0.0F, -0.2F, 0.0F);
+        this.bone3.offsetY = 0.06F;
+        this.bone3.offsetZ = -0.03F;
+        this.bone3.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

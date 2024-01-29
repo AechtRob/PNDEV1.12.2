@@ -7,12 +7,15 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnCacops;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderCacops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -35,7 +38,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimmingAmphibianBase {
+public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -258,7 +261,11 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
-
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_CACOPS;
+	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		 		if (!this.isPFAdult()) {
@@ -272,13 +279,13 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 		return 0.01;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
@@ -287,7 +294,7 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
@@ -299,13 +306,13 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.6F;
+		return -0.0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.02;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.85F;
+		return 0.0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

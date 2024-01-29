@@ -1,9 +1,6 @@
 package net.lepidodendron.pfvillagers.village;
 
-import net.lepidodendron.block.BlockAcaciaBridge;
 import net.lepidodendron.block.BlockLamp;
-import net.lepidodendron.block.BlockOakBridge;
-import net.lepidodendron.block.BlockSpruceBridge;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
@@ -18,6 +15,9 @@ import net.minecraft.world.gen.structure.template.ITemplateProcessor;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraftforge.common.BiomeDictionary;
+import net.prehistoricnaturedeco.block.BlockAcaciaBridge;
+import net.prehistoricnaturedeco.block.BlockOakBridge;
+import net.prehistoricnaturedeco.block.BlockSpruceBridge;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -61,7 +61,7 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
         }
     }
 
-    protected IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, Biome biome) {
+    public static IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, Biome biome) {
         net.minecraftforge.event.terraingen.BiomeEvent.GetVillageBlockID event = new net.minecraftforge.event.terraingen.BiomeEvent.GetVillageBlockID(biome, blockstateIn);
         net.minecraftforge.common.MinecraftForge.TERRAIN_GEN_BUS.post(event);
         int structureType = 0;
@@ -233,7 +233,9 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
             }
         }
 
-        if (blockstateIn.getBlock() == Blocks.TORCH && Functions.decoLoaded()) {
+        if (blockstateIn.getBlock() == Blocks.TORCH
+                //&& Functions.decoLoaded()
+        ) {
             EnumFacing facing = blockstateIn.getValue(BlockTorch.FACING);
             if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
                 return BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, facing);
@@ -243,7 +245,7 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
         return blockstateIn;
     }
 
-    protected IBlockState biomeDoor(int structureType) {
+    public static IBlockState biomeDoor(int structureType) {
         switch (structureType) {
             case 2:
                 return Blocks.ACACIA_DOOR.getDefaultState();

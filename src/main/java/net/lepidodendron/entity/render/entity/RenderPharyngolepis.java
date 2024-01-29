@@ -9,6 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPharyngolepis extends RenderLiving<EntityPrehistoricFloraPharyngolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pharyngolepis.png");
+    public static float getScaler() {
+        return 0.65F * 0.343F;
+    }
 
     public RenderPharyngolepis(RenderManager mgr) {
         super(mgr, new ModelPharyngolepis(), 0.0f);

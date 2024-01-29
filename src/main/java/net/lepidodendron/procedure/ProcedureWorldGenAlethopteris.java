@@ -2,14 +2,8 @@ package net.lepidodendron.procedure;
 
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockAlethopterisLeaves;
-import net.lepidodendron.block.BlockAlethopterisLeaves1;
-import net.lepidodendron.block.BlockAlethopterisLog;
-import net.lepidodendron.block.BlockAlethopterisStrobilus;
-import net.lepidodendron.util.Functions;
+import net.lepidodendron.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -147,7 +141,15 @@ public class ProcedureWorldGenAlethopteris extends ElementsLepidodendronMod.ModE
 
 			//Leaves:
 			yy = y + (int) TrunkHeight + 1;
-			ProcedureTreeLeaf.executeProcedure(x, yy, z, world, BlockAlethopterisLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x, yy - 1, z, world, BlockAlethopterisLeaves.block);
+			if (world.rand.nextInt(2) == 0 && world.isAirBlock(new BlockPos(x, yy, z)) && world.isAirBlock(new BlockPos(x, yy + 1, z))) {
+				world.setBlockState(new BlockPos(x, yy, z), BlockAlethopterisStrobilus.block.getDefaultState());
+				world.setBlockState(new BlockPos(x, yy + 1, z), BlockAlethopterisStrobilusTop.block.getDefaultState());
+			}
+			else {
+				ProcedureTreeLeaf.executeProcedure(x, yy, z, world, BlockAlethopterisLeaves.block);
+			}
+
 			yy = yy - 1;
 			ProcedureTreeLeaf.executeProcedure(x + 1, yy, z, world, BlockAlethopterisLeaves.block);
 			ProcedureTreeLeaf.executeProcedure(x + 2, yy, z, world, BlockAlethopterisLeaves.block);
@@ -192,50 +194,50 @@ public class ProcedureWorldGenAlethopteris extends ElementsLepidodendronMod.ModE
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + (int) TrunkHeight - (int) counter - 1, z - 4, world, BlockAlethopterisLeaves1.block);
 				counter = counter + 1;
 			}
-			if (((world.getBlockState(new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter - 1, z)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter - 1, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter - 1, z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter - 1, z)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter - 1, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter - 1, z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter, z + 4))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z + 4)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z + 4), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z + 4);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter, z - 4))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z - 4)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z - 4), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z - 4);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
+//			if (((world.getBlockState(new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter - 1, z)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter - 1, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x + 4, y + (int) TrunkHeight - (int) counter - 1, z);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter - 1, z)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter - 1, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x - 4, y + (int) TrunkHeight - (int) counter - 1, z);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter, z + 4))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z + 4)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z + 4), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z + 4);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter, z - 4))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z - 4)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z - 4), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 1, z - 4);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
 
 			counter = 0;
 			while (counter < (TrunkHeight/2))  {
@@ -245,50 +247,50 @@ public class ProcedureWorldGenAlethopteris extends ElementsLepidodendronMod.ModE
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + (int) TrunkHeight - (int) counter - 3, z - 2, world, BlockAlethopterisLeaves1.block);
 				counter = counter + 1;
 			}
-			if (((world.getBlockState(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 2, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 2, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 2, z + 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z + 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z + 2);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 2, z - 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z - 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z - 2);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
+//			if (((world.getBlockState(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 2, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 2, z))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 2, z + 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z + 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z + 2);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 2, z - 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z - 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x, y + (int) TrunkHeight - (int) counter - 3, z - 2);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
 
 			counter = 0;
 			while (counter < (TrunkHeight/2) - 3)  {
@@ -298,50 +300,50 @@ public class ProcedureWorldGenAlethopteris extends ElementsLepidodendronMod.ModE
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2, world, BlockAlethopterisLeaves1.block);
 				counter = counter + 1;
 			}
-			if (((world.getBlockState(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 2, z + 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z + 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z + 2);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 2, z - 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z - 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z - 2);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 2, z + 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z + 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z + 2);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-			if (((world.getBlockState(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 2, z - 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
-				if (!world.isRemote) {
-					BlockPos _bp = new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					IBlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setBoolean("decayable", (true));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
+//			if (((world.getBlockState(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 2, z + 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z + 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z + 2);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 2, z - 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z - 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x + 2, y + (int) TrunkHeight - (int) counter - 3, z - 2);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 2, z + 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z + 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z + 2);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
+//			if (((world.getBlockState(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 2, z - 2))).getBlock() == BlockAlethopterisLeaves1.block) && (world.isAirBlock(new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2), BlockAlethopterisStrobilus.block.getDefaultState(), 3);
+//				if (!world.isRemote) {
+//					BlockPos _bp = new BlockPos(x - 2, y + (int) TrunkHeight - (int) counter - 3, z - 2);
+//					TileEntity _tileEntity = world.getTileEntity(_bp);
+//					IBlockState _bs = world.getBlockState(_bp);
+//					if (_tileEntity != null)
+//						_tileEntity.getTileData().setBoolean("decayable", (true));
+//					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+//				}
+//			}
 
 			
 		}

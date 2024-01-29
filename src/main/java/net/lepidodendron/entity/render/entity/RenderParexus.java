@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderParexus extends RenderLiving<EntityPrehistoricFloraParexus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parexus.png");
-
+    public static float getScaler() {
+        return 0.147F;
+    }
     public RenderParexus(RenderManager mgr) {
         super(mgr, new ModelParexus(), 0.0f);
     }

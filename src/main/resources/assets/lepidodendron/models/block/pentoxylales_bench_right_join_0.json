@@ -1,6 +1,0 @@
-{
-	"parent": "lepidodendron:block/bench_right_join",
-	"textures": {
-		"metal": "lepidodendron:blocks/pentoxylales_planks"
-	}
-}

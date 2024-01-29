@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraGargoyleosaurus extends EntityPrehistoricFlor
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation ALERT_ANIMATION;
 	public Animation TAIL_ANIMATION;
 	private int standCooldown;

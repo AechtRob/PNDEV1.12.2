@@ -779,9 +779,6 @@ public class ModelGuanlong extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.NOISE_ANIMATION) { //The idle noise anim
-            //animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The display/roar
             animDisplay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }

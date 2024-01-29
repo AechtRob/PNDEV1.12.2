@@ -81,19 +81,19 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation MAKE_NEST_ANIMATION;
     public static Animation HIDE_ANIMATION;
     private Animation currentAnimation;
-    private EntityPrehistoricFloraAgeableBase shoalLeader;
-    private int inPFLove;
+    public EntityPrehistoricFloraAgeableBase shoalLeader;
+    public int inPFLove;
     public int canGrow;
-    private boolean laying;
-    private EntityItem eatTarget;
-    private EntityLivingBase warnTarget;
-    private EntityLiving grappleTarget;
+    public boolean laying;
+    public EntityItem eatTarget;
+    public EntityLivingBase warnTarget;
+    public EntityLiving grappleTarget;
     public boolean willGrapple;
-    private int alarmCooldown;
-    private int warnCooldown;
+    public int alarmCooldown;
+    public int warnCooldown;
     public int ticksExistedAnimated;
     public boolean wasWarning;
-    private float getMaxTurnDistancePerTick;
+    public float getMaxTurnDistancePerTick;
     public int homeCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
@@ -340,6 +340,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean placesNest() {return false;}
 
     public boolean isHomeableNest (World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
 
@@ -360,6 +363,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isMyNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
@@ -401,6 +407,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isLayableNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         //is empty of eggs, and either belongs to me or is empty:
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
@@ -417,6 +426,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean nestBlockMatch(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (this.isNestMound()) {
             boolean match = false;
             if (!match) {
@@ -820,6 +832,20 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (entity instanceof EntityLiving) {
                 ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
                 entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
+            }
+
+            //Force it to recognise a nest if applicable
+            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                EntityPrehistoricFloraAgeableBase ageable = (EntityPrehistoricFloraAgeableBase) entity;
+                if (ageable.isHomeableNest(worldIn, ageable.getPosition())) {
+                    ageable.setNestLocation(ageable.getPosition());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down())) {
+                    ageable.setNestLocation(ageable.getPosition().down());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down(2))) {
+                    ageable.setNestLocation(ageable.getPosition().down(2));
+                }
             }
 
             //Exceptions for variants:

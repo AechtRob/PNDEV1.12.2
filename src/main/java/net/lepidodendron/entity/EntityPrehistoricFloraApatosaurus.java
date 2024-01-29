@@ -59,10 +59,10 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
-		setSize(3.0F, 6F);
+		setSize(2.95F, 6F);
 		stepHeight = 2;
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.95F;
 		maxHeight = 6F;
 		maxHealthAgeable = 200.0D;
 		TAIL_ANIMATION = Animation.create(80);

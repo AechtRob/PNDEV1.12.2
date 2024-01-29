@@ -181,15 +181,20 @@ public class ModelSidneyia extends AdvancedModelBase {
         this.body.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.render(0.016F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.body.rotateAngleX = (float) Math.toRadians(30);
+        this.body.offsetY = -0.025F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.body.offsetY = 0.12F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

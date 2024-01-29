@@ -32,7 +32,7 @@ public class RenderDubreuillosaurus extends RenderLiving<EntityPrehistoricFloraD
             {
                 return;
             }
-            RenderDisplays.modelDubreuillosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelDubreuillosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

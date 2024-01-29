@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation ALERT_ANIMATION;
 	private int standCooldown;
 

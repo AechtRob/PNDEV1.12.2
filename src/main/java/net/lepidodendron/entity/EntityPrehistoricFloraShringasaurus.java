@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	private int PFdrinking;
 
 	private static final DataParameter<Integer> SHRINGASAURUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraShringasaurus.class, DataSerializers.VARINT);

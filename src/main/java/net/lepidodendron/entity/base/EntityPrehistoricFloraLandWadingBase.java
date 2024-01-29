@@ -36,7 +36,6 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     @SideOnly(Side.CLIENT)
     public ChainBuffer tailBuffer;
     private int jumpTicks;
-    private int inPFLove;
     public Animation HURT_ANIMATION;
 
     public EntityPrehistoricFloraLandWadingBase(World world) {
@@ -85,6 +84,11 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     }
 
     public abstract int wadeDepth();
+
+    @Override
+    public int getMaxFallHeight() {
+        return 4;
+    }
 
     @Override
     protected float getJumpUpwardsMotion()
@@ -235,6 +239,14 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     }
 
     @Override
+    public void fall(float distance, float damageMultiplier) {
+        if (distance <= this.getMaxFallHeight()) {
+            return;
+        }
+        super.fall(distance, damageMultiplier);
+    }
+
+    @Override
     public void onEntityUpdate() {
         super.onEntityUpdate();
     }
@@ -307,6 +319,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         if (!this.world.isRemote) {
             selectNavigator();
         }
+
 
         //Updated from vanilla to allow underwater jumping:
         if (this.jumpTicks > 0)

@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation HIDE_ANIMATION;
 
 	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);

@@ -14,7 +14,21 @@ public class ProcedureTreeLeaf extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static void executeProcedure(int x, int y, int z, World world, Block blockLeaf) {
-
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x + 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x - 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z + 1))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z - 1))) {
+			return;
+		}
 		Block block = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock();
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world,
@@ -27,7 +41,21 @@ public class ProcedureTreeLeaf extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static void executeProcedure(BlockPos pos, World world, Block blockLeaf) {
-
+		if (!world.isBlockLoaded(pos)) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.east())) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.north())) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.south())) {
+			return;
+		}
+		if (!world.isBlockLoaded(pos.west())) {
+			return;
+		}
 		Block block = world.getBlockState(pos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(pos), world,
 				pos)) {

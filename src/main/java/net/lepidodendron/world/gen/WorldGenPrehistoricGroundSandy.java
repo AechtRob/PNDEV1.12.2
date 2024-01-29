@@ -44,8 +44,10 @@ public class WorldGenPrehistoricGroundSandy extends WorldGenerator
                     while ((yct <= 1) && (!waterCriteria)) {
                         zct = -waterDist;
                         while ((zct <= waterDist) && (!waterCriteria)) {
-                            if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int) waterDist,2)) && ((worldIn.getBlockState(new BlockPos(blockpos.getX() + xct, blockpos.getY() + yct, blockpos.getZ() + zct))).getMaterial() == Material.WATER)) {
-                                waterCriteria = true;
+                            if (worldIn.isBlockLoaded(new BlockPos(blockpos.getX() + xct, blockpos.getY() + yct, blockpos.getZ() + zct))) {
+                                if ((Math.pow((int) Math.abs(xct), 2) + Math.pow((int) Math.abs(zct), 2) <= Math.pow((int) waterDist, 2)) && ((worldIn.getBlockState(new BlockPos(blockpos.getX() + xct, blockpos.getY() + yct, blockpos.getZ() + zct))).getMaterial() == Material.WATER)) {
+                                    waterCriteria = true;
+                                }
                             }
                             zct = zct + 1;
                         }

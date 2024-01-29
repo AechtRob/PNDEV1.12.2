@@ -36,7 +36,7 @@ public class EntityPrehistoricFloraBunostegos extends EntityPrehistoricFloraLand
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 
 	public EntityPrehistoricFloraBunostegos(World world) {
 		super(world);

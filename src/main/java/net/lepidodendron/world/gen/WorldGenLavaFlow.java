@@ -22,7 +22,7 @@ public class WorldGenLavaFlow extends WorldGenerator
 
         for (int i = 0; i < 2; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
 
             if (worldIn.isAirBlock(blockpos) && worldIn.getBlockState(blockpos.down()).getBlock() == BlockLavaRock.block
                 && blockpos.getY() > (Functions.getAdjustedSeaLevel(worldIn, blockpos) + rand.nextInt(10)+altitude))

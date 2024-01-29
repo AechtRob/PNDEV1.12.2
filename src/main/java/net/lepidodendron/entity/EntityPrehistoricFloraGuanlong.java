@@ -43,8 +43,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation HURT_ANIMATION;
@@ -60,7 +58,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 		SCRATCH_ANIMATION = Animation.create(80);
 		STAND_ANIMATION = Animation.create(80);
 		HURT_ANIMATION = Animation.create(15);
-		NOISE_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -83,20 +80,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
 
 		//Alert animation
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
@@ -128,7 +111,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION, NOISE_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION};
 	}
 
 	@Override
@@ -199,10 +182,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 		return 700;
 	}
 
-	public int getAmbientTalkInterval() {
-		return 200;
-	}
-
 	@Override
 	public int getAdultAge() {
 		return 64000;
@@ -269,7 +248,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
 	}
 
 	@Override
@@ -282,11 +261,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:guanlong_death"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
 	}
 
 	@Override

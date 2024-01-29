@@ -39,7 +39,7 @@ public class RenderDilophosaurus extends RenderLiving<EntityPrehistoricFloraDilo
             {
                 return;
             }
-            RenderDisplays.modelDilophosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelDilophosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

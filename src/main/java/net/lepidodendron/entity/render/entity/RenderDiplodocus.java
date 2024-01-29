@@ -39,7 +39,7 @@ public class RenderDiplodocus extends RenderLiving<EntityPrehistoricFloraDiplodo
             {
                 return;
             }
-            RenderDisplays.modelDiplodocus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelDiplodocusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

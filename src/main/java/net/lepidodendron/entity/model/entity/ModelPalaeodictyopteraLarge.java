@@ -193,6 +193,7 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.3F);
         this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
@@ -204,6 +205,7 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
         this.body.offsetY = -0.07F;
         this.body.render(0.01f);
     }
+
     public void renderStaticWall(float f) {
         this.body.offsetY = -0.14F;
         this.body.render(0.01F);
@@ -269,9 +271,9 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
         this.walk(antennaR, 0.3F, 0.15F, false,0,0.1F, f2, 1F);
         this.swing(antennaL, 0.3F, -0.25F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaR, 0.3F, 0.25F, false, 0, 0.1F, f2, 0.8F);
-        this.swing(mouth, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
-        this.swing(cerciL, 0.12F, -0.4F, false, 0, -0.1F, f2, 0.8F);
-        this.swing(cerciR, 0.12F, 0.4F, false, 0, 0.1F, f2, 0.8F);
+        //this.swing(mouth, 1.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        this.swing(cerciL, 0.12F, -0.22F, false, 0, -0.1F, f2, 0.8F);
+        this.swing(cerciR, 0.12F, 0.22F, false, 0, 0.1F, f2, 0.8F);
 
     }
 }

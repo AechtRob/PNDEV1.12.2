@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getNoiseLength() {
-		return 40;
+		return 60;
 	} //Roar
 
 	@Override
@@ -237,7 +237,7 @@ public class EntityPrehistoricFloraCeratosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:saltriovenator_idle"));
+				.getObject(new ResourceLocation("lepidodendron:ceratosaurus_idle"));
 	}
 
 	@Override

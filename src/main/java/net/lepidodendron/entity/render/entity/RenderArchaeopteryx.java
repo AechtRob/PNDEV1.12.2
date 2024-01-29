@@ -34,7 +34,7 @@ public class RenderArchaeopteryx extends RenderLiving<EntityPrehistoricFloraArch
             {
                 return;
             }
-            RenderDisplays.modelArchaeopteryx.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelArchaeopteryxBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public ChainBuffer tailBuffer;
 
 	public Animation STAND_ANIMATION;

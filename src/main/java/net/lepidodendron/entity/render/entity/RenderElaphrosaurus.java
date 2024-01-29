@@ -39,7 +39,7 @@ public class RenderElaphrosaurus extends RenderLiving<EntityPrehistoricFloraElap
             {
                 return;
             }
-            RenderDisplays.modelElaphrosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelElaphrosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

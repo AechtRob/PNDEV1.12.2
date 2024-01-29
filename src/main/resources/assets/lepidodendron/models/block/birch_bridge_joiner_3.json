@@ -1,7 +1,0 @@
-{
-  "parent": "lepidodendron:block/bridge_joiner",
-  "textures": {
-    "wood": "blocks/planks_birch",
-    "metal": "lepidodendron:blocks/zircon_block"
-  }
-}

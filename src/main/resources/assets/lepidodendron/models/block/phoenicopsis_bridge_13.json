@@ -1,7 +1,0 @@
-{
-  "parent": "lepidodendron:block/bridge",
-  "textures": {
-    "wood": "lepidodendron:blocks/phoenicopsis_planks",
-    "metal": "lepidodendron:blocks/anthracite_block"
-  }
-}

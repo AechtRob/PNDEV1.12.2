@@ -39,7 +39,6 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     private static final DataParameter<EnumFacing> CLIMBINGFACING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.FACING);
     private static final DataParameter<Integer> CLIMBINGCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> HEADBLOCKCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.VARINT);
-    private int inPFLove;
 
     public EntityPrehistoricFloraLandClimbingBase(World world) {
         super(world);
@@ -231,6 +230,68 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
+        //Dont understand why these sometimes get inside blocks, but this just fixes it anyway....
+        if (ds == DamageSource.IN_WALL) {
+            if (this.getIsClimbing()) { //It thinks its climbing so push back in teh direction is climbing more realistically
+                if (!this.world.getBlockState(this.getPosition().offset(this.getClimbFacing())).causesSuffocation()) {
+                    int xOffset = 0;
+                    int zOffset = 0;
+                    if (this.getClimbFacing() == EnumFacing.NORTH) {
+                        zOffset = -1;
+                    }
+                    if (this.getClimbFacing() == EnumFacing.SOUTH) {
+                        zOffset = 1;
+                    }
+                    if (this.getClimbFacing() == EnumFacing.EAST) {
+                        xOffset = 1;
+                    }
+                    if (this.getClimbFacing() == EnumFacing.WEST) {
+                        xOffset = -1;
+                    }
+                    this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+                    return false;
+                }
+            } else if (!this.world.getBlockState(this.getPosition().offset(this.getAdjustedHorizontalFacing().getOpposite())).causesSuffocation()) {
+                //PUsh it back the direction it came from (so it doesnt phase through walls unintentionally)
+                int xOffset = 0;
+                int zOffset = 0;
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.NORTH) {
+                    zOffset = -1;
+                }
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.SOUTH) {
+                    zOffset = 1;
+                }
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.EAST) {
+                    xOffset = 1;
+                }
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.WEST) {
+                    xOffset = -1;
+                }
+                this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+                return false;
+            } else { //Test horizontals as a last resort:
+                for (int ii = 0; ii <= 3; ii++) {
+                    if (!this.world.getBlockState(this.getPosition().offset(EnumFacing.byHorizontalIndex(ii))).causesSuffocation()) {
+                        int xOffset = 0;
+                        int zOffset = 0;
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.NORTH) {
+                            zOffset = -1;
+                        }
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.SOUTH) {
+                            zOffset = 1;
+                        }
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.EAST) {
+                            xOffset = 1;
+                        }
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.WEST) {
+                            xOffset = -1;
+                        }
+                        this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+                        return false;
+                    }
+                }
+            }
+        }
         if (ds == DamageSource.FALL) { //Immune to fall damage
             return false;
         }

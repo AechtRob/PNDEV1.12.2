@@ -52,24 +52,23 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public Animation TAIL_ANIMATION;
+	public Animation IDLE2_ANIMATION;
+	public Animation IDLE1_ANIMATION;
 	private int standCooldown;
-	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraDiplodocus(World world) {
 		super(world);
-		setSize(3.0F, 4.5F);
+		setSize(2.95F, 4.5F);
 		stepHeight = 2;
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.95F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 200.0D;
-		TAIL_ANIMATION = Animation.create(80);
+		IDLE2_ANIMATION = Animation.create(460);
+		IDLE1_ANIMATION = Animation.create(140);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		NOISE_ANIMATION = Animation.create(120);
 		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
@@ -150,7 +149,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TAIL_ANIMATION};
+		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, IDLE2_ANIMATION, IDLE1_ANIMATION};
 	}
 
 	@Override
@@ -210,8 +209,9 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
-			|| this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == TAIL_ANIMATION) {
+				|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
+				|| this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == IDLE2_ANIMATION
+				|| this.getAnimation() == IDLE1_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -476,19 +476,10 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		return 1000;
 	}
 
-	public int getAmbientTalkInterval() {
-		return 300;
-	}
-
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:diplodocus_roar"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:diplodocus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:diplodocus_idle"));
 	}
 
 	@Override
@@ -543,16 +534,16 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 				IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 				EnumFacing facing = this.getAdjustedHorizontalFacing();
 				if (facing == EnumFacing.NORTH) {
-					this.getAttackTarget().addVelocity(0.25, 0.15, 0);
+					this.getAttackTarget().addVelocity(0.275, 0.15, 0);
 				}
 				else if (facing == EnumFacing.SOUTH) {
-					this.getAttackTarget().addVelocity(-0.25, 0.15, 0);
+					this.getAttackTarget().addVelocity(-0.275, 0.15, 0);
 				}
 				else if (facing == EnumFacing.EAST) {
-					this.getAttackTarget().addVelocity(0, 0.15, 0.25);
+					this.getAttackTarget().addVelocity(0, 0.15, 0.275);
 				}
 				else if (facing == EnumFacing.WEST) {
-					this.getAttackTarget().addVelocity(0, 0.15, -0.25);
+					this.getAttackTarget().addVelocity(0, 0.15, -0.275);
 				}
 				boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
 				if (this.getOneHit()) {
@@ -614,27 +605,22 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(TAIL_ANIMATION);
+			if (rand.nextInt(2) == 0) {
+				this.setAnimation(IDLE2_ANIMATION);
+			}
+			else {
+				this.setAnimation(IDLE1_ANIMATION);
+			}
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
-
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
 		}
 
 	}

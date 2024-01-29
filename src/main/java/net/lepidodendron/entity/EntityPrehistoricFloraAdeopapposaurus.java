@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	//public Animation STAND_ANIMATION;
 	public Animation LOOK_ANIMATION;
 

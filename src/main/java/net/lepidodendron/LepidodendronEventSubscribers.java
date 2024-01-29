@@ -8,6 +8,7 @@ import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.WorldOverworldPortal;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
@@ -39,6 +40,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
+import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
@@ -54,6 +56,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -62,6 +65,38 @@ import java.util.List;
 import java.util.Random;
 
 public class LepidodendronEventSubscribers {
+
+	@SubscribeEvent //Manage Nether portals: when travelling to the Nether
+	// use the overworld (or other) portal, not a new Nether Portal in the Nether itself.
+	//This subscriber is also copied into the dimension mods to deal with those.
+	public void goToNether(EntityTravelToDimensionEvent event) {
+		if (LepidodendronConfig.oneWayPortalsNether && LepidodendronConfig.oneWayPortals) {
+			if (event.getDimension() == -1) {
+				//We are travelling to the Nether from here:
+				Entity entityIn = event.getEntity();
+				World worldIn = entityIn.getEntityWorld();
+
+			 	if (event.getEntity().getEntityWorld().provider.getDimensionType().getId() == 0) {
+					if (!worldIn.isRemote && !entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn instanceof EntityPlayerMP) {
+						EntityPlayerMP thePlayer = (EntityPlayerMP) entityIn;
+						if (thePlayer.dimension != event.getDimension()) {
+							thePlayer.timeUntilPortal = 10;
+							ReflectionHelper.setPrivateValue(EntityPlayerMP.class, thePlayer, true, "invulnerableDimensionChange", "field_184851_cj");
+							WorldOverworldPortal.BlockCustomPortal.transferPlayerToDimensionPN(thePlayer.server.getPlayerList(), thePlayer, event.getDimension(), WorldOverworldPortal.BlockCustomPortal.getTeleporterForDimension(thePlayer, entityIn.getPosition(), event.getDimension()));
+						}
+					}
+					event.setCanceled(true);
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent //Manage Nether portals: don't allow then to be lit in the Nether
+	public void makeNetherPortal(BlockEvent.PortalSpawnEvent event) {
+		if (LepidodendronConfig.oneWayPortalsNether && LepidodendronConfig.oneWayPortals && event.getWorld().provider.getDimensionType().getId() == -1) {
+			event.setCanceled(true);
+		}
+	}
 
 	@SubscribeEvent //Give the Palaeopedia on first join:
 	public void killedEntity(LivingDropsEvent event) {
@@ -827,6 +862,15 @@ public class LepidodendronEventSubscribers {
 						stackDicroidium.setTagCompound(stackNBT);
 						MerchantRecipe recipeDicroidium = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackDicroidium);
 						MerchantRecipeFinal.add(recipeDicroidium);
+
+						ItemStack stackGinkgo = new ItemStack(ItemFossilClean.block, 1);
+						plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:ginkgo_sapling");
+						stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackGinkgo.setTagCompound(stackNBT);
+						MerchantRecipe recipeGinkgo = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackGinkgo);
+						MerchantRecipeFinal.add(recipeGinkgo);
 					}
 				}
 			}

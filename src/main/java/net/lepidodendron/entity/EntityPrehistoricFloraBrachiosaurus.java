@@ -10,6 +10,8 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
+import net.lepidodendron.entity.render.entity.RenderApatosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -17,6 +19,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -49,24 +52,24 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public Animation TAIL_ANIMATION;
+	//public Animation TAIL_ANIMATION;
 	private int standCooldown;
 	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraBrachiosaurus(World world) {
 		super(world);
-		setSize(3.0F, 6F);
-		stepHeight = 4;
+		setSize(2.95F, 6F);
+		stepHeight = 2;
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.95F;
 		maxHeight = 6F;
 		maxHealthAgeable = 200.0D;
-		TAIL_ANIMATION = Animation.create(80);
+		//TAIL_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		NOISE_ANIMATION = Animation.create(40);
+		NOISE_ANIMATION = Animation.create(86);
 		setgetMaxTurnDistancePerTick(5.0F);
 	}
 
@@ -126,7 +129,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getGrazeLength() {
-		return 80;
+		return 252;
 	}
 
 	@Override
@@ -147,7 +150,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, TAIL_ANIMATION};
+		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}
 
 	@Override
@@ -178,12 +181,12 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getRoarLength() {
-		return 60;
+		return 86;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 140;
+		return 131;
 	}
 
 	@Override
@@ -202,17 +205,19 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.4F;
+		float speedBase = 0.39F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
 			|| this.getAnimation() == ATTACK_ANIMATION || this.getAnimation() == EAT_ANIMATION
-			|| this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == TAIL_ANIMATION) {
+			|| this.getAnimation() == GRAZE_ANIMATION
+				//|| this.getAnimation() == TAIL_ANIMATION
+		) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.4F;
+			speedBase = speedBase * 1.3F;
 		}
 		return speedBase;
 	}
@@ -245,7 +250,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(6, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -274,7 +279,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getDrinkLength() {
-		return 160;
+		return 190;
 	}
 
 	@Override
@@ -525,7 +530,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:brachiosaurus_idle"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
@@ -608,23 +613,10 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	public void fall(float distance, float damageMultiplier) {
-		if (distance <= 6) {
-			return;
-		}
-		super.fall(distance, damageMultiplier);
-	}
-
-	@Override
-	public int getMaxFallHeight() {
-		return 4;
-	}
-
-	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(25.0, 45.00, 25.0);
+			return this.getEntityBoundingBox().grow(15.0, 15.00, 15.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -666,17 +658,17 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(TAIL_ANIMATION);
-			this.standCooldown = 3000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 3000;
-			this.setAnimation(NO_ANIMATION);
-		}
+//		//Sometimes stand up and look around:
+//		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+//				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+//			this.setAnimation(TAIL_ANIMATION);
+//			this.standCooldown = 3000;
+//		}
+//		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+//		if ((!this.world.isRemote) && this.getAnimation() == TAIL_ANIMATION && this.getAnimationTick() == TAIL_ANIMATION.getDuration() - 1) {
+//			this.standCooldown = 3000;
+//			this.setAnimation(NO_ANIMATION);
+//		}
 
 		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
 		{
@@ -702,18 +694,67 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_BRACHIOSAURUS;
+		return ModTriggers.CLICK_APATOSAURUS;
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.BRACHIOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.APATOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.BRACHIOSAURUS_LOOT;
+		return LepidodendronMod.APATOSAURUS_LOOT;
 	}
 
 	//Rendering taxidermy:
 	//--------------------
-	
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 3.5;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 2.5;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -2.5;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -2.9;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 6.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderApatosaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelApatosaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderApatosaurus.getScaler();
+	}
 }

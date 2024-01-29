@@ -226,6 +226,9 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.YIQI_LOOT_YOUNG;
+		}
 		return LepidodendronMod.YIQI_LOOT;
 	}
 

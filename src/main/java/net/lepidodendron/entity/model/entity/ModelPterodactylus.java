@@ -855,14 +855,17 @@ public class ModelPterodactylus extends AdvancedModelBaseExtended {
         }
 
         if (ee.getAttachmentPos() == null ) {
-            //if (ee.getIsMoving()) {
+            if (ee.getIsMoving()) {
                 if (ee.getIsFast()) { //Flying fast
                     animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
                 else { //Flying regular
                     animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
-            //}
+            }
+            else { //Flying regular but straight upwards
+                animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            }
         }
         else if (ee.getAttachmentPos() != null) {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {

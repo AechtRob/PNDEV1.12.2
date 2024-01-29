@@ -39,7 +39,7 @@ public class RenderMymoorapelta extends RenderLiving<EntityPrehistoricFloraMymoo
             {
                 return;
             }
-            RenderDisplays.modelMymoorapelta.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelMymoorapeltaBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

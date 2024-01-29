@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public boolean homesToNest() {
+		return true;
+	}
+
+	@Override
 	public int getEatLength() {
 		return 20;
 	}
@@ -323,8 +328,8 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, true));
-		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, true, false));
+		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
+		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));

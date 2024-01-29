@@ -768,7 +768,12 @@ public class ModelCooperoceras extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.whole.render(f5 * 0.076F);
     }
-
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(whole, 4.8F, 0.0F, 0.0F);
+        this.whole.offsetY = -0.028F;
+        this.whole.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -35,12 +35,12 @@ public class Diet implements IComponentProcessor {
         String[] string = new String[]{};
         String result = "";
         String nestString = "N/A";
+        EntityLiving entity = (EntityLiving) ee.newInstance(null);
+        String homingString = LepidodendronBookSubscribers.getHomingString(entity, false);
         if (method != null) {
             try {
-                EntityLiving entity = (EntityLiving) ee.newInstance(null);
                 string = (String[]) method.invoke(entity, (Object[]) null);
                 nestString = LepidodendronBookSubscribers.getNestString(entity, false);
-                entity.setDead();
             }
             catch (Exception e) {
             }
@@ -56,8 +56,8 @@ public class Diet implements IComponentProcessor {
         else {
             result = "$(br)Unknown diet";
         }
-
-        return "$(br)$(l)Diet:$()$(br)" + result + "$(br2)" + "$(l)Breeding notes:$()$(br)" + nestString;
+        entity.setDead();
+        return "$(br)$(l)Diet:$()$(br)" + result + "$(br2)" + "$(l)Breeding notes:$()$(br)" + nestString + "$(br2)" + homingString;
     }
 
 }
