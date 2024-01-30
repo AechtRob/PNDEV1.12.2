@@ -60,6 +60,14 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	@Override
+	public boolean canBePushed() {
+		if (this.getAnimation() == DRINK_ANIMATION) {
+			return false;
+		}
+		return super.canBePushed();
+	}
+
+	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		if (this.getAnimation() == DRINK_ANIMATION) {
