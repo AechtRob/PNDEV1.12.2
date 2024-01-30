@@ -1244,11 +1244,21 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         int adultAge = ageableBase.getAdultAge();
                                                                         if (rand.nextInt(20) == 0 && doAgeVar) {
                                                                             if (adultAge > 0) {
-                                                                                nbtStr = "{AgeTicks:" + rand.nextInt(adultAge) + 1 + "}";
+                                                                                if (nbtStr.equalsIgnoreCase("")) {
+                                                                                    nbtStr = "{AgeTicks:" + rand.nextInt(adultAge) + 1 + "}";
+                                                                                }
+                                                                                else {
+                                                                                    nbtStr = "{AgeTicks:" + rand.nextInt(adultAge) + 1 + "," + nbtStr.substring(1);
+                                                                                }
                                                                             }
                                                                         }
                                                                         else {
-                                                                            nbtStr = "{AgeTicks:" + adultAge + "}";
+                                                                            if (nbtStr.equalsIgnoreCase("")) {
+                                                                                nbtStr = "{AgeTicks:" + adultAge + "}";
+                                                                            }
+                                                                            else {
+                                                                                nbtStr = "{AgeTicks:" + adultAge + "," + nbtStr.substring(1);
+                                                                            }
                                                                         }
                                                                     }
                                                                     else if (mobToSpawn.startsWith("fossil:")) {
