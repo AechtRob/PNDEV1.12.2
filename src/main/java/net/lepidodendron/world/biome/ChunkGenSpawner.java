@@ -1142,7 +1142,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraHaldanodon) {
-                                                                EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
+                                                                EntityPrehistoricFloraHaldanodon EntityLandBase = (EntityPrehistoricFloraHaldanodon) entity;
                                                                 if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) && spawnPos.getY() > Functions.getAdjustedSeaLevel(world, spawnPos)) {
                                                                     boolean isLoaded = true;
                                                                     int x = -6;
