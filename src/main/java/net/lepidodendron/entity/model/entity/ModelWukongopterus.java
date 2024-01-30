@@ -578,6 +578,43 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
             this.faceTarget(f3, f4, 8, neck2);
             this.faceTarget(f3, f4, 4, head);
 
+            //if (ee.getIsMoving()) {
+            AdvancedModelRenderer[] wingLeft = {this.wingleft1, this.wingleft2, this.wingleft3, this.wingleft4};
+            AdvancedModelRenderer[] wingRight = {this.wingright1, this.wingright2, this.wingright3, this.wingright4};
+
+            AdvancedModelRenderer[] legLeft = {this.upperlegL, this.lowerlegL, this.footL};
+            AdvancedModelRenderer[] legRight = {this.upperlegR, this.lowerlegR, this.footR};
+
+            AdvancedModelRenderer[] tailFullFly = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5};
+            float speedFly = 1.50F;
+            float fixedY = 0; //The standard offset to centre the mob
+            if (flier.getIsFast()) { //Flying fast
+                speedFly = 2.24F;
+            }
+            else { //Flying regular
+
+            }
+
+            //Animations:
+            this.chainFlap(wingLeft, speedFly, 0.35F, 0.3F, f2, 1F);
+            this.chainFlap(wingRight, speedFly, -0.35F, -0.3F, f2, 1F);
+
+            this.swing(wingleft3, speedFly, 0.7F, false, 2.0F, 0.12F, f2, 1F);
+            this.swing(wingright3, speedFly, -0.7F, false, 2.0F, -0.12F, f2, 1F);
+
+            this.swing(wingleft1, speedFly, 0.10F, false, 2.0F, 0.08F, f2, 1F);
+            this.swing(wingright1, speedFly, -0.10F, false, 2.0F, -0.08F, f2, 1F);
+
+            float floatMoveZ = this.moveBoxExtended(speedFly * 0.3F, 0.30F, false, 4, f2, 1);
+            this.root.offsetZ = floatMoveZ;
+            float floatMoveY = this.moveBoxExtended(speedFly * 0.6F, 0.50F, false, 4, f2, 1);
+            this.root.offsetY = (floatMoveY) + fixedY;
+
+            this.chainWaveExtended(legLeft, speedFly, 0.055F, 0.1F, 0F, f2, 1F);
+            this.chainWaveExtended(legRight, speedFly, -0.055F, -0.1F, 3F, f2, 1F);
+            this.chainWave(tailFullFly, speedFly * 0.5F, 0.02F, 0.5F, f2, 1F);
+            this.chainSwing(tailFullFly, speedFly * 0.5F, 0.15F, 2.0F, f2, 1F);
+
         }
         else { //not flying
             if (flier.getIsFast()) {
@@ -653,6 +690,17 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
             this.setRotateAngle(cube_r13, -0.1231F, -0.0447F, -0.3463F);
             this.setRotateAngle(cube_r14, -0.1309F, 0.0F, 0.0F);
 
+            if (ee.getAttachmentPos() == null ) {
+                //if (ee.getIsMoving()) {
+                if (ee.getIsFast()) { //Flying fast
+                    //animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+                else { //Flying regular
+                    //animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+                //}
+            }
+
         } else if (ee.getAttachmentPos() != null) {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {
                 //Is walking:
@@ -713,12 +761,12 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
 
         if (ee.getAttachmentPos() == null ) {
             //if (ee.getIsMoving()) {
-                if (ee.getIsFast()) { //Flying fast
-                    animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
-                else { //Flying regular
-                    animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
+//                if (ee.getIsFast()) { //Flying fast
+//                    animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+//                }
+//                else { //Flying regular
+//                    animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+//                }
             //}
         }
         else if (ee.getAttachmentPos() != null) {
