@@ -27,15 +27,13 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -58,6 +56,24 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 		maxHealthAgeable = 63.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		if (this.getAnimation() == DRINK_ANIMATION) {
+			if (this.getAnimationTick() == 445) {
+				if (this.world instanceof WorldServer) {
+					Vec3d eventpos = new Vec3d(this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY(), this.getDrinkingFrom().getZ() + 0.5);
+					for (int j = 0; (float) j < 200F; ++j) {
+						float f5 = (this.rand.nextFloat() * 2.0F - 1.0F) * 0.5F;
+						float f6 = (this.rand.nextFloat() * 2.0F - 1.0F) * 0.5F;
+						((WorldServer) this.world).spawnParticle(EnumParticleTypes.WATER_SPLASH, eventpos.x + f5, eventpos.y, eventpos.z + f6, (int) 1, 0, 0, 0, 0.2, new int[0]);
+					}
+				}
+				this.playSound(this.getSplashSound(), 1.0F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
+			}
 		}
 	}
 
@@ -115,36 +131,36 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 				&& this.isBlockWadable(this.world, entityPos.down(), this)
 				&&
 				(
-						(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+						(this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-								|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-								|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-								|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing, 2));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
