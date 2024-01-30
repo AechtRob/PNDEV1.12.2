@@ -11,7 +11,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderPiatnitzkysaurus;
-import net.lepidodendron.entity.render.entity.RenderPoraspis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -53,26 +52,6 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public int getWalkCycleLength() {
-		return 50;
-	}
-
-	@Override
-	public int getFootstepOffset() {
-		return 25;
-	}
-
-	@Override
-	public int getRunCycleLength() {
-		return 20;
-	}
-
-	@Override
-	public int getRunFootstepOffset() {
-		return 0;
 	}
 
 	@Override

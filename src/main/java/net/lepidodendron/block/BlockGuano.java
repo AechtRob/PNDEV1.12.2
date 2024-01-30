@@ -146,6 +146,15 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+			super.onBlockAdded(worldIn, pos, state);
+			//This is theoretically impossible, but just in case:
+			if (worldIn.getBlockState(pos).getValue(LAYERS) == 8) {
+				worldIn.setBlockState(pos, BlockGuanoBlock.block.getDefaultState());
+			}
+		}
+
+		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		}
 

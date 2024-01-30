@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockGuano;
+import net.lepidodendron.block.BlockGuanoBlock;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
@@ -90,7 +91,9 @@ public class ItemGuano extends ElementsLepidodendronMod.ModElement {
 							if (axisalignedbb != Block.NULL_AABB && worldIn.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && worldIn.setBlockState(blockpos, iblockstate1, 10)) {
 								SoundType soundtype = BlockGuano.block.getSoundType(iblockstate1, worldIn, blockpos, playerIn);
 								worldIn.playSound(playerIn, blockpos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
-
+								if (worldIn.getBlockState(blockpos).getValue(BlockSnow.LAYERS) == 8) {
+									worldIn.setBlockState(blockpos, BlockGuanoBlock.block.getDefaultState());
+								}
 								if (playerIn instanceof EntityPlayerMP) {
 									CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP) playerIn, blockpos, itemstack);
 								}
