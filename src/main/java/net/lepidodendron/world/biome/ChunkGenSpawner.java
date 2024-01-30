@@ -1131,26 +1131,53 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityNest) {
                                                                                 te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                                te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+
+                                                                                ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                stack.setCount(1);
+                                                                                ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                                                                             }
                                                                         }
                                                                     }
                                                                 }
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraHaldanodon) {
-                                                                EntityPrehistoricFloraHaldanodon EntityPrehistoricFloraHaldanodon = (EntityPrehistoricFloraHaldanodon) entity;
-                                                                if (EntityPrehistoricFloraHaldanodon.hasNest() && (EntityPrehistoricFloraHaldanodon.homesToNest() && worldGen) && spawnPos.getY() > Functions.getAdjustedSeaLevel(world, spawnPos)) {
-                                                                    //Spawn a nest and burrow for it:
-                                                                    //Buildburrow:
-                                                                    BlockPos pos1 = EntityPrehistoricFloraHaldanodon.buildBurrow(world, spawnPos, ((EntityPrehistoricFloraHaldanodon) entity).hasLargeBurrow());
-                                                                    if (rand.nextInt(3) == 0) {
-                                                                        spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
+                                                                EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
+                                                                if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) && spawnPos.getY() > Functions.getAdjustedSeaLevel(world, spawnPos)) {
+                                                                    boolean isLoaded = true;
+                                                                    int x = -6;
+                                                                    while (x <= 6) {
+                                                                        int z = -6;
+                                                                        while (z <= 6) {
+                                                                            BlockPos pos2 = new BlockPos(spawnPos.getX() + x, 0, spawnPos.getZ() + z);
+                                                                            if (!world.isBlockLoaded(pos2)) {
+                                                                                isLoaded = false;
+                                                                                break;
+                                                                            }
+                                                                            z++;
+                                                                        }
+                                                                        x++;
                                                                     }
-                                                                    offsetter = 0;
-                                                                    world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
-                                                                    TileEntity te = world.getTileEntity(pos1);
-                                                                    if (te != null) {
-                                                                        if (te instanceof BlockNest.TileEntityNest) {
-                                                                            te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+
+                                                                    if (isLoaded) {
+                                                                        //Spawn a nest and burrow for it:
+                                                                        //Buildburrow:
+                                                                        BlockPos pos1 = EntityPrehistoricFloraHaldanodon.buildBurrow(world, spawnPos, ((EntityPrehistoricFloraHaldanodon) entity).hasLargeBurrow());
+                                                                        if (rand.nextInt(3) == 0) {
+                                                                            spawnPos = pos1; //Spawn sometimes at the nest burrow and sometime inside
+                                                                        }
+                                                                        offsetter = 0;
+                                                                        world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
+                                                                        TileEntity te = world.getTileEntity(pos1);
+                                                                        if (te != null) {
+                                                                            if (te instanceof BlockNest.TileEntityNest) {
+                                                                                te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                                te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+
+                                                                                ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                stack.setCount(1);
+                                                                                ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                            }
                                                                         }
                                                                     }
                                                                 }
