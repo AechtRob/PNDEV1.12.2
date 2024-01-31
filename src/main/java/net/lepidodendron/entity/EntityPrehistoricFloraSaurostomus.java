@@ -107,8 +107,6 @@ public class EntityPrehistoricFloraSaurostomus extends EntityPrehistoricFloraAge
 		return ArrayUtils.addAll(DietString.FISH, DietString.NAUTILOID);
 	}
 
-	
-
 	@Override
 	public boolean isAIDisabled() {
 		return false;

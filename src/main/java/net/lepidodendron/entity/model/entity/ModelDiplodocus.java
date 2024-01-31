@@ -517,13 +517,13 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.50F;
-        this.root.offsetX = 0.0F;
-        this.root.rotateAngleY = (float)Math.toRadians(120);
-        this.root.rotateAngleX = (float)Math.toRadians(0);
-        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.offsetY = 1.95F;
+        this.root.offsetX = -0.5F;
+        this.root.rotateAngleY = (float)Math.toRadians(130);
+        this.root.rotateAngleX = (float)Math.toRadians(3);
+        this.root.rotateAngleZ = (float)Math.toRadians(1);
         this.root.scaleChildren = true;
-        float scaler = 0.2F;
+        float scaler = 0.45F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(hip, -0.5F, 0.0F, 0.0F);
