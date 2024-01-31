@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getTalkInterval() {
+		return 60;
+	}
+
+	@Override
 	public boolean homesToNest() {
 		return true;
 	}
@@ -309,11 +314,6 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.screamAlarmCooldown = 25;
 		}
-	}
-
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
 	}
 
 	@Override

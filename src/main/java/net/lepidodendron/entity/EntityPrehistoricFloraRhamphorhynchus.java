@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public int getTalkInterval() {
+		return 60;
+	}
+
+	@Override
 	public int getEatLength() {
 		return 20;
 	}
@@ -311,11 +316,6 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.screamAlarmCooldown = 25;
 		}
-	}
-
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
 	}
 
 	@Override

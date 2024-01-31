@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int getTalkInterval() {
+		return 60;
+	}
+
+	@Override
 	public boolean homesToNest() {
 		return true;
 	}
@@ -287,11 +292,6 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 			this.screamAlarmCooldown = 25;
 		}
-	}
-
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
 	}
 
 	@Override

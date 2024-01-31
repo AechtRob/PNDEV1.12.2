@@ -294,11 +294,6 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraL
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:eudimorphodon_death"));
 	}
 
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
-	}
-
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityAISwimming(this));
