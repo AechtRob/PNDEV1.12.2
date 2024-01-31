@@ -1477,7 +1477,7 @@ public class ModelSauroSkeleton2 extends AdvancedModelBase {
     public void renderAll(float f) {
         this.resetToDefaultPose();
         this.fossil.offsetY = -1.0F; //negative makes higher
-        this.fossil.offsetX = 0.175F; //negative makes higher
+        this.fossil.offsetX = 0.00F; //negative makes higher
         this.fossil.rotateAngleZ = (float)Math.toRadians(90);
         this.fossil.rotateAngleY = 0.1F;
         this.fossil.render(0.05f);
