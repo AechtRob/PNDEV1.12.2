@@ -74,6 +74,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             //Get mob list and pick a mob for this biome:
             boolean TriassicCanyons = false;
             boolean Creeks = false;
+            boolean SeaForests = false;
             boolean Deserts = false;
             boolean LowerSpawnBiomes = false;
             boolean HigherSpawnBiomes = false;
@@ -97,6 +98,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
                 ){
                     Creeks = true;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")
+                ){
+                    SeaForests = true;
                 }
 
                 if (biome.getRegistryName().toString().startsWith("lepidodendron:")
@@ -1064,6 +1070,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             weighter = weighter * 0.225;
                                                         }
 
+                                                        //Deal with bumping up sea forests spawns:
+                                                        if (SeaForests) {
+                                                            weighter = weighter * 0.333;
+                                                        }
+
                                                         //Deal with reducing desert spawns on land:
                                                         else if (Deserts && locationID == 1) {
                                                             weighter = weighter * 1.35;
@@ -1076,7 +1087,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
                                                         //Deal with reducing underspawning biomes spawns on land:
                                                         else if (HigherSpawnBiomes && (locationID == 1 || locationID == 5)) {
-                                                            weighter = weighter * 0.90;
+                                                            weighter = weighter * 0.75;
                                                         }
 
                                                         if ((Math.random() * weighter) <= (double) weight) {
