@@ -18,6 +18,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -60,11 +61,11 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	@Override
-	public boolean canBePushed() {
+	public EnumPushReaction getPushReaction() {
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			return false;
+			return EnumPushReaction.IGNORE;
 		}
-		return super.canBePushed();
+		return super.getPushReaction();
 	}
 
 	@Override
