@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFlora
 
 	@Override
 	public boolean homesToNest() {
-		return false;
+		return true;
 	}
 
 	@Override

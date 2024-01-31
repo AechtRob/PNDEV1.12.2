@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraL
 
 	@Override
 	public boolean homesToNest() {
-		return false;
+		return true;
 	}
 
 	@Override

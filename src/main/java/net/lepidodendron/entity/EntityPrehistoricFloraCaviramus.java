@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraCaviramus extends EntityPrehistoricFloraLandC
 
 	@Override
 	public boolean homesToNest() {
-		return false;
+		return true;
 	}
 
 	@Override

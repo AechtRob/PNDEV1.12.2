@@ -65,6 +65,11 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public boolean homesToNest() {
+		return true;
+	}
+
+	@Override
 	public float headHitHeight() {
 		return 0.425F;
 	}

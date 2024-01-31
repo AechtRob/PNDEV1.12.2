@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 
 	@Override
 	public boolean homesToNest() {
-		return false;
+		return true;
 	}
 
 	@Override
