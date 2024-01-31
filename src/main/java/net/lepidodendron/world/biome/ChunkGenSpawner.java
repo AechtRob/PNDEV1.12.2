@@ -1134,8 +1134,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
                                                                                 ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                stack.setCount(1);
-                                                                                ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                if (stack == null) {
+                                                                                    System.err.println("Error with eggs: " + EntityLandBase);
+                                                                                }
+                                                                                else {
+                                                                                    stack.setCount(1);
+                                                                                    ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                }
                                                                             }
                                                                         }
                                                                     }
@@ -1175,8 +1180,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
                                                                                 ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                stack.setCount(1);
-                                                                                ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                if (stack == null) {
+                                                                                    System.err.println("Error with eggs: " + EntityLandBase);
+                                                                                }
+                                                                                else {
+                                                                                    stack.setCount(1);
+                                                                                    ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                }
                                                                             }
                                                                         }
                                                                     }
@@ -1199,8 +1209,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
                                                                                         ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                        stack.setCount(1);
-                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        if (stack == null) {
+                                                                                            System.err.println("Error with eggs: " + EntityLandBase);
+                                                                                        }
+                                                                                        else {
+                                                                                            stack.setCount(1);
+                                                                                            ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        }
                                                                                     }
                                                                                 }
                                                                             }
@@ -1216,8 +1231,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
                                                                                         ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                        stack.setCount(1);
-                                                                                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        if (stack == null) {
+                                                                                            System.err.println("Error with eggs: " + EntityLandBase);
+                                                                                        }
+                                                                                        else {
+                                                                                            stack.setCount(1);
+                                                                                            ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        }
                                                                                     }
                                                                                 }
                                                                             }
