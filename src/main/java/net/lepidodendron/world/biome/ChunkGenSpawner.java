@@ -76,6 +76,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             boolean Creeks = false;
             boolean Deserts = false;
             boolean LowerSpawnBiomes = false;
+            boolean HigherSpawnBiomes = false;
             String[] MobString = new String[0];
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
@@ -123,6 +124,14 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
                     ) {
                     LowerSpawnBiomes = true;
+                }
+
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_forest")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_hills")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white")
+                ) {
+                    HigherSpawnBiomes = true;
                 }
 
             } else {
@@ -1060,9 +1069,14 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             weighter = weighter * 1.35;
                                                         }
 
-                                                        //Deal with reducing desert spawns on land:
+                                                        //Deal with reducing overspawning biomes spawns on land:
                                                         else if (LowerSpawnBiomes && locationID == 1) {
                                                             weighter = weighter * 1.25;
+                                                        }
+
+                                                        //Deal with reducing underspawning biomes spawns on land:
+                                                        else if (HigherSpawnBiomes && (locationID == 1 || locationID == 5)) {
+                                                            weighter = weighter * 0.90;
                                                         }
 
                                                         if ((Math.random() * weighter) <= (double) weight) {
