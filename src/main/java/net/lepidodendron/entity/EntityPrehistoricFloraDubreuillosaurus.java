@@ -49,10 +49,10 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 
 	public EntityPrehistoricFloraDubreuillosaurus(World world) {
 		super(world);
-		setSize(1.2F, 1.8F);
+		setSize(0.95F, 1.85F);
 		minWidth = 0.20F;
-		maxWidth = 1.2F;
-		maxHeight = 1.8F;
+		maxWidth = 0.95F;
+		maxHeight = 1.85F;
 		maxHealthAgeable = 63.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
