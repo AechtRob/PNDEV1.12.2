@@ -200,7 +200,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 		if (this.getIsFast() && (!this.getIsClimbing()) && (!this.getIsFlying())) {
 			return 0.485F;
 		}
-		return 0.325F;
+		return 0.225F;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -210,7 +210,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 
 	@Override
 	public float getClimbSpeed() {
-		return 0.5F;
+		return 0.425F;
 	}
 
 	@Override

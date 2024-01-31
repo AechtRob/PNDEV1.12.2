@@ -142,7 +142,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		if (this.getIsFast()) {
 			speedBase = 0.318F * 3.55F;
 		}
-		return speedBase * 0.85F;
+		return speedBase * 0.60F;
 	}
 
 	@Override

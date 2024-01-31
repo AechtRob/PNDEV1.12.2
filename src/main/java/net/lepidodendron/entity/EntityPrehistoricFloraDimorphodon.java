@@ -180,7 +180,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 
 	@Override
 	public float getClimbSpeed() {
-		return 0.5F;
+		return 0.44F;
 	}
 
 	@Override

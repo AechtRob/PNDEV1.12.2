@@ -485,7 +485,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	protected float getSoundVolume() {
-		return 2.0F;
+		return 3.0F;
 	}
 
 	@Override

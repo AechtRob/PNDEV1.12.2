@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.render.entity.RenderShringasaurus;
 import net.lepidodendron.entity.render.entity.RenderWukongopterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamerFlier;
@@ -288,7 +287,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 
 	@Override
 	public float getClimbSpeed() {
-		return 0.0035F;
+		return 0.0075F;
 	}
 
 	@Override
