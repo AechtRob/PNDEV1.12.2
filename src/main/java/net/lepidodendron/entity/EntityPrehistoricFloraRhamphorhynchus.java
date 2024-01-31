@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 
 	@Override
 	public int getTalkInterval() {
-		return 60;
+		return 90;
 	}
 
 	@Override

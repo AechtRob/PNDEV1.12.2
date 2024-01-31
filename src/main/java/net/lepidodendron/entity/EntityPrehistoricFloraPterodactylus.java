@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getTalkInterval() {
-		return 60;
+		return 90;
 	}
 
 	@Override

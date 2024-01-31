@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getTalkInterval() {
-		return 60;
+		return 90;
 	}
 
 	@Override
