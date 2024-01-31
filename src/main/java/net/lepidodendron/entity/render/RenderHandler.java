@@ -5243,6 +5243,7 @@ public class RenderHandler {
         //Misc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRibCage.TileEntityCustom.class, new RenderRibCage());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockBatHead.TileEntityCustom.class, new RenderBatHead());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSauroSkeleton.TileEntityCustom.class, new RenderSauroSkeleton());
 
 
     }

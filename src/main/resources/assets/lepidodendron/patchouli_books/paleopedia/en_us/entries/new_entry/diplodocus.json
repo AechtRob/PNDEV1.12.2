@@ -1,0 +1,47 @@
+{
+	"name": "Diplodocus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/diplodocus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_diplodocus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplodocus",
+			"title": "Diplodocus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. carnegii",
+            "entity": "lepidodendron:prehistoric_flora_diplodocus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplodocus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		}
+	]
+}
