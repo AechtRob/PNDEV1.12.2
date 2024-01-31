@@ -514,6 +514,7 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.hip.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -0.50F;
