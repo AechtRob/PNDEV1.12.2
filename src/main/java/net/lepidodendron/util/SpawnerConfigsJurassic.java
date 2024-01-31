@@ -60,8 +60,8 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicTrapAirOutcropsRocksPF = new String[0];
     public static final String[] dimJurassicTrapAirConiferousPF = new String[0];
     public static final String[] dimJurassicTrapAirRoughHillsPF = new String[0];
-    public static final String[] dimJurassicTrapAirIslandsPF = new String[0];
-    public static final String[] dimJurassicTrapAirIslandsRaisedPF = new String[0];
+    public static final String[] dimJurassicTrapAirAtollsPF = new String[0];
+    public static final String[] dimJurassicTrapAirAtollsHillsPF = new String[0];
     public static final String[] dimJurassicTrapAirTaigaPF = new String[0];
     public static final String[] dimJurassicTrapAirTaigaForestPF = new String[0];
     public static final String[] dimJurassicTrapAirTaigaBeachPF = new String[0];
@@ -96,8 +96,8 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicTrapGroundOutcropsRocksPF = new String[0];
     public static final String[] dimJurassicTrapGroundConiferousPF = new String[0];
     public static final String[] dimJurassicTrapGroundRoughHillsPF = new String[0];
-    public static final String[] dimJurassicTrapGroundIslandsPF = new String[0];
-    public static final String[] dimJurassicTrapGroundIslandsRaisedPF = new String[0];
+    public static final String[] dimJurassicTrapGroundAtollsPF = new String[0];
+    public static final String[] dimJurassicTrapGroundAtollsHillsPF = new String[0];
     public static final String[] dimJurassicTrapGroundTaigaPF = new String[0];
     public static final String[] dimJurassicTrapGroundTaigaForestPF = new String[0];
     public static final String[] dimJurassicTrapGroundTaigaBeachPF = new String[0];
@@ -132,8 +132,8 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicTrapWaterOutcropsRocksPF = new String[0];
     public static final String[] dimJurassicTrapWaterConiferousPF = new String[0];
     public static final String[] dimJurassicTrapWaterRoughHillsPF = new String[0];
-    public static final String[] dimJurassicTrapWaterIslandsPF = new String[0];
-    public static final String[] dimJurassicTrapWaterIslandsRaisedPF = new String[0];
+    public static final String[] dimJurassicTrapWaterAtollsPF = new String[0];
+    public static final String[] dimJurassicTrapWaterAtollsHillsPF = new String[0];
     public static final String[] dimJurassicTrapWaterTaigaPF = new String[0];
     public static final String[] dimJurassicTrapWaterTaigaForestPF = new String[0];
     public static final String[] dimJurassicTrapWaterTaigaBeachPF = new String[0];
