@@ -214,7 +214,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.3F;
+			speedBase = speedBase * 1.66F;
 		}
 		return speedBase;
 	}
