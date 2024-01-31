@@ -38,7 +38,6 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicMobsDesertGulleyPF = new String[0];
     public static final String[] dimJurassicMobsDesertIslandPF = new String[0];
 
-
     //AirTraps:
     public static final String[] dimJurassicTrapAirOceanPF = new String[0];
     public static final String[] dimJurassicTrapAirOceanGlassSpongePF = new String[0];
