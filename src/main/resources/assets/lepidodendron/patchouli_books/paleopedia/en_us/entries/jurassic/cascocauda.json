@@ -1,7 +1,7 @@
 {
 	"name": "Cascocauda",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cascocauda_icon.png",
+	"icon": "paleopedia:textures/items/cascocauda_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_cascocauda",
 	"pages": [

@@ -1,7 +1,7 @@
 {
 	"name": "Gargoyleosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/gargoyleosaurus_icon.png",
+	"icon": "paleopedia:textures/items/gargoyleosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_gargoyleosaurus",
 	"pages": [

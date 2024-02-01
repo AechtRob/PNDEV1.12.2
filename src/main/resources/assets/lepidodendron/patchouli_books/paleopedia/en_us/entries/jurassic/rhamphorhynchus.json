@@ -1,7 +1,7 @@
 {
 	"name": "Rhamphorhynchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/rhamphorhynchus_icon.png",
+	"icon": "paleopedia:textures/items/rhamphorhynchus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_rhamphorhynchus",
 	"pages": [

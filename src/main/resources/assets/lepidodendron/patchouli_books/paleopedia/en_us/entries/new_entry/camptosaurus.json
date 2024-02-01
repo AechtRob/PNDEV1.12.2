@@ -1,7 +1,7 @@
 {
 	"name": "Camptosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/camptosaurus_icon.png",
+	"icon": "paleopedia:textures/items/camptosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_camptosaurus",
 	"pages": [

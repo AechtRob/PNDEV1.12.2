@@ -1,7 +1,7 @@
 {
 	"name": "Dilophosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dilophosaurus_icon.png",
+	"icon": "paleopedia:textures/items/dilophosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_dilophosaurus",
 	"pages": [

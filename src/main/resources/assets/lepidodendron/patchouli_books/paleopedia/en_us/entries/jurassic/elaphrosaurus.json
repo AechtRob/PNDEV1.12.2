@@ -1,7 +1,7 @@
 {
 	"name": "Elaphrosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/elaphrosaurus_icon.png",
+	"icon": "paleopedia:textures/items/elaphrosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_elaphrosaurus",
 	"pages": [

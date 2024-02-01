@@ -1,7 +1,7 @@
 {
 	"name": "Proceratosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/proceratosaurus_icon.png",
+	"icon": "paleopedia:textures/items/proceratosaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_proceratosaurus",
 	"pages": [

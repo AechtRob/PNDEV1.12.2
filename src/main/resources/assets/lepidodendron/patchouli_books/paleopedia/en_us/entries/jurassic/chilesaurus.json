@@ -1,7 +1,7 @@
 {
 	"name": "Chilesaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/chilesaurus_icon.png",
+	"icon": "paleopedia:textures/items/chilesaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_chilesaurus",
 	"pages": [

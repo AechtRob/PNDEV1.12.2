@@ -1,7 +1,7 @@
 {
 	"name": "Adeopapposaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/adeopapposaurus_icon.png",
+	"icon": "paleopedia:textures/items/adeopapposaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_adeopapposaurus",
 	"pages": [
