@@ -1,7 +1,7 @@
 {
 	"name": "Limusaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/limusaurus_icon.png",
+	"icon": "paleopedia:textures/items/limusaurus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_limusaurus",
 	"pages": [
