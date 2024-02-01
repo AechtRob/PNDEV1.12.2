@@ -42,6 +42,7 @@ public class ItemWukongopterusRawF extends ElementsLepidodendronMod.ModElement {
         OreDictionary.registerOre("pnfurnacePterosaur", ItemWukongopterusRawF.block);
         OreDictionary.registerOre("pndietMeat", ItemWukongopterusRawF.block);
     }
+
     public static class ItemFoodCustom extends ItemPNTaxidermyItem {
         public ItemFoodCustom() {
             super(2, 0.1f, false);

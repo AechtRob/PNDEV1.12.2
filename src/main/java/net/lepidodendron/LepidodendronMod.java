@@ -76,6 +76,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation ORCHARD_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "orchard_chest"));
 	public static final SoundType SKELETON = new SoundType(1.0F, 1.0F, SoundEvents.ENTITY_SKELETON_DEATH, SoundEvents.BLOCK_STONE_STEP, SoundEvents.ENTITY_SKELETON_STEP, SoundEvents.ENTITY_SKELETON_HURT, SoundEvents.BLOCK_STONE_STEP);
 
+	public static final ResourceLocation PN_FISHING = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "gameplay/fishing"));
+
 	public static final int ENTITY_WALLISEROPS = 1;
 	public static final ResourceLocation WALLISEROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/walliserops"));
 	public static final int ENTITY_PNEUMODESMUS = 2;
@@ -2203,6 +2205,7 @@ public class LepidodendronMod {
 				return stack;
 			}
 		});
+
 	}
 
 	@Mod.EventHandler
@@ -2238,6 +2241,7 @@ public class LepidodendronMod {
 			BlockFirePF newFire = (BlockFirePF) (new BlockFirePF()).setHardness(0.0F).setLightLevel(1.0F).setTranslationKey("fire").setRegistryName(Objects.requireNonNull(Blocks.FIRE.getRegistryName()));
 			event.getRegistry().register(newFire);
 		}
+
 	}
 
 	@SubscribeEvent
@@ -2253,6 +2257,8 @@ public class LepidodendronMod {
 
 	@SubscribeEvent
 	public void registerEntities(RegistryEvent.Register<EntityEntry> event) {
+		if (event.getName().toString().equalsIgnoreCase("minecraft:"))
+
 		event.getRegistry().registerAll(elements.getEntities().stream().map(Supplier::get).toArray(EntityEntry[]::new));
 	}
 

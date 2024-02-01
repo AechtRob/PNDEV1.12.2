@@ -46,6 +46,7 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
+import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.village.MerchantTradeOffersEvent;
@@ -65,6 +66,36 @@ import java.util.List;
 import java.util.Random;
 
 public class LepidodendronEventSubscribers {
+
+
+	@SubscribeEvent //Stop vanilla fish in the dimensions:
+	public void onFishing(ItemFishedEvent event) {
+		if (event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimSilurian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimDevonian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCarboniferous
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPermian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousLate
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
+			return;
+		}
+		for (ItemStack itemstack : event.getDrops())
+		{
+			Item item = itemstack.getItem();
+			if (item == Items.FISH || item == Items.COOKED_FISH)
+			{
+				event.setCanceled(true);
+				return;
+			}
+		}
+	}
 
 	@SubscribeEvent //Manage Nether portals: when travelling to the Nether
 	// use the overworld (or other) portal, not a new Nether Portal in the Nether itself.

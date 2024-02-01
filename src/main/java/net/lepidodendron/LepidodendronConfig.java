@@ -50,6 +50,7 @@ public class LepidodendronConfig {
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
     public static boolean modFire = true;
+    public static boolean modFishing = true;
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
     public static boolean renderAnimations = true;
