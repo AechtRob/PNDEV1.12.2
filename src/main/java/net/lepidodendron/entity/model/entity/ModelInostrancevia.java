@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraInostrancevia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -339,6 +338,7 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.rightarm.setScale(0,0,0);
         this.leftarm.setScale(0,0,0);
@@ -357,6 +357,7 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         this.leftarm.setScale(1,1,1);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(hips, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.1F, 0.0F, -0.01F);
@@ -385,6 +386,49 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         this.setRotateAngle(righthand, 0.3F, 0.0F, 0.0F);
         this.hips.offsetY = -0.13F;
         this.hips.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hips.offsetY = -0.25F;
+        this.hips.offsetX = -1.5F;
+        this.hips.rotateAngleY = (float)Math.toRadians(200);
+        this.hips.rotateAngleX = (float)Math.toRadians(8);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.hips.scaleChildren = true;
+        float scaler = 0.6F;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body2, 0.1F, 0.0F, -0.01F);
+        this.setRotateAngle(body, 0.12F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.05F, 0.0F, 0.03F);
+        this.setRotateAngle(neck, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.3F, 0.1F);
+        this.setRotateAngle(jaw, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.15F, -0.2F, 0.0F);
+        this.setRotateAngle(leftleg2, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfoot, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftbacktoe, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, -0.35F, 0.1F, 0.0F);
+        this.setRotateAngle(rightleg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfoot, 0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(rightbacktoe, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm2, -0.35F, 0.0F, 0.1F);
+        this.setRotateAngle(lefthand, 0.45F, 0.0F, -0.1F);
+        this.setRotateAngle(rightarm, 0.9F, 0.0F, 0.3F);
+        this.setRotateAngle(rightarm2, -0.4F, -0.3F, -0.5F);
+        this.setRotateAngle(righthand, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
         resetToDefaultPose();
     }
 

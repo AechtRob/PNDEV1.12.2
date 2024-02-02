@@ -180,6 +180,7 @@ public class RenderDisplays {
     public static final ModelHurdia modelHurdia = new ModelHurdia();
     public static final ModelHybodus modelHybodus = new ModelHybodus();
     public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
+    public static final ModelInostrancevia modelInostranceviaBook = new ModelInostrancevia();
     public static final ModelIowacystis modelIowacystis = new ModelIowacystis();
     public static final ModelIsanichthys modelIsanichthys = new ModelIsanichthys();
     public static final ModelIschyodus modelIschyodus = new ModelIschyodus();
