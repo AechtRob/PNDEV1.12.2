@@ -785,7 +785,18 @@ public class ModelGargoyleosaurus extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = -0.15F;
+        this.root.rotateAngleY = (float)Math.toRadians(125);
+        this.root.rotateAngleX = (float)Math.toRadians(1);
+        this.root.rotateAngleZ = (float)Math.toRadians(-1);
+        this.root.scaleChildren = true;
+        float scaler = 0.65F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
         this.setRotateAngle(Tail4, 0.0F, 0.0873F, 0.0F);
         this.setRotateAngle(Tail3, 0.0873F, 0.0435F, 0.0038F);
         this.setRotateAngle(Tail2, 0.0611F, 0.0F, 0.0F);
@@ -866,10 +877,14 @@ public class ModelGargoyleosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(armleft3, 0.2148F, 0.0045F, 0.0395F);
         this.setRotateAngle(armleft2, -0.6537F, 0.0345F, 0.045F);
         this.setRotateAngle(armleft, 0.3897F, 0.3036F, -0.1316F);
-        this.root.offsetY = -0.102F;
-        this.root.render(0.01F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

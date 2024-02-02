@@ -39,7 +39,7 @@ public class RenderOrnitholestes extends RenderLiving<EntityPrehistoricFloraOrni
             {
                 return;
             }
-            RenderDisplays.modelOrnitholestes.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelOrnitholestesBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

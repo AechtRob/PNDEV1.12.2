@@ -467,16 +467,16 @@ public class ModelPterodactylus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0F;
+        this.root.offsetY = -0.7F;
         this.root.offsetX = 0F;
-        this.root.rotateAngleY = (float)Math.toRadians(0);
+        this.root.rotateAngleY = (float)Math.toRadians(125);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 1.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
+        //this.setRotateAngle(root, 0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(body1, -0.0456F, 0.0F, 0.0F);
         this.setRotateAngle(body1_r1, -0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(leftleg, 0.5633F, -0.0702F, -1.242F);

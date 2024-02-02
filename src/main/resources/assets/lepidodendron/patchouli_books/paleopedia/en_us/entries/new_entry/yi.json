@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/yi_icon.png",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_yi",
+	"turnin": "lepidodendron:pf_adv_book_yiqi",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_yi",
+			"trigger": "lepidodendron:pf_adv_book_yiqi",
 			"title": "Yi",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Theropoda $(br)>Scansoriopterygidae"
@@ -14,34 +14,34 @@
         	{
             "type": "entity",
             "name": "Y. qi",
-            "entity": "lepidodendron:prehistoric_flora_yi",
+            "entity": "lepidodendron:prehistoric_flora_yiqi",
             "rotate": false,
             "default_rotation": 0
        	},
 		{
-			"advancement": "lepidodendron:pf_adv_book_yi",
+			"advancement": "lepidodendron:pf_adv_book_yiqi",
 			"type": "text",
 			"text": ""
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_yi"
+			"mob": "lepidodendron:prehistoric_flora_yiqi"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_yi"
+			"mob": "lepidodendron:prehistoric_flora_yiqi"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_yi"
+			"mob": "lepidodendron:prehistoric_flora_yiqi"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_yi"
+			"mob": "lepidodendron:prehistoric_flora_yiqi"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_yi"
+			"mob": "lepidodendron:prehistoric_flora_yiqi"
 		}
 	]
 }

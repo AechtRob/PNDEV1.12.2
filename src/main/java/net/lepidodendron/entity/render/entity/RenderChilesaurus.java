@@ -39,7 +39,7 @@ public class RenderChilesaurus extends RenderLiving<EntityPrehistoricFloraChiles
             {
                 return;
             }
-            RenderDisplays.modelChilesaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelChilesaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

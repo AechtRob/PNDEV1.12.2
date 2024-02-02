@@ -584,6 +584,7 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
 
         this.root.offsetY = -0.175F;
@@ -597,6 +598,7 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
         
         resetToDefaultPose();

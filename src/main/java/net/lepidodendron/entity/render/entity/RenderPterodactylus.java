@@ -39,7 +39,7 @@ public class RenderPterodactylus extends RenderLiving<EntityPrehistoricFloraPter
             {
                 return;
             }
-            RenderDisplays.modelPterodactylus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelPterodactylusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

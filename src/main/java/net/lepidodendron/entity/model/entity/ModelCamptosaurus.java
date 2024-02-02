@@ -521,16 +521,81 @@ public class ModelCamptosaurus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Camptosaurus.offsetY = -0.50F;
-        this.Camptosaurus.offsetX = 0.0F;
-        this.Camptosaurus.rotateAngleY = (float)Math.toRadians(0);
-        this.Camptosaurus.rotateAngleX = (float)Math.toRadians(-88);
-        this.Camptosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Camptosaurus.offsetY = 0.10F;
+        this.Camptosaurus.offsetX = 0.05F;
+        this.Camptosaurus.rotateAngleY = (float)Math.toRadians(115);
+        this.Camptosaurus.rotateAngleX = (float)Math.toRadians(-2);
+        this.Camptosaurus.rotateAngleZ = (float)Math.toRadians(2);
         this.Camptosaurus.scaleChildren = true;
         float scaler = 0.6F;
         this.Camptosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Tail5, -0.0886F, -0.1739F, 0.0154F);
+        this.setRotateAngle(Tail4, 0.0894F, -0.2173F, -0.0193F);
+        this.setRotateAngle(Tail3, 0.0468F, -0.2163F, -0.0289F);
+        this.setRotateAngle(Tail2, 0.131F, -0.0433F, -0.0057F);
+        this.setRotateAngle(Tail1, -0.4189F, 0.0F, 0.0F);
+        this.setRotateAngle(OpposableR, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(OpposableL, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck4, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Neck3, 0.1713F, 0.0935F, -0.028F);
+        this.setRotateAngle(Neck2, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(Neck1, -0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalR, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalL, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(LegR, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(LegL, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeR, 0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeL, 1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.219F, 0.0852F, -0.0189F);
+        this.setRotateAngle(HandR, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(FootR, -1.0036F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -1.7453F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowR, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowL, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.6458F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r32, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r31, 0.1571F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r30, 0.1582F, 0.1207F, 0.0192F);
+        this.setRotateAngle(cube_r3, 0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r29, 0.1582F, -0.1207F, -0.0192F);
+        this.setRotateAngle(cube_r28, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r27, 0.2461F, 0.1185F, 0.0297F);
+        this.setRotateAngle(cube_r26, 0.2461F, -0.1185F, -0.0297F);
+        this.setRotateAngle(cube_r25, 0.5411F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.7679F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.8378F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, 1.309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, 2.1468F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.576F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.2281F, 0.1207F, 0.0192F);
+        this.setRotateAngle(cube_r16, 0.2281F, -0.1207F, -0.0192F);
+        this.setRotateAngle(cube_r15, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.2368F, 0.1207F, 0.0192F);
+        this.setRotateAngle(cube_r13, 0.2368F, -0.1207F, -0.0192F);
+        this.setRotateAngle(cube_r12, 0.4189F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.7069F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, -0.0437F, 0.0436F, -0.0019F);
+        this.setRotateAngle(Body, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Basin_r5, -0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(Basin_r4, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(Basin_r3, -0.3403F, 0.0F, 0.0F);
+        this.setRotateAngle(Basin_r2, -0.0087F, 0.0F, 0.0F);
+        this.setRotateAngle(Basin_r1, -0.4887F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, 0.6109F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Camptosaurus.render(f);
         //Reset rotations, positions and sizing:

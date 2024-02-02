@@ -34,7 +34,7 @@ public class RenderTianyulong extends RenderLiving<EntityPrehistoricFloraTianyul
             {
                 return;
             }
-            RenderDisplays.modelTianyulong.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelTianyulongBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

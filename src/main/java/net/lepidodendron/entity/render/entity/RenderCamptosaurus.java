@@ -34,7 +34,7 @@ public class RenderCamptosaurus extends RenderLiving<EntityPrehistoricFloraCampt
             {
                 return;
             }
-            RenderDisplays.modelCamptosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelCamptosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

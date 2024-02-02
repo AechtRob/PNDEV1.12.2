@@ -34,7 +34,7 @@ public class RenderBrachiosaurus extends RenderLiving<EntityPrehistoricFloraBrac
             {
                 return;
             }
-            RenderDisplays.modelBrachiosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelBrachiosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();
