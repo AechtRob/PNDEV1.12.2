@@ -6,7 +6,7 @@
     ],
     
     "inventory": {
-      "model": "lepidodendron:mesodescolea"
+      "model": "lepidodendron:mesodescolea_inventory"
     }
   }
 }
