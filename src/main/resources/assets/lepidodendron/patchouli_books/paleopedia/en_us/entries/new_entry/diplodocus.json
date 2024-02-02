@@ -1,7 +1,7 @@
 {
 	"name": "Diplodocus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/diplodocus_icon.png",
+	"icon": "paleopedia:textures/items/diplodocus_icon.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_diplodocus",
 	"pages": [
@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_diplodocus",
 			"title": "Diplodocus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocoidea $(br)>Diplodocidae"
 		},
         	{
             "type": "entity",
-            "name": "D. carnegii",
+            "name": "D. longus",
             "entity": "lepidodendron:prehistoric_flora_diplodocus",
             "rotate": false,
             "default_rotation": 0
