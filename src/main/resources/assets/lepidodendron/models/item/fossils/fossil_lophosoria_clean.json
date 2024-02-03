@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/fossil_lophosoria",
+    "layer0": "lepidodendron:items/fossil_clean",
     "layer1": "lepidodendron:items/petrified_lophosoria"
   }
 }

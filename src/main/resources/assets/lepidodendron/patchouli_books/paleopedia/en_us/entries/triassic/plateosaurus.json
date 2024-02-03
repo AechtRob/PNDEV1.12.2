@@ -1,7 +1,7 @@
 {
 	"name": "Plateosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/plateosaurus_icon.png",
+	"icon": "paleopedia:textures/items/plateosaurus_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_plateosaurus",
 	"pages": [
