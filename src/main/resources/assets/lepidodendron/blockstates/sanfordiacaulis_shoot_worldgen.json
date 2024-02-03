@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sanfordiacaulis_shoot_centre"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:sanfordiacaulis_shoot_inventory"
+    }
+  }
+}

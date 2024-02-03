@@ -456,6 +456,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_WALCHIA = new CustomTrigger("pf_book_walchia");
     public static final CustomTrigger CLICK_WATER_HORSETAIL = new CustomTrigger("pf_book_water_horsetail");
     public static final CustomTrigger CLICK_WATTIEZA = new CustomTrigger("pf_book_wattieza");
+    public static final CustomTrigger CLICK_SANFORDIACAULIS = new CustomTrigger("pf_book_sanfordiacaulis");
     public static final CustomTrigger CLICK_WEICHSELIA = new CustomTrigger("pf_book_weichselia");
     public static final CustomTrigger CLICK_WIELANDIELLA = new CustomTrigger("pf_book_wielandiella");
     public static final CustomTrigger CLICK_WILLIAMSONIA = new CustomTrigger("pf_book_williamsonia");
@@ -1811,6 +1812,7 @@ public class ModTriggers
             CLICK_WALCHIA,
             CLICK_WATER_HORSETAIL,
             CLICK_WATTIEZA,
+            CLICK_SANFORDIACAULIS,
             CLICK_WEICHSELIA,
             CLICK_WIELANDIELLA,
             CLICK_WILLIAMSONIA,

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:sanfordiacaulis_shoot"
+    },
+    "facing=north": {
+      "model": "lepidodendron:sanfordiacaulis_shoot_side", "y": -90
+    },
+    "facing=east": {
+      "model": "lepidodendron:sanfordiacaulis_shoot_side"
+    },
+    "facing=south": {
+      "model": "lepidodendron:sanfordiacaulis_shoot_side", "y": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:sanfordiacaulis_shoot_side", "y": 180
+    }
+  }
+}
