@@ -308,8 +308,29 @@ public class ModelGlacialisaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStatic(float f) {
 
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = -0.15F;
+        this.root.rotateAngleY = (float)Math.toRadians(220);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 0.75F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

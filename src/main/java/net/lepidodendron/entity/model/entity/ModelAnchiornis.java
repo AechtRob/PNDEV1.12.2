@@ -1,18 +1,18 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
+import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnchiornis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 
-public class ModelAnchiornis extends AdvancedModelBaseExtended {
+public class ModelAnchiornis extends AdvancedModelBase {
     private final AdvancedModelRenderer Anchiornis;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer UpperLegR;
@@ -546,12 +546,13 @@ public class ModelAnchiornis extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Anchiornis.offsetY = -0.2F;
-        this.Anchiornis.offsetX = 0.2F;
-        this.Anchiornis.rotateAngleY = (float)Math.toRadians(200);
-        this.Anchiornis.rotateAngleX = (float)Math.toRadians(8);
-        this.Anchiornis.rotateAngleZ = (float)Math.toRadians(-8);
-        float scaler = 1.0F;
+        this.Anchiornis.offsetY = -2.0F;
+        this.Anchiornis.offsetX = -0.6F;
+        this.Anchiornis.rotateAngleY = (float)Math.toRadians(120);
+        this.Anchiornis.rotateAngleX = (float)Math.toRadians(3);
+        this.Anchiornis.rotateAngleZ = (float)Math.toRadians(0);
+        this.Anchiornis.scaleChildren = true;
+        float scaler = 2.5F;
         this.Anchiornis.setScale(scaler, scaler, scaler);
         //Start of pose:
 

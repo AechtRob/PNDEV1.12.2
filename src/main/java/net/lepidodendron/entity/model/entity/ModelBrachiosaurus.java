@@ -600,7 +600,22 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticBook(float f) {
-        
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.7F;
+        this.root.offsetX = 0.1F;
+        this.root.rotateAngleY = (float)Math.toRadians(210);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-4);
+        this.root.scaleChildren = true;
+        float scaler = 0.575F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
         resetToDefaultPose();
     }
 

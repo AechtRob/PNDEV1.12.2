@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiplodocus;
 import net.lepidodendron.entity.EntityPrehistoricFloraMamenchisaurus;
 import net.lepidodendron.entity.model.entity.ModelMamenchisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -35,7 +34,7 @@ public class RenderMamenchisaurus extends RenderLiving<EntityPrehistoricFloraMam
             {
                 return;
             }
-            RenderDisplays.modelMamenchisaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelMamenchisaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

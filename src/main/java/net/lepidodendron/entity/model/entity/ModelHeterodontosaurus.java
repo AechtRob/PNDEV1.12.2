@@ -991,18 +991,31 @@ public class ModelHeterodontosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Chest, -0.0873F, 0.0F, 0.0F);
         this.setRotateAngle(Body, -0.0436F, 0.0F, 0.0F);
         this.setRotateAngle(basinfeathers_r1, -0.1571F, 0.0F, 0.0F);
-            this.Hips.offsetY = -0.023F;
-            this.Hips.render(0.01F);
-            resetToDefaultPose();
-    }
-
-    public void renderStaticBook(float f) {
-        this.setRotateAngle(Hips, -0.2F, 0.0F, 0.0F);
-
-        this.Hips.offsetY = -0.06F;
+        this.Hips.offsetY = -0.023F;
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -0.4F;
+        this.Hips.offsetX = 0.25F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(225);
+        this.Hips.rotateAngleX = (float)Math.toRadians(8);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Hips.scaleChildren = true;
+        float scaler = 1.15F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    
     public void renderStaticWall(float f) {
         this.setRotateAngle(UpperLegR, -0.3491F, 0.0F, 0.0F);
         this.setRotateAngle(UpperLegL, -0.3491F, 0.0F, 0.0F);
