@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/dorygnathus_icon"
+    "layer0": "lepidodendron:items/entities/dorygnathus_raw"
   }
 }

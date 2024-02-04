@@ -92,7 +92,7 @@ public class BlockSanfordiacaulisLog extends ElementsLepidodendronMod.ModElement
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_TICOA;
+			return ModTriggers.CLICK_SANFORDIACAULIS;
 		}
 
 		@Override
