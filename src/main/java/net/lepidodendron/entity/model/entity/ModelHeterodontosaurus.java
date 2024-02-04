@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHeterodontosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraLimusaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -1244,7 +1243,7 @@ public class ModelHeterodontosaurus extends AdvancedModelBaseExtended {
     }
 
     public void animAlarm(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraHeterodontosaurus entity = (EntityPrehistoricFloraHeterodontosaurus) entitylivingbaseIn;
 
         int animCycle = 20;
         double tickAnim = animTick + partialTickTime;
