@@ -240,6 +240,16 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         return super.attackEntityFrom(ds, f);
     }
 
+    @Override
+    public void knockBack(Entity entityIn, float strength, double xRatio, double zRatio)
+    {
+        if (this.getAttachmentFacing() != EnumFacing.DOWN && this.getAttachmentFacing() != EnumFacing.UP) {
+            //Is climbing, so do not apply knockback, it will instead just stop climbing:
+            return;
+        }
+        super.knockBack(entityIn, strength, xRatio, zRatio);
+    }
+
     public void setFlying() {
         if (!world.isRemote) {
             this.setSitting(false);

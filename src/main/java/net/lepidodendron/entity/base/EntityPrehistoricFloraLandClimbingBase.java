@@ -10,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.init.MobEffects;
@@ -48,6 +49,16 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    @Override
+    public void knockBack(Entity entityIn, float strength, double xRatio, double zRatio)
+    {
+        if (this.getIsClimbing()) {
+            //Is climbing, so do not apply knockback, it will instead just stop climbing:
+            return;
+        }
+        super.knockBack(entityIn, strength, xRatio, zRatio);
     }
 
     @Override
