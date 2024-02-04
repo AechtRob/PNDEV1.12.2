@@ -1,0 +1,467 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_jurassic.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_jurassic.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"jurassic_beach": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_beach"
+			}
+		},
+		"jurassic_beach_black": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_beach_black"
+			}
+		},
+		"jurassic_boulders": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_boulders"
+			}
+		},
+		"jurassic_coniferous_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_coniferous_forest"
+			}
+		},
+		"jurassic_coniferous_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_coniferous_hills"
+			}
+		},
+		"jurassic_coniferous_mountains": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_coniferous_mountains"
+			}
+		},
+		"jurassic_ocean_coral": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ocean_coral"
+			}
+		},
+		"jurassic_cycad_thickets": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_cycad_thickets"
+			}
+		},
+		"jurassic_desert": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_desert"
+			}
+		},
+		"jurassic_desert_island": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_desert_island"
+			}
+		},
+		"jurassic_desert_rim": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_desert_rim"
+			}
+		},
+		"jurassic_desert_rim_desert_side": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_desert_rim_desert_side"
+			}
+		},
+		"jurassic_desert_rim_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_desert_rim_helper"
+			}
+		},
+		"jurassic_fern_pasture": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_fern_pasture"
+			}
+		},
+		"jurassic_floodplain": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_floodplain"
+			}
+		},
+		"jurassic_floodplain_forested": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_floodplain_forested"
+			}
+		},
+		"jurassic_garrigue": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_garrigue"
+			}
+		},
+		"jurassic_garrigue_copse": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_garrigue_copse"
+			}
+		},
+		"jurassic_ginkgo_parkland": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ginkgo_parkland"
+			}
+		},
+		"jurassic_ginkgo_woodland": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ginkgo_woodland"
+			}
+		},
+		"jurassic_ocean_glass_sponge_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef"
+			}
+		},
+		"jurassic_island_large_field": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_large_field"
+			}
+		},
+		"jurassic_island_large": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_large"
+			}
+		},
+		"jurassic_island_large_roost": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_large_roost"
+			}
+		},
+		"jurassic_island_large_scrub": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_large_scrub"
+			}
+		},
+		"jurassic_island_large_wet": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_large_wet"
+			}
+		},
+		"jurassic_lakes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_lakes"
+			}
+		},
+		"jurassic_lake_shore": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_lake_shore"
+			}
+		},
+		"jurassic_mire": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mire"
+			}
+		},
+		"jurassic_mire_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mire_helper"
+			}
+		},
+		"jurassic_mire_lakes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mire_lakes"
+			}
+		},
+		"jurassic_mudflats": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mudflats"
+			}
+		},
+		"jurassic_mudflats_estuary": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mudflats_estuary"
+			}
+		},
+		"jurassic_mudflats_estuary_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mudflats_estuary_helper"
+			}
+		},
+		"jurassic_mudflats_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mudflats_helper"
+			}
+		},
+		"jurassic_ocean": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ocean"
+			}
+		},
+		"jurassic_ocean_rafts": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ocean_rafts"
+			}
+		},
+		"jurassic_ocean_shore": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_ocean_shore"
+			}
+		},
+		"jurassic_outcrops_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_outcrops_edge"
+			}
+		},
+		"jurassic_outcrops": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_outcrops"
+			}
+		},
+		"jurassic_river": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_river"
+			}
+		},
+		"jurassic_riverbank": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_riverbank"
+			}
+		},
+		"jurassic_rough_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_rough_hills"
+			}
+		},
+		"jurassic_island_sandy": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_sandy"
+			}
+		},
+		"jurassic_island_sandy_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_sandy_forest"
+			}
+		},
+		"jurassic_island_sandy_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_sandy_hills"
+			}
+		},
+		"jurassic_island_sandy_white": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_sandy_white"
+			}
+		},
+		"jurassic_island_sandy_white_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_sandy_white_edge"
+			}
+		},
+		"jurassic_southern_taiga": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_southern_taiga"
+			}
+		},
+		"jurassic_southern_taiga_basalt": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_southern_taiga_basalt"
+			}
+		},
+		"jurassic_southern_taiga_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_southern_taiga_forest"
+			}
+		},
+		"jurassic_southern_taiga_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_southern_taiga_hills"
+			}
+		},
+		"jurassic_creek_desert": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_creek_desert"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"jurassic_beach"
+		],
+		[
+			"jurassic_beach_black"
+		],
+		[
+			"jurassic_boulders"
+		],
+		[
+			"jurassic_coniferous_forest",
+			"jurassic_coniferous_hills",
+			"jurassic_coniferous_mountains"
+		],
+		[
+			"jurassic_ocean_coral"
+		],
+		[
+			"jurassic_cycad_thickets"
+		],
+		[
+			"jurassic_desert"
+		],
+		[
+			"jurassic_creek_desert"
+		],
+		[
+			"jurassic_desert_island"
+		],
+		[
+			"jurassic_desert_rim",
+			"jurassic_desert_rim_desert_side",
+			"jurassic_desert_rim_helper"
+		],
+		[
+			"jurassic_fern_pasture"
+		],
+		[
+			"jurassic_floodplain"
+		],
+		[
+			"jurassic_floodplain_forested"
+		],
+		[
+			"jurassic_garrigue"
+		],
+		[
+			"jurassic_garrigue_copse"
+		],
+		[
+			"jurassic_ginkgo_parkland"
+		],
+		[
+			"jurassic_ginkgo_woodland"
+		],
+		[
+			"jurassic_ocean_glass_sponge_reef"
+		],
+		[
+			"jurassic_island_large_field",
+			"jurassic_island_large_scrub",
+			"jurassic_island_large_wet"
+		],
+		[
+			"jurassic_island_large",
+			"jurassic_island_large_roost"
+		],
+		[
+			"jurassic_lakes",
+			"jurassic_lake_shore"
+		],
+		[
+			"jurassic_mire",
+			"jurassic_mire_helper",
+			"jurassic_mire_lakes"
+		],
+		[
+			"jurassic_mudflats",
+			"jurassic_mudflats_helper"
+		],
+		[
+			"jurassic_mudflats_estuary",
+			"jurassic_mudflats_estuary_helper"
+		],
+		[
+			"jurassic_ocean"
+		],
+		[
+			"jurassic_ocean_rafts"
+		],
+		[
+			"jurassic_ocean_shore"
+		],
+		[
+			"jurassic_outcrops_edge",
+			"jurassic_outcrops"
+		],
+		[
+			"jurassic_river"
+		],
+		[
+			"jurassic_riverbank"
+		],
+		[
+			"jurassic_rough_hills"
+		],
+		[
+			"jurassic_island_sandy",
+			"jurassic_island_sandy_forest"
+		],
+		[
+			"jurassic_island_sandy_hills"
+		],
+		[
+			"jurassic_island_sandy_white",
+			"jurassic_island_sandy_white_edge"
+		],
+		[
+			"jurassic_southern_taiga",
+			"jurassic_southern_taiga_basalt"
+		],
+		[
+			"jurassic_southern_taiga_forest"
+		],
+		[
+			"jurassic_southern_taiga_hills"
+		]
+	]
+}
