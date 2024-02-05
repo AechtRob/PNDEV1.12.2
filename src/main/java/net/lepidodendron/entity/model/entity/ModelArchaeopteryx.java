@@ -547,12 +547,13 @@ public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Archaeopteryx.offsetY = -0.2F;
-        this.Archaeopteryx.offsetX = 0.2F;
-        this.Archaeopteryx.rotateAngleY = (float)Math.toRadians(200);
+        this.Archaeopteryx.offsetY = -2.50F;
+        this.Archaeopteryx.offsetX = 0.1F;
+        this.Archaeopteryx.rotateAngleY = (float)Math.toRadians(210);
         this.Archaeopteryx.rotateAngleX = (float)Math.toRadians(8);
         this.Archaeopteryx.rotateAngleZ = (float)Math.toRadians(-8);
-        float scaler = 1.0F;
+        this.Archaeopteryx.scaleChildren = true;
+        float scaler = 4.0F;
         this.Archaeopteryx.setScale(scaler, scaler, scaler);
         //Start of pose:
 

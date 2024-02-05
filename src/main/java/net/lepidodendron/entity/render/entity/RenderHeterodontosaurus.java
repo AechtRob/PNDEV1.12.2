@@ -34,7 +34,7 @@ public class RenderHeterodontosaurus extends RenderLiving<EntityPrehistoricFlora
             {
                 return;
             }
-            RenderDisplays.modelHeterodontosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelHeterodontosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

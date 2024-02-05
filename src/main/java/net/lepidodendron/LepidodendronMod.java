@@ -76,8 +76,6 @@ public class LepidodendronMod {
 	public static final ResourceLocation ORCHARD_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "orchard_chest"));
 	public static final SoundType SKELETON = new SoundType(1.0F, 1.0F, SoundEvents.ENTITY_SKELETON_DEATH, SoundEvents.BLOCK_STONE_STEP, SoundEvents.ENTITY_SKELETON_STEP, SoundEvents.ENTITY_SKELETON_HURT, SoundEvents.BLOCK_STONE_STEP);
 
-	public static final ResourceLocation PN_FISHING = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "gameplay/fishing"));
-
 	public static final int ENTITY_WALLISEROPS = 1;
 	public static final ResourceLocation WALLISEROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/walliserops"));
 	public static final int ENTITY_PNEUMODESMUS = 2;
@@ -2044,8 +2042,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation CHILESAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus"));
 	public static final ResourceLocation CHILESAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chilesaurus_young"));
 	public static final int ENTITY_PTERODACTYLUS = 819;
-	public static final ResourceLocation PTERODACTYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pterodactlyus"));
-	public static final ResourceLocation PTERODACTYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pterodactlyus_young"));
+	public static final ResourceLocation PTERODACTYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pterodactylus"));
+	public static final ResourceLocation PTERODACTYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pterodactylus_young"));
 	public static final int ENTITY_ELAPHROSAURUS = 820;
 	public static final ResourceLocation ELAPHROSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/elaphrosaurus"));
 	public static final ResourceLocation ELAPHROSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/elaphrosaurus_young"));

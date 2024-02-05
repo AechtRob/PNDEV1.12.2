@@ -20,6 +20,7 @@ public class RenderAllosaurus extends RenderLiving<EntityPrehistoricFloraAllosau
     public static float getScaler() {
         return 0.9F;
     }
+
     @Override
     public void doRender(EntityPrehistoricFloraAllosaurus entity, double x, double y, double z, float entityYaw, float partialTicks) {
         @SuppressWarnings("deprecation")
@@ -50,6 +51,7 @@ public class RenderAllosaurus extends RenderLiving<EntityPrehistoricFloraAllosau
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
         }
     }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAllosaurus entity) {
         return RenderAllosaurus.TEXTURE;

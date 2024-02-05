@@ -444,15 +444,16 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
+
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -0.2F;
-        this.Root.offsetX = 0.2F;
-        this.Root.rotateAngleY = (float)Math.toRadians(80);
-        this.Root.rotateAngleX = (float)Math.toRadians(30);
-        this.Root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Root.offsetY = 0.3F;
+        this.Root.offsetX = -0.15F;
+        this.Root.rotateAngleY = (float)Math.toRadians(130);
+        this.Root.rotateAngleX = (float)Math.toRadians(-20);
+        this.Root.rotateAngleZ = (float)Math.toRadians(-5);
         this.Root.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 0.65F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Upperjawslopefront_r1, 0.6545F, 0.0F, 0.0F);
@@ -469,7 +470,7 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Tail3, 0.1309F, 0.0F, 0.0F);
         this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
         this.setRotateAngle(Tail1, -0.0436F, 0.0F, 0.0F);
-        this.setRotateAngle(Root, -0.2618F, 0.0F, 0.0F);
+        //this.setRotateAngle(Root, -0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(Rightleg4, 0.2182F, 0.0F, 0.0F);
         this.setRotateAngle(Rightleg3, -0.829F, 0.0F, 0.0F);
         this.setRotateAngle(Rightleg2, 0.3054F, 0.0F, 0.0F);
@@ -517,6 +518,7 @@ public class ModelAllosaurus extends AdvancedModelBaseExtended {
         this.Root.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(Upperjawslopefront_r1, 0.6545F, 0.0F, 0.0F);
         this.setRotateAngle(Upperjawslopebase_r1, 0.0175F, 0.0F, 0.0F);
