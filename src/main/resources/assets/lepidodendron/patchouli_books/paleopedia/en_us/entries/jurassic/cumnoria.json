@@ -1,0 +1,62 @@
+{
+	"name": "Cumnoria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cumnoria_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cumnoria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cumnoria",
+			"title": "Cumnoria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Ornithopoda"
+		},
+        	{
+            "type": "entity",
+            "name": "C. prestwichii",
+            "entity": "lepidodendron:prehistoric_flora_cumnoria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cumnoria",
+			"type": "text",
+			"text": "Cumnoria is a genus of basal Iguanodontian from the Late Jurassic of Britain. Known from a single specimen recovered in Cumnor Hurst, the relatively small 3.5 m long specimen represented a juvenile member of the species, as seen by the lack of fusion across it's vertebrae and ribs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cumnoria",
+			"type": "text",
+			"text": "First discovered in 1879, the remains were initially discarded by workers in the area who dumped them in a trash heap; subsequently recovered from it by a worker using a sac, they were brought to the attention of academic figures, who described it originally as Iguanodon sp. In 1888 the remains were reassigned to the new genus Cumnoria but then quickly moved inside Camptosaurus just one year later, where it remained for over a century."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cumnoria",
+			"type": "text",
+			"text": "In 1980 the specimen was rediscribed once more and in 2008 seemingly the validity of Cumnoria became more widespread. In 2015 the genus was once again lumped inside of Camptosaurus, position once again rivaled in 2023 when a new paper regarded it as separate without awcknowledging the 2015 publication on the matter."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cumnoria",
+			"type": "text",
+			"text": "While originally placed to be close to Camptosaurus, Cumnoria now is believed to be the oldest known styracostern, being more closely related to derived Iguanodontians than to Camptosaurus itself, however this position too is still debated as well."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cumnoria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cumnoria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cumnoria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cumnoria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cumnoria"
+		}
+	]
+}

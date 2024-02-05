@@ -21,7 +21,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_camarasaurus",
 			"type": "text",
-			"text": ""
+			"text": "Camarasaurus was a genus of camarasaurid macronarian sauropod dinosaur, that lived during the Late Jurassic (around 155 - 145 million years ago). Its remains have been found in North America, specifically at the famous Morrison Formation. First discovered in 1877 by Mr. Oramel William Lucas and described by Edward Drinker Cope, it has since become the most commonly found fossil sauropod in North America."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camarasaurus",
+			"type": "text",
+			"text": "Depending on the species, this sauropod measured between 15 - 23 metres (49 - 75 feet) long, and up to a maximum of 47 metric tons in weight. Like other large sauropods, Camarasaurus was a herbivore, with a robust skull (meaning it preserves more often than the skulls of most other sauropods),"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camarasaurus",
+			"type": "text",
+			"text": " and strong, chisel-shaped teeth built for processing coarser vegetation. A particularly well preserved specimen of this dinosaur's head preserves part of its gum-line, and potentially also a covering of tough outer scales and possibly even a beak (though this is disputed)."
 		},
 		{
 			"type": "lepidodendron:diet",

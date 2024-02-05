@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anchisaurus",
 			"title": "Anchisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropodomorpha $(br)>Sauropodiformes $(br)>Anchisauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropodomorpha $(br)>Anchisauria"
 		},
         	{
             "type": "entity",
