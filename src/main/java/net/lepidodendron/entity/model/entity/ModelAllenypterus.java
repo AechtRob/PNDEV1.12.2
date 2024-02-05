@@ -216,10 +216,15 @@ public class ModelAllenypterus extends AdvancedModelBase {
         this.Allenypterus.render(f5);
     }
 
-    public void renderStaticWall(float f) {
-        this.Allenypterus.rotateAngleY = (float) Math.toRadians(90);
-        this.Allenypterus.offsetX = -0.01F;
-        this.Allenypterus.offsetY = -0.19F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Allenypterus, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.Allenypterus.offsetZ = -0.0F;
+        this.Allenypterus.offsetY = 0.2F;
         this.Allenypterus.render(0.01F);
         this.resetToDefaultPose();
     }

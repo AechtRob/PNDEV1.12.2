@@ -192,16 +192,20 @@ public class ModelEuparkeria extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bodybase1.render(f5 * 0.2f);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.bodybase1.offsetZ = -0.71F;
-        this.bodybase1.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bodybase, -0.05F, 0.5F, 0.0F);
+        this.setRotateAngle(upperbodybase, 0.22F, -0.3F, 0.0F);
+        this.setRotateAngle(upperbody, 0.0F, -0.3F, 0.05F);
+        this.setRotateAngle(neck, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(head, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(hindlegR, -0.05F, 0.7F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.6F, 0.0F);
+        this.bodybase1.offsetY = 0.11F;
+        this.bodybase1.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

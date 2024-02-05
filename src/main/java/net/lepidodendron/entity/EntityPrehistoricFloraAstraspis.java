@@ -201,7 +201,7 @@ public class EntityPrehistoricFloraAstraspis extends EntityPrehistoricFloraFishB
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.16;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;

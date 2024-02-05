@@ -214,26 +214,42 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Keichousaurus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.lowerJaw.rotateAngleX = (float) Math.toRadians(10);
-        this.neck2.rotateAngleY = (float) Math.toRadians(18);
-        this.neck.rotateAngleY = (float) Math.toRadians(15);
-        this.head.rotateAngleY = (float) Math.toRadians(10);
-        this.Keichousaurus.rotateAngleY = (float) Math.toRadians(10);
-        this.tail.rotateAngleY = (float) Math.toRadians(10);
-        this.tail2.rotateAngleY = (float) Math.toRadians(20);
-        this.tail3.rotateAngleY = (float) Math.toRadians(15);
-        this.Keichousaurus.offsetZ = -0.11F;
-        this.Keichousaurus.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(upperbody, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, 0.25F, -0.3F, 0.0F);
+        this.setRotateAngle(head, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(lowerJaw, 0.3F, 0.0F, 0.0F);
+        this.upperbody.offsetY = -0.02F;
+        this.upperbody.offsetX = 0.0F;
+        this.upperbody.offsetZ = 0.09F;
+        this.upperbody.render(0.01F);
+        resetToDefaultPose();
     }
-
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Keichousaurus, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(upperbody, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, 0.15F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerJaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftleg, 0.1F, 0.5F, 0.4F);
+        this.setRotateAngle(leftleg2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(rightleg3, 0.1F, -0.7F, -0.4F);
+        this.setRotateAngle(rightleg4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(leftarm, 0.3F, -0.5F, 0.2F);
+        this.setRotateAngle(leftarm2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(rightarm3, 0.5F, 0.5F, 0.1F);
+        this.setRotateAngle(rightarm4, 0.0F, 0.3F, 0.0F);
+        this.Keichousaurus.offsetY = -0.15F;
+        this.Keichousaurus.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

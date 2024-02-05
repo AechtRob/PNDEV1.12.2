@@ -203,7 +203,7 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.18;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -228,6 +228,7 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 	public static float getScaler(@Nullable String variant) {
 		return RenderAllenypterus.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
 	@Nullable
 	@Override
