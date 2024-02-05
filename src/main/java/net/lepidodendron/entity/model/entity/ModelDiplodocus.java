@@ -456,6 +456,7 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.neck1.rotateAngleX = (float) Math.toRadians(20);
         this.setRotateAngle(neck1, -0.2F, 0.0F, 0.0F);
@@ -1612,6 +1613,7 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
     public void animIdle2(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraDiplodocus entity = (EntityPrehistoricFloraDiplodocus) entitylivingbaseIn;
+
         int animCycle = 460;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -4324,15 +4326,15 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (6.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 60) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 60) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 0) / 71) * (7.5-(0)));
+            yy = 0 + (((tickAnim - 0) / 71) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 71) * (0-(0)));
         }
-        else if (tickAnim >= 60 && tickAnim < 189) {
-            xx = 6.5 + (((tickAnim - 60) / 129) * (6.5-(6.5)));
-            yy = 0 + (((tickAnim - 60) / 129) * (0-(0)));
-            zz = 0 + (((tickAnim - 60) / 129) * (0-(0)));
+        else if (tickAnim >= 71 && tickAnim < 189) {
+            xx = 7.5 + (((tickAnim - 71) / 118) * (6.5-(7.5)));
+            yy = 0 + (((tickAnim - 71) / 118) * (0-(0)));
+            zz = 0 + (((tickAnim - 71) / 118) * (0-(0)));
         }
         else if (tickAnim >= 189 && tickAnim < 219) {
             xx = 6.5 + (((tickAnim - 189) / 30) * (6.5-(6.5)));
@@ -4352,10 +4354,15 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(body, body.rotateAngleX + (float) Math.toRadians(xx), body.rotateAngleY + (float) Math.toRadians(yy), body.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 270) {
-            xx = 0 + (((tickAnim - 0) / 270) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 270) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 270) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 0) / 71) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 71) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 71) * (1.75-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 270) {
+            xx = 0 + (((tickAnim - 71) / 199) * (0-(0)));
+            yy = 0 + (((tickAnim - 71) / 199) * (0-(0)));
+            zz = 1.75 + (((tickAnim - 71) / 199) * (0-(1.75)));
         }
         else {
             xx = 0;
@@ -4444,33 +4451,33 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 74) {
-            xx = 0 + (((tickAnim - 0) / 74) * (16.68-(0)));
-            yy = 0 + (((tickAnim - 0) / 74) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 74) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 0) / 71) * (24.18-(0)));
+            yy = 0 + (((tickAnim - 0) / 71) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 71) * (0-(0)));
         }
-        else if (tickAnim >= 74 && tickAnim < 84) {
-            xx = 16.68 + (((tickAnim - 74) / 10) * (18.39-(16.68)));
-            yy = 0 + (((tickAnim - 74) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 74) / 10) * (0-(0)));
+        else if (tickAnim >= 71 && tickAnim < 86) {
+            xx = 24.18 + (((tickAnim - 71) / 15) * (24.8-(24.18)));
+            yy = 0 + (((tickAnim - 71) / 15) * (0-(0)));
+            zz = 0 + (((tickAnim - 71) / 15) * (0-(0)));
         }
-        else if (tickAnim >= 84 && tickAnim < 121) {
-            xx = 18.39 + (((tickAnim - 84) / 37) * (13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135-120))*0.5-(18.39)));
-            yy = 0 + (((tickAnim - 84) / 37) * (0-(0)));
-            zz = 0 + (((tickAnim - 84) / 37) * (0-(0)));
+        else if (tickAnim >= 86 && tickAnim < 121) {
+            xx = 24.8 + (((tickAnim - 86) / 35) * (13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135-120))*0.5-(24.8)));
+            yy = 0 + (((tickAnim - 86) / 35) * (0-(0)));
+            zz = 0 + (((tickAnim - 86) / 35) * (0-(0)));
         }
         else if (tickAnim >= 121 && tickAnim < 176) {
-            xx = 13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135-120))*0.5 + (((tickAnim - 121) / 55) * (15.93-(13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135-120))*0.5)));
+            xx = 13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135-120))*0.5 + (((tickAnim - 121) / 55) * (27.68-(13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135-120))*0.5)));
             yy = 0 + (((tickAnim - 121) / 55) * (0-(0)));
             zz = 0 + (((tickAnim - 121) / 55) * (0-(0)));
         }
         else if (tickAnim >= 176 && tickAnim < 187) {
-            xx = 15.93 + (((tickAnim - 176) / 11) * (17.39-(15.93)));
+            xx = 27.68 + (((tickAnim - 176) / 11) * (27.89-(27.68)));
             yy = 0 + (((tickAnim - 176) / 11) * (0-(0)));
             zz = 0 + (((tickAnim - 176) / 11) * (0-(0)));
         }
         else if (tickAnim >= 187 && tickAnim < 274) {
-            xx = 17.39 + (((tickAnim - 187) / 87) * (0-(17.39)));
+            xx = 27.89 + (((tickAnim - 187) / 87) * (0-(27.89)));
             yy = 0 + (((tickAnim - 187) / 87) * (0-(0)));
             zz = 0 + (((tickAnim - 187) / 87) * (0-(0)));
         }
@@ -4485,34 +4492,34 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 74) {
-            xx = 0 + (((tickAnim - 0) / 74) * (13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1-(0)));
+            xx = 0 + (((tickAnim - 0) / 74) * (20.175+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1-(0)));
             yy = 0 + (((tickAnim - 0) / 74) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 74) * (0-(0)));
         }
-        else if (tickAnim >= 74 && tickAnim < 85) {
-            xx = 13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1 + (((tickAnim - 74) / 11) * (14.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*2-(13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1)));
-            yy = 0 + (((tickAnim - 74) / 11) * (0-(0)));
-            zz = 0 + (((tickAnim - 74) / 11) * (0-(0)));
+        else if (tickAnim >= 74 && tickAnim < 86) {
+            xx = 20.175+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1 + (((tickAnim - 74) / 12) * (22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*2-(20.175+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1)));
+            yy = 0 + (((tickAnim - 74) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 74) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 85 && tickAnim < 124) {
-            xx = 14.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*2 + (((tickAnim - 85) / 39) * (7.4+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2-(14.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*2)));
-            yy = 0 + (((tickAnim - 85) / 39) * (0-(0)));
-            zz = 0 + (((tickAnim - 85) / 39) * (0-(0)));
+        else if (tickAnim >= 86 && tickAnim < 124) {
+            xx = 22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*2 + (((tickAnim - 86) / 38) * (7.4+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2-(22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*2)));
+            yy = 0 + (((tickAnim - 86) / 38) * (0-(0)));
+            zz = 0 + (((tickAnim - 86) / 38) * (0-(0)));
         }
         else if (tickAnim >= 124 && tickAnim < 176) {
-            xx = 7.4+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2 + (((tickAnim - 124) / 52) * (15.35+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-1-(7.4+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2)));
+            xx = 7.4+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2 + (((tickAnim - 124) / 52) * (24.35+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-1-(7.4+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2)));
             yy = 0 + (((tickAnim - 124) / 52) * (0-(0)));
             zz = 0 + (((tickAnim - 124) / 52) * (0-(0)));
         }
-        else if (tickAnim >= 176 && tickAnim < 189) {
-            xx = 15.35+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-1 + (((tickAnim - 176) / 13) * (17.6+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-2-(15.35+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-1)));
-            yy = 0 + (((tickAnim - 176) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 176) / 13) * (0-(0)));
+        else if (tickAnim >= 176 && tickAnim < 187) {
+            xx = 24.35+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-1 + (((tickAnim - 176) / 11) * (22.95-(24.35+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-1)));
+            yy = 0 + (((tickAnim - 176) / 11) * (0-(0)));
+            zz = 0 + (((tickAnim - 176) / 11) * (0-(0)));
         }
-        else if (tickAnim >= 189 && tickAnim < 201) {
-            xx = 17.6+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-2 + (((tickAnim - 189) / 12) * (13.25-(17.6+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-2)));
-            yy = 0 + (((tickAnim - 189) / 12) * (0-(0)));
-            zz = 0 + (((tickAnim - 189) / 12) * (0-(0)));
+        else if (tickAnim >= 187 && tickAnim < 201) {
+            xx = 22.95 + (((tickAnim - 187) / 14) * (13.25-(22.95)));
+            yy = 0 + (((tickAnim - 187) / 14) * (0-(0)));
+            zz = 0 + (((tickAnim - 187) / 14) * (0-(0)));
         }
         else if (tickAnim >= 201 && tickAnim < 274) {
             xx = 13.25 + (((tickAnim - 201) / 73) * (0-(13.25)));
@@ -4530,32 +4537,32 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 74) {
-            xx = 0 + (((tickAnim - 0) / 74) * (12-(0)));
+            xx = 0 + (((tickAnim - 0) / 74) * (21-(0)));
             yy = 0 + (((tickAnim - 0) / 74) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 74) * (0-(0)));
         }
-        else if (tickAnim >= 74 && tickAnim < 85) {
-            xx = 12 + (((tickAnim - 74) / 11) * (12.25-(12)));
-            yy = 0 + (((tickAnim - 74) / 11) * (0-(0)));
-            zz = 0 + (((tickAnim - 74) / 11) * (0-(0)));
+        else if (tickAnim >= 74 && tickAnim < 86) {
+            xx = 21 + (((tickAnim - 74) / 12) * (20.84-(21)));
+            yy = 0 + (((tickAnim - 74) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 74) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 85 && tickAnim < 128) {
-            xx = 12.25 + (((tickAnim - 85) / 43) * (4.715+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1-(12.25)));
-            yy = 0 + (((tickAnim - 85) / 43) * (0-(0)));
-            zz = 0 + (((tickAnim - 85) / 43) * (0-(0)));
+        else if (tickAnim >= 86 && tickAnim < 128) {
+            xx = 20.84 + (((tickAnim - 86) / 42) * (4.715+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1-(20.84)));
+            yy = 0 + (((tickAnim - 86) / 42) * (0-(0)));
+            zz = 0 + (((tickAnim - 86) / 42) * (0-(0)));
         }
         else if (tickAnim >= 128 && tickAnim < 176) {
-            xx = 4.715+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1 + (((tickAnim - 128) / 48) * (12-(4.715+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1)));
+            xx = 4.715+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1 + (((tickAnim - 128) / 48) * (12.5-(4.715+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1)));
             yy = 0 + (((tickAnim - 128) / 48) * (0-(0)));
             zz = 0 + (((tickAnim - 128) / 48) * (0-(0)));
         }
         else if (tickAnim >= 176 && tickAnim < 187) {
-            xx = 12 + (((tickAnim - 176) / 11) * (12.25-(12)));
+            xx = 12.5 + (((tickAnim - 176) / 11) * (19.5-(12.5)));
             yy = 0 + (((tickAnim - 176) / 11) * (0-(0)));
             zz = 0 + (((tickAnim - 176) / 11) * (0-(0)));
         }
         else if (tickAnim >= 187 && tickAnim < 213) {
-            xx = 12.25 + (((tickAnim - 187) / 26) * (3.32-(12.25)));
+            xx = 19.5 + (((tickAnim - 187) / 26) * (3.32-(19.5)));
             yy = 0 + (((tickAnim - 187) / 26) * (0-(0)));
             zz = 0 + (((tickAnim - 187) / 26) * (0-(0)));
         }
@@ -4572,6 +4579,21 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(xx), neck3.rotateAngleY + (float) Math.toRadians(yy), neck3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 74) {
+            xx = 0 + (((tickAnim - 0) / 74) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 74) * (-0.725-(0)));
+            zz = 0 + (((tickAnim - 0) / 74) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.neck3.rotationPointX = this.neck3.rotationPointX + (float)(xx);
+        this.neck3.rotationPointY = this.neck3.rotationPointY - (float)(yy);
+        this.neck3.rotationPointZ = this.neck3.rotationPointZ + (float)(zz);
+
+
 
 
         if (tickAnim >= 0 && tickAnim < 49) {
@@ -4580,12 +4602,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 49) * (0-(0)));
         }
         else if (tickAnim >= 49 && tickAnim < 74) {
-            xx = 5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1 + (((tickAnim - 49) / 25) * (-4.5-(5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1)));
+            xx = 5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1 + (((tickAnim - 49) / 25) * (-1.25-(5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1)));
             yy = 0 + (((tickAnim - 49) / 25) * (0-(0)));
             zz = 0 + (((tickAnim - 49) / 25) * (0-(0)));
         }
         else if (tickAnim >= 74 && tickAnim < 85) {
-            xx = -4.5 + (((tickAnim - 74) / 11) * (-6.75-(-4.5)));
+            xx = -1.25 + (((tickAnim - 74) / 11) * (-6.75-(-1.25)));
             yy = 0 + (((tickAnim - 74) / 11) * (0-(0)));
             zz = 0 + (((tickAnim - 74) / 11) * (0-(0)));
         }
@@ -4640,12 +4662,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 49) * (0-(0)));
         }
         else if (tickAnim >= 49 && tickAnim < 74) {
-            xx = 6.26+Math.sin((Math.PI/180)*(((double)tickAnim/20)*130-120))*5 + (((tickAnim - 49) / 25) * (-7.5-(6.26+Math.sin((Math.PI/180)*(((double)tickAnim/20)*130-120))*5)));
+            xx = 6.26+Math.sin((Math.PI/180)*(((double)tickAnim/20)*130-120))*5 + (((tickAnim - 49) / 25) * (-13.25-(6.26+Math.sin((Math.PI/180)*(((double)tickAnim/20)*130-120))*5)));
             yy = 0 + (((tickAnim - 49) / 25) * (0-(0)));
             zz = 0 + (((tickAnim - 49) / 25) * (0-(0)));
         }
         else if (tickAnim >= 74 && tickAnim < 84) {
-            xx = -7.5 + (((tickAnim - 74) / 10) * (-12.25331-(-7.5)));
+            xx = -13.25 + (((tickAnim - 74) / 10) * (-12.25331-(-13.25)));
             yy = 0 + (((tickAnim - 74) / 10) * (-0.14124-(0)));
             zz = 0 + (((tickAnim - 74) / 10) * (-0.63325-(0)));
         }
@@ -4694,10 +4716,20 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 54) / 13) * (0-(0)));
             zz = 0 + (((tickAnim - 54) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 67 && tickAnim < 102) {
-            xx = 3 + (((tickAnim - 67) / 35) * (-7.93-(3)));
-            yy = 0 + (((tickAnim - 67) / 35) * (0-(0)));
-            zz = 0 + (((tickAnim - 67) / 35) * (0-(0)));
+        else if (tickAnim >= 67 && tickAnim < 74) {
+            xx = 3 + (((tickAnim - 67) / 7) * (0-(3)));
+            yy = 0 + (((tickAnim - 67) / 7) * (0-(0)));
+            zz = 0 + (((tickAnim - 67) / 7) * (0-(0)));
+        }
+        else if (tickAnim >= 74 && tickAnim < 84) {
+            xx = 0 + (((tickAnim - 74) / 10) * (-13.21-(0)));
+            yy = 0 + (((tickAnim - 74) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 74) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 84 && tickAnim < 102) {
+            xx = -13.21 + (((tickAnim - 84) / 18) * (-7.93-(-13.21)));
+            yy = 0 + (((tickAnim - 84) / 18) * (0-(0)));
+            zz = 0 + (((tickAnim - 84) / 18) * (0-(0)));
         }
         else if (tickAnim >= 102 && tickAnim < 157) {
             xx = -7.93 + (((tickAnim - 102) / 55) * (8.03+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*3-(-7.93)));
@@ -4749,10 +4781,15 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 129) / 39) * (0-(0)));
             zz = 0 + (((tickAnim - 129) / 39) * (0-(0)));
         }
-        else if (tickAnim >= 168 && tickAnim < 224) {
-            xx = -18 + (((tickAnim - 168) / 56) * (-16.67-(-18)));
-            yy = 0 + (((tickAnim - 168) / 56) * (0-(0)));
-            zz = 0 + (((tickAnim - 168) / 56) * (0-(0)));
+        else if (tickAnim >= 168 && tickAnim < 187) {
+            xx = -18 + (((tickAnim - 168) / 19) * (-26.8-(-18)));
+            yy = 0 + (((tickAnim - 168) / 19) * (0-(0)));
+            zz = 0 + (((tickAnim - 168) / 19) * (0-(0)));
+        }
+        else if (tickAnim >= 187 && tickAnim < 224) {
+            xx = -26.8 + (((tickAnim - 187) / 37) * (-16.67-(-26.8)));
+            yy = 0 + (((tickAnim - 187) / 37) * (0-(0)));
+            zz = 0 + (((tickAnim - 187) / 37) * (0-(0)));
         }
         else if (tickAnim >= 224 && tickAnim < 274) {
             xx = -16.67 + (((tickAnim - 224) / 50) * (0-(-16.67)));
@@ -5005,37 +5042,37 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = -12 + (((tickAnim - 10) / 10) * (-14.4995-(-12)));
         }
         else if (tickAnim >= 20 && tickAnim < 71) {
-            xx = -7.98202 + (((tickAnim - 20) / 51) * (-30.23202-(-7.98202)));
+            xx = -7.98202 + (((tickAnim - 20) / 51) * (-39.98202-(-7.98202)));
             yy = 1.03001 + (((tickAnim - 20) / 51) * (1.03001-(1.03001)));
             zz = -14.4995 + (((tickAnim - 20) / 51) * (-14.4995-(-14.4995)));
         }
         else if (tickAnim >= 71 && tickAnim < 84) {
-            xx = -30.23202 + (((tickAnim - 71) / 13) * (-30.23202-(-30.23202)));
+            xx = -39.98202 + (((tickAnim - 71) / 13) * (-39.98202-(-39.98202)));
             yy = 1.03001 + (((tickAnim - 71) / 13) * (1.03001-(1.03001)));
             zz = -14.4995 + (((tickAnim - 71) / 13) * (-14.4995-(-14.4995)));
         }
         else if (tickAnim >= 84 && tickAnim < 118) {
-            xx = -30.23202 + (((tickAnim - 84) / 34) * (-24.23202-(-30.23202)));
+            xx = -39.98202 + (((tickAnim - 84) / 34) * (-36.48202-(-39.98202)));
             yy = 1.03001 + (((tickAnim - 84) / 34) * (1.03001-(1.03001)));
             zz = -14.4995 + (((tickAnim - 84) / 34) * (-14.4995-(-14.4995)));
         }
         else if (tickAnim >= 118 && tickAnim < 130) {
-            xx = -24.23202 + (((tickAnim - 118) / 12) * (-24.23202-(-24.23202)));
+            xx = -36.48202 + (((tickAnim - 118) / 12) * (-36.48202-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 118) / 12) * (1.03001-(1.03001)));
             zz = -14.4995 + (((tickAnim - 118) / 12) * (-14.4995-(-14.4995)));
         }
         else if (tickAnim >= 130 && tickAnim < 176) {
-            xx = -24.23202 + (((tickAnim - 130) / 46) * (-30.23202-(-24.23202)));
+            xx = -36.48202 + (((tickAnim - 130) / 46) * (-36.48202-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 130) / 46) * (1.03001-(1.03001)));
             zz = -14.4995 + (((tickAnim - 130) / 46) * (-14.4995-(-14.4995)));
         }
         else if (tickAnim >= 176 && tickAnim < 189) {
-            xx = -30.23202 + (((tickAnim - 176) / 13) * (-30.23202-(-30.23202)));
+            xx = -36.48202 + (((tickAnim - 176) / 13) * (-36.48202-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 176) / 13) * (1.03001-(1.03001)));
             zz = -14.4995 + (((tickAnim - 176) / 13) * (-14.4995-(-14.4995)));
         }
         else if (tickAnim >= 189 && tickAnim < 222) {
-            xx = -30.23202 + (((tickAnim - 189) / 33) * (-16.2048-(-30.23202)));
+            xx = -36.48202 + (((tickAnim - 189) / 33) * (-16.2048-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 189) / 33) * (1.27693-(1.03001)));
             zz = -14.4995 + (((tickAnim - 189) / 33) * (-12.44603-(-14.4995)));
         }
@@ -5057,15 +5094,10 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(leftArm, leftArm.rotateAngleX + (float) Math.toRadians(xx), leftArm.rotateAngleY + (float) Math.toRadians(yy), leftArm.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 10) * (4.39-(0)));
-            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 10 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
-            yy = 4.39 + (((tickAnim - 10) / 10) * (-0.2-(4.39)));
-            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (-0.2-(0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 22) {
             xx = 0 + (((tickAnim - 20) / 2) * (0-(0)));
@@ -5089,32 +5121,37 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 27 && tickAnim < 71) {
             xx = 0 + (((tickAnim - 27) / 44) * (0-(0)));
-            yy = -0.2 + (((tickAnim - 27) / 44) * (1.675-(-0.2)));
+            yy = -0.2 + (((tickAnim - 27) / 44) * (-0.8-(-0.2)));
             zz = 0 + (((tickAnim - 27) / 44) * (0-(0)));
         }
         else if (tickAnim >= 71 && tickAnim < 84) {
             xx = 0 + (((tickAnim - 71) / 13) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 71) / 13) * (1.675-(1.675)));
+            yy = -0.8 + (((tickAnim - 71) / 13) * (-0.8-(-0.8)));
             zz = 0 + (((tickAnim - 71) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 84 && tickAnim < 133) {
-            xx = 0 + (((tickAnim - 84) / 49) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 84) / 49) * (1.675-(1.675)));
-            zz = 0 + (((tickAnim - 84) / 49) * (0-(0)));
+        else if (tickAnim >= 84 && tickAnim < 118) {
+            xx = 0 + (((tickAnim - 84) / 34) * (0-(0)));
+            yy = -0.8 + (((tickAnim - 84) / 34) * (0.255-(-0.8)));
+            zz = 0 + (((tickAnim - 84) / 34) * (0-(0)));
         }
-        else if (tickAnim >= 133 && tickAnim < 176) {
-            xx = 0 + (((tickAnim - 133) / 43) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 133) / 43) * (1.675-(1.675)));
-            zz = 0 + (((tickAnim - 133) / 43) * (0-(0)));
+        else if (tickAnim >= 118 && tickAnim < 130) {
+            xx = 0 + (((tickAnim - 118) / 12) * (0-(0)));
+            yy = 0.255 + (((tickAnim - 118) / 12) * (0.255-(0.255)));
+            zz = 0 + (((tickAnim - 118) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 130 && tickAnim < 176) {
+            xx = 0 + (((tickAnim - 130) / 46) * (0-(0)));
+            yy = 0.255 + (((tickAnim - 130) / 46) * (0.255-(0.255)));
+            zz = 0 + (((tickAnim - 130) / 46) * (0-(0)));
         }
         else if (tickAnim >= 176 && tickAnim < 189) {
             xx = 0 + (((tickAnim - 176) / 13) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 176) / 13) * (1.675-(1.675)));
+            yy = 0.255 + (((tickAnim - 176) / 13) * (0.255-(0.255)));
             zz = 0 + (((tickAnim - 176) / 13) * (0-(0)));
         }
         else if (tickAnim >= 189 && tickAnim < 222) {
             xx = 0 + (((tickAnim - 189) / 33) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 189) / 33) * (2.125-(1.675)));
+            yy = 0.255 + (((tickAnim - 189) / 33) * (2.125-(0.255)));
             zz = 0 + (((tickAnim - 189) / 33) * (0-(0)));
         }
         else if (tickAnim >= 222 && tickAnim < 235) {
@@ -5165,24 +5202,34 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 10) {
-            xx = 0 + (((tickAnim - 0) / 10) * (5.7246-(0)));
+            xx = 0 + (((tickAnim - 0) / 10) * (-0.0254-(0)));
             yy = 0 + (((tickAnim - 0) / 10) * (0.3737-(0)));
             zz = 0 + (((tickAnim - 0) / 10) * (7.56938-(0)));
         }
         else if (tickAnim >= 10 && tickAnim < 20) {
-            xx = 5.7246 + (((tickAnim - 10) / 10) * (-9.25-(5.7246)));
+            xx = -0.0254 + (((tickAnim - 10) / 10) * (-9.25-(-0.0254)));
             yy = 0.3737 + (((tickAnim - 10) / 10) * (0-(0.3737)));
             zz = 7.56938 + (((tickAnim - 10) / 10) * (15.5-(7.56938)));
         }
         else if (tickAnim >= 20 && tickAnim < 71) {
-            xx = -9.25 + (((tickAnim - 20) / 51) * (-5.75-(-9.25)));
-            yy = 0 + (((tickAnim - 20) / 51) * (0-(0)));
-            zz = 15.5 + (((tickAnim - 20) / 51) * (15.5-(15.5)));
+            xx = -9.25 + (((tickAnim - 20) / 51) * (-15.50085-(-9.25)));
+            yy = 0 + (((tickAnim - 20) / 51) * (0.45129-(0)));
+            zz = 15.5 + (((tickAnim - 20) / 51) * (15.28474-(15.5)));
         }
-        else if (tickAnim >= 71 && tickAnim < 222) {
-            xx = -5.75 + (((tickAnim - 71) / 151) * (-10.95655-(-5.75)));
-            yy = 0 + (((tickAnim - 71) / 151) * (-1.31781-(0)));
-            zz = 15.5 + (((tickAnim - 71) / 151) * (11.72298-(15.5)));
+        else if (tickAnim >= 71 && tickAnim < 176) {
+            xx = -15.50085 + (((tickAnim - 71) / 105) * (-15.50457-(-15.50085)));
+            yy = 0.45129 + (((tickAnim - 71) / 105) * (0.02073-(0.45129)));
+            zz = 15.28474 + (((tickAnim - 71) / 105) * (14.38217-(15.28474)));
+        }
+        else if (tickAnim >= 176 && tickAnim < 189) {
+            xx = -15.50457 + (((tickAnim - 176) / 13) * (-15.50457-(-15.50457)));
+            yy = 0.02073 + (((tickAnim - 176) / 13) * (0.02073-(0.02073)));
+            zz = 14.38217 + (((tickAnim - 176) / 13) * (14.38217-(14.38217)));
+        }
+        else if (tickAnim >= 189 && tickAnim < 222) {
+            xx = -15.50457 + (((tickAnim - 189) / 33) * (-10.95655-(-15.50457)));
+            yy = 0.02073 + (((tickAnim - 189) / 33) * (-1.31781-(0.02073)));
+            zz = 14.38217 + (((tickAnim - 189) / 33) * (11.72298-(14.38217)));
         }
         else if (tickAnim >= 222 && tickAnim < 235) {
             xx = -10.95655 + (((tickAnim - 222) / 13) * (0-(-10.95655)));
@@ -5202,24 +5249,49 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(leftArm2, leftArm2.rotateAngleX + (float) Math.toRadians(xx), leftArm2.rotateAngleY + (float) Math.toRadians(yy), leftArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 20) {
-            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 0 + (((tickAnim - 0) / 10) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 10) * (1.975-(0)));
+            zz = 0 + (((tickAnim - 0) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 71) {
-            xx = 0 + (((tickAnim - 20) / 51) * (0-(0)));
-            yy = 0 + (((tickAnim - 20) / 51) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 51) * (0-(0)));
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 10) / 10) * (0-(0)));
+            yy = 1.975 + (((tickAnim - 10) / 10) * (1.1-(1.975)));
+            zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 71 && tickAnim < 222) {
-            xx = 0 + (((tickAnim - 71) / 151) * (0-(0)));
-            yy = 0 + (((tickAnim - 71) / 151) * (0-(0)));
-            zz = 0 + (((tickAnim - 71) / 151) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 53) {
+            xx = 0 + (((tickAnim - 20) / 33) * (0-(0)));
+            yy = 1.1 + (((tickAnim - 20) / 33) * (1.15-(1.1)));
+            zz = 0 + (((tickAnim - 20) / 33) * (0-(0)));
+        }
+        else if (tickAnim >= 53 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 53) / 18) * (0-(0)));
+            yy = 1.15 + (((tickAnim - 53) / 18) * (0-(1.15)));
+            zz = 0 + (((tickAnim - 53) / 18) * (0-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 118) {
+            xx = 0 + (((tickAnim - 71) / 47) * (0-(0)));
+            yy = 0 + (((tickAnim - 71) / 47) * (-1.075-(0)));
+            zz = 0 + (((tickAnim - 71) / 47) * (0-(0)));
+        }
+        else if (tickAnim >= 118 && tickAnim < 176) {
+            xx = 0 + (((tickAnim - 118) / 58) * (0-(0)));
+            yy = -1.075 + (((tickAnim - 118) / 58) * (-0.8-(-1.075)));
+            zz = 0 + (((tickAnim - 118) / 58) * (0-(0)));
+        }
+        else if (tickAnim >= 176 && tickAnim < 189) {
+            xx = 0 + (((tickAnim - 176) / 13) * (0-(0)));
+            yy = -0.8 + (((tickAnim - 176) / 13) * (-0.8-(-0.8)));
+            zz = 0 + (((tickAnim - 176) / 13) * (0-(0)));
+        }
+        else if (tickAnim >= 189 && tickAnim < 222) {
+            xx = 0 + (((tickAnim - 189) / 33) * (0-(0)));
+            yy = -0.8 + (((tickAnim - 189) / 33) * (0.975-(-0.8)));
+            zz = 0 + (((tickAnim - 189) / 33) * (0-(0)));
         }
         else if (tickAnim >= 222 && tickAnim < 235) {
             xx = 0 + (((tickAnim - 222) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 222) / 13) * (0-(0)));
+            yy = 0.975 + (((tickAnim - 222) / 13) * (0-(0.975)));
             zz = 0 + (((tickAnim - 222) / 13) * (0-(0)));
         }
         else if (tickAnim >= 235 && tickAnim < 270) {
@@ -5255,32 +5327,32 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 16) / 4) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 71) {
-            xx = 10.75 + (((tickAnim - 20) / 51) * (17.75-(10.75)));
+            xx = 10.75 + (((tickAnim - 20) / 51) * (37.25-(10.75)));
             yy = 0 + (((tickAnim - 20) / 51) * (0-(0)));
             zz = 0 + (((tickAnim - 20) / 51) * (0-(0)));
         }
         else if (tickAnim >= 71 && tickAnim < 118) {
-            xx = 17.75 + (((tickAnim - 71) / 47) * (15.53-(17.75)));
+            xx = 37.25 + (((tickAnim - 71) / 47) * (31.28-(37.25)));
             yy = 0 + (((tickAnim - 71) / 47) * (0-(0)));
             zz = 0 + (((tickAnim - 71) / 47) * (0-(0)));
         }
-        else if (tickAnim >= 118 && tickAnim < 133) {
-            xx = 15.53 + (((tickAnim - 118) / 15) * (15.53-(15.53)));
-            yy = 0 + (((tickAnim - 118) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 118) / 15) * (0-(0)));
+        else if (tickAnim >= 118 && tickAnim < 130) {
+            xx = 31.28 + (((tickAnim - 118) / 12) * (31.28-(31.28)));
+            yy = 0 + (((tickAnim - 118) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 118) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 133 && tickAnim < 176) {
-            xx = 15.53 + (((tickAnim - 133) / 43) * (18.54-(15.53)));
-            yy = 0 + (((tickAnim - 133) / 43) * (0-(0)));
-            zz = 0 + (((tickAnim - 133) / 43) * (0-(0)));
+        else if (tickAnim >= 130 && tickAnim < 176) {
+            xx = 31.28 + (((tickAnim - 130) / 46) * (31.29-(31.28)));
+            yy = 0 + (((tickAnim - 130) / 46) * (0-(0)));
+            zz = 0 + (((tickAnim - 130) / 46) * (0-(0)));
         }
         else if (tickAnim >= 176 && tickAnim < 189) {
-            xx = 18.54 + (((tickAnim - 176) / 13) * (18.54-(18.54)));
+            xx = 31.29 + (((tickAnim - 176) / 13) * (31.29-(31.29)));
             yy = 0 + (((tickAnim - 176) / 13) * (0-(0)));
             zz = 0 + (((tickAnim - 176) / 13) * (0-(0)));
         }
         else if (tickAnim >= 189 && tickAnim < 222) {
-            xx = 18.54 + (((tickAnim - 189) / 33) * (12.5-(18.54)));
+            xx = 31.29 + (((tickAnim - 189) / 33) * (12.5-(31.29)));
             yy = 0 + (((tickAnim - 189) / 33) * (0-(0)));
             zz = 0 + (((tickAnim - 189) / 33) * (0-(0)));
         }
@@ -5322,10 +5394,15 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0.275 + (((tickAnim - 10) / 10) * (0-(0.275)));
             zz = 0 + (((tickAnim - 10) / 10) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 222) {
-            xx = 0 + (((tickAnim - 20) / 202) * (0-(0)));
-            yy = 0 + (((tickAnim - 20) / 202) * (0-(0)));
-            zz = 0 + (((tickAnim - 20) / 202) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 20) / 51) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 51) * (0.825-(0)));
+            zz = 0 + (((tickAnim - 20) / 51) * (0-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 222) {
+            xx = 0 + (((tickAnim - 71) / 151) * (0-(0)));
+            yy = 0.825 + (((tickAnim - 71) / 151) * (0-(0.825)));
+            zz = 0 + (((tickAnim - 71) / 151) * (0-(0)));
         }
         else if (tickAnim >= 222 && tickAnim < 235) {
             xx = 0 + (((tickAnim - 222) / 13) * (0-(0)));
@@ -5365,37 +5442,37 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 5.5 + (((tickAnim - 20) / 23) * (16.5-(5.5)));
         }
         else if (tickAnim >= 43 && tickAnim < 71) {
-            xx = -14.5 + (((tickAnim - 43) / 28) * (-30.23202-(-14.5)));
+            xx = -14.5 + (((tickAnim - 43) / 28) * (-42.48202-(-14.5)));
             yy = 0 + (((tickAnim - 43) / 28) * (1.03001-(0)));
             zz = 16.5 + (((tickAnim - 43) / 28) * (14.4995-(16.5)));
         }
         else if (tickAnim >= 71 && tickAnim < 84) {
-            xx = -30.23202 + (((tickAnim - 71) / 13) * (-30.23202-(-30.23202)));
+            xx = -42.48202 + (((tickAnim - 71) / 13) * (-42.48202-(-42.48202)));
             yy = 1.03001 + (((tickAnim - 71) / 13) * (1.03001-(1.03001)));
             zz = 14.4995 + (((tickAnim - 71) / 13) * (14.4995-(14.4995)));
         }
         else if (tickAnim >= 84 && tickAnim < 118) {
-            xx = -30.23202 + (((tickAnim - 84) / 34) * (-24.23202-(-30.23202)));
+            xx = -42.48202 + (((tickAnim - 84) / 34) * (-36.48202-(-42.48202)));
             yy = 1.03001 + (((tickAnim - 84) / 34) * (1.03001-(1.03001)));
             zz = 14.4995 + (((tickAnim - 84) / 34) * (14.4995-(14.4995)));
         }
         else if (tickAnim >= 118 && tickAnim < 130) {
-            xx = -24.23202 + (((tickAnim - 118) / 12) * (-24.23202-(-24.23202)));
+            xx = -36.48202 + (((tickAnim - 118) / 12) * (-36.48202-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 118) / 12) * (1.03001-(1.03001)));
             zz = 14.4995 + (((tickAnim - 118) / 12) * (14.4995-(14.4995)));
         }
         else if (tickAnim >= 130 && tickAnim < 176) {
-            xx = -24.23202 + (((tickAnim - 130) / 46) * (-30.23202-(-24.23202)));
+            xx = -36.48202 + (((tickAnim - 130) / 46) * (-36.48202-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 130) / 46) * (1.03001-(1.03001)));
             zz = 14.4995 + (((tickAnim - 130) / 46) * (14.4995-(14.4995)));
         }
         else if (tickAnim >= 176 && tickAnim < 189) {
-            xx = -30.23202 + (((tickAnim - 176) / 13) * (-30.23202-(-30.23202)));
+            xx = -36.48202 + (((tickAnim - 176) / 13) * (-36.48202-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 176) / 13) * (1.03001-(1.03001)));
             zz = 14.4995 + (((tickAnim - 176) / 13) * (14.4995-(14.4995)));
         }
         else if (tickAnim >= 189 && tickAnim < 222) {
-            xx = -30.23202 + (((tickAnim - 189) / 33) * (-15.7048-(-30.23202)));
+            xx = -36.48202 + (((tickAnim - 189) / 33) * (-15.7048-(-36.48202)));
             yy = 1.03001 + (((tickAnim - 189) / 33) * (1.27693-(1.03001)));
             zz = 14.4995 + (((tickAnim - 189) / 33) * (12.446-(14.4995)));
         }
@@ -5427,69 +5504,69 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 0) / 20) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
         }
-        else if (tickAnim >= 20 && tickAnim < 32) {
-            xx = 0 + (((tickAnim - 20) / 12) * (0-(0)));
-            yy = 0 + (((tickAnim - 20) / 12) * (7.375-(0)));
-            zz = 0 + (((tickAnim - 20) / 12) * (0-(0)));
-        }
-        else if (tickAnim >= 32 && tickAnim < 43) {
-            xx = 0 + (((tickAnim - 32) / 11) * (0-(0)));
-            yy = 7.375 + (((tickAnim - 32) / 11) * (0.475-(7.375)));
-            zz = 0 + (((tickAnim - 32) / 11) * (0-(0)));
+        else if (tickAnim >= 20 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 20) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 23) * (-0.45-(0)));
+            zz = 0 + (((tickAnim - 20) / 23) * (0-(0)));
         }
         else if (tickAnim >= 43 && tickAnim < 44) {
             xx = 0 + (((tickAnim - 43) / 1) * (0-(0)));
-            yy = 0.475 + (((tickAnim - 43) / 1) * (0.255-(0.475)));
+            yy = -0.45 + (((tickAnim - 43) / 1) * (-0.57-(-0.45)));
             zz = 0 + (((tickAnim - 43) / 1) * (0-(0)));
         }
         else if (tickAnim >= 44 && tickAnim < 46) {
             xx = 0 + (((tickAnim - 44) / 2) * (0-(0)));
-            yy = 0.255 + (((tickAnim - 44) / 2) * (0.475-(0.255)));
+            yy = -0.57 + (((tickAnim - 44) / 2) * (-0.45-(-0.57)));
             zz = 0 + (((tickAnim - 44) / 2) * (0-(0)));
         }
         else if (tickAnim >= 46 && tickAnim < 48) {
             xx = 0 + (((tickAnim - 46) / 2) * (0-(0)));
-            yy = 0.475 + (((tickAnim - 46) / 2) * (0.255-(0.475)));
+            yy = -0.45 + (((tickAnim - 46) / 2) * (-0.57-(-0.45)));
             zz = 0 + (((tickAnim - 46) / 2) * (0-(0)));
         }
         else if (tickAnim >= 48 && tickAnim < 49) {
             xx = 0 + (((tickAnim - 48) / 1) * (0-(0)));
-            yy = 0.255 + (((tickAnim - 48) / 1) * (0.475-(0.255)));
+            yy = -0.57 + (((tickAnim - 48) / 1) * (-0.45-(-0.57)));
             zz = 0 + (((tickAnim - 48) / 1) * (0-(0)));
         }
         else if (tickAnim >= 49 && tickAnim < 60) {
             xx = 0 + (((tickAnim - 49) / 11) * (0-(0)));
-            yy = 0.475 + (((tickAnim - 49) / 11) * (2.055-(0.475)));
+            yy = -0.45 + (((tickAnim - 49) / 11) * (-0.24-(-0.45)));
             zz = 0 + (((tickAnim - 49) / 11) * (0-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 71) {
             xx = 0 + (((tickAnim - 60) / 11) * (0-(0)));
-            yy = 2.055 + (((tickAnim - 60) / 11) * (1.675-(2.055)));
+            yy = -0.24 + (((tickAnim - 60) / 11) * (-1.05-(-0.24)));
             zz = 0 + (((tickAnim - 60) / 11) * (0-(0)));
         }
         else if (tickAnim >= 71 && tickAnim < 84) {
             xx = 0 + (((tickAnim - 71) / 13) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 71) / 13) * (1.675-(1.675)));
+            yy = -1.05 + (((tickAnim - 71) / 13) * (-1.05-(-1.05)));
             zz = 0 + (((tickAnim - 71) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 84 && tickAnim < 133) {
-            xx = 0 + (((tickAnim - 84) / 49) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 84) / 49) * (1.675-(1.675)));
-            zz = 0 + (((tickAnim - 84) / 49) * (0-(0)));
+        else if (tickAnim >= 84 && tickAnim < 118) {
+            xx = 0 + (((tickAnim - 84) / 34) * (0-(0)));
+            yy = -1.05 + (((tickAnim - 84) / 34) * (0.255-(-1.05)));
+            zz = 0 + (((tickAnim - 84) / 34) * (0-(0)));
         }
-        else if (tickAnim >= 133 && tickAnim < 176) {
-            xx = 0 + (((tickAnim - 133) / 43) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 133) / 43) * (1.675-(1.675)));
-            zz = 0 + (((tickAnim - 133) / 43) * (0-(0)));
+        else if (tickAnim >= 118 && tickAnim < 130) {
+            xx = 0 + (((tickAnim - 118) / 12) * (0-(0)));
+            yy = 0.255 + (((tickAnim - 118) / 12) * (0.255-(0.255)));
+            zz = 0 + (((tickAnim - 118) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 130 && tickAnim < 176) {
+            xx = 0 + (((tickAnim - 130) / 46) * (0-(0)));
+            yy = 0.255 + (((tickAnim - 130) / 46) * (0.255-(0.255)));
+            zz = 0 + (((tickAnim - 130) / 46) * (0-(0)));
         }
         else if (tickAnim >= 176 && tickAnim < 189) {
             xx = 0 + (((tickAnim - 176) / 13) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 176) / 13) * (1.675-(1.675)));
+            yy = 0.255 + (((tickAnim - 176) / 13) * (0.255-(0.255)));
             zz = 0 + (((tickAnim - 176) / 13) * (0-(0)));
         }
         else if (tickAnim >= 189 && tickAnim < 222) {
             xx = 0 + (((tickAnim - 189) / 33) * (0-(0)));
-            yy = 1.675 + (((tickAnim - 189) / 33) * (1.775-(1.675)));
+            yy = 0.255 + (((tickAnim - 189) / 33) * (1.775-(0.255)));
             zz = 0 + (((tickAnim - 189) / 33) * (0-(0)));
         }
         else if (tickAnim >= 222 && tickAnim < 243) {
@@ -5550,22 +5627,22 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 20) * (-5.16667-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 32) {
-            xx = -3.08333 + (((tickAnim - 20) / 12) * (-2.13194-(-3.08333)));
+            xx = -3.08333 + (((tickAnim - 20) / 12) * (-13.38194-(-3.08333)));
             yy = 0 + (((tickAnim - 20) / 12) * (0-(0)));
             zz = -5.16667 + (((tickAnim - 20) / 12) * (-8.18056-(-5.16667)));
         }
         else if (tickAnim >= 32 && tickAnim < 43) {
-            xx = -2.13194 + (((tickAnim - 32) / 11) * (-9.25-(-2.13194)));
+            xx = -13.38194 + (((tickAnim - 32) / 11) * (-24.25-(-13.38194)));
             yy = 0 + (((tickAnim - 32) / 11) * (0-(0)));
             zz = -8.18056 + (((tickAnim - 32) / 11) * (-15.5-(-8.18056)));
         }
         else if (tickAnim >= 43 && tickAnim < 71) {
-            xx = -9.25 + (((tickAnim - 43) / 28) * (-5.75-(-9.25)));
+            xx = -24.25 + (((tickAnim - 43) / 28) * (-14.25-(-24.25)));
             yy = 0 + (((tickAnim - 43) / 28) * (0-(0)));
             zz = -15.5 + (((tickAnim - 43) / 28) * (-15.5-(-15.5)));
         }
         else if (tickAnim >= 71 && tickAnim < 222) {
-            xx = -5.75 + (((tickAnim - 71) / 151) * (-9.25-(-5.75)));
+            xx = -14.25 + (((tickAnim - 71) / 151) * (-9.25-(-14.25)));
             yy = 0 + (((tickAnim - 71) / 151) * (0-(0)));
             zz = -15.5 + (((tickAnim - 71) / 151) * (-15.5-(-15.5)));
         }
@@ -5597,14 +5674,44 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightArm2, rightArm2.rotateAngleX + (float) Math.toRadians(xx), rightArm2.rotateAngleY + (float) Math.toRadians(yy), rightArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 222) {
-            xx = 0 + (((tickAnim - 0) / 222) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 222) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 222) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 20) * (1.125-(0)));
+            zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 32) {
+            xx = 0 + (((tickAnim - 20) / 12) * (0-(0)));
+            yy = 1.125 + (((tickAnim - 20) / 12) * (3.5-(1.125)));
+            zz = 0 + (((tickAnim - 20) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 32 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 32) / 11) * (0-(0)));
+            yy = 3.5 + (((tickAnim - 32) / 11) * (0-(3.5)));
+            zz = 0 + (((tickAnim - 32) / 11) * (0-(0)));
+        }
+        else if (tickAnim >= 43 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 43) / 28) * (0-(0)));
+            yy = 0 + (((tickAnim - 43) / 28) * (-0.625-(0)));
+            zz = 0 + (((tickAnim - 43) / 28) * (0-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 118) {
+            xx = 0 + (((tickAnim - 71) / 47) * (0-(0)));
+            yy = -0.625 + (((tickAnim - 71) / 47) * (-0.6-(-0.625)));
+            zz = 0 + (((tickAnim - 71) / 47) * (0-(0)));
+        }
+        else if (tickAnim >= 118 && tickAnim < 189) {
+            xx = 0 + (((tickAnim - 118) / 71) * (0-(0)));
+            yy = -0.6 + (((tickAnim - 118) / 71) * (-0.375-(-0.6)));
+            zz = 0 + (((tickAnim - 118) / 71) * (0-(0)));
+        }
+        else if (tickAnim >= 189 && tickAnim < 222) {
+            xx = 0 + (((tickAnim - 189) / 33) * (0-(0)));
+            yy = -0.375 + (((tickAnim - 189) / 33) * (1.825-(-0.375)));
+            zz = 0 + (((tickAnim - 189) / 33) * (0-(0)));
         }
         else if (tickAnim >= 222 && tickAnim < 243) {
             xx = 0 + (((tickAnim - 222) / 21) * (0-(0)));
-            yy = 0 + (((tickAnim - 222) / 21) * (2.175-(0)));
+            yy = 1.825 + (((tickAnim - 222) / 21) * (2.175-(1.825)));
             zz = 0 + (((tickAnim - 222) / 21) * (0-(0)));
         }
         else if (tickAnim >= 243 && tickAnim < 262) {
@@ -5635,34 +5742,34 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 20) * (0-(0)));
         }
         else if (tickAnim >= 20 && tickAnim < 32) {
-            xx = 5.92 + (((tickAnim - 20) / 12) * (17.12-(5.92)));
+            xx = 5.92 + (((tickAnim - 20) / 12) * (25.62-(5.92)));
             yy = 0 + (((tickAnim - 20) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 20) / 12) * (0-(0)));
         }
         else if (tickAnim >= 32 && tickAnim < 43) {
-            xx = 17.12 + (((tickAnim - 32) / 11) * (9.75-(17.12)));
+            xx = 25.62 + (((tickAnim - 32) / 11) * (25.75-(25.62)));
             yy = 0 + (((tickAnim - 32) / 11) * (0-(0)));
             zz = 0 + (((tickAnim - 32) / 11) * (0-(0)));
         }
         else if (tickAnim >= 43 && tickAnim < 71) {
-            xx = 9.75 + (((tickAnim - 43) / 28) * (17.75-(9.75)));
+            xx = 25.75 + (((tickAnim - 43) / 28) * (37.5-(25.75)));
             yy = 0 + (((tickAnim - 43) / 28) * (0-(0)));
             zz = 0 + (((tickAnim - 43) / 28) * (0-(0)));
         }
         else if (tickAnim >= 71 && tickAnim < 118) {
-            xx = 17.75 + (((tickAnim - 71) / 47) * (15.53-(17.75)));
+            xx = 37.5 + (((tickAnim - 71) / 47) * (31.28-(37.5)));
             yy = 0 + (((tickAnim - 71) / 47) * (0-(0)));
             zz = 0 + (((tickAnim - 71) / 47) * (0-(0)));
         }
-        else if (tickAnim >= 118 && tickAnim < 133) {
-            xx = 15.53 + (((tickAnim - 118) / 15) * (15.53-(15.53)));
-            yy = 0 + (((tickAnim - 118) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 118) / 15) * (0-(0)));
+        else if (tickAnim >= 118 && tickAnim < 130) {
+            xx = 31.28 + (((tickAnim - 118) / 12) * (31.53-(31.28)));
+            yy = 0 + (((tickAnim - 118) / 12) * (0-(0)));
+            zz = 0 + (((tickAnim - 118) / 12) * (0-(0)));
         }
-        else if (tickAnim >= 133 && tickAnim < 176) {
-            xx = 15.53 + (((tickAnim - 133) / 43) * (18.54-(15.53)));
-            yy = 0 + (((tickAnim - 133) / 43) * (0-(0)));
-            zz = 0 + (((tickAnim - 133) / 43) * (0-(0)));
+        else if (tickAnim >= 130 && tickAnim < 176) {
+            xx = 31.53 + (((tickAnim - 130) / 46) * (18.54-(31.53)));
+            yy = 0 + (((tickAnim - 130) / 46) * (0-(0)));
+            zz = 0 + (((tickAnim - 130) / 46) * (0-(0)));
         }
         else if (tickAnim >= 176 && tickAnim < 189) {
             xx = 18.54 + (((tickAnim - 176) / 13) * (18.54-(18.54)));
@@ -5712,10 +5819,15 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 0) / 32) * (0.6-(0)));
             zz = 0 + (((tickAnim - 0) / 32) * (0-(0)));
         }
-        else if (tickAnim >= 32 && tickAnim < 219) {
-            xx = 0 + (((tickAnim - 32) / 187) * (0-(0)));
-            yy = 0.6 + (((tickAnim - 32) / 187) * (0-(0.6)));
-            zz = 0 + (((tickAnim - 32) / 187) * (0-(0)));
+        else if (tickAnim >= 32 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 32) / 39) * (0-(0)));
+            yy = 0.6 + (((tickAnim - 32) / 39) * (0.87-(0.6)));
+            zz = 0 + (((tickAnim - 32) / 39) * (-0.3-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 219) {
+            xx = 0 + (((tickAnim - 71) / 148) * (0-(0)));
+            yy = 0.87 + (((tickAnim - 71) / 148) * (0-(0.87)));
+            zz = -0.3 + (((tickAnim - 71) / 148) * (0-(-0.3)));
         }
         else if (tickAnim >= 219 && tickAnim < 243) {
             xx = 0 + (((tickAnim - 219) / 24) * (0-(0)));
@@ -5745,13 +5857,13 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*1-(0)));
-            yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-1-(0)));
+            xx = 0.75 + (((tickAnim - 0) / 60) * (1.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*0.1-(0.75)));
+            yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*1 + (((tickAnim - 60) / 214) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*1)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-1 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-1)));
+            xx = 1.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*0.1 + (((tickAnim - 60) / 214) * (0.75-(1.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*0.1)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5)));
         }
         else {
@@ -5825,12 +5937,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1-(0)));
+            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.3-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.8-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.5-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1)));
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.3 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.3)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.8 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.8)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.5)));
         }
@@ -5845,12 +5957,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.5-(0)));
+            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.5-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.8-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.5)));
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-0.5)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.8 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.8)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2)));
         }
@@ -5865,12 +5977,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2-(0)));
+            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2)));
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2)));
         }
@@ -5885,12 +5997,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.5-(0)));
+            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.5)));
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*2)));
         }
@@ -5905,12 +6017,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-3-(0)));
+            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.5-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.8-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*3-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-3 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-3)));
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-1.5)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.8 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.8)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*3 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*3)));
         }
@@ -5925,12 +6037,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-5-(0)));
+            xx = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2-(0)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.8-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*3-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 274) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-5 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-5)));
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.8 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*-2.8)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*3 + (((tickAnim - 60) / 214) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*3)));
         }
@@ -5981,7 +6093,6 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         }
         this.setRotateAngle(tail12, tail12.rotateAngleX + (float) Math.toRadians(xx), tail12.rotateAngleY + (float) Math.toRadians(yy), tail12.rotateAngleZ + (float) Math.toRadians(zz));
 
-
     }
 
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
@@ -5992,7 +6103,7 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-       if (tickAnim >= 0 && tickAnim < 71) {
+        if (tickAnim >= 0 && tickAnim < 71) {
             xx = 0 + (((tickAnim - 0) / 71) * (6.5-(0)));
             yy = 0 + (((tickAnim - 0) / 71) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 71) * (0-(0)));
@@ -6083,17 +6194,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 67) {
-            xx = 0 + (((tickAnim - 0) / 67) * (15.43-(0)));
+            xx = 0 + (((tickAnim - 0) / 67) * (23.18-(0)));
             yy = 0 + (((tickAnim - 0) / 67) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 67) * (0-(0)));
         }
         else if (tickAnim >= 67 && tickAnim < 85) {
-            xx = 15.43 + (((tickAnim - 67) / 18) * (15.43-(15.43)));
+            xx = 23.18 + (((tickAnim - 67) / 18) * (23.68-(23.18)));
             yy = 0 + (((tickAnim - 67) / 18) * (0-(0)));
             zz = 0 + (((tickAnim - 67) / 18) * (0-(0)));
         }
         else if (tickAnim >= 85 && tickAnim < 140) {
-            xx = 15.43 + (((tickAnim - 85) / 55) * (0-(15.43)));
+            xx = 23.68 + (((tickAnim - 85) / 55) * (0-(23.68)));
             yy = 0 + (((tickAnim - 85) / 55) * (0-(0)));
             zz = 0 + (((tickAnim - 85) / 55) * (0-(0)));
         }
@@ -6108,17 +6219,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 68) {
-            xx = 0 + (((tickAnim - 0) / 68) * (13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1-(0)));
+            xx = 0 + (((tickAnim - 0) / 68) * (22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1-(0)));
             yy = 0 + (((tickAnim - 0) / 68) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 68) * (0-(0)));
         }
         else if (tickAnim >= 68 && tickAnim < 85) {
-            xx = 13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1 + (((tickAnim - 68) / 17) * (13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1-(13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1)));
+            xx = 22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1 + (((tickAnim - 68) / 17) * (22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1-(22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1)));
             yy = 0 + (((tickAnim - 68) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 68) / 17) * (0-(0)));
         }
         else if (tickAnim >= 85 && tickAnim < 140) {
-            xx = 13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1 + (((tickAnim - 85) / 55) * (0-(13.925+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1)));
+            xx = 22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1 + (((tickAnim - 85) / 55) * (0-(22.425+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*1)));
             yy = 0 + (((tickAnim - 85) / 55) * (0-(0)));
             zz = 0 + (((tickAnim - 85) / 55) * (0-(0)));
         }
@@ -6133,17 +6244,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 71) {
-            xx = 0 + (((tickAnim - 0) / 71) * (12-(0)));
+            xx = 0 + (((tickAnim - 0) / 71) * (21.5-(0)));
             yy = 0 + (((tickAnim - 0) / 71) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 71) * (0-(0)));
         }
         else if (tickAnim >= 71 && tickAnim < 85) {
-            xx = 12 + (((tickAnim - 71) / 14) * (12-(12)));
+            xx = 21.5 + (((tickAnim - 71) / 14) * (21.5-(21.5)));
             yy = 0 + (((tickAnim - 71) / 14) * (0-(0)));
             zz = 0 + (((tickAnim - 71) / 14) * (0-(0)));
         }
         else if (tickAnim >= 85 && tickAnim < 140) {
-            xx = 12 + (((tickAnim - 85) / 55) * (0-(12)));
+            xx = 21.5 + (((tickAnim - 85) / 55) * (0-(21.5)));
             yy = 0 + (((tickAnim - 85) / 55) * (0-(0)));
             zz = 0 + (((tickAnim - 85) / 55) * (0-(0)));
         }
@@ -6155,6 +6266,26 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(neck3, neck3.rotateAngleX + (float) Math.toRadians(xx), neck3.rotateAngleY + (float) Math.toRadians(yy), neck3.rotateAngleZ + (float) Math.toRadians(zz));
 
 
+        if (tickAnim >= 0 && tickAnim < 71) {
+            xx = 0 + (((tickAnim - 0) / 71) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 71) * (-1.125-(0)));
+            zz = 0 + (((tickAnim - 0) / 71) * (0-(0)));
+        }
+        else if (tickAnim >= 71 && tickAnim < 85) {
+            xx = 0 + (((tickAnim - 71) / 14) * (0-(0)));
+            yy = -1.125 + (((tickAnim - 71) / 14) * (-1.125-(-1.125)));
+            zz = 0 + (((tickAnim - 71) / 14) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.neck3.rotationPointX = this.neck3.rotationPointX + (float)(xx);
+        this.neck3.rotationPointY = this.neck3.rotationPointY - (float)(yy);
+        this.neck3.rotationPointZ = this.neck3.rotationPointZ + (float)(zz);
+
+
 
 
         if (tickAnim >= 0 && tickAnim < 49) {
@@ -6163,17 +6294,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 49) * (0-(0)));
         }
         else if (tickAnim >= 49 && tickAnim < 71) {
-            xx = 5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1 + (((tickAnim - 49) / 22) * (-4.5-(5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1)));
+            xx = 5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1 + (((tickAnim - 49) / 22) * (-3.25-(5.9+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5))*1)));
             yy = 0 + (((tickAnim - 49) / 22) * (0-(0)));
             zz = 0 + (((tickAnim - 49) / 22) * (0-(0)));
         }
         else if (tickAnim >= 71 && tickAnim < 85) {
-            xx = -4.5 + (((tickAnim - 71) / 14) * (-4.5-(-4.5)));
+            xx = -3.25 + (((tickAnim - 71) / 14) * (-3.25-(-3.25)));
             yy = 0 + (((tickAnim - 71) / 14) * (0-(0)));
             zz = 0 + (((tickAnim - 71) / 14) * (0-(0)));
         }
         else if (tickAnim >= 85 && tickAnim < 140) {
-            xx = -4.5 + (((tickAnim - 85) / 55) * (0-(-4.5)));
+            xx = -3.25 + (((tickAnim - 85) / 55) * (0-(-3.25)));
             yy = 0 + (((tickAnim - 85) / 55) * (0-(0)));
             zz = 0 + (((tickAnim - 85) / 55) * (0-(0)));
         }
@@ -6337,7 +6468,6 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.throat.rotationPointX = this.throat.rotationPointX + (float)(0);
         this.throat.rotationPointY = this.throat.rotationPointY - (float)(0);
         this.throat.rotationPointZ = this.throat.rotationPointZ + (float)(0);
-
 
         if (tickAnim >= 0 && tickAnim < 10) {
             xx = 0 + (((tickAnim - 0) / 10) * (-4.95888-(0)));
@@ -6748,12 +6878,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         if (tickAnim >= 0 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 0) / 60) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/2.5+125))*1-(0)));
+            xx = 0.5 + (((tickAnim - 0) / 60) * (0.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/2.5+125))*1-(0.5)));
             yy = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-1-(0)));
             zz = 0 + (((tickAnim - 0) / 60) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5-(0)));
         }
         else if (tickAnim >= 60 && tickAnim < 140) {
-            xx = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/2.5+125))*1 + (((tickAnim - 60) / 80) * (0-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/2.5+125))*1)));
+            xx = 0.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/2.5+125))*1 + (((tickAnim - 60) / 80) * (0.5-(0.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/2.5+125))*1)));
             yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-1 + (((tickAnim - 60) / 80) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-1)));
             zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5 + (((tickAnim - 60) / 80) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*135/1.5+125))*-0.5)));
         }
@@ -9894,20 +10024,20 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(leftArm, leftArm.rotateAngleX + (float) Math.toRadians(xx), leftArm.rotateAngleY + (float) Math.toRadians(yy), leftArm.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 34) {
-            xx = 0 + (((tickAnim - 0) / 34) * (0-(0)));
-            yy = -1.15 + (((tickAnim - 0) / 34) * (-2.67-(-1.15)));
-            zz = 0 + (((tickAnim - 0) / 34) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
+            yy = -1.475 + (((tickAnim - 0) / 18) * (-1.77-(-1.475)));
+            zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
         }
-        else if (tickAnim >= 34 && tickAnim < 43) {
-            xx = 0 + (((tickAnim - 34) / 9) * (0-(0)));
-            yy = -2.67 + (((tickAnim - 34) / 9) * (0.5-(-2.67)));
-            zz = 0 + (((tickAnim - 34) / 9) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 34) {
+            xx = 0 + (((tickAnim - 18) / 16) * (0-(0)));
+            yy = -1.77 + (((tickAnim - 18) / 16) * (-3.32-(-1.77)));
+            zz = 0 + (((tickAnim - 18) / 16) * (0-(0)));
         }
-        else if (tickAnim >= 43 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 43) / 7) * (0-(0)));
-            yy = 0.5 + (((tickAnim - 43) / 7) * (-1.15-(0.5)));
-            zz = 0 + (((tickAnim - 43) / 7) * (0-(0)));
+        else if (tickAnim >= 34 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 34) / 16) * (0-(0)));
+            yy = -3.32 + (((tickAnim - 34) / 16) * (-1.475-(-3.32)));
+            zz = 0 + (((tickAnim - 34) / 16) * (0-(0)));
         }
         else {
             xx = 0;
@@ -9921,13 +10051,18 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 43) {
-            xx = 3.75 + (((tickAnim - 0) / 43) * (-19.16-(3.75)));
-            yy = 0 + (((tickAnim - 0) / 43) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 43) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 34) {
+            xx = 3.75 + (((tickAnim - 0) / 34) * (-11.76-(3.75)));
+            yy = 0 + (((tickAnim - 0) / 34) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 34) * (0-(0)));
+        }
+        else if (tickAnim >= 34 && tickAnim < 43) {
+            xx = -11.76 + (((tickAnim - 34) / 9) * (-30.16-(-11.76)));
+            yy = 0 + (((tickAnim - 34) / 9) * (0-(0)));
+            zz = 0 + (((tickAnim - 34) / 9) * (0-(0)));
         }
         else if (tickAnim >= 43 && tickAnim < 50) {
-            xx = -19.16 + (((tickAnim - 43) / 7) * (3.75-(-19.16)));
+            xx = -30.16 + (((tickAnim - 43) / 7) * (3.75-(-30.16)));
             yy = 0 + (((tickAnim - 43) / 7) * (0-(0)));
             zz = 0 + (((tickAnim - 43) / 7) * (0-(0)));
         }
@@ -9939,19 +10074,29 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(leftArm2, leftArm2.rotateAngleX + (float) Math.toRadians(xx), leftArm2.rotateAngleY + (float) Math.toRadians(yy), leftArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 27) {
-            xx = 0 + (((tickAnim - 0) / 27) * (0-(0)));
-            yy = -1.3 + (((tickAnim - 0) / 27) * (0.505-(-1.3)));
-            zz = 0 + (((tickAnim - 0) / 27) * (0.15-(0)));
+        if (tickAnim >= 0 && tickAnim < 7) {
+            xx = 0 + (((tickAnim - 0) / 7) * (0-(0)));
+            yy = 0.45 + (((tickAnim - 0) / 7) * (0.75-(0.45)));
+            zz = 0 + (((tickAnim - 0) / 7) * (0.04-(0)));
         }
-        else if (tickAnim >= 27 && tickAnim < 43) {
-            xx = 0 + (((tickAnim - 27) / 16) * (0-(0)));
-            yy = 0.505 + (((tickAnim - 27) / 16) * (0.255-(0.505)));
-            zz = 0.15 + (((tickAnim - 27) / 16) * (0-(0.15)));
+        else if (tickAnim >= 7 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 7) / 11) * (0-(0)));
+            yy = 0.75 + (((tickAnim - 7) / 11) * (2.1-(0.75)));
+            zz = 0.04 + (((tickAnim - 7) / 11) * (0.06-(0.04)));
+        }
+        else if (tickAnim >= 18 && tickAnim < 34) {
+            xx = 0 + (((tickAnim - 18) / 16) * (0-(0)));
+            yy = 2.1 + (((tickAnim - 18) / 16) * (1.765-(2.1)));
+            zz = 0.06 + (((tickAnim - 18) / 16) * (0.08-(0.06)));
+        }
+        else if (tickAnim >= 34 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 34) / 9) * (0-(0)));
+            yy = 1.765 + (((tickAnim - 34) / 9) * (1.455-(1.765)));
+            zz = 0.08 + (((tickAnim - 34) / 9) * (0-(0.08)));
         }
         else if (tickAnim >= 43 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 43) / 7) * (0-(0)));
-            yy = 0.255 + (((tickAnim - 43) / 7) * (-1.3-(0.255)));
+            yy = 1.455 + (((tickAnim - 43) / 7) * (0.45-(1.455)));
             zz = 0 + (((tickAnim - 43) / 7) * (0-(0)));
         }
         else {
@@ -10061,23 +10206,23 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 13) {
             xx = 0 + (((tickAnim - 0) / 13) * (0-(0)));
-            yy = -1.725 + (((tickAnim - 0) / 13) * (-2.67-(-1.725)));
+            yy = -1.15 + (((tickAnim - 0) / 13) * (-2.495-(-1.15)));
             zz = 0 + (((tickAnim - 0) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 13 && tickAnim < 22) {
-            xx = 0 + (((tickAnim - 13) / 9) * (0-(0)));
-            yy = -2.67 + (((tickAnim - 13) / 9) * (0.5-(-2.67)));
-            zz = 0 + (((tickAnim - 13) / 9) * (0-(0)));
+        else if (tickAnim >= 13 && tickAnim < 28) {
+            xx = 0 + (((tickAnim - 13) / 15) * (0-(0)));
+            yy = -2.495 + (((tickAnim - 13) / 15) * (0.025-(-2.495)));
+            zz = 0 + (((tickAnim - 13) / 15) * (0-(0)));
         }
-        else if (tickAnim >= 22 && tickAnim < 28) {
-            xx = 0 + (((tickAnim - 22) / 6) * (0-(0)));
-            yy = 0.5 + (((tickAnim - 22) / 6) * (-1.175-(0.5)));
-            zz = 0 + (((tickAnim - 22) / 6) * (0-(0)));
+        else if (tickAnim >= 28 && tickAnim < 41) {
+            xx = 0 + (((tickAnim - 28) / 13) * (0-(0)));
+            yy = 0.025 + (((tickAnim - 28) / 13) * (0.6-(0.025)));
+            zz = 0 + (((tickAnim - 28) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 28 && tickAnim < 50) {
-            xx = 0 + (((tickAnim - 28) / 22) * (0-(0)));
-            yy = -1.175 + (((tickAnim - 28) / 22) * (-1.725-(-1.175)));
-            zz = 0 + (((tickAnim - 28) / 22) * (0-(0)));
+        else if (tickAnim >= 41 && tickAnim < 50) {
+            xx = 0 + (((tickAnim - 41) / 9) * (0-(0)));
+            yy = 0.6 + (((tickAnim - 41) / 9) * (-1.15-(0.6)));
+            zz = 0 + (((tickAnim - 41) / 9) * (0-(0)));
         }
         else {
             xx = 0;
@@ -10114,14 +10259,19 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightArm2, rightArm2.rotateAngleX + (float) Math.toRadians(xx), rightArm2.rotateAngleY + (float) Math.toRadians(yy), rightArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 22) {
-            xx = 0 + (((tickAnim - 0) / 22) * (0-(0)));
-            yy = 1.025 + (((tickAnim - 0) / 22) * (0.255-(1.025)));
-            zz = 0 + (((tickAnim - 0) / 22) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 0) / 13) * (0-(0)));
+            yy = 1.025 + (((tickAnim - 0) / 13) * (1.435-(1.025)));
+            zz = 0 + (((tickAnim - 0) / 13) * (0-(0)));
+        }
+        else if (tickAnim >= 13 && tickAnim < 22) {
+            xx = 0 + (((tickAnim - 13) / 9) * (0-(0)));
+            yy = 1.435 + (((tickAnim - 13) / 9) * (2.13-(1.435)));
+            zz = 0 + (((tickAnim - 13) / 9) * (0-(0)));
         }
         else if (tickAnim >= 22 && tickAnim < 28) {
             xx = 0 + (((tickAnim - 22) / 6) * (0-(0)));
-            yy = 0.255 + (((tickAnim - 22) / 6) * (-1.3-(0.255)));
+            yy = 2.13 + (((tickAnim - 22) / 6) * (-1.3-(2.13)));
             zz = 0 + (((tickAnim - 22) / 6) * (0-(0)));
         }
         else if (tickAnim >= 28 && tickAnim < 50) {
@@ -10244,19 +10394,14 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 0) / 26) * (-0.15-(0)));
             zz = 0 + (((tickAnim - 0) / 26) * (0-(0)));
         }
-        else if (tickAnim >= 26 && tickAnim < 33) {
-            xx = 0 + (((tickAnim - 26) / 7) * (0-(0)));
-            yy = -0.15 + (((tickAnim - 26) / 7) * (1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5-(-0.15)));
-            zz = 0 + (((tickAnim - 26) / 7) * (0-(0)));
-        }
-        else if (tickAnim >= 33 && tickAnim < 38) {
-            xx = 0 + (((tickAnim - 33) / 5) * (0-(0)));
-            yy = 1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5 + (((tickAnim - 33) / 5) * (0-(1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5)));
-            zz = 0 + (((tickAnim - 33) / 5) * (0-(0)));
+        else if (tickAnim >= 26 && tickAnim < 38) {
+            xx = 0 + (((tickAnim - 26) / 12) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 26) / 12) * (0.625-(-0.15)));
+            zz = 0 + (((tickAnim - 26) / 12) * (0-(0)));
         }
         else if (tickAnim >= 38 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 38) / 12) * (0-(0)));
-            yy = 0 + (((tickAnim - 38) / 12) * (0-(0)));
+            yy = 0.625 + (((tickAnim - 38) / 12) * (0-(0.625)));
             zz = 0 + (((tickAnim - 38) / 12) * (0-(0)));
         }
         else {
@@ -10301,17 +10446,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 0) / 18) * (0-(0)));
-            yy = -1.425 + (((tickAnim - 0) / 18) * (-2.575-(-1.425)));
+            yy = -0.675 + (((tickAnim - 0) / 18) * (-1.275-(-0.675)));
             zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 26) {
             xx = 0 + (((tickAnim - 18) / 8) * (0-(0)));
-            yy = -2.575 + (((tickAnim - 18) / 8) * (-3.475-(-2.575)));
+            yy = -1.275 + (((tickAnim - 18) / 8) * (-2.425-(-1.275)));
             zz = 0 + (((tickAnim - 18) / 8) * (0-(0)));
         }
         else if (tickAnim >= 26 && tickAnim < 32) {
             xx = 0 + (((tickAnim - 26) / 6) * (0-(0)));
-            yy = -3.475 + (((tickAnim - 26) / 6) * (0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-3.475)));
+            yy = -2.425 + (((tickAnim - 26) / 6) * (0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-2.425)));
             zz = 0 + (((tickAnim - 26) / 6) * (-1.025-(0)));
         }
         else if (tickAnim >= 32 && tickAnim < 38) {
@@ -10321,7 +10466,7 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 38 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 38) / 12) * (0-(0)));
-            yy = -1.55 + (((tickAnim - 38) / 12) * (-1.425-(-1.55)));
+            yy = -1.55 + (((tickAnim - 38) / 12) * (-0.675-(-1.55)));
             zz = 0 + (((tickAnim - 38) / 12) * (0-(0)));
         }
         else {
@@ -10439,19 +10584,14 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightLeg, rightLeg.rotateAngleX + (float) Math.toRadians(xx), rightLeg.rotateAngleY + (float) Math.toRadians(yy), rightLeg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = -0.15 + (((tickAnim - 0) / 8) * (1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5-(-0.15)));
-            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-        }
-        else if (tickAnim >= 8 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 8) / 7) * (0-(0)));
-            yy = 1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5 + (((tickAnim - 8) / 7) * (0-(1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5)));
-            zz = 0 + (((tickAnim - 8) / 7) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 15) {
+            xx = 0 + (((tickAnim - 0) / 15) * (0-(0)));
+            yy = -0.15 + (((tickAnim - 0) / 15) * (0.6-(-0.15)));
+            zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 15) / 35) * (0-(0)));
-            yy = 0 + (((tickAnim - 15) / 35) * (-0.15-(0)));
+            yy = 0.6 + (((tickAnim - 15) / 35) * (-0.15-(0.6)));
             zz = 0 + (((tickAnim - 15) / 35) * (0-(0)));
         }
         else {
@@ -10494,24 +10634,19 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightLeg2, rightLeg2.rotateAngleX + (float) Math.toRadians(xx), rightLeg2.rotateAngleY + (float) Math.toRadians(yy), rightLeg2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 8) {
-            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
-            yy = -2 + (((tickAnim - 0) / 8) * (0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-2)));
-            zz = 0 + (((tickAnim - 0) / 8) * (-1.025-(0)));
-        }
-        else if (tickAnim >= 8 && tickAnim < 15) {
-            xx = 0 + (((tickAnim - 8) / 7) * (0-(0)));
-            yy = 0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)) + (((tickAnim - 8) / 7) * (-1.55-(0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)))));
-            zz = -1.025 + (((tickAnim - 8) / 7) * (0-(-1.025)));
+        if (tickAnim >= 0 && tickAnim < 15) {
+            xx = 0 + (((tickAnim - 0) / 15) * (0-(0)));
+            yy = -0.75 + (((tickAnim - 0) / 15) * (-1.45-(-0.75)));
+            zz = 0 + (((tickAnim - 0) / 15) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 42) {
             xx = 0 + (((tickAnim - 15) / 27) * (0-(0)));
-            yy = -1.55 + (((tickAnim - 15) / 27) * (-2.78-(-1.55)));
+            yy = -1.45 + (((tickAnim - 15) / 27) * (-1.73-(-1.45)));
             zz = 0 + (((tickAnim - 15) / 27) * (0-(0)));
         }
         else if (tickAnim >= 42 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 42) / 8) * (0-(0)));
-            yy = -2.78 + (((tickAnim - 42) / 8) * (-2-(-2.78)));
+            yy = -1.73 + (((tickAnim - 42) / 8) * (-0.75-(-1.73)));
             zz = 0 + (((tickAnim - 42) / 8) * (0-(0)));
         }
         else {
@@ -10571,17 +10706,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 8 && tickAnim < 15) {
             xx = 0 + (((tickAnim - 8) / 7) * (0-(0)));
-            yy = 2.205 + (((tickAnim - 8) / 7) * (0-(2.205)));
+            yy = 2.205 + (((tickAnim - 8) / 7) * (0.125-(2.205)));
             zz = 0 + (((tickAnim - 8) / 7) * (0-(0)));
         }
         else if (tickAnim >= 15 && tickAnim < 42) {
             xx = 0 + (((tickAnim - 15) / 27) * (0-(0)));
-            yy = 0 + (((tickAnim - 15) / 27) * (-0.07-(0)));
+            yy = 0.125 + (((tickAnim - 15) / 27) * (0.13-(0.125)));
             zz = 0 + (((tickAnim - 15) / 27) * (0-(0)));
         }
         else if (tickAnim >= 42 && tickAnim < 50) {
             xx = 0 + (((tickAnim - 42) / 8) * (0-(0)));
-            yy = -0.07 + (((tickAnim - 42) / 8) * (0.125-(-0.07)));
+            yy = 0.13 + (((tickAnim - 42) / 8) * (0.125-(0.13)));
             zz = 0 + (((tickAnim - 42) / 8) * (0-(0)));
         }
         else {
@@ -10745,16 +10880,16 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/2.5))*-0.385), tail1.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-1.5), tail1.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*0.85));
 
 
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/2.5))*-0.259), tail2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-2), tail2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*0.85));
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(1+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/2.5))*-0.259), tail2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-2), tail2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*0.85));
 
 
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.8), tail3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*0.85));
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0.75), tail3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.8), tail3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*0.85));
 
 
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75-120))*-1.8), tail4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*3), tail4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*1.85));
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(1.75+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75-120))*-1.2), tail4.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*1), tail4.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*1.85));
 
 
-        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.95-15))*-1.9), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*3.8), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*1.85));
+        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.95-15))*-1.5), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*3.8), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*1.85));
 
 
         this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.95-15))*1.5), tail6.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.4), tail6.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.85));
@@ -10766,13 +10901,13 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(tail8, tail8.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*1.4), tail8.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.8), tail8.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*3.85));
 
 
-        this.setRotateAngle(tail9, tail9.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*3.5), tail9.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.8), tail9.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*3.85));
+        this.setRotateAngle(tail9, tail9.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*3), tail9.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*2.8), tail9.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*3.85));
 
 
-        this.setRotateAngle(tail10, tail10.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*5.8), tail10.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*5), tail10.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-4.85));
+        this.setRotateAngle(tail10, tail10.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*4), tail10.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*5), tail10.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-4.85));
 
 
-        this.setRotateAngle(tail11, tail11.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*7.8), tail11.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*7), tail11.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-4.85));
+        this.setRotateAngle(tail11, tail11.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/0.75))*6), tail11.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*7), tail11.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*-4.85));
 
 
         this.setRotateAngle(tail12, tail12.rotateAngleX + (float) Math.toRadians(-1+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*432/1.5-30))*15), tail12.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*9), tail12.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*216/1.5))*5.85));
@@ -10828,38 +10963,33 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 2) {
             xx = 0 + (((tickAnim - 0) / 2) * (0-(0)));
-            yy = -1.15 + (((tickAnim - 0) / 2) * (-1.595-(-1.15)));
+            yy = -0.475 + (((tickAnim - 0) / 2) * (-0.895-(-0.475)));
             zz = 0 + (((tickAnim - 0) / 2) * (0-(0)));
         }
         else if (tickAnim >= 2 && tickAnim < 3) {
             xx = 0 + (((tickAnim - 2) / 1) * (0-(0)));
-            yy = -1.595 + (((tickAnim - 2) / 1) * (-1.15-(-1.595)));
+            yy = -0.895 + (((tickAnim - 2) / 1) * (-0.475-(-0.895)));
             zz = 0 + (((tickAnim - 2) / 1) * (0-(0)));
         }
         else if (tickAnim >= 3 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
-            yy = -1.15 + (((tickAnim - 3) / 2) * (-1.595-(-1.15)));
+            yy = -0.475 + (((tickAnim - 3) / 2) * (-0.895-(-0.475)));
             zz = 0 + (((tickAnim - 3) / 2) * (0-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 7) {
             xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            yy = -1.595 + (((tickAnim - 5) / 2) * (-1.15-(-1.595)));
+            yy = -0.895 + (((tickAnim - 5) / 2) * (-0.475-(-0.895)));
             zz = 0 + (((tickAnim - 5) / 2) * (0-(0)));
         }
         else if (tickAnim >= 7 && tickAnim < 21) {
             xx = 0 + (((tickAnim - 7) / 14) * (0-(0)));
-            yy = -1.15 + (((tickAnim - 7) / 14) * (-2.67-(-1.15)));
+            yy = -0.475 + (((tickAnim - 7) / 14) * (-2.67-(-0.475)));
             zz = 0 + (((tickAnim - 7) / 14) * (0-(0)));
         }
-        else if (tickAnim >= 21 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 21) / 4) * (0-(0)));
-            yy = -2.67 + (((tickAnim - 21) / 4) * (0.5-(-2.67)));
-            zz = 0 + (((tickAnim - 21) / 4) * (0-(0)));
-        }
-        else if (tickAnim >= 25 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 25) / 5) * (0-(0)));
-            yy = 0.5 + (((tickAnim - 25) / 5) * (-1.15-(0.5)));
-            zz = 0 + (((tickAnim - 25) / 5) * (0-(0)));
+        else if (tickAnim >= 21 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 21) / 9) * (0-(0)));
+            yy = -2.67 + (((tickAnim - 21) / 9) * (-0.475-(-2.67)));
+            zz = 0 + (((tickAnim - 21) / 9) * (0-(0)));
         }
         else {
             xx = 0;
@@ -10896,19 +11026,34 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(leftArm2, leftArm2.rotateAngleX + (float) Math.toRadians(xx), leftArm2.rotateAngleY + (float) Math.toRadians(yy), leftArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 17) {
-            xx = 0 + (((tickAnim - 0) / 17) * (0-(0)));
-            yy = -1.3 + (((tickAnim - 0) / 17) * (0.505-(-1.3)));
-            zz = 0 + (((tickAnim - 0) / 17) * (0.15-(0)));
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0 + (((tickAnim - 0) / 3) * (0-(0)));
+            yy = -1.3 + (((tickAnim - 0) / 3) * (-0.91-(-1.3)));
+            zz = 0 + (((tickAnim - 0) / 3) * (0.03-(0)));
+        }
+        else if (tickAnim >= 3 && tickAnim < 5) {
+            xx = 0 + (((tickAnim - 3) / 2) * (0-(0)));
+            yy = -0.91 + (((tickAnim - 3) / 2) * (-0.035-(-0.91)));
+            zz = 0.03 + (((tickAnim - 3) / 2) * (0.05-(0.03)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 12) {
+            xx = 0 + (((tickAnim - 5) / 7) * (0-(0)));
+            yy = -0.035 + (((tickAnim - 5) / 7) * (1.825-(-0.035)));
+            zz = 0.05 + (((tickAnim - 5) / 7) * (0.11-(0.05)));
+        }
+        else if (tickAnim >= 12 && tickAnim < 17) {
+            xx = 0 + (((tickAnim - 12) / 5) * (0-(0)));
+            yy = 1.825 + (((tickAnim - 12) / 5) * (1.13-(1.825)));
+            zz = 0.11 + (((tickAnim - 12) / 5) * (0.15-(0.11)));
         }
         else if (tickAnim >= 17 && tickAnim < 25) {
             xx = 0 + (((tickAnim - 17) / 8) * (0-(0)));
-            yy = 0.505 + (((tickAnim - 17) / 8) * (0.255-(0.505)));
+            yy = 1.13 + (((tickAnim - 17) / 8) * (1.73-(1.13)));
             zz = 0.15 + (((tickAnim - 17) / 8) * (0-(0.15)));
         }
         else if (tickAnim >= 25 && tickAnim < 30) {
             xx = 0 + (((tickAnim - 25) / 5) * (0-(0)));
-            yy = 0.255 + (((tickAnim - 25) / 5) * (-1.3-(0.255)));
+            yy = 1.73 + (((tickAnim - 25) / 5) * (-1.3-(1.73)));
             zz = 0 + (((tickAnim - 25) / 5) * (0-(0)));
         }
         else {
@@ -11021,15 +11166,10 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = -1.725 + (((tickAnim - 0) / 8) * (-3.295-(-1.725)));
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
-        else if (tickAnim >= 8 && tickAnim < 13) {
-            xx = 0 + (((tickAnim - 8) / 5) * (0-(0)));
-            yy = -3.295 + (((tickAnim - 8) / 5) * (2-(-3.295)));
-            zz = 0 + (((tickAnim - 8) / 5) * (0-(0)));
-        }
-        else if (tickAnim >= 13 && tickAnim < 18) {
-            xx = 0 + (((tickAnim - 13) / 5) * (0-(0)));
-            yy = 2 + (((tickAnim - 13) / 5) * (-1.175-(2)));
-            zz = 0 + (((tickAnim - 13) / 5) * (0-(0)));
+        else if (tickAnim >= 8 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 8) / 10) * (0-(0)));
+            yy = -3.295 + (((tickAnim - 8) / 10) * (-1.175-(-3.295)));
+            zz = 0 + (((tickAnim - 8) / 10) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 19) {
             xx = 0 + (((tickAnim - 18) / 1) * (0-(0)));
@@ -11074,17 +11214,17 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 12) {
-            xx = -16.33 + (((tickAnim - 8) / 4) * (-26.16-(-16.33)));
+            xx = -16.33 + (((tickAnim - 8) / 4) * (-34.66-(-16.33)));
             yy = 0 + (((tickAnim - 8) / 4) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 4) * (0-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 18) {
-            xx = -26.16 + (((tickAnim - 12) / 6) * (10.25-(-26.16)));
+            xx = -34.66 + (((tickAnim - 12) / 6) * (7.5-(-34.66)));
             yy = 0 + (((tickAnim - 12) / 6) * (0-(0)));
             zz = 0 + (((tickAnim - 12) / 6) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 30) {
-            xx = 10.25 + (((tickAnim - 18) / 12) * (-1.5-(10.25)));
+            xx = 7.5 + (((tickAnim - 18) / 12) * (-1.5-(7.5)));
             yy = 0 + (((tickAnim - 18) / 12) * (0-(0)));
             zz = 0 + (((tickAnim - 18) / 12) * (0-(0)));
         }
@@ -11096,20 +11236,40 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightArm2, rightArm2.rotateAngleX + (float) Math.toRadians(xx), rightArm2.rotateAngleY + (float) Math.toRadians(yy), rightArm2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 12) {
-            xx = 0 + (((tickAnim - 0) / 12) * (0-(0)));
-            yy = 1.025 + (((tickAnim - 0) / 12) * (0.255-(1.025)));
-            zz = 0 + (((tickAnim - 0) / 12) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 8) {
+            xx = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+            yy = 2.225 + (((tickAnim - 0) / 8) * (0.435-(2.225)));
+            zz = 0 + (((tickAnim - 0) / 8) * (0-(0)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 12) {
+            xx = 0 + (((tickAnim - 8) / 4) * (0-(0)));
+            yy = 0.435 + (((tickAnim - 8) / 4) * (1.78-(0.435)));
+            zz = 0 + (((tickAnim - 8) / 4) * (0-(0)));
         }
         else if (tickAnim >= 12 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 12) / 6) * (0-(0)));
-            yy = 0.255 + (((tickAnim - 12) / 6) * (-1.3-(0.255)));
+            yy = 1.78 + (((tickAnim - 12) / 6) * (-0.95-(1.78)));
             zz = 0 + (((tickAnim - 12) / 6) * (0-(0)));
         }
-        else if (tickAnim >= 18 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 18) / 12) * (0-(0)));
-            yy = -1.3 + (((tickAnim - 18) / 12) * (1.025-(-1.3)));
-            zz = 0 + (((tickAnim - 18) / 12) * (0-(0)));
+        else if (tickAnim >= 18 && tickAnim < 19) {
+            xx = 0 + (((tickAnim - 18) / 1) * (0-(0)));
+            yy = -0.95 + (((tickAnim - 18) / 1) * (-0.265-(-0.95)));
+            zz = 0 + (((tickAnim - 18) / 1) * (0-(0)));
+        }
+        else if (tickAnim >= 19 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 19) / 4) * (0-(0)));
+            yy = -0.265 + (((tickAnim - 19) / 4) * (1.13-(-0.265)));
+            zz = 0 + (((tickAnim - 19) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 27) {
+            xx = 0 + (((tickAnim - 23) / 4) * (0-(0)));
+            yy = 1.13 + (((tickAnim - 23) / 4) * (2.02-(1.13)));
+            zz = 0 + (((tickAnim - 23) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 27 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 27) / 3) * (0-(0)));
+            yy = 2.02 + (((tickAnim - 27) / 3) * (2.225-(2.02)));
+            zz = 0 + (((tickAnim - 27) / 3) * (0-(0)));
         }
         else {
             xx = 0;
@@ -11236,19 +11396,14 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             yy = 0 + (((tickAnim - 3) / 13) * (-1.275-(0)));
             zz = 0 + (((tickAnim - 3) / 13) * (0-(0)));
         }
-        else if (tickAnim >= 16 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 16) / 3) * (0-(0)));
-            yy = -1.275 + (((tickAnim - 16) / 3) * (1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5-(-1.275)));
-            zz = 0 + (((tickAnim - 16) / 3) * (0-(0)));
-        }
-        else if (tickAnim >= 19 && tickAnim < 23) {
-            xx = 0 + (((tickAnim - 19) / 4) * (0-(0)));
-            yy = 1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5 + (((tickAnim - 19) / 4) * (-2.85-(1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5)));
-            zz = 0 + (((tickAnim - 19) / 4) * (0-(0)));
+        else if (tickAnim >= 16 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 16) / 7) * (0-(0)));
+            yy = -1.275 + (((tickAnim - 16) / 7) * (-2.325-(-1.275)));
+            zz = 0 + (((tickAnim - 16) / 7) * (0-(0)));
         }
         else if (tickAnim >= 23 && tickAnim < 25) {
             xx = 0 + (((tickAnim - 23) / 2) * (0-(0)));
-            yy = -2.85 + (((tickAnim - 23) / 2) * (-2.48-(-2.85)));
+            yy = -2.325 + (((tickAnim - 23) / 2) * (-2.48-(-2.325)));
             zz = 0 + (((tickAnim - 23) / 2) * (0-(0)));
         }
         else if (tickAnim >= 25 && tickAnim < 27) {
@@ -11308,28 +11463,38 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 11) {
             xx = 0 + (((tickAnim - 0) / 11) * (0-(0)));
-            yy = -1.55 + (((tickAnim - 0) / 11) * (-2.575-(-1.55)));
+            yy = 0.4 + (((tickAnim - 0) / 11) * (-1.65-(0.4)));
             zz = 0 + (((tickAnim - 0) / 11) * (0-(0)));
         }
         else if (tickAnim >= 11 && tickAnim < 16) {
             xx = 0 + (((tickAnim - 11) / 5) * (0-(0)));
-            yy = -2.575 + (((tickAnim - 11) / 5) * (-3.475-(-2.575)));
+            yy = -1.65 + (((tickAnim - 11) / 5) * (-2.525-(-1.65)));
             zz = 0 + (((tickAnim - 11) / 5) * (0-(0)));
         }
         else if (tickAnim >= 16 && tickAnim < 19) {
             xx = 0 + (((tickAnim - 16) / 3) * (0-(0)));
-            yy = -3.475 + (((tickAnim - 16) / 3) * (0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-3.475)));
+            yy = -2.525 + (((tickAnim - 16) / 3) * (1.535+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-2.525)));
             zz = 0 + (((tickAnim - 16) / 3) * (-1.025-(0)));
         }
         else if (tickAnim >= 19 && tickAnim < 23) {
             xx = 0 + (((tickAnim - 19) / 4) * (0-(0)));
-            yy = 0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)) + (((tickAnim - 19) / 4) * (-1.55-(0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)))));
+            yy = 1.535+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)) + (((tickAnim - 19) / 4) * (-1.275-(1.535+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)))));
             zz = -1.025 + (((tickAnim - 19) / 4) * (0-(-1.025)));
         }
-        else if (tickAnim >= 23 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 23) / 7) * (0-(0)));
-            yy = -1.55 + (((tickAnim - 23) / 7) * (-1.55-(-1.55)));
-            zz = 0 + (((tickAnim - 23) / 7) * (0-(0)));
+        else if (tickAnim >= 23 && tickAnim < 25) {
+            xx = 0 + (((tickAnim - 23) / 2) * (0-(0)));
+            yy = -1.275 + (((tickAnim - 23) / 2) * (-0.265-(-1.275)));
+            zz = 0 + (((tickAnim - 23) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 25 && tickAnim < 27) {
+            xx = 0 + (((tickAnim - 25) / 2) * (0-(0)));
+            yy = -0.265 + (((tickAnim - 25) / 2) * (-0.915-(-0.265)));
+            zz = 0 + (((tickAnim - 25) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 27 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 27) / 3) * (0-(0)));
+            yy = -0.915 + (((tickAnim - 27) / 3) * (0.4-(-0.915)));
+            zz = 0 + (((tickAnim - 27) / 3) * (0-(0)));
         }
         else {
             xx = 0;
@@ -11446,19 +11611,14 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(rightLeg, rightLeg.rotateAngleX + (float) Math.toRadians(xx), rightLeg.rotateAngleY + (float) Math.toRadians(yy), rightLeg.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-            yy = -2.975 + (((tickAnim - 0) / 5) * (1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5-(-2.975)));
-            zz = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-        }
-        else if (tickAnim >= 5 && tickAnim < 9) {
-            xx = 0 + (((tickAnim - 5) / 4) * (0-(0)));
-            yy = 1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5 + (((tickAnim - 5) / 4) * (-2.6-(1.36+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-20))*0.5)));
-            zz = 0 + (((tickAnim - 5) / 4) * (0-(0)));
+        if (tickAnim >= 0 && tickAnim < 9) {
+            xx = 0 + (((tickAnim - 0) / 9) * (0-(0)));
+            yy = -2.975 + (((tickAnim - 0) / 9) * (-2.225-(-2.975)));
+            zz = 0 + (((tickAnim - 0) / 9) * (0-(0)));
         }
         else if (tickAnim >= 9 && tickAnim < 11) {
             xx = 0 + (((tickAnim - 9) / 2) * (0-(0)));
-            yy = -2.6 + (((tickAnim - 9) / 2) * (-2.44-(-2.6)));
+            yy = -2.225 + (((tickAnim - 9) / 2) * (-2.44-(-2.225)));
             zz = 0 + (((tickAnim - 9) / 2) * (0-(0)));
         }
         else if (tickAnim >= 11 && tickAnim < 13) {
@@ -11528,22 +11688,52 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
         if (tickAnim >= 0 && tickAnim < 5) {
             xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-            yy = -2 + (((tickAnim - 0) / 5) * (0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-2)));
+            yy = -1.025 + (((tickAnim - 0) / 5) * (1.11+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250))-(-1.025)));
             zz = 0 + (((tickAnim - 0) / 5) * (-1.025-(0)));
         }
         else if (tickAnim >= 5 && tickAnim < 9) {
             xx = 0 + (((tickAnim - 5) / 4) * (0-(0)));
-            yy = 0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)) + (((tickAnim - 5) / 4) * (-1.55-(0.185+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)))));
+            yy = 1.11+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)) + (((tickAnim - 5) / 4) * (-1.55-(1.11+Math.sin((Math.PI/180)*(((double)tickAnim/20)*250-250)))));
             zz = -1.025 + (((tickAnim - 5) / 4) * (0-(-1.025)));
         }
-        else if (tickAnim >= 9 && tickAnim < 26) {
-            xx = 0 + (((tickAnim - 9) / 17) * (0-(0)));
-            yy = -1.55 + (((tickAnim - 9) / 17) * (-2.78-(-1.55)));
-            zz = 0 + (((tickAnim - 9) / 17) * (0-(0)));
+        else if (tickAnim >= 9 && tickAnim < 11) {
+            xx = 0 + (((tickAnim - 9) / 2) * (0-(0)));
+            yy = -1.55 + (((tickAnim - 9) / 2) * (-0.495-(-1.55)));
+            zz = 0 + (((tickAnim - 9) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 11 && tickAnim < 13) {
+            xx = 0 + (((tickAnim - 11) / 2) * (0-(0)));
+            yy = -0.495 + (((tickAnim - 11) / 2) * (-1.315-(-0.495)));
+            zz = 0 + (((tickAnim - 11) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 13 && tickAnim < 14) {
+            xx = 0 + (((tickAnim - 13) / 1) * (0-(0)));
+            yy = -1.315 + (((tickAnim - 13) / 1) * (-0.695-(-1.315)));
+            zz = 0 + (((tickAnim - 13) / 1) * (0-(0)));
+        }
+        else if (tickAnim >= 14 && tickAnim < 16) {
+            xx = 0 + (((tickAnim - 14) / 2) * (0-(0)));
+            yy = -0.695 + (((tickAnim - 14) / 2) * (-1.2-(-0.695)));
+            zz = 0 + (((tickAnim - 14) / 2) * (0-(0)));
+        }
+        else if (tickAnim >= 16 && tickAnim < 20) {
+            xx = 0 + (((tickAnim - 16) / 4) * (0-(0)));
+            yy = -1.2 + (((tickAnim - 16) / 4) * (-0.72-(-1.2)));
+            zz = 0 + (((tickAnim - 16) / 4) * (0-(0)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 23) {
+            xx = 0 + (((tickAnim - 20) / 3) * (0-(0)));
+            yy = -0.72 + (((tickAnim - 20) / 3) * (-1.055-(-0.72)));
+            zz = 0 + (((tickAnim - 20) / 3) * (0-(0)));
+        }
+        else if (tickAnim >= 23 && tickAnim < 26) {
+            xx = 0 + (((tickAnim - 23) / 3) * (0-(0)));
+            yy = -1.055 + (((tickAnim - 23) / 3) * (-0.68-(-1.055)));
+            zz = 0 + (((tickAnim - 23) / 3) * (0-(0)));
         }
         else if (tickAnim >= 26 && tickAnim < 30) {
             xx = 0 + (((tickAnim - 26) / 4) * (0-(0)));
-            yy = -2.78 + (((tickAnim - 26) / 4) * (-2-(-2.78)));
+            yy = -0.68 + (((tickAnim - 26) / 4) * (-1.025-(-0.68)));
             zz = 0 + (((tickAnim - 26) / 4) * (0-(0)));
         }
         else {
@@ -11569,12 +11759,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
             zz = 0 + (((tickAnim - 5) / 3) * (0-(0)));
         }
         else if (tickAnim >= 8 && tickAnim < 9) {
-            xx = -0.37 + (((tickAnim - 8) / 1) * (18.5-(-0.37)));
+            xx = -0.37 + (((tickAnim - 8) / 1) * (16.75-(-0.37)));
             yy = 0 + (((tickAnim - 8) / 1) * (0-(0)));
             zz = 0 + (((tickAnim - 8) / 1) * (0-(0)));
         }
         else if (tickAnim >= 9 && tickAnim < 26) {
-            xx = 18.5 + (((tickAnim - 9) / 17) * (-19.27-(18.5)));
+            xx = 16.75 + (((tickAnim - 9) / 17) * (-19.27-(16.75)));
             yy = 0 + (((tickAnim - 9) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 9) / 17) * (0-(0)));
         }
@@ -11603,12 +11793,12 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         }
         else if (tickAnim >= 5 && tickAnim < 9) {
             xx = 0 + (((tickAnim - 5) / 4) * (0-(0)));
-            yy = 2.205 + (((tickAnim - 5) / 4) * (0-(2.205)));
+            yy = 2.205 + (((tickAnim - 5) / 4) * (-0.15-(2.205)));
             zz = 0 + (((tickAnim - 5) / 4) * (0-(0)));
         }
         else if (tickAnim >= 9 && tickAnim < 26) {
             xx = 0 + (((tickAnim - 9) / 17) * (0-(0)));
-            yy = 0 + (((tickAnim - 9) / 17) * (-0.07-(0)));
+            yy = -0.15 + (((tickAnim - 9) / 17) * (-0.07-(-0.15)));
             zz = 0 + (((tickAnim - 9) / 17) * (0-(0)));
         }
         else if (tickAnim >= 26 && tickAnim < 30) {
@@ -11764,22 +11954,22 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75+65))*0.598), chest.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*0.3), chest.rotateAngleZ + (float) Math.toRadians(0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5+150))*-1.8));
 
 
-        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/1.5))*-0.8), tail1.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-1), tail1.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.85));
+        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/1.5))*-0.5), tail1.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-1), tail1.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.85));
 
 
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/1.5))*-0.6), tail2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-2), tail2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.85));
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(2+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/1.5))*-0.3), tail2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-2), tail2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.85));
 
 
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(0), tail3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.2), tail3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.85));
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(2.25), tail3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.2), tail3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.85));
 
 
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-120))*-3), tail4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.5), tail4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*1.85));
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-120))*-2), tail4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.5), tail4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*1.85));
 
 
-        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.95-15))*-2), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.8), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*1.85));
+        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-15))*-1.5), tail5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.8), tail5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*1.85));
 
 
-        this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-15))*2), tail6.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*4.2), tail6.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*2.85));
+        this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75-15))*1.5), tail6.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*4.2), tail6.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*2.85));
 
 
         this.setRotateAngle(tail7, tail7.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*1.3), tail7.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*4.4), tail7.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*2.85));
@@ -11788,16 +11978,16 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         this.setRotateAngle(tail8, tail8.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*1.4), tail8.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*4.8), tail8.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.85));
 
 
-        this.setRotateAngle(tail9, tail9.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*3.5), tail9.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*2.8), tail9.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.85));
+        this.setRotateAngle(tail9, tail9.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*2.5), tail9.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*2.8), tail9.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*3.85));
 
 
-        this.setRotateAngle(tail10, tail10.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*5.8), tail10.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*5), tail10.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-4.85));
+        this.setRotateAngle(tail10, tail10.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*4.8), tail10.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*5), tail10.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-4.85));
 
 
-        this.setRotateAngle(tail11, tail11.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*7.8), tail11.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*7), tail11.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-4.85));
+        this.setRotateAngle(tail11, tail11.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75))*5.8), tail11.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*7), tail11.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*-4.85));
 
 
-        this.setRotateAngle(tail12, tail12.rotateAngleX + (float) Math.toRadians(-1+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/1.5-30))*15), tail12.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*9), tail12.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*5.85));
+        this.setRotateAngle(tail12, tail12.rotateAngleX + (float) Math.toRadians(-1+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/1.5-40))*15), tail12.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*9), tail12.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*5.85));
 
 
         this.setRotateAngle(neck1, neck1.rotateAngleX + (float) Math.toRadians(1.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.75+65))*0.5), neck1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5))*0.5), neck1.rotateAngleZ + (float) Math.toRadians(-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/1.5+150))*-1));
@@ -11851,6 +12041,7 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
 
 
         this.setRotateAngle(neck6, neck6.rotateAngleX + (float) Math.toRadians(-6.75), neck6.rotateAngleY + (float) Math.toRadians(0), neck6.rotateAngleZ + (float) Math.toRadians(0));
+
 
     }
 
