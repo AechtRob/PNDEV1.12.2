@@ -264,7 +264,29 @@ public class ModelLisowicia extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.root.offsetY = -0.16F;
+        this.setRotateAngle(basin, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(head1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.7F, 0.0F, 0.1F);
+        this.setRotateAngle(tail2, 0.2F, 0.0F, 0.3F);
+        this.setRotateAngle(upperleg1, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(leg1, 1.3F, 0.3F, 0.0F);
+        this.setRotateAngle(foot1, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(toes1, 1.6F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, -0.8F, -0.1F, -0.1F);
+        this.setRotateAngle(leg2, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(foot2, -1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(toes2, 1.55F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 0.5F, -0.2F, 0.3F);
+        this.setRotateAngle(arm1, -1.3F, -0.2F, -0.2F);
+        this.setRotateAngle(hand1, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm2, -0.4F, 0.2F, -0.3F);
+        this.setRotateAngle(arm2, -0.5F, -0.2F, 0.2F);
+        this.setRotateAngle(hand2, 0.9F, 0.0F, 0.0F);
+        this.root.offsetY = -0.05F;
         this.root.render(0.01F);
         this.resetToDefaultPose();
     }

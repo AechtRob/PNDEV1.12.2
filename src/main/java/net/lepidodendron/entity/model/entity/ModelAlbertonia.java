@@ -143,8 +143,23 @@ public class ModelAlbertonia extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetY = -0.055F;
-        //this.Bodyfront.offsetX = -0.125F;
+        this.Bodyfront.offsetY = -0.15F;
+        this.Bodyfront.offsetX = -0.1F;
+        this.Bodyfront.offsetZ = 0.025F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, -0.2F, 0.2F, -0.3F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.Bodyfront.offsetZ = 0.01F;
+        this.Bodyfront.offsetX = -0.025F;
+        this.Bodyfront.offsetY = 0.15F;
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }

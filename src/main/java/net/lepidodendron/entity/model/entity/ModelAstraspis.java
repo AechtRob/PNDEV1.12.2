@@ -179,9 +179,23 @@ public class ModelAstraspis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.Astraspis.offsetZ = -0.05F;
-        this.Astraspis.offsetY = -0.18F;
-        this.Astraspis.rotateAngleX = (float) Math.toRadians(90);
+        this.Astraspis.rotateAngleY = (float) Math.toRadians(90);
+        this.Astraspis.offsetY = -0.15F;
+        this.Astraspis.offsetX = -0.1F;
+        this.Astraspis.offsetZ = 0.025F;
+        this.Astraspis.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Astraspis, -0.2F, 0.2F, -0.3F);
+        this.setRotateAngle(Tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.0F, 0.0F);
+        this.Astraspis.offsetZ = 0.01F;
+        this.Astraspis.offsetY = 0.15F;
         this.Astraspis.render(0.01F);
         this.resetToDefaultPose();
     }
