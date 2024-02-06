@@ -21,8 +21,14 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_yiqi",
 			"type": "text",
-			"text": ""
+			"text": "Yi is a Scansoriopterygid Dinosaur from the Late Jurassic of Cretaceous. This Dinosaur was discovered in the Tiaojishan Formation. Yi is thought to be a small tree dwelling animal. Like other Dinosaurs closely related, the presence of an elongated third finger indicates that this animal was likely to have a gliding membrane. And what makes it very unique among dinosaurs is the presence of a long, bony strut attached to the animals rist. "
 		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yiqi",
+			"type": "text",
+			"text": "No other dinosaurs have this kind of modified wrist bone, and it is possible this resulted in a wing appearance similar to those of bats. Only one species and specimen of Yi has ever been described, Yi Qi. This animal was discovered by a farmer,  Wang Jianrong. Who sold the fossil to a museum where a group lead by Xu Xing posted the initial study of this animal and named it. Yi is also unique for being the shortest generic name of any dinosaur."
+		},
+
 		{
 			"type": "lepidodendron:diet",
 			"mob": "lepidodendron:prehistoric_flora_yiqi"

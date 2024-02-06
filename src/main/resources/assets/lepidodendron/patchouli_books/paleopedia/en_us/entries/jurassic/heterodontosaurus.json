@@ -1,0 +1,67 @@
+{
+	"name": "Heterodontosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/heterodontosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_heterodontosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_heterodontosaurus",
+			"title": "Heterodontosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Heterodontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. tucki",
+            "entity": "lepidodendron:prehistoric_flora_heterodontosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
+			"type": "text",
+			"text": "t's this time again, the time I am silently judged until I post one of these and so here we have it, Heterodontosaurus comes to the Jurassic! Heterodontosaurus tucki is a species of Heterodontosaurian dinosaur from the Early Jurassic of South Africa. This genus, eponymous to its own family, is the better known among it's kin and was only one of four genera of Heterodontosaurians to have been discovered in the formation it comes from."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
+			"type": "text",
+			"text": "Around 1.2-1.7 m long, the nimble Heterodontosaurus was a small herbivorous or potentially omnivorous animal, taking its genus name from the varied shape of it's teeth, consisting of three different morphologies; The most apparent of the three tooth types would be the enlarged canines, today still debated the usage of between self defense or display, however the animal also head leaf shaped molars,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
+			"type": "text",
+			"text": "most commonly seen in animals who chew vegetation and a set of upper incisors which would hit against the lower predentary bone characteristic of Ornithischians. Originally described in 1962, the animal was named before the holotype was fully prepared as the authors recognized the importance of the discovery, being one of the first basal ornithischians found at the time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
+			"type": "text",
+			"text": "While today we look at Heterodontosaurus and see a bristle covered creature, this wasn't the case before 2009, when Tianyulong, a chinese relative of Heterodontosaurus, was named; Tianyulong is notable for it's fossils preserving a thick layer of long bristles covering its body. It was once believed Heterodontosaurus to have been a quadruped, hypothesis today refuted in favor of a bipedal model."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterodontosaurus",
+			"type": "text",
+			"text": "While we know Heterodontosaurids to have been basal Ornithischians, their placement in relation with later ones is still a topic of debate today. Despite its small size, Heterodontosaurus remains among the largest of its peers, the group containing some of the smallest ornithischians known today."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heterodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heterodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heterodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heterodontosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heterodontosaurus"
+		}
+	]
+}
