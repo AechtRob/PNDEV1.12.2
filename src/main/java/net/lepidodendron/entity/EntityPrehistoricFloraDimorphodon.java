@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 		minWidth = 0.10F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 8;
 	}
 
 	@Override
@@ -241,7 +241,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22D);
 		//this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0D);
 	}

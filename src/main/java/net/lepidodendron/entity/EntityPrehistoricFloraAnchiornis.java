@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 		minWidth = 0.10F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 4.0D;
 		STAND_ANIMATION = Animation.create(85);
 		DISPLAY_ANIMATION = Animation.create(45);
 	}
@@ -292,7 +292,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22D);
 		//this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0D);
 	}
