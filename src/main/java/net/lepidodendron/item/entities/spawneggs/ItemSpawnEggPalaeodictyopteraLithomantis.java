@@ -68,10 +68,10 @@ public class ItemSpawnEggPalaeodictyopteraLithomantis extends ElementsLepidodend
 			return "Carboniferous";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

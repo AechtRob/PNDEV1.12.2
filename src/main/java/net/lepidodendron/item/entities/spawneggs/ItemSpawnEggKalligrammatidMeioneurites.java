@@ -68,10 +68,10 @@ public class ItemSpawnEggKalligrammatidMeioneurites extends ElementsLepidodendro
 			return "Jurassic";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

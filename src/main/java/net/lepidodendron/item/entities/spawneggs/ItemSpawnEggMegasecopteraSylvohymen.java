@@ -67,10 +67,10 @@ public class ItemSpawnEggMegasecopteraSylvohymen extends ElementsLepidodendronMo
 			return "Permian";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

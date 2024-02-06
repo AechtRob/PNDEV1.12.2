@@ -68,10 +68,10 @@ public class ItemSpawnEggTitanopteraGigatitan extends ElementsLepidodendronMod.M
 			return "Triassic";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

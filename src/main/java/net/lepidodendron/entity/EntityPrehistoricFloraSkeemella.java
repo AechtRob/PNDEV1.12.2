@@ -16,6 +16,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -48,7 +49,9 @@ public class EntityPrehistoricFloraSkeemella extends EntityPrehistoricFloraFishB
 
 	public static String getPeriod() {return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
 
 	@Override
 	public boolean dropsEggs() {
