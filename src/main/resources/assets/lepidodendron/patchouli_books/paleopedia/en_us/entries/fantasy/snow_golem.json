@@ -1,0 +1,40 @@
+{
+	"name": "Snow Golem",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/snow_golem_icon.png",
+	"category": "lepidodendron:fantasy_golem",
+	"turnin": "lepidodendron:pf_adv_book_snow_golem",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The Snow Golem (Robotogolem nivalis) is a native Minecraft creature: it is created by placing a carved pumpkin onto two blocks of snow. It leaves a trail of snow in its wake, and will pelt any hostile mobs around it with snowballs. In hot biomes, or in the rain, they can take damage and die. You can regain your pumpkin by shearing the live golem."
+		},
+		{
+			"type": "entity",
+			"name": "R. nivalis",
+			"entity": "minecraft:snowman",
+			"rotate": false,
+			"default_rotation": -30
+		},
+		{
+			"type": "multiblock",
+			"name": "Snow Golem",
+			"enable_visualize": false,
+			"text": "To create a Snow Golem, place a carved pumpkin on top of two blocks of snow.",
+			"multiblock": {
+				"pattern": [
+					[ "H" ],
+					[ "B" ],
+					[ "0" ],
+					[ "A" ]
+				],
+				"mapping": {
+					"H": "minecraft:pumpkin",
+					"0": "minecraft:snow",
+					"B": "minecraft:snow",
+					"A": "minecraft:air"
+				}
+			}
+		}
+	]
+}

@@ -96,7 +96,7 @@ public class BlockBatHead extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockContainer {
 		public BlockCustom() {
 			super(Material.CIRCUITS);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(NODROP, Boolean.valueOf(false)));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NODROP, Boolean.valueOf(false)));
 			setTranslationKey("pf_bat_head");
 			setCreativeTab(null);
 		}

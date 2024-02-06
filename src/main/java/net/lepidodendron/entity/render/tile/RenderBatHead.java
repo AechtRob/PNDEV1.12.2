@@ -34,6 +34,7 @@ public class RenderBatHead extends TileEntitySpecialRenderer<BlockBatHead.TileEn
         this.renderBatHead((float)x, (float)y, (float)z, enumfacing, yy, destroyStage, partialTicks);
     }
 
+
     public void setRendererDispatcher(TileEntityRendererDispatcher rendererDispatcherIn)
     {
         super.setRendererDispatcher(rendererDispatcherIn);
@@ -42,6 +43,9 @@ public class RenderBatHead extends TileEntitySpecialRenderer<BlockBatHead.TileEn
 
     public void renderBatHead(float x, float y, float z, EnumFacing facing, float rotationIn, int destroyStage, float animateTicks)
     {
+        @SuppressWarnings("deprecation")
+        Class clazz = sun.reflect.Reflection.getCallerClass(8);
+
         ModelBat modelbase = this.modelBat;
 
         if (destroyStage >= 0)
@@ -64,6 +68,10 @@ public class RenderBatHead extends TileEntitySpecialRenderer<BlockBatHead.TileEn
         if (facing == EnumFacing.UP)
         {
             GlStateManager.translate(x + 0.5F, y + 0.095F, z + 0.5F);
+        }
+        else if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock"))
+        {
+            GlStateManager.translate(x + 0.5F, y + 0.205F, z + 0.5F);
         }
         else
         {
@@ -90,6 +98,9 @@ public class RenderBatHead extends TileEntitySpecialRenderer<BlockBatHead.TileEn
         GlStateManager.enableRescaleNormal();
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         GlStateManager.scale(0.5F, 0.5F, 0.5F);
+        if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            GlStateManager.scale(2.0F, 2.0F, 2.0F);
+        }
         GlStateManager.enableAlpha();
         GlStateManager.rotate(rotationIn, 0, 1, 0);
 

@@ -1,0 +1,40 @@
+{
+	"name": "Guano Golem",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/guano_golem_icon.png",
+	"category": "lepidodendron:fantasy_golem",
+	"turnin": "lepidodendron:pf_adv_book_guano_golem",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The Guano Golem (Robotogolem wanuensis) is related to the Snow Golem (Robotogolem nivalis) in the main Minecraft game. It is created in a similar way, leaves a trail of guano in its wake, and will pelt any hostile mobs around it with guano-balls."
+		},
+		{
+			"type": "entity",
+			"name": "R. wanuensis",
+			"entity": "lepidodendron:prehistoric_flora_guano_golem",
+			"rotate": false,
+			"default_rotation": -30
+		},
+		{
+			"type": "multiblock",
+			"name": "Guano Golem",
+			"enable_visualize": false,
+			"text": "To create a Guano Golem, place a bat head on top of two blocks of guano",
+			"multiblock": {
+				"pattern": [
+					[ "H" ],
+					[ "B" ],
+					[ "0" ],
+					[ "A" ]
+				],
+				"mapping": {
+					"H": "lepidodendron:bat_head",
+					"0": "lepidodendron:guano_block",
+					"B": "lepidodendron:guano_block",
+					"A": "minecraft:air"
+				}
+			}
+		}
+	]
+}
