@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.18F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 24.0D;
+		maxHealthAgeable = 25;
 		NOISE_ANIMATION = Animation.create(20);
 		SCRATCH_LEFT_ANIMATION = Animation.create(60);
 		SCRATCH_RIGHT_ANIMATION = Animation.create(60);
@@ -269,7 +269,7 @@ public class EntityPrehistoricFloraAnchisaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}

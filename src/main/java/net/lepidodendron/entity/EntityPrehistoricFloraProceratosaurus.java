@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 		minWidth = 0.50F;
 		maxWidth = 0.7F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 22.0D;
+		maxHealthAgeable = 18.0D;
 		STAND_ANIMATION = Animation.create(105);
 		HURT_ANIMATION = Animation.create(15);
 		NOISE_ANIMATION = Animation.create(20);
@@ -236,7 +236,7 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

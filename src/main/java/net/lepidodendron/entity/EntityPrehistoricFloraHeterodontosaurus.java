@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 		minWidth = 0.12F;
 		maxWidth = 0.375F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 8.0D;
 		STAND_ANIMATION = Animation.create(60);
 		DIG_ANIMATION = Animation.create(50);
 		CHATTER_ANIMATION = Animation.create(20);
@@ -441,7 +441,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

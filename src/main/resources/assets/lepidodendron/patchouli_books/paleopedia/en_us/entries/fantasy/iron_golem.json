@@ -7,11 +7,11 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "The Iron Golem (Robotogolem ferrum-viculensis) is a native Minecraft creature which spawns in villages: it is created by placing a carved pumpkin onto a body of iron. It attacks hostile mobs."
+			"text": "The Iron Golem (Robotogolem ferroviculensis) is a native Minecraft creature which spawns in villages: it is created by placing a carved pumpkin onto a body of iron. It attacks hostile mobs."
 		},
 		{
 			"type": "entity",
-			"name": "R. ferrum-viculensis",
+			"name": "R. ferroviculensis",
 			"entity": "minecraft:villager_golem",
 			"rotate": false,
 			"default_rotation": -30

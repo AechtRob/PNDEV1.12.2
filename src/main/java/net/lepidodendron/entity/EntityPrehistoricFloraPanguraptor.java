@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		minWidth = 0.12F;
 		maxWidth = 0.6F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 16.0D;
 		HURT_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

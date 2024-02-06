@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 		minWidth = 0.10F;
 		maxWidth = 0.65F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 6;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);

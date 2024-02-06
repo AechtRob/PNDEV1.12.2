@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		minWidth = 0.12F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 18.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -120,7 +120,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		//this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

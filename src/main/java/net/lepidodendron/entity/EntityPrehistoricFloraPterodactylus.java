@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		minWidth = 0.10F;
 		maxWidth = 0.65F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 6;
 		setNoAI(!true);
 		enablePersistence();
 	}

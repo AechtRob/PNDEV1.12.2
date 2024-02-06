@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 		minWidth = 0.18F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 26.0D;
+		maxHealthAgeable = 25;
 		//STAND_ANIMATION = Animation.create(145);
 		NOISE_ANIMATION = Animation.create(20);
 		LOOK_ANIMATION = Animation.create(70);

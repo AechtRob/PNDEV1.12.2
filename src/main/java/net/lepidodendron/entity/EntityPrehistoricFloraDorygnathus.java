@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 		minWidth = 0.10F;
 		maxWidth = 0.80F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 6.0D;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);

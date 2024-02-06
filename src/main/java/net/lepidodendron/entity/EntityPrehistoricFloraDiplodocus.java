@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		minWidth = 0.8F;
 		maxWidth = 2.95F;
 		maxHeight = 4.5F;
-		maxHealthAgeable = 200.0D;
+		maxHealthAgeable = 170;
 		IDLE2_ANIMATION = Animation.create(460);
 		IDLE1_ANIMATION = Animation.create(140);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -466,7 +466,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(9.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}

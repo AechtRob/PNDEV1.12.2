@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 		minWidth = 0.20F;
 		maxWidth = 0.99F;
 		maxHeight = 1.2F;
-		maxHealthAgeable = 24.0D;
+		maxHealthAgeable = 30;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -196,7 +196,7 @@ public class EntityPrehistoricFloraTanycolagreus extends EntityPrehistoricFloraL
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraSiderops extends EntityPrehistoricFloraSwimmi
 		minWidth = 0.12F;
 		maxWidth = 0.9F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 35;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -158,7 +158,7 @@ public class EntityPrehistoricFloraSiderops extends EntityPrehistoricFloraSwimmi
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(7.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

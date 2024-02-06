@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCa
 		minWidth = 0.20F;
 		maxWidth = 0.65F;
 		maxHeight = 1.1F;
-		maxHealthAgeable = 38.0D;
+		maxHealthAgeable = 40.0D;
 		IDLE1 = Animation.create(40);
 		IDLE2 = Animation.create(70);
 		IDLE3 = Animation.create(40);
@@ -407,7 +407,7 @@ public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

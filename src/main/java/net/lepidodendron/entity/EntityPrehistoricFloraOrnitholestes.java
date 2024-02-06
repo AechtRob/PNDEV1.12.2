@@ -10,7 +10,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderEffigia;
 import net.lepidodendron.entity.render.entity.RenderOrnitholestes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.util.CustomTrigger;
@@ -57,7 +56,7 @@ public class EntityPrehistoricFloraOrnitholestes extends EntityPrehistoricFloraL
 		minWidth = 0.20F;
 		maxWidth = 0.5F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 18.0D;
 		SCRATCH_ANIMATION = Animation.create(60);
 		STAND_ANIMATION = Animation.create(70);
 		HURT_ANIMATION = Animation.create(15);
@@ -263,7 +262,7 @@ public class EntityPrehistoricFloraOrnitholestes extends EntityPrehistoricFloraL
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
