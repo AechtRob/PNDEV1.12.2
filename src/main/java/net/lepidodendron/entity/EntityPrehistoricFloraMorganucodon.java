@@ -7,6 +7,8 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -42,6 +44,12 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MORGANUCODON;
 	}
 
 	public static String getPeriod() {

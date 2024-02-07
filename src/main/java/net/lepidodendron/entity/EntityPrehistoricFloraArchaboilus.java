@@ -9,6 +9,8 @@ import net.lepidodendron.block.BlockInsectEggsArchaboilus;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderArchaboilus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -47,6 +49,12 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 	public EntityPrehistoricFloraArchaboilus(World world) {
 		super(world);
 		setSize(0.18F, 0.15F);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ARCHABOILUS;
 	}
 
 	@Override

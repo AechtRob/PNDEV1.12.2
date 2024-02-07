@@ -9,6 +9,8 @@ import net.lepidodendron.block.BlockInsectEggsPycnophlebia;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderPycnophlebia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -47,6 +49,12 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 	public EntityPrehistoricFloraPycnophlebia(World world) {
 		super(world);
 		setSize(0.18F, 0.15F);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PYCNOPHLEBIA;
 	}
 
 	@Override

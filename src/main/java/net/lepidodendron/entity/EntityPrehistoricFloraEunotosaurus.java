@@ -6,6 +6,8 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -42,6 +44,13 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 			tailBuffer = new ChainBuffer();
 		}
 	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EUNOTOSAURUS;
+	}
+
 	@Override
 	public int getEatLength() {
 		return 10;

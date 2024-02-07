@@ -10,6 +10,8 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderDvinia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -43,6 +45,12 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		maxHeight = 0.4F;
 		maxHealthAgeable = 10.0D;
 		LOOK_ANIMATION = Animation.create(this.getLookLength());
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DVINIA;
 	}
 
 	public int getLookLength() {

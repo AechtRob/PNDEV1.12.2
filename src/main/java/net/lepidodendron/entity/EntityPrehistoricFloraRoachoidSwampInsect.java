@@ -6,6 +6,8 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
@@ -33,6 +35,12 @@ public class EntityPrehistoricFloraRoachoidSwampInsect extends EntityPrehistoric
 	public EntityPrehistoricFloraRoachoidSwampInsect(World world) {
 		super(world);
 		setSize(0.18F, 0.145F);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ROACHOID;
 	}
 
 	@Override

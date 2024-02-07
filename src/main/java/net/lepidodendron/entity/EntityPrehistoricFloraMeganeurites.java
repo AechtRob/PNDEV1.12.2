@@ -7,6 +7,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMeganeurites;
 import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -39,6 +41,12 @@ public class EntityPrehistoricFloraMeganeurites extends EntityPrehistoricFloraMe
 		super(world);
 		setSize(0.15F, 0.30F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MEGANEURITES;
 	}
 
 	@Override

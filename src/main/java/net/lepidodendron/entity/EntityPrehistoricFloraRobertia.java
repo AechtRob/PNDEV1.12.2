@@ -3,8 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.render.entity.RenderJonkeria;
 import net.lepidodendron.entity.render.entity.RenderRobertia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemRoots;
@@ -31,7 +29,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiictodon implements IAdvancementGranter {
+public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiictodon {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

@@ -5,7 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderProsictodon;
 import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -38,6 +40,12 @@ public class EntityPrehistoricFloraProsictodon extends EntityPrehistoricFloraDii
 		maxWidth = 0.22F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PROSICTODON;
 	}
 
 	public float getAISpeedLand() {

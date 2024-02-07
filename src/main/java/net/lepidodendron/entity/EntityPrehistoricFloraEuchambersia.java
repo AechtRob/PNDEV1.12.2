@@ -10,6 +10,8 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderEuchambersia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -43,6 +45,12 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 10.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EUCHAMBERSIA;
 	}
 
 	@Override

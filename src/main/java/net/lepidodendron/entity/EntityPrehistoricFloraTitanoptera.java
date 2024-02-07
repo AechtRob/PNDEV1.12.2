@@ -9,6 +9,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectB
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -52,6 +54,19 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case CLATROTITAN: default:
+				return ModTriggers.CLICK_TITANOPTERA_CLATROTITAN;
+			case GIGATITAN:
+				return ModTriggers.CLICK_TITANOPTERA_GIGATITAN;
+			case MESOTITAN:
+				return ModTriggers.CLICK_TITANOPTERA_MESOTITAN;
+		}
 	}
 
 	@Override

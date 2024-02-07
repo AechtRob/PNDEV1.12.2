@@ -5,7 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderEosimops;
 import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -38,6 +40,12 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 		maxWidth = 0.25F;
 		maxHeight = 0.30F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EOSIMOPS;
 	}
 
 	public float getAISpeedLand() {

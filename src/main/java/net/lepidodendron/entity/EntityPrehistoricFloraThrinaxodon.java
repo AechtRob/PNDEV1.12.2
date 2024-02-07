@@ -8,6 +8,8 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -47,6 +49,12 @@ public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDii
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
 		NOISE_ANIMATION = Animation.create(20);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_THRINAXODON;
 	}
 
 	@Override
