@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDesmatosuchus;
-import net.lepidodendron.entity.EntityPrehistoricFloraDesmatosuchus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -472,15 +471,15 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         float masterSpeed = entityDesmatosuchus.getTravelSpeed();
 
         if (entityDesmatosuchus.isDrinking()) {
-            this.faceTarget(f3, f4, 1, Desmatosuchus);
+            this.faceTarget(f3, f4, 6, Desmatosuchus);
         }
 
         //System.err.println("PFDrink " + entityDesmatosuchus.getPFDrinking());
 
         //float masterSpeed = 0;
 
-        this.faceTarget(f3, f4, 2, neck);
-        this.faceTarget(f3, f4, 4, head);
+        this.faceTarget(f3, f4, 6, neck);
+        this.faceTarget(f3, f4, 12, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         entityDesmatosuchus.tailBuffer.applyChainSwingBuffer(Tail);

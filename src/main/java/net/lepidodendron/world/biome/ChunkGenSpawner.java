@@ -82,7 +82,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             if (mobList == null) {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
                 Biome biome = world.getBiome(spawnPos);
-                MobString = EntityLists.mobString(biome, 0);
+                MobString = EntityLists.mobString(biome);
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {

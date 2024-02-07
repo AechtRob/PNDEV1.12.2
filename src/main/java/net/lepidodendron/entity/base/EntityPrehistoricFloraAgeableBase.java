@@ -773,6 +773,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos) {
+        summon(worldIn, mobToSpawn, nbtStr, xpos, ypos, zpos, false);
+    }
+
+    public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos, boolean isBaby) {
 
         if (worldIn.isRemote) {
             return;
@@ -832,6 +836,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (entity instanceof EntityLiving) {
                 ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
                 entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
+            }
+
+            //Babify mob if required:
+            if (isBaby) {
+                nbttagcompound.setInteger("AgeTicks", 0);
+                entity.readFromNBT(nbttagcompound);
             }
 
             //Force it to recognise a nest if applicable
