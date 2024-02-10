@@ -103,6 +103,17 @@ public class ModelBirkenia extends AdvancedModelBase {
         this.resetToDefaultPose();
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Birkenia, -0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.Birkenia.offsetX = -0.004F;
+        this.Birkenia.offsetY = 0.15F;
+        this.Birkenia.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
