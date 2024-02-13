@@ -208,7 +208,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadFilamentousAlgae) {
+			if (LepidodendronConfigPlants.spreadFilamentousAlgae && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

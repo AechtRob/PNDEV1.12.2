@@ -39,7 +39,7 @@
 //
 //import javax.annotation.Nullable;
 //
-//public class EntityPrehistoricFloraOrcanopterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
+//public class EntityPrehistoricFloraOrcanopterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
 //
 //	public Animation SWIM_ANIMATION;
 //	public Animation UNSWIM_ANIMATION;

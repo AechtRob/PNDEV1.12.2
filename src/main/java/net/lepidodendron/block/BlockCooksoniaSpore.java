@@ -67,7 +67,7 @@ public class BlockCooksoniaSpore extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadCooksonia) {
+			if (LepidodendronConfigPlants.spreadCooksonia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

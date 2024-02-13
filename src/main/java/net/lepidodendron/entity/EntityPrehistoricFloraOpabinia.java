@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.OpabiniaWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderOpabinia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -35,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraOpabinia extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraOpabinia extends EntityPrehistoricFloraFishBase implements ITrappableWater {
 
 	private static final DataParameter<Integer> FEEDTICKS = EntityDataManager.createKey(EntityPrehistoricFloraOpabinia.class, DataSerializers.VARINT);
 	public BlockPos currentTarget;

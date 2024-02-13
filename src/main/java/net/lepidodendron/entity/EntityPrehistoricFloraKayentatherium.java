@@ -6,6 +6,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderKayentatherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -19,7 +20,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon {
+public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon implements ITrappableLand {
 
 	public EntityPrehistoricFloraKayentatherium(World world) {
 		super(world);

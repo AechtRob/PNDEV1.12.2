@@ -11,6 +11,7 @@ import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.render.entity.RenderOmnidens;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.lepidodendron.item.entities.ItemEggsOmnidens;
 import net.minecraft.client.model.ModelBase;
@@ -40,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

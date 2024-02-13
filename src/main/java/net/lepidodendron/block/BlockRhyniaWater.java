@@ -73,7 +73,7 @@ public class BlockRhyniaWater extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadRhynia) {
+			if (LepidodendronConfigPlants.spreadRhynia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

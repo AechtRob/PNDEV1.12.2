@@ -151,7 +151,7 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadMontsechia) {
+			if (LepidodendronConfigPlants.spreadMontsechia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

@@ -86,7 +86,7 @@ public class BlockPsilophyton extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadPsilophyton) {
+			if (LepidodendronConfigPlants.spreadPsilophyton && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

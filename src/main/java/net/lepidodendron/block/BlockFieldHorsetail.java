@@ -87,7 +87,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadFieldHorsetail) {
+			if (LepidodendronConfigPlants.spreadFieldHorsetail && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

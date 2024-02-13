@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderSlimonia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -36,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
+public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
 
 	public Animation SWIM_ANIMATION;
 	public Animation UNSWIM_ANIMATION;

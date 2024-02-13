@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerDragonflyWing;
 import net.lepidodendron.entity.render.entity.RenderDragonfly;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -38,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;

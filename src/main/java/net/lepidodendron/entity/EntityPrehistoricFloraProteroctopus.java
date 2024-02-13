@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalking
 import net.lepidodendron.entity.render.entity.RenderProteroctopus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsProteroctopus;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -31,7 +32,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
+public class EntityPrehistoricFloraProteroctopus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
 
 	public Animation SWIM_ANIMATION;
 	public Animation UNSWIM_ANIMATION;

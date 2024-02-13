@@ -8,6 +8,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -29,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter, IScreamer {
+public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter, IScreamer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	private boolean screaming;

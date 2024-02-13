@@ -12,6 +12,7 @@ import net.lepidodendron.block.BlockInsectEggsMeganeuropsis;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -51,7 +52,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraInsectFlyingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraInsectFlyingBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

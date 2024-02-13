@@ -5,6 +5,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,7 +24,7 @@ import net.minecraft.world.WorldServer;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehistoricFloraEurypteridBase {
+public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
 
 	private static final float[] DELITZSCHALA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] DUNBARIA_SIZE = new float[]{0.2F, 0.2F};

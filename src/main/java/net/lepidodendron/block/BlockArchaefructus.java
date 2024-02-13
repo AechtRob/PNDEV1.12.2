@@ -69,7 +69,7 @@ public class BlockArchaefructus extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadArchaefructus) {
+			if (LepidodendronConfigPlants.spreadArchaefructus && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

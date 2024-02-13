@@ -68,7 +68,7 @@ public class BlockSwampHorsetailLandNoSpore extends ElementsLepidodendronMod.Mod
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadSwampHorsetail) {
+			if (LepidodendronConfigPlants.spreadSwampHorsetail && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

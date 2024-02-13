@@ -609,85 +609,85 @@ public class ModelDimorphodon extends AdvancedModelBaseExtended {
                     animClimbing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 }
             }
-            else if (ee.getIsMoving()) {
-                if (!ee.getIsFlying()) {
+            else if (ee.getIsFlying()) {
+                if (!ee.getIsMoving()) {
                     if (ee.getIsFast()) { //Running
                         animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                     } else { //Walking
                         animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                     }
                 }
-                else {
-                    //Set to flight pose:
-                    this.setRotateAngle(chest, -0.0436F, 0.0F, 0.0F);
-                    this.setRotateAngle(body1, -0.0873F, 0.0F, 0.0F);
-                    this.setRotateAngle(tail3, 0.0436F, 0.0F, 0.0F);
-                    this.setRotateAngle(tail4, 0.1309F, 0.0F, 0.0F);
-                    this.setRotateAngle(tail5, 0.0873F, 0.0F, 0.0F);
-                    this.setRotateAngle(upperlegleft, 0.303F, -0.2572F, -1.5943F);
-                    this.setRotateAngle(lowerlegleft, 0.5551F, 0.0992F, 0.2809F);
-                    this.setRotateAngle(footleft, 0.8294F, -0.5675F, 0.6802F);
-                    this.setRotateAngle(legwing2, -0.0873F, 0.0F, 0.0F);
-                    this.setRotateAngle(upperlegright, 0.303F, 0.2572F, 1.5943F);
-                    this.setRotateAngle(lowerlegright, 0.5551F, -0.0992F, -0.2809F);
-                    this.setRotateAngle(footright, 0.8294F, 0.5675F, -0.6802F);
-                    this.setRotateAngle(legwing4, -0.0873F, 0.0F, 0.0F);
-                    this.setRotateAngle(wingleft1, -0.0604F, 0.1241F, -0.1754F);
-                    this.setRotateAngle(wingleft2, -0.1083F, -0.001F, -1.5301F);
-                    this.setRotateAngle(wingleft3, -1.3171F, -0.0756F, 0.1933F);
-                    this.setRotateAngle(wingleft4, 0.1745F, 0.0F, 0.0F);
-                    this.setRotateAngle(handleft, -0.0071F, 0.0125F, 1.4716F);
-                    this.setRotateAngle(wingright1, -0.0604F, -0.1241F, 0.1754F);
-                    this.setRotateAngle(wingright2, -0.1083F, 0.001F, 1.5301F);
-                    this.setRotateAngle(wingright3, -1.3171F, 0.0756F, -0.1933F);
-                    this.setRotateAngle(wingright4, 0.1745F, 0.0F, 0.0F);
-                    this.setRotateAngle(handright, -0.0071F, -0.0125F, -1.4716F);
-                    this.setRotateAngle(neck1, -0.0436F, 0.0F, 0.0F);
-                    this.setRotateAngle(neck2, -0.2618F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r1, 0.288F, 0.0F, 0.0F);
-                    this.setRotateAngle(head, 0.5672F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r2, 0.0873F, 0.0F, 0.0F);
-                    this.setRotateAngle(head2, 0.1309F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r3, 0.8814F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r4, 0.1484F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r5, 0.5411F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r6, -0.0254F, -0.1659F, 0.6151F);
-                    this.setRotateAngle(cube_r7, 0.0262F, -0.1658F, 0.0F);
-                    this.setRotateAngle(cube_r8, -0.0326F, -0.1647F, 0.6594F);
-                    this.setRotateAngle(cube_r9, 0.0262F, -0.1222F, 0.0F);
-                    this.setRotateAngle(cube_r10, 0.1571F, -0.1222F, 0.0F);
-                    this.setRotateAngle(cube_r11, 0.288F, -0.1222F, 0.0F);
-                    this.setRotateAngle(cube_r12, -0.0254F, 0.1659F, -0.6151F);
-                    this.setRotateAngle(cube_r13, -0.0326F, 0.1647F, -0.6594F);
-                    this.setRotateAngle(cube_r14, 0.0262F, 0.1658F, 0.0F);
-                    this.setRotateAngle(cube_r15, -0.2967F, -0.192F, 0.0F);
-                    this.setRotateAngle(cube_r16, 0.0262F, -0.192F, 0.0F);
-                    this.setRotateAngle(cube_r17, 0.0262F, 0.192F, 0.0F);
-                    this.setRotateAngle(cube_r18, -0.2967F, 0.192F, 0.0F);
-                    this.setRotateAngle(cube_r19, 0.1571F, 0.1222F, 0.0F);
-                    this.setRotateAngle(cube_r20, 0.0262F, 0.1222F, 0.0F);
-                    this.setRotateAngle(cube_r21, 0.288F, 0.1222F, 0.0F);
-                    this.setRotateAngle(cube_r22, 0.0262F, 0.0F, 0.0F);
-                    this.setRotateAngle(jaw, 0.0873F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r23, 0.0873F, -0.1396F, -0.6894F);
-                    this.setRotateAngle(cube_r24, 0.8727F, -0.1396F, -0.9163F);
-                    this.setRotateAngle(cube_r25, 0.0F, -0.1396F, 0.0F);
-                    this.setRotateAngle(cube_r26, 0.0F, -0.2094F, 0.0F);
-                    this.setRotateAngle(cube_r27, 0.0873F, 0.1396F, 0.6894F);
-                    this.setRotateAngle(cube_r28, 0.8727F, 0.1396F, 0.9163F);
-                    this.setRotateAngle(cube_r29, 0.0F, 0.1396F, 0.0F);
-                    this.setRotateAngle(cube_r30, 0.0F, 0.2094F, 0.0F);
-                    this.setRotateAngle(cube_r31, -0.4363F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r32, -0.3054F, 0.0F, 0.0F);
-                    this.setRotateAngle(cube_r33, 0.1571F, 0.0F, 0.0F);
+            }
+            else {
+                //Set to flight pose:
+                this.setRotateAngle(chest, -0.0436F, 0.0F, 0.0F);
+                this.setRotateAngle(body1, -0.0873F, 0.0F, 0.0F);
+                this.setRotateAngle(tail3, 0.0436F, 0.0F, 0.0F);
+                this.setRotateAngle(tail4, 0.1309F, 0.0F, 0.0F);
+                this.setRotateAngle(tail5, 0.0873F, 0.0F, 0.0F);
+                this.setRotateAngle(upperlegleft, 0.303F, -0.2572F, -1.5943F);
+                this.setRotateAngle(lowerlegleft, 0.5551F, 0.0992F, 0.2809F);
+                this.setRotateAngle(footleft, 0.8294F, -0.5675F, 0.6802F);
+                this.setRotateAngle(legwing2, -0.0873F, 0.0F, 0.0F);
+                this.setRotateAngle(upperlegright, 0.303F, 0.2572F, 1.5943F);
+                this.setRotateAngle(lowerlegright, 0.5551F, -0.0992F, -0.2809F);
+                this.setRotateAngle(footright, 0.8294F, 0.5675F, -0.6802F);
+                this.setRotateAngle(legwing4, -0.0873F, 0.0F, 0.0F);
+                this.setRotateAngle(wingleft1, -0.0604F, 0.1241F, -0.1754F);
+                this.setRotateAngle(wingleft2, -0.1083F, -0.001F, -1.5301F);
+                this.setRotateAngle(wingleft3, -1.3171F, -0.0756F, 0.1933F);
+                this.setRotateAngle(wingleft4, 0.1745F, 0.0F, 0.0F);
+                this.setRotateAngle(handleft, -0.0071F, 0.0125F, 1.4716F);
+                this.setRotateAngle(wingright1, -0.0604F, -0.1241F, 0.1754F);
+                this.setRotateAngle(wingright2, -0.1083F, 0.001F, 1.5301F);
+                this.setRotateAngle(wingright3, -1.3171F, 0.0756F, -0.1933F);
+                this.setRotateAngle(wingright4, 0.1745F, 0.0F, 0.0F);
+                this.setRotateAngle(handright, -0.0071F, -0.0125F, -1.4716F);
+                this.setRotateAngle(neck1, -0.0436F, 0.0F, 0.0F);
+                this.setRotateAngle(neck2, -0.2618F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r1, 0.288F, 0.0F, 0.0F);
+                this.setRotateAngle(head, 0.5672F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r2, 0.0873F, 0.0F, 0.0F);
+                this.setRotateAngle(head2, 0.1309F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r3, 0.8814F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r4, 0.1484F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r5, 0.5411F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r6, -0.0254F, -0.1659F, 0.6151F);
+                this.setRotateAngle(cube_r7, 0.0262F, -0.1658F, 0.0F);
+                this.setRotateAngle(cube_r8, -0.0326F, -0.1647F, 0.6594F);
+                this.setRotateAngle(cube_r9, 0.0262F, -0.1222F, 0.0F);
+                this.setRotateAngle(cube_r10, 0.1571F, -0.1222F, 0.0F);
+                this.setRotateAngle(cube_r11, 0.288F, -0.1222F, 0.0F);
+                this.setRotateAngle(cube_r12, -0.0254F, 0.1659F, -0.6151F);
+                this.setRotateAngle(cube_r13, -0.0326F, 0.1647F, -0.6594F);
+                this.setRotateAngle(cube_r14, 0.0262F, 0.1658F, 0.0F);
+                this.setRotateAngle(cube_r15, -0.2967F, -0.192F, 0.0F);
+                this.setRotateAngle(cube_r16, 0.0262F, -0.192F, 0.0F);
+                this.setRotateAngle(cube_r17, 0.0262F, 0.192F, 0.0F);
+                this.setRotateAngle(cube_r18, -0.2967F, 0.192F, 0.0F);
+                this.setRotateAngle(cube_r19, 0.1571F, 0.1222F, 0.0F);
+                this.setRotateAngle(cube_r20, 0.0262F, 0.1222F, 0.0F);
+                this.setRotateAngle(cube_r21, 0.288F, 0.1222F, 0.0F);
+                this.setRotateAngle(cube_r22, 0.0262F, 0.0F, 0.0F);
+                this.setRotateAngle(jaw, 0.0873F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r23, 0.0873F, -0.1396F, -0.6894F);
+                this.setRotateAngle(cube_r24, 0.8727F, -0.1396F, -0.9163F);
+                this.setRotateAngle(cube_r25, 0.0F, -0.1396F, 0.0F);
+                this.setRotateAngle(cube_r26, 0.0F, -0.2094F, 0.0F);
+                this.setRotateAngle(cube_r27, 0.0873F, 0.1396F, 0.6894F);
+                this.setRotateAngle(cube_r28, 0.8727F, 0.1396F, 0.9163F);
+                this.setRotateAngle(cube_r29, 0.0F, 0.1396F, 0.0F);
+                this.setRotateAngle(cube_r30, 0.0F, 0.2094F, 0.0F);
+                this.setRotateAngle(cube_r31, -0.4363F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r32, -0.3054F, 0.0F, 0.0F);
+                this.setRotateAngle(cube_r33, 0.1571F, 0.0F, 0.0F);
 
-                    if (ee.getIsLaunching()) {
-                        animLaunching(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                    }
-                    else {
-                        //Is gliding:
-                        animGliding(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                    }
+                if (ee.getIsLaunching()) {
+                    animLaunching(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+                else {
+                    //Is gliding:
+                    animGliding(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
         }

@@ -105,7 +105,7 @@ public class RenderBatHead extends TileEntitySpecialRenderer<BlockBatHead.TileEn
         GlStateManager.rotate(rotationIn, 0, 1, 0);
 
         try { //Done direct to the model via reflection to allow for modded bats and skins etc... might be laggy:
-            Field field = modelbase.getClass().getDeclaredField("batHead");
+            Field field = modelbase.getClass().getDeclaredField("field_82895_a");
             field.setAccessible(true);
             ModelRenderer batHead = (ModelRenderer)field.get(modelbase);
             batHead.render(0.0625F);
