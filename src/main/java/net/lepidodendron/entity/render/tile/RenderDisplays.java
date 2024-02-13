@@ -108,6 +108,7 @@ public class RenderDisplays {
     public static final ModelDesmatosuchus modelDesmatosuchus = new ModelDesmatosuchus();
     public static final ModelDicranurus modelDicranurus = new ModelDicranurus();
     public static final ModelDiictodon modelDiictodon = new ModelDiictodon();
+    public static final ModelDiictodon modelDiictodonBook = new ModelDiictodon();
     public static final ModelDimetrodon modelDimetrodon = new ModelDimetrodon();
     public static final ModelDimorphodon modelDimorphodon = new ModelDimorphodon();
     public static final ModelDimorphodon modelDimorphodonBook = new ModelDimorphodon();
@@ -546,8 +547,8 @@ public class RenderDisplays {
     public static final ModelSinraptor modelSinraptor = new ModelSinraptor();
     public static final ModelSinraptor modelSinraptorBook = new ModelSinraptor();
     public static final ModelBrachiosaurus modelBrachiosaurus = new ModelBrachiosaurus();
-    public static final ModelMooreoceras modelMooreoceras = new ModelMooreoceras();
     public static final ModelBrachiosaurus modelBrachiosaurusBook = new ModelBrachiosaurus();
+    public static final ModelMooreoceras modelMooreoceras = new ModelMooreoceras();
     public static final ModelDeiroceras modelDeiroceras = new ModelDeiroceras();
     public static final ModelTetraceratops modelTetraceratops = new ModelTetraceratops();
     public static final ModelYohoia modelYohoia = new ModelYohoia();
@@ -555,4 +556,5 @@ public class RenderDisplays {
     public static final ModelProfallotaspis modelProfallotaspis = new ModelProfallotaspis();
     public static final ModelCooperoceras modelCooperoceras = new ModelCooperoceras();
     public static final ModelRobertia modelRobertia = new ModelRobertia();
+    public static final ModelRobertia modelRobertiaBook = new ModelRobertia();
 }

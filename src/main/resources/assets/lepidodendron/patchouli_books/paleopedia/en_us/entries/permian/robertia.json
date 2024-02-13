@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/robertia.png"],
-			"title": "R. broomiana",
-			"text": ""
+			"type": "entity",
+			"name": "R. broomiana",
+			"entity": "lepidodendron:prehistoric_flora_robertia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_robertia",

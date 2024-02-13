@@ -239,6 +239,18 @@ public class ModelBobasatrania extends AdvancedModelBase {
         this.resetToDefaultPose();
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bobasatrania, -0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.25F, 0.0F);
+        this.Bobasatrania.offsetY = -0.2F;
+        this.Bobasatrania.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
