@@ -1,6 +1,6 @@
 {
     "name": "Jurassic",
-    "description": "$(l)Welcome... to Jurassic Park$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System. ",
+    "description": "$(l)Welcome... to Jurassic Park$()$(br)This period is known for the explosion in dinosaur diversity, as well as when the ancestors to modern avians first arose. $(br2)$(l)Portal Block: Ginkgo Planks ",
     "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
     "sortnum": 8
 }
