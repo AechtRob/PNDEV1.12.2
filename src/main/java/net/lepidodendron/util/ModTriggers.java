@@ -1132,8 +1132,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PROMEXYELE = new CustomTrigger("pf_book_promexyele");
     public static final CustomTrigger CLICK_PAPILIONICHTHYS = new CustomTrigger("pf_book_papilionichthys");
     public static final CustomTrigger CLICK_RAINERICHTHYS = new CustomTrigger("pf_book_rainerichthys");
-    public static final CustomTrigger CLICK_notostracan = new CustomTrigger("pf_book_notostracan");
+    public static final CustomTrigger CLICK_NOTOSTRACAN = new CustomTrigger("pf_book_notostracan");
     public static final CustomTrigger CLICK_STRUDOPS = new CustomTrigger("pf_book_strudops");
+    public static final CustomTrigger CLICK_GUANO_GOLEM = new CustomTrigger("pf_book_guano_golem");
+    public static final CustomTrigger CLICK_IRON_GOLEM = new CustomTrigger("pf_book_iron_golem");
+    public static final CustomTrigger CLICK_SNOW_GOLEM = new CustomTrigger("pf_book_snow_golem");
+    public static final CustomTrigger CLICK_WITHER = new CustomTrigger("pf_book_wither");
     public static final CustomTrigger CLICK_ORCANOPTERUS = new CustomTrigger("pf_book_orcanopterus");
     public static final CustomTrigger CLICK_ONYCHOPTERELLA = new CustomTrigger("pf_book_onychopterella");
     public static final CustomTrigger CLICK_STROBILOPTERUS = new CustomTrigger("pf_book_strobilopterus");
@@ -2479,8 +2483,12 @@ public class ModTriggers
             CLICK_PROMEXYELE,
             CLICK_PAPILIONICHTHYS,
             CLICK_RAINERICHTHYS,
-            CLICK_notostracan,
+            CLICK_NOTOSTRACAN,
             CLICK_STRUDOPS,
+            CLICK_GUANO_GOLEM,
+            CLICK_IRON_GOLEM,
+            CLICK_SNOW_GOLEM,
+            CLICK_WITHER,
             CLICK_ORCANOPTERUS,
             CLICK_ONYCHOPTERELLA,
             CLICK_STROBILOPTERUS,

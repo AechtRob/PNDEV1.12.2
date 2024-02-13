@@ -3,6 +3,9 @@ package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGuano;
+import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
@@ -23,7 +26,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRangedAttackMob {
+public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IAdvancementGranter, IRangedAttackMob {
 
 	public EntityPrehistoricFloraGuanoGolem(World world) {
 		super(world);
@@ -165,4 +168,9 @@ public class EntityPrehistoricFloraGuanoGolem extends EntityGolem implements IRa
 	{
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_GUANO_GOLEM;
+	}
 }

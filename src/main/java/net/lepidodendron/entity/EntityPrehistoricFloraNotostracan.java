@@ -357,7 +357,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_notostracan;
+		return ModTriggers.CLICK_NOTOSTRACAN;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
