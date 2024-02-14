@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderApatosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -46,7 +47,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 
@@ -59,10 +60,10 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
-		setSize(3.0F, 6F);
+		setSize(2.95F, 6F);
 		stepHeight = 2;
 		minWidth = 0.8F;
-		maxWidth = 3.0F;
+		maxWidth = 2.95F;
 		maxHeight = 6F;
 		maxHealthAgeable = 200.0D;
 		TAIL_ANIMATION = Animation.create(80);
@@ -70,13 +71,13 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 			tailBuffer = new ChainBuffer();
 		}
 		NOISE_ANIMATION = Animation.create(40);
-		setgetMaxTurnDistancePerTick(5.0F);
+		setgetMaxTurnDistancePerTick(7.5F);
 	}
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
-		if (!this.getIsFast()) {
-			return 0.5F;
+		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
+			return 1.0F + (19F - (19F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}
@@ -168,7 +169,6 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Jurassic";}
 
-
 	@Override
 	public boolean hasNest() {
 		return true;
@@ -248,8 +248,8 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
-		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
+		//tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(6, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 120));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this, true));
@@ -327,29 +327,30 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
-		boolean test = (this.getPFDrinking() <= 0
+		if (!(this.getPFDrinking() <= 0
 			&& !world.isRemote
 			&& !this.getIsFast()
-			//&& !this.getIsMoving()
 			&& this.DRINK_ANIMATION.getDuration() > 0
 			&& this.getAnimation() == NO_ANIMATION
 			&& this.onGround
-			&& !this.isReallyInWater()
-			&&
-			(
-				(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
+			&& !this.isReallyInWater())) {
+			return false;
+		}
 
-				|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
+		boolean test = (
+			(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+			&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-				|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
+			|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+			&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-				|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
-				&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
-			)
+			|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+			&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
+
+			|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+			&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 		);
+
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
@@ -445,28 +446,27 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		BlockPos entityPos = Functions.getEntityBlockPos(this);
 
 		boolean test2 = false;
-		boolean test = (this.getPFGrazing() <= 0
+		if (!(this.getPFGrazing() <= 0
 				&& !world.isRemote
 				&& !this.getIsFast()
-				//&& !this.getIsMoving()
 				&& this.GRAZE_ANIMATION.getDuration() > 0
 				&& this.getAnimation() == NO_ANIMATION
-				&& !this.isReallyInWater()
-				&&
-				(
-					(isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))
-						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
+				&& !this.isReallyInWater())) {
+			return false;
+		}
+		boolean test = (
+			(isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))
+				&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))
-						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
+				|| (isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))
+				&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))
-						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
+				|| (isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))
+				&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))
-						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
-				)
-		);
+				|| (isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))
+				&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+			);
 		if (test) {
 			//Which one is grazable?
 			EnumFacing facing = null;
@@ -511,7 +511,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -550,7 +550,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	protected float getSoundVolume() {
-		return 2.0F;
+		return 3.0F;
 	}
 
 	@Override

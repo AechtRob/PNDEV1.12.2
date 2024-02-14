@@ -2,7 +2,6 @@ package net.lepidodendron.pfvillagers.village;
 
 import net.lepidodendron.block.BlockLamp;
 import net.lepidodendron.block.BlockZirconGlassGreenhouseWood;
-import net.lepidodendron.util.Functions;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -59,7 +58,7 @@ public class PalaeobotanisthouseBlocks implements ITemplateProcessor {
         }
     }
 
-    protected IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, Biome biome) {
+    public static IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, Biome biome) {
         net.minecraftforge.event.terraingen.BiomeEvent.GetVillageBlockID event = new net.minecraftforge.event.terraingen.BiomeEvent.GetVillageBlockID(biome, blockstateIn);
         net.minecraftforge.common.MinecraftForge.TERRAIN_GEN_BUS.post(event);
         int structureType = 0;
@@ -148,7 +147,9 @@ public class PalaeobotanisthouseBlocks implements ITemplateProcessor {
             }
         }
 
-        if (blockstateIn.getBlock() == Blocks.TORCH && Functions.decoLoaded()) {
+        if (blockstateIn.getBlock() == Blocks.TORCH
+                //&& Functions.decoLoaded()
+        ) {
             EnumFacing facing = blockstateIn.getValue(BlockTorch.FACING);
             if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
                 return BlockLamp.block.getDefaultState().withProperty(BlockLamp.BlockCustom.FACING, facing);
@@ -162,7 +163,7 @@ public class PalaeobotanisthouseBlocks implements ITemplateProcessor {
         return blockstateIn;
     }
 
-    protected IBlockState biomeDoor(int structureType) {
+    public static IBlockState biomeDoor(int structureType) {
         switch (structureType) {
             case 2:
                 return Blocks.ACACIA_DOOR.getDefaultState();

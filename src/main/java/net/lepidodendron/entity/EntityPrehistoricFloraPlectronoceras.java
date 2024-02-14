@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderPlectronoceras;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.util.DamageSource;
@@ -24,7 +25,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraPlectronoceras extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

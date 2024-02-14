@@ -150,6 +150,18 @@ public class ModelBrembodus extends AdvancedModelBase {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2F, -0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.05F;
+        this.body.offsetY = 0.05F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

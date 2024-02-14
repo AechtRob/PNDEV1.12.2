@@ -68,10 +68,10 @@ public class ItemSpawnEggLacewingBellinympha extends ElementsLepidodendronMod.Mo
 			return "Jurassic";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

@@ -81,19 +81,20 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation MAKE_NEST_ANIMATION;
     public static Animation HIDE_ANIMATION;
     private Animation currentAnimation;
-    private EntityPrehistoricFloraAgeableBase shoalLeader;
-    private int inPFLove;
+    public EntityPrehistoricFloraAgeableBase shoalLeader;
+    public int inPFLove;
     public int canGrow;
-    private boolean laying;
-    private EntityItem eatTarget;
-    private EntityLivingBase warnTarget;
-    private EntityLiving grappleTarget;
+    public boolean laying;
+    public EntityItem eatTarget;
+    public EntityLivingBase warnTarget;
+    public EntityLiving grappleTarget;
     public boolean willGrapple;
-    private int alarmCooldown;
-    private int warnCooldown;
+    public int alarmCooldown;
+    public int warnCooldown;
     public int ticksExistedAnimated;
     public boolean wasWarning;
-    private float getMaxTurnDistancePerTick;
+    public float getMaxTurnDistancePerTick;
+    public int homeCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -113,7 +114,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public float getgetMaxTurnDistancePerTick() {
-        if (this.getIsFast()) {
+        if (this.getIsFast() || this.getLaying() || this.isInLove()) {
             return 20.0F;
         }
         if (!this.getNavigator().noPath()) {
@@ -178,6 +179,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public float getUnSneakRange() {
         return this.getSneakRange() * 0.5F;
     }
+
+    public int getHomeCooldown() { return this.homeCooldown;}
 
     @Override
     public void onUpdate() {
@@ -337,6 +340,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean placesNest() {return false;}
 
     public boolean isHomeableNest (World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
 
@@ -357,6 +363,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isMyNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
@@ -398,6 +407,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isLayableNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         //is empty of eggs, and either belongs to me or is empty:
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
@@ -414,6 +426,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean nestBlockMatch(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (this.isNestMound()) {
             boolean match = false;
             if (!match) {
@@ -758,6 +773,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos) {
+        summon(worldIn, mobToSpawn, nbtStr, xpos, ypos, zpos, false);
+    }
+
+    public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos, boolean isBaby) {
 
         if (worldIn.isRemote) {
             return;
@@ -817,6 +836,26 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (entity instanceof EntityLiving) {
                 ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
                 entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
+            }
+
+            //Babify mob if required:
+            if (isBaby) {
+                nbttagcompound.setInteger("AgeTicks", 0);
+                entity.readFromNBT(nbttagcompound);
+            }
+
+            //Force it to recognise a nest if applicable
+            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                EntityPrehistoricFloraAgeableBase ageable = (EntityPrehistoricFloraAgeableBase) entity;
+                if (ageable.isHomeableNest(worldIn, ageable.getPosition())) {
+                    ageable.setNestLocation(ageable.getPosition());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down())) {
+                    ageable.setNestLocation(ageable.getPosition().down());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down(2))) {
+                    ageable.setNestLocation(ageable.getPosition().down(2));
+                }
             }
 
             //Exceptions for variants:
@@ -944,6 +983,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
+        compound.setInteger("homeCooldown", this.homeCooldown);
         compound.setBoolean("juvenile", this.getJuvenile());
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
@@ -965,6 +1005,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.inPFLove = compound.getInteger("InPFLove");
         this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
+        this.homeCooldown = compound.getInteger("homeCooldown");
         this.setJuvenile(compound.getBoolean("juvenile"));
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
@@ -1234,6 +1275,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);
+            }
+        }
+
+        if (this.homeCooldown > 0) {
+            this.homeCooldown -= rand.nextInt(3) + 1;
+        }
+        if (this.homeCooldown < 0) {
+            this.homeCooldown = 0;
+        }
+
+        if ((!this.world.isRemote) && this.getNestLocation() != null) {
+            if (this.world.isBlockLoaded(this.getNestLocation())) {
+                if (this.isMyNest(this.world, this.getNestLocation())) {
+                    if (this.getNestLocation().distanceSq(this.posX, this.posY, this.posZ) <= 9) {
+                        this.homeCooldown = 12000; //~5 game minutes of non-tethered movement (note the decrements are not in 1s)
+                    }
+                }
             }
         }
     }

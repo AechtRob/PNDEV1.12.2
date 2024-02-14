@@ -32,19 +32,19 @@ public class WorldGenPuddlesLava extends WorldGenerator
 
                 blockpos1 = blockpos.down().north();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState(), 16);
                 }
                 blockpos1 = blockpos.down().south();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState(), 16);
                 }
                 blockpos1 = blockpos.down().east();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState(), 16);
                 }
                 blockpos1 = blockpos.down().west();
                 if (rand.nextInt(3) == 0 && (!worldIn.isAirBlock(blockpos1)) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA) {
-                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState());
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos1, Blocks.MAGMA.getDefaultState(), 16);
                 }
 
                 flag = true;

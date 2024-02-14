@@ -39,7 +39,7 @@ public class RenderGuanlong extends RenderLiving<EntityPrehistoricFloraGuanlong>
             {
                 return;
             }
-            RenderDisplays.modelGuanlong.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelGuanlongBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

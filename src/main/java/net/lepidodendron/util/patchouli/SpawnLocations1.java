@@ -81,7 +81,7 @@ public class SpawnLocations1 implements IComponentProcessor {
 
     public static boolean spawnsHere(String mobID, String biomeID) {
         Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(biomeID));
-        String[] possibleMobs = EntityLists.mobString(biome, 0);
+        String[] possibleMobs = EntityLists.mobString(biome);
         boolean spawns = false;
         String pnVariant = "";
         int i = mobID.indexOf("@");

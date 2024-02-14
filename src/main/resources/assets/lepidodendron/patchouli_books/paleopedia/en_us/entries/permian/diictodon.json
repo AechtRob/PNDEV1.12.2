@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/diictodon.png"],
-			"title": "Diictodon sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Diictodon sp.",
+			"entity": "lepidodendron:prehistoric_flora_diictodon",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_diictodon",

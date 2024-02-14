@@ -4,15 +4,22 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderNotostracan;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanStrudops;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggNotostracanTriops;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -35,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -347,12 +354,102 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 	}
-
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_NOTOSTRACAN;
+	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return getStandardLoot();
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		switch (EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variant)) {
+			case STRUDOPS: default:
+				return 0.0;
+
+			case TRIOPS1:
+				return 0.0;
+
+			case TRIOPS2:
+				return 0.0;
+
+			case TRIOPS3:
+				return 0.0;
+		}
+	}
+
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variant)) {
+			case STRUDOPS: default:
+				return 0.0;
+
+			case TRIOPS1:
+				return 0.0;
+
+			case TRIOPS2:
+				return 0.0;
+
+			case TRIOPS3:
+				return 0.0;
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.75;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0F;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.295;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variant)) {
+			case STRUDOPS:
+			default:
+				return RenderNotostracan.TEXTURE_STRUDOPS;
+
+			case TRIOPS1:
+				return RenderNotostracan.TEXTURE_TRIOPS1;
+
+			case TRIOPS2:
+				return RenderNotostracan.TEXTURE_TRIOPS2;
+
+			case TRIOPS3:
+				return RenderNotostracan.TEXTURE_TRIOPS3;
+		}
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variant)) {
+			case STRUDOPS:
+			default:
+				return RenderDisplays.modelNotostracan;
+
+			case TRIOPS1:
+				return RenderDisplays.modelNotostracan;
+
+			case TRIOPS2:
+				return RenderDisplays.modelNotostracan;
+
+			case TRIOPS3:
+				return RenderDisplays.modelNotostracan;
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderNotostracan.getScaler(EntityPrehistoricFloraNotostracan.Type.getTypeFromString(variant));
+	}
 	@Override
 	public ItemStack getPickedResult(RayTraceResult target)
 	{

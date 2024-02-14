@@ -556,6 +556,8 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 
 		OreDictionary.registerOre("pndietRotten", new ItemStack(Items.ROTTEN_FLESH, 1));
 
+		OreDictionary.registerOre("pndietBone", new ItemStack(Items.BONE, 1));
+
 		OreDictionary.registerOre("pndietFish", new ItemStack(Items.FISH, 1, 0));
 		OreDictionary.registerOre("pndietFish", new ItemStack(Items.COOKED_FISH, 1, 0));
 		OreDictionary.registerOre("pndietFish", new ItemStack(Items.FISH, 1, 1));

@@ -1,0 +1,47 @@
+{
+	"name": "Mamenchisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mamenchisaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_mamenchisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mamenchisaurus",
+			"title": "Mamenchisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Mamenchisauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. youngi",
+            "entity": "lepidodendron:prehistoric_flora_mamenchisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mamenchisaurus",
+			"type": "text",
+			"text": "Mamenchisaurus was a large Chinese Sauropod from the Jurassic and Cretaceous. One of the notable formations it's from is the Shaximiao Formation where it has an assemblage zone named after it. A partial skeleton was first discovered in 1952 on the construction site of the Yitang Highway in Sichuan Province of China. A couple years later it was studied and named by C. C. Young. Mamenchisaurus had a brief appearance in the Lost World: Jurassic Park hunting scene where it was inaccurately depicted with a Diplodocid like tail."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mamenchisaurus"
+		}
+	]
+}

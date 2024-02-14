@@ -1,0 +1,67 @@
+{
+	"name": "Sinraptor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sinraptor_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_sinraptor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sinraptor",
+			"title": "Sinraptor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Metriacanthosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. dongi",
+            "entity": "lepidodendron:prehistoric_flora_sinraptor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinraptor",
+			"type": "text",
+			"text": "Sinraptor was a genus of metriacanthosaurid allosauroid theropod dinosaur that lived during the Late Jurassic (around 160 million years ago). Its genus name means \"Chinese robber\", and the specific name of the type species (S. dongi) honours vertebrate palaeontologist Dong Zhiming. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinraptor",
+			"type": "text",
+			"text": "Sinraptor's fossils were first found in China (specifically at the Shishugou Formation) by a joint Chinese/Canadian expedition in 1987, and described by Philip J. Currie and Zhao Xijin in 1993. Additional remains (initially referred to the closely related Yangchuanosaurus) discovered since may represent a second species of Sinraptor (named S. hepingensis), though this is still disputed."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinraptor",
+			"type": "text",
+			"text": "Quite large by Jurassic theropod standards, this dinosaur measured somewhere between 7.6 - 8.8 metres (25 - 29 feet) in length. Its weight may have been somewhere in the range of 1 - 2 metric tons, depending on which size estimate is used. Armed with a mouth full of sharp, bladelike teeth quite reminiscent of the dentition of its similarly sized distant relative Allosaurus,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinraptor",
+			"type": "text",
+			"text": "Sinraptor was a carnivore, and likely a major predator in its ecosystem. It likely hunted in a similar way too, probably going after medium-sized dinosaurs (such as stegosaurs) and relying on its razor-sharp teeth to inflict large, fatally bleeding wounds on them. In any case, this dinosaur appears to have led a rather harsh and violent life at times, as evidenced by a particular specimen (specimen IVPP 10600 to be precise). "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sinraptor",
+			"type": "text",
+			"text": "The skull is riddled with injuries such as tooth-raking marks, punctures, and even a fully penetrating lesion, while one of its ribs appears to have been broken at some point and then later healed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sinraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sinraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sinraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sinraptor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sinraptor"
+		}
+	]
+}

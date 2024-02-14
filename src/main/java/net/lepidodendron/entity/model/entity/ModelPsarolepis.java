@@ -262,18 +262,24 @@ public class ModelPsarolepis extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body1.render(f5 * 0.2F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Body1.rotateAngleY = (float) Math.toRadians(90);
-        this.Body1.offsetX = -0.07F;
-        this.Body1.offsetZ = 0.05F;
+        this.Body1.offsetY = -0.03F;
+        this.Body1.offsetX = -0.05F;
+        this.Body1.offsetZ = -0.37F;
         this.Body1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body1, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, 0.2F, 0.0F);
+        this.Body1.offsetY = -0.0F;
+        this.Body1.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

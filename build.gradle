@@ -89,7 +89,7 @@ dependencies {
     //compile "net.ilexiconn:llibrary:1.7.19-1.12.2"
 
     compile files('libs/llibrary-1.7.20-1.12.2.jar')
-
+    compile files('libs/prehistoricnaturedeco-1.12.2-1.0.jar')
     compile "vazkii.patchouli:Patchouli:1.0-21.4"
 
     // For more info...

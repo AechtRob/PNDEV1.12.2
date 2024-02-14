@@ -230,7 +230,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRhacopteris.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBotrychiopsis.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBotrychiopsis.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSanfordiacaulisSapling.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCarboniferous);
         return resLoc;

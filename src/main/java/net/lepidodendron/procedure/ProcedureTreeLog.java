@@ -19,7 +19,21 @@ public class ProcedureTreeLog extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 	
 	public static void executeProcedure(int x, int y, int z, World world, Block blockLog, EnumFacing facing) {
-
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x + 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x - 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z + 1))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z - 1))) {
+			return;
+		}
 		Block block = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world,
 			new BlockPos((int) x, (int) y, (int) z))

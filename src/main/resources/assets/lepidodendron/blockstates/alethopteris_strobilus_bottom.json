@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:alethopteris_strobilus"
+    },
+    "down=true": {"model": "lepidodendron:alethopteris_strobilus_down"},
+    "down=false": {"model": "lepidodendron:alethopteris_strobilus"}
+  }
+}

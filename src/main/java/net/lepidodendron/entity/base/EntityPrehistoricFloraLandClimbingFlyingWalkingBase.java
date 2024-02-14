@@ -24,6 +24,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathPoint;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -46,7 +47,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     private static final DataParameter<Boolean> SITTING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> SIT_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
-    protected static final DataParameter<Optional<BlockPos>> LAST_LAND = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
     protected static final DataParameter<EnumFacing> SIT_FACE = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FACING);
     private static final DataParameter<Boolean> HEADCOLLIDED = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Float> FLYPROGRESS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingWalkingBase.class, DataSerializers.FLOAT);
@@ -60,9 +60,9 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private int inPFLove;
-    private int climbingpause;
-    private BlockPos targetBlock;
+    public int ticksFreeflight;
+    public int climbingpause;
+    public BlockPos targetBlock;
     public Animation FLY_ANIMATION;
     public Animation UNFLY_ANIMATION;
 
@@ -77,6 +77,29 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
         FLY_ANIMATION = Animation.create(this.flyTransitionLength());
         UNFLY_ANIMATION = Animation.create(this.unflyTransitionLength());
+    }
+
+    public double nestDist() {
+        if (this.getNestLocation() != null) {
+            double d0 = (double)(this.getNestLocation().getX() + 0.5 - this.posX);
+            double d1 = (double)(this.getNestLocation().getY() + 0.5 - this.posY);
+            double d2 = (double)(this.getNestLocation().getZ() + 0.5 - this.posZ);
+            return Math.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+        }
+        return 0;
+    }
+
+    public double nestDistHorizontal() {
+        if (this.getNestLocation() != null) {
+            double d0 = (double)(this.getNestLocation().getX() + 0.5 - this.posX);
+            double d2 = (double)(this.getNestLocation().getZ() + 0.5 - this.posZ);
+            return Math.sqrt(d0 * d0 + d2 * d2);
+        }
+        return 0;
+    }
+
+    public boolean isSearchingNest() {
+        return nestDistHorizontal() < 16;
     }
 
     public abstract int flyTransitionLength();
@@ -125,6 +148,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     public int pausesClimbFor() {
         return 100;
+    }
+
+    public int fliesAwayFromNestFor() {
+        return 2400; //2 minutes
     }
 
     @Override
@@ -236,6 +263,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setHeadCollided(false);
+        this.ticksFreeflight = this.fliesAwayFromNestFor();
         this.climbingpause = -this.climbsFor() + rand.nextInt(this.climbsFor() + this.pausesClimbFor());
         return livingdata;
     }
@@ -247,7 +275,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.dataManager.register(FLYPROGRESS, 0F);
         this.dataManager.register(SIT_FACE, EnumFacing.DOWN);
         this.dataManager.register(SIT_BLOCK_POS, Optional.absent());
-        this.dataManager.register(LAST_LAND, Optional.absent());
         this.dataManager.register(HEADCOLLIDED, false);
     }
 
@@ -261,6 +288,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.sidewaysTries = compound.getInteger("sidewaysTries");
         this.setTickOffset(compound.getInteger("TickOffset"));
         this.sitTickCt = compound.getInteger("SitTickCt");
+        this.ticksFreeflight = compound.getInteger("ticksFreeflight");
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
             int j = compound.getInteger("PosY");
@@ -268,14 +296,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             this.dataManager.set(SIT_BLOCK_POS, Optional.of(new BlockPos(i, j, k)));
         } else {
             this.dataManager.set(SIT_BLOCK_POS, Optional.absent());
-        }
-        if (compound.hasKey("HomePosX")) {
-            int i = compound.getInteger("HomePosX");
-            int j = compound.getInteger("HomePosY");
-            int k = compound.getInteger("HomePosZ");
-            this.dataManager.set(LAST_LAND, Optional.of(new BlockPos(i, j, k)));
-        } else {
-            this.dataManager.set(LAST_LAND, Optional.absent());
         }
         if (compound.hasKey("TargetPosX")) {
             int i = compound.getInteger("TargetPosX");
@@ -297,17 +317,12 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         compound.setInteger("SitCooldown", sitCooldown);
         compound.setInteger("sidewaysTries", sidewaysTries);
         compound.setInteger("SitTickCt", sitTickCt);
+        compound.setInteger("ticksFreeflight", ticksFreeflight);
         BlockPos blockpos1 = this.getAttachmentPos();
         if (blockpos1 != null) {
             compound.setInteger("PosX", blockpos1.getX());
             compound.setInteger("PosY", blockpos1.getY());
             compound.setInteger("PosZ", blockpos1.getZ());
-        }
-        BlockPos blockpos3 = this.getHomePos();
-        if (blockpos3 != null) {
-            compound.setInteger("HomePosX", blockpos3.getX());
-            compound.setInteger("HomePosY", blockpos3.getY());
-            compound.setInteger("HomePosZ", blockpos3.getZ());
         }
         BlockPos blockpos2 = this.getFlyTarget();
         if (blockpos2 != null) {
@@ -408,15 +423,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         this.dataManager.set(SIT_BLOCK_POS, Optional.fromNullable(pos));
     }
 
-    @Nullable
-    public BlockPos getHomePos() {
-        return this.dataManager.get(LAST_LAND).orNull();
-    }
-
-    public void setHomePos(@Nullable BlockPos pos) {
-        this.dataManager.set(LAST_LAND, Optional.fromNullable(pos));
-    }
-
     @Override
     public boolean attackEntityFrom(DamageSource ds, float f) {
         if (ds == DamageSource.IN_WALL) {
@@ -476,17 +482,6 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     @Override
     public void onLivingUpdate() {
-
-        if (this.getAttachmentFacing() == EnumFacing.UP) {
-            this.setHomePos(this.getPosition());
-            this.setHoming(false);
-        }
-
-        //If it's close to the home point z and x then it can stop homing:
-        if (this.getHoming() && this.getHomePos().distanceSqToCenter(this.posX, this.getHomePos().getY(), this.posZ) < 10 ) {
-            //This is close enough hopefully
-            this.setHoming(false);
-        }
 
         if ((this instanceof IGuano) && this.rand.nextInt(6000) == 0 && (!this.world.isRemote)
             && this.getAttachmentFacing() != EnumFacing.UP && this.world.isAirBlock(this.getPosition().down())) {
@@ -563,8 +558,25 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         }
 
         boolean flying = isReallyFlying();
+
         if (sitCooldown > 0) {
             sitCooldown--;
+        }
+
+        if (this.nestDist() < 4) {
+            //Make it land if we're lucky:
+            if (this.homesToNest() && (!(this.ticksFreeflight > 0))) {
+                this.sitCooldown = 0;
+                this.sitTickCt = 0;
+                this.sidewaysTries = 0;
+            }
+            this.ticksFreeflight = this.fliesAwayFromNestFor(); //Reset it if it's more or less home
+        }
+        else if (this.ticksFreeflight > 0) {
+            this.ticksFreeflight = this.ticksFreeflight - rand.nextInt(3);
+        }
+        if (this.ticksFreeflight < 0) {
+            this.ticksFreeflight = 0;
         }
 
         if (!world.isRemote) {
@@ -684,6 +696,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                     sitProgress = 0F;
             }
 
+            if (!(this.isSearchingNest()) && this.homesToNest() && (!(this.ticksFreeflight > 0))) {
+                this.sitCooldown = this.sitCooldownSetter();
+            }
+
             if (this.getAttachmentPos() == null) {
                 //Entity eatTarget = this.getEatTarget();
                 //if (eatTarget != null) {
@@ -749,6 +765,14 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             }
         }
         this.renderYawOffset = this.rotationYaw;
+    }
+
+    @Override
+    protected float getSoundVolume() {
+        if (this.isReallyFlying()) {
+            return super.getSoundVolume() * 4F;
+        }
+        return super.getSoundVolume();
     }
 
     public boolean checkFlyConditions() {
@@ -987,6 +1011,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             if (flier.getAttachmentFacing() != EnumFacing.DOWN) {
                 return false;
             }
+//            else if (flier.homesToNest() && !(flier.ticksFreeflight > 0) && flier.getNestLocation() != null) {
+//                //If it homes to nest and had exhausted its free flight, don't do this AI:
+//                return false;
+//            }
 
             IBlockState state = flier.world.getBlockState(flier.getPosition().down());
             if (!flier.isReallyFlying() || flier.getLaying() || !(flier.sitCooldown > 0)
@@ -995,8 +1023,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                 return false;
             }
 
-            if (flier.getFlyTarget() != null && (flier.getDistanceSquared(new Vec3d(flier.getFlyTarget().getX(), flier.posY, flier.getFlyTarget().getZ())) > 3 || EntityPrehistoricFloraLandClimbingFlyingWalkingBase.isTargetBlocked(flier, new Vec3d(flier.getFlyTarget())))) {
-                flier.setFlyTarget(null);
+            if (!(flier.getFlyTarget() == flier.getNestLocation() && flier.homesToNest() && (!(flier.ticksFreeflight > 0)))) {
+                if (flier.getFlyTarget() != null && (flier.getDistanceSquared(new Vec3d(flier.getFlyTarget().getX(), flier.posY, flier.getFlyTarget().getZ())) > 3 || EntityPrehistoricFloraLandClimbingFlyingWalkingBase.isTargetBlocked(flier, new Vec3d(flier.getFlyTarget())))) {
+                    flier.setFlyTarget(null);
+                }
             }
 
             if (flier.getEatTarget() != null) {
@@ -1032,7 +1062,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
             }
             else {
                 BlockPos pos = new BlockPos((int) flier.getAttackTarget().posX, (int) flier.getAttackTarget().posY, (int) flier.getAttackTarget().posZ);
-                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR) {
+                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                    || pos == flier.getNestLocation()) {
                     return pos;
                 }
             }
@@ -1042,16 +1073,64 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         @Nullable
         public BlockPos getFlyTarget(){
             BlockPos pos = null;
-            for (int i = 0; i < 24; i++) {
-                pos = getInterimBlockTarget(flier);
-                if (pos != null) {
-                    BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
-                    pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
-                    if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
-                            && seaCheck(pos)
-                            && !isTargetBlocked(flier, new Vec3d(pos))) {
-                        return pos;
+            if (flier.getNestLocation() == null
+                    || (flier.homesToNest() && flier.ticksFreeflight > 0)) {
+                for (int i = 0; i < 24; i++) {
+                    pos = getInterimBlockTarget(flier);
+                    if (pos != null) {
+                        BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
+                        pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
+                        if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                                && seaCheck(pos)
+                                && !isTargetBlocked(flier, new Vec3d(pos))) {
+                            return pos;
+                        }
                     }
+                }
+                return pos; //It has no known nest so it just flies like normal
+            }
+            if (flier.isSearchingNest()) {
+                return flier.getNestLocation();
+            }
+            for (int i = 0; i < 24; i++) {
+                if (flier.nestDist() < 32 && flier.getNestLocation() != null) {
+                    return flier.getNestLocation();
+                }
+                //Otherwise just move in the right direction:
+                //North-South:
+                int northsouth = (int) Math.round(flier.posZ - (flier.getNestLocation().getZ() + 0.5));
+                byte ns = 0;
+                if (northsouth < 0) {
+                    ns = 1;
+                }
+                if (northsouth > 0) {
+                    ns = -1;
+                }
+                northsouth = Math.min(Math.abs(northsouth) + 1, 16);
+
+                int eastwest = (int) Math.round(flier.posX - (flier.getNestLocation().getX() + 0.5));
+                byte ew = 0;
+                if (eastwest < 0) {
+                    ew = 1;
+                }
+                if (eastwest > 0) {
+                    ew = -1;
+                }
+                eastwest = Math.min(Math.abs(eastwest) + 1, 16);
+
+                if (northsouth > 0) {
+                    northsouth = flier.rand.nextInt(northsouth) * ns;
+                }
+                if (eastwest > 0) {
+                    eastwest = flier.rand.nextInt(eastwest) * ew;
+                }
+
+                pos = flier.getPosition().add(eastwest, 0, northsouth);
+                BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
+                pos = new BlockPos(pos.getX(), Math.min(255, ground.getY() + flier.flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
+                if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                        && !isTargetBlocked(flier, new Vec3d(pos))) {
+                    return pos;
                 }
             }
             return pos;
@@ -1126,6 +1205,40 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
         double bbLength = this.getEntityBoundingBox().getAverageEdgeLength() * 2.5D;
         double maxDist = Math.max(6, bbLength * bbLength);
         if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
+            if (this.isSearchingNest() && this.homesToNest() && (!(this.ticksFreeflight > 0))) {
+                if (this.getNavigator().getPath() == null || this.getNavigator().noPath()) {
+                    this.getNavigator().tryMoveToXYZ(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY(), this.getFlyTarget().getZ() + 0.5D, 1F);
+                    if (this.getNavigator().getPath() == null || this.getNavigator().noPath()) {
+                        this.ticksFreeflight = 100; //To try again
+                        this.setFlying();
+                    }
+                    return;
+                }
+                else {
+                    BlockPos targetPoint = this.getFlyTarget();
+                    if (this.getNavigator().getPath().getCurrentPathIndex() < this.getNavigator().getPath().getCurrentPathLength() - 1) {
+                        PathPoint pathpoint = this.getNavigator().getPath().getPathPointFromIndex(this.getNavigator().getPath().getCurrentPathIndex() + 1);
+                        targetPoint = new BlockPos(pathpoint.x, pathpoint.y, pathpoint.z);
+                    }
+                    if (this.getPosition().down().getDistance(targetPoint.getX(), targetPoint.getY(), targetPoint.getZ()) < 0.5) {
+                        this.setFlyTarget(null);
+                        this.getNavigator().clearPath();
+                        return;
+                    }
+                    double xPos = targetPoint.getX() + 0.5 - posX;
+                    double yPos = Math.min(targetPoint.getY(), 256) + 1D - posY;
+                    double zPos = targetPoint.getZ()  + 0.5  - posZ;
+                    motionX += (Math.signum(xPos) * 0.5D - motionX) * 0.1 * this.getAISpeedLand();
+                    motionY += (Math.signum(yPos) * 0.5D - motionY) * 0.2;
+                    motionZ += (Math.signum(zPos) * 0.5D - motionZ) * 0.1 * this.getAISpeedLand();
+                    float angle = (float) (Math.atan2(motionZ, motionX) * 180.0D / Math.PI) - 90.0F;
+                    float rotation = MathHelper.wrapDegrees(angle - rotationYaw);
+                    moveForward = (float) this.getAISpeedLand();
+                    prevRotationYaw = rotationYaw;
+                    rotationYaw += rotation;
+                    return;
+                }
+            }
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
                 double xPos = this.getFlyTarget().getX() + 0.5D - posX;
                 double yPos = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;

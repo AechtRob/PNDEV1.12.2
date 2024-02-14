@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -35,12 +36,12 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	//public Animation STAND_ANIMATION;
 	public Animation LOOK_ANIMATION;
 
@@ -55,7 +56,7 @@ public class EntityPrehistoricFloraAdeopapposaurus extends EntityPrehistoricFlor
 		minWidth = 0.18F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 26.0D;
+		maxHealthAgeable = 25;
 		//STAND_ANIMATION = Animation.create(145);
 		NOISE_ANIMATION = Animation.create(20);
 		LOOK_ANIMATION = Animation.create(70);

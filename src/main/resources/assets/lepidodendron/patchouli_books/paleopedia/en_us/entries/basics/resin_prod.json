@@ -1,11 +1,11 @@
 {
-	"name": "Resin",
+	"name": "Resin and Latex",
 	"icon": "lepidodendron:bottle_of_resin",
 	"category": "lepidodendron:basics",
 	"pages": [
 		{
 			"type": "text",
-			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. To obtain resin, you extract it from trees using a resin extractor. This machine should be placed up against a tree of suitable size and type (various conifers). After a while the extractor will slowly start to fill with resin."
+			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. Latex is a gummy fluid which ia able to be crafted into rubber items, such as special boots to avoid you getting stuck on mud blocks. To obtain these fluids, you extract them from certain trees using a fluid extractor. This machine should be placed up against a tree of suitable size and type (various conifers for resins, and figs for latex). After a while the extractor will slowly start to fill with fluid."
 		},
 		{
 			"type": "crafting",
@@ -13,12 +13,12 @@
 		},
 		{
 			"type": "text",
-			"text": "A redstone comparator output can be used to test how much resin has been extracted: a full signal represents a full extractor. An extractor can hold up to 2000 millibuckets of resin (one bucket = 1000 millibuckets; one glass bottle = 333 millibuckets). To get the resin out of the extractor, right click it with an empty bucket or empty glass bottle. An untended extractor may overflow."
+			"text": "A redstone comparator output can be used to test how much fluid has been extracted: a full signal represents a full extractor. An extractor can hold up to 2000 millibuckets of fluid (one bucket = 1000 millibuckets; one glass bottle = 333 millibuckets). To get the fluid out of the extractor, right click it with an empty bucket or empty glass bottle. An untended extractor may overflow."
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/resin_collection.png"],
-			"title": "Resin Collection"
+			"title": "Resin or Latex Collection"
 		}
 	]
 }

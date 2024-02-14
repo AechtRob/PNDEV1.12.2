@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
@@ -9,7 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -74,12 +72,6 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
                 this.setAnimation(EAT_ANIMATION);
             }
         }
-    }
-
-    @Override
-    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-        livingdata = super.onInitialSpawn(difficulty, livingdata);
-        return livingdata;
     }
 
     public int getEatTick() {return 1;}

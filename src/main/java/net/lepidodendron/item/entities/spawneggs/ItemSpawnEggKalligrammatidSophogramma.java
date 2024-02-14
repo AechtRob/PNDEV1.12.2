@@ -67,10 +67,10 @@ public class ItemSpawnEggKalligrammatidSophogramma extends ElementsLepidodendron
 			return "Cretaceous";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

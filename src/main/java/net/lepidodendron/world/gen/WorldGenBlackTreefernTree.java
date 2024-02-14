@@ -97,7 +97,7 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
 
 					//Grab nearby positions too for clumps:
                     for (int ii = 0; ii < 12; ++ii) {
-                        BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+                        BlockPos blockpos = position.add(rand.nextInt(5) - rand.nextInt(5), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(5) - rand.nextInt(5));
                         if (!BlockTreefernBlackShootPlaceable.block.canPlaceBlockAt(worldIn, blockpos)) {
                             continue;
                         }

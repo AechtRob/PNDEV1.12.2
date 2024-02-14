@@ -160,18 +160,25 @@ public class ModelPteraspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Headback.render(f5 * 0.18F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Headback.rotateAngleY = (float) Math.toRadians(90);
-        this.Headback.offsetX = -0.05F;
-        this.Headback.offsetZ = 0.05F;
+        this.Headback.offsetY = -0.16F;
+        this.Headback.offsetX = -0.04F;
+        this.Headback.offsetZ = -0.25F;
         this.Headback.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Headback, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail6, 0.3F, -0.2F, 0.0F);
+        this.Headback.offsetY = 0.08F;
+        this.Headback.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

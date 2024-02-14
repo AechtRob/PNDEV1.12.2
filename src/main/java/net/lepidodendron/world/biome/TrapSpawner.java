@@ -2,6 +2,9 @@ package net.lepidodendron.world.biome;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -18,10 +21,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
@@ -29,14 +29,48 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
         super(instance, 42);
     }
 
-    public static String testBait(World world, BlockPos pos, Random rand, ItemStack stack, int type) {
+    public static String[] parseList(String[] inputList, int type, World world) throws InstantiationException, IllegalAccessException {
+        ArrayList<String> newString = new ArrayList<String>();
+        for (String entityStr : inputList) {
+            //Rough-and-ready test:
+            int colonTwo = entityStr.indexOf(":", entityStr.indexOf(":") + 1);
+            if (colonTwo > 0) {
+                EntityEntry ee = null;
+                int nbt = entityStr.indexOf("{");
+                if (nbt > 0) {
+                    ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entityStr.substring(0, entityStr.indexOf("{")).substring(0, colonTwo)));
+                }
+                else {
+                    ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entityStr.substring(0, colonTwo)));
+                }
+                //Try to construct this mob:
+                if (ee != null) {
+                    EntityLiving entity = (EntityLiving) ee.newInstance(world);
+                    if (entity instanceof ITrappableAir && type == 1) {
+                        newString.add(entityStr);
+                    }
+                    if (entity instanceof ITrappableLand && type == 2) {
+                        newString.add(entityStr);
+                    }
+                    if (entity instanceof ITrappableWater && type == 3) {
+                        newString.add(entityStr);
+                    }
+                    entity.setDead();
+                }
+            }
+        }
+
+        return newString.toArray(new String[0]);
+    }
+
+    public static String testBait(World world, BlockPos pos, Random rand, ItemStack stack, int type) throws InstantiationException, IllegalAccessException {
 
         //Get mob list and pick a mob for this biome:
         boolean TriassicCanyons = false;
         String[] MobString = new String[0];
 
         Biome biome = world.getBiome(pos);
-        MobString = EntityLists.mobString(biome, type);
+        MobString = parseList(EntityLists.mobString(biome), type, world);
 
         if (!(MobString.length >= 1)) {
             return "Nothing found in this location";
@@ -250,14 +284,15 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
     }
 
 
-    public static void executeProcedure(World world, BlockPos pos, Random rand, ItemStack stack, int type) {
+    public static void executeProcedure(World world, BlockPos pos, Random rand, ItemStack stack, int type) throws InstantiationException, IllegalAccessException {
 
         //Get mob list and pick a mob for this biome:
         boolean TriassicCanyons = false;
         String[] MobString = new String[0];
 
         Biome biome = world.getBiome(pos);
-        MobString = EntityLists.mobString(biome, type);
+        //MobString = EntityLists.mobString(biome, type);
+        MobString = parseList(EntityLists.mobString(biome), type, world);
 
         if (!(MobString.length >= 1)) {
             return;
@@ -446,7 +481,10 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                                                             SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
                                                             world.playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-                                                            EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+                                                            // Apply babification  - should be fine to do this to everything
+                                                            // as invalid tags will be stripped out eventually on a world save:
+
+                                                            EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, true);
 
 
                                                             //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);

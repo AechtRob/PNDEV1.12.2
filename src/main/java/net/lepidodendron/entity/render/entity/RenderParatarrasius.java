@@ -10,7 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderParatarrasius extends RenderLiving<EntityPrehistoricFloraParatarrasius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paratarrasius.png");
-
+    public static float getScaler() {
+        return 0.128F;
+    }
     public RenderParatarrasius(RenderManager mgr) {
         super(mgr, new ModelParatarrasius(), 0.0f);
     }

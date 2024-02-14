@@ -199,10 +199,51 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
-
     public void renderStaticFloor(float f) {
-        this.hips.offsetY = 0.2F;
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(neck, -0.15F, 0.2F, 0.1F);
+        this.setRotateAngle(head, -0.1F, 0.05F, 0.05F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.2F);
+        this.setRotateAngle(rightleg1, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(rightleg2, 1.0F, 0.1F, 0.0F);
+        this.setRotateAngle(rightleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm1, 0.0F, 1.2F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.5F, -0.9F, 0.0F);
+        this.setRotateAngle(leftarm3, 0.4F, 0.0F, 0.0F);
+        this.hips.offsetY = 0.037F;
         this.hips.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hips.offsetY = -1.5F;
+        this.hips.offsetX = 0.2F;
+        this.hips.rotateAngleY = (float)Math.toRadians(150);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-2);
+        this.hips.scaleChildren = true;
+        float scaler = 4.0F;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(neck, -0.15F, 0.4F, 0.1F);
+        this.setRotateAngle(head, -0.1F, 0.3F, 0.05F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.2F);
+        this.setRotateAngle(rightleg1, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(rightleg2, 1.0F, 0.1F, 0.0F);
+        this.setRotateAngle(rightleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftarm1, 0.0F, 1.2F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.5F, -0.9F, 0.0F);
+        this.setRotateAngle(leftarm3, 0.4F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
         resetToDefaultPose();
     }
 

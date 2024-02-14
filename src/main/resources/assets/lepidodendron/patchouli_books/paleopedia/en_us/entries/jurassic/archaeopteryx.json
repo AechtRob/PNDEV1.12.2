@@ -1,0 +1,52 @@
+{
+	"name": "Archaeopteryx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaeopteryx_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_archaeopteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeopteryx",
+			"title": "Archaeopteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Theropoda $(br)>Paraves $(br)>Archaeopterygidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. lithographica",
+            "entity": "lepidodendron:prehistoric_flora_archaeopteryx",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeopteryx",
+			"type": "text",
+			"text": "Archaeopteryx more famously is known for its contributions to evolutionary sciences. It is often cited as a transitional fossil between non-avian dinosaurs and modern day birds, making it invaluable to science. Archaeopteryx fittingly in German is sometimes referred to as \"Urvogel\" or \"primaeval bird\"."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeopteryx",
+			"type": "text",
+			"text": "Like many others like it, whether Archaeopteryx could fly is a controversial subject. Most recently, Voeten, Dennis F.A.E.; et al. (2018) determined that Archaeopteryx could've had a flight stroke style similar to the grabbing motion of other maniraptorans. It was hypothesized to fly like pheasants, quickly escaping predators and flying for a brief time."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaeopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaeopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaeopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaeopteryx"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaeopteryx"
+		}
+	]
+}

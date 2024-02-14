@@ -7,11 +7,15 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
+import net.lepidodendron.entity.render.entity.RenderPterodactylus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamerFlier;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -23,12 +27,14 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -39,9 +45,19 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		minWidth = 0.10F;
 		maxWidth = 0.65F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 6;
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 90;
+	}
+
+	@Override
+	public boolean homesToNest() {
+		return true;
 	}
 
 	@Override
@@ -280,11 +296,6 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 	}
 
 	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
-	}
-
-	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.BUG);
 	}
@@ -296,8 +307,8 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, true));
-		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, true, false));
+		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
+		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
@@ -334,8 +345,58 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		return 0; //Small eggs
 	}
 
+
 	//Rendering taxidermy:
 	//--------------------
-
+	public static double offsetWall(@Nullable String variant) {
+		return -0.225;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.27;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.04;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.1;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.03;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) { return RenderPterodactylus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelPterodactylus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderPterodactylus.getScaler();
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.03F;}
 
 }

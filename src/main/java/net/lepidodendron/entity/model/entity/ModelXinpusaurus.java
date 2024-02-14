@@ -340,7 +340,7 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Tail2, 0.0436F, 0.2618F, 0.0F);
         this.setRotateAngle(Tail3, 0.0873F, -0.3491F, 0.0F);
         this.setRotateAngle(Tail4, 0.0873F, -0.48F, 0.0F);
-        this.Xinpusaurus.offsetY = -0.6F;
+        this.Xinpusaurus.offsetY = -0.5F;
         this.Xinpusaurus.offsetX = 0.0F;
         this.Xinpusaurus.render(0.01F);
         resetToDefaultPose();
@@ -383,7 +383,7 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Tail2, 0.0436F, 0.2618F, 0.0F);
         this.setRotateAngle(Tail3, 0.0873F, -0.3491F, 0.0F);
         this.setRotateAngle(Tail4, 0.0873F, -0.48F, 0.0F);
-        this.Xinpusaurus.offsetY = -0.6F;
+        this.Xinpusaurus.offsetY = 0.0F;
         this.Xinpusaurus.offsetX = 0.0F;
         this.Xinpusaurus.render(0.01F);
         resetToDefaultPose();

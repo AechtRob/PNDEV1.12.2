@@ -180,6 +180,22 @@ public class ModelCoelacanthus extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetY = -0.03F;
+        this.Bodyfront.offsetX = -0.08F;
+        this.Bodyfront.offsetZ = -0.005F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Bodyback, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Headbase, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.2F, 0.0F);
+        this.Bodyfront.offsetZ = -0.05F;
+        this.Bodyfront.offsetY = -0.05F;
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }

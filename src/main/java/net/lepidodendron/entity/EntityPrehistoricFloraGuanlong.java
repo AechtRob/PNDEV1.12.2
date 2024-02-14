@@ -10,10 +10,14 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderGuanlong;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -35,13 +39,11 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation HURT_ANIMATION;
@@ -53,11 +55,10 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 		minWidth = 0.20F;
 		maxWidth = 0.8F;
 		maxHeight = 1.25F;
-		maxHealthAgeable = 32.0D;
+		maxHealthAgeable = 35;
 		SCRATCH_ANIMATION = Animation.create(80);
 		STAND_ANIMATION = Animation.create(80);
 		HURT_ANIMATION = Animation.create(15);
-		NOISE_ANIMATION = Animation.create(20);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -80,20 +81,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
 
 		//Alert animation
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
@@ -125,7 +112,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION, NOISE_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION};
 	}
 
 	@Override
@@ -186,7 +173,7 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.5F;
+			speedBase = speedBase * 3.325F;
 		}
 		return speedBase;
 	}
@@ -194,10 +181,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	@Override
 	public int getTalkInterval() {
 		return 700;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 200;
 	}
 
 	@Override
@@ -259,14 +242,14 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
 	}
 
 	@Override
@@ -279,11 +262,6 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:guanlong_death"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
 	}
 
 	@Override
@@ -370,5 +348,55 @@ public class EntityPrehistoricFloraGuanlong extends EntityPrehistoricFloraLandBa
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.225;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderGuanlong.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelGuanlong;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderGuanlong.getScaler();
+	}
 
 }

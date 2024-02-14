@@ -549,22 +549,22 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.50F;
-        this.root.offsetX = 0.0F;
-        this.root.rotateAngleY = (float)Math.toRadians(130);
-        this.root.rotateAngleX = (float)Math.toRadians(9);
-        this.root.rotateAngleZ = (float)Math.toRadians(-2);
+        this.root.offsetY = 0.25F;
+        this.root.offsetX = -0.7F;
+        this.root.rotateAngleY = (float)Math.toRadians(160);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.6F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(basin, -0.35F, 0.0F, 0.0F);
         this.setRotateAngle(body, 0.08F, 0.08F, 0.0F);
-        this.setRotateAngle(chest, 0.3F, 0.1F, 0.0F);
-        this.setRotateAngle(neck1, -0.35F, 0.1F, 0.0F);
-        this.setRotateAngle(neck2, -0.25F, 0.1F, 0.0F);
-        this.setRotateAngle(neck3, 0.5F, 0.2F, 0.1F);
-        this.setRotateAngle(head1, 0.7F, 0.2F, 0.1F);
+        this.setRotateAngle(chest, 0.3F, 0.15F, 0.0F);
+        this.setRotateAngle(neck1, -0.35F, 0.15F, 0.0F);
+        this.setRotateAngle(neck2, -0.25F, 0.15F, 0.0F);
+        this.setRotateAngle(neck3, 0.5F, 0.25F, 0.1F);
+        this.setRotateAngle(head1, 0.7F, 0.25F, 0.1F);
         this.setRotateAngle(jaw1, -0.2F, 0.0F, 0.0F);
         this.setRotateAngle(tail1, 0.0F, -0.1F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);

@@ -137,8 +137,21 @@ public class ModelAcanthodes extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetY = -0.225F;
-        this.Bodyfront.offsetX = -0.125F;
+        this.Bodyfront.offsetY = -0.2F;
+        this.Bodyfront.offsetX = -0.13F;
+        this.Bodyfront.offsetZ = -0.005F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.0F, -0.1F, 0.1F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.05F, -0.2F, 0.05F);
+        this.setRotateAngle(Tail2, 0.05F, -0.2F, 0.05F);
+        this.setRotateAngle(Tail3, 0.05F, -0.2F, 0.05F);
+        this.Bodyfront.offsetZ = -0.05F;
+        this.Bodyfront.offsetY = 0.05F;
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }

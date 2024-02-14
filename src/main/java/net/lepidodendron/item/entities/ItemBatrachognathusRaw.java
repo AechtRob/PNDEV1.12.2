@@ -35,7 +35,7 @@ public class ItemBatrachognathusRaw extends ElementsLepidodendronMod.ModElement 
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid_batrachognathus", ItemBatrachognathusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid@batrachognathus", ItemBatrachognathusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBatrachognathusRaw.block);
 		OreDictionary.registerOre("pnfurnaceMeat", ItemBatrachognathusRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemBatrachognathusRaw.block);

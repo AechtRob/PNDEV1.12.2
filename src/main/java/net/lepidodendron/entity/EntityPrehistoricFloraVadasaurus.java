@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderVadasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -32,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwimmingAmphibianBase {
+public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -303,7 +304,7 @@ public class EntityPrehistoricFloraVadasaurus extends EntityPrehistoricFloraSwim
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.75;
+		return 0.85;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.4;

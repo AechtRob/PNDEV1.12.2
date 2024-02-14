@@ -31,9 +31,9 @@ public class WorldGenAnomozamites extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, int minHeight, int maxHeight)
     {
         boolean flag = false;
-        int offset = 7;
+        int offset = 4;
         if (needsWater) {
-            offset = 6;
+            offset = 3;
         }
         for (int i = 0; i < 24; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));

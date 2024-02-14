@@ -6,8 +6,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
@@ -76,6 +80,47 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeTriassic) {
+			BiomeTriassic BiomeT = (BiomeTriassic) biome;
+			if (BiomeT.getBiomeType() == EnumBiomeTypeTriassic.Island
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_volcanic_hills")) {
+				if (random.nextInt(3) != 0)
+					return;
+				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				int y = random.nextInt(60) + 1;
+				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
+					public boolean apply(IBlockState blockAt) {
+						boolean blockCriteria = false;
+						IBlockState require;
+						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+							blockCriteria = true;
+						return blockCriteria;
+					}
+				})).generate(world, random, new BlockPos(x, y, z));
+			}
+		}
+
+		if (biome instanceof BiomeJurassic) {
+			BiomeJurassic BiomeJ = (BiomeJurassic) biome;
+			if (BiomeJ.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
+				if (random.nextInt(3) != 0)
+					return;
+				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				int y = random.nextInt(60) + 1;
+				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
+					public boolean apply(IBlockState blockAt) {
+						boolean blockCriteria = false;
+						IBlockState require;
+						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+							blockCriteria = true;
+						return blockCriteria;
+					}
+				})).generate(world, random, new BlockPos(x, y, z));
+			}
+		}
+
 		if (dimID == 0
 				|| dimID == LepidodendronConfig.dimPrecambrian
 				|| dimID == LepidodendronConfig.dimCambrian
@@ -87,6 +132,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene) {

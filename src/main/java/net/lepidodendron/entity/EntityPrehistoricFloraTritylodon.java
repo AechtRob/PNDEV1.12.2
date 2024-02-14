@@ -5,6 +5,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderTritylodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +19,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiictodon {
+public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiictodon implements ITrappableLand {
 
 	public EntityPrehistoricFloraTritylodon(World world) {
 		super(world);
@@ -25,6 +28,12 @@ public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiic
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_TRITYLODON;
 	}
 
 	public boolean hasAlarm() {

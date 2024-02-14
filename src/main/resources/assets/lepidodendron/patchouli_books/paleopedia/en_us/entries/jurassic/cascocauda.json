@@ -1,0 +1,46 @@
+{
+	"name": "Cascocauda",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cascocauda_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cascocauda",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cascocauda",
+			"title": "Cascocauda",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Batrachognathinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cascocauda.png"],
+			"title": "C. rong",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cascocauda",
+			"type": "text",
+			"text": "Cascocauda is a Jurassic Anurognathid from the Tiaojishan Formation of China. It was a small Anurognathid, with a wingspan of 43 cm long in the holotype specimen. Its name means ancient tail, with the species name, \"rong\" referring to the chinese word for \"fluffly\" "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@cascocauda"
+		}
+	]
+}

@@ -10,12 +10,14 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -23,7 +25,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSkeemella extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraSkeemella extends EntityPrehistoricFloraFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -48,7 +50,9 @@ public class EntityPrehistoricFloraSkeemella extends EntityPrehistoricFloraFishB
 
 	public static String getPeriod() {return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
 
 	@Override
 	public boolean dropsEggs() {

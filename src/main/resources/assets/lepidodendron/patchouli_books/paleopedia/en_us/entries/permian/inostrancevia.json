@@ -12,10 +12,10 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/inostrancevia.png"],
-			"title": "I. alexandri",
-			"text": ""
+			"type": "entity",
+			"name": "I. alexandri",
+			"entity": "lepidodendron:prehistoric_flora_inostrancevia",
+			"rotate": false
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_inostrancevia",

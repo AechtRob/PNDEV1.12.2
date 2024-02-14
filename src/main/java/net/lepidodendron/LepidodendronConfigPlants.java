@@ -202,6 +202,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightCalamophyton = 75;
     public static double multiplierCalamophyton = 1;
 
+    public static boolean genSanfordiacaulis = false;
+    public static String[] genSanfordiacaulisBlacklistBiomes = new String[0];
+    public static String[] genSanfordiacaulisOverrideBiomes = new String[0];
+    public static int[] dimSanfordiacaulis = new int[]{0};
+    public static int minheightSanfordiacaulis = 1;
+    public static int maxheightSanfordiacaulis = 75;
+    public static double multiplierSanfordiacaulis = 1;
+
     public static boolean genCecropsis = false;
     public static String[] genCecropsisBlacklistBiomes = new String[0];
     public static String[] genCecropsisOverrideBiomes = new String[0];
@@ -12572,6 +12580,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Calamophyton", "multiplierCalamophyton", multiplierCalamophyton);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierCalamophyton = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Sanfordiacaulis", "genSanfordiacaulis", genSanfordiacaulis);
+        prop.setComment("Set to true to generate Sanfordiacaulis naturally [default: false]");
+        genSanfordiacaulis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sanfordiacaulis", "genSanfordiacaulisBlacklistBiomes", genSanfordiacaulisBlacklistBiomes);
+        prop.setComment("List of biomes Sanfordiacaulis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSanfordiacaulisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sanfordiacaulis", "genSanfordiacaulisOverrideBiomes", genSanfordiacaulisOverrideBiomes);
+        prop.setComment("List of biomes Sanfordiacaulis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSanfordiacaulisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Sanfordiacaulis", "dimSanfordiacaulis", dimSanfordiacaulis);
+        prop.setComment("List of dimension IDs Sanfordiacaulis can generate in [default: 0]");
+        dimSanfordiacaulis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sanfordiacaulis", "minheightSanfordiacaulis", minheightSanfordiacaulis);
+        prop.setComment("Minimum height that Sanfordiacaulis can generate (1 to 250) [default: 1]");
+        minheightSanfordiacaulis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sanfordiacaulis", "maxheightSanfordiacaulis", maxheightSanfordiacaulis);
+        prop.setComment("Maximum height that Sanfordiacaulis can generate (1 to 250, or set to 0 for unlimited) [default: 75]");
+        maxheightSanfordiacaulis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sanfordiacaulis", "multiplierSanfordiacaulis", multiplierSanfordiacaulis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSanfordiacaulis = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Cecropsis", "genCecropsis", genCecropsis);

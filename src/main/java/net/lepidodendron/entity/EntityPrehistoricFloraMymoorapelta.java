@@ -9,9 +9,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderEffigia;
 import net.lepidodendron.entity.render.entity.RenderMymoorapelta;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -36,13 +36,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation ALERT_ANIMATION;
 	private int standCooldown;
 
@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraMymoorapelta extends EntityPrehistoricFloraLa
 		minWidth = 0.3F;
 		maxWidth = 0.99F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 40.0D;
 		ALERT_ANIMATION = Animation.create(100);
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

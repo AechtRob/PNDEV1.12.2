@@ -459,8 +459,24 @@ public class ModelMamenchisaurus extends AdvancedModelBaseExtended {
         
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
-        
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.6F;
+        this.root.offsetX = -0.45F;
+        this.root.rotateAngleY = (float)Math.toRadians(225);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 0.48F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
         resetToDefaultPose();
     }
 
@@ -544,19 +560,6 @@ public class ModelMamenchisaurus extends AdvancedModelBaseExtended {
                         this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
                         this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
                     }
-
-                    return;
-                }
-
-                if (diplo.getIsFast()) { //Running
-                    float speed = masterSpeed / 2F;
-                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
-
-                } else { //Walking
-                    float speed = masterSpeed / 1.50F;
-                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
                 }
             } else {
                 //Swimming pose:
@@ -618,9 +621,6 @@ public class ModelMamenchisaurus extends AdvancedModelBaseExtended {
         }
         else if (ee.getAnimation() == ee.GRAZE_ANIMATION) { //The leaves grazing anim
             animLeafGrazeUpwards(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
-        else if (ee.getAnimation() == ee.TAIL_ANIMATION) { //The leaves grazing anim
-            animTail(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.LOOK_ANIMATION) { //The leaves grazing anim
             animLook(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

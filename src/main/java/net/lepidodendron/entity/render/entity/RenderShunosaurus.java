@@ -34,7 +34,7 @@ public class RenderShunosaurus extends RenderLiving<EntityPrehistoricFloraShunos
             {
                 return;
             }
-            RenderDisplays.modelShunosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelShunosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

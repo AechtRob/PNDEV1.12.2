@@ -417,29 +417,34 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -1.5F, 3.1F, 0.0F);
         this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, -0.05F, -0.2F);
+        this.setRotateAngle(neck2, -0.2F, -0.1F, -0.2F);
+        this.setRotateAngle(head, 0.5F, 0.0F, -0.3F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(footR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(footL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(lowerlegR, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(footR, -0.2F, 0.5F, 0.8F);
+        this.setRotateAngle(upperlegL, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(lowerlegL, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(footL, 0.2F, -0.5F, -0.8F);
+        this.setRotateAngle(wingleft1, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -0.9F);
         this.setRotateAngle(wingleft3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft4, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(handR, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 0.9F);
         this.setRotateAngle(wingright3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright4, 0.0F, 0.0F, 0.0F);
-        this.root.offsetY = 0.0F;
+        this.setRotateAngle(wingright4, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(handL, 0.0F, 0.0F, 1.0F);
+        this.root.offsetY = -0.15F;
         this.root.offsetX = 0.0F;
         this.root.offsetZ = 0.0F;
         this.root.render(0.01F);
@@ -447,94 +452,102 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(footR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.3F, -0.3F, -0.5F);
+        this.setRotateAngle(lowerlegR, 1.2F, 0.2F, 0.2F);
+        this.setRotateAngle(footR, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegL, -0.3F, 0.0F, 0.5F);
+        this.setRotateAngle(lowerlegL, 0.2F, 0.0F, -0.5F);
         this.setRotateAngle(footL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright4, 0.0F, 0.0F, 0.0F);
-        this.root.offsetY = -0.12F;
+        this.setRotateAngle(wingleft1, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wingleft3, -1.5F, 0.0F, 0.2F);
+        this.setRotateAngle(wingleft4, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(handR, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright3, -1.5F, 0.0F, -0.2F);
+        this.setRotateAngle(wingright4, 0.0F, 0.6F, 0.0F);
+        this.setRotateAngle(handL, 0.0F, 0.0F, -1.5F);
+        this.root.offsetY = 0.2F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticSuspended(float f) {
-        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, -0.1F, 0.05F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.0F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(footR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(footL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.04F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.04F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.04F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.4F, 0.0F, -1.3F);
+        this.setRotateAngle(lowerlegR, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(footR, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegL, 0.4F, 0.0F, 1.3F);
+        this.setRotateAngle(lowerlegL, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(footL, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -1.45F);
+        this.setRotateAngle(wingleft3, -1.5F, 0.0F, 0.09F);
+        this.setRotateAngle(wingleft4, 0.0F, 0.07F, -0.05F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 1.45F);
+        this.setRotateAngle(wingright3, -1.5F, 0.0F, -0.09F);
+        this.setRotateAngle(wingright4, 0.0F, -0.05F, 0.0F);
         this.root.offsetY = -0.12F;
+        this.root.offsetZ = 0.02F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
     
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0F;
-        this.root.offsetX = 0F;
-        this.root.rotateAngleY = (float)Math.toRadians(0);
+        this.root.offsetY = -2.5F;
+        this.root.offsetX = -0.37F;
+        this.root.rotateAngleY = (float)Math.toRadians(130);
         this.root.rotateAngleX = (float)Math.toRadians(0);
         this.root.rotateAngleZ = (float)Math.toRadians(0);
         this.root.scaleChildren = true;
-        float scaler = 1.0F;
+        float scaler = 1.58F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(footR, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(upperlegL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerlegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegR, 0.3F, -0.3F, -0.5F);
+        this.setRotateAngle(lowerlegR, 1.2F, 0.2F, 0.2F);
+        this.setRotateAngle(footR, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegL, -0.3F, 0.0F, 0.5F);
+        this.setRotateAngle(lowerlegL, 0.2F, 0.0F, -0.5F);
         this.setRotateAngle(footL, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingleft4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(wingright4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wingleft3, -1.5F, 0.0F, 0.2F);
+        this.setRotateAngle(wingleft4, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(handR, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright3, -1.5F, 0.0F, -0.2F);
+        this.setRotateAngle(wingright4, 0.0F, 0.6F, 0.0F);
+        this.setRotateAngle(handL, 0.0F, 0.0F, -1.5F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
@@ -564,6 +577,43 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
             this.faceTarget(f3, f4, 8, neck);
             this.faceTarget(f3, f4, 8, neck2);
             this.faceTarget(f3, f4, 4, head);
+
+            //if (ee.getIsMoving()) {
+            AdvancedModelRenderer[] wingLeft = {this.wingleft1, this.wingleft2, this.wingleft3, this.wingleft4};
+            AdvancedModelRenderer[] wingRight = {this.wingright1, this.wingright2, this.wingright3, this.wingright4};
+
+            AdvancedModelRenderer[] legLeft = {this.upperlegL, this.lowerlegL, this.footL};
+            AdvancedModelRenderer[] legRight = {this.upperlegR, this.lowerlegR, this.footR};
+
+            AdvancedModelRenderer[] tailFullFly = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5};
+            float speedFly = 1.50F;
+            float fixedY = 0; //The standard offset to centre the mob
+            if (flier.getIsFast()) { //Flying fast
+                speedFly = 2.24F;
+            }
+            else { //Flying regular
+
+            }
+
+            //Animations:
+            this.chainFlap(wingLeft, speedFly, 0.35F, 0.3F, f2, 1F);
+            this.chainFlap(wingRight, speedFly, -0.35F, -0.3F, f2, 1F);
+
+            this.swing(wingleft3, speedFly, 0.7F, false, 2.0F, 0.12F, f2, 1F);
+            this.swing(wingright3, speedFly, -0.7F, false, 2.0F, -0.12F, f2, 1F);
+
+            this.swing(wingleft1, speedFly, 0.10F, false, 2.0F, 0.08F, f2, 1F);
+            this.swing(wingright1, speedFly, -0.10F, false, 2.0F, -0.08F, f2, 1F);
+
+            float floatMoveZ = this.moveBoxExtended(speedFly * 0.3F, 0.30F, false, 4, f2, 1);
+            this.root.offsetZ = floatMoveZ;
+            float floatMoveY = this.moveBoxExtended(speedFly * 0.6F, 0.50F, false, 4, f2, 1);
+            this.root.offsetY = (floatMoveY) + fixedY;
+
+            this.chainWaveExtended(legLeft, speedFly, 0.055F, 0.1F, 0F, f2, 1F);
+            this.chainWaveExtended(legRight, speedFly, -0.055F, -0.1F, 3F, f2, 1F);
+            this.chainWave(tailFullFly, speedFly * 0.5F, 0.02F, 0.5F, f2, 1F);
+            this.chainSwing(tailFullFly, speedFly * 0.5F, 0.15F, 2.0F, f2, 1F);
 
         }
         else { //not flying
@@ -640,6 +690,17 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
             this.setRotateAngle(cube_r13, -0.1231F, -0.0447F, -0.3463F);
             this.setRotateAngle(cube_r14, -0.1309F, 0.0F, 0.0F);
 
+            if (ee.getAttachmentPos() == null ) {
+                //if (ee.getIsMoving()) {
+                if (ee.getIsFast()) { //Flying fast
+                    //animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+                else { //Flying regular
+                    //animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                }
+                //}
+            }
+
         } else if (ee.getAttachmentPos() != null) {
             if (ee.getAttachmentFacing() == EnumFacing.UP) {
                 //Is walking:
@@ -700,12 +761,12 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
 
         if (ee.getAttachmentPos() == null ) {
             //if (ee.getIsMoving()) {
-                if (ee.getIsFast()) { //Flying fast
-                    animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
-                else { //Flying regular
-                    animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
+//                if (ee.getIsFast()) { //Flying fast
+//                    animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+//                }
+//                else { //Flying regular
+//                    animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+//                }
             //}
         }
         else if (ee.getAttachmentPos() != null) {

@@ -1,0 +1,47 @@
+{
+	"name": "Gargoyleosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gargoyleosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_gargoyleosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gargoyleosaurus",
+			"title": "Gargoyleosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Ankylosauria $(br)>Nodosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. parkpinorum",
+            "entity": "lepidodendron:prehistoric_flora_gargoyleosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gargoyleosaurus",
+			"type": "text",
+			"text": "Gargoyleosaurus is an early ankylosaur from the Jurassic of the Morrison Formation. This animal was one of the earliest known Ankylosaurs with reasonably complete fossil remains. It grew to roughly 3.5 meters long and stood at less than a meter tall. As a Nodosaurid, it lacked a bony clubbed tail, but had longer spike plates on the sides of its body. It is characterized by the presence of seven conical teeth in its premaxilla, or the tip of its upper jaw."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gargoyleosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gargoyleosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gargoyleosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gargoyleosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gargoyleosaurus"
+		}
+	]
+}

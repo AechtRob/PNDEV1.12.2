@@ -8,6 +8,9 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -27,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDiictodon {
+public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDiictodon implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,6 +50,12 @@ public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDii
 		maxHeight = 0.3F;
 		maxHealthAgeable = 8.0D;
 		NOISE_ANIMATION = Animation.create(20);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_THRINAXODON;
 	}
 
 	@Override

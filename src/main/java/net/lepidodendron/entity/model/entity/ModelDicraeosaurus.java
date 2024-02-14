@@ -617,13 +617,13 @@ public class ModelDicraeosaurus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.50F;
-        this.root.offsetX = 0.0F;
-        this.root.rotateAngleY = (float)Math.toRadians(130);
-        this.root.rotateAngleX = (float)Math.toRadians(9);
-        this.root.rotateAngleZ = (float)Math.toRadians(-2);
+        this.root.offsetY = 0.0F;
+        this.root.offsetX = -0.25F;
+        this.root.rotateAngleY = (float)Math.toRadians(-25);
+        this.root.rotateAngleX = (float)Math.toRadians(-50);
+        this.root.rotateAngleZ = (float)Math.toRadians(80);
         this.root.scaleChildren = true;
-        float scaler = 1.1F;
+        float scaler = 0.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(hips, 0.0F, 0.0F, -1.5F);
@@ -747,17 +747,6 @@ public class ModelDicraeosaurus extends AdvancedModelBaseExtended {
                     }
 
                     return;
-                }
-
-                if (camara.getIsFast()) { //Running
-                    float speed = masterSpeed / 2F;
-                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
-
-                } else { //Walking
-                    float speed = masterSpeed / 1.50F;
-                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
                 }
             } else {
                 //Swimming pose:

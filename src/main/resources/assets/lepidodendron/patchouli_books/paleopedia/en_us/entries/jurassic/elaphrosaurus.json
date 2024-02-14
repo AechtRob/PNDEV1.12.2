@@ -1,0 +1,52 @@
+{
+	"name": "Elaphrosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/elaphrosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_elaphrosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_elaphrosaurus",
+			"title": "Elaphrosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Noasauridae $(br)>Elaphrosaurinae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. bambergi",
+            "entity": "lepidodendron:prehistoric_flora_elaphrosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elaphrosaurus",
+			"type": "text",
+			"text": "Elaphrosaurus bambergi was a species of noasaurid theropod dinosaur that lived during the Late Jurassic period (around 154 - 150 million years ago). Its remains were first found in Tanzania in 1910, at the famous Tendaguru Formation. The 6 metre long animal's slender, lightweight, long-legged anatomy suggests that it was likely a fast runner. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elaphrosaurus",
+			"type": "text",
+			"text": "Its classification has been changed a lot over the decades, from an early Ornithomimid, to a \"Coelurid\", to a late-surviving Coelophysoid. Now however it is considered an early noasaurid ceratosaurian, closely related to Limusaurus. And much like Limusaurus, it was most likely either an omnivore or a herbivore."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_elaphrosaurus"
+		}
+	]
+}

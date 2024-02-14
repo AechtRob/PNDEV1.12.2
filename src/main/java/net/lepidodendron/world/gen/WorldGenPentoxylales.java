@@ -22,9 +22,9 @@ public class WorldGenPentoxylales extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 8;
+        int offset = 4;
         if (needsWater) {
-            offset = 5;
+            offset = 2;
         }
         for (int i = 0; i < 1; ++i)
         {

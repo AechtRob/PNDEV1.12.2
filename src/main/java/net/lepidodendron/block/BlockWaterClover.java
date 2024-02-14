@@ -160,7 +160,7 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadWaterClover) {
+			if (LepidodendronConfigPlants.spreadWaterClover && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

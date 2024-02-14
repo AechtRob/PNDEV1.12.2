@@ -35,7 +35,7 @@ public class ItemDendrorhynchoidesRaw extends ElementsLepidodendronMod.ModElemen
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid_dendrorhynchoides", ItemDendrorhynchoidesRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides", ItemDendrorhynchoidesRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDendrorhynchoidesRaw.block);
 		OreDictionary.registerOre("pnfurnaceMeat", ItemDendrorhynchoidesRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemDendrorhynchoidesRaw.block);

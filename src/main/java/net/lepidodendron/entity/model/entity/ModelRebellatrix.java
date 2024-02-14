@@ -204,20 +204,27 @@ public class ModelRebellatrix extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.345F);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.enableCull();
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetX = -0.13F;
-        this.body.offsetY = -0.14F;
-        this.body.offsetZ = 0.05F;
+        this.body.offsetY = -0.16F;
+        this.body.offsetX = -0.12F;
+        this.body.offsetZ = -0.19F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, 0.1F, 0.2F);
+        this.setRotateAngle(Head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1stsegment, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2ndsegment, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, 0.2F, 0.0F);
+        this.body.offsetY = -0.15F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

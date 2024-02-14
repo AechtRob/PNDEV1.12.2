@@ -5,8 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -31,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoricFloraCrawlingFlyingInsectBase {
+public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoricFloraCrawlingFlyingInsectBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -42,6 +46,12 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	public EntityPrehistoricFloraArchoblattinaInsect(World world) {
 		super(world);
 		setSize(0.20F, 0.145F);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ARCHOBLATTINA;
 	}
 
 	@Override

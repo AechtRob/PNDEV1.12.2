@@ -37,7 +37,7 @@ public class RenderWukongopterus extends RenderLiving<EntityPrehistoricFloraWuko
             {
                 return;
             }
-            RenderDisplays.modelWukongopterus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelWukongopterusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

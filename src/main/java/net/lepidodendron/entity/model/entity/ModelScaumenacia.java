@@ -186,20 +186,24 @@ public class ModelScaumenacia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 * 0.33F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.rotateAngleX = (float) Math.toRadians(0);
-        this.body.offsetX = -0.027F;
-        this.body.offsetY = -0.15F;
-        this.body.offsetZ = 0.07F;
+        this.body.offsetY = -0.16F;
+        this.body.offsetX = -0.04F;
+        this.body.offsetZ = -0.25F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.5F, 0.0F);
+        this.body.offsetY = -0.15F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

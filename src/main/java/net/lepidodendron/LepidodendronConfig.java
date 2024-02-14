@@ -50,6 +50,7 @@ public class LepidodendronConfig {
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
     public static boolean modFire = true;
+    public static boolean modFishing = true;
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
     public static boolean renderAnimations = true;
@@ -101,6 +102,7 @@ public class LepidodendronConfig {
     public static boolean doSpawnsReborn = false;
     public static boolean globalHomePortals = false;
     public static boolean oneWayPortals = true;
+    public static boolean oneWayPortalsNether = false;
 
     public static boolean doMultiplyMobs = false;
 
@@ -771,6 +773,10 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "portalsOneWay", oneWayPortals);
         prop.setComment("Portals generate one-way counterparts on both sides; but only when used between Prehistoric Nature dimensions and the overworld. [default: true]");
         oneWayPortals = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "portalsOneWayNether", oneWayPortalsNether);
+        prop.setComment("Extend the portal behaviour to Nether Portals [default: false]");
+        oneWayPortalsNether = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "doSpawnsPrehistoricFloraDefault", doSpawnsPrehistoricFloraDefault);

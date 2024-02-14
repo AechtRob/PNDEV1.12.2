@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.util.IBluffer;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -43,7 +44,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, IBluffer {
+public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, IBluffer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -60,7 +61,7 @@ public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCa
 		minWidth = 0.20F;
 		maxWidth = 0.65F;
 		maxHeight = 1.1F;
-		maxHealthAgeable = 38.0D;
+		maxHealthAgeable = 40.0D;
 		IDLE1 = Animation.create(40);
 		IDLE2 = Animation.create(70);
 		IDLE3 = Animation.create(40);
@@ -407,7 +408,7 @@ public class EntityPrehistoricFloraCumnoria extends EntityPrehistoricFloraLandCa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

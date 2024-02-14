@@ -33,7 +33,7 @@ public class ItemPNSpawnEgg extends Item {
     }
 
     public String getHabitat() {
-        return "";
+        return I18n.translateToLocal("helper.pf_terrestrial.name");
     }
 
     @SideOnly(Side.CLIENT)

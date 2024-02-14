@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -12,7 +13,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraMorganucodon {
+public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraMorganucodon implements ITrappableLand {
 
 	public EntityPrehistoricFloraMegazostrodon(World world) {
 		super(world);

@@ -69,11 +69,6 @@ public class ItemSpawnEggAnurognathidSinomacrops extends ElementsLepidodendronMo
 		}
 
 		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
-
-		@Override
 		@Nullable
 		public Entity spawnPNCreature(World worldIn, @Nullable ResourceLocation entityID, double x, double y, double z)
 		{

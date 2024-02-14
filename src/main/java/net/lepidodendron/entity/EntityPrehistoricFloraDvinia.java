@@ -10,6 +10,9 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderDvinia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodon {
+public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodon implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -43,6 +46,12 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		maxHeight = 0.4F;
 		maxHealthAgeable = 10.0D;
 		LOOK_ANIMATION = Animation.create(this.getLookLength());
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DVINIA;
 	}
 
 	public int getLookLength() {

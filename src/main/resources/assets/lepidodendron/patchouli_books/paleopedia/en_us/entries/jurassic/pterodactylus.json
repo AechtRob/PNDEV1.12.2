@@ -1,0 +1,47 @@
+{
+	"name": "Pterodactylus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pterodactylus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_pterodactylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pterodactylus",
+			"title": "Pterodactylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Pterodactyloidea $(br)>Euctenochasmatia"
+		},
+        	{
+            "type": "entity",
+            "name": "P. antiquus",
+            "entity": "lepidodendron:prehistoric_flora_pterodactylus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pterodactylus",
+			"type": "text",
+			"text": "Pterodactylus is a Late Jurassic pterodactyloid pterosaur primarily found in the Solnhofen Limestone of Germany. It is one of the more derived pterosaurs that lived during the Jurassic, and it was likely a generalist carnivore that fed on fish, insects, and small lizards. It is classified as the earliest diverging member of ctenochasmatoidea and would have lived alongside long tailed pterosaurs such as Scaphognathus and Rhamphorhynchus. It was quite a small pterosaur, with an estimated wingspan reaching 1 meter in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pterodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pterodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pterodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pterodactylus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pterodactylus"
+		}
+	]
+}

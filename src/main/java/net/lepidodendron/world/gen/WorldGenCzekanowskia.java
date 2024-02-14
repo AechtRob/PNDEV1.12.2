@@ -22,9 +22,9 @@ public class WorldGenCzekanowskia extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 5;
+        int offset = 3;
         if (needsWater) {
-            offset = 2;
+            offset = 1;
         }
         for (int i = 0; i < 36; ++i)
         {

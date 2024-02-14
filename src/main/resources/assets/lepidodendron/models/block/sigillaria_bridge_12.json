@@ -1,7 +1,0 @@
-{
-  "parent": "lepidodendron:block/bridge",
-  "textures": {
-    "wood": "lepidodendron:blocks/sigillaria_wood",
-    "metal": "blocks/redstone_block"
-  }
-}

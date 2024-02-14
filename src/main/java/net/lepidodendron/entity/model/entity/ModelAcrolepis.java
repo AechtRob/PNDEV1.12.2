@@ -300,11 +300,27 @@ public class ModelAcrolepis extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Acrolepis.render(f5);
     }
-    
+
     public void renderStaticWall(float f) {
         this.Acrolepis.rotateAngleY = (float) Math.toRadians(90);
         this.Acrolepis.offsetY = -0.15F;
-        this.Acrolepis.offsetX = -0.125F;
+        this.Acrolepis.offsetX = -0.1F;
+        this.Acrolepis.offsetZ = 0.025F;
+        this.Acrolepis.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Acrolepis, 0.0F, -0.0F, 0.1F);
+        this.setRotateAngle(Body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(Body4, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(Tail_Begin, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail_middle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail_end, 0.0F, 0.2F, 0.0F);
+        this.Acrolepis.offsetZ = -0.05F;
+        this.Acrolepis.offsetY = -0.1F;
         this.Acrolepis.render(0.01F);
         this.resetToDefaultPose();
     }

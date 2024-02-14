@@ -656,7 +656,7 @@ public class ModelDilophosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Chest, 0.05F, -0.18F, 0.0F);
         this.setRotateAngle(Neck1, 0.4F, -0.2F, 0.0F);
         this.setRotateAngle(Neck2, 0.1F, -0.28F, 0.0F);
-        this.setRotateAngle(Neck3, -0.2F, -0.35F, 0.15F);
+        this.setRotateAngle(Neck3, -0.3F, -0.35F, 0.15F);
         this.setRotateAngle(Head, -0.F, -0.1F, 0.2F);
         this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
         this.setRotateAngle(ThroatPouch, 0.7F, 0.0F, 0.0F);
@@ -680,15 +680,15 @@ public class ModelDilophosaurus extends AdvancedModelBaseExtended {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Dilophosaurus.offsetY = 0.3F;
-        this.Dilophosaurus.offsetX = 0.0F;
-        this.Dilophosaurus.rotateAngleY = (float)Math.toRadians(150);
-        this.Dilophosaurus.rotateAngleX = (float)Math.toRadians(5);
+        this.Dilophosaurus.offsetX = -0.3F;
+        this.Dilophosaurus.rotateAngleY = (float)Math.toRadians(0);
+        this.Dilophosaurus.rotateAngleX = (float)Math.toRadians(0);
         this.Dilophosaurus.rotateAngleZ = (float)Math.toRadians(0);
         this.Dilophosaurus.scaleChildren = true;
         float scaler = 0.6F;
         this.Dilophosaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Dilophosaurus, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Dilophosaurus, 0.2F, -0.8F, 0.0F);
         this.setRotateAngle(Body, 0.05F, -0.01F, 0.0F);
         this.setRotateAngle(Chest, 0.05F, -0.18F, 0.0F);
         this.setRotateAngle(Neck1, 0.4F, -0.2F, 0.0F);

@@ -210,7 +210,7 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 			super.onBlockAdded(worldIn, pos, state);
 		}
 
-		public static void makeTrapped(World world, BlockPos pos) {
+		public static void makeTrapped(World world, BlockPos pos) throws InstantiationException, IllegalAccessException {
 			if (hasTrapped(world, pos)) {
 				return;
 			}
@@ -248,7 +248,13 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
-			makeTrapped(worldIn, pos);
+			try {
+				makeTrapped(worldIn, pos);
+			} catch (InstantiationException e) {
+				//do nothing
+			} catch (IllegalAccessException e) {
+				//do nothing
+			}
 			super.randomTick(worldIn, pos, state, random);
 		}
 
@@ -526,7 +532,13 @@ public class BlockTrapAir extends ElementsLepidodendronMod.ModElement {
 				}
 
 				if (this.getWorld().rand.nextInt(this.ticker) == 0) {
-					BlockTrapAir.BlockCustom.makeTrapped(this.getWorld(), this.getPos());
+					try {
+						BlockCustom.makeTrapped(this.getWorld(), this.getPos());
+					} catch (InstantiationException e) {
+						//do nothing
+					} catch (IllegalAccessException e) {
+						//do nothing
+					}
 					this.ticker = 4800;
 				}
 			}

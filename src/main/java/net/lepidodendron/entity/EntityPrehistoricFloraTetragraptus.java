@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -22,7 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
-public class EntityPrehistoricFloraTetragraptus extends EntityPrehistoricFloraJellyfishBase {
+public class EntityPrehistoricFloraTetragraptus extends EntityPrehistoricFloraJellyfishBase implements ITrappableWater {
 
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)

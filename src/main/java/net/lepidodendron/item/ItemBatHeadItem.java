@@ -44,7 +44,7 @@ public class ItemBatHeadItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNminecraft:bat", BlockBatHead.block);
+		OreDictionary.registerOre("mobdnaPNminecraft:bat", ItemBatHeadItem.block);
 	}
 
 	@SideOnly(Side.CLIENT)

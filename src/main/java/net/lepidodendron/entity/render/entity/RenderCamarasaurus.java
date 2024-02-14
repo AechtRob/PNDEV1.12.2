@@ -39,7 +39,7 @@ public class RenderCamarasaurus extends RenderLiving<EntityPrehistoricFloraCamar
             {
                 return;
             }
-            RenderDisplays.modelCamarasaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelCamarasaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

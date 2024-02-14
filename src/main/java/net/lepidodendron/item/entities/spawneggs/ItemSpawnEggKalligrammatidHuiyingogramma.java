@@ -68,10 +68,10 @@ public class ItemSpawnEggKalligrammatidHuiyingogramma extends ElementsLepidodend
 			return "Jurassic";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

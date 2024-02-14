@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.util.IScreamerFlier;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -29,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -43,11 +44,21 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 		minWidth = 0.10F;
 		maxWidth = 0.80F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 6.0D;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 90;
+	}
+
+	@Override
+	public boolean homesToNest() {
+		return true;
 	}
 
 	@Override
@@ -307,11 +318,6 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
-	}
-
-	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.FISH);
 	}
@@ -323,8 +329,8 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 		tasks.addTask(3, new PanicScreamAI(this, 1.5F));
 		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, true));
-		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, true, false));
+		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
+		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
 		tasks.addTask(8, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));

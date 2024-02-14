@@ -1,0 +1,67 @@
+{
+	"name": "Camptosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/camptosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_camptosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_camptosaurus",
+			"title": "Camptosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Ankylopollexia $(br)>Camptosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. dispar",
+            "entity": "lepidodendron:prehistoric_flora_camptosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camptosaurus",
+			"type": "text",
+			"text": "Camptosaurus dispar is a genus of Ornithischian dinosaur from the Late Jurassic of North America. Until recently considered among the largest of the group, this animal could grow up to 4-5 m long, with one giant specimen estimated over 7 m remaining undescribed, potentially representing a different genus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camptosaurus",
+			"type": "text",
+			"text": "Due to complications in nomenclature and the division of Camptosaurus in several different genera, it has become difficult to separate what material is from Camptosaurus and what is instead from its relatives Uteodon and Theiophytalia. This robust herbivorous animal had very tightly packed teeth often showing signs of extensive wear,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camptosaurus",
+			"type": "text",
+			"text": "indicating the animal might've had a diet based on tough, fibrous vegetation. Studies carried out over the anatomy of Camptosaurus estimate the animal could achieve speeds up to 25 km/h, or 15 mph, while running. The animal was first described by Othniel Charles Marsh in 1879 based on remains discovered in Wyoming under the genus name Camptonotus,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camptosaurus",
+			"type": "text",
+			"text": " name then changed in 1885 to Camptosaurus due to the previous one being already taken by a cricket. The genus over the years saw many different animals lumped into it and subsequently split, with ongoing discussions even today about what pertains to the species and what doesn't."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_camptosaurus",
+			"type": "text",
+			"text": "In the past several remains from Europe were classified as different species of Camptosaurus however, safe for one recent find, all other species once part of the genus have since been split; the presence of Camptosaurus in Europe remains disputed to this day."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_camptosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_camptosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_camptosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_camptosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_camptosaurus"
+		}
+	]
+}

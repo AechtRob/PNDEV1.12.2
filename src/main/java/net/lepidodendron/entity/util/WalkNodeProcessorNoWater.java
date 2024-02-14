@@ -2,6 +2,7 @@ package net.lepidodendron.entity.util;
 
 import com.google.common.collect.Sets;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -495,7 +496,7 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
         boolean isTree = false;
         if (this.currentEntity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landBase = (EntityPrehistoricFloraLandBase) this.currentEntity;
-            if (landBase.canSpawnOnLeaves())
+            if (landBase.canSpawnOnLeaves() && (!(landBase instanceof EntityPrehistoricFloraLandClimbingGlidingBase)))
                 isTree = true;
         }
 

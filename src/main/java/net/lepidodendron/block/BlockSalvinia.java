@@ -159,7 +159,7 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadSalvinia) {
+			if (LepidodendronConfigPlants.spreadSalvinia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

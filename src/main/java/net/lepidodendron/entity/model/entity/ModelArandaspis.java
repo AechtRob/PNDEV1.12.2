@@ -118,8 +118,24 @@ public class ModelArandaspis extends AdvancedModelBase {
         this.Bodyhead.render(f5);
 
     }
+
     public void renderStaticWall(float f) {
         this.Bodyhead.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyhead.offsetY = -0.05F;
+        this.Bodyhead.offsetX = -0.04F;
+        this.Bodyhead.offsetZ = 0.0F;
+        this.Bodyhead.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyhead, -0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(Tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, -0.2F, 0.0F);
+        this.Bodyhead.offsetY = 0.15F;
         this.Bodyhead.render(0.01F);
         this.resetToDefaultPose();
     }

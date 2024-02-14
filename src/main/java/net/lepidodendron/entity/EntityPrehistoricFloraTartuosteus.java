@@ -11,9 +11,9 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.TartuosteusWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderDicraeosaurus;
 import net.lepidodendron.entity.render.entity.RenderTartuosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -39,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTartuosteus extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraTartuosteus extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	private static final DataParameter<Integer> FEEDTICKS = EntityDataManager.createKey(EntityPrehistoricFloraTartuosteus.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> TAILTICKS = EntityDataManager.createKey(EntityPrehistoricFloraTartuosteus.class, DataSerializers.VARINT);

@@ -291,7 +291,28 @@ public class ModelCacops extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hip.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.UpperArmL.setScale(0,0,0);
+        this.UpperArmR.setScale(0,0,0);
+        this.UpperArmL.scaleChildren = true;
+        this.UpperArmR.scaleChildren = true;
+        this.Chest.offsetY = -0.0F;
+        this.Chest.offsetX = -0.0F;
+        this.Chest.offsetZ = 0.07F;
+        this.Chest.render(0.01F);
+        this.UpperArmL.setScale(1,1,1);
+        this.UpperArmR.setScale(1,1,1);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hip, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(Chest, 0.02F, 0.05F, 0.0F);
+        this.setRotateAngle(Head, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.Hip.offsetY = -0.028F;
+        this.Hip.offsetZ = -0.05F;
+        this.Hip.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

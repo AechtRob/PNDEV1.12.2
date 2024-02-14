@@ -1,0 +1,46 @@
+{
+	"name": "Batrachognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/batrachognathus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_batrachognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_batrachognathus",
+			"title": "Batrachognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Batrachognathinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/batrachognathus.png"],
+			"title": "B. volans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_batrachognathus",
+			"type": "text",
+			"text": "Batrachognathus is a Jurassic Anurognathid known from the Karabastau Formation of Kazakhstan. It had a slightly longer and less rounded skull compared to other Anurognathids with a wingspan of up to 75 cm long. In 2021, phylogenetic analysis placed Batrachognathus as the sister taxon to Sinomacrops within its own subfamily, Batrachognathinae, in contrast to the 2006 study which placed it as sister to Jeholopterus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@batrachognathus"
+		}
+	]
+}

@@ -2,6 +2,7 @@ package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGuano;
+import net.lepidodendron.block.BlockGuanoBlock;
 import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.util.ParticleGuano;
 import net.minecraft.block.Block;
@@ -115,6 +116,9 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
                         if (axisalignedbb != Block.NULL_AABB && this.world.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && this.world.setBlockState(blockpos, iblockstate1, 10)) {
                             SoundType soundtype = BlockGuano.block.getSoundType(iblockstate1, this.world, blockpos, null);
                             this.world.playSound(null, blockpos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                            if (this.world.getBlockState(blockpos).getValue(BlockSnow.LAYERS) == 8) {
+                                this.world.setBlockState(blockpos, BlockGuanoBlock.block.getDefaultState());
+                            }
                         }
                     }
 

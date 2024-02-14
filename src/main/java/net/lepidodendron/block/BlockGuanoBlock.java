@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
@@ -64,7 +65,7 @@ public class BlockGuanoBlock extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_guano_block");
 			setSoundType(SoundType.SLIME);
 			setHarvestLevel("shovel", 0);
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMisc.tab);
 			setDefaultSlipperiness(0.8f);
 			setHardness(0.1F);
 			this.setTickRandomly(false);
@@ -106,19 +107,28 @@ public class BlockGuanoBlock extends ElementsLepidodendronMod.ModElement {
 			if (worldIn.getBlockState(pos.down()).getBlock() != null) {
 				if (!worldIn.isAirBlock(pos.down())) {
 					try {
-						north = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.NORTH);
-						east = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.EAST);
-						south = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.SOUTH);
-						west = worldIn.getBlockState(pos.down()).getBlock().shouldSideBeRendered(worldIn.getBlockState(pos.down()), worldIn, pos.down(), EnumFacing.WEST);
+						north = renderGuanoSide(worldIn, pos.down(), EnumFacing.NORTH);
+						east = renderGuanoSide(worldIn, pos.down(), EnumFacing.EAST);
+						south = renderGuanoSide(worldIn, pos.down(), EnumFacing.SOUTH);
+						west = renderGuanoSide(worldIn, pos.down(), EnumFacing.WEST);
 					} catch (Throwable e) {
-						System.err.println("Error in state: " + worldIn.getBlockState(pos.down()));
-						System.err.println("Pos: " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " ");
+						//System.err.println("Error in state: " + worldIn.getBlockState(pos.down()));
+						//System.err.println("Pos: " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " ");
 						//Do nothing:
 					}
 				}
 			}
 
 			return super.getActualState(state, worldIn, pos).withProperty(NORTH, north).withProperty(EAST, east).withProperty(SOUTH, south).withProperty(WEST, west);
+		}
+
+		public boolean renderGuanoSide(IBlockAccess world, BlockPos pos, EnumFacing facing) {
+			try {
+				return !world.getBlockState(pos.offset(facing)).doesSideBlockRendering(world, pos.offset(facing), facing.getOpposite());
+			}
+			catch (Throwable e) {
+				return true;
+			}
 		}
 
 		@Override

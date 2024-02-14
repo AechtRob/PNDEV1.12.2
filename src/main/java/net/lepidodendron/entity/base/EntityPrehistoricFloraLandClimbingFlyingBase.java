@@ -42,12 +42,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     public int sitCooldown = 0;
     public int sitTickCt = 0;
-    //public float flyProgress;
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private int inPFLove;
-    private int climbingpause;
+    public int climbingpause;
 
     public EntityPrehistoricFloraLandClimbingFlyingBase(World world) {
         super(world);
@@ -242,6 +240,12 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         return super.attackEntityFrom(ds, f);
     }
 
+    @Override
+    public void knockBack(Entity entityIn, float strength, double xRatio, double zRatio)
+    {
+        this.setFlying();
+    }
+
     public void setFlying() {
         if (!world.isRemote) {
             this.setSitting(false);
@@ -328,6 +332,27 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         }
 
         if (!world.isRemote) {
+
+            //Centre on a block:
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                //this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+                //this.posX = this.getPosition().getX() + 0.5;
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                //this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                //this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+                this.setPositionAndRotation(this.posX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                //this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+                this.setPositionAndRotation(this.posX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+            }
+
+
             if ((!world.isAirBlock(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()))
                     && !world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()).getBlock().isPassable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up())
                     && this.posY % 1 > this.headHitHeight()) {
@@ -403,7 +428,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             }
 
             if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
-                if (checkFlyConditions() || rand.nextInt(3000) == 0) {
+                if (checkFlyConditions() || rand.nextInt(250) == 0) {
                     this.setFlying();
                 }
             }

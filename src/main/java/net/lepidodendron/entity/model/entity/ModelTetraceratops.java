@@ -396,16 +396,42 @@ public class ModelTetraceratops extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Tetraceratops.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Tetraceratops.offsetZ = -0.3F;
-        this.Tetraceratops.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticWall(float f) {
+        this.Mandible.rotateAngleX = (float) Math.toRadians(30);
+        this.Head.rotateAngleX = (float) Math.toRadians(-10);
+        this.Neck1.offsetY = -0.025F;
+        this.Neck1.offsetZ = -0.15F;
+        this.Neck1.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Tetraceratops, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(chest, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Neck1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck2, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(Mandible, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LBackLeg, 0.4F, 0.2F, 0.2F);
+        this.setRotateAngle(LowerLBackLeg, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(LBackFoot, -0.2F, 0.2F, -0.25F);
+        this.setRotateAngle(RBackLeg, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerRBackLeg, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(RBackFoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LFrontLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLFrontLeg, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LFrontFoot, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(RFrontLeg, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerRFrontLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(RFrontFoot, -0.3F, 0.0F, 0.0F);
+        this.Tetraceratops.offsetY = 0.045F;
+        this.Tetraceratops.offsetZ = -0.05F;
+        this.Tetraceratops.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

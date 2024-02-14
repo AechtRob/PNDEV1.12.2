@@ -34,8 +34,8 @@ public class WorldGenIcebergs extends WorldGenerator {
         int i2 = position.getX();
         int k2 = position.getZ();
         for (int a = 0; a < count; a++) {
-            int ii = i2 + rand.nextInt(16) + 8;
-            int kk = k2 + rand.nextInt(16) + 8;
+            int ii = i2 + 16;
+            int kk = k2 + 16;
             int height = Functions.getAdjustedSeaLevel(worldIn, position) + 1;
             while (height >= Functions.getAdjustedSeaLevel(worldIn, position) - 1) {
                 if (
@@ -54,7 +54,7 @@ public class WorldGenIcebergs extends WorldGenerator {
 
             BlockPos startpos = new BlockPos(ii, jj, kk);
 
-            int i1 = 3 + rand.nextInt(10);
+            int i1 = 3 + rand.nextInt(6);
 
             for (int i = 0; i1 >= 0 && i < 3; ++i) {
                 int j = i1 + rand.nextInt(2);
@@ -63,25 +63,35 @@ public class WorldGenIcebergs extends WorldGenerator {
                 float f = (float) (j + k + l) * 0.333F + 0.5F;
 
                 for (BlockPos blockpos : BlockPos.getAllInBox(startpos.add(-j, -k, -l), startpos.add(j, k, l))) {
-                    if (blockpos.distanceSq(startpos) <= (double) (f * f)) {
-                        Block blockIn = Blocks.SNOW;
-                        if (Math.random() > 0.65) {
-                            blockIn = Blocks.PACKED_ICE;
+                    if (worldIn.isBlockLoaded(blockpos)) {
+                        if (blockpos.distanceSq(startpos) <= (double) (f * f)) {
+                            Block blockIn = Blocks.SNOW;
+                            if (Math.random() > 0.65) {
+                                blockIn = Blocks.PACKED_ICE;
+                            }
+                            if (Math.random() > 0.85) {
+                                blockIn = Blocks.SNOW;
+                            }
+                            if (Math.random() > 0.85) {
+                                blockIn = Blocks.PACKED_ICE;
+                            }
+                            if (blockpos.getY() <= Functions.getAdjustedSeaLevel(worldIn, blockpos)) {
+                                blockIn = Blocks.PACKED_ICE;
+                            }
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn.getDefaultState(), 16);
                         }
-                        if (Math.random() > 0.85) {
-                            blockIn = Blocks.SNOW;
-                        }
-                        if (Math.random() > 0.85) {
-                            blockIn = Blocks.PACKED_ICE;
-                        }
-                        if (blockpos.getY() <= Functions.getAdjustedSeaLevel(worldIn, blockpos)) {
-                            blockIn = Blocks.PACKED_ICE;
-                        }
-                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 2);
                     }
                 }
 
-                startpos = startpos.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+                BlockPos startpos2 = startpos;
+                for (int tries = 0; tries <= 100; tries ++) {
+                    startpos2 = startpos.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+                    if (worldIn.isBlockLoaded(startpos2)) {
+                        break;
+                    }
+                    startpos2 = startpos.add(0, 0 - rand.nextInt(2), 0);
+                }
+                startpos = startpos2;
             }
             return true;
         }

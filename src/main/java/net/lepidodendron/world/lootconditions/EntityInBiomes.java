@@ -29,6 +29,7 @@ public class EntityInBiomes implements LootCondition
     @Override
     public boolean testCondition(Random rand, LootContext context)
     {
+        System.err.println("Testing fishing biome condition");
         Entity entity = context.getEntity(this.target);
 
         if (entity == null)
@@ -42,6 +43,7 @@ public class EntityInBiomes implements LootCondition
             String biome = "\"" + world.getBiome(pos).getRegistryName().toString() + "\"";
             for (String biomess : this.biomes) {
                 if (biomess.equalsIgnoreCase(biome)) {
+                    System.err.println("Located biome fishing loot table for " + biome);
                     return true;
                 }
             }

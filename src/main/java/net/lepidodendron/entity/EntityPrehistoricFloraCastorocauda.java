@@ -11,6 +11,9 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderCastorocauda;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,7 +34,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHaldanodon {
+public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHaldanodon implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -44,6 +47,12 @@ public class EntityPrehistoricFloraCastorocauda extends EntityPrehistoricFloraHa
 		maxWidth = 0.4F;
 		maxHeight = 0.35F;
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_CASTOROCAUDA;
 	}
 
 	@Override

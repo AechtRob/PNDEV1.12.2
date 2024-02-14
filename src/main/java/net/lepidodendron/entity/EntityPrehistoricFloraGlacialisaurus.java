@@ -4,10 +4,12 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -36,12 +38,12 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation NOISE2_ANIMATION;
@@ -188,6 +190,15 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		//	return 0.0F; //Is rearing
 		//}
 		return speedBase;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(3.0, 3.0, 3.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override
@@ -429,7 +440,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		}
 		return test && test2;
 	}
-
 
 	@Override
 	public SoundEvent getAmbientSound() {

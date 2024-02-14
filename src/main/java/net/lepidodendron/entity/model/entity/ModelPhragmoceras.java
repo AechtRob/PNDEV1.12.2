@@ -278,7 +278,6 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-
         this.resetToDefaultPose();
         //float offsetY = 1.40F;
 
@@ -337,11 +336,12 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
             this.walk(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
             this.body.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1) + 1.4F - 0.20F;
             this.body.offsetZ = this.moveBoxExtended(speed, -0.03F, false, 0, f2, 1);
+            this.body.offsetY = -0.5F;
 
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.20F;
+            this.body.offsetY = -0.0F;
         }
 
     }

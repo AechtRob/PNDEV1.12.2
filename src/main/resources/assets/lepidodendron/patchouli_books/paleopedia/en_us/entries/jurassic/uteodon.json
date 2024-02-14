@@ -1,0 +1,62 @@
+{
+	"name": "Uteodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/uteodon_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_uteodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_uteodon",
+			"title": "Uteodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Ornithopoda $(br)>Ankylopollexia $(br)>Styracosterna"
+		},
+        	{
+            "type": "entity",
+            "name": "U. aphanoecetes",
+            "entity": "lepidodendron:prehistoric_flora_uteodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uteodon",
+			"type": "text",
+			"text": "Uteodon is a genus of basal Iguanodontian dinosaur from the late Jurassic of North America. This genus' size is sometimes debated as its placement as it's own thing has for long remained uncertain, with some estimates placing it as long as 6 m based on Camptosaurus while others estimating it as small as 2.5 m across, based on confirmed fossil material."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uteodon",
+			"type": "text",
+			"text": "First discovered in 1925 based on an almost complete specimen, the animal was first assigned to the species Camptosaurus medius, synonymized with Camptosaurus dispar in 1980 prompting the creation of the new species Camptosaurus aphanoecetes to accomodate the remains in 2008; the animal would then be reassigned to its own genus in 2011 only to be synonymized with Camptosaurus again four years later."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uteodon",
+			"type": "text",
+			"text": "Today the placement of Uteodon is once again valid as it's own genus once more. Uteodon would've lived in an area of the Morrison formation abundant in humid areas like rivers, lakes and swamps. The animal would've shared this environment with a large amount of other dinosaurs such as Camptosaurus, Allosaurus, Dryosaurus, Apatosaurus, "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uteodon",
+			"type": "text",
+			"text": "Camarasaurus, Stegosaurus and more, all of which are known from the same digsite the single specimen of Uteodon came from. The environment it lived in was also rich in flora like Ginkgos, Conifers and Cycads, which seemingly dominated the landscape during the Late Jurassic of what is today the Dry Mesa Quarry in the Morrison Formation."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_uteodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_uteodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_uteodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_uteodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_uteodon"
+		}
+	]
+}

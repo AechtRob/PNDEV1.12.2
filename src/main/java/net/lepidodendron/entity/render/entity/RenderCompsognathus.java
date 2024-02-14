@@ -34,7 +34,7 @@ public class RenderCompsognathus extends RenderLiving<EntityPrehistoricFloraComp
             {
                 return;
             }
-            RenderDisplays.modelCompsognathus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelCompsognathusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

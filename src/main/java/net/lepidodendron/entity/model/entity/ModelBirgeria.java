@@ -216,6 +216,19 @@ public class ModelBirgeria extends AdvancedModelBase {
         this.resetToDefaultPose();
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.15F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.2F, -0.1F);
+        this.setRotateAngle(body5, 0.15F, 0.2F, -0.1F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = -0.18F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

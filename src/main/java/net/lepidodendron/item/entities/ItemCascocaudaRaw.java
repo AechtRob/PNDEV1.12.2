@@ -35,7 +35,7 @@ public class ItemCascocaudaRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid_cascocauda", ItemCascocaudaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anurognathid@cascocauda", ItemCascocaudaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCascocaudaRaw.block);
 		OreDictionary.registerOre("pnfurnaceMeat", ItemCascocaudaRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemCascocaudaRaw.block);

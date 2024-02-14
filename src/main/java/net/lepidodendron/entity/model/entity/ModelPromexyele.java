@@ -307,16 +307,27 @@ public class ModelPromexyele extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Promexyele.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Promexyele.rotateAngleY = (float) Math.toRadians(90);
+        this.Promexyele.offsetY = -0.18F;
+        this.Promexyele.offsetX = -0.05F;
+        this.Promexyele.offsetZ = -0.43F;
         this.Promexyele.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Promexyele, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, -1.3F, -0.3F, -0.1F);
+        this.setRotateAngle(PectoralR, -1.3F, 0.3F, 0.1F);
+        this.Promexyele.offsetY = -0.03F;
+        this.Promexyele.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

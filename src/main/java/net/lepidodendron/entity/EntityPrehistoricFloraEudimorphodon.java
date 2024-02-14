@@ -2,46 +2,39 @@
 package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
-import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.render.entity.RenderEudimorphodon;
-import net.lepidodendron.entity.render.entity.RenderRhamphorhynchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IGuano;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraAgeableFlyingBase implements IAdvancementGranter {
-
-	public BlockPos currentTarget;
-	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano, ITrappableLand {
 
 	public EntityPrehistoricFloraEudimorphodon(World world) {
 		super(world);
@@ -50,6 +43,8 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		maxWidth = 0.52F;
 		maxHeight = 0.65F;
 		maxHealthAgeable = 12.0D;
+		setNoAI(!true);
+		enablePersistence();
 	}
 
 	@Override
@@ -57,63 +52,19 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		return 15;
 	}
 
-	public static String getPeriod() {return "Triassic";}
-
-	//public static String getHabitat() {return "Pterosaur";}
-
 	@Override
-	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
-	public int getAttackLength() {
+	public int getEatLength() {
 		return 20;
 	}
 
 	@Override
-	public String getTexture() {
-		return this.getTexture();
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, FLY_ANIMATION, UNFLY_ANIMATION};
 	}
 
 	@Override
-	public boolean dropsEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean laysEggs() {
+	public boolean homesToNest() {
 		return true;
-	}
-
-	public float getAISpeedLand() {
-		float speedBase = 0.325F;
-		if (this.getTicks() < 0) {
-			return 0.0F; //Is laying eggs
-		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
-			return 0.0F;
-		}
-		if (this.getIsFast()) {
-			speedBase = speedBase * 1.50F;
-		}
-		else if (this.getAnimation() == FLY_ANIMATION) {
-			speedBase = speedBase + (speedBase * ((float) this.getAnimationTick() / (float) this.FLY_ANIMATION.getDuration()));
-		}
-		else if (this.getAnimation() == UNFLY_ANIMATION) {
-			speedBase = (speedBase + speedBase) - (speedBase * ((float) this.getAnimationTick() / (float) this.UNFLY_ANIMATION.getDuration()));
-		}
-
-		return speedBase;
-	}
-
-	protected double getAISpeedFly() {
-		return 0.315D;
-	}
-
-	@Override
-	public boolean canFloat() {
-		return false;
 	}
 
 	@Override
@@ -127,18 +78,61 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 	}
 
 	@Override
-	public int flyLength() {
-		return 2400;
+	public boolean checkFlyConditions() {
+		return true;
+	}
+
+	public boolean hasAlarm() {
+		return true;
 	}
 
 	@Override
-	public int walkLength() {
-		return 1200;
+	public boolean canClimb() {
+		return false;
 	}
 
 	@Override
-	public int getTalkInterval() {
-		return 80;
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			List<EntityPrehistoricFloraEudimorphodon> eudimorphodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraEudimorphodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraEudimorphodon currentEudimorphodon : eudimorphodon) {
+				currentEudimorphodon.setRevengeTarget(ee);
+				//currentCaelestiventus.screamAlarmCooldown = rand.nextInt(20);
+				currentEudimorphodon.setFlying();
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	@Override
+	public boolean panics() {
+		return true;
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == DRINK_ANIMATION || animation == GRAZE_ANIMATION;
+	}
+
+	@Override
+	public ResourceLocation FlightSound() {
+		return null;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EUDIMORPHODON;
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.EUDIMORPHODON_LOOT_YOUNG;
+		}
+		return LepidodendronMod.EUDIMORPHODON_LOOT;
 	}
 
 	@Override
@@ -152,90 +146,8 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 	}
 
 	@Override
-	public float getEyeHeight()
-	{
-		return Math.max(super.getEyeHeight(), this.height * 0.9F);
-	}
-
-	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(2, new AgeableFlyingBaseWanderFly(this));
-		tasks.addTask(3, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new PanicAI(this, 1.0));
-		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 20));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
-	}
-
-	@Override
-	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.CRUSTACEAN);
-	}
-
-	@Override
-	public boolean panics() {
-		return true;
-	}
-	
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
-	}
-
-	@Override
-	protected boolean canDespawn() {
-		return false;
-	}
-
-	@Override
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.getAISpeedFly());
-	}
-
-	@Override
-	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eudimorphodon_idle"));
-	}
-
-	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eudimorphodon_hurt"));
-	}
-
-	@Override
-	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:eudimorphodon_death"));
-	}
-
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
-	}
-
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
-	}
-	
-
-	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -245,28 +157,163 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 
 	}
 
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
+	@Override
+	public boolean canJar() {
+		return false;
+	}
+
+	public static String getPeriod() {return "Triassic";}
+
+	//public static String getHabitat() {return "Terrestrial";}
+
+	@Override
+	public boolean dropsEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean hasNest() {
+		return true;
+	}
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
+
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		if (isLayableNest(world, pos)) {
+			return true;
+		}
+		return world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID;
+	}
+
+	@Override
+	public boolean canSpawnOnLeaves() {
+		return true;
+	}
+
+	@Override
+	public float getAISpeedLand() {
+		float speedBase = 0.325F;
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+			return 0.0F;
+		}
+		if (this.getAttachmentPos() != null) {
+			if (this.getAttachmentFacing() == EnumFacing.UP) {
+				//Walking:
+				if (this.getIsFast()) {
+					return speedBase * 1.50F;
 				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
+				else if (this.getAnimation() == FLY_ANIMATION) {
+					return speedBase + (speedBase * ((float) this.getAnimationTick() / (float) this.FLY_ANIMATION.getDuration()));
+				}
+				else if (this.getAnimation() == UNFLY_ANIMATION) {
+					return (speedBase + speedBase) - (speedBase * ((float) this.getAnimationTick() / (float) this.UNFLY_ANIMATION.getDuration()));
+				}
+				return speedBase;
 			}
 		}
+		//Otherwise we are flying:
+		if (this.getIsFast()) {
+			return 0.315F;
+		}
+		return 0.315F;
+	}
+
+	@Override
+	public boolean isAIDisabled() {
 		return false;
+	}
+
+	@Override
+
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(2);
+	}
+
+	@Override
+	public String getTexture() {
+		return this.getTexture();
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 10;
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 20;
+	}
+
+	@Override
+	public void playLivingSound() {
+		if (this.getAnimation() == NO_ANIMATION && ((this.getAttachmentPos() != null && this.checkFlyConditions())
+				|| this.getAttachmentPos() == null)) {
+			if (!this.world.isRemote) {
+				this.setAnimation(ROAR_ANIMATION);
+				SoundEvent soundevent = this.getAmbientSound();
+				if (soundevent != null)
+				{
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:eudimorphodon_idle"));
+	}
+
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:eudimorphodon_hurt"));
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:eudimorphodon_death"));
+	}
+
+	protected void initEntityAI() {
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
+		tasks.addTask(1, new EntityAISwimming(this));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new PanicAI(this, 1.0));
+
+		tasks.addTask(4, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 20));
+		tasks.addTask(6, new AgeableClimbingFlyingWalkingFlyHigh(this, false));
+		tasks.addTask(7, new LandClimbingFlyingWalkingBaseWanderFlightNearGroundAI(this, false, false));
+		tasks.addTask(8, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
+	}
+
+	@Override
+	public String[] getFoodOreDicts() {
+		return ArrayUtils.addAll(DietString.FISH, DietString.CRUSTACEAN);
 	}
 
 	@Override
@@ -278,22 +325,17 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		return false;
 	}
 
-	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
-		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
-		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
-	}
-	@Nullable
 	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_EUDIMORPHODON;
+	public String getEntityId(Entity entity) {
+		return "lepidodendron:prehistoric_flora_eudimorphodon";
 	}
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.EUDIMORPHODON_LOOT_YOUNG;
-		}
-		return LepidodendronMod.EUDIMORPHODON_LOOT;
+
+	@Override
+	public int getEggType(@Nullable String variantIn) { //0-3
+		return 0; //Small eggs
 	}
+
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {

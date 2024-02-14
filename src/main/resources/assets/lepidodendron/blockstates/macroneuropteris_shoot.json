@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:macroneuropteris_strobilus"
+    },
+    "facing=north": {
+      "model": "lepidodendron:macroneuropteris_strobilus"
+    },
+    "facing=east": {
+      "model": "lepidodendron:macroneuropteris_strobilus",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:macroneuropteris_strobilus",
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:macroneuropteris_strobilus",
+      "y": 270
+    },
+  "facing=up": {
+      "model": "lepidodendron:macroneuropteris_strobilus"
+    },
+    "facing=down": {
+      "model": "lepidodendron:macroneuropteris_strobilus",
+      "x": 180
+    }
+  }
+}

@@ -160,6 +160,17 @@ public class ModelBelantsea extends AdvancedModelBase {
         this.resetToDefaultPose();
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.1F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.1F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.25F, 0.1F);
+        this.setRotateAngle(Tailend, 0.0F, -0.3F, 0.1F);
+        this.Bodyfront.offsetY = 0.12F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderSaurostomus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -27,7 +28,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSaurostomus extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraSaurostomus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -106,8 +107,6 @@ public class EntityPrehistoricFloraSaurostomus extends EntityPrehistoricFloraAge
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.FISH, DietString.NAUTILOID);
 	}
-
-	
 
 	@Override
 	public boolean isAIDisabled() {

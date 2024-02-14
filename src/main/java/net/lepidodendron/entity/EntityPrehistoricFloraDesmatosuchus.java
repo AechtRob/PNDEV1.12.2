@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDesmatosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -32,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -62,6 +63,16 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 1; //medium
+	}
+
+	@Override
+	public int getEatLength() {
+		return 55;
+	}
+
+	@Override
+	public int getRoarLength() {
+		return 20;
 	}
 
 	@Override
@@ -104,7 +115,7 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.399F;
+		float speedBase = 0.3F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -112,7 +123,7 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.27F;
+			speedBase = speedBase * 1.6F;
 		}
 		return speedBase;
 	}

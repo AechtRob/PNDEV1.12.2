@@ -12,6 +12,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -37,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -111,12 +112,12 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	@Override
 	public int getRoarLength() {
 		return 80;
-	} //Idle
+	}
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
-	} //Roar
+		return 100;
+	}
 
 	@Override
 	public boolean hasNest() {
@@ -242,25 +243,25 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	@Override
 	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:sinraptor_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:sinraptor_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:sinraptor_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yangchuanosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:sinraptor_death"));
 	}
 
 	@Override

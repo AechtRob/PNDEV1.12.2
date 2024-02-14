@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
-import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
@@ -468,6 +467,26 @@ public class ModelDorygnathus extends AdvancedModelBaseExtended {
         this.root.render(f5);
     }
 
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = 0.2F;
+        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 2.0F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.jaw.rotateAngleX = (float) Math.toRadians(25);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -603,6 +622,9 @@ public class ModelDorygnathus extends AdvancedModelBaseExtended {
                 else { //Flying regular
                     animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
+            }
+            else { //Flying regular but straight upwards
+                animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
         }
         else if (ee.getAttachmentPos() != null) {

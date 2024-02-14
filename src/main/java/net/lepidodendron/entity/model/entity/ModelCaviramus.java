@@ -3,7 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
@@ -332,7 +332,7 @@ public class ModelCaviramus extends AdvancedModelBaseExtended {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 
-        EntityPrehistoricFloraAgeableFlyingBase flier = (EntityPrehistoricFloraAgeableFlyingBase) e;
+        EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) e;
         if (flier.isReallyFlying() || flier.getAnimation() == flier.UNFLY_ANIMATION) { //flight pose
             this.setRotateAngle(tail4, 0.04241150082346221F, 0.0F, 0.0F);
             this.setRotateAngle(upperlegL, 0.6368706440527309F, -0.14852751934471745F, -1.5920893436692274F);
@@ -479,7 +479,7 @@ public class ModelCaviramus extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraAgeableFlyingBase e = (EntityPrehistoricFloraAgeableFlyingBase) entity;
+        EntityPrehistoricFloraLandClimbingFlyingWalkingBase e = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) entity;
         animator.update(entity);
         this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);

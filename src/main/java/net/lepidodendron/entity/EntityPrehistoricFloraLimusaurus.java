@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderLimusaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -41,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer {
+public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -60,7 +61,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.05F;
 		maxWidth = 0.49F;
 		maxHeight = 0.52F;
-		maxHealthAgeable = 14.0D;
+		maxHealthAgeable = 16.0D;
 		STAND_ANIMATION = Animation.create(55);
 		CHATTER_ANIMATION = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -142,7 +143,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		if (this.getIsFast()) {
 			speedBase = 0.318F * 3.55F;
 		}
-		return speedBase * 0.85F;
+		return speedBase * 0.60F;
 	}
 
 	@Override
@@ -304,7 +305,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

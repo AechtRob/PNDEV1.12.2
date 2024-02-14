@@ -1,0 +1,46 @@
+{
+	"name": "Anurognathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/anurognathus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_anurognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anurognathus",
+			"title": "Anurognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Anurognathidae $(br)>Anurognathinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/anurognathus.png"],
+			"title": "A. ammoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anurognathus",
+			"type": "text",
+			"text": "Anurognathus is the type genus from which Anurognathidae gets its name. It was first described in 1923 from the Solnhofen Limestone Lagerstätte of Bavaria, Germany by Ludwig Döderlein with the holotype specimen BSP 1922.I.42. However, BSP 1922.I.42 was crushed and a little difficult to see. In 2007, S. Christopher Bennet described a more complete and better articulated specimen of Anurognathus, showing a short wide skull as well as imprints of the patagium."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@anurognathus"
+		}
+	]
+}

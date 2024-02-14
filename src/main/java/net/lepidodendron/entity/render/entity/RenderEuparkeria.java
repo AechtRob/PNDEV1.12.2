@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEuparkeria extends RenderLiving<EntityPrehistoricFloraEuparkeria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euparkeria.png");
+    public static float getScaler() {
+        return 0.235F;
+    }
 
     public RenderEuparkeria(RenderManager mgr) {
         super(mgr, new ModelEuparkeria(), 0.0f);

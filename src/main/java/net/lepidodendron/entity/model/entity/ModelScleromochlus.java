@@ -220,17 +220,20 @@ public class ModelScleromochlus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.basin1.render(f5 * 0.129f);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.basin1.offsetZ = -0.7F;
-        this.basin1.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(basin1, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.15F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
+        this.basin1.offsetY = 0.31F;
+        this.basin1.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

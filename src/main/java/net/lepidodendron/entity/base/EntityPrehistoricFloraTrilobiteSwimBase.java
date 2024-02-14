@@ -52,7 +52,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteSwimBase.class, DataSerializers.VARINT);
 
-    private int inPFLove;
+    public int inPFLove;
 
     public EntityPrehistoricFloraTrilobiteSwimBase(World world) {
         super(world);

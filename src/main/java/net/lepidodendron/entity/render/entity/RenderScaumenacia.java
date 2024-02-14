@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderScaumenacia extends RenderLiving<EntityPrehistoricFloraScaumenacia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scaumenacia.png");
-
+    public static float getScaler() {
+        return 0.7F * 0.45F;
+    }
     public RenderScaumenacia(RenderManager mgr) {
         super(mgr, new ModelScaumenacia(), 0.0f);
     }

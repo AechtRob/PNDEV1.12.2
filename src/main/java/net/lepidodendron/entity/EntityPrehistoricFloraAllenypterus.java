@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderAllenypterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
@@ -24,7 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -203,7 +204,7 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.18;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -228,6 +229,7 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 	public static float getScaler(@Nullable String variant) {
 		return RenderAllenypterus.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
 	@Nullable
 	@Override

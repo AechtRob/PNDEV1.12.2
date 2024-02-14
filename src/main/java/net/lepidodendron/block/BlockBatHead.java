@@ -9,8 +9,8 @@ import net.lepidodendron.item.ItemBatHeadItem;
 import net.lepidodendron.util.ParticleGuano;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -22,6 +22,7 @@ import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.block.state.pattern.BlockStateMatcher;
 import net.minecraft.block.state.pattern.FactoryBlockPattern;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -32,15 +33,14 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -73,6 +73,7 @@ public class BlockBatHead extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockBatHead.NODROP).build());
 //		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 //				new ModelResourceLocation("lepidodendron:bat_head", "inventory"));
 	}
@@ -90,16 +91,21 @@ public class BlockBatHead extends ElementsLepidodendronMod.ModElement {
 		}
 	};
 
-	public static class BlockCustom extends BlockContainer {
+	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.CIRCUITS);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(NODROP, Boolean.valueOf(false)));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(NODROP, Boolean.valueOf(false)));
 			setTranslationKey("pf_bat_head");
 			setCreativeTab(null);
 		}
 
 		private BlockPattern guanogolemBasePattern;
 		private BlockPattern guanogolemPattern;
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.BROWN;
+		}
 
 		@SideOnly(Side.CLIENT)
 		public boolean hasCustomBreakingProgress(IBlockState state)
@@ -110,6 +116,17 @@ public class BlockBatHead extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 			return new ItemStack(ItemBatHeadItem.block, 1);
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public BlockRenderLayer getRenderLayer() {
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override
+		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
 
 		@Override
@@ -281,6 +298,26 @@ public class BlockBatHead extends ElementsLepidodendronMod.ModElement {
 			super.eventReceived(state, worldIn, pos, eventID, eventParam);
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
+		}
+
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			if (tileentity != null) {
+				world.removeTileEntity(pos);
+			}
+			super.breakBlock(world, pos, state);
+		}
+
+		@Override
+		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return false;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public EnumBlockRenderType getRenderType(IBlockState state) {
+			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
 		}
 
 	}

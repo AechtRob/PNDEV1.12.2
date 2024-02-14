@@ -7,12 +7,16 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingBase;
+import net.lepidodendron.entity.render.entity.RenderAnurognathid;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamerFlier;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -34,12 +38,14 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLandClimbingFlyingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLandClimbingFlyingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -79,19 +85,22 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
-		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
-			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraAnurognathid> anurognathid = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnurognathid.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraAnurognathid currentAnurognathid : anurognathid) {
-				if (currentAnurognathid.getPNType() == this.getPNType()) {
-					currentAnurognathid.setRevengeTarget(ee);
-					currentAnurognathid.screamAlarmCooldown = rand.nextInt(20);
-					currentAnurognathid.setFlying();
+		boolean dsCheck = super.attackEntityFrom(ds, i);
+		if (dsCheck != false) {
+			Entity e = ds.getTrueSource();
+			if (e instanceof EntityLivingBase && this.hasAlarm()) {
+				EntityLivingBase ee = (EntityLivingBase) e;
+				List<EntityPrehistoricFloraAnurognathid> anurognathid = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnurognathid.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+				for (EntityPrehistoricFloraAnurognathid currentAnurognathid : anurognathid) {
+					if (currentAnurognathid.getPNType() == this.getPNType()) {
+						currentAnurognathid.setRevengeTarget(ee);
+						currentAnurognathid.screamAlarmCooldown = rand.nextInt(20);
+						currentAnurognathid.setFlying();
+					}
 				}
 			}
 		}
-		return super.attackEntityFrom(ds, i);
+		return dsCheck;
 	}
 
 	public void setScreaming(boolean screaming) {
@@ -722,5 +731,120 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	//Rendering taxidermy:
 	//--------------------
 
+	public static double offsetWall(@Nullable String variant) {
+		switch (EntityPrehistoricFloraAnurognathid.Type.getTypeFromString(variant)) {
+			case ANUROGNTHUS: default:
+				return 0.01;
+
+			case BATRACHOGNATHUS:
+				return 0.01;
+
+			case CASCOCAUDA:
+				return 0.01;
+
+			case DENDRORHYNCHOIDES:
+				return 0.01;
+
+			case JEHOLOPTERUS:
+				return 0.01;
+
+			case SINOMACROPS:
+				return 0.01;
+
+		}
+	}
+
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0F;
+	}
+
+	public static float widthSupport(@Nullable String variant) {return 0.03F;}
+
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraAnurognathid.Type.getTypeFromString(variant)) {
+			case ANUROGNTHUS:
+			default:
+				return RenderAnurognathid.TEXTURE_ANUROGNATHUS;
+
+			case BATRACHOGNATHUS:
+				return RenderAnurognathid.TEXTURE_BATRACHOGNATHUS;
+
+			case CASCOCAUDA:
+				return RenderAnurognathid.TEXTURE_CASCOCAUDA;
+
+			case DENDRORHYNCHOIDES:
+				return RenderAnurognathid.TEXTURE_DENDRORHYNCHOIDES;
+
+			case JEHOLOPTERUS:
+				return RenderAnurognathid.TEXTURE_JEHOLOPTERUS;
+
+			case SINOMACROPS:
+				return RenderAnurognathid.TEXTURE_SINOMACROPS;
+
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		switch (EntityPrehistoricFloraAnurognathid.Type.getTypeFromString(variant)) {
+			case ANUROGNTHUS:
+			default:
+				return RenderDisplays.modelAnurognathus;
+
+			case BATRACHOGNATHUS:
+				return RenderDisplays.modelBatrachognathus;
+
+			case CASCOCAUDA:
+				return RenderDisplays.modelCascocauda;
+
+			case DENDRORHYNCHOIDES:
+				return RenderDisplays.modelDendrorhynchoides;
+
+			case JEHOLOPTERUS:
+				return RenderDisplays.modelJeholopterus;
+
+			case SINOMACROPS:
+				return RenderDisplays.modelBatrachognathus;
+
+		}
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderAnurognathid.getScaler(EntityPrehistoricFloraAnurognathid.Type.getTypeFromString(variant));
+	}
 
 }

@@ -4,7 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemScrubbyPineNuts;
+import net.lepidodendron.item.ItemCedarNuts;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
@@ -102,7 +102,7 @@ public class BlockCedarFruit extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			
-			drops.add(new ItemStack(ItemScrubbyPineNuts.block, (int) (3)));
+			drops.add(new ItemStack(ItemCedarNuts.block, (int) (3)));
 			
 			if (((world.getBlockState(pos.north())).getMaterial() == Material.WATER) 
 				|| ((world.getBlockState(pos.south())).getMaterial() == Material.WATER)

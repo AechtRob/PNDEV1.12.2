@@ -69,11 +69,11 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private EntityItem eatTarget;
+    public EntityItem eatTarget;
     public Animation ATTACK_ANIMATION;
     public Animation LAY_ANIMATION;
-    private int inPFLove;
-    private boolean laying;
+    public int inPFLove;
+    public boolean laying;
 
     public EntityPrehistoricFloraInsectFlyingBase(World world) {
         super(world);

@@ -16,6 +16,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fluids.BlockFluidBase;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -216,7 +217,7 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
             }
             else
             {
-                if (pathpoint == null && p_186332_4_ > 0 && pathnodetype != PathNodeType.FENCE && pathnodetype != PathNodeType.TRAPDOOR)
+                if (pathpoint == null && p_186332_4_ > 0 && (pathnodetype != PathNodeType.FENCE || p_186332_4_ > 1) && pathnodetype != PathNodeType.TRAPDOOR)
                 {
                     pathpoint = this.getSafePoint(x, y + 1, z, p_186332_4_ - 1, p_186332_5_, facing);
 
@@ -524,11 +525,42 @@ public class WalkNodeProcessorShallowWater extends NodeProcessor
         PathNodeType type = block.getAiPathNodeType(iblockstate, worldIn, blockpos, this.currentEntity);
         if (type != null) return type;
 
-        if (isTree && worldIn.isAirBlock(blockpos) && worldIn.isAirBlock(blockpos.down()) && worldIn.isAirBlock(blockpos.down(2)))
+        if (isTree
+                && worldIn.getBlockState(blockpos).getBlock().isPassable(worldIn, blockpos) && worldIn.getBlockState(blockpos).getMaterial() != Material.LAVA
+                && worldIn.getBlockState(blockpos.down()).getBlock().isPassable(worldIn, blockpos.down()) && worldIn.getBlockState(blockpos.down()).getMaterial() != Material.LAVA
+                && worldIn.getBlockState(blockpos.down()).getBlock().isPassable(worldIn, blockpos.down(2)) && worldIn.getBlockState(blockpos.down(2)).getMaterial() != Material.LAVA)
         {
             //System.err.println("Testing blocked");
             return PathNodeType.BLOCKED;
         }
+        
+        BlockPos blockpos1 = new BlockPos(p_189553_2_, p_189553_3_ - this.currentEntity.height, p_189553_4_);
+        if (worldIn.getBlockState(blockpos1).getBlock().isPassable(worldIn, blockpos1) && worldIn.getBlockState(blockpos1).getMaterial() != Material.LAVA
+                && worldIn.getBlockState(blockpos1.down()).getBlock().isPassable(worldIn, blockpos1.down()) && worldIn.getBlockState(blockpos.down()).getMaterial() != Material.LAVA) {
+            boolean allFallable = true;
+            int fallDist;
+            for (fallDist = 0; fallDist <= this.currentEntity.getMaxFallHeight(); fallDist ++) {
+                if (blockpos1.getY() - fallDist > 0) {
+                    if ((!worldIn.getBlockState(blockpos1.down(fallDist)).getBlock().isPassable(worldIn, blockpos1.down(fallDist)))
+                            || worldIn.getBlockState(blockpos1.down(fallDist)).getBlock() instanceof BlockLiquid
+                            || worldIn.getBlockState(blockpos1.down(fallDist)).getBlock() instanceof BlockFluidBase
+                            || worldIn.getBlockState(blockpos1.down(fallDist)).getMaterial() == Material.WATER) {
+                        allFallable = false;
+                        break;
+                    }
+                }
+            }
+            if (blockpos1.getY() - fallDist > 0) {
+                if ((allFallable) && fallDist > this.currentEntity.getMaxFallHeight() && (worldIn.getBlockState(blockpos1.down(fallDist)).getBlock().isPassable(worldIn, blockpos1.down(fallDist)))
+                        && worldIn.getBlockState(blockpos1.down(fallDist)).getMaterial() != Material.WATER
+                        && worldIn.getBlockState(blockpos1.down(fallDist)).getMaterial() != Material.LAVA
+                        && worldIn.getBlockState(blockpos1.down(fallDist)).getBlock() instanceof BlockLiquid
+                        && worldIn.getBlockState(blockpos1.down(fallDist)).getBlock() instanceof BlockFluidBase) {
+                    return PathNodeType.BLOCKED;
+                }
+            }
+        }
+
         if (material == Material.AIR)
         {
             return PathNodeType.OPEN;

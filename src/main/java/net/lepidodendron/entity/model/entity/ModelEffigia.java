@@ -345,13 +345,12 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
         this.body.offsetY = -0.50F;
         this.body.offsetX = 0.0F;
         this.body.rotateAngleY = (float)Math.toRadians(130);
-        this.body.rotateAngleX = (float)Math.toRadians(9);
-        this.body.rotateAngleZ = (float)Math.toRadians(-2);
+        this.body.rotateAngleX = (float)Math.toRadians(5);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
         this.body.scaleChildren = true;
         float scaler = 1.1F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.1F, 0.0F, 0.0F);
         this.setRotateAngle(bodyback, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(bodymiddle, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(bodyfront, 0.2F, 0.0F, 0.0F);

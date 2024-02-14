@@ -460,6 +460,16 @@ public class ModelCotylorhynchus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(bodyCentreFront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(skullJaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(tail6, 0.0F, -0.5F, 0.0F);
         this.main.offsetY = -0.164F;
         this.main.render(0.01F);
         this.resetToDefaultPose();

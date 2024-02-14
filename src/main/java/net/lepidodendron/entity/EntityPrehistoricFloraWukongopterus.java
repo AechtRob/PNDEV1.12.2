@@ -8,10 +8,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.render.entity.RenderShringasaurus;
 import net.lepidodendron.entity.render.entity.RenderWukongopterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamerFlier;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
@@ -42,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -58,11 +58,16 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 		minWidth = 0.10F;
 		maxWidth = 0.65F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 6;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	public boolean homesToNest() {
+		return true;
 	}
 
 	@Override
@@ -288,7 +293,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 
 	@Override
 	public float getClimbSpeed() {
-		return 0.0035F;
+		return 0.0075F;
 	}
 
 	@Override
@@ -570,7 +575,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.5;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -587,9 +592,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
-	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.1;}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
 	}
@@ -615,7 +618,7 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	}
 	public static float getScaler(@Nullable String variant) {
 		if (variant.equalsIgnoreCase("female")) {
-			return RenderWukongopterus.getScaler() * 0.85F;
+			return RenderWukongopterus.getScaler() * 1.0F;
 		}
 		return RenderWukongopterus.getScaler();
 	}

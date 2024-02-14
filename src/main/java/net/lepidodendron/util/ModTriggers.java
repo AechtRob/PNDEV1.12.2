@@ -456,6 +456,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_WALCHIA = new CustomTrigger("pf_book_walchia");
     public static final CustomTrigger CLICK_WATER_HORSETAIL = new CustomTrigger("pf_book_water_horsetail");
     public static final CustomTrigger CLICK_WATTIEZA = new CustomTrigger("pf_book_wattieza");
+    public static final CustomTrigger CLICK_SANFORDIACAULIS = new CustomTrigger("pf_book_sanfordiacaulis");
     public static final CustomTrigger CLICK_WEICHSELIA = new CustomTrigger("pf_book_weichselia");
     public static final CustomTrigger CLICK_WIELANDIELLA = new CustomTrigger("pf_book_wielandiella");
     public static final CustomTrigger CLICK_WILLIAMSONIA = new CustomTrigger("pf_book_williamsonia");
@@ -1131,8 +1132,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PROMEXYELE = new CustomTrigger("pf_book_promexyele");
     public static final CustomTrigger CLICK_PAPILIONICHTHYS = new CustomTrigger("pf_book_papilionichthys");
     public static final CustomTrigger CLICK_RAINERICHTHYS = new CustomTrigger("pf_book_rainerichthys");
-    public static final CustomTrigger CLICK_notostracan = new CustomTrigger("pf_book_notostracan");
+    public static final CustomTrigger CLICK_NOTOSTRACAN = new CustomTrigger("pf_book_notostracan");
     public static final CustomTrigger CLICK_STRUDOPS = new CustomTrigger("pf_book_strudops");
+    public static final CustomTrigger CLICK_GUANO_GOLEM = new CustomTrigger("pf_book_guano_golem");
+    public static final CustomTrigger CLICK_IRON_GOLEM = new CustomTrigger("pf_book_iron_golem");
+    public static final CustomTrigger CLICK_SNOW_GOLEM = new CustomTrigger("pf_book_snow_golem");
+    public static final CustomTrigger CLICK_WITHER = new CustomTrigger("pf_book_wither");
     public static final CustomTrigger CLICK_ORCANOPTERUS = new CustomTrigger("pf_book_orcanopterus");
     public static final CustomTrigger CLICK_ONYCHOPTERELLA = new CustomTrigger("pf_book_onychopterella");
     public static final CustomTrigger CLICK_STROBILOPTERUS = new CustomTrigger("pf_book_strobilopterus");
@@ -1353,6 +1358,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MIRAGAIA = new CustomTrigger("pf_book_miragaia");
     public static final CustomTrigger CLICK_DORYGNATHUS = new CustomTrigger("pf_book_dorygnathus");
     public static final CustomTrigger CLICK_ELAPHROSAURUS = new CustomTrigger("pf_book_elaphrosaurus");
+    public static final CustomTrigger CLICK_YIQI = new CustomTrigger("pf_book_yiqi");
 
 
 
@@ -1810,6 +1816,7 @@ public class ModTriggers
             CLICK_WALCHIA,
             CLICK_WATER_HORSETAIL,
             CLICK_WATTIEZA,
+            CLICK_SANFORDIACAULIS,
             CLICK_WEICHSELIA,
             CLICK_WIELANDIELLA,
             CLICK_WILLIAMSONIA,
@@ -2476,8 +2483,12 @@ public class ModTriggers
             CLICK_PROMEXYELE,
             CLICK_PAPILIONICHTHYS,
             CLICK_RAINERICHTHYS,
-            CLICK_notostracan,
+            CLICK_NOTOSTRACAN,
             CLICK_STRUDOPS,
+            CLICK_GUANO_GOLEM,
+            CLICK_IRON_GOLEM,
+            CLICK_SNOW_GOLEM,
+            CLICK_WITHER,
             CLICK_ORCANOPTERUS,
             CLICK_ONYCHOPTERELLA,
             CLICK_STROBILOPTERUS,
@@ -2699,6 +2710,7 @@ public class ModTriggers
             CLICK_MIRAGAIA,
             CLICK_DORYGNATHUS,
             CLICK_ELAPHROSAURUS,
+            CLICK_YIQI,
 
 
 

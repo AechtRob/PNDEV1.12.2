@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -191,6 +192,7 @@ public class Functions {
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state, int flags) {
+
         if (worldIn.getBlockState(pos).getBlock() instanceof BlockDoublePlant) {
             if (worldIn.getBlockState(pos.up()).getBlock() instanceof BlockDoublePlant) {
                 if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER
@@ -213,7 +215,10 @@ public class Functions {
     }
 
     public static boolean decoLoaded() {
-        return true;
+        if (Loader.isModLoaded("prehistoricnaturedeco")) {
+            return true;
+        }
+        return false;
     }
 
 

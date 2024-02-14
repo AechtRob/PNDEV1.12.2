@@ -1,0 +1,6 @@
+{
+    "name": "Minecraft Life",
+    "description": "$(l)Creatures for Minecraft's own fantasy-like world$() $(br)Here you will find already-existing and additional fictional things which we have added to slot into Minecraft's own worlds, which have some inspiration in the real prehistoric life we add.",
+    "icon": "paleopedia:textures/category_icon/icon_minecraft.png",
+    "sortnum": 13
+}

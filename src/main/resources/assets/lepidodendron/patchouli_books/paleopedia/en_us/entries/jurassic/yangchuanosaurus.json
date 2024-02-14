@@ -1,0 +1,52 @@
+{
+	"name": "Yangchuanosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/yangchuanosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_yangchuanosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yangchuanosaurus",
+			"title": "Yangchuanosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Metriacanthosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "Y. shangyouensis",
+            "entity": "lepidodendron:prehistoric_flora_yangchuanosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yangchuanosaurus",
+			"type": "text",
+			"text": "Yangchuanosaurus was a genus of large metriacanthosaurid allosauroid theropod dinosaur that lived from the Middle Jurassic to possibly the Early Cretaceous (around 168.3 - 140 million years ago). Its remains have been found in China, specifically at the Shaximiao Formation. In terms of classification, this dinosaur is the most basal metriacanthosaurid currently known, as well as the only known non-metriacanthosaurine metriacanthosaurid."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yangchuanosaurus",
+			"type": "text",
+			"text": "A carnivore of immense size (especially by Jurassic standards), Yangchuanosaurus was able to reach up to around 11 metres (36 feet) in length and around 3 tons in weight when fully grown. Its great size and strong build likely made it the apex predator of its ecosystem, perhaps even large enough to prey upon young or sick sauropods. A distinctive ridge of hornlets, bumps and other bony protrusions ran down the animal's snout, which in life may have been covered in keratin and used for display."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_yangchuanosaurus"
+		}
+	]
+}

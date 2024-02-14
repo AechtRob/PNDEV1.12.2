@@ -205,6 +205,9 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			if (worldIn.isAirBlock(pos.down())) {
 				return false;
 			}
+			if (worldIn.getBlockState(pos.down()).getBlock() == BlockNest.block) {
+				return false;
+			}
 			IBlockState state = worldIn.getBlockState(pos.down());
 			if (state.getBlock().isFullCube(state) || state.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) {
 				return true;

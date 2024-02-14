@@ -1,7 +1,0 @@
-{
-  "parent": "lepidodendron:block/bridge_side",
-  "textures": {
-    "wood": "lepidodendron:blocks/czekanowskia_planks",
-    "metal": "lepidodendron:blocks/czekanowskia_planks"
-  }
-}

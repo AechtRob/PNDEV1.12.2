@@ -38,7 +38,7 @@ public class RenderHerrerasaurus extends RenderLiving<EntityPrehistoricFloraHerr
             {
                 return;
             }
-            RenderDisplays.modelHerrerasaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelHerrerasaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

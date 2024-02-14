@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderLacewing;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
@@ -37,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
