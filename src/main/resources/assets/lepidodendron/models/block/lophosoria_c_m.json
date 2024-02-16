@@ -6,7 +6,8 @@
 		"6": "lepidodendron:blocks/lophosoria_stem_1_c_w",
 		"9": "lepidodendron:blocks/lophosoria_stem_2_c_w",
 		"16": "lepidodendron:blocks/lophosoria_stem_2_c_c",
-		"17": "lepidodendron:blocks/lophosoria_stem_2_c_e"
+		"17": "lepidodendron:blocks/lophosoria_stem_2_c_e",
+		"particle": "lepidodendron:items/lophosoria_inventory"
 	},
 	"elements": [
 		{
