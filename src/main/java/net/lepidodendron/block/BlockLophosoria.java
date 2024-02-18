@@ -275,6 +275,10 @@ public class BlockLophosoria extends ElementsLepidodendronMod.ModElement {
 
 	    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
 
+			if (world.isRemote) {
+				super.onBlockAdded(world, pos, state);
+				return;
+			}
 			//Place the top as a structure so it doesn't decay whilst being placed!
 			Template template = ((WorldServer) world).getStructureTemplateManager().getTemplate(world.getMinecraftServer(),
 					new ResourceLocation("lepidodendron", "lophosoria_top"));
