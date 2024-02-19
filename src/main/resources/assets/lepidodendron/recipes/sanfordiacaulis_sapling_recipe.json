@@ -5,7 +5,7 @@
     {
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:spore_collection_envelope",
-	  "nbt": {"plant":"lepidodendron:alethopteris_sapling", "offsetY":1}
+	  "nbt": {"plant":"lepidodendron:sanfordiacaulis_sapling", "offsetY":1}
     },
     {
       "type": "forge:ore_dict",
@@ -13,7 +13,7 @@
     }
   ],
   "result": {
-    "item": "lepidodendron:alethopteris_sapling",
+    "item": "lepidodendron:sanfordiacaulis_sapling",
     "count": 1
   }
 }
