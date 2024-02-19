@@ -840,6 +840,9 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Add portal fossil trades
 	public void onEvent(MerchantTradeOffersEvent event) {
+		if (event.getMerchant() == null || event.getList() == null) {
+			return;
+		}
 		int i = -1;
 		if ((!event.getList().isEmpty()) && (!event.getMerchant().getWorld().isRemote)) {
 			MerchantRecipeList MerchantRecipeFinal = (MerchantRecipeList) event.getList().clone();
