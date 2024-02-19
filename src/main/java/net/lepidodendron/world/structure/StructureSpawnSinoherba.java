@@ -29,7 +29,7 @@ public class StructureSpawnSinoherba extends ElementsLepidodendronMod.ModElement
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSinoherba))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSinoherba && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genSinoherba && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

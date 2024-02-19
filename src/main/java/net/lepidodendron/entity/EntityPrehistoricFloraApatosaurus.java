@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		super(world);
 		setSize(2.95F, 6F);
 		stepHeight = 2;
-		minWidth = 0.8F;
+		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 6F;
 		maxHealthAgeable = 200.0D;
@@ -84,7 +84,8 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int wadeDepth() {
-		return (int) (5F * this.getAgeScale());
+		return 1;
+		//return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -164,7 +165,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

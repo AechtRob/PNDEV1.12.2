@@ -38,7 +38,7 @@ public class ItemPolyspermophyllumFruit extends ElementsLepidodendronMod.ModElem
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:nystroemia_fruit", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:polyspermopnyllum_fruit", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {

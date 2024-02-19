@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 		super(world);
 		setSize(2.5F, 4.5F);
 		stepHeight = 2;
-		minWidth = 0.8F;
+		minWidth = 0.1F;
 		maxWidth = 2.5F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 180.0D;
@@ -83,7 +83,8 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int wadeDepth() {
-		return (int) (3F * this.getAgeScale());
+		return 1;
+		//return (int) (3F * this.getAgeScale());
 	}
 
 	@Override
@@ -162,7 +163,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

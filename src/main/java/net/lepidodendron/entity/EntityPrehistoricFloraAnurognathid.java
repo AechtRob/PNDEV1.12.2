@@ -357,7 +357,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getAdultAge() {
-		return 32000;
+		return 0;
 	}
 
 	@Override

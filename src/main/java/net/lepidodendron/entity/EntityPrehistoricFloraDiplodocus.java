@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		super(world);
 		setSize(2.95F, 4.5F);
 		stepHeight = 2;
-		minWidth = 0.8F;
+		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 170;
@@ -83,7 +83,8 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int wadeDepth() {
-		return (int) (5F * this.getAgeScale());
+		return 1;
+		//return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -163,7 +164,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

@@ -91,6 +91,11 @@ public class EntityPrehistoricFloraArchaeopteryx extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int getEggType(@Nullable String PNType) {
+		return 0; //small
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, MAKE_NEST_ANIMATION, DISPLAY_ANIMATION};
 	}
@@ -119,7 +124,7 @@ public class EntityPrehistoricFloraArchaeopteryx extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 0;
 	}
 
 	@Override

@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 0;
 	}
 
 	@Override

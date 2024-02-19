@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 	public EntityPrehistoricFloraDimorphodon(World world) {
 		super(world);
 		setSize(0.8F, 0.6F);
-		minWidth = 0.10F;
+		minWidth = 0.20F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;
 		maxHealthAgeable = 8;
@@ -160,7 +160,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 24000;
 	}
 
 	@Override

@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 		super(world);
 		setSize(3.0F, 4.5F);
 		stepHeight = 2;
-		minWidth = 0.8F;
+		minWidth = 0.1F;
 		maxWidth = 3.0F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 160.0D;
@@ -83,7 +83,8 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	public int wadeDepth() {
-		return (int) (5F * this.getAgeScale());
+		return 1;
+		//return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -163,7 +164,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

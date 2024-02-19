@@ -189,7 +189,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 0;
 	}
 
 	@Override

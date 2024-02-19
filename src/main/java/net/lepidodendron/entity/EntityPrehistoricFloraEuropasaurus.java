@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

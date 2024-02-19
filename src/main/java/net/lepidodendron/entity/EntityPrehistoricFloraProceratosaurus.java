@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	public EntityPrehistoricFloraProceratosaurus(World world) {
 		super(world);
 		setSize(0.7F, 0.7F);
-		minWidth = 0.50F;
+		minWidth = 0.15F;
 		maxWidth = 0.7F;
 		maxHeight = 0.7F;
 		maxHealthAgeable = 18.0D;

@@ -88,7 +88,8 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int wadeDepth() {
-		return (int) (2F * this.getAgeScale());
+		return 1;
+		//return (int) (2F * this.getAgeScale());
 	}
 
 	@Override
@@ -168,7 +169,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

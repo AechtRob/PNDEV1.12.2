@@ -609,8 +609,8 @@ public class ModelDimorphodon extends AdvancedModelBaseExtended {
                     animClimbing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 }
             }
-            else if (ee.getIsFlying()) {
-                if (!ee.getIsMoving()) {
+            else if (!ee.getIsFlying()) {
+                if (ee.getIsMoving()) {
                     if (ee.getIsFast()) { //Running
                         animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                     } else { //Walking
