@@ -684,33 +684,55 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
         brachiosaurus.tailBuffer.applyChainSwingBuffer(Tail);
         float masterSpeed = brachiosaurus.getTravelSpeed()/2;
 
-            if (!brachiosaurus.isInWater()) {
+        if (!brachiosaurus.isInWater()) {
 
-                if (f3 == 0.0F || !brachiosaurus.getIsMoving()) {
-                    if (brachiosaurus.getAnimation() != brachiosaurus.EAT_ANIMATION
+            if (f3 == 0.0F || !brachiosaurus.getIsMoving()) {
+                if (brachiosaurus.getAnimation() != brachiosaurus.EAT_ANIMATION
                         && brachiosaurus.getAnimation() != brachiosaurus.DRINK_ANIMATION
                         && brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
-                        this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
-                        this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                    }
-
-                    if (brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
-                        this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
-                        this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
-                        this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
-                    }
-
-                    return;
+                    this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                    this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
                 }
-            } else {
-                //Swimming pose:
-                if (f3 == 0.0F) { //static in water
-                    return;
+
+                if (brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
+                    this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                    this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
                 }
-                //moving in water
+
                 return;
             }
+
+            if (brachiosaurus.getAnimation() != brachiosaurus.EAT_ANIMATION
+                    && brachiosaurus.getAnimation() != brachiosaurus.DRINK_ANIMATION
+                    && brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION
+                    && brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
+                this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
+                this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
+            }
+
+            if (brachiosaurus.getIsFast()) { //Running
+//                    float speed = masterSpeed / 2F;
+//                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
+
+            } else { //Walking
+//                    float speed = masterSpeed / 1.50F;
+//                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
+            }
+        } else {
+            //Swimming pose:
+            if (f3 == 0.0F) { //static in water
+                return;
+            }
+            //moving in water
+            return;
         }
+    }
     
 
 
