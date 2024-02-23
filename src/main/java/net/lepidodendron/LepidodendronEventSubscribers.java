@@ -13,6 +13,7 @@ import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
@@ -28,10 +29,10 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
@@ -56,7 +57,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -164,9 +164,73 @@ public class LepidodendronEventSubscribers {
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
-			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
-				player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
-				player.sendMessage(new TextComponentString("Left control panel: read battery; right control panel: add/remove battery"));
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && entity.world.getMinecraftServer() != null && !event.getEntityMounting().getEntityWorld().isRemote) {
+				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return entity.world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return entity.world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public Entity getCommandSenderEntity() {
+						return entity;
+					}
+				}, "/pninstruct " + player.getName() + " Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
+
+				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return entity.world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return entity.world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public Entity getCommandSenderEntity() {
+						return entity;
+					}
+				}, "/pninstruct " + player.getName() + " Left control panel: read battery; Right control panel: add/remove battery");
+
+				//player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+				//player.sendMessage(new TextComponentString("Left control panel: read battery; Right control panel: add/remove battery"));
 			}
 		}
 	}
@@ -185,7 +249,7 @@ public class LepidodendronEventSubscribers {
 	}
 
 	@SubscribeEvent //Spawn Hadean meteors
-	public void meteors(WorldTickEvent event) {
+	public void meteors(TickEvent.WorldTickEvent event) {
 		boolean spawnShower = false;
 		if (event.world != null && !event.world.isRemote && LepidodendronConfig.doMeteorites) {
 			if (event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently, default 6000

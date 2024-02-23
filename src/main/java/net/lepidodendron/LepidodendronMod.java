@@ -9,6 +9,7 @@ import net.lepidodendron.item.crafting.RecipeCookedMeatsandSeeds;
 import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
+import net.lepidodendron.util.CommandMountVehicle;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.lootconditions.EntityInBiomes;
 import net.lepidodendron.world.lootconditions.EntityInDimensionID;
@@ -2216,6 +2217,8 @@ public class LepidodendronMod {
 		elements.getElements().forEach(element -> element.serverLoad(event));
 		proxy.serverLoad(event);
 		//event.registerServerCommand(new Summoner());
+
+		event.registerServerCommand(new CommandMountVehicle());
 	}
 
 	@SubscribeEvent
