@@ -292,6 +292,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         }
 
         if (this.inPFLove > 0) {
+            this.setFlying();
             --this.inPFLove;
         }
 

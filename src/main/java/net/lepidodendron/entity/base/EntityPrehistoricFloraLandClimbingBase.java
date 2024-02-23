@@ -337,6 +337,17 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
         if (!world.isRemote) {
 
+            if (this.inPFLove > 0 || this.getLaying())
+            {
+                setIsClimbing(false);
+                this.setStartingToClimb(false);
+                setClimbFacing(EnumFacing.DOWN);
+                this.getNavigator().clearPath();
+                this.setClimbingCooldown(this.getClimbCooldown());
+                this.setHeadCollided(false);
+            }
+
+
             if (this.getClimbingCooldown() > 0) {
                 this.setClimbingCooldown(this.getClimbingCooldown() - 1);
             }

@@ -1680,7 +1680,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -47 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
@@ -1719,7 +1719,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -47 && this.getTicks() < 0) {
                 //Is stationary for egg-laying and this is a totten-log lay
                 //System.err.println("Laying an egg in it");
 
