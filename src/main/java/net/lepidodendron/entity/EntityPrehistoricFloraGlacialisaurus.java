@@ -9,6 +9,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderGlacialisaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;

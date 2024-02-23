@@ -10,6 +10,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -27,6 +28,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -51,8 +53,14 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(BlockResinExtractorFullLatex.TileEntityCustom.class, "lepidodendron:tileentityresin_extractor_full_latex");
+	}
+
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyInteger EXTRACTING = PropertyInteger.create("extracting", 0, 2);
 
 		public BlockCustom() {
 			super(Material.WOOD);
@@ -64,7 +72,51 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 			setLightOpacity(0);
 			setCreativeTab(null);
 			setTickRandomly(true);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(EXTRACTING, 1));
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			if (worldIn.getTileEntity(pos) != null) {
+				if (worldIn.getTileEntity(pos) instanceof BlockResinExtractorFullLatex.TileEntityCustom) {
+					Boolean extractable = isBlockActive((World) worldIn, pos, state.getValue(BlockResinExtractorFullLatex.BlockCustom.FACING));
+					if (extractable) {
+						return super.getActualState(state, worldIn, pos).withProperty(EXTRACTING, 2);
+					}
+				}
+			}
+			return super.getActualState(state, worldIn, pos).withProperty(EXTRACTING, 0);
+		}
+
+		@Override
+		public boolean hasTileEntity(IBlockState state) {
+			return true;
+		}
+
+		@Nullable
+		@Override
+		public TileEntity createTileEntity(World world, IBlockState state) {
+			return new BlockResinExtractorFullLatex.TileEntityCustom();
+		}
+
+		public BlockResinExtractorFullLatex.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
+			return new BlockResinExtractorFullLatex.TileEntityCustom();
+		}
+
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			//if (tileentity instanceof TileEntityNest)
+			//InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
+			world.removeTileEntity(pos);
+			super.breakBlock(world, pos, state);
+		}
+
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
 		}
 
 		@Override
@@ -79,8 +131,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 
 		@SideOnly(Side.CLIENT)
 		@Override
-		public BlockRenderLayer getRenderLayer()
-		{
+		public BlockRenderLayer getRenderLayer() {
 			return BlockRenderLayer.CUTOUT;
 		}
 
@@ -90,8 +141,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		protected boolean canSilkHarvest()
-		{
+		protected boolean canSilkHarvest() {
 			return false;
 		}
 
@@ -103,7 +153,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction,
-			float hitX, float hitY, float hitZ) {
+										float hitX, float hitY, float hitZ) {
 			if (entity.getHeldItemMainhand().getItem() == new ItemStack(Items.GLASS_BOTTLE, (int) (1)).getItem()) {
 				SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -118,19 +168,18 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1667);
-						_tileEntity.getTileData().setInteger("type", 2);
+						_tileEntity.getTileData().setInteger("type", 1);
 					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
-				world.updateComparatorOutputLevel(pos,BlockResinExtractor.block);
-				world.updateComparatorOutputLevel(pos,this);
+				world.updateComparatorOutputLevel(pos, BlockResinExtractor.block);
+				world.updateComparatorOutputLevel(pos, this);
 				return true;
-			}
-			else if (entity.getHeldItemMainhand().getItem() == new ItemStack(Items.BUCKET, (int) (1)).getItem()) {
+			} else if (entity.getHeldItemMainhand().getItem() == new ItemStack(Items.BUCKET, (int) (1)).getItem()) {
 				SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
 				entity.getEntityWorld().playSound(entity, entity.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				entity.inventory.clearMatchingItems(new ItemStack(Items.BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_latexn"), 1000));
+				ItemStack _setstack = FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_latex"), 1000));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(entity, _setstack);
 				//New fill level:
@@ -140,12 +189,12 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1000);
-						_tileEntity.getTileData().setInteger("type", 2);
+						_tileEntity.getTileData().setInteger("type", 1);
 					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
-				world.updateComparatorOutputLevel(pos,BlockResinExtractor.block);
-				world.updateComparatorOutputLevel(pos,this);
+				world.updateComparatorOutputLevel(pos, BlockResinExtractor.block);
+				world.updateComparatorOutputLevel(pos, this);
 				return true;
 			}
 			return super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
@@ -153,7 +202,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, EXTRACTING});
 		}
 
 		@Override
@@ -194,8 +243,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		public boolean isFullCube(IBlockState state)
-		{
+		public boolean isFullCube(IBlockState state) {
 			return false;
 		}
 
@@ -205,18 +253,12 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-		{
-			if (canPlaceAt(worldIn, pos, facing))
-			{
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+			if (canPlaceAt(worldIn, pos, facing)) {
 				return this.getDefaultState().withProperty(FACING, facing);
-			}
-			else
-			{
-				for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
-				{
-					if (canPlaceAt(worldIn, pos, enumfacing))
-					{
+			} else {
+				for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
+					if (canPlaceAt(worldIn, pos, enumfacing)) {
 						return this.getDefaultState().withProperty(FACING, enumfacing);
 					}
 				}
@@ -226,35 +268,26 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
-		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
-		{
-			for (EnumFacing enumfacing : FACING.getAllowedValues())
-			{
-				if (canPlaceAt(worldIn, pos, enumfacing))
-				{
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+			for (EnumFacing enumfacing : FACING.getAllowedValues()) {
+				if (canPlaceAt(worldIn, pos, enumfacing)) {
 					return true;
 				}
 			}
 			return false;
 		}
 
-		public static boolean canPlaceAt(World worldIn, BlockPos pos, EnumFacing facing)
-		{
+		public static boolean canPlaceAt(World worldIn, BlockPos pos, EnumFacing facing) {
 			BlockPos blockpos = pos.offset(facing.getOpposite());
 			IBlockState iblockstate = worldIn.getBlockState(blockpos);
 			Block block = iblockstate.getBlock();
 			BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, blockpos, facing);
 
-			if (facing.equals(EnumFacing.UP) || facing.equals(EnumFacing.DOWN))
-			{
+			if (facing.equals(EnumFacing.UP) || facing.equals(EnumFacing.DOWN)) {
 				return false;
-			}
-			else if (facing != EnumFacing.UP && facing != EnumFacing.DOWN)
-			{
+			} else if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
 				return !isExceptBlockForAttachWithPiston(block) && blockfaceshape == BlockFaceShape.SOLID;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 		}
@@ -270,7 +303,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 			}
 		}
 
-		public boolean isBlockActive(World world, BlockPos pos, EnumFacing facing) {
+		public static boolean isBlockActive(World world, BlockPos pos, EnumFacing facing) {
 			//On a valid log which is "planted" and of sufficient height:
 			BlockPos position = pos;
 			if (facing == EnumFacing.NORTH) {
@@ -290,11 +323,11 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 			Block block = blockstate.getBlock();
 			//Is the block "growing"?
 			if (
-				(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.CLAY)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
+					(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.CLAY)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
 			) {
 				return false;
 			}
@@ -306,10 +339,10 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 				}
 				i += 1;
 			}
-			//Is this a latexable block?
+			//Is this a resinable block?
 			try {
 				if (
-					block.getPickBlock(blockstate, null, world, position, null) != null
+						block.getPickBlock(blockstate, null, world, position, null) != null
 				) {
 					if (OreDictionary.containsMatch(false, OreDictionary.getOres("logLatex"),
 							block.getPickBlock(blockstate, null, world, position, null))) {
@@ -319,6 +352,25 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 			} catch (Exception e) {
 			}
 			return false;
+		}
+	}
+
+	public static class TileEntityCustom extends TileEntity implements ITickable {
+
+		@Override
+		public void update() {
+			//Check the extractable blockstate:
+			IBlockState state = this.world.getBlockState(this.getPos());
+			Boolean extractable = BlockResinExtractorFullLatex.BlockCustom.isBlockActive(world, pos, state.getValue(BlockResinExtractorFullLatex.BlockCustom.FACING));
+			if (state.getValue(BlockResinExtractorFullLatex.BlockCustom.EXTRACTING) > 0 && !extractable) {
+				if (!world.isRemote) {
+					world.setBlockState(this.getPos(), BlockResinExtractorFullLatex.block.getDefaultState().withProperty(BlockResinExtractorFullLatex.BlockCustom.FACING, state.getValue(BlockResinExtractorFullLatex.BlockCustom.FACING)).withProperty(BlockResinExtractorFullLatex.BlockCustom.EXTRACTING, 0));
+				}
+			} else if (state.getValue(BlockResinExtractorFullLatex.BlockCustom.EXTRACTING) == 0 && extractable) {
+				if (!world.isRemote) {
+					world.setBlockState(this.getPos(), BlockResinExtractorFullLatex.block.getDefaultState().withProperty(BlockResinExtractorFullLatex.BlockCustom.FACING, state.getValue(BlockResinExtractorFullLatex.BlockCustom.FACING)).withProperty(BlockResinExtractorFullLatex.BlockCustom.EXTRACTING, 2));
+				}
+			}
 		}
 	}
 }

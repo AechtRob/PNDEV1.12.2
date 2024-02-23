@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemBottleOfLatex;
@@ -12,6 +13,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -73,6 +75,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyInteger EXTRACTING = PropertyInteger.create("extracting", 0, 2);
 
 		public BlockCustom() {
 			super(Material.WOOD);
@@ -84,7 +87,23 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			//setTickRandomly(true);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(EXTRACTING, 0));
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			if (worldIn.getTileEntity(pos) != null) {
+				if (worldIn.getTileEntity(pos) instanceof BlockResinExtractor.TileEntityCustom) {
+					Block extractable = ((BlockResinExtractor.TileEntityCustom)worldIn.getTileEntity(pos)).isBlockActive((World)worldIn, pos, state.getValue(BlockResinExtractor.BlockCustom.FACING));
+					if (extractable == BlockResin.block) {
+						return super.getActualState(state, worldIn, pos).withProperty(EXTRACTING, 1);
+					}
+					else if (extractable == BlockLatex.block) {
+						return super.getActualState(state, worldIn, pos).withProperty(EXTRACTING, 2);
+					}
+				}
+			}
+			return super.getActualState(state, worldIn, pos).withProperty(EXTRACTING, 0);
 		}
 
 		@Override
@@ -251,7 +270,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING,});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, EXTRACTING});
 		}
 
 		@Override
@@ -357,10 +376,10 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 			super.onBlockAdded(worldIn, pos, state);
-			//Set the ticker to 1200:
+			//Set the ticker:
 			TileEntity _tileEntity = worldIn.getTileEntity(pos);
 			if (_tileEntity != null) {
-				_tileEntity.getTileData().setInteger("tickEachMinute", 1200);
+				_tileEntity.getTileData().setInteger("extractionCycleTicks", BlockResinExtractor.TileEntityCustom.getCycleLength());
 				_tileEntity.getTileData().setInteger("type", 0);
 			}
 		}
@@ -373,21 +392,47 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class TileEntityCustom extends TileEntity implements ITickable {
-
-		private int tickEachMinute;
+		
+		private int extractionCycleTicks;
 		private int mb;
 		private int type;
 
+		public static int getCycleLength() {
+			int i = LepidodendronConfig.extractionSpeed;
+			if (i <= 0) {
+				i = 1;
+			}
+			return i;
+			//return 1200;
+		}
+		
 		@Override
 		public void update() {
-			//System.err.println("tickEachMinute: " + tickEachMinute);
-			--this.tickEachMinute;
+			//Check the extractable blockstate:
+			IBlockState state = this.world.getBlockState(this.getPos());
+			Block extractable = isBlockActive(world, pos, state.getValue(BlockResinExtractor.BlockCustom.FACING));
+			if (state.getValue(BlockCustom.EXTRACTING) > 0 && extractable == null) {
+				if (!world.isRemote) {
+					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 0));
+				}
+			}
+			else if (state.getValue(BlockCustom.EXTRACTING) == 0 && extractable == BlockResin.block) {
+				if (!world.isRemote) {
+					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 1));
+				}
+			}
+			else if (state.getValue(BlockCustom.EXTRACTING) == 0 && extractable == BlockLatex.block) {
+				if (!world.isRemote) {
+					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 2));
+				}
+			}
 
-			if (this.tickEachMinute <= 0) {
-				//A minute has counted down:
+			//System.err.println("extractionCycleTicks: " + extractionCycleTicks);
+			--this.extractionCycleTicks;
+
+			if (this.extractionCycleTicks <= 0) {
+				//A cycle has counted down:
 				if (this.world.getBlockState(this.getPos()).getBlock() == BlockResinExtractor.block) {
-					IBlockState state = this.world.getBlockState(this.getPos());
-					Block extractable = isBlockActive(world, pos, state.getValue(BlockResinExtractor.BlockCustom.FACING));
 					if (extractable != null) {
 						boolean test = type == 0 || (extractable == BlockResin.block && type == 1) || (extractable == BlockLatex.block && type == 2);
 						if (test) {
@@ -442,13 +487,13 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				}
 
 				//We have ticked the extractor now, so we can now reset the timer again:
-				this.tickEachMinute = 1200;
+				this.extractionCycleTicks = this.getCycleLength();
 			}
 
 		}
 
 		@Nullable
-		public Block isBlockActive(World world, BlockPos pos, EnumFacing facing) {
+		public static Block isBlockActive(World world, BlockPos pos, EnumFacing facing) {
 			//On a valid log which is "planted" and of sufficient height:
 			BlockPos position = pos;
 			if (facing == EnumFacing.NORTH) {
@@ -513,8 +558,8 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
-			if (compound.hasKey("tickEachMinute")) {
-				this.tickEachMinute = compound.getInteger("tickEachMinute");
+			if (compound.hasKey("extractionCycleTicks")) {
+				this.extractionCycleTicks = compound.getInteger("extractionCycleTicks");
 			}
 			if (compound.hasKey("mb")) {
 				this.mb = compound.getInteger("mb");
@@ -527,7 +572,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
-			compound.setInteger("tickEachMinute", this.tickEachMinute);
+			compound.setInteger("extractionCycleTicks", this.extractionCycleTicks);
 			compound.setInteger("mb", this.mb);
 			compound.setInteger("type", this.type);
 			return compound;

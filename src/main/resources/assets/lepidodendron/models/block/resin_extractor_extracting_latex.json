@@ -2,8 +2,9 @@
 	"ambientocclusion": false,
 	"textures": {
 		"0": "lepidodendron:blocks/resin_barrel_side",
-		"1": "lepidodendron:blocks/resin_barrel_top_full",
+		"1": "lepidodendron:blocks/resin_barrel_top_latex",
 		"2": "lepidodendron:blocks/resin_metal_texture",
+		"3": "lepidodendron:blocks/latex_drip",
 		"particle": "lepidodendron:blocks/resin_barrel_side"
 	},
 	"elements": [
@@ -108,11 +109,12 @@
 			"to": [13, 12, 10],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"up": {"uv": [0, 0, 10, 10], "rotation": 270, "texture": "#1"}
+				"north": {"uv": [0, 0, 10, 10], "texture": "#0"},
+				"east": {"uv": [0, 0, 10, 10], "texture": "#0"},
+				"south": {"uv": [0, 0, 10, 10], "texture": "#0"},
+				"west": {"uv": [0, 0, 10, 10], "texture": "#0"},
+				"up": {"uv": [0, 0, 10, 10], "rotation": 270, "texture": "#1"},
+				"down": {"uv": [0, 0, 10, 10], "rotation": 90, "texture": "#0"}
 			}
 		},
 		{
@@ -164,11 +166,19 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
 			"faces": {
 				"north": {"uv": [13, 0, 16, 3], "texture": "#1"},
-				"east": {"uv": [13, 0, 15, 1], "rotation": 270, "texture": "#1"},
-				"south": {"uv": [13, 0, 14, 1], "rotation": 270, "texture": "#1"},
-				"west": {"uv": [13, 0, 15, 1], "rotation": 270, "texture": "#1"},
-				"up": {"uv": [13, 0, 15, 1], "rotation": 180, "texture": "#1"},
-				"down": {"uv": [13, 0, 15, 1], "texture": "#1"}
+				"east": {"uv": [0, 0, 2, 2], "rotation": 270, "texture": "#2"},
+				"south": {"uv": [0, 0, 2, 2], "rotation": 270, "texture": "#2"},
+				"west": {"uv": [0, 0, 2, 2], "rotation": 270, "texture": "#2"},
+				"up": {"uv": [0, 0, 2, 2], "rotation": 180, "texture": "#2"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#2"}
+			}
+		},
+		{
+			"from": [7.5, 12.5, 8],
+			"to": [8.5, 12.5, 14],
+			"faces": {
+				"up": {"uv": [0, 0, 1, 6], "texture": "#3"},
+				"down": {"uv": [0, 6, 1, 0], "texture": "#3"}
 			}
 		}
 	]

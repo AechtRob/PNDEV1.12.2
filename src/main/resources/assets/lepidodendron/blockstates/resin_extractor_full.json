@@ -1,24 +1,71 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:resin_extractor"}
-    ],
-    "facing=north": [
       {"model": "lepidodendron:resin_extractor_full"}
     ],
-    "facing=east": [
+    "extracting=0,facing=north": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ],
+    "extracting=0,facing=east": [
       {"model": "lepidodendron:resin_extractor_full", "y": 90}
     ],
-    "facing=south": [
+    "extracting=0,facing=south": [
       {"model": "lepidodendron:resin_extractor_full", "y": 180}
     ],
-  "facing=west": [
+    
+    "extracting=0,facing=west": [
       {"model": "lepidodendron:resin_extractor_full", "y": 270}
     ],
-  "facing=up": [
+  "extracting=0,facing=up": [
       {"model": "lepidodendron:resin_extractor_full"}
     ],
-    "facing=down": [
+    "extracting=0,facing=down": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ],
+
+
+
+
+    "extracting=1,facing=north": [
+      {"model": "lepidodendron:resin_extractor_full_extracting_resin"}
+    ],
+    "extracting=1,facing=east": [
+      {"model": "lepidodendron:resin_extractor_full_extracting_resin", "y": 90}
+    ],
+    "extracting=1,facing=south": [
+      {"model": "lepidodendron:resin_extractor_full_extracting_resin", "y": 180}
+    ],
+
+    "extracting=1,facing=west": [
+      {"model": "lepidodendron:resin_extractor_full_extracting_resin", "y": 270}
+    ],
+    "extracting=1,facing=up": [
+      {"model": "lepidodendron:resin_extractor_full_extracting_resin"}
+    ],
+    "extracting=1,facing=down": [
+      {"model": "lepidodendron:resin_extractor_full_extracting_resin"}
+    ],
+
+
+
+
+    "extracting=2,facing=north": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ],
+    "extracting=2,facing=east": [
+      {"model": "lepidodendron:resin_extractor_full", "y": 90}
+    ],
+    "extracting=2,facing=south": [
+      {"model": "lepidodendron:resin_extractor_full", "y": 180}
+    ],
+
+    "extracting=2,facing=west": [
+      {"model": "lepidodendron:resin_extractor_full", "y": 270}
+    ],
+    "extracting=2,facing=up": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ],
+    "extracting=2,facing=down": [
       {"model": "lepidodendron:resin_extractor_full"}
     ]
   }
