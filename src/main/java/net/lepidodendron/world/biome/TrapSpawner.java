@@ -241,14 +241,6 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                                                             correctBait = true;
                                                         }
                                                     }
-                                                    //Disallow large things as babies 99% of the time:
-                                                    if (correctBait) {
-                                                        if (nbtStr.indexOf("AgeTicks:0") > 0) {
-                                                            if (rand.nextInt(100) != 0) {
-                                                                correctBait = false;
-                                                            }
-                                                        }
-                                                    }
 
                                                     if (!errFound && correctBait) {
                                                         //System.err.println("Spawning " + mobToSpawn + " with locationID " + locationID + " at: " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
@@ -481,11 +473,15 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                                                             SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
                                                             world.playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-                                                            // Apply babification  - should be fine to do this to everything
+                                                            // Apply babification for large things - should be fine to do this to everything
                                                             // as invalid tags will be stripped out eventually on a world save:
 
-                                                            EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, true);
-
+                                                            if (entity.width > 0.9 || entity.height > 0.9) {
+                                                                EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, true);
+                                                            }
+                                                            else {
+                                                                EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, false);
+                                                            }
 
                                                             //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
 //                                                            world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
