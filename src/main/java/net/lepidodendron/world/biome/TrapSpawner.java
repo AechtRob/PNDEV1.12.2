@@ -38,7 +38,7 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                 EntityEntry ee = null;
                 int nbt = entityStr.indexOf("{");
                 if (nbt > 0) {
-                    ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entityStr.substring(0, entityStr.indexOf("{")).substring(0, colonTwo)));
+                    ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entityStr.substring(0, colonTwo).substring(0, entityStr.indexOf("{"))));
                 }
                 else {
                     ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entityStr.substring(0, colonTwo)));

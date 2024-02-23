@@ -636,31 +636,55 @@ public class ModelDiplodocus extends AdvancedModelBaseExtended {
         diplo.tailBuffer.applyChainSwingBuffer(Tail);
         float masterSpeed = diplo.getTravelSpeed()/2;
 
-            if (!diplo.isInWater()) {
+        if (!diplo.isInWater()) {
 
-                if (f3 == 0.0F || !diplo.getIsMoving()) {
-                    if (diplo.getAnimation() != diplo.EAT_ANIMATION
+            if (f3 == 0.0F || !diplo.getIsMoving()) {
+                if (diplo.getAnimation() != diplo.EAT_ANIMATION
                         && diplo.getAnimation() != diplo.DRINK_ANIMATION
                         && diplo.getAnimation() != diplo.ATTACK_ANIMATION) {
-                        this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
-                        this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                    }
+                    this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                    this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
+                }
 
-                    if (diplo.getAnimation() != diplo.ATTACK_ANIMATION) {
-                        this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
-                        this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
-                        this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
-                    }
+                if (diplo.getAnimation() != diplo.ATTACK_ANIMATION) {
+                    this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                    this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
                 }
-            } else {
-                //Swimming pose:
-                if (f3 == 0.0F) { //static in water
-                    return;
-                }
-                //moving in water
+
                 return;
             }
+
+            if (diplo.getAnimation() != diplo.EAT_ANIMATION
+                    && diplo.getAnimation() != diplo.DRINK_ANIMATION
+                    && diplo.getAnimation() != diplo.ATTACK_ANIMATION
+                    && diplo.getAnimation() != diplo.ATTACK_ANIMATION) {
+                this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
+                this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
+            }
+
+            if (diplo.getIsFast()) { //Running
+//                    float speed = masterSpeed / 2F;
+//                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
+
+            } else { //Walking
+//                    float speed = masterSpeed / 1.50F;
+//                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
+            }
+        } else {
+            //Swimming pose:
+            if (f3 == 0.0F) { //static in water
+                return;
+            }
+            //moving in water
+            return;
         }
+    }
     
 
 

@@ -386,6 +386,7 @@ public class RenderDisplays {
     public static final ModelYuxisaurus modelYuxisaurus = new ModelYuxisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
     public static final ModelAdeopapposaurus modelAdeopapposaurus = new ModelAdeopapposaurus();
+    public static final ModelAdeopapposaurus modelAdeopapposaurusBook = new ModelAdeopapposaurus();
     public static final ModelDicraeosaurus modelDicraeosaurus = new ModelDicraeosaurus();
     public static final ModelHeterodontosaurus modelHeterodontosaurus = new ModelHeterodontosaurus();
     public static final ModelHeterodontosaurus modelHeterodontosaurusBook = new ModelHeterodontosaurus();

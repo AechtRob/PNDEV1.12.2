@@ -292,26 +292,28 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticSuspended(float f) {
-        this.setRotateAngle(upperbody, -0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, -0.1745F, 0.0F, 0.0F);
-        this.setRotateAngle(rightwing3, 0.0F, -1.3963F, 0.0F);
-        this.setRotateAngle(rightwing2, -0.7458F, -0.2242F, -1.7716F);
-        this.setRotateAngle(rightwing, -0.1057F, -0.7734F, -1.2193F);
-        this.setRotateAngle(rightleg3, 2.7361F, 0.233F, -0.4733F);
-        this.setRotateAngle(rightleg2, -0.6188F, -0.0553F, 0.1281F);
-        this.setRotateAngle(rightleg, 0.4757F, -0.1648F, 0.1588F);
+        this.setRotateAngle(upperbody, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(tail2, 0.2633F, 0.1289F, 0.0229F);
+        this.setRotateAngle(tail, 0.2657F, 0.1685F, 0.0456F);
+        this.setRotateAngle(rightwing3, 3.028F, -0.3133F, -2.8277F);
+        this.setRotateAngle(rightwing2, -0.0444F, -0.1065F, 0.5128F);
+        this.setRotateAngle(rightwing, 0.0868F, 0.323F, -0.1755F);
+        this.setRotateAngle(rightleg3, 2.944F, 0.0556F, -1.7273F);
+        this.setRotateAngle(rightleg2, -0.8021F, -0.1582F, 0.2095F);
+        this.setRotateAngle(rightleg, 0.3542F, 0.0873F, 1.0374F);
         this.setRotateAngle(righthand, 2.618F, -1.5272F, -2.7489F);
-        this.setRotateAngle(neck, -0.5236F, 0.0F, 0.0F);
-        this.setRotateAngle(main, -1.3963F, 0.0F, -3.1416F);
-        this.setRotateAngle(leftwing3, 0.0F, 1.4399F, 0.0F);
-        this.setRotateAngle(leftwing2, -0.3935F, -0.0382F, 1.5037F);
-        this.setRotateAngle(leftwing, -0.0868F, 0.5128F, 1.2506F);
-        this.setRotateAngle(leftleg3, 2.7361F, -0.233F, 0.4733F);
-        this.setRotateAngle(leftleg2, -0.6188F, 0.0553F, -0.1281F);
-        this.setRotateAngle(leftleg, 0.4757F, 0.1648F, -0.1588F);
+        this.setRotateAngle(neck, -0.2237F, 0.3022F, -0.0429F);
+        this.setRotateAngle(main, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing3, 3.0963F, 0.2994F, 2.779F);
+        this.setRotateAngle(leftwing2, 0.0527F, -0.0198F, -0.2311F);
+        this.setRotateAngle(leftwing, -0.0528F, 0.0338F, -0.4268F);
+        this.setRotateAngle(leftmembrane, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg3, 2.9028F, -0.1114F, 1.5711F);
+        this.setRotateAngle(leftleg2, -0.4389F, 0.1959F, -0.1295F);
+        this.setRotateAngle(leftleg, 0.0016F, 0.1369F, -1.44F);
         this.setRotateAngle(lefthand, 2.618F, 1.5272F, 2.7489F);
         this.setRotateAngle(jaw, 0.48F, 0.0F, 0.0F);
-        this.setRotateAngle(Head, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.1752F, 0.0859F, -0.0152F);
         this.setRotateAngle(eye2, 0.0F, -0.2182F, 0.0F);
         this.setRotateAngle(eye, 0.0F, 0.2182F, 0.0F);
         this.setRotateAngle(cube_r9, 0.3054F, 0.0F, 0.0F);
@@ -325,7 +327,7 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r11, 0.0F, 0.4363F, 0.0F);
         this.setRotateAngle(cube_r10, 0.0F, -0.4363F, 0.0F);
         this.setRotateAngle(cube_r1, -1.6624F, 0.0F, 0.0F);
-        this.main.offsetY = -0.5F;
+        this.main.offsetY = 0.15F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
