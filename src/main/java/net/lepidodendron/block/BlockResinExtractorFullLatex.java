@@ -72,7 +72,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 			setLightOpacity(0);
 			setCreativeTab(null);
 			setTickRandomly(true);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(EXTRACTING, 1));
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(EXTRACTING, 2));
 		}
 
 		@Override
@@ -168,7 +168,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1667);
-						_tileEntity.getTileData().setInteger("type", 1);
+						_tileEntity.getTileData().setInteger("type", 2);
 					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
@@ -189,7 +189,7 @@ public class BlockResinExtractorFullLatex extends ElementsLepidodendronMod.ModEl
 					TileEntity _tileEntity = world.getTileEntity(pos);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setInteger("mb", 1000);
-						_tileEntity.getTileData().setInteger("type", 1);
+						_tileEntity.getTileData().setInteger("type", 2);
 					}
 					world.notifyBlockUpdate(pos, _bs, _bs, 3);
 				}
