@@ -169,6 +169,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
 		)
 		{
 			multiplier = 8;
