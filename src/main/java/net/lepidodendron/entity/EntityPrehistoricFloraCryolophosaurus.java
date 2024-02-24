@@ -100,13 +100,13 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 60;
-	} //Idle
+		return 80;
+	}
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
-	} //Roar
+		return 60;
+	}
 
 	@Override
 	public boolean hasNest() {
