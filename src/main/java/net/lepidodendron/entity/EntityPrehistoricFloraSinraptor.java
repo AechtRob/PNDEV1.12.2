@@ -326,7 +326,9 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
+
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 
