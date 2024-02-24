@@ -131,16 +131,6 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
-		if (biome instanceof BiomeTriassic)
-		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
 
 		if (biome instanceof BiomeJurassic)
 		{

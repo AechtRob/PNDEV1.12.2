@@ -156,7 +156,8 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 			GenChance = 64;
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")) {
 			GenChance = 64;
 		}
 

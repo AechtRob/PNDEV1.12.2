@@ -203,7 +203,6 @@ public class AlgaeGenerator extends WorldGenerator
 						}
 					}
 
-
 					if (this.algae == BlockCoralBamboo.block
 					) {
 						int yy = 1;
@@ -234,7 +233,9 @@ public class AlgaeGenerator extends WorldGenerator
 					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
-					if (gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
+					if ((!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("jurassic_lakes")))
+							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("jurassic_lake_shore")))
+							&& gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
 						waterDepthCheckMin = false;
 					}
 
