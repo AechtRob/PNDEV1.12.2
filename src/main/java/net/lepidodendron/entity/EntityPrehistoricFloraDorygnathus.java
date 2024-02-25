@@ -9,9 +9,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.util.IScreamerFlier;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -29,7 +29,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -207,10 +207,7 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 		if (isLayableNest(world, pos)) {
 			return true;
 		}
-		if (world.isAirBlock(pos) && world.getBlockState(pos.down()).getMaterial() == Material.LEAVES) {
-			return world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID;
-		}
-		return false;
+		return world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID;
 	}
 
 	@Override

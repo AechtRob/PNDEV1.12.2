@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderSpiroceras;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsSpiroceras;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.item.ItemStack;
@@ -22,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraSpiroceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

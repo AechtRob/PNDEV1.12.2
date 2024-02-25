@@ -31,7 +31,7 @@ public class ItemDimorphodonRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dimorphodon", ItemDimorphodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDimorphodonRaw.block);
-		OreDictionary.registerOre("pnfurnaceMeat", ItemDimorphodonRaw.block);
+		OreDictionary.registerOre("pnfurnacePterosaur", ItemDimorphodonRaw.block);
 		OreDictionary.registerOre("pndietMeat", ItemDimorphodonRaw.block);
 	}
 	@SideOnly(Side.CLIENT)

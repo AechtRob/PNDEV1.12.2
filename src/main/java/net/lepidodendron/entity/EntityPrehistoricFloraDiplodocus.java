@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderDiplodocus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -46,7 +47,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 
@@ -60,7 +61,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		super(world);
 		setSize(2.95F, 4.5F);
 		stepHeight = 2;
-		minWidth = 0.8F;
+		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 170;
@@ -69,20 +70,21 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		setgetMaxTurnDistancePerTick(5.0F);
+		setgetMaxTurnDistancePerTick(7.5F);
 	}
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
-			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
+			return 1.0F + (19F - (19F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
 	public int wadeDepth() {
-		return (int) (5F * this.getAgeScale());
+		return 1;
+		//return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -162,7 +164,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -248,7 +250,7 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		//tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -286,34 +288,14 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
+		int x = 7;
+		int y = 5;
+		for (int xx = 0; xx < x; xx++) {
+			for (int yy = 0; yy < y; yy++) {
+				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
+					return false;
+				}
+			}
 		}
 		return true;
 	}
@@ -337,36 +319,36 @@ public class EntityPrehistoricFloraDiplodocus extends EntityPrehistoricFloraLand
 			&& !this.isReallyInWater()
 			&&
 			(
-				(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+				(this.world.getBlockState(entityPos.north(7).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-				|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.south(7).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-				|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.east(7).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-				|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.west(7).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 			)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(7).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(7).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(7).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(7).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing, 7));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}

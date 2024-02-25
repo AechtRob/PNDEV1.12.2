@@ -69,7 +69,7 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genFilamentousAlgaeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genMontsechiaBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -96,7 +96,7 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int GenChance = 30;
-		double GenMultiplier = LepidodendronConfigPlants.weightFilamentousAlgae;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierMontsechia;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -151,7 +151,7 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadMontsechia) {
+			if (LepidodendronConfigPlants.spreadMontsechia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

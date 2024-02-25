@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderCryolophosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -36,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -99,13 +100,13 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 60;
-	} //Idle
+		return 80;
+	}
 
 	@Override
 	public int getNoiseLength() {
-		return 80;
-	} //Roar
+		return 60;
+	}
 
 	@Override
 	public boolean hasNest() {

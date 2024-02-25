@@ -172,7 +172,7 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 					multiplier = 5;
 				}
 				if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
-					multiplier = 10;
+					multiplier = 50;
 				}
 			}
 			else {

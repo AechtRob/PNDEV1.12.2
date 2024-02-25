@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
@@ -35,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArchoblattinaInsect {
+public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArchoblattinaInsect implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	private int animationTick;

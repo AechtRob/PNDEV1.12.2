@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWal
 import net.lepidodendron.entity.render.entity.RenderCaelestiventus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IGuano;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.BlockFaceShape;
@@ -33,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano {
+public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano, ITrappableLand {
 
 	public EntityPrehistoricFloraCaelestiventus(World world) {
 		super(world);

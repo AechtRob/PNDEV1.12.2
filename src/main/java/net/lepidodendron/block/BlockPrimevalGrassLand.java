@@ -69,7 +69,7 @@ public class BlockPrimevalGrassLand extends ElementsLepidodendronMod.ModElement 
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadPrimaevalGrass) {
+			if (LepidodendronConfigPlants.spreadPrimaevalGrass && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

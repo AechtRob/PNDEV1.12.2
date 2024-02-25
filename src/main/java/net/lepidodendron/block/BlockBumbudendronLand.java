@@ -71,7 +71,7 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadBumbudendron) {
+			if (LepidodendronConfigPlants.spreadBumbudendron && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingBas
 import net.lepidodendron.entity.render.entity.RenderAnurognathid;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamerFlier;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -44,7 +45,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLandClimbingFlyingBase implements IAdvancementGranter, IScreamerFlier {
+public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLandClimbingFlyingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -84,19 +85,22 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
-		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
-			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraAnurognathid> anurognathid = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnurognathid.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraAnurognathid currentAnurognathid : anurognathid) {
-				if (currentAnurognathid.getPNType() == this.getPNType()) {
-					currentAnurognathid.setRevengeTarget(ee);
-					currentAnurognathid.screamAlarmCooldown = rand.nextInt(20);
-					currentAnurognathid.setFlying();
+		boolean dsCheck = super.attackEntityFrom(ds, i);
+		if (dsCheck != false) {
+			Entity e = ds.getTrueSource();
+			if (e instanceof EntityLivingBase && this.hasAlarm()) {
+				EntityLivingBase ee = (EntityLivingBase) e;
+				List<EntityPrehistoricFloraAnurognathid> anurognathid = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnurognathid.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+				for (EntityPrehistoricFloraAnurognathid currentAnurognathid : anurognathid) {
+					if (currentAnurognathid.getPNType() == this.getPNType()) {
+						currentAnurognathid.setRevengeTarget(ee);
+						currentAnurognathid.screamAlarmCooldown = rand.nextInt(20);
+						currentAnurognathid.setFlying();
+					}
 				}
 			}
 		}
-		return super.attackEntityFrom(ds, i);
+		return dsCheck;
 	}
 
 	public void setScreaming(boolean screaming) {
@@ -353,7 +357,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getAdultAge() {
-		return 32000;
+		return 0;
 	}
 
 	@Override
@@ -751,16 +755,16 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	}
 
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.95;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.05F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;

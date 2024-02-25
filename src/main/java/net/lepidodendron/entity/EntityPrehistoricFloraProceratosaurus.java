@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderProceratosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -38,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -52,7 +53,7 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	public EntityPrehistoricFloraProceratosaurus(World world) {
 		super(world);
 		setSize(0.7F, 0.7F);
-		minWidth = 0.50F;
+		minWidth = 0.15F;
 		maxWidth = 0.7F;
 		maxHeight = 0.7F;
 		maxHealthAgeable = 18.0D;

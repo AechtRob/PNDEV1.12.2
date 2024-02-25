@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -28,7 +29,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbingGlidingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	public Animation STAND_ANIMATION;
@@ -111,7 +112,7 @@ public class EntityPrehistoricFloraYiQi extends EntityPrehistoricFloraLandClimbi
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 0;
 	}
 
 	@Override

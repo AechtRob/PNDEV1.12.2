@@ -12,6 +12,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -37,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -144,7 +145,7 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.35F;
+		float speedBase = 0.45F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -325,7 +326,9 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
+
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 

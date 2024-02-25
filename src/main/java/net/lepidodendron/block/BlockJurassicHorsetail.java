@@ -85,7 +85,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genHorsetail && !LepidodendronConfig.genAllPlants)
+		if ((!LepidodendronConfigPlants.genHorsetail) && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
 			)

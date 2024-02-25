@@ -31,7 +31,6 @@ public class LandWanderHerd extends EntityAIBase
         this.herdSize = 15;
     }
 
-
     public boolean shouldExecute()
     {
 

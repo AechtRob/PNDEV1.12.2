@@ -7,6 +7,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMegasecoptera;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMegasecopteraSylvohymen;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
@@ -32,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;

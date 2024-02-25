@@ -509,7 +509,7 @@ public class ModelMamenchisaurus extends AdvancedModelBaseExtended {
        // this.Hips.offsetY = 0.04F;
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraMamenchisaurus diplo = (EntityPrehistoricFloraMamenchisaurus) e;
+        EntityPrehistoricFloraMamenchisaurus mamenchisaurus = (EntityPrehistoricFloraMamenchisaurus) e;
 
 //        this.faceTarget(f3, f4, 6, neck1);
 //        this.faceTarget(f3, f4, 6, neck2);
@@ -518,7 +518,7 @@ public class ModelMamenchisaurus extends AdvancedModelBaseExtended {
 //        this.faceTarget(f3, f4, 4, neck5);
 //        this.faceTarget(f3, f4, 4, head);
 
-        boolean isBaby = diplo.getJuvenile();
+        boolean isBaby = mamenchisaurus.getJuvenile();
 
         if (isBaby) {
             this.neck5.scaleChildren = true;
@@ -542,34 +542,58 @@ public class ModelMamenchisaurus extends AdvancedModelBaseExtended {
         //AdvancedModelRenderer[] ArmL = {this.leftarm, this.leftarm2, this.leftarm3};
         //AdvancedModelRenderer[] ArmR = {this.rightarm, this.rightarm2, this.rightarm3};
 
-        diplo.tailBuffer.applyChainSwingBuffer(Tail);
-        float masterSpeed = diplo.getTravelSpeed()/2;
+        mamenchisaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        float masterSpeed = mamenchisaurus.getTravelSpeed()/2;
 
-            if (!diplo.isInWater()) {
+        if (!mamenchisaurus.isInWater()) {
 
-                if (f3 == 0.0F || !diplo.getIsMoving()) {
-                    if (diplo.getAnimation() != diplo.EAT_ANIMATION
-                        && diplo.getAnimation() != diplo.DRINK_ANIMATION
-                        && diplo.getAnimation() != diplo.ATTACK_ANIMATION) {
-                        this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
-                        this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                    }
-
-                    if (diplo.getAnimation() != diplo.ATTACK_ANIMATION) {
-                        this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
-                        this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
-                        this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
-                    }
+            if (f3 == 0.0F || !mamenchisaurus.getIsMoving()) {
+                if (mamenchisaurus.getAnimation() != mamenchisaurus.EAT_ANIMATION
+                        && mamenchisaurus.getAnimation() != mamenchisaurus.DRINK_ANIMATION
+                        && mamenchisaurus.getAnimation() != mamenchisaurus.ATTACK_ANIMATION) {
+                    this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                    this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
                 }
-            } else {
-                //Swimming pose:
-                if (f3 == 0.0F) { //static in water
-                    return;
+
+                if (mamenchisaurus.getAnimation() != mamenchisaurus.ATTACK_ANIMATION) {
+                    this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                    this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
                 }
-                //moving in water
+
                 return;
             }
+
+            if (mamenchisaurus.getAnimation() != mamenchisaurus.EAT_ANIMATION
+                    && mamenchisaurus.getAnimation() != mamenchisaurus.DRINK_ANIMATION
+                    && mamenchisaurus.getAnimation() != mamenchisaurus.ATTACK_ANIMATION
+                    && mamenchisaurus.getAnimation() != mamenchisaurus.ATTACK_ANIMATION) {
+                this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
+                this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
+            }
+
+            if (mamenchisaurus.getIsFast()) { //Running
+//                    float speed = masterSpeed / 2F;
+//                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
+
+            } else { //Walking
+//                    float speed = masterSpeed / 1.50F;
+//                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
+            }
+        } else {
+            //Swimming pose:
+            if (f3 == 0.0F) { //static in water
+                return;
+            }
+            //moving in water
+            return;
         }
+    }
     
 
 

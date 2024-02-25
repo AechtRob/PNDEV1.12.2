@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockInsectEggsArchaboilus;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderArchaboilus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
@@ -36,7 +37,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArchoblattinaInsect {
+public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArchoblattinaInsect implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

@@ -101,7 +101,7 @@ public class BandringaWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 if (this.PrehistoricFloraBandringa.world.isBlockLoaded(new BlockPos(randPos))) {
                     Vec3d randPosVar = randPos;
                     //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraBandringa.getPosition().getY() + " " + randPos.getZ());
-                    if (this.PrehistoricFloraBandringa.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraBandringa.isDirectPathBetweenPoints(this.PrehistoricFloraBandringa.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.x))) {
+                    if (this.PrehistoricFloraBandringa.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraBandringa.isDirectPathBetweenPoints(this.PrehistoricFloraBandringa.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
                         if (this.PrehistoricFloraBandringa.isHungry()) {
                             int ii = 0;
                             while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraBandringa.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {

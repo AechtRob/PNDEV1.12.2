@@ -69,7 +69,7 @@ public class BlockOrontium extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadOrontium) {
+			if (LepidodendronConfigPlants.spreadOrontium && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

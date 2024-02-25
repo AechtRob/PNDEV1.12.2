@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderTritylodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
@@ -18,7 +19,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiictodon {
+public class EntityPrehistoricFloraTritylodon extends EntityPrehistoricFloraDiictodon implements ITrappableLand {
 
 	public EntityPrehistoricFloraTritylodon(World world) {
 		super(world);

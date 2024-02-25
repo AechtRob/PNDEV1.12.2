@@ -405,6 +405,7 @@ public class AcidBathOutputPlants {
     public static String[] getJurassicCleanedFossilsPlants() {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockAnomozamitesSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemNeocalamitesItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAraucaritesSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAridHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBaiera.block).toString(),

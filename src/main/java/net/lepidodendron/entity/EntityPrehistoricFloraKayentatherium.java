@@ -2,10 +2,14 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderKayentatherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -19,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon {
+public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon implements IAdvancementGranter, ITrappableLand {
 
 	public EntityPrehistoricFloraKayentatherium(World world) {
 		super(world);
@@ -28,6 +32,12 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		maxWidth = 0.7F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 12.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_KAYENTATHERIUM;
 	}
 
 	public static String getPeriod() {return "Jurassic";}

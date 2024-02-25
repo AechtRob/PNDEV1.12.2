@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderOnychopterella;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -33,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
+public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
 
 	public Animation SWIM_ANIMATION;
 	public Animation UNSWIM_ANIMATION;
@@ -147,7 +148,7 @@ public class EntityPrehistoricFloraOnychopterella extends EntityPrehistoricFlora
 				//}
 			}
 
-			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 				//Is stationary for egg-laying:
 				//System.err.println("Test2");
 				IBlockState eggs = BlockEurypteridEggsOnychopterella.block.getDefaultState();

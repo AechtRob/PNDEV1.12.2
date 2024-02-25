@@ -10,7 +10,8 @@
 		"22": "lepidodendron:blocks/lophosoria_leaf_2_base",
 		"23": "lepidodendron:blocks/lophosoria_leaf_2_tip",
 		"24": "lepidodendron:blocks/lophosoria_leaf_3_tip_w",
-		"26": "lepidodendron:blocks/lophosoria_leaf_3_base_w"
+		"26": "lepidodendron:blocks/lophosoria_leaf_3_base_w",
+		"particle": "lepidodendron:items/lophosoria_inventory"
 	},
 	"elements": [
 		{

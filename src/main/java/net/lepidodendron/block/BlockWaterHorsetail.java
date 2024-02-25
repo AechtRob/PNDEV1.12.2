@@ -73,7 +73,7 @@ public class BlockWaterHorsetail extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadWaterHorsetail) {
+			if (LepidodendronConfigPlants.spreadWaterHorsetail && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

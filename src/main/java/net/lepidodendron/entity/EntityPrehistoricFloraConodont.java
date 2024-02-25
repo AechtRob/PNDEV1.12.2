@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderConodont;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.lepidodendron.util.CustomTrigger;
@@ -40,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

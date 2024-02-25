@@ -82,6 +82,9 @@ public class RenderDimorphodon extends RenderLiving<EntityPrehistoricFloraDimorp
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDimorphodon entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.2f) {
+            scale = 0.2f;
+        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

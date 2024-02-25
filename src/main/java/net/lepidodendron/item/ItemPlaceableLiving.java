@@ -327,10 +327,12 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 					if (getEntityFromNBT(itemstack) != null) {
 						//Entities:
+						boolean isBaby = false;
 						String nbtStr = "";
 						Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(getEntityFromNBT(itemstack)), worldIn);
 						if (entity instanceof EntityPrehistoricFloraAgeableBase) {
 							nbtStr = "{AgeTicks:0}";
+							isBaby = true;
 						}
 						else {
 							if (itemstack.getTagCompound().hasKey("PFMob")) {
@@ -352,19 +354,19 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 							if (iblockstate.getMaterial() == Material.WATER) {
 								if (this.getVariantID(itemstack).equalsIgnoreCase("")) {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5, isBaby);
 								}
 								else {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5, isBaby);
 								}
 							}
 							else {
 								blockpos = blockpos.offset(raytraceresult.sideHit);
 								if (this.getVariantID(itemstack).equalsIgnoreCase("")) {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5, isBaby);
 								}
 								else {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr,blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr,blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5, isBaby);
 								}
 							}
 						}

@@ -8,6 +8,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -34,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoricFloraCrawlingFlyingInsectBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoricFloraCrawlingFlyingInsectBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

@@ -69,7 +69,7 @@ public class BlockCallianthus extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadCallianthus) {
+			if (LepidodendronConfigPlants.spreadCallianthus && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

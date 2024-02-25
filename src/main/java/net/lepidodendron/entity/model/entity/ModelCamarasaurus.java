@@ -357,15 +357,101 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
-
-        this.base.offsetY = -0.175F;
-        this.base.render(0.01F);
+        this.setRotateAngle(upperlegright, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegleft, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarmright, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarmleft, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth1, 0.1384F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(nose3, 1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(nose2, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(nose1, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerteeth1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegright, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegleft, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerarmright, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerarmleft, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(hip, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(head2_r1, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.4554F, 0.0F, 0.0F);
+        this.setRotateAngle(handright, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(handleft, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(gums1, -0.5463F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(footleft, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike5, -0.2731F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike4, -0.2276F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike3, -0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike2, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike1, 0.2276F, 0.0F, 0.0F);
+        this.setRotateAngle(clawright, 0.0F, 0.2276F, 0.0F);
+        this.setRotateAngle(clawleft, 0.0F, -0.2276F, 0.0F);
+        this.setRotateAngle(chest, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(basin3_r1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(basin2_r1, -0.1309F, 0.0F, 0.0F);
+        this.neck1.offsetY = -0.06F;
+        this.neck1.offsetZ = 0.08F;
+        this.neck1.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-
-        this.base.offsetY = -0.175F;
+        this.setRotateAngle(upperlegright, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegleft, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarmright, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarmleft, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth1, 0.1384F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.0737F, -0.3405F, 0.0786F);
+        this.setRotateAngle(tail5, 0.0365F, -0.3911F, 0.0361F);
+        this.setRotateAngle(tail4, 0.134F, -0.2608F, -0.0233F);
+        this.setRotateAngle(tail3, 0.134F, -0.2608F, -0.0233F);
+        this.setRotateAngle(tail2, 0.2835F, -0.4253F, -0.1006F);
+        this.setRotateAngle(tail1, -0.0893F, -0.173F, 0.023F);
+        this.setRotateAngle(nose3, 1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(nose2, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(nose1, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.1758F, 0.082F, 0.0299F);
+        this.setRotateAngle(neck4, 0.1077F, 0.3272F, 0.1238F);
+        this.setRotateAngle(neck3, -0.0876F, 0.1308F, -0.0057F);
+        this.setRotateAngle(neck2, -0.2657F, 0.1685F, -0.0456F);
+        this.setRotateAngle(neck1, -0.4013F, 0.2013F, -0.0846F);
+        this.setRotateAngle(lowerteeth1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegright, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegleft, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerarmright, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerarmleft, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(hip, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(head2_r1, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.2808F, 0.0F, 0.0F);
+        this.setRotateAngle(handright, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(handleft, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(gums1, -0.5463F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(footleft, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike5, -0.2731F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike4, -0.2276F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike3, -0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike2, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike1, 0.2276F, 0.0F, 0.0F);
+        this.setRotateAngle(clawright, 0.0F, 0.2276F, 0.0F);
+        this.setRotateAngle(clawleft, 0.0F, -0.2276F, 0.0F);
+        this.setRotateAngle(chest, 0.0516F, 0.1289F, 0.0495F);
+        this.setRotateAngle(body, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(basin3_r1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(basin2_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(base, 0.0F, -0.1309F, 0.0F);
+        this.base.offsetY = -0.15F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }
@@ -381,7 +467,50 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
         float scaler = 0.6F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(upperlegright, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegleft, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarmright, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarmleft, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth1, 0.1384F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.0737F, -0.3405F, 0.0786F);
+        this.setRotateAngle(tail5, 0.0365F, -0.3911F, 0.0361F);
+        this.setRotateAngle(tail4, 0.134F, -0.2608F, -0.0233F);
+        this.setRotateAngle(tail3, 0.134F, -0.2608F, -0.0233F);
+        this.setRotateAngle(tail2, 0.2835F, -0.4253F, -0.1006F);
+        this.setRotateAngle(tail1, -0.0893F, -0.173F, 0.023F);
+        this.setRotateAngle(nose3, 1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(nose2, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(nose1, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.1758F, 0.082F, 0.0299F);
+        this.setRotateAngle(neck4, 0.1077F, 0.3272F, 0.1238F);
+        this.setRotateAngle(neck3, -0.0876F, 0.1308F, -0.0057F);
+        this.setRotateAngle(neck2, -0.2657F, 0.1685F, -0.0456F);
+        this.setRotateAngle(neck1, -0.4013F, 0.2013F, -0.0846F);
+        this.setRotateAngle(lowerteeth1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegright, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerlegleft, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerarmright, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerarmleft, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(hip, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(head2_r1, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.2808F, 0.0F, 0.0F);
+        this.setRotateAngle(handright, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(handleft, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(gums1, -0.5463F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(footleft, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike5, -0.2731F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike4, -0.2276F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike3, -0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike2, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(fleshyspike1, 0.2276F, 0.0F, 0.0F);
+        this.setRotateAngle(clawright, 0.0F, 0.2276F, 0.0F);
+        this.setRotateAngle(clawleft, 0.0F, -0.2276F, 0.0F);
+        this.setRotateAngle(chest, 0.0516F, 0.1289F, 0.0495F);
+        this.setRotateAngle(body, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(basin3_r1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(basin2_r1, -0.1309F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:
@@ -455,44 +584,55 @@ public class ModelCamarasaurus extends AdvancedModelBaseExtended {
         camara.tailBuffer.applyChainSwingBuffer(Tail);
         float masterSpeed = camara.getTravelSpeed()/2;
 
-            if (!camara.isInWater()) {
+        if (!camara.isInWater()) {
 
-                if (f3 == 0.0F || !camara.getIsMoving()) {
-                    if (camara.getAnimation() != camara.EAT_ANIMATION
+            if (f3 == 0.0F || !camara.getIsMoving()) {
+                if (camara.getAnimation() != camara.EAT_ANIMATION
                         && camara.getAnimation() != camara.DRINK_ANIMATION
                         && camara.getAnimation() != camara.ATTACK_ANIMATION) {
-                        this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
-                        this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                    }
-
-                    if (camara.getAnimation() != camara.ATTACK_ANIMATION) {
-                        this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
-                        this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
-                        this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
-                    }
-
-                    return;
+                    this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                    this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
                 }
 
-                if (camara.getIsFast()) { //Running
-                    float speed = masterSpeed / 2F;
-                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
+                if (camara.getAnimation() != camara.ATTACK_ANIMATION) {
+                    this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                    this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
+                }
 
-                } else { //Walking
-                    float speed = masterSpeed / 1.50F;
-                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
-                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
-                }
-            } else {
-                //Swimming pose:
-                if (f3 == 0.0F) { //static in water
-                    return;
-                }
-                //moving in water
                 return;
             }
+
+            if (camara.getAnimation() != camara.EAT_ANIMATION
+                    && camara.getAnimation() != camara.DRINK_ANIMATION
+                    && camara.getAnimation() != camara.ATTACK_ANIMATION
+                    && camara.getAnimation() != camara.ATTACK_ANIMATION) {
+                this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
+                this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
+            }
+
+            if (camara.getIsFast()) { //Running
+//                    float speed = masterSpeed / 2F;
+//                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
+
+            } else { //Walking
+//                    float speed = masterSpeed / 1.50F;
+//                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
+            }
+        } else {
+            //Swimming pose:
+            if (f3 == 0.0F) { //static in water
+                return;
+            }
+            //moving in water
+            return;
         }
+    }
     
 
 

@@ -5,10 +5,8 @@ import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemNeocalamitesItem;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -81,7 +79,7 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!LepidodendronConfigPlants.genNeocalamites && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
-		if (dimID == LepidodendronConfig.dimPermian || dimID == LepidodendronConfig.dimTriassic)
+		if (dimID == LepidodendronConfig.dimPermian || dimID == LepidodendronConfig.dimTriassic || dimID == LepidodendronConfig.dimJurassic)
 			dimensionCriteria = true;
 
 		if (!dimensionCriteria)
@@ -125,6 +123,15 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			}
 		}
+
+		if (biome instanceof BiomeJurassic) {
+			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
+					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Desert) {
+				biomeCriteria = true;
+			}
+		}
 			
 		if (!biomeCriteria)
 			return;
@@ -149,9 +156,13 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 			GenChance = 64;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")) {
+			GenChance = 256;
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
 			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
-
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris")
@@ -161,7 +172,11 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony"))
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
+
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_riverbank"))
 		{
 			GenChance = 48;
 		}
@@ -467,9 +482,9 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        tooltip.add("Periods: [Carboniferous -] Permian - Triassic");
-	        tooltip.add("Note: Can be planted in water or on land");
-	        tooltip.add("Propagation: spores");}
+	        	tooltip.add("Periods: [Carboniferous (?) -] Permian - Triassic - Jurassic");
+	        	tooltip.add("Note: Can be planted in water or on land");
+	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

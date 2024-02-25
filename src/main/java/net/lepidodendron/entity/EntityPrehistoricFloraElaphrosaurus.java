@@ -9,10 +9,10 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderApatosaurus;
 import net.lepidodendron.entity.render.entity.RenderElaphrosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
@@ -40,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer {
+public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, IScreamer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 1; //small
+		return 1; //medium
 	}
 
 	@Override

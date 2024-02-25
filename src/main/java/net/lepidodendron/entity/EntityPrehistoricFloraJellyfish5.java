@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -25,7 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJellyfishBase {
+public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJellyfishBase implements ITrappableWater {
 
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)

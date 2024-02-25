@@ -67,7 +67,7 @@ public class BlockFooziaSpore extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadFoozia) {
+			if (LepidodendronConfigPlants.spreadFoozia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

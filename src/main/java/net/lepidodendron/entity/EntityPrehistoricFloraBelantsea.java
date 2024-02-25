@@ -12,6 +12,7 @@ import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderBelantsea;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
@@ -27,7 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBelantsea extends EntityPrehistoricFloraFishBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraBelantsea extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -189,7 +190,7 @@ public class EntityPrehistoricFloraBelantsea extends EntityPrehistoricFloraFishB
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;

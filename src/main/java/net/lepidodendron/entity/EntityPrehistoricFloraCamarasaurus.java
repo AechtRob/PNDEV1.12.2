@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderCamarasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -46,7 +47,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter {
+public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 
@@ -60,7 +61,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 		super(world);
 		setSize(2.5F, 4.5F);
 		stepHeight = 2;
-		minWidth = 0.8F;
+		minWidth = 0.1F;
 		maxWidth = 2.5F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 180.0D;
@@ -69,20 +70,21 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 			tailBuffer = new ChainBuffer();
 		}
 		NOISE_ANIMATION = Animation.create(35);
-		setgetMaxTurnDistancePerTick(5.0F);
+		setgetMaxTurnDistancePerTick(7.5F);
 	}
 
 	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
-			return 0.5F + (19.5F - (19.5F * this.getAgeScale()));
+			return 1.0F + (19F - (19F * this.getAgeScale()));
 		}
 		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
 	public int wadeDepth() {
-		return (int) (3F * this.getAgeScale());
+		return 1;
+		//return (int) (3F * this.getAgeScale());
 	}
 
 	@Override
@@ -161,7 +163,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -245,7 +247,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
+		//tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

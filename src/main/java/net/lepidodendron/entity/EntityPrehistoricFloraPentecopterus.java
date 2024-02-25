@@ -36,7 +36,7 @@
 //
 //import javax.annotation.Nullable;
 //
-//public class EntityPrehistoricFloraPentecopterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
+//public class EntityPrehistoricFloraPentecopterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
 //
 //	public Animation SWIM_ANIMATION;
 //	public Animation UNSWIM_ANIMATION;
@@ -149,7 +149,7 @@
 //				//}
 //			}
 //
-//			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+//			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 //				//Is stationary for egg-laying:
 //				//System.err.println("Test2");
 //				IBlockState eggs = BlockEurypteridEggsSlimonia.block.getDefaultState();

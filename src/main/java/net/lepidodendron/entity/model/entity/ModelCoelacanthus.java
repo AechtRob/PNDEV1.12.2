@@ -186,7 +186,6 @@ public class ModelCoelacanthus extends AdvancedModelBase {
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Bodyfront, 0.1F, -0.1F, 0.0F);
         this.setRotateAngle(Bodyback, 0.0F, -0.2F, 0.0F);

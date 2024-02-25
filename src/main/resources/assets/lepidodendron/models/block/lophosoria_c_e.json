@@ -2,7 +2,8 @@
 	"ambientocclusion": false,
 	"textures": {
 		"22": "lepidodendron:blocks/lophosoria_leaf_2_base",
-		"23": "lepidodendron:blocks/lophosoria_leaf_2_tip"
+		"23": "lepidodendron:blocks/lophosoria_leaf_2_tip",
+		"particle": "lepidodendron:items/lophosoria_inventory"
 	},
 	"elements": [
 		{

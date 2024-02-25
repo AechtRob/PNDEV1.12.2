@@ -76,10 +76,10 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
                 return 0.20F;
 
             case BATRACHOGNATHUS:
-                return 0.202F;
+                return 0.270F;
 
             case CASCOCAUDA:
-                return 0.202F;
+                return 0.250F;
 
             case DENDRORHYNCHOIDES:
                 return 0.20F;

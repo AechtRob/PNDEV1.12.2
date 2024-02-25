@@ -73,7 +73,7 @@ public class BlockBumbudendronWater extends ElementsLepidodendronMod.ModElement 
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadBumbudendron) {
+			if (LepidodendronConfigPlants.spreadBumbudendron && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

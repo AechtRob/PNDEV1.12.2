@@ -342,7 +342,7 @@ public class ModelBatrachognathus extends AdvancedModelBaseExtended {
         }
 
         EntityPrehistoricFloraAnurognathid entityAnurognathid = (EntityPrehistoricFloraAnurognathid) e;
-        if (entityAnurognathid.getIsMoving() && entityAnurognathid.getFlyProgress() != 0 && entityAnurognathid.getAttachmentPos() == null) {
+        if (entityAnurognathid.getFlyProgress() != 0 && entityAnurognathid.getAttachmentPos() == null) {
             //flight pose
             this.setRotateAngle(cube_r1, -0.0087F, 0.0F, 0.0F);
             this.setRotateAngle(leftwing, 0.0F, 0.1745F, 0.0F);

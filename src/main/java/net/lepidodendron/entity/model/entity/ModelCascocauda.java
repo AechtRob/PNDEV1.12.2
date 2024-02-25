@@ -364,8 +364,6 @@ public class ModelCascocauda extends AdvancedModelBaseExtended {
             this.setRotateAngle(rightleg2, -0.9163F, 0.0F, 0.0F);
             this.setRotateAngle(rightleg3, 3.1416F, 0.8727F, 1.309F);
 
-
-
             float speed = 1.50F;
             float fixedY = 0; //The standard offset to centre the mob
 
