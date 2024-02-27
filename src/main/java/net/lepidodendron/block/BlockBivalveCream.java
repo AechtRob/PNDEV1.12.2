@@ -80,10 +80,8 @@ public class BlockBivalveCream extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pndietShellfish", BlockBivalveCream.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalve))
 			dimensionCriteria = true;
