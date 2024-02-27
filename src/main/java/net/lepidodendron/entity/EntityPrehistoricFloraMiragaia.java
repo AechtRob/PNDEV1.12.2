@@ -124,6 +124,24 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
+//		if (this.getIsSneaking()) {
+//			if (this.getRevengeTarget() != null) {
+//				if (this.getRevengeTarget() instanceof EntityPlayer) {
+//					if (((EntityPlayer) this.getRevengeTarget()).isCreative()) {
+//						this.setIsSneaking(false);
+//					}
+//				}
+//			}
+//			if (this.getAttackTarget() != null) {
+//				if (this.getAttackTarget() instanceof EntityPlayer) {
+//					if (((EntityPlayer) this.getAttackTarget()).isCreative()) {
+//						this.setIsSneaking(false);
+//					}
+//				}
+//			}
+//		}
+
+
 		//Managing the rotations, client-side only:
 		if (this.world.isRemote) {
 			if (this.getIsSneaking() && this.rotationAngle < 90) {
