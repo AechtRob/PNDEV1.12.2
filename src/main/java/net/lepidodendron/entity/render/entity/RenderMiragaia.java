@@ -66,7 +66,7 @@ public class RenderMiragaia extends RenderLiving<EntityPrehistoricFloraMiragaia>
     protected void preRenderCallback(EntityPrehistoricFloraMiragaia entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        GlStateManager.rotate(entity.getRotationAngle(), 0, 1, 0);
+        //GlStateManager.rotate(entity.getRotationAngle(), 0, 1, 0);
         this.shadowSize = entity.width * scale * 0.6F;
     }
 

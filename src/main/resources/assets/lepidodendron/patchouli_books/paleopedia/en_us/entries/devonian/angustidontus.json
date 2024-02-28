@@ -7,7 +7,7 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_angustidontus",
-			"title": "",
+			"title": "Angustidontus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)>Arthropoda $(br)>Malacostraca $(br)>Angustidontida $(br)>Angustidontidae"
 		},
