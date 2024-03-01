@@ -127,6 +127,14 @@ public class ModelCladoselache extends AdvancedModelBase {
         this.body.render(f5);
     }
 
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.17F;
+        this.body.offsetX = -0.25F;
+        this.body.offsetZ = 0.15F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.rotateAngleX = (float) Math.toRadians(-15);

@@ -203,7 +203,7 @@ public class EntityPrehistoricFloraBrochoadmones extends EntityPrehistoricFloraF
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.3;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -228,6 +228,7 @@ public class EntityPrehistoricFloraBrochoadmones extends EntityPrehistoricFloraF
 	public static float getScaler(@Nullable String variant) {
 		return RenderBrochoadmones.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 	@Nullable
 	@Override

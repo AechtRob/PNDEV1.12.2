@@ -245,6 +245,18 @@ public class ModelDorypterus extends AdvancedModelBase {
         this.Dorypterus.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Dorypterus, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
+        this.Dorypterus.offsetX = 0.015F;
+        this.Dorypterus.offsetY = 0.4F;
+        this.Dorypterus.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

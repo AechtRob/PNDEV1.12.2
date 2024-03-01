@@ -403,7 +403,14 @@ public class ModelCobelodus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Cobelodus.render(f5);
     }
-
+    public void renderStaticWall(float f) {
+        this.Cobelodus.rotateAngleY = (float) Math.toRadians(90);
+        this.Cobelodus.offsetY = -0.18F;
+        this.Cobelodus.offsetX = -0.15F;
+        this.Cobelodus.offsetZ = -0.02F;
+        this.Cobelodus.render(0.01F);
+        this.resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
         this.Cobelodus.rotateAngleY = (float) Math.toRadians(90);
         this.Head.rotateAngleY = (float) Math.toRadians(-20);

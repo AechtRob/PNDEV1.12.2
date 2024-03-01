@@ -136,6 +136,15 @@ public class ModelDoryaspis extends AdvancedModelBase {
         this.Doryaspis.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Doryaspis, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.2F, 0.0F);
+        this.Doryaspis.offsetY = 0.05F;
+        this.Doryaspis.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
