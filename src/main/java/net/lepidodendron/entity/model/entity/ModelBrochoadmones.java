@@ -333,12 +333,25 @@ public class ModelBrochoadmones extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Brochoadmones.render(f5);
     }
-
     public void renderStaticWall(float f) {
         this.Brochoadmones.rotateAngleY = (float) Math.toRadians(90);
         this.Brochoadmones.offsetY = -0.2F;
         this.Brochoadmones.offsetX = -0.15F;
         this.Brochoadmones.offsetZ = 0.07F;
+        this.Brochoadmones.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Brochoadmones, 0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(Body1, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Brochoadmones.offsetX = -0.005F;
+        this.Brochoadmones.offsetZ = -0.03F;
+        this.Brochoadmones.offsetY = 0.2F;
         this.Brochoadmones.render(0.01F);
         this.resetToDefaultPose();
     }
