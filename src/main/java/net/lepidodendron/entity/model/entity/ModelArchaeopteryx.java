@@ -627,13 +627,12 @@ public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
             }
         }
         else {
-            //Swimming pose:
-            if (!ee.getIsMoving()) { //static in water
-                //
+            if (ee.getIsLaunching()) {
+                animLaunching(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
             else {
-                //moving in water
-                //
+                //Is gliding:
+                animGliding(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
         }
         if (ee.getAnimation() == ee.EAT_ANIMATION) {

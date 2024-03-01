@@ -80,7 +80,8 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 				|| animation == IDLE_2
 				|| animation == IDLE_3
 				|| animation == DRINK_ANIMATION
-				|| animation == GRAZE_ANIMATION;
+				|| animation == GRAZE_ANIMATION
+				|| this.getIsSneaking();
 	}
 
 	@Override
@@ -124,6 +125,24 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
+//		if (this.getIsSneaking()) {
+//			if (this.getRevengeTarget() != null) {
+//				if (this.getRevengeTarget() instanceof EntityPlayer) {
+//					if (((EntityPlayer) this.getRevengeTarget()).isCreative()) {
+//						this.setIsSneaking(false);
+//					}
+//				}
+//			}
+//			if (this.getAttackTarget() != null) {
+//				if (this.getAttackTarget() instanceof EntityPlayer) {
+//					if (((EntityPlayer) this.getAttackTarget()).isCreative()) {
+//						this.setIsSneaking(false);
+//					}
+//				}
+//			}
+//		}
+
+
 		//Managing the rotations, client-side only:
 		if (this.world.isRemote) {
 			if (this.getIsSneaking() && this.rotationAngle < 90) {
@@ -142,7 +161,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 
 		//Alert animation
 		if ((!this.world.isRemote) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& (!this.getIsSneaking()) && (!this.getIsMoving()) && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(3);
 			switch (next) {
 				case 0:
@@ -289,6 +308,8 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
+
+
 
 	@Override
 	public String[] getFoodOreDicts() {
@@ -488,7 +509,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(24.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.9D);
 	}
 
 	@Override

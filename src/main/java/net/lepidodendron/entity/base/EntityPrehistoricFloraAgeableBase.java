@@ -1202,10 +1202,38 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getAttackTarget().isDead) {
                     this.setAttackTarget(null);
                 }
+                if (this.getAttackTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
+                        this.setAttackTarget(null);
+                    }
+                }
             }
             if (this.getEatTarget() != null) {
                 if (this.getEatTarget().isDead) {
                     this.setEatTarget(null);
+                }
+            }
+            if (this.getWarnTarget() != null) {
+                if (this.getWarnTarget().isDead) {
+                    this.setWarnTarget(null);
+                }
+                if (this.getWarnTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
+                        this.setWarnTarget(null);
+                    }
+                }
+                if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
+                    this.setWarnTarget(null);
+                }
+            }
+            if (this.getRevengeTarget() != null) {
+                if (this.getRevengeTarget().isDead) {
+                    this.setRevengeTarget(null);
+                }
+                if (this.getRevengeTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
+                        this.setRevengeTarget(null);
+                    }
                 }
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
@@ -1240,7 +1268,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     || (this.getAttackTarget() == this.getRevengeTarget() && !this.sneakOnRevenge())
                     || (this.getOneHit() && !this.sneakOnRevenge())
             ) {
-                this.setSneaking(false);
+                this.setIsSneaking(false);
             }
 
         }
