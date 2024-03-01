@@ -4263,7 +4263,7 @@ public class ModelShunosaurus extends AdvancedModelBaseExtended {
         double xx = 0;
         double yy = 0;
         double zz = 0;
-         if (tickAnim >= 0 && tickAnim < 18) {
+        if (tickAnim >= 0 && tickAnim < 18) {
             xx = 0 + (((tickAnim - 0) / 18) * (11-(0)));
             yy = 0 + (((tickAnim - 0) / 18) * (0-(0)));
             zz = 0 + (((tickAnim - 0) / 18) * (0-(0)));
@@ -4987,16 +4987,17 @@ public class ModelShunosaurus extends AdvancedModelBaseExtended {
 
         this.setRotateAngle(Tail2, Tail2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667))*1), Tail2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667))*2), Tail2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667))*1.5));
 
-        this.setRotateAngle(Tail3, Tail3.rotateAngleX + (float) Math.toRadians(xx), Tail3.rotateAngleY + (float) Math.toRadians(yy), Tail3.rotateAngleZ + (float) Math.toRadians(zz));
 
+        this.setRotateAngle(Tail3, Tail3.rotateAngleX + (float) Math.toRadians(-6.9713+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-50))*1), Tail3.rotateAngleY + (float) Math.toRadians(-0.454+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-50))*4), Tail3.rotateAngleZ + (float) Math.toRadians(-0.1963+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-50))*3));
 
 
         this.setRotateAngle(Tail4, Tail4.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-70))*3), Tail4.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-70))*4), Tail4.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-70))*3));
 
-        this.setRotateAngle(Tail5, Tail5.rotateAngleX + (float) Math.toRadians(xx), Tail5.rotateAngleY + (float) Math.toRadians(yy), Tail5.rotateAngleZ + (float) Math.toRadians(zz));
 
-        this.setRotateAngle(Tail6, Tail6.rotateAngleX + (float) Math.toRadians(xx), Tail6.rotateAngleY + (float) Math.toRadians(yy), Tail6.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(Tail5, Tail5.rotateAngleX + (float) Math.toRadians(-1.1287+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-90))*5), Tail5.rotateAngleY + (float) Math.toRadians(1.5519+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-90))*4), Tail5.rotateAngleZ + (float) Math.toRadians(-0.8816+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-90))*3));
 
+
+        this.setRotateAngle(Tail6, Tail6.rotateAngleX + (float) Math.toRadians(5.7606+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720/4.6667-50))*10), Tail6.rotateAngleY + (float) Math.toRadians(1.9329+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-50))*2), Tail6.rotateAngleZ + (float) Math.toRadians(-0.8144+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/4.6667-50))*2));
 
 
 
@@ -5146,7 +5147,6 @@ public class ModelShunosaurus extends AdvancedModelBaseExtended {
             zz = 0;
         }
         this.setRotateAngle(footright, footright.rotateAngleX + (float) Math.toRadians(xx), footright.rotateAngleY + (float) Math.toRadians(yy), footright.rotateAngleZ + (float) Math.toRadians(zz));
-
 
     }
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
