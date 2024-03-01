@@ -622,13 +622,8 @@ public class ModelAnchiornis extends AdvancedModelBase {
         }
         else {
             //Swimming pose:
-            if (!ee.getIsMoving()) { //static in water
-                //
-            }
-            else {
-                //moving in water
-                //
-            }
+            animGliding(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+
         }
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

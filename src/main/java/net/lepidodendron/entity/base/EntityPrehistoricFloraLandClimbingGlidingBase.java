@@ -185,6 +185,14 @@ public abstract class EntityPrehistoricFloraLandClimbingGlidingBase extends Enti
 					this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
 				}
 			}
+			if (this.isReallyInWater()) {
+				this.setIsLaunching(true);
+				this.motionY = this.getJumpUpwardsMotion();
+				this.launchProgress = 50;
+				if (this.getLaunchCooldown() > 0) {
+					this.launchCooldown = rand.nextInt(this.getLaunchCooldown());
+				}
+			}
 
 			if (this.launchProgress <= 0) {
 				this.setIsLaunching(false);
