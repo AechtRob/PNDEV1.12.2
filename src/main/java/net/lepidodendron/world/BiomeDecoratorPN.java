@@ -3,6 +3,7 @@ package net.lepidodendron.world;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -321,13 +322,14 @@ public class BiomeDecoratorPN extends BiomeDecorator {
                 }
 
             if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, forgeChunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA))
-                for (int l5 = 0; l5 < 20; ++l5)
-                {
-                    int j10 = random.nextInt(16) + 8;
-                    int i14 = random.nextInt(16) + 8;
-                    int j17 = random.nextInt(random.nextInt(random.nextInt(240) + 8) + 8);
-                    BlockPos blockpos3 = this.chunkPos.add(j10, j17, i14);
-                    (new WorldGenLiquids(Blocks.FLOWING_LAVA)).generate(worldIn, random, blockpos3);
+                if (!(biomeIn instanceof BiomeCarboniferous)) { //No lava flows in Carboniferous as they burn too quickly!
+                    for (int l5 = 0; l5 < 20; ++l5) {
+                        int j10 = random.nextInt(16) + 8;
+                        int i14 = random.nextInt(16) + 8;
+                        int j17 = random.nextInt(random.nextInt(random.nextInt(240) + 8) + 8);
+                        BlockPos blockpos3 = this.chunkPos.add(j10, j17, i14);
+                        (new WorldGenLiquids(Blocks.FLOWING_LAVA)).generate(worldIn, random, blockpos3);
+                    }
                 }
         }
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Post(worldIn, random, forgeChunkPos));
