@@ -237,6 +237,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         }
         this.setFlying();
         this.inPFLove = 0;
+        if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+            this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.5, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+            this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.5, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.EAST) {
+            this.setLocationAndAngles(this.posX - 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.WEST) {
+            this.setLocationAndAngles(this.posX + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+        }
         return super.attackEntityFrom(ds, f);
     }
 
@@ -288,10 +300,34 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         this.rotationYawHead = this.rotationYaw;
 
         if (this.getLaying()) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.setLocationAndAngles(this.posX - 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.setLocationAndAngles(this.posX + 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
             this.setFlying();
         }
 
         if (this.inPFLove > 0) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.setLocationAndAngles(this.posX - 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.setLocationAndAngles(this.posX + 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
             this.setFlying();
             --this.inPFLove;
         }
