@@ -111,7 +111,7 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                         }
                         else  if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
                         {
-                            if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) + 2 + rand.nextInt(3)) {
+                            if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) + 3 + rand.nextInt(3)) {
                                 if (rand.nextInt(3) != 0) {
                                     ProcedureWorldGenArchaeopterisStunted.executeProcedure($_dependencies);
                                 }

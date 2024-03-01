@@ -80,7 +80,8 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 				|| animation == IDLE_2
 				|| animation == IDLE_3
 				|| animation == DRINK_ANIMATION
-				|| animation == GRAZE_ANIMATION;
+				|| animation == GRAZE_ANIMATION
+				|| this.getIsSneaking();
 	}
 
 	@Override
@@ -160,7 +161,7 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 
 		//Alert animation
 		if ((!this.world.isRemote) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& (!this.getIsSneaking()) && (!this.getIsMoving()) && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(3);
 			switch (next) {
 				case 0:
@@ -307,6 +308,8 @@ public class EntityPrehistoricFloraMiragaia extends EntityPrehistoricFloraLandCa
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
+
+
 
 	@Override
 	public String[] getFoodOreDicts() {

@@ -9,6 +9,7 @@ import net.lepidodendron.item.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.WorldOverworldPortal;
+import net.lepidodendron.world.biome.FishingRodDrops;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
@@ -17,6 +18,7 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,6 +35,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
@@ -70,6 +73,9 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Stop vanilla fish in the dimensions:
 	public void onFishing(ItemFishedEvent event) {
+		if (event.getHookEntity().getEntityWorld().isRemote) {
+			return;
+		}
 		if (event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
 				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
 				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
@@ -86,13 +92,41 @@ public class LepidodendronEventSubscribers {
 				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
 			return;
 		}
-		for (ItemStack itemstack : event.getDrops())
+
+		for (ItemStack itemstackVanilla : event.getDrops())
 		{
-			Item item = itemstack.getItem();
+			Item item = itemstackVanilla.getItem();
 			if (item == Items.FISH || item == Items.COOKED_FISH)
 			{
 				event.setCanceled(true);
-				return;
+
+				//Replace with modded drops:
+				Entity bobber = event.getHookEntity();
+				World world = bobber.getEntityWorld();
+				EntityPlayer angler = event.getEntityPlayer();
+
+				//Try 64 times to find something:
+				ItemStack itemstack = null;
+				int tries = 0;
+				while (itemstack == null & tries < 64)
+				{
+					itemstack = FishingRodDrops.executeProcedure(bobber.world, bobber.getPosition(), bobber.world.rand, null, bobber);
+					tries ++;
+				}
+				if (itemstack == null) {
+					return;
+				}
+
+				EntityItem entityitem = new EntityItem(bobber.world, bobber.posX, bobber.posY, bobber.posZ, itemstack);
+				double d0 = angler.posX - bobber.posX;
+				double d1 = angler.posY - bobber.posY;
+				double d2 = angler.posZ - bobber.posZ;
+				double d3 = (double) MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+				entityitem.motionX = d0 * 0.1D;
+				entityitem.motionY = d1 * 0.1D + (double)MathHelper.sqrt(d3) * 0.08D;
+				entityitem.motionZ = d2 * 0.1D;
+				world.spawnEntity(entityitem);
+				angler.world.spawnEntity(new EntityXPOrb(angler.world, angler.posX, angler.posY + 0.5D, angler.posZ + 0.5D, world.rand.nextInt(6) + 1));
 			}
 		}
 	}
@@ -749,7 +783,7 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent //Steam in the Hot Springs:
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		Random rand = new Random();
-		if (event.phase == TickEvent.Phase.END && event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian) {
+		if (event.phase == TickEvent.Phase.END && (event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian || event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous)) {
 			Entity entity = event.player;
 			World world = entity.world;
 			BlockPos pos = entity.getPosition();
@@ -761,7 +795,9 @@ public class LepidodendronEventSubscribers {
 					while (z <= entity.posZ + 16) {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
-							if (world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs") && rand.nextInt(150) == 0) {
+							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
+									&& rand.nextInt(150) == 0) {
 								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
 							}

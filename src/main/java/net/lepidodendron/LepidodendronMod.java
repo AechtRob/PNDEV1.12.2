@@ -11,9 +11,6 @@ import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.CommandMountVehicle;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.lootconditions.EntityInBiomes;
-import net.lepidodendron.world.lootconditions.EntityInDimensionID;
-import net.lepidodendron.world.lootconditions.EntityInDimensionName;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.block.SoundType;
@@ -35,7 +32,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootTableList;
-import net.minecraft.world.storage.loot.conditions.LootConditionManager;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ModFixs;
@@ -2156,9 +2152,6 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
 
 		ModTriggers.registerTriggers();
-		LootConditionManager.registerCondition(new EntityInDimensionName.Serializer());
-		LootConditionManager.registerCondition(new EntityInDimensionID.Serializer());
-		LootConditionManager.registerCondition(new EntityInBiomes.Serializer());
 
 		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 59);
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyoptera.FixerPalaeodictyoptera);

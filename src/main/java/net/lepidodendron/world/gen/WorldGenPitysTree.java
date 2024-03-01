@@ -91,7 +91,8 @@ public class WorldGenPitysTree extends WorldGenAbstractTree
                     }
                     if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
                     {
-                        if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) + 2 + rand.nextInt(3)) {
+                        if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) + 3 + rand.nextInt(3)) {
+                            $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris
                             ProcedureWorldGenPitys.executeProcedure($_dependencies);
                             return true;
                         }

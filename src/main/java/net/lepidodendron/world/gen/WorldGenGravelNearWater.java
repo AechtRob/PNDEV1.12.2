@@ -9,7 +9,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class WorldGenSandNearWater extends WorldGenerator {
+public class WorldGenGravelNearWater extends WorldGenerator {
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
         boolean flag = false;
@@ -31,7 +31,7 @@ public class WorldGenSandNearWater extends WorldGenerator {
                 //Check for water and make denser near water:
                 int ii = 0;
                 int water = 0;
-                while (ii < 6 && water == 0) {
+                while (ii < 8 && water == 0) {
                     int xx = -ii;
                     while (xx <= ii && water == 0) {
                         int zz = -ii;
@@ -48,7 +48,10 @@ public class WorldGenSandNearWater extends WorldGenerator {
                 //water is a number between 0 and 6:
                 if (water != 0) {
                     if (rand.nextInt(water + 1) == 0) {
-                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.SAND.getStateFromMeta(0), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.GRAVEL.getStateFromMeta(0), 2);
+                        if (rand.nextInt(10) == 0) {
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.down(), Blocks.STONE.getStateFromMeta(0), 2);
+                        }
                         flag = true;
                         return flag;
                     }
