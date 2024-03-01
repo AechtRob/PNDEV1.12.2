@@ -1233,6 +1233,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     || world.getBlockState(spawnPos.down()).getBlockFaceShape(world, spawnPos.down(), EnumFacing.UP) != BlockFaceShape.SOLID) {
                                                                                     leafCheck = false;
                                                                                 }
+                                                                                if (EntityLandBase.nestBlockMatch(world, spawnPos)) {
+                                                                                    //Some CAN do ground nests despite this!
+                                                                                    leafCheck = true;
+                                                                                }
                                                                             }
                                                                             if (leafCheck) {
                                                                                 //Spawn a nest under the mob:
