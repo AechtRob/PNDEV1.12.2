@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_synophalos",
 			"title": "Synophalos",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Malacostraca$(br)>Hymenocarina$(br)>Waptiidae"
 		},
 		{
 			"type": "image",
