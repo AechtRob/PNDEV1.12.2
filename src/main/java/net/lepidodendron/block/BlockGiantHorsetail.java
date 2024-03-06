@@ -146,7 +146,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
 					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary
 					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh
-					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills) {
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Fen) {
 				biomeCriteria = true;
 			}
 			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")

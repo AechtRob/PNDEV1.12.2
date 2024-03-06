@@ -414,7 +414,8 @@ public class LepidodendronFogSubscribers {
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
-					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Fen) {
 				return 200;
 			}
 		}
@@ -541,7 +542,8 @@ public class LepidodendronFogSubscribers {
 									&& biome instanceof BiomeCarboniferous && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 								if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
-										|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
+										|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh
+										|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Fen) {
 									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
