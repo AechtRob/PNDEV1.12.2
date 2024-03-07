@@ -358,21 +358,20 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             //Centre on a block:
             if (this.getIsClimbing()) {
                 if (this.getClimbFacing() == EnumFacing.NORTH) {
-                    //this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-                    //this.posX = this.getPosition().getX() + 0.5;
+                    double offsetZ = (double)this.getPosition().getZ() + 1 - (this.width / 2F);
+                    this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
                 }
                 if (this.getClimbFacing() == EnumFacing.SOUTH) {
-                    //this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+                    double offsetZ = (double)this.getPosition().getZ() + (this.width / 2F);
+                    this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
                 }
                 if (this.getClimbFacing() == EnumFacing.WEST) {
-                    //this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    this.setPositionAndRotation(this.posX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+                    double offsetX = (double)this.getPosition().getX() + 1 - (this.width / 2F);
+                    this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
                 }
                 if (this.getClimbFacing() == EnumFacing.EAST) {
-                    //this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    this.setPositionAndRotation(this.posX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+                    double offsetX = (double)this.getPosition().getX() +  (this.width / 2F);
+                    this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
                 }
             }
 

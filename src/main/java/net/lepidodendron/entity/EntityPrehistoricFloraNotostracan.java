@@ -342,6 +342,7 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		this.setPNType(EntityPrehistoricFloraNotostracan.Type.byId(rand.nextInt(EntityPrehistoricFloraNotostracan.Type.values().length) + 1));
 		return livingdata;
 	}
+
 	public void setPNType(Type type)
 	{
 		this.dataManager.set(NOTOSTRACA_TYPE, Integer.valueOf(type.ordinal()));
@@ -351,14 +352,20 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 	{
 		return Type.byId(((Integer)this.dataManager.get(NOTOSTRACA_TYPE)).intValue());
 	}
+
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_NOTOSTRACAN;
+		if (this.getPNType() == Type.STRUDOPS) {
+			return ModTriggers.CLICK_STRUDOPS;
+		}
+		return ModTriggers.CLICK_TRIOPS;
 	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return getStandardLoot();

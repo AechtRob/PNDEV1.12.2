@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraWeigeltisaurus(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		minWidth = 0.10F;
+		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;
