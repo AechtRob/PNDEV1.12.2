@@ -46,7 +46,7 @@ public class SpawnerConfigsPermian {
     public static String[] dimPermianMobsAridLandsLushReborn = new String[0];
     public static String[] dimPermianMobsStonyReborn = new String[0];
     public static String[] dimPermianMobsRiverReborn = new String[0];
-    public static String[] dimPermianMobsLowlandsReborn = new String[]{"rebornmod:entities.diplocaulus:2:7:3"};
+    public static String[] dimPermianMobsLowlandsReborn = new String[]{"rebornmod:entities.diplocaulus:2:7:3", "rebornmod:entities.dimetrodon:2:-6:1"};
     public static String[] dimPermianMobsLowlandForestReborn = new String[0];
     public static String[] dimPermianMobsFloodbasaltReborn = new String[0];
     public static String[] dimPermianMobsHighlandsReborn = new String[0];
