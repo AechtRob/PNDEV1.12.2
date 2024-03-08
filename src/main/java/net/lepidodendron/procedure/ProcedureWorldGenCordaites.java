@@ -81,6 +81,10 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			TrunkHeight = 15 + (int) Math.round(Math.random() * 15);
+			if (world.rand.nextInt(10) == 0 && !SaplingSpawn) {
+				//Smaller ones for vaired worldgen only:
+				TrunkHeight = (int)Math.round((double)TrunkHeight / 2D);
+			}
 
 			//Trunk:
 			counter = 2;
