@@ -211,12 +211,13 @@ public abstract class RenderLivingBaseVariantModels<T extends EntityLivingBase> 
             LOGGER.error("Couldn't render entity", (Throwable)exception);
         }
 
+        //Something wrong here as it kind of double-renders mobs... but commenting out the render line seems to fix it - review this one day?
         GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
         GlStateManager.enableTexture2D();
         GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        //super.doRender(entity, x, y, z, entityYaw, partialTicks);
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.RenderLivingEvent.Post<T>(entity, this, partialTicks, x, y, z));
 
         if (!this.renderOutlines)
