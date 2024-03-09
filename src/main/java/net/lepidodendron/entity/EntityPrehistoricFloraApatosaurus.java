@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	public EntityPrehistoricFloraApatosaurus(World world) {
 		super(world);
 		setSize(2.95F, 6F);
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 6F;
@@ -96,7 +96,10 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -551,7 +554,7 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	protected float getSoundVolume() {
-		return 3.0F;
+		return 1.0F + (2.0F * this.getAgeScale());
 	}
 
 	@Override

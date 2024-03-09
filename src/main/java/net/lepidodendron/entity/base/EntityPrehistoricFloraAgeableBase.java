@@ -85,6 +85,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public int inPFLove;
     public int canGrow;
     public boolean laying;
+    public float extraStepHeight = 0F;
     public EntityItem eatTarget;
     public EntityLivingBase warnTarget;
     public EntityLiving grappleTarget;
@@ -143,6 +144,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public void playStepSoundPublic() {
+        if (this.width < 1.5F) {
+            return;
+        }
         Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
         BlockPos pos = this.getPosition();
 
@@ -960,6 +964,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
         }
+        this.stepHeight = 1F + ((this.extraStepHeight) * this.getAgeScale());
     }
 
     public float getAgeScale() {
@@ -1368,6 +1373,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Nullable
     public SoundEvent getAmbientSoundPublic() {
         return this.getAmbientSound();
+    }
+
+    @Override
+    protected float getSoundPitch()
+    {
+        float pitchAdder = (1F - this.getAgeScale()) * 300F * (this.getMaxWidth() - this.minWidth);
+        return ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F) + 1.0F + pitchAdder;
     }
 
     public void onEntityUpdate()

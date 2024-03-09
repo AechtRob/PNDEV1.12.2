@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 	public EntityPrehistoricFloraTorvosaurus(World world) {
 		super(world);
 		setSize(1.8F, 3.2F);
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		minWidth = 0.20F;
 		maxWidth = 1.8F;
 		maxHeight = 3.2F;
@@ -96,7 +96,10 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	protected float getJumpUpwardsMotion() {
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override

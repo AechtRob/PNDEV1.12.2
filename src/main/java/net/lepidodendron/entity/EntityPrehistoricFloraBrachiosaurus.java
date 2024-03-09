@@ -29,7 +29,6 @@ import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -61,7 +60,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	public EntityPrehistoricFloraBrachiosaurus(World world) {
 		super(world);
 		setSize(2.95F, 6F);
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 6F;
@@ -96,7 +95,10 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -139,16 +141,6 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		super.entityInit();
 		this.setScaleForAge(false);
 	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-	}
-
 
 	@Override
 	public Animation[] getAnimations() {
@@ -488,7 +480,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	protected float getSoundVolume() {
-		return 3.0F;
+		return 1.0F + (2.0F * this.getAgeScale());
 	}
 
 	@Override

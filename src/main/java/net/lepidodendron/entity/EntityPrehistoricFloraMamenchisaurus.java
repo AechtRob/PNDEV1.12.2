@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraMamenchisaurus(World world) {
 		super(world);
 		setSize(3.0F, 4.5F);
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		minWidth = 0.1F;
 		maxWidth = 3.0F;
 		maxHeight = 4.5F;
@@ -95,7 +95,10 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -486,7 +489,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	protected float getSoundVolume() {
-		return 3.0F;
+		return 1.0F + (2.0F * this.getAgeScale());
 	}
 
 	@Override
