@@ -29,7 +29,7 @@ public class StructureSpawnPalissya extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPalissya))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genPalissya && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genPalissya && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

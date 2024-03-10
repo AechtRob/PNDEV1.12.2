@@ -10,6 +10,8 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
+import net.lepidodendron.entity.render.entity.RenderBrachiosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
@@ -18,6 +20,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -26,7 +29,6 @@ import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -58,8 +60,8 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	public EntityPrehistoricFloraBrachiosaurus(World world) {
 		super(world);
 		setSize(2.95F, 6F);
-		stepHeight = 2;
-		minWidth = 0.8F;
+		extraStepHeight = 1F;
+		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 6F;
 		maxHealthAgeable = 250.0D;
@@ -81,7 +83,8 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int wadeDepth() {
-		return (int) (5F * this.getAgeScale());
+		return 1;
+		//return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -92,7 +95,10 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -136,16 +142,6 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 		this.setScaleForAge(false);
 	}
 
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-	}
-
-
 	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{GRAZE_ANIMATION, HURT_ANIMATION, ATTACK_ANIMATION, NOISE_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, MAKE_NEST_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
@@ -161,11 +157,10 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}
-
 
 	@Override
 	public boolean hasNest() {
@@ -184,7 +179,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEatLength() {
-		return 131;
+		return 121;
 	}
 
 	@Override
@@ -203,7 +198,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.39F;
+		float speedBase = 0.445F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -286,34 +281,14 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up()))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
+		int x = 8;
+		int y = 8;
+		for (int xx = 0; xx < x; xx++) {
+			for (int yy = 0; yy < y; yy++) {
+				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
+					return false;
+				}
+			}
 		}
 		return true;
 	}
@@ -337,36 +312,36 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 			&& !this.isReallyInWater()
 			&&
 			(
-				(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+				(this.world.getBlockState(entityPos.north(8).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-				|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.south(8).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-				|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.east(8).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-				|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.west(8).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 			)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(8).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(8).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(8).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(8).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing, 8));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
@@ -378,59 +353,14 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(2)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(2)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(3)))) {
-			return false;
-		}
-		if (world.getBlockState(pos.offset(facing).up(3)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).up(4)))) {
-			return false;
+		int x = 5;
+		int y = 12;
+		for (int xx = 0; xx < x; xx++) {
+			for (int yy = 0; yy < y; yy++) {
+				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
+					return false;
+				}
+			}
 		}
 		return true;
 	}
@@ -454,48 +384,48 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 				&& !this.isReallyInWater()
 				&&
 				(
-					(isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))
+					(isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(12)))
 						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(12)))
 						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(12)))
 						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(12)))
 						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is grazable?
 			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))) {
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(12)))) {
 				facing = EnumFacing.NORTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(12)))) {
 				facing = EnumFacing.SOUTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(12)))) {
 				facing = EnumFacing.EAST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(12)))) {
 				facing = EnumFacing.WEST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
 					test2 = true;
 				}
 			}
 			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(6).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setGrazingFrom(entityPos.up(12).offset(facing, 5));
 				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 			}
 		}
@@ -550,7 +480,7 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	protected float getSoundVolume() {
-		return 3.0F;
+		return 1.0F + (2.0F * this.getAgeScale());
 	}
 
 	@Override
@@ -705,54 +635,54 @@ public class EntityPrehistoricFloraBrachiosaurus extends EntityPrehistoricFloraL
 
 	//Rendering taxidermy:
 	//--------------------
-//	public static double offsetWall(@Nullable String variant) {
-//		return -0.45;
-//	}
-//	public static double upperfrontverticallinedepth(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbackverticallinedepth(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperfrontlineoffset(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbacklineoffset(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-//		return 0.0;
-//	}
-//	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-//		return 3.5;
-//	}
-//	public static double lowerbackverticallinedepth(@Nullable String variant) {
-//		return 2.5;
-//	}
-//	public static double lowerfrontlineoffset(@Nullable String variant) {
-//		return 0.5;
-//	}
-//	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return -2.5;
-//	}
-//	public static double lowerbacklineoffset(@Nullable String variant) {
-//		return -2.9;
-//	}
-//	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-//		return 6.0;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderBrachiosaurus.TEXTURE;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelBrachiosaurus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderBrachiosaurus.getScaler();
-//	}
+public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -2.5;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -2.9;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 6.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderBrachiosaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelBrachiosaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderBrachiosaurus.getScaler();
+	}
 }

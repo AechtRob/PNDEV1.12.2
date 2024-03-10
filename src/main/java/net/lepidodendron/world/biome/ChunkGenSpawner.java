@@ -18,10 +18,14 @@ import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.JsonToNBT;
+import net.minecraft.nbt.NBTException;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -1223,23 +1227,53 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     if (EntityLandBase.hasNest() ) {
                                                                         if ((!EntityLandBase.isNestMound()) && world.getBlockState(spawnPos).getBlock() != BlockNest.block
                                                                                 && BlockNest.block.canPlaceBlockAt(world, spawnPos)) {
-                                                                            //Spawn a nest under the mob:
-                                                                            world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
-                                                                            TileEntity te = world.getTileEntity(spawnPos);
-                                                                            if (te != null) {
-                                                                                if (te instanceof BlockNest.TileEntityNest) {
-                                                                                    te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
-                                                                                    te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
-                                                                                    if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
-                                                                                        te.getTileData().setString("egg", EntityLandBase.getEggNBT());
-
-                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
-                                                                                        if (stack == null) {
-                                                                                            System.err.println("Error with eggs: " + EntityLandBase);
+                                                                            boolean leafCheck = true;
+                                                                            if (EntityLandBase.canSpawnOnLeaves()) {
+                                                                                if ((!world.isAirBlock(spawnPos)) || world.getBlockState(spawnPos.down()).getMaterial() != Material.LEAVES
+                                                                                    || world.getBlockState(spawnPos.down()).getBlockFaceShape(world, spawnPos.down(), EnumFacing.UP) != BlockFaceShape.SOLID) {
+                                                                                    leafCheck = false;
+                                                                                }
+                                                                                if (EntityLandBase.nestBlockMatch(world, spawnPos)) {
+                                                                                    //Some CAN do ground nests despite this!
+                                                                                    leafCheck = true;
+                                                                                }
+                                                                            }
+                                                                            if (leafCheck) {
+                                                                                //Spawn a nest under the mob:
+                                                                                world.setBlockState(spawnPos, BlockNest.block.getDefaultState(), 16);
+                                                                                TileEntity te = world.getTileEntity(spawnPos);
+                                                                                if (te != null) {
+                                                                                    if (te instanceof BlockNest.TileEntityNest) {
+                                                                                        String mobName = EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString();
+                                                                                        String variantName = "";
+                                                                                        if ((!(nbtStr.equalsIgnoreCase(""))) && entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                            NBTTagCompound nbttagcompound = new NBTTagCompound();
+                                                                                            try {
+                                                                                                nbttagcompound = JsonToNBT.getTagFromJson(nbtStr);
+                                                                                            } catch (
+                                                                                                    NBTException nbtexception) {
+                                                                                                //do nothing
+                                                                                            }
+                                                                                            if (nbttagcompound.hasKey("PNType")) {
+                                                                                                mobName = mobName + "_" + nbttagcompound.getString("PNType");
+                                                                                                entity.readEntityFromNBT(nbttagcompound);
+                                                                                            }
                                                                                         }
-                                                                                        else {
-                                                                                            stack.setCount(1);
-                                                                                            ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                        te.getTileData().setString("creature", mobName);
+                                                                                        te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
+                                                                                        if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
+                                                                                            //te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+                                                                                            //ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+
+                                                                                            te.getTileData().setString("creature", mobName);
+                                                                                            ItemStack stack = BlockNest.BlockCustom.getEggItemStack(mobName);
+
+                                                                                            if (stack == null) {
+                                                                                                System.err.println("Error with eggs: " + EntityLandBase);
+                                                                                            } else {
+                                                                                                stack.setCount(1);
+                                                                                                ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                 }

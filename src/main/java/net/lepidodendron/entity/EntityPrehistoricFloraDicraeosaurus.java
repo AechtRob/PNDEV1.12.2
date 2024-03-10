@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 		minWidth = 0.2F;
 		maxWidth = 2.25F;
 		maxHeight = 3.25F;
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		maxHealthAgeable = 140.0D;
 		TAIL_ANIMATION = Animation.create(845);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -88,7 +88,8 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int wadeDepth() {
-		return (int) (2F * this.getAgeScale());
+		return 1;
+		//return (int) (2F * this.getAgeScale());
 	}
 
 	@Override
@@ -99,7 +100,10 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -168,7 +172,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -574,7 +578,7 @@ public class EntityPrehistoricFloraDicraeosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	protected float getSoundVolume() {
-		return 2.0F;
+		return 1.0F + (1.0F * this.getAgeScale());
 	}
 
 	@Override

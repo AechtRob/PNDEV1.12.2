@@ -119,6 +119,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Desert
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
 				biomeCriteria = true;
@@ -161,7 +162,9 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_desert")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")) {
 			GenChance = 192;
 		}
 

@@ -237,6 +237,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         }
         this.setFlying();
         this.inPFLove = 0;
+        if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+            this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.5, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+            this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.5, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.EAST) {
+            this.setLocationAndAngles(this.posX - 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.WEST) {
+            this.setLocationAndAngles(this.posX + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+        }
         return super.attackEntityFrom(ds, f);
     }
 
@@ -288,10 +300,35 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         this.rotationYawHead = this.rotationYaw;
 
         if (this.getLaying()) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.setLocationAndAngles(this.posX - 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.setLocationAndAngles(this.posX + 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
             this.setFlying();
         }
 
         if (this.inPFLove > 0) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.setLocationAndAngles(this.posX - 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.setLocationAndAngles(this.posX + 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            this.setFlying();
             --this.inPFLove;
         }
 
@@ -334,22 +371,22 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         if (!world.isRemote) {
 
             //Centre on a block:
+
             if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                //this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-                //this.posX = this.getPosition().getX() + 0.5;
+                double offsetZ = (double)this.getPosition().getZ() + (this.width / 2F);
+                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
             }
             if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                //this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+                double offsetZ = (double)this.getPosition().getZ() + 1 - (this.width / 2F);
+                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
             }
             if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                //this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                this.setPositionAndRotation(this.posX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+                double offsetX = (double)this.getPosition().getX() + (this.width / 2F);
+                this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
             }
             if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                //this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                this.setPositionAndRotation(this.posX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+                double offsetX = (double)this.getPosition().getX() + 1 - (this.width / 2F);
+                this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
             }
 
 
@@ -400,18 +437,18 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                         this.rotationYawHead = this.rotationYaw;
                     }
                     this.moveHelper.action = EntityMoveHelper.Action.WAIT;
-                    if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                        this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    }
-                    if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                        this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    }
-                    if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                        this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    }
-                    if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                        this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-                    }
+//                    if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+//                        this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+//                    }
+//                    if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+//                        this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+//                    }
+//                    if (this.getAttachmentFacing() == EnumFacing.WEST) {
+//                        this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+//                    }
+//                    if (this.getAttachmentFacing() == EnumFacing.EAST) {
+//                        this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
+//                    }
                     this.setAttachmentPos(this.getPosition().offset(this.getAttachmentFacing()));
                     if (this.climbingpause < 0 && !this.getHeadCollided()) {
                         this.motionY = this.getClimbSpeed();

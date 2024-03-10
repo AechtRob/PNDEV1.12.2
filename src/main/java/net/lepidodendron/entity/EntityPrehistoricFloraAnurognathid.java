@@ -357,7 +357,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getAdultAge() {
-		return 32000;
+		return 0;
 	}
 
 	@Override
@@ -755,16 +755,16 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	}
 
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.95;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return -0.05F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.4;

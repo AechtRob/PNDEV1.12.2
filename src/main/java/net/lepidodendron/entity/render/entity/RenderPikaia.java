@@ -13,7 +13,7 @@ public class RenderPikaia extends RenderLiving<EntityPrehistoricFloraPikaia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia.png");
     public static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia_nerf.png");
 
-    public static float getScaler() {return 0.042F;}
+    public static float getScaler() {return 0.035F;}
     public RenderPikaia(RenderManager mgr) {
         super(mgr, new ModelPikaia(), 0.0f);
     }

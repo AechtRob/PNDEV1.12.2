@@ -525,11 +525,11 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Cumnoria.offsetY = -0.50F;
+        this.Cumnoria.offsetY = -0.2F;
         this.Cumnoria.offsetX = 0.0F;
-        this.Cumnoria.rotateAngleY = (float)Math.toRadians(0);
-        this.Cumnoria.rotateAngleX = (float)Math.toRadians(-88);
-        this.Cumnoria.rotateAngleZ = (float)Math.toRadians(0);
+        this.Cumnoria.rotateAngleY = (float)Math.toRadians(220);
+        this.Cumnoria.rotateAngleX = (float)Math.toRadians(1);
+        this.Cumnoria.rotateAngleZ = (float)Math.toRadians(1);
         this.Cumnoria.scaleChildren = true;
         float scaler = 0.6F;
         this.Cumnoria.setScale(scaler, scaler, scaler);

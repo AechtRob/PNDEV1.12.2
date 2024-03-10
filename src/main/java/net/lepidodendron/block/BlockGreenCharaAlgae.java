@@ -201,6 +201,13 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 48;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")
+		)
+		{
+			multiplier = 35;
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
 		)
 			multiplier = 42;

@@ -85,6 +85,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public int inPFLove;
     public int canGrow;
     public boolean laying;
+    public float extraStepHeight = 0F;
     public EntityItem eatTarget;
     public EntityLivingBase warnTarget;
     public EntityLiving grappleTarget;
@@ -143,6 +144,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public void playStepSoundPublic() {
+        if (this.width < 1.5F) {
+            return;
+        }
         Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
         BlockPos pos = this.getPosition();
 
@@ -960,6 +964,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
         }
+        this.stepHeight = 1F + ((this.extraStepHeight) * this.getAgeScale());
     }
 
     public float getAgeScale() {
@@ -1202,10 +1207,38 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.getAttackTarget().isDead) {
                     this.setAttackTarget(null);
                 }
+                if (this.getAttackTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
+                        this.setAttackTarget(null);
+                    }
+                }
             }
             if (this.getEatTarget() != null) {
                 if (this.getEatTarget().isDead) {
                     this.setEatTarget(null);
+                }
+            }
+            if (this.getWarnTarget() != null) {
+                if (this.getWarnTarget().isDead) {
+                    this.setWarnTarget(null);
+                }
+                if (this.getWarnTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
+                        this.setWarnTarget(null);
+                    }
+                }
+                if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
+                    this.setWarnTarget(null);
+                }
+            }
+            if (this.getRevengeTarget() != null) {
+                if (this.getRevengeTarget().isDead) {
+                    this.setRevengeTarget(null);
+                }
+                if (this.getRevengeTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
+                        this.setRevengeTarget(null);
+                    }
                 }
             }
             this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
@@ -1240,7 +1273,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     || (this.getAttackTarget() == this.getRevengeTarget() && !this.sneakOnRevenge())
                     || (this.getOneHit() && !this.sneakOnRevenge())
             ) {
-                this.setSneaking(false);
+                this.setIsSneaking(false);
             }
 
         }
@@ -1340,6 +1373,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Nullable
     public SoundEvent getAmbientSoundPublic() {
         return this.getAmbientSound();
+    }
+
+    @Override
+    protected float getSoundPitch()
+    {
+        float pitchAdder = (1F - this.getAgeScale()) * 300F * (this.getMaxWidth() - this.minWidth);
+        return ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F) + 1.0F + pitchAdder;
     }
 
     public void onEntityUpdate()
@@ -1466,6 +1506,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         int i = this.getAgeTicks();
         //Do not grow entities which are in cages, etc:
         Block blockIn = world.getBlockState(this.getPosition()).getBlock();
+        boolean wasAlreadyAdult = i == this.getAdultAge();
         if (this.isEntityAlive()
                 && blockIn != BlockCageSmall.block
                 && blockIn != BlockGlassJar.block
@@ -1476,11 +1517,134 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         {
             ++i;
             //throttle at limit:
-            if (i > this.getAdultAge()) {i = this.getAdultAge();}
+            if (i > this.getAdultAge()) {
+                i = this.getAdultAge();
+            }
             this.setAgeTicks(i);
         }
 
-        this.setScaleForAge(false);
+        if (!wasAlreadyAdult) {
+            //Age the mob:
+            this.setScaleForAge(false);
+            //Check for collisions:
+            BlockPos n = new BlockPos(this.posX, this.posY, this.posZ - (this.width/2));
+            BlockPos e = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ);
+            BlockPos s = new BlockPos(this.posX, this.posY, this.posZ + (this.width/2));
+            BlockPos w = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ);
+            BlockPos ne = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ - (this.width/2));
+            BlockPos nw = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ - (this.width/2));
+            BlockPos se = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ + (this.width/2));
+            BlockPos sw = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ + (this.width/2));
+            if (this.isEntityInsideOpaqueBlock()
+                    || world.getBlockState(n).causesSuffocation()
+                    || world.getBlockState(e).causesSuffocation()
+                    || world.getBlockState(s).causesSuffocation()
+                    || world.getBlockState(w).causesSuffocation()
+                    || world.getBlockState(ne).causesSuffocation()
+                    || world.getBlockState(nw).causesSuffocation()
+                    || world.getBlockState(se).causesSuffocation()
+                    || world.getBlockState(sw).causesSuffocation()
+            ) {
+                //Move the mob out from its collision if possible:
+                //Check each vertex:
+                boolean nClear = false;
+                boolean eClear = false;
+                boolean sClear = false;
+                boolean wClear = false;
+                boolean neClear = false;
+                boolean nwClear = false;
+                boolean seClear = false;
+                boolean swClear = false;
+                if (!world.getBlockState(n).causesSuffocation()) {
+                    nClear = true;
+                }
+                if (!world.getBlockState(e).causesSuffocation()) {
+                    eClear = true;
+                }
+                if (!world.getBlockState(s).causesSuffocation()) {
+                    sClear = true;
+                }
+                if (!world.getBlockState(w).causesSuffocation()) {
+                    wClear = true;
+                }
+                if (!world.getBlockState(ne).causesSuffocation()) {
+                    neClear = true;
+                }
+                if (!world.getBlockState(nw).causesSuffocation()) {
+                    nwClear = true;
+                }
+                if (!world.getBlockState(se).causesSuffocation()) {
+                    seClear = true;
+                }
+                if (!world.getBlockState(sw).causesSuffocation()) {
+                    swClear = true;
+                }
+                if (neClear || nwClear || seClear || swClear || nClear|| eClear|| sClear|| wClear) {
+                    boolean moved = false;
+                    while (!moved) {
+                        int m = getRNG().nextInt(8);
+                        switch (m) {
+                            case 0: default:
+                                if (neClear) {
+                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), ne.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 1:
+                                if (nwClear) {
+                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), nw.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 2:
+                                if (seClear) {
+                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), se.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 3:
+                                if (swClear) {
+                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), sw.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 4:
+                                if (nClear) {
+                                    this.setLocationAndAngles(this.posX, n.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 5:
+                                if (eClear) {
+                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), e.getY(), this.posZ, this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 6:
+                                if (sClear) {
+                                    this.setLocationAndAngles(this.posX, s.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 7:
+                                if (wClear) {
+                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), w.getY(), this.posZ, this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                        }
+                    }
+                }
+            }
+        }
 
         double oldHealthMax = this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue();
         float oldHealth = this.getHealth();
@@ -1556,7 +1720,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -47 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
@@ -1595,7 +1759,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -47 && this.getTicks() < 0) {
                 //Is stationary for egg-laying and this is a totten-log lay
                 //System.err.println("Laying an egg in it");
 

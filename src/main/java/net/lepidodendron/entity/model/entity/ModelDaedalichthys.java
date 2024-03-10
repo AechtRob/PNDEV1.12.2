@@ -152,6 +152,17 @@ public class ModelDaedalichthys extends AdvancedModelBase {
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.25F, 0.0F, -0.1F);
+        this.setRotateAngle(body, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.head.offsetX = 0.01F;
+        this.head.offsetY = 0.05F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

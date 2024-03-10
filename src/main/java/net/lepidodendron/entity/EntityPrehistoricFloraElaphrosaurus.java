@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 1; //small
+		return 1; //medium
 	}
 
 	@Override

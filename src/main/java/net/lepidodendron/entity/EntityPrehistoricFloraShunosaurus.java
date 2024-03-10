@@ -91,7 +91,8 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 				|| animation == IDLE_1
 				|| animation == IDLE_2
 				|| animation == DRINK_ANIMATION
-				|| animation == GRAZE_ANIMATION;
+				|| animation == GRAZE_ANIMATION
+				|| this.getIsSneaking();
 	}
 
 	@Override
@@ -153,7 +154,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 
 		//Alert animation
 		if ((!this.world.isRemote) && (!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				&& (!this.getIsSneaking()) && (!this.getIsMoving()) && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(2);
 			switch (next) {
 				case 0:
@@ -184,7 +185,7 @@ public class EntityPrehistoricFloraShunosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}

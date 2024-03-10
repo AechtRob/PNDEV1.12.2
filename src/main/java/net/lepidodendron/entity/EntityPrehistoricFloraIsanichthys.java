@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraIsanichthys extends EntityPrehistoricFloraFis
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous";}
+	public static String getPeriod() {return "late Jurassic - Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -98,7 +98,6 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genUnderwaterGunkOverrideBiomes))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician)
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimCambrian)
@@ -130,6 +129,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
 		if (!biomeCriteria)
 			return;
 

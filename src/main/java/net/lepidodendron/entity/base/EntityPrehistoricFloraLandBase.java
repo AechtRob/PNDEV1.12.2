@@ -17,6 +17,7 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
@@ -666,10 +667,20 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 if (this.getAttackTarget().isDead) {
                     this.setAttackTarget(null);
                 }
+                if (this.getAttackTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
+                        this.setAttackTarget(null);
+                    }
+                }
             }
             if (this.getWarnTarget() != null) {
                 if (this.getWarnTarget().isDead) {
                     this.setWarnTarget(null);
+                }
+                if (this.getWarnTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
+                        this.setWarnTarget(null);
+                    }
                 }
                 if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
                     this.setWarnTarget(null);
@@ -678,6 +689,11 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             if (this.getRevengeTarget() != null) {
                 if (this.getRevengeTarget().isDead) {
                     this.setRevengeTarget(null);
+                }
+                if (this.getRevengeTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
+                        this.setRevengeTarget(null);
+                    }
                 }
             }
             if (this.getEatTarget() != null) {
@@ -722,7 +738,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     || (this.getAttackTarget() == this.getRevengeTarget() && !this.sneakOnRevenge())
                     || (this.getOneHit() && !this.sneakOnRevenge())
             ) {
-                this.setSneaking(false);
+                this.setIsSneaking(false);
             }
         }
 

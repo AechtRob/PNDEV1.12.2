@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus@male"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_xinpusaurus@gendered"
  },
  {
  "item": "lepidodendron:phial_empty"

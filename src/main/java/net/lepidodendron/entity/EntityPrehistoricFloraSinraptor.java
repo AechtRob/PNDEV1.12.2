@@ -145,7 +145,7 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.35F;
+		float speedBase = 0.45F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -326,7 +326,9 @@ public class EntityPrehistoricFloraSinraptor extends EntityPrehistoricFloraLandC
 		if (this.standCooldown < 0) {
 			this.standCooldown = 0;
 		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
+
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 

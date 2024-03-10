@@ -523,13 +523,13 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Uteodon.offsetY = -0.50F;
+        this.Uteodon.offsetY = -0.2F;
         this.Uteodon.offsetX = 0.0F;
-        this.Uteodon.rotateAngleY = (float)Math.toRadians(0);
-        this.Uteodon.rotateAngleX = (float)Math.toRadians(-88);
-        this.Uteodon.rotateAngleZ = (float)Math.toRadians(0);
+        this.Uteodon.rotateAngleY = (float)Math.toRadians(235);
+        this.Uteodon.rotateAngleX = (float)Math.toRadians(-1);
+        this.Uteodon.rotateAngleZ = (float)Math.toRadians(-1);
         this.Uteodon.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 0.5F;
         this.Uteodon.setScale(scaler, scaler, scaler);
         //Start of pose:
 

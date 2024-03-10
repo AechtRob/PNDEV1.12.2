@@ -586,15 +586,161 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
-
-        this.root.offsetY = -0.175F;
-        this.root.render(0.01F);
+        this.setRotateAngle(throat1, 0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(tail8, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail7, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(rightHand, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(rightFoot, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm2, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(neck9, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(neck8, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(neck7, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck6, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.9599F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(leftHand, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFoot, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm2, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, -1.4224F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r42, 0.0F, 0.0F, -0.48F);
+        this.setRotateAngle(cube_r41, 0.0F, 0.0F, 0.48F);
+        this.setRotateAngle(cube_r40, 0.7592F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r39, 1.1519F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r38, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r37, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r36, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r35, 0.4276F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r34, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r33, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r32, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r31, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r30, 0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r29, -1.3788F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r28, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r27, -1.2305F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r26, -1.3439F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, -1.1694F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -0.925F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, -1.7366F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, -1.0297F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.5498F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -1.2305F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.8508F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0436F, 0.0F, 0.0F);
+        this.neck.offsetY = 0.3F;
+        this.neck.offsetZ = 0.256F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-
-        this.root.offsetY = -0.175F;
+        this.setRotateAngle(throat1, 0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(tail8, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail7, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(rightHand, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(rightFoot, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm2, -0.3507F, 0.026F, -0.0559F);
+        this.setRotateAngle(rightArm, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(neck9, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(neck8, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck7, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(neck6, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(neck5, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.9599F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(leftHand, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFoot, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, -0.8988F, 0.0F, 0.0F);
+        this.setRotateAngle(hips, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r42, 0.0F, 0.0F, -0.48F);
+        this.setRotateAngle(cube_r41, 0.0F, 0.0F, 0.48F);
+        this.setRotateAngle(cube_r40, 0.7592F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r39, 1.1519F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r38, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r37, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r36, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r35, 0.4276F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r34, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r33, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r32, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r31, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r30, 0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r29, -1.3788F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r28, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r27, -1.2305F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r26, -1.3439F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, -1.1694F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, -0.925F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, -1.7366F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, -1.0297F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.5498F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -1.2305F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.8508F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.0436F, 0.0F, 0.0F);
+        this.root.offsetY = -0.14F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
@@ -684,33 +830,55 @@ public class ModelBrachiosaurus extends AdvancedModelBaseExtended {
         brachiosaurus.tailBuffer.applyChainSwingBuffer(Tail);
         float masterSpeed = brachiosaurus.getTravelSpeed()/2;
 
-            if (!brachiosaurus.isInWater()) {
+        if (!brachiosaurus.isInWater()) {
 
-                if (f3 == 0.0F || !brachiosaurus.getIsMoving()) {
-                    if (brachiosaurus.getAnimation() != brachiosaurus.EAT_ANIMATION
+            if (f3 == 0.0F || !brachiosaurus.getIsMoving()) {
+                if (brachiosaurus.getAnimation() != brachiosaurus.EAT_ANIMATION
                         && brachiosaurus.getAnimation() != brachiosaurus.DRINK_ANIMATION
                         && brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
-                        this.chainFlap(Neck, 0.05F, 0.05F, 0.5, f2, 0.8F);
-                        this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                    }
-
-                    if (brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
-                        this.chainFlap(Tail, (0.15F * 0.1F), 0.1F, 0.2F, f2, 1F);
-                        this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.35F, 0.12F, f2, 1F);
-                        this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.35F, 0F, f2, 1F);
-                    }
-
-                    return;
+                    this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                    this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
                 }
-            } else {
-                //Swimming pose:
-                if (f3 == 0.0F) { //static in water
-                    return;
+
+                if (brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
+                    this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                    this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                    this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
                 }
-                //moving in water
+
                 return;
             }
+
+            if (brachiosaurus.getAnimation() != brachiosaurus.EAT_ANIMATION
+                    && brachiosaurus.getAnimation() != brachiosaurus.DRINK_ANIMATION
+                    && brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION
+                    && brachiosaurus.getAnimation() != brachiosaurus.ATTACK_ANIMATION) {
+                this.chainFlap(Neck, 0.05F, 0.02F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.05F * 2, -0.01F, 0.5F, f2, 0.8F);
+                this.chainFlap(Tail, (0.15F * 0.1F), 0.05F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (0.15F * 0.1F) * 2F, 0.05F * 0.15F, 0.12F, f2, 1F);
+                this.chainSwing(Tail, (0.15F * 0.1F) * 8F, 0.05F * 0.15F, 0F, f2, 1F);
+            }
+
+            if (brachiosaurus.getIsFast()) { //Running
+//                    float speed = masterSpeed / 2F;
+//                    this.chainFlap(Tail, (speed * 1.2F), 0.1F, 0.5F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.6F) , 0.05F, 0.12F, f2, 1F);
+
+            } else { //Walking
+//                    float speed = masterSpeed / 1.50F;
+//                    this.chainFlap(Tail, (speed * 0.5F), 0.1F, 0.2F, f2, 1F);
+//                    this.chainWave(Tail, (speed * 0.5F), 0.05F * 0.65F, 0.12F, f2, 1F);
+            }
+        } else {
+            //Swimming pose:
+            if (f3 == 0.0F) { //static in water
+                return;
+            }
+            //moving in water
+            return;
         }
+    }
     
 
 

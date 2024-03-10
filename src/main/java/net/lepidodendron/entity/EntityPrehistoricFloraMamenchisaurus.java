@@ -59,8 +59,8 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraMamenchisaurus(World world) {
 		super(world);
 		setSize(3.0F, 4.5F);
-		stepHeight = 2;
-		minWidth = 0.8F;
+		extraStepHeight = 1F;
+		minWidth = 0.1F;
 		maxWidth = 3.0F;
 		maxHeight = 4.5F;
 		maxHealthAgeable = 160.0D;
@@ -83,7 +83,8 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	public int wadeDepth() {
-		return (int) (5F * this.getAgeScale());
+		return 1;
+		//return (int) (5F * this.getAgeScale());
 	}
 
 	@Override
@@ -94,7 +95,10 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -163,7 +167,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	public int getEggType(@Nullable String PNType) {
-		return 2; //large
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -270,7 +274,6 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 		return EnumCreatureAttribute.UNDEFINED;
 	}
 
-	//TODO override to allow targeting water for drinking, currently targets grass
 	@Override
 	public boolean drinksWater() {
 		return true;
@@ -287,7 +290,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 8;
+		int x = 10;
 		int y = 6;
 		for (int xx = 0; xx < x; xx++) {
 			for (int yy = 0; yy < y; yy++) {
@@ -318,36 +321,36 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 			&& !this.isReallyInWater()
 			&&
 			(
-				(this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER
+				(this.world.getBlockState(entityPos.north(10).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-				|| (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.south(10).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-				|| (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.east(10).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-				|| (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER
+				|| (this.world.getBlockState(entityPos.west(10).down()).getMaterial() == Material.WATER
 				&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 			)
 		);
 		if (test) {
 			//Which one is water?
 			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(6).down()).getMaterial() == Material.WATER) {
+			if (this.world.getBlockState(entityPos.north(10).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.NORTH;
 			}
-			else if (this.world.getBlockState(entityPos.south(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.south(10).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.SOUTH;
 			}
-			else if (this.world.getBlockState(entityPos.east(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.east(10).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.EAST;
 			}
-			else if (this.world.getBlockState(entityPos.west(6).down()).getMaterial() == Material.WATER) {
+			else if (this.world.getBlockState(entityPos.west(10).down()).getMaterial() == Material.WATER) {
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setDrinkingFrom(entityPos.offset(facing, 10));
 				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
@@ -359,7 +362,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 8;
+		int x = 3;
 		int y = 6;
 		for (int xx = 0; xx < x; xx++) {
 			for (int yy = 0; yy < y; yy++) {
@@ -390,48 +393,48 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 				&& !this.isReallyInWater()
 				&&
 				(
-					(isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))
+					(isBlockGrazable(this.world.getBlockState(entityPos.north(4).up(6)))
 						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(4).up(6)))
 						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(4).up(6)))
 						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))
+						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(4).up(6)))
 						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
 		if (test) {
 			//Which one is grazable?
 			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(6).up(6)))) {
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(4).up(6)))) {
 				facing = EnumFacing.NORTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(4).up(6)))) {
 				facing = EnumFacing.SOUTH;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(4).up(6)))) {
 				facing = EnumFacing.EAST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(6).up(6)))) {
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(4).up(6)))) {
 				facing = EnumFacing.WEST;
 				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
 					test2 = true;
 				}
 			}
 			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(6).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing).offset(facing));
+				this.setGrazingFrom(entityPos.up(6).offset(facing, 4));
 				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
 			}
 		}
@@ -486,7 +489,7 @@ public class EntityPrehistoricFloraMamenchisaurus extends EntityPrehistoricFlora
 
 	@Override
 	protected float getSoundVolume() {
-		return 3.0F;
+		return 1.0F + (2.0F * this.getAgeScale());
 	}
 
 	@Override

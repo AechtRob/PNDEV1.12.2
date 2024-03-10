@@ -29,7 +29,7 @@ public class StructureSpawnGansufructus extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimGansufructus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genGansufructus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genGansufructus && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

@@ -464,7 +464,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
             }
 
             if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
-                this.setSneaking(false);
+                this.setIsSneaking(false);
             }
         }
 

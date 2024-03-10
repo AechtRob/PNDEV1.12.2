@@ -377,7 +377,30 @@ public class ModelCtenospondylus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.root.offsetY = -0.09F;
+        this.setRotateAngle(Hips, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.25F, 0.2F, 0.05F);
+        this.setRotateAngle(Bodyfront, 0.1F, 0.2F, 0.05F);
+        this.setRotateAngle(Neckbase, 0.05F, 0.15F, 0.0F);
+        this.setRotateAngle(Neckend, 0.05F, 0.15F, 0.F);
+        this.setRotateAngle(Head, -0.1F, 0.15F, 0.0F);
+        this.setRotateAngle(Lowerjawback, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.15F, -0.2F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.15F, -0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.13F, -0.2F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.7F, 0.8F, 0.5F);
+        this.setRotateAngle(Leftshin, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(Rightshin, 1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindfoot, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.5F, -0.3F, 0.8F);
+        this.setRotateAngle(Leftlowerarm, -0.6F, -0.3F, -0.5F);
+        this.setRotateAngle(Leftfrontfoot, 0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, -0.3F, 0.3F, -0.3F);
+        this.setRotateAngle(Rightlowerarm, 0.2F, 0.0F, 0.35F);
+        this.setRotateAngle(Rightfrontfoot, 0.0F, 0.0F, 0.0F);
+        this.root.offsetY = -0.07F;
         this.root.render(0.01F);
         this.resetToDefaultPose();
     }
