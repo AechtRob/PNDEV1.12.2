@@ -264,7 +264,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.67F;
+			speedBase = speedBase * 2.37F;
 
 		}
 		return speedBase;

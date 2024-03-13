@@ -67,6 +67,11 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public int getTalkInterval() {
+		return 320;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
