@@ -199,7 +199,7 @@ public class EntityPrehistoricFloraGantarostrataspis extends EntityPrehistoricFl
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.1;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -224,6 +224,7 @@ public class EntityPrehistoricFloraGantarostrataspis extends EntityPrehistoricFl
 	public static float getScaler(@Nullable String variant) {
 		return RenderGantarostrataspis.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 	@Nullable
 	@Override

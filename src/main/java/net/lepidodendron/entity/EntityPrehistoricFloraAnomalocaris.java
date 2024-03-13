@@ -258,7 +258,7 @@ public class EntityPrehistoricFloraAnomalocaris extends EntityPrehistoricFloraAg
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.86;
+		return 0.83;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;

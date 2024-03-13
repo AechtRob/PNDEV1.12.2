@@ -236,7 +236,28 @@ public class ModelGorgonops extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.Hips.offsetY = -0.06F;
+        this.setRotateAngle(Hips, -0.07F, 0.0F, 0.0F);
+        this.setRotateAngle(Belly, 0.07F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.4F, 0.3F, 0.01F);
+        this.setRotateAngle(Head, 0.4F, 0.3F, 0.05F);
+        this.setRotateAngle(Lowerjaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.6F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(Leftshin, 0.7F, 0.0F, 0.3F);
+        this.setRotateAngle(Lefthindfoot, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(Rightshin, 0.35F, 0.0F, -0.3F);
+        this.setRotateAngle(Righthindfoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.1F, 0.0F, -0.5F);
+        this.setRotateAngle(Leftlowerarm, -1.1F, 0.3F, 0.3F);
+        this.setRotateAngle(Leftfrontfoot, 1.3F, -0.2F, 0.3F);
+        this.setRotateAngle(Rightupperarm, 0.4F, 0.0F, 0.3F);
+        this.setRotateAngle(Rightlowerarm, -0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(Rightfrontfoot, -0.1F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.05F;
         this.Hips.render(0.01F);
         this.resetToDefaultPose();
     }

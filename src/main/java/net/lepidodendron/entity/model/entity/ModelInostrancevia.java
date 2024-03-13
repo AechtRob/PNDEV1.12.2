@@ -391,20 +391,20 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = -0.25F;
-        this.hips.offsetX = -1.5F;
-        this.hips.rotateAngleY = (float)Math.toRadians(200);
-        this.hips.rotateAngleX = (float)Math.toRadians(8);
-        this.hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.hips.offsetY = -0.3F;
+        this.hips.offsetX = -0.35F;
+        this.hips.rotateAngleY = (float)Math.toRadians(100);
+        this.hips.rotateAngleX = (float)Math.toRadians(-1.5);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-1.5);
         this.hips.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 1.0F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(body2, 0.1F, 0.0F, -0.01F);
         this.setRotateAngle(body, 0.12F, 0.0F, 0.0F);
-        this.setRotateAngle(chest, 0.05F, 0.0F, 0.03F);
-        this.setRotateAngle(neck, -0.2F, 0.1F, 0.0F);
-        this.setRotateAngle(neck2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(chest, 0.05F, 0.1F, 0.03F);
+        this.setRotateAngle(neck, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(neck2, 0.1F, 0.3F, 0.0F);
         this.setRotateAngle(head, 0.1F, 0.3F, 0.1F);
         this.setRotateAngle(jaw, 0.6F, 0.0F, 0.0F);
         this.setRotateAngle(tail1, -0.5F, 0.0F, 0.0F);

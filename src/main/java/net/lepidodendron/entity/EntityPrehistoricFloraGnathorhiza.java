@@ -228,7 +228,7 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.25;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -240,7 +240,7 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -253,6 +253,7 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 	public static float getScaler(@Nullable String variant) {
 		return RenderGnathorhiza.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 	@Nullable
 	@Override

@@ -427,7 +427,7 @@ public class EntityPrehistoricFloraEglonaspis extends EntityPrehistoricFloraFish
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -436,10 +436,10 @@ public class EntityPrehistoricFloraEglonaspis extends EntityPrehistoricFloraFish
 		return 0.0;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return 0.07;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.2;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -452,6 +452,7 @@ public class EntityPrehistoricFloraEglonaspis extends EntityPrehistoricFloraFish
 	public static float getScaler(@Nullable String variant) {
 		return RenderEglonaspis.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 	@Nullable
 	@Override

@@ -176,6 +176,17 @@ public class ModelGantarostrataspis extends AdvancedModelBase {
         this.Gantarostrataspis.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Gantarostrataspis, 0.5F, -0.5F, -0.2F);
+        this.setRotateAngle(Tail1, -0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2F, -0.3F, 0.0F);
+        this.Gantarostrataspis.offsetZ = -0.05F;
+        this.Gantarostrataspis.offsetY = 0.1F;
+        this.Gantarostrataspis.offsetX = 0.013F;
+        this.Gantarostrataspis.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

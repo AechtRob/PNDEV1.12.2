@@ -203,7 +203,7 @@ public class EntityPrehistoricFloraFurcacauda extends EntityPrehistoricFloraFish
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.25;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -228,6 +228,7 @@ public class EntityPrehistoricFloraFurcacauda extends EntityPrehistoricFloraFish
 	public static float getScaler(@Nullable String variant) {
 		return RenderFurcacauda.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.0175F;}
 
 	@Nullable
 	@Override

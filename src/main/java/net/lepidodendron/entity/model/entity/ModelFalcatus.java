@@ -179,6 +179,20 @@ public class ModelFalcatus extends AdvancedModelBase {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(mouth, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.body.offsetZ = -0.1F;
+        this.body.offsetY = 0.3F;
+        this.body.offsetX = -0.02F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -234,7 +234,7 @@ public class EntityPrehistoricFloraChinlea extends EntityPrehistoricFloraAgeable
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.3;
+		return 0.4;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
@@ -249,7 +249,7 @@ public class EntityPrehistoricFloraChinlea extends EntityPrehistoricFloraAgeable
 		return 0.4;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0.1F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
