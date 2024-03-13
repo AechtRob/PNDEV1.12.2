@@ -99,6 +99,7 @@ public class RenderAnurognathid extends RenderLivingBaseVariantModels<EntityPreh
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
             default:
+                GlStateManager.translate(0.0F, -0.1F, 0.0F);
                 break;
             case EAST: case WEST: case NORTH: case SOUTH:
                 GlStateManager.translate(0.0, 0.05F, -this.getOffset(entityLiving.getPNType()));

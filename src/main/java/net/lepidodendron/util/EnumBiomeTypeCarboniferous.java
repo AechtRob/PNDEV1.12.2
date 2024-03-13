@@ -11,7 +11,8 @@ public enum EnumBiomeTypeCarboniferous implements IStringSerializable {
     Hills("hills"),
     Estuary("estuary"),
     Savanna("savanna"),
-    Volcanic("volcanic")
+    Volcanic("volcanic"),
+    Fen("fen")
     ;
 
     private final String name;

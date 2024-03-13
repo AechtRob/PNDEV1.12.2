@@ -12,17 +12,17 @@ import net.minecraft.entity.EntityLivingBase;
 
 public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer main;
-    private final AdvancedModelRenderer leftwing;
-    private final AdvancedModelRenderer leftwing2;
-    private final AdvancedModelRenderer leftwing3;
-    private final AdvancedModelRenderer leftmembrane;
-    private final AdvancedModelRenderer lefthand;
-    private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer rightwing;
     private final AdvancedModelRenderer rightwing2;
     private final AdvancedModelRenderer rightwing3;
     private final AdvancedModelRenderer rightmembrane;
     private final AdvancedModelRenderer righthand;
+    private final AdvancedModelRenderer cube_r1;
+    private final AdvancedModelRenderer leftwing;
+    private final AdvancedModelRenderer leftwing2;
+    private final AdvancedModelRenderer leftwing3;
+    private final AdvancedModelRenderer leftmembrane;
+    private final AdvancedModelRenderer lefthand;
     private final AdvancedModelRenderer cube_r2;
     private final AdvancedModelRenderer neck;
     private final AdvancedModelRenderer Head;
@@ -356,7 +356,6 @@ public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
         else {
 
         }
-
 
         this.faceTarget(f3, f4, 8, neck);
         this.faceTarget(f3, f4, 8, Head);
@@ -700,7 +699,6 @@ public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
             zz = 0;
         }
         this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
-
 
 
 
@@ -1092,6 +1090,7 @@ public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraAnurognathid e = (EntityPrehistoricFloraAnurognathid) entity;
         animator.update(entity);
+        //setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
 
         animator.setAnimation(e.ROAR_ANIMATION);
         animator.startKeyframe(3);

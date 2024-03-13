@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	public EntityPrehistoricFloraCamarasaurus(World world) {
 		super(world);
 		setSize(2.5F, 4.5F);
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		minWidth = 0.1F;
 		maxWidth = 2.5F;
 		maxHeight = 4.5F;
@@ -95,7 +95,10 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 		if (this.isReallyInWater()) {
 			return super.getJumpUpwardsMotion() * 1.25F;
 		}
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
@@ -484,7 +487,7 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	protected float getSoundVolume() {
-		return 3.0F;
+		return 1.0F + (2.0F * this.getAgeScale());
 	}
 
 	@Override

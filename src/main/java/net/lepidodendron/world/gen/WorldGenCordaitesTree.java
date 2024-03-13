@@ -2,7 +2,9 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenCordaites;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -92,6 +94,12 @@ public class WorldGenCordaitesTree extends WorldGenAbstractTree
                     ){
                         $_dependencies.put("SaplingSpawn", true); // disables Ankyropteris
                         $_dependencies.put("vines", false);
+                    }
+                    if (worldIn.getBiome(position) instanceof BiomeCarboniferous) {
+                        BiomeCarboniferous biomeC = (BiomeCarboniferous) worldIn.getBiome(position);
+                        if (biomeC.getBiomeType() ==  EnumBiomeTypeCarboniferous.Fen) {
+                            $_dependencies.put("vines2", true);
+                        }
                     }
                     ProcedureWorldGenCordaites.executeProcedure($_dependencies);
                     return true;
