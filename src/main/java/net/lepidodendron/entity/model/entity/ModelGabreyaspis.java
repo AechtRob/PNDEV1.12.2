@@ -194,6 +194,18 @@ public class ModelGabreyaspis extends AdvancedModelBase {
         this.gabreyaspis.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(gabreyaspis, -0.2F, 0.3F, 0.2F);
+        this.setRotateAngle(tail, -0.2F, -0.4F, 0.0F);
+        this.setRotateAngle(tail2, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.1F, 0.0F);
+        this.gabreyaspis.offsetZ = -0.0F;
+        this.gabreyaspis.offsetY = -0.05F;
+        this.gabreyaspis.offsetX = -0.005F;
+        this.gabreyaspis.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

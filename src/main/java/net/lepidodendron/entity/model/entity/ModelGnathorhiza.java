@@ -224,6 +224,19 @@ public class ModelGnathorhiza extends AdvancedModelBase {
         this.Bodymiddlefront.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodymiddlefront, 0.3F, -0.1F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodyback, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Headbase, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.3F, 0.0F);
+        this.Bodymiddlefront.offsetY = 0.2F;
+        this.Bodymiddlefront.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

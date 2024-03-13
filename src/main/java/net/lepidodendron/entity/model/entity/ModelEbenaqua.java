@@ -289,6 +289,21 @@ public class ModelEbenaqua extends AdvancedModelBase {
         this.Ebanaqua.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Ebanaqua, 0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.2F, 0.0F);
+        this.Ebanaqua.offsetZ = -0.01F;
+        this.Ebanaqua.offsetX = -0.12F;
+        this.Ebanaqua.offsetY = 0.35F;
+        this.Ebanaqua.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -38,10 +38,10 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 
 	public EntityPrehistoricFloraCeratodus(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
-		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.3F;
+		setSize(1.0F, 1.0F);
+		minWidth = 0.5F;
+		maxWidth = 1.0F;
+		maxHeight = 1.0F;
 		maxHealthAgeable = 8.0D;
 	}
 
