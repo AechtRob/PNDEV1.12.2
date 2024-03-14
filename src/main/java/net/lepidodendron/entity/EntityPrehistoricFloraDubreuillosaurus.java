@@ -15,6 +15,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderDubreuillosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
@@ -138,7 +139,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 				&& this.getAnimation() == NO_ANIMATION
 				&& this.onGround
 				&& this.isReallyInWater()
-				&& this.isBlockWadable(this.world, entityPos.down(), this)
+				&& !PathNavigateGroundNoDeepWater.isTooDeep(this.world, entityPos)
 				&&
 				(
 						(this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER
@@ -175,12 +176,6 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 			}
 		}
 		return test;
-	}
-
-
-	@Override
-	public int wadeDepth() {
-		return 1;
 	}
 
 	@Override
@@ -309,12 +304,12 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
-		//tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		//tasks.addTask(2, new AgeableWarnEntity(this, EntityPlayer.class, 4));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new LandWanderNestAI(this));
 		tasks.addTask(4, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(5, new LandWanderWader(this, NO_ANIMATION, 0.8D, 30));
+		tasks.addTask(5, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
 		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));

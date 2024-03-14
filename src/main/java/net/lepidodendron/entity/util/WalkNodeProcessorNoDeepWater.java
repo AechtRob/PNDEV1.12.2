@@ -3,6 +3,7 @@ package net.lepidodendron.entity.util;
 import com.google.common.collect.Sets;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +22,7 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.Set;
 
-public class WalkNodeProcessorNoWater extends NodeProcessor
+public class WalkNodeProcessorNoDeepWater extends NodeProcessor
 {
     protected float avoidsWater;
     protected EntityLiving currentEntity;
@@ -42,7 +43,7 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
     {
         int i;
 
-        if (this.getCanSwim() && this.entity.isInWater())
+        if (this.getCanSwim() && ((EntityPrehistoricFloraLandWadingBase) this.entity).isSwimmingInWater())
         {
             i = (int)this.entity.getEntityBoundingBox().minY;
             BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos(MathHelper.floor(this.entity.posX), i, MathHelper.floor(this.entity.posZ));
@@ -390,24 +391,26 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
 
         if (y >= 1 ) {
             if (currentEntity != null) {
-                if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
-                    if (currentEntity.world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
+                if (currentEntity.world.isBlockLoaded(new BlockPos(x, y, z))) {
+                    if (currentEntity.world.getBlockState(new BlockPos(x, y - 2, z)).getMaterial() == Material.WATER) {
                         if (currentEntity.width > 1) {
                             if (
-                                    blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
-                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                                    PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x + 1, y - 1, z - 1))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x + 1, y - 1, z))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x + 1, y - 1, z + 1))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x, y - 1, z - 1))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x, y - 1, z + 1))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x - 1, y - 1, z - 1))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x - 1, y - 1, z))
+                                            && PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x - 1, y - 1, z + 1))
                             ) {
                                 pathnodetype = PathNodeType.BLOCKED;
                             }
                         }
                         else {
-                            pathnodetype = PathNodeType.BLOCKED;
+                            if (PathNavigateGroundNoDeepWater.isTooeepIBA(blockaccessIn, new BlockPos(x, y - 1, z))) {
+                                pathnodetype = PathNodeType.BLOCKED;
+                            }
                         }
                     }
                 } else {

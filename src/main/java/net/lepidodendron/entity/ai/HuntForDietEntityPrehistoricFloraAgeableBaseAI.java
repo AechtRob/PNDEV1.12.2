@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -334,7 +335,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
         if (pos.down(i).getY() <= 0) {
             return true;
         }
-        return !((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, pos.down(i), null);
+        return !(PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, pos.down(i)));
     }
 
     public boolean isInWaterforHunting(Entity entity) {

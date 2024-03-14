@@ -82,12 +82,6 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public int wadeDepth() {
-		return 1;
-		//return (int) (3F * this.getAgeScale());
-	}
-
-	@Override
 	protected float getJumpUpwardsMotion() {
 		if (this.isInWater()) {
 			return super.getJumpUpwardsMotion() * 1.5F;
@@ -246,12 +240,12 @@ public class EntityPrehistoricFloraCamarasaurus extends EntityPrehistoricFloraLa
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		//tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
 		//tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
-		tasks.addTask(7, new LandWanderWader(this, NO_ANIMATION, 0.7D, 0));
+		tasks.addTask(7, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this, true));
