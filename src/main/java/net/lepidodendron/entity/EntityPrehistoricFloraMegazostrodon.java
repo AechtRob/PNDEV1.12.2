@@ -2,8 +2,11 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -13,7 +16,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraMorganucodon implements ITrappableLand {
+public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraMorganucodon implements ITrappableLand, IAdvancementGranter {
 
 	public EntityPrehistoricFloraMegazostrodon(World world) {
 		super(world);
@@ -22,6 +25,12 @@ public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraM
 		maxWidth = 0.27F;
 		maxHeight = 0.35F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MEGAZOSTRODON;
 	}
 
 	@Override
