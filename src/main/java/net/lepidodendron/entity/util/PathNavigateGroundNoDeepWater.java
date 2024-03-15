@@ -342,7 +342,27 @@ public class PathNavigateGroundNoDeepWater extends PathNavigate
             return false;
         }
         else {
-            return isTooDeep(entity.world, entity.getPosition());
+            if (entity.width < 1) {
+                return isTooDeep(entity.world, entity.getPosition());
+            }
+            else {
+                //find all blocks underneath it:
+                int xMin = (int)Math.floor(entity.posX - (entity.width/2F));
+                int xMax= (int)Math.floor(entity.posX + (entity.width/2F));
+                int zMin = (int)Math.floor(entity.posZ - (entity.width/2F));
+                int zMax = (int)Math.floor(entity.posZ + (entity.width/2F));
+                int xx = xMin;
+                boolean foundGround = false;
+                while (xx <= xMax && !foundGround) {
+                    int zz = zMin;
+                    while (zz <= zMax && !foundGround) {
+                        foundGround = !isTooDeep(entity.world, new BlockPos(xx, entity.posY, zz));
+                        zz ++;
+                    }
+                    xx ++;
+                }
+                return !foundGround;
+            }
         }
     }
 

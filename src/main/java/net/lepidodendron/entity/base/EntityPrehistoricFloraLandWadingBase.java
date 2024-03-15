@@ -56,11 +56,6 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         HURT_ANIMATION = Animation.create(this.getHurtLength());
     }
 
-    @Override
-    public float getSwimHeight() {
-        return this.height * 0.15F;
-    }
-
     public int getHurtLength() {
         return 30;
     }

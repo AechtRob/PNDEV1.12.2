@@ -75,6 +75,11 @@ public class EntityPrehistoricFloraApatosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public float getSwimHeight() {
+		return this.height * 0.20F;
+	}
+
+	@Override
 	public float getgetMaxTurnDistancePerTick() {
 		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
 			return 1.0F + (19F - (19F * this.getAgeScale()));

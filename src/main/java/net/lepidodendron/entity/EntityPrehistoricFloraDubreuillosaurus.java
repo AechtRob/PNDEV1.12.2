@@ -63,6 +63,11 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	@Override
+	public float getSwimHeight() {
+		return this.height * 0.20F;
+	}
+
+	@Override
 	public EnumPushReaction getPushReaction() {
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			return EnumPushReaction.IGNORE;
@@ -251,7 +256,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.425F;
+		float speedBase = 0.465F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -259,7 +264,7 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.37F;
+			speedBase = speedBase * 2.32F;
 
 		}
 		return speedBase;
@@ -293,12 +298,6 @@ public class EntityPrehistoricFloraDubreuillosaurus extends EntityPrehistoricFlo
 	public float getEyeHeight()
 	{
 		return Math.max(super.getEyeHeight(), this.height * 0.9F);
-	}
-
-	@Override
-	public float getSwimHeight()
-	{
-		return this.height * 1.1F;
 	}
 
 	protected void initEntityAI() {

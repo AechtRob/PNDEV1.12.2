@@ -121,22 +121,30 @@ public class LandWanderAvoidDeepWaterAI extends AnimationAINoAnimation<EntityPre
         }
         else
         {
-            return this.entity.getRNG().nextFloat() >= 0.001 ? getTarget() : vecRnd;
+            //If it's already in water, make it more likely to stay?
+            if (this.entity.isReallyInWater() && this.entity.getRNG().nextInt(3) != 0) {
+                return this.entity.getRNG().nextFloat() >= 0.001 ? getTargetWater() : vecRnd;
+            }
+            else if (this.entity.getRNG().nextInt(4) == 0) {
+                return this.entity.getRNG().nextFloat() >= 0.001 ? RandomPositionGenerator.getLandPos(this.entity, 15, 7) : vecRnd;
+            }
+            else {
+                return this.entity.getRNG().nextFloat() >= 0.001 ? getTargetWater() : vecRnd;
+            }
         }
     }
     
-    Vec3d getTarget() {
+    Vec3d getTargetWater() {
         Random rand = this.entity.getRNG();
         if (this.entity.getAttackTarget() == null) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 256; i++) {
                 Vec3d randPos = this.entity.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 if (this.entity.world.isBlockLoaded(new BlockPos(randPos))) {
-                    if (this.entity.world.getBlockState(new BlockPos(randPos)).getBlock().isPassable(this.entity.world, new BlockPos(randPos))) {
-                        if (this.entity.world.getBlockState(new BlockPos(randPos)).getMaterial() != Material.WATER) {
-                            return randPos;
-                        }
-                        else if (!PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, new BlockPos(randPos))) {
-                            return randPos;
+                    if (this.entity.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER) {
+                        if (this.entity.world.getBlockState(new BlockPos(randPos)).getBlock().isPassable(this.entity.world, new BlockPos(randPos))) {
+                            if (!PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, new BlockPos(randPos))) {
+                                return randPos;
+                            }
                         }
                     }
                 }
