@@ -24,9 +24,9 @@ public class RenderUteodon extends RenderLiving<EntityPrehistoricFloraUteodon> {
     @Override
     public void doRender(EntityPrehistoricFloraUteodon entity, double x, double y, double z, float entityYaw, float partialTicks) {
         try {
-            @SuppressWarnings("deprecation")
-            Class clazz = sun.reflect.Reflection.getCallerClass(4);
-        if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
+            StackTraceElement[] elements = new Throwable().getStackTrace();
+            String  callerClass = elements[4].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
             GlStateManager.enableAlpha();
