@@ -23,8 +23,9 @@ public class RenderYiQi extends RenderLiving<EntityPrehistoricFloraYiQi> {
 
     @Override
     public void doRender(EntityPrehistoricFloraYiQi entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
+        try {
+            @SuppressWarnings("deprecation")
+            Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
@@ -49,6 +50,11 @@ public class RenderYiQi extends RenderLiving<EntityPrehistoricFloraYiQi> {
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
 

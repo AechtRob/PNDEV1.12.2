@@ -23,8 +23,9 @@ public class RenderDorygnathus extends RenderLiving<EntityPrehistoricFloraDorygn
 
     @Override
     public void doRender(EntityPrehistoricFloraDorygnathus entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
+        try {
+            @SuppressWarnings("deprecation")
+            Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
@@ -49,6 +50,11 @@ public class RenderDorygnathus extends RenderLiving<EntityPrehistoricFloraDorygn
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
 

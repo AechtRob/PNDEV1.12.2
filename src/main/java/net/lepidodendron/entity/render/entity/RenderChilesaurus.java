@@ -28,8 +28,9 @@ public class RenderChilesaurus extends RenderLiving<EntityPrehistoricFloraChiles
 
     @Override
     public void doRender(EntityPrehistoricFloraChilesaurus entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
+        try {
+            @SuppressWarnings("deprecation")
+            Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
@@ -54,6 +55,11 @@ public class RenderChilesaurus extends RenderLiving<EntityPrehistoricFloraChiles
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
 

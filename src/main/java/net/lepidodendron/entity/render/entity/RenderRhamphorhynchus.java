@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhamphorhynchus;
-import net.lepidodendron.entity.EntityPrehistoricFloraWukongopterus;
 import net.lepidodendron.entity.model.entity.ModelRhamphorhynchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
@@ -23,8 +22,9 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
     }
     @Override
     public void doRender(EntityPrehistoricFloraRhamphorhynchus entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
+        try {
+            @SuppressWarnings("deprecation")
+            Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
@@ -49,6 +49,11 @@ public class RenderRhamphorhynchus extends RenderLiving<EntityPrehistoricFloraRh
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
     @Override

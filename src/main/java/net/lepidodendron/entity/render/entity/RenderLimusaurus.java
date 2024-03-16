@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraCompsognathus;
 import net.lepidodendron.entity.EntityPrehistoricFloraLimusaurus;
 import net.lepidodendron.entity.model.entity.ModelLimusaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -23,8 +22,9 @@ public class RenderLimusaurus extends RenderLiving<EntityPrehistoricFloraLimusau
     }
     @Override
     public void doRender(EntityPrehistoricFloraLimusaurus entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
+        try {
+            @SuppressWarnings("deprecation")
+            Class clazz = sun.reflect.Reflection.getCallerClass(4);
         if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
@@ -49,6 +49,11 @@ public class RenderLimusaurus extends RenderLiving<EntityPrehistoricFloraLimusau
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
     @Override
