@@ -92,7 +92,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genStromatoliteBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -194,7 +194,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 							int j = random.nextInt(3) + 1;
 							j = Math.min(3, j);
 							for (int k = 0; k < j; ++k) {
-								//System.err.println("SeaLavel: " + (world.getSeaLevel()));
+								//System.err.println("SeaLavel: " + (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))));
 								//System.err.println("Try to spawn at: "  + blockpos1.up(k).getY());
 								if (
 									//((world.isAirBlock(blockpos1.down()) || ((BlockFalling) block).canFallThrough(world.getBlockState(blockpos1.down()))) && blockpos1.getY() >= 0)
@@ -205,9 +205,9 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 												&& ((world.getBlockState(blockpos1.up(k).down()).getMaterial() == Material.SAND)
 												|| (world.getBlockState(blockpos1.up(k).down()).getMaterial() == Material.ROCK)
 												|| (world.getBlockState(blockpos1.up(k).down()).getBlock() == block))
-												&& (blockpos1.up(k).getY() >= (world.getSeaLevel() - 5))
-												&& (blockpos1.up(k).getY() < (world.getSeaLevel())
-													|| (blockpos1.up(k).getY() <= world.getSeaLevel() &&
+												&& (blockpos1.up(k).getY() >= (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - 5))
+												&& (blockpos1.up(k).getY() < (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))
+													|| (blockpos1.up(k).getY() <= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) &&
 														(BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)
 														|| BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 													)
@@ -216,7 +216,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 												|| (world.getBlockState(blockpos1.up(k)).getMaterial() == Material.WATER))
 												&&
 												!((world.getBlockState(blockpos1.up(k).down()).getBlock() == block)
-														&& blockpos1.up(k).getY() == (world.getSeaLevel()))
+														&& blockpos1.up(k).getY() == (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))))
 								) {
 									world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2);
 								}

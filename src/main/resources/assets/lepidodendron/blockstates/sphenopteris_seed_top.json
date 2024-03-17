@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "var=false": {"model": "lepidodendron:sphenopteris_seed_top"},
+    "var=true": {"model": "lepidodendron:sphenopteris_seed_top_var"}
+  }
+}

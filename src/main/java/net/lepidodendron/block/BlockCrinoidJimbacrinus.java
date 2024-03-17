@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
@@ -109,7 +110,7 @@ public class BlockCrinoidJimbacrinus extends ElementsLepidodendronMod.ModElement
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -143,7 +144,7 @@ public class BlockCrinoidJimbacrinus extends ElementsLepidodendronMod.ModElement
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 6; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up()) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up(2)) && i11 <= (world.getSeaLevel()-20)) {
+						if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up()) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up(2)) && i11 <= (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))-20)) {
 							BlockPos blockpos2 = blockpos1.down();
 							int j = 1 + random.nextInt(random.nextInt(random.nextInt(BlockCustom.crinoidheight) + 1) + 1);
 							j = Math.min(BlockCustom.crinoidheight, j);

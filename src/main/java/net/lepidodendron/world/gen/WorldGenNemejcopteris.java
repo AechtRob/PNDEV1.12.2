@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockNemejcopteris;
+import net.lepidodendron.block.BlockNemejcopterisTop;
 import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -22,6 +23,7 @@ public class WorldGenNemejcopteris extends WorldGenerator
             if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNemejcopteris.block.canPlaceBlockAt(worldIn, blockpos))
             {
                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockNemejcopteris.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockNemejcopterisTop.block.getDefaultState(), 2);
                 flag = true;
             }
         }

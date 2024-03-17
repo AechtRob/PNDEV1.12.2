@@ -40,6 +40,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockNemejcopteris extends ElementsLepidodendronMod.ModElement {
@@ -153,6 +154,41 @@ public class BlockNemejcopteris extends ElementsLepidodendronMod.ModElement {
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Override
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+			if (!worldIn.isAirBlock(pos.up())) {
+				return false;
+			}
+			return super.canPlaceBlockAt(worldIn, pos);
+		}
+
+		@Override
+		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+			worldIn.setBlockState(pos.up(), BlockNemejcopterisTop.block.getDefaultState());
+			super.onBlockAdded(worldIn, pos, state);
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockNemejcopterisTop.block) {
+				worldIn.destroyBlock(pos, true);
+			}
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+		}
+
+		@Override
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockNemejcopterisTop.block) {
+				if (worldIn.getBlockState(pos.up()).getBlock().isReplaceable(worldIn, pos.up())) {
+					worldIn.setBlockState(pos.up(), BlockNemejcopterisTop.block.getDefaultState());
+				}
+				else {
+					worldIn.setBlockToAir(pos);
+				}
+			}
+			super.updateTick(worldIn, pos, state, rand);
+		}
 
 		@Override
 	    public EnumOffsetType getOffsetType()

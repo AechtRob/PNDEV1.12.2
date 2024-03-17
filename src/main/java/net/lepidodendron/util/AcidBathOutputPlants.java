@@ -395,6 +395,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockWielandiella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGordonopterisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPseudoctenis.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockDoratophyllum.block).toString()
 
         };
@@ -472,7 +473,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSciadopitysSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSelaginella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSphenobaieraSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStiffCycadSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemSwampHorsetailItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTallAraucariaSapling.block).toString(),
@@ -596,7 +596,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSelaginella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMatonia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSphenobaieraSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSphenopteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStiffCycadSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemSwampHorsetailItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSycamoreSapling.block).toString(),

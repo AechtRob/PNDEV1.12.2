@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraDicranurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraHeliopeltis;
 import net.lepidodendron.entity.model.entity.ModelHeliopeltis;
 import net.minecraft.client.renderer.GlStateManager;

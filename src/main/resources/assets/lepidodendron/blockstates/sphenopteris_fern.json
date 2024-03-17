@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sphenopteris_fern" },
+      {"model": "lepidodendron:sphenopteris_fern_var"}
+    ]
+  }
+}
