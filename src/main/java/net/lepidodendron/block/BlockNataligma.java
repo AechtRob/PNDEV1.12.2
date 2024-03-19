@@ -6,6 +6,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -148,7 +149,7 @@ public class BlockNataligma extends ElementsLepidodendronMod.ModElement {
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
 		if (heightCheck) {
-			minheight = world.getSeaLevel() + 2;
+			minheight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) + 2;
 		}
 		final int maxH = maxheight;
 		final int minH = minheight;

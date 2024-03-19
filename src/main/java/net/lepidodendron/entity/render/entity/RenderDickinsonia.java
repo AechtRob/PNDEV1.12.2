@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAspidorhynchus;
 import net.lepidodendron.entity.EntityPrehistoricFloraDickinsonia;
 import net.lepidodendron.entity.model.entity.ModelDickinsonia;
 import net.minecraft.client.renderer.GlStateManager;

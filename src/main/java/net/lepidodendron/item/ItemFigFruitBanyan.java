@@ -4,8 +4,8 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -43,7 +43,7 @@ public class ItemFigFruitBanyan extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemFood {
 		public ItemCustom() {
-			super(1, false);
+			super(1, 0.2f, false);
 			setMaxDamage(0);
 			maxStackSize = 64;
 			setTranslationKey("pf_fig_fruit_banyan");
@@ -52,18 +52,9 @@ public class ItemFigFruitBanyan extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public int getItemEnchantability() {
-			return 0;
+		public EnumAction getItemUseAction(ItemStack par1ItemStack) {
+			return EnumAction.EAT;
 		}
 
-		@Override
-		public int getMaxItemUseDuration(ItemStack itemstack) {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, IBlockState par2Block) {
-			return 1F;
-		}
 	}
 }

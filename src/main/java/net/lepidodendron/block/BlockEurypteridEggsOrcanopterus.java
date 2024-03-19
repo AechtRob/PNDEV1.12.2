@@ -57,7 +57,7 @@
 //		}
 //		int minWaterDepth = 10;
 //		int waterDepthCheckMax = 20;
-//		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
+//		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - waterDepthCheckMax;
 //		for (int i = 0; i < (int) 3; i++) {
 //			int l6 = chunkX + random.nextInt(16) + 8;
 //			int i11 = random.nextInt(128 - startHeight) + startHeight;

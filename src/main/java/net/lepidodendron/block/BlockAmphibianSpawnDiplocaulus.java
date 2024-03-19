@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
@@ -64,7 +65,7 @@ public class BlockAmphibianSpawnDiplocaulus extends ElementsLepidodendronMod.Mod
 
 		int minWaterDepth = 1;
 		int waterDepthCheckMax = 10;
-		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - waterDepthCheckMax;
 		for (int i = 0; i < (int) 1; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128 - startHeight) + startHeight;

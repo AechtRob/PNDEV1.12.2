@@ -1,7 +1,9 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockSanfordiacaulisLog;
+import net.lepidodendron.block.BlockSanfordiacaulisShoot;
+import net.lepidodendron.block.BlockSanfordiacaulisShootPlaceable;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;

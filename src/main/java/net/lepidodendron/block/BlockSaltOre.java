@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSalt;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
@@ -60,7 +61,7 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 		if (dimID == 0 || dimID == LepidodendronConfig.dimJurassic)
 			dimensionCriteria = true;
 
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		boolean biomeCriteria = false;
 		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY) && dimID == 0)
 			biomeCriteria = true;

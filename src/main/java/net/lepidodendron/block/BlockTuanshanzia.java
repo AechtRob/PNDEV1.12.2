@@ -5,6 +5,7 @@ import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -87,7 +88,7 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondBlacklistBiomes))
 				&& (matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)
 				|| dimID == LepidodendronConfig.dimPrecambrian)) {
