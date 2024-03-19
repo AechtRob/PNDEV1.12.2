@@ -22,6 +22,8 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
     public static final ResourceLocation TEXTURE_STENODICTYA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_stenodictya.png");
     public static final ResourceLocation TEXTURE_MAZOTHAIROS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_mazothairos.png");
 
+    public static final ResourceLocation TEXTURE_PSYCHROPTILUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_psychroptilus.png");
+
     public RenderPalaeodictyoptera(RenderManager mgr) {
         super(mgr,
             new ModelPalaeodictyopteraSmall(),
@@ -59,6 +61,9 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
 
             case MAZOTHAIROS:
                 return TEXTURE_MAZOTHAIROS;
+
+            case PSYCHROPTILUS:
+                return TEXTURE_PSYCHROPTILUS;
         }
     }
 
@@ -90,6 +95,9 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
 
             case MAZOTHAIROS:
                 return this.mainModelArray[2];
+
+            case PSYCHROPTILUS:
+                return this.mainModelArray[0];
         }
     }
 
@@ -121,6 +129,9 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
 
             case MAZOTHAIROS:
                 return 0.07F; //ok
+
+            case PSYCHROPTILUS:
+                return 0.07F;
         }
     }
 
@@ -184,6 +195,9 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
                 return 0.24F;
 
             case MAZOTHAIROS:
+                return 0.24F;
+
+            case PSYCHROPTILUS:
                 return 0.24F;
         }
     }

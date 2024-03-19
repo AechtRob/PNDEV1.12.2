@@ -1,0 +1,21 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:archaeoconularia"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_archaeoconularia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_archaeoconularia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_archaeoconularia"
+		}
+	}
+}
+

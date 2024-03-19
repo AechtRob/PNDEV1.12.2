@@ -4227,5 +4227,21 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 4223;
     public static final int zosterophyllum_spore = 4224;
     public static final int advancement_placeholder = 4225;
+    public static final int conulariid_brown = 4226;
+    public static final int conulariid_magenta = 4227;
+    public static final int archaeoconularia = 4228;
+    public static final int essexella = 4229;
+    public static final int amphibian_spawn_banksiops = 4230;
+    public static final int eggs_pampaphoneus = 4231;
+    public static final int plesiosaurus_raw = 4232;
+    public static final int pampaphoneus_raw = 4233;
+    public static final int banksiops_raw = 4234;
+    public static final int ichthyosaurus_raw = 4235;
+
+    public static final int amphibian_spawn_banksiops_worldgen = 4236;
+    public static final int eldonia_raw = 4237;
+    public static final int discophyllum_raw = 4238;
+    public static final int paropsonema_raw = 4239;
+    public static final int palaeodictyoptera_psychroptilus_raw = 4240;
 
 }

@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:conulariid_magenta"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:conulariid_magenta", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:conulariid_magenta"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:conulariid_magenta", "x": 180}
+    ]
+  }
+}
