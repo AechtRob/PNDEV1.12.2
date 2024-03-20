@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemOrcanopterusRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:orcanopterus_raw")
+public class ItemHughmilleriaRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:hughmilleria_raw")
 	public static final Item block = null;
-	public ItemOrcanopterusRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.orcanopterus_raw);
+	public ItemHughmilleriaRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.hughmilleria_raw);
 	}
 
 	@Override
@@ -30,21 +30,21 @@ public class ItemOrcanopterusRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/orcanopterus_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/hughmilleria_raw", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_orcanopterus", ItemOrcanopterusRaw.block);
-		OreDictionary.registerOre("pnfurnaceCrustacean", ItemOrcanopterusRaw.block);
-		OreDictionary.registerOre("pndietCrustacean", ItemOrcanopterusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hughmilleria", ItemHughmilleriaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemHughmilleriaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemHughmilleriaRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_orcanopterus_raw");
-			setRegistryName("orcanopterus_raw");
+			setTranslationKey("pf_hughmilleria_raw");
+			setRegistryName("hughmilleria_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

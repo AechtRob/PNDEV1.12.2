@@ -172,7 +172,7 @@ public class EntityPrehistoricFloraBanksiops extends EntityPrehistoricFloraSwimm
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.16F;
+		float calcSpeed = 0.14F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.26f;
 		}

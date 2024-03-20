@@ -5218,6 +5218,63 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPalaeoctenophora.class, new IRenderFactory<EntityPrehistoricFloraPalaeoctenophora>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPalaeoctenophora> createRenderFor(RenderManager manager) {
+                return new RenderPalaeoctenophora(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeocydippida.class, new IRenderFactory<EntityPrehistoricFloraArchaeocydippida>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeocydippida> createRenderFor(RenderManager manager) {
+                return new RenderArchaeocydippida(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCtenorhabdotus.class, new IRenderFactory<EntityPrehistoricFloraCtenorhabdotus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCtenorhabdotus> createRenderFor(RenderManager manager) {
+                return new RenderCtenorhabdotus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIchthyosaurus.class, new IRenderFactory<EntityPrehistoricFloraIchthyosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIchthyosaurus> createRenderFor(RenderManager manager) {
+                return new RenderIchthyosaurus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHughmilleria.class, new IRenderFactory<EntityPrehistoricFloraHughmilleria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHughmilleria> createRenderFor(RenderManager manager) {
+                return new RenderHughmilleria(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOrcanopterus.class, new IRenderFactory<EntityPrehistoricFloraOrcanopterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOrcanopterus> createRenderFor(RenderManager manager) {
+                return new RenderOrcanopterus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStoermeropterus.class, new IRenderFactory<EntityPrehistoricFloraStoermeropterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraStoermeropterus> createRenderFor(RenderManager manager) {
+                return new RenderStoermeropterus(manager);
+            }
+        });
+
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         //Specials:

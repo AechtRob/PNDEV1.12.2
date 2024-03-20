@@ -4247,4 +4247,11 @@ public class LepidodendronSorter {
     public static final int paropsonema_raw = 4239;
     public static final int palaeodictyoptera_psychroptilus_raw = 4240;
 
+    public static final int eurypterid_eggs_hughmilleria = 4270;
+    public static final int eurypterid_eggs_hughmilleria_worldgen = 4271;
+    public static final int hughmilleria_raw = 4272;
+    public static final int waptia_raw = 4273;
+    public static final int isoxys_raw = 4274;
+    public static final int capinatator_raw = 4275;
+
 }

@@ -29,16 +29,16 @@ import java.util.Random;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockEurypteridEggsStoermeropterus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eurypterid_eggs_stoermeropterus_worldgen")
+public class BlockEurypteridEggsHughmilleria extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eurypterid_eggs_hughmilleria_worldgen")
 	public static final Block block = null;
-	public BlockEurypteridEggsStoermeropterus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eurypterid_eggs_stoermeropterus_worldgen);
+	public BlockEurypteridEggsHughmilleria(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eurypterid_eggs_hughmilleria_worldgen);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("eurypterid_eggs_stoermeropterus_worldgen"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("eurypterid_eggs_hughmilleria_worldgen"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -47,16 +47,16 @@ public class BlockEurypteridEggsStoermeropterus extends ElementsLepidodendronMod
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				//new ModelResourceLocation("lepidodendron:insect_eggs_eoarthropleura_worldgen", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEurypteridEggsStoermeropterus.BlockCustom.LEVEL).build());
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEurypteridEggsHughmilleria.BlockCustom.LEVEL).build());
 	}
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (dimID != LepidodendronConfig.dimSilurian) {
+		if ((dimID != LepidodendronConfig.dimSilurian)) {
 			return;
 		}
-		int minWaterDepth = 10;
+		int minWaterDepth = 5;
 		int waterDepthCheckMax = 20;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - waterDepthCheckMax;
 		for (int i = 0; i < (int) 3; i++) {
@@ -66,11 +66,7 @@ public class BlockEurypteridEggsStoermeropterus extends ElementsLepidodendronMod
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeSilurian) {
 				BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
-				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon) {
+				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
@@ -79,14 +75,14 @@ public class BlockEurypteridEggsStoermeropterus extends ElementsLepidodendronMod
 
 	public static class BlockCustom extends BlockMobSpawn {
 		public BlockCustom() {
-			setTranslationKey("pf_eurypterid_eggs_stoermeropterus_worldgen");
+			setTranslationKey("pf_eurypterid_eggs_hughmilleria_worldgen");
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
 		}
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockEurypteridEggsStoermeropterusPlaceable.block, (int) (1));
+			return new ItemStack(BlockEurypteridEggsHughmilleriaPlaceable.block, (int) (1));
 		}
 
 		@Override

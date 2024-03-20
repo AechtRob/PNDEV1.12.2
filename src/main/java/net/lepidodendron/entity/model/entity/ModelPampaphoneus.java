@@ -586,9 +586,9 @@ public class ModelPampaphoneus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraPampaphoneus Pampaphoneus = (EntityPrehistoricFloraPampaphoneus) e;
         float masterSpeed = Pampaphoneus.getTravelSpeed();
 
-        this.faceTarget(f3, f4, 8, neck);
-        this.faceTarget(f3, f4, 8, neck2);
-        this.faceTarget(f3, f4, 8, head);
+        this.faceTarget(f3, f4, 4, neck);
+        this.faceTarget(f3, f4, 4, neck2);
+        this.faceTarget(f3, f4, 4, head);
 
         //float speed = 0.2F;
 

@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.entity.EntityPrehistoricFloraOrcanopterus;
+import net.lepidodendron.entity.EntityPrehistoricFloraHughmilleria;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -26,16 +26,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockEurypteridEggsOrcanopterusPlaceable extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eurypterid_eggs_orcanopterus")
+public class BlockEurypteridEggsHughmilleriaPlaceable extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eurypterid_eggs_hughmilleria")
 	public static final Block block = null;
-	public BlockEurypteridEggsOrcanopterusPlaceable(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eurypterid_eggs_orcanopterus);
+	public BlockEurypteridEggsHughmilleriaPlaceable(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eurypterid_eggs_hughmilleria);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("eurypterid_eggs_orcanopterus"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("eurypterid_eggs_hughmilleria"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -43,20 +43,20 @@ public class BlockEurypteridEggsOrcanopterusPlaceable extends ElementsLepidodend
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eurypterid_eggs_orcanopterus", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEurypteridEggsOrcanopterus.BlockCustom.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:eurypterid_eggs_hughmilleria", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEurypteridEggsHughmilleria.BlockCustom.LEVEL).build());
 	}
-
+	
 	public static class BlockCustom extends BlockMobSpawn {
 		public BlockCustom() {
-			setTranslationKey("pf_eurypterid_eggs_orcanopterus");
+			setTranslationKey("pf_eurypterid_eggs_hughmilleria");
 			this.setTickRandomly(true);
 			setCreativeTab(null);
 		}
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockEurypteridEggsOrcanopterusPlaceable.block, (int) (1));
+			return new ItemStack(BlockEurypteridEggsHughmilleriaPlaceable.block, (int) (1));
 		}
 
 		@Override
@@ -65,7 +65,7 @@ public class BlockEurypteridEggsOrcanopterusPlaceable extends ElementsLepidodend
 			super.updateTick(worldIn, pos, state, rand);
 
 			if (!(worldIn.isRemote)) {
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraOrcanopterus.class).toString(), "{AgeTicks:0}", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
+				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraHughmilleria.class).toString(), "{AgeTicks:0}", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
 			}
 			worldIn.destroyBlock(pos, false);
 		}
@@ -74,8 +74,8 @@ public class BlockEurypteridEggsOrcanopterusPlaceable extends ElementsLepidodend
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: " + EntityPrehistoricFloraOrcanopterus.getHabitat() + " Eurypterid");
-				tooltip.add("Periods: " + EntityPrehistoricFloraOrcanopterus.getPeriod());
+				tooltip.add("Type: " + EntityPrehistoricFloraHughmilleria.getHabitat() + " Eurypterid");
+				tooltip.add("Periods: " + EntityPrehistoricFloraHughmilleria.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}*/
