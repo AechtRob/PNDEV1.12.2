@@ -5267,6 +5267,38 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEramoscorpius.class, new IRenderFactory<EntityPrehistoricFloraEramoscorpius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEramoscorpius> createRenderFor(RenderManager manager) {
+                return new RenderEramoscorpius(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPraearcturus.class, new IRenderFactory<EntityPrehistoricFloraPraearcturus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPraearcturus> createRenderFor(RenderManager manager) {
+                return new RenderPraearcturus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStrobilopterus.class, new IRenderFactory<EntityPrehistoricFloraStrobilopterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraStrobilopterus> createRenderFor(RenderManager manager) {
+                return new RenderStrobilopterus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWaptia.class, new IRenderFactory<EntityPrehistoricFloraWaptia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWaptia> createRenderFor(RenderManager manager) {
+                return new RenderWaptia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIsoxys.class, new IRenderFactory<EntityPrehistoricFloraIsoxys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIsoxys> createRenderFor(RenderManager manager) {
+                return new RenderIsoxys(manager);
+            }
+        });
         
         
         

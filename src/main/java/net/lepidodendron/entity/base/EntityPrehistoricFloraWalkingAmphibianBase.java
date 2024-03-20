@@ -52,6 +52,30 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
         }
     }
 
+    public int getAttackLength() {
+        return 20;
+    }
+
+    @Override
+    public boolean dropsEggs() {
+        return false;
+    }
+
+    @Override
+    public boolean laysEggs() {
+        return false;
+    }
+
+    @Override
+    public String getTexture() {
+        return this.getTexture();
+    }
+
+    @Override
+    protected boolean canDespawn() {
+        return false;
+    }
+
     public static String getHabitat() {
         return I18n.translateToLocal("helper.pf_amphibious.name");
     }

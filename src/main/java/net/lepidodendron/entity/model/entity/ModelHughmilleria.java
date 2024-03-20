@@ -425,7 +425,10 @@ public class ModelHughmilleria extends AdvancedModelBase {
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraHughmilleria entity = (EntityPrehistoricFloraHughmilleria) entitylivingbaseIn;
         int animCycle = 40;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;
@@ -760,7 +763,9 @@ public class ModelHughmilleria extends AdvancedModelBase {
     public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraHughmilleria entity = (EntityPrehistoricFloraHughmilleria) entitylivingbaseIn;
         int animCycle = 20;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+
         double xx = 0;
         double yy = 0;
         double zz = 0;

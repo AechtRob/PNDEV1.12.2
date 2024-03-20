@@ -65,6 +65,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
+    private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
@@ -558,6 +560,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(JUVENILE, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
+        this.dataManager.register(BABIES, false);
+        this.dataManager.register(ISBABY, false);
         //this.setScaleForAge(false); //REMOVED!
     }
 
@@ -1030,6 +1034,22 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public boolean getJuvenile() {
         return this.dataManager.get(JUVENILE);
+    }
+
+    public boolean getBabies() {
+        return this.dataManager.get(BABIES);
+    }
+
+    public void setBabies(boolean babies) {
+        this.dataManager.set(BABIES, babies);
+    }
+
+    public boolean getIsBaby() {
+        return this.dataManager.get(ISBABY);
+    }
+
+    public void setIsBaby(boolean babies) {
+        this.dataManager.set(ISBABY, babies);
     }
 
     @Override
