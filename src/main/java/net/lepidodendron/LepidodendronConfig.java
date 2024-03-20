@@ -30,7 +30,7 @@ public class LepidodendronConfig {
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
     public static boolean biomeOlive = true;
-    public static boolean digsiteGen = true;
+    //public static boolean digsiteGen = true;
     public static int digsiteTentColour = 12;
     public static int digsiteBedColour = 7;
     public static int digsiteCarpetColour = 8;
@@ -695,10 +695,10 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
 
-        prop = cfg.get("Global World-Gen", "digsiteGen", digsiteGen);
-        prop.setComment("Set to false to disable the world-gen of this mod's fossil digsites. [default: true]");
-        digsiteGen = prop.getBoolean();
-        propOrder.add(prop.getName());
+//        prop = cfg.get("Global World-Gen", "digsiteGen", digsiteGen);
+//        prop.setComment("Set to false to disable the world-gen of this mod's fossil digsites. [default: true]");
+//        digsiteGen = prop.getBoolean();
+//        propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "digsiteTentColour", digsiteTentColour);
         prop.setComment("Change to a different metadata number to use a different colour of wool, or use -1 for a random single colour or -2 for completely random patchwork. [default: 12]");
         digsiteTentColour = prop.getInt();
@@ -720,7 +720,7 @@ public class LepidodendronConfig {
         digsiteDimensionWhiteList = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Lepidodendron", "digSiteRarity", digsiteRarity);
-        prop.setComment("One in this many chunks will try to generate a digsite (note, most attempts will fail due to unsuitable terrain) [default: 50]");
+        prop.setComment("One in this many chunks will try to generate a digsite, or set to zero to disable (note, most attempts will fail due to unsuitable terrain) [default: 50]");
         digsiteRarity = prop.getInt();
         propOrder.add(prop.getName());
 

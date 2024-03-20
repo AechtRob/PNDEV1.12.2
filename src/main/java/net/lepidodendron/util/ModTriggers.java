@@ -170,6 +170,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_COOKSONIA = new CustomTrigger("pf_book_cooksonia");
     public static final CustomTrigger CLICK_BELLENDENA = new CustomTrigger("pf_book_bellendena");
     public static final CustomTrigger CLICK_CORDAITES = new CustomTrigger("pf_book_cordaites");
+    public static final CustomTrigger CLICK_CORDAITES_DRY = new CustomTrigger("pf_book_cordaites_dry");
     public static final CustomTrigger CLICK_CORNULITIDA = new CustomTrigger("pf_book_cornulitida");
     public static final CustomTrigger CLICK_CORONACOLLINA = new CustomTrigger("pf_book_coronacollina");
     public static final CustomTrigger CLICK_CORUMBELLA = new CustomTrigger("pf_book_corumbella");
@@ -473,6 +474,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ZAMITES = new CustomTrigger("pf_book_zamites");
     public static final CustomTrigger CLICK_ZOSTEROPHYLLUM = new CustomTrigger("pf_book_zosterophyllum");
     public static final CustomTrigger CLICK_ZYGOPTERIDACEAE = new CustomTrigger("pf_book_zygopteridaceae");
+    public static final CustomTrigger CLICK_SYMPLOCOPTERIS = new CustomTrigger("pf_book_symplocopteris");
     public static final CustomTrigger CLICK_ZYGOPTERIS = new CustomTrigger("pf_book_zygopteris");
 
     public static final CustomTrigger CLICK_CEPHALOTAXUS = new CustomTrigger("pf_book_cephalotaxus");
@@ -1623,6 +1625,7 @@ public class ModTriggers
             CLICK_COOKSONIA,
             CLICK_BELLENDENA,
             CLICK_CORDAITES,
+            CLICK_CORDAITES_DRY,
             CLICK_CORNULITIDA,
             CLICK_CORONACOLLINA,
             CLICK_CORUMBELLA,
@@ -1926,6 +1929,7 @@ public class ModTriggers
             CLICK_ZAMITES,
             CLICK_ZOSTEROPHYLLUM,
             CLICK_ZYGOPTERIDACEAE,
+            CLICK_SYMPLOCOPTERIS,
             CLICK_ZYGOPTERIS,
             CLICK_CEPHALOTAXUS,
             CLICK_CUNNINGHAMIA,
