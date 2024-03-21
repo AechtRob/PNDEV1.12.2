@@ -2179,7 +2179,41 @@ public class LepidodendronMod {
 	public static final int ENTITY_ISOXYS = 878;
 	public static final ResourceLocation ISOXYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/isoxys"));
 
-
+	public static final int ENTITY_CAPINATATOR = 879;
+	public static final ResourceLocation CAPINATATOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/capinatator"));
+	public static final int ENTITY_HADRANAX = 880;
+	public static final ResourceLocation HADRANAX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hadranax"));
+	public static final int ENTITY_TIMOREBESTIA = 881;
+	public static final ResourceLocation TIMOREBESTIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/timorebestia"));
+	public static final int ENTITY_MOBULAVERMIS = 882;
+	public static final ResourceLocation MOBULAVERMIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mobulavermis"));
+	public static final int ENTITY_BURGESSIA = 883;
+	public static final ResourceLocation BURGESSIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/burgessia"));
+	public static final int ENTITY_SAPERION = 884;
+	public static final ResourceLocation SAPERION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saperion"));
+	public static final int ENTITY_THULASPIS = 885;
+	public static final ResourceLocation THULASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thulaspis"));
+	public static final int ENTITY_UROKODIA = 886;
+	public static final ResourceLocation UROKODIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urokodia"));
+	public static final int ENTITY_THELXIOPE = 887;
+	public static final ResourceLocation THELXIOPE_SPINOSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope"));
+	public static final ResourceLocation THELXIOPE_SP_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope_sp"));
+	public static final int ENTITY_TITANOKORYS = 888;
+	public static final ResourceLocation TITANOKORYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanokorys"));
+	public static final int ENTITY_ERYMA = 889;
+	public static final ResourceLocation ERYMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eryma"));
+	public static final int ENTITY_PARIOSCORPIO = 890;
+	public static final ResourceLocation PARIOSCORPIO_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parioscorpio"));
+	public static final int ENTITY_NESONEKTRIS = 891;
+	public static final ResourceLocation NESONEKTRIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/nesonektris"));
+	public static final int ENTITY_TANAOCROSSUS = 892;
+	public static final ResourceLocation TANAOCROSSUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanaocrossus"));
+	public static final int ENTITY_EOCHONDROSTEUS = 893;
+	public static final ResourceLocation EOCHONDROSTEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eochondrosteus"));
+	public static final int ENTITY_LIAOSTEUS = 894;
+	public static final ResourceLocation LIAOSTEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/liaosteus"));
+	public static final int ENTITY_KICHKASSIA = 895;
+	public static final ResourceLocation KICHKASSIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kichkassia"));
 
 
 

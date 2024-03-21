@@ -3349,12 +3349,12 @@ public class LepidodendronSorter {
     public static final int scoria = 3345;
     public static final int scoria_polished = 3346;
     public static final int scoria_smooth = 3347;
-    public static final int scorpion_eramoscorpius_raw = 3348;
+    public static final int eramoscorpius_raw = 3348;
     public static final int scorpionfly_raw  = 3349;
     public static final int scorpion_gigantoscorpio_raw = 3350;
     public static final int scorpion_gondwanascorpio_raw = 3351;
     public static final int scorpion_opsieobuthus_raw = 3352;
-    public static final int scorpion_praearcturus_raw = 3353;
+    public static final int praearcturus_raw = 3353;
     public static final int scorpion_pulmonoscorpius_raw = 3354;
     public static final int scutosaurus_raw = 3355;
     public static final int scytophyllum = 3356;
@@ -4262,5 +4262,23 @@ public class LepidodendronSorter {
     public static final int isoxys_raw = 4274;
     public static final int eggs_eramoscorpius = 4275;
     public static final int eggs_praearcturus = 4276;
+    public static final int capinatator_raw = 4292;
+    public static final int hadranax_raw = 4293;
+    public static final int timorebestia_raw = 4294;
+    public static final int mobulavermis_raw = 4295;
+    public static final int burgessia_raw = 4296;
+    public static final int saperion_raw = 4297;
+    public static final int thulaspis_raw = 4298;
+    public static final int urokodia_raw = 4299;
+    public static final int thelxiope_raw = 4300;
+    public static final int thelxiope_sp_raw = 4301;
+    public static final int titanokorys_raw = 4302;
+    public static final int eryma_raw = 4303;
+    public static final int parioscorpio_raw = 4304;
+    public static final int nesonektris_raw = 4305;
+    public static final int tanaocrossus_raw = 4306;
+    public static final int eochondrosteus_raw = 4307;
+    public static final int liaosteus_raw = 4308;
+    public static final int kichkassia_raw = 4309;
 
 }

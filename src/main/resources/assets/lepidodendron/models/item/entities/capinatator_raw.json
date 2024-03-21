@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:items/saperion_icon"
+    "layer0": "paleopedia:items/capinatator_icon"
   },
   "display": {
     "ground": {
