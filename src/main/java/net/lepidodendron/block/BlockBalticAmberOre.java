@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemBalticAmberChunk;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
@@ -67,7 +68,7 @@ public class BlockBalticAmberOre extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;		
 		if (!biomeCriteria)
 			return;
-		int SeaLevel = world.getSeaLevel();
+		int SeaLevel = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ));
 		if (SeaLevel < 1) SeaLevel = 1;
 		if (SeaLevel > 200) SeaLevel = 200;
 		for (int i = 0; i < 8; i++) {

@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -117,11 +118,11 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 
 		minWaterDepth = 1;
 		maxWaterDepth = 6;
-		startHeight = world.getSeaLevel() - maxWaterDepth;
+		startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < 16; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
@@ -138,7 +139,7 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= world.getSeaLevel())) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;

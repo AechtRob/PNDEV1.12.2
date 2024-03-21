@@ -122,7 +122,8 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = 0.6F;
+			//speedBase = 0.6F;
+			speedBase = 0.85F;
 		}
 		return speedBase;
 	}

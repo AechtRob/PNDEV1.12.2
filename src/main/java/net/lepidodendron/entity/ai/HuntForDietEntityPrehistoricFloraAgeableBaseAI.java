@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -88,7 +89,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     }
                     if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
                         if (isTooDeepforWading(entityChooser)) {
-                            targetOK = false; //Eurypterids and fish don't attack players on land:
+                            targetOK = false;
                         }
                     }
                     if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.entity.getEntityBoundingBox().getAverageEdgeLength() * this.minSize)
@@ -180,7 +181,6 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 
         return this.targetEntity != null;
     }
-
     
     @Override
     public boolean shouldContinueExecuting() {
@@ -325,16 +325,7 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
         else if (!entity.isInWater()) {
             return false;
         }
-        int i = 0;
-        BlockPos pos = entity.getPosition();
-        while (pos.down(i).getY() >= 0 && this.entity.world.getBlockState(pos.down(i)).getMaterial() == Material.WATER) {
-            i++;
-        }
-        i = i - 1;
-        if (pos.down(i).getY() <= 0) {
-            return true;
-        }
-        return !((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, pos.down(i), null);
+        return (PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, entity.getPosition()));
     }
 
     public boolean isInWaterforHunting(Entity entity) {

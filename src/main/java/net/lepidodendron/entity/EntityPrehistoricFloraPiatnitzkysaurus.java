@@ -122,7 +122,8 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = 0.62F;
+			//speedBase = 0.62F;
+			speedBase = 0.85F;
 		}
 		return speedBase;
 	}

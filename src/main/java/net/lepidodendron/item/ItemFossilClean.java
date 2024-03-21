@@ -54,7 +54,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_gargoyleosaurus_clean","inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_proceratosaurus_clean","inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_shunosaurus_clean","inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_wukongopterus_clean","inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_wukongopterus_gendered_clean","inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_camptosaurus_clean","inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_rhamphorhynchus_clean","inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pterodactylus_clean","inventory"),

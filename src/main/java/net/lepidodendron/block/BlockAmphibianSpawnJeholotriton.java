@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
@@ -62,7 +63,7 @@ public class BlockAmphibianSpawnJeholotriton extends ElementsLepidodendronMod.Mo
 
 		int minWaterDepth = 1;
 		int waterDepthCheckMax = 10;
-		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - waterDepthCheckMax;
 		for (int i = 0; i < (int) 1; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
@@ -71,7 +72,7 @@ public class BlockAmphibianSpawnJeholotriton extends ElementsLepidodendronMod.Mo
 			if (biome instanceof BiomeJurassic) {
 				BiomeJurassic biomeC = (BiomeJurassic) biome;
 				if (biomeC.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-					|| biomeC.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo) {
+					|| biomeC.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

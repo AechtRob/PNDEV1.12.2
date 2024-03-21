@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -24,7 +25,7 @@ public class LandEntitySwimmingAI extends EntityAIBase
         this.jumpsInWater = jumpsInWater;
         this.setMutexBits(4);
 
-        if (entityIn.getNavigator() instanceof PathNavigateGroundNoWater)
+        if (entityIn.getNavigator() instanceof PathNavigateGroundNoWater || entityIn.getNavigator() instanceof PathNavigateGroundNoDeepWater)
         {
             if (entityIn.getNavigator() instanceof PathNavigateGround) {
                 ((PathNavigateGround) entityIn.getNavigator()).setCanSwim(true);

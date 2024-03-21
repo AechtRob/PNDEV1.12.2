@@ -67,6 +67,11 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public int getTalkInterval() {
+		return 320;
+	}
+
+	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
@@ -76,7 +81,7 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public boolean isAnimationDirectionLocked(Animation animation) {
-		return animation == SCRATCH_ANIMATION || animation == ROAR_ANIMATION || animation == STAND_ANIMATION
+		return animation == SCRATCH_ANIMATION || animation == STAND_ANIMATION
 				|| super.isAnimationDirectionLocked(animation);
 	}
 
@@ -163,13 +168,12 @@ public class EntityPrehistoricFloraProceratosaurus extends EntityPrehistoricFlor
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.32F;
+		float speedBase = 0.36F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-				|| this.getAnimation() == STAND_ANIMATION || this.getAnimation() == SCRATCH_ANIMATION
-				|| this.getAnimation() == ROAR_ANIMATION) {
+				|| this.getAnimation() == STAND_ANIMATION || this.getAnimation() == SCRATCH_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {

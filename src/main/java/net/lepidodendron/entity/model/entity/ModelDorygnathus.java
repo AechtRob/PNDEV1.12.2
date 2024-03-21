@@ -562,16 +562,42 @@ public class ModelDorygnathus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.5F;
+        this.root.offsetY = -1.6F;
         this.root.offsetX = 0F;
-        this.root.rotateAngleY = (float)Math.toRadians(130);
+        this.root.rotateAngleY = (float)Math.toRadians(132);
         this.root.rotateAngleX = (float)Math.toRadians(10);
         this.root.rotateAngleZ = (float)Math.toRadians(2);
         this.root.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 1.55F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(chest, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(body1, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(head, 0.6F, 0.1F, 0.2F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegright, 0.4F, 0.0F, 1.3F);
+        this.setRotateAngle(lowerlegright, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(upperlegleft, 0.4F, 0.0F, -1.3F);
+        this.setRotateAngle(lowerlegleft, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(footleft, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(wingleft1, -0.0F, 0.0F, -0.6F);
+        this.setRotateAngle(wingleft2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(wingleft3, -1.5F, 0.0F, 0.5F);
+        this.setRotateAngle(wingleft4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(handleft, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(wingright1, 0.0F, 0.0F, 0.6F);
+        this.setRotateAngle(wingright2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(wingright3, -1.5F, 0.0F, -0.5F);
+        this.setRotateAngle(wingright4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(handright, 0.0F,0.0F, 1.5F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

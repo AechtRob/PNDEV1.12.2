@@ -23,9 +23,10 @@ public class RenderDimorphodon extends RenderLiving<EntityPrehistoricFloraDimorp
 
     @Override
     public void doRender(EntityPrehistoricFloraDimorphodon entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
-        if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
+        try {
+            StackTraceElement[] elements = new Throwable().getStackTrace();
+            String  callerClass = elements[4].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
             GlStateManager.enableAlpha();
@@ -49,6 +50,11 @@ public class RenderDimorphodon extends RenderLiving<EntityPrehistoricFloraDimorp
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
 

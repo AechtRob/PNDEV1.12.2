@@ -5,6 +5,7 @@ import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.WorldGenPrototaxites;
 import net.minecraft.block.Block;
@@ -78,7 +79,7 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		//Just an *additional* spawner for mushroom biomes:
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = true;

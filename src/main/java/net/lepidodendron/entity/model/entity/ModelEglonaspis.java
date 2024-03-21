@@ -195,6 +195,18 @@ public class ModelEglonaspis extends AdvancedModelBase {
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(body, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.1F, 0.1F, 0.0F);
+        this.head.offsetZ = -0.0F;
+        this.head.offsetY = -0.16F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

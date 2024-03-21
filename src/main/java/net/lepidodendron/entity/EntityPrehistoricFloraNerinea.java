@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNerinea;
 import net.minecraft.block.Block;
@@ -41,6 +42,11 @@ public class EntityPrehistoricFloraNerinea extends EntityPrehistoricFloraSlither
 	public EntityPrehistoricFloraNerinea(World world) {
 		super(world, 26);
 		setSize(0.2F, 0.2F);
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override

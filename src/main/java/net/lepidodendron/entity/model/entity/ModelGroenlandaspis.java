@@ -228,6 +228,18 @@ public class ModelGroenlandaspis extends AdvancedModelBase {
         this.Groenlandaspis.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Groenlandaspis, 0.3F, 0.2F, 0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1F, 0.0F);
+        this.Groenlandaspis.offsetY = -0.05F;
+        this.Groenlandaspis.offsetX = -0.0F;
+        this.Groenlandaspis.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

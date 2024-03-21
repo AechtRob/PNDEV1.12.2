@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.lepidodendron.util.Functions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -134,13 +135,13 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
     }
 
     public boolean cantReachItem(Entity item) {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase && (!(this.entity instanceof EntityPrehistoricFloraLandWadingBase))) {
-            if (item.isInWater()) {
+        if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
+            if (item.isInWater() && (PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, item.getPosition()))) {
                 return true;
             }
         }
-        if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
-            if (item.isInWater() && !(((EntityPrehistoricFloraLandWadingBase)this.entity).isBlockWadable(this.entity.world, item.getPosition(), (EntityPrehistoricFloraLandWadingBase)this.entity))) {
+        else if (this.entity instanceof EntityPrehistoricFloraLandBase && (!(this.entity instanceof EntityPrehistoricFloraLandWadingBase))) {
+            if (item.isInWater()) {
                 return true;
             }
         }

@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEffigia;
-import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.model.entity.ModelEffigia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
@@ -27,9 +26,10 @@ public class RenderEffigia extends RenderLiving<EntityPrehistoricFloraEffigia> {
         return RenderEffigia.TEXTURE;
     }
     public void doRender(EntityPrehistoricFloraEffigia entity, double x, double y, double z, float entityYaw, float partialTicks) {
-        @SuppressWarnings("deprecation")
-        Class clazz = sun.reflect.Reflection.getCallerClass(4);
-        if (clazz.getName().equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
+        try {
+            StackTraceElement[] elements = new Throwable().getStackTrace();
+            String  callerClass = elements[4].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
             GlStateManager.pushMatrix();
             GlStateManager.disableCull();
             GlStateManager.enableAlpha();
@@ -53,6 +53,11 @@ public class RenderEffigia extends RenderLiving<EntityPrehistoricFloraEffigia> {
         }
         else {
             super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
         }
     }
     @Override

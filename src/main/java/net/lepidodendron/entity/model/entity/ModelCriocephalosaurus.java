@@ -302,7 +302,7 @@ public class ModelCriocephalosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r1, -0.0436F, 0.0F, 0.0F);
         this.setRotateAngle(chest, 0.0F, 0.1745F, 0.0873F);
         this.setRotateAngle(body, 0.0F, 0.1745F, 0.0436F);
-        this.root.offsetY = -0.155F;
+        this.root.offsetY = -0.133F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }

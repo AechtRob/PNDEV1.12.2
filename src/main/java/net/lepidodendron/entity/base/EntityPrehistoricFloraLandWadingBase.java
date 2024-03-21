@@ -4,32 +4,28 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
-import net.lepidodendron.entity.util.PathNavigateAmphibian;
-import net.lepidodendron.entity.util.PathNavigateGroundWade;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
+import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.MaterialLatex;
+import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
-import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.pathfinding.NodeProcessor;
-import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ReportedException;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.*;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import javax.annotation.Nullable;
 
 public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehistoricFloraLandBase {
 
@@ -41,14 +37,19 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     public EntityPrehistoricFloraLandWadingBase(World world) {
         super(world);
         if (world != null) {
-            if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
-                this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
+            if (this.isSwimmingInWater() && this.canSwim()) {
+                if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.SwimmingMoveHelper))
+                        || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
+                    this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
+                    this.navigator = new PathNavigateSwimmerTopLayer(this, world);
+                }
             }
-            if (isBlockWadable(this.world, this.getPosition(), this) && (!(this.navigator instanceof PathNavigateGroundWade))) {
-                this.navigator = new PathNavigateGroundWade(this, world);
-            }
-            else if ((!(isBlockWadable(this.world, this.getPosition(), this))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
-                this.navigator = new PathNavigateAmphibian(this, world);
+            else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
+                if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.WanderMoveHelper))
+                        || (!(this.navigator instanceof PathNavigateGroundNoDeepWater))) {
+                    this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
+                    this.navigator = new PathNavigateGroundNoDeepWater(this, world);
+                }
             }
         }
         this.setPathPriority(PathNodeType.WATER, 10F);
@@ -61,16 +62,21 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     
     @Override
     public void selectNavigator () {
-        if (!(this.moveHelper instanceof EntityPrehistoricFloraLandWadingBase.WanderMoveHelper)) {
-            this.moveHelper = new EntityPrehistoricFloraLandWadingBase.WanderMoveHelper();
+        if (this.isSwimmingInWater() && this.canSwim()) {
+            if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.SwimmingMoveHelper))
+                    || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
+                this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
+                this.navigator = new PathNavigateSwimmerTopLayer(this, world);
+            }
         }
-        if (isBlockWadable(this.world, this.getPosition(), this) && (!(this.navigator instanceof PathNavigateGroundWade))) {
-            this.navigator = new PathNavigateGroundWade(this, world);
+
+        else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
+            if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.WanderMoveHelper))
+                    || (!(this.navigator instanceof PathNavigateGroundNoDeepWater))) {
+                this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
+                this.navigator = new PathNavigateGroundNoDeepWater(this, world);
+            }
         }
-        else if ((!(isBlockWadable(this.world, this.getPosition(), this))) && (!(this.navigator instanceof PathNavigateAmphibian))) {
-            this.navigator = new PathNavigateAmphibian(this, world);
-        }
-        this.setPathPriority(PathNodeType.WATER, 10F);
     }
 
     @Override
@@ -80,14 +86,7 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
 
     @Override
     public boolean isSwimmingInWater() {
-        return false;
-    }
-
-    public abstract int wadeDepth();
-
-    @Override
-    public int getMaxFallHeight() {
-        return 4;
+        return PathNavigateGroundNoDeepWater.isUnacceptableWater(this);
     }
 
     @Override
@@ -169,57 +168,6 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         }
 
         return false;
-    }
-
-    public boolean isBlockWadable(IBlockAccess world, BlockPos pos, @Nullable EntityPrehistoricFloraLandWadingBase entityIn) {
-        if (world instanceof World) {
-            if (!((World) world).isBlockLoaded(pos)) {
-                return false;
-            }
-        }
-        //First we need to go downwards and start from the bottom as mobs sink, provided the mob is not already at the bottom:
-        if (entityIn != null) {
-            if (!entityIn.onGround) {
-                int yy = 0;
-                while (pos.add(0, -yy, 0).getY() > 0) {
-                    if (world.getBlockState(pos.add(0, -yy, 0)).getMaterial().blocksMovement()) {
-                        break;
-                    }
-                    yy++;
-                }
-                if (yy > 0) {
-                    pos = pos.add(0, -(yy - 1), 0);
-                }
-            }
-        }
-        else {
-            int yy = 0;
-            while (pos.add(0, -yy, 0).getY() > 0) {
-                if (world.getBlockState(pos.add(0, -yy, 0)).getMaterial().blocksMovement()) {
-                    break;
-                }
-                yy++;
-            }
-            if (yy > 0) {
-                pos = pos.add(0, -(yy - 1), 0);
-            }
-        }
-        if (world.getBlockState(pos).getMaterial() != Material.WATER) {
-            return true;
-        }
-        boolean flag = false;
-        for (int i = 1; i <= this.wadeDepth() ; i++) {
-            IBlockState state = world.getBlockState(pos.up(i));
-            if (state.getMaterial() != Material.WATER
-                    && state.getMaterial() != Material.LAVA
-                    && state.getBlock().isPassable(world, pos.up(i))) {
-                flag = true;
-                if (flag) {
-                    break;
-                }
-            }
-        }
-        return flag;
     }
 
     @Override
@@ -523,6 +471,19 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
     public void travel(float strafe, float vertical, float forward) {
         float f4;
         if (this.isServerWorld()) {
+
+            double yy = this.posY + Math.max((this.getSwimHeight() - 0.2), 0.1);
+            BlockPos posEyes = new BlockPos(this.posX, yy, this.posZ);
+
+            if (this.isSwimmingInWater() &&
+                    (world.getBlockState(posEyes).getMaterial() == Material.WATER
+                            || world.getBlockState(posEyes).getMaterial() == Material.LAVA
+                            || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN
+                            || world.getBlockState(posEyes).getMaterial() == MaterialLatex.LATEX)
+            ) {
+                this.motionY = 0.2D;
+            }
+
             if (isInWater()) {
                 this.moveRelative(strafe, vertical, forward, 0.1F);
                 f4 = 0.8F;
@@ -593,88 +554,6 @@ public abstract class EntityPrehistoricFloraLandWadingBase extends EntityPrehist
         }
         this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
         this.limbSwing += this.limbSwingAmount;
-    }
-
-    public class WanderMoveHelper extends EntityMoveHelper {
-
-        private final EntityPrehistoricFloraLandWadingBase EntityBase = EntityPrehistoricFloraLandWadingBase.this;
-
-        public WanderMoveHelper() {
-            super(EntityPrehistoricFloraLandWadingBase.this);
-        }
-
-        public void onUpdateMoveHelper() {
-            if (this.action == EntityMoveHelper.Action.STRAFE) {
-                float f = (float) this.EntityBase.getAISpeedLand();
-                float f1 = (float) this.speed * f;
-                float f2 = this.moveForward;
-                float f3 = this.moveStrafe;
-                float f4 = MathHelper.sqrt(f2 * f2 + f3 * f3);
-
-                if (f4 < 1.0F) {
-                    f4 = 1.0F;
-                }
-
-                f4 = f1 / f4;
-                f2 = f2 * f4;
-                f3 = f3 * f4;
-                float f5 = MathHelper.sin(this.EntityBase.rotationYaw * 0.017453292F);
-                float f6 = MathHelper.cos(this.EntityBase.rotationYaw * 0.017453292F);
-                float f7 = f2 * f6 - f3 * f5;
-                float f8 = f3 * f6 + f2 * f5;
-                PathNavigate pathnavigate = this.EntityBase.getNavigator();
-
-                if (pathnavigate != null) {
-                    NodeProcessor nodeprocessor = pathnavigate.getNodeProcessor();
-
-                    if (nodeprocessor != null && nodeprocessor.getPathNodeType(this.EntityBase.world, MathHelper.floor(this.EntityBase.posX + (double) f7), MathHelper.floor(this.EntityBase.posY), MathHelper.floor(this.EntityBase.posZ + (double) f8)) != PathNodeType.WALKABLE) {
-                        this.moveForward = 1.0F;
-                        this.moveStrafe = 0.0F;
-                        f1 = f;
-                    }
-                }
-
-                this.EntityBase.setAIMoveSpeed(f1);
-                this.EntityBase.setMoveForward(this.moveForward);
-                this.EntityBase.setMoveStrafing(this.moveStrafe);
-                this.action = EntityMoveHelper.Action.WAIT;
-            } else if (this.action == EntityMoveHelper.Action.MOVE_TO) {
-                this.action = EntityMoveHelper.Action.WAIT;
-                double d0 = this.posX - this.EntityBase.posX;
-                double d1 = this.posZ - this.EntityBase.posZ;
-                double d2 = this.posY - this.EntityBase.posY;
-                double d3 = d0 * d0 + d2 * d2 + d1 * d1;
-
-                if (d3 < 2.500000277905201E-7D) {
-                    this.EntityBase.setMoveForward(0.0F);
-                    return;
-                }
-
-                float turn = (EntityBase.getgetMaxTurnDistancePerTick());
-                float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
-                //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getAISpeedLand()));
-
-                this.EntityBase.setAIMoveSpeed((float) (0.4f * this.speed * this.EntityBase.getAISpeedLand()));
-
-                //Testing mode:
-                //this.EntityBase.setAIMoveSpeed(0f);
-
-                if (d2 > (double) this.EntityBase.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.EntityBase.width)) {
-                    this.EntityBase.getJumpHelper().setJumping();
-                    this.action = EntityMoveHelper.Action.JUMPING;
-                    //System.err.println("Set jump 4");
-                }
-            } else if (this.action == EntityMoveHelper.Action.JUMPING) {
-                this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getAISpeedLand()));
-
-                if (this.EntityBase.onGround) {
-                    this.action = EntityMoveHelper.Action.WAIT;
-                }
-            } else {
-                this.EntityBase.setMoveForward(0.0F);
-            }
-        }
     }
     
 }

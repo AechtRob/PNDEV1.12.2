@@ -375,7 +375,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.15;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -406,6 +406,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 		}
 		return RenderFalcatus.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 	@Nullable
 	@Override

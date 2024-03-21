@@ -249,7 +249,7 @@ public class ModelChinlea extends AdvancedModelBase {
         this.setRotateAngle(pectoralfinR, -0.6981F, -0.2618F, 0.2618F);
         this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, -0.3491F);
         this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, 0.3491F);
-        this.head.offsetY = -0.6F;
+        this.head.offsetY = -0.2F;
         this.head.render(0.01F);
         resetToDefaultPose();
     }

@@ -170,6 +170,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_COOKSONIA = new CustomTrigger("pf_book_cooksonia");
     public static final CustomTrigger CLICK_BELLENDENA = new CustomTrigger("pf_book_bellendena");
     public static final CustomTrigger CLICK_CORDAITES = new CustomTrigger("pf_book_cordaites");
+    public static final CustomTrigger CLICK_CORDAITES_DRY = new CustomTrigger("pf_book_cordaites_dry");
     public static final CustomTrigger CLICK_CORNULITIDA = new CustomTrigger("pf_book_cornulitida");
     public static final CustomTrigger CLICK_CORONACOLLINA = new CustomTrigger("pf_book_coronacollina");
     public static final CustomTrigger CLICK_CORUMBELLA = new CustomTrigger("pf_book_corumbella");
@@ -327,6 +328,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NEMATOPHYTA = new CustomTrigger("pf_book_nematophyta");
     public static final CustomTrigger CLICK_NEMEJCOPTERIS = new CustomTrigger("pf_book_nemejcopteris");
     public static final CustomTrigger CLICK_NEOCALAMITES = new CustomTrigger("pf_book_neocalamites");
+    public static final CustomTrigger CLICK_ARCHAEOCALAMITES = new CustomTrigger("pf_book_archaeocalamites");
     public static final CustomTrigger CLICK_NEUROPTERIDIUM = new CustomTrigger("pf_book_neuropteridium");
     public static final CustomTrigger CLICK_NILSSONIA = new CustomTrigger("pf_book_nilssonia");
     public static final CustomTrigger CLICK_NILSSONIOCLADUS = new CustomTrigger("pf_book_nilssoniocladus");
@@ -416,6 +418,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPACIINODUM = new CustomTrigger("pf_book_spaciinodum");
     public static final CustomTrigger CLICK_SPHENOBAIERA = new CustomTrigger("pf_book_sphenobaiera");
     public static final CustomTrigger CLICK_SPHENOPTERIS = new CustomTrigger("pf_book_sphenopteris");
+    public static final CustomTrigger CLICK_SPHENOPTERIS_FERN = new CustomTrigger("pf_book_sphenopteris_fern");
+    public static final CustomTrigger CLICK_SPHENOPTERIS_SEED = new CustomTrigger("pf_book_sphenopteris_seed");
     public static final CustomTrigger CLICK_SPINY_CYCAD = new CustomTrigger("pf_book_spiny_cycad");
     public static final CustomTrigger CLICK_SPRUCE = new CustomTrigger("pf_book_spruce");
     public static final CustomTrigger CLICK_STAUROPTERIS = new CustomTrigger("pf_book_stauropteris");
@@ -471,6 +475,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ZAMITES = new CustomTrigger("pf_book_zamites");
     public static final CustomTrigger CLICK_ZOSTEROPHYLLUM = new CustomTrigger("pf_book_zosterophyllum");
     public static final CustomTrigger CLICK_ZYGOPTERIDACEAE = new CustomTrigger("pf_book_zygopteridaceae");
+    public static final CustomTrigger CLICK_SYMPLOCOPTERIS = new CustomTrigger("pf_book_symplocopteris");
     public static final CustomTrigger CLICK_ZYGOPTERIS = new CustomTrigger("pf_book_zygopteris");
 
     public static final CustomTrigger CLICK_CEPHALOTAXUS = new CustomTrigger("pf_book_cephalotaxus");
@@ -1529,6 +1534,7 @@ public class ModTriggers
             CLICK_COOKSONIA,
             CLICK_BELLENDENA,
             CLICK_CORDAITES,
+            CLICK_CORDAITES_DRY,
             CLICK_CORNULITIDA,
             CLICK_CORONACOLLINA,
             CLICK_CORUMBELLA,
@@ -1686,6 +1692,7 @@ public class ModTriggers
             CLICK_NEMATOPHYTA,
             CLICK_NEMEJCOPTERIS,
             CLICK_NEOCALAMITES,
+            CLICK_ARCHAEOCALAMITES,
             CLICK_NEUROPTERIDIUM,
             CLICK_NILSSONIA,
             CLICK_NILSSONIOCLADUS,
@@ -1775,6 +1782,8 @@ public class ModTriggers
             CLICK_SPACIINODUM,
             CLICK_SPHENOBAIERA,
             CLICK_SPHENOPTERIS,
+            CLICK_SPHENOPTERIS_FERN,
+            CLICK_SPHENOPTERIS_SEED,
             CLICK_SPINY_CYCAD,
             CLICK_SPRUCE,
             CLICK_STAUROPTERIS,
@@ -1830,6 +1839,7 @@ public class ModTriggers
             CLICK_ZAMITES,
             CLICK_ZOSTEROPHYLLUM,
             CLICK_ZYGOPTERIDACEAE,
+            CLICK_SYMPLOCOPTERIS,
             CLICK_ZYGOPTERIS,
             CLICK_CEPHALOTAXUS,
             CLICK_CUNNINGHAMIA,

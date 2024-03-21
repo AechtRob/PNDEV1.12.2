@@ -255,6 +255,19 @@ public class ModelFeroxichthys extends AdvancedModelBase {
         this.Feroxichthys.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Feroxichthys, -0.1F, -0.0F, 0.05F);
+        this.setRotateAngle(body, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.Feroxichthys.offsetZ = 0.02F;
+        this.Feroxichthys.offsetY = 0.1F;
+        this.Feroxichthys.offsetX = 0.002F;
+        this.Feroxichthys.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

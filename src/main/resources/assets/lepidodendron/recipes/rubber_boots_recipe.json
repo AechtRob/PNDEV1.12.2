@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "3 5",
+    "6 8"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:rubber"
+    },
+    "5": {
+      "item": "lepidodendron:rubber"
+    },
+    "6": {
+      "item": "lepidodendron:rubber"
+    },
+    "8": {
+      "item": "lepidodendron:rubber"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:rubber_boots",
+    "count": 1
+  }
+}
