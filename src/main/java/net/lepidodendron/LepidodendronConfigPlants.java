@@ -1561,6 +1561,7 @@ public class LepidodendronConfigPlants {
     public static String[] genPalaeognetaleanaOverrideBiomes = new String[0];
     public static int[] dimPalaeognetaleana = new int[]{0};
     public static boolean genOdontopterisLepidodendron = false;
+    public static boolean genOdontopterisSynchysidendron = false;
     public static boolean genOdontopterisLepidophloios = false;
     public static boolean genOdontopterisDiaphorodendron = false;
     public static boolean genOdontopterisCordaites = false;
@@ -11984,6 +11985,10 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Odontopteris", "genOdontopterisLepidodendron", genOdontopterisLepidodendron);
         prop.setComment("Set to true to generate Odontopteris naturally on Lepidodendron trees [default: false]");
         genOdontopterisLepidodendron = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Odontopteris", "genOdontopterisSynchysidendron", genOdontopterisSynchysidendron);
+        prop.setComment("Set to true to generate Odontopteris naturally on Synchysidendron trees [default: false]");
+        genOdontopterisSynchysidendron = prop.getBoolean();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Odontopteris", "genOdontopterisLepidophloios", genOdontopterisLepidophloios);
         prop.setComment("Set to true to generate Odontopteris naturally on Lepidophloios trees [default: false]");

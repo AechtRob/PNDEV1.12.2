@@ -67,7 +67,19 @@ public class ProcedureWorldGenLepidodendron extends ElementsLepidodendronMod.Mod
 		
 		if (((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))) ||
 			(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
-			 && (world.canSeeSky(new BlockPos((int) x, (int) y + 1, (int) z))))) {	
+			 && (world.canSeeSky(new BlockPos((int) x, (int) y + 1, (int) z)))) ||
+				(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
+						&& ((world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z))).getMaterial() == Material.WATER)
+						&& (world.canSeeSky(new BlockPos((int) x, (int) y + 2, (int) z)))) ||
+				(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
+						&& ((world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z))).getMaterial() == Material.WATER)
+						&& ((world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z))).getMaterial() == Material.WATER)
+						&& (world.canSeeSky(new BlockPos((int) x, (int) y + 3, (int) z)))) ||
+				(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
+						&& ((world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z))).getMaterial() == Material.WATER)
+						&& ((world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z))).getMaterial() == Material.WATER)
+						&& ((world.getBlockState(new BlockPos((int) x, (int) y + 3, (int) z))).getMaterial() == Material.WATER)
+						&& (world.canSeeSky(new BlockPos((int) x, (int) y + 4, (int) z))))) {
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockWoodenLog.block.getDefaultState(), 3);
 			
@@ -266,6 +278,9 @@ public class ProcedureWorldGenLepidodendron extends ElementsLepidodendronMod.Mod
 				block = world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)), world,
 						new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z))) {
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z), BlockWoodenLog.block.getDefaultState(), 3);
+				}
+				else if (world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)).getMaterial() == Material.WATER) {
 					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z), BlockWoodenLog.block.getDefaultState(), 3);
 				}
 				counter = (double) ((counter) + 1);
