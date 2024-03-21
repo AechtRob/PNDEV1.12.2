@@ -1,9 +1,8 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.procedure.ProcedureWorldGenLepidodendron;
-import net.lepidodendron.procedure.ProcedureWorldGenLepidodendronYoung1;
-import net.lepidodendron.procedure.ProcedureWorldGenLepidodendronYoung2;
+import net.lepidodendron.procedure.ProcedureWorldGenSynchysidendron;
+import net.lepidodendron.procedure.ProcedureWorldGenSynchysidendronYoung;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,10 +14,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenLepidodendronTree extends WorldGenAbstractTree
+public class WorldGenSynchysidendronTree extends WorldGenAbstractTree
 {
 
-    public WorldGenLepidodendronTree(boolean notify)
+    public WorldGenSynchysidendronTree(boolean notify)
     {
         super(notify);
     }
@@ -174,13 +173,10 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
                         $_dependencies.put("vines", false);
                     }
                     if (rand.nextInt(14) == 0) {
-                        ProcedureWorldGenLepidodendronYoung1.executeProcedure($_dependencies);
-                    }
-                    else if (rand.nextInt(14) == 0) {
-                        ProcedureWorldGenLepidodendronYoung2.executeProcedure($_dependencies);
+                        ProcedureWorldGenSynchysidendronYoung.executeProcedure($_dependencies);
                     }
                     else {
-                        ProcedureWorldGenLepidodendron.executeProcedure($_dependencies);
+                        ProcedureWorldGenSynchysidendron.executeProcedure($_dependencies);
                     }
                     return true;
                 }
