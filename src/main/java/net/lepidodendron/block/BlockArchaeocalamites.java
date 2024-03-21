@@ -105,6 +105,11 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_hills")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")
 			) {
 				biomeCriteria = true;
 			}
@@ -126,6 +131,11 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCarboniferous
 		){
 			GenChance = 72;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
+		){
+			GenChance = 225;
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")
@@ -435,7 +445,7 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        	tooltip.add("Periods: [Carboniferous (?) -] Permian - Triassic - Jurassic");
+	        	tooltip.add("Periods: Carboniferous [- Permian]");
 	        	tooltip.add("Note: Can be planted in water or on land");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
