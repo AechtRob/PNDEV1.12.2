@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/synchysidendron_sporangia",
+    "particle": "lepidodendron:blocks/synchysidendron_sporangia"
+  }
+}
