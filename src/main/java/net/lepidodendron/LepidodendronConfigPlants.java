@@ -2385,6 +2385,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightNeocalamites = 90;
     public static double multiplierNeocalamites = 1;
 
+    public static boolean genArchaeocalamites = false;
+    public static String[] genArchaeocalamitesBlacklistBiomes = new String[0];
+    public static String[] genArchaeocalamitesOverrideBiomes = new String[0];
+    public static int[] dimArchaeocalamites = new int[]{0};
+    public static int minheightArchaeocalamites = 55;
+    public static int maxheightArchaeocalamites = 90;
+    public static double multiplierArchaeocalamites = 1;
+
     public static boolean genPhyllotheca = false;
     public static String[] genPhyllothecaBlacklistBiomes = new String[0];
     public static String[] genPhyllothecaOverrideBiomes = new String[0];
@@ -10549,6 +10557,33 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Omphalophloios", "multiplierOmphalophloios", multiplierOmphalophloios);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierOmphalophloios = prop.getDouble();
+
+        prop = cfg.get("WorldGen Archaeocalamites", "genArchaeocalamites", genArchaeocalamites);
+        prop.setComment("Set to true to generate Archaeocalamites naturally [default: false]");
+        genArchaeocalamites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Archaeocalamites", "genArchaeocalamitesBlacklistBiomes", genArchaeocalamitesBlacklistBiomes);
+        prop.setComment("List of biomes Archaeocalamites are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genArchaeocalamitesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Archaeocalamites", "genArchaeocalamitesOverrideBiomes", genArchaeocalamitesOverrideBiomes);
+        prop.setComment("List of biomes Archaeocalamites are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genArchaeocalamitesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Archaeocalamites", "dimArchaeocalamites", dimArchaeocalamites);
+        prop.setComment("List of dimension IDs Archaeocalamites can generate in [default: 0]");
+        dimArchaeocalamites = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Archaeocalamites", "minheightArchaeocalamites", minheightArchaeocalamites);
+        prop.setComment("Minimum height that Archaeocalamites can generate (1 to 250) [default: 55]");
+        minheightArchaeocalamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Archaeocalamites", "maxheightArchaeocalamites", maxheightArchaeocalamites);
+        prop.setComment("Maximum height that Archaeocalamites can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightArchaeocalamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Archaeocalamites", "multiplierArchaeocalamites", multiplierArchaeocalamites);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierArchaeocalamites = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Neocalamites", "genNeocalamites", genNeocalamites);
