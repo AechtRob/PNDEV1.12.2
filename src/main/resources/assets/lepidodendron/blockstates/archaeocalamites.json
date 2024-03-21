@@ -1,0 +1,9 @@
+{
+    "multipart": [
+		{ 	"apply": { "model": "lepidodendron:archaeocalamites" } },
+    	
+        {   "when": { "water": true },
+            "apply": { "model": "lepidodendron:archaeocalamites_lower_stem" }
+        }
+    ]
+}
