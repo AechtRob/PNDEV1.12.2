@@ -268,8 +268,8 @@ public class ProcedureWorldGenSynchysidendronYoung extends ElementsLepidodendron
 				Functions.setBlockStateAndCheckForDoublePlant(world, new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), BlockSynchysidendronLog.block.getDefaultState(), 3);
 			}
 
-			height = (double) (16) + Math.round((Math.random() * 10) / 2)
-					+ Math.round((Math.random() * 4) / 2);
+			height = (double) (10) + Math.round((Math.random() * 10D) / 2D)
+					+ Math.round((Math.random() * 4D) / 2D);
 			counter = (double) 1;
 			while (((counter) <= (height))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)).getBlock();
@@ -311,10 +311,10 @@ public class ProcedureWorldGenSynchysidendronYoung extends ElementsLepidodendron
 			ProcedureTreeLeaf.executeProcedure(x, y + (int) counter - 1, z + 1, world, BlockSynchysidendronLeaves.block);
 			ProcedureTreeLeaf.executeProcedure(x, y + (int) counter - 1, z - 1, world, BlockSynchysidendronLeaves.block);
 
-			ProcedureTreeLeaf.executeProcedure(x + 1, y + (int) counter - 2, z, world, BlockSynchysidendronLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x - 1, y + (int) counter - 2, z, world, BlockSynchysidendronLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x, y + (int) counter - 2, z + 1, world, BlockSynchysidendronLeaves.block);
-			ProcedureTreeLeaf.executeProcedure(x, y + (int) counter - 2, z - 1, world, BlockSynchysidendronLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x + 1, y + (int) counter - 3, z, world, BlockSynchysidendronLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x - 1, y + (int) counter - 3, z, world, BlockSynchysidendronLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x, y + (int) counter - 3, z + 1, world, BlockSynchysidendronLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x, y + (int) counter - 3, z - 1, world, BlockSynchysidendronLeaves.block);
 
 		}
 	}
