@@ -218,7 +218,8 @@ public class BlockAngiopteris extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return INFINITE_EXTENT_AABB;
+			return new AxisAlignedBB(pos.north(7).west(7), pos.add(8, 4, 8));
+			//return INFINITE_EXTENT_AABB;
 		}
 
 	}
