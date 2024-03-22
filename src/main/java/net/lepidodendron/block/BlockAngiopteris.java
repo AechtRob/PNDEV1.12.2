@@ -87,6 +87,11 @@ public class BlockAngiopteris extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("angiopteris");
 		}
 
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(pos.add(-2, 0, -2), pos.add(2, 3, 2));
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
