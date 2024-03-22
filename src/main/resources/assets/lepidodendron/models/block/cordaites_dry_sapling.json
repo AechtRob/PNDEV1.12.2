@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/cordaites_sapling_dry",
+    "particle": "lepidodendron:blocks/cordaites_sapling_dry"
+  }
+}
