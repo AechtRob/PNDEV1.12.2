@@ -147,7 +147,8 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeCarb.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean
+				&& biomeCarb.getBiomeType() != EnumBiomeTypeCarboniferous.Volcanic) {
 				biomeCriteria = true;
 			}
 			else {
