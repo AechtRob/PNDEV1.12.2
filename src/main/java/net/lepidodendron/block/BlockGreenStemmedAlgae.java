@@ -142,6 +142,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_polar")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal_black")

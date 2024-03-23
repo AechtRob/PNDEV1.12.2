@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -157,6 +156,7 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_polar")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal_black")

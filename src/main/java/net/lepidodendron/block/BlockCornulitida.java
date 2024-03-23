@@ -162,7 +162,8 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
-			if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean
+					&& biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = false;
 			}
 		}

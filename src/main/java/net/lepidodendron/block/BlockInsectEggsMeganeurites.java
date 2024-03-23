@@ -67,7 +67,8 @@ public class BlockInsectEggsMeganeurites extends ElementsLepidodendronMod.ModEle
 			if (biome instanceof BiomeCarboniferous) {
 				BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
 				if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean
-						&& biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ice) {
+						&& biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ice
+						&& biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Bay) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
