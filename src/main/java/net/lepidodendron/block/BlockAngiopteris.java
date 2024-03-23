@@ -89,7 +89,7 @@ public class BlockAngiopteris extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(pos.add(-2, 0, -2), pos.add(2, 3, 2));
+			return new AxisAlignedBB(-0.5D, 0D, -0.5D, 1.5D, 2.0D, 1.5D);
 		}
 
 		@Nullable
@@ -223,7 +223,7 @@ public class BlockAngiopteris extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return new AxisAlignedBB(pos.north(7).west(7), pos.add(8, 4, 8));
+			return new AxisAlignedBB(pos.north(7).west(7), pos.add(8, 5, 8));
 			//return INFINITE_EXTENT_AABB;
 		}
 
