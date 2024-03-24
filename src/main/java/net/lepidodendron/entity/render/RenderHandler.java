@@ -5499,6 +5499,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRibCage.TileEntityCustom.class, new RenderRibCage());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockBatHead.TileEntityCustom.class, new RenderBatHead());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSauroSkeleton.TileEntityCustom.class, new RenderSauroSkeleton());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockAngiopteris.TileEntityAngiopteris.class, new RenderAngiopteris());
 
 
     }
