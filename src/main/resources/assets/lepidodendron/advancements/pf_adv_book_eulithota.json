@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:eulithota_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_eulithota.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_eulithota.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_eulithota"
+		}
+	}
+}

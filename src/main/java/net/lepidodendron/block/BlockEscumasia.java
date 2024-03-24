@@ -88,6 +88,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
+		//whitelist dimensions
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 			dimensionCriteria = true;
@@ -104,6 +105,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = false;
 		}
+		//it goes into these dimensions
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 		) {
 			dimensionCriteria = true;
@@ -122,6 +124,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
+		//which biomes does it generate in?
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
