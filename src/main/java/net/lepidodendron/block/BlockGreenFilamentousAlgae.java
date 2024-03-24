@@ -97,7 +97,8 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ice) {
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ice
+					|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = false;
 			}
 		}

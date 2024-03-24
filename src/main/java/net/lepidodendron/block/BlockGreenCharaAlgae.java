@@ -126,7 +126,8 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+				|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = false;
 			}
 			else {
