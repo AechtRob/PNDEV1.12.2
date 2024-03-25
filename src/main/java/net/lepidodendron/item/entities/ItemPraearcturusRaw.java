@@ -19,7 +19,7 @@ public class ItemPraearcturusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:praearcturus_raw")
 	public static final Item block = null;
 	public ItemPraearcturusRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.praearcturus_raw);
+		super(instance, LepidodendronSorter.scorpion_praearcturus_raw);
 	}
 
 	@Override

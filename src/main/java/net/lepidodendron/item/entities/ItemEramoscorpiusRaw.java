@@ -19,7 +19,7 @@ public class ItemEramoscorpiusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:eramoscorpius_raw")
 	public static final Item block = null;
 	public ItemEramoscorpiusRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eramoscorpius_raw);
+		super(instance, LepidodendronSorter.scorpion_eramoscorpius_raw);
 	}
 
 	@Override
