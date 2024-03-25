@@ -15,8 +15,8 @@ public class RenderArchaeocydippida extends RenderLiving<EntityPrehistoricFloraA
 
     public RenderArchaeocydippida(RenderManager mgr) {
         super(mgr, new ModelArchaeocydippida(), 0.0f);
-        this.addLayer(new LayerArchaeocydippidaEmissive(this));
         this.addLayer(new LayerArchaeocydippidaBody(this));
+        this.addLayer(new LayerArchaeocydippidaEmissive(this));
 
     }
 

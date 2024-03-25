@@ -613,8 +613,14 @@ public class ModelCtenorhabdotus extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
+
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
+
+        GlStateManager.disableBlend();
 
     }
     public void renderStatic(float f) {
@@ -677,6 +683,7 @@ public class ModelCtenorhabdotus extends AdvancedModelBaseExtended {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);        this.resetToDefaultPose();
         EntityPrehistoricFloraCtenorhabdotus ee = (EntityPrehistoricFloraCtenorhabdotus) entitylivingbaseIn;
+        this.main.scaleChildren = true;
         if (ee.isReallyInWater()) {
             animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
@@ -1119,7 +1126,9 @@ public class ModelCtenorhabdotus extends AdvancedModelBaseExtended {
         this.eastlumi14.rotationPointX = this.eastlumi14.rotationPointX + (float)(0.05+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360))*0.05);
         this.eastlumi14.rotationPointY = this.eastlumi14.rotationPointY - (float)(0);
         this.eastlumi14.rotationPointZ = this.eastlumi14.rotationPointZ + (float)(0);
+
     }
+
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraCtenorhabdotus e = (EntityPrehistoricFloraCtenorhabdotus) entity;
         animator.update(entity);

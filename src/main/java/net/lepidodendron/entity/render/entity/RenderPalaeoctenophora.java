@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeoctenophora;
-import net.lepidodendron.entity.model.entity.ModelArchaeocydippida;
 import net.lepidodendron.entity.model.entity.ModelPalaeoctenophora;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -16,8 +15,8 @@ public class RenderPalaeoctenophora extends RenderLiving<EntityPrehistoricFloraP
 
     public RenderPalaeoctenophora(RenderManager mgr) {
         super(mgr, new ModelPalaeoctenophora(), 0.0f);
-        this.addLayer(new LayerPalaeoctenophoraEmissive(this));
         this.addLayer(new LayerPalaeoctenophoraBody(this));
+        this.addLayer(new LayerPalaeoctenophoraEmissive(this));
 
     }
 
