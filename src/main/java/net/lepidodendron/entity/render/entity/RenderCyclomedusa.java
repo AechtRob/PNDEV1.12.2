@@ -1,11 +1,8 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAeger;
 import net.lepidodendron.entity.EntityPrehistoricFloraCyclomedusa;
-import net.lepidodendron.entity.model.entity.ModelCombJelly;
 import net.lepidodendron.entity.model.entity.ModelCyclomedusa;
-import net.lepidodendron.entity.model.entity.ModelPrecambrianJelly;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -34,7 +31,7 @@ public class RenderCyclomedusa extends RenderLiving<EntityPrehistoricFloraCyclom
     protected void preRenderCallback(EntityPrehistoricFloraCyclomedusa entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        //this.shadowSize = entity.width * scale * 0.50F;
     }
 
 }

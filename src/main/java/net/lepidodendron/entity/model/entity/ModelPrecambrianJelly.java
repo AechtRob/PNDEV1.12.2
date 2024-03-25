@@ -3,6 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -43,7 +44,7 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.96F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.90F);
 
         this.main.render(f5);
         GlStateManager.disableBlend();
@@ -61,16 +62,26 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-
-
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
-            this.swing(main, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
-            this.walk(main, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
-            this.flap(main, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
-            this.bob(main, -speed * 0.5F, 0.5F, false, f2, 0.6F);
-            EntityPrehistoricFloraEoandromeda ee = (EntityPrehistoricFloraEoandromeda) e;
-            this.main.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
+            if (e instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+                EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) e;
+                this.main.scaleChildren = true;
+                float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.065F) + 1F;
+                this.main.setScaleZ(scaler);
+                float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.065F);
+                this.main.setScaleX(scaler2 * 0.5F);
+            }
+            else {
+                this.swing(main, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
+                this.walk(main, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
+                this.flap(main, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
+                this.bob(main, -speed * 0.5F, 0.5F, false, f2, 0.6F);
+                if (e instanceof EntityPrehistoricFloraEoandromeda) {
+                    EntityPrehistoricFloraEoandromeda ee = (EntityPrehistoricFloraEoandromeda) e;
+                    this.main.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
+                }
+            }
         }
     }
 }
