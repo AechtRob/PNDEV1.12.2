@@ -34,7 +34,7 @@ public class RenderArchaeocydippida extends RenderLiving<EntityPrehistoricFloraA
     protected void preRenderCallback(EntityPrehistoricFloraArchaeocydippida entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        //this.shadowSize = entity.width * scale * 0.50F;
     }
 
 }
