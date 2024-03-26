@@ -566,7 +566,7 @@ public class ModelArchaeocydippida extends AdvancedModelBaseExtended {
 
         //this.body.offsetZ = this.moveBoxExtended(speed, 1F, false, 3.5F, f2, 1) + offsetZ;
 
-        
+
 //        this.Armbase.scaleChildren = false;
 //        this.Armbase.setScaleY(1.0F);
 //        this.Armbase2.scaleChildren = false;
