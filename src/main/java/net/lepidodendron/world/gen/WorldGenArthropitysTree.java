@@ -83,6 +83,10 @@ public class WorldGenArthropitysTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
+                    $_dependencies.put("worldgen", true);
+                    $_dependencies.put("parentx", position.getX());
+                    $_dependencies.put("parenty", position.getY());
+                    $_dependencies.put("parentz", position.getZ());
                     $_dependencies.put("vines", true);
 					$_dependencies.put("SaplingSpawn", false);
 					ProcedureWorldGenArthropitys.executeProcedure($_dependencies);

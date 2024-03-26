@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:arthropitys_rhizome"
+    },
+    "facing=north": {
+      "model": "lepidodendron:arthropitys_rhizome",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:arthropitys_rhizome",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:arthropitys_rhizome",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "lepidodendron:arthropitys_rhizome",
+      "x": 90,
+      "y": 270
+    },
+    "facing=up": {
+      "model": "lepidodendron:arthropitys_rhizome"
+    },
+    "facing=down": {
+      "model": "lepidodendron:arthropitys_rhizome",
+      "y": 180
+    }
+  }
+}
