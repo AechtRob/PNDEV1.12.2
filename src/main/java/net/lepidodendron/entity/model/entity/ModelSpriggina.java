@@ -123,7 +123,7 @@ public class ModelSpriggina extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body1.render(f5 * 0.35F);
+        this.body1.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
