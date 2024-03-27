@@ -2,13 +2,17 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenAlethopteris;
+import net.lepidodendron.procedure.ProcedureWorldGenCordaitesDry;
 import net.lepidodendron.procedure.ProcedureWorldGenPitys;
 import net.lepidodendron.procedure.ProcedureWorldGenWalchia;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
@@ -78,7 +82,7 @@ public class WorldGenWalchiaTree extends WorldGenAbstractTree
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
-
+                Biome biome = worldIn.getBiome(position);
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
@@ -95,7 +99,7 @@ public class WorldGenWalchiaTree extends WorldGenAbstractTree
 						ProcedureWorldGenWalchia.executeProcedure($_dependencies);
 					}
                     else if (position.getY() > 120 + (rand.nextInt(9) - 4)
-                        && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_hills_high")) {
+                        && biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_hills_high")) {
                         return false;
                     }
 					else {
@@ -108,7 +112,14 @@ public class WorldGenWalchiaTree extends WorldGenAbstractTree
                                 ProcedureWorldGenPitys.executeProcedure($_dependencies);
                             }
 					        else {
-                                ProcedureWorldGenAlethopteris.executeProcedure($_dependencies);
+                                if (biome instanceof BiomeCarboniferous) {
+                                    BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
+                                    if (biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp) {
+                                        ProcedureWorldGenAlethopteris.executeProcedure($_dependencies);
+                                        return true;
+                                    }
+                                }
+                                ProcedureWorldGenCordaitesDry.executeProcedure($_dependencies);
                             }
                         }
 					}

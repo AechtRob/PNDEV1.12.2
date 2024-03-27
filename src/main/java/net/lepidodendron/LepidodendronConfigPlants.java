@@ -1057,6 +1057,13 @@ public class LepidodendronConfigPlants {
     public static int minheightSphenophyllales1 = 1;
     public static int maxheightSphenophyllales1 = 90;
     public static double multiplierSphenophyllales1 = 1;
+    public static boolean genSphenophyllales2 = false;
+    public static String[] genSphenophyllales2BlacklistBiomes = new String[0];
+    public static String[] genSphenophyllales2OverrideBiomes = new String[0];
+    public static int[] dimSphenophyllales2 = new int[]{0};
+    public static int minheightSphenophyllales2 = 1;
+    public static int maxheightSphenophyllales2 = 90;
+    public static double multiplierSphenophyllales2 = 1;
     public static boolean genClaytosmunda = false;
     public static String[] genClaytosmundaBlacklistBiomes = new String[0];
     public static String[] genClaytosmundaOverrideBiomes = new String[0];
@@ -6872,6 +6879,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Sphenophyllales (Scrambling)", "multiplierSphenophyllales1", multiplierSphenophyllales1);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierSphenophyllales1 = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "genSphenophyllales2", genSphenophyllales2);
+        prop.setComment("Set to true to generate Shrubby Sphenophyllales naturally [default: false]");
+        genSphenophyllales2 = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "genSphenophyllales2BlacklistBiomes", genSphenophyllales2BlacklistBiomes);
+        prop.setComment("List of biomes Shrubby Sphenophyllales are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSphenophyllales2BlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "genSphenophyllales2OverrideBiomes", genSphenophyllales2OverrideBiomes);
+        prop.setComment("List of biomes Shrubby Sphenophyllales are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSphenophyllales2OverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "dimSphenophyllales2", dimSphenophyllales2);
+        prop.setComment("List of dimension IDs Shrubby Sphenophyllales can generate in [default: 0]");
+        dimSphenophyllales2 = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "minheightSphenophyllales2", minheightSphenophyllales2);
+        prop.setComment("Minimum height that Shrubby Sphenophyllales can generate (1 to 250) [default: 1]");
+        minheightSphenophyllales2 = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "maxheightSphenophyllales2", maxheightSphenophyllales2);
+        prop.setComment("Maximum height that Shrubby Sphenophyllales can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightSphenophyllales2 = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sphenophyllales (Shrubby)", "multiplierSphenophyllales2", multiplierSphenophyllales2);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSphenophyllales2 = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Claytosmunda", "genClaytosmunda", genClaytosmunda);

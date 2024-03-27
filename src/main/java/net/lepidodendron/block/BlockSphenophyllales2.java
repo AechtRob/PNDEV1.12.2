@@ -42,11 +42,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sphenophyllales_1")
+public class BlockSphenophyllales2 extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:sphenophyllales_2")
 	public static final Block block = null;
-	public BlockSphenophyllales1(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sphenophyllales_1);
+	public BlockSphenophyllales2(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.sphenophyllales_2);
 	}
 
 	@Override
@@ -59,16 +59,16 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:sphenophyllales_1", "inventory"));
+				new ModelResourceLocation("lepidodendron:sphenophyllales_2", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:sphenophyllales_1", BlockSphenophyllales1.block);
-		OreDictionary.registerOre("treeSapling", BlockSphenophyllales1.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockSphenophyllales1.block);
-		OreDictionary.registerOre("plant", BlockSphenophyllales1.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:sphenophyllales_2", BlockSphenophyllales2.block);
+		OreDictionary.registerOre("treeSapling", BlockSphenophyllales2.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockSphenophyllales2.block);
+		OreDictionary.registerOre("plant", BlockSphenophyllales2.block);
 	}
 
 
@@ -80,8 +80,8 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_sphenophyllales_1");
-			setRegistryName("sphenophyllales_1");
+			setTranslationKey("pf_sphenophyllales_2");
+			setRegistryName("sphenophyllales_2");
 		}
 
 		@Override
@@ -163,14 +163,14 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail/sphenophyte plant");
-	        	tooltip.add("Periods: Devonian - Carboniferous");
+	        	tooltip.add("Periods: [Devonian (?) -] Carboniferous - Permian [- Triassic]");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
 		@Override
 		public Block planted() {
-			return BlockSphenophyllales1.block;
+			return BlockSphenophyllales2.block;
 		}
 
 		@Override
