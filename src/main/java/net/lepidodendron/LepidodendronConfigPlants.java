@@ -2399,6 +2399,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightNeocalamites = 90;
     public static double multiplierNeocalamites = 1;
 
+    public static boolean genParacalamites = false;
+    public static String[] genParacalamitesBlacklistBiomes = new String[0];
+    public static String[] genParacalamitesOverrideBiomes = new String[0];
+    public static int[] dimParacalamites = new int[]{0};
+    public static int minheightParacalamites = 55;
+    public static int maxheightParacalamites = 90;
+    public static double multiplierParacalamites = 1;
+
     public static boolean genArchaeocalamites = false;
     public static String[] genArchaeocalamitesBlacklistBiomes = new String[0];
     public static String[] genArchaeocalamitesOverrideBiomes = new String[0];
@@ -10626,6 +10634,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Archaeocalamites", "multiplierArchaeocalamites", multiplierArchaeocalamites);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierArchaeocalamites = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Paracalamites", "genParacalamites", genParacalamites);
+        prop.setComment("Set to true to generate Paracalamites naturally [default: false]");
+        genParacalamites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paracalamites", "genParacalamitesBlacklistBiomes", genParacalamitesBlacklistBiomes);
+        prop.setComment("List of biomes Paracalamites are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genParacalamitesBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paracalamites", "genParacalamitesOverrideBiomes", genParacalamitesOverrideBiomes);
+        prop.setComment("List of biomes Paracalamites are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genParacalamitesOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Paracalamites", "dimParacalamites", dimParacalamites);
+        prop.setComment("List of dimension IDs Paracalamites can generate in [default: 0]");
+        dimParacalamites = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paracalamites", "minheightParacalamites", minheightParacalamites);
+        prop.setComment("Minimum height that Paracalamites can generate (1 to 250) [default: 55]");
+        minheightParacalamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paracalamites", "maxheightParacalamites", maxheightParacalamites);
+        prop.setComment("Maximum height that Paracalamites can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightParacalamites = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paracalamites", "multiplierParacalamites", multiplierParacalamites);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierParacalamites = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Neocalamites", "genNeocalamites", genNeocalamites);

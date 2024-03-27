@@ -310,7 +310,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockChiropteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCordaitesDrySapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSphenophyllales2.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockSphenophyllales2.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemParacalamitesItem.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPermian);
         return resLoc;
