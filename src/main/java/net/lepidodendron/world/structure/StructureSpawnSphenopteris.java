@@ -36,9 +36,9 @@ public class StructureSpawnSphenopteris extends ElementsLepidodendronMod.ModElem
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSphenopterisBlacklistBiomes))) {
-			biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-				biomeCriteria = false;
+			biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -117,9 +117,9 @@ public class StructureSpawnSphenopteris extends ElementsLepidodendronMod.ModElem
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSphenopterisBlacklistBiomes))) {
-					biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-						biomeCriteria = false;
+					biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))

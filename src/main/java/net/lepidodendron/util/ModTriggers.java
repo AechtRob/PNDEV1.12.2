@@ -259,6 +259,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FURCIFOLIUM = new CustomTrigger("pf_book_furcifolium");
     public static final CustomTrigger CLICK_FURCULA = new CustomTrigger("pf_book_furcula");
     public static final CustomTrigger CLICK_GANGAMOPTERIS = new CustomTrigger("pf_book_gangamopteris");
+    public static final CustomTrigger CLICK_GLOSSOPTERIS_AMPLA = new CustomTrigger("pf_book_glossopteris_ampla");
     public static final CustomTrigger CLICK_GIANT_HORSETAIL = new CustomTrigger("pf_book_giant_horsetail");
     public static final CustomTrigger CLICK_JURASSIC_HORSETAIL = new CustomTrigger("pf_book_jurassic_horsetail");
     public static final CustomTrigger CLICK_GIGANTOPTERID = new CustomTrigger("pf_book_gigantopterid");
@@ -422,6 +423,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPHENOPTERIS = new CustomTrigger("pf_book_sphenopteris");
     public static final CustomTrigger CLICK_SPHENOPTERIS_FERN = new CustomTrigger("pf_book_sphenopteris_fern");
     public static final CustomTrigger CLICK_SPHENOPTERIS_SEED = new CustomTrigger("pf_book_sphenopteris_seed");
+    public static final CustomTrigger CLICK_CALAMOPITYS = new CustomTrigger("pf_book_calamopitys_seed");
     public static final CustomTrigger CLICK_ANGIOPTERIS = new CustomTrigger("pf_book_angiopteris");
     public static final CustomTrigger CLICK_SPINY_CYCAD = new CustomTrigger("pf_book_spiny_cycad");
     public static final CustomTrigger CLICK_SPRUCE = new CustomTrigger("pf_book_spruce");
@@ -1720,6 +1722,7 @@ public class ModTriggers
             CLICK_FURCIFOLIUM,
             CLICK_FURCULA,
             CLICK_GANGAMOPTERIS,
+            CLICK_GLOSSOPTERIS_AMPLA,
             CLICK_GIANT_HORSETAIL,
             CLICK_JURASSIC_HORSETAIL,
             CLICK_GIGANTOPTERID,
@@ -1881,6 +1884,7 @@ public class ModTriggers
             CLICK_SPHENOPTERIS,
             CLICK_SPHENOPTERIS_FERN,
             CLICK_SPHENOPTERIS_SEED,
+            CLICK_CALAMOPITYS,
             CLICK_ANGIOPTERIS,
             CLICK_SPINY_CYCAD,
             CLICK_SPRUCE,
