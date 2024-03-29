@@ -1094,6 +1094,13 @@ public class LepidodendronConfigPlants {
     public static int minheightCalamopitys = 1;
     public static int maxheightCalamopitys = 90;
     public static double multiplierCalamopitys = 1;
+    public static boolean genCalathospermum = false;
+    public static String[] genCalathospermumBlacklistBiomes = new String[0];
+    public static String[] genCalathospermumOverrideBiomes = new String[0];
+    public static int[] dimCalathospermum = new int[]{0};
+    public static int minheightCalathospermum = 75;
+    public static int maxheightCalathospermum = 150;
+    public static double multiplierCalathospermum = 1;
     public static boolean genClaytosmunda = false;
     public static String[] genClaytosmundaBlacklistBiomes = new String[0];
     public static String[] genClaytosmundaOverrideBiomes = new String[0];
@@ -7052,6 +7059,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Calamopitys", "multiplierCalamopitys", multiplierCalamopitys);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierCalamopitys = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Calathospermum", "genCalathospermum", genCalathospermum);
+        prop.setComment("Set to true to generate Sphenophyllales naturally [default: false]");
+        genCalathospermum = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Calathospermum", "genCalathospermumBlacklistBiomes", genCalathospermumBlacklistBiomes);
+        prop.setComment("List of biomes Shrubby Sphenophyllales are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genCalathospermumBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Calathospermum", "genCalathospermumOverrideBiomes", genCalathospermumOverrideBiomes);
+        prop.setComment("List of biomes Calathospermum are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genCalathospermumOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Calathospermum", "dimCalathospermum", dimCalathospermum);
+        prop.setComment("List of dimension IDs Calathospermum can generate in [default: 0]");
+        dimCalathospermum = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Calathospermum", "minheightCalathospermum", minheightCalathospermum);
+        prop.setComment("Minimum height that Calathospermum can generate (1 to 250) [default: 75]");
+        minheightCalathospermum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Calathospermum", "maxheightCalathospermum", maxheightCalathospermum);
+        prop.setComment("Maximum height that Calathospermum can generate (1 to 250, or set to 0 for unlimited) [default: 150]");
+        maxheightCalathospermum = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Calathospermum", "multiplierCalathospermum", multiplierCalathospermum);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierCalathospermum = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Sphenophyllales (Sturdy)", "genSphenophyllales2", genSphenophyllales2);

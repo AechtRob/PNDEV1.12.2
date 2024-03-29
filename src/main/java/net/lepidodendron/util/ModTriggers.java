@@ -423,7 +423,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPHENOPTERIS = new CustomTrigger("pf_book_sphenopteris");
     public static final CustomTrigger CLICK_SPHENOPTERIS_FERN = new CustomTrigger("pf_book_sphenopteris_fern");
     public static final CustomTrigger CLICK_SPHENOPTERIS_SEED = new CustomTrigger("pf_book_sphenopteris_seed");
-    public static final CustomTrigger CLICK_CALAMOPITYS = new CustomTrigger("pf_book_calamopitys_seed");
+    public static final CustomTrigger CLICK_CALAMOPITYS = new CustomTrigger("pf_book_calamopitys");
+    public static final CustomTrigger CLICK_CALATHOSPERMUM = new CustomTrigger("pf_book_calathospermum");
     public static final CustomTrigger CLICK_ANGIOPTERIS = new CustomTrigger("pf_book_angiopteris");
     public static final CustomTrigger CLICK_SPINY_CYCAD = new CustomTrigger("pf_book_spiny_cycad");
     public static final CustomTrigger CLICK_SPRUCE = new CustomTrigger("pf_book_spruce");
@@ -1885,6 +1886,7 @@ public class ModTriggers
             CLICK_SPHENOPTERIS_FERN,
             CLICK_SPHENOPTERIS_SEED,
             CLICK_CALAMOPITYS,
+            CLICK_CALATHOSPERMUM,
             CLICK_ANGIOPTERIS,
             CLICK_SPINY_CYCAD,
             CLICK_SPRUCE,

@@ -1050,6 +1050,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_paracalamites_item_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_neuropteridium_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_calamopitys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_calathospermum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nilssonia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nilssoniocladus_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nilssoniopteris_clean", "inventory"),
