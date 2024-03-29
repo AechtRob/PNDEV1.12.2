@@ -195,6 +195,9 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Some instructions for use of rideables
 	public void playerMounted(EntityMountEvent event) {
+		if (event.getWorldObj().isRemote) {
+			return;
+		}
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
