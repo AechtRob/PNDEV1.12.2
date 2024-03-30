@@ -7,7 +7,6 @@ import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemParacalamitesItem;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
@@ -103,8 +102,7 @@ public class BlockParacalamites extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_swamp")
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_swamp")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest")
 			) {
 				biomeCriteria = true;
