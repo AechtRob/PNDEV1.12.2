@@ -644,26 +644,29 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
                         RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
                         if (rayTrace != null && rayTrace.hitVec != null) {
                             BlockPos sidePos = rayTrace.getBlockPos();
-                            if (world.isSideSolid(sidePos, rayTrace.sideHit) && rayTrace.sideHit != EnumFacing.DOWN) {
-                                this.setAttachmentPos(sidePos);
-                                this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
-                                this.motionX = 0.0D;
-                                this.motionY = 0.0D;
-                                this.motionZ = 0.0D;
-                                if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                                    rotationYaw = 180;
-                                    rotationYawHead = rotationYaw;
-                                } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                                    rotationYaw = 270;
-                                    rotationYawHead = rotationYaw;
-                                } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                                    rotationYaw = 0;
-                                    rotationYawHead = rotationYaw;
-                                } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                                    rotationYaw = 90;
-                                    rotationYawHead = rotationYaw;
+                            try {
+                                if (world.isSideSolid(sidePos, rayTrace.sideHit) && rayTrace.sideHit != EnumFacing.DOWN) {
+                                    this.setAttachmentPos(sidePos);
+                                    this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
+                                    this.motionX = 0.0D;
+                                    this.motionY = 0.0D;
+                                    this.motionZ = 0.0D;
+                                    if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                                        rotationYaw = 180;
+                                        rotationYawHead = rotationYaw;
+                                    } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                                        rotationYaw = 270;
+                                        rotationYawHead = rotationYaw;
+                                    } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                                        rotationYaw = 0;
+                                        rotationYawHead = rotationYaw;
+                                    } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                                        rotationYaw = 90;
+                                        rotationYawHead = rotationYaw;
+                                    }
                                 }
                             }
+                            catch (Error e) {}
                         }
                     }
                 }
