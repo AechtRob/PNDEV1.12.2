@@ -157,12 +157,17 @@ public class BlockArthropitysSapling extends ElementsLepidodendronMod.ModElement
 	            int x = pos.getX();
 				int y = pos.getY();
 				int z = pos.getZ();
+				boolean worldgen = false;
 				{
 					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
+					$_dependencies.put("worldgen", worldgen);
+					$_dependencies.put("parentx", x);
+					$_dependencies.put("parenty", y);
+					$_dependencies.put("parentz", z);
 					$_dependencies.put("SaplingSpawn", true);
 					$_dependencies.put("vines", false);
 					ProcedureWorldGenArthropitys.executeProcedure($_dependencies);

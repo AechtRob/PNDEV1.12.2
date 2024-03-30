@@ -750,17 +750,21 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
                 if (rayTrace != null && rayTrace.hitVec != null) {
                     BlockPos sidePos = rayTrace.getBlockPos();
-                    if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
-                        this.setAttachmentPos(sidePos);
-                        this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
-                        this.motionX = 0.0D;
-                        this.motionY = 0.0D;
-                        this.motionZ = 0.0D;
+                    try {
+                        if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
+                            this.setAttachmentPos(sidePos);
+                            this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
+                            this.motionX = 0.0D;
+                            this.motionY = 0.0D;
+                            this.motionZ = 0.0D;
+                        }
                     }
+                    catch (Error e) {}
                 }
             }
         } else {
             BlockPos pos = this.getAttachmentPos();
+
             if (world.isSideSolid(pos, this.getAttachmentFacing())) {
                 sitTickCt++;
                 sitCooldown = 150;
@@ -772,16 +776,16 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 this.prevRotationYawHead = 180.0F;
                 this.moveHelper.action = EntityMoveHelper.Action.WAIT;
                 if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                    this.posZ = this.getPosition().getZ() + (this.width/2F);
+                    this.posZ = this.getPosition().getZ() + (this.width / 2F);
                 }
                 if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                    this.posZ = this.getPosition().getZ() + 1 - (this.width/2F);
+                    this.posZ = this.getPosition().getZ() + 1 - (this.width / 2F);
                 }
                 if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                    this.posX = this.getPosition().getX() + (this.width/2F);
+                    this.posX = this.getPosition().getX() + (this.width / 2F);
                 }
                 if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                    this.posX = this.getPosition().getX() + 1 - (this.width/2F);
+                    this.posX = this.getPosition().getX() + 1 - (this.width / 2F);
                 }
                 this.motionX = 0.0D;
                 this.motionY = 0.0D;
@@ -791,6 +795,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
                 this.setAttachmentPos(null);
             }
+
         }
         if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
             this.sitTickCt = 0;
@@ -1005,10 +1010,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     if ((!world.isAirBlock(randomPos)) && (world.getBlockState(randomPos).getMaterial() != Material.WATER) && (world.getBlockState(randomPos).getMaterial() != Material.LAVA)) {
                         RayTraceResult rayTrace = world.rayTraceBlocks(EntityPrehistoricFloraInsectFlyingBase.this.getPositionVector().add(0, 0.25, 0), new Vec3d(randomPos).add(0.5, 0.5, 0.5), true);
                         if (rayTrace != null && rayTrace.hitVec != null) {
-                            if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
-                                target = rayTrace.getBlockPos();
-                                isGoingToAttach = true;
+                            try {
+                                if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
+                                    target = rayTrace.getBlockPos();
+                                    isGoingToAttach = true;
+                                }
                             }
+                            catch (Error e) {}
                         }
                     }
                 }

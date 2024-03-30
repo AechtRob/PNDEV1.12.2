@@ -79,7 +79,7 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
                 }
             }
 
-            if (!flag || (position.getY() > Functions.getAdjustedSeaLevel(worldIn, position)+20))
+            if (!flag || (position.getY() > Functions.getAdjustedSeaLevel(worldIn, position) + 20))
             {
                 return false;
             }
@@ -91,7 +91,8 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
 
 				boolean isSoil = (
 					(((worldIn.getBlockState(down)).getMaterial() == Material.SAND) 
-					|| ((worldIn.getBlockState(down)).getMaterial() == Material.GROUND))
+					    || ((worldIn.getBlockState(down)).getMaterial() == Material.GROUND)
+                        || ((worldIn.getBlockState(down)).getMaterial() == Material.CLAY))
 					&&
 					(worldIn.isAirBlock(position)
 					)
@@ -102,15 +103,62 @@ public class WorldGenLepidodendronTree extends WorldGenAbstractTree
 					((worldIn.getBlockState(position.down())).getMaterial() == Material.WATER)
 						&& 
 					(((worldIn.getBlockState(position.down(2))).getMaterial() == Material.SAND) 
-						|| ((worldIn.getBlockState(position.down(2))).getMaterial() == Material.GROUND))
+						    || ((worldIn.getBlockState(position.down(2))).getMaterial() == Material.GROUND)
+                            || ((worldIn.getBlockState(position.down(2))).getMaterial() == Material.CLAY))
 					) {
 						position = position.down();
 						isSoil = true;
 					}
 					 
 				}
+
+                if (!isSoil) {
+                    if (worldIn.isAirBlock(position) &&
+                            ((worldIn.getBlockState(position.down())).getMaterial() == Material.WATER)
+                            && ((worldIn.getBlockState(position.down(2))).getMaterial() == Material.WATER)
+                            &&
+                            (((worldIn.getBlockState(position.down(3))).getMaterial() == Material.SAND)
+                                    || ((worldIn.getBlockState(position.down(3))).getMaterial() == Material.GROUND)
+                                    || ((worldIn.getBlockState(position.down(3))).getMaterial() == Material.CLAY))
+                    ) {
+                        position = position.down(2);
+                        isSoil = true;
+                    }
+
+                }
+
+                if (!isSoil) {
+                    if (worldIn.isAirBlock(position) &&
+                            ((worldIn.getBlockState(position.down())).getMaterial() == Material.WATER)
+                            && ((worldIn.getBlockState(position.down(2))).getMaterial() == Material.WATER)
+                            && ((worldIn.getBlockState(position.down(3))).getMaterial() == Material.WATER)
+                            &&
+                            (((worldIn.getBlockState(position.down(4))).getMaterial() == Material.SAND)
+                                    || ((worldIn.getBlockState(position.down(4))).getMaterial() == Material.GROUND)
+                                    || ((worldIn.getBlockState(position.down(4))).getMaterial() == Material.CLAY))
+                    ) {
+                        position = position.down(3);
+                        isSoil = true;
+                    }
+                }
+
+                if (!isSoil) {
+                    if (worldIn.isAirBlock(position) &&
+                            ((worldIn.getBlockState(position.down())).getMaterial() == Material.WATER)
+                            && ((worldIn.getBlockState(position.down(2))).getMaterial() == Material.WATER)
+                            && ((worldIn.getBlockState(position.down(3))).getMaterial() == Material.WATER)
+                            && ((worldIn.getBlockState(position.down(4))).getMaterial() == Material.WATER)
+                            &&
+                            (((worldIn.getBlockState(position.down(5))).getMaterial() == Material.SAND)
+                                    || ((worldIn.getBlockState(position.down(5))).getMaterial() == Material.GROUND)
+                                    || ((worldIn.getBlockState(position.down(5))).getMaterial() == Material.CLAY))
+                    ) {
+                        position = position.down(4);
+                        isSoil = true;
+                    }
+                }
 				
-                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) - 4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
                     java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", position.getX());

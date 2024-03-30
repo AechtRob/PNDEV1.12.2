@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:synchysidendron_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:synchysidendron_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:synchysidendron_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:synchysidendron_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:synchysidendron_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:synchysidendron_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:synchysidendron_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

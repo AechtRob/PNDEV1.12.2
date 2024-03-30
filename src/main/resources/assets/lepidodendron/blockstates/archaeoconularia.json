@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:archaeoconularia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:archaeoconularia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:archaeoconularia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:archaeoconularia", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:archaeoconularia", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:archaeoconularia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:archaeoconularia", "x": 180}
+    ]
+  }
+}

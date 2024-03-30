@@ -53,6 +53,7 @@ public class BlockCalamitesThatch extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:calamites_thatch", "inventory"));
 	}
+
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool INNER = PropertyBool.create("inner");

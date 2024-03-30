@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/trizygia_var_seed",
+    "particle": "lepidodendron:blocks/trizygia_var_seed"
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:essexella"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_essexella.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_essexella.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_essexella"
+		}
+	}
+}
+

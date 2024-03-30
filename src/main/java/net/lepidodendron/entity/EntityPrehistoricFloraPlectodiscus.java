@@ -179,14 +179,7 @@ public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJe
         super.onEntityUpdate();
     }
 
-    @Override
-    protected void collideWithEntity(Entity entityIn) {
-        super.collideWithEntity(entityIn);
-        if (entityIn instanceof EntityLivingBase && !(entityIn instanceof EntityPrehistoricFloraJellyfishBase)
-                && !(entityIn instanceof EntityMob)) {
-            entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-        }
-    }
+
 
     @Override
     protected Item getDropItem() {

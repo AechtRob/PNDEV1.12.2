@@ -113,6 +113,9 @@ public class BlockArchaeocalamites extends ElementsLepidodendronMod.ModElement {
 			) {
 				biomeCriteria = true;
 			}
+			else {
+				biomeCriteria = false;
+			}
 		}
 
 		if (!biomeCriteria)
