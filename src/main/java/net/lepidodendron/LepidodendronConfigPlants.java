@@ -2988,19 +2988,19 @@ public class LepidodendronConfigPlants {
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Crinoids", "dimCrinoid", dimCrinoid);
-        prop.setComment("List of dimension IDs Crinoids, Cystoids, Graptolites, and other sessile creatures etc. can generate in [default: empty]");
+        prop.setComment("List of dimension IDs Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. can generate in [default: empty]");
         dimCrinoid = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Crinoids", "genCrinoidBlacklistBiomes", genCrinoidBlacklistBiomes);
-        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, and other sessile creatures etc. are blacklisted from, in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. are blacklisted from, in the format: modid:biomeid [default: empty]");
         genCrinoidBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Crinoids", "genCrinoidOverrideBiomes", genCrinoidOverrideBiomes);
-        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, and other sessile creatures etc. are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genCrinoidOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Crinoids", "weightCrinoid", weightCrinoid);
-        prop.setComment("Percentage chance that Crinoids, Cystoids, Graptolites, and other sessile creatures etc. generate in a suitable chunk (0 to 100) [default: 100]");
+        prop.setComment("Percentage chance that Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. generate in a suitable chunk (0 to 100) [default: 100]");
         weightCrinoid = prop.getInt();
         propOrder.add(prop.getName());
 
