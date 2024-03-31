@@ -8,10 +8,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -88,7 +88,7 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician)
+				|| (dimID == LepidodendronConfig.dimCambrian)
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
@@ -99,7 +99,7 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimensionCriteria = false;
 		}
-		if ((dimID == LepidodendronConfig.dimCambrian)//
+		if ((dimID == LepidodendronConfig.dimOrdovician)
 		) {
 			dimensionCriteria = true;
 		}
@@ -110,7 +110,7 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCambrian//
+		if (dimID == LepidodendronConfig.dimOrdovician//
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -131,10 +131,16 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef) {
+		int multiplier = 1;
+		if ((dimID == LepidodendronConfig.dimOrdovician)
+		) {
+			multiplier = 10;
+		}
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean) {
 				biomeCriteria = true;
+				multiplier = 20;
 			}
 			else {
 				biomeCriteria = false;
@@ -142,12 +148,6 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		}
 		if (!biomeCriteria)
 			return;
-
-		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimCambrian)//
-		) {
-			multiplier = 10;
-		}
 
 		int minWaterDepth = 1;
 		int maxWaterDepth = 15;
@@ -535,7 +535,7 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Undetermined sponge-like organism");
-				tooltip.add("Periods: Cambrian");
+				tooltip.add("Periods: Ordovician");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
