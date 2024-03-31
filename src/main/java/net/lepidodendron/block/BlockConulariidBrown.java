@@ -13,6 +13,7 @@ import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -106,8 +107,8 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		
-		if (dimID == LepidodendronConfig.dimDevonian || dimID == LepidodendronConfig.dimCarboniferous
+
+		if (dimID == LepidodendronConfig.dimDevonian || dimID == LepidodendronConfig.dimCarboniferous || (dimID == LepidodendronConfig.dimTriassic)
 				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian || dimID == LepidodendronConfig.dimPermian
 				
 		)
@@ -132,14 +133,14 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimDevonian)
+		if ((dimID == LepidodendronConfig.dimDevonian) || (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimPermian)
 		) {
 			multiplier = 2;
 		}
-		
+
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
 			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
@@ -164,7 +165,7 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
 				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
-					multiplier = 15;
+					multiplier = 10;
 				}
 				biomeCriteria = true;
 			}
@@ -205,15 +206,27 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+		
+		if (biome instanceof BiomeTriassic)
+		{
+			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
+				biomeCriteria = true;
+				multiplier = 1;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 		if (!biomeCriteria)
 			return;
 
-		
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")) {
-			multiplier = 20;
+			multiplier = 15;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
-			multiplier = 20;
+			multiplier = 15;
 		}
 		
 		int minWaterDepth = 1;
@@ -396,7 +409,7 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    	public BlockRenderLayer getRenderLayer()
+    public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -680,7 +693,7 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Sessile echinoderm");
-				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian");}
+				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 
