@@ -1,5 +1,6 @@
 package net.lepidodendron;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.gui.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -40,7 +42,7 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 	public final List<Supplier<Biome>> biomes = new ArrayList<>();
 	public final List<Supplier<EntityEntry>> entities = new ArrayList<>();
 	public final List<Supplier<Potion>> potions = new ArrayList<>();
-	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
+	public static Object2ObjectOpenHashMap<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new Object2ObjectOpenHashMap<>();
 	public ElementsLepidodendronMod() {
 		sounds.put(new ResourceLocation("lepidodendron", "wet_crunch_plants"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "wet_crunch_plants")));
