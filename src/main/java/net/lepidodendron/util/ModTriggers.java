@@ -161,6 +161,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CLATHROPTERIS = new CustomTrigger("pf_book_clathropteris");
     public static final CustomTrigger CLICK_ONYCHIOPSIS = new CustomTrigger("pf_book_onychiopsis");
     public static final CustomTrigger CLICK_CLAYTOSMUNDA = new CustomTrigger("pf_book_claytosmunda");
+    public static final CustomTrigger CLICK_NEOMARIOPTERIS = new CustomTrigger("pf_book_neomariopteris");
     public static final CustomTrigger CLICK_CLOUDINA = new CustomTrigger("pf_book_cloudina");
     public static final CustomTrigger CLICK_COBBANIA = new CustomTrigger("pf_book_cobbania");
     public static final CustomTrigger CLICK_ORONTIUM = new CustomTrigger("pf_book_orontium");
@@ -361,6 +362,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PHOENIX = new CustomTrigger("pf_book_phoenix");
     public static final CustomTrigger CLICK_PHYLLOTHECA = new CustomTrigger("pf_book_phyllotheca");
     public static final CustomTrigger CLICK_PIRANIA = new CustomTrigger("pf_book_pirania");
+    public static final CustomTrigger CLICK_ARBORISPONGIA = new CustomTrigger("pf_book_arborispongia");
     public static final CustomTrigger CLICK_PITYS = new CustomTrigger("pf_book_pitys");
     public static final CustomTrigger CLICK_PLANE = new CustomTrigger("pf_book_plane");
     public static final CustomTrigger CLICK_FIG = new CustomTrigger("pf_book_fig");
@@ -1623,6 +1625,7 @@ public class ModTriggers
             CLICK_ONYCHIOPSIS,
             CLICK_LICHEN,
             CLICK_CLAYTOSMUNDA,
+            CLICK_NEOMARIOPTERIS,
             CLICK_CLOUDINA,
             CLICK_COBBANIA,
             CLICK_ORONTIUM,
@@ -1823,6 +1826,7 @@ public class ModTriggers
             CLICK_PHOENIX,
             CLICK_PHYLLOTHECA,
             CLICK_PIRANIA,
+            CLICK_ARBORISPONGIA,
             CLICK_PITYS,
             CLICK_PLANE,
             CLICK_FIG,

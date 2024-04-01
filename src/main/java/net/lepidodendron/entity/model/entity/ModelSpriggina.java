@@ -136,7 +136,7 @@ public class ModelSpriggina extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body1.offsetY = 0.982F;
+        //this.body1.offsetY = 0.982F;
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {
@@ -166,7 +166,7 @@ public class ModelSpriggina extends AdvancedModelBase {
             }
         }
         else {
-            this.body1.offsetY = 0.978F;
+            this.body1.offsetY = -0.004F;
             this.chainSwing(body, 0.2F, 0.08F, 0.5, f2, 0.3F);
             this.chainWave(body, 0.8F, 0.07f, 0.5, f2, 0.5F);
             this.bob(body1, 0.8F, 0.5F, false, f2, 1);

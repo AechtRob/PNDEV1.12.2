@@ -1108,6 +1108,13 @@ public class LepidodendronConfigPlants {
     public static int minheightClaytosmunda = 1;
     public static int maxheightClaytosmunda = 90;
     public static double multiplierClaytosmunda = 1;
+    public static boolean genNeomariopteris = false;
+    public static String[] genNeomariopterisBlacklistBiomes = new String[0];
+    public static String[] genNeomariopterisOverrideBiomes = new String[0];
+    public static int[] dimNeomariopteris = new int[]{0};
+    public static int minheightNeomariopteris = 1;
+    public static int maxheightNeomariopteris = 90;
+    public static double multiplierNeomariopteris = 1;
 
     public static boolean genDictyophyllum = false;
     public static String[] genDictyophyllumBlacklistBiomes = new String[0];
@@ -2988,19 +2995,19 @@ public class LepidodendronConfigPlants {
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Crinoids", "dimCrinoid", dimCrinoid);
-        prop.setComment("List of dimension IDs Crinoids, Cystoids, Graptolites, and other sessile creatures etc. can generate in [default: empty]");
+        prop.setComment("List of dimension IDs Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. can generate in [default: empty]");
         dimCrinoid = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Crinoids", "genCrinoidBlacklistBiomes", genCrinoidBlacklistBiomes);
-        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, and other sessile creatures etc. are blacklisted from, in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. are blacklisted from, in the format: modid:biomeid [default: empty]");
         genCrinoidBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Crinoids", "genCrinoidOverrideBiomes", genCrinoidOverrideBiomes);
-        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, and other sessile creatures etc. are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genCrinoidOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Crinoids", "weightCrinoid", weightCrinoid);
-        prop.setComment("Percentage chance that Crinoids, Cystoids, Graptolites, and other sessile creatures etc. generate in a suitable chunk (0 to 100) [default: 100]");
+        prop.setComment("Percentage chance that Crinoids, Cystoids, Graptolites, prehistoric sponges, and other sessile creatures etc. generate in a suitable chunk (0 to 100) [default: 100]");
         weightCrinoid = prop.getInt();
         propOrder.add(prop.getName());
 
@@ -7115,6 +7122,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Sphenophyllales (Sturdy)", "multiplierSphenophyllales2", multiplierSphenophyllales2);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierSphenophyllales2 = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Neomariopteris", "genNeomariopteris", genNeomariopteris);
+        prop.setComment("Set to true to generate Neomariopteris naturally [default: false]");
+        genNeomariopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Neomariopteris", "genNeomariopterisBlacklistBiomes", genNeomariopterisBlacklistBiomes);
+        prop.setComment("List of biomes Neomariopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genNeomariopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Neomariopteris", "genNeomariopterisOverrideBiomes", genNeomariopterisOverrideBiomes);
+        prop.setComment("List of biomes Neomariopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genNeomariopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Neomariopteris", "dimNeomariopteris", dimNeomariopteris);
+        prop.setComment("List of dimension IDs Neomariopteris can generate in [default: 0]");
+        dimNeomariopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Neomariopteris", "minheightNeomariopteris", minheightNeomariopteris);
+        prop.setComment("Minimum height that Neomariopteris can generate (1 to 250) [default: 1]");
+        minheightNeomariopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Neomariopteris", "maxheightNeomariopteris", maxheightNeomariopteris);
+        prop.setComment("Maximum height that Neomariopteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightNeomariopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Neomariopteris", "multiplierNeomariopteris", multiplierNeomariopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierNeomariopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Claytosmunda", "genClaytosmunda", genClaytosmunda);

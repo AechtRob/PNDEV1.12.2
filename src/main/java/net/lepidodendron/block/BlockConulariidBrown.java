@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.*;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
@@ -99,9 +98,6 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| dimID == LepidodendronConfig.dimCarboniferous
 				|| dimID == LepidodendronConfig.dimPermian
-				|| dimID == LepidodendronConfig.dimTriassic
-				|| dimID == LepidodendronConfig.dimCambrian
-				
 		) {
 			dimensionCriteria = true;
 		}
@@ -111,14 +107,9 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCarboniferous
-				|| dimID == LepidodendronConfig.dimPermian
-				|| dimID == LepidodendronConfig.dimTriassic
-		)
-			weight = 30; //Full scale populations in these dims
 
-		if (dimID == LepidodendronConfig.dimDevonian
-				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian || dimID == LepidodendronConfig.dimCambrian
+		if (dimID == LepidodendronConfig.dimDevonian || dimID == LepidodendronConfig.dimCarboniferous || (dimID == LepidodendronConfig.dimTriassic)
+				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian || dimID == LepidodendronConfig.dimPermian
 				
 		)
 			weight = 100; //Full scale populations in these dims
@@ -128,7 +119,7 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -140,15 +131,14 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
+
+		int multiplier = 1;
+		if ((dimID == LepidodendronConfig.dimDevonian) || (dimID == LepidodendronConfig.dimTriassic)
+				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimCarboniferous)
+				|| (dimID == LepidodendronConfig.dimPermian)
+		) {
+			multiplier = 2;
 		}
 
 		if (biome instanceof BiomeOrdovician) {
@@ -169,10 +159,14 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeSilurian) {
 			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
 			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-					//|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
 					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+					multiplier = 10;
+				}
 				biomeCriteria = true;
 			}
 			else {
@@ -193,23 +187,15 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+				|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
 		}
-		if (biome instanceof BiomeTriassic)
-		{
-			BiomeTriassic biomeTri = (BiomeTriassic) biome;
-			if (biomeTri.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
+		
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
@@ -220,35 +206,36 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+		
+		if (biome instanceof BiomeTriassic)
+		{
+			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
+				biomeCriteria = true;
+				multiplier = 1;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimCarboniferous)
-				|| (dimID == LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimTriassic)
-		) {
-			multiplier = 2;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")) {
+			multiplier = 15;
 		}
-		if ((dimID == LepidodendronConfig.dimPermian)
-		) {
-			multiplier = 3;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
+			multiplier = 15;
 		}
-		int dimWeight = 1;
-		if ((dimID == LepidodendronConfig.dimCarboniferous)
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_coral"))
-		{
-			dimWeight = 2;
-		}
-		int minWaterDepth = 3 * dimWeight;
-		int maxWaterDepth = 15 * dimWeight;
-		int startHeight = world.getSeaLevel() - maxWaterDepth;
+		
+		int minWaterDepth = 1;
+		int maxWaterDepth = 18;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - maxWaterDepth;
 
 		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
@@ -265,7 +252,7 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= world.getSeaLevel())) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, blockpos1.add(0, yy, 0)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;
@@ -706,7 +693,7 @@ public class BlockConulariidBrown extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Sessile echinoderm");
-				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian");}
+				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

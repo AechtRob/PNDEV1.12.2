@@ -7,13 +7,10 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
-import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurian;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -28,8 +25,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -57,16 +52,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:conulariid_magenta")
+public class BlockArborispongia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:arborispongia")
 	public static final Block block = null;
-	public BlockConulariidMagenta(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.conulariid_magenta);
+	public BlockArborispongia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.arborispongia);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("conulariid_magenta"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("arborispongia"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -76,28 +71,35 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:conulariid_magenta", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockConulariidMagenta.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:arborispongia", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockArborispongia.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:conulariid_magenta", BlockConulariidMagenta.block);
-		OreDictionary.registerOre("pndietCrinoid", BlockConulariidMagenta.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:arborispongia", BlockArborispongia.block);
+		OreDictionary.registerOre("itemSponge", BlockArborispongia.block);
+		OreDictionary.registerOre("pndietSponge", BlockArborispongia.block);
 	}
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| dimID == LepidodendronConfig.dimCarboniferous
-				|| dimID == LepidodendronConfig.dimPermian
+				|| (dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimPermian)
+				|| (dimID == LepidodendronConfig.dimPrecambrian)
+				|| (dimID == LepidodendronConfig.dimCambrian)
+				|| (dimID == LepidodendronConfig.dimOrdovician)
+				|| (dimID == LepidodendronConfig.dimTriassic)
+				|| (dimID == LepidodendronConfig.dimJurassic)
+		) {
+			dimensionCriteria = false;
+		}
+		if ((dimID == LepidodendronConfig.dimCarboniferous)
 		) {
 			dimensionCriteria = true;
 		}
@@ -107,10 +109,7 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-
-		if (dimID == LepidodendronConfig.dimDevonian || dimID == LepidodendronConfig.dimCarboniferous || (dimID == LepidodendronConfig.dimTriassic)
-				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian || dimID == LepidodendronConfig.dimPermian
-				
+		if (dimID == LepidodendronConfig.dimCarboniferous
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -131,24 +130,14 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
-
-		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimDevonian) || (dimID == LepidodendronConfig.dimTriassic)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimCarboniferous)
-				|| (dimID == LepidodendronConfig.dimPermian)
-		) {
-			multiplier = 2;
+		if (dimID == LepidodendronConfig.dimPrecambrian){
+			biomeCriteria = false;
 		}
 
-		if (biome instanceof BiomeOrdovician) {
-			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
-			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+		if (biome instanceof BiomeCarboniferous) {
+			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")
+			) {
 				biomeCriteria = true;
 			}
 			else {
@@ -156,93 +145,28 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 			}
 		}
 
-		if (biome instanceof BiomeSilurian) {
-			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
-			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
-				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
-					multiplier = 10;
-				}
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-
-		if (biome instanceof BiomePermian)
-		{
-			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomeCarboniferous)
-		{
-			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
-				|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		
-		if (biome instanceof BiomeDevonian)
-		{
-			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		
-		if (biome instanceof BiomeTriassic)
-		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-				multiplier = 1;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
 		if (!biomeCriteria)
 			return;
 
-
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")) {
-			multiplier = 15;
+		int multiplier = 1;
+		if ((dimID == LepidodendronConfig.dimCarboniferous)
+		) {
+			multiplier = 20;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
-			multiplier = 15;
-		}
-		
 		int minWaterDepth = 1;
-		int maxWaterDepth = 18;
-		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - maxWaterDepth;
+		int maxWaterDepth = 8;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < (12 * multiplier); i++) {
+		for (int i = 0; i < 12 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
-					for (int i = 0; i < 40; ++i) {
+					for (int i = 0; i < 32; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (Functions.isWater(world, blockpos1)) {
+						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth
@@ -252,7 +176,7 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, blockpos1.add(0, yy, 0)))) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;
@@ -277,38 +201,8 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
-									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockConulariidMagenta.BlockCustom.FACING, enumfacing), 2);
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockPirania.BlockCustom.FACING, enumfacing), 2);
 									return true;
-								} else {
-									for (EnumFacing enumfacing1 : BlockConulariidMagenta.BlockCustom.FACING.getAllowedValues()) {
-										pos1 = blockpos1;
-
-										if (enumfacing1 == EnumFacing.NORTH) {
-											pos1 = blockpos1.add(0, 0, 1);
-										}
-										if (enumfacing1 == EnumFacing.SOUTH) {
-											pos1 = blockpos1.add(0, 0, -1);
-										}
-										if (enumfacing1 == EnumFacing.EAST) {
-											pos1 = blockpos1.add(-1, 0, 0);
-										}
-										if (enumfacing1 == EnumFacing.WEST) {
-											pos1 = blockpos1.add(1, 0, 0);
-										}
-										if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
-												((world.getBlockState(pos1).getMaterial() == Material.SAND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
-														|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
-														|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)
-														|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
-														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
-														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
-												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
-											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockConulariidMagenta.BlockCustom.FACING, enumfacing1), 2);
-											return true;
-										}
-									}
 								}
 							}
 						}
@@ -321,28 +215,28 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 
 	public static boolean matchBiome(Biome biome, String[] biomesList) {
 
-    	//String regName = biome.getRegistryName().toString();
+		//String regName = biome.getRegistryName().toString();
 
-        String[] var2 = biomesList;
-        int var3 = biomesList.length;
+		String[] var2 = biomesList;
+		int var3 = biomesList.length;
 
-        for(int var4 = 0; var4 < var3; ++var4) {
-            String checkBiome = var2[var4];
-            if (!checkBiome.contains(":")) {
-            	//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
-	            if (checkBiome.equalsIgnoreCase(
-	            	biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
-	            	)) {
-	                return true;
-	            }
-        	}
-        	if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-                return true;
-            }
-        }
+		for(int var4 = 0; var4 < var3; ++var4) {
+			String checkBiome = var2[var4];
+			if (!checkBiome.contains(":")) {
+				//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
+				if (checkBiome.equalsIgnoreCase(
+						biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
+				)) {
+					return true;
+				}
+			}
+			if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
+				return true;
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 
 	public boolean shouldGenerateInDimension(int id, int[] dims) {
 		int[] var2 = dims;
@@ -355,14 +249,14 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		}
 		return false;
 	}
-
+	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
-
+		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
-
+    
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_conulariid_magenta");
+			setTranslationKey("pf_arborispongia");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);
@@ -376,31 +270,21 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_CONULARIID;
-		}
-
-		@Override
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote)) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
+			return ModTriggers.CLICK_ARBORISPONGIA;
 		}
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
 		}
-
+			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
-
+		
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
-
+	
 	    @Nullable
 	    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
 	    {
@@ -409,30 +293,14 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
-
+		
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
-		}
-
-		@Override
-		public boolean isOpaqueCube(IBlockState state) {
-			return false;
-		}
-
-		@Override
-		public boolean isFullCube(IBlockState state)
-	    {
-	        return false;
-	    }
-
-		@Override
-		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{LEVEL, FACING});
 		}
 
 		@Override
@@ -452,6 +320,22 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 				case DOWN :
 					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
 			}
+		}
+
+		@Override
+		public boolean isOpaqueCube(IBlockState state) {
+			return false;
+		}
+		
+		@Override
+		public boolean isFullCube(IBlockState state)
+	    {
+	        return false;
+	    }
+
+		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{LEVEL, FACING});
 		}
 
 		@Override
@@ -499,7 +383,7 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
-
+		
 		@Override
 		protected boolean canSilkHarvest()
 	    {
@@ -513,7 +397,7 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		}
 
 		@Override
-		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
 		{
 			if (!canPlaceBlockAt(worldIn, pos)) {
 				worldIn.setBlockToAir(pos);
@@ -524,85 +408,85 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 				//Test the orientation of this block and then check if it is still connected:
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.south());
-					if (worldIn.isAirBlock(pos.south()) ||
+					if (worldIn.isAirBlock(pos.south()) || 
 						(
 							(iblockstate.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID)
 							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.south()))
-						)
+						)	
 					)
 						{
 							worldIn.setBlockToAir(pos);
-
+							
 						}
 					}
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.SOUTH) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.north());
-					if (worldIn.isAirBlock(pos.north()) ||
+					if (worldIn.isAirBlock(pos.north()) || 
 						(
 							(iblockstate.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID)
 							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.north()))
-						)
+						)	
 					)
 						{
 							worldIn.setBlockToAir(pos);
-
+							
 						}
 					}
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.EAST) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.west());
-					if (worldIn.isAirBlock(pos.west()) ||
+					if (worldIn.isAirBlock(pos.west()) || 
 						(
 							(iblockstate.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID)
 							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.west()))
-						)
+						)	
 					)
 						{
 							worldIn.setBlockToAir(pos);
-
+							
 						}
 					}
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.WEST) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.east());
-					if (worldIn.isAirBlock(pos.east()) ||
+					if (worldIn.isAirBlock(pos.east()) || 
 						(
 							(iblockstate.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID)
 							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.east()))
-						)
+						)	
 					)
 						{
 							worldIn.setBlockToAir(pos);
-
+							
 						}
 					}
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.UP) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.down());
-					if (worldIn.isAirBlock(pos.down()) ||
+					if (worldIn.isAirBlock(pos.down()) || 
 						(
 							(iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID)
 							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()))
-						)
+						)	
 					)
 						{
 							worldIn.setBlockToAir(pos);
-
+							
 						}
 					}
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.DOWN) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.up());
-					if (worldIn.isAirBlock(pos.up()) ||
+					if (worldIn.isAirBlock(pos.up()) || 
 						(
 							(iblockstate.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID)
 							&& (!iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.up()))
-						)
+						)	
 					)
 						{
 							worldIn.setBlockToAir(pos);
-
+							
 						}
 					}
 			}
 		}
-
+	
 		@Override
 	    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
 	    {
@@ -615,19 +499,14 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 	        return true;
 	    }
 
-		public boolean canBlockStay(World worldIn, BlockPos pos)
-		{
-			return this.canPlaceBlockAt(worldIn, pos);
-		}
-
-		//@Override
+	    //@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 		{
 
 			//System.err.println("Can place");
-
+			
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
-				return super.canPlaceBlockAt(worldIn, pos);
+				return super.canPlaceBlockAt(worldIn, pos); 
 			}
 			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
@@ -635,7 +514,7 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.CLAY))) {
 			//	return false;
 			//}
-			return false;
+			return false; 
 		}
 
 		@Override
@@ -667,11 +546,11 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 	        		blockface = false;
 			}
 
-
+			
 			return (blockface && canPlaceBlockAt(worldIn, pos));
-
+			
 	    }
-
+		
 		@Override
 	    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
 	    {
@@ -692,10 +571,9 @@ public class BlockConulariidMagenta extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sessile echinoderm");
-				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic");}
+				tooltip.add("Type: Shallow Marine Sponge");
+				tooltip.add("Periods: Carboniferous");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
-
 	}
 }
