@@ -7,14 +7,22 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
-public class EntityRegistries {
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-    private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {
-        EntityRegistry.registerModEntity(new ResourceLocation(LepidodendronMod.MODID + ":" + name), entity, name, id, LepidodendronMod.instance, range, 1, true, color1, color2);
+public class EntityRegistries {
+    private static final Map<String, Class<? extends Entity>> entityRegistryMap = new LinkedHashMap<>();
+
+    public static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {
+        ResourceLocation location = new ResourceLocation(LepidodendronMod.MODID, name);
+        EntityRegistry.registerModEntity(location, entity, name, id, LepidodendronMod.instance, range, 1, true, color1, color2);
+        entityRegistryMap.put(name, entity);
     }
 
-    private static void registerEntityNoEgg(String name, Class<? extends Entity> entity, int id, int range) {
-        EntityRegistry.registerModEntity(new ResourceLocation(LepidodendronMod.MODID + ":" + name), entity, name, id, LepidodendronMod.instance, range, 1, true);
+    public static void registerEntityNoEgg(String name, Class<? extends Entity> entity, int id, int range) {
+        ResourceLocation location = new ResourceLocation(LepidodendronMod.MODID, name);
+        EntityRegistry.registerModEntity(location, entity, name, id, LepidodendronMod.instance, range, 1, true);
+        entityRegistryMap.put(name, entity);
     }
 
     public static void registerEntities() {
