@@ -134,7 +134,7 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimOrdovician)
 		) {
-			multiplier = 10;
+			multiplier = 2;
 		}
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
