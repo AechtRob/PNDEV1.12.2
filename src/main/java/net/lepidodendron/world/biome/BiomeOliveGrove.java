@@ -3,6 +3,9 @@ package net.lepidodendron.world.biome;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.block.BlockAnemone;
+import net.lepidodendron.block.BlockButtercup;
+import net.lepidodendron.block.BlockDaisy;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.util.math.BlockPos;
@@ -27,9 +30,12 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 		super(instance, 7);
 	}
 
-	protected static final WorldGenDaisy DAISY_GENERATOR = new WorldGenDaisy();
-	protected static final WorldGenButtercup BUTTERCUP_GENERATOR = new WorldGenButtercup();
-	protected static final WorldGenAnemone ANEMONE_GENERATOR = new WorldGenAnemone();
+	//protected static final WorldGenDaisy DAISY_GENERATOR = new WorldGenDaisy();
+	//protected static final WorldGenButtercup BUTTERCUP_GENERATOR = new WorldGenButtercup();
+
+	protected static final WorldGenSinglePlantOptionalWater PLANTS_GENERATOR = new WorldGenSinglePlantOptionalWater();
+
+	//protected static final WorldGenAnemone ANEMONE_GENERATOR = new WorldGenAnemone();
 	protected static final WorldGenCobble COBBLE_GENERATOR = new WorldGenCobble();
 	protected static final WorldGenMossStone MOSSY_COBBLE_GENERATOR = new WorldGenMossStone();
 	protected static final WorldGenCoarseDirt DIRT_GENERATOR = new WorldGenCoarseDirt();
@@ -139,7 +145,7 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					DAISY_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					PLANTS_GENERATOR.generate(BlockDaisy.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -148,7 +154,7 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					BUTTERCUP_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					PLANTS_GENERATOR.generate(BlockButtercup.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -157,9 +163,8 @@ public class BiomeOliveGrove extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					ANEMONE_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					PLANTS_GENERATOR.generate(BlockAnemone.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
-
 
 			int i = rand.nextInt(5) - 3;
 			this.addDoublePlants(worldIn, rand, pos, i);
