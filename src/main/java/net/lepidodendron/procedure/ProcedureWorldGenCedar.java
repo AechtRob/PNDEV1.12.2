@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCedarLeaves;
 import net.lepidodendron.block.BlockCedarLog;
@@ -17,7 +18,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenCedar!");
 			return;
@@ -407,7 +408,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 1, world, BlockCedarLog.block, EnumFacing.EAST);
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 2, world, BlockCedarLog.block, EnumFacing.EAST);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz + 2);
@@ -415,7 +416,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchSouth.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz - 1, world, BlockCedarLog.block, EnumFacing.EAST);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz - 1);
@@ -433,7 +434,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -457,7 +458,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 1, world, BlockCedarLog.block, EnumFacing.EAST);
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 2, world, BlockCedarLog.block, EnumFacing.EAST);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz + 2);
@@ -465,7 +466,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchSouth.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz - 1, world, BlockCedarLog.block, EnumFacing.EAST);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz - 1);
@@ -484,7 +485,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					if (yy < (y + 1)) yy = y + 1;
 				}
 
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -508,7 +509,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx + 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
 						ProcedureTreeLog.executeProcedure((int) xx + 2, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx + 2);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -516,7 +517,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchEast.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx - 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx - 1);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -534,7 +535,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -558,7 +559,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx + 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
 						ProcedureTreeLog.executeProcedure((int) xx + 2, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx + 2);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -566,7 +567,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchEast.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx - 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx - 1);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -584,7 +585,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					}
 					if (yy < (y + 1)) yy = y + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -735,7 +736,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 1, world, BlockCedarLog.block, EnumFacing.EAST);
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 2, world, BlockCedarLog.block, EnumFacing.EAST);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz + 2);
@@ -743,7 +744,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchSouth.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz - 1, world, BlockCedarLog.block, EnumFacing.EAST);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz - 1);
@@ -756,7 +757,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					if (Math.random() > 0.6) yy = yy - 1;
 					if (yy < (y + 1)) yy = y + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -780,7 +781,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 1, world, BlockCedarLog.block, EnumFacing.EAST);
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz + 2, world, BlockCedarLog.block, EnumFacing.EAST);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz + 2);
@@ -788,7 +789,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchSouth.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx, (int) yy, (int) zz - 1, world, BlockCedarLog.block, EnumFacing.EAST);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz - 1);
@@ -802,7 +803,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					if (yy < (y + 1)) yy = y + 1;
 				}
 
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -826,7 +827,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx + 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
 						ProcedureTreeLog.executeProcedure((int) xx + 2, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx + 2);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -834,7 +835,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchEast.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx - 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx - 1);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -847,7 +848,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					if (Math.random() > 0.6) yy = yy - 1;
 					if (yy < (y + 1)) yy = y + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);
@@ -871,7 +872,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						//Do side branches here too!
 						ProcedureTreeLog.executeProcedure((int) xx + 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
 						ProcedureTreeLog.executeProcedure((int) xx + 2, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx + 2);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -879,7 +880,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 						ProcedureWorldGenCedarBranchEast.executeProcedure($_dependencies);
 
 						ProcedureTreeLog.executeProcedure((int) xx - 1, (int) yy, (int) zz, world, BlockCedarLog.block, EnumFacing.UP);
-						$_dependencies = new java.util.HashMap<>();
+						$_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", xx - 1);
 						$_dependencies.put("y", (int) yy);
 						$_dependencies.put("z", zz);
@@ -892,7 +893,7 @@ public class ProcedureWorldGenCedar extends ElementsLepidodendronMod.ModElement 
 					if (Math.random() > 0.6) yy = yy - 1;
 					if (yy < (y + 1)) yy = y + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", xx);
 				$_dependencies.put("y", (int) yy);
 				$_dependencies.put("z", zz);

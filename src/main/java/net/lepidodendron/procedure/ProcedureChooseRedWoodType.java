@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.minecraft.world.World;
 
@@ -11,7 +12,7 @@ public class ProcedureChooseRedWoodType extends ElementsLepidodendronMod.ModElem
 		super(instance, 32);
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure ChooseRedwoodType!");
 			return;
@@ -38,7 +39,7 @@ public class ProcedureChooseRedWoodType extends ElementsLepidodendronMod.ModElem
 		World world = (World) dependencies.get("world");
 		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		if ((Math.random() >= 0.85)) {
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+			Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
@@ -47,7 +48,7 @@ public class ProcedureChooseRedWoodType extends ElementsLepidodendronMod.ModElem
 				ProcedureWorldGenRedwoodLargeNoCheck.executeProcedure($_dependencies);
 		} else {
 			if ((Math.random() >= 0.7)) {
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
@@ -56,7 +57,7 @@ public class ProcedureChooseRedWoodType extends ElementsLepidodendronMod.ModElem
 				ProcedureWorldGenRedwoodSmall.executeProcedure($_dependencies);
 			}	
 			else {
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);

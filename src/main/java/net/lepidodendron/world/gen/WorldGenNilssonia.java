@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockNilssoniaLog;
 import net.lepidodendron.block.BlockNilssoniaSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenNilssonia;
@@ -46,7 +47,7 @@ public class WorldGenNilssonia extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.north().up(2)).getBlock() != BlockNilssoniaLog.block)
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockNilssoniaLog.block)
                 ) {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -81,7 +82,7 @@ public class WorldGenNilssonia extends WorldGenerator
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockNilssoniaLog.block)
                             && (worldIn.getBlockState(blockpos.south()).getBlock() != BlockNilssoniaLog.block)
                     ) {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());

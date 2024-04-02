@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockAnomozamitesLog;
 import net.lepidodendron.block.BlockAnomozamitesSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenAnomozamites;
@@ -56,7 +57,7 @@ public class WorldGenAnomozamites extends WorldGenerator
                         && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                         && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
                 ) {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -93,7 +94,7 @@ public class WorldGenAnomozamites extends WorldGenerator
                             && (blockpos.getY() > minHeight + (rand.nextInt(5) - 2))
                             && (blockpos.getY() < maxHeight + (rand.nextInt(5) - 2))
                     ) {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());

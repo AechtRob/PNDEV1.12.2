@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockUtrechtiaSapling;
 import net.lepidodendron.block.BlockUtrechtiaStem;
 import net.lepidodendron.procedure.ProcedureWorldGenUtrechtia;
@@ -31,7 +32,7 @@ public class WorldGenUtrechtia extends WorldGenerator
                 && (blockpos.getY() < 100)
             	)
             {
-                HashMap<String, Object> $_dependencies = new HashMap<>();
+                Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", blockpos.getX());
 					$_dependencies.put("y", blockpos.getY());
 					$_dependencies.put("z", blockpos.getZ());

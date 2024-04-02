@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCalycanthusFlower;
 import net.lepidodendron.block.BlockCalycanthusLeaves;
@@ -16,7 +17,7 @@ public class ProcedureCalycanthusFlowerNeighbourBlockChanges extends ElementsLep
 		super(instance, 188);
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure CalycanthusFlowerNeighbourBlockChanges!");
 			return;

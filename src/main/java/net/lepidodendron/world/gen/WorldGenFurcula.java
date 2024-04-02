@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockFurculaLog;
 import net.lepidodendron.block.BlockFurculaSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenFurcula;
@@ -29,7 +30,7 @@ public class WorldGenFurcula extends WorldGenerator
             	&& (worldIn.getBlockState(blockpos.south()).getBlock() != BlockFurculaLog.block)
             	)
             {
-                java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", blockpos.getX());
 					$_dependencies.put("y", blockpos.getY());
 					$_dependencies.put("z", blockpos.getZ());

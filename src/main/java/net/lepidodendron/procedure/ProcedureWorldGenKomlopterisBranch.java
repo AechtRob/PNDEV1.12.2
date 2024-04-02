@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockKomlopterisLog;
 import net.lepidodendron.block.BlockKomlopterisShoot;
@@ -15,7 +16,7 @@ public class ProcedureWorldGenKomlopterisBranch extends ElementsLepidodendronMod
 	}
 
 	
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenKomlopterisBranch!");
 			return;
@@ -88,7 +89,7 @@ public class ProcedureWorldGenKomlopterisBranch extends ElementsLepidodendronMod
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
 							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockKomlopterisLog.block.getDefaultState(), 3);
 						}
-						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 						$_dependencies.put("x", (int) x);
 						$_dependencies.put("y", (int) y);
 						$_dependencies.put("z", (int) z);
@@ -129,8 +130,8 @@ public class ProcedureWorldGenKomlopterisBranch extends ElementsLepidodendronMod
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockKomlopterisLog.block.getDefaultState(), 3);		
-									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockKomlopterisLog.block.getDefaultState(), 3);
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 									$_dependencies.put("x", (int) x);
 									$_dependencies.put("y", (int) y);
 									$_dependencies.put("z", (int) z - 1);
@@ -158,8 +159,8 @@ public class ProcedureWorldGenKomlopterisBranch extends ElementsLepidodendronMod
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockKomlopterisLog.block.getDefaultState(), 3);		
-									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockKomlopterisLog.block.getDefaultState(), 3);
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 									$_dependencies.put("x", (int) x);
 									$_dependencies.put("y", (int) y);
 									$_dependencies.put("z", (int) z + 1);
@@ -189,8 +190,8 @@ public class ProcedureWorldGenKomlopterisBranch extends ElementsLepidodendronMod
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z ))) {
-									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockKomlopterisLog.block.getDefaultState(), 3);		
-									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockKomlopterisLog.block.getDefaultState(), 3);
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 									$_dependencies.put("x", (int) x - 1);
 									$_dependencies.put("y", (int) y);
 									$_dependencies.put("z", (int) z);
@@ -216,8 +217,8 @@ public class ProcedureWorldGenKomlopterisBranch extends ElementsLepidodendronMod
 								//And start again:
 								block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z ))) {
-									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockKomlopterisLog.block.getDefaultState(), 3);		
-									java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockKomlopterisLog.block.getDefaultState(), 3);
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 									$_dependencies.put("x", (int) x + 1);
 									$_dependencies.put("y", (int) y);
 									$_dependencies.put("z", (int) z);
