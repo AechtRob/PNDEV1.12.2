@@ -1,0 +1,9 @@
+{
+    "multipart": [
+		{ 	"apply": { "model": "lepidodendron:paracalamites" } },
+    	
+        {   "when": { "water": true },
+            "apply": { "model": "lepidodendron:paracalamites_lower_stem" }
+        }
+    ]
+}

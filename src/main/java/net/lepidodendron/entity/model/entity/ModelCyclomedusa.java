@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraCyclomedusa;
-import net.lepidodendron.entity.EntityPrehistoricFloraYorgia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -65,9 +64,9 @@ public class ModelCyclomedusa extends AdvancedModelBase {
         EntityPrehistoricFloraCyclomedusa ee = (EntityPrehistoricFloraCyclomedusa) e;
 
         this.main.scaleChildren = true;
-        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.065F) + 1F;
+        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.085F) + 1F;
         this.main.setScaleZ(scaler);
-        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.065F);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.085F);
         this.main.setScaleX(scaler2 * 0.5F);
 
     }

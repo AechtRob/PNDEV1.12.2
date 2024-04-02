@@ -84,6 +84,7 @@ public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_LIQUIDAMBAR = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_liquidambar.png");
 
     private static final ResourceLocation TEXTURE_SYNCHYSIDENDRON = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_synchysidendron.png");
+    private static final ResourceLocation TEXTURE_GLOSSOPTERIS_AMPLA = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_glossopteris_ampla.png");
 
 
     public RenderPNBoat(RenderManager renderManagerIn) {
@@ -241,6 +242,8 @@ public class RenderPNBoat extends RenderBoat {
                 return TEXTURE_LIQUIDAMBAR;
             case SYNCHYSIDENDRON:
                 return TEXTURE_SYNCHYSIDENDRON;
+            case GLOSSOPTERIS_AMPLA:
+                return TEXTURE_GLOSSOPTERIS_AMPLA;
         }
     }
 }

@@ -32,7 +32,7 @@ public class RenderCtenorhabdotus extends RenderLiving<EntityPrehistoricFloraCte
     protected void preRenderCallback(EntityPrehistoricFloraCtenorhabdotus entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        //this.shadowSize = entity.width * scale * 0.50F;
     }
 
 }

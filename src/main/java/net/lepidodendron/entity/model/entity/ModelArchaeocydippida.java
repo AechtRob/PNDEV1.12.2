@@ -539,6 +539,7 @@ public class ModelArchaeocydippida extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -562,6 +563,10 @@ public class ModelArchaeocydippida extends AdvancedModelBaseExtended {
         //this.resetToDefaultPose();
         EntityPrehistoricFloraArchaeocydippida entityArchaeocydippida = (EntityPrehistoricFloraArchaeocydippida) e;
         this.main.offsetY = 1.7F;
+
+        //this.body.offsetZ = this.moveBoxExtended(speed, 1F, false, 3.5F, f2, 1) + offsetZ;
+
+
 //        this.Armbase.scaleChildren = false;
 //        this.Armbase.setScaleY(1.0F);
 //        this.Armbase2.scaleChildren = false;
@@ -599,6 +604,7 @@ public class ModelArchaeocydippida extends AdvancedModelBaseExtended {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);        this.resetToDefaultPose();
         EntityPrehistoricFloraArchaeocydippida ee = (EntityPrehistoricFloraArchaeocydippida) entitylivingbaseIn;
+        this.main.scaleChildren = true;
         if (ee.isReallyInWater()) {
             animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }

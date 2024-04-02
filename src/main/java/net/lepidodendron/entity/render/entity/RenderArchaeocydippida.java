@@ -15,8 +15,8 @@ public class RenderArchaeocydippida extends RenderLiving<EntityPrehistoricFloraA
 
     public RenderArchaeocydippida(RenderManager mgr) {
         super(mgr, new ModelArchaeocydippida(), 0.0f);
-        this.addLayer(new LayerArchaeocydippidaEmissive(this));
         this.addLayer(new LayerArchaeocydippidaBody(this));
+        this.addLayer(new LayerArchaeocydippidaEmissive(this));
 
     }
 
@@ -34,7 +34,7 @@ public class RenderArchaeocydippida extends RenderLiving<EntityPrehistoricFloraA
     protected void preRenderCallback(EntityPrehistoricFloraArchaeocydippida entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        //this.shadowSize = entity.width * scale * 0.50F;
     }
 
 }

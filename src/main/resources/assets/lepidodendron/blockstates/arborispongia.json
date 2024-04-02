@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:arborispongia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:arborispongia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:arborispongia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:arborispongia", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:arborispongia", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:arborispongia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:arborispongia", "x": 180}
+    ]
+  }
+}

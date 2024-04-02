@@ -337,10 +337,13 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 					if ((!world.isAirBlock(randomPos)) && (world.getBlockState(randomPos).getMaterial() != Material.WATER) && (world.getBlockState(randomPos).getMaterial() != Material.LAVA)) {
 						RayTraceResult rayTrace = world.rayTraceBlocks(EntityPrehistoricFloraMeganeuropsis.this.getPositionVector().add(0, 0.25, 0), new Vec3d(randomPos).add(0.5, 0.5, 0.5), true);
 						if (rayTrace != null && rayTrace.hitVec != null) {
-							if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
-								target = rayTrace.getBlockPos();
-								isGoingToAttach = true;
+							try {
+								if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
+									target = rayTrace.getBlockPos();
+									isGoingToAttach = true;
+								}
 							}
+							catch (Error e) {}
 						}
 					}
 				}

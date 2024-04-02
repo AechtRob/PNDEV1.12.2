@@ -423,9 +423,9 @@ public class LepidodendronFogSubscribers {
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-					|| (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris
-					&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-					&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse"))) {
+					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_swamp"))
+					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest"))
+					|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris_foggy"))) {
 				return 150;
 			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
@@ -531,9 +531,9 @@ public class LepidodendronFogSubscribers {
 									&& biome instanceof BiomePermian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomePermian biomePermian = (BiomePermian) biome;
 								if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-										|| (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris
-										&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-										&& !biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse"))) {
+										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_swamp"))
+										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest"))
+										|| (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris_foggy"))) {
 									fog = backgroundFog2 * 10F;
 								}
 							}

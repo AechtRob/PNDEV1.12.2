@@ -23,11 +23,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Random;
 
@@ -48,12 +46,6 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 		elements.items.add(() -> new ItemSlab(block, (BlockSlab) block, (BlockSlab) block_slab_double).setRegistryName(block.getRegistryName()));
 	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-		OreDictionary.registerOre("slabWood", BlockArthropitysSlab.block);
-	}
-
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
@@ -62,16 +54,15 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class BlockCustom extends BlockSlab {
 		public BlockCustom() {
-			super(Material.WOOD);
+			super(Material.PLANTS);
 			setTranslationKey("pf_arthropitys_slab");
-			setSoundType(SoundType.WOOD);
-			setHarvestLevel("axe", 1);
-			setHardness(2F);
-			setResistance(3F);
-			setLightLevel(0F);
+			setSoundType(SoundType.PLANT);
+			setHardness(0.5F);
+			setResistance(2.5F);
+			setLightLevel(0);
 			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronBuilding.tab);
-			IBlockState state = this.blockState.getBaseState().withProperty(VARIANT, BlockCustom.Variant.DEFAULT);
+			IBlockState state = this.blockState.getBaseState().withProperty(VARIANT, Variant.DEFAULT);
 			if (!this.isDouble())
 				state = state.withProperty(BlockSlab.HALF, EnumBlockHalf.BOTTOM);
 			if (!this.isDouble())
@@ -79,8 +70,8 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(state);
 			this.useNeighborBrightness = !this.isDouble();
 		}
-		public static final PropertyEnum<BlockCustom.Variant> VARIANT = PropertyEnum.<BlockCustom.Variant>create("variant",
-				BlockCustom.Variant.class);
+		public static final PropertyEnum<Variant> VARIANT = PropertyEnum.<Variant>create("variant",
+				Variant.class);
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return Item.getItemFromBlock(block);
@@ -103,7 +94,7 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 			if (this.isDouble()) {
 				return this.getDefaultState();
 			} else {
-				return this.getDefaultState().withProperty(HALF, BlockSlab.EnumBlockHalf.values()[meta % 2]);
+				return this.getDefaultState().withProperty(HALF, EnumBlockHalf.values()[meta % 2]);
 			}
 		}
 
@@ -128,7 +119,7 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Comparable<?> getTypeForItem(ItemStack stack) {
-			return BlockCustom.Variant.DEFAULT;
+			return Variant.DEFAULT;
 		}
 
 		@Override
@@ -160,7 +151,6 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 		//	return 0;
 		//}
 
-
 		@Override
 		public boolean isOpaqueCube(IBlockState state) {
 			return false;
@@ -168,7 +158,7 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 20;
+			return 30;
 		}
 
 		@Override
@@ -178,7 +168,7 @@ public class BlockArthropitysSlab extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.WOOD;
+			return MapColor.FOLIAGE;
 		}
 	}
 }

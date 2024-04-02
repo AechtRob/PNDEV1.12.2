@@ -409,57 +409,54 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
                     RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
                     if (rayTrace != null && rayTrace.hitVec != null) {
                         BlockPos sidePos = rayTrace.getBlockPos();
-                        if (world.isSideSolid(sidePos, rayTrace.sideHit) && rayTrace.sideHit != EnumFacing.UP && rayTrace.sideHit != EnumFacing.DOWN) {
-                            this.setAttachmentPos(sidePos);
-                            this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
-                            this.motionX = 0.0D;
-                            //this.motionY = 0.0D;
-                            this.motionZ = 0.0D;
+                        try {
+                            if (world.isSideSolid(sidePos, rayTrace.sideHit) && rayTrace.sideHit != EnumFacing.UP && rayTrace.sideHit != EnumFacing.DOWN) {
+                                this.setAttachmentPos(sidePos);
+                                this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
+                                this.motionX = 0.0D;
+                                //this.motionY = 0.0D;
+                                this.motionZ = 0.0D;
+                            }
                         }
+                        catch (Error e) {}
                     }
                 }
             } else {
                 BlockPos pos = this.getAttachmentPos();
-                if (world.isSideSolid(pos, this.getAttachmentFacing())) {
-                    sitTickCt++;
-                    sitCooldown = 150;
-                    if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                        rotationYaw = 180;
-                        this.rotationYawHead = this.rotationYaw;
-                    } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                        rotationYaw = 270;
-                        this.rotationYawHead = this.rotationYaw;
-                    } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                        rotationYaw = 0;
-                        this.rotationYawHead = this.rotationYaw;
-                    } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                        rotationYaw = 90;
-                        this.rotationYawHead = this.rotationYaw;
-                    }
-                    this.moveHelper.action = EntityMoveHelper.Action.WAIT;
-//                    if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-//                        this.posZ = this.getPosition().getZ() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-//                    }
-//                    if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-//                        this.posZ = this.getPosition().getZ() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-//                    }
-//                    if (this.getAttachmentFacing() == EnumFacing.WEST) {
-//                        this.posX = this.getPosition().getX() + ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-//                    }
-//                    if (this.getAttachmentFacing() == EnumFacing.EAST) {
-//                        this.posX = this.getPosition().getX() + 1 - ((this.getMaxWidth() * this.getAgeScale()) / 2F);
-//                    }
-                    this.setAttachmentPos(this.getPosition().offset(this.getAttachmentFacing()));
-                    if (this.climbingpause < 0 && !this.getHeadCollided()) {
-                        this.motionY = this.getClimbSpeed();
-                        //this.setIsMoving(true);
+                try {
+                    if (world.isSideSolid(pos, this.getAttachmentFacing())) {
+                        sitTickCt++;
+                        sitCooldown = 150;
+                        if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                            rotationYaw = 180;
+                            this.rotationYawHead = this.rotationYaw;
+                        } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                            rotationYaw = 270;
+                            this.rotationYawHead = this.rotationYaw;
+                        } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                            rotationYaw = 0;
+                            this.rotationYawHead = this.rotationYaw;
+                        } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                            rotationYaw = 90;
+                            this.rotationYawHead = this.rotationYaw;
+                        }
+                        this.moveHelper.action = EntityMoveHelper.Action.WAIT;
+
+                        this.setAttachmentPos(this.getPosition().offset(this.getAttachmentFacing()));
+                        if (this.climbingpause < 0 && !this.getHeadCollided()) {
+                            this.motionY = this.getClimbSpeed();
+                            //this.setIsMoving(true);
+                        } else {
+                            this.motionY = 0;
+                            //this.setIsMoving(false);
+                        }
+                        this.motionX = 0.0D;
+                        this.motionZ = 0.0D;
                     } else {
-                        this.motionY = 0;
-                        //this.setIsMoving(false);
+                        this.setFlying();
                     }
-                    this.motionX = 0.0D;
-                    this.motionZ = 0.0D;
-                } else {
+                }
+                catch (Error e) {
                     this.setFlying();
                 }
             }
