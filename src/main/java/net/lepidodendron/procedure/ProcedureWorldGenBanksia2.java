@@ -57,7 +57,7 @@ public class ProcedureWorldGenBanksia2 extends ElementsLepidodendronMod.ModEleme
 
 			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockBanksiaLog2.block.getDefaultState(), 3);
 
-			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+			Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 			$_dependencies.put("x", x);
 			$_dependencies.put("y", y + 1);
 			$_dependencies.put("z", z);
