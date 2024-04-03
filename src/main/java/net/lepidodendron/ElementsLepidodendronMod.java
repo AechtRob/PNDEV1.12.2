@@ -1,5 +1,6 @@
 package net.lepidodendron;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.gui.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,12 +36,12 @@ import java.util.*;
 import java.util.function.Supplier;
 
 public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
-	public final List<ModElement> elements = new ArrayList<>();
-	public final List<Supplier<Block>> blocks = new ArrayList<>();
-	public final List<Supplier<Item>> items = new ArrayList<>();
-	public final List<Supplier<Biome>> biomes = new ArrayList<>();
-	public final List<Supplier<EntityEntry>> entities = new ArrayList<>();
-	public final List<Supplier<Potion>> potions = new ArrayList<>();
+	public final List<ModElement> elements = new ObjectArrayList <> ();
+	public final List<Supplier<Block>> blocks = new ObjectArrayList <>();
+	public final List<Supplier<Item>> items = new ObjectArrayList <>();
+	public final List<Supplier<Biome>> biomes = new ObjectArrayList <>();
+	public final List<Supplier<EntityEntry>> entities = new ObjectArrayList <>();
+	public final List<Supplier<Potion>> potions = new ObjectArrayList <>();
 	public static Object2ObjectOpenHashMap<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new Object2ObjectOpenHashMap<>();
 	public ElementsLepidodendronMod() {
 		sounds.put(new ResourceLocation("lepidodendron", "wet_crunch_plants"),
