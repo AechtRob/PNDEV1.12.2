@@ -1309,6 +1309,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 doAgeVar = true;
                                                             }
 
+                                                            if (mobToSpawn.equalsIgnoreCase("lepidodendron:prehistoric_flora_cidaroida")) {
+                                                                nbtStr = "{variant:" + world.rand.nextInt(4) + "}";
+                                                            }
+
                                                             if (!(TriassicCanyons && spawnPos.getY() > 70)) {
                                                                 for (int i = 0; i < spawnQty; ++i) {
 
