@@ -22,7 +22,7 @@ public class ModTriggers
     public static final CustomTrigger ENTER_PERMIAN = new CustomTrigger("enter_pf_permian");
     public static final CustomTrigger ENTER_TRIASSIC = new CustomTrigger("enter_pf_triassic");
     public static final CustomTrigger ENTER_JURASSIC = new CustomTrigger("enter_pf_jurassic");
-    public static final CustomTrigger ENTER_CRETACEOUS = new CustomTrigger("enter_pf_cretaceous");
+    public static final CustomTrigger ENTER_CRETACEOUS_EARLY = new CustomTrigger("enter_pf_cretaceous_early");
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
     public static final CustomTrigger ACID_CLEAN = new CustomTrigger("pf_acid_clean");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
@@ -1487,7 +1487,7 @@ public class ModTriggers
             ENTER_PERMIAN,
             ENTER_TRIASSIC,
             ENTER_JURASSIC,
-            ENTER_CRETACEOUS,
+            ENTER_CRETACEOUS_EARLY,
             REJUVENATE,
             ACID_CLEAN,
             USE_CAGE,

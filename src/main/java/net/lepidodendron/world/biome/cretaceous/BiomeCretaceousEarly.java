@@ -5,8 +5,9 @@ import net.lepidodendron.world.BiomeDecoratorPN;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 
-public abstract class BiomeCretaceous extends Biome {
-    public BiomeCretaceous(BiomeProperties properties) {
+public abstract class BiomeCretaceousEarly extends Biome {
+
+    public BiomeCretaceousEarly(BiomeProperties properties) {
         super(properties);
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
