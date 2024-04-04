@@ -37,6 +37,7 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicMobsDesertRimPF = new String[]{"lepidodendron:prehistoric_flora_docodon:4:3:1"};
     public static final String[] dimJurassicMobsDesertGulleyPF = new String[]{"lepidodendron:prehistoric_flora_semionotus:0:80:3","lepidodendron:prehistoric_flora_morrolepis:0:80:3","lepidodendron:prehistoric_flora_ceratodus:2:70:3","lepidodendron:prehistoric_flora_dilophosaurus:1:30:8","lepidodendron:prehistoric_flora_anchisaurus:1:30:8"};
     public static final String[] dimJurassicMobsDesertIslandPF = new String[0];
+    public static final String[] dimJurassicMobsForestIslandPF = new String[0];
 
     //------------ Fossils and Archeology mobs:
     public static final String[] dimJurassicMobsOceanFA = new String[]{"fossil:fossil.plesiosaur{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:1:10:3", "fossil:fossil.plesiosaur{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:1:10:2","fossil:fossil.liopleurodon{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:45}],Health:45}:1:10:3", "fossil:fossil.liopleurodon{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:45}],Health:45}:1:10:2", "fossil:fossil.icthyosaurus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:1:10:3"};
@@ -74,6 +75,7 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicMobsDesertRimFA = new String[0];
     public static final String[] dimJurassicMobsDesertGulleyFA = new String[]{"fossil:fossil.dilophosaurus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:40}],Health:40}:1:30:8"};
     public static final String[] dimJurassicMobsDesertIslandFA = new String[0];
+    public static final String[] dimJurassicMobsForestIslandFA = new String[0];
 
     //------------ Reborn mobs:
     public static final String[] dimJurassicMobsOceanReborn = new String[]{"rebornmod:entities.perisphinctes:2:80:3","rebornmod:entities.perisphinctes:2:80:2"};
@@ -111,5 +113,6 @@ public class SpawnerConfigsJurassic {
     public static final String[] dimJurassicMobsDesertRimReborn = new String[0];
     public static final String[] dimJurassicMobsDesertGulleyReborn = new String[]{"rebornmod:entities.segisaurus:1:30:8", "rebornmod:entities.dilophosaurus:1:30:8"};
     public static final String[] dimJurassicMobsDesertIslandReborn = new String[0];
+    public static final String[] dimJurassicMobsForestIslandReborn = new String[0];
 
 }
