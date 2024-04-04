@@ -363,6 +363,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PHYLLOTHECA = new CustomTrigger("pf_book_phyllotheca");
     public static final CustomTrigger CLICK_PIRANIA = new CustomTrigger("pf_book_pirania");
     public static final CustomTrigger CLICK_ARBORISPONGIA = new CustomTrigger("pf_book_arborispongia");
+    public static final CustomTrigger CLICK_TITUSVILLIA = new CustomTrigger("pf_book_titusvillia");
     public static final CustomTrigger CLICK_PITYS = new CustomTrigger("pf_book_pitys");
     public static final CustomTrigger CLICK_PLANE = new CustomTrigger("pf_book_plane");
     public static final CustomTrigger CLICK_FIG = new CustomTrigger("pf_book_fig");
@@ -1827,6 +1828,7 @@ public class ModTriggers
             CLICK_PHYLLOTHECA,
             CLICK_PIRANIA,
             CLICK_ARBORISPONGIA,
+            CLICK_TITUSVILLIA,
             CLICK_PITYS,
             CLICK_PLANE,
             CLICK_FIG,
