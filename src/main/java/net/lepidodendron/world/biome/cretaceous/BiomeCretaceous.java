@@ -1,6 +1,6 @@
 package net.lepidodendron.world.biome.cretaceous;
 
-import net.lepidodendron.util.EnumBiomeTypeCretaceous;
+import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.BiomeDecoratorPN;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -14,7 +14,7 @@ public abstract class BiomeCretaceous extends Biome {
         this.spawnableCaveCreatureList.clear();
     }
 
-    public abstract EnumBiomeTypeCretaceous getBiomeType();
+    public abstract EnumBiomeTypeCretaceousEarly getBiomeType();
 
     @Override
     public BiomeDecorator createBiomeDecorator()
