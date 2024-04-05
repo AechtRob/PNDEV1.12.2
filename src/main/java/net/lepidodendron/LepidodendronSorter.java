@@ -4309,4 +4309,17 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 4305;
     public static final int advancement_placeholder = 4306;
 
+    public static final int burgessia_raw = 4370;
+    public static final int thulaspis_raw = 4371;
+    public static final int capinatator_raw = 4372;
+    public static final int hadranax_raw = 4373;
+    public static final int timorebestia_raw = 4374;
+    public static final int tanaocrossus_raw = 4375;
+    public static final int saperion_raw = 4376;
+    public static final int mobulavermis_raw = 4377;
+    public static final int urokodia_raw = 4378;
+    public static final int titanokorys_raw = 4379;
+    public static final int thelxiope_raw = 4380;
+    public static final int nesonektris_raw = 4381;
+
 }

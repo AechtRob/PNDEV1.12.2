@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPalaeoctenophora extends RenderLiving<EntityPrehistoricFloraPalaeoctenophora> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoctenophora.png");
 
-    public static float getScaler() {return 0.5F;}
+    public static float getScaler() {return 0.35F;}
 
     public RenderPalaeoctenophora(RenderManager mgr) {
         super(mgr, new ModelPalaeoctenophora(), 0.0f);

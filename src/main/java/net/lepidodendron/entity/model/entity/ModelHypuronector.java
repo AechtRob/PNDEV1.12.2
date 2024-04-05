@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
+import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHypuronector;
 import net.lepidodendron.entity.EntityPrehistoricFloraHypuronector;
@@ -366,12 +367,12 @@ public class ModelHypuronector extends AdvancedModelBaseExtended {
         this.eyeleft = new AdvancedModelRendererExtended(this);
         this.eyeleft.setRotationPoint(0.8F, 0.0539F, -0.8417F);
         this.head.addChild(eyeleft);
-        this.eyeleft.cubeList.add(new ModelBox(eyeleft, 20, 4, -0.6F, -0.5F, -0.4F, 1, 1, 1, 0.01F, false));
+        this.eyeleft.cubeList.add(new ModelBox(eyeleft, 20, 4, -0.6F, -0.5F, -0.4F, 1, 1, 1, 0.0F, false));
 
         this.eyeright = new AdvancedModelRendererExtended(this);
         this.eyeright.setRotationPoint(-0.8F, 0.0539F, -0.8417F);
         this.head.addChild(eyeright);
-        this.eyeright.cubeList.add(new ModelBox(eyeright, 0, 20, -0.4F, -0.5F, -0.4F, 1, 1, 1, 0.01F, false));
+        this.eyeright.cubeList.add(new ModelBox(eyeright, 0, 20, -0.4F, -0.5F, -0.4F, 1, 1, 1, 0.0F, false));
 
         this.lowerjaw = new AdvancedModelRendererExtended(this);
         this.lowerjaw.setRotationPoint(0.0F, 0.6539F, 0.2583F);
