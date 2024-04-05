@@ -4,27 +4,27 @@
       {"model": "lepidodendron:shikamaia"}
     ],
     "facing=north": [
-      {"model": "lepidodendron:shikamaia"},
+      {"model": "lepidodendron:shikamaia", "weight": 2},
       {"model": "lepidodendron:shikamaia_var"}
     ],
     "facing=east": [
-      {"model": "lepidodendron:shikamaia", "y": 90},
+      {"model": "lepidodendron:shikamaia", "y": 90, "weight": 2},
       {"model": "lepidodendron:shikamaia_var", "y": 90}
     ],
     "facing=south": [
-      {"model": "lepidodendron:shikamaia", "y": 180},
+      {"model": "lepidodendron:shikamaia", "y": 180, "weight": 2},
       {"model": "lepidodendron:shikamaia_var", "y": 180}
     ],
   "facing=west": [
-      {"model": "lepidodendron:shikamaia", "y": 270},
+      {"model": "lepidodendron:shikamaia", "y": 270, "weight": 2},
       {"model": "lepidodendron:shikamaia_var", "y": 270}
     ],
   "facing=up": [
-      {"model": "lepidodendron:shikamaia"},
+      {"model": "lepidodendron:shikamaia", "weight": 2},
       {"model": "lepidodendron:shikamaia_var"}
     ],
     "facing=down": [
-      {"model": "lepidodendron:shikamaia"},
+      {"model": "lepidodendron:shikamaia", "weight": 2},
       {"model": "lepidodendron:shikamaia_var"}
     ]
   }
