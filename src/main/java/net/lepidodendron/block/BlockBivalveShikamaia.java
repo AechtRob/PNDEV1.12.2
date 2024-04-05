@@ -84,7 +84,7 @@ public class BlockBivalveShikamaia extends ElementsLepidodendronMod.ModElement {
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
-		if (dimID == LepidodendronConfig.dimJurassic
+		if (dimID == LepidodendronConfig.dimPermian
 		) {
 			dimensionCriteria = true;
 		}
@@ -135,14 +135,14 @@ public class BlockBivalveShikamaia extends ElementsLepidodendronMod.ModElement {
 
 		if (dimID == LepidodendronConfig.dimPermian
 		) {
-			multiplier = 3;
+			multiplier = 2;
 		}
 
 		int minWaterDepth = 1;
 		int maxWaterDepth = 10;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < (12 * multiplier); i++) {
+		for (int i = 0; i < (multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
