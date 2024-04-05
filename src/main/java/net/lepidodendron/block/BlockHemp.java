@@ -8,7 +8,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -114,7 +114,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 
 		boolean heightCheck = false;
 
-		if (biome instanceof BiomeCretaceous)
+		if (biome instanceof BiomeCretaceousEarly)
 		{
 //			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 //			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {

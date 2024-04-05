@@ -1351,6 +1351,17 @@ public class EntityLists {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsCalderaSwampReborn);
                 }
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_forested")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandPF);
+                }
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandReborn);
+                }
             }
 
         return MobString;

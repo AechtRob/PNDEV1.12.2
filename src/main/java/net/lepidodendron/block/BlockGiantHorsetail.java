@@ -6,7 +6,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -198,7 +198,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		if (biome instanceof BiomeCretaceous) {
+		if (biome instanceof BiomeCretaceousEarly) {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
 				biomeCriteria = true;
 			}
