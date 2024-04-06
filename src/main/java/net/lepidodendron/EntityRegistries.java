@@ -866,6 +866,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_liaosteus", EntityPrehistoricFloraLiaosteus.class, LepidodendronMod.ENTITY_LIAOSTEUS, 48,-11321543,-2043439);
         registerEntity("prehistoric_flora_kichkassia", EntityPrehistoricFloraKichkassia.class, LepidodendronMod.ENTITY_KICHKASSIA, 48,-5347787,-12178662);
         //TODO make meats for Batch LMNO
+
 //        registerEntity("prehistoric_flora_brazilichthys", EntityPrehistoricFloraBrazilichthys.class, LepidodendronMod.ENTITY_BRAZILICHTHYS, 64,-5347787,-12178662);
 //        registerEntity("prehistoric_flora_conchopoma", EntityPrehistoricFloraConchopoma.class, LepidodendronMod.ENTITY_CONCHOPOMA, 48,-5347787,-12178662);
 //        registerEntity("prehistoric_flora_surcaudalus", EntityPrehistoricFloraSurcaudalus.class, LepidodendronMod.ENTITY_SURCAUDALUS, 48,-5347787,-12178662);
@@ -882,6 +883,40 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_senekichthys", EntityPrehistoricFloraSenekichthys.class, LepidodendronMod.ENTITY_SENEKICHTHYS, 48,-5347787,-12178662);
 //        registerEntity("prehistoric_flora_heteropetalus", EntityPrehistoricFloraHeteropetalus.class, LepidodendronMod.ENTITY_HETEROPETALUS, 48,-5347787,-12178662);
 
+
+
+//        registerEntity("prehistoric_flora_climacograptus", EntityPrehistoricFloraClimacograptus.class, LepidodendronMod.ENTITY_CLIMACOGRAPTUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_phyllograptus", EntityPrehistoricFloraPhyllograptus.class, LepidodendronMod.ENTITY_PHYLLOGRAPTUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_bowengriphus", EntityPrehistoricFloraBowengriphus.class, LepidodendronMod.ENTITY_BOWENGRIPHUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_gosfordia", EntityPrehistoricFloraGosfordia.class, LepidodendronMod.ENTITY_GOSFORDIA, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_sargodon", EntityPrehistoricFloraSargodon.class, LepidodendronMod.ENTITY_SARGODON, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_hydropessum", EntityPrehistoricFloraHydropessum.class, LepidodendronMod.ENTITY_HYDROPESSUM, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_phacops", EntityPrehistoricFloraPhacops.class, LepidodendronMod.ENTITY_PHACOPS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_phylloceras", EntityPrehistoricFloraPhylloceras.class, LepidodendronMod.ENTITY_PHYLLOCERAS, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_erettopterus", EntityPrehistoricFloraErettopterus.class, LepidodendronMod.ENTITY_ERETTOPTERUS, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_polysentor", EntityPrehistoricFloraPolysentor.class, LepidodendronMod.ENTITY_POLYSENTOR, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_harpagofututor", EntityPrehistoricFloraHarpagofututor.class, LepidodendronMod.ENTITY_HARPAGOFUTUTOR, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_thalattosuchus", EntityPrehistoricFloraThalattosuchus.class, LepidodendronMod.ENTITY_THALATTOSUCHUS, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_debeerius", EntityPrehistoricFloraDebeerius.class, LepidodendronMod.ENTITY_DEBEERIUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_wodnika", EntityPrehistoricFloraWodnika.class, LepidodendronMod.ENTITY_WODNIKA, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_pseudangustidontus", EntityPrehistoricFloraPseudangustidontus.class, LepidodendronMod.ENTITY_PSEUDANGUSTIDONTUS, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_sarcoprion", EntityPrehistoricFloraSarcoprion.class, LepidodendronMod.ENTITY_SARCOPRION, 128,-5347787,-12178662);
+//
+//        registerEntity("prehistoric_flora_dipteronotus", EntityPrehistoricFloraDipteronotus.class, LepidodendronMod.ENTITY_DIPTERONOTUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_heterostrophus", EntityPrehistoricFloraHeterostrophus.class, LepidodendronMod.ENTITY_HETEROSTROPHUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_flagellopantopus", EntityPrehistoricFloraFlagellopantopus.class, LepidodendronMod.ENTITY_FLAGELLOPANTOPUS, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_waaganella", EntityPrehistoricFloraWaaganella.class, LepidodendronMod.ENTITY_WAAGANELLA, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_akasakiella", EntityPrehistoricFloraAkasakiella.class, LepidodendronMod.ENTITY_AKASAKIELLA, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_foordella", EntityPrehistoricFloraFoordella.class, LepidodendronMod.ENTITY_FOORDELLA, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_chippewaella", EntityPrehistoricFloraChippewaella.class, LepidodendronMod.ENTITY_CHIPPEWAELLA, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_deuterosaurus", EntityPrehistoricFloraDeuterosaurus.class, LepidodendronMod.ENTITY_DEUTEROSAURUS, 64,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_dracopelta", EntityPrehistoricFloraDracopelta.class, LepidodendronMod.ENTITY_DRACOPELTA, 84,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_stonefly", EntityPrehistoricFloraStonefly.class, LepidodendronMod.ENTITY_STONEFLY, 48,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_sinophoneus", EntityPrehistoricFloraSinophoneus.class, LepidodendronMod.ENTITY_SINOPHONEUS, 64,-5347787,-12178662);
+//
+//        registerEntity("prehistoric_flora_pentecopterus", EntityPrehistoricFloraPentecopterus.class, LepidodendronMod.ENTITY_PENTECOPTERUS, 84,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_leedsichthys", EntityPrehistoricFloraLeedsichthys.class, LepidodendronMod.ENTITY_LEEDSICHTHYS, 164,-5347787,-12178662);
+//        registerEntity("prehistoric_flora_pliosaurus", EntityPrehistoricFloraPliosaurus.class, LepidodendronMod.ENTITY_PLIOSAURUS, 164,-5347787,-12178662);
 
 
 
