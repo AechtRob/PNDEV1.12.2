@@ -348,7 +348,7 @@ public class ModelParioscorpio extends AdvancedModelBase {
         if (isAtBottom) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
+            taildegree = 0.05F;
         }
 
         AdvancedModelRenderer[] pincerL = {this.leftarm1, this.leftarm2, this.leftarm3};
@@ -359,7 +359,7 @@ public class ModelParioscorpio extends AdvancedModelBase {
         //this.swing(appendageR, speed * 3F, 0.7F, false, 0, -1.15F, f2, 0.5F);
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
+            this.chainWave(fishTail, speed, 0.15F, -3, f2, 1);
             this.chainSwing(fishTail, speed, taildegree, -3, f2, 1);
             //this.swing(Lunaspis, speed, 0.3F, true, 0, 0, f2, 1);
             this.flap(leftleg1, 0.5F, -0.4F, true, 0, -0.5F, f2, 0.3F);
