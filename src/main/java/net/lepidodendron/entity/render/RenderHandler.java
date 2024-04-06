@@ -5370,6 +5370,39 @@ public class RenderHandler {
                 return new RenderHadranax(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEryma.class, new IRenderFactory<EntityPrehistoricFloraEryma>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEryma> createRenderFor(RenderManager manager) {
+                return new RenderEryma(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParioscorpio.class, new IRenderFactory<EntityPrehistoricFloraParioscorpio>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraParioscorpio> createRenderFor(RenderManager manager) {
+                return new RenderParioscorpio(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLiaosteus.class, new IRenderFactory<EntityPrehistoricFloraLiaosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLiaosteus> createRenderFor(RenderManager manager) {
+                return new RenderLiaosteus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEochondrosteus.class, new IRenderFactory<EntityPrehistoricFloraEochondrosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEochondrosteus> createRenderFor(RenderManager manager) {
+                return new RenderEochondrosteus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKichkassia.class, new IRenderFactory<EntityPrehistoricFloraKichkassia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKichkassia> createRenderFor(RenderManager manager) {
+                return new RenderKichkassia(manager);
+            }
+        });
         
         
         

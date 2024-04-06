@@ -534,7 +534,7 @@ public class BlockArchaeoconularia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Undetermined sponge-like organism");
+				tooltip.add("Type: Sessile Cnidarian");
 				tooltip.add("Periods: Ordovician");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

@@ -4321,5 +4321,22 @@ public class LepidodendronSorter {
     public static final int titanokorys_raw = 4379;
     public static final int thelxiope_raw = 4380;
     public static final int nesonektris_raw = 4381;
+    public static final int eryma_raw = 4382;
+    public static final int parioscorpio_raw = 4383;
+    public static final int eochondrosteus_raw = 4384;
+    public static final int liaosteus_raw = 4385;
+    public static final int kichkassia_raw = 4386;
+    public static final int brazilichthys_raw = 4387;
+    public static final int surcaudalus_raw = 4388;
+    public static final int conchopoma_raw = 4389;
+    public static final int bethesdaichthys_raw = 4390;
+    public static final int lufengosaurus_raw = 4391;
+    public static final int leptoteuthis_raw = 4392;
+    public static final int namurotypus_raw = 4393;
+    public static final int insect_eggs_namurotypus = 4394;
+    public static final int insect_eggs_namurotypus_worldgen = 4395;
+    public static final int erasipteroides_raw = 4396;
+    public static final int insect_eggs_erasipteroides = 4397;
+    public static final int insect_eggs_erasipteroides_worldgen = 4398;
 
 }

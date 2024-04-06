@@ -331,20 +331,22 @@ public class ModelStoermeropterus extends AdvancedModelBase {
         //Swimming pose:
 
         if (ee.isReallyInWater()) {
-            if ((!ee.isReallySwimming())) {
-                //Walk pose:
-                if (ee.getIsFast()) {
-                    animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-
+            if (ee.getIsMoving()) {
+                if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
+                    //Walk pose:
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 } else {
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    if (ee.getIsFast()) {
+                        animFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    }
                 }
-
-            } else {
-                //animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
-        } else {
-
+            else { //in water but not moving:
+                if (ee.getAnimation() != ee.UNSWIM_ANIMATION && ee.getAnimation() != ee.SWIM_ANIMATION) {
+                    //Walk static pose:
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+                }
+            }
         }
     }
 
@@ -860,10 +862,13 @@ public class ModelStoermeropterus extends AdvancedModelBase {
 
     }
 
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraStoermeropterus entity = (EntityPrehistoricFloraStoermeropterus) entitylivingbaseIn;
         int animCycle = 20;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;
