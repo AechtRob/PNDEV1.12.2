@@ -198,8 +198,11 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		if (biome instanceof BiomeCretaceousEarly) {
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -261,8 +264,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
 			GenChance = 30;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_nypa_mangrove")) {
-			GenChance = 256;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")) {
+			GenChance = 192;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
 			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")) {

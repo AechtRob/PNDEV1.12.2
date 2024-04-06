@@ -89,17 +89,13 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCretaceousEarly)
 		{
-//			BiomeCretaceous biomeCretaceous = (BiomeCretaceous) biome;
-//			if (biomeCretaceous.getBiomeType() == EnumBiomeTypeCretaceous.Lake
-//				|| biomeCretaceous.getBiomeType() == EnumBiomeTypeCretaceous.River
-//				|| biomeCretaceous.getBiomeType() == EnumBiomeTypeCretaceous.Mire
-//				|| biomeCretaceous.getBiomeType() == EnumBiomeTypeCretaceous.Ginkgo
-//				|| biomeCretaceous.getBiomeType() == EnumBiomeTypeCretaceous.Floodplain) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
 		if (!biomeCriteria)
 			return;

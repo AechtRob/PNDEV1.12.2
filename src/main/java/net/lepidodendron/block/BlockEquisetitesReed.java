@@ -8,6 +8,7 @@ import net.lepidodendron.item.ItemEquisetitesReedItem;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -74,7 +75,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfigPlants.genEquisetitesReed && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimTriassic
-		 	|| dimID == LepidodendronConfig.dimJurassic)
+		 		|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly)
 			dimensionCriteria = true;
 
 		if (!dimensionCriteria)
@@ -120,6 +122,17 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 			
 		if (!biomeCriteria)
 			return;
@@ -147,6 +160,11 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
 			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")) {
+			GenChance = 64;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
 			GenChance = 64;
 		}
 

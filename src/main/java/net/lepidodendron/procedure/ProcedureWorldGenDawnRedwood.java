@@ -45,17 +45,10 @@ public class ProcedureWorldGenDawnRedwood extends ElementsLepidodendronMod.ModEl
 		double counterbase = 0;
 		int xct;
 		int zct;
-		
-		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
-		if ((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))
-			&& material != Material.GRASS
-			&& material != Material.GROUND
-			&& material != Material.GLASS
-			&& material != Material.IRON
-			&& material != Material.ROCK
-			&& material != Material.SAND
-			&& material != Material.WOOD
-			) {			
+
+		if (((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))) ||
+				(((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
+						&& (world.canSeeSky(new BlockPos((int) x, (int) y + 1, (int) z))))) {
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 			
 			//Trunk:
