@@ -15,7 +15,7 @@ public class RenderNesonektris extends RenderLiving<EntityPrehistoricFloraNesone
         super(mgr, new ModelNesonektris(), 0.0f);
     }
 
-    public static float getScaler() {return 0.2F; }
+    public static float getScaler() {return 0.4F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraNesonektris entity) {
