@@ -445,6 +445,13 @@ public class LepidodendronConfigPlants {
     public static int minheightWilliamsonia = 1;
     public static int maxheightWilliamsonia = 90;
     public static double multiplierWilliamsonia = 1;
+    public static boolean genMonanthesia = false;
+    public static String[] genMonanthesiaBlacklistBiomes = new String[0];
+    public static String[] genMonanthesiaOverrideBiomes = new String[0];
+    public static int[] dimMonanthesia = new int[]{0};
+    public static int minheightMonanthesia = 1;
+    public static int maxheightMonanthesia = 90;
+    public static double multiplierMonanthesia = 1;
     public static boolean genCycadeoidea = false;
     public static String[] genCycadeoideaBlacklistBiomes = new String[0];
     public static String[] genCycadeoideaOverrideBiomes = new String[0];
@@ -4759,6 +4766,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Tempskya", "multiplierTempskya", multiplierTempskya);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierTempskya = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Monanthesia", "genMonanthesia", genMonanthesia);
+        prop.setComment("Set to true to generate Monanthesia naturally [default: false]");
+        genMonanthesia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Monanthesia", "genMonanthesiaBlacklistBiomes", genMonanthesiaBlacklistBiomes);
+        prop.setComment("List of biomes Monanthesia are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genMonanthesiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Monanthesia", "genMonanthesiaOverrideBiomes", genMonanthesiaOverrideBiomes);
+        prop.setComment("List of biomes Monanthesia are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genMonanthesiaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Monanthesia", "dimMonanthesia", dimMonanthesia);
+        prop.setComment("List of dimension IDs Monanthesia can generate in [default: 0]");
+        dimMonanthesia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Monanthesia", "minheightMonanthesia", minheightMonanthesia);
+        prop.setComment("Minimum height that Monanthesia can generate (1 to 250) [default: 1]");
+        minheightMonanthesia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Monanthesia", "maxheightMonanthesia", maxheightMonanthesia);
+        prop.setComment("Maximum height that Monanthesia can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightMonanthesia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Monanthesia", "multiplierMonanthesia", multiplierMonanthesia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierMonanthesia = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Williamsonia", "genWilliamsonia", genWilliamsonia);
