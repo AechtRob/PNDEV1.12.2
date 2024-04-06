@@ -7,9 +7,8 @@ import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemSalviniaItem;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.SalviniaGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -88,7 +87,7 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genSalviniaOverrideBiomes))
 			biomeCriteria = true;
 
-		if (biome instanceof BiomeCretaceous)
+		if (biome instanceof BiomeCretaceousEarly)
 		{
 //			BiomeCretaceous biomeCretaceous = (BiomeCretaceous) biome;
 //			if (biomeCretaceous.getBiomeType() == EnumBiomeTypeCretaceous.Lake
@@ -114,7 +113,7 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}
-		if (biome instanceof BiomeCretaceous) {
+		if (biome instanceof BiomeCretaceousEarly) {
 			GenChance = 192;
 		}
 
