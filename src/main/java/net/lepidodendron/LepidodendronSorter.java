@@ -4338,5 +4338,14 @@ public class LepidodendronSorter {
     public static final int erasipteroides_raw = 4396;
     public static final int insect_eggs_erasipteroides = 4397;
     public static final int insect_eggs_erasipteroides_worldgen = 4398;
+    public static final int mamulichthys_raw = 4399;
+    public static final int megalichthys_raw = 4400;
+    public static final int senekichthys_raw = 4401;
+    public static final int heteropetalus_raw = 4402;
+    public static final int heteropetalus_f_raw = 4403;
+    public static final int caihong_raw = 4404;
+    public static final int eggs_lufengosaurus = 4405;
+    public static final int eggs_caihong = 4406;
+    public static final int eggs_leptoteuthis = 4407;
 
 }
