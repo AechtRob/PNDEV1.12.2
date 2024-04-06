@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_small",
   "textures": {
-    "layer0": "lepidodendron:items/entities/eggs_longisquama"
+    "texture": "lepidodendron:entities/eggs_longisquama"
   }
 }

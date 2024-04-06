@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderRhizostomites extends RenderLiving<EntityPrehistoricFloraRhizostomites> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhizostomites.png");
 
-    public static float getScaler() {return 0.3F;}
+    public static float getScaler() {return 0.6F;}
 
     public RenderRhizostomites(RenderManager mgr) {
         super(mgr, new ModelRhizostomites(), 0.0f);

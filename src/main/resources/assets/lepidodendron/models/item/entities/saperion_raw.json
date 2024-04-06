@@ -1,6 +1,15 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/saperion_raw"
+    "layer0": "paleopedia:items/saperion_icon"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.165,
+        0.165,
+        0.165
+      ]
+    }
   }
 }

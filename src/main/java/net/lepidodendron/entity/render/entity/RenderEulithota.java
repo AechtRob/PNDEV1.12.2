@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEulithota extends RenderLiving<EntityPrehistoricFloraEulithota> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eulithota.png");
 
-    public static float getScaler() {return 0.3F;}
+    public static float getScaler() {return 0.6F;}
 
     public RenderEulithota(RenderManager mgr) {
         super(mgr, new ModelEulithota(), 0.0f);

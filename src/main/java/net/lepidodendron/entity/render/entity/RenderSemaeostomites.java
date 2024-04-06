@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSemaeostomites extends RenderLiving<EntityPrehistoricFloraSemaeostomites> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/semaeostomites.png");
 
-    public static float getScaler() {return 0.22F;}
+    public static float getScaler() {return 0.44F;}
 
     public RenderSemaeostomites(RenderManager mgr) {
         super(mgr, new ModelSemaeostomites(), 0.0f);

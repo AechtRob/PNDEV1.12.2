@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHydrocraspedota extends RenderLiving<EntityPrehistoricFloraHydrocraspedota> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hydrocraspedota.png");
 
-    public static float getScaler() {return 0.3F;}
+    public static float getScaler() {return 0.5F;}
 
     public RenderHydrocraspedota(RenderManager mgr) {
         super(mgr, new ModelHydrocraspedota(), 0.0f);
