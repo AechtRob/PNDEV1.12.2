@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/pallisade_post_small_tall",
+    "textures": {
+        "texture": "lepidodendron:blocks/monanthesia_log"
+    }
+}
+
