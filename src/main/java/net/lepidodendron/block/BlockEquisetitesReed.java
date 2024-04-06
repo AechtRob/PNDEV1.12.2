@@ -75,7 +75,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfigPlants.genEquisetitesReed && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimTriassic
-		 	|| dimID == LepidodendronConfig.dimJurassic)
+		 		|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly)
 			dimensionCriteria = true;
 
 		if (!dimensionCriteria)

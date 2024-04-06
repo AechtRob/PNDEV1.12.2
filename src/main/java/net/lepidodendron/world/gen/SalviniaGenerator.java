@@ -43,8 +43,8 @@ public class SalviniaGenerator extends WorldGenerator
 			return true;
 
 		int multiplier = 1;
-//		if (dimID == LepidodendronConfig.dimCretaceousEarly
-//		) {multiplier = 4;}
+		if (dimID == LepidodendronConfig.dimCretaceousEarly
+		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)
         {
