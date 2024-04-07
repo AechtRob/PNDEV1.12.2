@@ -1466,6 +1466,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRUMILLOSPONGIA = new CustomTrigger("pf_book_crumillospongia");
     public static final CustomTrigger CLICK_DIPTERONOTUS = new CustomTrigger("pf_book_dipteronotus");
     public static final CustomTrigger CLICK_HETEROSTROPHUS = new CustomTrigger("pf_book_heterostrophus");
+    public static final CustomTrigger CLICK_MONOLOPHOSAURUS = new CustomTrigger("pf_book_monolophosaurus");
 
 
 
@@ -2925,6 +2926,7 @@ public class ModTriggers
             CLICK_DIPTERONOTUS,
             CLICK_HETEROSTROPHUS,
             CLICK_FLAGELLOPANTOPUS,
+            CLICK_MONOLOPHOSAURUS
 
 
 

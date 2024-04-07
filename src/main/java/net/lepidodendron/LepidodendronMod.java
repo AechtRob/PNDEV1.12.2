@@ -2247,6 +2247,10 @@ public class LepidodendronMod {
 	public static final int ENTITY_NAMUROTYPUS_NYMPH = 909;
 	public static final int ENTITY_ERASIPTEROIDES_NYMPH = 910;
 
+	public static final int ENTITY_MONOLOPHOSAURUS = 911;
+	public static final ResourceLocation MONOLOPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/monolophosaurus"));
+	public static final ResourceLocation MONOLOPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/monolophosaurus_young"));
+
 
 
 

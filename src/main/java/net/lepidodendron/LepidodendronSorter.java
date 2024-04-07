@@ -4352,5 +4352,7 @@ public class LepidodendronSorter {
     public static final int eggs_lufengosaurus = 4405;
     public static final int eggs_caihong = 4406;
     public static final int eggs_leptoteuthis = 4407;
+    public static final int eggs_monolophosaurus = 4408;
+    public static final int monolophosaurus_raw = 4409;
 
 }
