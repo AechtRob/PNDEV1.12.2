@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockCalamitesRhizome;
@@ -20,7 +21,7 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 		super(instance, 375);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 
 		//Do nothing is sprweading is turned off:
 		if (!LepidodendronConfigPlants.spreadCalamites)
@@ -242,7 +243,7 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 				
 				boolean worldgen = false;
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);

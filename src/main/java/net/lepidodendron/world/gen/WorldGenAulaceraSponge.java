@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockAulacera;
 import net.lepidodendron.procedure.ProcedureWorldGenAulacera;
 import net.lepidodendron.util.Functions;
@@ -50,7 +51,7 @@ public class WorldGenAulaceraSponge extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockAulacera.block)
                 ) {
                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,position, BlockAulacera.block.getDefaultState(), 2);
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());

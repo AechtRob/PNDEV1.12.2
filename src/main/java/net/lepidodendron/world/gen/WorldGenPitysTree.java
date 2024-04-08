@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenPitys;
 import net.lepidodendron.util.Functions;
@@ -79,7 +80,7 @@ public class WorldGenPitysTree extends WorldGenAbstractTree
 
                 if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());

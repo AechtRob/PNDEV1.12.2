@@ -1,5 +1,6 @@
 package net.lepidodendron;
-
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.gui.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -34,13 +36,13 @@ import java.util.*;
 import java.util.function.Supplier;
 
 public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
-	public final List<ModElement> elements = new ArrayList<>();
-	public final List<Supplier<Block>> blocks = new ArrayList<>();
-	public final List<Supplier<Item>> items = new ArrayList<>();
-	public final List<Supplier<Biome>> biomes = new ArrayList<>();
-	public final List<Supplier<EntityEntry>> entities = new ArrayList<>();
-	public final List<Supplier<Potion>> potions = new ArrayList<>();
-	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
+	public final List<ModElement> elements = new ObjectArrayList <> ();
+	public final List<Supplier<Block>> blocks = new ObjectArrayList <>();
+	public final List<Supplier<Item>> items = new ObjectArrayList <>();
+	public final List<Supplier<Biome>> biomes = new ObjectArrayList <>();
+	public final List<Supplier<EntityEntry>> entities = new ObjectArrayList <>();
+	public final List<Supplier<Potion>> potions = new ObjectArrayList <>();
+	public static Object2ObjectOpenHashMap<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new Object2ObjectOpenHashMap<>();
 	public ElementsLepidodendronMod() {
 		sounds.put(new ResourceLocation("lepidodendron", "wet_crunch_plants"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "wet_crunch_plants")));
@@ -50,11 +52,11 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "respawner")));
 
 		sounds.put(new ResourceLocation("lepidodendron", "eoarthropleura_idle"),
-			new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "eoarthropleura_idle")));
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "eoarthropleura_idle")));
 		sounds.put(new ResourceLocation("lepidodendron", "eoarthropleura_hurt"),
-			new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "eoarthropleura_hurt")));
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "eoarthropleura_hurt")));
 		sounds.put(new ResourceLocation("lepidodendron", "eoarthropleura_death"),
-			new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "eoarthropleura_death")));
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "eoarthropleura_death")));
 		sounds.put(new ResourceLocation("lepidodendron", "pneudodesmus_idle"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "pneudodesmus_idle")));
 		sounds.put(new ResourceLocation("lepidodendron", "pneudodesmus_hurt"),

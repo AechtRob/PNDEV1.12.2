@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockStiffCycadLog;
 import net.lepidodendron.block.BlockStiffCycadSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenStiffCycad;
@@ -46,7 +47,7 @@ public class WorldGenStiffCycad extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.north().up(2)).getBlock() != BlockStiffCycadLog.block)
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockStiffCycadLog.block)
                 ) {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -81,7 +82,7 @@ public class WorldGenStiffCycad extends WorldGenerator
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockStiffCycadLog.block)
                             && (worldIn.getBlockState(blockpos.south()).getBlock() != BlockStiffCycadLog.block)
                     ) {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());

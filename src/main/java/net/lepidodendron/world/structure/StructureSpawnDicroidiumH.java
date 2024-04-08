@@ -1,6 +1,7 @@
 
 package net.lepidodendron.world.structure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
@@ -166,7 +167,7 @@ public class StructureSpawnDicroidiumH extends ElementsLepidodendronMod.ModEleme
 					return;
 				BlockPos spawnTo = new BlockPos(i, j + 1, k);
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);

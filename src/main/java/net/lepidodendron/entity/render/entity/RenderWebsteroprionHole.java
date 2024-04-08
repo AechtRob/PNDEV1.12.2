@@ -21,19 +21,13 @@ public class RenderWebsteroprionHole extends RenderLiving<EntityPrehistoricFlora
     }
 
     @Override
-    protected void applyRotations(EntityPrehistoricFloraWebsteroprionHole entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
-        super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
-    }
-
-    @Override
-    protected void preRenderCallback(EntityPrehistoricFloraWebsteroprionHole entity, float f) {
-
+    protected void preRenderCallback(EntityPrehistoricFloraWebsteroprionHole entity, float f ) {
         int ticksExtension = entity.getticksExtension();
         int ticksRetraction = entity.getticksRetraction();
         int AttackDuration = entity.getAttackLength();
         int AttackTick = entity.getAttackTick();
-        float scaler = 0;
 
+        float scaler = 0;
         if (AttackTick <= ticksExtension) { //Extension
             scaler = (float) ((double) (ticksExtension-AttackTick) / (double) ticksExtension);
         }
@@ -44,5 +38,4 @@ public class RenderWebsteroprionHole extends RenderLiving<EntityPrehistoricFlora
         }
         GlStateManager.translate(0, (scaler * 3),0);
     }
-
 }

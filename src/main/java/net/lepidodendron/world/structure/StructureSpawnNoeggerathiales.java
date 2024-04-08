@@ -1,6 +1,7 @@
 
 package net.lepidodendron.world.structure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
@@ -202,7 +203,7 @@ public class StructureSpawnNoeggerathiales extends ElementsLepidodendronMod.ModE
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
 				{
-					HashMap<String, Object> $_dependencies = new HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);

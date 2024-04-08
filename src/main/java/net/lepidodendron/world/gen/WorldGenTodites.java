@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockToditesLog;
 import net.lepidodendron.block.BlockToditesSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenTodites;
@@ -29,7 +30,7 @@ public class WorldGenTodites extends WorldGenerator
             	&& (worldIn.getBlockState(blockpos.south()).getBlock() != BlockToditesLog.block)
             	)
             {
-                java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", blockpos.getX());
 					$_dependencies.put("y", blockpos.getY());
 					$_dependencies.put("z", blockpos.getZ());

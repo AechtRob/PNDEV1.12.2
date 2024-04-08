@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockMacroneuropterisLeaves;
 import net.lepidodendron.block.BlockMacroneuropterisLeaves1;
@@ -15,7 +16,7 @@ public class ProcedureMacroneuropterisStrobilusNeighbourBlockChanges extends Ele
 		super(instance, 1182);
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure MacroneuropterisStrobilusNeighbourBlockChanges!");
 			return;

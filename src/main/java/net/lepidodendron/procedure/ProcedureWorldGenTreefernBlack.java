@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
@@ -18,7 +19,7 @@ public class ProcedureWorldGenTreefernBlack extends ElementsLepidodendronMod.Mod
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenTreefernBlack!");
 			return;

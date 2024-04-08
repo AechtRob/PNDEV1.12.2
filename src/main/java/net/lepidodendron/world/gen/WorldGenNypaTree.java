@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureWorldGenNypa;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
@@ -88,7 +89,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                                     || state.getMaterial() == Material.SAND || state.getMaterial() == Material.CLAY);
 
                     if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && isSoil && blockpos.getY() < worldIn.getHeight() - i - 1) {
-                        java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
@@ -118,7 +119,7 @@ public class WorldGenNypaTree extends WorldGenAbstractTree
                         }
 
                         if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && isSoil && blockpos.getY() < worldIn.getHeight() - i - 1) {
-                            java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                            Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());

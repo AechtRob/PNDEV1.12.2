@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockAneurophytonLog;
 import net.lepidodendron.block.BlockAneurophytonSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenAneurophyton;
@@ -38,7 +39,7 @@ public class WorldGenAneurophyton extends WorldGenerator
                 && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockAneurophytonLog.block)
             	)
             {
-                HashMap<String, Object> $_dependencies = new HashMap<>();
+                Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", blockpos.getX());
 					$_dependencies.put("y", blockpos.getY());
 					$_dependencies.put("z", blockpos.getZ());

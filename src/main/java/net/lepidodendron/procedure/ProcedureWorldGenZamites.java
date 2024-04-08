@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockZamitesLeaves;
 import net.lepidodendron.block.BlockZamitesLog;
@@ -21,7 +22,7 @@ public class ProcedureWorldGenZamites extends ElementsLepidodendronMod.ModElemen
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenZamites!");
 			return;

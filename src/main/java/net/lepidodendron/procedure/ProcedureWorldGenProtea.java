@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockProteaLeaves;
 import net.lepidodendron.util.Functions;
@@ -16,7 +17,7 @@ public class ProcedureWorldGenProtea extends ElementsLepidodendronMod.ModElement
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenProtea!");
 			return;
@@ -63,7 +64,7 @@ public class ProcedureWorldGenProtea extends ElementsLepidodendronMod.ModElement
 					ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z + counter2, world, BlockProteaLeaves.block, EnumFacing.NORTH);
 					counter2 = counter2 + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y + 1);
 				$_dependencies.put("z", z + randomiser);
@@ -82,7 +83,7 @@ public class ProcedureWorldGenProtea extends ElementsLepidodendronMod.ModElement
 					ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z - counter2, world, BlockProteaLeaves.block, EnumFacing.NORTH);
 					counter2 = counter2 + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y + 1);
 				$_dependencies.put("z", z - randomiser);
@@ -101,7 +102,7 @@ public class ProcedureWorldGenProtea extends ElementsLepidodendronMod.ModElement
 					ProcedureTreeLog.executeProcedure((int) x + counter2, (int) y, (int) z, world, BlockProteaLeaves.block, EnumFacing.NORTH);
 					counter2 = counter2 + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x + randomiser);
 				$_dependencies.put("y", y + 1);
 				$_dependencies.put("z", z);
@@ -120,7 +121,7 @@ public class ProcedureWorldGenProtea extends ElementsLepidodendronMod.ModElement
 					ProcedureTreeLog.executeProcedure((int) x - counter2, (int) y, (int) z, world, BlockProteaLeaves.block, EnumFacing.NORTH);
 					counter2 = counter2 + 1;
 				}
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x - randomiser);
 				$_dependencies.put("y", y + 1);
 				$_dependencies.put("z", z);
@@ -136,7 +137,7 @@ public class ProcedureWorldGenProtea extends ElementsLepidodendronMod.ModElement
 
 			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockProteaLeaves.block.getDefaultState(), 3);
 
-			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+			Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 			$_dependencies.put("x", x);
 			$_dependencies.put("y", y + 1);
 			$_dependencies.put("z", z);

@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureWorldGenOlive;
 import net.lepidodendron.procedure.ProcedureWorldGenOliveDead;
 import net.lepidodendron.util.Functions;
@@ -38,7 +39,7 @@ public class WorldGenOliveTreeInGrove extends WorldGenerator
                     boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling) Blocks.SAPLING);
 
                     if (positionTree.getY() >= Functions.getAdjustedSeaLevel(worldIn, positionTree) - 4 && isSoil && positionTree.getY() < worldIn.getHeight() - 1) {
-                        java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                         $_dependencies.put("x", positionTree.getX());
                         $_dependencies.put("y", positionTree.getY());
                         $_dependencies.put("z", positionTree.getZ());

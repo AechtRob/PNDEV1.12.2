@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockMagnoliaLeaves;
 import net.lepidodendron.block.BlockMagnoliaLog;
@@ -20,7 +21,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenMagnolia!");
 			return;
@@ -156,7 +157,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 							//What layer (out of three) of the tree are we in for picking a branch?
 							layer = Math.ceil(counter/(MainTrunkHeight / 3));
 							//Launch the branch routine from the (new) point of attachment:
-							java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+							Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 							$_dependencies.put("x", x);
 							$_dependencies.put("y", (y + (int)counter));
 							$_dependencies.put("z", (z - (int)counterext));
@@ -222,7 +223,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 							//What layer (out of three) of the tree are we in for picking a branch?
 							layer = Math.ceil(counter/(MainTrunkHeight / 3));
 							//Launch the branch routine from the (new) point of attachment:
-							java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+								Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 							$_dependencies.put("x", (x + (int)counterext));
 							$_dependencies.put("y", (y + (int)counter));
 							$_dependencies.put("z", z);
@@ -285,7 +286,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 								//What layer (out of three) of the tree are we in for picking a branch?
 								layer = Math.ceil(counter/(MainTrunkHeight / 3));
 								//Launch the branch routine from the (new) point of attachment:
-								java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 								$_dependencies.put("x", x);
 								$_dependencies.put("y", (y + (int)counter));
 								$_dependencies.put("z", (z + (int)counterext));
@@ -353,7 +354,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 								//What layer (out of three) of the tree are we in for picking a branch?
 								layer = Math.ceil(counter/(MainTrunkHeight / 3));
 								//Launch the branch routine from the (new) point of attachment:
-								java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 								$_dependencies.put("x", (x - (int)counterext));
 								$_dependencies.put("y", (y + (int)counter));
 								$_dependencies.put("z", z);
