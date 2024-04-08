@@ -36,10 +36,10 @@ public class EntityPrehistoricFloraLeptoteuthis extends EntityPrehistoricFloraNa
 
 	public EntityPrehistoricFloraLeptoteuthis(World world) {
 		super(world);
-		setSize(0.4F, 0.3F);
+		setSize(0.8F, 0.4F);
 		minWidth = 0.07F;
-		maxWidth = 0.4F;
-		maxHeight = 0.3F;
+		maxWidth = 0.8F;
+		maxHeight = 0.4F;
 		maxHealthAgeable = 4.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

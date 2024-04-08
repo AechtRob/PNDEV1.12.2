@@ -362,8 +362,16 @@ public class ModelLeptoteuthis extends AdvancedModelBaseExtended {
         this.chainWave(tentacle8, speed, degreeTentacle, 0, f2, 1F);
        // this.chainWave(tentacle9, speed, degreeTentacle, 0, f2, 1F);
        // this.chainWave(tentacle10, speed, degreeTentacle, 0, f2, 1F);
-        this.swing(finL, (float) (speed), 0.15F, true, 0, 0, f2, 1);
-        this.swing(finR, (float) (speed), 0.15F, true, 0, 0, f2, 1);
+        this.flap(finL, (float) (speed)*2, 0.15F, false, 0, 0, f2, 1);
+        this.flap(finR, (float) (speed)*2, 0.15F, true, 0, 0, f2, 1);
+        this.flap(finL2, (float) (speed)*2, 0.15F, false, 1, 0, f2, 1);
+        this.flap(finR2, (float) (speed)*2, 0.15F, true, 1, 0, f2, 1);
+        this.flap(finL3, (float) (speed)*2, 0.15F, false, 2, 0, f2, 1);
+        this.flap(finR3, (float) (speed)*2, 0.15F, true, 2, 0, f2, 1);
+        this.flap(finL4, (float) (speed)*2, 0.15F, false, 3, 0, f2, 1);
+        this.flap(finR4, (float) (speed)*2, 0.15F, true, 3, 0, f2, 1);
+        this.flap(finL5, (float) (speed)*2, 0.15F, false, 4, 0, f2, 1);
+        this.flap(finR5, (float) (speed)*2, 0.15F, true, 4, 0, f2, 1);
 
 
 

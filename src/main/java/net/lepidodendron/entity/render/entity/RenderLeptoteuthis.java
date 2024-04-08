@@ -12,7 +12,7 @@ public class RenderLeptoteuthis extends RenderLiving<EntityPrehistoricFloraLepto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/leptoteuthis.png");
 
     public static float getScaler() {
-        return 0.7F * 0.25F;
+        return 0.5f;
     }
     public RenderLeptoteuthis(RenderManager mgr) {
         super(mgr, new ModelLeptoteuthis(), 0.0f);
