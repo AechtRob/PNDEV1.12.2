@@ -3,12 +3,10 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.block.BlockGlossopterisLog;
-import net.lepidodendron.block.BlockGlossopterisStrobilus;
-import net.lepidodendron.block.BlockGlossopterisTreeLeaves;
-import net.lepidodendron.block.BlockPalaeognetaleana;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -34,6 +32,7 @@ public class ProcedureWorldGenGlossopteris extends ElementsLepidodendronMod.ModE
 	public static final PropertyBool EAST = PropertyBool.create("east");
 	public static final PropertyBool SOUTH = PropertyBool.create("south");
 	public static final PropertyBool WEST = PropertyBool.create("west");
+	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
@@ -2499,10 +2498,10 @@ public class ProcedureWorldGenGlossopteris extends ElementsLepidodendronMod.ModE
 
 						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGlossopterisTreeLeaves.block) {
 							//strobili:
-							if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter + 1, (int) z + zct)))) {
-								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter + 1, (int) z + zct), BlockGlossopterisStrobilus.block.getDefaultState(), 3);
+							if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGlossopterisStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 								if (!world.isRemote) {
-									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter + 1, (int) z + zct);
+									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct);
 									TileEntity _tileEntity = world.getTileEntity(_bp);
 									IBlockState _bs = world.getBlockState(_bp);
 									if (_tileEntity != null)

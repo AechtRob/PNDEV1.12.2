@@ -2367,7 +2367,7 @@ public class ProcedureWorldGenGlossopterisDuocaudata extends ElementsLepidodendr
 
 						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGlossopterisDuocaudataLeaves.block) {
 							//strobili:
-							if ((Math.random() > 0.6) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
+							if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
 								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGlossopterisDuocaudataStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 								if (!world.isRemote) {
 									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct);

@@ -27,16 +27,13 @@ public class RenderAngiopteris extends TileEntitySpecialRenderer<BlockAngiopteri
         if (entity != null && entity.hasWorld() && world.getBlockState(pos).getBlock() == BlockAngiopteris.block) {
 
             GlStateManager.pushMatrix();
-            GlStateManager.disableCull();
             GlStateManager.enableRescaleNormal();
             GlStateManager.translate(x + 0.5F, y + 1.50F, z + 0.5F);
             GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
             GlStateManager.scale(0.05F, 0.05F, 0.05F);
             Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
-            GlStateManager.enableAlpha();
             this.modelAngiopteris.renderAll(1.25f);
-            GlStateManager.disableAlpha();
-            GlStateManager.enableCull();
+            GlStateManager.disableRescaleNormal();
             GlStateManager.popMatrix();
         }
     }
