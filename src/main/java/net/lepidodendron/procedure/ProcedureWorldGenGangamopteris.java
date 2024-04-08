@@ -3,10 +3,7 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.block.BlockGangamopterisLeaves;
-import net.lepidodendron.block.BlockGangamopterisLog;
-import net.lepidodendron.block.BlockGangamopterisStrobilus;
-import net.lepidodendron.block.BlockPalaeognetaleana;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -2606,10 +2603,10 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 
 						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGangamopterisLeaves.block) {
 							//strobili:
-							if ((Math.random() > 0.6) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
-								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGangamopterisStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
+							if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter + 1, (int) z + zct)))) {
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter + 1, (int) z + zct), BlockGangamopterisStrobilus.block.getDefaultState(), 3);
 								if (!world.isRemote) {
-									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct);
+									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter + 1, (int) z + zct);
 									TileEntity _tileEntity = world.getTileEntity(_bp);
 									IBlockState _bs = world.getBlockState(_bp);
 									if (_tileEntity != null)
