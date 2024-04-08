@@ -3,9 +3,9 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.block.BlockGangamopterisLeaves;
-import net.lepidodendron.block.BlockGangamopterisLog;
-import net.lepidodendron.block.BlockGangamopterisStrobilus;
+import net.lepidodendron.block.BlockGlossopterisDuocaudataLeaves;
+import net.lepidodendron.block.BlockGlossopterisDuocaudataLog;
+import net.lepidodendron.block.BlockGlossopterisDuocaudataStrobilus;
 import net.lepidodendron.block.BlockPalaeognetaleana;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
@@ -25,8 +25,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.ModElement {
-	public ProcedureWorldGenGangamopteris(ElementsLepidodendronMod instance) {
+public class ProcedureWorldGenGlossopterisDuocaudata extends ElementsLepidodendronMod.ModElement {
+	public ProcedureWorldGenGlossopterisDuocaudata(ElementsLepidodendronMod instance) {
 		super(instance, 42);
 	}
 
@@ -39,23 +39,23 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure WorldGenGangamopteris!");
+			System.err.println("Failed to load dependency x for procedure WorldGenGlossopterisDuocaudata!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure WorldGenGangamopteris!");
+			System.err.println("Failed to load dependency y for procedure WorldGenGlossopterisDuocaudata!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure WorldGenGangamopteris!");
+			System.err.println("Failed to load dependency z for procedure WorldGenGlossopterisDuocaudata!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure WorldGenGangamopteris!");
+			System.err.println("Failed to load dependency world for procedure WorldGenGlossopterisDuocaudata!");
 			return;
 		}
 		if (dependencies.get("SaplingSpawn") == null) {
-			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenGangamopteris!");
+			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenGlossopterisDuocaudata!");
 			return;
 		}
 		int x = (int) dependencies.get("x");
@@ -66,6 +66,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 		int yy = y;
 		int zz = z;
 		World world = (World) dependencies.get("world");
+		Random rand = new Random();
 		double height = 0;
 		double counter = 0;
 		Material material = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial();
@@ -84,7 +85,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 			world.setBlockToAir(new BlockPos((int) x, (int) y + 1, (int) z));
 			world.setBlockToAir(new BlockPos((int) x, (int) y + 2, (int) z));
-			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			Block block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)), world,
 					new BlockPos((int) x, (int) (y + 1), (int) z))
@@ -94,7 +95,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.SNOW)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.WEB)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getMaterial() == Material.LEAVES)) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), world,
@@ -105,7 +106,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == Material.SNOW)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == Material.WEB)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == Material.LEAVES)) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 1)), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z + 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
@@ -127,7 +128,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == Material.SNOW)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == Material.WEB)
 					|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == Material.LEAVES)) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 1)), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) (z - 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
@@ -149,7 +150,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == Material.SNOW)
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == Material.WEB)
 					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) y, (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) y, (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
@@ -171,7 +172,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == Material.SNOW)
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == Material.WEB)
 					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == Material.LEAVES)) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) y, (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) y, (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z));
 					for (IProperty<?> prop : _bs.getProperties().keySet()) {
@@ -184,315 +185,59 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 				} catch (Exception e) {
 				}
 			}
-			height = (double) (2) + Math.round((Math.random() * 12) / 6) + Math.round((Math.random() * 12) / 6)
-					+ Math.round((Math.random() * 6) / 3);
+			height = (double) (2) + rand.nextInt(3);
 			counter = (double) 1;
 			while (((counter) <= (height))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z)), world,
 						new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z))) {
-					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((y + 1) + (counter)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 				}
 				counter = (double) ((counter) + 1);
 			}
 			// ===========================================================
 			// First layer of leaves/branches:
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 1)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 1)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 1)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 2)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 2)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 2)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 3))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 3))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 3)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 3)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 3)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 4))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 4))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 4)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 4)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 4)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 4)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			// ===========================================================
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 1)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 1)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 1)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 2)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 2)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 2)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 3))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 3))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 3)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 3)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 3)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 4))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 4))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 4)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 4)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 4)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 4)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			// =====================================
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			// ===========================================================
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) z)), world,
-					new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z + 1, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z + 2, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z + 3, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z + 4, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z - 1, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z - 2, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z - 3, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 2)), z - 4, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.WEST);
+
+			ProcedureTreeLog.executeProcedure(x + 1, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x + 2, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x + 3, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x + 4, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+
+			ProcedureTreeLog.executeProcedure(x - 1, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x - 2, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x - 3, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x - 4, (int) ((height) + (y + 2)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+
 			// =======================================
 			// Two layers of trunk and then the next of branches:
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 1)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 1)));
@@ -509,7 +254,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 2)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 2)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 2)));
@@ -526,7 +271,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 3)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 3)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 3)));
@@ -544,7 +289,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 1)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 1)));
@@ -561,7 +306,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 2)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 2)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 2)));
@@ -578,7 +323,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 3)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 3)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 3)));
@@ -595,7 +340,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) z));
@@ -612,7 +357,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) z));
@@ -629,7 +374,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) z));
@@ -647,7 +392,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) z));
@@ -664,7 +409,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) z));
@@ -681,7 +426,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) z));
@@ -699,37 +444,37 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z + 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 3)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 3)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z - 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 3)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 3)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) z));
@@ -746,7 +491,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) z));
@@ -763,7 +508,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z + 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 4)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 4)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 4)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 4)));
@@ -780,7 +525,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z - 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 4)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 4)), BlockGangamopterisLog.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 4)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
 						3);
 				try {
 					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 4)));
@@ -799,926 +544,931 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
-			// ============================================
-			// Next layer of branches:
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z)), world,
-					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z)), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z)), world,
-					new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z)), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			// ===========================================================
-			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z)), world,
-					new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			// =========================================
-			// Two layers of trunk:
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z)), world,
-					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z)), world,
-					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
-			}
-			// ===============================================
-			// Last bit of branches:
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)), BlockGangamopterisLog.block.getDefaultState(),
-						3);
-				try {
-					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)));
-					for (IProperty<?> prop : _bs.getProperties().keySet()) {
-						if (prop.getName().equals("facing")) {
-							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)),
-									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
-							break;
-						}
-					}
-				} catch (Exception e) {
-				}
-			}
+//			// ============================================
+//			// Next layer of branches:
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z)), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z)), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) z),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z)), world,
+//					new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) z),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z)), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) z),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			// ===========================================================
+//			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z)), world,
+//					new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) z),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 1)),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 2)),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 1)),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 2)),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			// =========================================
+//			// Two layers of trunk:
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z)), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z)), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
+//			}
+//			// ===============================================
+//			// Last bit of branches:
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) z),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) z),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 1)),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)), BlockGlossopterisDuocaudataLog.block.getDefaultState(),
+//						3);
+//				try {
+//					IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)));
+//					for (IProperty<?> prop : _bs.getProperties().keySet()) {
+//						if (prop.getName().equals("facing")) {
+//							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 1)),
+//									_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//				}
+//			}
+
+			height = height - 4;
 			// =====================================
 			// Finally four bits of trunk up the middle:
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 12)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 12)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 12)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 12)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 12)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 13)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 13)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 13)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 14)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 14)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 14)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 14)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 14)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 15)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 15)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 15)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 15)), (int) z), BlockGangamopterisLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 15)), (int) z), BlockGlossopterisDuocaudataLog.block.getDefaultState(), 3);
 			}
+
+			height = height + 4;
+
 			// =======================================
 			// Leaf placement:
 			block = world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 2)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 2)), (int) z)), world,
 					new BlockPos((int) (x + 5), (int) ((height) + (y + 2)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 5), (int) ((height) + (y + 2)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 1)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 1)), (int) z)), world,
 					new BlockPos((int) (x + 5), (int) ((height) + (y + 1)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 5), (int) ((height) + (y + 1)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 2)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 2)), (int) z)), world,
 					new BlockPos((int) (x - 5), (int) ((height) + (y + 2)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 5), (int) ((height) + (y + 2)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 1)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 1)), (int) z)), world,
 					new BlockPos((int) (x - 5), (int) ((height) + (y + 1)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 5), (int) ((height) + (y + 1)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z + 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z + 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z + 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z + 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z + 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 2)), (int) (z - 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z - 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z - 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z - 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 1)), (int) (z - 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 2))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 3))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 4))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 2))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 3))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 4))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 2)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 2))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 3))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 4))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 2))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 3))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 4))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 2)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 3))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 2))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 3))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 2))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 2)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 3))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 2)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 2))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 2)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 3))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 2)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 3)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 3)), (int) z)), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 3)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 3)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 3)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 3)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 3)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 4)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 4)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 4)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 4)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 4)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 4)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) (z + 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 4)), (int) (z - 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// =============================
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 5)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 5)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 5)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 5)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 2))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 2))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 2))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 2))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 3))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 3))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 5)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 3))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 3))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 5)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// =======================
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 5)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 5)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x + 5), (int) ((height) + (y + 5)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 5), (int) ((height) + (y + 5)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 5)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 5)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x - 5), (int) ((height) + (y + 5)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 5), (int) ((height) + (y + 5)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 6)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 6)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 5), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x + 5), (int) ((height) + (y + 6)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 5), (int) ((height) + (y + 6)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) (x + 6), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 6), (int) ((height) + (y + 5)), (int) z)), world,
 					new BlockPos((int) (x + 6), (int) ((height) + (y + 5)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 6), (int) ((height) + (y + 5)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 6), (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 6), (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) (x + 6), (int) ((height) + (y + 4)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 6), (int) ((height) + (y + 4)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 
@@ -1726,841 +1476,854 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 6)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 6)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 6)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x - 5), (int) ((height) + (y + 6)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 5), (int) ((height) + (y + 6)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) (x - 6), (int) ((height) + (y + 5)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 5), (int) ((height) + (y + 6)), (int) z)), world,
 					new BlockPos((int) (x - 6), (int) ((height) + (y + 5)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 6), (int) ((height) + (y + 5)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 6), (int) ((height) + (y + 4)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 6), (int) ((height) + (y + 4)), (int) z)), world,
 					new BlockPos((int) (x - 6), (int) ((height) + (y + 4)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 6), (int) ((height) + (y + 4)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z + 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 6))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 6))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 6)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z + 6)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 6))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 6))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 6)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z + 6)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 5))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 5))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 5)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 6)), (int) (z - 5)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 6))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 6))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 6)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 5)), (int) (z - 6)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 6))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 6))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 6)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 4)), (int) (z - 6)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 3))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 4))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 3))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 4))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 6)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 3))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 4))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 3))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 4))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 6)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 6)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 7)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 7)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 7)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 7)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 7)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 7)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 7)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 7)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 7)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 7)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 7)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 7)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 7)), (int) z)), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 7)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 7)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z - 2)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z - 2)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z - 2))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z - 2),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z - 2)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z - 2)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z - 2))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z - 2),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z + 2)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z + 2)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z + 2))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 7)), (int) z + 2),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z + 2)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z + 2)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z + 2))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 7)), (int) z + 2),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 
 			// ===========================================================
+
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 8)), z + 1, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.EAST);
+			ProcedureTreeLog.executeProcedure(x, (int) ((height) + (y + 8)), z - 1, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.EAST);
+			ProcedureTreeLog.executeProcedure(x + 1, (int) ((height) + (y + 8)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+			ProcedureTreeLog.executeProcedure(x - 1, (int) ((height) + (y + 8)), z, world, BlockGlossopterisDuocaudataLog.block, EnumFacing.UP);
+
+			ProcedureTreeLeaf.executeProcedure(x + 1, (int) ((height) + (y + 8)), z + 1, world, BlockGlossopterisDuocaudataLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x - 1, (int) ((height) + (y + 8)), z - 1, world, BlockGlossopterisDuocaudataLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x + 1, (int) ((height) + (y + 8)), z - 1, world, BlockGlossopterisDuocaudataLeaves.block);
+			ProcedureTreeLeaf.executeProcedure(x - 1, (int) ((height) + (y + 8)), z + 1, world, BlockGlossopterisDuocaudataLeaves.block);
+
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z + 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 3))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 3))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 3)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 4))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 4))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 4)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 8)), (int) (z - 4)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 8)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 8)), (int) z)), world,
 					new BlockPos((int) (x + 3), (int) ((height) + (y + 8)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 8)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 8)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 4), (int) ((height) + (y + 8)), (int) z)), world,
 					new BlockPos((int) (x + 4), (int) ((height) + (y + 8)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 4), (int) ((height) + (y + 8)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 8)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 8)), (int) z)), world,
 					new BlockPos((int) (x - 3), (int) ((height) + (y + 8)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 8)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 8)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 4), (int) ((height) + (y + 8)), (int) z)), world,
 					new BlockPos((int) (x - 4), (int) ((height) + (y + 8)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 4), (int) ((height) + (y + 8)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 2))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 2))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 2))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 2))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z + 2))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z + 2))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z - 2))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 8)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z - 2))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 8)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 8)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 8)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
-			// ===========================================================
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1))), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1))), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z)), world,
-					new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z)), world,
-					new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z)), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			// ===========================================================
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z)), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z)), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			// ===========================================================
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1))), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1))), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1))), world,
-					new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1))), world,
-					new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1))), world,
-					new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1))), world,
-					new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2))), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2))), world,
-					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2))), world,
-					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z)), world,
-					new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
+//			// ===========================================================
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1))), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1))), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z)), world,
+//					new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 9)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z)), world,
+//					new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 9)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 9)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z)), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 9)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 9)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			// ===========================================================
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z)), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 10)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z)), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 10)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			// ===========================================================
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1))), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1))), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1))), world,
+//					new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1))), world,
+//					new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 11)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1))), world,
+//					new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z - 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1))), world,
+//					new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 11)), (int) (z + 1)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z + 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2))), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z + 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2))), world,
+//					new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 11)), (int) (z - 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2))), world,
+//					new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 11)), (int) (z - 2)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z + 3)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 11)), (int) (z - 3)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 11)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z)), world,
+//					new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 11)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3))).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3))), world,
+//					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3)))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3)),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z)), world,
+//					new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
+//			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z)).getBlock();
+//			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z)), world,
+//					new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z))) {
+//				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z),
+//						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
+//			}
 
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z + 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3))).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3))), world,
-					new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3)))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 10)), (int) (z - 3)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z)), world,
-					new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 3), (int) ((height) + (y + 10)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
-			block = world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z)).getBlock();
-			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z)), world,
-					new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 3), (int) ((height) + (y + 10)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
-			}
+			height = height - 4;
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 12)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 12)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 12)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 12)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 12)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 12)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 12)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 12)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 12)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z + 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z + 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z - 1))), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 13)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 2), (int) ((height) + (y + 13)), (int) z)), world,
 					new BlockPos((int) (x + 2), (int) ((height) + (y + 13)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 2), (int) ((height) + (y + 13)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 13)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 2), (int) ((height) + (y + 13)), (int) z)), world,
 					new BlockPos((int) (x - 2), (int) ((height) + (y + 13)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 2), (int) ((height) + (y + 13)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z - 1))), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 13)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 13)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 2))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 2))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 2)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 2)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 13)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 14)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 14)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 14)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 14)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 14)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 14)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 14)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 14)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 14)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z + 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z + 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z - 1)))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 15)), (int) (z - 1)),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 15)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) ((height) + (y + 15)), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) ((height) + (y + 15)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) ((height) + (y + 15)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 15)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) ((height) + (y + 15)), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) ((height) + (y + 15)), (int) z))) {
 				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) ((height) + (y + 15)), (int) z),
-						BlockGangamopterisLeaves.block.getDefaultState(), 3);
+						BlockGlossopterisDuocaudataLeaves.block.getDefaultState(), 3);
 			}
 			// ===========================================================
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 16)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 16)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 16)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 16)), (int) z), BlockGangamopterisLeaves.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 16)), (int) z), BlockGlossopterisDuocaudataLeaves.block.getDefaultState(),
 						3);
 			}
 			block = world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 17)), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) ((height) + (y + 17)), (int) z)), world,
 					new BlockPos((int) x, (int) ((height) + (y + 17)), (int) z))) {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 17)), (int) z), BlockGangamopterisLeaves.block.getDefaultState(),
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) ((height) + (y + 17)), (int) z), BlockGlossopterisDuocaudataLeaves.block.getDefaultState(),
 						3);
 			}
 
@@ -2590,9 +2353,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			if (!biomeCriteria)
 				SpawnPalaeognetaleana = false;
 
-
 			BlockPos posVine;
-			Random rand = new Random();
 			int vineLength;
 			int vineCount;
 			counter = y;
@@ -2604,10 +2365,10 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 					zct = -6;
 					while (zct <= 6) {
 
-						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGangamopterisLeaves.block) {
+						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGlossopterisDuocaudataLeaves.block) {
 							//strobili:
 							if ((Math.random() > 0.6) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
-								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGangamopterisStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGlossopterisDuocaudataStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 								if (!world.isRemote) {
 									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct);
 									TileEntity _tileEntity = world.getTileEntity(_bp);

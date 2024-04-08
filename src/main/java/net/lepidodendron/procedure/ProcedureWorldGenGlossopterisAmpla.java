@@ -2334,7 +2334,7 @@ public class ProcedureWorldGenGlossopterisAmpla extends ElementsLepidodendronMod
 			boolean dimensionCriteria = false;
 			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfigPlants.dimPalaeognetaleana))
 				dimensionCriteria = true;
-			if (!LepidodendronConfigPlants.genPalaeognetaleanaGlossopterisAmpla && !LepidodendronConfig.genAllPlants)
+			if (!LepidodendronConfigPlants.genPalaeognetaleanaGlossopteris && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
 			if (!dimensionCriteria)
 				SpawnPalaeognetaleana = false;

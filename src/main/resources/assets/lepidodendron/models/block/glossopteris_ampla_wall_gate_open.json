@@ -1,8 +1,0 @@
-{
-    "parent": "block/wall_gate_open",
-    "textures": {
-        "texture": "lepidodendron:blocks/glossopteris_ampla_planks",
-    "particle": "lepidodendron:blocks/glossopteris_ampla_planks"
-    }
-}
-

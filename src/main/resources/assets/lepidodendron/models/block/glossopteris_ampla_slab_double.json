@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "lepidodendron:blocks/glossopteris_ampla_planks",
-    "particle": "lepidodendron:blocks/glossopteris_ampla_planks"
-  }
-}
