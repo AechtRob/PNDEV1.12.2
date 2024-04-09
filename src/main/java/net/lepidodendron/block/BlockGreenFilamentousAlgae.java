@@ -87,7 +87,9 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_temperate_glossopteris")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest_ocean")) {
 				biomeCriteria = true;
 			}
 			else {

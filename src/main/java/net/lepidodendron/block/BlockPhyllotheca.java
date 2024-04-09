@@ -100,10 +100,15 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_stony")
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 				biomeCriteria = true;
+			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris_foggy")) {
+				biomeCriteria = false;
 			}
 		}
 
@@ -137,7 +142,8 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 				GenChance = 20;
 			}
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_temperate_glossopteris")) {
 				GenChance = 92;
 			}
 		}
