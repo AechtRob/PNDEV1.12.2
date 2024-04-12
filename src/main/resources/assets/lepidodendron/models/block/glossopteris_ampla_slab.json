@@ -1,8 +1,0 @@
-{
-  "parent": "block/half_slab",
-  "textures": {
-    "bottom": "lepidodendron:blocks/glossopteris_ampla_planks",
-    "top": "lepidodendron:blocks/glossopteris_ampla_planks",
-    "side": "lepidodendron:blocks/glossopteris_ampla_planks"
-  }
-}

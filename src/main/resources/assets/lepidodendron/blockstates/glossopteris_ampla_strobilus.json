@@ -23,11 +23,15 @@
  ],
  "facing=up": [
  	{"model": "lepidodendron:glossopteris_ampla_strobilus"},
- 	{"model": "lepidodendron:glossopteris_ampla_strobilus_rot"}
+ 	{"model": "lepidodendron:glossopteris_ampla_strobilus_rot"},
+    {"model": "lepidodendron:glossopteris_ampla_strobilus", "y": 90 },
+    {"model": "lepidodendron:glossopteris_ampla_strobilus_rot", "y": 90 }
  ],
  "facing=down": [
  	{"model": "lepidodendron:glossopteris_ampla_strobilus", "x": 180},
- 	{"model": "lepidodendron:glossopteris_ampla_strobilus_rot", "x": 180}
+ 	{"model": "lepidodendron:glossopteris_ampla_strobilus_rot", "x": 180},
+    {"model": "lepidodendron:glossopteris_ampla_strobilus", "x": 180, "y": 90 },
+    {"model": "lepidodendron:glossopteris_ampla_strobilus_rot", "x": 180, "y": 90 }
  ]
  }
 }

@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockBjuviaLog;
 import net.lepidodendron.block.BlockBjuviaSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenBjuvia;
@@ -44,7 +45,7 @@ public class WorldGenBjuvia extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.north().up(2)).getBlock() != BlockBjuviaLog.block)
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockBjuviaLog.block)
                 ) {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -79,7 +80,7 @@ public class WorldGenBjuvia extends WorldGenerator
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockBjuviaLog.block)
                             && (worldIn.getBlockState(blockpos.south()).getBlock() != BlockBjuviaLog.block)
                     ) {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());

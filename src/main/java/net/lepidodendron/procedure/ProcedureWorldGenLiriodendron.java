@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockLiriodendronLeaves;
 import net.lepidodendron.block.BlockLiriodendronLog;
@@ -20,7 +21,7 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenLiriodendron!");
 			return;
@@ -324,7 +325,7 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 			LayerCounter = 0;
 			while (LayerCounter <= Layer1Number) {
 
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
@@ -340,8 +341,8 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 			//Layer 2:
 			LayerCounter = 0;
 			while (LayerCounter <= Layer23Number) {
-				
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
@@ -357,8 +358,8 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 			//Layer 3:
 			LayerCounter = 0;
 			while ((LayerCounter <= Layer23Number) && (TopCount > (y + BareTrunkHeight))) {
-				
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
@@ -375,8 +376,8 @@ public class ProcedureWorldGenLiriodendron extends ElementsLepidodendronMod.ModE
 			//Layer 4:
 			LayerCounter = 0;
 			while ((LayerCounter <= Layer4Number) && (TopCount > (y + BareTrunkHeight))) {
-				
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+
+				Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);

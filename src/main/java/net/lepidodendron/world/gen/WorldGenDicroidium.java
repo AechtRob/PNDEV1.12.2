@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockDicroidiumStem;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidium;
 import net.lepidodendron.util.Functions;
@@ -112,7 +113,7 @@ public class WorldGenDicroidium extends WorldGenAbstractTree
                     && (worldIn.getBlockState(position.south().up(2)).getBlock() != BlockDicroidiumStem.block)
             	    )
                 {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());

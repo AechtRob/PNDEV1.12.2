@@ -71,7 +71,7 @@ public class BlockNathorstiana extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setLightOpacity(3);
+			setLightOpacity(0);
 			setCreativeTab(null);
 			if (LepidodendronConfigPlants.spreadNathorstiana && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);

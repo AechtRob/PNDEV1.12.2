@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockBolbitis;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -17,7 +18,8 @@ public class WorldGenBolbitis extends WorldGenerator
 
         for (int i = 0; i < 20; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), 0, rand.nextInt(8) - rand.nextInt(8));
+            blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
 
             if ( (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBolbitis.block.canPlaceBlockAt(worldIn, blockpos))
             {

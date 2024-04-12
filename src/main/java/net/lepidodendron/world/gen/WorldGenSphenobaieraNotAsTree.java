@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockSahnioxylonSapling;
 import net.lepidodendron.block.BlockSahnioxylonShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenSphenobaiera;
@@ -49,7 +50,7 @@ public class WorldGenSphenobaieraNotAsTree extends WorldGenerator
                         Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                     }
                     else {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
@@ -87,7 +88,7 @@ public class WorldGenSphenobaieraNotAsTree extends WorldGenerator
                             Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                         }
                         else {
-                            HashMap<String, Object> $_dependencies = new HashMap<>();
+                            Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());

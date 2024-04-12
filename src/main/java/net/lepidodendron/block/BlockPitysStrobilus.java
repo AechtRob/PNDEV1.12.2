@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
@@ -203,7 +204,7 @@ public class BlockPitysStrobilus extends ElementsLepidodendronMod.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			{
-				HashMap<String, Object> $_dependencies = new HashMap<>();
+				Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
@@ -229,7 +230,7 @@ public class BlockPitysStrobilus extends ElementsLepidodendronMod.ModElement {
 			//	} else {
 			//	}
 				{
-					HashMap<String, Object> $_dependencies = new HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);

@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
@@ -37,7 +38,7 @@ public class ProcedureWorldGenGlossopterisAmpla extends ElementsLepidodendronMod
 	public static final PropertyBool WEST = PropertyBool.create("west");
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenGlossopterisAmpla!");
 			return;
@@ -2334,7 +2335,7 @@ public class ProcedureWorldGenGlossopterisAmpla extends ElementsLepidodendronMod
 			boolean dimensionCriteria = false;
 			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfigPlants.dimPalaeognetaleana))
 				dimensionCriteria = true;
-			if (!LepidodendronConfigPlants.genPalaeognetaleanaGlossopterisAmpla && !LepidodendronConfig.genAllPlants)
+			if (!LepidodendronConfigPlants.genPalaeognetaleanaGlossopteris && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
 			if (!dimensionCriteria)
 				SpawnPalaeognetaleana = false;
@@ -2367,7 +2368,7 @@ public class ProcedureWorldGenGlossopterisAmpla extends ElementsLepidodendronMod
 
 						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGlossopterisAmplaLeaves.block) {
 							//strobili:
-							if ((Math.random() > 0.6) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
+							if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
 								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGlossopterisAmplaStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 								if (!world.isRemote) {
 									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct);

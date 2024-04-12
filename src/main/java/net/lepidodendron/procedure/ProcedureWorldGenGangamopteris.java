@@ -1,12 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
-import net.lepidodendron.block.BlockGangamopterisLeaves;
-import net.lepidodendron.block.BlockGangamopterisLog;
-import net.lepidodendron.block.BlockGangamopterisStrobilus;
-import net.lepidodendron.block.BlockPalaeognetaleana;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -37,7 +35,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 	public static final PropertyBool WEST = PropertyBool.create("west");
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenGangamopteris!");
 			return;
@@ -2571,7 +2569,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			boolean dimensionCriteria = false;
 			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfigPlants.dimPalaeognetaleana))
 				dimensionCriteria = true;
-			if (!LepidodendronConfigPlants.genPalaeognetaleanaGangamopteris && !LepidodendronConfig.genAllPlants)
+			if (!LepidodendronConfigPlants.genPalaeognetaleanaGlossopteris && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
 			if (!dimensionCriteria)
 				SpawnPalaeognetaleana = false;
@@ -2606,7 +2604,7 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 
 						if ((world.getBlockState(new BlockPos((int) x + xct, (int) height + counter, (int) z + zct))).getBlock() == BlockGangamopterisLeaves.block) {
 							//strobili:
-							if ((Math.random() > 0.6) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
+							if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos(x + xct, (int) height + counter - 1, (int) z + zct)))) {
 								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct), BlockGangamopterisStrobilus.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 								if (!world.isRemote) {
 									BlockPos _bp = new BlockPos((int) x + xct, (int) height + counter - 1, (int) z + zct);

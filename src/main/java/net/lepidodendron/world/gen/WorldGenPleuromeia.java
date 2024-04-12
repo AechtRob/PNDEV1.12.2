@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockPleuromeiaSapling;
 import net.lepidodendron.block.BlockPleuromeiaStem;
 import net.lepidodendron.procedure.ProcedureWorldGenPleuromeia;
@@ -50,7 +51,7 @@ public class WorldGenPleuromeia extends WorldGenerator
             )
             if (!needsWater) {
                 {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -80,7 +81,7 @@ public class WorldGenPleuromeia extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());

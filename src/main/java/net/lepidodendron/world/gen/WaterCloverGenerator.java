@@ -34,7 +34,9 @@ public class WaterCloverGenerator extends WorldGenerator
     	boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWaterClover))
 			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimJurassic))
+		if ((dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
+			)
 			{
 				dimensionCriteria = true;
 			}
@@ -44,6 +46,7 @@ public class WaterCloverGenerator extends WorldGenerator
 
 		int multiplier = 1;
 		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)
