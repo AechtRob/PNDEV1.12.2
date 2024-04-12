@@ -1,22 +1,22 @@
 {
   "textures": {
-    "particle": "lepidodendron:blocks/cretaceous_portal",
-    "portal": "lepidodendron:blocks/cretaceous_portal"
+    "particle": "lepidodendron:blocks/cretaceous_early_portal",
+    "portal": "lepidodendron:blocks/cretaceous_early_portal"
   },
   "elements": [
     {
       "from": [
-        6,
         0,
-        0
+        0,
+        6
       ],
       "to": [
-        10,
         16,
-        16
+        16,
+        10
       ],
       "faces": {
-        "east": {
+        "north": {
           "uv": [
             0,
             0,
@@ -25,7 +25,7 @@
           ],
           "texture": "#portal"
         },
-        "west": {
+        "south": {
           "uv": [
             0,
             0,
