@@ -153,8 +153,12 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		}
 		if (biome instanceof BiomeCretaceousEarly)
 		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
+				biomeCriteria = true;
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
 				biomeCriteria = true;
 			}
 			else {
@@ -167,9 +171,10 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		int GenChance = 32;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")) {
 			GenChance = 64;
 		}
 
