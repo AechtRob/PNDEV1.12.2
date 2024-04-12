@@ -10,30 +10,21 @@ import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class ModelCyclomedusa extends AdvancedModelBase {
-    private final AdvancedModelRenderer main;
-    private final AdvancedModelRenderer cyclomedusabase;
-    private final AdvancedModelRenderer ediacariabase;
+    private final AdvancedModelRenderer bone;
 
     public ModelCyclomedusa() {
         this.textureWidth = 32;
         this.textureHeight = 32;
 
-        this.main = new AdvancedModelRenderer(this);
-        this.main.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.main.cubeList.add(new ModelBox(main, 0, 20, -1.0F, -1.5F, -1.0F, 2, 1, 2, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 22, 0, -0.5F, -1.975F, -0.5F, 1, 1, 1, 0.0F, false));
-
-        this.cyclomedusabase = new AdvancedModelRenderer(this);
-        this.cyclomedusabase.setRotationPoint(-0.5F, -0.3F, -0.5F);
-        this.main.addChild(cyclomedusabase);
-        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 0, 7, -1.5F, -1.0F, -1.5F, 4, 1, 4, 0.0F, false));
-
-        this.ediacariabase = new AdvancedModelRenderer(this);
-        this.ediacariabase.setRotationPoint(-0.5F, 0.0F, -0.5F);
-        this.main.addChild(ediacariabase);
-        this.ediacariabase.cubeList.add(new ModelBox(ediacariabase, 0, 13, -0.5F, -0.975F, -0.5F, 2, 1, 2, -0.01F, false));
-        this.ediacariabase.cubeList.add(new ModelBox(ediacariabase, 0, 0, 0.0F, -0.475F, 0.0F, 1, 1, 1, 0.0F, false));
-        this.ediacariabase.cubeList.add(new ModelBox(ediacariabase, 0, 0, -2.0F, -1.0F, -2.0F, 5, 1, 5, 0.0F, false));
+        this.bone = new AdvancedModelRenderer(this);
+        this.bone.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.bone.cubeList.add(new ModelBox(bone, 0, 8, -2.0F, -1.35F, -2.0F, 4, 1, 4, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 14, -1.5F, -1.6F, -1.5F, 3, 1, 3, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 13, 16, -1.0F, -1.95F, -1.0F, 2, 1, 2, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 0, -0.5F, -2.35F, -0.5F, 1, 1, 1, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 0, 0, -2.0F, -1.0F, -3.0F, 4, 1, 6, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 15, 0, 2.0F, -1.0F, -2.0F, 1, 1, 4, 0.0F, false));
+        this.bone.cubeList.add(new ModelBox(bone, 13, 10, -3.0F, -1.0F, -2.0F, 1, 1, 4, 0.0F, false));
 
         updateDefaultPose();
     }
@@ -44,7 +35,7 @@ public class ModelCyclomedusa extends AdvancedModelBase {
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
 
-        this.main.render(f5);
+        this.bone.render(f5);
         GlStateManager.disableBlend();
     }
 
@@ -63,11 +54,11 @@ public class ModelCyclomedusa extends AdvancedModelBase {
 
         EntityPrehistoricFloraCyclomedusa ee = (EntityPrehistoricFloraCyclomedusa) e;
 
-        this.main.scaleChildren = true;
+        this.bone.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.085F) + 1F;
-        this.main.setScaleZ(scaler);
+        this.bone.setScaleZ(scaler);
         float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.085F);
-        this.main.setScaleX(scaler2 * 0.5F);
+        this.bone.setScaleX(scaler2 * 0.5F);
 
     }
 }

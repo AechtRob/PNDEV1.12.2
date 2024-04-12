@@ -12,7 +12,7 @@ public class RenderPlesiosaurus extends RenderLiving<EntityPrehistoricFloraPlesi
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plesiosaurus.png");
 
     public static float getScaler() {
-        return 0.516F;
+        return 0.516F*1.2f;
     }
     public RenderPlesiosaurus(RenderManager mgr) {
         super(mgr, new ModelPlesiosaurus(), 0.0f);

@@ -5464,6 +5464,30 @@ public class RenderHandler {
                 return new RenderLufengosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegalichthys.class, new IRenderFactory<EntityPrehistoricFloraMegalichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMegalichthys> createRenderFor(RenderManager manager) {
+                return new RenderMegalichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMamulichthys.class, new IRenderFactory<EntityPrehistoricFloraMamulichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMamulichthys> createRenderFor(RenderManager manager) {
+                return new RenderMamulichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSenekichthys.class, new IRenderFactory<EntityPrehistoricFloraSenekichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSenekichthys> createRenderFor(RenderManager manager) {
+                return new RenderSenekichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHeteropetalus.class, new IRenderFactory<EntityPrehistoricFloraHeteropetalus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHeteropetalus> createRenderFor(RenderManager manager) {
+                return new RenderHeteropetalus(manager);
+            }
+        });
         
         
         
