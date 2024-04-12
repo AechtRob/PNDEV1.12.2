@@ -7,6 +7,7 @@ import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemSalviniaItem;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.SalviniaGenerator;
@@ -89,9 +90,14 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCretaceousEarly)
 		{
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
-				biomeCriteria = true;
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly)biome;
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
 			}
 			else {
 				biomeCriteria = false;

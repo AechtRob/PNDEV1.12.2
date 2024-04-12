@@ -90,7 +90,7 @@ public class SalviniaGenerator extends WorldGenerator
 		}
 
 		double getLight = worldIn.getLight(pos);
-		if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+		if ((!worldIn.canSeeSky(pos)) && (worldIn.isDaytime()) && (getLight < 7))
 		{
 			return false;
 		}
