@@ -1,0 +1,46 @@
+{
+	"name": "Octomedusa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/octomedusa_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_octomedusa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_octomedusa",
+			"title": "Octomedusa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria $(br)>Scyphozoa"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/octomedusa.png"],
+			"title": "O. pieckorum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_octomedusa",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_octomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_octomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_octomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_octomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_octomedusa"
+		}
+	]
+}

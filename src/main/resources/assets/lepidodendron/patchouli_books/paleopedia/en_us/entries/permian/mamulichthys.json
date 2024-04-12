@@ -1,0 +1,47 @@
+{
+	"name": "Mamulichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mamulichthys_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_mamulichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mamulichthys",
+			"title": "Mamulichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii $(br)>Discordichthyiformes $(br)>Discordichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. ignotus",
+            "entity": "lepidodendron:prehistoric_flora_mamulichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mamulichthys",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "Eldonia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eldonia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_eldonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eldonia",
+			"title": "Eldonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Deuterostomia $(br)>Ambulacraria $(br)>Cambroernida $(br)>Eldoniidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/Eldonia.png"],
+			"title": "E. ludwigii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eldonia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		}
+	]
+}

@@ -15,7 +15,7 @@ public class RenderMegalichthys extends RenderLiving<EntityPrehistoricFloraMegal
         super(mgr, new ModelMegalichthys(), 0.0f);
     }
 
-    public static float getScaler() {return 0.3F; }
+    public static float getScaler() {return 0.7F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMegalichthys entity) {

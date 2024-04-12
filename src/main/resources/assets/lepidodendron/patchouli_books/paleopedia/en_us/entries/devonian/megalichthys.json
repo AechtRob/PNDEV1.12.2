@@ -1,0 +1,47 @@
+{
+	"name": "Megalichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/megalichthys_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_megalichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megalichthys",
+			"title": "Megalichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Carbonifeorus$(br2)>Sarcopterygii $(br)>Tetrapodomorpha $(br)>Megalichthyiformes $(br)>Megalichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. hibberti",
+            "entity": "lepidodendron:prehistoric_flora_megalichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalichthys",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_megalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_megalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_megalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_megalichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_megalichthys"
+		}
+	]
+}
