@@ -28,7 +28,7 @@ public class RecipeCookedMeatsandSeeds  {
 		}
 		for (ItemStack stack : OreDictionary.getOres("pnfurnaceSnail")) {
 			if (stack.getItem() == ItemMurex.block) {
-				GameRegistry.addSmelting(stack, new ItemStack(Items.DYE, 8, 5), 0.35F);
+				GameRegistry.addSmelting(stack, new ItemStack(Items.DYE, 8, 5), 1.0F);
 			}
 			else {
 				GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoEscargots.block, 1), 0.35F);
