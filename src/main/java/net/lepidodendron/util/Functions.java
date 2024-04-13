@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoublePlant;
@@ -35,6 +36,13 @@ public class Functions {
         if (biome instanceof BiomeJurassic) {
             if (((BiomeJurassic)biome).getBiomeType() == EnumBiomeTypeJurassic.Desert) {
                 return 42;
+            }
+        }
+        if (biome instanceof BiomeCretaceousEarly) {
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")) {
+                return 87;
             }
         }
         return world.getSeaLevel();
