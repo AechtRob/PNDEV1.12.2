@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:shankouclava",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:shankouclava",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:shankouclava",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:shankouclava",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:shankouclava",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:shankouclava",
+      "y": 0
+    }
+  }
+}

@@ -891,8 +891,8 @@ public class EntityRegistries {
 
 
 
-//        registerEntity("prehistoric_flora_climacograptus", EntityPrehistoricFloraClimacograptus.class, LepidodendronMod.ENTITY_CLIMACOGRAPTUS, 48,-5347787,-12178662);
-//        registerEntity("prehistoric_flora_phyllograptus", EntityPrehistoricFloraPhyllograptus.class, LepidodendronMod.ENTITY_PHYLLOGRAPTUS, 48,-5347787,-12178662);
+        registerEntity("prehistoric_flora_climacograptus", EntityPrehistoricFloraClimacograptus.class, LepidodendronMod.ENTITY_CLIMACOGRAPTUS, 48,-5347787,-12178662);
+        registerEntity("prehistoric_flora_phyllograptus", EntityPrehistoricFloraPhyllograptus.class, LepidodendronMod.ENTITY_PHYLLOGRAPTUS, 48,-5347787,-12178662);
 //        registerEntity("prehistoric_flora_bowengriphus", EntityPrehistoricFloraBowengriphus.class, LepidodendronMod.ENTITY_BOWENGRIPHUS, 48,-5347787,-12178662);
 //        registerEntity("prehistoric_flora_gosfordia", EntityPrehistoricFloraGosfordia.class, LepidodendronMod.ENTITY_GOSFORDIA, 48,-5347787,-12178662);
 //        registerEntity("prehistoric_flora_sargodon", EntityPrehistoricFloraSargodon.class, LepidodendronMod.ENTITY_SARGODON, 64,-5347787,-12178662);

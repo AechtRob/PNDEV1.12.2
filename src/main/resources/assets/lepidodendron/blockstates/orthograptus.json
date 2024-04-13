@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:orthograptus",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:orthograptus",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:orthograptus",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:orthograptus",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:orthograptus",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:orthograptus",
+      "y": 0
+    }
+  }
+}

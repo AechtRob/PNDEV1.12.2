@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:cotyledion",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:cotyledion",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:cotyledion",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:cotyledion",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:cotyledion",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:cotyledion",
+      "y": 0
+    }
+  }
+}
