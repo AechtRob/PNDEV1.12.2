@@ -1,0 +1,46 @@
+{
+	"name": "Rhizostomites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhizostomites_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_rhizostomites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhizostomites",
+			"title": "Rhizostomites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria $(br)>Scyphozoa"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/rhizostomites.png"],
+			"title": "R. admirandus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhizostomites",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhizostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhizostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhizostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhizostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhizostomites"
+		}
+	]
+}

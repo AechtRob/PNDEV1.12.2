@@ -1,0 +1,46 @@
+{
+	"name": "Hydrocraspedota",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hydrocraspedota_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_hydrocraspedota",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hydrocraspedota",
+			"title": "Hydrocraspedota",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/hydrocraspedota.png"],
+			"title": "H. mayri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hydrocraspedota",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hydrocraspedota"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hydrocraspedota"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hydrocraspedota"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hydrocraspedota"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hydrocraspedota"
+		}
+	]
+}

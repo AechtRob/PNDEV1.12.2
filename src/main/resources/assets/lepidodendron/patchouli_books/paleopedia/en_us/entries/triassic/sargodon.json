@@ -1,0 +1,47 @@
+{
+	"name": "Sargodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sargodon_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_sargodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sargodon",
+			"title": "Sargodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Dapediiformes $(br)>Dapediidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. tomicus",
+            "entity": "lepidodendron:prehistoric_flora_sargodon",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sargodon",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sargodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sargodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sargodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sargodon"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sargodon"
+		}
+	]
+}

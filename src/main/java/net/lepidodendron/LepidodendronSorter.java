@@ -4374,6 +4374,20 @@ public class LepidodendronSorter {
     public static final int shankouclava = 4461;
     public static final int cotyledion = 4462;
     public static final int orthograptus = 4463;
+    public static final int bowengriphus_raw = 4464;
+    public static final int sargodon_raw = 4465;
+    public static final int hydropessum_raw = 4466;
+    public static final int phylloceras_raw = 4467;
+    public static final int shell_phylloceras = 4468;
+    public static final int eggs_phylloceras = 4469;
+    public static final int gosfordia_raw = 4470;
+    public static final int phacops_raw = 4471;
+    public static final int polysentor_raw = 4472;
+    public static final int eurypterid_eggs_erettopterus = 4473;
+    public static final int eurypterid_eggs_erettopterus_worldgen = 4474;
+    public static final int erettopterus_raw = 4475;
+    public static final int harpagofututor_raw = 4476;
+    public static final int thalattosuchus_raw = 4477;
 
 
 }

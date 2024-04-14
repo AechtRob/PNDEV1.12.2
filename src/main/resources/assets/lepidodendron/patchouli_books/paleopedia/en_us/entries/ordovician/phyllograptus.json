@@ -1,0 +1,46 @@
+{
+	"name": "Phyllograptus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phyllograptus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_phyllograptus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phyllograptus",
+			"title": "Phyllograptus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata $(br)>Graptolithina $(br)>Phyllograptidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/phyllograptus.png"],
+			"title": "Phyllograptus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phyllograptus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		}
+	]
+}
