@@ -5488,6 +5488,19 @@ public class RenderHandler {
                 return new RenderHeteropetalus(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPhyllograptus.class, new IRenderFactory<EntityPrehistoricFloraPhyllograptus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPhyllograptus> createRenderFor(RenderManager manager) {
+                return new RenderPhyllograptus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraClimacograptus.class, new IRenderFactory<EntityPrehistoricFloraClimacograptus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraClimacograptus> createRenderFor(RenderManager manager) {
+                return new RenderClimacograptus(manager);
+            }
+        });
         
         
         
@@ -5552,6 +5565,7 @@ public class RenderHandler {
             //Cambrian:
             ClientRegistry.bindTileEntitySpecialRenderer(BlockStromatoveris.TileEntityCustom.class, new RenderStromatoveris());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockThaumaptilon.TileEntityCustom.class, new RenderThaumaptilon());
+            ClientRegistry.bindTileEntitySpecialRenderer(BlockShankouclava.TileEntityCustom.class, new RenderShankouclava());
         }
 
         //These do not have block models available:

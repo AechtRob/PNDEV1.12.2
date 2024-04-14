@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraClimacograptus extends EntityPrehistoricFlora
 
     public EntityPrehistoricFloraClimacograptus(World world) {
         super(world);
-        setSize(0.3F, 0.4F);
+        setSize(0.1F, 0.15F);
     }
 
     @Override

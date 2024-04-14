@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraPhyllograptus extends EntityPrehistoricFloraJ
 
     public EntityPrehistoricFloraPhyllograptus(World world) {
         super(world);
-        setSize(0.3F, 0.4F);
+        setSize(0.15F, 0.18F);
     }
 
     @Override
