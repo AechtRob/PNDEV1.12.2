@@ -163,17 +163,18 @@ public class LepidodendronBookSubscribers {
 		}
 
 	}
-	DecimalFormat df = new DecimalFormat("###.#");
+
 	public void deliverStatsEntity(PlayerInteractEvent.EntityInteract event) {
 		String agePercent = "";
 		double maxHealth = 0;
 		double actualHealth = 0;
 		String nestString = "";
 
-		Entity target = event.getTarget();
-		if (target instanceof EntityPrehistoricFloraAgeableBase) {
-			agePercent = df.format(Math.floor(((EntityPrehistoricFloraAgeableBase) target).getAgeScale() * 100F)) + "%";
-		} else {
+		DecimalFormat df = new DecimalFormat("###.#");
+		if (event.getTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+			agePercent = df.format(Math.floor(((EntityPrehistoricFloraAgeableBase)event.getTarget()).getAgeScale() * 100F)) + "%";
+		}
+		else {
 			agePercent = "100%";
 		}
 		if (event.getTarget() instanceof EntityLivingBase) {
