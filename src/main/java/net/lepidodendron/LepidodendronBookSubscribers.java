@@ -180,7 +180,7 @@ public class LepidodendronBookSubscribers {
 			maxHealth = ((EntityLivingBase) event.getTarget()).getMaxHealth();
 			actualHealth = ((EntityLivingBase) event.getTarget()).getHealth();
 		}
-		nestString = getNestString(target, true);
+		nestString = getNestString(event.getTarget(), true);
 
 		if (event.getWorld().isRemote) {
 			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + df.format(actualHealth) + "/" + df.format(maxHealth) + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
