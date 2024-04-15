@@ -15,7 +15,7 @@ public class RenderEochondrosteus extends RenderLiving<EntityPrehistoricFloraEoc
         super(mgr, new ModelEochondrosteus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.25F; }
+    public static float getScaler() {return 0.18F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEochondrosteus entity) {

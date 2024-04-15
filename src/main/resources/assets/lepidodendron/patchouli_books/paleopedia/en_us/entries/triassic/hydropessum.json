@@ -1,0 +1,47 @@
+{
+	"name": "Hydropessum",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hydropessum_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_hydropessum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hydropessum",
+			"title": "Hydropessum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Perleidiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "H. kannemeyeri",
+            "entity": "lepidodendron:prehistoric_flora_hydropessum",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hydropessum",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hydropessum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hydropessum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hydropessum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hydropessum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hydropessum"
+		}
+	]
+}

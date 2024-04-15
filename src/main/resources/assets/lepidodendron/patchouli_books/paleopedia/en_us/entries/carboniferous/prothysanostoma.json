@@ -1,0 +1,46 @@
+{
+	"name": "Prothysanostoma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/prothysanostoma_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_prothysanostoma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prothysanostoma",
+			"title": "Prothysanostoma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria $(br)>Scyphozoa $(br)>Rhizostomatida"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/prothysanostoma.png"],
+			"title": "P. eleanorae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prothysanostoma",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_prothysanostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_prothysanostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_prothysanostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_prothysanostoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_prothysanostoma"
+		}
+	]
+}
