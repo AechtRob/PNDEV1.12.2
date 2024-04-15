@@ -1,14 +1,17 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.*;
+import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemKajanthusFlower;
+import net.lepidodendron.item.ItemKajanthusSeeds;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.gen.VineGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -16,48 +19,45 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:aristolochia")
+public class BlockKajanthusFlower extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:kajanthus_flower")
 	public static final Block block = null;
-	public BlockAristolochia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.aristolochia);
+	public BlockKajanthusFlower(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.kajanthus_flower);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("aristolochia"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("kajanthus_flower"));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(BlockKajanthusFlower.TileEntityCustom.class, "lepidodendron:tileentitykajanthus_flower");
 	}
 
 	public static final PropertyBool UP = PropertyBool.create("up");
@@ -65,140 +65,41 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
     public static final PropertyBool EAST = PropertyBool.create("east");
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
-    
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:aristolochia", "inventory"));
-	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:aristolochia", BlockAristolochia.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockAristolochia.block);
-		OreDictionary.registerOre("plant", BlockAristolochia.block);
-		OreDictionary.registerOre("itemMossForStone", BlockAristolochia.block);
-	}
-
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-
-		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAristolochia))
-			dimensionCriteria = true;
-//		if (dimID == LepidodendronConfig.dimCarboniferous
-//				|| dimID == LepidodendronConfig.dimPermian
-//				|| dimID == LepidodendronConfig.dimTriassic
-//				|| dimID == LepidodendronConfig.dimJurassic)
-//		{
-//			dimensionCriteria = true;
-//		}
-		if (!dimensionCriteria)
-			return;
-
-		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genAristolochiaBlacklistBiomes)) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
-				biomeCriteria = false;
-		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genAristolochiaOverrideBiomes))
-			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genAristolochia && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
-			biomeCriteria = false;
-
-
-//		if (biome instanceof BiomeJurassic)
-//		{
-//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
-
-		if (!biomeCriteria)
-			return;
-
-		int GenChance = 30;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierAristolochia;
-		if (GenMultiplier < 0) {GenMultiplier = 0;}
-		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
-		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
-			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
-			GenChance = Math.min(GenChance * 10, 100);
-		}
-
-		for (int i = 0; i < (int) GenChance; i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new VineGenerator((BlockVine) block)).generate(world, random, new BlockPos(l6, i11, l14));
-		}
-	}
-
-	public static boolean matchBiome(Biome biome, String[] biomesList) {
-
-		//String regName = biome.getRegistryName().toString();
-
-		String[] var2 = biomesList;
-		int var3 = biomesList.length;
-
-		for(int var4 = 0; var4 < var3; ++var4) {
-			String checkBiome = var2[var4];
-			if (!checkBiome.contains(":")) {
-				//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
-				if (checkBiome.equalsIgnoreCase(
-						biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
-				)) {
-					return true;
-				}
-			}
-			if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	public boolean shouldGenerateInDimension(int id, int[] dims) {
-		int[] var2 = dims;
-		int var3 = dims.length;
-		for (int var4 = 0; var4 < var3; ++var4) {
-			int dim = var2[var4];
-			if (dim == id) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public static class BlockCustom extends BlockVine implements IAdvancementGranter {
+	public static class BlockCustom extends BlockVine implements ITileEntityProvider, IAdvancementGranter {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
-			setTranslationKey("pf_aristolochia");
+			setTranslationKey("pf_kajanthus_flower");
 			setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));
         	setTickRandomly(true);
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_ARISTOLOCHIA;
+			return ModTriggers.CLICK_KAJANTHUS;
+		}
+
+		@Override
+		public TileEntity createNewTileEntity(World worldIn, int meta) {
+			return new BlockKajanthusFlower.TileEntityCustom();
+		}
+
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
+		}
+
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			//if (tileentity instanceof TileEntityNest)
+			//InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
+			world.removeTileEntity(pos);
+			super.breakBlock(world, pos, state);
 		}
 
 		@Override
@@ -228,18 +129,15 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
-	    {
-	        if (!LepidodendronConfig.doPropagation && !worldIn.isRemote && stack.getItem() == Items.SHEARS)
-	        {
-	            player.addStat(StatList.getBlockStats(this));
-	            spawnAsEntity(worldIn, pos, new ItemStack(this, 1, 0));
-	        }
-	        else {
-	        	if (!LepidodendronConfig.doPropagation) {
-	           		super.harvestBlock(worldIn, player, pos, state, te, stack);
-	        	}
-	        }
-	    }
+		{
+			if (!worldIn.isRemote) {
+				if (!LepidodendronConfig.doPropagation && stack.getItem() == Items.SHEARS) {
+					player.addStat(StatList.getBlockStats(this));
+					spawnAsEntity(worldIn, pos, new ItemStack(BlockKajanthus.block, 1, 0));
+				}
+			}
+			super.harvestBlock(worldIn, player, pos, state, te, stack);
+		}
 
 	    @Override
 		protected boolean canSilkHarvest()
@@ -254,7 +152,7 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	    public boolean canAttachTo(World p_193395_1_, BlockPos p_193395_2_, EnumFacing p_193395_3_)
 	    {
 	        Block block = p_193395_1_.getBlockState(p_193395_2_.up()).getBlock();
-	        return this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.offset(p_193395_3_.getOpposite()), p_193395_3_) && (block == Blocks.AIR || block == this || block == BlockAristolochiaFlower.block || this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.up(), EnumFacing.UP));
+	        return this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.offset(p_193395_3_.getOpposite()), p_193395_3_) && (block == Blocks.AIR || block == this || block == BlockKajanthus.block || this.isAcceptableNeighbor(p_193395_1_, p_193395_2_.up(), EnumFacing.UP));
 	    }
 
 	    private boolean isAcceptableNeighbor(World p_193396_1_, BlockPos p_193396_2_, EnumFacing p_193396_3_)
@@ -282,10 +180,10 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                    {
 	                        for (int i1 = -1; i1 <= 1; ++i1)
 	                        {
-	                            if (
-									(worldIn.getBlockState(pos.add(k, i1, l)).getBlock() == this)
-									|| (worldIn.getBlockState(pos.add(k, i1, l)).getBlock() == BlockAristolochiaFlower.block)
-										)
+								if (
+										(worldIn.getBlockState(pos.add(k, i1, l)).getBlock() == this)
+										|| (worldIn.getBlockState(pos.add(k, i1, l)).getBlock() == BlockKajanthus.block)
+									)
 	                            {
 	                                --j;
 	
@@ -304,7 +202,7 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	
 	                if (enumfacing1 == EnumFacing.UP && pos.getY() < 255 && worldIn.isAirBlock(blockpos2))
 	                {
-						IBlockState iblockstate2 = state;
+	                    IBlockState iblockstate2 = state;
 	
 	                    for (EnumFacing enumfacing2 : EnumFacing.Plane.HORIZONTAL)
 	                    {
@@ -318,15 +216,16 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                        }
 	                    }
 
-						IBlockState state1 = state;
+						IBlockState state1 = BlockKajanthus.block.getDefaultState()
+								.withProperty(UP, state.getValue(UP))
+								.withProperty(NORTH, state.getValue(NORTH))
+								.withProperty(EAST, state.getValue(EAST))
+								.withProperty(SOUTH, state.getValue(SOUTH))
+								.withProperty(WEST, state.getValue(WEST));
 						if (rand.nextInt(3) == 0) {
-							state1 = BlockAristolochiaFlower.block.getDefaultState()
-									.withProperty(UP, state.getValue(UP))
-									.withProperty(NORTH, state.getValue(NORTH))
-									.withProperty(EAST, state.getValue(EAST))
-									.withProperty(SOUTH, state.getValue(SOUTH))
-									.withProperty(WEST, state.getValue(WEST));
+							state1 = state;
 						}
+
 	                    if (((Boolean)iblockstate2.getValue(NORTH)).booleanValue() || ((Boolean)iblockstate2.getValue(EAST)).booleanValue() || ((Boolean)iblockstate2.getValue(SOUTH)).booleanValue() || ((Boolean)iblockstate2.getValue(WEST)).booleanValue())
 	                    {
 	                        worldIn.setBlockState(blockpos2, state1, 2);
@@ -368,14 +267,14 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                        }
 	                        else if (iblockstate3.getBlockFaceShape(worldIn, blockpos4, enumfacing1) == BlockFaceShape.SOLID)
 	                        {
-								IBlockState state2 = state;
+								IBlockState state2 = BlockKajanthus.block.getDefaultState()
+										.withProperty(UP, state.getValue(UP))
+										.withProperty(NORTH, state.getValue(NORTH))
+										.withProperty(EAST, state.getValue(EAST))
+										.withProperty(SOUTH, state.getValue(SOUTH))
+										.withProperty(WEST, state.getValue(WEST));
 								if (rand.nextInt(3) == 0) {
-									state2 = BlockAristolochiaFlower.block.getDefaultState()
-											.withProperty(UP, state.getValue(UP))
-											.withProperty(NORTH, state.getValue(NORTH))
-											.withProperty(EAST, state.getValue(EAST))
-											.withProperty(SOUTH, state.getValue(SOUTH))
-											.withProperty(WEST, state.getValue(WEST));
+									state2 = state;
 								}
 	                            worldIn.setBlockState(pos, state2.withProperty(getPropertyFor(enumfacing1), Boolean.valueOf(true)), 2);
 	                        }
@@ -392,7 +291,7 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                        if ((worldIn.getBlockState(blockpos3)).getMaterial() == Material.AIR)
 	                        {
 								IBlockState iblockstate1 = state;
-
+	
 	                            for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
 	                            {
 	                                if (rand.nextBoolean())
@@ -401,14 +300,14 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                                }
 	                            }
 
-								IBlockState state3 = iblockstate1;
+								IBlockState state3 = BlockKajanthus.block.getDefaultState()
+										.withProperty(UP, iblockstate1.getValue(UP))
+										.withProperty(NORTH, iblockstate1.getValue(NORTH))
+										.withProperty(EAST, iblockstate1.getValue(EAST))
+										.withProperty(SOUTH, iblockstate1.getValue(SOUTH))
+										.withProperty(WEST, iblockstate1.getValue(WEST));
 								if (rand.nextInt(3) == 0) {
-									state3 = BlockAristolochiaFlower.block.getDefaultState()
-											.withProperty(UP, iblockstate1.getValue(UP))
-											.withProperty(NORTH, iblockstate1.getValue(NORTH))
-											.withProperty(EAST, iblockstate1.getValue(EAST))
-											.withProperty(SOUTH, iblockstate1.getValue(SOUTH))
-											.withProperty(WEST, iblockstate1.getValue(WEST));
+									state3 = iblockstate1;
 								}
 
 	                            if (((Boolean)iblockstate1.getValue(NORTH)).booleanValue() || ((Boolean)iblockstate1.getValue(EAST)).booleanValue() || ((Boolean)iblockstate1.getValue(SOUTH)).booleanValue() || ((Boolean)iblockstate1.getValue(WEST)).booleanValue())
@@ -416,7 +315,7 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                                worldIn.setBlockState(blockpos3, state3, 2);
 	                            }
 	                        }
-	                        else if (block == this || block == BlockAristolochiaFlower.block)
+	                        else if (block == this || block == BlockKajanthus.block)
 	                        {
 	                            IBlockState iblockstate4 = iblockstate;
 	
@@ -431,13 +330,12 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	                            }
 
 								IBlockState state4 = block.getDefaultState()
-											.withProperty(UP, iblockstate4.getValue(UP))
-											.withProperty(NORTH, iblockstate4.getValue(NORTH))
-											.withProperty(EAST, iblockstate4.getValue(EAST))
-											.withProperty(SOUTH, iblockstate4.getValue(SOUTH))
-											.withProperty(WEST, iblockstate4.getValue(WEST));
-
-
+										.withProperty(UP, iblockstate4.getValue(UP))
+										.withProperty(NORTH, iblockstate4.getValue(NORTH))
+										.withProperty(EAST, iblockstate4.getValue(EAST))
+										.withProperty(SOUTH, iblockstate4.getValue(SOUTH))
+										.withProperty(WEST, iblockstate4.getValue(WEST));
+	
 	                            if (((Boolean)iblockstate4.getValue(NORTH)).booleanValue() || ((Boolean)iblockstate4.getValue(EAST)).booleanValue() || ((Boolean)iblockstate4.getValue(SOUTH)).booleanValue() || ((Boolean)iblockstate4.getValue(WEST)).booleanValue())
 	                            {
 	                                worldIn.setBlockState(blockpos3, state4, 2);
@@ -449,15 +347,54 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	        }
 	    }
 
-	    @SideOnly(Side.CLIENT)
 		@Override
-	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Flowering-plant vine");
-	        	tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene");
-				tooltip.add("Propagation: flowers");}
-	        super.addInformation(stack, player, tooltip, advanced);
-	    }
+		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			//right-click block:
+			if (!(worldIn.isRemote)) {
+				ItemStack stack = playerIn.getHeldItem(hand);
+				if ((playerIn.capabilities.allowEdit) && stack.getItem() instanceof ItemShears
+						&& hand == EnumHand.MAIN_HAND)
+				{
+					//playerIn.swingArm(hand);
+					if (Math.random() > 0.95) {
+						worldIn.destroyBlock(pos, false);
+					}
+					Block.spawnAsEntity(worldIn, pos, new ItemStack(ItemKajanthusFlower.block, 1));
+					stack.damageItem(1, playerIn);
+					return true;
+				}
+
+				if ((!playerIn.capabilities.allowEdit) || (playerIn.getHeldItemMainhand().getItem() != ItemKajanthusFlower.block) || !LepidodendronConfig.doPropagation)
+				{
+					return true;
+				}
+				else {
+					ItemStack itemstack = playerIn.getHeldItem(hand);
+					if (!playerIn.isCreative()) {itemstack.shrink(1);}
+					if (!((hand != playerIn.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+						if (Math.random() > 0.5) {
+							ItemStack stackSeed = new ItemStack(ItemKajanthusSeeds.block, (int) (1));
+							stackSeed.setCount(1);
+							ItemHandlerHelper.giveItemToPlayer(playerIn, stackSeed);
+							if (Math.random() > 0.75) {
+								worldIn.destroyBlock(pos, false);
+							}
+							return true;
+						}
+						else {
+							if (Math.random() > 0.75) {
+								worldIn.destroyBlock(pos, false);
+								return true;
+							}
+						}
+					}
+					return true;
+				}
+			}
+			else {
+				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+			}
+		}
 
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
 		{
@@ -480,7 +417,7 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 				{
 					IBlockState iblockstate1 = worldIn.getBlockState(pos.up());
 
-					if ((iblockstate1.getBlock() != this && iblockstate1.getBlock() != BlockAristolochiaFlower.block)
+					if ((iblockstate1.getBlock() != this && iblockstate1.getBlock() != BlockKajanthus.block)
 							|| !((Boolean)iblockstate1.getValue(propertybool)).booleanValue())
 					{
 						state = state.withProperty(propertybool, Boolean.valueOf(false));
@@ -501,6 +438,40 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 
 				return true;
 			}
+		}
+	}
+
+	public static class TileEntityCustom extends TileEntity {
+
+		@Override
+		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
+		{
+			return (oldState.getBlock() != newSate.getBlock());
+		}
+
+		@Override
+		public SPacketUpdateTileEntity getUpdatePacket() {
+			return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
+		}
+
+		@Override
+		public NBTTagCompound getUpdateTag() {
+			return this.writeToNBT(new NBTTagCompound());
+		}
+
+		@Override
+		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+			this.readFromNBT(pkt.getNbtCompound());
+		}
+
+		@Override
+		public void handleUpdateTag(NBTTagCompound tag) {
+			this.readFromNBT(tag);
+		}
+
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 1, 1));
 		}
 	}
 }

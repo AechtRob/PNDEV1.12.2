@@ -9,6 +9,7 @@ import net.lepidodendron.item.ItemBottleOfLatex;
 import net.lepidodendron.item.ItemBottleOfResin;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -365,6 +366,9 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			}
 			else if (facing != EnumFacing.UP && facing != EnumFacing.DOWN)
 			{
+				if (block instanceof BlockLog) {
+					return true;
+				}
 				return !isExceptBlockForAttachWithPiston(block) && blockfaceshape == BlockFaceShape.SOLID;
 			}
 			else
