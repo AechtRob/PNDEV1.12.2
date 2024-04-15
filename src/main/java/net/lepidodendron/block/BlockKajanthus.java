@@ -118,7 +118,7 @@ public class BlockKajanthus extends ElementsLepidodendronMod.ModElement {
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")) {
-				GenChance = 120;
+				GenChance = 100;
 				biomeCriteria = true;
 			}
 			else {
