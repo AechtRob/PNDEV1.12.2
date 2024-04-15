@@ -70,6 +70,9 @@ public class VineGenerator extends WorldGenerator
 						if (this.Vine == BlockActinidea.block && rand.nextInt(6) == 0) {
 							this.state = BlockActinideaFruit.block.getDefaultState();
 						}
+						if (this.Vine == BlockKajanthus.block && rand.nextInt(6) == 0) {
+							this.state = BlockKajanthusFlower.block.getDefaultState();
+						}
 						if (enumfacing == EnumFacing.NORTH) {
 							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(BlockVine.SOUTH, true), 3);
 							return true;
@@ -93,17 +96,5 @@ public class VineGenerator extends WorldGenerator
         }
         return true;
     }
-
-    public boolean shouldGenerateInDimension(int id, int[] dims) {
-		int[] var2 = dims;
-		int var3 = dims.length;
-		for (int var4 = 0; var4 < var3; ++var4) {
-			int dim = var2[var4];
-			if (dim == id) {
-				return true;
-			}
-		}
-		return false;
-	}
 
 }

@@ -2726,6 +2726,12 @@ public class LepidodendronConfigPlants {
     public static String[] genAristolochiaOverrideBiomes = new String[0];
     public static double multiplierAristolochia = 1;
 
+    public static int[] dimKajanthus = new int[]{0};
+    public static boolean genKajanthus = false;
+    public static String[] genKajanthusBlacklistBiomes = new String[0];
+    public static String[] genKajanthusOverrideBiomes = new String[0];
+    public static double multiplierKajanthus = 1;
+
     public static int[] dimHops = new int[]{0};
     public static boolean genHops = false;
     public static String[] genHopsBlacklistBiomes = new String[0];
@@ -12473,6 +12479,27 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lyginopteris", "dimLyginopteris", dimLyginopteris);
         prop.setComment("List of dimension IDs Lyginopteris can generate in [default: 0]");
         dimLyginopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Kajanthus", "dimKajanthus", dimKajanthus);
+        prop.setComment("List of dimension IDs Kajanthus can generate in [default: 0]");
+        dimKajanthus = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Kajanthus", "genKajanthus", genKajanthus);
+        prop.setComment("Set to true to generate Kajanthus naturally [default: false]");
+        genKajanthus = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Kajanthus", "genKajanthusBlacklistBiomes", genKajanthusBlacklistBiomes);
+        prop.setComment("List of biomes Kajanthus are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genKajanthusBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Kajanthus", "genKajanthusOverrideBiomes", genKajanthusOverrideBiomes);
+        prop.setComment("List of biomes Kajanthus are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genKajanthusOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Kajanthus", "multiplierKajanthus", multiplierKajanthus);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierKajanthus = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Aristolochia", "dimAristolochia", dimAristolochia);
