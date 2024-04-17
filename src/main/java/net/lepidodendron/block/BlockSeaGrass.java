@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -116,8 +115,6 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genSeagrassOverrideBiomes))
 			biomeCriteria = true;
 
-
-
 		if (dimID == LepidodendronConfig.dimPrecambrian
 				|| dimID == LepidodendronConfig.dimCambrian
 				|| dimID == LepidodendronConfig.dimOrdovician
@@ -135,6 +132,10 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
+		if (dimID == LepidodendronConfig.dimCretaceousEarly
+		) {
+			multiplier = 32;
+		}
 
 		for (int i = 0; i < (int) 20 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

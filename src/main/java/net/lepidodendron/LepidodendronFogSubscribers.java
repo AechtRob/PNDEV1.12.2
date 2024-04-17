@@ -3,6 +3,7 @@ package net.lepidodendron;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -454,6 +455,13 @@ public class LepidodendronFogSubscribers {
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousEarly) {
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")) {
+				return 150;
+			}
+		}
+
 		return 0;
 	}
 
@@ -560,6 +568,9 @@ public class LepidodendronFogSubscribers {
 									|| biomeJurassic.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_creek_fog")) {
 									fog = backgroundFog2 * 5F;
 								}
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
 									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_desert") && player.posY >= player.world.getSeaLevel() - 4) {
 									fog = backgroundFog2 * 5F;								
