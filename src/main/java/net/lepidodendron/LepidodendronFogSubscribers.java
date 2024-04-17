@@ -492,7 +492,9 @@ public class LepidodendronFogSubscribers {
 						|| world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
 						|| world.provider.getDimension() == LepidodendronConfig.dimPermian
 						|| world.provider.getDimension() == LepidodendronConfig.dimTriassic
-						|| player.world.provider.getDimension() == LepidodendronConfig.dimJurassic
+						|| world.provider.getDimension() == LepidodendronConfig.dimJurassic
+						|| world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+						|| world.provider.getDimension() == LepidodendronConfig.dimCretaceousLate
 				) {
 					if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
