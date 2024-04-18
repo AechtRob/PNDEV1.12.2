@@ -381,7 +381,8 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 			}
 			if ((world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly)
 			){
-				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")) {
 					SpawnLygodium = true;
 				}
 				else {

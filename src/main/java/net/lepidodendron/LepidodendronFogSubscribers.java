@@ -457,7 +457,8 @@ public class LepidodendronFogSubscribers {
 
 		if (biome instanceof BiomeCretaceousEarly) {
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")) {
+			if (biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+				|| biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_creek_antarctic_rainforest")) {
 				return 150;
 			}
 		}
@@ -571,7 +572,8 @@ public class LepidodendronFogSubscribers {
 									fog = backgroundFog2 * 5F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
-									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest") && player.posY >= player.world.getSeaLevel() - 4) {
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+										|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")) && player.posY >= player.world.getSeaLevel() - 4) {
 									fog = backgroundFog2 * 5F;
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
 									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_desert") && player.posY >= player.world.getSeaLevel() - 4) {
