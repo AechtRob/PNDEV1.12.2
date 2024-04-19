@@ -1,0 +1,46 @@
+{
+	"name": "Cordubia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cordubia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_cordubia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cordubia",
+			"title": "Cordubia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria $(br)>Medusae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/cordubia.png"],
+			"title": "C. gigantea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cordubia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cordubia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cordubia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cordubia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cordubia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cordubia"
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:gangtoucunia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:gangtoucunia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:gangtoucunia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:gangtoucunia", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:gangtoucunia", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:gangtoucunia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:gangtoucunia", "x": 180}
+    ]
+  }
+}

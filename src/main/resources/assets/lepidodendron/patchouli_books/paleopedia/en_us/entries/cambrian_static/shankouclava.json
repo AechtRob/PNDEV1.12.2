@@ -1,0 +1,26 @@
+{
+	"name": "Shankouclava",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/shankouclava_icon.png",
+	"category": "lepidodendron:cambrian_static",
+	"turnin": "lepidodendron:pf_adv_book_shankouclava",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shankouclava",
+			"title": "Shankouclava",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata $(br)>Tunicata"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/shankouclava.png"],
+			"title": "S. anningense",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shankouclava",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

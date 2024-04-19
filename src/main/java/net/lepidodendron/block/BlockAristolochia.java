@@ -5,7 +5,6 @@ import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.VineGenerator;
 import net.minecraft.block.Block;
@@ -456,7 +455,7 @@ public class BlockAristolochia extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Flowering-plant vine");
 	        	tooltip.add("Periods: late Cretaceous - Paleogene - Neogene - Pleistocene");
-	        	tooltip.add("Propagation: fruit");}
+				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

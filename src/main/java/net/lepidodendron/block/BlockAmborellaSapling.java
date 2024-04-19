@@ -154,6 +154,7 @@ public class BlockAmborellaSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
+					$_dependencies.put("hasFlowers", true);
 					ProcedureWorldGenAmborella.executeProcedure($_dependencies);
 				}
 	        }

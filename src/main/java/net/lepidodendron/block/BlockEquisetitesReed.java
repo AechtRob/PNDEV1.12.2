@@ -128,7 +128,9 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_north_america_braided")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -149,7 +151,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 				GenChance = 15;
 		}
 		if (dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic)
+			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceousEarly)
 		{
 			GenChance = 35;
 		}

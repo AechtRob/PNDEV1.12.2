@@ -114,6 +114,10 @@ public class ItemBottleOfResin extends ElementsLepidodendronMod.ModElement {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandBlackSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
+			else if (blockTarget == BlockSandGrey.block) {
+				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandGreySticky.block.getDefaultState(), 2);}
+				resined = true;
+			}
 			else if (blockTarget == BlockSandWhite.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandWhiteSticky.block.getDefaultState(), 2);}
 				resined = true;
@@ -160,6 +164,10 @@ public class ItemBottleOfResin extends ElementsLepidodendronMod.ModElement {
 			}
 			else if (blockTarget == BlockSandBlackWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandBlackWavySticky.block.getDefaultState(), 2);}
+				resined = true;
+			}
+			else if (blockTarget == BlockSandGreyWavy.block) {
+				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandGreyWavySticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
 			else if (blockTarget == BlockGravelWavy.block) {

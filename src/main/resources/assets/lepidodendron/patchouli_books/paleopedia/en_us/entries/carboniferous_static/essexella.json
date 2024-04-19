@@ -1,0 +1,26 @@
+{
+	"name": "Essexella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/essexella_icon.png",
+	"category": "lepidodendron:carboniferous_static",
+	"turnin": "lepidodendron:pf_adv_book_essexella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_essexella",
+			"title": "Essexella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/essexella.png"],
+			"title": E. asherae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_essexella",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

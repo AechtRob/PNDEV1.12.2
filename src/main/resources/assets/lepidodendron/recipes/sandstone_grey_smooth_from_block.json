@@ -1,0 +1,20 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "lepidodendron:sandstone_grey"
+      }
+    ]
+  },
+  "result": {
+    "item": "lepidodendron:sandstone_grey_smooth",
+    "count": 4
+  }
+}
+

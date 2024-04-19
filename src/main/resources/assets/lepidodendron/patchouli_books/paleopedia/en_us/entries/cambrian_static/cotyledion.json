@@ -1,0 +1,26 @@
+{
+	"name": "Cotyledion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cotyledion_icon.png",
+	"category": "lepidodendron:cambrian_static",
+	"turnin": "lepidodendron:pf_adv_book_cotyledion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cotyledion",
+			"title": "Cotyledion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Entoprocta"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/cotyledion.png"],
+			"title": "C. tylodes",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cotyledion",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

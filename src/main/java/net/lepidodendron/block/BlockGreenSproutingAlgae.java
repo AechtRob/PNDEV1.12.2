@@ -111,6 +111,7 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
 			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 			 ) {
 			biomeCriteria = true;
 		}

@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -163,6 +164,48 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 			}
 			else {
 				biomeCriteria = true;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly)biome;
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_inland_sea_australia")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_africa")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_asia")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else {
+				biomeCriteria = false;
 			}
 		}
 

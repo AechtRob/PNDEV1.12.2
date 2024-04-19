@@ -8,7 +8,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -115,6 +114,7 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				 ) {
 			biomeCriteria = true;
 		}
@@ -141,6 +141,7 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 2;
 		}

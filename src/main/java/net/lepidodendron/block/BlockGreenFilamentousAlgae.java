@@ -6,6 +6,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -131,6 +132,51 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				biomeCriteria = false;
 			}
 		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly)biome;
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_inland_sea_australia")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_africa")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_asia")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 		if (!biomeCriteria)
 			return;
 
@@ -168,6 +214,14 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")) {
+			GenChance = 192;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_north_america_braided")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")) {
 			GenChance = 192;
 		}
 

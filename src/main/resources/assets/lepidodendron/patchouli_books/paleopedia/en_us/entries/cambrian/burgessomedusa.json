@@ -1,0 +1,46 @@
+{
+	"name": "Burgessomedusa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/burgessomedusa_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_burgessomedusa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_burgessomedusa",
+			"title": "Burgessomedusa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria $(br)>Medusozoa"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/burgessomedusa.png"],
+			"title": "B. phasmiformis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_burgessomedusa",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		}
+	]
+}

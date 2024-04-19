@@ -205,7 +205,10 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_north_america_braided")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -252,7 +255,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 256;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")) {
 			GenChance = 5;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
@@ -264,8 +268,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 64;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")) {
 			GenChance = 30;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
@@ -274,7 +278,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 192;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_woodland_polje")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")) {
 			GenChance = 256;
 		}
 
@@ -296,6 +301,26 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 20; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")) {
+							if (world.getBlockState(blockpos1.down().north()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west(2)).getMaterial() != Material.WATER) {
+								continue;
+							}
+						}
+						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")
+							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_outer")) {
+							continue;
+						}
 						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0) ) {
 							int j = 1 + random.nextInt(random.nextInt(10) + 1);
 							j = Math.max(2, j);

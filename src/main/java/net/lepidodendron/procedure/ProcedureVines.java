@@ -28,9 +28,9 @@ public class ProcedureVines extends ElementsLepidodendronMod.ModElement {
 			vinecounter = 0;
 			while ((world.isAirBlock(new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz - 1))) && ((yy - vinecounter) > 0)) {
 				try {
-				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz - 1), BlockSphenophyllales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(true)).withProperty(WEST, Boolean.valueOf(false)), 2);
-			}
-			catch (Exception e) {}
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - vinecounter), (int) zz - 1), BlockSphenophyllales.block.getDefaultState().withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(true)).withProperty(WEST, Boolean.valueOf(false)), 2);
+				}
+				catch (Exception e) {}
 				vinecounter = vinecounter + 1;
 			}
 		}

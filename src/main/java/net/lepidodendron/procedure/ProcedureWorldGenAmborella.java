@@ -34,10 +34,15 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 			System.err.println("Failed to load dependency world for procedure WorldGenAmborella!");
 			return;
 		}
+		if (dependencies.get("world") == null) {
+			System.err.println("Failed to load dependency hasFlowers for procedure WorldGenAmborella!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean hasFlowers = (boolean) dependencies.get("hasFlowers");
 		double TreeHeight = 0;
 		double counter = 0;
 		int randomiser;
@@ -80,10 +85,10 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 								//Sometimes add a block above, sometimes add a flower above:
 								if (world.rand.nextInt(10) == 0) {
 									ProcedureNonDecayingTreeLeaf.executeProcedure(placePos.getX(), placePos.getY() + 1, placePos.getZ(), world, BlockAmborellaLeaves.block);
-									addFlower(world, placePos.up());
+									addFlower(hasFlowers,world, placePos.up());
 								}
 								else {
-									addFlower(world, placePos);
+									addFlower(hasFlowers,world, placePos);
 								}
 							}
 						}
@@ -97,7 +102,10 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 		}
 	}
 
-	public static void addFlower(World world, BlockPos pos) {
+	public static void addFlower(boolean hasFlowers, World world, BlockPos pos) {
+		if (!hasFlowers) {
+			return;
+		}
 		if (world.getBlockState(pos).getBlock() == BlockAmborellaLeaves.block && world.rand.nextInt(6) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {

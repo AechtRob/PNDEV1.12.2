@@ -150,6 +150,22 @@ public class BlockAcid extends ElementsLepidodendronMod.ModElement {
 					if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSandBlack.block) {
 						world.setBlockState(pos.down(), BlockSandBlack.block.getDefaultState());
 					}
+					
+					if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSandGrey.block) {
+						world.setBlockState(pos.north(), BlockSandGrey.block.getDefaultState());
+					}
+					if (world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundSandGrey.block) {
+						world.setBlockState(pos.south(), BlockSandGrey.block.getDefaultState());
+					}
+					if (world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundSandGrey.block) {
+						world.setBlockState(pos.east(), BlockSandGrey.block.getDefaultState());
+					}
+					if (world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundSandGrey.block) {
+						world.setBlockState(pos.west(), BlockSandGrey.block.getDefaultState());
+					}
+					if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSandGrey.block) {
+						world.setBlockState(pos.down(), BlockSandGrey.block.getDefaultState());
+					}
 
 					if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSandWhite.block) {
 						world.setBlockState(pos.north(), BlockSandWhite.block.getDefaultState());

@@ -103,6 +103,10 @@ public class ItemHerbicide extends ElementsLepidodendronMod.ModElement {
 									worldIn.destroyBlock(blockpos.down(), false);
 									worldIn.setBlockState(blockpos.down(), BlockSandBlack.block.getDefaultState());
 								}
+								if (targetBlock == BlockPrehistoricGroundSandGrey.block) {
+									worldIn.destroyBlock(blockpos.down(), false);
+									worldIn.setBlockState(blockpos.down(), BlockSandGrey.block.getDefaultState());
+								}
 								if (targetBlock == BlockPrehistoricGroundSandWhite.block) {
 									worldIn.destroyBlock(blockpos.down(), false);
 									worldIn.setBlockState(blockpos.down(), BlockSandWhite.block.getDefaultState());

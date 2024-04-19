@@ -698,6 +698,9 @@ public class EntityPrehistoricFloraHaldanodon extends EntityPrehistoricFloraSwim
 		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block) {
 			return BlockSandBlackSticky.block.getDefaultState();
 		}
+		else if (oldBurrowState == BlockSandGrey.block.getDefaultState() || oldBurrowState == BlockSandGreyWavy.block) {
+			return BlockSandGreySticky.block.getDefaultState();
+		}
 		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block) {
 			return BlockSandWhiteSticky.block.getDefaultState();
 		}

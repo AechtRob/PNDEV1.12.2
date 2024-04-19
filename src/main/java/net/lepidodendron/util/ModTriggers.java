@@ -144,6 +144,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CALLISTOPHYTALES = new CustomTrigger("pf_book_callistophytales");
     public static final CustomTrigger CLICK_HEDERA = new CustomTrigger("pf_book_hedera");
     public static final CustomTrigger CLICK_ARISTOLOCHIA = new CustomTrigger("pf_book_aristolochia");
+    public static final CustomTrigger CLICK_KAJANTHUS = new CustomTrigger("pf_book_kajanthus");
     public static final CustomTrigger CLICK_BUCKTHORN = new CustomTrigger("pf_book_buckthorn");
     public static final CustomTrigger CLICK_ACTINIDEA = new CustomTrigger("pf_book_actinidea");
     public static final CustomTrigger CLICK_VITIS = new CustomTrigger("pf_book_vitis");
@@ -1467,6 +1468,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRUMILLOSPONGIA = new CustomTrigger("pf_book_crumillospongia");
     public static final CustomTrigger CLICK_DIPTERONOTUS = new CustomTrigger("pf_book_dipteronotus");
     public static final CustomTrigger CLICK_HETEROSTROPHUS = new CustomTrigger("pf_book_heterostrophus");
+    public static final CustomTrigger CLICK_MONOLOPHOSAURUS = new CustomTrigger("pf_book_monolophosaurus");
 
 
 
@@ -1612,6 +1614,7 @@ public class ModTriggers
             CLICK_CALLISTOPHYTALES,
             CLICK_HEDERA,
             CLICK_ARISTOLOCHIA,
+            CLICK_KAJANTHUS,
             CLICK_BUCKTHORN,
             CLICK_ACTINIDEA,
             CLICK_VITIS,
@@ -2927,6 +2930,7 @@ public class ModTriggers
             CLICK_DIPTERONOTUS,
             CLICK_HETEROSTROPHUS,
             CLICK_FLAGELLOPANTOPUS,
+            CLICK_MONOLOPHOSAURUS
 
 
 

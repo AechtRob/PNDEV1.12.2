@@ -100,6 +100,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
 			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			dimensionCriteria = true;
 		}
@@ -123,6 +124,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
 			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 			) {
 			biomeCriteria = true;
 		}

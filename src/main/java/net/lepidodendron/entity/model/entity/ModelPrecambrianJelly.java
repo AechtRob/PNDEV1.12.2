@@ -29,6 +29,12 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
         this.cyclomedusabase.setRotationPoint(-0.5F, -0.3F, -0.5F);
         this.main.addChild(cyclomedusabase);
         this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 0, 7, -1.5F, -1.0F, -1.5F, 4, 1, 4, 0.0F, false));
+        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 20, 10, -0.5F, -1.0F, -1.5F, 2, 1, 4, 0.0F, false));
+        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 20, 5, -1.5F, -1.0F, -0.5F, 4, 1, 2, 0.0F, false));
+        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 15, 25, 2.5F, -1.0F, -0.5F, 1, 1, 2, 0.0F, false));
+        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 22, 25, -2.5F, -1.0F, -0.5F, 1, 1, 2, 0.0F, true));
+        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 17, 21, -0.5F, -1.0F, -2.5F, 2, 1, 1, 0.0F, false));
+        this.cyclomedusabase.cubeList.add(new ModelBox(cyclomedusabase, 17, 21, -0.5F, -1.0F, 2.5F, 2, 1, 1, 0.0F, true));
 
         this.ediacariabase = new AdvancedModelRenderer(this);
         this.ediacariabase.setRotationPoint(-0.5F, 0.0F, -0.5F);

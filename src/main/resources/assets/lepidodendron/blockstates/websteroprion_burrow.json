@@ -32,6 +32,9 @@
     },
     "type=10": {
       "model": "lepidodendron:websteroprion_burrow_10"
+    },
+    "type=11": {
+      "model": "lepidodendron:websteroprion_burrow_11"
     }
   }
 }
