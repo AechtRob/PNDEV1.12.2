@@ -16,10 +16,14 @@ public class WorldGenAmborella extends WorldGenerator
 {
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
-        return generate(worldIn, rand, position, false);
+        return generate(worldIn, rand, position, false, true);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater) {
+        return generate(worldIn, rand, position, needsWater, true);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, boolean hasFlowers)
     {
         boolean flag = false;
         int offset = 2;
@@ -38,6 +42,7 @@ public class WorldGenAmborella extends WorldGenerator
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
                     $_dependencies.put("world", worldIn);
+                    $_dependencies.put("hasFlowers", hasFlowers);
                     ProcedureWorldGenAmborella.executeProcedure($_dependencies);
                     flag = true;
                 }
@@ -69,6 +74,7 @@ public class WorldGenAmborella extends WorldGenerator
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
                         $_dependencies.put("world", worldIn);
+                        $_dependencies.put("hasFlowers", hasFlowers);
                         ProcedureWorldGenAmborella.executeProcedure($_dependencies);
                         flag = true;
                     }
