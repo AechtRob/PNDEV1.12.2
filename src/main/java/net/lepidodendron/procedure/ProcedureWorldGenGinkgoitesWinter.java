@@ -503,11 +503,17 @@ public class ProcedureWorldGenGinkgoitesWinter extends ElementsLepidodendronMod.
 											|| ((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.GRASS)
 											|| ((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.SAND))
 								) {
-									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + xct, (int) y + yct + 1, (int) z + zct), BlockLeafLitter.block.getDefaultState(), 3);
+									if (world.getBlockState(new BlockPos((int) x + xct, (int) y + yct + 1, (int) z + zct)).getMaterial() == Material.SNOW
+											|| world.getBlockState(new BlockPos((int) x + xct, (int) y + yct + 1, (int) z + zct)).getMaterial() == Material.CRAFTED_SNOW) {
+										Functions.setBlockStateAndCheckForDoublePlant(world, new BlockPos((int) x + xct, (int) y + yct, (int) z + zct), BlockLeafLitter.block.getDefaultState(), 3);
+									}
+									else {
+										Functions.setBlockStateAndCheckForDoublePlant(world, new BlockPos((int) x + xct, (int) y + yct + 1, (int) z + zct), BlockLeafLitter.block.getDefaultState(), 3);
+									}
 								}
 							}
 							else {
-								if (world.rand.nextInt(4) == 0 && (((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.GROUND)
+								if ((((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.GROUND)
 										|| ((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.GRASS)
 										|| ((world.getBlockState(new BlockPos((int) x + xct, (int) y + yct, (int) z + zct))).getMaterial() == Material.SAND))) {
 									{

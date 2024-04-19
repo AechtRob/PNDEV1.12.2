@@ -691,6 +691,9 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block.getDefaultState()) {
 			return BlockSandBlackSticky.block.getDefaultState();
 		}
+		else if (oldBurrowState == BlockSandGrey.block.getDefaultState() || oldBurrowState == BlockSandGreyWavy.block.getDefaultState()) {
+			return BlockSandGreySticky.block.getDefaultState();
+		}
 		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block.getDefaultState()) {
 			return BlockSandWhiteSticky.block.getDefaultState();
 		}

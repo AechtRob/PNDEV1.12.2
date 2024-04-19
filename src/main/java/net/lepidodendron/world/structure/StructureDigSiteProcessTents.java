@@ -185,6 +185,9 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
             if (biome.topBlock == BlockSandBlack.block) {
                 return BlockSandstoneBlack.block.getDefaultState();
             }
+            if (biome.topBlock == BlockSandGrey.block) {
+                return BlockSandstoneGrey.block.getDefaultState();
+            }
             if (biome.topBlock == BlockSandPangaean.block) {
                 return BlockSandstonePangaean.block.getDefaultState();
             }
@@ -206,6 +209,9 @@ public class StructureDigSiteProcessTents implements ITemplateProcessor {
             }
             if (biome.topBlock == BlockSandBlack.block) {
                 return BlockSandstoneBlack.block.getDefaultState();
+            }
+            if (biome.topBlock == BlockSandGrey.block) {
+                return BlockSandstoneGrey.block.getDefaultState();
             }
             if (biome.topBlock == BlockSandPangaean.block) {
                 return BlockSandstonePangaean.block.getDefaultState();

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "snowy=false": [
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var1" },
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var2"},
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var3"},
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var4"},
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var5"},
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var1", "y": 90 },
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var2", "y": 90 },
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var3", "y": 90 },
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var4", "y": 90 },
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_grey_var5", "y": 90 }
+    ],
+    "snowy=true": [
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_snowed_grey" },
+      {"model": "lepidodendron:sandy_prehistoric_ground_cover_snowed_grey", "y": 90 }
+    ]
+  }
+}
+

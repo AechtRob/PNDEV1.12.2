@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:sand_grey" },
+      { "model": "lepidodendron:sand_grey", "y": 90 },
+      { "model": "lepidodendron:sand_grey", "y": 180 },
+      { "model": "lepidodendron:sand_grey", "y": 270 }
+    ]
+  }
+}
+

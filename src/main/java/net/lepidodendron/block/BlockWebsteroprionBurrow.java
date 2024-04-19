@@ -77,7 +77,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-	public static final PropertyInteger TYPE = PropertyInteger.create("type", 0, 10);
+	public static final PropertyInteger TYPE = PropertyInteger.create("type", 0, 11);
 	public static final PropertyBool OCCUPIED = PropertyBool.create("occupied");
 
 	@SideOnly(Side.CLIENT)
@@ -411,6 +411,11 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 					|| stateDown.getBlock() == BlockSandBlackWavy.block
 					|| stateDown.getBlock() == BlockSandBlackWavySticky.block
 			) {type = 9;} //black sand
+			if (stateDown.getBlock() == BlockSandGrey.block
+					|| stateDown.getBlock() == BlockSandGreySticky.block
+					|| stateDown.getBlock() == BlockSandGreyWavy.block
+					|| stateDown.getBlock() == BlockSandGreyWavySticky.block
+			) {type = 11;} //grey sand
 			if (stateDown.getBlock() == BlockSandyDirt.block
 					|| stateDown.getBlock() == BlockCoarseSandyDirt.block
 			) {type = 10;} //sandy dirt
