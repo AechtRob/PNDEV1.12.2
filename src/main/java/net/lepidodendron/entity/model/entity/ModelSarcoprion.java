@@ -356,7 +356,7 @@ public class ModelSarcoprion extends AdvancedModelBase {
             this.swing(root, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
 
-        this.walk(jaw, (float) (speed * 0.2), 0.2F, false, 0.5f, 0.2f, f2, 1);
+        this.walk(jaw, (float) (speed * 0.2), 0.05F, true, 0.0f, -0.05f, f2, 1);
         this.flap(leftpectoral, (float) (speed * 0.85), 0.2F, false, 0.8F, 0, f2, 0.5F);
         this.swing(leftpectoral, (float) (speed * 0.85), 0.1F, true, 0, 0, f2, 0.5F);
         this.flap(rightpectoral, (float) (speed * 0.85), -0.2F, false, 0.8F, 0, f2, 0.5F);
@@ -383,27 +383,20 @@ public class ModelSarcoprion extends AdvancedModelBase {
         animator.setAnimation(e.ATTACK_ANIMATION); //duration 25
         animator.startKeyframe(5);
         //animator.rotate(this.Headback, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(55), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(2);
-        animator.startKeyframe(2);
-        //animator.rotate(this.Headback, (float) Math.toRadians(-2.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.startKeyframe(2);
+        //animator.rotate(this.Headback, (float) Math.toRadians(-2.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(2);
+        animator.startKeyframe(2);
         //animator.rotate(this.Headback, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(55), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.resetKeyframe(2);
 
-        animator.setAnimation(e.ROAR_ANIMATION);
-        animator.startKeyframe(5);
-        //animator.rotate(this.Headback, (float) Math.toRadians(-2.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(27.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(5);
-        animator.resetKeyframe(5);
 
     }
 }
