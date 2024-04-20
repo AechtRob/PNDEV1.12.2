@@ -2281,8 +2281,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation DEBEERIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/debeerius"));
 	public static final int ENTITY_WODNIKA = 925;
 	public static final ResourceLocation WODNIKA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wodnika"));
-	public static final int ENTITY_PSEUDANGUSTIDONTUS = 926;
-	public static final ResourceLocation PSEUDANGUSTIDONTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudangustidontus"));
+	public static final int ENTITY_PSEUDOANGUSTIDONTUS = 926;
+	public static final ResourceLocation PSEUDOANGUSTIDONTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudoangustidontus"));
 	public static final int ENTITY_SARCOPRION = 927;
 	public static final ResourceLocation SARCOPRION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sarcoprion"));
 	public static final ResourceLocation SARCOPRION_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sarcoprion_young"));

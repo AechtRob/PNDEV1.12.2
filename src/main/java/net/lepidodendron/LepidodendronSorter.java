@@ -4403,4 +4403,12 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 4399;
     public static final int advancement_placeholder = 4400;
 
+    public static final int sarcoprion_raw = 4441;
+    public static final int eggs_sarcoprion = 4442;
+    public static final int eggs_sarcoprion_worldgen = 4443;
+    public static final int debeerius_raw = 4444;
+    public static final int pseudoangustidontus_raw = 4445;
+    public static final int wodnika_raw = 4446;
+    public static final int dipteronotus_raw = 4447;
+
 }
