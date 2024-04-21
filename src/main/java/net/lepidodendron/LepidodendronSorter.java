@@ -4410,5 +4410,12 @@ public class LepidodendronSorter {
     public static final int pseudoangustidontus_raw = 4445;
     public static final int wodnika_raw = 4446;
     public static final int dipteronotus_raw = 4447;
+    public static final int heterostrophus_raw = 4448;
+    public static final int waaganella_item = 4449;
+    public static final int chippewaella_item = 4450;
+    public static final int foordella_item = 4451;
+    public static final int akasakiella_item = 4452;
+    public static final int deuterosaurus_raw = 4453;
+    public static final int eggs_deuterosaurus = 4454;
 
 }

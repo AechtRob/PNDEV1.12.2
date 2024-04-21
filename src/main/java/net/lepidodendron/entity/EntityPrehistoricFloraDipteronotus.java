@@ -3,9 +3,16 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderDapedium;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -19,7 +26,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFloraTrilobiteSwimBase implements ITrappableWater {
+public class EntityPrehistoricFloraDipteronotus extends EntityPrehistoricFloraFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -27,9 +34,24 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraFlagellopantopus(World world) {
+	public EntityPrehistoricFloraDipteronotus(World world) {
 		super(world);
-		setSize(0.4F, 0.25F);
+		setSize(0.3F, 0.25F);
+	}
+
+	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 10;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -37,7 +59,7 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -47,13 +69,18 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 	}
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
+	protected float getAISpeedFish() {
+		return 0.13f;
 	}
 
 	@Override
-	protected float getAISpeedTrilobite() {
-		return 0.05f;
+	protected boolean isSlowAtBottom() {
+		return false;
+	}
+
+	@Override
+	public int getAnimationTick() {
+		return getAnimationTick();
 	}
 
 	@Override
@@ -77,15 +104,15 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAITrilobiteSwimBase(this, 1));
-		tasks.addTask(1, new TrilobiteWanderSwimWaterColumn(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteSwimBaseAI(this));
+		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
+		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
+		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD);
+		return ArrayUtils.addAll(DietString.SHELLFISH);
 	}
 
 	@Override
@@ -100,7 +127,7 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.ARTHROPOD;
+		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override
@@ -111,8 +138,8 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(3.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
@@ -147,8 +174,17 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return null;
-		//return LepidodendronMod.FLAGELLOPANTOPUS_LOOT;
+		return LepidodendronMod.DIPTERONOTUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DIPTERONOTUS;
+	}
 }
+
