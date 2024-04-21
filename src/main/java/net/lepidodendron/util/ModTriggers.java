@@ -1462,13 +1462,22 @@ public class ModTriggers
     public static final CustomTrigger CLICK_THALATTOSUCHUS = new CustomTrigger("pf_book_thalattosuchus");
     public static final CustomTrigger CLICK_DEBEERIUS = new CustomTrigger("pf_book_debeerius");
     public static final CustomTrigger CLICK_WODNIKA = new CustomTrigger("pf_book_wodnika");
-    public static final CustomTrigger CLICK_PSEUDANGUSTIDONTUS = new CustomTrigger("pf_book_pseudangustidontus");
+    public static final CustomTrigger CLICK_PSEUDOANGUSTIDONTUS = new CustomTrigger("pf_book_pseudoangustidontus");
     public static final CustomTrigger CLICK_SARCOPRION = new CustomTrigger("pf_book_sarcoprion");
     public static final CustomTrigger CLICK_DAIHUA = new CustomTrigger("pf_book_daihua");
     public static final CustomTrigger CLICK_CRUMILLOSPONGIA = new CustomTrigger("pf_book_crumillospongia");
     public static final CustomTrigger CLICK_DIPTERONOTUS = new CustomTrigger("pf_book_dipteronotus");
     public static final CustomTrigger CLICK_HETEROSTROPHUS = new CustomTrigger("pf_book_heterostrophus");
     public static final CustomTrigger CLICK_MONOLOPHOSAURUS = new CustomTrigger("pf_book_monolophosaurus");
+    public static final CustomTrigger CLICK_WAAGANELLA = new CustomTrigger("pf_book_waaganella");
+    public static final CustomTrigger CLICK_AKASAKIELLA = new CustomTrigger("pf_book_akasakiella");
+    public static final CustomTrigger CLICK_FOORDELLA = new CustomTrigger("pf_book_foordella");
+    public static final CustomTrigger CLICK_CHIPPEWAELLA = new CustomTrigger("pf_book_chippewaella");
+    public static final CustomTrigger CLICK_DEUTEROSAURUS = new CustomTrigger("pf_book_deuterosaurus");
+    public static final CustomTrigger CLICK_DRACOPELTA = new CustomTrigger("pf_book_dracopelta");
+    public static final CustomTrigger CLICK_SHIKAMAIA = new CustomTrigger("pf_book_shikamaia");
+    public static final CustomTrigger CLICK_SINOPHONEUS = new CustomTrigger("pf_book_sinophoneus");
+    public static final CustomTrigger CLICK_STONEFLY = new CustomTrigger("pf_book_stonefly");
 
 
 
@@ -2923,14 +2932,23 @@ public class ModTriggers
             CLICK_THALATTOSUCHUS,
             CLICK_DEBEERIUS,
             CLICK_WODNIKA,
-            CLICK_PSEUDANGUSTIDONTUS,
+            CLICK_PSEUDOANGUSTIDONTUS,
             CLICK_SARCOPRION,
             CLICK_DAIHUA,
             CLICK_CRUMILLOSPONGIA,
             CLICK_DIPTERONOTUS,
             CLICK_HETEROSTROPHUS,
             CLICK_FLAGELLOPANTOPUS,
-            CLICK_MONOLOPHOSAURUS
+            CLICK_MONOLOPHOSAURUS,
+            CLICK_WAAGANELLA,
+            CLICK_AKASAKIELLA,
+            CLICK_FOORDELLA,
+            CLICK_CHIPPEWAELLA,
+            CLICK_DEUTEROSAURUS,
+            CLICK_DRACOPELTA,
+            CLICK_SHIKAMAIA,
+            CLICK_SINOPHONEUS,
+            CLICK_STONEFLY
 
 
 

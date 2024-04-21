@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "pseudangustidontus",
+      "name": "pseudoangustidontus",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:pseudangustidontus_raw",
+          "name": "lepidodendron:pseudoangustidontus_raw",
           "weight": 1,
           "functions": [
             {

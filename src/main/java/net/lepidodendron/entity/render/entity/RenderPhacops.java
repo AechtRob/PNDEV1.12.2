@@ -28,7 +28,7 @@ public class RenderPhacops extends RenderLiving<EntityPrehistoricFloraPhacops> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPhacops entity, float f) {
-        float scale = 0.9F;
+        float scale = 0.7F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }
