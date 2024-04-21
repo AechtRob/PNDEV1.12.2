@@ -131,7 +131,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                         {
                             BlockPos blockpos = position.add(i2, j4 - 1, j3);
 
-                            if (worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
+                            if ((worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND || worldIn.getBlockState(blockpos).getMaterial() == Material.SAND) && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
                             {
                                 //Biome biome = worldIn.getBiome(blockpos);
                                 //String checkBiome = "lepidodendron:devonian_floodplain";
