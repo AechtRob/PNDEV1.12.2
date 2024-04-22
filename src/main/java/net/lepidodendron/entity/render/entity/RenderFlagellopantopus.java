@@ -26,7 +26,7 @@ public class RenderFlagellopantopus extends RenderLiving<EntityPrehistoricFloraF
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraFlagellopantopus entity, float f) {
-        float scale = 0.3F;
+        float scale = 0.22F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

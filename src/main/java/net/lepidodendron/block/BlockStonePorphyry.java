@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -71,8 +72,12 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 			}
 			for (int l1 = 0; l1 < 2; ++l1) {
 				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-				int y = random.nextInt(height) + 1; //Level y
 				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				if (world.getBiome(new BlockPos(x, 0, z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
+						|| world.getBiome(new BlockPos(x, 0, z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+					height = Functions.getAdjustedSeaLevel(world, new BlockPos(x, 0, z)) - 6;
+				}
+				int y = random.nextInt(height) + 1; //Level y
 				(new WorldGenMinable(block.getDefaultState(), 13, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {
 						boolean blockCriteria = false;

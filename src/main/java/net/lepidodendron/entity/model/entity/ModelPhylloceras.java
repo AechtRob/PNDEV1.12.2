@@ -270,6 +270,7 @@ public class ModelPhylloceras extends AdvancedModelBaseExtended {
 
         this.resetToDefaultPose();
         this.Shell1.offsetY = 1.25F;
+        this.Shell1.rotateAngleX = (float) Math.toRadians(50);
 
         AdvancedModelRendererExtended[] tentacle1 = {this.arm1a, this.arm1b};
         AdvancedModelRendererExtended[] tentacle2 = {this.arm2a, this.arm2b};
