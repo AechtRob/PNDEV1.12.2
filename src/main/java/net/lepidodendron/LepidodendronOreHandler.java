@@ -51,8 +51,8 @@ public class LepidodendronOreHandler {
 				}
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 20,
@@ -84,8 +84,8 @@ public class LepidodendronOreHandler {
 						105, 170);
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
@@ -102,8 +102,8 @@ public class LepidodendronOreHandler {
 						105, 170);
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
@@ -120,8 +120,8 @@ public class LepidodendronOreHandler {
 						105, 170);
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
 					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
