@@ -5,7 +5,7 @@ import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -131,6 +131,19 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -138,6 +151,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 52;
+		}
+		if ((dimID == LepidodendronConfig.dimCretaceousEarly)
+		) {
+			multiplier = 92;
 		}
 		if ((dimID == LepidodendronConfig.dimOrdovician)
 		) {
