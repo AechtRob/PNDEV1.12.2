@@ -102,7 +102,7 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field")) {
-			GenChance = 92;
+			GenChance = 132;
 		}
 
 		for (int i = 0; i < (int) GenChance; i++) {

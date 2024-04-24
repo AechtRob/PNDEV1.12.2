@@ -1843,6 +1843,14 @@ public class LepidodendronConfigPlants {
     public static int minheightErdtmanithecales = 1;
     public static int maxheightErdtmanithecales = 0;
     public static double multiplierErdtmanithecales = 1;
+
+    public static boolean genArlenea = false;
+    public static String[] genArleneaBlacklistBiomes = new String[0];
+    public static String[] genArleneaOverrideBiomes = new String[0];
+    public static int[] dimArlenea = new int[]{0};
+    public static int minheightArlenea = 1;
+    public static int maxheightArlenea = 0;
+    public static double multiplierArlenea = 1;
     
     public static boolean genProtognetum = false;
     public static String[] genProtognetumBlacklistBiomes = new String[0];
@@ -9758,6 +9766,35 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Jianchangia", "multiplierJianchangia", multiplierJianchangia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierJianchangia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Arlenea", "genArlenea", genArlenea);
+        prop.setComment("Set to true to generate Arlenea naturally [default: false]");
+        genArlenea = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arlenea", "genArleneaBlacklistBiomes", genArleneaBlacklistBiomes);
+        prop.setComment("List of biomes Arlenea are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genArleneaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arlenea", "genArleneaOverrideBiomes", genArleneaOverrideBiomes);
+        prop.setComment("List of biomes Arlenea are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genArleneaOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arlenea", "dimArlenea", dimArlenea);
+        prop.setComment("List of dimension IDs Arlenea can generate in [default: 0]");
+        dimArlenea = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arlenea", "minheightArlenea", minheightArlenea);
+        prop.setComment("Minimum height that Arlenea can generate (1 to 250) [default: 1]");
+        minheightArlenea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arlenea", "maxheightArlenea", maxheightArlenea);
+        prop.setComment("Maximum height that Arlenea can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightArlenea = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Arlenea", "multiplierArlenea", multiplierArlenea);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierArlenea = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Erdtmanithecales", "genErdtmanithecales", genErdtmanithecales);

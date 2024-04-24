@@ -1,0 +1,11 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:arlenea_inventory"
+    },
+    "normal": [
+      {"model": "lepidodendron:arlenea"},
+      {"model": "lepidodendron:arlenea_var"}
+    ]
+  }
+}
