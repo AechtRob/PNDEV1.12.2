@@ -1,5 +1,6 @@
 package net.lepidodendron.world.biome;
 
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.util.ITrappableAir;
@@ -30,7 +31,7 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
     }
 
     public static String[] parseList(String[] inputList, int type, World world) throws InstantiationException, IllegalAccessException {
-        ArrayList<String> newString = new ArrayList<String>();
+        ObjectArrayList <String> newString = new ObjectArrayList<String>();
         for (String entityStr : inputList) {
             //Rough-and-ready test:
             int colonTwo = entityStr.indexOf(":", entityStr.indexOf(":") + 1);
