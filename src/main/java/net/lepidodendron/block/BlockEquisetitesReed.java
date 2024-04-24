@@ -126,11 +126,13 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCretaceousEarly)
 		{
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_north_america_braided")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -175,6 +177,10 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			GenChance = 64;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field")) {
+			GenChance = 64;
+		}
+
 		int maxheight = LepidodendronConfigPlants.maxheightEquisetitesReed;
 		int minheight = LepidodendronConfigPlants.minheightEquisetitesReed;
 		if (maxheight < 0) {maxheight = 0;}
@@ -183,7 +189,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 		if (minheight > 250) {minheight = 250;}
 		final int maxH = maxheight;
 		final int minH = minheight;
-			
+
+
 		for (int i = 0; i < GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);

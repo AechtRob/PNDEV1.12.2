@@ -242,6 +242,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ENCBLUE = new CustomTrigger("pf_book_encblue");
     public static final CustomTrigger CLICK_SHRUBBY_CYCAD = new CustomTrigger("pf_book_shrubby_cycad");
     public static final CustomTrigger CLICK_EPHEDRA = new CustomTrigger("pf_book_ephedra");
+    public static final CustomTrigger CLICK_ARLENEA = new CustomTrigger("pf_book_arlenea");
     public static final CustomTrigger CLICK_ERDTMANITHECALES = new CustomTrigger("pf_book_erdtmanithecales");
     public static final CustomTrigger CLICK_JIANCHANGIA = new CustomTrigger("pf_book_jianchangia");
     public static final CustomTrigger CLICK_WELWITSCHIA = new CustomTrigger("pf_book_welwitschia");
@@ -1723,6 +1724,7 @@ public class ModTriggers
             CLICK_ENCBLUE,
             CLICK_SHRUBBY_CYCAD,
             CLICK_EPHEDRA,
+            CLICK_ARLENEA,
             CLICK_ERDTMANITHECALES,
             CLICK_JIANCHANGIA,
             CLICK_WELWITSCHIA,

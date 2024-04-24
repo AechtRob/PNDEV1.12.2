@@ -78,12 +78,12 @@ public class WorldGenBrachyphyllumTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
                 if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_forested")
-                    || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+                    || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")) {
                     if (state.getMaterial() == Material.SAND) {
                         isSoil = true;
                     }
                 }
-                if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")
+                if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
                     && position.getY() > 70) {
                     isSoil = false;
                 }

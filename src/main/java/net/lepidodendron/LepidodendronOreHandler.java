@@ -29,8 +29,10 @@ public class LepidodendronOreHandler {
 			) {
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 17,
 						new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 20),
 						0, Functions.getAdjustedSeaLevel(event.getWorld(), event.getPos()) - 6);
@@ -49,8 +51,10 @@ public class LepidodendronOreHandler {
 				}
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 20,
 						new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 9),
 						0, Functions.getAdjustedSeaLevel(event.getWorld(), event.getPos()) - 6);
@@ -80,8 +84,10 @@ public class LepidodendronOreHandler {
 						105, 170);
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
 						new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), 33),
 						0, Functions.getAdjustedSeaLevel(event.getWorld(), event.getPos()) - 6);
@@ -96,8 +102,10 @@ public class LepidodendronOreHandler {
 						105, 170);
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
 						new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), 33),
 						0, Functions.getAdjustedSeaLevel(event.getWorld(), event.getPos()) - 6);
@@ -112,8 +120,10 @@ public class LepidodendronOreHandler {
 						105, 170);
 				event.setResult(Event.Result.DENY);
 			}
-			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa")
-					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_desert_spikes")) {
+			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
 						new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), 33),
 						0, Functions.getAdjustedSeaLevel(event.getWorld(), event.getPos()) - 6);

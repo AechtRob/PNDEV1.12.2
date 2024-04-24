@@ -7,9 +7,8 @@ import net.lepidodendron.item.ItemMontsechiaItem;
 import net.lepidodendron.item.ItemMontsechiaSeeds;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.MontsechiaGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
@@ -79,20 +78,16 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 		}
 
-//		if (biome instanceof BiomeJurassic)
-//		{
-//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -106,8 +101,8 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 			GenChance = Math.min(GenChance * 10, 100);
 		}
 
-		if (biome instanceof BiomeJurassic) {
-			GenChance = 192;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field")) {
+			GenChance = 132;
 		}
 
 		for (int i = 0; i < (int) GenChance; i++) {
