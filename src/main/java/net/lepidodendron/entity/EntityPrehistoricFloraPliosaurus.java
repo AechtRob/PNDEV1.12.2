@@ -42,10 +42,10 @@ public class EntityPrehistoricFloraPliosaurus extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraPliosaurus(World world) {
 		super(world);
-		setSize(2F, 0.925F);
+		setSize(2.5F, 2F);
 		minWidth = 0.2F;
 		maxWidth = 2F;
-		maxHeight = 0.925F;
+		maxHeight = 2F;
 		maxHealthAgeable = 55.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

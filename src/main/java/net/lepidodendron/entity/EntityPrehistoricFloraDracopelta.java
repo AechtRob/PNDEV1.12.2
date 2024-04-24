@@ -5,27 +5,29 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderYuxisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -34,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLandBase implements ITrappableLand {
+public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -42,17 +44,22 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 
 	//private int inPFLove;
 	public Animation HIDE_ANIMATION;
+	public Animation ALERT_ANIMATION;
+	public Animation RELAX_ANIMATION;
+	private int standCooldown;
 
 	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
 
 	public EntityPrehistoricFloraDracopelta(World world) {
 		super(world);
-		setSize(1.5F, 1F);
+		setSize(0.9F, 0.9F);
 		minWidth = 0.3F;
-		maxWidth = 1.5F;
-		maxHeight = 1F;
-		maxHealthAgeable = 50.0D;
+		maxWidth = 0.9F;
+		maxHeight = 0.9F;
+		maxHealthAgeable = 25.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
+		RELAX_ANIMATION = Animation.create(760);
+		ALERT_ANIMATION = Animation.create(141);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -67,7 +74,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	}
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 35;
 	}
 
 	@Override
@@ -77,7 +84,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION};
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, HIDE_ANIMATION, RELAX_ANIMATION, ALERT_ANIMATION};
 	}
 
 	@Override
@@ -142,6 +149,22 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 //	}
 
 	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(2000);
+		return livingdata;
+	}
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
+	}
+	@Override
 	public String getTexture() {
 		return this.getTexture();
 	}
@@ -162,18 +185,18 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.310F;
+		float speedBase = 0.29F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION
-			|| this.getAnimation() == HIDE_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+			|| this.getAnimation() == HIDE_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == ALERT_ANIMATION || this.getAnimation() == RELAX_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
+			speedBase = speedBase * 2.0F;
 			speedBase = speedBase / 0.85F;
-			speedBase = 0.6F;
+			speedBase = 0.5F;
 		}
 		return speedBase;
 	}
@@ -242,7 +265,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getDrinkLength() {
-		return 50;  //grazes, does not drink
+		return 180;  //grazes, does not drink
 	}
 
 	@Override
@@ -312,6 +335,33 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public void onEntityUpdate() {
+
+		super.onEntityUpdate();
+		//random idle animations
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				int next = rand.nextInt(10);
+				if (next < 5) {
+					this.setAnimation(RELAX_ANIMATION);
+				} else {
+					this.setAnimation(ALERT_ANIMATION);
+				}
+				this.standCooldown = 2000;
+			}
+			if ((!this.world.isRemote) && this.getAnimation() == RELAX_ANIMATION && this.getAnimationTick() == RELAX_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
+			if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
+
+
+	}
+
+	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:yuxisaurus_idle"));
@@ -342,10 +392,20 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
+		//this.renderYawOffset = this.rotationYaw;
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
+
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+
+		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
@@ -392,9 +452,9 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.YUXISAURUS_LOOT_YOUNG;
+			return LepidodendronMod.DRACOPELTA_LOOT_YOUNG;
 		}
-		return LepidodendronMod.YUXISAURUS_LOOT;
+		return LepidodendronMod.DRACOPELTA_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -453,4 +513,9 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	}
 
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DRACOPELTA;
+	}
 }

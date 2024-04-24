@@ -6,12 +6,16 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.model.entity.ModelTamisiocaris;
 import net.lepidodendron.entity.render.entity.RenderAnteosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -34,7 +38,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
+public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -43,11 +47,11 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraDeuterosaurus(World world) {
 		super(world);
-		setSize(1.1F, 1.3F);
+		setSize(0.9F, 0.9F);
 		minWidth = 0.18F;
-		maxWidth = 1.2F;
-		maxHeight = 1.4F;
-		maxHealthAgeable = 50.0D;
+		maxWidth = 0.9F;
+		maxHeight = 0.9F;
+		maxHealthAgeable = 33.0D;
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -76,6 +80,10 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 		return new Animation[]{GRAPPLE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}
 
+	@Override
+	public int getRoarLength() {
+		return 100;
+	}
 
 	public static String getPeriod() {return "Permian";}
 
@@ -88,7 +96,11 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 40;
+	}
+	@Override
+	public int getEatLength() {
+		return 40;
 	}
 
 	@Override
@@ -107,7 +119,7 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	}
 	
 	public float getAISpeedLand() {
-		float speedBase = 0.415F;
+		float speedBase = 0.25F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -118,7 +130,7 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.00F;
+			speedBase = speedBase * 2.5F;
 		}
 		return speedBase;
 	}
@@ -351,9 +363,9 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.ANTEOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.DEUTEROSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.ANTEOSAURUS_LOOT;
+		return LepidodendronMod.DEUTEROSAURUS_LOOT;
 	}
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
@@ -404,5 +416,11 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	}
 	public static float getScaler(@Nullable String variant) {
 		return RenderAnteosaurus.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DEUTEROSAURUS;
 	}
 }

@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -15,11 +16,14 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -34,14 +38,15 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	private int animationTick;
+	private int standCooldown;
 	private Animation animation = NO_ANIMATION;
 
 	public EntityPrehistoricFloraLeedsichthys(World world) {
 		super(world);
-		setSize(1.5F, 2.0F);
+		setSize(3F, 2.5F);
 		minWidth = 0.2F;
-		maxWidth = 1.5F;
-		maxHeight = 2F;
+		maxWidth = 3F;
+		maxHeight = 2.5F;
 		maxHealthAgeable = 80.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -55,6 +60,26 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
 		}
 	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(2000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
+	}
+
+
 
 	@Override
 	public boolean isSmall() {
@@ -198,11 +223,53 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		////this.renderYawOffset = this.rotationYaw;
+		//this.renderYawOffset = this.rotationYaw;
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+
+		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+	@Override
+	public int getAttackLength() {
+		return 385;
 	}
 
+	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+			//random idle animations
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+				int next = rand.nextInt(10);
+				//if (next < 5) {
+				//this.setAnimation(STAND_ANIMATION);
+				//} else {
+				this.setAnimation(ATTACK_ANIMATION);
+				//}
+				this.standCooldown = 2000;
+			}
+//			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+//				this.standCooldown = 2000;
+//				this.setAnimation(NO_ANIMATION);
+//			}
+			if ((!this.world.isRemote) && this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == ATTACK_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
+
+
 	}
 
 	@Nullable
