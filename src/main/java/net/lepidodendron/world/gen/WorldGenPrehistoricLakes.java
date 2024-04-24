@@ -1,5 +1,7 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockBrownstone;
+import net.lepidodendron.block.BlockDriedMud;
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
 import net.lepidodendron.block.BlockPrehistoricGroundSandBlack;
 import net.lepidodendron.util.Functions;
@@ -133,12 +135,6 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
 
                             if ((worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND || worldIn.getBlockState(blockpos).getMaterial() == Material.SAND) && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
                             {
-                                //Biome biome = worldIn.getBiome(blockpos);
-                                //String checkBiome = "lepidodendron:devonian_floodplain";
-                                //if (!checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-								//	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundCoverBasic.block.getDefaultState(), 2);
-                                //}
-                                //else {
                                 if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks"))) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
                                 }
@@ -147,7 +143,10 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                     || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")) {
                                     Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSandBlack.block.getDefaultState(), 2);
                                 }
-                                //}
+                            }
+                            if (worldIn.getBlockState(blockpos).getBlock() == BlockBrownstone.block && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
+                            {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDriedMud.block.getDefaultState(), 2);
                             }
                         }
                     }
