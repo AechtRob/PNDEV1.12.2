@@ -4424,5 +4424,9 @@ public class LepidodendronSorter {
     public static final int akasakiella_item = 4452;
     public static final int deuterosaurus_raw = 4453;
     public static final int eggs_deuterosaurus = 4454;
+    public static final int pliosaurus_raw = 4455;
+    public static final int leedsichthys_raw = 4456;
+    public static final int eggs_dracopelta = 4457;
+    public static final int dracopelta_raw = 4458;
 
 }
