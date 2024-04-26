@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:rose_ancient"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_rose_ancient.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_rose_ancient.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_rose_ancient"
+		}
+	}
+}
