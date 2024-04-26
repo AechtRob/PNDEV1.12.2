@@ -1,6 +1,5 @@
 package net.lepidodendron.util.patchouli;
 
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.world.biome.EntityLists;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -39,7 +38,7 @@ public class SpawnLocations1 implements IComponentProcessor {
         String biomeList = "$(br)";
         String biomeListFinal = "$(br)";
         int i = 0;
-        ObjectArrayList <String> biomeArray = new ObjectArrayList <String> ();
+        ArrayList<String> biomeArray = new ArrayList<String>();
         for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
             biomeArray.add(biome.getRegistryName().toString());
         }
