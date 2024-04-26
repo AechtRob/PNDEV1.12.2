@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import com.google.common.collect.Lists;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -6822,7 +6823,7 @@ public class LepidodendronConfigPlants {
     }
 
     public static boolean syncConfigPlantsPart2() {
-        List<String> propOrder = Lists.newArrayList();
+        ObjectArrayList <String> propOrder = new ObjectArrayList<>();
         Property prop = cfg.get("WorldGen Baiera", "genBaiera", genBaiera);
         prop.setComment("Set to true to generate Baiera naturally [default: false]");
         genBaiera = prop.getBoolean();
