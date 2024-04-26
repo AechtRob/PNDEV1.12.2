@@ -141,6 +141,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BURYKHIA = new CustomTrigger("pf_book_burykhia");
     public static final CustomTrigger CLICK_CALAMITES = new CustomTrigger("pf_book_calamites");
     public static final CustomTrigger CLICK_CALAMOPHYTON = new CustomTrigger("pf_book_calamophyton");
+    public static final CustomTrigger CLICK_ROSE_ANCIENT = new CustomTrigger("pf_book_rose_ancient");
     public static final CustomTrigger CLICK_CALLISTOPHYTALES = new CustomTrigger("pf_book_callistophytales");
     public static final CustomTrigger CLICK_HEDERA = new CustomTrigger("pf_book_hedera");
     public static final CustomTrigger CLICK_ARISTOLOCHIA = new CustomTrigger("pf_book_aristolochia");
@@ -351,6 +352,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_OESIA = new CustomTrigger("pf_book_oesia");
     public static final CustomTrigger CLICK_OMPHALOPHLOIOS = new CustomTrigger("pf_book_omphalophloios");
     public static final CustomTrigger CLICK_ORTISEIA = new CustomTrigger("pf_book_ortiseia");
+    public static final CustomTrigger CLICK_VOJNOVSKYALES = new CustomTrigger("pf_book_vojnovskyales");
     public static final CustomTrigger CLICK_OSMUNDA = new CustomTrigger("pf_book_osmunda");
     public static final CustomTrigger CLICK_OTOZAMITES = new CustomTrigger("pf_book_otozamites");
     public static final CustomTrigger CLICK_PACHYPTERIS = new CustomTrigger("pf_book_pachypteris");
@@ -1621,6 +1623,7 @@ public class ModTriggers
             CLICK_BURYKHIA,
             CLICK_CALAMITES,
             CLICK_CALAMOPHYTON,
+            CLICK_ROSE_ANCIENT,
             CLICK_CALLISTOPHYTALES,
             CLICK_HEDERA,
             CLICK_ARISTOLOCHIA,
@@ -1831,6 +1834,7 @@ public class ModTriggers
             CLICK_OESIA,
             CLICK_OMPHALOPHLOIOS,
             CLICK_ORTISEIA,
+            CLICK_VOJNOVSKYALES,
             CLICK_OSMUNDA,
             CLICK_OTOZAMITES,
             CLICK_PACHYPTERIS,

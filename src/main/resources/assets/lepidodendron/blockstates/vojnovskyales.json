@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:vojnovskyales"},
+      {"model": "lepidodendron:vojnovskyales_var1"},
+      {"model": "lepidodendron:vojnovskyales_var2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:vojnovskyales_inventory"
+    }
+  }
+}

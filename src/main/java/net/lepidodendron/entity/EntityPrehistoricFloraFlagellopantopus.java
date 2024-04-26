@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 
 	@Override
 	protected float getAISpeedTrilobite() {
-		return 0.05f;
+		return 0.044f;
 	}
 
 	@Override
