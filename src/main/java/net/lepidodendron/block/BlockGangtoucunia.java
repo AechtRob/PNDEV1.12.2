@@ -238,6 +238,9 @@ public class BlockGangtoucunia extends ElementsLepidodendronMod.ModElement {
 										if (te instanceof TileEntityGangtoucunia) {
 											TileEntityGangtoucunia Gangtoucunia = (TileEntityGangtoucunia) te;
 											Gangtoucunia.setHidden(361);
+											Gangtoucunia.setCluster(world.rand.nextInt(3) + 1);
+											Gangtoucunia.setOffset1(Math.max(world.rand.nextFloat() * 0.45F, 0.2F) * (world.rand.nextBoolean() ? 1F : -1F ));
+											Gangtoucunia.setOffset2(Math.max(world.rand.nextFloat() * 0.45F, 0.2F) * (world.rand.nextBoolean() ? 1F : -1F ));
 										}
 									}
 									world.notifyBlockUpdate(blockpos1, state, state, 3);
