@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import com.google.common.collect.Lists;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -2860,7 +2861,7 @@ public class LepidodendronConfigPlants {
     }
 
     public static boolean syncConfigPlantsPart1() {
-        List<String> propOrder = Lists.newArrayList();
+        ObjectArrayList <String> propOrder = new ObjectArrayList<>();
         Property prop = cfg.get("~EXPERIMENTAL OPTION: Terraform (not guaranteed - experiment at your own risk)", "genTransformBiomes", genTransformBiomes);
         prop.setComment("List of vanilla biomes to terraform (CPU-heavy!). This will make the plants from this mod generate far more densely, like forests. It will also remove all vanilla trees, plants, etc. from the chosen biomes, unless you retain them using the options below. This is not a true world-gen setting but works on every new chunk loaded while this option is on. Remember to turn it off again if you load a world you don't want terraforming! CAUTION: there is no way to re-add removed vanilla plants after this option removes them. This will not affect modded biomes or any modded trees or other decorations. In the format: minecraft:biomeid or just \"minecraft\" to apply to all vanilla biomes (cannot be applied globally to non-vanilla biomes at present, so you would need to list non-vanilla ones by biomeid) [default: empty]");
         genTransformBiomes = prop.getStringList();
@@ -6830,7 +6831,7 @@ public class LepidodendronConfigPlants {
     }
 
     public static boolean syncConfigPlantsPart2() {
-        List<String> propOrder = Lists.newArrayList();
+        ObjectArrayList <String> propOrder = new ObjectArrayList<>();
         Property prop = cfg.get("WorldGen Baiera", "genBaiera", genBaiera);
         prop.setComment("Set to true to generate Baiera naturally [default: false]");
         genBaiera = prop.getBoolean();
