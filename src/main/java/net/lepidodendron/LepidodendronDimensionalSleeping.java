@@ -68,7 +68,7 @@ public class LepidodendronDimensionalSleeping {
 				}
 				for (int i : dimsPlayers) {
 					WorldServer WorldTest = DimensionManager.getWorld(i);
-					List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+					ObjectList<EntityPlayer> playersInWorld = new ObjectArrayList<> (WorldTest.getPlayers (EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase ));
 					if (!playersInWorld.isEmpty()) {
 						playerCountAsleep = playerCountAsleep + getPlayersAsleepInWorld(WorldTest);
 					}
@@ -134,7 +134,7 @@ public class LepidodendronDimensionalSleeping {
 			return 0;
 		}
 
-		List<EntityPlayer> playersInWorld = world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+		ObjectList<EntityPlayer> playersInWorld = new ObjectArrayList<> (world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 
 		if (!playersInWorld.isEmpty()) {
 			for (EntityPlayer entityplayer : playersInWorld) {
@@ -167,7 +167,7 @@ public class LepidodendronDimensionalSleeping {
 			return;
 		}
 
-		List<EntityPlayer> playersInWorld = world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+		ObjectList<EntityPlayer> playersInWorld = new ObjectArrayList<> (world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 
 		for (EntityPlayer entityplayer : playersInWorld.stream().filter(EntityPlayer::isPlayerSleeping).collect(Collectors.toList()))
 		{
