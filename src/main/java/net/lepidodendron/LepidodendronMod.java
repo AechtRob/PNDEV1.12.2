@@ -2317,6 +2317,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PLIOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pliosaurus"));
 	public static final ResourceLocation PLIOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pliosaurus_young"));
 
+	public static final int GUI_TIME_RESEARCHER_ID = 940;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

@@ -1,4 +1,5 @@
 package net.lepidodendron;
+
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lepidodendron.gui.*;
@@ -9,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -32,7 +32,10 @@ import net.minecraftforge.fml.relauncher.Side;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.function.Supplier;
 
 public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
@@ -1447,6 +1450,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUIBatterySubmarine.GUIID) {
 				return new GUIBatterySubmarine.GUILepidodendronBatterySubmarine(world, x, y, z, player);
 			}
+			if (id == GUITimeResearcher.GUIID) {
+				return new GUITimeResearcher.GUILepidodendronTimeResearcher(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -1491,12 +1497,13 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUIBatterySubmarine.GUIID) {
 				return new GUIBatterySubmarine.GuiWindow(world, x, y, z, player);
 			}
+			if (id == GUITimeResearcher.GUIID) {
+				return new GUITimeResearcher.GuiWindow(world, x, y, z, player);
+			}
 			return null;
 		}
 
 	}
-
-
 
 	public List<ModElement> getElements() {
 		return elements;
