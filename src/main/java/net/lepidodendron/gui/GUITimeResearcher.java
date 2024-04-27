@@ -1,6 +1,7 @@
 package net.lepidodendron.gui;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockTimeResearcher;
 import net.minecraft.client.gui.GuiButton;
@@ -58,14 +59,14 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 1);
+            this.internal = new InventoryBasic("", true, 2);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
 
             this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 59 - 3, 39) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 45, 26) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     if (ent instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
@@ -77,7 +78,18 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
+                }
+            }));
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 105, 26) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
                     return false;
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
                 }
             }));
 
@@ -100,6 +112,37 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
         @Override
         public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
             ItemStack itemstack = ItemStack.EMPTY;
+            Slot slot = (Slot) this.inventorySlots.get(index);
+            if (slot != null && slot.getHasStack()) {
+                ItemStack itemstack1 = slot.getStack();
+                itemstack = itemstack1.copy();
+                if (index < 2) {
+                    if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
+                        return ItemStack.EMPTY;
+                    }
+                    slot.onSlotChange(itemstack1, itemstack);
+                } else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
+                    if (index < 2 + 27) {
+                        if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
+                            return ItemStack.EMPTY;
+                        }
+                    } else {
+                        if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    }
+                    return ItemStack.EMPTY;
+                }
+                if (itemstack1.getCount() == 0) {
+                    slot.putStack(ItemStack.EMPTY);
+                } else {
+                    slot.onSlotChanged();
+                }
+                if (itemstack1.getCount() == itemstack.getCount()) {
+                    return ItemStack.EMPTY;
+                }
+                slot.onTake(playerIn, itemstack1);
+            }
             return itemstack;
         }
 
@@ -110,7 +153,80 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
          * Container implementation do not check if the item is valid for the slot
          */
         protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
-            return false;
+            boolean flag = false;
+            int i = startIndex;
+            if (reverseDirection) {
+                i = endIndex - 1;
+            }
+            if (stack.isStackable()) {
+                while (!stack.isEmpty()) {
+                    if (reverseDirection) {
+                        if (i < startIndex) {
+                            break;
+                        }
+                    } else if (i >= endIndex) {
+                        break;
+                    }
+                    Slot slot = this.inventorySlots.get(i);
+                    ItemStack itemstack = slot.getStack();
+                    if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
+                            && (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
+                            && ItemStack.areItemStackTagsEqual(stack, itemstack)) {
+                        int j = itemstack.getCount() + stack.getCount();
+                        int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
+                        if (j <= maxSize) {
+                            stack.setCount(0);
+                            itemstack.setCount(j);
+                            slot.putStack(itemstack);
+                            flag = true;
+                        } else if (itemstack.getCount() < maxSize) {
+                            stack.shrink(maxSize - itemstack.getCount());
+                            itemstack.setCount(maxSize);
+                            slot.putStack(itemstack);
+                            flag = true;
+                        }
+                    }
+                    if (reverseDirection) {
+                        --i;
+                    } else {
+                        ++i;
+                    }
+                }
+            }
+            if (!stack.isEmpty()) {
+                if (reverseDirection) {
+                    i = endIndex - 1;
+                } else {
+                    i = startIndex;
+                }
+                while (true) {
+                    if (reverseDirection) {
+                        if (i < startIndex) {
+                            break;
+                        }
+                    } else if (i >= endIndex) {
+                        break;
+                    }
+                    Slot slot1 = this.inventorySlots.get(i);
+                    ItemStack itemstack1 = slot1.getStack();
+                    if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
+                        if (stack.getCount() > slot1.getSlotStackLimit()) {
+                            slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
+                        } else {
+                            slot1.putStack(stack.splitStack(stack.getCount()));
+                        }
+                        slot1.onSlotChanged();
+                        flag = true;
+                        break;
+                    }
+                    if (reverseDirection) {
+                        --i;
+                    } else {
+                        ++i;
+                    }
+                }
+            }
+            return flag;
         }
 
         @Override
@@ -164,8 +280,24 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
+            if (LepidodendronConfig.machinesRF) {
+                this.drawTexturedModalRect(k + 25, l + 23, 0, 203, 200, 10);
+                this.drawTexturedModalRect(k + 26, l + 24, 0, 196, this.getRFWidth(), 8);
+            }
             //Arrow:
             this.drawTexturedModalRect(k + 79, l + 39, 176, 14, getProgressBarLength(), 16);
+        }
+        
+        private int getRFWidth() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    double fraction = te.getEnergyFraction();
+                    return (int) Math.round(fraction * 198D);
+                }
+            }
+            return 0;
         }
 
         private int getProgressBarLength() {
@@ -208,7 +340,12 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
         
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Time Researcher", 46, -3, 4210752);
+            if (LepidodendronConfig.machinesRF) {
+                this.fontRenderer.drawString("Time Researcher", 46, -3, 4210752);
+            }
+            else {
+                this.fontRenderer.drawString("Time Researcher", 46, 10, 4210752);
+            }
             this.fontRenderer.drawString("Precambrian", -30, 49, 4210752);
             this.fontRenderer.drawString("Cambrian", -30, 58, 4210752);
             this.fontRenderer.drawString("Ordovician", -30, 67, 4210752);

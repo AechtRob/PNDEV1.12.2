@@ -5,12 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.*;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -83,8 +82,7 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
-			dimensionCriteria = true;
+
 		if (dimID == LepidodendronConfig.dimJurassic
 		) {
 			dimensionCriteria = true;
@@ -92,23 +90,18 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		else {
 			dimensionCriteria = false;
 		}
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
+			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
 
 		int weight = LepidodendronConfigPlants.weightBivalvePrehistoric;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCarboniferous
-			|| dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic
-		)
+		if (dimID == LepidodendronConfig.dimJurassic
+		) {
 			weight = 100; //Full scale populations in these dims
-
-		if (dimID == LepidodendronConfig.dimDevonian
-			|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			weight = 50; //Half scale populations in these dims
+		}
 
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
@@ -127,54 +120,6 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genBivalvePrehistoricOverrideBiomes))
 			biomeCriteria = true;
 
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			biomeCriteria = true;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
-
-		if (biome instanceof BiomeDevonian)
-		{
-			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomeCarboniferous)
-		{
-			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
-					|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomePermian)
-		{
-			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		if (biome instanceof BiomeTriassic)
-		{
-			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
 		if (biome instanceof BiomeJurassic)
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
@@ -189,17 +134,6 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-			|| (dimID == LepidodendronConfig.dimDevonian)
-			|| (dimID == LepidodendronConfig.dimCarboniferous)
-		) {
-			multiplier = 2;
-		}
-		if ((dimID == LepidodendronConfig.dimPermian)
-			//|| dimID == LepidodendronConfig.dimTriassic)
-		) {
-			multiplier = 3;
-		}
 
 		if ((dimID == LepidodendronConfig.dimJurassic)
 		) {
