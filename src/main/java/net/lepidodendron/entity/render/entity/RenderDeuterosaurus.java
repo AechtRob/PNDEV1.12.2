@@ -16,7 +16,7 @@ public class RenderDeuterosaurus extends RenderLiving<EntityPrehistoricFloraDeut
     }
 
     public static float getScaler() {
-        return 0.5F;
+        return 0.7F;
     }
 
     @Override
