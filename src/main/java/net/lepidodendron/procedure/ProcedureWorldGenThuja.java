@@ -36,6 +36,10 @@ public class ProcedureWorldGenThuja extends ElementsLepidodendronMod.ModElement 
 			System.err.println("Failed to load dependency world for procedure WorldGenThuja!");
 			return;
 		}
+		if (dependencies.get("SaplingSpawn") == null) {
+			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenThuja!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");

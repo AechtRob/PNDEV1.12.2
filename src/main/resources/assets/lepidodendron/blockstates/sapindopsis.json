@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sapindopsis"},
+      {"model": "lepidodendron:sapindopsis_var1"},
+      {"model": "lepidodendron:sapindopsis_var2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:sapindopsis_inventory"
+    }
+  }
+}

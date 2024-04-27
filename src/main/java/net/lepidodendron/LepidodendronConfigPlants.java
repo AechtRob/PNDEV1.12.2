@@ -1482,6 +1482,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightOrtiseia = 0;
     public static double multiplierOrtiseia = 1;
 
+    public static boolean genSapindopsis = false;
+    public static String[] genSapindopsisBlacklistBiomes = new String[0];
+    public static String[] genSapindopsisOverrideBiomes = new String[0];
+    public static int[] dimSapindopsis = new int[]{0};
+    public static int minheightSapindopsis = 110;
+    public static int maxheightSapindopsis = 0;
+    public static double multiplierSapindopsis = 1;
+
     public static boolean genVojnovskyales = false;
     public static String[] genVojnovskyalesBlacklistBiomes = new String[0];
     public static String[] genVojnovskyalesOverrideBiomes = new String[0];
@@ -8579,6 +8587,35 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Vojnovskyales", "multiplierVojnovskyales", multiplierVojnovskyales);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierVojnovskyales = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Sapindopsis", "genSapindopsis", genSapindopsis);
+        prop.setComment("Set to true to generate Sapindopsis naturally [default: false]");
+        genSapindopsis = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sapindopsis", "genSapindopsisBlacklistBiomes", genSapindopsisBlacklistBiomes);
+        prop.setComment("List of biomes Sapindopsis are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSapindopsisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sapindopsis", "genSapindopsisOverrideBiomes", genSapindopsisOverrideBiomes);
+        prop.setComment("List of biomes Sapindopsis are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genSapindopsisOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sapindopsis", "dimSapindopsis", dimSapindopsis);
+        prop.setComment("List of dimension IDs Sapindopsis can generate in [default: 0]");
+        dimSapindopsis = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sapindopsis", "minheightSapindopsis", minheightSapindopsis);
+        prop.setComment("Minimum height that Sapindopsis can generate (1 to 250) [default: 110]");
+        minheightSapindopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sapindopsis", "maxheightSapindopsis", maxheightSapindopsis);
+        prop.setComment("Minimum height that Sapindopsis can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightSapindopsis = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sapindopsis", "multiplierSapindopsis", multiplierSapindopsis);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierSapindopsis = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Ortiseia", "genOrtiseia", genOrtiseia);

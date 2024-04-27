@@ -352,6 +352,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_OESIA = new CustomTrigger("pf_book_oesia");
     public static final CustomTrigger CLICK_OMPHALOPHLOIOS = new CustomTrigger("pf_book_omphalophloios");
     public static final CustomTrigger CLICK_ORTISEIA = new CustomTrigger("pf_book_ortiseia");
+    public static final CustomTrigger CLICK_SAPINDOPSIS = new CustomTrigger("pf_book_sapindopsis");
     public static final CustomTrigger CLICK_VOJNOVSKYALES = new CustomTrigger("pf_book_vojnovskyales");
     public static final CustomTrigger CLICK_OSMUNDA = new CustomTrigger("pf_book_osmunda");
     public static final CustomTrigger CLICK_OTOZAMITES = new CustomTrigger("pf_book_otozamites");
@@ -1834,6 +1835,7 @@ public class ModTriggers
             CLICK_OESIA,
             CLICK_OMPHALOPHLOIOS,
             CLICK_ORTISEIA,
+            CLICK_SAPINDOPSIS,
             CLICK_VOJNOVSKYALES,
             CLICK_OSMUNDA,
             CLICK_OTOZAMITES,
