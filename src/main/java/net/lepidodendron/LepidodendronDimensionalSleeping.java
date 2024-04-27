@@ -1,6 +1,8 @@
 package net.lepidodendron;
 
 import com.google.common.base.Predicate;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,7 +43,7 @@ public class LepidodendronDimensionalSleeping {
 				for (int i : dims) {
 					WorldServer WorldTest = DimensionManager.getWorld(i);
 					if (WorldTest != null) {
-						List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+						ObjectList<EntityPlayer> playersInWorld = new ObjectArrayList<> (WorldTest.getPlayers (EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase ));
 						if (!playersInWorld.isEmpty()) {
 							for (EntityPlayer p : playersInWorld) {
 								if (p.getEntityWorld().provider.canSleepAt(p, p.getPosition()) == WorldProvider.WorldSleepResult.ALLOW
