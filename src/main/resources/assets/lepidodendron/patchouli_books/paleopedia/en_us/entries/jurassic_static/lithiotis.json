@@ -2,7 +2,7 @@
 	"name": "Lithiotis",
 	"read_by_default": true,
 	"icon": "lepidodendron:bivalve_lithiotis",
-	"category": "lepidodendron:triassic_static",
+	"category": "lepidodendron:jurassic_static",
 	"turnin": "lepidodendron:pf_adv_book_lithiotis",
 	"pages": [
 		{
