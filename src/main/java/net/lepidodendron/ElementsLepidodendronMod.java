@@ -2,7 +2,6 @@ package net.lepidodendron;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.lepidodendron.gui.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -1365,7 +1364,7 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator cg, IChunkProvider cp) {
-		elements.parallelStream().forEach(element -> element.generateWorld(random, chunkX * 16, chunkZ * 16, world, world.provider.getDimension(), cg, cp));
+		elements.forEach(element -> element.generateWorld(random, chunkX * 16, chunkZ * 16, world, world.provider.getDimension(), cg, cp));
 	}
 
 	@Override
