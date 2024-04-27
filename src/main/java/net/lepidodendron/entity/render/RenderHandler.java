@@ -9,6 +9,7 @@ import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
 import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
+import net.lepidodendron.tileentity.TileEntityGangtoucunia;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -5719,6 +5720,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockHerpetogaster.TileEntityCustom.class, new RenderHerpetogaster());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFacivermis.class, new RenderFacivermis());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockOesia.TileEntityCustom.class, new RenderOesia());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGangtoucunia.class, new RenderGangtoucunia());
 
         //Tile Entities Nautiloid shells etc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockFurcaster.TileEntityCustom.class, new RenderFurcasterItem());
