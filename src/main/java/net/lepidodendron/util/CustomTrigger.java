@@ -5,6 +5,8 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.ICriterionTrigger;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.critereon.AbstractCriterionInstance;
@@ -18,7 +20,7 @@ import java.util.Set;
 public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
 {
     private final ResourceLocation RL;
-    private final Map<PlayerAdvancements, CustomTrigger.Listeners> listeners = Maps.newHashMap();
+    private final Object2ObjectOpenHashMap<PlayerAdvancements, CustomTrigger.Listeners> listeners = new Object2ObjectOpenHashMap <> ();
 
     /**
      * Instantiates a new custom trigger.
@@ -200,7 +202,7 @@ public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
          */
         public void trigger(EntityPlayerMP player)
         {
-            ArrayList<ICriterionTrigger.Listener<CustomTrigger.Instance>> list = null;
+            ObjectArrayList<ICriterionTrigger.Listener<CustomTrigger.Instance>> list = null;
 
             for (ICriterionTrigger.Listener<CustomTrigger.Instance> listener : listeners)
             {
@@ -208,7 +210,7 @@ public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
                 {
                     if (list == null)
                     {
-                        list = Lists.newArrayList();
+                        list = new ObjectArrayList();
                     }
 
                     list.add(listener);
