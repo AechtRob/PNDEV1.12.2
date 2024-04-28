@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUITimeResearcher;
-import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -21,6 +20,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -40,6 +40,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -208,12 +210,12 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityTimeResearcher extends TileEntityLockableLoot implements ITickable, ISidedInventory {
-		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+	public static class TileEntityTimeResearcher extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
+		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
 		protected boolean isProcessing;
 		public int processTick;
-		private int processTickTime = 20;
+		private int processTickTime = 200;
 
 		public int maxResearch = Math.max(0, LepidodendronConfig.maxResearch);
 
@@ -287,7 +289,11 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			if (this.isProcessing) {
 				return false;
 			}
-			if (isItemValidForSlot(0, this.getStackInSlot(0))) {
+			if (isItemValidForSlot(0, this.getStackInSlot(0))
+				&& (this.getStackInSlot(1).isEmpty()
+			 		|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
+				)
+			) {
 				return true;
 			}
 			return false;
@@ -324,7 +330,15 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
-			boolean updated = false;
+			if (!(isItemValidForSlot(0, this.getStackInSlot(0))
+				&& (this.getStackInSlot(1).isEmpty()
+					|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
+				)
+			)) {
+				this.processTick = 0;
+				this.isProcessing = false;
+				return;
+			}
 
 			if (this.canStartProcess()) {
 				this.processTick = 0;
@@ -339,9 +353,19 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				//System.err.println("Ending process");
 				this.processTick = 0;
 				this.isProcessing = false;
-				if (isItemValidForSlot(0, this.getStackInSlot(0))) {
+				if (isItemValidForSlot(0, this.getStackInSlot(0))
+						&& (this.getStackInSlot(1).isEmpty()
+						|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
+					)
+				) {
 					ItemStack stackProcessing = this.getStackInSlot(0);
 					stackProcessing.shrink(1);
+					if (this.getStackInSlot(1).isEmpty()) {
+						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, 1));
+					}
+					else {
+						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, this.getStackInSlot(1).getCount() + 1));
+					}
 					this.notifyBlockUpdate();
 				}
 			}
@@ -514,7 +538,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int[] getSlotsForFace(EnumFacing side) {
-			return new int[]{0};
+			return new int[]{0,1};
 		}
 
 		@Override
@@ -527,30 +551,35 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+			if (index == 1) {
+				return true;
+			}
 			return false;
 		}
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 0) {
-				Item item = stack.getItem();
-				if (item == ItemFossilPrecambrian.block
-						|| item == ItemFossilCambrian.block
-						|| item == ItemFossilOrdovician.block
-						|| item == ItemFossilSilurian.block
-						|| item == ItemFossilDevonian.block
-						|| item == ItemFossilCarboniferous.block
-						|| item == ItemFossilPermian.block
-						|| item == ItemFossilTriassic.block
-						|| item == ItemFossilJurassic.block
-						|| item == ItemFossilCretaceous.block
-						|| item == ItemFossilPaleogene.block
-						|| item == ItemFossilNeogene.block
-						|| item == ItemFossilPleistocene.block) {
+				Block item = Block.getBlockFromItem(stack.getItem());
+				if (item == BlockFossilPrecambrian.block
+						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilOrdovician.block
+						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilCarboniferous.block
+						|| item == BlockFossilPermian.block
+						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilCretaceous.block
+						|| item == BlockFossilPaleogene.block
+						|| item == BlockFossilNeogene.block
+						|| item == BlockFossilPleistocene.block) {
 					return true;
 				}
 				return false;
 			}
+			if (index == 1)
+				return false;
 
 			return false;
 		}
@@ -565,7 +594,11 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
-			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
+			if (capability == CapabilityEnergy.ENERGY) {
+				return (facing == blockFacing) ? (T) this : null;
+			}
+			else if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
 				if (facing == EnumFacing.UP) {
 					return (T) handlerUp;
 				}
@@ -587,6 +620,90 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+		//Energy addin:
+		//-------------
+		protected int energy;
+		protected int capacity = 50000;
+		protected int maxReceive = 500;
+		protected int maxExtract = 250;
+
+		@Override
+		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockAcidBathEnd.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
+					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
+			}
+			return super.hasCapability(capability, facing);
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate)
+		{
+			if (!canReceive())
+				return 0;
+
+			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
+			if (!simulate) {
+				energy += energyReceived;
+				if (energyReceived > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyReceived;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate)
+		{
+			if (!canExtract())
+				return 0;
+
+			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
+			if (!simulate) {
+				energy -= energyExtracted;
+				if (energyExtracted > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyExtracted;
+		}
+
+		@Override
+		public int getEnergyStored()
+		{
+			return energy;
+		}
+
+		@Override
+		public int getMaxEnergyStored()
+		{
+			return capacity;
+		}
+
+		@Override
+		public boolean canExtract()
+		{
+			return this.maxExtract > 0;
+		}
+
+		@Override
+		public boolean canReceive()
+		{
+			return this.maxReceive > 0;
+		}
+
+		public double getEnergyFraction() {
+			if (this.capacity > 0) {
+				return ((double) this.energy) / ((double) this.capacity);
+			}
+			return 0;
 		}
 
 	}
