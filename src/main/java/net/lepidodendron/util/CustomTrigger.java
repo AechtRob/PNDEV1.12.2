@@ -17,7 +17,7 @@ import java.util.Set;
 public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
 {
     private final ResourceLocation RL;
-    private final Object2ObjectOpenHashMap<PlayerAdvancements, CustomTrigger.Listeners> listeners = new Object2ObjectOpenHashMap <> ();
+    private final Object2ObjectOpenHashMap<PlayerAdvancements, CustomTrigger.Listeners> listeners = new Object2ObjectOpenHashMap<>();
 
     /**
      * Instantiates a new custom trigger.
