@@ -1,12 +1,10 @@
 package net.lepidodendron.util;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.ICriterionTrigger;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.critereon.AbstractCriterionInstance;
@@ -14,7 +12,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Set;
 
 public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
@@ -202,7 +199,7 @@ public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
          */
         public void trigger(EntityPlayerMP player)
         {
-            ObjectArrayList<ICriterionTrigger.Listener<CustomTrigger.Instance>> list = null;
+            ArrayList<ICriterionTrigger.Listener<CustomTrigger.Instance>> list = null;
 
             for (ICriterionTrigger.Listener<CustomTrigger.Instance> listener : listeners)
             {
@@ -210,7 +207,7 @@ public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
                 {
                     if (list == null)
                     {
-                        list = new ObjectArrayList();
+                        list = Lists.newArrayList();
                     }
 
                     list.add(listener);
