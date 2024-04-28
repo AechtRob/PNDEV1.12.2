@@ -200,23 +200,28 @@ public class Functions {
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state, int flags) {
+        IBlockState blockState = worldIn.getBlockState(pos);
+        Block block = blockState.getBlock();
+        IBlockState upState = worldIn.getBlockState(pos.up());
+        IBlockState downState = worldIn.getBlockState(pos.down());
 
-        if (worldIn.getBlockState(pos).getBlock() instanceof BlockDoublePlant) {
-            if (worldIn.getBlockState(pos.up()).getBlock() instanceof BlockDoublePlant) {
-                if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER
-                        && worldIn.getBlockState(pos.up()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER) {
-                    worldIn.setBlockToAir(pos.up());
-                }
+        if (block instanceof BlockDoublePlant) {
+            BlockDoublePlant.EnumBlockHalf blockHalf = blockState.getValue(BlockDoublePlant.HALF);
+            BlockDoublePlant.EnumBlockHalf upHalf = upState.getValue(BlockDoublePlant.HALF);
+            BlockDoublePlant.EnumBlockHalf downHalf = downState.getValue(BlockDoublePlant.HALF);
+
+            if (upState.getBlock() instanceof BlockDoublePlant && blockHalf == BlockDoublePlant.EnumBlockHalf.LOWER && upHalf == BlockDoublePlant.EnumBlockHalf.UPPER) {
+                worldIn.setBlockToAir(pos.up());
             }
-            if (worldIn.getBlockState(pos.down()).getBlock() instanceof BlockDoublePlant) {
-                if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
-                        && worldIn.getBlockState(pos.down()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER) {
-                    worldIn.setBlockToAir(pos.down());
-                }
+
+            if (downState.getBlock() instanceof BlockDoublePlant && blockHalf == BlockDoublePlant.EnumBlockHalf.UPPER && downHalf == BlockDoublePlant.EnumBlockHalf.LOWER) {
+                worldIn.setBlockToAir(pos.down());
             }
         }
+
         worldIn.setBlockState(pos, state, flags);
     }
+
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state) {
         setBlockStateAndCheckForDoublePlant(worldIn, pos, state, 3);
