@@ -32,7 +32,8 @@
         "stream": false
       }
     ]
-  },  "dry_crunch_plants": {
+  },
+  "dry_crunch_plants": {
     "sounds": [
       {
         "name": "lepidodendron:landplant_drycrunch01",
@@ -56,6 +57,15 @@
       },
       {
         "name": "lepidodendron:landplant_drycrunch06",
+        "stream": false
+      }
+    ]
+  },
+
+  "time_researcher_crusher": {
+    "sounds": [
+      {
+        "name": "lepidodendron:time_researcher_crusher",
         "stream": false
       }
     ]

@@ -16,6 +16,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("dry_crunch_plants")
     public static final SoundEvent DRY_CRUNCH_PLANTS = createSoundEvent("dry_crunch_plants");
 
+    @GameRegistry.ObjectHolder("time_researcher_crusher")
+    public static final SoundEvent TIME_RESEARCHER_CRUSHER = createSoundEvent("time_researcher_crusher");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);

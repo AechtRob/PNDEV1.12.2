@@ -344,7 +344,7 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
                 this.fontRenderer.drawString("Time Researcher", 46, -3, 4210752);
             }
             else {
-                this.fontRenderer.drawString("Time Researcher", 46, 10, 4210752);
+                this.fontRenderer.drawString("Time Researcher", 46, 2, 4210752);
             }
             this.fontRenderer.drawString("Precambrian", -30, 49, 4210752);
             this.fontRenderer.drawString("Cambrian", -30, 58, 4210752);
@@ -361,21 +361,21 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Neogene", -30, 157, 4210752);
             this.fontRenderer.drawString("Pleistocene", -30, 166, 4210752);
 
-            DecimalFormat df = new DecimalFormat("#0.00%");
-            this.fontRenderer.drawString(df.format(getPercent(1)), 175, 49, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(2)), 175, 58, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(3)), 175, 67, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(4)), 175, 76, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(5)), 175, 85, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(6)), 175, 94, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(7)), 175, 103, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(8)), 175, 112, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(9)), 175, 121, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(10)), 175, 130, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(11)), 175, 139, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(12)), 175, 148, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(13)), 175, 157, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(14)), 175, 166, 4210752);
+            DecimalFormat df = new DecimalFormat("#0.000%");
+            this.fontRenderer.drawString(df.format(getPercent(1)), 165, 49, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(2)), 165, 58, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(3)), 165, 67, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(4)), 165, 76, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(5)), 165, 85, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(6)), 165, 94, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(7)), 165, 103, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(8)), 165, 112, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(9)), 165, 121, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(10)), 165, 130, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(11)), 165, 139, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(12)), 165, 148, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(13)), 165, 157, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(14)), 165, 166, 4210752);
         }
 
         @Override

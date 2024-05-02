@@ -25,7 +25,7 @@ public class LepidodendronConfig {
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
     public static int taxidermyRenderRange = 48;
-    public static int maxResearch = 1000000;
+    public static int maxResearch = 1000;
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
