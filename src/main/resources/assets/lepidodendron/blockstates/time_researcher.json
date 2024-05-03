@@ -50,7 +50,7 @@
       "apply": [
         {
           "model": "lepidodendron:time_researcher_rf",
-          "y": 270
+          "y": 180
         }
       ]
     },
@@ -60,8 +60,7 @@
       },
       "apply": [
         {
-          "model": "lepidodendron:time_researcher_rf",
-          "y": 90
+          "model": "lepidodendron:time_researcher_rf"
         }
       ]
     },
@@ -71,7 +70,8 @@
       },
       "apply": [
         {
-          "model": "lepidodendron:time_researcher_rf"
+          "model": "lepidodendron:time_researcher_rf",
+          "y": 270
         }
       ]
     },
@@ -82,7 +82,7 @@
       "apply": [
         {
           "model": "lepidodendron:time_researcher_rf",
-          "y": 180
+          "y": 90
         }
       ]
     }

@@ -502,7 +502,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				//Give the processed block now:
 				if (!getStackInSlot(5).isEmpty()) {
 					//setInventorySlotContents(5, new ItemStack(Items.REDSTONE, 1));
-					ItemStack result = itemChooser(getStackInSlot(5));
+					ItemStack result = itemChooser(getStackInSlot(5), world);
 					if (result == null) {
 						setInventorySlotContents(5, ItemStack.EMPTY);
 					} else {
@@ -511,7 +511,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				}
 				if (!getStackInSlot(6).isEmpty()) {
 					//setInventorySlotContents(6, new ItemStack(Items.REDSTONE, 1));
-					ItemStack result = itemChooser(getStackInSlot(6));
+					ItemStack result = itemChooser(getStackInSlot(6), world);
 					if (result == null) {
 						setInventorySlotContents(6, ItemStack.EMPTY);
 					} else {
@@ -520,7 +520,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				}
 				if (!getStackInSlot(7).isEmpty()) {
 					//setInventorySlotContents(7, new ItemStack(Items.REDSTONE, 1));
-					ItemStack result = itemChooser(getStackInSlot(7));
+					ItemStack result = itemChooser(getStackInSlot(7), world);
 					if (result == null) {
 						setInventorySlotContents(7, ItemStack.EMPTY);
 					} else {
@@ -529,7 +529,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				}
 				if (!getStackInSlot(8).isEmpty()) {
 					//setInventorySlotContents(8, new ItemStack(Items.REDSTONE, 1));
-					ItemStack result = itemChooser(getStackInSlot(8));
+					ItemStack result = itemChooser(getStackInSlot(8), world);
 					if (result == null) {
 						setInventorySlotContents(8, ItemStack.EMPTY);
 					} else {
@@ -638,7 +638,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		private ItemStack getPlantStack(ItemStack stack) {
+		private static ItemStack getPlantStack(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
 			if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
@@ -841,7 +841,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		private ItemStack getMobStack(ItemStack stack) {
+		private static ItemStack getMobStack(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
 			if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
@@ -1044,7 +1044,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		private ItemStack getStaticsStack(ItemStack stack) {
+		private static ItemStack getStaticsStack(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
 			if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
@@ -1247,7 +1247,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		public ItemStack itemChooser(ItemStack stack) {
+		public static ItemStack itemChooser(ItemStack stack, World world) {
 			ItemStack finalItem = null;
 			String resLoc = "";
 			float junk = (float) LepidodendronConfig.junkFossil;
@@ -1307,7 +1307,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		public ItemStack getFailStack(ItemStack stack) {
+		public static ItemStack getFailStack(ItemStack stack) {
 			//if (world.rand.nextInt(5) != 0) {
 			ItemStack finalItem = null;
 			if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {

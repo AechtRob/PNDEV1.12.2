@@ -70,6 +70,15 @@
       }
     ]
   },
+
+  "time_researcher_laser": {
+    "sounds": [
+      {
+        "name": "lepidodendron:time_researcher_laser",
+        "stream": false
+      }
+    ]
+  },
   
   "pneudodesmus_idle": {
     "sounds": [

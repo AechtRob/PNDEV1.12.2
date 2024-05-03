@@ -186,6 +186,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			super.onBlockAdded(worldIn, pos, state);
 			worldIn.setBlockState(pos.up(), BlockTimeResearcher.block.getDefaultState().withProperty(BlockTimeResearcher.BlockCustom.FACING, state.getValue(FACING)));
 			worldIn.setBlockState(pos.up(2), BlockTimeResearcherHopper.block.getDefaultState().withProperty(BlockTimeResearcherHopper.BlockCustom.FACING, state.getValue(FACING)));
+			worldIn.setBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY()), BlockTimeResearcherFinderBottom.block.getDefaultState().withProperty(BlockTimeResearcherFinderBottom.BlockCustom.FACING, state.getValue(FACING)));
 			worldIn.setBlockState(pos.up().offset(state.getValue(FACING).rotateY().rotateY().rotateY()), BlockTimeResearcherFinderTop.block.getDefaultState().withProperty(BlockTimeResearcherFinderTop.BlockCustom.FACING, state.getValue(FACING)));
 		}
 
@@ -193,6 +194,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
 			return super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up()) && super.canPlaceBlockAt(worldIn, pos.up(2));
 		}
+
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
@@ -203,6 +205,10 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
 			if (worldIn.getBlockState(pos.up()).getBlock() != BlockTimeResearcher.block) {
+				worldIn.destroyBlock(pos, true);
+				return;
+			}
+			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY())).getBlock() != BlockTimeResearcherFinderBottom.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
 			}

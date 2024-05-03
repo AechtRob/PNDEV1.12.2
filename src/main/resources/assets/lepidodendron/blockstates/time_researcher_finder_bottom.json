@@ -1,0 +1,47 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_finder_bottom",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_finder_bottom"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_finder_bottom",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_finder_bottom",
+          "y": 90
+        }
+      ]
+    }
+  ]
+}

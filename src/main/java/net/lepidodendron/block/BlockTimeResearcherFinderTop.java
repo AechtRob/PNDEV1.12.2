@@ -186,7 +186,11 @@ public class BlockTimeResearcherFinderTop extends ElementsLepidodendronMod.ModEl
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 			
 			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY())).getBlock() != BlockTimeResearcher.block) {
-				worldIn.destroyBlock(pos, true);
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+			if (worldIn.getBlockState(pos.down()).getBlock() != BlockTimeResearcherFinderBottom.block) {
+				worldIn.destroyBlock(pos, false);
 				return;
 			}
 

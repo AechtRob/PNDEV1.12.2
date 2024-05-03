@@ -179,6 +179,10 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				worldIn.destroyBlock(pos, false);
 				return;
 			}
+			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY())).getBlock() != BlockTimeResearcherFinderTop.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
 
 			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 		}
@@ -703,6 +707,30 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
 		}
 
 		//Energy addin:

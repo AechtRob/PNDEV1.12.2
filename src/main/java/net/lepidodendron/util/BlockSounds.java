@@ -19,6 +19,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("time_researcher_crusher")
     public static final SoundEvent TIME_RESEARCHER_CRUSHER = createSoundEvent("time_researcher_crusher");
 
+    @GameRegistry.ObjectHolder("time_researcher_laser")
+    public static final SoundEvent TIME_RESEARCHER_LASER = createSoundEvent("time_researcher_laser");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);

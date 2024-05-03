@@ -132,7 +132,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
 			if (worldIn.getBlockState(pos.down()).getBlock() != BlockTimeResearcher.block) {
-				worldIn.destroyBlock(pos, true);
+				worldIn.destroyBlock(pos, false);
 				return;
 			}
 
