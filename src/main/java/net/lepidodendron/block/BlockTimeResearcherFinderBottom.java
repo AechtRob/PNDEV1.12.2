@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import io.netty.buffer.ByteBuf;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -21,9 +22,12 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -41,6 +45,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -68,6 +75,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(TileEntityTimeResearcherFinderBottom.class, "lepidodendron:tileentitytime_researcher_finder_bottom");
+		elements.addNetworkMessage(BlockTimeResearcherFinderBottom.ParticlePacket.Handler.class, BlockTimeResearcherFinderBottom.ParticlePacket.class, Side.CLIENT);
 	}
 
 //	@SideOnly(Side.CLIENT)
@@ -239,9 +247,14 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		protected int trayheight;
 		protected boolean isProcessing;
 		public int processTick;
+		public boolean renderZap;
 		private int minEnergyNeeded = 100;
 		private int trayLiftTickTime = 120; //6 seconds to move the tray
-		private int processTickTime = 480; //24 seconds to process the tray fully
+		private int processTickTime = 960; //48 seconds to process the tray fully
+
+		public int getHeight() {
+			return this.trayheight;
+		}
 
 		public String getSelectedLife() {
 			if (this.selectedLife == null) {
@@ -305,6 +318,10 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			return false;
 		}
 
+		public boolean testRoll(float f) {
+			return (500F / (12F - (f * 10F))) - 40F >= this.world.rand.nextFloat() * 250F;
+		}
+
 		@Override
 		public void update() {
 
@@ -313,6 +330,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			}
 
 			boolean updated = false;
+			this.renderZap = false;
 
 			if (this.canStartProcess()) {
 				this.isProcessing = true;
@@ -354,9 +372,10 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 					this.trayheight++;
 				} else if (this.processTick >= (this.processTickTime - this.trayLiftTickTime)) {
 					this.trayheight--;
-				} else {
-					if (this.getWorld().rand.nextInt(10) == 0) {
+				} else if (this.processTick <= (this.processTickTime - this.trayLiftTickTime) - 80) {
+					if (this.getWorld().rand.nextInt(5) == 0) {
 						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.25F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
+						this.renderZap = true;
 					}
 					//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 				}
@@ -369,16 +388,20 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 				updated = true;
 			}
 
-			if (this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime)) {
+			if (this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime) - 80) {
 				//Give the processed block now:
 				if (!getStackInSlot(1).isEmpty()) {
+					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 2.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
+
+					LepidodendronMod.PACKET_HANDLER.sendToAll(new ParticlePacket(pos.getX(), pos.getY(), pos.getZ()));
+
 					ItemStack result = ItemStack.EMPTY;
 					if (this.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)) {
 						result = new ItemStack(ItemFossilPrecambrian.block, 1);
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(1), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(1))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -425,7 +448,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(2), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(2))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getCambrianCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -472,7 +495,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(3), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(3))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -519,7 +542,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(4), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(4))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getSilurianCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -566,7 +589,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(5), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(5))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getDevonianCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -613,7 +636,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(6), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(6))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -660,7 +683,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(7), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(7))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getPermianCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -707,7 +730,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(8), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(8))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getTriassicCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -754,7 +777,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(9), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(9))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getJurassicCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -801,8 +824,8 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow((timeResearcher.getResearchPercent(10) + timeResearcher.getResearchPercent(11)) / 2D, 2)
-										>= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								float av = (timeResearcher.getResearchPercent(10) + timeResearcher.getResearchPercent(11)) / 2F;
+								if (testRoll(av)) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getCretaceousCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -849,7 +872,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(12), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(12))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -896,7 +919,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(13), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(13))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getNeogeneCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -943,7 +966,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 								BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-								if (Math.pow(timeResearcher.getResearchPercent(14), 2) >= Math.pow(world.rand.nextFloat() * 4, 2)) {
+								if (testRoll(timeResearcher.getResearchPercent(14))) {
 									boolean found = false;
 									String[] resLoc = AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs();
 									List<String> strings = Arrays.asList(resLoc);
@@ -1166,6 +1189,12 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			if (compound.hasKey("selectedLife")) {
 				this.selectedLife = compound.getString("selectedLife");
 			}
+			if (compound.hasKey("trayheight")) {
+				this.trayheight = compound.getInteger("trayheight");
+			}
+			if (compound.hasKey("renderZap")) {
+				this.renderZap = compound.getBoolean("renderZap");
+			}
 			this.forgeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
 				ItemStackHelper.loadAllItems(compound, this.forgeContents);
@@ -1178,6 +1207,8 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			compound.setString("selectedLife", this.selectedLife);
+			compound.setInteger("trayheight", this.trayheight);
+			compound.setBoolean("renderZap", this.renderZap);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.forgeContents);
 			}
@@ -1313,6 +1344,73 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+	}
+
+	public static class ParticlePacket implements IMessage {
+
+		private double x, y, z;
+
+		public ParticlePacket()
+		{
+		}
+
+		public ParticlePacket(double x, double y, double z)
+		{
+			this.x = x;
+			this.y = y;
+			this.z = z;
+		}
+
+		@Override
+		public void fromBytes(ByteBuf buf)
+		{
+			try
+			{
+				this.x = buf.readDouble();
+				this.y = buf.readDouble();
+				this.z = buf.readDouble();
+			}
+			catch(IndexOutOfBoundsException ioe)
+			{
+				return;
+			}
+		}
+
+		@Override
+		public void toBytes(ByteBuf buf)
+		{
+			buf.writeDouble(x);
+			buf.writeDouble(y);
+			buf.writeDouble(z);
+		}
+
+		public static class Handler implements IMessageHandler<ParticlePacket, IMessage>
+		{
+
+			@Override
+			public IMessage onMessage(ParticlePacket message, MessageContext ctx)
+			{
+
+				Minecraft minecraft = Minecraft.getMinecraft();
+				final WorldClient worldClient = minecraft.world;
+
+				minecraft.addScheduledTask(() -> processMessage(message, worldClient));
+
+				return null;
+			}
+
+			void processMessage(ParticlePacket message, WorldClient worldClient)
+			{
+				for (int l = 0; l < 32; ++l) {
+					worldClient.spawnParticle(EnumParticleTypes.BLOCK_DUST, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.05D, 0);
+				}
+				for (int l = 0; l < 8; ++l) {
+					worldClient.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.0D, 0);
+				}
+			}
+
 		}
 
 	}
