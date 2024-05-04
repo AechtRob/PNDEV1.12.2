@@ -66,10 +66,62 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
         GlStateManager.disableRescaleNormal();
         GlStateManager.disableBlend();
 
+        //Render item if present:
+        float scale = 0.95F;
+        BlockPos pos = entity.getPos();
+        World world = entity.getWorld();
+        if (entity != null && entity.hasWorld()) {
+            TileEntity te = world.getTileEntity(pos);
+            if (te != null) {
+                if (te instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom tee = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te;
+                    ItemStack itemstack = ItemStack.EMPTY;
+                    if (!((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).getStackInSlot(1).isEmpty()) {
+                        itemstack = tee.getStackInSlot(1);
+                    }
+                    if (!(itemstack.isEmpty() || tee.isEmpty())) {
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.alphaFunc(516, 0.1F);
+                        GlStateManager.enableBlend();
+                        RenderHelper.enableStandardItemLighting();
+                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+                        GlStateManager.pushMatrix();
+                        if (Block.getBlockFromItem(itemstack.getItem()) instanceof BlockFossil) {
+                            GlStateManager.translate(x + 0.5, y + yy - 1.05, z + 0.5);
+                            GlStateManager.rotate(45, 0, 1, 0);
+                        }
+                        else {
+                            scale = 0.4F;
+                            GlStateManager.translate(x + 0.5, y + yy - 1.0, z + 0.5);
+                            GlStateManager.rotate(90, 1, 0, 0);
+                        }
+                        GlStateManager.scale(scale, scale, scale);
+
+                        IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
+                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
+                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+
+                        GlStateManager.popMatrix();
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableBlend();
+                    }
+
+                }
+            }
+        }
+
         //Render laser beams if present:
         if (entity.renderZap) {
 
             GL11.glPushMatrix();
+
+            GlStateManager.enableBlend();
+            GlStateManager.disableAlpha();
+            GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+            GlStateManager.depthMask(true);
+            Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
+
             GL11.glDisable(GL11.GL_TEXTURE_2D);
             GL11.glBegin(GL11.GL_TRIANGLES);
             GL11.glColor3ub((byte) 77, (byte) 182, (byte) 251);
@@ -230,53 +282,13 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
 
             GL11.glEnd();
             GL11.glEnable(GL11.GL_TEXTURE_2D);
+
+            Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+            GlStateManager.disableBlend();
+            GlStateManager.enableAlpha();
+
             GL11.glPopMatrix();
-            
-        }
 
-        //Render item if present:
-        float scale = 0.95F;
-        BlockPos pos = entity.getPos();
-        World world = entity.getWorld();
-        if (entity != null && entity.hasWorld()) {
-            TileEntity te = world.getTileEntity(pos);
-            if (te != null) {
-                if (te instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
-                    BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom tee = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te;
-                    ItemStack itemstack = ItemStack.EMPTY;
-                    if (!((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).getStackInSlot(1).isEmpty()) {
-                        itemstack = tee.getStackInSlot(1);
-                    }
-                    if (!(itemstack.isEmpty() || tee.isEmpty())) {
-                        GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(516, 0.1F);
-                        GlStateManager.enableBlend();
-                        RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-                        GlStateManager.pushMatrix();
-                        if (Block.getBlockFromItem(itemstack.getItem()) instanceof BlockFossil) {
-                            GlStateManager.translate(x + 0.5, y + yy - 1.05, z + 0.5);
-                            GlStateManager.rotate(45, 0, 1, 0);
-                        }
-                        else {
-                            scale = 0.4F;
-                            GlStateManager.translate(x + 0.5, y + yy - 1.0, z + 0.5);
-                            GlStateManager.rotate(90, 1, 0, 0);
-                        }
-                        GlStateManager.scale(scale, scale, scale);
-
-                        IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
-                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
-                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
-
-                        GlStateManager.popMatrix();
-                        GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableBlend();
-                    }
-
-                }
-            }
         }
     }
 }
