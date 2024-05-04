@@ -367,7 +367,6 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
                     if (tileEntity2 != null) {
                         if (tileEntity2 instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
                             BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity2;
-                            //return (int)Math.round(te.progressFraction() * 70D);
                             double fraction = te.getEnergyFraction();
                             return (int) Math.round(fraction * 24D);
                         }

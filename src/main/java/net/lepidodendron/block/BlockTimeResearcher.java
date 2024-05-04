@@ -353,6 +353,33 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			this.receiveEnergy(10, false);
+
 			if (!(isItemValidForSlot(0, this.getStackInSlot(0))
 			)) {
 				this.processTick = 0;
@@ -477,6 +504,9 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
@@ -534,6 +564,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			compound.setInteger("dimPrecambrian", this.dimPrecambrian);
@@ -660,11 +691,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
-			if (capability == CapabilityEnergy.ENERGY) {
-				return (facing == blockFacing) ? (T) this : null;
-			}
-			else if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
 				if (facing == EnumFacing.UP) {
 					return (T) handlerUp;
 				}
@@ -683,9 +710,9 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				if (facing == EnumFacing.WEST) {
 					return (T) handlerWest;
 				}
-
 			}
-			return super.getCapability(capability, facing);
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
 		}
 
 		public void drainEnergy(int energy) {
@@ -716,15 +743,15 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		//-------------
 		protected int energy;
 		protected int capacity = 50000;
-		protected int maxReceive = 500;
-		protected int maxExtract = 250;
+		protected int maxReceive = 2000;
+		protected int maxExtract = 500;
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
 			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
 			if (blockstate != null) {
-				if (blockstate.getBlock() == BlockAcidBathEnd.block) {
-					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
+				if (blockstate.getBlock() == BlockTimeResearcher.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
 					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
 						return true;
 					}

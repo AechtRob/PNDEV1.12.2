@@ -351,7 +351,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 						BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-						timeResearcher.drainEnergy(1000);
+						timeResearcher.drainEnergy(500);
 					}
 				}
 				updated = true;
@@ -388,7 +388,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 				updated = true;
 			}
 
-			if (this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime) - 80) {
+			if (hasEnergy && this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime) - 80) {
 				//Give the processed block now:
 				if (!getStackInSlot(1).isEmpty()) {
 					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 2.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
