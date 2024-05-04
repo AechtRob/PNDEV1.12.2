@@ -13,6 +13,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -79,6 +80,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
 			super(Material.IRON);
@@ -141,6 +143,11 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(RF, LepidodendronConfig.machinesRF);
+		}
+
+		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return (new ItemStack(this, 1).getItem());
 		}
@@ -158,7 +165,26 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, RF});
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockTimeResearcherHopper.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+			if (worldIn.getBlockState(pos.down()).getBlock() != BlockTimeResearcherDispenser.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY())).getBlock() != BlockTimeResearcherFinderTop.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 		}
 
 		@Override
@@ -215,7 +241,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		protected boolean isProcessing;
 		public int processTick;
-		private int processTickTime = 200;
+		private int processTickTime = 20;
 
 		public int maxResearch = Math.max(0, LepidodendronConfig.maxResearch);
 
@@ -359,6 +385,67 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 					)
 				) {
 					ItemStack stackProcessing = this.getStackInSlot(0);
+					//Assign knowledge:
+					if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
+						&& this.dimPrecambrian < this.maxResearch) {
+						this.dimPrecambrian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
+							&& this.dimCambrian < this.maxResearch) {
+						this.dimCambrian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
+							&& this.dimOrdovician < this.maxResearch) {
+						this.dimOrdovician ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
+							&& this.dimSilurian < this.maxResearch) {
+						this.dimSilurian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
+							&& this.dimDevonian < this.maxResearch) {
+						this.dimDevonian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
+							&& this.dimCarboniferous < this.maxResearch) {
+						this.dimCarboniferous ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
+							&& this.dimPermian < this.maxResearch) {
+						this.dimPermian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
+							&& this.dimTriassic < this.maxResearch) {
+						this.dimTriassic ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
+							&& this.dimJurassic < this.maxResearch) {
+						this.dimJurassic ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)) {
+						if (world.rand.nextBoolean()) {
+							if (this.dimCretaceousEarly < this.maxResearch) {
+								this.dimCretaceousEarly++;
+							}
+						}
+						else {
+							if (this.dimCretaceousLate < this.maxResearch) {
+								this.dimCretaceousLate++;
+							}
+						}
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
+							&& this.dimPaleogene < this.maxResearch) {
+						this.dimPaleogene ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
+							&& this.dimNeogene < this.maxResearch) {
+						this.dimNeogene ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
+							&& this.dimPleistocene < this.maxResearch) {
+						this.dimPleistocene ++;
+					}
 					stackProcessing.shrink(1);
 					if (this.getStackInSlot(1).isEmpty()) {
 						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, 1));
@@ -484,7 +571,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			return compound;
 		}
 
-		private void notifyBlockUpdate() {
+		public void notifyBlockUpdate() {
 			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
@@ -564,12 +651,12 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				if (item == BlockFossilPrecambrian.block
 						|| item == BlockFossilCambrian.block
 						|| item == BlockFossilOrdovician.block
-						|| item == BlockFossilCambrian.block
-						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilSilurian.block
+						|| item == BlockFossilDevonian.block
 						|| item == BlockFossilCarboniferous.block
 						|| item == BlockFossilPermian.block
-						|| item == BlockFossilCambrian.block
-						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilTriassic.block
+						|| item == BlockFossilJurassic.block
 						|| item == BlockFossilCretaceous.block
 						|| item == BlockFossilPaleogene.block
 						|| item == BlockFossilNeogene.block
@@ -620,6 +707,30 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
 		}
 
 		//Energy addin:
