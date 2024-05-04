@@ -248,7 +248,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		protected boolean isProcessing;
 		public int processTick;
 		public boolean renderZap;
-		private int minEnergyNeeded = 100;
+		private int minEnergyNeeded = 1000;
 		private int trayLiftTickTime = 120; //6 seconds to move the tray
 		private int processTickTime = 960; //48 seconds to process the tray fully
 
@@ -351,7 +351,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 						BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-						timeResearcher.drainEnergy(100);
+						timeResearcher.drainEnergy(1000);
 					}
 				}
 				updated = true;
@@ -382,7 +382,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 						BlockTimeResearcher.TileEntityTimeResearcher timeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-						timeResearcher.drainEnergy(10);
+						timeResearcher.drainEnergy(100);
 					}
 				}
 				updated = true;
@@ -1206,7 +1206,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			super.writeToNBT(compound);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
-			compound.setString("selectedLife", this.selectedLife);
+			compound.setString("selectedLife", this.getSelectedLife());
 			compound.setInteger("trayheight", this.trayheight);
 			compound.setBoolean("renderZap", this.renderZap);
 			if (!this.checkLootAndWrite(compound)) {

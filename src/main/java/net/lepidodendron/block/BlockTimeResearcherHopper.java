@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.util.BlockSounds;
@@ -211,6 +212,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		public float crusherRotation;
 		public int soundLength = 42;
 		public int soundTick;
+		private int minEnergyNeeded = 100;
 
 		private boolean isFull()
 		{
@@ -367,6 +369,17 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity te = world.getTileEntity(pos.down());
+				if (te != null) {
+					if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+						if (!((BlockTimeResearcher.TileEntityTimeResearcher)te).hasEnergy(minEnergyNeeded)) {
+							return;
+						}
+					}
+				}
+			}
+
 			this.soundTick --;
 			if (soundTick < 0) {
 				this.soundTick = 0;
@@ -386,6 +399,12 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 			}
 
 			if (this.processTick > 0) {
+				TileEntity te = world.getTileEntity(pos.down());
+				if (te != null) {
+					if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+						((BlockTimeResearcher.TileEntityTimeResearcher)te).drainEnergy(10);
+					}
+				}
 				this.crusherRotation = this.crusherRotation + (0.5F * Math.min(this.processTick, 20));
 				if (this.crusherRotation >= 360) {
 					this.crusherRotation = 0;
