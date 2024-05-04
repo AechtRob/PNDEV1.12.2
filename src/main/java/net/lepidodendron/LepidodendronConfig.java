@@ -25,8 +25,8 @@ public class LepidodendronConfig {
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
     public static int taxidermyRenderRange = 48;
-    public static int researchMax = 1000;
-    public static int researchPortal = 15;
+    public static int researchMax = 10000;
+    public static int researchPortal = 5;
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
@@ -474,7 +474,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "researchPortal", researchPortal);
-        prop.setComment("The percentage of research needed in order to obtain a portal block to a dimension [default: 15]");
+        prop.setComment("The percentage of research needed in order to obtain a portal block to a dimension [default: 5]");
         researchPortal = prop.getInt();
         propOrder.add(prop.getName());
 
