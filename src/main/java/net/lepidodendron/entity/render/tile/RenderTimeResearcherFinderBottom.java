@@ -120,6 +120,10 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GlStateManager.disableAlpha();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
             GlStateManager.depthMask(true);
+//            int i = 61680;
+//            int j = i % 65536;
+//            int k = i / 65536;
+//            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
             Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
 
             GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -284,6 +288,10 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GL11.glEnable(GL11.GL_TEXTURE_2D);
 
             Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
+//            i = 0;
+//            j = i % 65536;
+//            k = i / 65536;
+//            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
             GlStateManager.disableBlend();
             GlStateManager.enableAlpha();
 
