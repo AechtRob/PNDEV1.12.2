@@ -420,26 +420,25 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 			if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 				BlockTimeResearcher.TileEntityTimeResearcher tileEntity = (BlockTimeResearcher.TileEntityTimeResearcher) te;
 				if (tileEntity.getStackInSlot(0).isEmpty()) {
-					//Pick a random slot to draw from and then cycle over til we find something to push:
-					int i = world.rand.nextInt(this.getSizeInventory());
-					int ii = i + 1;
-					while (ii != i) {
-						if (ii >= this.getSizeInventory()) {
-							ii = 0;
-						}
+					//Cycle over the inventory:
+					int ii = 0;
+					while (ii <= this.getSizeInventory()) {
 						if ((!this.getStackInSlot(ii).isEmpty()) && tileEntity.isItemValidForSlot(0, this.getStackInSlot(ii))) {
 							tileEntity.setInventorySlotContents(0, new ItemStack(this.getStackInSlot(ii).getItem(), 1));
 							this.getStackInSlot(ii).shrink(1);
 							this.notifyBlockUpdate();
 							tileEntity.notifyBlockUpdate();
 							this.processTick = 100;
-							if (!isSoundPlaying()) {
-								playSound(world, pos);
-							}
 							markDirty();
 							return;
 						}
 						ii ++;
+					}
+				}
+				else {
+					//Something is in the slot in the researcher underneath so keep the animations going:
+					if (!isSoundPlaying()) {
+						playSound(world, pos);
 					}
 				}
 				return;

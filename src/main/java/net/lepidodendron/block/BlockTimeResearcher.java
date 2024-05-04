@@ -21,7 +21,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -237,13 +236,14 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class TileEntityTimeResearcher extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
-		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
+		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime = 20;
 
-		public int maxResearch = Math.max(0, LepidodendronConfig.maxResearch);
+		public int maxResearch = Math.max(0, LepidodendronConfig.researchMax);
+		public float portalResearch = Math.min(Math.max(0, (float)LepidodendronConfig.researchPortal / 100F), 1F);
 
 		public int dimPrecambrian;
 		public int dimCambrian;
@@ -316,9 +316,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				return false;
 			}
 			if (isItemValidForSlot(0, this.getStackInSlot(0))
-				&& (this.getStackInSlot(1).isEmpty()
-			 		|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
-				)
 			) {
 				return true;
 			}
@@ -357,9 +354,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			}
 
 			if (!(isItemValidForSlot(0, this.getStackInSlot(0))
-				&& (this.getStackInSlot(1).isEmpty()
-					|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
-				)
 			)) {
 				this.processTick = 0;
 				this.isProcessing = false;
@@ -380,9 +374,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				this.processTick = 0;
 				this.isProcessing = false;
 				if (isItemValidForSlot(0, this.getStackInSlot(0))
-						&& (this.getStackInSlot(1).isEmpty()
-						|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
-					)
 				) {
 					ItemStack stackProcessing = this.getStackInSlot(0);
 					//Assign knowledge:
@@ -447,12 +438,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 						this.dimPleistocene ++;
 					}
 					stackProcessing.shrink(1);
-					if (this.getStackInSlot(1).isEmpty()) {
-						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, 1));
-					}
-					else {
-						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, this.getStackInSlot(1).getCount() + 1));
-					}
 					this.notifyBlockUpdate();
 				}
 			}
@@ -630,17 +615,11 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
-			if (index == 0) { //Fossil
-				return isItemValidForSlot(index, itemStackIn);
-			}
 			return false;
 		}
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-			if (index == 1) {
-				return true;
-			}
 			return false;
 		}
 
