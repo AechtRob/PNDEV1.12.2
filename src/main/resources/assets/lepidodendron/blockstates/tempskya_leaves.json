@@ -27,7 +27,7 @@
 		{"model": "lepidodendron:tempskya_leaf_3", "y": 270 }
     ],
     "facing=up": [
-      	{"model": "lepidodendron:tempskya_shoot" },
+      	{"model": "lepidodendron:tempskya_shoot" }
     ],
     "facing=down": [
       	{"model": "lepidodendron:tempskya_shoot", "x": 180 }

@@ -1,11 +1,10 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"2": "lepidodendron:blocks/tempskya_leaf_center_1_base",
 		"3": "lepidodendron:blocks/tempskya_leaf_left_1_base",
 		"4": "lepidodendron:blocks/tempskya_leaf_left_1_tip",
 		"5": "lepidodendron:blocks/tempskya_leaf_center_1_tip",
-		"particle": "lepidodendron:blocks/tempskya_leaf_center_1_base"
+		"particle": "lepidodendron:blocks/tempskya_leaf_left_1_base"
 	},
 	"elements": [
 		{
@@ -13,10 +12,6 @@
 			"to": [13.7, 5.17098, 8.92731],
 			"rotation": {"angle": -45, "axis": "x", "origin": [5.7, 6.17098, 5.42731]},
 			"faces": {
-				"north": {"uv": [16, 0, 0, 0], "texture": "#missing"},
-				"east": {"uv": [8, 0, 0, 0], "texture": "#missing"},
-				"south": {"uv": [16, 0, 0, 0], "texture": "#missing"},
-				"west": {"uv": [8, 0, 0, 0], "texture": "#missing"},
 				"up": {"uv": [0, 8, 16, 0], "texture": "#4"},
 				"down": {"uv": [0, 0, 16, 8], "texture": "#4"}
 			}
@@ -26,10 +21,6 @@
 			"to": [13.7, 11, 16],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [5.7, 11, 16]},
 			"faces": {
-				"north": {"uv": [16, 0, 0, 0], "texture": "#missing"},
-				"east": {"uv": [8, 0, 0, 0], "texture": "#missing"},
-				"south": {"uv": [16, 0, 0, 0], "texture": "#missing"},
-				"west": {"uv": [8, 0, 0, 0], "texture": "#missing"},
 				"up": {"uv": [0, 16, 16, 8], "texture": "#3"},
 				"down": {"uv": [0, 8, 16, 16], "texture": "#3"}
 			}
@@ -39,10 +30,6 @@
 			"to": [18.3, 12, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [2.3, -2, 0]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 8, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 16, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 8, 0], "texture": "#missing"},
 				"up": {"uv": [0, 16, 16, 8], "texture": "#2"},
 				"down": {"uv": [0, 8, 16, 16], "texture": "#2"}
 			}
@@ -52,10 +39,6 @@
 			"to": [18.3, 10.58456, 7.88412],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [10.3, 11.58456, 4.38412]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 8, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 16, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 8, 0], "texture": "#missing"},
 				"up": {"uv": [0, 8, 16, 0], "texture": "#5"},
 				"down": {"uv": [0, 0, 16, 8], "texture": "#5"}
 			}
