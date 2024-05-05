@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_conulariid",
 			"type": "text",
-			"text": ""
+			"text": "Conulariids are a group of Paleozoic and Triassic cnidarians that are commonly found all over the world. They possess a conical shell which would have surrounded their soft bodies. These organisms were also likely sessile feeders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_conulariid",
+			"type": "text",
+			"text": "They are generally extremely small, measuring up to only a few centimeters in the length of their shell. Conulariids, like conodonts and ammonites, are also commonly used as index fossils due to their fossils being really common."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_conulariid",
+			"type": "text",
+			"text": "They are generally believed to have used their tentacles to ensnare prey, and as they grew older, conulariids may have become recumbent, or tipped over."
 		}
 	]
 }
