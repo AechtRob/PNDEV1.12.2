@@ -1,0 +1,25 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "slabIron"
+    },
+    "4": {
+      "item": "minecraft:dispenser"
+    },
+    "7": {
+      "item": "lepidodendron:redstone_component"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:time_researcher_dispenser_item",
+    "count": 1
+  }
+}

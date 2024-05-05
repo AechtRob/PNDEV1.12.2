@@ -1,4 +1,5 @@
 {
+	"parent": "block/cube_all",
 	"ambientocclusion": false,
 	"textures": {
 		"0": "lepidodendron:blocks/fossil_finder_glass",

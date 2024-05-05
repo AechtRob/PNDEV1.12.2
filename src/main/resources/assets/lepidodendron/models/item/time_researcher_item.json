@@ -2,7 +2,7 @@
   "parent": "lepidodendron:block/time_researcher_item",
   "display": {
     "gui": {
-      "rotation": [0, -45, 1],
+      "rotation": [30, 55, 0],
       "translation": [0, 0.75, 0],
       "scale": [0.275, 0.275, 0.275]
     },

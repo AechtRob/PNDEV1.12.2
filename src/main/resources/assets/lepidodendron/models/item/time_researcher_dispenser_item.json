@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/time_researcher_dispenser",
+  "display": {
+    "gui": {
+      "rotation": [30, -55, 0],
+      "scale":[ 0.625, 0.625, 0.625 ]
+    }
+  }
+}
