@@ -13,6 +13,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -20,7 +21,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -79,6 +79,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
 			super(Material.IRON);
@@ -141,6 +142,11 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(RF, LepidodendronConfig.machinesRF);
+		}
+
+		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return (new ItemStack(this, 1).getItem());
 		}
@@ -158,7 +164,26 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, RF});
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockTimeResearcherHopper.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+			if (worldIn.getBlockState(pos.down()).getBlock() != BlockTimeResearcherDispenser.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY())).getBlock() != BlockTimeResearcherFinderTop.block) {
+				worldIn.destroyBlock(pos, false);
+				return;
+			}
+
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 		}
 
 		@Override
@@ -211,13 +236,14 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class TileEntityTimeResearcher extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
-		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
+		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
 		protected boolean isProcessing;
 		public int processTick;
-		private int processTickTime = 200;
+		private int processTickTime = 20;
 
-		public int maxResearch = Math.max(0, LepidodendronConfig.maxResearch);
+		public int maxResearch = Math.max(0, LepidodendronConfig.researchMax);
+		public float portalResearch = Math.min(Math.max(0, (float)LepidodendronConfig.researchPortal / 100F), 1F);
 
 		public int dimPrecambrian;
 		public int dimCambrian;
@@ -290,9 +316,6 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				return false;
 			}
 			if (isItemValidForSlot(0, this.getStackInSlot(0))
-				&& (this.getStackInSlot(1).isEmpty()
-			 		|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
-				)
 			) {
 				return true;
 			}
@@ -330,10 +353,34 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			this.receiveEnergy(10, false);
+
 			if (!(isItemValidForSlot(0, this.getStackInSlot(0))
-				&& (this.getStackInSlot(1).isEmpty()
-					|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
-				)
 			)) {
 				this.processTick = 0;
 				this.isProcessing = false;
@@ -354,18 +401,70 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				this.processTick = 0;
 				this.isProcessing = false;
 				if (isItemValidForSlot(0, this.getStackInSlot(0))
-						&& (this.getStackInSlot(1).isEmpty()
-						|| this.getStackInSlot(1).getCount() < this.getStackInSlot(1).getMaxStackSize()
-					)
 				) {
 					ItemStack stackProcessing = this.getStackInSlot(0);
+					//Assign knowledge:
+					if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)
+						&& this.dimPrecambrian < this.maxResearch) {
+						this.dimPrecambrian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)
+							&& this.dimCambrian < this.maxResearch) {
+						this.dimCambrian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)
+							&& this.dimOrdovician < this.maxResearch) {
+						this.dimOrdovician ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)
+							&& this.dimSilurian < this.maxResearch) {
+						this.dimSilurian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)
+							&& this.dimDevonian < this.maxResearch) {
+						this.dimDevonian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)
+							&& this.dimCarboniferous < this.maxResearch) {
+						this.dimCarboniferous ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPermian.block)
+							&& this.dimPermian < this.maxResearch) {
+						this.dimPermian ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)
+							&& this.dimTriassic < this.maxResearch) {
+						this.dimTriassic ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)
+							&& this.dimJurassic < this.maxResearch) {
+						this.dimJurassic ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)) {
+						if (world.rand.nextBoolean()) {
+							if (this.dimCretaceousEarly < this.maxResearch) {
+								this.dimCretaceousEarly++;
+							}
+						}
+						else {
+							if (this.dimCretaceousLate < this.maxResearch) {
+								this.dimCretaceousLate++;
+							}
+						}
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)
+							&& this.dimPaleogene < this.maxResearch) {
+						this.dimPaleogene ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)
+							&& this.dimNeogene < this.maxResearch) {
+						this.dimNeogene ++;
+					}
+					else if (stackProcessing.getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)
+							&& this.dimPleistocene < this.maxResearch) {
+						this.dimPleistocene ++;
+					}
 					stackProcessing.shrink(1);
-					if (this.getStackInSlot(1).isEmpty()) {
-						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, 1));
-					}
-					else {
-						this.setInventorySlotContents(1, new ItemStack(Blocks.GRAVEL, this.getStackInSlot(1).getCount() + 1));
-					}
 					this.notifyBlockUpdate();
 				}
 			}
@@ -405,6 +504,9 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
@@ -462,6 +564,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			compound.setInteger("dimPrecambrian", this.dimPrecambrian);
@@ -484,7 +587,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			return compound;
 		}
 
-		private void notifyBlockUpdate() {
+		public void notifyBlockUpdate() {
 			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
@@ -543,17 +646,11 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
-			if (index == 0) { //Fossil
-				return isItemValidForSlot(index, itemStackIn);
-			}
 			return false;
 		}
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-			if (index == 1) {
-				return true;
-			}
 			return false;
 		}
 
@@ -564,12 +661,12 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				if (item == BlockFossilPrecambrian.block
 						|| item == BlockFossilCambrian.block
 						|| item == BlockFossilOrdovician.block
-						|| item == BlockFossilCambrian.block
-						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilSilurian.block
+						|| item == BlockFossilDevonian.block
 						|| item == BlockFossilCarboniferous.block
 						|| item == BlockFossilPermian.block
-						|| item == BlockFossilCambrian.block
-						|| item == BlockFossilCambrian.block
+						|| item == BlockFossilTriassic.block
+						|| item == BlockFossilJurassic.block
 						|| item == BlockFossilCretaceous.block
 						|| item == BlockFossilPaleogene.block
 						|| item == BlockFossilNeogene.block
@@ -594,11 +691,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
-			if (capability == CapabilityEnergy.ENERGY) {
-				return (facing == blockFacing) ? (T) this : null;
-			}
-			else if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
 				if (facing == EnumFacing.UP) {
 					return (T) handlerUp;
 				}
@@ -617,24 +710,48 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				if (facing == EnumFacing.WEST) {
 					return (T) handlerWest;
 				}
-
 			}
-			return super.getCapability(capability, facing);
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
 		}
 
 		//Energy addin:
 		//-------------
 		protected int energy;
 		protected int capacity = 50000;
-		protected int maxReceive = 500;
-		protected int maxExtract = 250;
+		protected int maxReceive = 2000;
+		protected int maxExtract = 500;
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
 			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
 			if (blockstate != null) {
-				if (blockstate.getBlock() == BlockAcidBathEnd.block) {
-					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
+				if (blockstate.getBlock() == BlockTimeResearcher.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockTimeResearcher.BlockCustom.FACING).getOpposite();
 					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
 						return true;
 					}

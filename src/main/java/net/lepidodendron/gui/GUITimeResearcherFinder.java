@@ -3,13 +3,12 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAcidBath;
-import net.lepidodendron.block.BlockAcidBathEnd;
-import net.lepidodendron.block.BlockAcidBathUp;
-import net.lepidodendron.item.*;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.block.BlockTimeResearcher;
+import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.Container;
@@ -22,6 +21,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -29,16 +29,17 @@ import net.minecraftforge.fml.relauncher.Side;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
-    public static int GUIID = LepidodendronMod.GUI_ACID_ID;
+public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement {
+    public static int GUIID = LepidodendronMod.GUI_TIME_RESEARCHER_FINDER_ID;
     public static HashMap guistate = new HashMap();
-    public GUIAcidBath(ElementsLepidodendronMod instance) {
+    public GUITimeResearcherFinder(ElementsLepidodendronMod instance) {
         super(instance, 1);
     }
 
@@ -46,112 +47,45 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
     public void preInit(FMLPreInitializationEvent event) {
         elements.addNetworkMessage(GUIButtonPressedMessageHandler.class, GUIButtonPressedMessage.class, Side.SERVER);
         elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
+        elements.addNetworkMessage(GUILifeChangedMessageHandler.class, GUILifeChangedMessage.class, Side.SERVER);
     }
 
-    public static class GUILepidodendronAcidBath extends Container implements Supplier<Map<Integer, Slot>> {
+    public static class GUILepidodendronTimeResearcherFinder extends Container implements Supplier<Map<Integer, Slot>> {
         private IInventory internal;
-        private World world;
+        public static World world;
         private EntityPlayer entity;
-        private int x, y, z;
+        public static int x, y, z;
         private Map<Integer, Slot> customSlots = new HashMap<>();
-        public GUILepidodendronAcidBath(World world, int x, int y, int z, EntityPlayer player) {
+
+        public GUILepidodendronTimeResearcherFinder(World world, int x, int y, int z, EntityPlayer player) {
             this.world = world;
             this.entity = player;
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 9);
+            this.internal = new InventoryBasic("", true, 2);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+
+            this.internal.openInventory(player);
+
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 18, 36) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return (stack.getItem() == ItemFossilPrecambrian.block
-                            || stack.getItem() == ItemFossilCambrian.block
-                            || stack.getItem() == ItemFossilOrdovician.block
-                            || stack.getItem() == ItemFossilSilurian.block
-                            || stack.getItem() == ItemFossilDevonian.block
-                            || stack.getItem() == ItemFossilCarboniferous.block
-                            || stack.getItem() == ItemFossilPermian.block
-                            || stack.getItem() == ItemFossilTriassic.block
-                            || stack.getItem() == ItemFossilJurassic.block
-                            || stack.getItem() == ItemFossilCretaceous.block
-                            || stack.getItem() == ItemFossilPaleogene.block
-                            || stack.getItem() == ItemFossilNeogene.block
-                            || stack.getItem() == ItemFossilPleistocene.block);
-                }
-            }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154 - 3, 30 - 8) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
+                    if (ent instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                        BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom te = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) ent;
+                        return te.isItemValidForSlot(0, stack);
+                    }
                     return false;
                 }
 
                 @Override
-                public void onSlotChanged() {
-
-                    super.onSlotChanged();
-                }
-
-                @Override
-                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
-                    TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
-                    ItemStack slotStack = ((BlockAcidBathUp.TileEntityAcidBathUp)tileEntity).getStackInSlot(1);
-
-                    if (thePlayer instanceof EntityPlayerMP && stack.getItem()  == ItemFossilClean.block) {
-                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
-                    }
-                    //System.err.println("Taken " + slotStack);
-                    return super.onTake(thePlayer, stack);
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154 - 3, 48 - 8) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
-                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemFossilClean.block) {
-                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
-                    }
-                    //System.err.println("Taken " + stack);
-                    return super.onTake(thePlayer, stack);
-                }
-            }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136 - 3, 30 - 8) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
-                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemFossilClean.block) {
-                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
-                    }
-                    //System.err.println("Taken " + stack);
-                    return super.onTake(thePlayer, stack);
-                }
-            }));
-            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 136 - 3, 48 - 8) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
-                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemFossilClean.block) {
-                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
-                    }
-                    //System.err.println("Taken " + stack);
-                    return super.onTake(thePlayer, stack);
-                }
-            }));
-            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 46 - 3, 58 - 8) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 80, 68) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -159,18 +93,10 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
-                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
-                        if ((!tile.getIsProcessing())
-                                && (tile.isTankPaused())) {
-                            return true;
-                        }
-                    }
                     return false;
                 }
             }));
-            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 64 - 3, 58 - 8) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 134, 45) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -178,18 +104,10 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
-                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
-                        if ((!tile.getIsProcessing())
-                                && (tile.isTankPaused())) {
-                            return true;
-                        }
-                    }
-                    return false;
+                    return true;
                 }
             }));
-            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 7, 82 - 3, 58 - 8) {
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 152, 45) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -197,18 +115,10 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
-                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
-                        if ((!tile.getIsProcessing())
-                                && (tile.isTankPaused())) {
-                            return true;
-                        }
-                    }
-                    return false;
+                    return true;
                 }
             }));
-            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 8, 100 - 3, 58 - 8) {
+            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 134, 63) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -216,15 +126,18 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
-                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
-                        if ((!tile.getIsProcessing())
-                                && (tile.isTankPaused())) {
-                            return true;
-                        }
-                    }
+                    return true;
+                }
+            }));
+            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 152, 63) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
                     return false;
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
                 }
             }));
 
@@ -232,9 +145,9 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 99 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 142));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 157));
 
         }
 
@@ -247,6 +160,11 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             return internal.isUsableByPlayer(player);
         }
 
+        public IInventory getLowerChestInventory()
+        {
+            return this.internal;
+        }
+
         @Override
         public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
             ItemStack itemstack = ItemStack.EMPTY;
@@ -254,18 +172,18 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             if (slot != null && slot.getHasStack()) {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
-                if (index < 9) {
-                    if (!this.mergeItemStack(itemstack1, 9, this.inventorySlots.size(), true)) {
+                if (index < 2) {
+                    if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
                         return ItemStack.EMPTY;
                     }
                     slot.onSlotChange(itemstack1, itemstack);
-                } else if (!this.mergeItemStack(itemstack1, 0, 9, false)) {
-                    if (index < 9 + 27) {
-                        if (!this.mergeItemStack(itemstack1, 9 + 27, this.inventorySlots.size(), true)) {
+                } else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
+                    if (index < 2 + 27) {
+                        if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
                             return ItemStack.EMPTY;
                         }
                     } else {
-                        if (!this.mergeItemStack(itemstack1, 9, 9 + 27, false)) {
+                        if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
                             return ItemStack.EMPTY;
                         }
                     }
@@ -279,8 +197,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                 if (itemstack1.getCount() == itemstack.getCount()) {
                     return ItemStack.EMPTY;
                 }
-                //System.err.println("itemstack1 5 " + itemstack);
-                slot.onTake(playerIn, itemstack);
+                slot.onTake(playerIn, itemstack1);
             }
             return itemstack;
         }
@@ -374,6 +291,11 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             if ((internal instanceof InventoryBasic) && (playerIn instanceof EntityPlayerMP)) {
                 this.clearContainer(playerIn, playerIn.world, internal);
             }
+            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+            if (ent instanceof IInventory)
+                this.internal = (IInventory) ent;
+
+            this.internal.closeInventory(playerIn);
         }
 
         private void slotChanged(int slotid, int ctype, int meta) {
@@ -389,16 +311,17 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
         private int x, y, z;
         private EntityPlayer entity;
         public GuiWindow(World world, int x, int y, int z, EntityPlayer entity) {
-            super(new GUILepidodendronAcidBath(world, x, y, z, entity));
+            super(new GUILepidodendronTimeResearcherFinder(world, x, y, z, entity));
             this.world = world;
             this.x = x;
             this.y = y;
             this.z = z;
             this.entity = entity;
             this.xSize = 182;
-            this.ySize = 166;
+            this.ySize = 196;
         }
-        private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/acid_bath_gui.png");
+        private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/time_researcher_finder_gui.png");
+
         @Override
         public void drawScreen(int mouseX, int mouseY, float partialTicks) {
             this.drawDefaultBackground();
@@ -414,25 +337,36 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
-            this.drawTexturedModalRect(k + 46, l + 32 - 8, 0,196, this.getProgressBarLength(), 6);
-            this.drawTexturedModalRect(k + 39, l + 45 + (30 - this.getAcidDepth()) - 8, 0,166, 84, this.getAcidDepth());
+            this.drawTexturedModalRect(k + 68, l + 55, 19,196, this.getProgressBarLength(), 6);
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 9, l + 51 - 8, 0,202, 18, 26);
-                this.drawTexturedModalRect(k + 10, l + 52 + (24 - this.getRFHeight()) - 8, 0, 228, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 20, l + 76, 0,196, 18, 26);
+                this.drawTexturedModalRect(k + 21, l + 77 + (24 - this.getRFHeight()), 0, 222, 16, this.getRFHeight());
             }
+            if (renderZap()) {
+                this.drawTexturedModalRect(k + 76, l + 81, 19,222, 30, 12);
+            }
+        }
+
+        private boolean renderZap() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    return ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom)tileEntity).renderZap;
+                }
+            }
+            return false;
         }
 
         private int getRFHeight() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                    BlockPos RFStorage = new BlockPos(x, y, z);
-                    RFStorage = RFStorage.down().offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockAcidBathUp.BlockCustom.FACING));
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockPos RFStorage = new BlockPos(x, y + 1, z);
+                    RFStorage = RFStorage.offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockTimeResearcher.BlockCustom.FACING).rotateY());
                     TileEntity tileEntity2 = world.getTileEntity(RFStorage);
                     if (tileEntity2 != null) {
-                        if (tileEntity2 instanceof BlockAcidBathEnd.TileEntityAcidBathEnd) {
-                            BlockAcidBathEnd.TileEntityAcidBathEnd te = (BlockAcidBathEnd.TileEntityAcidBathEnd) tileEntity2;
-                            //return (int)Math.round(te.progressFraction() * 70D);
+                        if (tileEntity2 instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                            BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity2;
                             double fraction = te.getEnergyFraction();
                             return (int) Math.round(fraction * 24D);
                         }
@@ -445,20 +379,9 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
         private int getProgressBarLength() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                    BlockAcidBathUp.TileEntityAcidBathUp te = (BlockAcidBathUp.TileEntityAcidBathUp) tileEntity;
-                    return (int)Math.round(te.progressFraction() * 70D);
-                }
-            }
-            return 0;
-        }
-
-        private int getAcidDepth() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y - 1, z));
-            if (tileEntity != null) {
-                if (tileEntity instanceof BlockAcidBath.TileEntityAcidBath) {
-                    BlockAcidBath.TileEntityAcidBath te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
-                    return (int)Math.round(te.acidFraction() * 30D);
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    return (int)Math.round(te.progressFraction() * 46D);
                 }
             }
             return 0;
@@ -479,10 +402,60 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             super.keyTyped(typedChar, keyCode);
         }
 
+        @Nullable
+        private float getPercent(int dimIn) {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    return te.getResearchPercent(dimIn);
+                }
+            }
+            return 0;
+        }
+        
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Acid Bath Fossil Cleaning", 25, 7, 4210752);
-            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
+            this.fontRenderer.drawString("Fossil Searcher", 35, -6, 4210752);
+            this.fontRenderer.drawString("Searching for:", 50, 12, 4210752);
+            String mob = "";
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom te = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity;
+                    mob = te.getSelectedLife();
+                }
+            }
+            if (!(mob.equalsIgnoreCase(""))) {
+                mob = translateMob(mob);
+            }
+            int xPos = (this.fontRenderer.getStringWidth(mob) / 2);
+            this.fontRenderer.drawString(mob, 88 - xPos, 22, 4210752);
+        }
+
+        public String translateMob(String mobIn) {
+            if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
+                mobIn = mobIn.replace("@", "_").substring(10);
+            }
+            else {
+                mobIn = mobIn.replace("@", "_").substring(LepidodendronMod.MODID.length() + 1);
+            }
+
+            String name = "entity." + mobIn + ".name";
+            name = net.minecraft.util.text.translation.I18n.translateToLocal(name);
+            if (name.equalsIgnoreCase("entity." + mobIn + ".name")) {
+                name = "tile.pf_" + mobIn + ".name";
+                name = net.minecraft.util.text.translation.I18n.translateToLocal(name);
+            }
+            if (name.equalsIgnoreCase("tile.pf_" + mobIn + ".name")) {
+                name = "item.pf_" + mobIn + ".name";
+                name = net.minecraft.util.text.translation.I18n.translateToLocal(name);
+            }
+            if (name.equalsIgnoreCase("item.pf_" + mobIn + ".name")) {
+                name = mobIn;
+            }
+
+            return name;
         }
 
         @Override
@@ -498,11 +471,22 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             this.guiTop = (this.height - 166) / 2;
             Keyboard.enableRepeatEvents(true);
             this.buttonList.clear();
+            this.buttonList.add(new GuiButtonLife(0, this.width / 2 + 32, this.guiTop - 9));
+
         }
 
         @Override
         protected void actionPerformed(GuiButton button) {
             LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIButtonPressedMessage(button.id, x, y, z));
+            if (button.id == 0)
+            {
+                TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+                if (tileEntity != null) {
+                    if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                        this.mc.displayGuiScreen(new GUITimeResearcherFinderSelector(this,  (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity));
+                    }
+                }
+            }
             handleButtonAction(entity, button.id, x, y, z);
         }
 
@@ -573,6 +557,52 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
         }
     }
 
+
+    public static class GUILifeChangedMessageHandler implements IMessageHandler<GUILifeChangedMessage, IMessage> {
+        @Override
+        public IMessage onMessage(GUILifeChangedMessage message, MessageContext context) {
+            EntityPlayerMP entity = context.getServerHandler().player;
+            TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
+            if (te != null) {
+                if (te instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).setSelectedLife(message.mobID);
+                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).markDirty();
+                }
+            }
+            return null;
+        }
+    }
+
+    public static class GUILifeChangedMessage implements IMessage {
+        String mobID;
+        int x, y, z;
+        public GUILifeChangedMessage() {
+        }
+
+        public GUILifeChangedMessage(String mobID, int x, int y, int z) {
+            this.mobID = mobID;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        @Override
+        public void toBytes(io.netty.buffer.ByteBuf buf) {
+            ByteBufUtils.writeUTF8String(buf, mobID);
+            buf.writeInt(x);
+            buf.writeInt(y);
+            buf.writeInt(z);
+        }
+
+        @Override
+        public void fromBytes(io.netty.buffer.ByteBuf buf) {
+            mobID = ByteBufUtils.readUTF8String(buf);
+            x = buf.readInt();
+            y = buf.readInt();
+            z = buf.readInt();
+        }
+    }
+
     public static class GUISlotChangedMessage implements IMessage {
         int slotID, x, y, z, changeType, meta;
         public GUISlotChangedMessage() {
@@ -620,5 +650,19 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
         // security measure to prevent arbitrary chunk generation
         if (!world.isBlockLoaded(new BlockPos(x, y, z)))
             return;
+    }
+
+    public static class GuiButtonLife extends GuiButton {
+        public GuiButtonLife(int buttonID, int xPos, int yPos) {
+            super(buttonID, xPos, yPos, 16, 16, "");
+        }
+
+        public void drawButton(Minecraft mc, int mouseX, int mouseY, float partialTicks) {
+            if (this.visible) {
+                mc.getTextureManager().bindTexture(GuiWindow.texture);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                this.drawTexturedModalRect(this.x, this.y, 22,204, this.width, this.height);
+            }
+        }
     }
 }

@@ -66,33 +66,6 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
 
             this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 45, 26) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    if (ent instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
-                        BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) ent;
-                        return te.isItemValidForSlot(0, stack);
-                    }
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return true;
-                }
-            }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 105, 26) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return true;
-                }
-            }));
-
         }
 
         public Map<Integer, Slot> get() {
@@ -111,39 +84,7 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
 
         @Override
         public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-            ItemStack itemstack = ItemStack.EMPTY;
-            Slot slot = (Slot) this.inventorySlots.get(index);
-            if (slot != null && slot.getHasStack()) {
-                ItemStack itemstack1 = slot.getStack();
-                itemstack = itemstack1.copy();
-                if (index < 2) {
-                    if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
-                        return ItemStack.EMPTY;
-                    }
-                    slot.onSlotChange(itemstack1, itemstack);
-                } else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
-                    if (index < 2 + 27) {
-                        if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
-                            return ItemStack.EMPTY;
-                        }
-                    } else {
-                        if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
-                            return ItemStack.EMPTY;
-                        }
-                    }
-                    return ItemStack.EMPTY;
-                }
-                if (itemstack1.getCount() == 0) {
-                    slot.putStack(ItemStack.EMPTY);
-                } else {
-                    slot.onSlotChanged();
-                }
-                if (itemstack1.getCount() == itemstack.getCount()) {
-                    return ItemStack.EMPTY;
-                }
-                slot.onTake(playerIn, itemstack1);
-            }
-            return itemstack;
+            return ItemStack.EMPTY;
         }
 
         @Override /**
@@ -153,80 +94,7 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
          * Container implementation do not check if the item is valid for the slot
          */
         protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
-            boolean flag = false;
-            int i = startIndex;
-            if (reverseDirection) {
-                i = endIndex - 1;
-            }
-            if (stack.isStackable()) {
-                while (!stack.isEmpty()) {
-                    if (reverseDirection) {
-                        if (i < startIndex) {
-                            break;
-                        }
-                    } else if (i >= endIndex) {
-                        break;
-                    }
-                    Slot slot = this.inventorySlots.get(i);
-                    ItemStack itemstack = slot.getStack();
-                    if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
-                            && (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
-                            && ItemStack.areItemStackTagsEqual(stack, itemstack)) {
-                        int j = itemstack.getCount() + stack.getCount();
-                        int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
-                        if (j <= maxSize) {
-                            stack.setCount(0);
-                            itemstack.setCount(j);
-                            slot.putStack(itemstack);
-                            flag = true;
-                        } else if (itemstack.getCount() < maxSize) {
-                            stack.shrink(maxSize - itemstack.getCount());
-                            itemstack.setCount(maxSize);
-                            slot.putStack(itemstack);
-                            flag = true;
-                        }
-                    }
-                    if (reverseDirection) {
-                        --i;
-                    } else {
-                        ++i;
-                    }
-                }
-            }
-            if (!stack.isEmpty()) {
-                if (reverseDirection) {
-                    i = endIndex - 1;
-                } else {
-                    i = startIndex;
-                }
-                while (true) {
-                    if (reverseDirection) {
-                        if (i < startIndex) {
-                            break;
-                        }
-                    } else if (i >= endIndex) {
-                        break;
-                    }
-                    Slot slot1 = this.inventorySlots.get(i);
-                    ItemStack itemstack1 = slot1.getStack();
-                    if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
-                        if (stack.getCount() > slot1.getSlotStackLimit()) {
-                            slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
-                        } else {
-                            slot1.putStack(stack.splitStack(stack.getCount()));
-                        }
-                        slot1.onSlotChanged();
-                        flag = true;
-                        break;
-                    }
-                    if (reverseDirection) {
-                        --i;
-                    } else {
-                        ++i;
-                    }
-                }
-            }
-            return flag;
+            return false;
         }
 
         @Override
@@ -284,8 +152,61 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
                 this.drawTexturedModalRect(k + 25, l + 23, 0, 203, 200, 10);
                 this.drawTexturedModalRect(k + 26, l + 24, 0, 196, this.getRFWidth(), 8);
             }
-            //Arrow:
-            this.drawTexturedModalRect(k + 79, l + 39, 176, 14, getProgressBarLength(), 16);
+            this.drawTexturedModalRect(k + 90, l + 39, 1, 197, this.getdimPercentGreen(1), 7);
+            this.drawTexturedModalRect(k + 90, l + 39, 1, 204, this.getdimPercentRed(1), 7);
+            this.drawTexturedModalRect(k + 90, l + 50, 1, 197, this.getdimPercentGreen(2), 7);
+            this.drawTexturedModalRect(k + 90, l + 50, 1, 204, this.getdimPercentRed(2), 7);
+            this.drawTexturedModalRect(k + 90, l + 61, 1, 197, this.getdimPercentGreen(3), 7);
+            this.drawTexturedModalRect(k + 90, l + 61, 1, 204, this.getdimPercentRed(3), 7);
+            this.drawTexturedModalRect(k + 90, l + 72, 1, 197, this.getdimPercentGreen(4), 7);
+            this.drawTexturedModalRect(k + 90, l + 72, 1, 204, this.getdimPercentRed(4), 7);
+            this.drawTexturedModalRect(k + 90, l + 83, 1, 197, this.getdimPercentGreen(5), 7);
+            this.drawTexturedModalRect(k + 90, l + 83, 1, 204, this.getdimPercentRed(5), 7);
+            this.drawTexturedModalRect(k + 90, l + 94, 1, 197, this.getdimPercentGreen(6), 7);
+            this.drawTexturedModalRect(k + 90, l + 94, 1, 204, this.getdimPercentRed(6), 7);
+            this.drawTexturedModalRect(k + 90, l + 105, 1, 197, this.getdimPercentGreen(7), 7);
+            this.drawTexturedModalRect(k + 90, l + 105, 1, 204, this.getdimPercentRed(7), 7);
+            this.drawTexturedModalRect(k + 90, l + 116, 1, 197, this.getdimPercentGreen(8), 7);
+            this.drawTexturedModalRect(k + 90, l + 116, 1, 204, this.getdimPercentRed(8), 7);
+            this.drawTexturedModalRect(k + 90, l + 127, 1, 197, this.getdimPercentGreen(9), 7);
+            this.drawTexturedModalRect(k + 90, l + 127, 1, 204, this.getdimPercentRed(9), 7);
+            this.drawTexturedModalRect(k + 90, l + 138, 1, 197, this.getdimPercentGreen(10), 7);
+            this.drawTexturedModalRect(k + 90, l + 138, 1, 204, this.getdimPercentRed(10), 7);
+            this.drawTexturedModalRect(k + 90, l + 149, 1, 197, this.getdimPercentGreen(11), 7);
+            this.drawTexturedModalRect(k + 90, l + 149, 1, 204, this.getdimPercentRed(11), 7);
+            this.drawTexturedModalRect(k + 90, l + 160, 1, 197, this.getdimPercentGreen(12), 7);
+            this.drawTexturedModalRect(k + 90, l + 160, 1, 204, this.getdimPercentRed(12), 7);
+            this.drawTexturedModalRect(k + 90, l + 171, 1, 197, this.getdimPercentGreen(13), 7);
+            this.drawTexturedModalRect(k + 90, l + 171, 1, 204, this.getdimPercentRed(13), 7);
+            this.drawTexturedModalRect(k + 90, l + 182, 1, 197, this.getdimPercentGreen(14), 7);
+            this.drawTexturedModalRect(k + 90, l + 182, 1, 204, this.getdimPercentRed(14), 7);
+        }
+
+        private int getdimPercentRed(int i) {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    if (te.getResearchPercent(i) >= te.portalResearch) {
+                        return 0;
+                    }
+                    double fraction = Math.min(te.getResearchPercent(i), te.portalResearch);
+                    return (int) Math.floor(fraction * 112D);
+                }
+            }
+            return 0;
+        }
+
+        private int getdimPercentGreen(int i) {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    double fraction = te.getResearchPercent(i);
+                    return (int) Math.floor(fraction * 112D);
+                }
+            }
+            return 0;
         }
         
         private int getRFWidth() {
@@ -295,17 +216,6 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
                     BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
                     double fraction = te.getEnergyFraction();
                     return (int) Math.round(fraction * 198D);
-                }
-            }
-            return 0;
-        }
-
-        private int getProgressBarLength() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
-            if (tileEntity != null) {
-                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
-                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-                    return (int)Math.round(te.progressFraction() * 22D);
                 }
             }
             return 0;
@@ -344,38 +254,38 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
                 this.fontRenderer.drawString("Time Researcher", 46, -3, 4210752);
             }
             else {
-                this.fontRenderer.drawString("Time Researcher", 46, 10, 4210752);
+                this.fontRenderer.drawString("Time Researcher", 46, 2, 4210752);
             }
-            this.fontRenderer.drawString("Precambrian", -30, 49, 4210752);
-            this.fontRenderer.drawString("Cambrian", -30, 58, 4210752);
-            this.fontRenderer.drawString("Ordovician", -30, 67, 4210752);
-            this.fontRenderer.drawString("Silurian", -30, 76, 4210752);
-            this.fontRenderer.drawString("Devonian", -30, 85, 4210752);
-            this.fontRenderer.drawString("Carboniferous", -30, 94, 4210752);
-            this.fontRenderer.drawString("Permian", -30, 103, 4210752);
-            this.fontRenderer.drawString("Triassic", -30, 112, 4210752);
-            this.fontRenderer.drawString("Jurassic", -30, 121, 4210752);
-            this.fontRenderer.drawString("E. Cretaceous", -30, 130, 4210752);
-            this.fontRenderer.drawString("L. Cretaceous", -30, 139, 4210752);
-            this.fontRenderer.drawString("Paleogene", -30, 148, 4210752);
-            this.fontRenderer.drawString("Neogene", -30, 157, 4210752);
+            this.fontRenderer.drawString("Precambrian", -30, 23, 4210752);
+            this.fontRenderer.drawString("Cambrian", -30, 34, 4210752);
+            this.fontRenderer.drawString("Ordovician", -30, 45, 4210752);
+            this.fontRenderer.drawString("Silurian", -30, 56, 4210752);
+            this.fontRenderer.drawString("Devonian", -30, 67, 4210752);
+            this.fontRenderer.drawString("Carboniferous", -30, 78, 4210752);
+            this.fontRenderer.drawString("Permian", -30, 89, 4210752);
+            this.fontRenderer.drawString("Triassic", -30, 100, 4210752);
+            this.fontRenderer.drawString("Jurassic", -30, 111, 4210752);
+            this.fontRenderer.drawString("E. Cretaceous", -30, 122, 4210752);
+            this.fontRenderer.drawString("L. Cretaceous", -30, 133, 4210752);
+            this.fontRenderer.drawString("Paleogene", -30, 144, 4210752);
+            this.fontRenderer.drawString("Neogene", -30, 155, 4210752);
             this.fontRenderer.drawString("Pleistocene", -30, 166, 4210752);
 
-            DecimalFormat df = new DecimalFormat("#0.00%");
-            this.fontRenderer.drawString(df.format(getPercent(1)), 175, 49, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(2)), 175, 58, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(3)), 175, 67, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(4)), 175, 76, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(5)), 175, 85, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(6)), 175, 94, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(7)), 175, 103, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(8)), 175, 112, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(9)), 175, 121, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(10)), 175, 130, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(11)), 175, 139, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(12)), 175, 148, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(13)), 175, 157, 4210752);
-            this.fontRenderer.drawString(df.format(getPercent(14)), 175, 166, 4210752);
+            DecimalFormat df = new DecimalFormat("#0.000%");
+            this.fontRenderer.drawString(df.format(getPercent(1)), 165, 23, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(2)), 165, 34, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(3)), 165, 45, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(4)), 165, 56, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(5)), 165, 67, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(6)), 165, 78, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(7)), 165, 89, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(8)), 165, 100, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(9)), 165, 111, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(10)), 165, 122, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(11)), 165, 133, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(12)), 165, 144, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(13)), 165, 155, 4210752);
+            this.fontRenderer.drawString(df.format(getPercent(14)), 165, 166, 4210752);
         }
 
         @Override

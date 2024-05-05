@@ -26,7 +26,8 @@ public class LepidodendronConfig {
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
     public static int taxidermyRenderRange = 48;
-    public static int maxResearch = 1000000;
+    public static int researchMax = 10000;
+    public static int researchPortal = 5;
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
@@ -468,9 +469,14 @@ public class LepidodendronConfig {
         taxidermyRenderRange = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "maxResearch", maxResearch);
+        prop = cfg.get("Global World-Gen", "researchMax", researchMax);
         prop.setComment("Reduce or increase this to set the total maximum research level for the Fossil Researcher machine [default: 1000000]");
-        maxResearch = prop.getInt();
+        researchMax = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "researchPortal", researchPortal);
+        prop.setComment("The percentage of research needed in order to obtain a portal block to a dimension [default: 5]");
+        researchPortal = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "showTooltips", showTooltips);
