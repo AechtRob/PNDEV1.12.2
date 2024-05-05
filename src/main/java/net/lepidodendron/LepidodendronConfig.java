@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -224,7 +225,7 @@ public class LepidodendronConfig {
     }
 
     public static boolean syncConfigGeneral() {
-        ObjectArrayList <String> propOrder = new ObjectArrayList<>();
+        ObjectList<String> propOrder = new ObjectArrayList<>();
         Property prop = cfg.get("Global World-Gen", "genGlobalBlacklist", genGlobalBlacklist);
         prop.setComment("List of biomes all plants are blacklisted from, in the format: modid:biomeid [default: empty]");
         genGlobalBlacklist = prop.getStringList();

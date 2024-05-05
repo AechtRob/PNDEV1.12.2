@@ -191,7 +191,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public void onUpdate() {
         if (!this.updateBlocked) {
-            this.ticksExistedAnimated = this.ticksExistedAnimated + this.animSpeedAdder();
+            this.ticksExistedAnimated += this.animSpeedAdder();
         }
         super.onUpdate();
     }

@@ -1,10 +1,10 @@
 package net.lepidodendron.util;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.advancements.ICriterionTrigger;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.critereon.AbstractCriterionInstance;
@@ -12,13 +12,12 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Set;
 
 public class CustomTrigger implements ICriterionTrigger<CustomTrigger.Instance>
 {
     private final ResourceLocation RL;
-    private final Map<PlayerAdvancements, CustomTrigger.Listeners> listeners = Maps.newHashMap();
+    private final Object2ObjectOpenHashMap<PlayerAdvancements, CustomTrigger.Listeners> listeners = new Object2ObjectOpenHashMap<>();
 
     /**
      * Instantiates a new custom trigger.
