@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUITimeResearcher;
+import net.lepidodendron.item.ItemTimeResearcher;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -17,16 +18,16 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -35,10 +36,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
@@ -62,7 +62,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("time_researcher"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+//		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
@@ -70,12 +70,12 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		GameRegistry.registerTileEntity(TileEntityTimeResearcher.class, "lepidodendron:tileentitytime_researcher");
 	}
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:time_researcher", "inventory"));
-	}
+//	@SideOnly(Side.CLIENT)
+//	@Override
+//	public void registerModels(ModelRegistryEvent event) {
+//		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+//				new ModelResourceLocation("lepidodendron:time_researcher", "inventory"));
+//	}
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -91,6 +91,39 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			return dropStack(world, pos);
+		}
+
+		public static ItemStack dropStack(World world, BlockPos pos) {
+			ItemStack stack = new ItemStack(ItemTimeResearcher.block, 1);
+			TileEntity te = world.getTileEntity(pos);
+			if (te != null) {
+				if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher entity = (BlockTimeResearcher.TileEntityTimeResearcher) te;
+					NBTTagCompound stackNBT = new NBTTagCompound();
+					stackNBT.setInteger("dimPrecambrian", entity.dimPrecambrian);
+					stackNBT.setInteger("dimCambrian", entity.dimCambrian);
+					stackNBT.setInteger("dimOrdovician", entity.dimOrdovician);
+					stackNBT.setInteger("dimSilurian", entity.dimSilurian);
+					stackNBT.setInteger("dimDevonian", entity.dimDevonian);
+					stackNBT.setInteger("dimCarboniferous", entity.dimCarboniferous);
+					stackNBT.setInteger("dimPermian", entity.dimPermian);
+					stackNBT.setInteger("dimTriassic", entity.dimTriassic);
+					stackNBT.setInteger("dimJurassic", entity.dimJurassic);
+					stackNBT.setInteger("dimCretaceousEarly", entity.dimCretaceousEarly);
+					stackNBT.setInteger("dimCretaceousLate", entity.dimCretaceousLate);
+					stackNBT.setInteger("dimPaleogene", entity.dimPaleogene);
+					stackNBT.setInteger("dimNeogene", entity.dimNeogene);
+					stackNBT.setInteger("dimPleistocene", entity.dimPleistocene);
+					stack.setTagCompound(stackNBT);
+				}
+			}
+
+			return stack;
 		}
 
 		@Override
@@ -120,6 +153,9 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 			TileEntity tileentity = world.getTileEntity(pos);
 			if (tileentity != null) {
 				if (tileentity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), this.dropStack(world, pos));
+					entityToSpawn.setPickupDelay(10);
+					world.spawnEntity(entityToSpawn);
 					InventoryHelper.dropInventoryItems(world, pos, (BlockTimeResearcher.TileEntityTimeResearcher) tileentity);
 				}
 				world.removeTileEntity(pos);
@@ -148,7 +184,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return (new ItemStack(this, 1).getItem());
+			return (new ItemStack(Items.AIR, 1).getItem());
 		}
 
 		@Override
@@ -482,7 +518,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getSizeInventory() {
-			return 2;
+			return 1;
 		}
 
 		@Override

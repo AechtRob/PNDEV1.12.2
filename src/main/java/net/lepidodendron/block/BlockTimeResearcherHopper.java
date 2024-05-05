@@ -31,6 +31,7 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
@@ -86,6 +87,11 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			return BlockTimeResearcher.BlockCustom.dropStack(world, pos.down());
+		}
+
+		@Override
 		public boolean hasTileEntity(IBlockState state) {
 			return true;
 		}
@@ -116,6 +122,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				}
 				world.removeTileEntity(pos);
 			}
+
 			super.breakBlock(world, pos, state);
 		}
 
@@ -133,7 +140,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
 			if (worldIn.getBlockState(pos.down()).getBlock() != BlockTimeResearcher.block) {
-				worldIn.destroyBlock(pos, false);
+				worldIn.destroyBlock(pos, true);
 				return;
 			}
 

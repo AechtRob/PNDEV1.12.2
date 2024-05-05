@@ -27,6 +27,7 @@ import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
@@ -41,6 +42,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
@@ -101,6 +103,14 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		}
 
 		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			if (state.getValue(FACING) != EnumFacing.DOWN && state.getValue(FACING)  != EnumFacing.UP) {
+				return BlockTimeResearcher.BlockCustom.dropStack(world, pos.up().offset(state.getValue(FACING).rotateY()));
+			}
+			return ItemStack.EMPTY;
+		}
+
+		@Override
 		public boolean hasTileEntity(IBlockState state) {
 			return true;
 		}
@@ -151,7 +161,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return (new ItemStack(this, 1).getItem());
+			return (new ItemStack(Items.AIR, 1).getItem());
 		}
 
 		@Override
@@ -214,11 +224,11 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 			
 			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY())).getBlock() != BlockTimeResearcherDispenser.block) {
-				worldIn.destroyBlock(pos, false);
+				worldIn.destroyBlock(pos, true);
 				return;
 			}
 			if (worldIn.getBlockState(pos.up()).getBlock() != BlockTimeResearcherFinderTop.block) {
-				worldIn.destroyBlock(pos, false);
+				worldIn.destroyBlock(pos, true);
 				return;
 			}
 
@@ -269,7 +279,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		@Nullable
 		public BlockPos getResearcherPos() {
-			EnumFacing facing = world.getBlockState(this.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING);
+			EnumFacing facing = world.getBlockState(this.getPos()).getValue(BlockTimeResearcherFinderBottom.BlockCustom.FACING);
 			if (facing != EnumFacing.DOWN && facing != EnumFacing.UP) {
 				return pos.up().offset(facing.rotateY());
 			}

@@ -13,16 +13,15 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -31,10 +30,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -56,7 +54,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("time_researcher_dispenser"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
@@ -64,12 +62,12 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		GameRegistry.registerTileEntity(TileEntityTimeResearcherDispenser.class, "lepidodendron:tileentitytime_researcher_dispenser");
 	}
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:time_researcher_dispenser", "inventory"));
-	}
+//	@SideOnly(Side.CLIENT)
+//	@Override
+//	public void registerModels(ModelRegistryEvent event) {
+//		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+//				new ModelResourceLocation("lepidodendron:time_researcher_dispenser", "inventory"));
+//	}
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -84,6 +82,11 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			return BlockTimeResearcher.BlockCustom.dropStack(world, pos.up());
 		}
 
 		@Override
@@ -117,6 +120,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 				}
 				world.removeTileEntity(pos);
 			}
+
 			super.breakBlock(world, pos, state);
 		}
 
@@ -127,7 +131,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return (new ItemStack(this, 1).getItem());
+			return (new ItemStack(Items.AIR, 1).getItem());
 		}
 
 		@Override
@@ -180,21 +184,6 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return false;
 		}
-		
-		@Override
-		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-			super.onBlockAdded(worldIn, pos, state);
-			worldIn.setBlockState(pos.up(), BlockTimeResearcher.block.getDefaultState().withProperty(BlockTimeResearcher.BlockCustom.FACING, state.getValue(FACING)));
-			worldIn.setBlockState(pos.up(2), BlockTimeResearcherHopper.block.getDefaultState().withProperty(BlockTimeResearcherHopper.BlockCustom.FACING, state.getValue(FACING)));
-			worldIn.setBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY()), BlockTimeResearcherFinderBottom.block.getDefaultState().withProperty(BlockTimeResearcherFinderBottom.BlockCustom.FACING, state.getValue(FACING)));
-			worldIn.setBlockState(pos.up().offset(state.getValue(FACING).rotateY().rotateY().rotateY()), BlockTimeResearcherFinderTop.block.getDefaultState().withProperty(BlockTimeResearcherFinderTop.BlockCustom.FACING, state.getValue(FACING)));
-		}
-
-		@Override
-		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up()) && super.canPlaceBlockAt(worldIn, pos.up(2));
-		}
-
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
