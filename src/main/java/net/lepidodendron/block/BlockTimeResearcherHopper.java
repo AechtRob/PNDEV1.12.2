@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.item.*;
 import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -610,20 +611,35 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 //			if (index == 0) {
-				Block item = Block.getBlockFromItem(stack.getItem());
-				if (item == BlockFossilPrecambrian.block
-						|| item == BlockFossilCambrian.block
-						|| item == BlockFossilOrdovician.block
-						|| item == BlockFossilSilurian.block
-						|| item == BlockFossilDevonian.block
-						|| item == BlockFossilCarboniferous.block
-						|| item == BlockFossilPermian.block
-						|| item == BlockFossilTriassic.block
-						|| item == BlockFossilJurassic.block
-						|| item == BlockFossilCretaceous.block
-						|| item == BlockFossilPaleogene.block
-						|| item == BlockFossilNeogene.block
-						|| item == BlockFossilPleistocene.block) {
+				Item item = stack.getItem();
+				Block itemBlock = Block.getBlockFromItem(item);
+				if (itemBlock == BlockFossilPrecambrian.block
+						|| itemBlock == BlockFossilCambrian.block
+						|| itemBlock == BlockFossilOrdovician.block
+						|| itemBlock == BlockFossilSilurian.block
+						|| itemBlock == BlockFossilDevonian.block
+						|| itemBlock == BlockFossilCarboniferous.block
+						|| itemBlock == BlockFossilPermian.block
+						|| itemBlock == BlockFossilTriassic.block
+						|| itemBlock == BlockFossilJurassic.block
+						|| itemBlock == BlockFossilCretaceous.block
+						|| itemBlock == BlockFossilPaleogene.block
+						|| itemBlock == BlockFossilNeogene.block
+						|| itemBlock == BlockFossilPleistocene.block
+						|| item == ItemFossilPrecambrian.block
+						|| item == ItemFossilCambrian.block
+						|| item == ItemFossilOrdovician.block
+						|| item == ItemFossilSilurian.block
+						|| item == ItemFossilDevonian.block
+						|| item == ItemFossilCarboniferous.block
+						|| item == ItemFossilPermian.block
+						|| item == ItemFossilTriassic.block
+						|| item == ItemFossilJurassic.block
+						|| item == ItemFossilCretaceous.block
+						|| item == ItemFossilPaleogene.block
+						|| item == ItemFossilNeogene.block
+						|| item == ItemFossilPleistocene.block
+				) {
 					return true;
 				}
 				return false;
