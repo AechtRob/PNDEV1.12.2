@@ -150,6 +150,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 24;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
 		)
 			multiplier = 48;
 

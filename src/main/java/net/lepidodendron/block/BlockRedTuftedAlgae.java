@@ -262,6 +262,10 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 		)
 			multiplier = 48;
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
+		)
+			multiplier = 12;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds")
 		)
 			multiplier = 24;

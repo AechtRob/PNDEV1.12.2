@@ -1,8 +1,8 @@
 {
     "parent": "lepidodendron:block/cube_noao",
     "textures": {
-        "particle": "lepidodendron:blocks/titusvillia_2",
-        "plant": "lepidodendron:blocks/titusvillia_2"
+        "particle": "lepidodendron:blocks/retiophyllia_var2",
+        "plant": "lepidodendron:blocks/retiophyllia_var2"
     },
     "elements": [
         {   "from": [ 0.8, 0, 8 ],
