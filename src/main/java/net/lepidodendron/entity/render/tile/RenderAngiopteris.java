@@ -27,7 +27,7 @@ public class RenderAngiopteris extends TileEntitySpecialRenderer<BlockAngiopteri
         if (entity != null && entity.hasWorld() && world.getBlockState(pos).getBlock() == BlockAngiopteris.block) {
 
             GlStateManager.pushMatrix();
-            //GlStateManager.disableCull();
+            GlStateManager.disableCull();
             GlStateManager.enableRescaleNormal();
             //GlStateManager.enableAlpha();
             GlStateManager.translate(x + 0.5F, y + 1.50F, z + 0.5F);
@@ -37,7 +37,7 @@ public class RenderAngiopteris extends TileEntitySpecialRenderer<BlockAngiopteri
             this.modelAngiopteris.renderAll(1.25f);
            // GlStateManager.disableAlpha();
             GlStateManager.disableRescaleNormal();
-            //GlStateManager.enableCull();
+            GlStateManager.enableCull();
             GlStateManager.popMatrix();
         }
     }
