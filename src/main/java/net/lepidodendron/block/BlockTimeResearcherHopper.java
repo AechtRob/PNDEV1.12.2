@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.util.BlockSounds;
@@ -30,6 +31,7 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
@@ -85,6 +87,11 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			return BlockTimeResearcher.BlockCustom.dropStack(world, pos.down());
+		}
+
+		@Override
 		public boolean hasTileEntity(IBlockState state) {
 			return true;
 		}
@@ -115,6 +122,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				}
 				world.removeTileEntity(pos);
 			}
+
 			super.breakBlock(world, pos, state);
 		}
 
@@ -132,7 +140,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
 			if (worldIn.getBlockState(pos.down()).getBlock() != BlockTimeResearcher.block) {
-				worldIn.destroyBlock(pos, false);
+				worldIn.destroyBlock(pos, true);
 				return;
 			}
 
@@ -211,6 +219,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		public float crusherRotation;
 		public int soundLength = 42;
 		public int soundTick;
+		private int minEnergyNeeded = 100;
 
 		private boolean isFull()
 		{
@@ -367,6 +376,17 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity te = world.getTileEntity(pos.down());
+				if (te != null) {
+					if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+						if (!((BlockTimeResearcher.TileEntityTimeResearcher)te).hasEnergy(minEnergyNeeded)) {
+							return;
+						}
+					}
+				}
+			}
+
 			this.soundTick --;
 			if (soundTick < 0) {
 				this.soundTick = 0;
@@ -386,6 +406,12 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 			}
 
 			if (this.processTick > 0) {
+				TileEntity te = world.getTileEntity(pos.down());
+				if (te != null) {
+					if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+						((BlockTimeResearcher.TileEntityTimeResearcher)te).drainEnergy(10);
+					}
+				}
 				this.crusherRotation = this.crusherRotation + (0.5F * Math.min(this.processTick, 20));
 				if (this.crusherRotation >= 360) {
 					this.crusherRotation = 0;
@@ -420,26 +446,25 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 			if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
 				BlockTimeResearcher.TileEntityTimeResearcher tileEntity = (BlockTimeResearcher.TileEntityTimeResearcher) te;
 				if (tileEntity.getStackInSlot(0).isEmpty()) {
-					//Pick a random slot to draw from and then cycle over til we find something to push:
-					int i = world.rand.nextInt(this.getSizeInventory());
-					int ii = i + 1;
-					while (ii != i) {
-						if (ii >= this.getSizeInventory()) {
-							ii = 0;
-						}
+					//Cycle over the inventory:
+					int ii = 0;
+					while (ii <= this.getSizeInventory()) {
 						if ((!this.getStackInSlot(ii).isEmpty()) && tileEntity.isItemValidForSlot(0, this.getStackInSlot(ii))) {
 							tileEntity.setInventorySlotContents(0, new ItemStack(this.getStackInSlot(ii).getItem(), 1));
 							this.getStackInSlot(ii).shrink(1);
 							this.notifyBlockUpdate();
 							tileEntity.notifyBlockUpdate();
 							this.processTick = 100;
-							if (!isSoundPlaying()) {
-								playSound(world, pos);
-							}
 							markDirty();
 							return;
 						}
 						ii ++;
+					}
+				}
+				else {
+					//Something is in the slot in the researcher underneath so keep the animations going:
+					if (!isSoundPlaying()) {
+						playSound(world, pos);
 					}
 				}
 				return;

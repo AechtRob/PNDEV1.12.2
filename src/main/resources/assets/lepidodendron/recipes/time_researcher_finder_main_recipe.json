@@ -1,0 +1,47 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "1": {
+      "item": "lepidodendron:redstone_component"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "3": {
+      "item": "minecraft:iron_bars"
+    },
+    "4": {
+      "type": "minecraft:item_nbt",
+      "item": "patchouli:guide_book",
+      "count": 1,
+      "nbt": {"patchouli:book":"lepidodendron:paleopedia"}
+    },
+    "5": {
+      "item": "minecraft:iron_bars"
+    },
+    "6": {
+      "item": "lepidodendron:redstone_component"
+    },
+    "7": {
+      "item": "lepidodendron:redstone_component"
+    },
+    "8": {
+      "item": "lepidodendron:redstone_component"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:time_researcher_main_item",
+    "count": 1
+  }
+}

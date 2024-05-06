@@ -342,6 +342,19 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
                 this.drawTexturedModalRect(k + 20, l + 76, 0,196, 18, 26);
                 this.drawTexturedModalRect(k + 21, l + 77 + (24 - this.getRFHeight()), 0, 222, 16, this.getRFHeight());
             }
+            if (renderZap()) {
+                this.drawTexturedModalRect(k + 76, l + 81, 19,222, 30, 12);
+            }
+        }
+
+        private boolean renderZap() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    return ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom)tileEntity).renderZap;
+                }
+            }
+            return false;
         }
 
         private int getRFHeight() {
@@ -354,7 +367,6 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
                     if (tileEntity2 != null) {
                         if (tileEntity2 instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
                             BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity2;
-                            //return (int)Math.round(te.progressFraction() * 70D);
                             double fraction = te.getEnergyFraction();
                             return (int) Math.round(fraction * 24D);
                         }

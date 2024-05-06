@@ -5840,6 +5840,7 @@ public class RenderHandler {
 
         //Research:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTimeResearcherHopper.TileEntityTimeResearcherHopper.class, new RenderTimeResearcherHopper());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom.class, new RenderTimeResearcherFinderBottom());
 
         //Traps:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockTrapAir.TileEntityTrapAir.class, new RenderTrapAir());

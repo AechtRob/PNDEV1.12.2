@@ -1,0 +1,40 @@
+{
+  "parent": "lepidodendron:block/time_researcher_item",
+  "display": {
+    "gui": {
+      "rotation": [30, 55, 0],
+      "translation": [0, 0.75, 0],
+      "scale": [0.275, 0.275, 0.275]
+    },
+    "thirdperson_righthand": {
+      "rotation": [0, -45, 1],
+      "translation": [0, 1.5, 0],
+      "scale": [0.315, 0.315, 0.315]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [0, -45, 1],
+      "translation": [0, 1.5, 0],
+      "scale": [0.315, 0.315, 0.315]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, -45, 1],
+      "translation": [0, 1.5, 0],
+      "scale": [0.315, 0.315, 0.315]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, -45, 1],
+      "translation": [0, 1.5, 0],
+      "scale": [0.315, 0.315, 0.315]
+    },
+    "ground": {
+      "rotation": [0, -45, 1],
+      "translation": [0, 2.75, 0],
+      "scale": [0.275, 0.275, 0.275]
+    },
+    "fixed": {
+      "rotation": [0, -45, 1],
+      "translation": [0, 1.5, 0],
+      "scale": [0.315, 0.315, 0.315]
+    }
+  }
+}

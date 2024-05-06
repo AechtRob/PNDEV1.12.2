@@ -1,42 +1,36 @@
 {
   "variants": {
   	"inventory": [
-		{ "model": "lepidodendron:tempskya_leaves" }
+		{ "model": "lepidodendron:tempskya_shoot" }
     ],
     "normal": [
-      	{"model": "lepidodendron:tempskya_leaves"}
+      	{"model": "lepidodendron:tempskya_shoot"}
     ],
     "facing=north": [
-		{"model": "lepidodendron:tempskya_leaves", "weight": 3, "x": 90 },
-		{"model": "lepidodendron:tempskya_leaves_lg", "weight": 2, "x": 90 },
-		{"model": "lepidodendron:tempskya_side1", "weight": 4, "x": 90 },
-		{"model": "lepidodendron:tempskya_side2", "weight": 4, "x": 90 }
+		{"model": "lepidodendron:tempskya_leaf_1" },
+		{"model": "lepidodendron:tempskya_leaf_2" },
+		{"model": "lepidodendron:tempskya_leaf_3" }
     ],
     "facing=east": [
-      	{"model": "lepidodendron:tempskya_leaves", "weight": 3, "x": 90, "y": 90 },
-		{"model": "lepidodendron:tempskya_leaves_lg", "weight": 2, "x": 90, "y": 90 },
-		{"model": "lepidodendron:tempskya_side1", "weight": 4, "x": 90, "y": 90 },
-		{"model": "lepidodendron:tempskya_side2", "weight": 4, "x": 90, "y": 90 }
+      	{"model": "lepidodendron:tempskya_leaf_1", "y": 90 },
+		{"model": "lepidodendron:tempskya_leaf_2","y": 90 },
+		{"model": "lepidodendron:tempskya_leaf_3", "y": 90 }
     ],
     "facing=south": [
-      	{"model": "lepidodendron:tempskya_leaves", "weight": 3, "x": 90, "y": 180 },
-		{"model": "lepidodendron:tempskya_leaves_lg", "weight": 2, "x": 90, "y": 180 },
-		{"model": "lepidodendron:tempskya_side1", "weight": 4, "x": 90, "y": 180 },
-		{"model": "lepidodendron:tempskya_side2", "weight": 4, "x": 90, "y": 180 }
+		{"model": "lepidodendron:tempskya_leaf_1", "y": 180 },
+		{"model": "lepidodendron:tempskya_leaf_2","y": 180 },
+		{"model": "lepidodendron:tempskya_leaf_3", "y": 180 }
     ],
     "facing=west": [
-      	{"model": "lepidodendron:tempskya_leaves", "weight": 3, "x": 90, "y": 270 },
-		{"model": "lepidodendron:tempskya_leaves_lg", "weight": 2, "x": 90, "y": 270 },
-		{"model": "lepidodendron:tempskya_side1", "weight": 4, "x": 90, "y": 270 },
-		{"model": "lepidodendron:tempskya_side2", "weight": 4, "x": 90, "y": 270 }
+		{"model": "lepidodendron:tempskya_leaf_1", "y": 270 },
+		{"model": "lepidodendron:tempskya_leaf_2","y": 270 },
+		{"model": "lepidodendron:tempskya_leaf_3", "y": 270 }
     ],
     "facing=up": [
-      	{"model": "lepidodendron:tempskya_leaves", "weight": 3},
-		{"model": "lepidodendron:tempskya_leaves_lg", "weight": 2 }
+      	{"model": "lepidodendron:tempskya_shoot" }
     ],
     "facing=down": [
-      	{"model": "lepidodendron:tempskya_leaves", "weight": 3, "x": 180 },
-		{"model": "lepidodendron:tempskya_leaves_lg", "weight": 2, "x": 180 }
+      	{"model": "lepidodendron:tempskya_shoot", "x": 180 }
     ]
   }
 }

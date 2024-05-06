@@ -4222,6 +4222,21 @@ item.pf_diplocaulus_raw.name=Raw Diplocaulus
 item.pf_diploceraspis_raw.name=Raw Diploceraspis
 item.pf_diplodocus_raw.name=Raw Diplodocus
 item.pf_dna_centrifuge.name=DNA Recombiner Centrifuge Component
+
+item.pf_time_researcher_item.name=Time Researcher Machine
+item.pf_time_researcher_main_item.name=Time Researcher Computer Unit
+tile.pf_time_researcher.name=Time Researcher Computer Unit
+item.pf_time_researcher_hopper_item.name=Time Researcher Crusher Unit
+tile.pf_time_researcher_hopper.name=Time Researcher Crusher Unit
+item.pf_time_researcher_dispenser_item.name=Time Researcher Portal Dispenser Unit
+tile.pf_time_researcher_dispenser.name=Time Researcher Portal Dispenser Unit
+item.pf_time_researcher_finder_top_item.name=Time Researcher Laser Chamber
+tile.pf_time_researcher_finder_top.name=Time Researcher Laser Chamber
+item.pf_time_researcher_finder_bottom_item.name=Time Researcher Fossil Preparation Chamber
+tile.pf_time_researcher_finder_bottom.name=Time Researcher Fossil Preparation Chamber
+item.pf_time_researcher_crusher_item.name=Time Researcher Fossil Crusher
+item.pf_time_researcher_laser_item.name=Time Researcher Laser
+
 item.pf_dna_claw.name=DNA Recombiner Claw Component
 item.pf_dna_forge.name=DNA Recombiner Oligo-Forge Component
 item.pf_dna_rail.name=DNA Recombiner Rail Component
