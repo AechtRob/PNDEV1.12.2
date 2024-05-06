@@ -156,10 +156,10 @@ public class BlockRetiophyllia extends ElementsLepidodendronMod.ModElement {
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
-			multiplier = 18;
+			multiplier = 14;
 		}
 		int minWaterDepth = 1;
-		int maxWaterDepth = 8;
+		int maxWaterDepth = 16;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < 12 * multiplier; i++) {
