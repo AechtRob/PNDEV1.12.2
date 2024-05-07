@@ -298,7 +298,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		public float getResearchPercent(int dimIn) {
 			if (maxResearch <= 0) {
-				return 100;
+				return 1F;
 			}
 			switch (dimIn) {
 				case 1: default:
