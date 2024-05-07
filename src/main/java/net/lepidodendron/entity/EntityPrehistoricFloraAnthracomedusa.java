@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,6 +18,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -54,6 +56,11 @@ public class EntityPrehistoricFloraAnthracomedusa extends EntityPrehistoricFlora
     @Override
     public boolean dropsEggs() {
         return true;
+    }
+
+    @Override
+    public ItemStack getPropagule() {
+        return new ItemStack(ItemUnknownPlanula.block, (int) (1));
     }
 
     //Arbitrary for jellyfish as there is no specific AI animation:

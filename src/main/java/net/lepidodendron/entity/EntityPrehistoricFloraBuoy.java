@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.item.ItemBuoyItem;
-import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -62,7 +61,7 @@ public class EntityPrehistoricFloraBuoy extends EntityPrehistoricFloraJellyfishB
 
     @Override
     public ItemStack getPropagule() {
-        return new ItemStack(ItemUnknownPlanula.block, (int) (1));
+        return ItemStack.EMPTY;
     }
 
     @Override

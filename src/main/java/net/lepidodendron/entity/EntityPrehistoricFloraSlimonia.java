@@ -28,6 +28,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -270,7 +271,9 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 		return "Silurian";
 	}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
 
 	@Override
 	public boolean dropsEggs() {

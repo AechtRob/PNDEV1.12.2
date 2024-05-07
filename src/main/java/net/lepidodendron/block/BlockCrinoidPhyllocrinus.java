@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -207,7 +206,7 @@ public class BlockCrinoidPhyllocrinus extends ElementsLepidodendronMod.ModElemen
 
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote)) {
+			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
 				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);

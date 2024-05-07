@@ -294,7 +294,7 @@ public class ProcedureWorldGenLiquidambar extends ElementsLepidodendronMod.ModEl
     static void generateTrunk()
     {
         BlockPos blockpos = basePos;
-        BlockPos blockpos1 = basePos.up(height);
+        BlockPos blockpos1 = basePos.up(height + 2);
         Block block = BlockLiquidambarLog.block;
         limb(blockpos, blockpos1, block);
 
