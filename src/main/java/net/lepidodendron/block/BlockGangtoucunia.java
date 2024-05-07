@@ -89,7 +89,7 @@ public class BlockGangtoucunia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:entities/gangtoucunia", "inventory"));
+				new ModelResourceLocation("lepidodendron:gangtoucunia", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockGangtoucunia.LEVEL).build());
 	}
 
