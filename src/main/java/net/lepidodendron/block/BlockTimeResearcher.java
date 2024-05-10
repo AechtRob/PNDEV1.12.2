@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUITimeResearcher;
-import net.lepidodendron.item.ItemTimeResearcher;
+import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -298,7 +298,7 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 
 		public float getResearchPercent(int dimIn) {
 			if (maxResearch <= 0) {
-				return 100;
+				return 1F;
 			}
 			switch (dimIn) {
 				case 1: default:
@@ -500,6 +500,80 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 							&& this.dimPleistocene < this.maxResearch) {
 						this.dimPleistocene ++;
 					}
+					else if (stackProcessing.getItem() == ItemFossilPrecambrian.block
+							&& this.dimPrecambrian < this.maxResearch) {
+						this.dimPrecambrian ++;
+						this.dimPrecambrian ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilCambrian.block
+							&& this.dimCambrian < this.maxResearch) {
+						this.dimCambrian ++;
+						this.dimCambrian ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilOrdovician.block
+							&& this.dimOrdovician < this.maxResearch) {
+						this.dimOrdovician ++;
+						this.dimOrdovician ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilSilurian.block
+							&& this.dimSilurian < this.maxResearch) {
+						this.dimSilurian ++;
+						this.dimSilurian ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilDevonian.block
+							&& this.dimDevonian < this.maxResearch) {
+						this.dimDevonian ++;
+						this.dimDevonian ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilCarboniferous.block
+							&& this.dimCarboniferous < this.maxResearch) {
+						this.dimCarboniferous ++;
+						this.dimCarboniferous ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilPermian.block
+							&& this.dimPermian < this.maxResearch) {
+						this.dimPermian ++;
+						this.dimPermian ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilTriassic.block
+							&& this.dimTriassic < this.maxResearch) {
+						this.dimTriassic ++;
+						this.dimTriassic ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilJurassic.block
+							&& this.dimJurassic < this.maxResearch) {
+						this.dimJurassic ++;
+						this.dimJurassic ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilCretaceous.block) {
+						if (world.rand.nextBoolean()) {
+							if (this.dimCretaceousEarly < this.maxResearch) {
+								this.dimCretaceousEarly++;
+								this.dimCretaceousEarly++;
+							}
+						}
+						else {
+							if (this.dimCretaceousLate < this.maxResearch) {
+								this.dimCretaceousLate++;
+								this.dimCretaceousLate++;
+							}
+						}
+					}
+					else if (stackProcessing.getItem() == ItemFossilPaleogene.block
+							&& this.dimPaleogene < this.maxResearch) {
+						this.dimPaleogene ++;
+						this.dimPaleogene ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilNeogene.block
+							&& this.dimNeogene < this.maxResearch) {
+						this.dimNeogene ++;
+						this.dimNeogene ++;
+					}
+					else if (stackProcessing.getItem() == ItemFossilPleistocene.block
+							&& this.dimPleistocene < this.maxResearch) {
+						this.dimPleistocene ++;
+						this.dimPleistocene ++;
+					}
 					stackProcessing.shrink(1);
 					this.notifyBlockUpdate();
 				}
@@ -693,20 +767,35 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 0) {
-				Block item = Block.getBlockFromItem(stack.getItem());
-				if (item == BlockFossilPrecambrian.block
-						|| item == BlockFossilCambrian.block
-						|| item == BlockFossilOrdovician.block
-						|| item == BlockFossilSilurian.block
-						|| item == BlockFossilDevonian.block
-						|| item == BlockFossilCarboniferous.block
-						|| item == BlockFossilPermian.block
-						|| item == BlockFossilTriassic.block
-						|| item == BlockFossilJurassic.block
-						|| item == BlockFossilCretaceous.block
-						|| item == BlockFossilPaleogene.block
-						|| item == BlockFossilNeogene.block
-						|| item == BlockFossilPleistocene.block) {
+				Item item = stack.getItem();
+				Block itemBlock = Block.getBlockFromItem(item);
+				if (itemBlock == BlockFossilPrecambrian.block
+						|| itemBlock == BlockFossilCambrian.block
+						|| itemBlock == BlockFossilOrdovician.block
+						|| itemBlock == BlockFossilSilurian.block
+						|| itemBlock == BlockFossilDevonian.block
+						|| itemBlock == BlockFossilCarboniferous.block
+						|| itemBlock == BlockFossilPermian.block
+						|| itemBlock == BlockFossilTriassic.block
+						|| itemBlock == BlockFossilJurassic.block
+						|| itemBlock == BlockFossilCretaceous.block
+						|| itemBlock == BlockFossilPaleogene.block
+						|| itemBlock == BlockFossilNeogene.block
+						|| itemBlock == BlockFossilPleistocene.block
+						|| item == ItemFossilPrecambrian.block
+						|| item == ItemFossilCambrian.block
+						|| item == ItemFossilOrdovician.block
+						|| item == ItemFossilSilurian.block
+						|| item == ItemFossilDevonian.block
+						|| item == ItemFossilCarboniferous.block
+						|| item == ItemFossilPermian.block
+						|| item == ItemFossilTriassic.block
+						|| item == ItemFossilJurassic.block
+						|| item == ItemFossilCretaceous.block
+						|| item == ItemFossilPaleogene.block
+						|| item == ItemFossilNeogene.block
+						|| item == ItemFossilPleistocene.block
+				) {
 					return true;
 				}
 				return false;

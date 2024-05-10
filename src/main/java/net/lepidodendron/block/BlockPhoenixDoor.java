@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemPhoenixDoorItem;
-import net.lepidodendron.item.ItemScrubbyPineDoorItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.SoundType;
@@ -94,7 +93,7 @@ public class BlockPhoenixDoor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	    {
-	        return state.getValue(HALF) == EnumDoorHalf.UPPER ? Items.AIR : (new ItemStack(ItemScrubbyPineDoorItem.block, (int) (1))).getItem();
+	        return state.getValue(HALF) == EnumDoorHalf.UPPER ? Items.AIR : (new ItemStack(ItemPhoenixDoorItem.block, (int) (1))).getItem();
 	    }
 
 	}

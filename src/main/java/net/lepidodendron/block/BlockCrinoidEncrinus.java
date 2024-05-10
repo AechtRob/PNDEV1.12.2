@@ -127,6 +127,8 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
+		int multiplier = 1;
+
 		if (biome instanceof BiomeSilurian) {
 			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
 			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
@@ -176,6 +178,9 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
 			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
 				biomeCriteria = true;
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")) {
+					multiplier = 12;
+				}
 			}
 			else {
 				biomeCriteria = false;
@@ -184,7 +189,6 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
 		}
@@ -256,7 +260,7 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote)) {
+			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
 				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);

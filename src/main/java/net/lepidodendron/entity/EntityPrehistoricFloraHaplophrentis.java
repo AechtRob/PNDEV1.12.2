@@ -16,6 +16,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -66,7 +67,9 @@ public class EntityPrehistoricFloraHaplophrentis extends EntityPrehistoricFloraW
 
 	public static String getPeriod() {return "Cambrian";}
 
-	//public static String getHabitat() {return "Amphibious";}
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
 
 	@Override
 	public void playLivingSound() {

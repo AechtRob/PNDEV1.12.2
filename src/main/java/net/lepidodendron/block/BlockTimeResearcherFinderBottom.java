@@ -329,7 +329,14 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		}
 
 		public boolean testRoll(float f) {
-			return (500F / (12F - (f * 10F))) - 40F >= this.world.rand.nextFloat() * 250F;
+			f = f * 100;
+			return (585F / (12F - (f / 10F))) - 41.666F >= this.world.rand.nextFloat() * 250F;
+		}
+
+		public static float actualProbablity(float f) {
+			f = f * 100;
+			float chance = (585F / (12F - (f / 10F))) - 41.666F;
+			return 1 - (250 - chance) / 250;
 		}
 
 		@Override

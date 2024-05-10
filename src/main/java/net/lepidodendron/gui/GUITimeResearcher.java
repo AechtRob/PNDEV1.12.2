@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockTimeResearcher;
+import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -247,6 +248,18 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             }
             return 0;
         }
+
+        @Nullable
+        private float getChance(int dimIn) {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    return BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom.actualProbablity(te.getResearchPercent(dimIn));
+                }
+            }
+            return 0;
+        }
         
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
@@ -271,7 +284,23 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Neogene", -30, 155, 4210752);
             this.fontRenderer.drawString("Pleistocene", -30, 166, 4210752);
 
-            DecimalFormat df = new DecimalFormat("#0.000%");
+            DecimalFormat df = new DecimalFormat("#0.00%");
+            this.fontRenderer.drawString("Precision = " + df.format(getChance(1)), 63, 23, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(2)), 63, 34, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(3)), 63, 45, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(4)), 63, 56, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(5)), 63, 67, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(6)), 63, 78, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(7)), 63, 89, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(8)), 63, 100, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(9)), 63, 111, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(10)), 63, 122, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(11)), 63, 133, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(12)), 63, 144, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(13)), 63, 155, 4210752);
+            this.fontRenderer.drawString("Precision = "+ df.format(getChance(14)), 63, 166, 4210752);
+
+            df = new DecimalFormat("#0.000%");
             this.fontRenderer.drawString(df.format(getPercent(1)), 165, 23, 4210752);
             this.fontRenderer.drawString(df.format(getPercent(2)), 165, 34, 4210752);
             this.fontRenderer.drawString(df.format(getPercent(3)), 165, 45, 4210752);

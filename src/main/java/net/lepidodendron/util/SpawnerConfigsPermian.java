@@ -20,6 +20,7 @@ public class SpawnerConfigsPermian {
     public static String[] dimPermianMobsHighlandsPF = new String[]{"lepidodendron:prehistoric_flora_acanthodes:0:40:3","lepidodendron:prehistoric_flora_antarcticarcinus:2:80:3","lepidodendron:prehistoric_flora_bulbasaurus:4:5:1","lepidodendron:prehistoric_flora_gorgonops:2:-2:1","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_lystrosaurus:6:14:1","lepidodendron:prehistoric_flora_moschops:6:4:1","lepidodendron:prehistoric_flora_roachoid_forest:5:4:1","lepidodendron:prehistoric_flora_robertia:4:2:1","lepidodendron:prehistoric_flora_sauroctonus:2:-2:1","lepidodendron:prehistoric_flora_trigonotarbid_permotarbus:2:15:1"};
     public static String[] dimPermianMobsWetlandsPF = new String[]{"lepidodendron:prehistoric_flora_acanthodes:0:80:3","lepidodendron:prehistoric_flora_acanthostomatops:3:27:3","lepidodendron:prehistoric_flora_adelophthalmus:3:65:3","lepidodendron:prehistoric_flora_branchiosaur:3:35:3","lepidodendron:prehistoric_flora_cacops:3:54:3","lepidodendron:prehistoric_flora_coelacanthus:0:27:3","lepidodendron:prehistoric_flora_ctenospondylus:3:-4:1","lepidodendron:prehistoric_flora_dasyceps:2:19:3","lepidodendron:prehistoric_flora_diplocaulus:3:43:3","lepidodendron:prehistoric_flora_diploceraspis:5:35:3","lepidodendron:prehistoric_flora_edaphosaurus:2:12:1","lepidodendron:prehistoric_flora_eryops:3:28:3","lepidodendron:prehistoric_flora_estemmenosuchus:2:6:1","lepidodendron:prehistoric_flora_glaurung:4:35:5","lepidodendron:prehistoric_flora_glaurung:4:1:1","lepidodendron:prehistoric_flora_gnathorhiza:2:35:3","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_labidosaurus:3:6:1","lepidodendron:prehistoric_flora_lysorophia{PNType:\"lysorophus\"}@{PNType:\"brachydectes\"}:1:14:1","lepidodendron:prehistoric_flora_meganeuropsis:2:-3:1","lepidodendron:prehistoric_flora_ophiacodon:1:-14:1","lepidodendron:prehistoric_flora_palaeodictyoptera{PNType:\"dunbaria\"}:2:12:1","lepidodendron:prehistoric_flora_phlegethontia:1:22:3","lepidodendron:prehistoric_flora_platyhystrix:2:12:3","lepidodendron:prehistoric_flora_platysomus:0:75:3","lepidodendron:prehistoric_flora_protozygoptera:1:100:1","lepidodendron:prehistoric_flora_roachoid_swamp:5:4:1","lepidodendron:prehistoric_flora_scorpion_opsieobuthus:1:20:1","lepidodendron:prehistoric_flora_secodontosaurus:3:-4:1","lepidodendron:prehistoric_flora_seymouria:3:8:1","lepidodendron:prehistoric_flora_snail_land:3:39:1","lepidodendron:prehistoric_flora_sphenacodon:1:-10:1","lepidodendron:prehistoric_flora_trigonotarbid_permotarbus:2:15:1","lepidodendron:prehistoric_flora_xenacanthus:1:14:3"};
     public static String[] dimPermianMobsMountainsPF = new String[0];
+    public static String[] dimPermianMobsHummocksPF = new String[0];
 
     //------------ Fossils and Archeology mobs:
     public static String[] dimPermianMobsOceanDeepFA = new String[0];
@@ -38,6 +39,7 @@ public class SpawnerConfigsPermian {
     public static String[] dimPermianMobsHighlandsFA = new String[0];
     public static String[] dimPermianMobsDesertFA = new String[0];
     public static String[] dimPermianMobsMountainsFA = new String[0];
+    public static String[] dimPermianMobsHummocksFA = new String[0];
 
     //------------ Reborn mobs:
     public static String[] dimPermianMobsOceanDeepReborn = new String[0];
@@ -56,5 +58,6 @@ public class SpawnerConfigsPermian {
     public static String[] dimPermianMobsHighlandsReborn = new String[0];
     public static String[] dimPermianMobsDesertReborn = new String[0];
     public static String[] dimPermianMobsMountainsReborn = new String[0];
+    public static String[] dimPermianMobsHummocksReborn = new String[0];
 
 }

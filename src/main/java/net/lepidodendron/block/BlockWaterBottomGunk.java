@@ -151,6 +151,9 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 52;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")) {
+				multiplier = 12;
+			}
 		}
 		if ((dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {

@@ -13,6 +13,10 @@ public class SpawnerConfigsCarboniferous {
     public static String[] dimCarboniferousMobsIcePF = new String[]{"lepidodendron:prehistoric_flora_antarcticarcinus:3:15:3","lepidodendron:prehistoric_flora_archaeognatha:1:2:1"};
     public static String[] dimCarboniferousMobsWoodlandPF = new String[]{"lepidodendron:prehistoric_flora_megarachne:2:12:3","lepidodendron:prehistoric_flora_megarachne:2:12:3","lepidodendron:prehistoric_flora_acanthodes:0:5:3","lepidodendron:prehistoric_flora_acanthodes:0:5:2","lepidodendron:prehistoric_flora_archaeognatha:1:2:1","lepidodendron:prehistoric_flora_centipede:1:5:1","lepidodendron:prehistoric_flora_harvestman:2:20:1","lepidodendron:prehistoric_flora_melanedaphodon:2:3:1","lepidodendron:prehistoric_flora_petrolacosaurus:3:16:1","lepidodendron:prehistoric_flora_roachoid_forest:5:20:1","lepidodendron:prehistoric_flora_scorpion_gigantoscorpio:1:20:1","lepidodendron:prehistoric_flora_scorpion_opsieobuthus:1:20:1","lepidodendron:prehistoric_flora_scorpion_pulmonoscorpius:1:20:1","lepidodendron:prehistoric_flora_senekichthys:0:25:3","lepidodendron:prehistoric_flora_senekichthys:0:25:2","lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus:2:29:1","lepidodendron:prehistoric_flora_trigonotarbid_eophrynus:2:29:1","lepidodendron:prehistoric_flora_trigonotarbid_kreischeria:2:29:1"};
     public static String[] dimCarboniferousMobsSteppePF = new String[]{"lepidodendron:prehistoric_flora_megarachne:2:22:3","lepidodendron:prehistoric_flora_megarachne:2:22:3","lepidodendron:prehistoric_flora_acanthodes:0:5:3","lepidodendron:prehistoric_flora_acanthodes:0:5:2","lepidodendron:prehistoric_flora_centipede:1:2:1","lepidodendron:prehistoric_flora_harvestman:2:7:1","lepidodendron:prehistoric_flora_senekichthys:0:25:3","lepidodendron:prehistoric_flora_senekichthys:0:25:2","lepidodendron:prehistoric_flora_trigonotarbid_cryptomartus:2:9:1","lepidodendron:prehistoric_flora_trigonotarbid_eophrynus:2:9:1","lepidodendron:prehistoric_flora_trigonotarbid_kreischeria:2:9:1"};
+    public static String[] dimCarboniferousMobsBayPF = new String[0];
+    public static String[] dimCarboniferousMobsFenPF = new String[0];
+    public static String[] dimCarboniferousMobsTarnsPF = new String[0];
+    public static String[] dimCarboniferousMobsTarnsWaterPF = new String[0];
 
     //------------ Fossils and Archeology mobs:
     public static String[] dimCarboniferousMobsSwampFA = new String[]{"fossil:fossil.crassigyrinus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:20}],Health:20}:2:20:3","fossil:fossil.diplocaulus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:10}],Health:10}:3:20:3","fossil:fossil.meganeura{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:18}],Health:18}:2:-20:1"};
@@ -23,6 +27,10 @@ public class SpawnerConfigsCarboniferous {
     public static String[] dimCarboniferousMobsOceanShallowFA = new String[0];
     public static String[] dimCarboniferousMobsIceFA = new String[0];
     public static String[] dimCarboniferousMobsHillsFA = new String[0];
+    public static String[] dimCarboniferousMobsBayFA = new String[0];
+    public static String[] dimCarboniferousMobsFenFA = new String[0];
+    public static String[] dimCarboniferousMobsTarnsFA = new String[0];
+    public static String[] dimCarboniferousMobsTarnsWaterFA = new String[0];
 
     //------------ Reborn mobs:
     public static String[] dimCarboniferousMobsSwampReborn = new String[]{"rebornmod:entities.crassigyrinus:2:7:3","rebornmod:entities.diplocaulus:2:7:3"};
@@ -33,5 +41,9 @@ public class SpawnerConfigsCarboniferous {
     public static String[] dimCarboniferousMobsOceanShallowReborn = new String[0];
     public static String[] dimCarboniferousMobsIceReborn = new String[0];
     public static String[] dimCarboniferousMobsHillsReborn = new String[0];
+    public static String[] dimCarboniferousMobsBayReborn = new String[0];
+    public static String[] dimCarboniferousMobsFenReborn = new String[0];
+    public static String[] dimCarboniferousMobsTarnsReborn = new String[0];
+    public static String[] dimCarboniferousMobsTarnsWaterReborn = new String[0];
 
 }
