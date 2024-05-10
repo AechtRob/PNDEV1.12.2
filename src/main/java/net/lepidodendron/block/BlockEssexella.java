@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -140,7 +139,8 @@ public class BlockEssexella extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
+			//if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")) {
 				biomeCriteria = true;
 			}
 			else {

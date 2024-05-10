@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diskagma",
 			"title": "Diskagma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Rhyacian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Fungi$(br)>Glomeromycota$(br)>Archaeosporales"
+			"text": "$(l)Temporal Range:$() Rhyacian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Eukariota$(br)>Incertae sedis"
 		},
 		{
 			"type": "image",

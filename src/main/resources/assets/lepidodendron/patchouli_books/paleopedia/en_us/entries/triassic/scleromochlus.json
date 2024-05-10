@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scleromochlus",
 			"title": "Scleromochlus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauriformes$(br)>Eucrocopoda$(br)>Scleromochlidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Archosauriformes$(br)>Ornithodira$(br)>Pterosauromorpha"
 		},
 		{
 			"type": "image",
