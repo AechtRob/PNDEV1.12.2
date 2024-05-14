@@ -6,6 +6,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.item.*;
+import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.WorldOverworldPortal;
@@ -818,6 +819,16 @@ public class LepidodendronEventSubscribers {
 	@SideOnly(Side.CLIENT) //Tooltips for vanilla items etc
 	@SubscribeEvent
 	public void onEvent(ItemTooltipEvent event) throws NoSuchMethodException {
+
+		if (event.getItemStack().getItem() instanceof ItemPNTaxidermyItem) {
+			List<String> tt = event.getToolTip();
+			tt.add("Can be turned into taxidermy");
+		}
+		if (event.getItemStack().getItem() instanceof ItemGlassCaseDisplayItem) {
+			List<String> tt = event.getToolTip();
+			tt.add("Can be displayed in the Entomology Display Case");
+			tt.add("Can be turned into taxidermy");
+		}
 
 		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
 			if (event.getItemStack().getTagCompound() != null) {
