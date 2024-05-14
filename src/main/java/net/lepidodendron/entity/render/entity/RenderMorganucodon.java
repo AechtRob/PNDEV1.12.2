@@ -14,6 +14,7 @@ public class RenderMorganucodon extends RenderLiving<EntityPrehistoricFloraMorga
     public RenderMorganucodon(RenderManager mgr) {
         super(mgr, new ModelMorganucodon(), 0f);
     }
+    public static float getScaler() {return 0.18f;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMorganucodon entity) {

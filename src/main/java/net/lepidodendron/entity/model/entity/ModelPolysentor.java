@@ -212,9 +212,47 @@ public class ModelPolysentor extends AdvancedModelBase {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
-        resetToDefaultPose();
+        this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.root.offsetZ = -1.15F;
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = -0.0F;
+        this.root.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.0F;
+        this.root.offsetY = 0.015F;
+        this.root.offsetX = 0.0F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.8F;
+        this.root.offsetX = 0.9F;
+        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 6.5F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, -0.2F, 3.5F, 0.1F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

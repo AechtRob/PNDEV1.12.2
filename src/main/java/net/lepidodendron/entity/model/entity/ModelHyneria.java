@@ -269,6 +269,20 @@ public class ModelHyneria extends AdvancedModelBase {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(head, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.2F;
+        this.body.offsetY = -0.3F;
+        this.body.offsetX = 0.05F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

@@ -202,10 +202,43 @@ public class ModelEochondrosteus extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.main.offsetZ = -1.295F;
+        this.main.offsetY = -0.24F;
+        this.main.offsetX = -0.03F;
+        this.main.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.resetToDefaultPose();
+        this.setRotateAngle(main, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.03F;
+        this.main.offsetY = -0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = 0.4F;
+        this.main.offsetX = 0.55F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 0.5F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

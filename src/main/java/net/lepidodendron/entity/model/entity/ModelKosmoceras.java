@@ -362,8 +362,9 @@ public class ModelKosmoceras extends AdvancedModelBaseExtended {
         this.Shell1.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.Shell1.rotateAngleY = (float) Math.toRadians(90);
-        this.Shell1.offsetY = -0.45F;
+        this.setRotateAngle(Shell1, 0.3F, 0.0F, 0.0F);
+        this.Shell1.offsetY = -0.1F;
+        this.Shell1.offsetZ = 0.03F;
         this.Shell1.render(0.01F);
         resetToDefaultPose();
     }

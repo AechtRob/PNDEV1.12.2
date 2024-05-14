@@ -157,7 +157,6 @@ public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobite
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.34; }
-
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}

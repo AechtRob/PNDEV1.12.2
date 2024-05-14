@@ -306,15 +306,34 @@ public class ModelParioscorpio extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-    public void renderStaticWall(float f) {
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.head.offsetZ = 0.02F;
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = -0.005F;
+        this.head.render(0.01F);
         resetToDefaultPose();
-
-
     }
-    public void renderStaticSuspended(float f) {
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = 0.4F;
+        this.head.offsetX = 0.55F;
+        this.head.rotateAngleY = (float)Math.toRadians(200);
+        this.head.rotateAngleX = (float)Math.toRadians(8);
+        this.head.rotateAngleZ = (float)Math.toRadians(-8);
+        this.head.scaleChildren = true;
+        float scaler = 0.5F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

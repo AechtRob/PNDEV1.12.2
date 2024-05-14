@@ -223,9 +223,7 @@ public class EntityPrehistoricFloraDaedalichthys extends EntityPrehistoricFloraF
 		return RenderDaedalichthys.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelDaedalichthys;
-	}
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelDaedalichthys;}
 	public static float getScaler(@Nullable String variant) {
 		return RenderDaedalichthys.getScaler();
 	}

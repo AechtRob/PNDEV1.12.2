@@ -520,34 +520,109 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Uteodon.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Chest.offsetY = -0.0F;
+        this.Chest.offsetX = 0.0F;
+        this.Chest.offsetZ = 0.02F;
+        this.Chest.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Uteodon, 0.12F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.15F, -0.02F, -0.05F);
+        this.setRotateAngle(Chest, 0.15F, -0.1F, -0.05F);
+        this.setRotateAngle(Neck1, -0.1F, -0.3F, 0.05F);
+        this.setRotateAngle(Neck2, -0.1F, -0.4F, 0.05F);
+        this.setRotateAngle(Neck3, -0.2F, -0.5F, 0.05F);
+        this.setRotateAngle(Head, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(ArmL, 1.5F, 2.0F, 2.0F);
+        this.setRotateAngle(ElbowL, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, -1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LegL, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeL, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalL, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LegR, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeR, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalR, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, -1.1F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowL, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, 0.6F, 0.2F, 0.1F);
+        this.setRotateAngle(ElbowR, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(HandR, 0.5F, -0.2F, 0.0F);
+        this.Uteodon.offsetZ = 0.07F;
+        this.Uteodon.offsetX = -0.01F;
+        this.Uteodon.offsetY = -0.1F;
+        this.Uteodon.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Uteodon.offsetY = -0.2F;
+        this.Uteodon.offsetY = -0.0F;
         this.Uteodon.offsetX = 0.0F;
         this.Uteodon.rotateAngleY = (float)Math.toRadians(235);
         this.Uteodon.rotateAngleX = (float)Math.toRadians(-1);
         this.Uteodon.rotateAngleZ = (float)Math.toRadians(-1);
         this.Uteodon.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.35F;
         this.Uteodon.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Uteodon, 0.12F, 3.4F, 0.0F);
+        this.setRotateAngle(Body, 0.15F, -0.02F, -0.05F);
+        this.setRotateAngle(Chest, 0.15F, -0.1F, -0.05F);
+        this.setRotateAngle(Neck1, -0.1F, -0.3F, 0.05F);
+        this.setRotateAngle(Neck2, -0.1F, -0.4F, 0.05F);
+        this.setRotateAngle(Neck3, -0.2F, -0.5F, 0.05F);
+        this.setRotateAngle(Head, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(ArmL, 1.5F, 2.0F, 2.0F);
+        this.setRotateAngle(ElbowL, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, -1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LegL, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeL, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalL, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LegR, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeR, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalR, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, -1.1F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowL, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, 0.6F, 0.2F, 0.1F);
+        this.setRotateAngle(ElbowR, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(HandR, 0.5F, -0.2F, 0.0F);
         //End of pose, now render the model:
         this.Uteodon.render(f);
         //Reset rotations, positions and sizing:
         this.Uteodon.setScale(1.0F, 1.0F, 1.0F);
         this.Uteodon.scaleChildren = false;
-        resetToDefaultPose();
-    }
-
-    public void renderStaticWall(float f) {
-
-        resetToDefaultPose();
-    }
-
-    public void renderStaticFloor(float f) {
-
         resetToDefaultPose();
     }
 

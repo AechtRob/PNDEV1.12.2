@@ -149,7 +149,7 @@ public class ModelDragonfly extends AdvancedModelBase {
     }
 
     public void renderStaticDisplayCase(float f) {
-        this.setRotateAngle(body, 0.0F, 0.0F, -0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
         this.body.offsetY = -0.05F;
         this.body.render(0.01f);
         resetToDefaultPose();

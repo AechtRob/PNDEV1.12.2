@@ -280,22 +280,22 @@ public class EntityPrehistoricFloraHyneria extends EntityPrehistoricFloraAgeable
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.8;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.5;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.1;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.5;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.1;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return 0.5;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

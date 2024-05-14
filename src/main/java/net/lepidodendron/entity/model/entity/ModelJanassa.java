@@ -175,6 +175,18 @@ public class ModelJanassa extends AdvancedModelBase {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(body2, -0.02F, 0.3F, 0.0F);
+        this.setRotateAngle(body3, -0.04F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, -0.06F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, -0.08F, -0.2F, 0.0F);
+        this.body.offsetZ = -0.03F;
+        this.body.offsetY = -0.0F;
+        this.body.offsetX = -0.01F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

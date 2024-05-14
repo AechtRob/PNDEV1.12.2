@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderIschyodus;
 import net.lepidodendron.entity.render.entity.RenderSqualoraja;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -499,6 +500,9 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderSqualoraja.TEXTURE_F;
+		}
 		return RenderSqualoraja.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
@@ -506,6 +510,9 @@ public class EntityPrehistoricFloraSqualoraja extends EntityPrehistoricFloraAgea
 		return RenderDisplays.modelSqualoraja;
 	}
 	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderSqualoraja.getScaler() * 1.0F;
+		}
 		return RenderSqualoraja.getScaler();
 	}
 

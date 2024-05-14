@@ -759,16 +759,71 @@ public class ModelPseudoangustidontus extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.bone.rotateAngleY = (float) Math.toRadians(90);
-        this.bone.offsetX = -0F;
-        this.bone.offsetZ = 0.02F;
+        this.bone.offsetX = -0.05F;
+        this.bone.offsetZ = 0.1F;
         this.bone.offsetY = -0.15F;
         this.bone.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone, -0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(segment1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment6, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(segment7, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(segment8, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(segment9, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(segment10, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(segment11, 0.0F, -0.1F, 0.0F);
+        this.bone.offsetZ = -0.1F;
+        this.bone.offsetY = -0.2F;
+        this.bone.offsetX = 0.005F;
+        this.bone.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(bone, 0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(segment2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(segment4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment6, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment7, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(segment8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment11, 0.0F, 0.0F, 0.0F);
+        this.bone.offsetZ = -0.0F;
+        this.bone.offsetY = -0.05F;
+        this.bone.offsetX = 0.005F;
+        this.bone.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = 0.4F;
+        this.bone.offsetX = 0.55F;
+        this.bone.rotateAngleY = (float)Math.toRadians(200);
+        this.bone.rotateAngleX = (float)Math.toRadians(8);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-8);
+        this.bone.scaleChildren = true;
+        float scaler = 0.5F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
         resetToDefaultPose();
     }
 

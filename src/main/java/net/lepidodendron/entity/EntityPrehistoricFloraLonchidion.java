@@ -220,7 +220,7 @@ public class EntityPrehistoricFloraLonchidion extends EntityPrehistoricFloraAgea
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0.0;
@@ -229,13 +229,13 @@ public class EntityPrehistoricFloraLonchidion extends EntityPrehistoricFloraAgea
 		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.1;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

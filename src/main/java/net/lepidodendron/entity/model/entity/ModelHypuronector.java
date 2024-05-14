@@ -408,7 +408,84 @@ public class ModelHypuronector extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hypuronector.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Hypuronector, -1.5F, 3.1F, 0.1F);
+        this.setRotateAngle(body, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(upperbody, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.05F, 0.2F);
+        this.setRotateAngle(neck3, 0.0F, 0.05F, 0.2F);
+        this.setRotateAngle(neck4, 0.0F, 0.05F, 0.2F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.2F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, -0.2F);
+        this.setRotateAngle(tail2, 0.0F, -0.15F, -0.2F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, -0.1F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, -0.1F);
+        this.setRotateAngle(frontleftarm, 0.0F, 0.0F, -0.25F);
+        this.setRotateAngle(frontleftarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftarm3, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(frontrightarm, 0.0F, 0.0F, 0.4F);
+        this.setRotateAngle(frontrightarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightarm3, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(backleftleg, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(backleftleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.0F, 0.0F);
+        this.Hypuronector.offsetY = -0.25F;
+        this.Hypuronector.offsetX = 0.0F;
+        this.Hypuronector.offsetZ = -1.58F;
+        this.Hypuronector.render(0.01F);
+        resetToDefaultPose();
+    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hypuronector, 0.2F, 0.5F, -0.3F);
+        this.setRotateAngle(body, -0.1F, -0.1F, 0.2F);
+        this.setRotateAngle(upperbody, -0.15F, -0.1F, 0.1F);
+        this.setRotateAngle(neck, -0.1F, -0.1F, -0.2F);
+        this.setRotateAngle(neck3, -0.1F, -0.1F, -0.1F);
+        this.setRotateAngle(neck4, -0.2F, -0.1F, -0.1F);
+        this.setRotateAngle(head, -0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, -0.1F, 0.05F);
+        this.setRotateAngle(tail2, 0.05F, -0.1F, 0.05F);
+        this.setRotateAngle(tail3, 0.05F, -0.2F, 0.05F);
+        this.setRotateAngle(tail4, 0.05F, -0.2F, 0.05F);
+        this.setRotateAngle(frontleftarm, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(frontleftarm2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(frontleftarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightarm, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(frontrightarm2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(frontrightarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, 0.0F, -0.2F, 0.3F);
+        this.setRotateAngle(backleftleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, -0.5F, 0.3F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.0F, 0.0F);
+        this.Hypuronector.offsetZ = -0.03F;
+        this.Hypuronector.offsetY = 0.32F;
+        this.Hypuronector.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hypuronector.offsetY = 0.4F;
+        this.Hypuronector.offsetX = 0.55F;
+        this.Hypuronector.rotateAngleY = (float)Math.toRadians(200);
+        this.Hypuronector.rotateAngleX = (float)Math.toRadians(8);
+        this.Hypuronector.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Hypuronector.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Hypuronector.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Hypuronector.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hypuronector.setScale(1.0F, 1.0F, 1.0F);
+        this.Hypuronector.scaleChildren = false;
         resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

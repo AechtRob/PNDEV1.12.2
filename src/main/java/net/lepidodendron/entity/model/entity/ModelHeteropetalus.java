@@ -311,16 +311,41 @@ public class ModelHeteropetalus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-
-    public void renderStaticWall(float f) {
-        this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetX = -0.035F;
-        this.root.offsetY = 0.03F;
-        this.root.render(0.01F);
-        this.resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
-        this.resetToDefaultPose();
+        this.setRotateAngle(root, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.0F;
+        this.root.offsetY = -0.05F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -1.2F;
+        this.root.offsetX = -0.5F;
+        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 4.5F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, -0.3F, 2.5F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -1.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.8F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 2.5F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

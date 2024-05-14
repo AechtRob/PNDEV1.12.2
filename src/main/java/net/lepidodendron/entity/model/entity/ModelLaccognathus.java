@@ -246,6 +246,20 @@ public class ModelLaccognathus extends AdvancedModelBase {
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.head.offsetZ = -0.0F;
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = 0.0F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

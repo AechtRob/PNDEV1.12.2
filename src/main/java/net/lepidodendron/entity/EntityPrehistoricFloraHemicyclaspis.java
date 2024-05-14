@@ -201,7 +201,7 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.1;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -226,6 +226,7 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 	public static float getScaler(@Nullable String variant) {
 		return RenderHemicyclaspis.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.025F;}
 
 	@Nullable
 	@Override

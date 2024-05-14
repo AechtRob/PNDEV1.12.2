@@ -544,19 +544,101 @@ public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
-
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Archaeopteryx, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.00F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.00F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.00F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.7F, 1.0F, -0.8F);
+        this.setRotateAngle(LowerArmL, 0.2F, 0.5F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, -0.7F, -1.0F, 0.8F);
+        this.setRotateAngle(LowerArmR, 0.2F, -0.5F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F,0.0F, 0.0F);
+        this.Archaeopteryx.offsetY = -0.15F;
+        this.Archaeopteryx.offsetX = 0.0F;
+        this.Archaeopteryx.offsetZ = -0.42F;
+        this.Archaeopteryx.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Archaeopteryx, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(ToesL, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -1.0F, 0.2F, -2.0F);
+        this.setRotateAngle(LowerArmL, 0.3F, -0.5F, -0.4F);
+        this.setRotateAngle(HandL, 0.0F, 0.1F, -0.4F);
+        this.setRotateAngle(UpperArmR, -1.0F, -0.2F, 2.0F);
+        this.setRotateAngle(LowerArmR, 0.3F, 0.5F, 0.4F);
+        this.setRotateAngle(HandR, 0.0F,0.1F, 0.4F);
+        this.Archaeopteryx.offsetX = 0.0F;
+        this.Archaeopteryx.offsetY = -0.0F;
+        this.Archaeopteryx.render(0.01F);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Archaeopteryx.offsetY = -2.50F;
-        this.Archaeopteryx.offsetX = 0.1F;
+        this.Archaeopteryx.offsetY = -2.30F;
+        this.Archaeopteryx.offsetX = -0.05F;
         this.Archaeopteryx.rotateAngleY = (float)Math.toRadians(210);
         this.Archaeopteryx.rotateAngleX = (float)Math.toRadians(8);
         this.Archaeopteryx.rotateAngleZ = (float)Math.toRadians(-8);
         this.Archaeopteryx.scaleChildren = true;
-        float scaler = 4.0F;
+        float scaler = 2.9F;
         this.Archaeopteryx.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Archaeopteryx, -0.5F, 4.0F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(ToesL, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -1.0F, 0.2F, -2.0F);
+        this.setRotateAngle(LowerArmL, 0.3F, -0.5F, -0.4F);
+        this.setRotateAngle(HandL, 0.0F, 0.1F, -0.4F);
+        this.setRotateAngle(UpperArmR, -1.0F, -0.2F, 2.0F);
+        this.setRotateAngle(LowerArmR, 0.3F, 0.5F, 0.4F);
+        this.setRotateAngle(HandR, 0.0F,0.1F, 0.4F);
         //End of pose, now render the model:
         this.Archaeopteryx.render(f);
         //Reset rotations, positions and sizing:

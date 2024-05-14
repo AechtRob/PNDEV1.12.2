@@ -303,15 +303,65 @@ public class ModelFlagellopantopus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legRs1, 0.0F, 0.0F, 0.9F);
+        this.setRotateAngle(legRss1, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(legRsss1, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(legRs2, 0.0F, 0.0F, 2.0F);
+        this.setRotateAngle(legRss2, 0.0F, 0.0F, -2.3F);
+        this.setRotateAngle(legRsss2, 0.0F, 0.0F, -1.8F);
+        this.setRotateAngle(legR3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(legRs3, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(legRss3, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(legRsss3, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(legR4, -0.2F, 0.5F, -1.0F);
+        this.setRotateAngle(legRs4, 0.0F, 0.0F, 2.0F);
+        this.setRotateAngle(legRss4, 0.0F, 0.0F, -2.1F);
+        this.setRotateAngle(legRsss4, 0.0F, 0.0F, -2.0F);
+        this.setRotateAngle(legL1, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(legLs1, 0.0F, 0.0F, -0.9F);
+        this.setRotateAngle(legLss1, 0.0F, 0.0F, 0.7F);
+        this.setRotateAngle(legLsss1, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(legLs2, 0.0F, 0.0F, -2.0F);
+        this.setRotateAngle(legLss2, 0.0F, 0.0F, 2.3F);
+        this.setRotateAngle(legLsss2, 0.0F, 0.0F, 1.8F);
+        this.setRotateAngle(legL3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(legLs3, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(legLss3, 0.0F, 0.0F, 0.7F);
+        this.setRotateAngle(legLsss3, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(legL4, -0.2F, -0.5F, 1.0F);
+        this.setRotateAngle(legLs4, 0.0F, 0.0F, -2.0F);
+        this.setRotateAngle(legLss4, 0.0F, 0.0F, 2.1F);
+        this.setRotateAngle(legLsss4, 0.0F, 0.0F, 2.0F);
+        this.Body.offsetZ = 0.02F;
+        this.Body.offsetY = -0.05F;
+        this.Body.offsetX = 0.0F;
+        this.Body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = 0.4F;
+        this.Body.offsetX = 0.55F;
+        this.Body.rotateAngleY = (float)Math.toRadians(200);
+        this.Body.rotateAngleX = (float)Math.toRadians(8);
+        this.Body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

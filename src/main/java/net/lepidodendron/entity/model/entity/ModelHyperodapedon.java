@@ -294,7 +294,16 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticFloor(float f) {
-        this.hip.offsetY = 0.082F;
+        this.setRotateAngle(hip, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(upperbody, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        this.hip.offsetY = 0.084F;
         this.hip.render(0.01F);
         this.resetToDefaultPose();
     }

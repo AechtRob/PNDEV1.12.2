@@ -2,7 +2,8 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegazostrodon;
-import net.lepidodendron.entity.model.entity.ModelMorganucodon;
+import net.lepidodendron.entity.model.entity.ModelMegazostrodon;
+import net.lepidodendron.entity.model.entity.ModelMegazostrodon;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -12,8 +13,9 @@ public class RenderMegazostrodon extends RenderLiving<EntityPrehistoricFloraMega
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megazostrodon.png");
 
     public RenderMegazostrodon(RenderManager mgr) {
-        super(mgr, new ModelMorganucodon(), 0f);
+        super(mgr, new ModelMegazostrodon(), 0f);
     }
+    public static float getScaler() {return 0.16f;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMegazostrodon entity) {

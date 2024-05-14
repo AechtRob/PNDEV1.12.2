@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderAegirocassis;
+import net.lepidodendron.entity.render.entity.RenderPseudoangustidontus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemEggsAegirocassis;
@@ -198,51 +199,51 @@ public class EntityPrehistoricFloraPseudoangustidontus extends EntityPrehistoric
 		return 0.25;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1;
+		return 0.7;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 1;
+		return 0.7;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.3;
+		return -0.3;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.3F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.3;
+		return 0.02;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.04F;
+		return -0.1F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.5;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.3;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.5;
 	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.6;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.1;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.2F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.09F;
+		return -0.3F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderAegirocassis.TEXTURE;
+		return RenderPseudoangustidontus.TEXTURE;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAegirocassis;
+		return RenderDisplays.modelPseudoangustidontus;
 	}
 	public static float getScaler(@Nullable String variant) {
-		return RenderAegirocassis.getScaler();
+		return RenderPseudoangustidontus.getScaler();
 	}
 }
 

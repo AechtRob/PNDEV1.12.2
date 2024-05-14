@@ -206,6 +206,23 @@ public class ModelIniopteryx extends AdvancedModelBase {
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.0F, 0.3F, 0.3F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailstart, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Leftpectoralfinbase, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(Leftpectoralfin, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(Rightpectoralfinbase, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(Rightpectoralfin, 0.0F, 0.0F, 0.2F);
+        this.Bodyfront.offsetZ = -0.02F;
+        this.Bodyfront.offsetY = 0.12F;
+        this.Bodyfront.offsetX = 0.017F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

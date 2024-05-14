@@ -492,7 +492,6 @@ public class ModelDorygnathus extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(chest, -0.3F, 0.0F, 0.3F);
         this.setRotateAngle(body1, -0.3F, 0.0F, 0.0F);

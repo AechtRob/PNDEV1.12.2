@@ -91,8 +91,8 @@ public class ModelDicraeosaurus extends AdvancedModelBaseExtended {
     private ModelAnimator animator;
 
     public ModelDicraeosaurus() {
-        this.textureWidth = 512;
-        this.textureHeight = 512;
+        this.textureWidth = 290;
+        this.textureHeight = 290;
 
         this.root = new AdvancedModelRenderer(this);
         this.root.setRotationPoint(0.0F, -14.0F, 7.775F);
@@ -617,33 +617,33 @@ public class ModelDicraeosaurus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.0F;
-        this.root.offsetX = -0.25F;
-        this.root.rotateAngleY = (float)Math.toRadians(-25);
-        this.root.rotateAngleX = (float)Math.toRadians(-50);
-        this.root.rotateAngleZ = (float)Math.toRadians(80);
+        this.root.offsetY = 0.8F;
+        this.root.offsetX = 0.95F;
+        this.root.rotateAngleY = (float)Math.toRadians(-185);
+        this.root.rotateAngleX = (float)Math.toRadians(-0);
+        this.root.rotateAngleZ = (float)Math.toRadians(30);
         this.root.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 0.9F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(hips, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(hips, 0.0F, 0.0F, -1.0F);
         this.setRotateAngle(body, 0.0F, 0.0F, 0.1F);
         this.setRotateAngle(chest, 0.0F, 0.0F, 0.02F);
-        this.setRotateAngle(neck, 0.0F, 0.05F, 0.1F);
-        this.setRotateAngle(neck2, 0.0F, 0.1F, 0.1F);
-        this.setRotateAngle(neck3, 0.0F, 0.2F, 0.1F);
-        this.setRotateAngle(neck4, -0.02F, 0.3F, 0.2F);
+        this.setRotateAngle(neck, -0.2F, 0.6F, 0.2F);
+        this.setRotateAngle(neck2, 0.0F, 0.6F, 0.3F);
+        this.setRotateAngle(neck3, 0.0F, 0.4F, 0.3F);
+        this.setRotateAngle(neck4, -0.02F, 0.4F, 0.3F);
         this.setRotateAngle(head, -0.2F, 0.2F, 0.2F);
         this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
         this.setRotateAngle(throat2, -0.15F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.1F, 0.1F, 0.0F);
-        this.setRotateAngle(tail2, 0.1F, 0.1F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.05F, 0.0F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail5, 0.05F, -0.2F, 0.0F);
-        this.setRotateAngle(tail6, 0.15F, -0.02F, 0.0F);
-        this.setRotateAngle(tail7, 0.2F, -0.05F, 0.0F);
-        this.setRotateAngle(tail8, 0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.5F, 0.2F, 0.2F);
+        this.setRotateAngle(tail2, 0.5F, 0.0F, 0.2F);
+        this.setRotateAngle(tail3, 0.5F, 0.0F, -0.1F);
+        this.setRotateAngle(tail4, 0.5F, 0.0F, -0.05F);
+        this.setRotateAngle(tail5, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail7, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail8, 0.5F, 0.0F, 0.0F);
         this.setRotateAngle(upperlegL, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(lowerlegL, -0.4F, 0.0F, 0.0F);
         this.setRotateAngle(footL, -0.3F, 0.0F, 0.0F);

@@ -520,7 +520,7 @@ public class ModelListracanthus extends AdvancedModelBase {
         this.body5.rotateAngleY = (float) Math.toRadians(20);
         this.body6.rotateAngleY = (float) Math.toRadians(20);
         this.body7.rotateAngleY = (float) Math.toRadians(24);
-        this.bodybase.offsetX = -0.15F;
+        this.bodybase.offsetX = 0.0F;
         this.bodybase.offsetY = -0.3F;
         this.bodybase.offsetZ = -0.11F;
         this.bodybase.render(0.01F);

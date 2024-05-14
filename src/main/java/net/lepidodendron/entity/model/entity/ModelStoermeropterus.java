@@ -256,12 +256,36 @@ public class ModelStoermeropterus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.carapace.render(f5);
     }
-
-    public void renderStaticWall(float f) {
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(carapace, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment3, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(segment4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(segment5, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment6, 0.1F, 0.0F, 0.0F);
+        this.carapace.offsetZ = -0.02F;
+        this.carapace.offsetY = 0.13F;
+        this.carapace.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.carapace.offsetY = 0.4F;
+        this.carapace.offsetX = 0.55F;
+        this.carapace.rotateAngleY = (float)Math.toRadians(200);
+        this.carapace.rotateAngleX = (float)Math.toRadians(8);
+        this.carapace.rotateAngleZ = (float)Math.toRadians(-8);
+        this.carapace.scaleChildren = true;
+        float scaler = 0.5F;
+        this.carapace.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
-    public void renderStaticFloor(float f) {
+        //End of pose, now render the model:
+        this.carapace.render(f);
+        //Reset rotations, positions and sizing:
+        this.carapace.setScale(1.0F, 1.0F, 1.0F);
+        this.carapace.scaleChildren = false;
         resetToDefaultPose();
     }
 

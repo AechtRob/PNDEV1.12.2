@@ -125,10 +125,45 @@ public class ModelLiaosteus extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.73F;
+        this.body.offsetY = -0.22F;
+        this.body.offsetX = -0.08F;
+        this.body.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.resetToDefaultPose();
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.02F;
+        this.body.offsetY = -0.1F;
+        this.body.offsetX = -0.012F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.4F;
+        this.body.offsetX = 0.55F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -21,7 +21,6 @@ public class RenderPalaeodictyoptera extends RenderLivingBaseVariantModels<Entit
     public static final ResourceLocation TEXTURE_SINODUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_sinodunbaria.png");
     public static final ResourceLocation TEXTURE_STENODICTYA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_stenodictya.png");
     public static final ResourceLocation TEXTURE_MAZOTHAIROS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_mazothairos.png");
-
     public static final ResourceLocation TEXTURE_PSYCHROPTILUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_psychroptilus.png");
 
     public RenderPalaeodictyoptera(RenderManager mgr) {

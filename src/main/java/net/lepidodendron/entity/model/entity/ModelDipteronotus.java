@@ -215,13 +215,48 @@ public class ModelDipteronotus extends AdvancedModelBase {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
-        resetToDefaultPose();
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = -1.34F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.03F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.0F;
+        this.body.offsetY = -0.05F;
+        this.body.offsetX = 0.005F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.4F;
+        this.body.offsetX = 0.55F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

@@ -115,16 +115,34 @@ public class ModelBowengriphus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.all.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = -0.1F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(all, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontbit, 0.0F, 0.0F, 0.0F);
+        this.all.offsetZ = -0.0F;
+        this.all.offsetY = 0.32F;
+        this.all.offsetX = -0.0F;
         this.all.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.all.offsetY = -2.7F;
+        this.all.offsetX = 0.0F;
+        this.all.rotateAngleY = (float)Math.toRadians(200);
+        this.all.rotateAngleX = (float)Math.toRadians(8);
+        this.all.rotateAngleZ = (float)Math.toRadians(-8);
+        this.all.scaleChildren = true;
+        float scaler = 9.5F;
+        this.all.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(all, -0.4F, -0.5F, 0.3F);
+        this.setRotateAngle(frontbit, 0.1F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.all.render(f);
+        //Reset rotations, positions and sizing:
+        this.all.setScale(1.0F, 1.0F, 1.0F);
+        this.all.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

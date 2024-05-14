@@ -253,7 +253,7 @@ public class EntityPrehistoricFloraLaminacaris extends EntityPrehistoricFloraAge
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.0;
+		return 0.85;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0.0;

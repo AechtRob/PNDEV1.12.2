@@ -569,16 +569,23 @@ public class ModelKleptothule extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Kleptothule.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Kleptothule.render(0.019F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Kleptothule, 0.2F, 0.0F, 0.05F);
+        this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, -0.2F, 0.0F);
+        this.Kleptothule.offsetZ = 0.0F;
+        this.Kleptothule.offsetY = 0.0F;
+        this.Kleptothule.offsetX = 0.001F;
+        this.Kleptothule.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

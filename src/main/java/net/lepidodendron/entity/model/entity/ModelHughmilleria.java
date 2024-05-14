@@ -253,12 +253,39 @@ public class ModelHughmilleria extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-
-    public void renderStaticWall(float f) {
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(legR5, 0.7F, -0.3F, 0.5F);
+        this.setRotateAngle(legR5_2, 0.5F, 0.0F, 0.5F);
+        this.setRotateAngle(legL5, 0.7F, 0.3F, -0.5F);
+        this.setRotateAngle(legL5_2, 0.5F, 0.0F, -0.5F);
+        this.Body.offsetZ = -0.03F;
+        this.Body.offsetY = -0.05F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Body.offsetY = 0.4F;
+        this.Body.offsetX = 0.55F;
+        this.Body.rotateAngleY = (float)Math.toRadians(200);
+        this.Body.rotateAngleX = (float)Math.toRadians(8);
+        this.Body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Body.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
-    public void renderStaticFloor(float f) {
+        //End of pose, now render the model:
+        this.Body.render(f);
+        //Reset rotations, positions and sizing:
+        this.Body.setScale(1.0F, 1.0F, 1.0F);
+        this.Body.scaleChildren = false;
         resetToDefaultPose();
     }
 

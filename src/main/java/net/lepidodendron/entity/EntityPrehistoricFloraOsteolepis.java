@@ -191,7 +191,7 @@ public class EntityPrehistoricFloraOsteolepis extends EntityPrehistoricFloraFish
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.25;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -203,7 +203,7 @@ public class EntityPrehistoricFloraOsteolepis extends EntityPrehistoricFloraFish
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.03;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -216,6 +216,7 @@ public class EntityPrehistoricFloraOsteolepis extends EntityPrehistoricFloraFish
 	public static float getScaler(@Nullable String variant) {
 		return RenderOsteolepis.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.015F;}
 
 	@Nullable
 	@Override

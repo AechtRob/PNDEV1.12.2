@@ -332,22 +332,22 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.06;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.3;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return 0.2;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -360,6 +360,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 	public static float getScaler(@Nullable String variant) {
 		return RenderHolonema.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 	@Nullable
 	@Override

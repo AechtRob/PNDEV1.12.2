@@ -195,16 +195,37 @@ public class ModelThrinaxodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.chest.render(f5 * 0.22f);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.chest.offsetZ = -0.3F;
-        this.chest.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(jaw1, 0.3F, 0.0F, -0.0F);
+        this.upperarm1.setScale(0,0,0);
+        this.upperarm2.setScale(0,0,0);
+        this.upperarm1.scaleChildren = true;
+        this.upperarm2.scaleChildren = true;
+        this.chest.offsetY = -0.15F;
+        this.chest.offsetX = 0.0F;
+        this.chest.offsetZ = -0.32F;
+        this.chest.render(0.01F);
+        this.upperarm1.setScale(1,1,1);
+        this.upperarm2.setScale(1,1,1);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(chest, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(body, 0.0F, -0.1F, 0.1F);
+        this.setRotateAngle(neck1, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(head1, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw1, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leg2, 1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(feet2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arm1, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(hand1, 0.0F, 0.0F, 0.0F);
+        this.chest.offsetY = 0.18F;
+        this.chest.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

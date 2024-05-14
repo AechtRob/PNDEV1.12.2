@@ -394,16 +394,37 @@ public class ModelHadranax extends AdvancedModelBase {
         //this.head.render(f5 * 0.2F);
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = -0.1F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.08F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftAppendage1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightAppendage1, 0.0F, 0.0F, 0.0F);
+        this.head.offsetZ = -0.03F;
+        this.head.offsetY = 0.17F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = 0.4F;
+        this.head.offsetX = 0.55F;
+        this.head.rotateAngleY = (float)Math.toRadians(200);
+        this.head.rotateAngleX = (float)Math.toRadians(8);
+        this.head.rotateAngleZ = (float)Math.toRadians(-8);
+        this.head.scaleChildren = true;
+        float scaler = 0.5F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

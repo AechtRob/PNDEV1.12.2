@@ -269,16 +269,16 @@ public class EntityPrehistoricFloraListracanthus extends EntityPrehistoricFloraA
 		return 0.85;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return -0.5;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return 0.7;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.1;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.80;
+		return -0.8;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

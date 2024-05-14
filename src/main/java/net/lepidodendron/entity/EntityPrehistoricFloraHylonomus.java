@@ -293,6 +293,7 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 	public static float getScaler(@Nullable String variant) {
 		return RenderHylonomus.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 	@Nullable
 	@Override
