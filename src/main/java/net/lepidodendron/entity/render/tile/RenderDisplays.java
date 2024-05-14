@@ -245,6 +245,7 @@ public class RenderDisplays {
     public static final ModelGeosaurus modelGeosaurus = new ModelGeosaurus();
     public static final ModelGephyrostegus modelGephyrostegus = new ModelGephyrostegus();
     public static final ModelGerarus modelGerarus = new ModelGerarus();
+    public static final ModelMeganeuropsis modelMeganeuropsis = new ModelMeganeuropsis();
     public static final ModelGigantspinosaurus modelGigantspinosaurus = new ModelGigantspinosaurus();
     public static final ModelGogonasus modelGogonasus = new ModelGogonasus();
     public static final ModelGoodradigbeeon modelGoodradigbeeon = new ModelGoodradigbeeon();

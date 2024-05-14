@@ -333,7 +333,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 if (textureDisplayTransparent != null) {
                                     try { //Add in any transaprency
                                         itemRender = itemRender || !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            textureDisplay, getScaler, modelDisplay,
+                                            textureDisplayTransparent, getScaler, modelDisplay,
                                             offsetWall, 0, 0,
                                             upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
                                             lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,

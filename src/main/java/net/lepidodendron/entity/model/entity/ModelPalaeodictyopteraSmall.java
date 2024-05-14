@@ -160,6 +160,7 @@ public class ModelPalaeodictyopteraSmall extends AdvancedModelBase {
 
     public void renderStatic(float f) {
         this.body.render(0.01f);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
