@@ -590,7 +590,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.434;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -599,11 +599,12 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		return -0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.017F;}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -642,20 +643,25 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 				return RenderDisplays.modelProconodontus;
 
 			case CLYDAGNATHUS:
-
-			case CLARKINA:
-
-			case MISIKELLA:
-
-			case OZARKODINA:
-
-			case HINDEODUS:
 				return RenderDisplays.modelClydagnathus;
 
+			case CLARKINA:
+				return RenderDisplays.modelClarkina;
+
+			case MISIKELLA:
+				return RenderDisplays.modelMisikella;
+
+			case OZARKODINA:
+				return RenderDisplays.modelOzarkodina;
+
+			case HINDEODUS:
+				return RenderDisplays.modelHindeodus;
+
 			case PROMISSUM:
+				return RenderDisplays.modelPromissum;
 
 			case IOWAGNATHUS:
-				return RenderDisplays.modelPromissum;
+				return RenderDisplays.modelIowagnathus;
 		}
 	}
 

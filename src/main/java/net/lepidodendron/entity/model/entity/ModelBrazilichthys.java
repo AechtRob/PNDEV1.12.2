@@ -359,15 +359,47 @@ public class ModelBrazilichthys extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
-
     public void renderStaticWall(float f) {
-
+        this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.02F;
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = -0.03F;
+        this.root.render(0.01F);
         this.resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(root, -0.5F, 0.3F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, -0.3F, 0.0F);
+        this.root.offsetZ = 0.0F;
+        this.root.offsetY = -0.15F;
+        this.root.offsetX = 0.0F;
+        this.root.render(0.01F);
         this.resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.4F;
+        this.root.offsetX = 0.55F;
+        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 0.5F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
     
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

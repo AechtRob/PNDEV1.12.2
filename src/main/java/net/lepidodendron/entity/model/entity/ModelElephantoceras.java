@@ -236,9 +236,8 @@ public class ModelElephantoceras extends AdvancedModelBaseExtended {
         this.Shell1.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.Shell1.rotateAngleY = (float) Math.toRadians(90);
-        this.Shell1.offsetY = -0.45F;
-        this.Shell1.offsetZ = -0.004F;
+        this.Shell1.offsetY = -0.1F;
+        this.Shell1.offsetZ = 0.03F;
         this.Shell1.render(0.01F);
         resetToDefaultPose();
     }

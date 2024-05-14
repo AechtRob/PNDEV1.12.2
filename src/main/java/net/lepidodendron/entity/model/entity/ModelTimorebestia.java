@@ -212,15 +212,36 @@ public class ModelTimorebestia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.timorebestia.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(timorebestia, -0.1F, 0.0F, 0.2F);
+        this.setRotateAngle(head, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(body1, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.05F, 0.0F);
+        this.timorebestia.offsetZ = -0.0F;
+        this.timorebestia.offsetY = -0.05F;
         this.timorebestia.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.timorebestia.offsetY = 0.4F;
+        this.timorebestia.offsetX = 0.55F;
+        this.timorebestia.rotateAngleY = (float)Math.toRadians(200);
+        this.timorebestia.rotateAngleX = (float)Math.toRadians(8);
+        this.timorebestia.rotateAngleZ = (float)Math.toRadians(-8);
+        this.timorebestia.scaleChildren = true;
+        float scaler = 0.5F;
+        this.timorebestia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.timorebestia.render(f);
+        //Reset rotations, positions and sizing:
+        this.timorebestia.setScale(1.0F, 1.0F, 1.0F);
+        this.timorebestia.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

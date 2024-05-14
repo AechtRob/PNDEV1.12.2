@@ -659,41 +659,6 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 				return RenderDragonfly.TEXTURE_DRAGONFLY10;
 		}
 	}
-			@SideOnly(Side.CLIENT)
-			public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
-				switch (EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant)) {
-					case DRAGONFLY1:
-					default:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY1;
-
-					case DRAGONFLY2:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY2;
-
-					case DRAGONFLY3:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY3;
-
-					case DRAGONFLY4:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY4;
-
-					case DRAGONFLY5:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY5;
-
-					case DRAGONFLY6:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY6;
-
-					case DRAGONFLY7:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY7;
-
-					case DRAGONFLY8:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY8;
-
-					case DRAGONFLY9:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY9;
-
-					case DRAGONFLY10:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY10;
-				}
-			}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		switch (EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant)) {

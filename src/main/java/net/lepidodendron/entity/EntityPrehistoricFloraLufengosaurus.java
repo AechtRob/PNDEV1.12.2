@@ -10,7 +10,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderBrazilichthys;
 import net.lepidodendron.entity.render.entity.RenderGlacialisaurus;
+import net.lepidodendron.entity.render.entity.RenderLufengosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -620,6 +622,53 @@ public class EntityPrehistoricFloraLufengosaurus extends EntityPrehistoricFloraL
 	}
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return -0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.7;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.08;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -1.5;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderLufengosaurus.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelLufengosaurus;}
+	public static float getScaler(@Nullable String variant) {
+		return RenderLufengosaurus.getScaler();
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 
 }

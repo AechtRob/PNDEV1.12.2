@@ -205,10 +205,46 @@ public class ModelHeterostrophus extends AdvancedModelBase {
         this.Heterostrophus.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.Heterostrophus.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.Heterostrophus.offsetZ = -1.27F;
+        this.Heterostrophus.offsetY = -0.2F;
+        this.Heterostrophus.offsetX = -0.03F;
+        this.Heterostrophus.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Heterostrophus, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Heterostrophus.offsetZ = 0.02F;
+        this.Heterostrophus.offsetY = -0.05F;
+        this.Heterostrophus.offsetX = -0.02F;
+        this.Heterostrophus.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Heterostrophus.offsetY = 0.4F;
+        this.Heterostrophus.offsetX = 0.55F;
+        this.Heterostrophus.rotateAngleY = (float)Math.toRadians(200);
+        this.Heterostrophus.rotateAngleX = (float)Math.toRadians(8);
+        this.Heterostrophus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Heterostrophus.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Heterostrophus.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
-    public void renderStaticFloor(float f) {
+        //End of pose, now render the model:
+        this.Heterostrophus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Heterostrophus.setScale(1.0F, 1.0F, 1.0F);
+        this.Heterostrophus.scaleChildren = false;
         resetToDefaultPose();
     }
 

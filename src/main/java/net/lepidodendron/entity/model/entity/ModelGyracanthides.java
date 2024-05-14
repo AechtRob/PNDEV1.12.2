@@ -265,6 +265,19 @@ public class ModelGyracanthides extends AdvancedModelBase {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, 0.1F, -0.2F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.05F;
+        this.body.offsetY = -0.1F;
+        this.body.offsetX = -0.02F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

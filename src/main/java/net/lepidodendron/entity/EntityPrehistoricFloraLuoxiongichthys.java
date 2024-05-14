@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraLuoxiongichthys extends EntityPrehistoricFlor
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.3;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -216,7 +216,7 @@ public class EntityPrehistoricFloraLuoxiongichthys extends EntityPrehistoricFlor
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -0.05;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -229,6 +229,7 @@ public class EntityPrehistoricFloraLuoxiongichthys extends EntityPrehistoricFlor
 	public static float getScaler(@Nullable String variant) {
 		return RenderLuoxiongichthys.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
 	@Nullable
 	@Override

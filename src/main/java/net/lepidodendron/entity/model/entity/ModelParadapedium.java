@@ -274,7 +274,17 @@ public class ModelParadapedium extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        resetToDefaultPose();
+        this.setRotateAngle(Paradapedium, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
+        this.Paradapedium.offsetZ = 0.0F;
+        this.Paradapedium.offsetY = -0.05F;
+        this.Paradapedium.offsetX = 0.0F;
+        this.Paradapedium.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

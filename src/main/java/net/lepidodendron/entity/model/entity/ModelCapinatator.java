@@ -422,15 +422,40 @@ public class ModelCapinatator extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(root, 0.1F, 0.0F, 0.05F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.2F, 0.0F);
+        this.root.offsetX = -0.01F;
+        this.root.offsetZ = -0.03F;
+        this.root.offsetY = -0.05F;
         this.root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = 0.4F;
+        this.root.offsetX = 0.55F;
+        this.root.rotateAngleY = (float)Math.toRadians(200);
+        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 0.5F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

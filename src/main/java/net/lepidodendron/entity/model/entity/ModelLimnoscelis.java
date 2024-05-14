@@ -210,6 +210,16 @@ public class ModelLimnoscelis extends AdvancedModelBase {
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Belly, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw1, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.2F, 0.0F);
         this.Hips.render(0.01F);
         this.resetToDefaultPose();
     }

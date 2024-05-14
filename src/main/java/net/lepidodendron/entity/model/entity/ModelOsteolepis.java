@@ -197,6 +197,18 @@ public class ModelOsteolepis extends AdvancedModelBase {
         this.Osteolepis.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Osteolepis, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Bady5, 0.05F, 0.1F, 0.0F);
+        this.Osteolepis.offsetZ = -0.0F;
+        this.Osteolepis.offsetY = 0.0F;
+        this.Osteolepis.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

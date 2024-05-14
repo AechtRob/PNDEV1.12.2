@@ -325,16 +325,16 @@ public class ModelSokkaejaecystis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.main.offsetZ = -0.08F;
-        this.main.render(0.021F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arm1, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(arm2, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(arm3, 0.0F, -0.7F, 0.0F);
+        this.main.offsetZ = 0.0F;
+        this.main.offsetY = 0.12F;
+        this.main.offsetX = 0.0F;
+        this.main.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

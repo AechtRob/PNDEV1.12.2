@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderAcrolepis;
+import net.lepidodendron.entity.render.entity.RenderBrazilichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -218,34 +219,31 @@ public class EntityPrehistoricFloraBrazilichthys extends EntityPrehistoricFloraA
 		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.3;
+		return 0.4;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.3;
+		return 0.465;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.12;
+		return -0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.3;
+		return 0.1;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.04;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.3;
+		return -0.12;
 	}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderAcrolepis.TEXTURE;
-	}
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderBrazilichthys.TEXTURE;}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAcrolepis;
-	}
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelBrazilichthys;}
 	public static float getScaler(@Nullable String variant) {
-		return RenderAcrolepis.getScaler();
+		return RenderBrazilichthys.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 	@Nullable
 	@Override

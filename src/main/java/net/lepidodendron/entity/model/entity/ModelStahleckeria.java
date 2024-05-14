@@ -244,7 +244,6 @@ public class ModelStahleckeria extends AdvancedModelBaseExtended {
         this.neck.render(0.01F);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);

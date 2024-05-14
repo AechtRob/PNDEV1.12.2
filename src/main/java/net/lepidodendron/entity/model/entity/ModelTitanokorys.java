@@ -456,15 +456,45 @@ public class ModelTitanokorys extends AdvancedModelBase {
         this.Titanokorys.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Titanokorys.render(0.04F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Titanokorys, -1.6F, 3.15F, 0.0F);
+        this.Titanokorys.offsetY = -0.19F;
+        this.Titanokorys.offsetX = -0.0F;
+        this.Titanokorys.offsetZ = -0.58F;
+        this.Titanokorys.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Titanokorys, 0.2F, 0.0F, -0.3F);
+        this.setRotateAngle(body1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(appendageLeft, -1.2F, 0.2F, 0.3F);
+        this.setRotateAngle(appendageRight, -0.7F, 0.1F, -0.2F);
+        this.Titanokorys.offsetZ = -0.03F;
+        this.Titanokorys.offsetY = -0.2F;
+        this.Titanokorys.offsetX = -0.005F;
+        this.Titanokorys.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Titanokorys.offsetY = 0.4F;
+        this.Titanokorys.offsetX = 0.55F;
+        this.Titanokorys.rotateAngleY = (float)Math.toRadians(200);
+        this.Titanokorys.rotateAngleX = (float)Math.toRadians(8);
+        this.Titanokorys.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Titanokorys.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Titanokorys.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Titanokorys.render(f);
+        //Reset rotations, positions and sizing:
+        this.Titanokorys.setScale(1.0F, 1.0F, 1.0F);
+        this.Titanokorys.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

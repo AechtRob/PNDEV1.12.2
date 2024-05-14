@@ -258,6 +258,18 @@ public class ModelHibernaspis extends AdvancedModelBase {
         this.Body.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, -0.1F, 0.1F, 0.0F);
+        this.Body.offsetZ = -0.1F;
+        this.Body.offsetY = 0.28F;
+        this.Body.offsetX = -0.0F;
+        this.Body.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

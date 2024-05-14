@@ -223,7 +223,7 @@ public class EntityPrehistoricFloraOrnithoprion extends EntityPrehistoricFloraAg
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.25;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -248,6 +248,7 @@ public class EntityPrehistoricFloraOrnithoprion extends EntityPrehistoricFloraAg
 	public static float getScaler(@Nullable String variant) {
 		return RenderOrnithoprion.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.03F;}
 
 	@Nullable
 	@Override

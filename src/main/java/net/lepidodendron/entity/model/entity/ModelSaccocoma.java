@@ -324,15 +324,21 @@ public class ModelSaccocoma extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);        this.Base.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Arm1, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm2, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm3, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm4, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm5, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm6, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm7, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm8, -0.7F, 0.3F, 0.0F);
+        this.setRotateAngle(Arm9, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Arm10, -0.7F, 0.3F, 0.0F);
+        this.Base.offsetY = -0.03F;
+        this.Base.offsetZ = 0.0F;
+        this.Base.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

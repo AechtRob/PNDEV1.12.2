@@ -233,6 +233,21 @@ public class ModelMcnamaraspis extends AdvancedModelBase {
         this.Body1.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body1, -0.1F, 0.0F, 0.05F);
+        this.setRotateAngle(Body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail5, 0.05F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail6, 0.05F, 0.3F, 0.0F);
+        this.Body1.offsetZ = 0.0F;
+        this.Body1.offsetY = 0.15F;
+        this.Body1.offsetX = 0.008F;
+        this.Body1.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

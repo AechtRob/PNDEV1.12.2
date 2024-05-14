@@ -142,19 +142,35 @@ public class ModelPromissum extends AdvancedModelBase {
         //this.head.render(f5 * 0.25F);
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
         this.head.offsetX = -0.4F;
         this.head.offsetY = -0.2F;
-        this.head.offsetZ = 0.01F;
+        this.head.offsetZ = 0.27F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(body6, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body9, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body10, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.1F, 0.0F);
+        this.head.offsetZ = -0.3F;
+        this.head.offsetY = -0.199F;
+        this.head.offsetX = 0.012F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

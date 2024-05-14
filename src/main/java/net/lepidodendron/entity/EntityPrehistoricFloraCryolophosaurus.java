@@ -345,10 +345,10 @@ public class EntityPrehistoricFloraCryolophosaurus extends EntityPrehistoricFlor
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 1.1;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 1.1;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;

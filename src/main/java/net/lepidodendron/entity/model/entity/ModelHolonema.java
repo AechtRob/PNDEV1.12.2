@@ -253,6 +253,21 @@ public class ModelHolonema extends AdvancedModelBase {
         this.headshield.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(headshield, -0.2F, -0.2F, 0.2F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(frontleftfin, 0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(frontrightfin, 0.2F, -0.3F, 0.0F);
+        this.headshield.offsetZ = -0.08F;
+        this.headshield.offsetY = -0.109F;
+        this.headshield.offsetX = 0.03F;
+        this.headshield.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

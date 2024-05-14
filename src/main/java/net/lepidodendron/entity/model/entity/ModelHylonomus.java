@@ -160,7 +160,13 @@ public class ModelHylonomus extends AdvancedModelBase {
     }
 
     public void renderStaticFloor(float f) {
-        this.body.offsetY = 0.329F;
+        this.setRotateAngle(neck, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        this.body.offsetY = 0.3295F;
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }

@@ -175,6 +175,19 @@ public class ModelOrnithoprion extends AdvancedModelBase {
         this.ornithoprion.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(ornithoprion, 0.3F, 0.0F, -0.1F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.ornithoprion.offsetZ = -0.07F;
+        this.ornithoprion.offsetY = 0.0F;
+        this.ornithoprion.offsetX = 0.005F;
+        this.ornithoprion.render(0.01F);
+        this.resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

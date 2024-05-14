@@ -347,12 +347,40 @@ public class ModelEryma extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bone.render(f5);
     }
-
-    public void renderStaticWall(float f) {
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone, -0.1F, 0.0F, -0.05F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(body3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armR3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(clawR, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(armL, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(armL2, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(armL3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, 0.5F, 0.0F);
+        this.bone.offsetZ = -0.03F;
+        this.bone.offsetY = 0.04F;
+        this.bone.offsetX = -0.0F;
+        this.bone.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = 0.4F;
+        this.bone.offsetX = 0.55F;
+        this.bone.rotateAngleY = (float)Math.toRadians(200);
+        this.bone.rotateAngleX = (float)Math.toRadians(8);
+        this.bone.rotateAngleZ = (float)Math.toRadians(-8);
+        this.bone.scaleChildren = true;
+        float scaler = 0.5F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
-    public void renderStaticFloor(float f) {
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
         resetToDefaultPose();
     }
 

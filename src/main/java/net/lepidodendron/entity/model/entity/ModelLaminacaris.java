@@ -498,10 +498,27 @@ public class ModelLaminacaris extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-
     public void renderStaticFloor(float f) {
-        this.body.offsetY = -0.36F;
-        this.body.offsetZ = -0.06F;
+        this.setRotateAngle(body, 0.25F, -0.1F, 0.3F);
+        this.setRotateAngle(body2, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.2F, 0.0F);
+        this.body.offsetY = -0.3F;
+        this.body.offsetZ = -0.03F;
+        this.head.offsetX = -0.006F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(body, 0.75F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.0F, 0.0F);
+        this.body.offsetY = -0.2F;
+        this.body.offsetZ = -0.005F;
+        this.head.offsetX = -0.0F;
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }

@@ -208,9 +208,62 @@ public class ModelHydropessum extends AdvancedModelBase {
         this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        resetToDefaultPose();
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.39F;
+        this.main.offsetY = -0.23F;
+        this.main.offsetX = -0.03F;
+        this.main.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.03F;
+        this.main.offsetY = -0.05F;
+        this.main.offsetX = -0.0F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(head, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.06F;
+        this.main.offsetY = -0.05F;
+        this.main.offsetX = -0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -0.7F;
+        this.main.offsetX = 0.7F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 3.5F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(main, 0.0F, 3.7F, -0.2F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

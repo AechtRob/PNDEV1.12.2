@@ -431,16 +431,34 @@ public class ModelThulaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Thulaspis.render(f5);
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Thulaspis, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftAntenna, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightAntenna, 0.0F, 0.0F, 0.0F);
+        this.Thulaspis.offsetZ = -0.03F;
+        this.Thulaspis.offsetY = 0.13F;
+        this.Thulaspis.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Thulaspis.offsetY = 0.4F;
+        this.Thulaspis.offsetX = 0.55F;
+        this.Thulaspis.rotateAngleY = (float)Math.toRadians(200);
+        this.Thulaspis.rotateAngleX = (float)Math.toRadians(8);
+        this.Thulaspis.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Thulaspis.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Thulaspis.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Thulaspis.render(0.022F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        //End of pose, now render the model:
+        this.Thulaspis.render(f);
+        //Reset rotations, positions and sizing:
+        this.Thulaspis.setScale(1.0F, 1.0F, 1.0F);
+        this.Thulaspis.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

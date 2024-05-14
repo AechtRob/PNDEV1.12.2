@@ -414,15 +414,39 @@ public class ModelMobulavermis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Head, -0.2F, -0.2F, -0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.1F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.1F);
+        this.setRotateAngle(body3, 0.1F, -0.05F, 0.1F);
+        this.setRotateAngle(tail1, 0.1F, -0.2F, 0.1F);
+        this.setRotateAngle(tail2, 0.1F, -0.3F, 0.1F);
+        this.setRotateAngle(leftAppendage1, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(rightAppendage1, -0.2F, 0.3F, 0.0F);
+        this.Head.offsetX = 0.003F;
+        this.Head.offsetZ = -0.01F;
+        this.Head.offsetY = -0.1F;
         this.Head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Head.offsetY = 0.4F;
+        this.Head.offsetX = 0.55F;
+        this.Head.rotateAngleY = (float)Math.toRadians(200);
+        this.Head.rotateAngleX = (float)Math.toRadians(8);
+        this.Head.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Head.scaleChildren = true;
+        float scaler = 0.5F;
+        this.Head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Head.render(f);
+        //Reset rotations, positions and sizing:
+        this.Head.setScale(1.0F, 1.0F, 1.0F);
+        this.Head.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

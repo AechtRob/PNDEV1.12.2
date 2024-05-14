@@ -252,9 +252,32 @@ public class ModelPhylloceras extends AdvancedModelBaseExtended {
         this.Shell1.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.Shell1.rotateAngleY = (float) Math.toRadians(90);
-        this.Shell1.offsetY = -0.45F;
-        this.Shell1.render(0.01F);
+        this.root.offsetY = -0.2F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.root.offsetY = 0.1F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -1.5F;
+        this.root.offsetX = -0.7F;
+        this.root.rotateAngleY = (float)Math.toRadians(50);
+        this.root.rotateAngleX = (float)Math.toRadians(-50);
+        this.root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.root.scaleChildren = true;
+        float scaler = 3.5F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
         resetToDefaultPose();
     }
 

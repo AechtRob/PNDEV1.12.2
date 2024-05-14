@@ -357,6 +357,24 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         this.neck.render(0.01F);
         this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.1F, 0.0F);
+        this.body4.offsetX = 0.03F;
+        this.body4.offsetY = -0.13F;
+        this.body4.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

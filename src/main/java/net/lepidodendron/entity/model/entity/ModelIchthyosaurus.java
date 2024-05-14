@@ -60,8 +60,8 @@ public class ModelIchthyosaurus extends AdvancedModelBase {
     private final AdvancedModelRenderer cube_r27;
     public ModelIchthyosaurus() {
 
-        this.textureWidth = 128;
-        this.textureHeight = 128;
+        this.textureWidth = 92;
+        this.textureHeight = 92;
 
         this.main = new AdvancedModelRenderer(this);
         this.main.setRotationPoint(0.0F, 28.0F, -23.75F);
@@ -345,16 +345,66 @@ public class ModelIchthyosaurus extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-
+        this.Head.rotateAngleX = (float) Math.toRadians(-5);
+        this.Head.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.Head.offsetY = 0.115F;
+        this.Head.offsetX = -0.0F;
+        this.Head.offsetZ = -0.41F;
         this.Head.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(main, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, -0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.02F, -0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.03F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.04F, -0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.06F, -0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.07F, -0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.08F, -0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.08F, -0.1F, 0.0F);
+        this.main.offsetZ = -0.0F;
+        this.main.offsetY = -0.28F;
+        this.main.offsetX = -0.0F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.01F);
+        this.setRotateAngle(Head, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.1F, 0.0F);
+        this.main.offsetY = -0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = 0.4F;
+        this.main.offsetX = 0.55F;
+        this.main.rotateAngleY = (float)Math.toRadians(200);
+        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.scaleChildren = true;
+        float scaler = 0.5F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
         resetToDefaultPose();
     }
 

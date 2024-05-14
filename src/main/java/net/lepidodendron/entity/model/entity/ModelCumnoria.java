@@ -522,6 +522,58 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Cumnoria.render(f5);
     }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Cumnoria, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Chest.offsetY = -0.15F;
+        this.Chest.offsetX = 0.0F;
+        this.Chest.offsetZ = -0.4F;
+        this.Chest.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Cumnoria, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(KneeR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ArmR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(ElbowR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F, 0.0F, 0.0F);
+        this.Cumnoria.offsetX = 0.0F;
+        this.Cumnoria.offsetY = 0.23F;
+        this.Cumnoria.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -542,17 +594,6 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         this.Cumnoria.scaleChildren = false;
         resetToDefaultPose();
     }
-
-    public void renderStaticWall(float f) {
-
-        resetToDefaultPose();
-    }
-
-    public void renderStaticFloor(float f) {
-
-        resetToDefaultPose();
-    }
-
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

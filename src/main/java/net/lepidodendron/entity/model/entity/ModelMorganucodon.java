@@ -245,17 +245,37 @@ public class ModelMorganucodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5 * 0.15f);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Hips.offsetZ = -0.3F;
-        this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(20);
-        this.Hips.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, -0.0F);
+        this.Rightupperarm.setScale(0,0,0);
+        this.Leftupperarm.setScale(0,0,0);
+        this.Rightupperarm.scaleChildren = true;
+        this.Leftupperarm.scaleChildren = true;
+        this.Bodyfront.offsetY = 0.0F;
+        this.Bodyfront.offsetX = 0.0F;
+        this.Bodyfront.offsetZ = -0.35F;
+        this.Bodyfront.render(0.01F);
+        this.Rightupperarm.setScale(1,1,1);
+        this.Leftupperarm.setScale(1,1,1);
+        this.Bodyfront.offsetY = 0.0F;
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawmiddle, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailend, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.0F, 0.0F, 0.0F);
+        this.Hips.offsetY = 0.22F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

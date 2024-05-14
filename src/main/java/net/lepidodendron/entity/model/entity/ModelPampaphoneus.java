@@ -546,22 +546,67 @@ public class ModelPampaphoneus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
-
     public void renderStaticWall(float f) {
-        
+        this.chest.rotateAngleY = (float) Math.toRadians(0);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.rightarm.setScale(0,0,0);
+        this.leftarm.setScale(0,0,0);
+        this.rightarm.scaleChildren = true;
+        this.leftarm.scaleChildren = true;
+        this.chest.offsetY = -0.03F;
+        this.chest.offsetX = 0.0F;
+        this.chest.offsetZ = -0.2F;
+        this.chest.render(0.01F);
+        this.rightarm.setScale(1,1,1);
+        this.leftarm.setScale(1,1,1);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
-       
+        this.setRotateAngle(hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(neck2, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(head, -0.6F, 0.0F, -0.1F);
+        this.setRotateAngle(jaw, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(leftarm, 0.2F, 0.2F, -0.2F);
+        this.setRotateAngle(leftarm2, 0.3F, -0.2F, 0.3F);
+        this.setRotateAngle(lefthand, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfronttoe, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightarm, -0.4F, -0.5F, -0.3F);
+        this.setRotateAngle(rightarm2, 0.2F, 0.2F, 0.3F);
+        this.setRotateAngle(righthand, 0.25F, 0.0F, 0.1F);
+        this.setRotateAngle(rightfronttoe, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.1F, -0.3F, -0.3F);
+        this.setRotateAngle(leftleg2, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfoot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftbacktoe, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfoot, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(rightbacktoe, 0.0F, 0.0F, 0.0F);
+        this.hips.offsetZ = -0.03F;
         this.hips.offsetY = -0.13F;
         this.hips.render(0.01F);
         resetToDefaultPose();
     }
-
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        
+        this.hips.offsetY = 0.4F;
+        this.hips.offsetX = 0.55F;
+        this.hips.rotateAngleY = (float)Math.toRadians(200);
+        this.hips.rotateAngleX = (float)Math.toRadians(8);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-8);
+        this.hips.scaleChildren = true;
+        float scaler = 0.5F;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

@@ -838,7 +838,7 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 				return RenderDisplays.modelJeholopterus;
 
 			case SINOMACROPS:
-				return RenderDisplays.modelBatrachognathus;
+				return RenderDisplays.modelSinomacrops;
 
 		}
 	}

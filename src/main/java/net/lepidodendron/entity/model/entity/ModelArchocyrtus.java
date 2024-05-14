@@ -117,16 +117,31 @@ public class ModelArchocyrtus extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Body.offsetZ = -0.04F;
-        this.Body.render(0.037F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Body, -1.5F, 3.1F, 0.0F);
+        this.setRotateAngle(mouth, 1.4F, 0.0F, 0.0F);
+        this.Body.offsetZ = -0.0F;
+        this.Body.offsetY = -0.25F;
+        this.Body.offsetX = -0.00F;
+        this.Body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(mouth, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(WingL, 0.3F, -1.2F, 0.0F);
+        this.setRotateAngle(WingR, 0.3F, 1.2F, 0.0F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.0F);
+        this.Body.offsetZ = 0.03F;
+        this.Body.offsetY = -0.0F;
+        this.Body.offsetX = 0.0F;
+        this.Body.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

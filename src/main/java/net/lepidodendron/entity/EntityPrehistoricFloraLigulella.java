@@ -198,13 +198,13 @@ public class EntityPrehistoricFloraLigulella extends EntityPrehistoricFloraFishB
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.9;
+		return 0.27;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.01;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
@@ -226,6 +226,7 @@ public class EntityPrehistoricFloraLigulella extends EntityPrehistoricFloraFishB
 	public static float getScaler(@Nullable String variant) {
 		return RenderLigulella.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 
 }

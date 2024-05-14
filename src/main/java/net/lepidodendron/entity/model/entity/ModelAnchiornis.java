@@ -537,31 +537,111 @@ public class ModelAnchiornis extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Anchiornis.render(f5);
     }
-    
-    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
-        modelRenderer.rotateAngleY = y;
-        modelRenderer.rotateAngleZ = z;
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Anchiornis, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.00F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.00F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.00F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.7F, 1.0F, -0.8F);
+        this.setRotateAngle(LowerArmL, 0.2F, 0.5F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, -0.7F, -1.0F, 0.8F);
+        this.setRotateAngle(LowerArmR, 0.2F, -0.5F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F,0.0F, 0.0F);
+        this.Anchiornis.offsetY = -0.15F;
+        this.Anchiornis.offsetX = 0.0F;
+        this.Anchiornis.offsetZ = -0.4F;
+        this.Anchiornis.render(0.01F);
+        resetToDefaultPose();
     }
-
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Anchiornis, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.7F, 1.0F, -0.8F);
+        this.setRotateAngle(LowerArmL, 0.2F, 0.5F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, -0.7F, -1.0F, 0.8F);
+        this.setRotateAngle(LowerArmR, 0.2F, -0.5F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F,0.0F, 0.0F);
+        this.Anchiornis.offsetX = 0.0F;
+        this.Anchiornis.offsetY = 0.23F;
+        this.Anchiornis.render(0.01F);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Anchiornis.offsetY = -2.0F;
-        this.Anchiornis.offsetX = -0.6F;
-        this.Anchiornis.rotateAngleY = (float)Math.toRadians(120);
+        this.Anchiornis.offsetY = -1.0F;
+        this.Anchiornis.offsetX = 0.2F;
+        this.Anchiornis.rotateAngleY = (float)Math.toRadians(150);
         this.Anchiornis.rotateAngleX = (float)Math.toRadians(3);
         this.Anchiornis.rotateAngleZ = (float)Math.toRadians(0);
         this.Anchiornis.scaleChildren = true;
-        float scaler = 2.5F;
+        float scaler = 3.5F;
         this.Anchiornis.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Anchiornis, 0.5F, 2.5F, 0.0F);
+        this.setRotateAngle(Body, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck1, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck3, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.7F, 1.0F, -0.8F);
+        this.setRotateAngle(LowerArmL, 0.2F, 0.5F, 0.0F);
+        this.setRotateAngle(HandL, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(UpperArmR, -0.7F, -1.0F, 0.8F);
+        this.setRotateAngle(LowerArmR, 0.2F, -0.5F, 0.0F);
+        this.setRotateAngle(HandR, 0.0F,0.0F, 0.0F);
         //End of pose, now render the model:
         this.Anchiornis.render(f);
         //Reset rotations, positions and sizing:
         this.Anchiornis.setScale(1.0F, 1.0F, 1.0F);
         this.Anchiornis.scaleChildren = false;
         resetToDefaultPose();
+    }
+    
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
     }
 
     @Override

@@ -227,16 +227,19 @@ public class ModelHovasaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.main.offsetZ = -1.4F;
-        this.main.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.4F, 0.2F, 0.3F);
+        this.setRotateAngle(body, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(head, -0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, -0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(tail4, -0.2F, -0.5F, 0.0F);
+        this.main.offsetY = -0.15F;
+        this.main.offsetX = -0.015F;
+        this.main.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

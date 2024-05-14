@@ -264,16 +264,21 @@ public class ModelCeltedens extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Hips.offsetZ = -0.71F;
-        this.Hips.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(Chest, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Head, -0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
+        this.Hips.offsetZ = 0.0F;
+        this.Hips.offsetY = 0.235F;
+        this.Hips.offsetX = 0.0F;
+        this.Hips.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

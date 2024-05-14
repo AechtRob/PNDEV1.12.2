@@ -328,10 +328,10 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.2;
+		return 0.9;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 1;
@@ -340,9 +340,9 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		return -0.2F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.2;
+		return 0.0;
 	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.8F;}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderPiatnitzkysaurus.TEXTURE;}
 	@SideOnly(Side.CLIENT)
