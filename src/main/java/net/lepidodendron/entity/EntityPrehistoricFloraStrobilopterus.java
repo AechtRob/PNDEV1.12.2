@@ -354,6 +354,9 @@ public class EntityPrehistoricFloraStrobilopterus extends EntityPrehistoricFlora
     }
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		return 0.35;
+	}
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

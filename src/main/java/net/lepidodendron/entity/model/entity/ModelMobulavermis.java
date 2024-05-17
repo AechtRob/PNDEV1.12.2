@@ -429,6 +429,11 @@ public class ModelMobulavermis extends AdvancedModelBase {
         this.Head.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.Head.offsetZ = 0.030F;
+        this.Head.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Head.offsetY = 0.4F;

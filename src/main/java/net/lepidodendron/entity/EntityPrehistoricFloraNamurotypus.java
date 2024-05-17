@@ -8,10 +8,16 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMeganeurites;
 import net.lepidodendron.block.BlockInsectEggsNamurotypus;
 import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.render.entity.LayerMeganeuritesWing;
+import net.lepidodendron.entity.render.entity.LayerNamurotypusWing;
+import net.lepidodendron.entity.render.entity.RenderMeganeurites;
+import net.lepidodendron.entity.render.entity.RenderNamurotypus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -83,15 +89,13 @@ public class EntityPrehistoricFloraNamurotypus extends EntityPrehistoricFloraMeg
 	}
 
 	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
 			ResourceLocation resourcelocation = LepidodendronMod.NAMUROTYPUS_LOOT_JAR;
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build())) {
 				NBTTagCompound variantNBT = new NBTTagCompound();
 				variantNBT.setString("PNType", "");
 				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
@@ -99,10 +103,49 @@ public class EntityPrehistoricFloraNamurotypus extends EntityPrehistoricFloraMeg
 				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
-		}
-		else {
+		} else {
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
-
 	}
-}
+        //-------------------
+		//Displays general:
+		public static float getScaler(@Nullable String variant) {
+		return RenderNamurotypus.getScaler();
+	}
+		@SideOnly(Side.CLIENT)
+		public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderNamurotypus.TEXTURE;
+	}
+		@SideOnly(Side.CLIENT)
+		public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
+		return LayerNamurotypusWing.TEXTURE;
+	}
+		@SideOnly(Side.CLIENT)
+		public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelMeganeurites;
+	}
+	//Entomology Case
+	public static double offsetCase(@Nullable String variant) {
+		return 0.385;
+	}
+	//-------------------
+
+
+		//-------------------
+		//Taxidermy:
+		public static double offsetWall(@Nullable String variant) {return 0.075;}
+		public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
+		public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+		public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
+		public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0F;}
+		public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+		public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return -0.15F;}
+		public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0;}
+		public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.41;}
+		public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+		public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.6F;}
+		public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
+		public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+		//-------------------
+	}

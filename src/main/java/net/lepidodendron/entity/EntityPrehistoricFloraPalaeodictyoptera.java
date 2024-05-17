@@ -607,7 +607,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				return 0.34;
 
 			case HOMOIOPTERA:
-				return 0.30;
+				return 0.29;
 
 			case LITHOMANTIS:
 				return 0.30;
@@ -616,13 +616,10 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				return 0.31;
 
 			case SINODUNBARIA:
-				return 0.38;
+				return 0.27;
 
 			case STENODICTYA:
-				return 0.41;
-
-			case MAZOTHAIROS:
-				return 0.35;
+				return 0.36;
 
 			case PSYCHROPTILUS:
 				return 0.27;
@@ -664,28 +661,28 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.67;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.6;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -694,11 +691,12 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		return -0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

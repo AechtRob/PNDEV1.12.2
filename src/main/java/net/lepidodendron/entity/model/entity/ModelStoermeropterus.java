@@ -269,6 +269,11 @@ public class ModelStoermeropterus extends AdvancedModelBase {
         this.carapace.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.carapace.offsetZ = 0.030F;
+        this.carapace.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.carapace.offsetY = 0.4F;

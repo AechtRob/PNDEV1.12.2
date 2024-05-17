@@ -197,18 +197,51 @@ public class ModelMeganeurites extends AdvancedModelBase {
 
         updateDefaultPose();
     }
-
-    public void renderStatic(float f) {
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetX = 0.001F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }
-
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, 0.1F, 0.0F, -0.1F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetX = -0.013F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleX = (float)Math.toRadians(90);
+        this.body.offsetY = -0.15F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }
-
-
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);

@@ -366,6 +366,9 @@ public static String getHabitat() {
 	}
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		return 0.36;
+	}
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

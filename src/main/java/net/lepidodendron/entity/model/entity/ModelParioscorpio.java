@@ -317,6 +317,11 @@ public class ModelParioscorpio extends AdvancedModelBase {
         this.head.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.head.offsetZ = -0.020F;
+        this.head.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = 0.4F;

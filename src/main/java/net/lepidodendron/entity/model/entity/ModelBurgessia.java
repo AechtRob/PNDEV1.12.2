@@ -175,6 +175,11 @@ public class ModelBurgessia extends AdvancedModelBase {
         this.Burgessia.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.Burgessia.offsetZ = 0.030F;
+        this.Burgessia.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Burgessia.offsetY = 0.4F;

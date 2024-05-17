@@ -7,10 +7,16 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsErasipteroides;
 import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.render.entity.LayerErasipteroidesWing;
+import net.lepidodendron.entity.render.entity.LayerNamurotypusWing;
+import net.lepidodendron.entity.render.entity.RenderErasipteroides;
+import net.lepidodendron.entity.render.entity.RenderNamurotypus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -102,6 +108,46 @@ public class EntityPrehistoricFloraErasipteroides extends EntityPrehistoricFlora
 		else {
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
-
 	}
+	//-------------------
+	//Displays general:
+	public static float getScaler(@Nullable String variant) {
+		return RenderErasipteroides.getScaler();
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderErasipteroides.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
+		return LayerErasipteroidesWing.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelErasipteroides;
+	}
+	//Entomology Case
+	public static double offsetCase(@Nullable String variant) {
+		return 0.385;
+	}
+	//-------------------
+
+
+	//-------------------
+	//Taxidermy:
+	public static double offsetWall(@Nullable String variant) {return 0.075;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0F;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return -0.15F;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.4;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.6F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+	//-------------------
 }
