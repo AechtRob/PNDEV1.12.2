@@ -1,6 +1,5 @@
 package net.lepidodendron;
 
-import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraftforge.common.MinecraftForge;
@@ -11,7 +10,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
-import java.util.List;
 
 public class LepidodendronConfigPlants {
     public static Configuration cfg;
@@ -732,6 +730,13 @@ public class LepidodendronConfigPlants {
     public static int minheightDicksonia = 1;
     public static int maxheightDicksonia = 150;
     public static double multiplierDicksonia = 1;
+    public static boolean genParadoxopteris = false;
+    public static String[] genParadoxopterisBlacklistBiomes = new String[0];
+    public static String[] genParadoxopterisOverrideBiomes = new String[0];
+    public static int[] dimParadoxopteris = new int[]{0};
+    public static int minheightParadoxopteris = 1;
+    public static int maxheightParadoxopteris = 150;
+    public static double multiplierParadoxopteris = 1;
     public static boolean genEmbothrium = false;
     public static String[] genEmbothriumBlacklistBiomes = new String[0];
     public static String[] genEmbothriumOverrideBiomes = new String[0];
@@ -5848,6 +5853,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Dicksonia", "multiplierDicksonia", multiplierDicksonia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierDicksonia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Paradoxopteris", "genParadoxopteris", genParadoxopteris);
+        prop.setComment("Set to true to generate Paradoxopteris naturally [default: false]");
+        genParadoxopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paradoxopteris", "genParadoxopterisBlacklistBiomes", genParadoxopterisBlacklistBiomes);
+        prop.setComment("List of biomes Paradoxopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genParadoxopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paradoxopteris", "genParadoxopterisOverrideBiomes", genParadoxopterisOverrideBiomes);
+        prop.setComment("List of biomes Paradoxopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genParadoxopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Paradoxopteris", "dimParadoxopteris", dimParadoxopteris);
+        prop.setComment("List of dimension IDs Paradoxopteris can generate in [default: 0]");
+        dimParadoxopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paradoxopteris", "minheightParadoxopteris", minheightParadoxopteris);
+        prop.setComment("Minimum height that Paradoxopteris can generate (1 to 250) [default: 1]");
+        minheightParadoxopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paradoxopteris", "maxheightParadoxopteris", maxheightParadoxopteris);
+        prop.setComment("Maximum height that Paradoxopteris can generate (1 to 250, or set to 0 for unlimited) [default: 150]");
+        maxheightParadoxopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Paradoxopteris", "multiplierParadoxopteris", multiplierParadoxopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierParadoxopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Embothrium", "genEmbothrium", genEmbothrium);
