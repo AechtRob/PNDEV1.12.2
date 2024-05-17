@@ -100,6 +100,11 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 			|| dimID == LepidodendronConfig.dimCarboniferous
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
+			|| dimID == LepidodendronConfig.dimCretaceousLate
+			|| dimID == LepidodendronConfig.dimPaleogene
+			|| dimID == LepidodendronConfig.dimNeogene
+			|| dimID == LepidodendronConfig.dimPleistocene
 		) {
 			return;
 		}

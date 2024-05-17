@@ -124,6 +124,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			biomeCriteria = false;
 		}
@@ -132,7 +133,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if (dimID == LepidodendronConfig.dimCretaceousEarly
+		if (dimID == LepidodendronConfig.dimCretaceousLate
 		) {
 			multiplier = 32;
 		}
