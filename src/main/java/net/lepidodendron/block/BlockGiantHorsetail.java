@@ -190,7 +190,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_copse")) {
 				biomeCriteria = true;
 			}
 			else {
