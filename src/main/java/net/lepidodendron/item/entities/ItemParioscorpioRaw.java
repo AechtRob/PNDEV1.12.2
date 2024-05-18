@@ -4,9 +4,10 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -42,20 +43,26 @@ public class ItemParioscorpioRaw extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/parioscorpio_raw", "inventory"));
 	}
 
-	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
-			super();
+			super(0,0,false);
 			setTranslationKey("pf_parioscorpio_raw");
 			setRegistryName("parioscorpio_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
 
-		@Nullable
 		@Override
-		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_parioscorpio";
+		public EnumAction getItemUseAction(ItemStack stack)
+		{
+			return EnumAction.NONE;
 		}
+
+//		@Nullable
+//		@Override
+//		public String getMobStr() {
+//			return "lepidodendron:prehistoric_flora_parioscorpio";
+//		}
 
 		@Nullable
 		@Override

@@ -4,7 +4,6 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -43,20 +42,20 @@ public class ItemStoermeropterusRaw extends ElementsLepidodendronMod.ModElement 
 		OreDictionary.registerOre("pndietCrustacean", ItemStoermeropterusRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
-			super();
+			super(2, 0.1f, false);
 			setTranslationKey("pf_stoermeropterus_raw");
 			setRegistryName("stoermeropterus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
 
-		@Nullable
-		@Override
-		public String getMobStr() {
-			return "lepidodendron:prehistoric_flora_stoermeropterus";
-		}
+//		@Nullable
+//		@Override
+//		public String getMobStr() {
+//			return "lepidodendron:prehistoric_flora_stoermeropterus";
+//		}
 
 		@Nullable
 		@Override
