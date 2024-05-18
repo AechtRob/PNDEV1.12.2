@@ -354,6 +354,9 @@ public class EntityPrehistoricFloraOrcanopterus extends EntityPrehistoricFloraSw
     }
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		return 0.45;
+	}
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

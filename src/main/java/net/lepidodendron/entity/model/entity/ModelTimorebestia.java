@@ -224,6 +224,11 @@ public class ModelTimorebestia extends AdvancedModelBase {
         this.timorebestia.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.timorebestia.offsetZ = 0.030F;
+        this.timorebestia.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.timorebestia.offsetY = 0.4F;

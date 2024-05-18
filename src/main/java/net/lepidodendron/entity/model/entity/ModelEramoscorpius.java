@@ -313,6 +313,11 @@ public class ModelEramoscorpius extends AdvancedModelBase {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = 0.030F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = 0.4F;

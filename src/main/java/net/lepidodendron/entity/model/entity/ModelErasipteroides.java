@@ -187,18 +187,79 @@ public class ModelErasipteroides extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
-
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.07F;
-        this.body.render(0.015F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetX = -0.0F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, -0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetX = -0.01F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.4F;
+        this.body.offsetX = 0.55F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 0.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleX = (float)Math.toRadians(90);
+        this.body.offsetY = -0.15F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

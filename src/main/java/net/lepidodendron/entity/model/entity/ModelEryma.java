@@ -364,6 +364,11 @@ public class ModelEryma extends AdvancedModelBase {
         this.bone.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.bone.offsetZ = 0.030F;
+        this.bone.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bone.offsetY = 0.4F;

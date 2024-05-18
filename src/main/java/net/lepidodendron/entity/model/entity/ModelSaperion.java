@@ -205,6 +205,11 @@ public class ModelSaperion extends AdvancedModelBase {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.main.offsetZ = 0.030F;
+        this.main.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = 0.4F;

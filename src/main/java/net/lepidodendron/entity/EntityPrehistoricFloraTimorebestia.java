@@ -250,6 +250,9 @@ public class EntityPrehistoricFloraTimorebestia extends EntityPrehistoricFloraAg
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		return 0.4;
+	}
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}

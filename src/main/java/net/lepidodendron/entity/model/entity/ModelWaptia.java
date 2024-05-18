@@ -348,6 +348,11 @@ public class ModelWaptia extends AdvancedModelBase {
         this.base.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticDisplayCase(float f) {
+        this.base.offsetZ = 0.030F;
+        this.base.render(0.01f);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = 0.4F;
