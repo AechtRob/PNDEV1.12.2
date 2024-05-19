@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraCenoceras extends EntityPrehistoricFloraNauti
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return -1;
 	}
 
 	@Override

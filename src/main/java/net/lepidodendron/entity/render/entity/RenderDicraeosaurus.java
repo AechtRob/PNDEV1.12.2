@@ -40,7 +40,7 @@ public class RenderDicraeosaurus extends RenderLiving<EntityPrehistoricFloraDicr
             {
                 return;
             }
-            RenderDisplays.modelDicraeosaurus.renderStaticBook(this.prepareScale(entity, partialTicks));
+            RenderDisplays.modelDicraeosaurusBook.renderStaticBook(this.prepareScale(entity, partialTicks));
             if (flag)
             {
                 this.unsetBrightness();

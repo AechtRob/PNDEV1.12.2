@@ -237,23 +237,24 @@ public class EntityPrehistoricFloraThalassiodracon extends EntityPrehistoricFlor
 		return -1.36;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 0.9;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 2.0;
+		return 0.9;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.9F;
+		return -0.5F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
 		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 1.F;
+		return 0.5F;
 	}
+
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0.9;
 	}

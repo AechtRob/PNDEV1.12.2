@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraWingertshellicus extends EntityPrehistoricFlo
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 	@Override

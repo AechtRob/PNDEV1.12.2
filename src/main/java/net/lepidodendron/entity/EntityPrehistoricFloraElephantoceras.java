@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderElephantoceras;
-import net.lepidodendron.entity.render.entity.RenderHyneria;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -65,7 +64,7 @@ public class EntityPrehistoricFloraElephantoceras extends EntityPrehistoricFlora
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return -1;
 	}
 
 	@Override

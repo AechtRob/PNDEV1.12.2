@@ -276,9 +276,30 @@ public class ModelThalassiodracon extends AdvancedModelBaseExtended {
             this.Hips.render(0.01F);
             resetToDefaultPose();
     }
+
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Tail4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck6, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck4, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck2, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(Lowerjaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfrontflipper1, 0.0F, 0.0873F, -0.1745F);
+        this.setRotateAngle(Leftfrontflipper1, 0.0F, -0.0873F, 0.2182F);
+        this.setRotateAngle(cube_r1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindflipper1, 0.0F, 0.0873F, 0.1745F);
+        this.setRotateAngle(Lefthindflipper1, 0.0F, -0.0873F, -0.1745F);
+        this.Hips.offsetY = -0.08F;
+        this.Hips.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;

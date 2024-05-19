@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraVampyronassa extends EntityPrehistoricFloraNa
 
 	@Override
 	public int getAdultAge() {
-		return 48000;
+		return -1;
 	}
 
 	@Override

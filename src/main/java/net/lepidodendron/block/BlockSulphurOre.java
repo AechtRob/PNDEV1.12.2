@@ -9,7 +9,6 @@ import net.lepidodendron.item.ItemSulphur;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -24,6 +23,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -233,8 +234,12 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
-		{
+		public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
+			Random rand = world instanceof World ? ((World) world).rand : new Random();
+			if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this)) {
+				int i = MathHelper.getInt(rand, 1, 4);
+				return i;
+			}
 			return 0;
 		}
 
