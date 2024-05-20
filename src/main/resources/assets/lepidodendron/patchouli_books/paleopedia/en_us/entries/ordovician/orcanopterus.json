@@ -1,0 +1,47 @@
+{
+	"name": "Orcanopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/orcanopterus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_orcanopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_orcanopterus",
+			"title": "Orcanopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Eurypterida $(br)>Waeringopteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. manitoulinensis",
+            "entity": "lepidodendron:prehistoric_flora_orcanopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orcanopterus",
+			"type": "text",
+			"text": "Orcanopterus is a medium sized eurypterid known from the Late Ordovician of Canada. It grew to around 60 cm long, and had a broad and flat body and cephalon. The body was made up of twelve segments, which is further grouped into two tagmata and a telson. The first tagma has segments that are more wide than long, while the second tagma has segments that are only slightly wider than they are long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_orcanopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_orcanopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_orcanopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_orcanopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_orcanopterus"
+		}
+	]
+}

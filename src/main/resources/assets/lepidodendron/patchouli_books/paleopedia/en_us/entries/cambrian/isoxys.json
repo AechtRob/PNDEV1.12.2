@@ -1,0 +1,47 @@
+{
+	"name": "Isoxys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/isoxys_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_isoxys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_isoxys",
+			"title": "Isoxys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Isoxyida $(br)>Isoxyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. curvirostratus",
+            "entity": "lepidodendron:prehistoric_flora_isoxys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_isoxys",
+			"type": "text",
+			"text": "Isoxys is a genus of stem-group arthropod from the Cambrian. Around 20 species are described, with carapace length ranging from 1 to 10 cm. It had a bivalved carapace, which was sharp at its ends. The first pair of appendages is large and upward facing, while others are biramous. It was probably actively swimming and hunting smaller prey, and it would also be common prey of other pelagic predators like radiodonts. Eggs are laid inside the carapace. It is an important arthropod that has characters from both more basal arthropods like radiodont and modern arthropods."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_isoxys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_isoxys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_isoxys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_isoxys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_isoxys"
+		}
+	]
+}

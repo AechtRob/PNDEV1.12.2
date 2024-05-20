@@ -1,0 +1,47 @@
+{
+	"name": "Hypuronector",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hypuronector_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_hypuronector",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hypuronector",
+			"title": "Hypuronector",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Drepanosauromorpha $(br)>Drepanosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. limnaios",
+            "entity": "lepidodendron:prehistoric_flora_hypuronector",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypuronector",
+			"type": "text",
+			"text": "Hypuronector is a drepanosaur known from the Lockatong Formation of the eastern United States. It was a small arboreal animal, estimated to be about 12 cm long. Many specimens are known, although non are complete skeletons. It had a deep, paddle-like tail, and for this reason was originally interpreted to have been a swimmer, and sometimes even a glider, although these interpretations have now been ruled out after further studies."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hypuronector"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hypuronector"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hypuronector"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hypuronector"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hypuronector"
+		}
+	]
+}
