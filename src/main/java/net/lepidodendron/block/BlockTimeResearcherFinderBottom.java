@@ -391,7 +391,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 					this.trayheight--;
 				} else if (this.processTick <= (this.processTickTime - this.trayLiftTickTime) - 80) {
 					if (this.getWorld().rand.nextInt(5) == 0) {
-						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.2F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
+						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.1F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
 						this.renderZap = true;
 					}
 					//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);

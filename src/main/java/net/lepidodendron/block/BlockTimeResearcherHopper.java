@@ -410,7 +410,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				TileEntity te = world.getTileEntity(pos.down());
 				if (te != null) {
 					if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
-						((BlockTimeResearcher.TileEntityTimeResearcher)te).drainEnergy(10);
+						((BlockTimeResearcher.TileEntityTimeResearcher)te).drainEnergy(20);
 					}
 				}
 				this.crusherRotation = this.crusherRotation + (0.5F * Math.min(this.processTick, 20));
@@ -474,7 +474,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		}
 
 		public void playSound(World world, BlockPos pos) {
-			world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_CRUSHER, SoundCategory.BLOCKS, 0.2F, 1.0F);
+			world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_CRUSHER, SoundCategory.BLOCKS, 0.1F, 1.0F);
 			this.soundTick = this.soundLength;
 		}
 
