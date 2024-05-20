@@ -1,0 +1,47 @@
+{
+	"name": "Erasipteroides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/erasipteroides_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_erasipteroides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_erasipteroides",
+			"title": "Erasipteroides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arthropoda $(br)>Insecta $(br)>Erasipteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. valentini",
+            "entity": "lepidodendron:prehistoric_flora_erasipteroides",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_erasipteroides",
+			"type": "text",
+			"text": "Erasipteroides is a griffinfly known from the Hagen-Vorhalle locality of the Upper Carboniferous. It is known from a partial fossil, which preserved most of the body, head, and wings. It was a small griffinfly, much smaller than Meganeura, growing up to 30 cm in wingspan."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_erasipteroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_erasipteroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_erasipteroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_erasipteroides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_erasipteroides"
+		}
+	]
+}

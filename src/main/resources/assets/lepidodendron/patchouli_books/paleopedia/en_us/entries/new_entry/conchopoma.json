@@ -1,0 +1,47 @@
+{
+	"name": "Conchopoma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/conchopoma_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_conchopoma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_conchopoma",
+			"title": "Conchopoma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous - Permian$(br2)>Sarcopterygii $(br)>Dipnoi"
+		},
+        	{
+            "type": "entity",
+            "name": "C. gadiforme",
+            "entity": "lepidodendron:prehistoric_flora_conchopoma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_conchopoma",
+			"type": "text",
+			"text": "Conchopoma is a lungfish which lived during the Carboniferous and Permian periods. Its fossils have been found in North America. Conchopoma had a large round body which is different from modern and mesozoic lungfish, which generally had longer and thinner bodies."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_conchopoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_conchopoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_conchopoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_conchopoma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_conchopoma"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Burgessia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/burgessia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_burgessia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_burgessia",
+			"title": "Burgessia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda"
+		},
+        	{
+            "type": "entity",
+            "name": "B. bella",
+            "entity": "lepidodendron:prehistoric_flora_burgessia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_burgessia",
+			"type": "text",
+			"text": "Burgessia is an extremely abundant shelled arthropod from the Burgess Shale of Canada. It had an unsegmented circular carapace which was slightly convex. It was likely to have been a benthic sea floor dweller that lacked the ability to swim. Some studies suggest that Burgessia was a deposit feeder. It is so abundant in the Burgess Shale that over 1,700 specimens have been collected."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_burgessia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_burgessia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_burgessia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_burgessia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_burgessia"
+		}
+	]
+}

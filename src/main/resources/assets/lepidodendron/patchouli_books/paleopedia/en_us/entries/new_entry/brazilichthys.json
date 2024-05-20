@@ -1,0 +1,47 @@
+{
+	"name": "Brazilichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brazilichthys_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_brazilichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brazilichthys",
+			"title": "Brazilichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>"
+		},
+        	{
+            "type": "entity",
+            "name": "B. macrognathus",
+            "entity": "lepidodendron:prehistoric_flora_brazilichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brazilichthys",
+			"type": "text",
+			"text": "Brazilichthys is an enigmatic fish from the Permian of Brazil. It is known from a single partially complete skull, found exclusively in Brazil, which showcases a variety of distinct features, resulting in its placement in its own family, Brazilichthyidae. Its evolutionary relationships to other genera are not well known due to its fragmentary nature, and no other similar taxon has been discovered anywhere else in the world. The skull of Brazilichthys measured 8 cm long, and it lived in freshwater environments, alongside other Brazilian taxa such as Prionosuchus. It was named after Brazil, the place where it was discovered."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brazilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brazilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brazilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brazilichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brazilichthys"
+		}
+	]
+}
