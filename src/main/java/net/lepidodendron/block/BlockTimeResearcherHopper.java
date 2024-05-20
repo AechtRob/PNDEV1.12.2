@@ -474,7 +474,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		}
 
 		public void playSound(World world, BlockPos pos) {
-			world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_CRUSHER, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_CRUSHER, SoundCategory.BLOCKS, 0.2F, 1.0F);
 			this.soundTick = this.soundLength;
 		}
 
