@@ -66,6 +66,10 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
 	}
 
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
+
 	public ItemStack getPropagule() {
 		ItemStack stack = new ItemStack(ItemUnknownEgg.block, (int) (1));
 		if (!stack.hasTagCompound()) {

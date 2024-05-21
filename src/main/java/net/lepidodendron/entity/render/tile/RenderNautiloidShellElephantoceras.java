@@ -52,7 +52,7 @@ public class RenderNautiloidShellElephantoceras extends TileEntitySpecialRendere
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         }
         modelNautiloidShell.renderAll(Minecraft.getMinecraft().player.ticksExisted);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.disableRescaleNormal();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();

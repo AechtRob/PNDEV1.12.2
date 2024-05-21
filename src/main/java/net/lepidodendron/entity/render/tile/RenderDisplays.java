@@ -184,6 +184,7 @@ public class RenderDisplays {
     public static final ModelDorypterus modelDorypterus = new ModelDorypterus();
     public static final ModelDrepanaspis modelDrepanaspis = new ModelDrepanaspis();
     public static final ModelDicraeosaurus modelDicraeosaurus = new ModelDicraeosaurus();
+    public static final ModelDicraeosaurus modelDicraeosaurusBook = new ModelDicraeosaurus();
     public static final ModelDiplodocus modelDiplodocus = new ModelDiplodocus ();
     public static final ModelDiplodocus modelDiplodocusBook = new ModelDiplodocus ();
     public static final ModelDilophosaurus modelDilophosaurus = new ModelDilophosaurus ();

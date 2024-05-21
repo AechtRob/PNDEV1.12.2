@@ -436,6 +436,7 @@ public class ModelPiatnitzkysaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(neck3, 0.05F, 0.0F, 0.0F);
         this.setRotateAngle(neck2, -0.05F, 0.0F, 0.0F);

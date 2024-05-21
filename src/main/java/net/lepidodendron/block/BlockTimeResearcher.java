@@ -481,10 +481,16 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 							if (this.dimCretaceousEarly < this.maxResearch) {
 								this.dimCretaceousEarly++;
 							}
+							else if (this.dimCretaceousLate < this.maxResearch) {
+								this.dimCretaceousLate++;
+							}
 						}
 						else {
 							if (this.dimCretaceousLate < this.maxResearch) {
 								this.dimCretaceousLate++;
+							}
+							else if (this.dimCretaceousEarly < this.maxResearch) {
+								this.dimCretaceousEarly++;
 							}
 						}
 					}

@@ -476,7 +476,39 @@ public class TrapSpawner extends ElementsLepidodendronMod.ModElement {
                                                             // Apply babification for large things - should be fine to do this to everything
                                                             // as invalid tags will be stripped out eventually on a world save:
 
-                                                            if (entity.width > 0.9 || entity.height > 0.9) {
+                                                            boolean noBucket = false;
+                                                            if (entity instanceof EntityPrehistoricFloraAgeableFishBase) {
+                                                                noBucket = !((EntityPrehistoricFloraAgeableFishBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraNautiloidBase) {
+                                                                noBucket = !((EntityPrehistoricFloraNautiloidBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraEurypteridBase) {
+                                                                noBucket = !((EntityPrehistoricFloraEurypteridBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraAmphibianBase) {
+                                                                noBucket = !((EntityPrehistoricFloraAmphibianBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraFishBase) {
+                                                                noBucket = !((EntityPrehistoricFloraFishBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraJellyfishBase) {
+                                                                noBucket = !((EntityPrehistoricFloraJellyfishBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+                                                                noBucket = !((EntityPrehistoricFloraSlitheringWaterBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+                                                                noBucket = !((EntityPrehistoricFloraSwimmingBottomWalkingWaterBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+                                                                noBucket = !((EntityPrehistoricFloraTrilobiteBottomBase)entity).isSmall();
+                                                            }
+                                                            if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+                                                                noBucket = !((EntityPrehistoricFloraTrilobiteSwimBase)entity).isSmall();
+                                                            }
+
+                                                            if (entity.width > 0.9 || entity.height > 0.9 || noBucket) {
                                                                 EntityPrehistoricFloraAgeableBase.summon(world, mobToSpawn, nbtStr, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, true);
                                                             }
                                                             else {

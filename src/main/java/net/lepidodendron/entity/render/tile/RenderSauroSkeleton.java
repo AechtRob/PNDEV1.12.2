@@ -62,7 +62,7 @@ public class RenderSauroSkeleton extends TileEntitySpecialRenderer<BlockSauroSke
             modelSauroSkeleton2.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         }
 
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.disableRescaleNormal();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();

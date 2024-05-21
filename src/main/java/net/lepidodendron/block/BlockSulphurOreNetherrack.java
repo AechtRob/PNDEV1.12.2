@@ -17,6 +17,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -143,8 +144,12 @@ public class BlockSulphurOreNetherrack extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
-		public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
-		{
+		public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
+			Random rand = world instanceof World ? ((World) world).rand : new Random();
+			if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this)) {
+				int i = MathHelper.getInt(rand, 1, 4);
+				return i;
+			}
 			return 0;
 		}
 

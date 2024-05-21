@@ -489,9 +489,15 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		return 1.4F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return 1.2;
+		}
 		return 1.5;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return 1.1;
+		}
 		return 1.4;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
@@ -504,7 +510,7 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.5F;
+		return -0.2F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

@@ -15,6 +15,7 @@ import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
@@ -63,6 +64,15 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
+
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	//an array of all the animations
@@ -269,10 +279,6 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 	public static String getPeriod() {
 		return "Silurian";
-	}
-
-	public static String getHabitat() {
-		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	@Override

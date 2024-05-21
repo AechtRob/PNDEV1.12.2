@@ -566,7 +566,7 @@ public class LepidodendronConfig {
         attackHealth = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Global Mobs", "adultAge", adultAge);
-        prop.setComment("Ageable mobs will behave as adults once they are at least this percentage of full age (hunting, dropping eggs, etc.). This does nto affect models/textures. [default: 75]");
+        prop.setComment("Ageable mobs will behave as adults once they are at least this percentage of full age (hunting, dropping eggs, etc.). This does not affect models/textures. [default: 75]");
         adultAge = prop.getInt();
         propOrder.add(prop.getName());
 //        prop = cfg.get("Global Mobs", "doMultiplyMobs", doMultiplyMobs);

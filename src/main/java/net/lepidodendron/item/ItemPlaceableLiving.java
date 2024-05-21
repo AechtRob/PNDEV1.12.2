@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -415,7 +416,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
 							if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-								itemstack.shrink(1);
+								//Shrink it if the item is not the block:
+								if (Block.getBlockFromItem(item) == null || Block.getBlockFromItem(item) == Blocks.AIR) {
+									itemstack.shrink(1);
+								}
 							}
 							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
 								//if (!playerIn.isCreative()) {

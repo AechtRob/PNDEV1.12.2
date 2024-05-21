@@ -410,7 +410,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				TileEntity te = world.getTileEntity(pos.down());
 				if (te != null) {
 					if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
-						((BlockTimeResearcher.TileEntityTimeResearcher)te).drainEnergy(10);
+						((BlockTimeResearcher.TileEntityTimeResearcher)te).drainEnergy(20);
 					}
 				}
 				this.crusherRotation = this.crusherRotation + (0.5F * Math.min(this.processTick, 20));
@@ -474,7 +474,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 		}
 
 		public void playSound(World world, BlockPos pos) {
-			world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_CRUSHER, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_CRUSHER, SoundCategory.BLOCKS, 0.1F, 1.0F);
 			this.soundTick = this.soundLength;
 		}
 
@@ -613,32 +613,49 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 //			if (index == 0) {
 				Item item = stack.getItem();
 				Block itemBlock = Block.getBlockFromItem(item);
-				if (itemBlock == BlockFossilPrecambrian.block
-						|| itemBlock == BlockFossilCambrian.block
-						|| itemBlock == BlockFossilOrdovician.block
-						|| itemBlock == BlockFossilSilurian.block
-						|| itemBlock == BlockFossilDevonian.block
-						|| itemBlock == BlockFossilCarboniferous.block
-						|| itemBlock == BlockFossilPermian.block
-						|| itemBlock == BlockFossilTriassic.block
-						|| itemBlock == BlockFossilJurassic.block
-						|| itemBlock == BlockFossilCretaceous.block
-						|| itemBlock == BlockFossilPaleogene.block
-						|| itemBlock == BlockFossilNeogene.block
-						|| itemBlock == BlockFossilPleistocene.block
-						|| item == ItemFossilPrecambrian.block
-						|| item == ItemFossilCambrian.block
-						|| item == ItemFossilOrdovician.block
-						|| item == ItemFossilSilurian.block
-						|| item == ItemFossilDevonian.block
-						|| item == ItemFossilCarboniferous.block
-						|| item == ItemFossilPermian.block
-						|| item == ItemFossilTriassic.block
-						|| item == ItemFossilJurassic.block
-						|| item == ItemFossilCretaceous.block
-						|| item == ItemFossilPaleogene.block
-						|| item == ItemFossilNeogene.block
-						|| item == ItemFossilPleistocene.block
+				TileEntity te = this.world.getTileEntity(this.getPos().down());
+				boolean dimPrecambrian = false;
+				boolean dimCambrian = false;
+				boolean dimOrdovician = false;
+				boolean dimSilurian = false;
+				boolean dimDevonian = false;
+				boolean dimCarboniferous = false;
+				boolean dimPermian = false;
+				boolean dimTriassic = false;
+				boolean dimJurassic = false;
+				boolean dimCretaceous = false;
+				boolean dimPaleogene = false;
+				boolean dimNeogene = false;
+				boolean dimPleistocene = false;
+				if (te instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+					BlockTimeResearcher.TileEntityTimeResearcher tileEntityTimeResearcher = (BlockTimeResearcher.TileEntityTimeResearcher) te;
+					dimPrecambrian = tileEntityTimeResearcher.getResearchPercent(1) == 1;
+					dimCambrian = tileEntityTimeResearcher.getResearchPercent(2) == 1;
+					dimOrdovician = tileEntityTimeResearcher.getResearchPercent(3) == 1;
+					dimSilurian = tileEntityTimeResearcher.getResearchPercent(4) == 1;
+					dimDevonian = tileEntityTimeResearcher.getResearchPercent(5) == 1;
+					dimCarboniferous = tileEntityTimeResearcher.getResearchPercent(6) == 1;
+					dimPermian = tileEntityTimeResearcher.getResearchPercent(7) == 1;
+					dimTriassic = tileEntityTimeResearcher.getResearchPercent(8) == 1;
+					dimJurassic = tileEntityTimeResearcher.getResearchPercent(9) == 1;
+					dimCretaceous = tileEntityTimeResearcher.getResearchPercent(10) == 1 && tileEntityTimeResearcher.getResearchPercent(11) == 1;
+					dimPaleogene = tileEntityTimeResearcher.getResearchPercent(12) == 1;
+					dimNeogene = tileEntityTimeResearcher.getResearchPercent(13) == 1;
+					dimPleistocene = tileEntityTimeResearcher.getResearchPercent(14) == 1;
+				}
+				if (((itemBlock == BlockFossilPrecambrian.block || item == ItemFossilPrecambrian.block) && !dimPrecambrian)
+						|| ((itemBlock == BlockFossilCambrian.block || item == ItemFossilCambrian.block) && !dimCambrian)
+						|| ((itemBlock == BlockFossilOrdovician.block || item == ItemFossilOrdovician.block) && !dimOrdovician)
+						|| ((itemBlock == BlockFossilSilurian.block || item == ItemFossilSilurian.block) && !dimSilurian)
+						|| ((itemBlock == BlockFossilDevonian.block || item == ItemFossilDevonian.block) && !dimDevonian)
+						|| ((itemBlock == BlockFossilCarboniferous.block || item == ItemFossilCarboniferous.block) && !dimCarboniferous)
+						|| ((itemBlock == BlockFossilPermian.block || item == ItemFossilPermian.block) && !dimPermian)
+						|| ((itemBlock == BlockFossilTriassic.block || item == ItemFossilTriassic.block) && !dimTriassic)
+						|| ((itemBlock == BlockFossilJurassic.block || item == ItemFossilJurassic.block) && !dimJurassic)
+						|| ((itemBlock == BlockFossilCretaceous.block || item == ItemFossilCretaceous.block) && !dimCretaceous)
+						|| ((itemBlock == BlockFossilPaleogene.block || item == ItemFossilPaleogene.block) && !dimPaleogene)
+						|| ((itemBlock == BlockFossilNeogene.block || item == ItemFossilNeogene.block) && !dimNeogene)
+						|| ((itemBlock == BlockFossilPleistocene.block || item == ItemFossilPleistocene.block) && !dimPleistocene)
 				) {
 					return true;
 				}

@@ -90,7 +90,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                 } else {
                     this.nest.renderAll(1.25f);
                 }
-                GlStateManager.disableAlpha();
+                //GlStateManager.disableAlpha();
                 GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
@@ -185,7 +185,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                             break;
                     }
 
-                    GlStateManager.disableAlpha();
+                    //GlStateManager.disableAlpha();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();

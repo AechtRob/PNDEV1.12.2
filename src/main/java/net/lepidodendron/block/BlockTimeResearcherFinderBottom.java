@@ -301,6 +301,11 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		public boolean canStartProcess() {
 
+			if (this.getSelectedLife().toString().equalsIgnoreCase("")
+				|| this.getSelectedLife().toString().equalsIgnoreCase("- NONE -")) {
+				return false;
+			}
+
 			if (LepidodendronConfig.machinesRF) {
 				BlockPos researcherPos = getResearcherPos();
 				if (researcherPos != null) {
@@ -330,13 +335,13 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		public boolean testRoll(float f) {
 			f = f * 100;
-			return (585F / (12F - (f / 10F))) - 41.666F >= this.world.rand.nextFloat() * 250F;
+			return  Math.max(0F, (410F / (11.5F - (f / 10F))) - 39.0475F) > this.world.rand.nextFloat() * 250F;
 		}
 
 		public static float actualProbablity(float f) {
 			f = f * 100;
-			float chance = (585F / (12F - (f / 10F))) - 41.666F;
-			return 1 - (250 - chance) / 250;
+			float chance = Math.max(0F, (410F / (11.5F - (f / 10F))) - 39.0475F);
+			return 1 - (251 - chance) / 251;
 		}
 
 		@Override
@@ -391,7 +396,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 					this.trayheight--;
 				} else if (this.processTick <= (this.processTickTime - this.trayLiftTickTime) - 80) {
 					if (this.getWorld().rand.nextInt(5) == 0) {
-						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.25F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
+						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.1F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
 						this.renderZap = true;
 					}
 					//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
@@ -1420,9 +1425,6 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 			void processMessage(ParticlePacket message, WorldClient worldClient)
 			{
-				for (int l = 0; l < 32; ++l) {
-					worldClient.spawnParticle(EnumParticleTypes.BLOCK_DUST, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.05D, 0);
-				}
 				for (int l = 0; l < 8; ++l) {
 					worldClient.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.0D, 0);
 				}
