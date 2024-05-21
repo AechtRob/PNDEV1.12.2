@@ -35,7 +35,7 @@ public class RenderAngiopteris extends TileEntitySpecialRenderer<BlockAngiopteri
             GlStateManager.scale(0.05F, 0.05F, 0.05F);
             Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
             this.modelAngiopteris.renderAll(1.25f);
-            GlStateManager.disableAlpha();
+            //GlStateManager.disableAlpha();
             GlStateManager.disableRescaleNormal();
             GlStateManager.enableCull();
             GlStateManager.popMatrix();

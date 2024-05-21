@@ -301,6 +301,11 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		public boolean canStartProcess() {
 
+			if (this.getSelectedLife().toString().equalsIgnoreCase("")
+				|| this.getSelectedLife().toString().equalsIgnoreCase("- NONE -")) {
+				return false;
+			}
+
 			if (LepidodendronConfig.machinesRF) {
 				BlockPos researcherPos = getResearcherPos();
 				if (researcherPos != null) {
@@ -330,13 +335,13 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		public boolean testRoll(float f) {
 			f = f * 100;
-			return (585F / (12F - (f / 10F))) - 41.666F >= this.world.rand.nextFloat() * 250F;
+			return  Math.max(0F, (410F / (11.5F - (f / 10F))) - 40.5265F) > this.world.rand.nextFloat() * 250F;
 		}
 
 		public static float actualProbablity(float f) {
 			f = f * 100;
-			float chance = (585F / (12F - (f / 10F))) - 41.666F;
-			return 1 - (250 - chance) / 250;
+			float chance = Math.max(0F, (410F / (11.5F - (f / 10F))) - 40.5265F);
+			return 1 - (251 - chance) / 251;
 		}
 
 		@Override
@@ -1420,9 +1425,6 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 			void processMessage(ParticlePacket message, WorldClient worldClient)
 			{
-				for (int l = 0; l < 32; ++l) {
-					worldClient.spawnParticle(EnumParticleTypes.BLOCK_DUST, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.05D, 0);
-				}
 				for (int l = 0; l < 8; ++l) {
 					worldClient.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.0D, 0);
 				}

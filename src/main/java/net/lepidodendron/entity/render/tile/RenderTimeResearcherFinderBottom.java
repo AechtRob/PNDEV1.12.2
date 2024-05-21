@@ -48,14 +48,14 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
 
         this.bindTexture(TEXTURE);
         ModelTimeResearcherFinderPlate modelTimeResearcherFinderPlate = this.modelTimeResearcherFinderPlate;
+
+        GlStateManager.pushMatrix();
         GlStateManager.disableCull();
         GlStateManager.enableRescaleNormal();
         GlStateManager.alphaFunc(516, 0.1f);
         GlStateManager.enableBlend();
         RenderHelper.enableStandardItemLighting();
         GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
-
-        GlStateManager.pushMatrix();
         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -80,12 +80,12 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
                         itemstack = tee.getStackInSlot(1);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
+                        GlStateManager.pushMatrix();
                         GlStateManager.enableRescaleNormal();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
                         GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-                        GlStateManager.pushMatrix();
                         if (Block.getBlockFromItem(itemstack.getItem()) instanceof BlockFossil) {
                             GlStateManager.translate(x + 0.5, y + yy - 1.05, z + 0.5);
                             GlStateManager.rotate(45, 0, 1, 0);
@@ -114,16 +114,13 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
         //Render laser beams if present:
         if (entity.renderZap) {
 
-            GL11.glPushMatrix();
+            GlStateManager.pushMatrix();
 
             GlStateManager.enableBlend();
             GlStateManager.disableAlpha();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
             GlStateManager.depthMask(true);
-//            int i = 61680;
-//            int j = i % 65536;
-//            int k = i / 65536;
-//            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+
             Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
 
             GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -288,14 +285,11 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GL11.glEnable(GL11.GL_TEXTURE_2D);
 
             Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
-//            i = 0;
-//            j = i % 65536;
-//            k = i / 65536;
-//            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
+
             GlStateManager.disableBlend();
             GlStateManager.enableAlpha();
 
-            GL11.glPopMatrix();
+            GlStateManager.popMatrix();
 
         }
     }

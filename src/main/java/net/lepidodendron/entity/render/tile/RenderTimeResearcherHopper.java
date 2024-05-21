@@ -30,8 +30,9 @@ public class RenderTimeResearcherHopper extends TileEntitySpecialRenderer<BlockT
         this.bindTexture(TEXTURE);
         ModelTimeResearcherHopperCrusher modelTimeResearcherHopperCrusher = this.modelTimeResearcherHopperCrusher;
         GlStateManager.pushMatrix();
+        GlStateManager.enableAlpha();
         GlStateManager.enableRescaleNormal();
-        GlStateManager.disableCull();
+        GlStateManager.enableCull();
         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -43,7 +44,7 @@ public class RenderTimeResearcherHopper extends TileEntitySpecialRenderer<BlockT
         modelTimeResearcherHopperCrusher.grinder3.rotateAngleZ = (float)Math.toRadians(rotation);
         modelTimeResearcherHopperCrusher.renderAll(1.25f);
         GlStateManager.disableRescaleNormal();
-        GlStateManager.enableCull();
+//        GlStateManager.disableAlpha();
         GlStateManager.popMatrix();
 
     }

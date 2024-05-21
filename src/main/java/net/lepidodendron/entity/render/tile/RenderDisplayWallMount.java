@@ -421,14 +421,14 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
 
                     if (itemRender) {
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                         GlStateManager.enableCull();
                         GlStateManager.disableRescaleNormal();
                         RenderHelper.disableStandardItemLighting();
                         GlStateManager.popMatrix();
                     } else {
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
