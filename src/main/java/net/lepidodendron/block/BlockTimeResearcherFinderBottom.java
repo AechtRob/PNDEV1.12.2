@@ -259,8 +259,8 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		public int processTick;
 		public boolean renderZap;
 		private int minEnergyNeeded = 1000;
-		private int trayLiftTickTime = 120; //6 seconds to move the tray
-		private int processTickTime = 960; //48 seconds to process the tray fully
+		private int trayLiftTickTime = 120; //6 seconds to move the block
+		private int processTickTime = 960; //48 seconds to process the block fully
 
 		public int getHeight() {
 			return this.trayheight;
@@ -413,7 +413,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			if (hasEnergy && this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime) - 80) {
 				//Give the processed block now:
 				if (!getStackInSlot(1).isEmpty()) {
-					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 2.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
+					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 1.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
 
 					LepidodendronMod.PACKET_HANDLER.sendToAll(new ParticlePacket(pos.getX(), pos.getY(), pos.getZ()));
 
