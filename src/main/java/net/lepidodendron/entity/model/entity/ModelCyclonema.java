@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraWaterGastropodBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -79,6 +80,17 @@ public class ModelCyclonema extends AdvancedModelBase {
         this.swing(eye2, 0.2F, 0.1F, false, 0, 0.15F, f2, 0.8F);
         this.walk(eye1, 0.2F, 0.1F, false, 0, 0.15F, f2, 0.8F);
         this.walk(eye2, 0.2F, 0.1F, true, 0, 0.15F, f2, 0.8F);
+
+        EntityPrehistoricFloraWaterGastropodBase ee = (EntityPrehistoricFloraWaterGastropodBase) e;
+        this.body.scaleChildren = false;
+        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
+        this.body.setScaleZ(scaler);
+        this.tail.setScaleZ(scaler);
+        this.tail2.setScaleZ(scaler);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        this.body.setScaleX(scaler2 * 0.7F);
+        this.tail.setScaleX(scaler2 * 0.7F);
+        this.tail2.setScaleX(scaler2 * 0.7F);
 
     }
 }
