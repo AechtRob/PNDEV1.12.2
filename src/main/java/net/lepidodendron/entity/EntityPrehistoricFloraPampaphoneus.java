@@ -10,8 +10,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderGorgonops;
-import net.lepidodendron.entity.render.entity.RenderIchthyosaurus;
 import net.lepidodendron.entity.render.entity.RenderPampaphoneus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -49,6 +47,7 @@ public class EntityPrehistoricFloraPampaphoneus extends EntityPrehistoricFloraLa
 	public Animation SHAKE_ANIMATION;
 	public Animation SNIFF_ANIMATION;
 	private int standCooldown;
+
 	public EntityPrehistoricFloraPampaphoneus(World world) {
 		super(world);
 		setSize(0.53F, 0.69F);
@@ -80,7 +79,6 @@ public class EntityPrehistoricFloraPampaphoneus extends EntityPrehistoricFloraLa
 	}
 
 	public static String getPeriod() {return "Permian";}
-	
 
     @Override
     public boolean hasNest() {
