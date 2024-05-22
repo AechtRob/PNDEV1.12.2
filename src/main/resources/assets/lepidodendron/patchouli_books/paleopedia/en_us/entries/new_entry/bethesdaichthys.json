@@ -1,0 +1,47 @@
+{
+	"name": "Bethesdaichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bethesdaichthys_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_bethesdaichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bethesdaichthys",
+			"title": "Bethesdaichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "B. kitchingi",
+            "entity": "lepidodendron:prehistoric_flora_bethesdaichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bethesdaichthys",
+			"type": "text",
+			"text": "Bethesdaichthys is a freshwater fish from the Permian of South Africa. It had a short and oval shaped body, with small teeth in its jaw. Its eyes were very close to the front of its head. It was medium sized, measuring around 30 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bethesdaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bethesdaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bethesdaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bethesdaichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bethesdaichthys"
+		}
+	]
+}

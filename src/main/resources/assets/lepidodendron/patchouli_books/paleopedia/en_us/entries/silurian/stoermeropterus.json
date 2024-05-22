@@ -1,0 +1,47 @@
+{
+	"name": "Stoermeropterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/stoermeropterus_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_stoermeropterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stoermeropterus",
+			"title": "Stoermeropterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda $(br)>Eurypterida $(br)>Moselopteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. conicus",
+            "entity": "lepidodendron:prehistoric_flora_stoermeropterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stoermeropterus",
+			"type": "text",
+			"text": "Stoermeropterus is a eurypterid known from the Silurian of North American and Europe. It was a small eurypterid, growing to around 20 cm in length. These eurypterids lacked a paddle appendage. Their bodies were also very short and wide as opposed to later long and slender eurypterids. As such, they may have spent their time on the sea floor scavenging for food rather than actively swimming around in search of prey."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_stoermeropterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_stoermeropterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_stoermeropterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_stoermeropterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_stoermeropterus"
+		}
+	]
+}

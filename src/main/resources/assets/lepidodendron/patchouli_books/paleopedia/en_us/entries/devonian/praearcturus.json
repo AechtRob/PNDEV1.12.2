@@ -1,0 +1,47 @@
+{
+	"name": "Praearcturus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/praearcturus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_praearcturus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_praearcturus",
+			"title": "Praearcturus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arachnida $(br)>Scorpiones $(br)>Praearcturidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. gigas",
+            "entity": "lepidodendron:prehistoric_flora_praearcturus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_praearcturus",
+			"type": "text",
+			"text": "Praearcturus is a fossil scorpion known from the Devonian of England. The animal is exceptionally large for a scorpion, growing up to 1 meter in length. It is usually interpreted as a mostly aquatic animal, which could come onto land, but would have extreme difficulty in moving around."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_praearcturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_praearcturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_praearcturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_praearcturus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_praearcturus"
+		}
+	]
+}

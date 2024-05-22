@@ -1,0 +1,47 @@
+{
+	"name": "Eryma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eryma_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_eryma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eryma",
+			"title": "Eryma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Arthropoda $(br)>Malacostraca $(br)>Decapoda $(br)>Erymidae"
+		},
+        	{
+            "type": "entity",
+            "name": "E. modestiforme",
+            "entity": "lepidodendron:prehistoric_flora_eryma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eryma",
+			"type": "text",
+			"text": "Eryma is a fossil lobsert-like crustacean from the Mesozoic. Many specimens are known from the Solnhofen Limestone of Germany, many having three dimensional preservation. They bear similarities to modern lobsters, although having much smaller claws than modern lobsters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eryma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eryma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eryma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eryma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eryma"
+		}
+	]
+}
