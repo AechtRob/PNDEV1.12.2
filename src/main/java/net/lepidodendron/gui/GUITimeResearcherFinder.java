@@ -3,8 +3,11 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockTimeResearcher;
-import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
+import net.lepidodendron.block.*;
+import net.lepidodendron.item.*;
+import net.lepidodendron.util.AcidBathOutputMobs;
+import net.lepidodendron.util.AcidBathOutputPlants;
+import net.lepidodendron.util.AcidBathOutputStatics;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -15,8 +18,10 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,6 +36,8 @@ import org.lwjgl.opengl.GL11;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -401,24 +408,12 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
         protected void keyTyped(char typedChar, int keyCode) throws IOException {
             super.keyTyped(typedChar, keyCode);
         }
-
-        @Nullable
-        private float getPercent(int dimIn) {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
-            if (tileEntity != null) {
-                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
-                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
-                    return te.getResearchPercent(dimIn);
-                }
-            }
-            return 0;
-        }
         
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
             this.fontRenderer.drawString("Fossil Searcher", 35, -6, 4210752);
             this.fontRenderer.drawString("Searching for:", 50, 12, 4210752);
-            String mob = "";
+            String mob = "- NONE -";
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
@@ -426,15 +421,162 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
                     mob = te.getSelectedLife();
                 }
             }
-            if (!(mob.equalsIgnoreCase(""))) {
+            if (!(mob.equalsIgnoreCase("- NONE -"))) {
                 mob = translateMob(mob);
             }
             int xPos = (this.fontRenderer.getStringWidth(mob) / 2);
             this.fontRenderer.drawString(mob, 88 - xPos, 22, 4210752);
+            DecimalFormat df = new DecimalFormat("#0.##%");
+            xPos = (this.fontRenderer.getStringWidth(df.format(getProbability())) / 2);
+            this.fontRenderer.drawString(df.format(getProbability()), 89 - xPos, 57, 4210752);
+        }
+
+        public double getProbability() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom te = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity;
+                    String mob = te.getSelectedLife();
+                    if (te.getStackInSlot(1).getItem() == ItemFossilPrecambrian.block
+                        || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getPrecambrianCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(1);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilCambrian.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getCambrianCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getCambrianCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getCambrianCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(2);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilOrdovician.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getOrdovicianCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getOrdovicianCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(3);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilSilurian.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getSilurianCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getSilurianCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getSilurianCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(4);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilDevonian.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getDevonianCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getDevonianCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getDevonianCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(5);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilCarboniferous.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getCarboniferousCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getCarboniferousCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(6);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilPermian.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPermian.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getPermianCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getPermianCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getPermianCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(7);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilTriassic.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getTriassicCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getTriassicCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getTriassicCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(8);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilJurassic.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getJurassicCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getJurassicCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getJurassicCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(9);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilCretaceous.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getCretaceousCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getCretaceousCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getCretaceousCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(10);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilPaleogene.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getPaleogeneCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getPaleogeneCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(11);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilCambrian.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getNeogeneCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getNeogeneCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getNeogeneCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(12);
+                        }
+                    }
+                    if (te.getStackInSlot(1).getItem() == ItemFossilCambrian.block
+                            || te.getStackInSlot(1).getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)) {
+                        if (Arrays.stream(AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs()).anyMatch(m -> m.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputPlants.getPleistoceneCleanedFossilsPlants()).anyMatch(p -> p.equalsIgnoreCase(mob))
+                                || Arrays.stream(AcidBathOutputStatics.getPleistoceneCleanedFossilsStatics()).anyMatch(s -> s.equalsIgnoreCase(mob))
+                        ) {
+                            return getPercent(13);
+                        }
+                    }
+                }
+            }
+            return 0.0D;
+        }
+
+        @Nullable
+        private float getPercent(int dimIn) {
+            EnumFacing facing = world.getBlockState(new BlockPos(x, y, z)).getValue(BlockTimeResearcherFinderBottom.BlockCustom.FACING);
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y +  1, z).offset(facing.rotateY()));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    return BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom.actualProbablity(te.getResearchPercent(dimIn));
+                }
+            }
+            return 0;
         }
 
         public String translateMob(String mobIn) {
-            if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
+            if (mobIn.equalsIgnoreCase("- NONE -") || mobIn.equalsIgnoreCase("")) {
+                mobIn = "- NONE -";
+            }
+            else if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
                 mobIn = mobIn.replace("@", "_").substring(10);
             }
             else {

@@ -38,7 +38,7 @@ public class RenderRibCage extends TileEntitySpecialRenderer<BlockRibCage.TileEn
         GlStateManager.rotate(currentRotation, 1F, 0F, 0F);
 
         modelRibCage.renderAll(Minecraft.getMinecraft().player.ticksExisted);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.disableRescaleNormal();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();

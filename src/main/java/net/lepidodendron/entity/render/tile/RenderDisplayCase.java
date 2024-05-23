@@ -303,7 +303,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 
                     if (itemRender) {
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                         GlStateManager.enableCull();
                         GlStateManager.disableRescaleNormal();
@@ -311,7 +311,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.popMatrix();
                     }
                     else {
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();

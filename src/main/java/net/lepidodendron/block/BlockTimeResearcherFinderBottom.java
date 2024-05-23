@@ -259,8 +259,8 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 		public int processTick;
 		public boolean renderZap;
 		private int minEnergyNeeded = 1000;
-		private int trayLiftTickTime = 120; //6 seconds to move the tray
-		private int processTickTime = 960; //48 seconds to process the tray fully
+		private int trayLiftTickTime = 120; //6 seconds to move the block
+		private int processTickTime = 960; //48 seconds to process the block fully
 
 		public int getHeight() {
 			return this.trayheight;
@@ -301,6 +301,11 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		public boolean canStartProcess() {
 
+			if (this.getSelectedLife().toString().equalsIgnoreCase("")
+				|| this.getSelectedLife().toString().equalsIgnoreCase("- NONE -")) {
+				return false;
+			}
+
 			if (LepidodendronConfig.machinesRF) {
 				BlockPos researcherPos = getResearcherPos();
 				if (researcherPos != null) {
@@ -330,13 +335,13 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 		public boolean testRoll(float f) {
 			f = f * 100;
-			return (585F / (12F - (f / 10F))) - 41.666F >= this.world.rand.nextFloat() * 250F;
+			return  Math.max(0F, (410F / (11.5F - (f / 10F))) - 39.0475F) > this.world.rand.nextFloat() * 250F;
 		}
 
 		public static float actualProbablity(float f) {
 			f = f * 100;
-			float chance = (585F / (12F - (f / 10F))) - 41.666F;
-			return 1 - (250 - chance) / 250;
+			float chance = Math.max(0F, (410F / (11.5F - (f / 10F))) - 39.0475F);
+			return 1 - (251 - chance) / 251;
 		}
 
 		@Override
@@ -391,7 +396,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 					this.trayheight--;
 				} else if (this.processTick <= (this.processTickTime - this.trayLiftTickTime) - 80) {
 					if (this.getWorld().rand.nextInt(5) == 0) {
-						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.2F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
+						world.playSound(null, pos, BlockSounds.TIME_RESEARCHER_LASER, SoundCategory.BLOCKS, 0.1F, 1.0F + ((this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.5F));
 						this.renderZap = true;
 					}
 					//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
@@ -408,7 +413,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			if (hasEnergy && this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime) - 80) {
 				//Give the processed block now:
 				if (!getStackInSlot(1).isEmpty()) {
-					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 2.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
+					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 1.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
 
 					LepidodendronMod.PACKET_HANDLER.sendToAll(new ParticlePacket(pos.getX(), pos.getY(), pos.getZ()));
 
@@ -1420,9 +1425,6 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 
 			void processMessage(ParticlePacket message, WorldClient worldClient)
 			{
-				for (int l = 0; l < 32; ++l) {
-					worldClient.spawnParticle(EnumParticleTypes.BLOCK_DUST, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.05D, 0);
-				}
 				for (int l = 0; l < 8; ++l) {
 					worldClient.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, message.x + 0.5D, message.y + 1.25D, message.z + 0.5D, 0, 0.0D, 0);
 				}

@@ -73,7 +73,7 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
         public List(Minecraft mcIn)
         {
             super(mcIn, GUITimeResearcherFinderSelector.this.width, GUITimeResearcherFinderSelector.this.height, 32, GUITimeResearcherFinderSelector.this.height - 65 + 4, 18);
-
+            this.lifeList.add("- NONE -");
             //Loop over all life possible in the mod and offer ti here:
             for (String stringLife : AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()) {
                 this.lifeList.add(stringLife);
@@ -281,7 +281,10 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
         }
         
         public String translateMob(String mobIn) {
-            if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
+            if (mobIn.equalsIgnoreCase("- NONE -") || mobIn.equalsIgnoreCase("")) {
+                mobIn = "- NONE -";
+            }
+            else if (mobIn.substring(0,10).equalsIgnoreCase("minecraft:")) {
                 mobIn = mobIn.replace("@", "_").substring(10);
             }
             else {

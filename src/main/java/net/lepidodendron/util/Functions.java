@@ -200,21 +200,26 @@ public class Functions {
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state, int flags) {
+        IBlockState currentState = worldIn.getBlockState(pos);
+        Block currentBlock = currentState.getBlock();
 
-        if (worldIn.getBlockState(pos).getBlock() instanceof BlockDoublePlant) {
-            if (worldIn.getBlockState(pos.up()).getBlock() instanceof BlockDoublePlant) {
-                if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER
-                        && worldIn.getBlockState(pos.up()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER) {
-                    worldIn.setBlockToAir(pos.up());
+        if (currentBlock instanceof BlockDoublePlant) {
+            BlockPos upPos = pos.up();
+            BlockPos downPos = pos.down();
+            IBlockState upState = worldIn.getBlockState(upPos);
+            IBlockState downState = worldIn.getBlockState(downPos);
+
+            if (currentState.getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER) {
+                if (upState.getBlock() instanceof BlockDoublePlant && upState.getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER) {
+                    worldIn.setBlockToAir(upPos);
                 }
-            }
-            if (worldIn.getBlockState(pos.down()).getBlock() instanceof BlockDoublePlant) {
-                if (worldIn.getBlockState(pos).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
-                        && worldIn.getBlockState(pos.down()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER) {
-                    worldIn.setBlockToAir(pos.down());
+            } else {
+                if (downState.getBlock() instanceof BlockDoublePlant && downState.getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.LOWER) {
+                    worldIn.setBlockToAir(downPos);
                 }
             }
         }
+
         worldIn.setBlockState(pos, state, flags);
     }
 

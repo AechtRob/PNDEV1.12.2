@@ -284,7 +284,7 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Neogene", -30, 155, 4210752);
             this.fontRenderer.drawString("Pleistocene", -30, 166, 4210752);
 
-            DecimalFormat df = new DecimalFormat("#0.00%");
+            DecimalFormat df = new DecimalFormat("#0.##%");
             this.fontRenderer.drawString("Precision = " + df.format(getChance(1)), 63, 23, 4210752);
             this.fontRenderer.drawString("Precision = "+ df.format(getChance(2)), 63, 34, 4210752);
             this.fontRenderer.drawString("Precision = "+ df.format(getChance(3)), 63, 45, 4210752);
@@ -300,7 +300,7 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Precision = "+ df.format(getChance(13)), 63, 155, 4210752);
             this.fontRenderer.drawString("Precision = "+ df.format(getChance(14)), 63, 166, 4210752);
 
-            df = new DecimalFormat("#0.000%");
+            df = new DecimalFormat("#0.00#%");
             this.fontRenderer.drawString(df.format(getPercent(1)), 165, 23, 4210752);
             this.fontRenderer.drawString(df.format(getPercent(2)), 165, 34, 4210752);
             this.fontRenderer.drawString(df.format(getPercent(3)), 165, 45, 4210752);

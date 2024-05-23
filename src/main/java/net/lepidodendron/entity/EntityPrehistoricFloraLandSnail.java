@@ -185,7 +185,6 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return null;

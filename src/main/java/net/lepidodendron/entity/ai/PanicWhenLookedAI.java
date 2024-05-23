@@ -67,6 +67,9 @@ public class PanicWhenLookedAI extends EntityAIBase
             if (!(((EntityPrehistoricFloraLandBase) this.creature).getAISpeedLand() > 0)) {
                 return false;
             }
+            if (this.creature.isInWater()) {
+                return false;
+            }
         }
 
         if (this.creature instanceof INervous) {

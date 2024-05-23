@@ -9980,5 +9980,54 @@
         "stream": false
       }
     ]
+  },
+
+  "longisquama_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:longisquama_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:longisquama_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:longisquama_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:longisquama_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:longisquama_living05",
+        "stream": false
+      }
+    ]
+  },
+  "longisquama_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:longisquama_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:longisquama_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:longisquama_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "longisquama_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:longisquama_death",
+        "stream": false
+      }
+    ]
   }
 }

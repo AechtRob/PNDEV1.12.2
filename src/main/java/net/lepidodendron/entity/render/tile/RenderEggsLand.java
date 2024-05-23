@@ -173,7 +173,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                     break;
             }
 
-            GlStateManager.disableAlpha();
+            //GlStateManager.disableAlpha();
             GlStateManager.disableRescaleNormal();
             GlStateManager.enableCull();
             GlStateManager.popMatrix();
