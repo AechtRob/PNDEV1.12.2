@@ -5,8 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraLongisquama;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -303,6 +301,7 @@ public class ModelLongisquama extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body2.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -314,6 +313,7 @@ public class ModelLongisquama extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -343,7 +343,7 @@ public class ModelLongisquama extends AdvancedModelBase {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
+        else if (ee.getAnimation() == ee.CHATTER_ANIMATION) { //The noise anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
