@@ -447,15 +447,15 @@ public class ModelBrazilichthys extends AdvancedModelBase {
         else {
             this.swing(root, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(frontLeftFin, (float) (speed * 0.65), 0.28F, false, 0.8F, 0, f2, 0.5F);
-        this.walk(frontLeftFin, (float) (speed * 0.65), 0.18F, true, 0, 0, f2, 0.5F);
-        this.flap(frontRightFin, (float) (speed * 0.65), -0.28F, false, 0.8F, 0, f2, 0.5F);
-        this.walk(frontRightFin, (float) (speed * 0.65), -0.18F, true, 0, 0, f2, 0.5F);
+        this.flap(frontLeftFin, (float) (speed * 1.35), 0.38F, false, 0.8F, 0, f2, 0.5F);
+        this.walk(frontLeftFin, (float) (speed * 1.35), 0.28F, true, 0, 0, f2, 0.5F);
+        this.flap(frontRightFin, (float) (speed * 1.35), -0.38F, false, 0.8F, 0, f2, 0.5F);
+        this.walk(frontRightFin, (float) (speed * 1.35), -0.28F, true, 0, 0, f2, 0.5F);
 
-        this.flap(backLeftFin, (float) (speed * 0.65), 0.28F, false, 1.8F, 0, f2, 0.5F);
-        this.walk(backLeftFin, (float) (speed * 0.65), 0.18F, true, 1, 0, f2, 0.5F);
-        this.flap(backRightFin, (float) (speed * 0.65), -0.28F, false, 1.8F, 0, f2, 0.5F);
-        this.walk(backRightFin, (float) (speed * 0.65), -0.18F, true, 1, 0, f2, 0.5F);
+        this.flap(backLeftFin, (float) (speed * 1.35), 0.28F, false, 1.8F, 0, f2, 0.5F);
+        this.walk(backLeftFin, (float) (speed * 1.35), 0.18F, true, 1, 0, f2, 0.5F);
+        this.flap(backRightFin, (float) (speed * 1.35), -0.28F, false, 1.8F, 0, f2, 0.5F);
+        this.walk(backRightFin, (float) (speed * 1.35), -0.18F, true, 1, 0, f2, 0.5F);
 
         if (!e.isInWater()) {
             this.root.rotateAngleZ = (float) Math.toRadians(90);

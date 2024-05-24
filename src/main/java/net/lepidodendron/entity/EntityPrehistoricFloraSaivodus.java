@@ -146,7 +146,6 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.FISH, DietString.MEAT), DietString.NAUTILOID);
 	}
 
-
 	@Override
 	public boolean isAIDisabled() {
 		return false;
