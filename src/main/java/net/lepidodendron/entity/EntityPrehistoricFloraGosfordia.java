@@ -3,25 +3,24 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.entity.ai.AmphibianWander;
 import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderMiguashaia;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraFishBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -40,6 +39,29 @@ public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraFishB
 	public EntityPrehistoricFloraGosfordia(World world) {
 		super(world);
 		setSize(0.4F, 0.3F);
+		minWidth = 0.2F;
+		maxWidth = 0.4F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 5.0D;
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
+
+	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
+	public boolean dropsEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
 	}
 
 	@Override
@@ -51,19 +73,26 @@ public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraFishB
 
 	//public static String getHabitat() {return "Aquatic";}
 
+
 	@Override
-	public boolean dropsEggs() {
-		return true;
+	protected float getAISpeedSwimmingAmphibian() {
+		if (this.isReallyInWater()) {
+			return 0.3f;
+		}
+		return 0.235F;
 	}
 
 	@Override
-	protected float getAISpeedFish() {
-		return 0.3f;
+	public int WaterDist() {
+		int i = (int) LepidodendronConfig.waterCeratodus;
+		if (i > 16) {i = 16;}
+		if (i < 1) {i = 1;}
+		return i;
 	}
 
 	@Override
-	protected boolean isSlowAtBottom() {
-		return true;
+	public int getAdultAge() {
+		return 0;
 	}
 
 	@Override
@@ -92,9 +121,9 @@ public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraFishB
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
@@ -153,6 +182,11 @@ public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraFishB
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
+	}
+
+	@Override
+	public int airTime() {
+		return 10000;
 	}
 
 	public void onEntityUpdate() {

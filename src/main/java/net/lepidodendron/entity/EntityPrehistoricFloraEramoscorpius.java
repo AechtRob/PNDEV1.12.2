@@ -11,7 +11,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderEramoscorpius;
-import net.lepidodendron.entity.render.entity.RenderHughmilleria;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IBrood;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -20,10 +19,17 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -45,6 +51,9 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraEramoscorpius.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraEramoscorpius.class, DataSerializers.BOOLEAN);
+
 
 	public EntityPrehistoricFloraEramoscorpius(World world) {
 		super(world);
@@ -59,18 +68,79 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 			maxHealthAgeable = 6.0D;
 		}
 	}
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(BABIES, false);
+		this.dataManager.register(ISBABY, false);
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setBoolean("Babies", this.getBabies());
+		compound.setBoolean("IsBaby", this.getIsBaby());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setBabies(compound.getBoolean("Babies"));
+		this.setIsBaby(compound.getBoolean("IsBaby"));
+	}
+
+	public boolean getBabies() {
+		return this.dataManager.get(BABIES);
+	}
+
+	public void setBabies(boolean babies) {
+		this.dataManager.set(BABIES, babies);
+	}
+
+	public boolean getIsBaby() {
+		return this.dataManager.get(ISBABY);
+	}
+
+	public void setIsBaby(boolean babies) {
+		this.dataManager.set(ISBABY, babies);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setTicks(0);
+		this.setAgeTicks(this.getAdultAge());
+		if (Math.random() >= 0.8) {
+			this.setBabies(true);
+		}
+		return livingdata;
+	}
+
+	@Override
+	public boolean dropsEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
+	}
+
 
 	@Override
 	public int getAttackLength() {
 		return 15;
 	}
+
 	@Override
 	protected float getAISpeedWalkingAmphibian() {
 
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return (float) Math.min(1F, (this.getAgeScale() * 2F)) * 0.34F;
+		if (this.getIsFast()) {
+			return (float) Math.min(1F, (this.getAgeScale() * 1.60F)) * 0.34F;
+		}
+		return (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
 	}
 
 	@Override
@@ -110,36 +180,10 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		return 12000;
 	}
 
-
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setTicks(0);
-		this.setAgeTicks(this.getAdultAge());
-		if (Math.random() >= 0.8) {
-			this.setBabies(true);
-		}
-		return livingdata;
-	}
-
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		this.setIsBaby(!(this.getAgeTicks() >= getAdultAge()));
 	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setBoolean("Babies", this.getBabies());
-		compound.setBoolean("IsBaby", this.getIsBaby());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.setBabies(compound.getBoolean("Babies"));
-		this.setIsBaby(compound.getBoolean("IsBaby"));
-	}
-
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
@@ -214,8 +258,28 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 			launchAttack();
 		}
 
+		//Bear eggs perhaps:
+		if (!world.isRemote && this.getCanBreed() && (!this.getBabies()) && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+			this.setBabies(true);
+			this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			this.setLaying(false);
+			this.setTicks(0);
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	public void launchAttack() {
+		IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		if (getAttackTarget() != null) {
+			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+			Entity target = this.getAttackTarget();
+			if (target instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) target;
+				player.addPotionEffect(new PotionEffect(MobEffects.POISON, (int) 300, (int) 1));
+			}
+		}
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -250,10 +314,7 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
-
 	}
-
-
 
 	@Override
 	public void onDeath(DamageSource cause) {
