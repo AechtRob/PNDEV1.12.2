@@ -1341,6 +1341,12 @@ public class ModelLeedsichthys extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraLeedsichthys ee = (EntityPrehistoricFloraLeedsichthys) e;
         //ee.tailBuffer.applyChainSwingBuffer(fishTail);
 
+        if (ee.getAnimation() == ee.NO_ANIMATION || ee.getAnimation() == null) {
+            this.jaw.rotateAngleX = ee.mouthAngle() * (float)Math.toRadians(30);
+            //System.err.println("Mouth Angle:" + entity.mouthAngle());
+            //System.err.println("Feed Ticks:" + entity.getFeedTicks());
+        }
+
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
