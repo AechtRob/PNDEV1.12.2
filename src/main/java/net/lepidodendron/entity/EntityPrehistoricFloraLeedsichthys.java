@@ -9,9 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderGyrosteus;
 import net.lepidodendron.entity.render.entity.RenderLeedsichthys;
-import net.lepidodendron.entity.render.entity.RenderTitanichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -21,6 +19,9 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -35,6 +36,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
+
+	private static final DataParameter<Integer> FEEDTICKS = EntityDataManager.createKey(EntityPrehistoricFloraLeedsichthys.class, DataSerializers.VARINT);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -53,6 +56,23 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+	public int getFeedTicks() {
+		if (this.dataManager.get(FEEDTICKS) == null) {
+			this.setFeedTicks(0);
+			return 0;
+		}
+		return this.dataManager.get(FEEDTICKS);
+	}
+
+	public void setFeedTicks(int feedticks) {
+		this.dataManager.set(FEEDTICKS, feedticks);
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(FEEDTICKS, 0);
 	}
 
 	@Override
@@ -74,11 +94,13 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
+		compound.setInteger("FeedTicks", this.getFeedTicks());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.standCooldown = compound.getInteger("standCooldown");
+		this.setFeedTicks(compound.getInteger("FeedTicks"));
 	}
 
 
@@ -227,6 +249,13 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
+		if (!this.world.isRemote) {
+			if ((!(getFeedTicks() > 0)) || getFeedTicks() > 750) {
+				setFeedTicks(0);
+			}
+			setFeedTicks(getFeedTicks() + rand.nextInt(3));
+		}
+
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
@@ -243,6 +272,23 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
+
+	public float mouthAngle() {
+		if (getFeedTicks() < 600F) {
+			return 1F;
+		}
+		if (getFeedTicks() >= 630F && getFeedTicks() <= 720F) {
+			return 0F;
+		}
+		else if (getFeedTicks() < 630F) {
+			return (630F - getFeedTicks()) / 30F;
+		}
+		else if (getFeedTicks() > 720F) {
+			return (getFeedTicks() - 720F) / 30F;
+		}
+		return 1F;
+	}
+
 	@Override
 	public int getAttackLength() {
 		return 385;
