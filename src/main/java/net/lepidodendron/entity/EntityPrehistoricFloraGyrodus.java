@@ -108,7 +108,7 @@ public class EntityPrehistoricFloraGyrodus extends EntityPrehistoricFloraAgeable
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true, this.getShoalDist() - 0.5F));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

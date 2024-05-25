@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraFoordella extends EntityPrehistoricFloraSlith
 
 	public EntityPrehistoricFloraFoordella(World world) {
 		super(world, 26);
-		setSize(0.1F, 0.1F);
+		setSize(0.2F, 0.2F);
 	}
 
 	@Override

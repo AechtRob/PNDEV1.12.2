@@ -17,14 +17,25 @@ public class ShoalFishBaseAI extends EntityAIBase {
     private final EntityPrehistoricFloraFishBase entity;
     private final double speed;
     private final boolean memory;
+    private float followdistance;
     private Path currentPath;
     private Random rand = new Random();
+
 
     public ShoalFishBaseAI(EntityPrehistoricFloraFishBase entity, double speed, boolean memory) {
         this.entity = entity;
         this.speed = speed;
         this.memory = memory;
         this.setMutexBits(7);
+        this.followdistance = 0;
+    }
+
+    public ShoalFishBaseAI(EntityPrehistoricFloraFishBase entity, double speed, boolean memory, float followdistance) {
+        this.entity = entity;
+        this.speed = speed;
+        this.memory = memory;
+        this.setMutexBits(7);
+        this.followdistance = followdistance;
     }
 
     @Override
@@ -37,6 +48,9 @@ public class ShoalFishBaseAI extends EntityAIBase {
             return false;
         }
         if (target == this.entity) {
+            return false;
+        }
+        if (this.entity.getDistance(target) <= this.followdistance ) {
             return false;
         }
         this.currentPath = this.entity.getNavigator().getPathToEntityLiving(target);

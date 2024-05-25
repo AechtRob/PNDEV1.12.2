@@ -10029,5 +10029,201 @@
         "stream": false
       }
     ]
+  },
+
+  "pliosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pliosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pliosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pliosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pliosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pliosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "pliosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pliosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pliosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pliosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "pliosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pliosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "geosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:geosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:geosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:geosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:geosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:geosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "geosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:geosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:geosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:geosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "geosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:geosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "thalattosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:thalattosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thalattosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thalattosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thalattosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thalattosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "thalattosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:thalattosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thalattosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thalattosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "thalattosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:thalattosuchus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "dakosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dakosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dakosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dakosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dakosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dakosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "dakosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dakosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dakosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dakosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "dakosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dakosaurus_death",
+        "stream": false
+      }
+    ]
   }
 }

@@ -9,12 +9,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderRhomaleosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -23,6 +20,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
@@ -42,10 +40,10 @@ public class EntityPrehistoricFloraPliosaurus extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraPliosaurus(World world) {
 		super(world);
-		setSize(2.5F, 2F);
+		setSize(2.7F, 2.25F);
 		minWidth = 0.2F;
-		maxWidth = 2F;
-		maxHeight = 2F;
+		maxWidth = 2.7F;
+		maxHeight = 2.25F;
 		maxHealthAgeable = 55.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -112,6 +110,11 @@ public class EntityPrehistoricFloraPliosaurus extends EntityPrehistoricFloraAgea
 	@Override
 	public int getAdultAge() {
 		return 96000;
+	}
+
+	public AxisAlignedBB getAttackBoundingBox() {
+		float size = this.getRenderSizeModifier() * 2.0F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
 	@Override
@@ -187,19 +190,19 @@ public class EntityPrehistoricFloraPliosaurus extends EntityPrehistoricFloraAgea
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhomaleosaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:pliosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhomaleosaurus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:pliosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhomaleosaurus_death"));
+				.getObject(new ResourceLocation("lepidodendron:pliosaurus_death"));
 	}
 
 	@Override
