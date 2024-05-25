@@ -4,22 +4,26 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockEggsWodnika;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderDebeerius;
 import net.lepidodendron.entity.render.entity.RenderWodnika;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -42,8 +46,8 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 		super(world);
 		setSize(0.9F, 0.5F);
 		minWidth = 0.1F;
-		maxWidth = 0.9F;
-		maxHeight = 0.5F;
+		maxWidth = 0.7F;
+		maxHeight = 0.575F;
 		maxHealthAgeable = 20.0D;
 	}
 
@@ -61,7 +65,7 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 	
 	@Override
@@ -70,8 +74,13 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
+	public boolean divesToLay() {
+		return true;
+	}
+
+	@Override
 	public int getAdultAge() {
-		return 36000;
+		return 96000;
 	} //Only adults!
 
 	@Override
@@ -79,6 +88,9 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 		float AIspeed = 0.231f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2.2F;
+		}
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
 		}
 		return AIspeed;
 	}
@@ -88,20 +100,14 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 		return false;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
@@ -135,7 +141,7 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -173,6 +179,40 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		//Lay eggs perhaps:
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+				&& (BlockEggsWodnika.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
+				|| BlockEggsWodnika.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
+				&& (BlockEggsWodnika.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockEggsWodnika.block.canPlaceBlockAt(world, this.getPosition().down()))
+		){
+			//if (Math.random() > 0.5) {
+			this.setTicks(-50); //Flag this as stationary for egg-laying
+			//}
+		}
+
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+			//Is stationary for egg-laying:
+			////System.err.println("Test2");
+			IBlockState eggs = BlockEggsWodnika.block.getDefaultState();
+			if (BlockEggsWodnika.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsWodnika.block.canPlaceBlockAt(world, this.getPosition())) {
+				world.setBlockState(this.getPosition(), eggs);
+				this.setLaying(false);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			}
+			if (BlockEggsWodnika.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsWodnika.block.canPlaceBlockAt(world, this.getPosition().down())) {
+				world.setBlockState(this.getPosition().down(), eggs);
+				this.setLaying(false);
+				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			}
+			this.setTicks(0);
+		}
+	}
+
+	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
 			this.setAnimation(ATTACK_ANIMATION);
@@ -193,6 +233,9 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.WODNIKA_LOOT_YOUNG;
+		}
 		return LepidodendronMod.WODNIKA_LOOT;
 	}
 

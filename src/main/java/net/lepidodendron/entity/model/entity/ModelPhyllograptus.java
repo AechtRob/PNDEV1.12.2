@@ -2,7 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraMonograptus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhyllograptus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -64,9 +63,9 @@ public class ModelPhyllograptus extends AdvancedModelBase {
             this.walk(main, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
             this.flap(main, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
             this.bob(main, -speed * 0.5F, 0.5F, false, f2, 0.6F);
-            this.main.scaleChildren = true;
-            float bouncer = (float) (Math.abs(Math.abs(Math.abs((double)ee.getRotationDegree() - 180D) - 90D) - 45D) / 90D);
-            this.main.setScale(1 , (1 + bouncer), 1);
+//            this.main.scaleChildren = true;
+//            float bouncer = (float) (Math.abs(Math.abs(Math.abs((double)ee.getRotationDegree() - 180D) - 90D) - 45D) / 90D);
+//            this.main.setScale(1 , (1 + bouncer), 1);
             this.main.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
         }
 

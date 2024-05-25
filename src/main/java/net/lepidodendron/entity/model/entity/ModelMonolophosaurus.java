@@ -501,6 +501,7 @@ public class ModelMonolophosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Monolophosaurus.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.Chest.rotateAngleX = (float) Math.toRadians(20);
         this.setRotateAngle(Chest, 0.1F, -0.0F, 0.0F);
@@ -568,12 +569,13 @@ public class ModelMonolophosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer.rotateAngleY = y;
         AdvancedModelRenderer.rotateAngleZ = z;
     }
+    
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraMonolophosaurus EntityMegalosaurus = (EntityPrehistoricFloraMonolophosaurus) e;
+        EntityPrehistoricFloraMonolophosaurus EntityMonolophosaurus = (EntityPrehistoricFloraMonolophosaurus) e;
         this.Monolophosaurus.offsetZ = 0.5F;
 
         AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5};
@@ -581,16 +583,16 @@ public class ModelMonolophosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] ArmL = {this.ArmL, this.ElbowL, this.HandL};
         AdvancedModelRenderer[] ArmR = {this.ArmR, this.ElbowR, this.HandR};
 
-        EntityMegalosaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        EntityMonolophosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
-        if (EntityMegalosaurus.getAnimation() == EntityMegalosaurus.LAY_ANIMATION) {
+        if (EntityMonolophosaurus.getAnimation() == EntityMonolophosaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
-            if (!EntityMegalosaurus.isReallyInWater()) {
+            if (!EntityMonolophosaurus.isReallyInWater()) {
 
-                if (f3 == 0.0F || !EntityMegalosaurus.getIsMoving()) {
+                if (f3 == 0.0F || !EntityMonolophosaurus.getIsMoving()) {
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                     this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
 
@@ -611,7 +613,7 @@ public class ModelMonolophosaurus extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (EntityMegalosaurus.getIsFast()) { //Running
+                if (EntityMonolophosaurus.getIsFast()) { //Running
 
 
                 } else { //Walking
@@ -645,6 +647,9 @@ public class ModelMonolophosaurus extends AdvancedModelBaseExtended {
                 } else { //Walking
                     animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
+            }
+            else {
+                this.Monolophosaurus.offsetY = 0.06F;
             }
         }
         else {

@@ -10,7 +10,6 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderEramoscorpius;
 import net.lepidodendron.entity.render.entity.RenderPraearcturus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IBrood;
@@ -20,10 +19,17 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -45,36 +51,95 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraPraearcturus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraPraearcturus.class, DataSerializers.BOOLEAN);
 
 	public EntityPrehistoricFloraPraearcturus(World world) {
 		super(world);
-		setSize(0.5F, 0.2F);
+		setSize(0.3F, 0.15F);
 		minWidth = 0.10F;
-		maxWidth = 0.50F;
-		maxHeight = 0.20F;
+		maxWidth = 0.30F;
+		maxHeight = 0.15F;
 		if (getIsBaby()) {
 			maxHealthAgeable = 4.0D;
 		}
 		else {
-			maxHealthAgeable = 9.0D;
+			maxHealthAgeable = 6.0D;
 		}
 	}
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(BABIES, false);
+		this.dataManager.register(ISBABY, false);
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setBoolean("Babies", this.getBabies());
+		compound.setBoolean("IsBaby", this.getIsBaby());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setBabies(compound.getBoolean("Babies"));
+		this.setIsBaby(compound.getBoolean("IsBaby"));
+	}
+
+	public boolean getBabies() {
+		return this.dataManager.get(BABIES);
+	}
+
+	public void setBabies(boolean babies) {
+		this.dataManager.set(BABIES, babies);
+	}
+
+	public boolean getIsBaby() {
+		return this.dataManager.get(ISBABY);
+	}
+
+	public void setIsBaby(boolean babies) {
+		this.dataManager.set(ISBABY, babies);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setTicks(0);
+		this.setAgeTicks(this.getAdultAge());
+		if (Math.random() >= 0.8) {
+			this.setBabies(true);
+		}
+		return livingdata;
+	}
+
+	@Override
+	public boolean dropsEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
+	}
+
 
 	@Override
 	public int getAttackLength() {
-		return 21;
+		return 15;
 	}
+
 	@Override
 	protected float getAISpeedWalkingAmphibian() {
 
-		float calcSpeed = 0.15F;
-		if (this.isReallyInWater()) {
-			calcSpeed = 0.28f;
-		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return  calcSpeed;
+		if (this.getIsFast()) {
+			return (float) Math.min(1F, (this.getAgeScale() * 1.60F)) * 0.34F;
+		}
+		return (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
 	}
 
 	@Override
@@ -92,7 +157,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
+		return ArrayUtils.addAll(DietString.FISH);
 	}
 
 	@Override
@@ -114,36 +179,10 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 		return 12000;
 	}
 
-
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setTicks(0);
-		this.setAgeTicks(this.getAdultAge());
-		if (Math.random() >= 0.8) {
-			this.setBabies(true);
-		}
-		return livingdata;
-	}
-
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		this.setIsBaby(!(this.getAgeTicks() >= getAdultAge()));
 	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setBoolean("Babies", this.getBabies());
-		compound.setBoolean("IsBaby", this.getIsBaby());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.setBabies(compound.getBoolean("Babies"));
-		this.setIsBaby(compound.getBoolean("IsBaby"));
-	}
-
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
@@ -157,6 +196,9 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	}
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetCase(@Nullable String variant) {
+		return 0.2;
+	}
 	public static double offsetWall(@Nullable String variant) {
 		return -1.36;
 	}
@@ -205,6 +247,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	public static float getScaler(@Nullable String variant) {
 		return RenderPraearcturus.getScaler();
 	}
+
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
@@ -214,8 +257,28 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 			launchAttack();
 		}
 
+		//Bear eggs perhaps:
+		if (!world.isRemote && this.getCanBreed() && (!this.getBabies()) && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+			this.setBabies(true);
+			this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			this.setLaying(false);
+			this.setTicks(0);
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	public void launchAttack() {
+		IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		if (getAttackTarget() != null) {
+			boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+			Entity target = this.getAttackTarget();
+			if (target instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) target;
+				player.addPotionEffect(new PotionEffect(MobEffects.POISON, (int) 300, (int) 1));
+			}
+		}
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -250,11 +313,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
-		//this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-
 	}
-
-
 
 	@Override
 	public void onDeath(DamageSource cause) {

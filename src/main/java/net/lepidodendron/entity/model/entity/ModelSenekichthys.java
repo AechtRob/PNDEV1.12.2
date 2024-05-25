@@ -251,13 +251,13 @@ public class ModelSenekichthys extends AdvancedModelBase {
         //this.head.offsetY = 1.2F;
 
         AdvancedModelRenderer[] fishTail = {  this.tail2, this.tail3};
-        float speed = 0.3F;
+        float speed = 0.85F;
         if (!e.isInWater()) {
             speed = 0.89F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.03F, -3, f2, 1);
-            this.chainSwing(fishTail, speed, 0.335F, -2.6, f2, 1);
+            this.chainSwing(fishTail, speed, 0.435F, -2.6, f2, 1);
             this.swing(root, speed, 0.16F, true, 0, 0, f2, 1);
             this.walk(jaw, (float) (speed * 0.35), 0.2F, false, 0.5f, 0.16F, f2, 1);
 

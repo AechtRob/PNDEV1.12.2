@@ -4,14 +4,13 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.render.entity.RenderHypuronector;
-import net.lepidodendron.entity.render.entity.RenderLeedsichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
-import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
@@ -19,6 +18,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -27,6 +27,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -121,11 +122,6 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
 	public int getAttackLength() {
 		return 20;
 	}
@@ -186,12 +182,11 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicScreamAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderAvoidWaterClimbingAI(this, 1.0D, 5));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(5, new LandWanderNestInBlockAI(this));
+		tasks.addTask(6, new LandWanderAvoidWaterClimbingAI(this, 1.0D, 5));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1.5));
 	}
 
@@ -212,8 +207,6 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 			super.applyEntityCollision(entityIn);
 		}
 	}
-
-	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -306,25 +299,48 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
+		if (
+				world.getBlockState(pos).getBlock() == BlockRottenLog.block
+						|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
+						|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
+						|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
+						|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
+		) {
 			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
+				public String getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
+			}.getValue(new BlockPos(pos), "egg");
 			if (eggRenderType.equals("")) {
-				return true;
+				//There is a space, is the orientation correct?
+				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
+					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
+					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
+							&& faceshape != BlockFaceShape.SOLID)) {
+						//This is solid for laying:
+						return true;
+					}
+				}
+				else {
+					//Is it upward-facing?
+					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					if (facing == EnumFacing.UP) {
+						//This is OK for laying mosses
+						return true;
+					}
+				}
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		return (testLay(world, pos.down()) || testLay(world, pos)) ;
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraClimacograptus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhyllograptus;
 import net.lepidodendron.entity.model.entity.ModelPhyllograptus;
 import net.minecraft.client.renderer.GlStateManager;
@@ -12,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPhyllograptus extends RenderLiving<EntityPrehistoricFloraPhyllograptus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phyllograptus.png");
     public static float getScaler() {
-        return 0.15F;
+        return 0.25F;
     }
 
     public RenderPhyllograptus(RenderManager mgr) {

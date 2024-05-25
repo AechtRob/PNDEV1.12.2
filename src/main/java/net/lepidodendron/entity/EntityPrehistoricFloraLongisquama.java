@@ -104,11 +104,6 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
 	public int getAttackLength() {
 		return 20;
 	}
@@ -133,7 +128,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if ((this.getAnimation() == CHATTER_ANIMATION ) && (this.willGrapple) && this.getGrappleTarget() != null) {
+		if (this.getAnimation() == CHATTER_ANIMATION  && (this.willGrapple) && this.getGrappleTarget() != null && !this.getIsClimbing()) {
 			return 0.0F; //Is talking to a colleague!
 		}
 		if (this.getIsFast()) {
@@ -300,7 +295,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 			}
 		}
 
-		if (this.getAnimation() == CHATTER_ANIMATION && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+		if (this.getAnimation() == CHATTER_ANIMATION && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null && !this.getIsClimbing())  {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
 			launchGrapple();
 			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
@@ -311,7 +306,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 			this.setGrappleTarget(null);
 			this.willGrapple = false;
 		}
-		else if (this.getAnimation() == CHATTER_ANIMATION && this.getGrappleTarget() != null) {
+		else if (this.getAnimation() == CHATTER_ANIMATION && this.getGrappleTarget() != null && !this.getIsClimbing()) {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
 		}
 
@@ -391,7 +386,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	@Override
 	public void onEntityUpdate() {
 
-		if (this.getAnimation() == CHATTER_ANIMATION && this.getGrappleTarget() != null) {
+		if (this.getAnimation() == CHATTER_ANIMATION && this.getGrappleTarget() != null && !this.getIsClimbing()) {
 			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
 		}
 

@@ -6,12 +6,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.entity.render.entity.RenderKichkassia;
 import net.lepidodendron.entity.render.entity.RenderPhylloceras;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsKosmoceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsPhylloceras;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
@@ -84,7 +83,6 @@ public class EntityPrehistoricFloraPhylloceras extends EntityPrehistoricFloraNau
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
-
 	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.FISHFOOD);
@@ -116,7 +114,7 @@ public class EntityPrehistoricFloraPhylloceras extends EntityPrehistoricFloraNau
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsKosmoceras.block, (int) (1));
+		return new ItemStack(ItemNautiloidEggsPhylloceras.block, (int) (1));
 	}
 
 	@Override

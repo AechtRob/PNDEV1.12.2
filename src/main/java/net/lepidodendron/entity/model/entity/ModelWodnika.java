@@ -248,21 +248,21 @@ public class ModelWodnika extends AdvancedModelBase {
         //if (f3 != 0.0F) {this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, 0, f2, 1);}
         if (e.isInWater()) {
             this.chainWave(fishTail, speed * still * 2, 0.02F * still, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * still, 0.29F * still, -0.85, f2, 0.5F * still);
+            this.chainSwing(fishTail, speed * still * 2, 0.39F * still, -1.55, f2, 0.5F * still);
             this.swing(bone, speed, 0.2F, true, 0, 0, f2, 0.8F);
         }
         else {
             this.swing(bone, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(finleft, (float) (speed * 0.65), 0.28F, false, 0.8F, 0, f2, 0.5F);
-        this.walk(finleft, (float) (speed * 0.65), 0.18F, true, 0, 0, f2, 0.5F);
-        this.flap(finright, (float) (speed * 0.65), -0.28F, false, 0.8F, 0, f2, 0.5F);
-        this.walk(finright, (float) (speed * 0.65), -0.18F, true, 0, 0, f2, 0.5F);
+        this.flap(finleft, (float) (speed * 0.65), 0.48F, false, 0.8F, 0, f2, 0.5F);
+        this.walk(finleft, (float) (speed * 0.65), 0.38F, true, 0, 0, f2, 0.5F);
+        this.flap(finright, (float) (speed * 0.65), -0.48F, false, 0.8F, 0, f2, 0.5F);
+        this.walk(finright, (float) (speed * 0.65), -0.38F, true, 0, 0, f2, 0.5F);
 
-        this.flap(finleft2, (float) (speed * 0.65), 0.28F, false, 1.8F, 0, f2, 0.5F);
-        this.walk(finleft2, (float) (speed * 0.65), 0.18F, true, 1, 0, f2, 0.5F);
-        this.flap(finright2, (float) (speed * 0.65), -0.28F, false, 1.8F, 0, f2, 0.5F);
-        this.walk(finright2, (float) (speed * 0.65), -0.18F, true, 1, 0, f2, 0.5F);
+        this.flap(finleft2, (float) (speed * 0.65), 0.38F, false, 1.8F, 0, f2, 0.5F);
+        this.walk(finleft2, (float) (speed * 0.65), 0.28F, true, 1, 0, f2, 0.5F);
+        this.flap(finright2, (float) (speed * 0.65), -0.38F, false, 1.8F, 0, f2, 0.5F);
+        this.walk(finright2, (float) (speed * 0.65), -0.28F, true, 1, 0, f2, 0.5F);
 
         //this.flap(AnalFin, (float) (speed * 0.65), -0.28F, false, 0.4F, 0.1F, f2, 0.5F);
         //this.flap(DorsalFin, (float) (speed * 0.65), -0.18F, false, 0.4F, 0.05F, f2, 0.5F);

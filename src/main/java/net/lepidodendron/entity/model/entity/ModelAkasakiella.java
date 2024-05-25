@@ -87,6 +87,7 @@ public class ModelAkasakiella extends AdvancedModelBase {
         EntityPrehistoricFloraAkasakiella ee = (EntityPrehistoricFloraAkasakiella) e;
 
         this.body.offsetZ = 0.13F;
+        this.body.offsetX = 0.06F;
         this.tail.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
         this.tail.setScaleZ(scaler*0.85F);

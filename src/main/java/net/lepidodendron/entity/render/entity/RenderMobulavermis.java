@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraHadranax;
 import net.lepidodendron.entity.EntityPrehistoricFloraMobulavermis;
 import net.lepidodendron.entity.model.entity.ModelMobulavermis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -15,7 +14,7 @@ public class RenderMobulavermis extends RenderLiving<EntityPrehistoricFloraMobul
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mobulavermis.png");
 
     public static float getScaler() {
-        return 0.2F;
+        return 0.185F;
     }
 
     public RenderMobulavermis(RenderManager mgr) {

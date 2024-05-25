@@ -9,11 +9,10 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderAegirocassis;
 import net.lepidodendron.entity.render.entity.RenderPseudoangustidontus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemEggsAegirocassis;
+import net.lepidodendron.item.entities.ItemEggsPseudoangustidontus;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -185,7 +184,7 @@ public class EntityPrehistoricFloraPseudoangustidontus extends EntityPrehistoric
 
 	@Override
 	public ItemStack getPropagule() {
-		return new ItemStack(ItemEggsAegirocassis.block, (int) (1));
+		return new ItemStack(ItemEggsPseudoangustidontus.block, (int) (1));
 	}
 
 	@Nullable

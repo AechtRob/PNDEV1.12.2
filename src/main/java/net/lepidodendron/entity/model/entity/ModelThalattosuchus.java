@@ -274,6 +274,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(Neck, 0.2F, -0.2F, 0.0F);
         this.setRotateAngle(Head, -0.25F, 0.3F, 0.1F);
@@ -284,6 +285,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         this.Neck.render(0.01F);
         this.resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Body, 0.2F, -0.2F, 0.3F);
         this.setRotateAngle(Neck, -0.0F, -0.4F, -0.2F);
@@ -302,6 +304,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         this.Body.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(Body, -0.1F, 0.0F, 0.0F);
         this.setRotateAngle(Neck, 0.2F, 0.2F, 0.0F);
@@ -399,6 +402,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
 
         }
     }
+
     @Override
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);

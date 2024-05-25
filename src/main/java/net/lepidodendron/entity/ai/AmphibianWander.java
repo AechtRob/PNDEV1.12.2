@@ -71,7 +71,7 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
 
         if (this.PrehistoricFloraAmphibianBase.getRNG().nextFloat() < 0.3F) {
             Path path = this.PrehistoricFloraAmphibianBase.getNavigator().getPath();
-            if (this.PrehistoricFloraAmphibianBase.isInWater()) {
+            if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
                 //Path path = this.PrehistoricFloraJellyfishBase.getNavigator().getPath();
                 if (
                         ((!this.PrehistoricFloraAmphibianBase.getNavigator().noPath())
