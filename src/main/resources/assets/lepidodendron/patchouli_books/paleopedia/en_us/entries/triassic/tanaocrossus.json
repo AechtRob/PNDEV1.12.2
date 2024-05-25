@@ -1,0 +1,47 @@
+{
+	"name": "Tanaocrossus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tanaocrossus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_tanaocrossus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tanaocrossus",
+			"title": "Tanaocrossus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "T. kalliokoskii",
+            "entity": "lepidodendron:prehistoric_flora_tanaocrossus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanaocrossus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tanaocrossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tanaocrossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tanaocrossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tanaocrossus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tanaocrossus"
+		}
+	]
+}

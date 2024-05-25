@@ -1,0 +1,47 @@
+{
+	"name": "Kichkassia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/kichkassia_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_kichkassia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kichkassia",
+			"title": "Kichkassia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii $(br)>Eurynotoidiformes $(br)>Eurynotoidiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "K. furcae",
+            "entity": "lepidodendron:prehistoric_flora_kichkassia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kichkassia",
+			"type": "text",
+			"text": "Kichkassia is a Permian freshwater ray-finned fish known from European Russia. It is a small fish, with a short and stout body and rounded head.  Its fossil consists of a moderately well preserved full body specimen with the body and tail well preserved but the head is smushed."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_kichkassia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_kichkassia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_kichkassia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_kichkassia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_kichkassia"
+		}
+	]
+}

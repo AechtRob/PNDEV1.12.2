@@ -1,0 +1,47 @@
+{
+	"name": "Mobulavermis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mobulavermis_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_mobulavermis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mobulavermis",
+			"title": "Mobulavermis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Kerygmachelidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. adustus",
+            "entity": "lepidodendron:prehistoric_flora_mobulavermis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mobulavermis",
+			"type": "text",
+			"text": "Mobulavermis is a Cambrian kerygmachelid lobopodian known from the Pioche Formation. It was a large animal, growing up to around 50 cm in length, although the paratype measures to 80 cm in length. Its authors found that gilled lobopodians in it, Utahnax, and Kerygmachela, form a monophyletic clade, which was named Kerygmachelidae. It is thought to have been pelagic, feeding on smaller prey in the water column."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mobulavermis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mobulavermis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mobulavermis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mobulavermis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mobulavermis"
+		}
+	]
+}

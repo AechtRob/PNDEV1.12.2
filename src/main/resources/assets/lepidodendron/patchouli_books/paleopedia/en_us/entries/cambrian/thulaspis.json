@@ -1,0 +1,47 @@
+{
+	"name": "Thulaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/thulaspis_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_thulaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thulaspis",
+			"title": "Thulaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Artiopoda"
+		},
+        	{
+            "type": "entity",
+            "name": "T. tholops",
+            "entity": "lepidodendron:prehistoric_flora_thulaspis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thulaspis",
+			"type": "text",
+			"text": "Thulaspis is a Cambrian artiopod known from the Sirius Passet Lagerstatte of Greenland. It is likely to be one of the most basal members of Artiopoda. It was relatively large for an artiopod, reaching about 12 cm long and it had a carapace which was fused, oval shaped, and convex. This animal was likely to have been a benthic animal, that may have been able to swim in short bursts due to the flap-like exopods it had."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thulaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thulaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thulaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thulaspis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thulaspis"
+		}
+	]
+}

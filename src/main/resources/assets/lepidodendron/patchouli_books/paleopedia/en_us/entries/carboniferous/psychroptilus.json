@@ -1,0 +1,47 @@
+{
+	"name": "Psychroptilus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/palaeodictyoptera_psychroptilus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_psychroptilus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_psychroptilus",
+			"title": "Psychroptilus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta $(br)>Palaeodictyoptera $(br)>Psychroptilidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. burrettae",
+            "entity": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_psychroptilus",
+			"type": "text",
+			"text": "Psychroptilus is from the Wynard Formation in Northwest Tasmania. Being in the South Pole, Australia was mostly covered by glaciers and the rocks from the time contain dropstones and scrap marks from the glaciers. Psychroptilus was a Palaeodictyopteran, and a small one with a 5cm wingspan. It was from the end of the Carboniferous when most of the glaciers were disappearing."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+		}
+	]
+}

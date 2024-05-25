@@ -1,0 +1,47 @@
+{
+	"name": "Leptoteuthis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/leptoteuthis_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_leptoteuthis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_leptoteuthis",
+			"title": "Leptoteuthis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Mollusca $(br)>Cephalopoda $(br)>Vampyromorphida $(br)>Leptotheuthidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. gigas",
+            "entity": "lepidodendron:prehistoric_flora_leptoteuthis",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_leptoteuthis",
+			"type": "text",
+			"text": "Leptoteuthis is a genus of vampyromorph from the Jurassic Solnhofen Limestone. It is known from a well preserved slab which includes imprints of the soft tissue. They mostly lived in shallow ocean environments."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_leptoteuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_leptoteuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_leptoteuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_leptoteuthis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_leptoteuthis"
+		}
+	]
+}
