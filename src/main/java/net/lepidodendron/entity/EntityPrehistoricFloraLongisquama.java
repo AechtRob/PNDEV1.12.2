@@ -104,11 +104,6 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
 	public int getAttackLength() {
 		return 20;
 	}

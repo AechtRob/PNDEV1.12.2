@@ -54,7 +54,6 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraPraearcturus.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraPraearcturus.class, DataSerializers.BOOLEAN);
 
-
 	public EntityPrehistoricFloraPraearcturus(World world) {
 		super(world);
 		setSize(0.3F, 0.15F);

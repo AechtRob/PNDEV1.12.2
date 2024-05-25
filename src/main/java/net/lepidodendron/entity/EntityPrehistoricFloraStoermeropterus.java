@@ -11,7 +11,6 @@ import net.lepidodendron.block.BlockEurypteridEggsStoermeropterus;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.render.entity.RenderOrcanopterus;
 import net.lepidodendron.entity.render.entity.RenderStoermeropterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -147,7 +146,7 @@ public static String getHabitat() {
 			}
 
 			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
-//Lay eggs perhaps:
+			//Lay eggs perhaps:
 			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 					&& (BlockEurypteridEggsStoermeropterus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 					|| BlockEurypteridEggsStoermeropterus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))

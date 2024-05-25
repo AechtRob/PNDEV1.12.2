@@ -10,9 +10,7 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderGogonasus;
 import net.lepidodendron.entity.render.entity.RenderMegalichthys;
-import net.lepidodendron.entity.render.entity.RenderMonolophosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -60,7 +58,7 @@ public class EntityPrehistoricFloraMegalichthys extends EntityPrehistoricFloraFi
 
 	@Override
 	protected float getAISpeedFish() {
-		return (0.13F);
+		return (0.315F);
 	}
 
 	@Override
