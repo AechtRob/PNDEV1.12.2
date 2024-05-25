@@ -6,6 +6,8 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -97,6 +99,12 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             || state.getBlock().isFullCube(state))
         {
             return true;
+        }
+        else if (state.getBlock() instanceof BlockSlab) {
+            return state.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.BOTTOM;
+        }
+        else if (state.getBlock() instanceof BlockStairs) {
+            return state.getValue(BlockStairs.FACING) == facing.getOpposite();
         }
         return false;
     }

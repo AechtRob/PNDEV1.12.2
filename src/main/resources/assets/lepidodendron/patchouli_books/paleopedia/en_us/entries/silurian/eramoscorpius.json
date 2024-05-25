@@ -1,0 +1,47 @@
+{
+	"name": "Eramoscorpius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eramoscorpius_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_eramoscorpius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eramoscorpius",
+			"title": "Eramoscorpius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arachnida $(br)>Scorpiones"
+		},
+        	{
+            "type": "entity",
+            "name": "E. brucensis",
+            "entity": "lepidodendron:prehistoric_flora_eramoscorpius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eramoscorpius",
+			"type": "text",
+			"text": "Eramoscorpius is a fossil scorpion known from the Eramosa Shales of Silurian Canada. It is small, being no bigger than 15 cm in length, and may have been semi aquatic. It is also the oldest known scorpion that had walking legs similar to modern scorpions."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eramoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eramoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eramoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eramoscorpius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eramoscorpius"
+		}
+	]
+}

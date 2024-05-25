@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.entity.render.entity.RenderBrazilichthys;
 import net.lepidodendron.entity.render.entity.RenderLeptoteuthis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
@@ -42,7 +41,7 @@ public class EntityPrehistoricFloraLeptoteuthis extends EntityPrehistoricFloraNa
 		minWidth = 0.07F;
 		maxWidth = 0.8F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 8.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

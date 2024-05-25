@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraGosfordia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -200,13 +201,17 @@ public class ModelGosfordia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
+
     public void renderStaticWall(float f) {
+
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
 
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -223,26 +228,28 @@ public class ModelGosfordia extends AdvancedModelBase {
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail, this.Tail2, this.Tail3};
         float speed = 0.3F;
+        float outOfWater = 1.0F;
         if (!e.isInWater()) {
             speed = 0.9F;
         }
+        if (!((EntityPrehistoricFloraGosfordia) e).isReallyInWater()) {
+            outOfWater = 1.45f;
+            this.main.bob(speed, 0.35F, false, f2, 1F);
+            //this.main.offsetY = 1.1F;
+        }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.main.rotateAngleY = (float) Math.toRadians(180);
-            this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
-            this.swing(main, speed, 0.3F, true, 0, 0, f2, 1);
-            this.walk(Jaw, (float) (speed * 0.75), (float)Math.toRadians(15), false, 0, -0.2F, f2, 1);
-            this.walk(FrontLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.swing(FrontLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.walk(FrontRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.swing(FrontRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.walk(BackLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.swing(BackLeftFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.walk(BackRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            this.swing(BackRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
-            if (!e.isInWater()) {
-                this.main.offsetY = 0.2F;
-                this.main.rotateAngleZ = (float) Math.toRadians(90);
-            }
+            this.chainSwing(fishTail, speed * outOfWater, 0.4F * outOfWater, -3, f2, 1);
+            this.swing(main, speed, 0.3F * outOfWater, true, 0, 0, f2, 1);
+            this.walk(Jaw, (float) (speed * 0.75 * outOfWater), (float)Math.toRadians(15) * outOfWater, false, 0, -0.2F, f2, 1);
+            this.walk(FrontLeftFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.swing(FrontLeftFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.walk(FrontRightFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.swing(FrontRightFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.walk(BackLeftFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.swing(BackLeftFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.walk(BackRightFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
+            this.swing(BackRightFin, (float) (speed * 0.75 * outOfWater), 0.2F * outOfWater, true, 0, 0, f2, 1);
         }
     }
 }

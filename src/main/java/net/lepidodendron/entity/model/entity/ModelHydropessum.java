@@ -207,6 +207,7 @@ public class ModelHydropessum extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
@@ -276,7 +277,6 @@ public class ModelHydropessum extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.main.offsetY = 0F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
@@ -284,9 +284,10 @@ public class ModelHydropessum extends AdvancedModelBase {
         if (!e.isInWater()) {
             speed = 0.7F;
         }
+        this.main.offsetY = -0.2F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed*0.8F, 0.15F, 0, f2, 1);
-            this.walk(jaw, (float) (speed * 0.75), 0.2F, false, 0.1F, 0, f2, 1);
+            this.chainSwing(fishTail, speed*1.2F, 0.25F, 0, f2, 1);
+            this.walk(jaw, (float) (speed * 0.75), 0.6F, false, 0.1F, 0, f2, 1);
 
             this.walk(frontLeftFin, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);
             this.swing(frontLeftFin, (float) (speed * 0.75), 0.25F, true, 0, 0, f2, 1);

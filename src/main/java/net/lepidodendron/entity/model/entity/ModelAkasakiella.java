@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraAkasakiella;
-import net.lepidodendron.entity.EntityPrehistoricFloraNipponomaria;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -88,6 +87,7 @@ public class ModelAkasakiella extends AdvancedModelBase {
         EntityPrehistoricFloraAkasakiella ee = (EntityPrehistoricFloraAkasakiella) e;
 
         this.body.offsetZ = 0.13F;
+        this.body.offsetX = 0.06F;
         this.tail.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
         this.tail.setScaleZ(scaler*0.85F);
@@ -103,5 +103,13 @@ public class ModelAkasakiella extends AdvancedModelBase {
         this.eye1.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
         this.eye2.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
         this.eye2.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
+
+        this.cube_r1.scaleChildren = false;
+        scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
+        this.body.setScaleZ(scaler);
+        this.cube_r1.setScaleZ(scaler);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        this.body.setScaleZ(scaler);
+        this.cube_r1.setScaleX(scaler2 * 0.7F);
     }
 }

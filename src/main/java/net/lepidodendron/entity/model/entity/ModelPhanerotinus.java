@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraWaterGastropodBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -160,6 +161,22 @@ public class ModelPhanerotinus extends AdvancedModelBase {
         this.walk(tentacleL2, 0.2F, 0.1F, true, 0, 0.15F, f2, 0.8F);
         this.walk(shell, 0.1F, 0.08F, true, 0, -0.04F, f2, 1.0F);
         this.swing(shell, 0.125F, 0.05F, true, 0, -0.04F, f2, 1.0F);
+
+
+        EntityPrehistoricFloraWaterGastropodBase ee = (EntityPrehistoricFloraWaterGastropodBase) e;
+        this.cube_r1.scaleChildren = false;
+        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
+        this.body.setScaleZ(scaler);
+        this.leg.setScaleZ(scaler);
+        this.leg2.setScaleZ(scaler);
+        this.leg3.setScaleZ(scaler);
+        this.cube_r1.setScaleZ(scaler);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        this.body.setScaleZ(scaler);
+        this.leg.setScaleX(scaler2 * 0.7F);
+        this.leg2.setScaleX(scaler2 * 0.7F);
+        this.leg3.setScaleX(scaler2 * 0.7F);
+        this.cube_r1.setScaleX(scaler2 * 0.7F);
 
     }
 }

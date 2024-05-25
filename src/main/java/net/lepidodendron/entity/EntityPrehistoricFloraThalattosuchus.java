@@ -10,8 +10,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderGeosaurus;
-import net.lepidodendron.entity.render.entity.RenderPhylloceras;
 import net.lepidodendron.entity.render.entity.RenderThalattosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -85,6 +83,19 @@ public class EntityPrehistoricFloraThalattosuchus extends EntityPrehistoricFlora
 
 	@Override
 	public void playLivingSound() {
+		if (!this.isReallyInWater()) {
+			return;
+		}
+		if (this.getAnimation() != null) {
+			SoundEvent soundevent = this.getAmbientSound();
+			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+				this.setAnimation(ROAR_ANIMATION);
+				if (soundevent != null)
+				{
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
 	}
 
 	@Override
@@ -197,17 +208,20 @@ public class EntityPrehistoricFloraThalattosuchus extends EntityPrehistoricFlora
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:thalattosuchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:thalattosuchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:thalattosuchus_death"));
 	}
 
 	@Override

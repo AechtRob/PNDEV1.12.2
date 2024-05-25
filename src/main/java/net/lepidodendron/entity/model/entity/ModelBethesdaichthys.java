@@ -267,12 +267,12 @@ public class ModelBethesdaichthys extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
 
-        float speed = 0.186F;
+        float speed = 0.6F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
         if (ee.getIsFast()) {
-            speed = speed * 2.6F;
+            speed = speed * 1.8F;
         }
-        float still = 1f;
+        float still = 1.0f;
         if (f3 == 0.0F) {
             still = 0.6F;
         }
@@ -286,16 +286,16 @@ public class ModelBethesdaichthys extends AdvancedModelBase {
         //if (f3 != 0.0F) {this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, 0, f2, 1);}
         if (e.isInWater()) {
             this.chainWave(fishTail, speed * still * 2, 0.02F * still, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * still, 0.29F * still, -0.85, f2, 0.5F * still);
-            this.swing(root, speed, 0.2F, true, 0, 0, f2, 0.8F);
+            this.chainSwing(fishTail, speed * still, 0.8F * still, -0.85, f2, 0.5F * still);
+            this.swing(root, speed, 0.1F, true, 0, 0, f2, 0.8F);
         }
         else {
             this.swing(root, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(frontLeftFin, (float) (speed * 0.65), 0.28F, false, 0.8F, 0, f2, 0.5F);
-        this.walk(frontLeftFin, (float) (speed * 0.65), 0.18F, true, 0, 0, f2, 0.5F);
-        this.flap(frontRightFin, (float) (speed * 0.65), -0.28F, false, 0.8F, 0, f2, 0.5F);
-        this.walk(frontRightFin, (float) (speed * 0.65), -0.18F, true, 0, 0, f2, 0.5F);
+        this.flap(frontLeftFin, (float) (speed * 0.65), 0.38F, false, 0.8F, 0, f2, 0.5F);
+        this.walk(frontLeftFin, (float) (speed * 0.65), 0.28F, true, 0, 0, f2, 0.5F);
+        this.flap(frontRightFin, (float) (speed * 0.65), -0.38F, false, 0.8F, 0, f2, 0.5F);
+        this.walk(frontRightFin, (float) (speed * 0.65), -0.28F, true, 0, 0, f2, 0.5F);
 
         this.flap(backLeftFin, (float) (speed * 0.65), 0.28F, false, 1.8F, 0, f2, 0.5F);
         this.walk(backLeftFin, (float) (speed * 0.65), 0.18F, true, 1, 0, f2, 0.5F);

@@ -2,7 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraAkasakiella;
 import net.lepidodendron.entity.EntityPrehistoricFloraWaaganella;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -125,5 +124,6 @@ public class ModelWaaganella extends AdvancedModelBase {
         this.lefteyestalk.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
         this.righteyestalk.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
         this.righteyestalk.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
+
     }
 }

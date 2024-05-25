@@ -1,0 +1,47 @@
+{
+	"name": "Hughmilleria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hughmilleria_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_hughmilleria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hughmilleria",
+			"title": "Hughmilleria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda $(br)>Eurypterida $(br)>Pterygotioidea $(br)>Hughmilleriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. socialis",
+            "entity": "lepidodendron:prehistoric_flora_hughmilleria",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hughmilleria",
+			"type": "text",
+			"text": "Hughmilleria is a small eurypterid from the Silurian period. It is a small eurypterid, and is classified as the most basal known member of Pterygotioidea. It grew to around 20 cm in length and lacks the large from claws that later more derived Pterygotioids had. Hughmilleria dominated the freshwater and brackish lagoonal environments in the Silurian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hughmilleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hughmilleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hughmilleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hughmilleria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hughmilleria"
+		}
+	]
+}

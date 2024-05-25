@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderMamulichthys;
 import net.lepidodendron.entity.render.entity.RenderSenekichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -71,7 +70,7 @@ public class EntityPrehistoricFloraSenekichthys extends EntityPrehistoricFloraFi
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.15f;
+		return 0.25f;
 	}
 
 	@Override

@@ -1,0 +1,47 @@
+{
+	"name": "Longisquama",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/longisquama_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_longisquama",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_longisquama",
+			"title": "Longisquama",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Reptilia $(br)>Neodiapsida"
+		},
+        	{
+            "type": "entity",
+            "name": "L. insignis",
+            "entity": "lepidodendron:prehistoric_flora_longisquama",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_longisquama",
+			"type": "text",
+			"text": "Longisquama is a neodiapsid known from the Madygen Formation of Triassic Kyrgyzstan. It is known from a partial specimen which preserves long structures growing from its back. The purpose of these structures is not known and only one specimen, the holotype, preserves the integuments. Longisquama is classified as a neodiapsid, though due to the strange structures it possesses, relationships within the group is hard to assess. The name Longisquama means \"long scales\" and references the long strange scales found in the holotype specimen."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_longisquama"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_longisquama"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_longisquama"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_longisquama"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_longisquama"
+		}
+	]
+}

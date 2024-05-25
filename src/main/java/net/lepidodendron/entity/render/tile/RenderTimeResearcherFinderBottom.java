@@ -128,7 +128,7 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GL11.glColor3ub((byte) 77, (byte) 182, (byte) 251);
 
             float width = 0.03F;
-            float offsetter = 0.3F;
+            float offsetter = 0.34F;
 
             //LASER 1:
             //face1:
@@ -168,7 +168,7 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GL11.glVertex3f((float) x + 0.5F - width/2, (float) y + 1.85F, (float) z + 0.5F + offsetter + width/2);
 
             //LASER 2:
-            offsetter = -0.3F;
+            offsetter = -0.34F;
             //face1:
             GL11.glVertex3f((float) x + 0.5F + width/2, (float) y + 1.85F, (float) z + 0.5F + offsetter - width/2);
             GL11.glVertex3f((float) x + 0.5F + width/2, (float) y + 1.1F, (float) z + 0.5F + width/2);
@@ -206,7 +206,7 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GL11.glVertex3f((float) x + 0.5F - width/2, (float) y + 1.85F, (float) z + 0.5F + offsetter + width/2);
 
             //LASER 3:
-            offsetter = -0.35F;
+            offsetter = -0.30F;
             //face1:
             GL11.glVertex3f((float) x + 0.5F + offsetter + width/2, (float) y + 1.85F, (float) z + 0.5F - width/2);
             GL11.glVertex3f((float) x + 0.5F + width/2, (float) y + 1.1F, (float) z + 0.5F + width/2);
@@ -244,7 +244,7 @@ public class RenderTimeResearcherFinderBottom extends TileEntitySpecialRenderer<
             GL11.glVertex3f((float) x + 0.5F + offsetter - width/2, (float) y + 1.85F, (float) z + 0.5F + width/2);
 
             //LASER 4:
-            offsetter = 0.35F;
+            offsetter = 0.30F;
             //face1:
             GL11.glVertex3f((float) x + 0.5F + offsetter + width/2, (float) y + 1.85F, (float) z + 0.5F - width/2);
             GL11.glVertex3f((float) x + 0.5F + width/2, (float) y + 1.1F, (float) z + 0.5F + width/2);

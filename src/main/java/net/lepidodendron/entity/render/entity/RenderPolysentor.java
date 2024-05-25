@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraPhylloceras;
 import net.lepidodendron.entity.EntityPrehistoricFloraPolysentor;
 import net.lepidodendron.entity.model.entity.ModelPolysentor;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -18,7 +17,7 @@ public class RenderPolysentor extends RenderLiving<EntityPrehistoricFloraPolysen
         super(mgr, new ModelPolysentor(), 0.0f);
     }
 
-    public static float getScaler() {return 0.2F; }
+    public static float getScaler() {return 0.26F; }
     @Override
     public void doRender(EntityPrehistoricFloraPolysentor entity, double x, double y, double z, float entityYaw, float partialTicks) {
         try {

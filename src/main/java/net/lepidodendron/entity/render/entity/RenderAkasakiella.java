@@ -12,7 +12,7 @@ public class RenderAkasakiella extends RenderLiving<EntityPrehistoricFloraAkasak
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/akasakiella.png");
 
     public static float getScaler() {
-        return 0.7F * 0.28F;
+        return 0.76F;
     }
     public RenderAkasakiella(RenderManager mgr) {
         super(mgr, new ModelAkasakiella(), 0.0f);

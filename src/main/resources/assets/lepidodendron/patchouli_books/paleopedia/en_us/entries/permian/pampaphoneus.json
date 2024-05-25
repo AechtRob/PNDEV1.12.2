@@ -1,0 +1,47 @@
+{
+	"name": "Pampaphoneus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pampaphoneus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_pampaphoneus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pampaphoneus",
+			"title": "Pampaphoneus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida $(br)>Dinocephalia $(br)>Anteosauridae $(br)>Syodontinae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. biccai",
+            "entity": "lepidodendron:prehistoric_flora_pampaphoneus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pampaphoneus",
+			"type": "text",
+			"text": "Pampaphoneus is a carnivorous dinocephalian known from the Permian of Brazil. Its remains consist of an almost complete skull with a fully articulated lower jaw. Pampaphoneus is known from the Rio do Rasto Formation, which was a temperate Glossopteris-filled floodplains. Pampaphoneus would have preyed on smaller vertebrates that it shared its environment with such as Rastodon."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pampaphoneus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pampaphoneus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pampaphoneus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pampaphoneus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pampaphoneus"
+		}
+	]
+}

@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -241,5 +242,13 @@ public class ModelMurex extends AdvancedModelBase {
         this.lefteyestalk.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
         this.righteyestalk.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
         this.righteyestalk.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
+
+        EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) e;
+        this.foot.scaleChildren = true;
+        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
+        this.foot.setScaleZ(scaler);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        this.foot.setScaleX(scaler2 * 0.7F);
+        this.foot.scaleChildren = false;
     }
 }

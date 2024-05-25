@@ -12,7 +12,7 @@ public class RenderFoordella extends RenderLiving<EntityPrehistoricFloraFoordell
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/foordella.png");
 
     public static float getScaler() {
-        return 0.7F * 0.3F;
+        return 0.7F * 0.44F;
     }
     public RenderFoordella(RenderManager mgr) {
         super(mgr, new ModelFoordella(), 0.0f);

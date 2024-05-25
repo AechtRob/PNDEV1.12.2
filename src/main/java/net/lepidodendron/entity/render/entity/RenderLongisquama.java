@@ -26,6 +26,21 @@ public class RenderLongisquama extends RenderLiving<EntityPrehistoricFloraLongis
     @Override
     protected void applyRotations(EntityPrehistoricFloraLongisquama entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+
+        switch (entityLiving.getClimbFacing()) {
+            case DOWN:
+            default:
+                break;
+
+            case EAST: case WEST: case NORTH: case SOUTH:
+                GlStateManager.translate(0.0F, 0.05F, -0.135F);
+                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                break;
+
+            case UP:
+                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+        }
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLongisquama entity, float f) {

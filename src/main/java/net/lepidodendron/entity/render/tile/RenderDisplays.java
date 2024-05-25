@@ -12,6 +12,8 @@ public class RenderDisplays {
     public static final ModelAnchiornis modelAnchiornisBook = new ModelAnchiornis();
     public static final ModelAnchisaurus modelAnchisaurus = new ModelAnchisaurus();
     public static final ModelAnchisaurus modelAnchisaurusBook = new ModelAnchisaurus();
+    public static final ModelLongisquama modelLongisquama = new ModelLongisquama();
+    public static final ModelLongisquama modelLongisquamaBook = new ModelLongisquama();
     public static final ModelAdamanteryon modelAdamanteryon = new ModelAdamanteryon();
     public static final ModelAegirocassis modelAegirocassis = new ModelAegirocassis();
     public static final ModelAetheolepis modelAetheolepis = new ModelAetheolepis();

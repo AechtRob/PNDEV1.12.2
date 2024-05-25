@@ -1,0 +1,47 @@
+{
+	"name": "Hadranax",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/hadranax_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_hadranax",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hadranax",
+			"title": "Hadranax",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Xenusia $(br)>Protonychophora $(br)>Xenusiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. augustus",
+            "entity": "lepidodendron:prehistoric_flora_hadranax",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hadranax",
+			"type": "text",
+			"text": "Hadranax is a Cambrian lobopod known from the Sirius Passet Lagerstatte. It had two elongated frontal appendages with are thought to have been sensory organs, allowing it to better traverse its environment. Hadranax fossils are incomplete and thus its true classification has been debated."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_hadranax"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_hadranax"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_hadranax"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_hadranax"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_hadranax"
+		}
+	]
+}

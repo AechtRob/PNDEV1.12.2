@@ -12,7 +12,7 @@ public class RenderChippewaella extends RenderLiving<EntityPrehistoricFloraChipp
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chippewaella.png");
 
     public static float getScaler() {
-        return 0.7F * 0.27F;
+        return 0.35F;
     }
     public RenderChippewaella(RenderManager mgr) {
         super(mgr, new ModelChippewaella(), 0.0f);

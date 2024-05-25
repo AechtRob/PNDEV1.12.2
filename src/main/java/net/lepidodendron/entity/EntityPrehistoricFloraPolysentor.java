@@ -7,9 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderPhylloceras;
 import net.lepidodendron.entity.render.entity.RenderPolysentor;
-import net.lepidodendron.entity.render.entity.RenderRainerichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -25,7 +23,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
-import vazkii.patchouli.client.gui.GuiAdvancementsExt;
 
 import javax.annotation.Nullable;
 
@@ -73,7 +70,7 @@ public class EntityPrehistoricFloraPolysentor extends EntityPrehistoricFloraFish
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		return 0.24f;
 	}
 
 	@Override

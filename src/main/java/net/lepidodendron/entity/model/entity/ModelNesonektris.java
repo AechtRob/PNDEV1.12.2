@@ -173,6 +173,7 @@ public class ModelNesonektris extends AdvancedModelBase {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.4F, -3, f2, 0.8F);
             this.swing(main, speed, 0.25F, true, 0, 0, f2, 1);
+            this.flap(main, 0.25F, 0.4F, false, 0, 0, f2, 0.8F);
             if (!e.isInWater()) {
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = 0.15F;
