@@ -1523,27 +1523,31 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.setGrowingAge(0); //Resetting vanilla methods which we don't use
         }
 
+        //Ageing routine, every 100 ticks (once per five seconds)
         int i = this.getAgeTicks();
+        boolean didAge = false;
         //Do not grow entities which are in cages, etc:
         Block blockIn = world.getBlockState(this.getPosition()).getBlock();
-        boolean wasAlreadyAdult = i == this.getAdultAge();
+        boolean wasAlreadyAdult = i >= this.getAdultAge();
         if (this.isEntityAlive()
                 && blockIn != BlockCageSmall.block
                 && blockIn != BlockGlassJar.block
                 && blockIn != BlockTrapAirTop.block
                 && blockIn != BlockTrapGround.block
                 && blockIn != BlockTrapWater.block
-                && !this.world.isRemote)
+                && (!this.world.isRemote)
+                && this.getTicks() % 100 == 0)
         {
-            ++i;
+            i = i + 100;
             //throttle at limit:
             if (i > this.getAdultAge()) {
                 i = this.getAdultAge();
             }
             this.setAgeTicks(i);
+            didAge = true;
         }
 
-        if (!wasAlreadyAdult) {
+        if (didAge && !wasAlreadyAdult) {
             //Age the mob:
             this.setScaleForAge(false);
             //Check for collisions:
