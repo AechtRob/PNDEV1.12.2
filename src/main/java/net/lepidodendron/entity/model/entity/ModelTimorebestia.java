@@ -231,16 +231,21 @@ public class ModelTimorebestia extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.timorebestia.offsetY = 0.4F;
-        this.timorebestia.offsetX = 0.55F;
+        this.timorebestia.offsetY = -0.8F;
+        this.timorebestia.offsetX = -0.8F;
         this.timorebestia.rotateAngleY = (float)Math.toRadians(200);
         this.timorebestia.rotateAngleX = (float)Math.toRadians(8);
         this.timorebestia.rotateAngleZ = (float)Math.toRadians(-8);
         this.timorebestia.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 3.0F;
         this.timorebestia.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(timorebestia, -0.9F, -0.5F, 0.2F);
+        this.setRotateAngle(head, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(body1, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.1F, 0.0F);
         //End of pose, now render the model:
         this.timorebestia.render(f);
         //Reset rotations, positions and sizing:

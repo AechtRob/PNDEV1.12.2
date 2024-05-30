@@ -2,8 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoredlichia;
-import net.lepidodendron.entity.EntityPrehistoricFloraThulaspis;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -448,16 +446,19 @@ public class ModelThulaspis extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Thulaspis.offsetY = 0.4F;
-        this.Thulaspis.offsetX = 0.55F;
+        this.Thulaspis.offsetY = -1.7F;
+        this.Thulaspis.offsetX = 0.0F;
         this.Thulaspis.rotateAngleY = (float)Math.toRadians(200);
         this.Thulaspis.rotateAngleX = (float)Math.toRadians(8);
         this.Thulaspis.rotateAngleZ = (float)Math.toRadians(-8);
         this.Thulaspis.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 7.5F;
         this.Thulaspis.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Thulaspis, 0.5F, 3.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(leftAntenna, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightAntenna, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Thulaspis.render(f);
         //Reset rotations, positions and sizing:

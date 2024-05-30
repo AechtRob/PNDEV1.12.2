@@ -276,16 +276,22 @@ public class ModelStoermeropterus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.carapace.offsetY = 0.4F;
-        this.carapace.offsetX = 0.55F;
+        this.carapace.offsetY = -0.4F;
+        this.carapace.offsetX = 1.0F;
         this.carapace.rotateAngleY = (float)Math.toRadians(200);
         this.carapace.rotateAngleX = (float)Math.toRadians(8);
         this.carapace.rotateAngleZ = (float)Math.toRadians(-8);
         this.carapace.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 3.5F;
         this.carapace.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(carapace, 0.2F, 3.5F, 0.0F);
+        this.setRotateAngle(segment, -0.1F, 0.2F, 0.05F);
+        this.setRotateAngle(segment2, -0.1F, 0.2F, 0.05F);
+        this.setRotateAngle(segment3, 0.1F, 0.2F, 0.05F);
+        this.setRotateAngle(segment4, 0.2F, 0.2F, 0.05F);
+        this.setRotateAngle(segment5, 0.3F, 0.2F, 0.05F);
+        this.setRotateAngle(segment6, 0.3F, 0.2F, 0.05F);
         //End of pose, now render the model:
         this.carapace.render(f);
         //Reset rotations, positions and sizing:

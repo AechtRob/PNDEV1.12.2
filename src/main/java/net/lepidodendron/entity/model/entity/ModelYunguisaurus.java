@@ -426,41 +426,41 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
 
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Yunguisaurus.offsetY = -0.5F;
-        this.Yunguisaurus.offsetX = 0.075F;
+        this.Yunguisaurus.offsetY = -0.4F;
+        this.Yunguisaurus.offsetX = -0.23F;
         this.Yunguisaurus.rotateAngleY = (float)Math.toRadians(-210);
         this.Yunguisaurus.rotateAngleX = (float)Math.toRadians(20);
         this.Yunguisaurus.rotateAngleZ = (float)Math.toRadians(5);
         this.Yunguisaurus.scaleChildren = true;
-        float scaler = 0.48F;
+        float scaler = 0.46F;
         this.Yunguisaurus.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.8F);
-        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(leftfrontflipper, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(leftfrontflipperbase, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(leftfrontflippertip, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightfrontflipper, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightfrontflipperbase, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightfrontflippertip, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.3F);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail6, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(leftbackflipper, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(leftbackflipperbase, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(leftbackflippertip, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightbackflipper, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightbackflipperbase, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(rightbackflippertip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.3F, 1.3F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(neck2, -0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(neck3, -0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(neck4, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(neck5, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(head, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontflipper, -0.5F, 0.2F, 0.0F);
+        this.setRotateAngle(leftfrontflipperbase, 0.0F, 0.05F, 0.05F);
+        this.setRotateAngle(leftfrontflippertip, 0.0F, -0.08F, 0.02F);
+        this.setRotateAngle(rightfrontflipper, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(rightfrontflipperbase, 0.0F, -0.05F, 0.05F);
+        this.setRotateAngle(rightfrontflippertip, 0.0F, 0.08F, 0.02F);
+        this.setRotateAngle(tail, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.2F, 0.1F, -0.05F);
+        this.setRotateAngle(tail3, 0.2F, 0.1F, -0.05F);
+        this.setRotateAngle(tail4, 0.2F, 0.1F, -0.1F);
+        this.setRotateAngle(tail5, 0.1F, 0.2F, -0.1F);
+        this.setRotateAngle(tail6, 0.1F, 0.2F, -0.1F);
+        this.setRotateAngle(leftbackflipper, 0.0F, -0.3F, 0.2F);
+        this.setRotateAngle(leftbackflipperbase, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(leftbackflippertip, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(rightbackflipper, 0.0F, 0.3F, -0.2F);
+        this.setRotateAngle(rightbackflipperbase, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(rightbackflippertip, 0.0F, 0.4F, 0.0F);
         //End of pose, now render the model:
         this.Yunguisaurus.render(f);
         //Reset rotations, positions and sizing:

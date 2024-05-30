@@ -308,16 +308,31 @@ public class ModelOrcanopterus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = 0.4F;
+        this.body.offsetY = -0.6F;
         this.body.offsetX = 0.55F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.5F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.2F, 3.0F, -0.4F);
+        this.setRotateAngle(tergite2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tergite3, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(tergite4, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(tergite5, 0.2F, 0.05F, 0.0F);
+        this.setRotateAngle(tergite6, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tergite7, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tergite8, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tergite9, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tergite10, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tergite11, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tergite12, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(telson, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(legR5_2, 0.5F, 0.0F, 0.5F);
+        this.setRotateAngle(legL5, 0.7F, 0.0F, -0.5F);
+        this.setRotateAngle(legL5_2, 0.5F, 0.0F, -0.5F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:
