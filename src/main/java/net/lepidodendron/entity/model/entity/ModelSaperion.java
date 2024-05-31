@@ -2,7 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoredlichia;
 import net.lepidodendron.entity.EntityPrehistoricFloraSaperion;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -212,16 +211,18 @@ public class ModelSaperion extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.4F;
-        this.main.offsetX = 0.55F;
+        this.main.offsetY = -1.6F;
+        this.main.offsetX = 0.3F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 5.8F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, -0.9F, 0.5F, -0.3F);
+        this.setRotateAngle(leftAntennae, 0.0F, 0.05F, 0.2F);
+        this.setRotateAngle(rightAntennae, 0.0F, -0.05F, 0.3F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

@@ -1,11 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHypuronector;
-import net.lepidodendron.entity.EntityPrehistoricFloraHypuronector;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -471,16 +468,39 @@ public class ModelHypuronector extends AdvancedModelBaseExtended {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Hypuronector.offsetY = 0.4F;
-        this.Hypuronector.offsetX = 0.55F;
+        this.Hypuronector.offsetY = -1.3F;
+        this.Hypuronector.offsetX = 1.5F;
         this.Hypuronector.rotateAngleY = (float)Math.toRadians(200);
         this.Hypuronector.rotateAngleX = (float)Math.toRadians(8);
         this.Hypuronector.rotateAngleZ = (float)Math.toRadians(-8);
         this.Hypuronector.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 4.4F;
         this.Hypuronector.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Hypuronector, 0.2F, 4.4F, 0.2F);
+        this.setRotateAngle(body, -0.1F, -0.1F, 0.2F);
+        this.setRotateAngle(upperbody, -0.15F, -0.1F, 0.1F);
+        this.setRotateAngle(neck, -0.1F, -0.2F, -0.2F);
+        this.setRotateAngle(neck3, -0.1F, -0.2F, -0.1F);
+        this.setRotateAngle(neck4, -0.2F, -0.2F, -0.1F);
+        this.setRotateAngle(head, -0.1F, 0.0F, 0.1F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, -0.1F, 0.05F);
+        this.setRotateAngle(tail2, 0.05F, -0.1F, 0.05F);
+        this.setRotateAngle(tail3, 0.05F, -0.1F, 0.05F);
+        this.setRotateAngle(tail4, 0.05F, -0.1F, 0.05F);
+        this.setRotateAngle(frontleftarm, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(frontleftarm2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(frontleftarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontrightarm, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(frontrightarm2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(frontrightarm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, 0.0F, -0.2F, 0.3F);
+        this.setRotateAngle(backleftleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, -0.5F, 0.3F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Hypuronector.render(f);
         //Reset rotations, positions and sizing:

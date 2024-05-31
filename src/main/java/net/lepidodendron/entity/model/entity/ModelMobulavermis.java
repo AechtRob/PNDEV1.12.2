@@ -436,16 +436,23 @@ public class ModelMobulavermis extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Head.offsetY = 0.4F;
-        this.Head.offsetX = 0.55F;
+        this.Head.offsetY = -2.9F;
+        this.Head.offsetX = 0.4F;
         this.Head.rotateAngleY = (float)Math.toRadians(200);
         this.Head.rotateAngleX = (float)Math.toRadians(8);
         this.Head.rotateAngleZ = (float)Math.toRadians(-8);
         this.Head.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.9F;
         this.Head.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Head, -0.9F, 0.5F, -0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.2F, 0.1F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.1F);
+        this.setRotateAngle(body3, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail1, 0.1F, -0.5F, 0.1F);
+        this.setRotateAngle(tail2, 0.1F, -0.5F, 0.1F);
+        this.setRotateAngle(leftAppendage1, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(rightAppendage1, -0.2F, 0.3F, 0.0F);
         //End of pose, now render the model:
         this.Head.render(f);
         //Reset rotations, positions and sizing:

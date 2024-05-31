@@ -134,16 +134,20 @@ public class ModelNesonektris extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.4F;
-        this.main.offsetX = 0.55F;
+        this.main.offsetY = -0.7F;
+        this.main.offsetX = 0.8F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 3.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.2F, 3.5F, 0.3F);
+        this.setRotateAngle(tail, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

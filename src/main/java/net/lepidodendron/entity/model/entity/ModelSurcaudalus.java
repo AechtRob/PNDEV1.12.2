@@ -290,16 +290,22 @@ public class ModelSurcaudalus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.4F;
-        this.root.offsetX = 0.55F;
+        this.root.offsetY = -0.4F;
+        this.root.offsetX = -0.1F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 3.7F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.2F, 3.7F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, -0.5F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.5F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

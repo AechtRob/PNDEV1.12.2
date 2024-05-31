@@ -315,16 +315,26 @@ public class ModelPraearcturus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = 0.4F;
-        this.body.offsetX = 0.55F;
+        this.body.offsetY = -0.1F;
+        this.body.offsetX = -0.1F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.5F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.2F, -2.7F, 0.0F);
+        this.setRotateAngle(abdomen, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail6, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(armL, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(armR, -0.3F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

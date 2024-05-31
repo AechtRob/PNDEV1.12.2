@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEryma;
-import net.lepidodendron.entity.EntityPrehistoricFloraEryma;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -372,15 +371,24 @@ public class ModelEryma extends AdvancedModelBase {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bone.offsetY = 0.4F;
-        this.bone.offsetX = 0.55F;
+        this.bone.offsetX = 0.2F;
         this.bone.rotateAngleY = (float)Math.toRadians(200);
         this.bone.rotateAngleX = (float)Math.toRadians(8);
         this.bone.rotateAngleZ = (float)Math.toRadians(-8);
         this.bone.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 5.0F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(bone, -0.2F, 3.0F, -0.05F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(body3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(armR3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(clawR, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(armL, -0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(armL2, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(armL3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(clawL, 0.0F, 0.5F, 0.0F);
         //End of pose, now render the model:
         this.bone.render(f);
         //Reset rotations, positions and sizing:

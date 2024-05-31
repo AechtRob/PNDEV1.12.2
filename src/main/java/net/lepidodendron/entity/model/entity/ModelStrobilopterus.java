@@ -198,16 +198,22 @@ public class ModelStrobilopterus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = 0.4F;
-        this.Body.offsetX = 0.55F;
+        this.Body.offsetY = 0.0F;
+        this.Body.offsetX = 1.5F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 4.0F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Body, 0.3F, -3.3F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.9F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Telson, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Body.render(f);
         //Reset rotations, positions and sizing:
