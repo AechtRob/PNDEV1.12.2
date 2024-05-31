@@ -1,0 +1,47 @@
+{
+	"name": "Chippewaella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chippewaella_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_chippewaella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chippewaella",
+			"title": "Chippewaella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Mollusca"
+		},
+        	{
+            "type": "entity",
+            "name": "C. patellitheca",
+            "entity": "lepidodendron:prehistoric_flora_chippewaella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chippewaella",
+			"type": "text",
+			"text": "Chippewaella patellitheca is a stem-gastropod found at Mount Washington summit, Eau Claire. It was described by Gerald O. Gunderson in 1993. It has a deep and broad sinus as well as a dull peripheral band. According to Peter J. Wagner,  Chippewaella is the most basal gastropod. Yet, as small and perhaps unassuming as Chippewaella may be to the common eye, this individual is representative of a class of animals that would go to leave a lasting impression upon this planet. Pioneers into a new world, who will venture through blazing hydrothermal vents, luscious rainforest canopies, blazing sandy dunes, vibrant reefs cities, and the nooks and crannies of the human world: gastropods."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chippewaella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chippewaella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chippewaella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chippewaella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chippewaella"
+		}
+	]
+}

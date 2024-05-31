@@ -1,0 +1,31 @@
+{
+	"name": "Titusvillia ",
+	"read_by_default": true,
+	"icon": "lepidodendron:titusvillia",
+	"category": "lepidodendron:carboniferous_static",
+	"turnin": "lepidodendron:pf_adv_book_titusvillia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_titusvillia",
+			"title": "Titusvillia ",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Hexactinellida$(br)>Lyssakida$(br)>Titusvilliidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/titusvillia.png"],
+			"title": "T. drakei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_titusvillia",
+			"type": "text",
+			"text": "Titusvillia is a genus of glass sponge known from Carboniferous. It is thought that it was a sponge that formed colonies with a characteristic branched, undulating shape."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_titusvillia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

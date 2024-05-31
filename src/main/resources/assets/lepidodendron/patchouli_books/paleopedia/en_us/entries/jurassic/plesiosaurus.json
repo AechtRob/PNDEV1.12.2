@@ -1,0 +1,47 @@
+{
+	"name": "Plesiosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/plesiosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_plesiosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_plesiosaurus",
+			"title": "Plesiosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Plesiosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. dolichodeirus",
+            "entity": "lepidodendron:prehistoric_flora_plesiosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_plesiosaurus",
+			"type": "text",
+			"text": "Plesiosaurus is a large marine long necked reptile from the Jurassic of Europe. It is known from many well preserved specimens, most growing to around 3m in length. As a plesiosaur, it was a fish and shellfish eater, with long teeth adapted for catching and eating fish. It had a small head and a long neck, presumably used as a rudder during navigation. Another theory put forth for its neck was that it would slowly swim and wait for prey to come close to it, with the long neck separating the head and mouth from the body, where most of the motion would come from. It propelled itself using its specialized paddle-like flippers. These animals gave birth to live young."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_plesiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_plesiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_plesiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_plesiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_plesiosaurus"
+		}
+	]
+}

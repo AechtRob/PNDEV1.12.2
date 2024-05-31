@@ -2,25 +2,26 @@
 	"name": "Flagellopantopus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/flagellopantopus_icon.png",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_flagellopantopus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_flagellopantopus",
 			"title": "Flagellopantopus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda$(br)>Chelicerata$(br)>Pycnogonida$(br)>Pantopoda"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Arthropoda $(br)>Chelicerata $(br)>Pycnogonida $(br)>Pantopoda"
 		},
-		{
-			"type": "image",
-			"images": ["paleopedia:textures/flagellopantopus.png"],
-			"title": "F. blocki",
-			"text": ""
-		},
+        	{
+            "type": "entity",
+            "name": "F. blocki",
+            "entity": "lepidodendron:prehistoric_flora_flagellopantopus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
 		{
 			"advancement": "lepidodendron:pf_adv_book_flagellopantopus",
 			"type": "text",
-			"text": "Flagellopantopus is a sea spider known from Devonian Hunsrück Slate, Germany. A distinct difference from the modern sea spider is that it had a whip-like telson that was 2.5 times its body length, which gives it a facehugger-like appearance."
+			"text": "Flagellopantopus is a Devonian sea spider, known from the Hunsruck Slate of Germany. It had a body plan similar to typical sea spiders, except with the addition of a long tail. The purpose of this tail is unknown, but well preserved specimens indicate that it was more than twice the length of its main body. "
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,0 +1,47 @@
+{
+	"name": "Sarcoprion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/sarcoprion_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_sarcoprion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sarcoprion",
+			"title": "Sarcoprion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes $(br)>Holocephali $(br)>Eugeneodontida $(br)>Helicoprionidae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. edax",
+            "entity": "lepidodendron:prehistoric_flora_sarcoprion",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sarcoprion",
+			"type": "text",
+			"text": "Sarcoprion is a holocephalian cartilaginous fish known from the Permian of Greenland. It is known from its tooth whorl as well as parts of its jaw and snout. The animal may have measured up to 6m in length, and probably had an elongated snout, based on the remains known. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_sarcoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_sarcoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_sarcoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_sarcoprion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_sarcoprion"
+		}
+	]
+}

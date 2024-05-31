@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_heteropetalus",
 			"title": "Heteropetalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Holocephali $(br)>Debeeriiformes $(br)>Debeeriidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Debeeriidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_heteropetalus",
 			"type": "text",
-			"text": ""
+			"text": "Heteropetalus is a debeerid cartilaginous fish which is known from the Bear Gulch Limestone of the Carboniferous. Like many other Bear Gulch chondricthyans, it displays sexual dimorphism, with the males being generally larger and possessing larger dorsal spines and dorsal fins. They had teeth that seemed to have been adapted for crushing shells."
 		},
 		{
 			"type": "lepidodendron:diet",
