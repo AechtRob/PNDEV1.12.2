@@ -1,0 +1,47 @@
+{
+	"name": "Dracopelta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dracopelta_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dracopelta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dracopelta",
+			"title": "Dracopelta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Ankylosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "D. zbyszewskii",
+            "entity": "lepidodendron:prehistoric_flora_dracopelta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dracopelta",
+			"type": "text",
+			"text": "Dracopelta is an ankylosaur from the Jurassic Portuguese Lourinha Formation. It is known from a partial skeleton and some undescribed material. It is estimated to have been around 3m in length, and had small flat osteoderms lining its back. As a basal ankylosaur, it may have bore a similar resemblance to Mymoorapelta."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dracopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dracopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dracopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dracopelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dracopelta"
+		}
+	]
+}

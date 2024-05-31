@@ -1,0 +1,47 @@
+{
+	"name": "Ichthyosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ichthyosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_ichthyosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ichthyosaurus",
+			"title": "Ichthyosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Ichthyosauria $(br)>Ichthyosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "I. communis",
+            "entity": "lepidodendron:prehistoric_flora_ichthyosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichthyosaurus",
+			"type": "text",
+			"text": "Ichthyosaurus is a medium sized ichthyosaur from the Jurassic of Europe. It is one of the best known Ichthyosaurs, with multiple complete specimens, some of which preserve soft tissue imprints. It had large circular eyes, and a streamlined body that is reminiscent of dolphins. They grew to around 3m in length. It is thought to have been a ram feeder and a pursuit predator, sustaining thunniform locomotion while chasing down prey. It likely had good eyesight, helping it catch cephalopods and fish, which it preyed upon. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichthyosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichthyosaurus"
+		}
+	]
+}

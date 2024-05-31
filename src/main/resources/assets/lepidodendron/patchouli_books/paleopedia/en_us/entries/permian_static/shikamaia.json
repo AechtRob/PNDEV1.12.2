@@ -1,0 +1,31 @@
+{
+	"name": "Shikamaia",
+	"read_by_default": true,
+	"icon": "lepidodendron:bivalve_shikamaia",
+	"category": "lepidodendron:permian_static",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_shikamaia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_shikamaia",
+			"title": "Shikamaia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida $(br)>Alatoconchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bivalve_shikamaia.png"],
+			"title": "S. akasakaensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_shikamaia",
+			"type": "text",
+			"text": "Shikamaia is a genus of bivalve known from the Middle Permian. It is gigantic and sometimes exceeds a meter, and had unique boat-like shape. It is hypothesized that it gets energy from symbiotic bacteria."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_shikamaia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
