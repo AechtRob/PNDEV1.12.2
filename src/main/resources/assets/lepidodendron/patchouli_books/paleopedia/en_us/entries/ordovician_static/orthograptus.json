@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_orthograptus",
 			"type": "text",
-			"text": ""
+			"text": "Orthograptus was a probable sessile graptolite known from all over the world during the Ordovician period. It is known from straight body fossils, which may have grouped together, being suspension feeders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orthograptus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }

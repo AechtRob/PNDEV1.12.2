@@ -1,0 +1,47 @@
+{
+	"name": "Thalattosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/thalattosuchus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_thalattosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thalattosuchus",
+			"title": "Thalattosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pseudosuchia $(br)>Crocodyliformes $(br)>Thalattosuchia $(br)>Metriorhynchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. superciliosus",
+            "entity": "lepidodendron:prehistoric_flora_thalattosuchus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thalattosuchus",
+			"type": "text",
+			"text": "Thalattosuchus is a Jurassic marine crocodilian-like thalattosuchian known from Europe. It grew to around 3-4m in length and had extremely reduced forelimbs and a strong tail. This animal likely swam using its tail as its main source of propulsion. It also had nasal salt glands, which it would have used to remove excess salt from itself."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_thalattosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_thalattosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_thalattosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_thalattosuchus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_thalattosuchus"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Harpagofututor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/harpagofututor_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_harpagofututor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_harpagofututor",
+			"title": "Harpagofututor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Chondrenchelyiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "H. volsellorhinus",
+            "entity": "lepidodendron:prehistoric_flora_harpagofututor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harpagofututor",
+			"type": "text",
+			"text": "Harpagofututor is a cartilaginous fish from the Carboniferous. It is known from multiple sites, including Bear Gulch. It displays heavy sexual dimorphism, with males sporting deer-like antlers on its head. Many specimens are also known, several of which contain soft tissue. This animal was eel-like and had almost no scales, growing to around 20cm in length and having teeth adapted for crushing shells."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_harpagofututor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_harpagofututor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_harpagofututor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_harpagofututor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_harpagofututor"
+		}
+	]
+}
