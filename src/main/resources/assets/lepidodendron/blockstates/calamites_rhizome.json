@@ -4,27 +4,29 @@
       "model": "lepidodendron:calamites_rhizome"
     },
     "facing=north": {
-      "model": "lepidodendron:calamites_rhizome"
+      "model": "lepidodendron:calamites_rhizome",
+      "x": 90
     },
     "facing=east": {
       "model": "lepidodendron:calamites_rhizome",
+      "x": 90,
       "y": 90
     },
     "facing=south": {
       "model": "lepidodendron:calamites_rhizome",
-      "y": 180
+      "x": 270
     },
     "facing=west": {
       "model": "lepidodendron:calamites_rhizome",
+      "x": 90,
       "y": 270
     },
     "facing=up": {
-      "model": "lepidodendron:calamites_rhizome",
-      "x": 270
+      "model": "lepidodendron:calamites_rhizome"
     },
     "facing=down": {
       "model": "lepidodendron:calamites_rhizome",
-      "x": 90
+      "y": 180
     }
   }
 }

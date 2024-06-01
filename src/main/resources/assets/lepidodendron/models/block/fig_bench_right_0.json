@@ -1,6 +1,0 @@
-{
-	"parent": "lepidodendron:block/bench_right",
-	"textures": {
-		"metal": "lepidodendron:blocks/fig_planks"
-	}
-}

@@ -943,7 +943,14 @@ public class ModelStegosaurus extends AdvancedModelBaseExtended {
     }
 
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(neck3, 0.1392F, 0.346F, 0.0475F);
+        this.setRotateAngle(neck2, -0.2317F, 0.3405F, -0.0786F);
+        this.setRotateAngle(neck, 0.1085F, 0.3352F, 0.2006F);
+        this.setRotateAngle(jaw, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.2233F, 0.2129F, 0.0479F);
+        this.neck.offsetY = -0.125F;
+        this.neck.offsetZ = 0.07F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
 

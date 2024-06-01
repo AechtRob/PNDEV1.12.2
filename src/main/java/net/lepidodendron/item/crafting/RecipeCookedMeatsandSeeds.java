@@ -27,7 +27,12 @@ public class RecipeCookedMeatsandSeeds  {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoCalamari.block, 1), 0.35F);
 		}
 		for (ItemStack stack : OreDictionary.getOres("pnfurnaceSnail")) {
-			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoEscargots.block, 1), 0.35F);
+			if (stack.getItem() == ItemMurex.block) {
+				GameRegistry.addSmelting(stack, new ItemStack(Items.DYE, 8, 5), 1.0F);
+			}
+			else {
+				GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoEscargots.block, 1), 0.35F);
+			}
 		}
 		for (ItemStack stack : OreDictionary.getOres("pnfurnaceMeat")) {
 			GameRegistry.addSmelting(stack, new ItemStack(ItemPalaeoSteak.block, 1), 0.35F);
@@ -66,7 +71,7 @@ public class RecipeCookedMeatsandSeeds  {
 			if (stack.getItem() != new ItemStack(BlockAraucarioxylonLog.block, 1).getItem()
 					&& stack.getItem() !=  new ItemStack(BlockSciadopitysLog.block, 1).getItem()
 					&& stack.getItem() !=  new ItemStack(BlockHymenaeaLog.block, 1).getItem()) {
-				GameRegistry.addSmelting(stack, new ItemStack(Items.COAL, 1), 0.15F);
+				GameRegistry.addSmelting(stack, new ItemStack(Items.COAL, 1, 1), 0.15F);
 			}
 		}
 

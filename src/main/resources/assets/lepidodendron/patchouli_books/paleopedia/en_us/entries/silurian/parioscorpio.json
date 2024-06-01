@@ -1,0 +1,47 @@
+{
+	"name": "Parioscorpio",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/parioscorpio_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_parioscorpio",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parioscorpio",
+			"title": "Parioscorpio",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Arthropoda"
+		},
+        	{
+            "type": "entity",
+            "name": "P. venator",
+            "entity": "lepidodendron:prehistoric_flora_parioscorpio",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parioscorpio",
+			"type": "text",
+			"text": "Parioscorpio is an enigmatic Silurian arthropod from the Waukesha Biota. It was around 5 cm long, possessing two larger raptorial appendages, which would have moved in a clamping motion to capture prey. Its taxonomy is controversial, but it is currently thought to have been a basal euarthropod."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_parioscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_parioscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_parioscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_parioscorpio"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_parioscorpio"
+		}
+	]
+}

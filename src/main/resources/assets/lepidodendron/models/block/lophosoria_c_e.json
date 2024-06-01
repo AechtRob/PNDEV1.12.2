@@ -1,0 +1,36 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"22": "lepidodendron:blocks/lophosoria_leaf_2_base",
+		"23": "lepidodendron:blocks/lophosoria_leaf_2_tip",
+		"particle": "lepidodendron:items/lophosoria_inventory"
+	},
+	"elements": [
+		{
+			"from": [7, 4.9, 1.1],
+			"to": [23, 4.9, 17.1],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [15, 4.9, 9.1]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#22"},
+				"down": {"uv": [0, 16, 16, 0], "rotation": 90, "texture": "#22"}
+			}
+		},
+		{
+			"from": [20, -3.8181, 1.1],
+			"to": [32, -3.8181, 17.1],
+			"rotation": {"angle": -45, "axis": "z", "origin": [28.04757, -3.8181, 9.1]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 12], "rotation": 270, "texture": "#23"},
+				"down": {"uv": [16, 0, 0, 12], "rotation": 270, "texture": "#23"}
+			}
+		}
+	]
+}

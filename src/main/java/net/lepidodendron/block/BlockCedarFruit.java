@@ -4,7 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemScrubbyPineNuts;
+import net.lepidodendron.item.ItemCedarNuts;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
@@ -28,11 +28,15 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nonnull;
+import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockCedarFruit extends ElementsLepidodendronMod.ModElement {
@@ -60,7 +64,7 @@ public class BlockCedarFruit extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:cedar_fruit", "inventory"));
 	}
-	public static class BlockCustom extends BlockFalling {
+	public static class BlockCustom extends BlockFalling implements IShearable {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setTranslationKey("pf_cedar_fruit");
@@ -98,7 +102,7 @@ public class BlockCedarFruit extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			
-			drops.add(new ItemStack(ItemScrubbyPineNuts.block, (int) (3)));
+			drops.add(new ItemStack(ItemCedarNuts.block, (int) (3)));
 			
 			if (((world.getBlockState(pos.north())).getMaterial() == Material.WATER) 
 				|| ((world.getBlockState(pos.south())).getMaterial() == Material.WATER)
@@ -188,6 +192,16 @@ public class BlockCedarFruit extends ElementsLepidodendronMod.ModElement {
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
 			return BlockFaceShape.UNDEFINED;
 		}
-	    
+
+		@Override
+		public boolean isShearable(@Nonnull ItemStack item, IBlockAccess world, BlockPos pos) {
+			return true;
+		}
+
+		@Nonnull
+		@Override
+		public List<ItemStack> onSheared(@Nonnull ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
+		}
 	}
 }

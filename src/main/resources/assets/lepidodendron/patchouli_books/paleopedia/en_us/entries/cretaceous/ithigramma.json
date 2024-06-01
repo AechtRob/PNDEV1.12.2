@@ -2,14 +2,14 @@
 	"name": "Ithigramma",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kalligrammatid_ithigramma_icon.png",
-	"category": "lepidodendron:cretaceous_animal",
+	"category": "lepidodendron:cretaceousearly_animal",
 	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_kalligrammatid_ithigramma",
 			"title": "Ithigramma",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
+			"text": "$(l)Temporal Range:$() Early Cretaceous$(br2)>Insecta $(br)>Neuroptera $(br)>Kalligrammatidae"
 		},
 		{
 			"type": "image",

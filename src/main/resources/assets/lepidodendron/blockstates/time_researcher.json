@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "north", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_rf",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_rf"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_rf",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:time_researcher_rf",
+          "y": 90
+        }
+      ]
+    }
+  ]
+}

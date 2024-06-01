@@ -95,17 +95,25 @@ public class ModelBirkenia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Birkenia.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Birkenia.rotateAngleY = (float) Math.toRadians(90);
+        this.Birkenia.offsetY = -0.15F;
         this.Birkenia.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Birkenia, -0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.Birkenia.offsetX = -0.004F;
+        this.Birkenia.offsetY = 0.15F;
+        this.Birkenia.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -116,7 +124,7 @@ public class ModelBirkenia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.Birkenia.offsetY = 1.2F;
+        this.Birkenia.offsetY = -0.3F;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
         float speed = 0.66F;
@@ -130,7 +138,7 @@ public class ModelBirkenia extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Birkenia.rotateAngleZ = (float) Math.toRadians(90);
-                this.Birkenia.offsetY = 1.20F;
+                this.Birkenia.offsetY = 0.0F;
                 this.bob(Birkenia, -speed, 5F, false, f2, 1);
             }
         }

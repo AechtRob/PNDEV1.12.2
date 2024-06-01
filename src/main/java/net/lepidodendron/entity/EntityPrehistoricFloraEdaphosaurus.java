@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEdaphosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -29,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -56,7 +57,7 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //medium
 	}
 

@@ -1,11 +1,14 @@
 package net.lepidodendron.entity.ai;
 
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.minecraft.entity.ai.EntityAIBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
+import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.minecraft.entity.ai.RandomPositionGenerator;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.Vec3d;
 
-public class LandWanderAvoidWaterAI extends EntityAIBase
+public class LandWanderAvoidWaterAI extends AnimationAINoAnimation<EntityPrehistoricFloraLandBase>
 {
     protected final EntityPrehistoricFloraLandBase entity;
     protected double x;
@@ -28,6 +31,8 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public LandWanderAvoidWaterAI(EntityPrehistoricFloraLandBase creatureIn, double speedIn, int chanceStill, int chanceStillInWater)
     {
+        super(creatureIn);
+        setMutexBits(1);
         this.entity = creatureIn;
         this.speed = speedIn;
         this.executionChance = chanceStill;
@@ -37,10 +42,13 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public boolean shouldExecute()
     {
+        if (entity.isAnimationDirectionLocked(this.entity.getAnimation())) {
+            return false;
+        }
 
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase ptero = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (ptero.getAttachmentFacing() != EnumFacing.UP) {
                 return false;
             }
         }
@@ -87,6 +95,13 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     {
         Vec3d vecRnd = RandomPositionGenerator.findRandomTarget(this.entity, 10, 7);
         Vec3d vec3d = null;
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (flier.getNestLocation() != null && flier.isSearchingNest() && flier.homesToNest() && (!(flier.ticksFreeflight > 0))) {
+                vec3d = new Vec3d(flier.getNestLocation().getX() + 0.5, flier.getNestLocation().getY(), flier.getNestLocation().getZ() + 0.5);
+                return vec3d;
+            }
+        }
         if (this.entity.isSwimmingInWater())
         {
             for (int i = 0; i < 16; i++) {
@@ -105,6 +120,11 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.entity.getNavigator().clearPath();
+            return false;
+        }
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
             if (LandBase.isAnimationDirectionLocked(this.entity.getAnimation())) {
@@ -113,8 +133,22 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
             }
         }
 
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase ptero = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.entity;
+            if (ptero.getAttachmentFacing() != EnumFacing.UP && this.entity.getNavigator() instanceof PathNavigateGroundNoWater) {
+                this.entity.getNavigator().clearPath();
+                return false;
+            }
+        }
+
         return
                 !this.entity.getNavigator().noPath();
+    }
+
+    @Override
+    public Animation getAnimation()
+    {
+        return null;
     }
 
     public void startExecuting()
@@ -126,6 +160,7 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
 //        this.entity.getNavigator().tryMoveToXYZ(this.x + Xoffset, this.y, this.z + Zoffset, this.speed);
 
         this.entity.getNavigator().tryMoveToXYZ(this.x, this.y, this.z, this.speed);
+        this.ticksAI = 600;
     }
 
     public void makeUpdate()

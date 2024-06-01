@@ -8,11 +8,18 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderDilophosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -34,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -50,7 +57,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 		minWidth = 0.50F;
 		maxWidth = 0.98F;
 		maxHeight = 1.9F;
-		maxHealthAgeable = 36.0D;
+		maxHealthAgeable = 70.0D;
 		STAND_ANIMATION = Animation.create(120);
 		CLEAN_ANIMATION = Animation.create(65);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -90,7 +97,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	public int getEatTick() {return 12;}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //large
 	}
 
@@ -141,7 +148,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.38F;
+		float speedBase = 0.375F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -149,7 +156,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase*2F;
+			speedBase = speedBase*2.3F;
 		}
 		return speedBase;
 	}
@@ -207,7 +214,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
@@ -231,7 +238,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -274,7 +281,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		//Alert animation
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			int next = rand.nextInt(100);
 			if (next < 50) {
@@ -285,7 +292,11 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 			this.standCooldown = 3000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 3000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == CLEAN_ANIMATION && this.getAnimationTick() == CLEAN_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 3000;
 			this.setAnimation(NO_ANIMATION);
 		}
@@ -360,7 +371,62 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 		return LepidodendronMod.DILOPHOSAURUS_LOOT;
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DILOPHOSAURUS;
+	}
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.3;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.5;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.5;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderDilophosaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelDilophosaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderDilophosaurus.getScaler();
+	}
 
 }

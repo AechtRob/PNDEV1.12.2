@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -19,7 +20,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLochmanolenellus extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraLochmanolenellus extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -85,7 +86,7 @@ public class EntityPrehistoricFloraLochmanolenellus extends EntityPrehistoricFlo
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.PLANTS);
+		return ArrayUtils.addAll(DietString.ALGAE);
 	}
 
 	@Override

@@ -1,7 +1,9 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockPentoxylalesSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenPentoxylales;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,15 +23,15 @@ public class WorldGenPentoxylales extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 8;
+        int offset = 4;
         if (needsWater) {
-            offset = 5;
+            offset = 2;
         }
         for (int i = 0; i < 1; ++i)
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPentoxylalesSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPentoxylalesSapling.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 if ((worldIn.canSeeSky(blockpos))
@@ -37,10 +39,10 @@ public class WorldGenPentoxylales extends WorldGenerator
 
                     //Grow:
                     //if (Math.random() > 0.3) {
-                    //    worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                    //    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                     //}
                     //else {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
@@ -75,10 +77,10 @@ public class WorldGenPentoxylales extends WorldGenerator
                             && worldIn.isAirBlock(blockpos.up()) && worldIn.isAirBlock((blockpos.up(2))) && worldIn.isAirBlock((blockpos.up(3))) && worldIn.isAirBlock((blockpos.up(4)))) {
 
                         //if (Math.random() > 0.3) {
-                        //    worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                        //    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                        // }
                         //else {
-                            HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());

@@ -1,8 +1,10 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockNilssoniaLog;
 import net.lepidodendron.block.BlockNilssoniaSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenNilssonia;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -22,16 +24,16 @@ public class WorldGenNilssonia extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 7;
+        int offset = 4;
         if (needsWater) {
-            offset = 6;
+            offset = 2;
         }
         for (int i = 0; i < 24; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNilssoniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNilssoniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
                         && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockNilssoniaLog.block)
                         && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockNilssoniaLog.block)
                         && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockNilssoniaLog.block)
@@ -45,7 +47,7 @@ public class WorldGenNilssonia extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.north().up(2)).getBlock() != BlockNilssoniaLog.block)
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockNilssoniaLog.block)
                 ) {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -74,13 +76,13 @@ public class WorldGenNilssonia extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNilssoniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNilssoniaSapling.block.canPlaceBlockAt(worldIn, blockpos)
                             && (worldIn.getBlockState(blockpos.east()).getBlock() != BlockNilssoniaLog.block)
                             && (worldIn.getBlockState(blockpos.west()).getBlock() != BlockNilssoniaLog.block)
                             && (worldIn.getBlockState(blockpos.north()).getBlock() != BlockNilssoniaLog.block)
                             && (worldIn.getBlockState(blockpos.south()).getBlock() != BlockNilssoniaLog.block)
                     ) {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());

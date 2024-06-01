@@ -1,0 +1,46 @@
+{
+	"name": "Archaeocydippida",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaeocydippida_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_archaeocydippida",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeocydippida",
+			"title": "Archaeocydippida",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora $(br)>Tentaculata $(br)>Cydippida"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/archaeocydippida.png"],
+			"title": "A. hunsrueckiana",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeocydippida",
+			"type": "text",
+			"text": "Archaeocydippida is a cydippid ctenophore known from the Hunsruck Slate of Devonian Germany. It is well preserved, clearly showing 8 comb rows with comb plates. It likely had an ecology similar to that of modern cydippids. Its specimen was too delicate to prepare and had to be studied through radiography."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaeocydippida"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaeocydippida"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaeocydippida"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaeocydippida"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaeocydippida"
+		}
+	]
+}

@@ -7,6 +7,7 @@ import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
@@ -123,7 +124,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			|| LepidodendronConfig.dimDevonian == dimID
 			|| LepidodendronConfig.dimTriassic == dimID
 			|| LepidodendronConfig.dimJurassic == dimID
-			|| LepidodendronConfig.dimCretaceous == dimID
+			|| LepidodendronConfig.dimCretaceousEarly == dimID
 			|| LepidodendronConfig.dimPaleogene == dimID
 			|| LepidodendronConfig.dimNeogene== dimID
 			|| LepidodendronConfig.dimPleistocene == dimID
@@ -174,7 +175,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
 		if (heightCheck) {
-			minheight = world.getSeaLevel() + 2;
+			minheight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) + 2;
 		}
 		final int maxH = maxheight;
 		final int minH = minheight;

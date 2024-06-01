@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -27,7 +28,7 @@ public class WorldGenSchizoneura extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSchizoneuraSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSchizoneuraSapling.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 if ((worldIn.canSeeSky(blockpos))
@@ -36,33 +37,33 @@ public class WorldGenSchizoneura extends WorldGenerator
                     //Grow:
                     if (Math.random() > 0.7) {
                         //1,2,3
-                        worldIn.setBlockState(blockpos, BlockSchizoneura3.block.getDefaultState(), 2);
-                        worldIn.setBlockState(blockpos.up(), BlockSchizoneura2.block.getDefaultState(), 2);
-                        worldIn.setBlockState(blockpos.up(2), BlockSchizoneura1.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura3.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura2.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura1.block.getDefaultState(), 2);
                     }
                     else {
                         if (Math.random() > 0.6) {
                             //1,2,3,5
-                            worldIn.setBlockState(blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
-                            worldIn.setBlockState(blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
-                            worldIn.setBlockState(blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
-                            worldIn.setBlockState(blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
                         }
                         else {
                             if (Math.random() > 0.5) {
                                 //1,2,3,4,5
-                                worldIn.setBlockState(blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(), BlockSchizoneura4.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(2), BlockSchizoneura3.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(3), BlockSchizoneura2.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(4), BlockSchizoneura1.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura4.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura3.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(3), BlockSchizoneura2.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(4), BlockSchizoneura1.block.getDefaultState(), 2);
                             }
                             else {
                                 //1,2,3,4
-                                worldIn.setBlockState(blockpos, BlockSchizoneura4.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura4.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
                             }
                         }
                     }
@@ -96,33 +97,33 @@ public class WorldGenSchizoneura extends WorldGenerator
                         //Grow:
                         if (Math.random() > 0.7) {
                             //1,2,3
-                            worldIn.setBlockState(blockpos, BlockSchizoneura3.block.getDefaultState(), 2);
-                            worldIn.setBlockState(blockpos.up(), BlockSchizoneura2.block.getDefaultState(), 2);
-                            worldIn.setBlockState(blockpos.up(2), BlockSchizoneura1.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura3.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura2.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura1.block.getDefaultState(), 2);
                         }
                         else {
                             if (Math.random() > 0.6) {
                                 //1,2,3,5
-                                worldIn.setBlockState(blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
-                                worldIn.setBlockState(blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
                             }
                             else {
                                 if (Math.random() > 0.5) {
                                     //1,2,3,4,5
-                                    worldIn.setBlockState(blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(), BlockSchizoneura4.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(2), BlockSchizoneura3.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(3), BlockSchizoneura2.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(4), BlockSchizoneura1.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura5.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura4.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura3.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(3), BlockSchizoneura2.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(4), BlockSchizoneura1.block.getDefaultState(), 2);
                                 }
                                 else {
                                     //1,2,3,4
-                                    worldIn.setBlockState(blockpos, BlockSchizoneura4.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
-                                    worldIn.setBlockState(blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSchizoneura4.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(), BlockSchizoneura3.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(2), BlockSchizoneura2.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(3), BlockSchizoneura1.block.getDefaultState(), 2);
                                 }
                             }
                         }

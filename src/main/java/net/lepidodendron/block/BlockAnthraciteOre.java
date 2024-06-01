@@ -66,7 +66,7 @@ public class BlockAnthraciteOre extends ElementsLepidodendronMod.ModElement {
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous)
+			|| dimID == LepidodendronConfig.dimCretaceousEarly)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
@@ -102,7 +102,7 @@ public class BlockAnthraciteOre extends ElementsLepidodendronMod.ModElement {
 		public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
 			Random rand = world instanceof World ? ((World) world).rand : new Random();
 			if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this)) {
-				int i = MathHelper.getInt(rand, 1, 4);
+				int i = MathHelper.getInt(rand, 1, 5);
 				return i;
 			}
 			return 0;

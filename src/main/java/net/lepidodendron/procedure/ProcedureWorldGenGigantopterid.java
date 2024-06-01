@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockGigantopteridLog;
 import net.lepidodendron.block.BlockGigantopteridShoot;
 import net.lepidodendron.block.BlockGigantopteridShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenGigantopterid extends ElementsLepidodendronMod.Mod
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenGigantopterid!");
 			return;
@@ -50,12 +52,12 @@ public class ProcedureWorldGenGigantopterid extends ElementsLepidodendronMod.Mod
 				//Trunkless:
 				Block block = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world, new BlockPos((int) x, (int) y, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockGigantopteridShootPlaceable.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockGigantopteridShootPlaceable.block.getDefaultState(), 3);
 				}
 				if (Math.random() > 0.7) {
 					block = world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z)), world, new BlockPos((int) x, (int) y + 1, (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) y + 1, (int) z), BlockGigantopteridShootPlaceable.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 1, (int) z), BlockGigantopteridShootPlaceable.block.getDefaultState(), 3);
 					}
 				}
 			}
@@ -65,12 +67,12 @@ public class ProcedureWorldGenGigantopterid extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLog.executeProcedure((int) x, (int) y, (int) z, world, BlockGigantopteridLog.block, EnumFacing.DOWN);
 					Block block = world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 1, (int) z)), world, new BlockPos((int) x, (int) y + 1, (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) y + 1, (int) z), BlockGigantopteridShoot.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 1, (int) z), BlockGigantopteridShoot.block.getDefaultState(), 3);
 					}
 					if (Math.random() > 0.7) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z)), world, new BlockPos((int) x, (int) y + 2, (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + 2, (int) z), BlockGigantopteridShoot.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 2, (int) z), BlockGigantopteridShoot.block.getDefaultState(), 3);
 						}
 					}
 				}
@@ -80,7 +82,7 @@ public class ProcedureWorldGenGigantopterid extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLog.executeProcedure((int) x, (int) y + 1, (int) z, world, BlockGigantopteridLog.block, EnumFacing.DOWN);
 					Block block = world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + 2, (int) z)), world, new BlockPos((int) x, (int) y + 2, (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) y + 2, (int) z), BlockGigantopteridShoot.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + 2, (int) z), BlockGigantopteridShoot.block.getDefaultState(), 3);
 					}
 				}
 			}

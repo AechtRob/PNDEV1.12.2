@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:glossopteris_duocaudata_sapling" },
+        "stage=1": { "model": "lepidodendron:glossopteris_duocaudata_sapling" }
+    }
+}
+

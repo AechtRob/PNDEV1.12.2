@@ -3,7 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
@@ -320,7 +320,7 @@ public class ModelAustriadactylus extends AdvancedModelBaseExtended {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 
-        EntityPrehistoricFloraAgeableFlyingBase flier = (EntityPrehistoricFloraAgeableFlyingBase) e;
+        EntityPrehistoricFloraLandClimbingFlyingWalkingBase flier = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) e;
         if (flier.isReallyFlying() || flier.getAnimation() == flier.UNFLY_ANIMATION) { //flight pose
             this.setRotateAngle(footL, 1.0016444577195458F, 0.0F, 0.0F);
             this.setRotateAngle(wing2R, 0.0F, 0.0F, 1.6845917940249266F);
@@ -464,7 +464,7 @@ public class ModelAustriadactylus extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraAgeableFlyingBase e = (EntityPrehistoricFloraAgeableFlyingBase) entity;
+        EntityPrehistoricFloraLandClimbingFlyingWalkingBase e = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) entity;
         animator.update(entity);
         this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);

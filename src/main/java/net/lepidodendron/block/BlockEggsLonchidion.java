@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
@@ -62,7 +63,7 @@ public class BlockEggsLonchidion extends ElementsLepidodendronMod.ModElement {
 		}
 		int minWaterDepth = 5;
 		int waterDepthCheckMax = 25;
-		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - waterDepthCheckMax;
 		for (int i = 0; i < (int) 3; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128 - startHeight) + startHeight;

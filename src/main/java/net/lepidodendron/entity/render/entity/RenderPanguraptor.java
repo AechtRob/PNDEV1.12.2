@@ -7,18 +7,26 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderPanguraptor extends RenderLiving<EntityPrehistoricFloraPanguraptor> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
+    public static final ResourceLocation TEXTURE_PINGU = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pinguraptor.png");
 
     public RenderPanguraptor(RenderManager mgr) {
         super(mgr, new ModelPanguraptor(), 0.5f);
     }
 
-    public static float getScaler() {return 0.495f *0.7F; }
+    public static float getScaler() {return 0.495f * 0.7F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPanguraptor entity) {
+        String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        if (s != null &&
+                (("pinguraptor".equalsIgnoreCase(s)) || ("pingu".equalsIgnoreCase(s)))
+        ) {
+            return RenderPanguraptor.TEXTURE_PINGU;
+        }
         return RenderPanguraptor.TEXTURE;
     }
 

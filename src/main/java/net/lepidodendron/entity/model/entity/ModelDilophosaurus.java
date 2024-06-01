@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDilophosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -636,11 +635,86 @@ public class ModelDilophosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Dilophosaurus.render(f5);
     }
-
     public void renderStaticWall(float f) {
+        this.Chest.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(Chest, 0.1F, -0.0F, 0.0F);
+        this.setRotateAngle(Neck1, -0.25F, 0.0F, -0.1F);
+        this.setRotateAngle(Neck2, -0.45F, 0.3F, 0.0F);
+        this.setRotateAngle(Neck3, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.3F, -0.5F, 0.0F);
+        this.setRotateAngle(Jaw, 0.4F, 0.0F, 0.0F);
+        this.Chest.offsetY = -0.02F;
+        this.Chest.offsetX = 0.0F;
+        this.Chest.offsetZ = 0.05F;
+        this.Chest.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(Dilophosaurus, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.05F, -0.01F, 0.0F);
+        this.setRotateAngle(Chest, 0.05F, -0.18F, 0.0F);
+        this.setRotateAngle(Neck1, 0.4F, -0.2F, 0.0F);
+        this.setRotateAngle(Neck2, 0.1F, -0.28F, 0.0F);
+        this.setRotateAngle(Neck3, -0.3F, -0.35F, 0.15F);
+        this.setRotateAngle(Head, -0.F, -0.1F, 0.2F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ThroatPouch, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(LegL, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(TibiaL, -0.2F, 0.0F, 0.05F);
+        this.setRotateAngle(MetatarsalL, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.39F, 0.0F, 0.0F);
+        this.setRotateAngle(LegR, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(TibiaR, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalR, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, -0.2F, 0.0F, 0.0F);
+        this.Dilophosaurus.offsetY = -0.16F;
+        this.Dilophosaurus.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Dilophosaurus.offsetY = 0.3F;
+        this.Dilophosaurus.offsetX = -0.3F;
+        this.Dilophosaurus.rotateAngleY = (float)Math.toRadians(0);
+        this.Dilophosaurus.rotateAngleX = (float)Math.toRadians(0);
+        this.Dilophosaurus.rotateAngleZ = (float)Math.toRadians(0);
+        this.Dilophosaurus.scaleChildren = true;
+        float scaler = 0.6F;
+        this.Dilophosaurus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Dilophosaurus, 0.2F, -0.8F, 0.0F);
+        this.setRotateAngle(Body, 0.05F, -0.01F, 0.0F);
+        this.setRotateAngle(Chest, 0.05F, -0.18F, 0.0F);
+        this.setRotateAngle(Neck1, 0.4F, -0.2F, 0.0F);
+        this.setRotateAngle(Neck2, 0.1F, -0.28F, 0.0F);
+        this.setRotateAngle(Neck3, -0.2F, -0.35F, 0.15F);
+        this.setRotateAngle(Head, -0.F, -0.1F, 0.2F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(ThroatPouch, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(Tail5, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(LegL, -0.3F, -0.2F, 0.0F);
+        this.setRotateAngle(TibiaL, -0.2F, 0.0F, 0.05F);
+        this.setRotateAngle(MetatarsalL, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(FootL, 0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(LegR, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(TibiaR, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(MetatarsalR, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(FootR, -0.2F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Dilophosaurus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Dilophosaurus.setScale(1.0F, 1.0F, 1.0F);
+        this.Dilophosaurus.scaleChildren = false;
         resetToDefaultPose();
     }
 

@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderParmastega extends RenderLiving<EntityPrehistoricFloraParmastega> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parmastega.png");
+    public static float getScaler() {
+        return 0.355f;
+    }
 
     public RenderParmastega(RenderManager mgr) {
         super(mgr, new ModelParmastega(), 0.4f);
@@ -27,7 +30,7 @@ public class RenderParmastega extends RenderLiving<EntityPrehistoricFloraParmast
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraParmastega entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.275F;
     }

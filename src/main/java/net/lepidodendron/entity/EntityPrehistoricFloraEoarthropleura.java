@@ -9,6 +9,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -34,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFloraLandBase implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

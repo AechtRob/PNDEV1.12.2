@@ -191,7 +191,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockXianguangia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockStromatolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThrombolite.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSphenoecium.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockSphenoecium.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString()
+
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
         return resLoc;
@@ -254,7 +257,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockTabulata_Block2.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTabulata_Block3.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTentaculita.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockThamnobeatriceaSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockThamnobeatriceaSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockArchaeoconularia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsOrdovician);
         return resLoc;
@@ -314,9 +320,12 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockTentaculita.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCyathocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEncrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidPisocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEucalyptocrinites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidSiphonocrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCystoidPseudocrinites.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockCystoidPseudocrinites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsSilurian);
         return resLoc;
@@ -375,12 +384,13 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEncrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEucalyptocrinites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidPetalocrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCrinoidPisocrinus.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemCrinoidScyphocrinusItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveMegalodon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidAncyrocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCupressocrinites.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCrinoidVadarocrinus.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidVadarocrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsDevonian);
         return resLoc;
@@ -448,7 +458,12 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantOrange.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantRed.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantYellow.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantYellow.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockEssexella.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockArborispongia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockTitusvillia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCarboniferous);
         return resLoc;
@@ -507,7 +522,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidJimbacrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockGigantospongia.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockGigantospongia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveShikamaia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPermian);
         return resLoc;
@@ -552,7 +570,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidTraumatocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidVostocovacrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTentaculita.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockRetiophyllia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsTriassic);
         return resLoc;

@@ -74,7 +74,7 @@ public class BlockBaragwanathia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadBaragwanathia) {
+			if (LepidodendronConfigPlants.spreadBaragwanathia && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

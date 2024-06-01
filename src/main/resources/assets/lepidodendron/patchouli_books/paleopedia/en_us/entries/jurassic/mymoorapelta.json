@@ -1,0 +1,52 @@
+{
+	"name": "Mymoorapelta",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mymoorapelta_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_mymoorapelta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mymoorapelta",
+			"title": "Mymoorapelta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Thyreophora $(br)>Ankylosauria $(br)>Nodosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. maysi",
+            "entity": "lepidodendron:prehistoric_flora_mymoorapelta",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mymoorapelta",
+			"type": "text",
+			"text": "Mymoorapelta is a Jurassic ankylosaur from the Morrison Formation. It is one of the earliest known nodosaurids and was quite small in comparison to later nodosaurids, reaching lengths of only 3 meters. It was a low browser in its environment, and would have fed on cycads and low growing conifers. Theropod predators such as Allosaurus and Ceratosaurus have all been found in association with this animal. Its tail was lined with spikes, which it likely used for defense. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mymoorapelta",
+			"type": "text",
+			"text": "Mymoorapelta was named for the Mygatt-Moore Quarry where its fossils were originally collected from. It was likely specialized to eat only specific types of plants, which may help explain its limited distribution. Mymoorapelta, unlike later ankylosaurs with stiff tails, had a flexible tail, which allowed for a greater range of motion in the tail. Recent studies suggest that the tail was used for intraspecific combat rather than for defense against predators."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mymoorapelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mymoorapelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mymoorapelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mymoorapelta"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mymoorapelta"
+		}
+	]
+}

@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -22,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 
-public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -156,7 +157,6 @@ public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobite
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) { return 0.34; }
-
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}

@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderSilesaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -35,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -68,7 +69,7 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //medium
 	}
 
@@ -287,14 +288,6 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();

@@ -50,9 +50,9 @@ public class BlockArthropitysDoor extends ElementsLepidodendronMod.ModElement {
 	
 	public static class BlockCustom extends BlockDoor {
 		public BlockCustom() {
-			super(Material.WOOD);
+			super(Material.PLANTS);
 			setTranslationKey("pf_arthropitys_door");
-			setSoundType(SoundType.WOOD);
+			setSoundType(SoundType.PLANT);
 			setHarvestLevel("axe", 1);
 			setHardness(3F);
 			setResistance(3F);
@@ -87,7 +87,7 @@ public class BlockArthropitysDoor extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public String getLocalizedName()
    	 	{
-        	return I18n.translateToLocal("item.pf_arthropitys_door_item.name");
+        	return I18n.translateToLocal("item.arthropitys_door_item.name");
     	}
     	
 		@Override

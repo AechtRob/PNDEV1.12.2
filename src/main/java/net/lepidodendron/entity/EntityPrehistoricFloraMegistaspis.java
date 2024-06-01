@@ -7,8 +7,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
 import net.lepidodendron.entity.render.entity.RenderMegistaspis;
-import net.lepidodendron.entity.render.entity.RenderPlatypeltoides;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -22,7 +22,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMegistaspis extends EntityPrehistoricFloraTrilobiteSwimBase {
+public class EntityPrehistoricFloraMegistaspis extends EntityPrehistoricFloraTrilobiteSwimBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

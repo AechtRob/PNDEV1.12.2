@@ -5,6 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderDysalotosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,12 +25,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFloraDryosaurus {
+public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFloraDryosaurus implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public ChainBuffer tailBuffer;
 	private int alarmCooldown;
 
@@ -37,10 +40,16 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		minWidth = 0.12F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 18.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DYSALOTOSAURUS;
 	}
 
 	@Override
@@ -85,7 +94,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 0; //small
 	}
 
@@ -120,7 +129,7 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		//this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

@@ -1,0 +1,17 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/paradoxopteris_log",
+		"inside": "lepidodendron:blocks/paradoxopteris_log"
+	},
+	"elements": [
+		{
+			"from": [7, 7, 7],
+			"to": [9, 9, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 1]},
+			"faces": {
+				"north": {"uv": [6, 6, 9, 9], "texture": "#inside"}
+			}
+		}
+	]
+}

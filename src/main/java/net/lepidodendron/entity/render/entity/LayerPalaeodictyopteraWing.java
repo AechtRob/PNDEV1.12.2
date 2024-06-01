@@ -19,6 +19,7 @@ public class LayerPalaeodictyopteraWing implements LayerRenderer<EntityPrehistor
     public static final ResourceLocation TEXTURE_SINODUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_sinodunbaria_wing.png");
     public static final ResourceLocation TEXTURE_STENODICTYA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_stenodictya_wing.png");
     public static final ResourceLocation TEXTURE_MAZOTHAIROS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_mazothairos_wing.png");
+    public static final ResourceLocation TEXTURE_PSYCHROPTILUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeodictyoptera_psychroptilus_wing.png");
 
     public LayerPalaeodictyopteraWing(RenderPalaeodictyoptera PalaeodictyopteraRendererIn)
     {
@@ -65,6 +66,10 @@ public class LayerPalaeodictyopteraWing implements LayerRenderer<EntityPrehistor
 
                 case MAZOTHAIROS:
                     this.PalaeodictyopteraRenderer.bindTexture(TEXTURE_MAZOTHAIROS);
+                    break;
+
+                case PSYCHROPTILUS:
+                    this.PalaeodictyopteraRenderer.bindTexture(TEXTURE_PSYCHROPTILUS);
                     break;
             }
 

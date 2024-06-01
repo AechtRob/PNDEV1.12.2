@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBaikalophyllum;
 import net.lepidodendron.block.BlockBaikalophyllumCentre;
 import net.lepidodendron.block.BlockBaikalophyllumTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -151,9 +152,9 @@ public class StructureSpawnBaikalophyllum extends ElementsLepidodendronMod.ModEl
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockBaikalophyllum.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockBaikalophyllumCentre.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockBaikalophyllumTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBaikalophyllum.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockBaikalophyllumCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockBaikalophyllumTop.block.getDefaultState(), 3);
 			}
 		}
 	}

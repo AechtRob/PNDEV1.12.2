@@ -293,9 +293,10 @@ public class AmphibianNodeProcessor extends NodeProcessor
     public PathNodeType getPathNodeType(IBlockAccess blockaccessIn, int x, int y, int z, EntityLiving entitylivingIn, int xSize, int ySize, int zSize, boolean canBreakDoorsIn, boolean canEnterDoorsIn)
     {
         //Amphibian:
-        if (!((EntityPrehistoricFloraAmphibianBase) entitylivingIn).isNearWater(entitylivingIn, new BlockPos(x, y, z)))
-        {
-            return PathNodeType.BLOCKED;
+        if (entitylivingIn instanceof EntityPrehistoricFloraAmphibianBase) {
+            if (!((EntityPrehistoricFloraAmphibianBase) entitylivingIn).isNearWater(entitylivingIn, new BlockPos(x, y, z))) {
+                return PathNodeType.BLOCKED;
+            }
         }
 
         EnumSet<PathNodeType> enumset = EnumSet.<PathNodeType>noneOf(PathNodeType.class);

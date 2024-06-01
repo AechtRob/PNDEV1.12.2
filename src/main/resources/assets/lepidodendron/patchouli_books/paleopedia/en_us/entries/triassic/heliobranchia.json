@@ -1,0 +1,46 @@
+{
+	"name": "Heliobranchia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/heliobranchia_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_heliobranchia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_heliobranchia",
+			"title": "Heliobranchia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Cnidaria $(br)>Scyphozoa $(br)>Coronatida $(br)>Heliobranchiidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/heliobranchia.png"],
+			"title": "H. catalaunica",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heliobranchia",
+			"type": "text",
+			"text": "Heliobranchia is a coronatidan jellyfish known from the Triassic of Spain. It had a circular bell with several protrusions, giving it a cartoonish sun-like shape. From the underside of the head, were dozens of small and thin tentacles which were likely used in catching prey or warding off predators."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heliobranchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heliobranchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heliobranchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heliobranchia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heliobranchia"
+		}
+	]
+}

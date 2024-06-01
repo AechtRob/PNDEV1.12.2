@@ -64,7 +64,7 @@ public class LepidodendronDecorationHandler {
 				event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimJurassic == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
-			if (LepidodendronConfig.dimCretaceous == event.getWorld().provider.getDimension() )
+			if (LepidodendronConfig.dimCretaceousEarly == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
         }
 
@@ -103,7 +103,7 @@ public class LepidodendronDecorationHandler {
 				event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimJurassic == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
-			if (LepidodendronConfig.dimCretaceous == event.getWorld().provider.getDimension() )
+			if (LepidodendronConfig.dimCretaceousEarly == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
 
         }
@@ -176,7 +176,7 @@ public class LepidodendronDecorationHandler {
 				event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimJurassic == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
-			if (LepidodendronConfig.dimCretaceous == event.getWorld().provider.getDimension() )
+			if (LepidodendronConfig.dimCretaceousEarly == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
 
         }
@@ -216,7 +216,7 @@ public class LepidodendronDecorationHandler {
 				event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimJurassic == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
-			if (LepidodendronConfig.dimCretaceous == event.getWorld().provider.getDimension() )
+			if (LepidodendronConfig.dimCretaceousEarly == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
 
         }
@@ -256,7 +256,7 @@ public class LepidodendronDecorationHandler {
 				event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimJurassic == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
-			if (LepidodendronConfig.dimCretaceous == event.getWorld().provider.getDimension() )
+			if (LepidodendronConfig.dimCretaceousEarly == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
 
         }

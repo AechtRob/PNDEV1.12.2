@@ -90,7 +90,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                 } else {
                     this.nest.renderAll(1.25f);
                 }
-                GlStateManager.disableAlpha();
+                //GlStateManager.disableAlpha();
                 GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
@@ -116,14 +116,27 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                 }
             }
 
+            String creatureType = "";
+            int i = eggRenderType.indexOf("@");
+            if (i >= 1) {
+                creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
+                eggRenderType = eggRenderType.substring(0, eggRenderType.indexOf("@"));
+            }
+
             if (!eggRenderType.equalsIgnoreCase("")) {
                 EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
                 if (ee != null) {
                     Entity entityEggs = ee.newInstance(world);
                     if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
                         EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
-                        TEXTURE_EGG = entityBase.getEggTexture();
-                        eggType = entityBase.getEggType();
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
+                        }
+                        else {
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
+                        }
                         if (entityBase.isNestMound()) {
                             eggType = -1;
                         }
@@ -172,7 +185,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
                             break;
                     }
 
-                    GlStateManager.disableAlpha();
+                    //GlStateManager.disableAlpha();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();

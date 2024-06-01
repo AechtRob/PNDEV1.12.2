@@ -1,7 +1,9 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockGunneraSapling;
 import net.lepidodendron.procedure.ProcedureWorldGenGunnera;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -20,9 +22,9 @@ public class WorldGenGunnera extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
     {
         boolean flag = false;
-        int offset = 8;
+        int offset = 4;
         if (needsWater) {
-            offset = 6;
+            offset = 2;
         }
         for (int i = 0; i < 6; ++i) {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
@@ -30,9 +32,9 @@ public class WorldGenGunnera extends WorldGenerator
 
             if (!needsWater) {
 
-                if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockGunneraSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockGunneraSapling.block.canPlaceBlockAt(worldIn, blockpos)
                 ) {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());
@@ -61,9 +63,9 @@ public class WorldGenGunnera extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockGunneraSapling.block.canPlaceBlockAt(worldIn, blockpos)
+                    if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockGunneraSapling.block.canPlaceBlockAt(worldIn, blockpos)
                     ) {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());

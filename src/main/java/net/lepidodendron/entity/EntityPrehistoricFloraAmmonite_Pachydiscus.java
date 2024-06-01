@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsPachydiscus;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -18,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAmmonite_Pachydiscus extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraAmmonite_Pachydiscus extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

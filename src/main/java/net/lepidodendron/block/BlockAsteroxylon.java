@@ -86,7 +86,7 @@ public class BlockAsteroxylon extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfigPlants.spreadAsteroxylon) {
+			if (LepidodendronConfigPlants.spreadAsteroxylon && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

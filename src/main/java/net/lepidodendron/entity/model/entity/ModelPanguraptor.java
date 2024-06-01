@@ -422,9 +422,9 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
 
 
         if (Panguraptor.getAnimation() == Panguraptor.LAY_ANIMATION) {
-            this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
-            this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
-            //Other stuff
+//            this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
+//            this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
+//            //Other stuff
 
             return;
         }
@@ -432,10 +432,10 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
         if (!Panguraptor.isReallyInWater()) {
 
             if (f3 == 0.0F || !Panguraptor.getIsMoving()) {
-                this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
-                this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
-                this.chainFlap(Tail, (0.2F*0.6F), 0.10F, 0.2F, f2, 1F);
-                this.chainSwing(Tail, (0.2F*0.6F) * 2F, 0.05F, 0.12F, f2, 1F);
+//                this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
+//                this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
+//                this.chainFlap(Tail, (0.2F*0.6F), 0.10F, 0.2F, f2, 1F);
+//                this.chainSwing(Tail, (0.2F*0.6F) * 2F, 0.05F, 0.12F, f2, 1F);
 
                 return;
            }
@@ -662,6 +662,16 @@ public class ModelPanguraptor extends AdvancedModelBaseExtended {
                     this.Hips.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(4.0), false, 1.75F, f2, 1) + 0.2F;
 
                 }
+            }
+            else if ((!ee.getIsMoving()) && ee.getAnimation() != ee.LAY_ANIMATION) {
+                this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
+                this.chainFlap(Tail, (0.2F*0.6F), 0.10F, 0.2F, f2, 1F);
+                this.chainSwing(Tail, (0.2F*0.6F) * 2F, 0.05F, 0.12F, f2, 1F);
+            }
+            else if (ee.getAnimation() == ee.LAY_ANIMATION) {
+                this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
+                this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
             }
         }
         else {

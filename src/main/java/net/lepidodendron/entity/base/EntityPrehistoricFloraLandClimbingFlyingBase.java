@@ -3,11 +3,11 @@ package net.lepidodendron.entity.base;
 import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
-import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
-import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.minecraft.block.material.Material;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -20,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -28,7 +29,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends EntityPrehistoricFloraLandClimbingBase {
+public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends EntityPrehistoricFloraLandBase {
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -36,62 +37,94 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
     private static final DataParameter<Boolean> SITTING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> SIT_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
     protected static final DataParameter<EnumFacing> SIT_FACE = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingBase.class, DataSerializers.FACING);
+    private static final DataParameter<Boolean> HEADCOLLIDED = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Float> FLYPROGRESS = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingFlyingBase.class, DataSerializers.FLOAT);
+
     public int sitCooldown = 0;
     public int sitTickCt = 0;
-    public float flyProgress;
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private int inPFLove;
+    public int climbingpause;
 
     public EntityPrehistoricFloraLandClimbingFlyingBase(World world) {
         super(world);
         if (world != null) {
-            this.selectNavigator();
+            this.moveHelper = new EntityPrehistoricFloraLandClimbingFlyingBase.FlightMoveHelper(this);
+            this.navigator = new PathNavigateFlyingNoWater(this, world);
+            this.getNavigator().getNodeProcessor().setCanSwim(false);
         }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
     }
 
+    public float headHitHeight() {
+        return 0.55F;
+    }
+
     @Override
-    public void selectNavigator () {
-        if (this.isFlying()) {
-            if ((!(this.moveHelper instanceof FlightMoveHelper))
-                    || (!(this.navigator instanceof PathNavigateFlyingNoWater))) {
-                this.moveHelper = new FlightMoveHelper(this);
-                this.navigator = new PathNavigateFlyingNoWater(this, world);
-            }
-        }
-        else if (this.isSwimmingInWater() && this.canSwim()) {
-            if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.SwimmingMoveHelper))
-                    || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
-                this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
-                this.navigator = new PathNavigateSwimmerTopLayer(this, world);
-            }
-        }
-        else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
-            if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandBase.WanderMoveHelper))
-                    || (!(this.navigator instanceof PathNavigateGroundNoWater))) {
-                this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
-                this.navigator = new PathNavigateGroundNoWater(this, world);
+    public void onUpdate() {
+        super.onUpdate();
+
+        if (!world.isRemote) {
+            if (this.motionX != 0 || this.motionZ != 0 || this.motionY != 0) {
+                this.setIsMoving(true);
+            } else {
+                this.setIsMoving(false);
             }
         }
     }
 
-    public boolean isFlying() {
-        return (!this.onGround) && (!this.isSitting()) && (!getIsClimbing());
+    @Override
+    public void selectNavigator () {
+        if ((!(this.moveHelper instanceof EntityPrehistoricFloraLandClimbingFlyingBase.FlightMoveHelper))
+                || (!(this.navigator instanceof PathNavigateFlyingNoWater))) {
+            this.moveHelper = new EntityPrehistoricFloraLandClimbingFlyingBase.FlightMoveHelper(this);
+            this.navigator = new PathNavigateFlyingNoWater(this, world);
+        }
+    }
+
+    public void setFlyProgress(float flyprgress) {
+        this.dataManager.set(FLYPROGRESS, flyprgress);
+    }
+
+    public float getFlyProgress() {
+        return this.dataManager.get(FLYPROGRESS);
+    }
+
+    @Override
+    public int animSpeedAdder() {
+        if (this.getIsMoving() && (!this.getHeadCollided())
+                && (!(this.getFlyProgress() != 0 && this.getAttachmentPos() == null))
+                && this.getTicks() >= 0
+        ) {
+            return 1;
+        }
+        return 0;
+    }
+
+    @Override
+    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+        livingdata = super.onInitialSpawn(difficulty, livingdata);
+        this.setHeadCollided(false);
+        this.climbingpause = -99 + rand.nextInt(200);
+        return livingdata;
     }
 
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(SITTING, false);
+        this.dataManager.register(FLYPROGRESS, 0F);
         this.dataManager.register(SIT_FACE, EnumFacing.DOWN);
         this.dataManager.register(SIT_BLOCK_POS, Optional.absent());
+        this.dataManager.register(HEADCOLLIDED, false);
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
+        this.setHeadCollided(compound.getBoolean("headcollided"));
+        this.climbingpause = compound.getInteger("climbingpause");
         this.dataManager.set(SIT_FACE, EnumFacing.byIndex(compound.getByte("SitFace")));
         this.sitCooldown = compound.getInteger("SitCooldown");
         this.setTickOffset(compound.getInteger("TickOffset"));
@@ -108,6 +141,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     public void writeEntityToNBT(NBTTagCompound compound) {
         super.writeEntityToNBT(compound);
+        compound.setBoolean("headcollided", this.getHeadCollided());
+        compound.setInteger("climbingpause", climbingpause);
         compound.setBoolean("Sitting", this.isSitting);
         compound.setByte("SitFace", (byte) this.dataManager.get(SIT_FACE).getIndex());
         BlockPos blockpos = this.getAttachmentPos();
@@ -118,6 +153,20 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             compound.setInteger("PosY", blockpos.getY());
             compound.setInteger("PosZ", blockpos.getZ());
         }
+    }
+
+    public boolean getHeadCollided()
+    {
+        return this.dataManager.get(HEADCOLLIDED);
+    }
+
+    public void setHeadCollided(boolean collided)
+    {
+        this.dataManager.set(HEADCOLLIDED, collided);
+    }
+
+    public float getClimbSpeed() {
+        return 0.01F;
     }
 
     @Override
@@ -154,13 +203,24 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         return pos.up(2 + rand.nextInt(3));
     }
 
+    @Override
+    public float getEyeHeight() {
+        return 0.15F;
+    }
+
     public EnumFacing getAttachmentFacing() {
         return this.dataManager.get(SIT_FACE);
     }
 
+    @Override
+    public BlockPos getPosition()
+    {
+        return new BlockPos(this.posX, this.posY + this.getEyeHeight(), this.posZ);
+    }
+
     @Nullable
     public BlockPos getAttachmentPos() {
-        return (BlockPos) ((Optional) this.dataManager.get(SIT_BLOCK_POS)).orNull();
+        return this.dataManager.get(SIT_BLOCK_POS).orNull();
     }
 
     public void setAttachmentPos(@Nullable BlockPos pos) {
@@ -175,26 +235,107 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         if (ds == DamageSource.FALL) {
             return false;
         }
-        this.sitTickCt = 0;
+        this.setFlying();
         this.inPFLove = 0;
-        sitCooldown = 1500 + rand.nextInt(1200);
-        this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
-        this.setAttachmentPos(null);
+        if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+            this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.5, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+            this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.5, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.EAST) {
+            this.setLocationAndAngles(this.posX - 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+        }
+        if (this.getAttachmentFacing() == EnumFacing.WEST) {
+            this.setLocationAndAngles(this.posX + 0.5, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+        }
         return super.attackEntityFrom(ds, f);
+    }
+
+    @Override
+    public void knockBack(Entity entityIn, float strength, double xRatio, double zRatio)
+    {
+        this.setFlying();
+    }
+
+    public void setFlying() {
+        if (!world.isRemote) {
+            this.setSitting(false);
+            this.sitTickCt = 0;
+            ticksSitted = 0;
+            sitCooldown = 500 + rand.nextInt(this.sitCooldownSetter());
+            this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
+            this.setAttachmentPos(null);
+        }
+    }
+
+    @Override
+    public boolean canBreatheUnderwater() {
+        return false;
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        return this.posY < (double) this.world.getSeaLevel() && isInWater();
+    }
+
+    public boolean isNotColliding() {
+        return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
+    }
+
+    @Override
+    public int getTalkInterval() {
+        return 120;
+    }
+
+    @Override
+    public boolean isOnLadder() {
+        return false;
     }
 
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
         this.renderYawOffset = this.rotationYaw;
+        this.rotationYawHead = this.rotationYaw;
 
-        if (this.inPFLove > 0)
-        {
+        if (this.getLaying()) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.setLocationAndAngles(this.posX - 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.setLocationAndAngles(this.posX + 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            this.setFlying();
+        }
+
+        if (this.inPFLove > 0) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ + 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                this.setLocationAndAngles(this.posX, this.posY, this.posZ - 0.25, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                this.setLocationAndAngles(this.posX - 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                this.setLocationAndAngles(this.posX + 0.25, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            }
+            this.setFlying();
             --this.inPFLove;
         }
 
-        if (this.getMateable() < 0) {
-            this.setMateable(this.getMateable() + 1);
+        if (!world.isRemote) {
+            if (this.getMateable() < 0) {
+                this.setMateable(this.getMateable() + 1);
+            }
         }
 
         if (!this.world.isRemote) {
@@ -203,8 +344,8 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
         if (this.isSitting()) {
             ticksSitted++;
-
         }
+
         if (!world.isRemote && !this.isInWater() && !this.isBeingRidden() && !this.isSitting() && this.getRNG().nextInt(1000) == 1 && (this.getAnimation() == NO_ANIMATION)) {
             this.setSitting(true);
             ticksSitted = 0;
@@ -215,9 +356,11 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             ticksSitted = 0;
         }
 
-        if (this.isInWater()) {
-            this.setSitting(false);
-            ticksSitted = 0;
+        if (!world.isRemote) {
+            if (this.isInWater()) {
+                this.setSitting(false);
+                ticksSitted = 0;
+            }
         }
 
         boolean flying = isFlying();
@@ -225,92 +368,164 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             sitCooldown--;
         }
 
-        if (this.getAttachmentPos() == null) {
-            sitTickCt = 0;
-            if (collided && sitCooldown == 0 && !onGround){
-                sitCooldown = 5;
-                Vec3d vec3d = this.getPositionEyes(0);
-                Vec3d vec3d1 = this.getLook(0);
-                Vec3d vec3d2 = vec3d.add(vec3d1.x * 1, vec3d1.y * 1, vec3d1.z * 1);
-                RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
-                if (rayTrace != null && rayTrace.hitVec != null) {
-                    BlockPos sidePos = rayTrace.getBlockPos();
-                    if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
-                        this.setAttachmentPos(sidePos);
-                        this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
-                        this.motionX = 0.0D;
-                        this.motionY = 0.0D;
-                        this.motionZ = 0.0D;
+        if (!world.isRemote) {
+
+            //Centre on a block:
+
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                double offsetZ = (double)this.getPosition().getZ() + (this.width / 2F);
+                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                double offsetZ = (double)this.getPosition().getZ() + 1 - (this.width / 2F);
+                this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                double offsetX = (double)this.getPosition().getX() + (this.width / 2F);
+                this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+            }
+            if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                double offsetX = (double)this.getPosition().getX() + 1 - (this.width / 2F);
+                this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+            }
+
+
+            if ((!world.isAirBlock(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()))
+                    && !world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()).getBlock().isPassable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up())
+                    && this.posY % 1 > this.headHitHeight()) {
+                //System.err.println("Is collided at head");
+                this.setHeadCollided(true);
+            } else {
+                this.setHeadCollided(false);
+            }
+
+            if (this.getAttachmentPos() == null) {
+                sitTickCt = 0;
+                if (collided && sitCooldown == 0) {
+                    sitCooldown = 5;
+                    Vec3d vec3d = this.getPositionEyes(0);
+                    Vec3d vec3d1 = this.getLook(0);
+                    Vec3d vec3d2 = vec3d.add(vec3d1.x * 1, vec3d1.y * 1, vec3d1.z * 1);
+                    RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
+                    if (rayTrace != null && rayTrace.hitVec != null) {
+                        BlockPos sidePos = rayTrace.getBlockPos();
+                        try {
+                            if (world.isSideSolid(sidePos, rayTrace.sideHit) && rayTrace.sideHit != EnumFacing.UP && rayTrace.sideHit != EnumFacing.DOWN) {
+                                this.setAttachmentPos(sidePos);
+                                this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
+                                this.motionX = 0.0D;
+                                //this.motionY = 0.0D;
+                                this.motionZ = 0.0D;
+                            }
+                        }
+                        catch (Error e) {}
                     }
                 }
-            }
-        } else {
-            BlockPos pos = this.getAttachmentPos();
-            if (world.isSideSolid(pos, this.getAttachmentFacing())) {
-                sitTickCt++;
-                sitCooldown = 150;
-                this.renderYawOffset = 180.0F;
-                this.prevRenderYawOffset = 180.0F;
-                this.rotationYaw = 180.0F;
-                this.prevRotationYaw = 180.0F;
-                this.rotationYawHead = 180.0F;
-                this.prevRotationYawHead = 180.0F;
-                this.moveHelper.action = EntityMoveHelper.Action.WAIT;
-                if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                    this.posZ = this.getPosition().getZ() + (this.width/2F);
-                }
-                if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                    this.posZ = this.getPosition().getZ() + 1 - (this.width/2F);
-                }
-                if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                    this.posX = this.getPosition().getX() + (this.width/2F);
-                }
-                if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                    this.posX = this.getPosition().getX() + 1 - (this.width/2F);
-                }
-                this.motionX = 0.0D;
-                this.motionY = 0.0D;
-                this.motionZ = 0.0D;
             } else {
-                this.sitTickCt = 0;
-                this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
-                this.setAttachmentPos(null);
+                BlockPos pos = this.getAttachmentPos();
+                try {
+                    if (world.isSideSolid(pos, this.getAttachmentFacing())) {
+                        sitTickCt++;
+                        sitCooldown = 150;
+                        if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                            rotationYaw = 180;
+                            this.rotationYawHead = this.rotationYaw;
+                        } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                            rotationYaw = 270;
+                            this.rotationYawHead = this.rotationYaw;
+                        } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                            rotationYaw = 0;
+                            this.rotationYawHead = this.rotationYaw;
+                        } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                            rotationYaw = 90;
+                            this.rotationYawHead = this.rotationYaw;
+                        }
+                        this.moveHelper.action = EntityMoveHelper.Action.WAIT;
+
+                        this.setAttachmentPos(this.getPosition().offset(this.getAttachmentFacing()));
+                        if (this.climbingpause < 0 && !this.getHeadCollided()) {
+                            this.motionY = this.getClimbSpeed();
+                            //this.setIsMoving(true);
+                        } else {
+                            this.motionY = 0;
+                            //this.setIsMoving(false);
+                        }
+                        this.motionX = 0.0D;
+                        this.motionZ = 0.0D;
+                    } else {
+                        this.setFlying();
+                    }
+                }
+                catch (Error e) {
+                    this.setFlying();
+                }
+            }
+
+            if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
+                if (checkFlyConditions() || rand.nextInt(250) == 0) {
+                    this.setFlying();
+                }
+            }
+            if (flying && getFlyProgress() < 20.0F) {
+                setFlyProgress(getFlyProgress() + 0.5F);
+                if (sitProgress != 0)
+                    sitProgress = 0F;
+            } else if (!flying && getFlyProgress() > 0.0F) {
+                setFlyProgress(getFlyProgress() - 0.5F);
+                if (sitProgress != 0)
+                    sitProgress = 0F;
+            }
+
+            if (this.getAttachmentPos() == null) {
+                //Entity eatTarget = this.getEatTarget();
+                //if (eatTarget != null) {
+                //    if (eatTarget.posY > this.posZ) {
+                //        this.motionY += 0.08D;
+                //    }
+                //}
+                //else {
+                if (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.LAVA) {
+                    this.motionY += 0.12D;
+                } else {
+                    //this.motionY += 0.022D;
+                }
+                //}
+            } else {
+                this.moveHelper.action = EntityMoveHelper.Action.WAIT;
+            }
+            if (flying && this.ticksExisted % 20 == 0 && !world.isRemote && this.getAttachmentPos() == null && this.FlightSound() != null) {
+                this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+                        .getObject(this.FlightSound()), this.getSoundVolume() * 0.5F, 1);
+            }
+
+            if (this.climbingpause >= -100) {
+                this.climbingpause = this.climbingpause - this.rand.nextInt(3);
+            }
+            if (this.climbingpause < -100) {
+                this.climbingpause = 100;
             }
         }
-        if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
-            this.sitTickCt = 0;
-            sitCooldown = this.sitCooldownSetter();
-            this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
-            this.setAttachmentPos(null);
-        }
-        if (flying && flyProgress < 20.0F) {
-            flyProgress += 0.5F;
-            if (sitProgress != 0)
-                sitProgress = 0F;
-        } else if (!flying && flyProgress > 0.0F) {
-            flyProgress -= 0.5F;
-            if (sitProgress != 0)
-                sitProgress = 0F;
-        }
 
-        if (!this.isMovementBlockedSoft() && this.getAttachmentPos() == null) {
-            //Entity eatTarget = this.getEatTarget();
-            //if (eatTarget != null) {
-            //    if (eatTarget.posY > this.posZ) {
-            //        this.motionY += 0.08D;
-            //    }
-            //}
-            //else {
-            this.motionY += 0.08D;
-            //}
-        } else {
-            this.moveHelper.action = EntityMoveHelper.Action.WAIT;
+        if (this.getAttachmentPos() != null) {
+            if (this.getAttachmentFacing() == EnumFacing.NORTH) {
+                rotationYaw = 180;
+                this.rotationYawHead = this.rotationYaw;
+            } else if (this.getAttachmentFacing() == EnumFacing.EAST) {
+                rotationYaw = 270;
+                this.rotationYawHead = this.rotationYaw;
+            } else if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
+                rotationYaw = 0;
+                this.rotationYawHead = this.rotationYaw;
+            } else if (this.getAttachmentFacing() == EnumFacing.WEST) {
+                rotationYaw = 90;
+                this.rotationYawHead = this.rotationYaw;
+            }
         }
-        if (flying && this.ticksExisted % 20 == 0 && !world.isRemote && this.getAttachmentPos() == null && this.FlightSound() != null) {
-            this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-                    .getObject(this.FlightSound()), this.getSoundVolume(), 1);
-        }
+    }
 
+    public boolean checkFlyConditions() {
+        return true;
     }
 
     public int sitTickCtMax() {
@@ -323,15 +538,15 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
 
     @Override
     public boolean isMovementBlocked() {
-        return isSitting();
-    }
-
-    public boolean isMovementBlockedSoft() {
-        return isMovementBlocked() ;
+        return this.getHealth() <= 0.0F || this.getAttachmentPos() != null || this.collidedHorizontally;
     }
 
     public ResourceLocation FlightSound() {
         return new ResourceLocation("lepidodendron:anurognathid_flight");
+    }
+
+    public boolean isFlying() {
+        return this.getAttachmentPos() == null;
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d target) {
@@ -348,6 +563,64 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
         return true;
     }
 
+    @Override
+    public void travel(float strafe, float vertical, float forward) {
+        float f4;
+        if (this.isServerWorld()) {
+            if (isInWater()) {
+                this.moveRelative(strafe, vertical, forward, 0.1F);
+                f4 = 0.8F;
+                float speedModifier = (float) EnchantmentHelper.getDepthStriderModifier(this);
+                if (speedModifier > 3.0F) {
+                    speedModifier = 3.0F;
+                }
+                if (!this.onGround) {
+                    speedModifier *= 0.5F;
+                }
+                if (speedModifier > 0.0F) {
+                    f4 += (0.54600006F - f4) * speedModifier / 3.0F;
+                }
+                this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+                this.motionX *= f4;
+                this.motionX *= 0.9;
+                this.motionY *= 0.9;
+                this.motionY *= f4;
+                this.motionZ *= 0.9;
+                this.motionZ *= f4;
+            } else {
+                super.travel(strafe, vertical, forward);
+            }
+        }
+
+        if (!world.isRemote) {
+            if (this.getAttachmentPos() != null && this.climbingpause < 0 && !this.getHeadCollided()) {
+                this.motionY = this.getClimbSpeed();
+                //this.setIsMoving(true);
+            } else {
+                this.motionY = 0;
+                //this.setIsMoving(false);
+            }
+        }
+
+        if (!world.isRemote) {
+            if (this.motionX != 0 || this.motionZ != 0 || this.motionY != 0) {
+                this.setIsMoving(true);
+            } else {
+                this.setIsMoving(false);
+            }
+        }
+
+        this.prevLimbSwingAmount = this.limbSwingAmount;
+        double deltaX = this.posX - this.prevPosX;
+        double deltaZ = this.posZ - this.prevPosZ;
+        double deltaY = this.posY - this.prevPosY;
+        float delta = MathHelper.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) * 4.0F;
+        if (delta > 1.0F) {
+            delta = 1.0F;
+        }
+        this.limbSwingAmount += (delta - this.limbSwingAmount) * 0.4F;
+        this.limbSwing += this.limbSwingAmount;
+    }
 
 
 
@@ -405,56 +678,5 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingBase extends Entit
             }
         }
     }
-
-    class AIWanderLandClimbingFlyingBase extends EntityAIBase {
-        BlockPos target;
-        boolean isGoingToAttach = false;
-
-        public AIWanderLandClimbingFlyingBase() {
-            this.setMutexBits(1);
-        }
-
-        public boolean shouldExecute() {
-            if (EntityPrehistoricFloraLandClimbingFlyingBase.this.sitCooldown == 0) {
-                for(int i = 0; i < 15; i++){
-                    BlockPos randomPos = new BlockPos(EntityPrehistoricFloraLandClimbingFlyingBase.this).add(rand.nextInt(17) - 8, rand.nextInt(11) - 5, rand.nextInt(17) - 8);
-                    if ((!world.isAirBlock(randomPos)) && (world.getBlockState(randomPos).getMaterial() != Material.WATER) && (world.getBlockState(randomPos).getMaterial() != Material.LAVA)) {
-                        RayTraceResult rayTrace = world.rayTraceBlocks(EntityPrehistoricFloraLandClimbingFlyingBase.this.getPositionVector().add(0, 0.25, 0), new Vec3d(randomPos).add(0.5, 0.5, 0.5), true);
-                        if (rayTrace != null && rayTrace.hitVec != null) {
-                            if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
-                                target = rayTrace.getBlockPos();
-                                isGoingToAttach = true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            target = EntityPrehistoricFloraLandClimbingFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraLandClimbingFlyingBase.this, EntityPrehistoricFloraLandClimbingFlyingBase.this.world, EntityPrehistoricFloraLandClimbingFlyingBase.this.posX + EntityPrehistoricFloraLandClimbingFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraLandClimbingFlyingBase.this.posZ + EntityPrehistoricFloraLandClimbingFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraLandClimbingFlyingBase.this.rand);
-            Material material = world.getBlockState(new BlockPos(target)).getMaterial();
-            Material material1 = world.getBlockState(new BlockPos(target).up()).getMaterial();
-            return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) && !EntityPrehistoricFloraLandClimbingFlyingBase.this.isSitting() && EntityPrehistoricFloraLandClimbingFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target).add(0.5D, 0.5D, 0.5D)) && EntityPrehistoricFloraLandClimbingFlyingBase.this.rand.nextInt(4) == 0 && EntityPrehistoricFloraLandClimbingFlyingBase.this.getAttachmentPos() == null;
-        }
-
-        public boolean shouldContinueExecuting() {
-            return false;
-        }
-
-        public void updateTask() {
-            if (!EntityPrehistoricFloraLandClimbingFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target))) {
-                target = EntityPrehistoricFloraLandClimbingFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraLandClimbingFlyingBase.this, EntityPrehistoricFloraLandClimbingFlyingBase.this.world, EntityPrehistoricFloraLandClimbingFlyingBase.this.posX + EntityPrehistoricFloraLandClimbingFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraLandClimbingFlyingBase.this.posZ + EntityPrehistoricFloraLandClimbingFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraLandClimbingFlyingBase.this.rand);
-            }
-            if (EntityPrehistoricFloraLandClimbingFlyingBase.this.world.isAirBlock(target) || isGoingToAttach) {
-                if (!EntityPrehistoricFloraLandClimbingFlyingBase.this.isFlying()) {
-                    EntityPrehistoricFloraLandClimbingFlyingBase.this.selectNavigator();
-                }
-                EntityPrehistoricFloraLandClimbingFlyingBase.this.moveHelper.setMoveTo((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 0.25D);
-                if (EntityPrehistoricFloraLandClimbingFlyingBase.this.getAttackTarget() == null) {
-                    EntityPrehistoricFloraLandClimbingFlyingBase.this.getLookHelper().setLookPosition((double) target.getX() + 0.5D, (double) target.getY() + 0.5D, (double) target.getZ() + 0.5D, 180.0F, 20.0F);
-
-                }
-            }
-        }
-    }
-
+    
 }

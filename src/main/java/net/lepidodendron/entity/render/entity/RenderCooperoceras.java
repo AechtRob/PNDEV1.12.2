@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCooperoceras extends RenderLiving<EntityPrehistoricFloraCooperoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cooperoceras.png");
-
+    public static float getScaler() {
+        return 0.082F;
+    }
     public RenderCooperoceras(RenderManager mgr) {
         super(mgr, new ModelCooperoceras(), 0.1f);
     }

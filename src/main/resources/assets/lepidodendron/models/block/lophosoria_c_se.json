@@ -1,0 +1,66 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"24": "lepidodendron:blocks/lophosoria_leaf_3_tip_w",
+		"25": "lepidodendron:blocks/lophosoria_leaf_3_base_e",
+		"26": "lepidodendron:blocks/lophosoria_leaf_3_base_w",
+		"27": "lepidodendron:blocks/lophosoria_leaf_3_tip_e",
+		"particle": "lepidodendron:items/lophosoria_inventory"
+	},
+	"elements": [
+		{
+			"from": [-4.1, -7.3181, 11.74757],
+			"to": [11.9, -7.3181, 27.74757],
+			"rotation": {"angle": 45, "axis": "x", "origin": [3.9, -7.3181, 19.74757]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#25"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#25"}
+			}
+		},
+		{
+			"from": [-4.1, 1.4, -1.3],
+			"to": [11.9, 1.4, 14.7],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [3.9, 1.4, 6.7]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#26"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#26"}
+			}
+		},
+		{
+			"from": [11.9, -7.31811, 11.74757],
+			"to": [19.9, -7.31811, 27.74757],
+			"rotation": {"angle": 45, "axis": "x", "origin": [19.9, -7.31811, 19.74757]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 8], "rotation": 270, "texture": "#27"},
+				"down": {"uv": [0, 0, 16, 8], "rotation": 270, "texture": "#27"}
+			}
+		},
+		{
+			"from": [19.9, -7.31811, 11.74757],
+			"to": [27.9, -7.31811, 27.74757],
+			"rotation": {"angle": 45, "axis": "x", "origin": [19.9, -7.31811, 19.74757]},
+			"faces": {
+				"up": {"uv": [16, 8, 0, 16], "rotation": 270, "texture": "#27"},
+				"down": {"uv": [0, 8, 16, 16], "rotation": 270, "texture": "#27"}
+			}
+		},
+		{
+			"from": [19.9, 1.4, -1.3],
+			"to": [27.9, 1.4, 14.7],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [23.9, 1.4, 6.7]},
+			"faces": {
+				"up": {"uv": [16, 8, 0, 16], "rotation": 270, "texture": "#24"},
+				"down": {"uv": [0, 8, 16, 16], "rotation": 270, "texture": "#24"}
+			}
+		},
+		{
+			"from": [11.9, 1.4, -1.3],
+			"to": [19.9, 1.4, 14.7],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [19.9, 1.4, 6.7]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 8], "rotation": 270, "texture": "#24"},
+				"down": {"uv": [0, 0, 16, 8], "rotation": 270, "texture": "#24"}
+			}
+		}
+	]
+}

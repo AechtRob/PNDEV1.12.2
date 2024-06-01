@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockCoral;
 import net.lepidodendron.block.BlockTabulata_Block1;
 import net.lepidodendron.block.BlockTabulata_Block2;
 import net.lepidodendron.block.BlockTabulata_Block3;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
@@ -35,7 +36,7 @@ public class WorldGenReef extends WorldGenerator
         int zct = 0;
         EnumFacing facing = EnumFacing.NORTH;
         BlockPos pos;
-        while ((layer <= startRadius) && (position.getY() + layer) < worldIn.getSeaLevel()) {
+        while ((layer <= startRadius) && (position.getY() + layer) < Functions.getAdjustedSeaLevel(worldIn, position)) {
             reefChance = 0.9D - (((double)layer - 1D) * (0.8D/(double)startRadius));
             layerRadius = (startRadius - layer + 1);
             xct = - layerRadius;
@@ -53,7 +54,7 @@ public class WorldGenReef extends WorldGenerator
                             && worldIn.getBlockState(pos).getMaterial() == Material.WATER
                             && ((Math.pow(Math.abs(xct),2)) + (Math.pow(Math.abs(zct),2)) <= (Math.pow(Math.abs(layerRadius),2)))) {
                             if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
-                                worldIn.setBlockState(pos, state.getBlock().getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, state.getBlock().getDefaultState());
                             }
                             else {
                                 int ii = rand.nextInt(4);
@@ -69,12 +70,12 @@ public class WorldGenReef extends WorldGenerator
                                 if (ii == 3) {
                                     facing = EnumFacing.WEST;
                                 }
-                                worldIn.setBlockState(pos, state.withProperty(BlockCoral.FACING, facing));
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, state.withProperty(BlockCoral.FACING, facing));
                             }
                             //Always a chance to grow straight up:
-                            if ((Math.random() > 0.65) && (position.getY() + layer + 1) < worldIn.getSeaLevel()) {
+                            if ((Math.random() > 0.65) && (position.getY() + layer + 1) < Functions.getAdjustedSeaLevel(worldIn, pos)) {
                                 if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
-                                    worldIn.setBlockState(pos.up(), state.getBlock().getDefaultState());
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(), state.getBlock().getDefaultState());
                                 }
                                 else {
                                     int ii = rand.nextInt(4);
@@ -90,11 +91,11 @@ public class WorldGenReef extends WorldGenerator
                                     if (ii == 3) {
                                         facing = EnumFacing.WEST;
                                     }
-                                    worldIn.setBlockState(pos.up(), state.withProperty(BlockCoral.FACING, facing));
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(), state.withProperty(BlockCoral.FACING, facing));
                                 }
-                                if ((Math.random() > 0.65) && (position.getY() + layer + 2) < worldIn.getSeaLevel()) {
+                                if ((Math.random() > 0.65) && (position.getY() + layer + 2) < Functions.getAdjustedSeaLevel(worldIn, position)) {
                                     if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
-                                        worldIn.setBlockState(pos.up(2), state.getBlock().getDefaultState());
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), state.getBlock().getDefaultState());
                                     }
                                     else {
                                         int ii = rand.nextInt(4);
@@ -110,7 +111,7 @@ public class WorldGenReef extends WorldGenerator
                                         if (ii == 3) {
                                             facing = EnumFacing.WEST;
                                         }
-                                        worldIn.setBlockState(pos.up(2), state.withProperty(BlockCoral.FACING, facing));
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), state.withProperty(BlockCoral.FACING, facing));
                                     }
                                 }
                             }

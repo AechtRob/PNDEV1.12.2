@@ -1,7 +1,10 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockBrownstone;
+import net.lepidodendron.block.BlockDriedMud;
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
 import net.lepidodendron.block.BlockPrehistoricGroundSandBlack;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -104,7 +107,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                         if (aboolean[(l1 * 16 + i3) * 8 + i4])
                         {
                             if (i4 >= 4) {
-                                worldIn.setBlockState(position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
                                     //fix for floating plants and half-plants:
@@ -112,9 +115,9 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                 }
                             }
                             else {
-                                worldIn.setBlockState(position.add(l1, i4, i3), this.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), this.block.getDefaultState(), 2);
                             }
-                            //worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
+                            //Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
                         }
                     }
                 }
@@ -130,23 +133,20 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                         {
                             BlockPos blockpos = position.add(i2, j4 - 1, j3);
 
-                            if (worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
+                            if ((worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND || worldIn.getBlockState(blockpos).getMaterial() == Material.SAND) && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
                             {
-                                //Biome biome = worldIn.getBiome(blockpos);
-                                //String checkBiome = "lepidodendron:devonian_floodplain";
-                                //if (!checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-								//	worldIn.setBlockState(blockpos, BlockPrehistoricGroundCoverBasic.block.getDefaultState(), 2);
-                                //}
-                                //else {
                                 if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks"))) {
-                                    worldIn.setBlockState(blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
                                 }
                                 if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
                                     || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
                                     || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")) {
-                                    worldIn.setBlockState(blockpos, BlockPrehistoricGroundSandBlack.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundSandBlack.block.getDefaultState(), 2);
                                 }
-                                //}
+                            }
+                            if (worldIn.getBlockState(blockpos).getBlock() == BlockBrownstone.block && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0)
+                            {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDriedMud.block.getDefaultState(), 2);
                             }
                         }
                     }
@@ -165,7 +165,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
 
                             if (flag1 && (k4 < 4 || rand.nextInt(2) != 0) && worldIn.getBlockState(position.add(j2, k4, k3)).getMaterial().isSolid())
                             {
-                                worldIn.setBlockState(position.add(j2, k4, k3), Blocks.STONE.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(j2, k4, k3), Blocks.STONE.getDefaultState(), 2);
                             }
                         }
                     }
@@ -183,7 +183,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                         if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3)))
                         {
                             int flag = net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2| 16 : 2; //Forge: With bit 5 unset, it will notify neighbors and load adjacent chunks.
-                            worldIn.setBlockState(position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), flag); //Forge
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(k2, 4, l3), Blocks.ICE.getDefaultState(), 16); //Forge
                         }
                     }
                 }

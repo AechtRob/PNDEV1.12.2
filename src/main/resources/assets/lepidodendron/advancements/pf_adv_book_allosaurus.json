@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:allosaurus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_allosaurus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_allosaurus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_allosaurus"
+		}
+	}
+}
+
+

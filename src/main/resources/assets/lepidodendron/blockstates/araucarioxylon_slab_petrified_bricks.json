@@ -4,7 +4,7 @@
       "model": "lepidodendron:araucarioxylon_slab_petrified_bricks"
     },
     "half=top,variant=default": {
-      "model": "lepidodendron:araucarioxylon_slab_petrified_bricks"
+      "model": "lepidodendron:araucarioxylon_slab_petrified_bricks_top"
     }
   }
 }

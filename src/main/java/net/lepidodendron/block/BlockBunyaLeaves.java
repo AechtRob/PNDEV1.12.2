@@ -66,6 +66,11 @@ public class BlockBunyaLeaves extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_bunya_leaves");
 		}
 
+		@Override
+		public boolean hasNonFancyOption() {
+			return false;
+		}
+
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {

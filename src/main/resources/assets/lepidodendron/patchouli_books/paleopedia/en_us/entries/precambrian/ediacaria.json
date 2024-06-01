@@ -1,0 +1,46 @@
+{
+	"name": "Ediacaria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ediacaria_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_ediacaria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ediacaria",
+			"title": "Ediacaria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Precambrian - Cambrian$(br2)>Cnidaria $(br)>Scyphozoa"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/ediacaria.png"],
+			"title": "E. flindersi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ediacaria",
+			"type": "text",
+			"text": "Ediacaria is discoid fossil from the Ediaracan to Cambrian periods. It is interpreted to have been an ancient cnidarian, and they are known from specimens discovered in Ireland and Australia. It has also been suggested to be some sort of microbial colony."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ediacaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ediacaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ediacaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ediacaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ediacaria"
+		}
+	]
+}

@@ -123,7 +123,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -177,7 +177,8 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+					|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = true;
 			}
 			else {
@@ -216,7 +217,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 		}
 		int minWaterDepth = 3 * dimWeight;
 		int maxWaterDepth = 15 * dimWeight;
-		int startHeight = world.getSeaLevel() - maxWaterDepth;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
@@ -224,7 +225,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
@@ -241,7 +242,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= world.getSeaLevel())) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;
@@ -370,7 +371,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote)) {
+			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
 				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);

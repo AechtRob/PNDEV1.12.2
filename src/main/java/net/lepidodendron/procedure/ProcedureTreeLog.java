@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -18,7 +19,21 @@ public class ProcedureTreeLog extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 	
 	public static void executeProcedure(int x, int y, int z, World world, Block blockLog, EnumFacing facing) {
-
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x + 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x - 1, (int) y, (int) z))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z + 1))) {
+			return;
+		}
+		if (!world.isBlockLoaded(new BlockPos((int) x, (int) y, (int) z - 1))) {
+			return;
+		}
 		Block block = world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world,
 			new BlockPos((int) x, (int) y, (int) z))
@@ -31,10 +46,10 @@ public class ProcedureTreeLog extends ElementsLepidodendronMod.ModElement {
 			|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WOOD && !block.isFullCube(world.getBlockState(new BlockPos((int) x, (int) y, (int) z))))) {
 
 			try {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState().withProperty(FACING,facing), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState().withProperty(FACING,facing), 3);
 			}
 			catch (Exception e) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState(), 3);
 			}
 		}
 	}
@@ -54,10 +69,10 @@ public class ProcedureTreeLog extends ElementsLepidodendronMod.ModElement {
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WOOD && !block.isFullCube(world.getBlockState(new BlockPos((int) x, (int) y, (int) z))))) {
 
 			try {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState().withProperty(FACING,facing), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState().withProperty(FACING,facing), 3);
 			}
 			catch (Exception e) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), blockLog.getDefaultState(), 3);
 			}
 		}
 	}

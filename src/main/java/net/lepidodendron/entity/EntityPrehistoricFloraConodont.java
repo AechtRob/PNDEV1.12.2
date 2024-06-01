@@ -4,17 +4,19 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
 import net.lepidodendron.entity.render.entity.RenderConodont;
-import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
@@ -39,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBase implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -62,6 +64,10 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	public EntityPrehistoricFloraConodont(World world) {
 		super(world);
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	public ItemStack getPropagule() {
@@ -145,6 +151,37 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	@Override
 	public boolean hasPNVariants() {
 		return true;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case IOWAGNATHUS: default:
+				return ModTriggers.CLICK_IOWAGNATHUS;
+
+			case PROCONODONTUS:
+				return ModTriggers.CLICK_PROCONODONTUS;
+
+			case CLARKINA:
+				return ModTriggers.CLICK_CLARKINA;
+
+			case OZARKODINA:
+				return ModTriggers.CLICK_OZARKODINA;
+
+			case MISIKELLA:
+				return ModTriggers.CLICK_MISIKELLA;
+
+			case HINDEODUS:
+				return ModTriggers.CLICK_HINDEODUS;
+
+			case PROMISSUM:
+				return ModTriggers.CLICK_PROMISSUM;
+
+			case CLYDAGNATHUS:
+				return ModTriggers.CLICK_CLYDAGNATHUS;
+
+		}
 	}
 
 	public enum Type
@@ -393,7 +430,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			float f = this.width;
 			this.width = width;
 			this.height = height;
-			if (this.width < f) {
+			if (this.width != f) {
 				double d0 = (double) width / 2.0D;
 				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
 			}
@@ -476,6 +513,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 			this.setPNType(EntityPrehistoricFloraConodont.Type.getTypeFromString(compound.getString("PNType")));
 		}
 	}
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase(@Nullable String variant) {
@@ -556,7 +594,7 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.434;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -565,11 +603,12 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 		return -0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.017F;}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -604,30 +643,29 @@ public class EntityPrehistoricFloraConodont extends EntityPrehistoricFloraFishBa
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		switch (EntityPrehistoricFloraConodont.Type.getTypeFromString(variant)) {
-			case PROMISSUM:
-			default:
-				return RenderDisplays.modelPalaeodictyopteraSmall;
+			case PROCONODONTUS: default:
+				return RenderDisplays.modelProconodontus;
 
 			case CLYDAGNATHUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
-
-			case PROCONODONTUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
-
-			case OZARKODINA:
-				return RenderDisplays.modelPalaeodictyopteraLarge;
-
-			case IOWAGNATHUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
-
-			case HINDEODUS:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
+				return RenderDisplays.modelClydagnathus;
 
 			case CLARKINA:
-				return RenderDisplays.modelPalaeodictyopteraSmall;
+				return RenderDisplays.modelClarkina;
 
 			case MISIKELLA:
-				return RenderDisplays.modelPalaeodictyopteraMedium;
+				return RenderDisplays.modelMisikella;
+
+			case OZARKODINA:
+				return RenderDisplays.modelOzarkodina;
+
+			case HINDEODUS:
+				return RenderDisplays.modelHindeodus;
+
+			case PROMISSUM:
+				return RenderDisplays.modelPromissum;
+
+			case IOWAGNATHUS:
+				return RenderDisplays.modelIowagnathus;
 		}
 	}
 

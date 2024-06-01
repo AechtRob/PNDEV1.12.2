@@ -10,15 +10,13 @@ import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemEchinodermEggsArchaeocidaris;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -27,13 +25,15 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFloraSlitheringWaterBase {
+public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFloraSlitheringWaterBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
+
+	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
 
 	public EntityPrehistoricFloraArchaeocidaris(World world) {
 		super(world, 0);//Does not slither
@@ -109,7 +109,7 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
 		if (player.getHeldItem(hand).isEmpty()) {
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 		return super.processInteract(player, hand);
 	}
@@ -118,7 +118,7 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if (entityIn instanceof EntityPlayer) {
-			entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 	}
 

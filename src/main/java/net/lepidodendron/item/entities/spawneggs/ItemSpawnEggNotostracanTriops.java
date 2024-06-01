@@ -14,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -69,7 +70,7 @@ public class ItemSpawnEggNotostracanTriops extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public String getHabitat() {
-			return "Freshwater/Marine";
+			return I18n.translateToLocal("helper.pf_aquatic.name");
 		}
 
 		@Override

@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
-import com.google.common.collect.Lists;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -9,25 +10,29 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
-import java.util.List;
 
 public class LepidodendronConfig {
     public static Configuration cfg;
     public static LepidodendronConfig instance = new LepidodendronConfig();
     public static String[] genGlobalBlacklist = new String[0];
+    public static String[] genWadeableBreaks = new String[]{"minecraft:waterlily", "lepidodendron:microvictoria_leaves", "lepidodendron:nelumbo_leaves", "lepidodendron:nuphar_leaves"};
     public static String[] genLogResin = new String[]{"minecraft:log:1", "lepidodendron:hymenaea_log", "lepidodendron:agathis_log", "lepidodendron:araucarioxylon_log", "lepidodendron:bunya_log", "lepidodendron:columnaris_log", "lepidodendron:cunninghamia_log", "lepidodendron:monkeypuzzle_log", "lepidodendron:sciadopitys_log", "lepidodendron:wollemi_log", "biomesoplenty:log_2:6", "biomesoplenty:log_0:7", "jurassicraft:araucaria_log", "wildnature:cedar_log", "wildnature:fir_log", "wildnature:pine_log", "lepidodendron:bristlecone_log", "lepidodendron:mirabilis_log", "lepidodendron:monkey_puzzle_araucaria_log", "lepidodendron:hoop_araucaria_log", "lepidodendron:cunninghamia_log", "lepidodendron:scrubby_pine_log"};
     public static String[] genLogLatex = new String[]{"lepidodendron:fig_log"};
+    public static String[] genFishableOredicts = new String[]{"listAllfishraw","pnfurnaceCalamari","pnfurnaceScampi","pnfurnaceCrustacean","pnfurnaceAmphibian","pnfurnaceSeafood","pnfurnaceFish"};
     public static String[] genPlantPrehistoric = new String[]{"fossil:bennettitales_large", "fossil:bennettitales_small", "fossil:calamites_leaves", "fossil:calamites_sapling", "fossil:cordaites_leaves", "fossil:cordaites_sapling", "fossil:crataegus", "fossil:cyathea", "fossil:dictyophyllum", "fossil:dillhoffia_flower", "fossil:dipteris", "fossil:duisbergia", "fossil:ependra", "fossil:fern_block", "fossil:florissantia", "fossil:foozia", "fossil:fossil_sapling_calamites", "fossil:fossil_sapling_cordaites", "fossil:fossil_sapling_palae", "fossil:fossil_sapling_sigillaria", "fossil:horsetail_small", "fossil:licopodiophyta", "fossil:osmunda", "fossil:palm_leaves", "fossil:palm_sapling", "fossil:sagenopteris", "fossil:sarracenia", "fossil:sigillaria_leaves", "fossil:sigillaria_sapling", "fossil:tempskya", "fossil:vaccinium", "fossil:welwitschia", "fossil:zamites", "jurassicraft:ajuginucula_smithii", "jurassicraft:ajuginucula_smithii_leaves", "jurassicraft:araucaria_leaves", "jurassicraft:araucaria_sapling", "jurassicraft:bennettitalean_cycadeoidea", "jurassicraft:bristle_fern", "jurassicraft:calamites_leaves", "jurassicraft:calamites_sapling", "jurassicraft:cinnamon_fern", "jurassicraft:cry_pansy", "jurassicraft:cycad_zamites", "jurassicraft:dicksonia", "jurassicraft:dicroidium_zuberi", "jurassicraft:dictyophyllum", "jurassicraft:encephalartos", "jurassicraft:ginkgo_leaves", "jurassicraft:ginkgo_sapling", "jurassicraft:gracilaria_seaweed", "jurassicraft:graminidites_bambusoides", "jurassicraft:heliconia", "jurassicraft:ladinia_simplex", "jurassicraft:moss", "jurassicraft:orontium_mackii", "jurassicraft:paleo_bale_cycad", "jurassicraft:paleo_bale_cycadeoidea", "jurassicraft:paleo_bale_fern", "jurassicraft:paleo_bale_leaves", "jurassicraft:paleo_bale_other", "jurassicraft:phoenix_leaves", "jurassicraft:phoenix_sapling", "jurassicraft:psaronius_leaves", "jurassicraft:psaronius_sapling", "jurassicraft:raphaelia", "jurassicraft:rhacophyton", "jurassicraft:rhamnus_salicifolius", "jurassicraft:scaly_tree_fern", "jurassicraft:serenna_veriformans", "jurassicraft:small_chain_fern", "jurassicraft:small_cycad", "jurassicraft:small_royal_fern", "jurassicraft:tempskya", "jurassicraft:umaltolepis", "jurassicraft:west_indian_lilac", "jurassicraft:woolly_stalked_begonia", "rebornmod:ajuginucula_smithii", "rebornmod:ajuginucula_smithii_leaves", "rebornmod:araucaria_leaves", "rebornmod:araucaria_sapling", "rebornmod:bennettitalean_cycadeoidea", "rebornmod:bristle_fern", "rebornmod:calamites_leaves", "rebornmod:calamites_sapling", "rebornmod:cinnamon_fern", "rebornmod:cry_pansy", "rebornmod:cycad_zamites", "rebornmod:dicksonia", "rebornmod:dicroidium_zuberi", "rebornmod:dictyophyllum", "rebornmod:encephalartos", "rebornmod:ginkgo_leaves", "rebornmod:ginkgo_sapling", "rebornmod:gracilaria_seaweed", "rebornmod:graminidites_bambusoides", "rebornmod:heliconia", "rebornmod:ladinia_simplex", "rebornmod:moss", "rebornmod:orontium_mackii", "rebornmod:paleo_bale_cycad", "rebornmod:paleo_bale_cycadeoidea", "rebornmod:paleo_bale_fern", "rebornmod:paleo_bale_leaves", "rebornmod:paleo_bale_other", "rebornmod:phoenix_leaves", "rebornmod:phoenix_sapling", "rebornmod:psaronius_leaves", "rebornmod:psaronius_sapling", "rebornmod:raphaelia", "rebornmod:rhacophyton", "rebornmod:rhamnus_salicifolius", "rebornmod:scaly_tree_fern", "rebornmod:serenna_veriformans", "rebornmod:small_chain_fern", "rebornmod:small_cycad", "rebornmod:small_royal_fern", "rebornmod:tempskya", "rebornmod:umaltolepis", "rebornmod:west_indian_lilac", "rebornmod:woolly_stalked_begonia"};
     public static int waterSandHorizontal = 6;
     public static int waterSandVertical = 0;
+    public static int extractionSpeed = 1200;
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
     public static int taxidermyRenderRange = 48;
+    public static int researchMax = 10000;
+    public static int researchPortal = 5;
     public static int spreadPlants = 70;
     public static boolean spreadPlantsAtAll = true;
     public static boolean biomeApple = true;
     public static boolean biomeOlive = true;
-    public static boolean digsiteGen = true;
+    //public static boolean digsiteGen = true;
     public static int digsiteTentColour = 12;
     public static int digsiteBedColour = 7;
     public static int digsiteCarpetColour = 8;
@@ -49,6 +54,7 @@ public class LepidodendronConfig {
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
     public static boolean modFire = true;
+    public static boolean modFishing = true;
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
     public static boolean renderAnimations = true;
@@ -59,6 +65,8 @@ public class LepidodendronConfig {
     public static boolean blockMobsFAExceptions = true;
     public static boolean doMeteorites = true;
     public static boolean doMeteoritesGriefing = true;
+    public static boolean doGuanoGriefing = true;
+    public static boolean doGuanoBats = true;
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
@@ -86,15 +94,19 @@ public class LepidodendronConfig {
     public static int dimPermian = -83;
     public static int dimTriassic = -84;
     public static int dimJurassic = -85;
-    public static int dimCretaceous = -86;
+    public static int dimCretaceousEarly = -86;
     public static int dimOrdovician = -87;
     public static int dimPaleogene = -88;
     public static int dimNeogene = -89;
     public static int dimPleistocene = -90;
+    public static int dimCretaceousLate = -91;
 
     public static boolean doSpawnsPrehistoricFloraDefault = true;
     public static boolean doSpawnsFossilsArcheology = false;
     public static boolean doSpawnsReborn = false;
+    public static boolean globalHomePortals = false;
+    public static boolean oneWayPortals = true;
+    public static boolean oneWayPortalsNether = false;
 
     public static boolean doMultiplyMobs = false;
 
@@ -213,7 +225,7 @@ public class LepidodendronConfig {
     }
 
     public static boolean syncConfigGeneral() {
-        List<String> propOrder = Lists.newArrayList();
+        ObjectList<String> propOrder = new ObjectArrayList<>();
         Property prop = cfg.get("Global World-Gen", "genGlobalBlacklist", genGlobalBlacklist);
         prop.setComment("List of biomes all plants are blacklisted from, in the format: modid:biomeid [default: empty]");
         genGlobalBlacklist = prop.getStringList();
@@ -414,6 +426,16 @@ public class LepidodendronConfig {
         revStaticsPleistocene = prop.getStringList();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Global World-Gen", "genWadeableBreaks", genWadeableBreaks);
+        prop.setComment("List of blocks which are destroyed by wading animals (to avoid getting stuck on them): modid:blockid:meta [default: \"minecraft:waterlily\", \"lepidodendron:microvictoria_leaves\", \"lepidodendron:nelumbo_leaves\", \"lepidodendron:nuphar_leaves\"]");
+        genWadeableBreaks = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "genFishableOredicts", genFishableOredicts);
+        prop.setComment("List of fish-oreDicts which can be fished up in the prehiostoric dimensions [default: \"listAllfishraw\",\"pnfurnaceCalamari\",\"pnfurnaceScampi\",\"pnfurnaceCrustacean\",\"pnfurnaceAmphibian\",\"pnfurnaceSeafood\",\"pnfurnaceFish\"]");
+        genFishableOredicts = prop.getStringList();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("Global World-Gen", "genLogResin", genLogResin);
         prop.setComment("List of log blocks which produce resin, in the format: modid:blockid:meta [default: \"minecraft:log:1\", \"lepidodendron:hymenaea_log\", \"lepidodendron:agathis_log\", \"lepidodendron:araucarioxylon_log\", \"lepidodendron:bunya_log\", \"lepidodendron:columnaris_log\", \"lepidodendron:monkeypuzzle_log\", \"lepidodendron:sciadopitys_log\", \"lepidodendron:walchia_log\", \"lepidodendron:wollemi_log\", \"biomesoplenty:log_2:6\", \"biomesoplenty:log_0:7\", \"jurassicraft:araucaria_log\", \"wildnature:cedar_log\", \"wildnature:fir_log\", \"wildnature:pine_log\", \"lepidodendron:bristlecone_log\", \"lepidodendron:mirabilis_log\", \"lepidodendron:monkey_puzzle_araucaria_log\", \"lepidodendron:hoop_araucaria_log\", \"lepidodendron:cunninghamia_log\", \"lepidodendron:scrubby_pine_log\"]");
         genLogResin = prop.getStringList();
@@ -447,6 +469,16 @@ public class LepidodendronConfig {
         taxidermyRenderRange = prop.getInt();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Global World-Gen", "researchMax", researchMax);
+        prop.setComment("Reduce or increase this to set the total maximum research level for the Fossil Researcher machine [default: 1000000]");
+        researchMax = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "researchPortal", researchPortal);
+        prop.setComment("The percentage of research needed in order to obtain a portal block to a dimension [default: 5]");
+        researchPortal = prop.getInt();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("Global World-Gen", "showTooltips", showTooltips);
         prop.setComment("Shows useful, searchable tooltips on relevant items [default: true]");
         showTooltips = prop.getBoolean();
@@ -460,6 +492,16 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doMeteoritesGriefing", doMeteoritesGriefing);
         prop.setComment("Make meteorites cause craters and fire, and leave iron ore (note that meteorite griefing is also tied to the more general mobGriefing gamerule) [default: true]");
         doMeteoritesGriefing = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doGuanoGriefing", doGuanoGriefing);
+        prop.setComment("Make some appropriate flying creatures drop guano ambiently, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
+        doGuanoGriefing = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doGuanoBats", doGuanoBats);
+        prop.setComment("Make vanilla bats drop guano ambiently while roosting, causing blocks of it to build up (note that guano is also tied to the more general mobGriefing gamerule) [default: true]");
+        doGuanoBats = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doReSpawner", doReSpawner);
@@ -524,7 +566,7 @@ public class LepidodendronConfig {
         attackHealth = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Global Mobs", "adultAge", adultAge);
-        prop.setComment("Ageable mobs will behave as adults once they are at least this percentage of full age (hunting, dropping eggs, etc.). This does nto affect models/textures. [default: 75]");
+        prop.setComment("Ageable mobs will behave as adults once they are at least this percentage of full age (hunting, dropping eggs, etc.). This does not affect models/textures. [default: 75]");
         adultAge = prop.getInt();
         propOrder.add(prop.getName());
 //        prop = cfg.get("Global Mobs", "doMultiplyMobs", doMultiplyMobs);
@@ -589,9 +631,9 @@ public class LepidodendronConfig {
         dimJurassic = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceous);
+        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceousEarly);
         prop.setComment("Dimension number of the Cretaceous dimension. Do not change this unless you get errors [default: -86]");
-        dimCretaceous = prop.getInt();
+        dimCretaceousEarly = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "dimPaleogene", dimPaleogene);
@@ -629,9 +671,9 @@ public class LepidodendronConfig {
         dimJurassic = prop.getInt();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceous);
+        prop = cfg.get("Global World-Gen", "dimCretaceous", dimCretaceousEarly);
         prop.setComment("Dimension number of the Cretaceous dimension. Do not change this unless you get errors [default: -84]");
-        dimCretaceous = prop.getInt();
+        dimCretaceousEarly = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "genFossil", genFossil);
@@ -665,10 +707,10 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
 
-        prop = cfg.get("Global World-Gen", "digsiteGen", digsiteGen);
-        prop.setComment("Set to false to disable the world-gen of this mod's fossil digsites. [default: true]");
-        digsiteGen = prop.getBoolean();
-        propOrder.add(prop.getName());
+//        prop = cfg.get("Global World-Gen", "digsiteGen", digsiteGen);
+//        prop.setComment("Set to false to disable the world-gen of this mod's fossil digsites. [default: true]");
+//        digsiteGen = prop.getBoolean();
+//        propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "digsiteTentColour", digsiteTentColour);
         prop.setComment("Change to a different metadata number to use a different colour of wool, or use -1 for a random single colour or -2 for completely random patchwork. [default: 12]");
         digsiteTentColour = prop.getInt();
@@ -690,7 +732,7 @@ public class LepidodendronConfig {
         digsiteDimensionWhiteList = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Lepidodendron", "digSiteRarity", digsiteRarity);
-        prop.setComment("One in this many chunks will try to generate a digsite (note, most attempts will fail due to unsuitable terrain) [default: 50]");
+        prop.setComment("One in this many chunks will try to generate a digsite, or set to zero to disable (note, most attempts will fail due to unsuitable terrain) [default: 50]");
         digsiteRarity = prop.getInt();
         propOrder.add(prop.getName());
 
@@ -742,6 +784,18 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "genPalaeontologist", genPalaeontologist);
         prop.setComment("Percentage chance that a Palaeontologist house will generate in a village. [default: 30]");
         genPalaeontologist = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "portalsHomeGlobally", globalHomePortals);
+        prop.setComment("Overworld portals can also be used to escape from non-Prehistoric Nature dimensions. [default: false]");
+        globalHomePortals = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "portalsOneWay", oneWayPortals);
+        prop.setComment("Portals generate one-way counterparts on both sides; but only when used between Prehistoric Nature dimensions and the overworld. [default: true]");
+        oneWayPortals = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "portalsOneWayNether", oneWayPortalsNether);
+        prop.setComment("Extend the portal behaviour to Nether Portals [default: false]");
+        oneWayPortalsNether = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "doSpawnsPrehistoricFloraDefault", doSpawnsPrehistoricFloraDefault);
@@ -813,6 +867,11 @@ public class LepidodendronConfig {
         prop.setComment("Controls whether spreadable plants can spread at all (if set to false, bonemeal can still trigger a spread) [default: true]");
         spreadPlantsAtAll = prop.getBoolean();
         propOrder.add(prop.getName());
+
+        propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "extractionSpeed", extractionSpeed);
+        prop.setComment("How often a resin and latex extractor extracts some fluid from a tree, in ticks [default: 1200]");
+        extractionSpeed = prop.getInt();
 
 
 

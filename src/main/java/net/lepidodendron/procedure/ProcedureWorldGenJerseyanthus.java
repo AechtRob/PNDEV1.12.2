@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockJerseyanthusFlower;
 import net.lepidodendron.block.BlockJerseyanthusLeaves;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +16,7 @@ public class ProcedureWorldGenJerseyanthus extends ElementsLepidodendronMod.ModE
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenJerseyanthus!");
 			return;
@@ -98,7 +100,7 @@ public class ProcedureWorldGenJerseyanthus extends ElementsLepidodendronMod.ModE
 		if (world.getBlockState(pos).getBlock() == BlockJerseyanthusLeaves.block && world.rand.nextInt(3) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {
-			world.setBlockState(pos.up(), BlockJerseyanthusFlower.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockJerseyanthusFlower.block.getDefaultState(), 3);
 			TileEntity tileEntity = world.getTileEntity(pos.up());
 			if (tileEntity instanceof BlockJerseyanthusFlower.TileEntityCustom) {
 				tileEntity.getTileData().setBoolean("decayable", (true));

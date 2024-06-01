@@ -28,7 +28,7 @@ public class RenderDocodon extends RenderLiving<EntityPrehistoricFloraDocodon> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDocodon entity, float f) {
-        float scale = entity.getAgeScale()*getScaler(); //This is smaller than Docodon
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         //this.shadowSize = entity.width * scale * 0.125F;
     }

@@ -1,0 +1,46 @@
+{
+	"name": "Daihuoides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/daihuoides_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_daihuoides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_daihuoides",
+			"title": "Daihuoides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/daihuoides.png"],
+			"title": "D. jakobvintheri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daihuoides",
+			"type": "text",
+			"text": "Daihuoides is a ctenophore from the Devonian period of Miguasha, Canada. It is classified as a late surviving stem-ctenophore, which creates a roughly 140 million year ghost lineage between it and its older relatives in the Cambrian. This animal had a float like appearance, with comb rows and plates found within the soft body. Based on where it was found, it likely lived in brackish water environments."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_daihuoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_daihuoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_daihuoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_daihuoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_daihuoides"
+		}
+	]
+}

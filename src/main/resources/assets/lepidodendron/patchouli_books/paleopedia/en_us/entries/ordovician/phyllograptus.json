@@ -1,0 +1,47 @@
+{
+	"name": "Phyllograptus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phyllograptus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_phyllograptus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phyllograptus",
+			"title": "Phyllograptus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata $(br)>Graptolithina $(br)>Graptoloidea $(br)>Phyllograptidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Phyllograptus sp.",
+            "entity": "lepidodendron:prehistoric_flora_phyllograptus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phyllograptus",
+			"type": "text",
+			"text": "Phyllograptus is a graptolite known from all over the world during the Ordovician period. It was a leaf shaped colonial organism that could reach 3.5 cm in length. They were most likely planktonic suspension feeders and are very commonly used as index fossils due to their abundance."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phyllograptus"
+		}
+	]
+}

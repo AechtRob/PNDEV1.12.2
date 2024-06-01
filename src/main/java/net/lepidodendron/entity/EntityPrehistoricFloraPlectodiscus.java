@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -26,7 +27,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
-public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJellyfishBase {
+public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJellyfishBase implements ITrappableWater {
 
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
@@ -178,14 +179,7 @@ public class EntityPrehistoricFloraPlectodiscus extends EntityPrehistoricFloraJe
         super.onEntityUpdate();
     }
 
-    @Override
-    protected void collideWithEntity(Entity entityIn) {
-        super.collideWithEntity(entityIn);
-        if (entityIn instanceof EntityLivingBase && !(entityIn instanceof EntityPrehistoricFloraJellyfishBase)
-                && !(entityIn instanceof EntityMob)) {
-            entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-        }
-    }
+
 
     @Override
     protected Item getDropItem() {

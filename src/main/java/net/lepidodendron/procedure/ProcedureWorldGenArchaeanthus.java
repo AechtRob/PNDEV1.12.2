@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockArchaeanthusFlower;
 import net.lepidodendron.block.BlockArchaeanthusLeaves;
 import net.lepidodendron.block.BlockArchaeanthusLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -21,7 +23,7 @@ public class ProcedureWorldGenArchaeanthus extends ElementsLepidodendronMod.ModE
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap < String, Object > dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenArchaeanthus!");
 			return;
@@ -146,7 +148,7 @@ public class ProcedureWorldGenArchaeanthus extends ElementsLepidodendronMod.ModE
 	public static void addFlower(World world, BlockPos pos) {
 
 		if ((world.getBlockState(pos).getBlock() == BlockArchaeanthusLeaves.block) && (Math.random() > 0.4) && world.isAirBlock(pos.down())) {
-			world.setBlockState(pos.down(), BlockArchaeanthusFlower.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.down(), BlockArchaeanthusFlower.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 			if (!world.isRemote) {
 				BlockPos _bp = pos.down();
 				TileEntity _tileEntity = world.getTileEntity(_bp);

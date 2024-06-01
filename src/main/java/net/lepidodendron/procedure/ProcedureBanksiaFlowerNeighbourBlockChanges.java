@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockBanksiaLog1;
 import net.lepidodendron.block.BlockBanksiaLog2;
@@ -15,7 +16,7 @@ public class ProcedureBanksiaFlowerNeighbourBlockChanges extends ElementsLepidod
 		super(instance, 738);
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure BanksiaFlowerNeighbourBlockChanges!");
 			return;

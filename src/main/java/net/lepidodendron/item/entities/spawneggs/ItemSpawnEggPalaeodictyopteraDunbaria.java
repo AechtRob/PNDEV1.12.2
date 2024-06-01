@@ -68,10 +68,10 @@ public class ItemSpawnEggPalaeodictyopteraDunbaria extends ElementsLepidodendron
 			return "early Permian";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

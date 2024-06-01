@@ -389,17 +389,42 @@ public class ModelOphiacodon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.ophiacodon.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.lower_jaw.rotateAngleX = (float) Math.toRadians(25);
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(ophiacodon, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.1F, 0.2F);
+        this.setRotateAngle(neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(front_body, -0.08F, 0.1F, 0.0F);
+        this.setRotateAngle(middle_body, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(back_body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, -0.3F, 0.0F);
+        this.setRotateAngle(lower_jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(left_upper_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_lower_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_paw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_upper_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_lower_arm, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_paw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_thigh, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_shin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(left_foot, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_thigh, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_shin, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(right_foot, 0.0F, 0.0F, 0.0F);
+        this.ophiacodon.offsetY = -0.01F;
+        this.ophiacodon.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

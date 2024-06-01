@@ -1,5 +1,6 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockGlossopterisTreeLeaves;
 import net.minecraft.tileentity.TileEntity;
@@ -14,7 +15,7 @@ public class ProcedureGlossopterisStrobilusNeighbourBlockChanges extends Element
 		super(instance, 606);
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure GlossopterisStrobilusNeighbourBlockChanges!");
 			return;
@@ -35,7 +36,7 @@ public class ProcedureGlossopterisStrobilusNeighbourBlockChanges extends Element
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		if (((!((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == BlockGlossopterisTreeLeaves.block.getDefaultState()
+		if (((!((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == BlockGlossopterisTreeLeaves.block.getDefaultState()
 				.getBlock())) && ((new Object() {
 					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);

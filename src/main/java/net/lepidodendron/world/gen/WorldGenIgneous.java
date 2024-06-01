@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLavaRock;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -19,7 +20,7 @@ public class WorldGenIgneous extends WorldGenerator
     {
         super(false);
         //this.block = blockIn;
-        this.startRadius = (int) Math.round(Math.random() * 8);
+        this.startRadius = (int) Math.round(Math.random() * 4);
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -43,7 +44,7 @@ public class WorldGenIgneous extends WorldGenerator
 
                     if (material != Material.GRASS && material != Material.ROCK
                     	&& material != Material.GROUND && material != Material.SAND
-                        && position.getY() <= worldIn.getSeaLevel())
+                        && position.getY() <= Functions.getAdjustedSeaLevel(worldIn, position))
                     {
                         break label50;
                     }
@@ -65,32 +66,44 @@ public class WorldGenIgneous extends WorldGenerator
 
                     for (BlockPos blockpos : BlockPos.getAllInBox(position.add(-j, -1, -l), position.add(j, -1, l)))
                     {
-                        if (
-                            (
-                            (worldIn.getBlockState(blockpos).getMaterial() == Material.ROCK)
-                            || (worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND)
-                            )
-                            && (blockpos.distanceSq(position) <= (double)(f * f))
-                        )
-                        {
-                        	Block blockIn = BlockLavaRock.block;
-                        	if (Math.random() > 0.65) { //Stone
-                        		blockIn = Blocks.STONE.getStateFromMeta(0).getBlock();
-                        	}
-                        	if (Math.random() > 0.85) { //Granite
-                        		blockIn = Blocks.STONE.getStateFromMeta(1).getBlock();
-                        	}
-                        	if (Math.random() > 0.85) { //Andesite
-                        		blockIn = Blocks.STONE.getStateFromMeta(5).getBlock();
-                        	}
-                        	if (Math.random() > 0.85) { //Diorite
-                                blockIn = Blocks.STONE.getStateFromMeta(3).getBlock();
+                        if (worldIn.isBlockLoaded(blockpos)) {
+                            if (
+                                    (
+                                            (worldIn.getBlockState(blockpos).getMaterial() == Material.ROCK)
+                                                    || (worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND)
+                                    )
+                                            && (blockpos.distanceSq(position) <= (double) (f * f))
+                            ) {
+                                Block blockIn = BlockLavaRock.block;
+                                if (Math.random() > 0.65) { //Stone
+                                    blockIn = Blocks.STONE.getStateFromMeta(0).getBlock();
+                                }
+                                if (Math.random() > 0.85) { //Granite
+                                    blockIn = Blocks.STONE.getStateFromMeta(1).getBlock();
+                                }
+                                if (Math.random() > 0.85) { //Andesite
+                                    blockIn = Blocks.STONE.getStateFromMeta(5).getBlock();
+                                }
+                                if (Math.random() > 0.85) { //Diorite
+                                    blockIn = Blocks.STONE.getStateFromMeta(3).getBlock();
+                                }
+
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn.getDefaultState(), 16);
                             }
-                            worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 4);
                         }
                     }
 
-                    position = position.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+                    BlockPos startpos2 = position;
+                    for (int tries = 0; tries <= 100; tries ++) {
+                        startpos2 = position.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
+                        if (worldIn.isBlockLoaded(startpos2)) {
+                            break;
+                        }
+                        startpos2 = position.add(0, 0 - rand.nextInt(2), 0);
+                    }
+                    position = startpos2;
+
+                    //position = position.add(-(i1 + 1) + rand.nextInt(2 + i1 * 2), 0 - rand.nextInt(2), -(i1 + 1) + rand.nextInt(2 + i1 * 2));
                 }
 
                 return true;

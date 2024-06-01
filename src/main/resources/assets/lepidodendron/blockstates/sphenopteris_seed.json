@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:sphenopteris_seed_inventory"
+    },
+    "var=false": {"model": "lepidodendron:sphenopteris_seed"},
+    "var=true": {"model": "lepidodendron:sphenopteris_seed_var"}
+  }
+}

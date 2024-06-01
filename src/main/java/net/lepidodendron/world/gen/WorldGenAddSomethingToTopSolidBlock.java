@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -27,7 +28,7 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, IBlockState state, int offsetY, boolean canBeWater)
     {
-        BlockPos blockpos = position.add(rand.nextInt(16) - rand.nextInt(16), 0, rand.nextInt(16) - rand.nextInt(16));
+        BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), 0, rand.nextInt(8) - rand.nextInt(8));
         blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).add(0, 1 + offsetY, 0);
 
         if (blockpos.getY() > maxHeight || blockpos.getY() < minHeight) {
@@ -37,12 +38,12 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
         IBlockState checkState = worldIn.getBlockState(checkPos);
         if (checkState.isSideSolid(worldIn, checkPos, EnumFacing.UP)) {
             if (canBeWater) {
-                worldIn.setBlockState(blockpos.add(0, offsetY, 0), state, 4);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.add(0, offsetY, 0), state, 4);
                 return true;
             }
             else { //Must not be water:
                 if (worldIn.getBlockState(blockpos.add(0, offsetY, 0)).getMaterial() != Material.WATER) {
-                    worldIn.setBlockState(blockpos.add(0, offsetY, 0), state, 4);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.add(0, offsetY, 0), state, 4);
                     return true;
                 }
             }

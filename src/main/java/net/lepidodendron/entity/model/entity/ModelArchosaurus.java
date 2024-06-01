@@ -271,19 +271,46 @@ public class ModelArchosaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Archosaurus.render(f5 * 0.33f);
+        this.Archosaurus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Jaw.rotateAngleX = (float)Math.toRadians(30);
         this.Neck1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Archosaurus, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body1, 0.18F, -0.05F, 0.0F);
+        this.setRotateAngle(Body2, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(upperBody, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(Neck1, 0.0F, 0.15F, 0.0F);
+        this.setRotateAngle(Neck2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tail3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(leftThigh, -0.3F, -0.2F, -0.3F);
+        this.setRotateAngle(leftTibia, 0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(leftFoot, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightThigh, 0.3F, 0.2F, 0.3F);
+        this.setRotateAngle(rightTibia, 1.0F, 0.2F, -0.3F);
+        this.setRotateAngle(rightFoot, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBicep, 0.5F, 0.2F, -0.3F);
+        this.setRotateAngle(leftForearm, 0.2F, 0.2F, 0.3F);
+        this.setRotateAngle(leftHand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBicep, -0.2F, -0.2F, 0.3F);
+        this.setRotateAngle(rightForearm, -0.2F, 0.0F, -0.3F);
+        this.setRotateAngle(rightHand, 0.25F, 0.0F, 0.0F);
+        this.Archosaurus.offsetX = -0.03F;
+        this.Archosaurus.offsetY = -0.035F;
+        this.Archosaurus.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -294,7 +321,7 @@ public class ModelArchosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Archosaurus.offsetY = 1.00F;
+        //this.Archosaurus.offsetY = 1.00F;
 
         EntityPrehistoricFloraArchosaurus Archosaurus = (EntityPrehistoricFloraArchosaurus) e;
         float masterSpeed = Archosaurus.getTravelSpeed();

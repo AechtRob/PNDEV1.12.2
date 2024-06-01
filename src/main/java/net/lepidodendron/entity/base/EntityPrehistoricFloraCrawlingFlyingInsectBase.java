@@ -7,7 +7,10 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraTitanoptera;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraCrawlingFlyingInsectBaseAI;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
+import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
+import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
@@ -60,9 +63,9 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraCrawlingFlyingInsectBase.class, DataSerializers.VARINT);
-    private int inPFLove;
-    private boolean laying;
-    private EntityItem eatTarget;
+    public int inPFLove;
+    public boolean laying;
+    public EntityItem eatTarget;
 
     public EntityPrehistoricFloraCrawlingFlyingInsectBase(World world) {
         super(world);
@@ -75,6 +78,11 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.chainBuffer = new ChainBuffer();
         }
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    @Override
+    public float getEyeHeight() {
+        return 0.15F;
     }
 
     public void eatItem(ItemStack stack) {
@@ -436,7 +444,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             float f = this.width;
             this.width = width;
             this.height = height;
-            if (this.width < f) {
+            if (this.width != f) {
                 double d0 = (double) width / 2.0D;
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }

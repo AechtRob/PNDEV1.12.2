@@ -6,13 +6,9 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
-import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
-import net.lepidodendron.entity.util.EnumCreatureAttributePN;
-import net.lepidodendron.entity.util.IPrehistoricDiet;
-import net.lepidodendron.entity.util.ShoalingHelper;
+import net.lepidodendron.entity.util.*;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.Block;
@@ -65,8 +61,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ISCURIOUSWALKING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
+    private static final DataParameter<Boolean> BABIES = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> ISBABY = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
@@ -81,18 +81,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
     public Animation MAKE_NEST_ANIMATION;
+    public static Animation HIDE_ANIMATION;
     private Animation currentAnimation;
-    private EntityPrehistoricFloraAgeableBase shoalLeader;
-    private int inPFLove;
+    public EntityPrehistoricFloraAgeableBase shoalLeader;
+    public int inPFLove;
     public int canGrow;
-    private boolean laying;
-    private EntityItem eatTarget;
-    private EntityLivingBase warnTarget;
-    private EntityLiving grappleTarget;
+    public boolean laying;
+    public float extraStepHeight = 0F;
+    public EntityItem eatTarget;
+    public EntityLivingBase warnTarget;
+    public EntityLiving grappleTarget;
     public boolean willGrapple;
-    private int alarmCooldown;
-    private int warnCooldown;
+    public int alarmCooldown;
+    public int warnCooldown;
     public int ticksExistedAnimated;
+    public boolean wasWarning;
+    public float getMaxTurnDistancePerTick;
+    public int homeCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -104,24 +109,63 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+        getMaxTurnDistancePerTick = 20.0F;
+    }
+
+    public void setgetMaxTurnDistancePerTick(float turn) {
+        this.getMaxTurnDistancePerTick = turn;
+    }
+
+    public float getgetMaxTurnDistancePerTick() {
+        if (this.getIsFast() || this.getLaying() || this.isInLove()) {
+            return 20.0F;
+        }
+        if (!this.getNavigator().noPath()) {
+            if (this.getDistance(
+                    this.getNavigator().getPath().getFinalPathPoint().x,
+                    this.posY,
+                    this.getNavigator().getPath().getFinalPathPoint().z)
+                < this.width * 1.5) {
+                return 20.0F;
+            }
+        }
+        return this.getMaxTurnDistancePerTick;
     }
 
     public int warnDistance() {
         return 16;
     }
 
+    /** Set to true if the mob needs to go into sneak AI mode if you hit it oe on a warn AI
+     * When false it only does the sneak AI when in "standard" hunting mode
+     *
+     * @return
+     */
+    public boolean sneakOnRevenge() {
+        return false;
+    }
+
     public void playStepSoundPublic() {
+        if (this.width < 1.5F) {
+            return;
+        }
         Block blockIn = this.world.getBlockState(this.getPosition().down()).getBlock();
         BlockPos pos = this.getPosition();
 
         SoundType soundtype = null;
         SoundEvent soundevent = SoundEvents.ENTITY_POLAR_BEAR_STEP;
         SoundEvent soundeventSnow = SoundEvents.BLOCK_SNOW_STEP;
+        SoundEvent soundeventWater = SoundEvents.ENTITY_PLAYER_SWIM;
         if (this.world.getBlockState(pos).getBlock() == Blocks.SNOW_LAYER
             || this.world.getBlockState(pos.down()).getBlock() == Blocks.SNOW)
         {
             soundtype = Blocks.SNOW_LAYER.getSoundType();
             this.getEntityWorld().playSound(null, this.getPosition(), soundeventSnow, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
+        }
+        else if (this.world.getBlockState(pos).getBlock() == Blocks.WATER)
+        {
+            soundtype = Blocks.WATER.getSoundType();
+            this.getEntityWorld().playSound(null, this.getPosition(), soundeventWater, SoundCategory.BLOCKS, soundtype.getVolume() * 0.15F, soundtype.getPitch());
         }
         else if (!blockIn.getDefaultState().getMaterial().isLiquid())
         {
@@ -142,10 +186,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return this.getSneakRange() * 0.5F;
     }
 
+    public int getHomeCooldown() { return this.homeCooldown;}
+
     @Override
     public void onUpdate() {
         if (!this.updateBlocked) {
-            this.ticksExistedAnimated = this.ticksExistedAnimated + this.animSpeedAdder();
+            this.ticksExistedAnimated += this.animSpeedAdder();
         }
         super.onUpdate();
     }
@@ -216,7 +262,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @SideOnly(Side.CLIENT)
     public AxisAlignedBB getRenderBoundingBox()
     {
-        if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+        if (LepidodendronConfig.renderBigMobsProperly && (this.getMaxWidth() * this.getAgeScale()) > 1F) {
             return this.getEntityBoundingBox().grow(1.0, 0.25, 1.0);
         }
         return this.getEntityBoundingBox();
@@ -300,6 +346,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean placesNest() {return false;}
 
     public boolean isHomeableNest (World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
 
@@ -320,6 +369,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isMyNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
@@ -336,17 +388,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
-    public ResourceLocation getEggTexture() {
+    public ResourceLocation getEggTexture(@Nullable String variantIn) {
         String entityString = this.getEntityString();
+        ResourceLocation resourceLocation;
         entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-        ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        if (variantIn == null) {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        }
+        else {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
+        }
         if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
             return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
         }
         return resourceLocation;
     }
 
-    public int getEggType() { //0-3
+    public int getEggType(@Nullable String variantIn) { //0-3
         return 0; //Default to small eggs
     }
 
@@ -355,6 +413,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean isLayableNest(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         //is empty of eggs, and either belongs to me or is empty:
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
@@ -371,6 +432,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public boolean nestBlockMatch(World world, BlockPos pos) {
+        if (!world.isBlockLoaded(pos)) {
+            return false;
+        }
         if (this.isNestMound()) {
             boolean match = false;
             if (!match) {
@@ -490,10 +554,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISSNEAKING, false);
+        this.dataManager.register(ISCURIOUSWALKING, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
+        this.dataManager.register(JUVENILE, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
+        this.dataManager.register(BABIES, false);
+        this.dataManager.register(ISBABY, false);
         //this.setScaleForAge(false); //REMOVED!
     }
 
@@ -649,6 +717,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public abstract int getAdultAge();
 
+    public boolean getIsCuriousWalking() {
+        return this.dataManager.get(ISCURIOUSWALKING);
+    }
+
+    public void setIsCuriousWalking(boolean isCurious) {
+        this.dataManager.set(ISCURIOUSWALKING, isCurious);
+    }
+
     public boolean getIsFast() {
         return this.dataManager.get(ISFAST);
     }
@@ -705,6 +781,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos) {
+        summon(worldIn, mobToSpawn, nbtStr, xpos, ypos, zpos, false);
+    }
+
+    public static void summon(World worldIn, String mobToSpawn, String nbtStr, double xpos, double ypos, double zpos, boolean isBaby) {
 
         if (worldIn.isRemote) {
             return;
@@ -764,6 +844,26 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (entity instanceof EntityLiving) {
                 ((EntityLiving) entity).onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entity)), (IEntityLivingData) null);
                 entity.readFromNBT(nbttagcompound); //re-apply nbt from previously in case some was overwritten by the init event
+            }
+
+            //Babify mob if required:
+            if (isBaby) {
+                nbttagcompound.setInteger("AgeTicks", 0);
+                entity.readFromNBT(nbttagcompound);
+            }
+
+            //Force it to recognise a nest if applicable
+            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                EntityPrehistoricFloraAgeableBase ageable = (EntityPrehistoricFloraAgeableBase) entity;
+                if (ageable.isHomeableNest(worldIn, ageable.getPosition())) {
+                    ageable.setNestLocation(ageable.getPosition());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down())) {
+                    ageable.setNestLocation(ageable.getPosition().down());
+                }
+                else if (ageable.isHomeableNest(worldIn, ageable.getPosition().down(2))) {
+                    ageable.setNestLocation(ageable.getPosition().down(2));
+                }
             }
 
             //Exceptions for variants:
@@ -844,7 +944,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         //System.err.println("AgeScale: " + this.getAgeScale());
         //System.err.println("width: " + (this.getAgeScale() * this.maxWidth));
         //System.err.println("height: " + (this.getAgeScale() * this.maxHeight));
-        this.setSizer(this.getAgeScale() * this.maxWidth, this.getAgeScale() * this.maxHeight);
+        this.setSizer(this.getAgeScale() * this.getMaxWidth(), this.getAgeScale() * this.getMaxHeight());
+    }
+
+    public float getMaxWidth() {
+        return this.maxWidth;
+    }
+
+    public float getMaxHeight() {
+        return this.maxHeight;
     }
 
     //Taken from the Entity class, not the EntityAgeable class
@@ -855,11 +963,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             float f = this.width;
             this.width = width;
             this.height = height;
-            if (this.width < f) {
+            if (this.width != f) {
                 double d0 = (double) width / 2.0D;
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
         }
+        this.stepHeight = 1F + ((this.extraStepHeight) * this.getAgeScale());
     }
 
     public float getAgeScale() {
@@ -867,7 +976,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.getAgeTicks() >= this.getAdultAge()) {
             return 1F;
         }
-        return Math.max((this.minWidth/this.maxWidth), (step * (float)this.getAgeTicks()));
+        return Math.max((this.minWidth/this.getMaxWidth()), (step * (float)this.getAgeTicks()));
     }
 
     //@Override
@@ -883,6 +992,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
+        compound.setInteger("homeCooldown", this.homeCooldown);
+        compound.setBoolean("juvenile", this.getJuvenile());
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
             compound.setInteger("PosX", this.getNestLocation().getX());
@@ -903,6 +1014,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.inPFLove = compound.getInteger("InPFLove");
         this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
+        this.homeCooldown = compound.getInteger("homeCooldown");
+        this.setJuvenile(compound.getBoolean("juvenile"));
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
@@ -912,6 +1025,31 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         } else {
             this.dataManager.set(NEST_BLOCK_POS, Optional.absent());
         }
+    }
+
+    public void setJuvenile(boolean val)
+    {
+        this.dataManager.set(JUVENILE, val);
+    }
+
+    public boolean getJuvenile() {
+        return this.dataManager.get(JUVENILE);
+    }
+
+    public boolean getBabies() {
+        return this.dataManager.get(BABIES);
+    }
+
+    public void setBabies(boolean babies) {
+        this.dataManager.set(BABIES, babies);
+    }
+
+    public boolean getIsBaby() {
+        return this.dataManager.get(ISBABY);
+    }
+
+    public void setIsBaby(boolean babies) {
+        this.dataManager.set(ISBABY, babies);
     }
 
     @Override
@@ -991,8 +1129,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         this.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase)this).HURT_ANIMATION);
                     }
+                    else if (this instanceof EntityPrehistoricFloraLandWadingBase) {
+                        this.setAnimation(((EntityPrehistoricFloraLandWadingBase)this).HURT_ANIMATION);
+                    }
                     else if (this instanceof EntityPrehistoricFloraPanguraptor) {
                         this.setAnimation(((EntityPrehistoricFloraPanguraptor)this).HURT_ANIMATION);
+                    }
+                    else if (this instanceof EntityPrehistoricFloraGuanlong) {
+                        this.setAnimation(((EntityPrehistoricFloraGuanlong)this).HURT_ANIMATION);
+                    }
+                    else if (this instanceof EntityPrehistoricFloraProceratosaurus) {
+                        this.setAnimation(((EntityPrehistoricFloraProceratosaurus)this).HURT_ANIMATION);
                     }
                     else {
                         this.setAnimation(ROAR_ANIMATION);
@@ -1062,9 +1209,28 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.renderYawOffset = this.rotationYaw;
 
         if (!world.isRemote) {
+            double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
+            double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
+            double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
+            if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+                if (!this.getJuvenile()) {
+                    this.setJuvenile(true);
+                }
+            }
+            else if (this.getJuvenile()) {
+                this.setJuvenile(false);
+            }
+        }
+
+        if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
                 if (this.getAttackTarget().isDead) {
                     this.setAttackTarget(null);
+                }
+                if (this.getAttackTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getAttackTarget()).isCreative()) {
+                        this.setAttackTarget(null);
+                    }
                 }
             }
             if (this.getEatTarget() != null) {
@@ -1072,12 +1238,45 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setEatTarget(null);
                 }
             }
-            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+            if (this.getWarnTarget() != null) {
+                if (this.getWarnTarget().isDead) {
+                    this.setWarnTarget(null);
+                }
+                if (this.getWarnTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getWarnTarget()).isCreative()) {
+                        this.setWarnTarget(null);
+                    }
+                }
+                if ((!(this.getWarnCooldown() > 0)) && this.getAttackTarget() == null) {
+                    this.setWarnTarget(null);
+                }
+            }
+            if (this.getRevengeTarget() != null) {
+                if (this.getRevengeTarget().isDead) {
+                    this.setRevengeTarget(null);
+                }
+                if (this.getRevengeTarget() instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.getRevengeTarget()).isCreative()) {
+                        this.setRevengeTarget(null);
+                    }
+                }
+            }
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & (this.panics() || this.sneakOnRevenge())) || (this.isBurning() & this.panics()));
 
-            if (this.getSneakRange() > 0 && this.getIsFast() && this.getAttackTarget() != null && (!this.getOneHit())) {
+            if (this.getSneakRange() > 0 && this.getIsFast()
+                    && (this.getAttackTarget() != null || (this.getRevengeTarget() != null && this.sneakOnRevenge()))
+                    && ((!this.getOneHit()) || this.sneakOnRevenge())
+            ) {
                 //If this is hunting and is not close enough, sneak up:
-                float distEntity = this.getDistancePrey(this.getAttackTarget());
-                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange() * 1.5D)) {
+
+                float distEntity;
+                if (this.getAttackTarget() != null) {
+                    distEntity = this.getDistancePrey(this.getAttackTarget());
+                }
+                else {
+                    distEntity = this.getDistancePrey(this.getRevengeTarget());
+                }
+                if (distEntity >= this.getUnSneakRange() && distEntity <= (this.getSneakRange())) {
                     this.setIsSneaking(true);
                 }
                 if (this.getIsSneaking() &&
@@ -1090,8 +1289,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setIsSneaking(false);
             }
 
-            if ((!this.getIsFast()) || this.getAttackTarget() == this.getRevengeTarget() || this.getOneHit()) {
-                this.setSneaking(false);
+            if ((!this.getIsFast())
+                    || (this.getAttackTarget() == this.getRevengeTarget() && !this.sneakOnRevenge())
+                    || (this.getOneHit() && !this.sneakOnRevenge())
+            ) {
+                this.setIsSneaking(false);
             }
 
         }
@@ -1126,6 +1328,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);
+            }
+        }
+
+        if (this.homeCooldown > 0) {
+            this.homeCooldown -= rand.nextInt(3) + 1;
+        }
+        if (this.homeCooldown < 0) {
+            this.homeCooldown = 0;
+        }
+
+        if ((!this.world.isRemote) && this.getNestLocation() != null) {
+            if (this.world.isBlockLoaded(this.getNestLocation())) {
+                if (this.isMyNest(this.world, this.getNestLocation())) {
+                    if (this.getNestLocation().distanceSq(this.posX, this.posY, this.posZ) <= 9) {
+                        this.homeCooldown = 12000; //~5 game minutes of non-tethered movement (note the decrements are not in 1s)
+                    }
+                }
             }
         }
     }
@@ -1174,6 +1393,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Nullable
     public SoundEvent getAmbientSoundPublic() {
         return this.getAmbientSound();
+    }
+
+    @Override
+    protected float getSoundPitch()
+    {
+        float pitchAdder = (1F - this.getAgeScale()) * 300F * (this.getMaxWidth() - this.minWidth);
+        return ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F) + 1.0F + pitchAdder;
     }
 
     public void onEntityUpdate()
@@ -1231,6 +1457,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 //            this.warnCooldown --;
 //        }
 
+//        if ((!world.isRemote) && this.getAttackTarget() != null) {
+//            this.faceEntity(this.getAttackTarget(), 10, 10);
+//        }
+//        if ((!world.isRemote) && this.getRevengeTarget() != null) {
+//            this.faceEntity(this.getRevengeTarget(), 10, 10);
+//        }
+
         if (this.getWarnTarget() != null && (!world.isRemote) && this.getAttackTarget() == null) {
             if (this.warnCooldown > 0) {
                 this.warnCooldown --;
@@ -1241,14 +1474,33 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 if (this.getDistance(this.getWarnTarget()) <= this.warnDistance()) {
-                    this.setAttackTarget(this.getWarnTarget());
-                    this.setOneHit(true);
-                    this.setWarnCooldown(0);
+                    if (this instanceof IWarnOnly) { //They do nothing
+                        this.setWarnTarget(null);
+                        this.setWarnCooldown(0);
+                    }
+                    else if (this instanceof IBluffer) { //They panic instead
+                        this.setRevengeTarget(this.getWarnTarget());
+                        this.setWarnCooldown(0);
+                    }
+                    else { //They attack
+                        this.setAttackTarget(this.getWarnTarget());
+                        if (this instanceof IWarnOnlyButHit) { //These only attack if you are next to them
+                            this.wasWarning = true;
+                        }
+                        this.setOneHit(true);
+                        this.setWarnCooldown(0);
+                    }
                 }
                 else {
                     this.setWarnTarget(null);
                     this.setWarnCooldown(0);
                 }
+            }
+        }
+
+        if (this.getAttackTarget() != null && this.wasWarning) {
+            if (this.getDistance(this.getAttackTarget()) >= this.warnDistance()) {
+                this.setAttackTarget(null);
             }
         }
 
@@ -1271,24 +1523,152 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.setGrowingAge(0); //Resetting vanilla methods which we don't use
         }
 
+        //Ageing routine, every 100 ticks (once per five seconds)
         int i = this.getAgeTicks();
+        boolean didAge = false;
         //Do not grow entities which are in cages, etc:
         Block blockIn = world.getBlockState(this.getPosition()).getBlock();
+        boolean wasAlreadyAdult = i >= this.getAdultAge();
         if (this.isEntityAlive()
                 && blockIn != BlockCageSmall.block
                 && blockIn != BlockGlassJar.block
                 && blockIn != BlockTrapAirTop.block
                 && blockIn != BlockTrapGround.block
                 && blockIn != BlockTrapWater.block
-                && !this.world.isRemote)
+                && (!this.world.isRemote)
+                && this.getTicks() % 100 == 0)
         {
-            ++i;
+            i = i + 100;
             //throttle at limit:
-            if (i > this.getAdultAge()) {i = this.getAdultAge();}
+            if (i > this.getAdultAge()) {
+                i = this.getAdultAge();
+            }
             this.setAgeTicks(i);
+            didAge = true;
         }
 
-        this.setScaleForAge(false);
+        if (didAge && !wasAlreadyAdult) {
+            //Age the mob:
+            this.setScaleForAge(false);
+            //Check for collisions:
+            BlockPos n = new BlockPos(this.posX, this.posY, this.posZ - (this.width/2));
+            BlockPos e = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ);
+            BlockPos s = new BlockPos(this.posX, this.posY, this.posZ + (this.width/2));
+            BlockPos w = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ);
+            BlockPos ne = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ - (this.width/2));
+            BlockPos nw = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ - (this.width/2));
+            BlockPos se = new BlockPos(this.posX + (this.width/2), this.posY, this.posZ + (this.width/2));
+            BlockPos sw = new BlockPos(this.posX - (this.width/2), this.posY, this.posZ + (this.width/2));
+            if (this.isEntityInsideOpaqueBlock()
+                    || world.getBlockState(n).causesSuffocation()
+                    || world.getBlockState(e).causesSuffocation()
+                    || world.getBlockState(s).causesSuffocation()
+                    || world.getBlockState(w).causesSuffocation()
+                    || world.getBlockState(ne).causesSuffocation()
+                    || world.getBlockState(nw).causesSuffocation()
+                    || world.getBlockState(se).causesSuffocation()
+                    || world.getBlockState(sw).causesSuffocation()
+            ) {
+                //Move the mob out from its collision if possible:
+                //Check each vertex:
+                boolean nClear = false;
+                boolean eClear = false;
+                boolean sClear = false;
+                boolean wClear = false;
+                boolean neClear = false;
+                boolean nwClear = false;
+                boolean seClear = false;
+                boolean swClear = false;
+                if (!world.getBlockState(n).causesSuffocation()) {
+                    nClear = true;
+                }
+                if (!world.getBlockState(e).causesSuffocation()) {
+                    eClear = true;
+                }
+                if (!world.getBlockState(s).causesSuffocation()) {
+                    sClear = true;
+                }
+                if (!world.getBlockState(w).causesSuffocation()) {
+                    wClear = true;
+                }
+                if (!world.getBlockState(ne).causesSuffocation()) {
+                    neClear = true;
+                }
+                if (!world.getBlockState(nw).causesSuffocation()) {
+                    nwClear = true;
+                }
+                if (!world.getBlockState(se).causesSuffocation()) {
+                    seClear = true;
+                }
+                if (!world.getBlockState(sw).causesSuffocation()) {
+                    swClear = true;
+                }
+                if (neClear || nwClear || seClear || swClear || nClear|| eClear|| sClear|| wClear) {
+                    boolean moved = false;
+                    while (!moved) {
+                        int m = getRNG().nextInt(8);
+                        switch (m) {
+                            case 0: default:
+                                if (neClear) {
+                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), ne.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 1:
+                                if (nwClear) {
+                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), nw.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 2:
+                                if (seClear) {
+                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), se.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 3:
+                                if (swClear) {
+                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), sw.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 4:
+                                if (nClear) {
+                                    this.setLocationAndAngles(this.posX, n.getY(), this.posZ - (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 5:
+                                if (eClear) {
+                                    this.setLocationAndAngles(this.posX + (rand.nextFloat()/10.0F), e.getY(), this.posZ, this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 6:
+                                if (sClear) {
+                                    this.setLocationAndAngles(this.posX, s.getY(), this.posZ + (rand.nextFloat()/10.0F), this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                            case 7:
+                                if (wClear) {
+                                    this.setLocationAndAngles(this.posX - (rand.nextFloat()/10.0F), w.getY(), this.posZ, this.rotationYaw, this.rotationPitch);
+                                    moved = true;
+                                }
+                                break;
+
+                        }
+                    }
+                }
+            }
+        }
 
         double oldHealthMax = this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue();
         float oldHealth = this.getHealth();
@@ -1364,7 +1744,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -47 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
@@ -1403,7 +1783,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setAnimation(LAY_ANIMATION);
                 //}
             }
-            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -30 && this.getTicks() < 0) {
+            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -47 && this.getTicks() < 0) {
                 //Is stationary for egg-laying and this is a totten-log lay
                 //System.err.println("Laying an egg in it");
 
@@ -1424,7 +1804,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
     }
 
-    public static String getEntityId(Entity entity) {
+    public String getEntityId(Entity entity) {
         String mobid = "";
         net.minecraftforge.fml.common.registry.EntityEntry entry =
                 net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
@@ -1448,8 +1828,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             while (xct <= 4) {
                 zct = -4;
                 while (zct <= 4) {
-                    if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
-                        return false;
+                    if (world.isBlockLoaded(this.getPosition().add(xct, yct, zct))) {
+                        if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
+                            return false;
+                        }
                     }
                     zct += 1;
                 }
@@ -1536,7 +1918,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
                     this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
-                    if (this.motionX != 0 || this.motionZ != 0) {
+                    if (this.motionX != 0 || this.motionZ != 0 ) {
                         this.setIsMoving(true);
                     }
                     else {

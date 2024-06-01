@@ -284,18 +284,30 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.head.rotateAngleX = (float)Math.toRadians(-25);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(40);
+        this.neck.offsetY = -0.035F;
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(hip, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(upperbody, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        this.hip.offsetY = 0.084F;
+        this.hip.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

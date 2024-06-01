@@ -1,0 +1,21 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    "   "
+  ],
+  "key": {
+    "1": {
+      "item": "lepidodendron:zircon_lens"
+    },
+    "4": {
+      "item": "lepidodendron:redstone_component"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:time_researcher_laser_item",
+    "count": 1
+  }
+}

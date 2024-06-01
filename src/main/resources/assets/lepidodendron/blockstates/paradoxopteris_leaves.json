@@ -1,0 +1,54 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:paradoxopteris1"
+    },
+    "inventory": {
+      "model": "lepidodendron:paradoxopteris_leaves_inventory"
+    },
+    "facing=north": [
+        {"model": "lepidodendron:paradoxopteris1", "y": 270 },
+        {"model": "lepidodendron:paradoxopteris2", "y": 270 },
+        {"model": "lepidodendron:paradoxopteris3", "y": 270 },
+        {"model": "lepidodendron:paradoxopteris4", "y": 270 },
+        {"model": "lepidodendron:paradoxopteris5", "y": 270 },
+        {"model": "lepidodendron:paradoxopteris6", "y": 270 }
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:paradoxopteris1" },
+      {"model": "lepidodendron:paradoxopteris2" },
+      {"model": "lepidodendron:paradoxopteris3" },
+      {"model": "lepidodendron:paradoxopteris4" },
+      {"model": "lepidodendron:paradoxopteris5" },
+      {"model": "lepidodendron:paradoxopteris6" }
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:paradoxopteris1", "y": 90 },
+      {"model": "lepidodendron:paradoxopteris2", "y": 90 },
+      {"model": "lepidodendron:paradoxopteris3", "y": 90 },
+      {"model": "lepidodendron:paradoxopteris4", "y": 90 },
+      {"model": "lepidodendron:paradoxopteris5", "y": 90 },
+      {"model": "lepidodendron:paradoxopteris6", "y": 90 }
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:paradoxopteris1", "y": 180 },
+      {"model": "lepidodendron:paradoxopteris2", "y": 180 },
+      {"model": "lepidodendron:paradoxopteris3", "y": 180 },
+      {"model": "lepidodendron:paradoxopteris4", "y": 180 },
+      {"model": "lepidodendron:paradoxopteris5", "y": 180 },
+      {"model": "lepidodendron:paradoxopteris6", "y": 180 }
+    ],
+  "facing=up": [
+    {"model": "lepidodendron:paradoxopteris_shoot"},
+    {"model": "lepidodendron:paradoxopteris_shoot", "y": 90 },
+    {"model": "lepidodendron:paradoxopteris_shoot", "y": 180 },
+    {"model": "lepidodendron:paradoxopteris_shoot", "y": 270 }
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:paradoxopteris_shoot", "x": 180 },
+      {"model": "lepidodendron:paradoxopteris_shoot", "x": 180, "y": 90 },
+      {"model": "lepidodendron:paradoxopteris_shoot", "x": 180, "y": 180 },
+      {"model": "lepidodendron:paradoxopteris_shoot", "x": 180, "y": 270 }
+    ]
+  }
+}

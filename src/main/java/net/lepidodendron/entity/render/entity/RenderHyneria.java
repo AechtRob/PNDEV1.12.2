@@ -15,6 +15,8 @@ public class RenderHyneria extends RenderLiving<EntityPrehistoricFloraHyneria> {
         super(mgr, new ModelHyneria(), 1.0f);
     }
 
+    public static float getScaler() {return 0.342F * 0.680F * 1.9F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHyneria entity) {
         return RenderHyneria.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderHyneria extends RenderLiving<EntityPrehistoricFloraHyneria> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHyneria entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

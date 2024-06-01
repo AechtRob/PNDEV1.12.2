@@ -1,10 +1,12 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockGunneraLeaves;
 import net.lepidodendron.block.BlockGunneraSapling;
 import net.lepidodendron.block.BlockGunneraShoot;
 import net.lepidodendron.block.BlockGunneraShootFlower;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -23,7 +25,7 @@ public class ProcedureWorldGenGunnera extends ElementsLepidodendronMod.ModElemen
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenGunnera!");
 			return;
@@ -224,34 +226,34 @@ public class ProcedureWorldGenGunnera extends ElementsLepidodendronMod.ModElemen
 
 	public static void setShoot(World world, BlockPos pos) {
 		if (Math.random() > 0.9) {
-			world.setBlockState(pos, BlockGunneraShootFlower.block.getDefaultState());
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGunneraShootFlower.block.getDefaultState());
 		}
 		else {
-			world.setBlockState(pos, BlockGunneraShootFlower.block.getDefaultState());
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockGunneraShootFlower.block.getDefaultState());
 		}
 		if (Math.random() > 0.3) {
 			if (canPlaceLeaves(world, pos.up())) {
-				world.setBlockState(pos.up(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.UP));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.UP));
 			}
 		}
 		if (Math.random() > 0.1) {
 			if (canPlaceLeaves(world, pos.north())) {
-				world.setBlockState(pos.north(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.NORTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.NORTH));
 			}
 		}
 		if (Math.random() > 0.1) {
 			if (canPlaceLeaves(world, pos.east())) {
-				world.setBlockState(pos.east(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.EAST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.EAST));
 			}
 		}
 		if (Math.random() > 0.1) {
 			if (canPlaceLeaves(world, pos.south())) {
-				world.setBlockState(pos.south(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.SOUTH));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.SOUTH));
 			}
 		}
 		if (Math.random() > 0.1) {
 			if (canPlaceLeaves(world, pos.west())) {
-				world.setBlockState(pos.west(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.WEST));
+				Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockGunneraLeaves.block.getDefaultState().withProperty(BlockGunneraLeaves.BlockCustom.FACING, EnumFacing.WEST));
 			}
 		}
 	}

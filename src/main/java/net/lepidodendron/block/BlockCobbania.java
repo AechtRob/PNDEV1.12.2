@@ -69,7 +69,7 @@ public class BlockCobbania extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadCobbania) {
+			if (LepidodendronConfigPlants.spreadCobbania && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

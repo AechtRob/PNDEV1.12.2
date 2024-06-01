@@ -70,7 +70,7 @@ public class BlockZosterophyllumSpore extends ElementsLepidodendronMod.ModElemen
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadZosterophyllum) {
+			if (LepidodendronConfigPlants.spreadZosterophyllum && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

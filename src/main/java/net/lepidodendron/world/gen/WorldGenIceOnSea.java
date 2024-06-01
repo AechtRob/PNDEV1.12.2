@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -26,8 +27,8 @@ public class WorldGenIceOnSea extends WorldGenerator
             	)
             )
             {
-                //worldIn.setBlockState(blockpos, Blocks.ICE.getStateFromMeta(0), 2);
-                worldIn.setBlockState(blockpos, Blocks.PACKED_ICE.getDefaultState(), 2);
+                //Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.ICE.getStateFromMeta(0), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.PACKED_ICE.getDefaultState(), 2);
                 flag = true;
             }
         }

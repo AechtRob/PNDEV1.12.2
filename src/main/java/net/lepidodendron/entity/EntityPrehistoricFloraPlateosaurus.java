@@ -5,21 +5,25 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderPlateosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -39,13 +43,12 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
+	//private int inPFLove;
 	public Animation STAND_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	public Animation NOISE2_ANIMATION;
@@ -84,8 +87,9 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		this.standCooldown = rand.nextInt(2000);
 		return livingdata;
 	}
+
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 
@@ -191,7 +195,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		//if (this.getAnimation() == STAND_ANIMATION) {
 		//	return 0.0F; //Is rearing
 		//}
-		return speedBase;
+		return speedBase * 1.15F;
 	}
 
 	@Override
@@ -213,7 +217,6 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
@@ -222,12 +225,10 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
 		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
@@ -257,8 +258,6 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -296,17 +295,10 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
-	}
 	@Override
 	public boolean isDrinking()
 	{
-		if (getJuvenile()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
@@ -380,7 +372,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean isGrazing()
 	{
-		if (getJuvenile() || !this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
@@ -484,28 +476,6 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
-
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
@@ -567,7 +537,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		}
 		else {
 			//random idle animations
-			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				int next = rand.nextInt(10);
 				//if (next < 5) {
@@ -577,7 +547,11 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 				//}
 				this.standCooldown = 2000;
 			}
-			if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+//			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+//				this.standCooldown = 2000;
+//				this.setAnimation(NO_ANIMATION);
+//			}
+			if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}
@@ -622,13 +596,37 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PLATEOSAURUS;
+	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.GLACIALISAURUS_LOOT_YOUNG;
+			return LepidodendronMod.PLATEOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.GLACIALISAURUS_LOOT;
+		return LepidodendronMod.PLATEOSAURUS_LOOT;
 	}
-
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 1.4;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 1.0;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -1.2;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderPlateosaurus.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelPlateosaurus;}
+	public static float getScaler(@Nullable String variant) {return RenderPlateosaurus.getScaler();}
 }

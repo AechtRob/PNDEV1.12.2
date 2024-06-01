@@ -90,7 +90,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genGreenLeafyAlgaeBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -112,6 +112,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				 ) {
 			biomeCriteria = true;
 		}
@@ -123,6 +124,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 2;
 		}
@@ -148,6 +150,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 24;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
 		)
 			multiplier = 48;
 

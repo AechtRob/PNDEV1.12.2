@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
@@ -125,17 +126,17 @@ public class BlockGlossopterisStrobilus extends ElementsLepidodendronMod.ModElem
 			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
 				case SOUTH :
 				default :
-					return new AxisAlignedBB(0.25D, 0.25D, 0D, 0.75D, 0.75D, 0.5D);
+					return new AxisAlignedBB(0.15D, 0.15D, 0D, 0.85D, 0.75D, 0.2D);
 				case NORTH :
-					return new AxisAlignedBB(0.25D, 0.25D, 1D, 0.75D, 0.75D, 0.5D);
+					return new AxisAlignedBB(0.15D, 0.15D, 1D, 0.85D, 0.75D, 0.7D);
 				case WEST :
-					return new AxisAlignedBB(1D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D);
+					return new AxisAlignedBB(1D, 0.15D, 0.15D, 0.7D, 0.75D, 0.85D);
 				case EAST :
-					return new AxisAlignedBB(0D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D);
+					return new AxisAlignedBB(0D, 0.15D, 0.15D, 0.3D, 0.75D, 0.85D);
 				case UP :
-					return new AxisAlignedBB(0.25D, 0D, 0.75D, 0.75D, 0.5D, 0.25D);
+					return new AxisAlignedBB(0.15D, 0D, 0.85D, 0.85D, 0.3D, 0.15D);
 				case DOWN :
-					return new AxisAlignedBB(0.25D, 1D, 0.75D, 0.75D, 0.5D, 0.25D);
+					return new AxisAlignedBB(0.15D, 1D, 0.85D, 0.85D, 0.7D, 0.15D);
 			}
 		}
 
@@ -224,7 +225,7 @@ public class BlockGlossopterisStrobilus extends ElementsLepidodendronMod.ModElem
 			int y = pos.getY();
 			int z = pos.getZ();
 			{
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
@@ -250,7 +251,7 @@ public class BlockGlossopterisStrobilus extends ElementsLepidodendronMod.ModElem
 			//	} else {
 			//	}
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);

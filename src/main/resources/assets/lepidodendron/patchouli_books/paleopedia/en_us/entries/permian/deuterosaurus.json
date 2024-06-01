@@ -1,0 +1,47 @@
+{
+	"name": "Deuterosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/deuterosaurus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_deuterosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_deuterosaurus",
+			"title": "Deuterosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida $(br)>Therapsida $(br)>Dinocephalia $(br)>Deuterosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. jubilaei",
+            "entity": "lepidodendron:prehistoric_flora_deuterosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_deuterosaurus",
+			"type": "text",
+			"text": "Deuterosaurus is a large dinocephalian synapsid from the Permian period of Russian Siberia. It has been interpreted as an omnivore due to its large canines, but short legs which may make it hard to chase prey. It may have engaged in headbutting, suggested by the thickened parts on the skull above the eyes and nose, for territorial displays or for mating."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_deuterosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_deuterosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_deuterosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_deuterosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_deuterosaurus"
+		}
+	]
+}

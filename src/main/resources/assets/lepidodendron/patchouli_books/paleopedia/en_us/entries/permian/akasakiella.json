@@ -1,0 +1,47 @@
+{
+	"name": "Akasakiella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/akasakiella_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_akasakiella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_akasakiella",
+			"title": "Akasakiella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Mollusca $(br)>Gastropoda $(br)>Caenogastropoda $(br)>Goniasmatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. yabei",
+            "entity": "lepidodendron:prehistoric_flora_akasakiella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_akasakiella",
+			"type": "text",
+			"text": "Akasakiella yabei is known from the Akasaka Limestone of Japan. It's shell can reach a staggering 40 cm in length, making it possibly the largest Permian gastropods ever reported. It was first discovered in 1943 and classified under the genus Murchinsonia. In 2012, thanks to Nützel and Nakazawa, it was designated as Akasakiella. Akasakiella is part of the family of Goniasmatidae which thrived in diversity before the Great Dying. Although they were able to survive into the Triassic, they eventually would shortly fall extinct as well."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_akasakiella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_akasakiella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_akasakiella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_akasakiella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_akasakiella"
+		}
+	]
+}

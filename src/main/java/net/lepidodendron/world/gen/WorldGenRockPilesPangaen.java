@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCoarseSandyDirtPangaean;
 import net.lepidodendron.block.BlockSandstonePangaean;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -50,7 +51,7 @@ public class WorldGenRockPilesPangaen extends WorldGenerator
                     return false;
                 }
 
-                if (position.getY() <= 109 && position.getY() >= (worldIn.getSeaLevel() + 4)
+                if (position.getY() <= 109 && position.getY() >= (Functions.getAdjustedSeaLevel(worldIn, position) + 4)
                         && (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau")
                         || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_broken")
                         || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_canyons")
@@ -83,7 +84,7 @@ public class WorldGenRockPilesPangaen extends WorldGenerator
                         	if (Math.random() > 0.85) {
                         		blockIn = BlockCoarseSandyDirtPangaean.block;
                         	}
-                            worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 4);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
                         }
                     }
 

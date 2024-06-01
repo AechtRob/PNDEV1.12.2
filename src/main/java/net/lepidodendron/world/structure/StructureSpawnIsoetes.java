@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockIsoetes;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -156,7 +157,7 @@ public class StructureSpawnIsoetes extends ElementsLepidodendronMod.ModElement {
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockIsoetes.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockIsoetes.block.getDefaultState(), 3);
 					//System.err.println("Spawned " + i + " " + j + " " + k);
 				}
 

@@ -6,9 +6,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -33,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArchoblattinaInsect {
+public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArchoblattinaInsect implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	private int animationTick;
@@ -52,6 +55,19 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case CLATROTITAN: default:
+				return ModTriggers.CLICK_TITANOPTERA_CLATROTITAN;
+			case GIGATITAN:
+				return ModTriggers.CLICK_TITANOPTERA_GIGATITAN;
+			case MESOTITAN:
+				return ModTriggers.CLICK_TITANOPTERA_MESOTITAN;
+		}
 	}
 
 	@Override

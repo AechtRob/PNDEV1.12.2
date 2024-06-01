@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockClaytosmunda;
 import net.lepidodendron.block.BlockZamitesLeaves;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -31,11 +32,11 @@ public class WorldGenZamitesShoot extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(8) - rand.nextInt(8), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockClaytosmunda.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockClaytosmunda.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 {
-                    worldIn.setBlockState(blockpos, BlockZamitesLeaves.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockZamitesLeaves.block.getDefaultState(), 2);
                     flag = true;
                 }
             }
@@ -60,7 +61,7 @@ public class WorldGenZamitesShoot extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockZamitesLeaves.block.getDefaultState().withProperty(BlockZamitesLeaves.BlockCustom.FACING, EnumFacing.UP), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockZamitesLeaves.block.getDefaultState().withProperty(BlockZamitesLeaves.BlockCustom.FACING, EnumFacing.UP), 2);
                     flag = true;
                 }
             }

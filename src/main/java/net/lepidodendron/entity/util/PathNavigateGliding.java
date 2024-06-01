@@ -1,6 +1,6 @@
 package net.lepidodendron.entity.util;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraWeigeltisaurus;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.pathfinding.PathFinder;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class PathNavigateGliding extends PathNavigate
 {
-    public PathNavigateGliding(EntityPrehistoricFloraWeigeltisaurus entityIn, World worldIn)
+    public PathNavigateGliding(EntityPrehistoricFloraLandClimbingGlidingBase entityIn, World worldIn)
     {
         super(entityIn, worldIn);
     }
@@ -26,8 +26,8 @@ public class PathNavigateGliding extends PathNavigate
 
     protected boolean canNavigate()
     {
-        if (this.entity instanceof EntityPrehistoricFloraWeigeltisaurus) {
-            return ((EntityPrehistoricFloraWeigeltisaurus)this.entity).getIsFlying();
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingGlidingBase) {
+            return ((EntityPrehistoricFloraLandClimbingGlidingBase)this.entity).getIsFlying();
         }
         return false;
     }

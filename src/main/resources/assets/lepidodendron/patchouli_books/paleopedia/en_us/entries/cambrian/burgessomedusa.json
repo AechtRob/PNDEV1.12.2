@@ -1,0 +1,46 @@
+{
+	"name": "Burgessomedusa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/burgessomedusa_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_burgessomedusa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_burgessomedusa",
+			"title": "Burgessomedusa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria $(br)>Medusozoa"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/burgessomedusa.png"],
+			"title": "B. phasmiformis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_burgessomedusa",
+			"type": "text",
+			"text": "Burgessomedusa is a free swimming cnidarian from the Cambrian Burgess Shale of Canada. It had a bell like body, with about 90 small tentacles. Specimens reached about as large as 20 cm and was probably an active predator. It is considered to be the oldest unambiguous free swimming cnidarian. It was unlikely to have swam using jet propulsion."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_burgessomedusa"
+		}
+	]
+}

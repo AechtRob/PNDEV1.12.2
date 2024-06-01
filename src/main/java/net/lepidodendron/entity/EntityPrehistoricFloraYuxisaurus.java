@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderYuxisaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -33,22 +34,24 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	private int inPFLove;
+	//private int inPFLove;
 	public Animation HIDE_ANIMATION;
 
+	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
+	
 	public EntityPrehistoricFloraYuxisaurus(World world) {
 		super(world);
 		setSize(1.5F, 1F);
 		minWidth = 0.3F;
 		maxWidth = 1.5F;
 		maxHeight = 1F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 50.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -81,14 +84,14 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if (entityIn instanceof EntityPlayer) {
-			entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 	}
 
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
 		if (player.getHeldItem(hand).isEmpty()) {
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 		return super.processInteract(player, hand);
 	}
@@ -103,16 +106,18 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 		else {
 			result = super.attackEntityFrom(ds, i);
 		}
-		if (result && ds.getTrueSource() instanceof EntityLivingBase) {
+		if (result && ds.getTrueSource() instanceof EntityLivingBase && this.getAnimation() != HIDE_ANIMATION) {
 			this.setAnimation(HIDE_ANIMATION);
 		}
 
 		if (entityIn instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entityIn;
 			if (player.getHeldItem(getActiveHand()).isEmpty()) {
-				entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
-				this.setAnimation(HIDE_ANIMATION);
+				entityIn.attackEntityFrom(SPIKY, (float) 2);
 			}
+		}
+		if (ds.getTrueSource() instanceof EntityLivingBase && !(entityIn instanceof EntityPlayer)) {
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 
 		return result;
@@ -123,7 +128,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 0; //small
 	}
 
@@ -200,7 +205,7 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new LandWanderNestAI(this));
 		tasks.addTask(4, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(5, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
+		tasks.addTask(5, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -337,13 +342,6 @@ public class EntityPrehistoricFloraYuxisaurus extends EntityPrehistoricFloraLand
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			//this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();

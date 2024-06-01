@@ -59,8 +59,8 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
     public boolean shouldExecute()
     {
         if (this.entity instanceof EntityPrehistoricFloraLandBase) {
-            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.entity;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
                 return false;
             }
         }

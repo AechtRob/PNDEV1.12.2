@@ -338,7 +338,20 @@ public class ModelEunotosaurus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        resetToDefaultPose();
+        this.setRotateAngle(body, -0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.body.offsetY = 0.112F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

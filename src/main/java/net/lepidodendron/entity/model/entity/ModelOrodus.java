@@ -326,13 +326,10 @@ public class ModelOrodus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Orodus.render(0.025F);
+        this.Orodus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticFloor(float f) {
         this.Orodus.rotateAngleY = (float) Math.toRadians(70);
         this.Cephalon.rotateAngleY = (float) Math.toRadians(-12.5);
         this.Jaw.rotateAngleX = (float) Math.toRadians(16.5);
@@ -344,13 +341,12 @@ public class ModelOrodus extends AdvancedModelBase {
         this.Body7.rotateAngleY = (float) Math.toRadians(5);
         this.Body8.rotateAngleY = (float) Math.toRadians(-12.5);
         this.Body9.rotateAngleY = (float) Math.toRadians(-17.5);
-        this.Orodus.offsetX = -0.24F;
-        this.Orodus.offsetY = -0.1F;
+        this.Orodus.offsetX = -0.20F;
+        this.Orodus.offsetZ = 0.08F;
+        this.Orodus.offsetY = -0.45F;
         this.Orodus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -362,7 +358,7 @@ public class ModelOrodus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Orodus.offsetY = 0.75F;
+        this.Orodus.offsetZ = -0.35F;
 
         AdvancedModelRenderer[] fishTail = {this.Body4, this.Body5, this.Body6, this.Body7, this.Body8, this.Body9};
 
@@ -403,7 +399,7 @@ public class ModelOrodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Orodus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Orodus.offsetY = 1.1F;
+            this.Orodus.offsetY = 1.1F - 0.75F;
             this.bob(Orodus, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

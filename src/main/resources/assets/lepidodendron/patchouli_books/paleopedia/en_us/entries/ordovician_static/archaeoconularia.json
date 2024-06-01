@@ -1,0 +1,26 @@
+{
+	"name": "Archaeoconularia",
+	"read_by_default": true,
+	"icon": "lepidodendron:archaeoconularia",
+	"category": "lepidodendron:ordovician_static",
+	"turnin": "lepidodendron:pf_adv_book_archaeoconularia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeoconularia",
+			"title": "Archaeoconularia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Cnidaria $(br)>Conulariida $(br)>Conulariidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/archaeoconularia.png"],
+			"title": "A. insignis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeoconularia",
+			"type": "text",
+			"text": "Archaeoconularia is a conulariid organism from the Ordovician of Europe. It is the largest conulariid known, with specimens able to grow up to half a meter tall. As conulariids, they would have stuck to the substrate, using their tentacles, which poked out of their shells, to capture prey."
+		}
+	]
+}

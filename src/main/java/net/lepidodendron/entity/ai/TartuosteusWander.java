@@ -100,19 +100,22 @@ public class TartuosteusWander extends AnimationAINoAnimation<EntityPrehistoricF
         if (this.PrehistoricFloraTartuosteus.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraTartuosteus.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
-                Vec3d randPosVar = randPos;
-                //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraTartuosteus.getPosition().getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraTartuosteus.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTartuosteus.isDirectPathBetweenPoints(this.PrehistoricFloraTartuosteus.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                    if (this.PrehistoricFloraTartuosteus.isHungry()) {
-                        int ii = 0;
-                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTartuosteus.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.add(0,-ii,0);
-                            ii = ii + 1;
+                if (this.PrehistoricFloraTartuosteus.world.isBlockLoaded(new BlockPos(randPos))) {
+                    Vec3d randPosVar = randPos;
+
+                    //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraTartuosteus.getPosition().getY() + " " + randPos.getZ());
+                    if (this.PrehistoricFloraTartuosteus.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTartuosteus.isDirectPathBetweenPoints(this.PrehistoricFloraTartuosteus.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        if (this.PrehistoricFloraTartuosteus.isHungry()) {
+                            int ii = 0;
+                            while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTartuosteus.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                                randPosVar = randPos.add(0, -ii, 0);
+                                ii = ii + 1;
+                            }
+                            randPos = randPosVar;
                         }
-                        randPos = randPosVar;
-                    }
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

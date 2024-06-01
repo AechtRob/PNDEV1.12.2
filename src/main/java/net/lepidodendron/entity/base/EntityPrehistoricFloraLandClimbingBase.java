@@ -6,10 +6,13 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.util.MaterialLatex;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.init.MobEffects;
@@ -19,10 +22,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidBase;
@@ -42,7 +42,6 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     private static final DataParameter<EnumFacing> CLIMBINGFACING = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.FACING);
     private static final DataParameter<Integer> CLIMBINGCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> HEADBLOCKCOOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandClimbingBase.class, DataSerializers.VARINT);
-    private int inPFLove;
 
     public EntityPrehistoricFloraLandClimbingBase(World world) {
         super(world);
@@ -55,6 +54,16 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     }
 
     @Override
+    public void knockBack(Entity entityIn, float strength, double xRatio, double zRatio)
+    {
+        if (this.getIsClimbing()) {
+            //Is climbing, so do not apply knockback, it will instead just stop climbing:
+            return;
+        }
+        super.knockBack(entityIn, strength, xRatio, zRatio);
+    }
+
+    @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setIsClimbing(false);
@@ -64,6 +73,10 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         this.setClimbingCooldown(0);
         this.setHeadBlockCooldown(0);
         return livingdata;
+    }
+
+    public float getClimbSpeed() {
+        return 1.0F;
     }
 
     public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
@@ -86,6 +99,12 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
             || state.getBlock().isFullCube(state))
         {
             return true;
+        }
+        else if (state.getBlock() instanceof BlockSlab) {
+            return state.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.BOTTOM;
+        }
+        else if (state.getBlock() instanceof BlockStairs) {
+            return state.getValue(BlockStairs.FACING) == facing.getOpposite();
         }
         return false;
     }
@@ -230,6 +249,68 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
+        //Dont understand why these sometimes get inside blocks, but this just fixes it anyway....
+        if (ds == DamageSource.IN_WALL) {
+            if (this.getIsClimbing()) { //It thinks its climbing so push back in teh direction is climbing more realistically
+                if (!this.world.getBlockState(this.getPosition().offset(this.getClimbFacing())).causesSuffocation()) {
+                    int xOffset = 0;
+                    int zOffset = 0;
+                    if (this.getClimbFacing() == EnumFacing.NORTH) {
+                        zOffset = -1;
+                    }
+                    if (this.getClimbFacing() == EnumFacing.SOUTH) {
+                        zOffset = 1;
+                    }
+                    if (this.getClimbFacing() == EnumFacing.EAST) {
+                        xOffset = 1;
+                    }
+                    if (this.getClimbFacing() == EnumFacing.WEST) {
+                        xOffset = -1;
+                    }
+                    this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+                    return false;
+                }
+            } else if (!this.world.getBlockState(this.getPosition().offset(this.getAdjustedHorizontalFacing().getOpposite())).causesSuffocation()) {
+                //PUsh it back the direction it came from (so it doesnt phase through walls unintentionally)
+                int xOffset = 0;
+                int zOffset = 0;
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.NORTH) {
+                    zOffset = -1;
+                }
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.SOUTH) {
+                    zOffset = 1;
+                }
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.EAST) {
+                    xOffset = 1;
+                }
+                if (this.getAdjustedHorizontalFacing().getOpposite() == EnumFacing.WEST) {
+                    xOffset = -1;
+                }
+                this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+                return false;
+            } else { //Test horizontals as a last resort:
+                for (int ii = 0; ii <= 3; ii++) {
+                    if (!this.world.getBlockState(this.getPosition().offset(EnumFacing.byHorizontalIndex(ii))).causesSuffocation()) {
+                        int xOffset = 0;
+                        int zOffset = 0;
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.NORTH) {
+                            zOffset = -1;
+                        }
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.SOUTH) {
+                            zOffset = 1;
+                        }
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.EAST) {
+                            xOffset = 1;
+                        }
+                        if (EnumFacing.byHorizontalIndex(ii) == EnumFacing.WEST) {
+                            xOffset = -1;
+                        }
+                        this.setLocationAndAngles(this.posX + xOffset, this.posY, this.posZ + zOffset, this.rotationYaw, this.rotationPitch);
+                        return false;
+                    }
+                }
+            }
+        }
         if (ds == DamageSource.FALL) { //Immune to fall damage
             return false;
         }
@@ -264,11 +345,42 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
         if (!world.isRemote) {
 
+            if (this.inPFLove > 0 || this.getLaying())
+            {
+                setIsClimbing(false);
+                this.setStartingToClimb(false);
+                setClimbFacing(EnumFacing.DOWN);
+                this.getNavigator().clearPath();
+                this.setClimbingCooldown(this.getClimbCooldown());
+                this.setHeadCollided(false);
+            }
+
+
             if (this.getClimbingCooldown() > 0) {
                 this.setClimbingCooldown(this.getClimbingCooldown() - 1);
             }
             if (this.getHeadBlockCooldown() > 0) {
                 this.setHeadBlockCooldown(this.getHeadBlockCooldown() - rand.nextInt(20));
+            }
+
+            //Centre on a block:
+            if (this.getIsClimbing()) {
+                if (this.getClimbFacing() == EnumFacing.NORTH) {
+                    double offsetZ = (double)this.getPosition().getZ() + 1 - (this.width / 2F);
+                    this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
+                }
+                if (this.getClimbFacing() == EnumFacing.SOUTH) {
+                    double offsetZ = (double)this.getPosition().getZ() + (this.width / 2F);
+                    this.setPositionAndRotation(this.getPosition().getX() + 0.5, this.posY, offsetZ, this.rotationYaw, this.rotationPitch);
+                }
+                if (this.getClimbFacing() == EnumFacing.WEST) {
+                    double offsetX = (double)this.getPosition().getX() + 1 - (this.width / 2F);
+                    this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+                }
+                if (this.getClimbFacing() == EnumFacing.EAST) {
+                    double offsetX = (double)this.getPosition().getX() +  (this.width / 2F);
+                    this.setPositionAndRotation(offsetX, this.posY, this.getPosition().getZ() + 0.5, this.rotationYaw, this.rotationPitch);
+                }
             }
 
             IBlockState state = this.world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ));
@@ -279,6 +391,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                 && state.getMaterial() != MaterialLatex.LATEX
                 && (!(state.getBlock() instanceof BlockFluidBase))
                 && (!(state.getBlock() instanceof BlockLiquid))
+                && (world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()).getBlock().isPassable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()))
             )
             {
                 //Randomise the order of priority in checking, to deal with climbing at corners:
@@ -287,14 +400,14 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     case 0:
                     default: {
                         if (this.motionZ <=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH)) {
-                            this.motionZ = -0.2;
+                            this.motionZ = -this.getAISpeedLand() * 0.1;
                             this.faceBlock(this.getPosition().north(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
                             this.setStartingToClimb(false);
                         }
-                        if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH) && !this.getIsClimbing()) {
+                        if (this.collidedHorizontally && this.isColllidedDirection(EnumFacing.NORTH) && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).north(), EnumFacing.SOUTH) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.SOUTH);
                             this.faceBlock(this.getPosition().north(), 10f, 10F);
@@ -305,14 +418,14 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
                     case 1: {
                         if (this.motionZ >=0 && !this.collidedHorizontally && this.isBlockClimbable(world,new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH)) {
-                            this.motionZ = 0.2;
+                            this.motionZ = this.getAISpeedLand() * 0.1;
                             this.faceBlock(this.getPosition().south(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
                             this.setStartingToClimb(false);
                         }
-                        if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH) && !this.getIsClimbing()) {
+                        if (this.collidedHorizontally && this.isColllidedDirection(EnumFacing.SOUTH)  && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).south(), EnumFacing.NORTH) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.NORTH);
                             this.faceBlock(this.getPosition().south(), 10f, 10F);
@@ -323,14 +436,14 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
                     case 2: {
                         if (this.motionX >=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST)) {
-                            this.motionX = 0.2;
+                            this.motionX = this.getAISpeedLand() * 0.1;
                             this.faceBlock(this.getPosition().east(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
                             this.setStartingToClimb(false);
                         }
-                        if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST) && !this.getIsClimbing()) {
+                        if (this.collidedHorizontally && this.isColllidedDirection(EnumFacing.EAST)  && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).east(), EnumFacing.WEST) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.WEST);
                             this.faceBlock(this.getPosition().east(), 10f, 10F);
@@ -341,14 +454,14 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
                     case 3: {
                         if (this.motionX <=0 && !this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST)) {
-                            this.motionX = -0.2;
+                            this.motionX = -this.getAISpeedLand() * 0.1;
                             this.faceBlock(this.getPosition().west(), 10f, 10F);
                             this.setStartingToClimb(true);
                         }
                         else {
                             this.setStartingToClimb(false);
                         }
-                        if (this.collidedHorizontally && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST) && !this.getIsClimbing()) {
+                        if (this.collidedHorizontally && this.isColllidedDirection(EnumFacing.WEST)  && this.isBlockClimbable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).west(), EnumFacing.EAST) && !this.getIsClimbing()) {
                             this.setIsClimbing(true);
                             this.setClimbFacing(EnumFacing.EAST);
                             this.faceBlock(this.getPosition().west(), 10f, 10F);
@@ -422,16 +535,16 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
                     this.setHeadBlockCooldown(0);
                     //System.err.println("Uncollide at head 4");
                     if (facing == EnumFacing.NORTH) {
-                        this.motionZ = this.getAIMoveSpeed();
+                        this.motionZ = this.getAISpeedLand() * 0.2;
                     }
                     if (facing == EnumFacing.SOUTH) {
-                        this.motionZ = -this.getAIMoveSpeed();
+                        this.motionZ = -this.getAISpeedLand() * 0.2;
                     }
                     if (facing == EnumFacing.WEST) {
-                        this.motionX = this.getAIMoveSpeed();
+                        this.motionX = this.getAISpeedLand() * 0.2;
                     }
                     if (facing == EnumFacing.EAST) {
-                        this.motionX = -this.getAIMoveSpeed();
+                        this.motionX = -this.getAISpeedLand() * 0.2;
                     }
 
                 }
@@ -517,6 +630,64 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
         super.onLivingUpdate();
 
 
+    }
+
+    public boolean isColllidedDirection(EnumFacing facing) {
+        if (this.world.isRemote || (!this.collidedHorizontally)
+            || (!world.getBlockState(new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()).getBlock().isPassable(world, new BlockPos(this.posX, Math.floor(this.posY), this.posZ).up()))) {
+            return false;
+        }
+        if (this.getEntityBoundingBox() != null) {
+            double minVal = 0;
+            double maxVal = 0;
+            double minValBlock = 0;
+            double maxValBlock = 0;
+            AxisAlignedBB entityAABB = this.getEntityBoundingBox();
+            AxisAlignedBB blockAABB = new AxisAlignedBB(this.getPosition().offset(facing));
+            switch (facing.getIndex()) {
+                case 0: case 1: default: //Down+Up
+                    return false;
+
+                case 2: //North
+                    minVal = entityAABB.minZ;
+                    minValBlock = blockAABB.minZ;
+                    maxValBlock = blockAABB.maxZ;
+                    if (minVal >= minValBlock && minVal <= maxValBlock) {
+                        return true;
+                    }
+                    break;
+
+
+                case 3: //South
+                    maxVal = entityAABB.maxZ;
+                    minValBlock = blockAABB.minZ;
+                    maxValBlock = blockAABB.maxZ;
+                    if (maxVal >= minValBlock && maxVal <= maxValBlock) {
+                        return true;
+                    }
+                    break;
+
+                case 4: //West
+                    minVal = entityAABB.minX;
+                    minValBlock = blockAABB.minX;
+                    maxValBlock = blockAABB.maxX;
+                    if (minVal >= minValBlock && minVal <= maxValBlock) {
+                        return true;
+                    }
+                    break;
+
+                case 5: //East
+                    maxVal = entityAABB.maxX;
+                    minValBlock = blockAABB.minX;
+                    maxValBlock = blockAABB.maxX;
+                    if (maxVal >= minValBlock && maxVal <= maxValBlock) {
+                        return true;
+                    }
+                    break;
+
+            }
+        }
+        return false;
     }
 
     @Override
@@ -619,7 +790,8 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
                     this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 
-                    if (this.motionX != 0 || this.motionZ != 0) {
+                    if (this.motionX != 0 || this.motionZ != 0
+                        || (this.getIsClimbing() && (!(this.getHeadCollided())))) {
                         this.setIsMoving(true);
                     }
                     else {
@@ -628,7 +800,7 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
 
                     if (this.getIsClimbing() && (!(this.getHeadCollided())))
                     {
-                        this.motionY = 0.2D;
+                        this.motionY = 0.2D * this.getClimbSpeed();
                     }
 
                     if (this.isPotionActive(MobEffects.LEVITATION) && (!(this.getHeadCollided())))

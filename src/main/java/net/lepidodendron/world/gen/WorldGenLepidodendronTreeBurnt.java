@@ -1,6 +1,8 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureWorldGenLepidodendronBurnt;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -75,7 +77,7 @@ public class WorldGenLepidodendronTreeBurnt extends WorldGenAbstractTree
                 }
             }
 
-            if (!flag || (position.getY() > worldIn.getSeaLevel()+20))
+            if (!flag || (position.getY() > Functions.getAdjustedSeaLevel(worldIn, position)+20))
             {
                 return false;
             }
@@ -106,9 +108,9 @@ public class WorldGenLepidodendronTreeBurnt extends WorldGenAbstractTree
 					 
 				}
 				
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());

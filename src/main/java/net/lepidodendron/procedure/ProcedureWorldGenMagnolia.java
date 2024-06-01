@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockMagnoliaLeaves;
 import net.lepidodendron.block.BlockMagnoliaLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -19,7 +21,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenMagnolia!");
 			return;
@@ -73,7 +75,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 				Block block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z), BlockMagnoliaLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + BareTrunkHeight +  counter), (int) z), BlockMagnoliaLog.block.getDefaultState(), 3);
 					}
 					counter = (double) (counter + 1);
 				}
@@ -82,27 +84,27 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 			Block block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z)), world,
 					new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + BareTrunkHeight + counter), (int) z), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			block = world.getBlockState(new BlockPos((int) (x - 1), (int) (y + BareTrunkHeight + counter - 1), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - 1), (int) (y + BareTrunkHeight + counter - 1), (int) z)), world,
 					new BlockPos((int) (x - 1), (int) (y + BareTrunkHeight + counter - 1), (int) z))) {
-				world.setBlockState(new BlockPos((int) (x - 1), (int) (y + BareTrunkHeight + counter - 1), (int) z), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - 1), (int) (y + BareTrunkHeight + counter - 1), (int) z), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			block = world.getBlockState(new BlockPos((int) (x + 1), (int) (y + BareTrunkHeight + counter - 1), (int) z)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) (y + BareTrunkHeight + counter - 1), (int) z)), world,
 					new BlockPos((int) (x + 1), (int) (y + BareTrunkHeight + counter - 1), (int) z))) {
-				world.setBlockState(new BlockPos((int) (x + 1), (int) (y + BareTrunkHeight + counter - 1), (int) z), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + 1), (int) (y + BareTrunkHeight + counter - 1), (int) z), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z + 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z + 1))), world,
 					new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z + 1)))) {
-				world.setBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z + 1)), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z + 1)), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			block = world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z - 1))).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z - 1))), world,
 					new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z - 1)))) {
-				world.setBlockState(new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z - 1)), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + BareTrunkHeight + counter - 1), (int) (z - 1)), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 
@@ -131,12 +133,12 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 							block = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1))).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1))), world,
 								new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1)))) {
-								world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1)), BlockMagnoliaLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1)), BlockMagnoliaLog.block.getDefaultState(), 3);
 								try {
 										IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1)));
 										for (IProperty<?> prop : _bs.getProperties().keySet()) {
 											if (prop.getName().equals("facing")) {
-												world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1)),
+												Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) (z - counterext - 1)),
 														_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 												break;
 											}
@@ -155,7 +157,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 							//What layer (out of three) of the tree are we in for picking a branch?
 							layer = Math.ceil(counter/(MainTrunkHeight / 3));
 							//Launch the branch routine from the (new) point of attachment:
-							java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+							Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 							$_dependencies.put("x", x);
 							$_dependencies.put("y", (y + (int)counter));
 							$_dependencies.put("z", (z - (int)counterext));
@@ -198,12 +200,12 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 							block = world.getBlockState(new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z)), world,
 								new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z))) {
-								world.setBlockState(new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z), BlockMagnoliaLog.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z), BlockMagnoliaLog.block.getDefaultState(), 3);
 								try {
 										IBlockState _bs = world.getBlockState(new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z));
 										for (IProperty<?> prop : _bs.getProperties().keySet()) {
 											if (prop.getName().equals("facing")) {
-												world.setBlockState(new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z),
+												Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x + counterext + 1), (int) (y + counter), (int) z),
 														_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 												break;
 											}
@@ -221,7 +223,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 							//What layer (out of three) of the tree are we in for picking a branch?
 							layer = Math.ceil(counter/(MainTrunkHeight / 3));
 							//Launch the branch routine from the (new) point of attachment:
-							java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+								Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 							$_dependencies.put("x", (x + (int)counterext));
 							$_dependencies.put("y", (y + (int)counter));
 							$_dependencies.put("z", z);
@@ -264,12 +266,12 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 								block = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1))).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z + counterext - 1))), world,
 									new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1)))) {
-									world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1)), BlockMagnoliaLog.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1)), BlockMagnoliaLog.block.getDefaultState(), 3);
 									try {
 										IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1)));
 										for (IProperty<?> prop : _bs.getProperties().keySet()) {
 											if (prop.getName().equals("facing")) {
-												world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1)),
+												Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) (z + counterext + 1)),
 														_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 												break;
 											}
@@ -284,7 +286,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 								//What layer (out of three) of the tree are we in for picking a branch?
 								layer = Math.ceil(counter/(MainTrunkHeight / 3));
 								//Launch the branch routine from the (new) point of attachment:
-								java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 								$_dependencies.put("x", x);
 								$_dependencies.put("y", (y + (int)counter));
 								$_dependencies.put("z", (z + (int)counterext));
@@ -328,12 +330,12 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 								block = world.getBlockState(new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z)).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z)), world,
 									new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z))) {
-									world.setBlockState(new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z), BlockMagnoliaLog.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z), BlockMagnoliaLog.block.getDefaultState(), 3);
 									try {
 										IBlockState _bs = world.getBlockState(new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z));
 										for (IProperty<?> prop : _bs.getProperties().keySet()) {
 											if (prop.getName().equals("facing")) {
-												world.setBlockState(new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z),
+												Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) (x - counterext - 1), (int) (y + counter), (int) z),
 														_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 												break;
 											}
@@ -352,7 +354,7 @@ public class ProcedureWorldGenMagnolia extends ElementsLepidodendronMod.ModEleme
 								//What layer (out of three) of the tree are we in for picking a branch?
 								layer = Math.ceil(counter/(MainTrunkHeight / 3));
 								//Launch the branch routine from the (new) point of attachment:
-								java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+									Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 								$_dependencies.put("x", (x - (int)counterext));
 								$_dependencies.put("y", (y + (int)counter));
 								$_dependencies.put("z", z);

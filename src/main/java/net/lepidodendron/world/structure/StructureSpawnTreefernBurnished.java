@@ -1,12 +1,14 @@
 
 package net.lepidodendron.world.structure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockTreefernBurnishedShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBurnished;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -188,10 +190,10 @@ public class StructureSpawnTreefernBurnished extends ElementsLepidodendronMod.Mo
 				if (Math.random() > 0.75) {
 					//Just a shoot:
 					BlockPos pos = new BlockPos((int) i, (int) j + 1, (int) k);
-					world.setBlockState(pos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockTreefernBurnishedShootPlaceable.block.getDefaultState());
 				}
 				else {
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);

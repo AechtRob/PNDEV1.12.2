@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderRhenocystis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemEchinodermEggsRhenocystis;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -19,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -26,7 +28,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWalkingAmphibianBase {
+public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWalkingAmphibianBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -64,7 +66,9 @@ public class EntityPrehistoricFloraRhenocystis extends EntityPrehistoricFloraWal
 
 	public static String getPeriod() {return "Devonian";}
 
-	//public static String getHabitat() {return "Amphibious";}
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
+	}
 
 	@Override
 	public void playLivingSound() {

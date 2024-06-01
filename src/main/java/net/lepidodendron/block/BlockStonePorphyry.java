@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -61,7 +62,7 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
-				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene) {
@@ -71,8 +72,14 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 			}
 			for (int l1 = 0; l1 < 2; ++l1) {
 				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-				int y = random.nextInt(height) + 1; //Level y
 				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				if (world.getBiome(new BlockPos(x, 0, z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+						|| world.getBiome(new BlockPos(x, 0, z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+						|| world.getBiome(new BlockPos(x, 0, z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+						|| world.getBiome(new BlockPos(x, 0, z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
+					height = Functions.getAdjustedSeaLevel(world, new BlockPos(x, 0, z)) - 6;
+				}
+				int y = random.nextInt(height) + 1; //Level y
 				(new WorldGenMinable(block.getDefaultState(), 13, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {
 						boolean blockCriteria = false;

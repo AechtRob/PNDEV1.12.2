@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLichen;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -34,11 +35,11 @@ public class LichenGenerator extends WorldGenerator
     {
         for (int i = 0; i < 24; ++i)
         {
-            int j = position.getX() + rand.nextInt(8) - rand.nextInt(8);
+            int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
             int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-            int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
+            int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
-            if (k >= worldIn.getSeaLevel() && this.Lichen.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
+            if (k >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k, l)) && this.Lichen.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
@@ -54,7 +55,7 @@ public class LichenGenerator extends WorldGenerator
 		            if (BlockLichen.BlockCustom.canPlaceAt(worldIn, pos, enumfacing)
 		            	&& worldIn.canSeeSky(pos))
 		            {
-		                worldIn.setBlockState(pos, this.state.withProperty(FACING, enumfacing), 3);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, this.state.withProperty(FACING, enumfacing), 3);
 		                return true;
 		            }
 		        }

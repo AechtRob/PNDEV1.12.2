@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLeafLitter;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -30,7 +31,7 @@ public class WorldGenPodzol extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), Blocks.DIRT.getStateFromMeta(2), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.DIRT.getStateFromMeta(2), 2);
                 flag = true;
             }
         }

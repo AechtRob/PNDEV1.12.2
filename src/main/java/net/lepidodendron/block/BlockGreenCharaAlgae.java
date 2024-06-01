@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -94,7 +95,7 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genGreenCharaAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
@@ -126,7 +127,8 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+				|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = false;
 			}
 			else {
@@ -165,6 +167,48 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly)biome;
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_inland_sea_australia")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_africa")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_asia")) {
+					biomeCriteria = false;
+				}
+				else {
+					biomeCriteria = true;
+				}
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -199,6 +243,18 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		)
 		{
 			multiplier = 48;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")
+
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")
+		)
+		{
+			multiplier = 35;
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")

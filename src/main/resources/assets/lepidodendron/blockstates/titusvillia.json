@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:titusvillia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:titusvillia_1"},
+      {"model": "lepidodendron:titusvillia_2"},
+      {"model": "lepidodendron:titusvillia_3"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:titusvillia_1", "y": 90},
+      {"model": "lepidodendron:titusvillia_2", "y": 90},
+      {"model": "lepidodendron:titusvillia_3", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:titusvillia_1", "y": 180},
+      {"model": "lepidodendron:titusvillia_2", "y": 180},
+      {"model": "lepidodendron:titusvillia_3", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:titusvillia_1", "y": 270},
+      {"model": "lepidodendron:titusvillia_2", "y": 270},
+      {"model": "lepidodendron:titusvillia_3", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:titusvillia_1"},
+      {"model": "lepidodendron:titusvillia_2"},
+      {"model": "lepidodendron:titusvillia_3"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:titusvillia_1"},
+      {"model": "lepidodendron:titusvillia_2"},
+      {"model": "lepidodendron:titusvillia_3"}
+    ]
+  }
+}

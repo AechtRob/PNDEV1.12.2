@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockNematophyta;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.init.Blocks;
@@ -143,7 +144,7 @@ public class StructureSpawnNematophyta extends ElementsLepidodendronMod.ModEleme
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockNematophyta.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockNematophyta.block.getDefaultState(), 3);
 			}
 		}
 	}

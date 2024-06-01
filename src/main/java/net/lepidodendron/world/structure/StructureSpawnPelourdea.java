@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPelourdea;
 import net.lepidodendron.block.BlockPelourdeaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -157,8 +158,8 @@ public class StructureSpawnPelourdea extends ElementsLepidodendronMod.ModElement
 						world.setBlockToAir(spawnTo.up());
 					}
 					//System.err.println("Spawning Pelourdea at " + i + " " + (j+1) + " " +k);
-					world.setBlockState(spawnTo, BlockPelourdea.block.getDefaultState());
-					world.setBlockState(spawnTo.up(), BlockPelourdeaTop.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPelourdea.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockPelourdeaTop.block.getDefaultState());
 				}
 
 			}

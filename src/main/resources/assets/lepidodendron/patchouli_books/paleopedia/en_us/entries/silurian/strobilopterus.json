@@ -1,0 +1,47 @@
+{
+	"name": "Strobilopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/strobilopterus_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_strobilopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_strobilopterus",
+			"title": "Strobilopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Arthropoda $(br)>Eurypterida $(br)>Strobilopteridae"
+		},
+        	{
+            "type": "entity",
+            "name": "S. princetonii",
+            "entity": "lepidodendron:prehistoric_flora_strobilopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_strobilopterus",
+			"type": "text",
+			"text": "Strobilopterus is a small eurypterid from the Silurian and Devonian periods. It had a wide almost semi-circular body with a thin tail portion. It grew up to 20 cm long. Its first pair of appendages were small, and lacked denticles, but the subsequent appendage pairs all had small spines."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_strobilopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_strobilopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_strobilopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_strobilopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_strobilopterus"
+		}
+	]
+}

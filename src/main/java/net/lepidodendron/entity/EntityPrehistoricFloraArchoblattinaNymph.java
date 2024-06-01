@@ -5,8 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
@@ -30,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 
-public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,7 +51,11 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 		maxHealthAgeable = 0.8D;
 	}
 
-	
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ARCHOBLATTINA_NYMPH;
+	}
 
 	@Override
 	public ItemStack getPickedResult(RayTraceResult target)

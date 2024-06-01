@@ -1,0 +1,47 @@
+{
+	"name": "Glacialisaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/glacialisaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_glacialisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_glacialisaurus",
+			"title": "Glacialisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropodomorpha $(br)>Massospondylidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. hammeri",
+            "entity": "lepidodendron:prehistoric_flora_glacialisaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_glacialisaurus",
+			"type": "text",
+			"text": "Glacialisaurus is a Jurassic sauropod dinosaur from Antarctica. It is fairly partial, and has been scaled, using its relative Lufengosaurus, to be a bit over 6 m long. It is known from Early Jurassic Hanson Formation which also yields pretty famous Cryolophosaurus. It was described from some leg bones in 2007, which are determinant enough to be assigned as a separate genus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_glacialisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_glacialisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_glacialisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_glacialisaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_glacialisaurus"
+		}
+	]
+}

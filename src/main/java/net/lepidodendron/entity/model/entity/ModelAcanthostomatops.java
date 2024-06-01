@@ -312,6 +312,7 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bone.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
@@ -352,8 +353,9 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
         this.bone.offsetY=0.055F;
         this.bone.render(0.01F);
 
-resetToDefaultPose();
+        resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

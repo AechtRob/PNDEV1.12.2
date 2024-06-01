@@ -1,0 +1,7 @@
+{
+    "name": "Golems",
+    "description": "Golems are creatures which can be called into life by assembling blocks in a certain pattern.",
+    "icon": "minecraft:pumpkin",
+    "parent": "lepidodendron:fantasy",
+    "sortnum": 1
+}

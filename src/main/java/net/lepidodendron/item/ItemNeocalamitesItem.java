@@ -157,7 +157,7 @@ public class ItemNeocalamitesItem extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-				tooltip.add("Periods: Permian - Triassic");
+				tooltip.add("Periods: [Carboniferous (?) -] Permian - Triassic - Jurassic");
 				tooltip.add("Note: can be planted under water or on land, on dirt, grass, clay or sand");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);

@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.CharniaGenerator;
 import net.minecraft.block.Block;
@@ -94,7 +95,7 @@ public class BlockCharnia extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (int) 36; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel()+1);
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new CharniaGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
@@ -123,7 +124,7 @@ public class BlockCharnia extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			if (Math.random() > 0.9 && (!world.isRemote)) {
+			if (Math.random() > 0.9 && (!world.isRemote) && (!player.isCreative())) {
 				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);

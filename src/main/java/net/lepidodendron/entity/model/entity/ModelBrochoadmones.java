@@ -331,17 +331,31 @@ public class ModelBrochoadmones extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Brochoadmones.render(f5 * 0.108F);
+        this.Brochoadmones.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
         this.Brochoadmones.rotateAngleY = (float) Math.toRadians(90);
+        this.Brochoadmones.offsetY = -0.2F;
+        this.Brochoadmones.offsetX = -0.15F;
+        this.Brochoadmones.offsetZ = 0.07F;
         this.Brochoadmones.render(0.01F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Brochoadmones, 0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(Body1, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Body2, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Body4, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
+        this.Brochoadmones.offsetX = -0.005F;
+        this.Brochoadmones.offsetZ = -0.03F;
+        this.Brochoadmones.offsetY = 0.2F;
+        this.Brochoadmones.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -352,7 +366,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Brochoadmones.offsetY = 1.25F;
+        //this.Brochoadmones.offsetY = 1.25F;
 
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5};
         float speed = 0.28F;
@@ -405,7 +419,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Brochoadmones.rotateAngleZ = (float) Math.toRadians(90);
-                this.Brochoadmones.offsetY = 1.35F;
+                this.Brochoadmones.offsetY = 1.35F -1.25F;
                 this.bob(Brochoadmones, -speed, 5F, false, f2, 1);
             }
         }

@@ -2,9 +2,12 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSalt;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
@@ -16,6 +19,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -54,13 +59,19 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
-		if (dimID == 0)
+		if (dimID == 0 || dimID == LepidodendronConfig.dimJurassic)
 			dimensionCriteria = true;
 
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		boolean biomeCriteria = false;
-		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
+		if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY) && dimID == 0)
 			biomeCriteria = true;
+
+		if (biome instanceof BiomeJurassic) {
+			if (((BiomeJurassic)biome).getBiomeType() == EnumBiomeTypeJurassic.Desert) {
+				biomeCriteria = true;
+			}
+		}
 
 		if ((!dimensionCriteria) || (!biomeCriteria))
 			return;
@@ -141,8 +152,12 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
-		{
+		public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
+			Random rand = world instanceof World ? ((World) world).rand : new Random();
+			if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this)) {
+				int i = MathHelper.getInt(rand, 2, 6);
+				return i;
+			}
 			return 0;
 		}
 

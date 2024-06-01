@@ -1,12 +1,14 @@
 
 package net.lepidodendron.world.structure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.*;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernSilver;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -189,32 +191,32 @@ public class StructureSpawnTreefernSilver extends ElementsLepidodendronMod.ModEl
 				if (Math.random() > 0.75) {
 					//Just a shoot:
 					BlockPos pos = new BlockPos((int) i, (int) j + 1, (int) k);
-					world.setBlockState(pos, BlockTreefernSilverShootPlaceable.block.getDefaultState());
-					world.setBlockState(pos.up(), BlockTreefernSilverShoot02.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,pos, BlockTreefernSilverShootPlaceable.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockTreefernSilverShoot02.block.getDefaultState(), 3);
 
-					world.setBlockState((pos).north(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
-					world.setBlockState((pos).south(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
-					world.setBlockState((pos).east(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
-					world.setBlockState((pos).west(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).north(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).south(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).east(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).west(), BlockTreefernSilverShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
-					world.setBlockState((pos).north().east(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
-					world.setBlockState((pos).south().west(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
-					world.setBlockState((pos).east().south(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
-					world.setBlockState((pos).west().north(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).north().east(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).south().west(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).east().south(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos).west().north(), BlockTreefernSilverShootSideDiag.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
-					world.setBlockState((pos.up()).north(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
-					world.setBlockState((pos.up()).south(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
-					world.setBlockState((pos.up()).east(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
-					world.setBlockState((pos.up()).west(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up()).north(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up()).south(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up()).east(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up()).west(), BlockTreefernSilverShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
-					world.setBlockState((pos.up().east()).north(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
-					world.setBlockState((pos.up().west()).south(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
-					world.setBlockState((pos.up().south()).east(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
-					world.setBlockState((pos.up().north()).west(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up().east()).north(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up().west()).south(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up().south()).east(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,(pos.up().north()).west(), BlockTreefernSilverShootSideDiag02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 				}
 				else {
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);

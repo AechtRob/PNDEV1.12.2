@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -95,7 +96,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
-				|| (dimID == LepidodendronConfig.dimCretaceous)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				|| (dimID == LepidodendronConfig.dimPaleogene)
 				|| (dimID == LepidodendronConfig.dimNeogene)
 				|| (dimID == LepidodendronConfig.dimPleistocene)
@@ -123,7 +124,7 @@ public class BlockAmblysiphonella extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;

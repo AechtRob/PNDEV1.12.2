@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockBaiera;
 import net.lepidodendron.block.BlockLesleya;
 import net.lepidodendron.block.BlockLesleyaCone;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,7 +22,7 @@ public class WorldGenLesleya extends WorldGenerator
         for (int i = 0; i < 16; ++i)
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBaiera.block.canPlaceBlockAt(worldIn, blockpos) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockBaiera.block.canPlaceBlockAt(worldIn, blockpos) &&
                 (
                     (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
                         || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND)
@@ -32,10 +33,10 @@ public class WorldGenLesleya extends WorldGenerator
             {
 
                 if (Math.random() > 0.5) {
-                    worldIn.setBlockState(blockpos, BlockLesleya.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLesleya.block.getDefaultState(), 2);
                 }
                 else {
-                    worldIn.setBlockState(blockpos, BlockLesleyaCone.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockLesleyaCone.block.getDefaultState(), 2);
                 }
 
                 flag = true;

@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderGasosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -36,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -48,30 +49,10 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.20F;
 		maxWidth = 1.2F;
 		maxHeight = 1.2F;
-		maxHealthAgeable = 48.0D;
+		maxHealthAgeable = 50.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-
-	@Override
-	public int getWalkCycleLength() {
-		return 50;
-	}
-
-	@Override
-	public int getFootstepOffset() {
-		return 25;
-	}
-
-	@Override
-	public int getRunCycleLength() {
-		return 20;
-	}
-
-	@Override
-	public int getRunFootstepOffset() {
-		return 0;
 	}
 
 	@Override
@@ -86,7 +67,7 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	public int getEatTick() {return 12;}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 
@@ -141,9 +122,8 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
-			speedBase = speedBase / 0.75F;
-			speedBase = 1.0F;
+			//speedBase = 0.6F;
+			speedBase = 0.85F;
 		}
 		return speedBase;
 	}
@@ -199,7 +179,7 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
@@ -223,9 +203,9 @@ public class EntityPrehistoricFloraGasosaurus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.3D);
 	}
 
 	@Override

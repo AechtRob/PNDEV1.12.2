@@ -7,9 +7,8 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -98,7 +97,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 			dimensionCriteria = true;
 		if (
 			dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 			|| dimID == LepidodendronConfig.dimPaleogene
 			|| dimID == LepidodendronConfig.dimNeogene
 			|| dimID == LepidodendronConfig.dimPleistocene
@@ -109,7 +108,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genBrownAscendingAlgaeBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -138,6 +137,27 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandWhite) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly)biome;
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Atlantic
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Pacific
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Southern
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Tethys
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_inland_sea_australia")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_africa")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_beach_asia")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -205,7 +225,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (blockpos1.getY() >= world.getSeaLevel()-20) {
+						if (blockpos1.getY() >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))-20) {
 							if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up())) {
 								BlockPos blockpos2 = blockpos1.down();
 								int j = 1 + random.nextInt(random.nextInt(random.nextInt(5) + 1) + 1);

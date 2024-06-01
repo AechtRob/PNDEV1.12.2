@@ -1,0 +1,47 @@
+{
+	"name": "Phylloceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/phylloceras_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_phylloceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phylloceras",
+			"title": "Phylloceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Mollusca $(br)>Cephalopoda $(br)>Ammonitida $(br)>Phylloceratidae"
+		},
+        	{
+            "type": "entity",
+            "name": "Phylloceras sp.",
+            "entity": "lepidodendron:prehistoric_flora_phylloceras",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phylloceras",
+			"type": "text",
+			"text": "Phylloceras is an ammonite known from the Jurassic and Cretaceous periods from all over the world. It had a shell diameter of about 20 cm maximum, and the suture lines in this animal are reminiscent of the leaves of plants, hence the naming. Their shells were flattened laterally, and were mostly smooth, with almost no bumps."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_phylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_phylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_phylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_phylloceras"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_phylloceras"
+		}
+	]
+}

@@ -15,6 +15,8 @@ public class RenderLaccognathus extends RenderLiving<EntityPrehistoricFloraLacco
         super(mgr, new ModelLaccognathus(), 0.3f);
     }
 
+    public static float getScaler() {return 1.0F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraLaccognathus entity) {
         return RenderLaccognathus.TEXTURE;
@@ -27,7 +29,8 @@ public class RenderLaccognathus extends RenderLiving<EntityPrehistoricFloraLacco
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLaccognathus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
+        if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

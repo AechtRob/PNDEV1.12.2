@@ -1,11 +1,13 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockWilliamsoniaLeaves;
 import net.lepidodendron.block.BlockWilliamsoniaLog;
 import net.lepidodendron.block.BlockWilliamsoniaShoot;
 import net.lepidodendron.block.BlockWilliamsoniaShootTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenWilliamsonia!");
 			return;
@@ -63,7 +65,7 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 			while (counter < TrunkHeight) {
 				Block block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter , (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z), BlockWilliamsoniaLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z), BlockWilliamsoniaLog.block.getDefaultState(), 3);
 				}
 
 				//possible sideshoots and flowers, more likely higher than lower:
@@ -73,15 +75,15 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 					if (Math.random()>0.9) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z - 1), BlockWilliamsoniaLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z - 1), BlockWilliamsoniaLog.block.getDefaultState(), 3);
 						}
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter + 1, (int) z - 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z - 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 1, (int) z - 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
 							}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1)), world, new BlockPos((int) x, (int) y + counter, (int) z - 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.NORTH), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z - 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.NORTH), 3);
 							}
 					}
 				}
@@ -92,15 +94,15 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 					if (Math.random()>0.9) {
 						block = world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter , (int) z + 1), BlockWilliamsoniaLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter , (int) z + 1), BlockWilliamsoniaLog.block.getDefaultState(), 3);
 						}
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter + 1, (int) z + 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z + 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 1, (int) z + 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
 							}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1)), world, new BlockPos((int) x, (int) y + counter, (int) z + 1))) {
-							world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.SOUTH), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z + 1), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.SOUTH), 3);
 							}
 					}
 				}
@@ -111,15 +113,15 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 					if (Math.random()>0.9) {
 						block = world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x + 1, (int) y + counter , (int) z), BlockWilliamsoniaLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter , (int) z), BlockWilliamsoniaLog.block.getDefaultState(), 3);
 						}
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter + 1, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter + 1, (int) z))) {
-							world.setBlockState(new BlockPos((int) x + 1, (int) y + counter + 1, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter + 1, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
 							}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z)), world, new BlockPos((int) x + 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.EAST), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) y + counter, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.EAST), 3);
 							}
 					}
 				}
@@ -130,15 +132,15 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 					if (Math.random()>0.9) {
 						block = world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x - 1, (int) y + counter , (int) z), BlockWilliamsoniaLog.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter , (int) z), BlockWilliamsoniaLog.block.getDefaultState(), 3);
 						}
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter + 1, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter + 1, (int) z))) {
-							world.setBlockState(new BlockPos((int) x - 1, (int) y + counter + 1, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter + 1, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.UP), 3);
 							}
 					}
 					else {
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z)), world, new BlockPos((int) x - 1, (int) y + counter, (int) z))) {
-							world.setBlockState(new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.WEST), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) y + counter, (int) z), BlockWilliamsoniaLeaves.block.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.WEST), 3);
 							}
 					}
 				}
@@ -151,8 +153,8 @@ public class ProcedureWorldGenWilliamsonia extends ElementsLepidodendronMod.ModE
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter, (int) z)), world, new BlockPos((int) x, (int) y + counter, (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z)), world, new BlockPos((int) x, (int) y + counter + 1, (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) y + counter, (int) z), BlockWilliamsoniaShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) y + counter + 1, (int) z), BlockWilliamsoniaShootTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter, (int) z), BlockWilliamsoniaShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + counter + 1, (int) z), BlockWilliamsoniaShootTop.block.getDefaultState(), 3);
 				}
 			}
 		}

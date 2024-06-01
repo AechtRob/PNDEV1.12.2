@@ -1181,16 +1181,21 @@ public class ModelShaihuludia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.root.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.root.render(0.019F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(root, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(head, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(body2, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(body3, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.2F, 0.0F);
+        this.root.offsetZ = 0.0F;
+        this.root.offsetY = -0.15F;
+        this.root.offsetX = 0.0F;
+        this.root.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

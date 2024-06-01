@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:monanthesia_shoot", "weight": 2 },
+      {"model": "lepidodendron:monanthesia_shoot_flower"},
+      {"model": "lepidodendron:monanthesia_shoot_flower_var"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:monanthesia_shoot_inventory"
+    }
+  }
+}

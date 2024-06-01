@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -43,9 +44,9 @@ public class MobSpawnGenerator extends WorldGenerator
     {
 		for (int i = 0; i < 5; ++i)
 		{
-			int j = position.getX() + rand.nextInt(8) - rand.nextInt(8);
+			int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
 			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-			int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
+			int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
 			if (this.mobspawn.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 			&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() == Material.WATER)){
@@ -60,7 +61,7 @@ public class MobSpawnGenerator extends WorldGenerator
 						yy = waterDepthMax + 1;
 					}
 					else if ((worldIn.getBlockState(new BlockPos(j, k + yy, l)).getMaterial() == Material.AIR)
-							&& (k + yy >= worldIn.getSeaLevel())) {
+							&& (k + yy >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k + yy, l)))) {
 						waterDepthCheckMax = true;
 					}
 					yy += 1;
@@ -86,7 +87,7 @@ public class MobSpawnGenerator extends WorldGenerator
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
-						worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 						if (variant != null) {
 							applyVariant(worldIn, new BlockPos(j, k, l), variant);
 						}
@@ -114,7 +115,7 @@ public class MobSpawnGenerator extends WorldGenerator
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 									|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
-								worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
 								if (variant != null) {
 									applyVariant(worldIn, new BlockPos(j, k, l), variant);
 								}

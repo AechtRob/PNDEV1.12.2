@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCorallineAlgae;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,9 +20,9 @@ public class WorldGenCorallineAlgae extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && canSurviveAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && canSurviveAt(worldIn, blockpos))
             {
-                worldIn.setBlockState(blockpos, BlockCorallineAlgae.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockCorallineAlgae.block.getDefaultState(), 2);
                 flag = true;
             }
         }
@@ -60,7 +61,7 @@ public class WorldGenCorallineAlgae extends WorldGenerator
             return false;
         }
 
-        if (pos.getY() > (worldIn.getSeaLevel() + 1) || pos.getY() < (worldIn.getSeaLevel() - 1)) {
+        if (pos.getY() > (Functions.getAdjustedSeaLevel(worldIn, pos) + 1) || pos.getY() < (Functions.getAdjustedSeaLevel(worldIn, pos) - 1)) {
             return false;
         }
 

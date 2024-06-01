@@ -1,9 +1,11 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumF;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
 import net.lepidodendron.procedure.ProcedureWorldGenTelemachus;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -80,9 +82,9 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
@@ -107,7 +109,7 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                         }
                     }
 
-                    if (position.getY() > (worldIn.getSeaLevel() + 30)) {
+                    if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position) + 30)) {
                         if (Math.random() > 0.93) {
                             ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
                         }
@@ -115,7 +117,7 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                             ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
                         }
                     }
-                    else if (position.getY() > (worldIn.getSeaLevel() + 20)) {
+                    else if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position) + 20)) {
                         if (Math.random() > 0.80) {
                             ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
                         }
@@ -123,7 +125,7 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                             ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
                         }
                     }
-                    else if (position.getY() > (worldIn.getSeaLevel() + 12)) {
+                    else if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position) + 12)) {
                         if (Math.random() > 0.60) {
                             ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
                         }
@@ -131,7 +133,7 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                             ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
                         }
                     }
-                    else if (position.getY() > (worldIn.getSeaLevel() + 5)) {
+                    else if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position) + 5)) {
                         if (Math.random() > 0.30) {
                             ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
                         }

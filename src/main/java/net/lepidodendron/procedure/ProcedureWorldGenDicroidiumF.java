@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDicroidiumFLeaves;
 import net.lepidodendron.block.BlockDicroidiumFLog;
 import net.lepidodendron.block.BlockDicroidiumFStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenDicroidiumF extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenDicroidiumF!");
 			return;
@@ -302,7 +304,7 @@ public class ProcedureWorldGenDicroidiumF extends ElementsLepidodendronMod.ModEl
 		if (!block.canBeReplacedByLeaves(world.getBlockState(blockpos), world,blockpos)) {
 			return;
 		}
-		world.setBlockState(blockpos, state, 2);
+		Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state, 2);
 		if (!world.isRemote) {
 			TileEntity _tileEntity = world.getTileEntity(blockpos);
 			IBlockState _bs = world.getBlockState(blockpos);
@@ -318,31 +320,31 @@ public class ProcedureWorldGenDicroidiumF extends ElementsLepidodendronMod.ModEl
 		BlockPos blockpos = pos.east();
 		Block block = world.getBlockState(blockpos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(blockpos), world, blockpos)) {
-			world.setBlockState(blockpos, state);
+			Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state);
 		}
 
 		blockpos = pos.west();
 		block = world.getBlockState(blockpos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(blockpos), world, blockpos)) {
-			world.setBlockState(blockpos, state);
+			Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state);
 		}
 
 		blockpos = pos.south();
 		block = world.getBlockState(blockpos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(blockpos), world, blockpos)) {
-			world.setBlockState(blockpos, state);
+			Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state);
 		}
 
 		blockpos = pos.north();
 		block = world.getBlockState(blockpos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(blockpos), world, blockpos)) {
-			world.setBlockState(blockpos, state);
+			Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state);
 		}
 
 		blockpos = pos.up();
 		block = world.getBlockState(blockpos).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(blockpos), world, blockpos)) {
-			world.setBlockState(blockpos, state);
+			Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state);
 		}
 
 

@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockStromatoveris;
 import net.lepidodendron.block.BlockThaumaptilon;
 import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -83,7 +84,7 @@ public class CambrianSeaPenGenerator extends WorldGenerator
 		if (!dimensionCriteria)
 			return true;
 
-		int bound = 8;
+		int bound = 4;
 
 		for (int i = 0; i < 24; ++i)
 		{
@@ -115,7 +116,7 @@ public class CambrianSeaPenGenerator extends WorldGenerator
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 						|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD)))
 					{
-						worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 						return true;
 					}
 				//}

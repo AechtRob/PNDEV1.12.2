@@ -100,19 +100,22 @@ public class TullymonsterWander extends AnimationAINoAnimation<EntityPrehistoric
         if (this.PrehistoricFloraTullimonstrum.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraTullimonstrum.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
-                Vec3d randPosVar = randPos;
-                //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraTullimonstrum.getPosition().getY() + " " + randPos.getZ());
-                if (this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTullimonstrum.isDirectPathBetweenPoints(this.PrehistoricFloraTullimonstrum.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                    if (this.PrehistoricFloraTullimonstrum.isHungry()) {
-                        int ii = 0;
-                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.add(0,-ii,0);
-                            ii = ii + 1;
+                if (this.PrehistoricFloraTullimonstrum.world.isBlockLoaded(new BlockPos(randPos))) {
+                    Vec3d randPosVar = randPos;
+
+                    //System.err.println("Target " + randPos.getX() + " " + this.PrehistoricFloraTullimonstrum.getPosition().getY() + " " + randPos.getZ());
+                    if (this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraTullimonstrum.isDirectPathBetweenPoints(this.PrehistoricFloraTullimonstrum.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        if (this.PrehistoricFloraTullimonstrum.isHungry()) {
+                            int ii = 0;
+                            while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraTullimonstrum.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                                randPosVar = randPos.add(0, -ii, 0);
+                                ii = ii + 1;
+                            }
+                            randPos = randPosVar;
                         }
-                        randPos = randPosVar;
-                    }
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        return randPos;
+                        if (!(randPos.y < 1 || randPos.y >= 254)) {
+                            return randPos;
+                        }
                     }
                 }
             }

@@ -1,7 +1,9 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockDicroidiumHLog;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumH;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -80,9 +82,9 @@ public class WorldGenDicroidiumHTree extends WorldGenAbstractTree
                 BlockPos down = position.down();
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
@@ -114,7 +116,7 @@ public class WorldGenDicroidiumHTree extends WorldGenAbstractTree
                         if (state.getMaterial() == Material.SAND && state.isSideSolid(worldIn, down, EnumFacing.UP)) {
                             isSoil = true;
                         }
-                        if (blockpos.getY() >= worldIn.getSeaLevel()-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {
+                        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());

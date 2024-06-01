@@ -193,8 +193,9 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
+
     public void renderStaticSuspended(float f) {
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(body, 0.3F, 0.0F, -0.3F);
         this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
@@ -202,10 +203,41 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
         this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
         this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
         this.body.offsetY = -0.07F;
+        this.body.offsetX = 0.005F;
         this.body.render(0.01f);
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(legL, 0.0F, 0.0F, 0.9F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.8F);
+        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.7F);
+        this.setRotateAngle(legR, 0.0F, 0.0F, -0.9F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, -0.8F);
+        this.setRotateAngle(legR3, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(cerciL, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(cerciR, 0.0F, -0.3F, 0.0F);
+        this.body.offsetY = -0.265F;
+        this.body.offsetX = 0.003F;
+        this.body.render(0.01f);
+    }
+
     public void renderStaticWall(float f) {
-        this.body.offsetY = -0.14F;
+        this.setRotateAngle(body, -1.56F, 3.15F, 0.0F);
+        this.setRotateAngle(legL, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(legR, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, 0.0F);
+        this.body.offsetY = -0.32F;
+        this.body.offsetZ = -0.035F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
@@ -269,9 +301,9 @@ public class ModelPalaeodictyopteraLarge extends AdvancedModelBase {
         this.walk(antennaR, 0.3F, 0.15F, false,0,0.1F, f2, 1F);
         this.swing(antennaL, 0.3F, -0.25F, false, 0, -0.1F, f2, 0.8F);
         this.swing(antennaR, 0.3F, 0.25F, false, 0, 0.1F, f2, 0.8F);
-        this.swing(mouth, 0.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
-        this.swing(cerciL, 0.12F, -0.4F, false, 0, -0.1F, f2, 0.8F);
-        this.swing(cerciR, 0.12F, 0.4F, false, 0, 0.1F, f2, 0.8F);
+        //this.swing(mouth, 1.3F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        this.swing(cerciL, 0.12F, -0.22F, false, 0, -0.1F, f2, 0.8F);
+        this.swing(cerciR, 0.12F, 0.22F, false, 0, 0.1F, f2, 0.8F);
 
     }
 }

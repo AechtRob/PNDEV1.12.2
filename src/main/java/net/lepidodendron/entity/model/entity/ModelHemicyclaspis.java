@@ -166,19 +166,27 @@ public class ModelHemicyclaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.head.render(f5 * 0.29F);
+        this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.rotateAngleY = (float) Math.toRadians(90);
+
+    public void renderStaticWall(float f) {
+        this.head.rotateAngleX = (float) Math.toRadians(90);
+        this.head.offsetY = -0.2F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.6F, 0.0F);
+        this.head.offsetZ = -0.05F;
+        this.head.offsetY = 0.02F;
+        this.head.offsetX = -0.009F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -189,7 +197,7 @@ public class ModelHemicyclaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.05F;
+        //this.head.offsetY = 1.05F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body, this.body2, this.body3};
@@ -224,7 +232,7 @@ public class ModelHemicyclaspis extends AdvancedModelBase {
             this.swing(finR, (float) (speed * 0.75), 0.12F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = 1.0F;
+                this.head.offsetY = -0.05F;
                 this.bob(head, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

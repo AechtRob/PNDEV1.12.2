@@ -141,21 +141,28 @@ public class ModelBrembodus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.13F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.02F;
+        this.body.offsetY = -0.125F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2F, -0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.05F;
+        this.body.offsetY = 0.05F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -166,7 +173,7 @@ public class ModelBrembodus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.35F;
+        //this.body.offsetY = 1.35F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body3, this.body4, this.body5};
@@ -191,7 +198,7 @@ public class ModelBrembodus extends AdvancedModelBase {
             this.swing(body, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.25F;
+                this.body.offsetY = -0.10F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }

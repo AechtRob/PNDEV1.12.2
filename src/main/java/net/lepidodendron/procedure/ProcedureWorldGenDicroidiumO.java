@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDicroidiumOLeaves;
 import net.lepidodendron.block.BlockDicroidiumOLog;
 import net.lepidodendron.block.BlockDicroidiumOStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenDicroidiumO extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenDicroidiumO!");
 			return;
@@ -286,7 +288,7 @@ public class ProcedureWorldGenDicroidiumO extends ElementsLepidodendronMod.ModEl
 		if (!block.canBeReplacedByLeaves(world.getBlockState(blockpos), world,blockpos)) {
 			return;
 		}
-		world.setBlockState(blockpos, state, 2);
+		Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, state, 2);
 		if (!world.isRemote) {
 			TileEntity _tileEntity = world.getTileEntity(blockpos);
 			IBlockState _bs = world.getBlockState(blockpos);

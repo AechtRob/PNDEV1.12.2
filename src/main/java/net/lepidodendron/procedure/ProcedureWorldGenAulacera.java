@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockAulacera;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -13,7 +15,7 @@ public class ProcedureWorldGenAulacera extends ElementsLepidodendronMod.ModEleme
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenAulacera!");
 			return;
@@ -46,7 +48,7 @@ public class ProcedureWorldGenAulacera extends ElementsLepidodendronMod.ModEleme
 
 			int ii = 0;
 			while (ii <= TreeHeight && BlockAulacera.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + ii, (int) z))) {
-				world.setBlockState(new BlockPos((int) x, (int) y + ii, (int) z), BlockAulacera.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y + ii, (int) z), BlockAulacera.block.getDefaultState(), 3);
 				ii += 1;
 			}
 				

@@ -2,10 +2,14 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderKayentatherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -19,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon {
+public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon implements IAdvancementGranter, ITrappableLand {
 
 	public EntityPrehistoricFloraKayentatherium(World world) {
 		super(world);
@@ -28,6 +32,12 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		maxWidth = 0.7F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 12.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_KAYENTATHERIUM;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -64,7 +74,7 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		tasks.addTask(5, new PanicAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(8, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

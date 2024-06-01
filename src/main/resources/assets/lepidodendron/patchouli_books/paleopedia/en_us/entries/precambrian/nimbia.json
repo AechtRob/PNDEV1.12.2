@@ -1,0 +1,46 @@
+{
+	"name": "Nimbia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nimbia_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_nimbia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nimbia",
+			"title": "Nimbia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cryogenian - Cambrian$(br2)>$(o)incertae sedis"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/nimbia.png"],
+			"title": "N. occlusa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nimbia",
+			"type": "text",
+			"text": "Nimbia occlusa is an enigmatic disk shape Precambrian fossil. It was circular, with occasional central dimples. These are believed to have been cnidarians, but may be microbial colonies instead. They reach up to 6 cm in diameter and are widespread across the northern hemisphere."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nimbia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nimbia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nimbia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nimbia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nimbia"
+		}
+	]
+}

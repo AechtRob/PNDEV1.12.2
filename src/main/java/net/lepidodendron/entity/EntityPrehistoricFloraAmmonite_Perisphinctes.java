@@ -6,9 +6,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderAmmonite_Perisphinctes;
-import net.lepidodendron.entity.render.entity.RenderSteurbautichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsPerisphinctes;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.item.ItemStack;
@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAmmonite_Perisphinctes extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraAmmonite_Perisphinctes extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

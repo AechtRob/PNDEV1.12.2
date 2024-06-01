@@ -151,17 +151,26 @@ public class ModelBelantsea extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bodyfront.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetY = -0.05F;
+        this.Bodyfront.offsetZ = -0.01F;
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.1F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.1F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.25F, 0.1F);
+        this.setRotateAngle(Tailend, 0.0F, -0.3F, 0.1F);
+        this.Bodyfront.offsetY = 0.12F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

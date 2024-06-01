@@ -93,7 +93,7 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 							//int j = random.nextInt(3) + 1;
 							//j = Math.min(3, j);
 							//for (int k = 0; k < j; ++k) {
-								//System.err.println("SeaLavel: " + (world.getSeaLevel()));
+								//System.err.println("SeaLavel: " + (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))));
 								//System.err.println("Try to spawn at: "  + blockpos1.up(k).getY());
 								if (
 									//((world.isAirBlock(blockpos1.down()) || ((BlockFalling) block).canFallThrough(world.getBlockState(blockpos1.down()))) && blockpos1.getY() >= 0)

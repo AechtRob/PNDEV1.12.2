@@ -1,0 +1,47 @@
+{
+	"name": "Paropsonema",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/paropsonema_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_paropsonema",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_paropsonema",
+			"title": "Paropsonema",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)>Deuterostomia $(br)>Ambulacraria $(br)>Cambroernida $(br)>Eldoniidae $(br)>Paropsonemida"
+		},
+    
+            {
+			"type": "image",
+			"images": ["paleopedia:textures/paropsonema.png"],
+			"title": "P. cryptophya",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_paropsonema",
+			"type": "text",
+			"text": "Paropsonema is a discoid eldoniid with a weird taxonomic history. Multiple specimens ranging from the Cambrian to the Devonian have been attributed to Paropsonema, although it seems the most definitive forms are from the Silurian and Devonian periods. It held a similar appearance to other eldoniids, with a C shaped gut and a circular medusae."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_paropsonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_paropsonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_paropsonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_paropsonema"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_paropsonema"
+		}
+	]
+}

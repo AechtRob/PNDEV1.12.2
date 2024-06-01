@@ -4,6 +4,7 @@ public class DietString {
 
     public static final String[] NULL = new String[]{};
     public static final String[] FISHFOOD = new String[]{"itemFishFood"};
+    public static final String[] BONE = new String[]{"pndietBone"};
     public static final String[] FISH = new String[]{"pndietFish","listAllfishraw","listAllfishcooked","listAllfishfresh"};
     public static final String[] MEAT = new String[]{"pndietMeat","listAllmeatraw","listAllmeatcooked"};
     public static final String[] BUG = new String[]{"pndietBug"};

@@ -1,0 +1,7 @@
+{
+    "name": "Late Cretaceous",
+    "description": "$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "icon": "paleopedia:textures/category_icon/icon_late_cretaceous.png",
+    "parent": "lepidodendron:cretaceous",
+    "sortnum": 2
+}

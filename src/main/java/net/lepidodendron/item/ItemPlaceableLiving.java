@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -327,10 +328,12 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 					if (getEntityFromNBT(itemstack) != null) {
 						//Entities:
+						boolean isBaby = false;
 						String nbtStr = "";
 						Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(getEntityFromNBT(itemstack)), worldIn);
 						if (entity instanceof EntityPrehistoricFloraAgeableBase) {
 							nbtStr = "{AgeTicks:0}";
+							isBaby = true;
 						}
 						else {
 							if (itemstack.getTagCompound().hasKey("PFMob")) {
@@ -352,19 +355,19 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 							if (iblockstate.getMaterial() == Material.WATER) {
 								if (this.getVariantID(itemstack).equalsIgnoreCase("")) {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5, isBaby);
 								}
 								else {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5, isBaby);
 								}
 							}
 							else {
 								blockpos = blockpos.offset(raytraceresult.sideHit);
 								if (this.getVariantID(itemstack).equalsIgnoreCase("")) {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5, isBaby);
 								}
 								else {
-									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr,blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5);
+									EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString() + "@" + this.getVariantID(itemstack), nbtStr,blockpos.getX() + 0.5, blockpos.getY(), blockpos.getZ() + 0.5, isBaby);
 								}
 							}
 						}
@@ -413,7 +416,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
 							if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-								itemstack.shrink(1);
+								//Shrink it if the item is not the block:
+								if (Block.getBlockFromItem(item) == null || Block.getBlockFromItem(item) == Blocks.AIR) {
+									itemstack.shrink(1);
+								}
 							}
 							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
 								//if (!playerIn.isCreative()) {

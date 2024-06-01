@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockSphenopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -35,9 +36,9 @@ public class StructureSpawnSphenopteris extends ElementsLepidodendronMod.ModElem
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSphenopterisBlacklistBiomes))) {
-			biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-				biomeCriteria = false;
+			biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -116,9 +117,9 @@ public class StructureSpawnSphenopteris extends ElementsLepidodendronMod.ModElem
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSphenopterisBlacklistBiomes))) {
-					biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-						biomeCriteria = false;
+					biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
+						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -143,7 +144,7 @@ public class StructureSpawnSphenopteris extends ElementsLepidodendronMod.ModElem
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockSphenopteris.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSphenopteris.block.getDefaultState(), 3);
 			}
 		}
 	}

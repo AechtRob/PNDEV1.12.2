@@ -5,13 +5,18 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDiictodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -43,7 +48,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandBase implements IScreamer, IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -182,7 +187,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		tasks.addTask(5, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(8, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -216,7 +221,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -349,6 +354,12 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	}
 
 	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DIICTODON;
+	}
+
+	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
 			return LepidodendronMod.DIICTODON_LOOT_YOUNG;
@@ -357,6 +368,10 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	}
 
 	public static BlockPos buildBurrow(World world, BlockPos pos, boolean large) {
+
+		if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			return pos;
+		}
 
 		BlockPos posNest = pos;
 		int i = world.rand.nextInt(4);
@@ -676,6 +691,9 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		else if (oldBurrowState == BlockSandBlack.block.getDefaultState() || oldBurrowState == BlockSandBlackWavy.block.getDefaultState()) {
 			return BlockSandBlackSticky.block.getDefaultState();
 		}
+		else if (oldBurrowState == BlockSandGrey.block.getDefaultState() || oldBurrowState == BlockSandGreyWavy.block.getDefaultState()) {
+			return BlockSandGreySticky.block.getDefaultState();
+		}
 		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block.getDefaultState()) {
 			return BlockSandWhiteSticky.block.getDefaultState();
 		}
@@ -762,52 +780,21 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	//--------------------
 	public static double offsetPlinth() { return 0.16; }
 	public static double offsetWall(@Nullable String variant) { return 0.05; }
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.5;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.2;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.2;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.1;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0F;
-	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.8;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.2;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.2;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.1;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0.0F;}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderDiictodon.TEXTURE;
-	}
-
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderDiictodon.TEXTURE;}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelDiictodon;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderDiictodon.getScaler();
-	}
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelDiictodon;}
+	public static float getScaler(@Nullable String variant) {return RenderDiictodon.getScaler();}
 }

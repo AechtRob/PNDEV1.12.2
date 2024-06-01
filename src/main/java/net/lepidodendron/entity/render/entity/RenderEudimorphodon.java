@@ -14,6 +14,9 @@ public class RenderEudimorphodon extends RenderLiving<EntityPrehistoricFloraEudi
     public RenderEudimorphodon(RenderManager mgr) {
         super(mgr, new ModelEudimorphodon(), 0.10f);
     }
+    public static float getScaler() {
+        return 0.1925F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEudimorphodon entity) {

@@ -68,10 +68,10 @@ public class ItemSpawnEggLacewingAetheogramma extends ElementsLepidodendronMod.M
 			return "Cretaceous";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

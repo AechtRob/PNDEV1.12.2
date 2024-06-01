@@ -282,13 +282,17 @@ public class ModelTanyrhinichthys extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(root, 0.7418F, (float) Math.toRadians(90), 0.0F);
-        this.setRotateAngle(cube_r1, -0.5585F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, -0.8552F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r3, 1.2741F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.9599F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r5, 0.9774F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r6, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(root, 0.3F, 0.0F, -0.7F);
+        this.setRotateAngle(head, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.3F, 0.0F);
+        this.root.offsetZ = 0.0F;
+        this.root.offsetY = -0.05F;
+        this.root.offsetX = 0.02F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

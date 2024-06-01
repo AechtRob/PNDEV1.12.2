@@ -3,6 +3,8 @@ package net.lepidodendron.procedure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -27,11 +29,11 @@ public class ProcedureSpawnAtli extends ElementsLepidodendronMod.ModElement {
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
-			if (dimID == LepidodendronConfig.dimCretaceous) {
+			if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 				dimensionCriteria = true;
 			}
+			Biome biome = world.getBiome(new BlockPos(x, y, z));
 			if (dimensionCriteria && !SaplingSpawn) {
-				Biome biome = world.getBiome(new BlockPos(x, y, z));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAtliBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
 						biomeCriteria = true;
@@ -47,8 +49,20 @@ public class ProcedureSpawnAtli extends ElementsLepidodendronMod.ModElement {
 				if (matchBiome(biome, LepidodendronConfigPlants.genAtliOverrideBiomes))
 					biomeCriteria = true;
 				}
-				if (dimID == LepidodendronConfig.dimCretaceous) {
-					biomeCriteria = true;
+				if (dimID == LepidodendronConfig.dimCretaceousEarly) {
+					if (biome instanceof BiomeCretaceousEarly) {
+						BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
+						if (biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America) {
+							if (!SaplingSpawn) {
+								biomeCriteria = true;
+							}
+						}
+						else {
+							if (!SaplingSpawn) {
+								biomeCriteria = false;
+							}
+						}
+					}
 				}
 				if (biomeCriteria && !SaplingSpawn) {
 					//Try one spot at the foot of the tree:

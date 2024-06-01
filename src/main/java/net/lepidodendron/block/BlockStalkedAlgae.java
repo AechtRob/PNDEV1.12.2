@@ -90,7 +90,7 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genStalkedAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -109,6 +109,7 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				 ) {
 			biomeCriteria = true;
 		}
@@ -121,6 +122,7 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 2;
 		}

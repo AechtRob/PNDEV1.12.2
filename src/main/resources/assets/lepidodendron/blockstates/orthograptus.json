@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:orthograptus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:orthograptus", "x": 90}
+
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:orthograptus", "x": 90,"y": 90}
+
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:orthograptus", "x": 90,"y": 180}
+
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:orthograptus", "x": 90,"y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:orthograptus"},
+      {"model": "lepidodendron:orthograptus","y": 90},
+      {"model": "lepidodendron:orthograptus","y": 180},
+      {"model": "lepidodendron:orthograptus","y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:orthograptus"},
+      {"model": "lepidodendron:orthograptus","y": 90},
+      {"model": "lepidodendron:orthograptus","y": 180},
+      {"model": "lepidodendron:orthograptus","y": 270}
+    ]
+  }
+}

@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -99,6 +100,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
 			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			dimensionCriteria = true;
 		}
@@ -106,7 +108,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			return;
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genGreenStemmedAlgaeBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -122,6 +124,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
 			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 			) {
 			biomeCriteria = true;
 		}
@@ -141,6 +144,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_polar")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal_black")
@@ -149,6 +153,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_forest")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_warm_lakeland")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_xeric")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")
@@ -169,6 +174,8 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")
 		)
 		{
 			multiplier = 8;
@@ -183,7 +190,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (blockpos1.getY() >= world.getSeaLevel()-15) {
+						if (blockpos1.getY() >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))-15) {
 							if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up())) {
 								BlockPos blockpos2 = blockpos1.down();
 								int j = 1 + random.nextInt(random.nextInt(random.nextInt(5) + 1) + 1);

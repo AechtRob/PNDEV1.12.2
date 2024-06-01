@@ -77,7 +77,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-	public static final PropertyInteger TYPE = PropertyInteger.create("type", 0, 10);
+	public static final PropertyInteger TYPE = PropertyInteger.create("type", 0, 11);
 	public static final PropertyBool OCCUPIED = PropertyBool.create("occupied");
 
 	@SideOnly(Side.CLIENT)
@@ -103,7 +103,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
-				|| (dimID == LepidodendronConfig.dimCretaceous)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			dimensionCriteria = false;
 		}
@@ -126,7 +126,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genWebsteroprionBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -162,18 +162,18 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 		}
 		int minWaterDepth = 2 * dimWeight;
 		int maxWaterDepth = 25 * dimWeight;
-		int startHeight = world.getSeaLevel() - maxWaterDepth;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < (56 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 6; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (blockpos1.getY() < world.getSeaLevel()
+						if (blockpos1.getY() < Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))
 								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
@@ -189,7 +189,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= world.getSeaLevel())) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;
@@ -411,6 +411,11 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 					|| stateDown.getBlock() == BlockSandBlackWavy.block
 					|| stateDown.getBlock() == BlockSandBlackWavySticky.block
 			) {type = 9;} //black sand
+			if (stateDown.getBlock() == BlockSandGrey.block
+					|| stateDown.getBlock() == BlockSandGreySticky.block
+					|| stateDown.getBlock() == BlockSandGreyWavy.block
+					|| stateDown.getBlock() == BlockSandGreyWavySticky.block
+			) {type = 11;} //grey sand
 			if (stateDown.getBlock() == BlockSandyDirt.block
 					|| stateDown.getBlock() == BlockCoarseSandyDirt.block
 			) {type = 10;} //sandy dirt

@@ -1,11 +1,13 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockBothrodendronLeaves;
 import net.lepidodendron.block.BlockBothrodendronLog;
 import net.lepidodendron.block.BlockBothrodendronStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenBothrodendron!");
 			return;
@@ -256,7 +258,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLeaf.executeProcedure(xx, yy, zz, world, BlockBothrodendronLeaves.block);
 					//Random flowers here:
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy - 1), (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) (yy - 1), (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -273,7 +275,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					yy = (int) counter;
 					zz = z;
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) yy, (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) yy, (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -291,7 +293,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLeaf.executeProcedure(xx, yy, zz, world, BlockBothrodendronLeaves.block);
 					//Random flowers here:
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy - 1), (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) (yy - 1), (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -308,7 +310,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					yy = (int) counter;
 					zz = z;
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) yy, (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) yy, (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -326,7 +328,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLeaf.executeProcedure(xx, yy, zz, world, BlockBothrodendronLeaves.block);
 					//Random flowers here:
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy - 1), (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) (yy - 1), (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -343,7 +345,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					yy = (int) counter;
 					zz = z + 1;
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) yy, (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) yy, (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -361,7 +363,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					ProcedureTreeLeaf.executeProcedure(xx, yy, zz, world, BlockBothrodendronLeaves.block);
 					//Random flowers here:
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy - 1), (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy - 1), (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) (yy - 1), (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -378,7 +380,7 @@ public class ProcedureWorldGenBothrodendron extends ElementsLepidodendronMod.Mod
 					yy = (int) counter;
 					zz = z - 1;
 					if ((Math.random() > 0.4) && (world.isAirBlock(new BlockPos((int) xx, (int) yy, (int) zz)))) {
-						world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockBothrodendronStrobilus.block.getDefaultState(), 3);
 						if (!world.isRemote) {
 							BlockPos _bp = new BlockPos((int) xx, (int) yy, (int) zz);
 							TileEntity _tileEntity = world.getTileEntity(_bp);

@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockTempskyaLeaves;
 import net.lepidodendron.block.BlockTempskyaLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenTempskya extends ElementsLepidodendronMod.ModEleme
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenTempskya!");
 			return;
@@ -88,14 +90,14 @@ public class ProcedureWorldGenTempskya extends ElementsLepidodendronMod.ModEleme
 						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z - 1))).getMaterial() == Material.WATER)
 						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z - 1))).getMaterial() == Material.PLANTS)
 						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z - 1))).getMaterial() == Material.LEAVES)) {
-							world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z - 1), BlockTempskyaLeaves.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z - 1), BlockTempskyaLeaves.block.getDefaultState(), 3);
 						}
 			
 					try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z - 1));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z - 1),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z - 1),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.NORTH), 3);
 								break;
 							}
@@ -115,14 +117,14 @@ public class ProcedureWorldGenTempskya extends ElementsLepidodendronMod.ModEleme
 						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z + 1))).getMaterial() == Material.WATER)
 						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z + 1))).getMaterial() == Material.PLANTS)
 						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z + 1))).getMaterial() == Material.LEAVES)) {
-							world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z + 1), BlockTempskyaLeaves.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z + 1), BlockTempskyaLeaves.block.getDefaultState(), 3);
 						}
 			
 					try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z + 1));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z + 1),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z + 1),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -142,14 +144,14 @@ public class ProcedureWorldGenTempskya extends ElementsLepidodendronMod.ModEleme
 						|| ((world.getBlockState(new BlockPos((int) x + 1, (int) (y + counter), (int) z))).getMaterial() == Material.WATER)
 						|| ((world.getBlockState(new BlockPos((int) x + 1, (int) (y + counter), (int) z))).getMaterial() == Material.PLANTS)
 						|| ((world.getBlockState(new BlockPos((int) x + 1, (int) (y + counter), (int) z))).getMaterial() == Material.LEAVES)) {
-							world.setBlockState(new BlockPos((int) x + 1, (int) (y + counter), (int) z), BlockTempskyaLeaves.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + counter), (int) z), BlockTempskyaLeaves.block.getDefaultState(), 3);
 						}
 			
 					try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) x + 1, (int) (y + counter), (int) z));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) x + 1, (int) (y + counter), (int) z),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + counter), (int) z),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.EAST), 3);
 								break;
 							}
@@ -169,14 +171,14 @@ public class ProcedureWorldGenTempskya extends ElementsLepidodendronMod.ModEleme
 						|| ((world.getBlockState(new BlockPos((int) x - 1, (int) (y + counter), (int) z))).getMaterial() == Material.WATER)
 						|| ((world.getBlockState(new BlockPos((int) x - 1, (int) (y + counter), (int) z))).getMaterial() == Material.PLANTS)
 						|| ((world.getBlockState(new BlockPos((int) x - 1, (int) (y + counter), (int) z))).getMaterial() == Material.LEAVES)) {
-							world.setBlockState(new BlockPos((int) x - 1, (int) (y + counter), (int) z), BlockTempskyaLeaves.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + counter), (int) z), BlockTempskyaLeaves.block.getDefaultState(), 3);
 						}
 			
 					try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) x - 1, (int) (y + counter), (int) z));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) x - 1, (int) (y + counter), (int) z),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + counter), (int) z),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}

@@ -1,7 +1,9 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.procedure.ProcedureWorldGenPsaronius;
 import net.lepidodendron.procedure.ProcedureWorldGenValmeyerodendron;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -81,14 +83,14 @@ public class WorldGenValmeyerodendronTree extends WorldGenAbstractTree
 					);
 					
 				
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					if (position.getY() > (worldIn.getSeaLevel()+15)) {
+					if (position.getY() > (Functions.getAdjustedSeaLevel(worldIn, position)+15)) {
 						ProcedureWorldGenPsaronius.executeProcedure($_dependencies);
 					}
 					else {

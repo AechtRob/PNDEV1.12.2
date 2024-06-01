@@ -1,0 +1,15 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:shrubby_sphenophyllales_var"
+    },
+    "normal": [
+      {"model": "lepidodendron:shrubby_sphenophyllales"},
+      {"model": "lepidodendron:shrubby_sphenophyllales_spore", "weight": 2 },
+      {"model": "lepidodendron:shrubby_sphenophyllales_var"},
+      {"model": "lepidodendron:shrubby_sphenophyllales_var_spore", "weight": 2 },
+      {"model": "lepidodendron:shrubby_sphenophyllales_large"},
+      {"model": "lepidodendron:shrubby_sphenophyllales_large_spore", "weight": 2 }
+    ]
+  }
+}

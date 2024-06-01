@@ -253,20 +253,6 @@ public class ModelTiktaalik extends AdvancedModelBaseExtended {
         this.body.render(f5);
     }
 
-    public void renderStaticPlinth(float f) {
-        this.lowerjaw.rotateAngleX = (float) Math.toRadians(23);
-        this.head.rotateAngleX = (float) Math.toRadians(-20);
-        this.head.rotateAngleY = (float) Math.toRadians(-25);
-        this.body2.rotateAngleY = (float) Math.toRadians(11);
-        this.body.rotateAngleY = (float) Math.toRadians(-15);
-        this.body3.rotateAngleY = (float) Math.toRadians(20);
-        this.body4.rotateAngleY = (float) Math.toRadians(20);
-        this.body5.rotateAngleY = (float) Math.toRadians(10);
-        this.body6.rotateAngleY = (float) Math.toRadians(5);
-        this.body.offsetY = -0.0F;
-        this.body.offsetZ = -0.09F;
-        this.body.render(0.01F);
-    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, -0.0873F, -0.0873F, 0.0F);
         this.setRotateAngle(body3, -0.0436F, -0.2182F, 0.0F);

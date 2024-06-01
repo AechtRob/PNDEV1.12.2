@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.CambrianSeaPenGenerator;
 import net.minecraft.block.Block;
@@ -92,7 +93,7 @@ public class BlockThaumaptilon extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (int) 8; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel()+1);
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new CambrianSeaPenGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}

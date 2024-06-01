@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockTyrmia;
 import net.lepidodendron.block.BlockTyrmiaCentre;
 import net.lepidodendron.block.BlockTyrmiaTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -151,9 +152,9 @@ public class StructureSpawnTyrmia extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockTyrmia.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(), BlockTyrmiaCentre.block.getDefaultState(), 3);
-				world.setBlockState(spawnTo.up(2), BlockTyrmiaTop.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockTyrmia.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockTyrmiaCentre.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockTyrmiaTop.block.getDefaultState(), 3);
 			}
 		}
 	}

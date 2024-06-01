@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:overworld_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:overworld_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:overworld_portal_ns"
+    }
+  }
+}

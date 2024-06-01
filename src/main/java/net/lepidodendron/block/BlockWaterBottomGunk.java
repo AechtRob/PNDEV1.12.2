@@ -5,6 +5,7 @@ import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -86,7 +87,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genUnderwaterGunkBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -98,7 +99,6 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genUnderwaterGunkOverrideBiomes))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician)
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimCambrian)
@@ -130,6 +130,20 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -137,6 +151,13 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 52;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")) {
+				multiplier = 12;
+			}
+		}
+		if ((dimID == LepidodendronConfig.dimCretaceousEarly)
+		) {
+			multiplier = 92;
 		}
 		if ((dimID == LepidodendronConfig.dimOrdovician)
 		) {

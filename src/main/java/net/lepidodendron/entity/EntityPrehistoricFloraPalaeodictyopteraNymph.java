@@ -5,6 +5,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,7 +24,7 @@ import net.minecraft.world.WorldServer;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehistoricFloraEurypteridBase {
+public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehistoricFloraEurypteridBase implements ITrappableWater {
 
 	private static final float[] DELITZSCHALA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] DUNBARIA_SIZE = new float[]{0.2F, 0.2F};
@@ -34,6 +35,7 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 	private static final float[] SINODUNBARIA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] STENODICTYA_SIZE = new float[]{0.2F, 0.2F};
 	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] PSYCHROPTILUS_SIZE = new float[]{0.2F, 0.2F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPalaeodictyopteraNymph.class, DataSerializers.VARINT);
 
@@ -66,7 +68,8 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		LYCOCERCUS(6, "lycocercus"),
 		SINODUNBARIA(7, "sinodunbaria"),
 		STENODICTYA(8, "stenodictya"),
-		MAZOTHAIROS(9, "mazothairos")
+		MAZOTHAIROS(9, "mazothairos"),
+		PSYCHROPTILUS(10, "mazothairos")
 		;
 	
 		private final String name;
@@ -146,6 +149,9 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 
 			case MAZOTHAIROS:
 				return 3f;
+
+			case PSYCHROPTILUS:
+				return 3f;
 		}
 	}
 
@@ -177,6 +183,9 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 
 			case MAZOTHAIROS:
 				return MAZOTHAIROS_SIZE;
+
+			case PSYCHROPTILUS:
+				return PSYCHROPTILUS_SIZE;
 		}
 	}
 

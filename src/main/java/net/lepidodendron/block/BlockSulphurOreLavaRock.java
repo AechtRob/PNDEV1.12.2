@@ -17,6 +17,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -54,7 +55,7 @@ public class BlockSulphurOreLavaRock extends ElementsLepidodendronMod.ModElement
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 
 		if (dimID == 0
 				|| dimID == LepidodendronConfig.dimPrecambrian
@@ -66,7 +67,7 @@ public class BlockSulphurOreLavaRock extends ElementsLepidodendronMod.ModElement
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
-				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene) {
@@ -171,8 +172,12 @@ public class BlockSulphurOreLavaRock extends ElementsLepidodendronMod.ModElement
 		}
 
 		@Override
-		public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
-		{
+		public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
+			Random rand = world instanceof World ? ((World) world).rand : new Random();
+			if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this)) {
+				int i = MathHelper.getInt(rand, 1, 4);
+				return i;
+			}
 			return 0;
 		}
 

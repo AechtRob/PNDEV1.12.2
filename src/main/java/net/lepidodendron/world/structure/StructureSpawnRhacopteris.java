@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockRhacopteris;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -149,7 +150,7 @@ public class StructureSpawnRhacopteris extends ElementsLepidodendronMod.ModEleme
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockRhacopteris.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockRhacopteris.block.getDefaultState(), 3);
 				BlockRhacopteris.block.onBlockAdded(world, spawnTo, BlockRhacopteris.block.getDefaultState());
 			}
 		}

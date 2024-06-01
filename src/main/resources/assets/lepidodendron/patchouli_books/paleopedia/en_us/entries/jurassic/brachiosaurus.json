@@ -1,0 +1,67 @@
+{
+	"name": "Brachiosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/brachiosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_brachiosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachiosaurus",
+			"title": "Brachiosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Macronaria $(br)>Brachiosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "B. altithorax",
+            "entity": "lepidodendron:prehistoric_flora_brachiosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiosaurus",
+			"type": "text",
+			"text": "Brachiosaurus altithorax is a species of Brachiosaurid Macronarian from the Late Jurassic of North America. Given that most of the material usually thought of as \"Brachiosaurus\" is actually Giraffatitan, a lot of size estimations for Brachiosaurus actually refer to its more complete African cousin, making it difficult to estimating size for this animal further compounded not only by its fragmentary nature but the apparently subadult nature of the remains as well."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiosaurus",
+			"type": "text",
+			"text": "Brachiosaurus gives the name to the Brachiosauridae family of Macronarians and makes up a somewhat small grouping of sauropods. The reason Brachiosaurus and Giraffatitan are oftentimes thought of interchangeably by the public is that the latter was originally described as an African species of the former, creating an association of material which lead to the reconstruction of Brachiosaurus historically using Giraffatitan material."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiosaurus",
+			"type": "text",
+			"text": "Despite some very famous representations of this animal rearing up on two legs to reach higher vegetation, we now know Brachiosaurus was in fact unable to do such action, instead just using it's very long and almost vertically positioned neck to reach vegetation. Brachiosaurus was used as a case study for proponents of dinosaurs being ectotherm, or cold blooded, for many years, as they hypothesized an animal this "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiosaurus",
+			"type": "text",
+			"text": "big being unable to sustain the more energy demanding metabolism of an endotherm; today we know that thanks to its mass and structures inside the bones, Brachiosaurus was homeotherm and furthermore it has been hypothesized the large nasal arc was used as a means to cool down the brain and create a cooling surface for the evaporation of sweat."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiosaurus",
+			"type": "text",
+			"text": "Since its discovery, Brachiosaurus has immediately found itself compared to giraffes in lifestyle; reaching 9 m from the ground, this animal probably fed on vegetation 5 m from the ground or higher and probably needed to ingest between 200 and 400 Kg of vegetation daily"
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_brachiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_brachiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_brachiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_brachiosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_brachiosaurus"
+		}
+	]
+}

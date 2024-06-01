@@ -1,18 +1,15 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.MathHelper;
 
 public class EntityTemptAI extends EntityAIBase
@@ -49,16 +46,19 @@ public class EntityTemptAI extends EntityAIBase
         if (this.temptedEntity.getEatTarget() != null) {
             return false;
         }
+
         if (this.temptedEntity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.temptedEntity;
-            if (landbase.getAnimation() == landbase.DRINK_ANIMATION) {
+            if (landbase.isAnimationDirectionLocked(landbase.getAnimation())) {
                 return false;
             }
         }
-        if (this.temptedEntity instanceof EntityPrehistoricFloraPlateosaurus) {
-            EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.temptedEntity;
-            if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
-                return false;
+
+        if (this.temptedEntity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
+            EntityPrehistoricFloraLandClimbingFlyingWalkingBase flybase = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) this.temptedEntity;
+            if (flybase.getAttachmentPos() != null) {
+                if (flybase.getAttachmentFacing() != EnumFacing.UP && flybase.getAttachmentFacing() != EnumFacing.DOWN)
+                    return false;
             }
         }
 
@@ -96,6 +96,13 @@ public class EntityTemptAI extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
+        if (this.temptedEntity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase landbase = (EntityPrehistoricFloraLandBase) this.temptedEntity;
+            if (landbase.isAnimationDirectionLocked(landbase.getAnimation())) {
+                landbase.getNavigator().clearPath();
+                return false;
+            }
+        }
         if (this.scaredByPlayerMovement)
         {
             if (this.temptedEntity.getDistanceSq(this.temptingPlayer) < 36.0D)

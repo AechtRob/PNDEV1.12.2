@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.BiomeOliveGrove;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -34,7 +35,7 @@ public class WorldGenOliveGroveGrassPath extends WorldGenerator
                 }
                 else {
                     if (rand.nextInt(3) != 0 && worldIn.getBiome(position) == BiomeOliveGrove.biome) {
-                        worldIn.setBlockState(position.down(), Blocks.GRASS_PATH.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.down(), Blocks.GRASS_PATH.getDefaultState(), 2);
                         flag = true;
                     }
                 }
@@ -43,7 +44,7 @@ public class WorldGenOliveGroveGrassPath extends WorldGenerator
                 }
                 else {
                     if (rand.nextInt(3) != 0 && worldIn.getBiome(position) == BiomeOliveGrove.biome) {
-                        worldIn.setBlockState(position.down(), Blocks.GRASS_PATH.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.down(), Blocks.GRASS_PATH.getDefaultState(), 2);
                         flag = true;
                     }
                 }

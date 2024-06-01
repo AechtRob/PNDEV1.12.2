@@ -34,7 +34,7 @@ public class RenderCladoselache extends RenderLiving<EntityPrehistoricFloraClado
         float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0.32F;
     }
 
 }

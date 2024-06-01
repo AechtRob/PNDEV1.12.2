@@ -4,22 +4,24 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderGlacialisaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -39,13 +41,12 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int inPFLove;
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
+	//private int inPFLove;
 	public Animation STAND_ANIMATION;
 	public Animation SCRATCH_ANIMATION;
 	public Animation NOISE2_ANIMATION;
@@ -60,7 +61,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		minWidth = 0.18F;
 		maxWidth = 0.9F;
 		maxHeight = 1.8F;
-		maxHealthAgeable = 70.0D;
+		maxHealthAgeable = 60.0D;
 		STAND_ANIMATION = Animation.create(145);
 		NOISE_ANIMATION = Animation.create(20);
 		SCRATCH_ANIMATION = Animation.create(105);
@@ -93,7 +94,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 
@@ -148,7 +149,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		return null;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Terrestrial Dinosaur";}
 
@@ -195,6 +196,15 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(3.0, 3.0, 3.0);
+		}
+		return this.getEntityBoundingBox();
+	}
+
+	@Override
 	public int getAdultAge() {
 		return 64000;
 	}
@@ -213,7 +223,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
@@ -222,12 +231,10 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
 		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
@@ -271,7 +278,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.2D);
 	}
@@ -294,19 +301,10 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
-	}
-
 	@Override
 	public boolean isDrinking()
 	{
-		if (getJuvenile()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
@@ -382,7 +380,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	@Override
 	public boolean isGrazing()
 	{
-		if (getJuvenile() || !this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 
@@ -446,28 +444,27 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		return test && test2;
 	}
 
-
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:glacialisaurus_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:lufengosaur_roar"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:glacialisaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:lufengosaur_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:glacialisaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:lufengosaur_death"));
 	}
 
 	public SoundEvent getAmbientAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:glacialisaurus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:lufengosaur_idle"));
 	}
 
 	@Override
@@ -485,28 +482,6 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
-
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
-
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-		}
-
-		if (this.getAnimation() == GRAZE_ANIMATION) {
-			this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
@@ -566,7 +541,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 		}
 		else {
 			//random idle animations
-			if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				//if (next < 5) {
 					this.setAnimation(SCRATCH_ANIMATION);
@@ -575,7 +550,7 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 				//}
 				this.standCooldown = 2000;
 			}
-			if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);
 			}
@@ -627,6 +602,58 @@ public class EntityPrehistoricFloraGlacialisaurus extends EntityPrehistoricFlora
 			return LepidodendronMod.GLACIALISAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.GLACIALISAURUS_LOOT;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.225;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderGlacialisaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelGlacialisaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderGlacialisaurus.getScaler();
 	}
 
 }

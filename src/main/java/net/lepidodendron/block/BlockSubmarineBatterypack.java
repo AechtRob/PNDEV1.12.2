@@ -21,7 +21,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -100,20 +99,8 @@ public class BlockSubmarineBatterypack extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
-		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+		public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
 		{
-			ItemStack stack = new ItemStack(ItemSubmarineBatterypack.block, 1, this.damageDropped(state));
-			TileEntity tileEntity = world.getTileEntity(pos);
-			int rf = 0;
-			if (tileEntity != null) {
-				if (tileEntity instanceof TileEntitySubmarineBatterypack) {
-					rf = ((TileEntitySubmarineBatterypack)tileEntity).getEnergyStored();
-				}
-			}
-			NBTTagCompound stackNBT = new NBTTagCompound();
-			stackNBT.setInteger("rf", rf);
-			stack.setTagCompound(stackNBT);
-			drops.add(stack);
 		}
 
 		@Override
@@ -154,13 +141,20 @@ public class BlockSubmarineBatterypack extends ElementsLepidodendronMod.ModEleme
 
 		@Override
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
-			TileEntity tileentity = world.getTileEntity(pos);
-			if (tileentity != null) {
-//				if (tileentity instanceof TileEntitySubmarineBatterypack) {
-//					InventoryHelper.dropInventoryItems(world, pos, (TileEntitySubmarineBatterypack) tileentity);
-//				}
-				world.removeTileEntity(pos);
+			TileEntity tileEntity = world.getTileEntity(pos);
+			ItemStack stack = new ItemStack(ItemSubmarineBatterypack.block, 1, this.damageDropped(state));
+			int rf = 0;
+			if (tileEntity != null) {
+				if (tileEntity instanceof TileEntitySubmarineBatterypack) {
+					rf = ((TileEntitySubmarineBatterypack)tileEntity).getEnergyStored();
+				}
 			}
+			NBTTagCompound stackNBT = new NBTTagCompound();
+			stackNBT.setInteger("rf", rf);
+			stack.setTagCompound(stackNBT);
+			spawnAsEntity(world, pos, stack);
+			world.removeTileEntity(pos);
+
 			super.breakBlock(world, pos, state);
 		}
 	}

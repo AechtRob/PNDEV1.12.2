@@ -3,7 +3,9 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEffigia;
 import net.lepidodendron.entity.model.entity.ModelEffigia;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -23,7 +25,41 @@ public class RenderEffigia extends RenderLiving<EntityPrehistoricFloraEffigia> {
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEffigia entity) {
         return RenderEffigia.TEXTURE;
     }
-
+    public void doRender(EntityPrehistoricFloraEffigia entity, double x, double y, double z, float entityYaw, float partialTicks) {
+        try {
+            StackTraceElement[] elements = new Throwable().getStackTrace();
+            String  callerClass = elements[4].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
+            GlStateManager.pushMatrix();
+            GlStateManager.disableCull();
+            GlStateManager.enableAlpha();
+            boolean flag = this.setDoRenderBrightness(entity, partialTicks);
+            if (!this.bindEntityTexture(entity))
+            {
+                return;
+            }
+            RenderDisplays.modelEffigiaBook.renderStaticBook(this.prepareScale(entity, partialTicks));
+            if (flag)
+            {
+                this.unsetBrightness();
+            }
+            GlStateManager.depthMask(true);
+            GlStateManager.disableRescaleNormal();
+            GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
+            GlStateManager.enableTexture2D();
+            GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
+            GlStateManager.enableCull();
+            GlStateManager.popMatrix();
+        }
+        else {
+            super.doRender(entity, x, y, z, entityYaw, partialTicks);
+        }
+        }
+        catch (Exception e)
+        {
+            //Do nothing
+        }
+    }
     @Override
     protected void applyRotations(EntityPrehistoricFloraEffigia entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);

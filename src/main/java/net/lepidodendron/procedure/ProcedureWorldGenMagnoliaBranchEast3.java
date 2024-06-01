@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockMagnoliaFlower;
 import net.lepidodendron.block.BlockMagnoliaLeaves;
 import net.lepidodendron.block.BlockMagnoliaLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenMagnoliaBranchEast3!");
 			return;
@@ -98,12 +100,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			Block block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -118,12 +120,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -138,12 +140,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -158,12 +160,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -178,12 +180,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -198,12 +200,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -218,12 +220,12 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -239,7 +241,7 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 2;
@@ -248,11 +250,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -269,11 +271,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -290,11 +292,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -311,11 +313,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -332,11 +334,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -353,7 +355,7 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 3;
@@ -362,11 +364,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -383,11 +385,11 @@ public class ProcedureWorldGenMagnoliaBranchEast3 extends ElementsLepidodendronM
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -414,12 +416,12 @@ if (option == 3 || option == 4) {
 			Block block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -434,12 +436,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -454,12 +456,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -474,12 +476,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -494,12 +496,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -514,12 +516,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -534,12 +536,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -554,12 +556,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -574,12 +576,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -594,12 +596,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -614,12 +616,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -634,12 +636,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -654,12 +656,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -674,12 +676,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -694,12 +696,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -714,12 +716,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -734,12 +736,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -755,7 +757,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + (2 * reflector);
@@ -764,7 +766,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 1;
@@ -773,7 +775,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 2;
@@ -782,7 +784,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 3;
@@ -791,11 +793,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -812,11 +814,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -833,11 +835,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -854,11 +856,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -875,11 +877,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -896,11 +898,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -917,11 +919,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -938,11 +940,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -959,11 +961,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -980,11 +982,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1001,11 +1003,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1022,7 +1024,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 5;
@@ -1031,11 +1033,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1052,11 +1054,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1073,11 +1075,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1094,11 +1096,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1115,7 +1117,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 2;
@@ -1124,7 +1126,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 3;
@@ -1133,11 +1135,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1154,11 +1156,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1175,11 +1177,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1196,11 +1198,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1229,12 +1231,12 @@ if (option == 3 || option == 4) {
 			Block block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1249,12 +1251,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1269,12 +1271,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1289,12 +1291,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1309,12 +1311,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1329,12 +1331,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1349,12 +1351,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -1369,12 +1371,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1389,12 +1391,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1409,12 +1411,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -1429,12 +1431,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -1449,12 +1451,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1470,11 +1472,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1491,11 +1493,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1512,11 +1514,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1533,11 +1535,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1554,7 +1556,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 
 			xx = x + 2;
@@ -1563,11 +1565,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1584,11 +1586,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1605,11 +1607,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1626,11 +1628,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1656,12 +1658,12 @@ if (option == 3 || option == 4) {
 			Block block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1676,12 +1678,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1696,12 +1698,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1716,12 +1718,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1736,12 +1738,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1756,12 +1758,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1776,12 +1778,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1796,12 +1798,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -1816,12 +1818,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -1836,12 +1838,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1856,12 +1858,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1876,12 +1878,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1896,12 +1898,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -1916,12 +1918,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1936,12 +1938,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -1956,12 +1958,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1976,12 +1978,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -1996,12 +1998,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -2016,12 +2018,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.WEST), 3);
 								break;
 							}
@@ -2036,12 +2038,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.SOUTH), 3);
 								break;
 							}
@@ -2056,12 +2058,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -2076,12 +2078,12 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 				new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLog.block.getDefaultState(), 3);
 				try {
 						IBlockState _bs = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz));
 						for (IProperty<?> prop : _bs.getProperties().keySet()) {
 							if (prop.getName().equals("facing")) {
-								world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz),
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz),
 										_bs.withProperty((PropertyDirection) prop, EnumFacing.UP), 3);
 								break;
 							}
@@ -2097,11 +2099,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2118,11 +2120,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2139,11 +2141,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2160,11 +2162,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2181,11 +2183,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2202,11 +2204,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2223,11 +2225,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2244,11 +2246,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2265,7 +2267,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 				
 			xx = x + 3;
@@ -2274,11 +2276,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2295,7 +2297,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 				
 			xx = x + 4;
@@ -2304,7 +2306,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 				
 			xx = x + 4;
@@ -2313,11 +2315,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2334,7 +2336,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 				
 			xx = x + 4;
@@ -2343,11 +2345,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2364,11 +2366,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2385,7 +2387,7 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 				
 			xx = x + 5;
@@ -2394,11 +2396,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2415,11 +2417,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2436,11 +2438,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2457,11 +2459,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2478,11 +2480,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2499,11 +2501,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2520,11 +2522,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2541,11 +2543,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2562,11 +2564,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -2583,11 +2585,11 @@ if (option == 3 || option == 4) {
 			block = world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)).getBlock();
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) xx, (int) yy, (int) zz)), world,
 					new BlockPos((int) xx, (int) yy, (int) zz))) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockMagnoliaLeaves.block.getDefaultState(), 3);
 				}
 			//Random flowers here:
 			if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos((int) xx, (int) (yy + 1), (int) zz)))) {
-				world.setBlockState(new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) (yy + 1), (int) zz), BlockMagnoliaFlower.block.getDefaultState(), 3);
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) xx, (int) (yy + 1), (int) zz);
 					TileEntity _tileEntity = world.getTileEntity(_bp);

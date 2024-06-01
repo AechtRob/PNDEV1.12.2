@@ -11,6 +11,7 @@ import net.lepidodendron.block.BlockSelaginella;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemLandSnail;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -33,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandSlitheringBase {
+public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandSlitheringBase implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -183,7 +184,6 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
 
 	@Nullable
 	protected ResourceLocation getLootTable() {

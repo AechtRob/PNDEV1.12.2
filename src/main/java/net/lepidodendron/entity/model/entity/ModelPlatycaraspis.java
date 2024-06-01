@@ -128,20 +128,29 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.platycaraspis.render(f5 * 0.22F);
+        this.platycaraspis.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.platycaraspis.rotateAngleY = (float) Math.toRadians(90);
-        this.platycaraspis.offsetX = -0.07F;
-        this.platycaraspis.offsetZ = 0.01F;
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(platycaraspis, 1.6F, 0.0F, -0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.05F, 0.0F);
+        this.platycaraspis.offsetY = -0.15F;
+        this.platycaraspis.offsetX = -0.0F;
+        this.platycaraspis.offsetZ = -0.35F;
         this.platycaraspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(platycaraspis, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.2F, 0.0F);
+        this.platycaraspis.offsetY = -0.0F;
+        this.platycaraspis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -153,7 +162,7 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.platycaraspis.offsetY = 1.15F;
+        //this.platycaraspis.offsetY = 1.15F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body1, this.Body2, this.Body3, this.Tail};
@@ -184,7 +193,7 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
             this.swing(platycaraspis, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.platycaraspis.offsetY = 1.15F;
+                //this.platycaraspis.offsetY = 1.15F;
                 this.bob(platycaraspis, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

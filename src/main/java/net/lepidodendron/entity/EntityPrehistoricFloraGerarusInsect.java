@@ -6,11 +6,15 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +29,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraArchoblattinaInsect {
+public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraArchoblattinaInsect implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -33,9 +37,17 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
+	public final EntityDamageSource SPIKY = new EntityDamageSource("spiky", this);
+
 	public EntityPrehistoricFloraGerarusInsect(World world) {
 		super(world);
 		setSize(0.18F, 0.145F);
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_GERARUS;
 	}
 
 	@Override
@@ -50,7 +62,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 
 	@Override
 	public int defaultFlyCooldown() {
-		return 3000;
+		return 5000;
 	}
 
 	@Override
@@ -66,7 +78,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	protected void collideWithEntity(Entity entityIn) {
 		super.collideWithEntity(entityIn);
 		if (entityIn instanceof EntityPlayer) {
-			entityIn.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			entityIn.attackEntityFrom(SPIKY, (float) 2);
 		}
 	}
 
@@ -77,7 +89,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 
 		if (itemstack.isEmpty())
 		{
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 
 		return super.processInteract(player, hand);
@@ -87,7 +99,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source.getImmediateSource() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) source.getImmediateSource();
-			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
+			player.attackEntityFrom(SPIKY, (float) 2);
 		}
 
 		return super.attackEntityFrom(source, amount);

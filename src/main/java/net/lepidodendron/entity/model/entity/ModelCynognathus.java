@@ -292,16 +292,40 @@ public class ModelCynognathus extends AdvancedModelBaseExtended {
         this.Hips.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.Neck.offsetY = -0.06F;
+        this.Neck.offsetZ = 0.06F;
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(23);
         this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.15F, 0.0F, 0.05F);
+        this.setRotateAngle(Belly, 0.15F, 0.0F, -0.05F);
+        this.setRotateAngle(Bodyfront, 0.05F, 0.0F, -0.05F);
+        this.setRotateAngle(Neck, 0.05F, 0.0F, 0.03F);
+        this.setRotateAngle(Head, -0.05F, 0.0F, 0.01F);
+        this.setRotateAngle(Lowerjawback, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.3F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(Tailmiddleend, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.1F, -0.15F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.5F, -0.1F, -0.1F);
+        this.setRotateAngle(Leftshin, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Rightshin, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindfoot, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, -0.2F, 0.0F, -0.3F);
+        this.setRotateAngle(Leftlowerarm, -1.5F, 0.1F, 0.4F);
+        this.setRotateAngle(Leftfrontfoot, 1.9F, 0.0F, 0.3F);
+        this.setRotateAngle(Rightupperarm, 0.8F, -0.2F, 0.1F);
+        this.setRotateAngle(Rightlowerarm, -1.4F, 0.0F, -0.1F);
+        this.setRotateAngle(Rightfrontfoot, 0.5F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.075F;
+        this.Hips.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

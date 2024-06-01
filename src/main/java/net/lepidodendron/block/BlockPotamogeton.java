@@ -69,7 +69,7 @@ public class BlockPotamogeton extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfigPlants.spreadPotamogeton) {
+			if (LepidodendronConfigPlants.spreadPotamogeton && LepidodendronConfig.spreadPlantsAtAll) {
 				setTickRandomly(true);
 			}
 			else {

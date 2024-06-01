@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDicroidiumHLog;
 import net.lepidodendron.block.BlockDicroidiumHShoot;
 import net.lepidodendron.block.BlockDicroidiumHShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenDicroidiumH extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenDicroidiumH!");
 			return;
@@ -62,26 +64,26 @@ public class ProcedureWorldGenDicroidiumH extends ElementsLepidodendronMod.ModEl
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockDicroidiumHLog.block, EnumFacing.DOWN);
 				counter = counter + 1;
 			}
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockDicroidiumHShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockDicroidiumHShoot.block.getDefaultState(), 3);
 
 			if (TrunkHeight == 5 && Math.random() > 0.85) {
 				//Random extra crown:
 				int i = world.rand.nextInt(4);
 				if (i == 0) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter - 2), (int) z - 1), BlockDicroidiumHShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter - 1), (int) z - 1), BlockDicroidiumHLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter - 2), (int) z - 1), BlockDicroidiumHShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter - 1), (int) z - 1), BlockDicroidiumHLog.block.getDefaultState(), 3);
 				}
 				if (i == 1) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter - 2), (int) z + 1), BlockDicroidiumHShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter - 1), (int) z + 1), BlockDicroidiumHLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter - 2), (int) z + 1), BlockDicroidiumHShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter - 1), (int) z + 1), BlockDicroidiumHLog.block.getDefaultState(), 3);
 				}
 				if (i == 2) {
-					world.setBlockState(new BlockPos((int) x - 1, (int) (y + counter - 2), (int) z), BlockDicroidiumHShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x - 1, (int) (y + counter - 1), (int) z), BlockDicroidiumHLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + counter - 2), (int) z), BlockDicroidiumHShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + counter - 1), (int) z), BlockDicroidiumHLog.block.getDefaultState(), 3);
 				}
 				if (i == 3) {
-					world.setBlockState(new BlockPos((int) x + 1, (int) (y + counter - 2), (int) z), BlockDicroidiumHShoot.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x + 1, (int) (y + counter - 1), (int) z), BlockDicroidiumHLog.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + counter - 2), (int) z), BlockDicroidiumHShoot.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + counter - 1), (int) z), BlockDicroidiumHLog.block.getDefaultState(), 3);
 				}
 			}
 		}

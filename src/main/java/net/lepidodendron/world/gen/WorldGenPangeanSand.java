@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockLeafLitter;
 import net.lepidodendron.block.BlockSandPangaean;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class WorldGenPangeanSand extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), BlockSandPangaean.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockSandPangaean.block.getDefaultState(), 2);
                 flag = true;
             }
         }

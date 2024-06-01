@@ -393,7 +393,48 @@ public class ModelDeiroceras extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.shellbase.render(f5 * 0.585F);
     }
-
+    public void renderStaticWall(float f) {
+        this.shellbase.rotateAngleY = (float) Math.toRadians(90);
+        this.shellbase.offsetY = -0.0F;
+        this.shellbase.offsetX = -0.23F;
+        this.shellbase.offsetZ = -0.03F;
+        this.shellbase.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(shellbase, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle1a, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle1b, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(tentacle2a, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle2b, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tentacle3a, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(tentacle3b, 0.0F, -0.3F, -0.5F);
+        this.setRotateAngle(tentacle4a, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(tentacle4b, 0.0F, 0.3F, 0.5F);
+        this.setRotateAngle(tentacle5a, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(tentacle5b, 0.0F, -0.3F, 0.5F);
+        this.setRotateAngle(tentacle6a, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(tentacle6b, 0.0F, 0.3F, -0.5F);
+        this.setRotateAngle(tentacle7a, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(tentacle7b, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle8a, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(tentacle8b, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle9a, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(tentacle9b, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tentacle10a, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(tentacle10b, -0.3F, 0.0F, 0.0F);
+        this.shellbase.offsetY = -0.19F;
+        this.shellbase.offsetZ = -0.2F;
+        this.shellbase.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(shellbase, 0.1F, 0.0F, 0.0F);
+        this.shellbase.offsetY = 0.2F;
+        this.shellbase.offsetZ = -0.2F;
+        this.shellbase.render(0.01F);
+        resetToDefaultPose();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

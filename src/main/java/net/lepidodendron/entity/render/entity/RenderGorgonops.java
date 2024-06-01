@@ -12,8 +12,10 @@ public class RenderGorgonops extends RenderLiving<EntityPrehistoricFloraGorgonop
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gorgonops.png");
 
     public RenderGorgonops(RenderManager mgr) {
-        super(mgr, new ModelGorgonops(), 0.5f);
+        super(mgr, new ModelGorgonops(), 0.8f);
     }
+
+    public static float getScaler() {return 0.47f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraGorgonops entity) {
@@ -27,9 +29,9 @@ public class RenderGorgonops extends RenderLiving<EntityPrehistoricFloraGorgonop
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraGorgonops entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.270F;
+        this.shadowSize = entity.width * scale * 0.90F;
     }
 
 }

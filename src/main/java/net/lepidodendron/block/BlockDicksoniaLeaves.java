@@ -50,7 +50,6 @@ public class BlockDicksoniaLeaves extends ElementsLepidodendronMod.ModElement {
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
-
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
@@ -58,6 +57,7 @@ public class BlockDicksoniaLeaves extends ElementsLepidodendronMod.ModElement {
 		//		new ModelResourceLocation("lepidodendron:dicksonia_leaves_worldgen", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
 	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {

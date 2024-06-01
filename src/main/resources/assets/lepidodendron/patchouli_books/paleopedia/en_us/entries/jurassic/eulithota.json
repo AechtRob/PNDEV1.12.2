@@ -1,0 +1,46 @@
+{
+	"name": "Eulithota",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eulithota_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_eulithota",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eulithota",
+			"title": "Eulithota",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria $(br)>Scyphozoa $(br)>Semaeostomeae $(br)>Eulithotidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/eulithota.png"],
+			"title": "E. fasciculata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eulithota",
+			"type": "text",
+			"text": "Eulithota is a semaeostomean jellyfish known from the Solnhofen Limestone of Jurassic Germany. It had a stout bell with dozens of tiny tentacles coming out of it. It likely used these tentacles to ensnare prey like modern semaeostomean jellyfish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eulithota"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eulithota"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eulithota"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eulithota"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eulithota"
+		}
+	]
+}

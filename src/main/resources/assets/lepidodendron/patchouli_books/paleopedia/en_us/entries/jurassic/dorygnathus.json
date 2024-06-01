@@ -1,0 +1,47 @@
+{
+	"name": "Dorygnathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dorygnathus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dorygnathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dorygnathus",
+			"title": "Dorygnathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Rhamphorhynchidae $(br)>Rhamphorhynchinae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. banthensis",
+            "entity": "lepidodendron:prehistoric_flora_dorygnathus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dorygnathus",
+			"type": "text",
+			"text": "Dorygnathus is a rhamphorhynchid pterosaur from the Jurassic Posidonia Shale of Bavaria, Germany. Dorygnathus had a short neck and a long tail, similar to other early pterosaurs. It was likely a beach dwelling pterosaur, similar to today's seabirds. It is thought to have been piscivorous, and tooth wear suggest they may sometimes be durophagus, eating hard shelled organisms."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dorygnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dorygnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dorygnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dorygnathus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dorygnathus"
+		}
+	]
+}

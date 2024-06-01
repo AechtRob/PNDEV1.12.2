@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelProfallotaspis extends AdvancedModelBase {
@@ -498,17 +497,20 @@ public class ModelProfallotaspis extends AdvancedModelBase {
         this.Profallotaspis.render(f5 * 0.18F);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.body.offsetZ = 0.1F;
-        GlStateManager.disableCull();
-        this.Profallotaspis.offsetZ = -0.08F;
-        this.Profallotaspis.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.Profallotaspis.rotateAngleX = (float) Math.toRadians(30);
+        this.Profallotaspis.offsetY = -0.025F;
+        this.Profallotaspis.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Profallotaspis, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Thorax1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Thorax2, 0.0F, 0.3F, 0.0F);
+        this.Profallotaspis.offsetY = 0.312F;
+        this.Profallotaspis.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

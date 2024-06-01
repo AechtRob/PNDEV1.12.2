@@ -160,7 +160,7 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Opens portals and rejuvenates petrified plants. Requires the Enchantment of Time Reversal");
+				tooltip.add("Opens Portals: Requires the Enchantment of Time Reversal");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}

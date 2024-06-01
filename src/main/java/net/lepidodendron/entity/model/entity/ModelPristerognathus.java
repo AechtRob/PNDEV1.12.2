@@ -270,20 +270,44 @@ public class ModelPristerognathus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 0.415f);
+        this.Hips.render(f5);
+    }
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.4F, 0.0F, -0.0F);
+        this.setRotateAngle(Lowerjaw1, 0.2F, 0.0F, 0.0F);
+        this.Neck.offsetY = -0.05F;
+        this.Neck.offsetX = 0.0F;
+        this.Neck.offsetZ = -0.05F;
+        this.Neck.render(0.01F);
+        resetToDefaultPose();
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Neck.offsetY = -0.001F;
-        this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(35);
-        this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.2F, 0.2F, 1.0F);
+        this.setRotateAngle(Belly, 0.0F, 0.1F, -0.1F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.1F, -0.1F);
+        this.setRotateAngle(Neck, 0.1F, 0.0F, -0.4F);
+        this.setRotateAngle(Head, 0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(Lowerjaw1, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.5F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.3F, 0.0F, -0.2F);
+        this.setRotateAngle(Leftshin, 0.0F, -0.4F, 0.53F);
+        this.setRotateAngle(Lefthindfoot, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 0.5F, 0.0F, -0.2F);
+        this.setRotateAngle(Righthindfoot, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 0.9F, 0.0F, -0.8F);
+        this.setRotateAngle(Leftlowerarm, -1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.7F, 0.0F, -0.3F);
+        this.setRotateAngle(Rightlowerarm, -0.5F, 0.0F, -0.3F);
+        this.setRotateAngle(Rightfrontfoot, 0.8F, 0.0F, 0.0F);
+        this.Hips.offsetY = 0.05F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -296,7 +320,7 @@ public class ModelPristerognathus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.885F;
+        //this.Hips.offsetY = 0.885F;
 
         EntityPrehistoricFloraPristerognathus Pristerognathus = (EntityPrehistoricFloraPristerognathus) e;
         float masterSpeed = Pristerognathus.getTravelSpeed();

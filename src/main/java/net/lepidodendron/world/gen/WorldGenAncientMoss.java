@@ -6,6 +6,7 @@ import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -34,40 +35,40 @@ public class WorldGenAncientMoss extends WorldGenerator
 			BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
 			int orientation = rand.nextInt(6);
 
-			if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
+			if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
 					&& (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAncientMoss.block.canPlaceBlockAt(worldIn, blockpos))
 			{
 				if (orientation == 0) { //North
 					if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.NORTH)) {
-						worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
 						flag = true;
 					}
 				}
 				else {
 					if (orientation == 1) { //South
 						if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.SOUTH)) {
-							worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
 							flag = true;
 						}
 					}
 					else {
 						if (orientation == 2) { //West
 							if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.WEST)) {
-								worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
 								flag = true;
 							}
 						}
 						else {
 							if (orientation == 3) { //East
 								if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.EAST)) {
-									worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
 									flag = true;
 								}
 							}
 							else {
 								if (orientation == 4) { //Up
 									if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-										worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
+										Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 										PlaceEggs(rand, worldIn, blockpos);
 										flag = true;
 									}
@@ -75,7 +76,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 								else {
 									if (orientation == 5) { //Down
 										if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.DOWN)) {
-											worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
+											Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
 											flag = true;
 										}
 									}
@@ -98,41 +99,41 @@ public class WorldGenAncientMoss extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
 
-            if ((blockpos.getY() < worldIn.getSeaLevel()+altitude) && worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
+            if ((blockpos.getY() < Functions.getAdjustedSeaLevel(worldIn, blockpos)+altitude) && worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
             && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockAncientMoss.block.canPlaceBlockAt(worldIn, blockpos))
             {
             	int orientation = rand.nextInt(6);
             	if (orientation == 0) { //North
             		if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.NORTH)) {
-	                	worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
+	                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
 	                	flag = true;
             		}
             	}
             	else {
             		if (orientation == 1) { //South
 	            		if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.SOUTH)) {
-		                	worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
+		                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
 		                	flag = true;
 	            		}
 	            	}
 	            	else {
 	            		if (orientation == 2) { //West
 		            		if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.WEST)) {
-			                	worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
+			                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
 			                	flag = true;
 		            		}
 		            	}
 		            	else {
 		            		if (orientation == 3) { //East
 			            		if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.EAST)) {
-				                	worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
+				                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
 				                	flag = true;
 			            		}
 			            	}
 			            	else {
 			            		if (orientation == 4) { //Up
 				            		if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-					                	worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
+					                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 										PlaceEggs(rand, worldIn, blockpos);
 					                	flag = true;
 				            		}
@@ -140,7 +141,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 				            	else {
 				            		if (orientation == 5) { //Down
 					            		if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.DOWN)) {
-						                	worldIn.setBlockState(blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
+						                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockAncientMoss.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
 						                	flag = true;
 					            		}
 					            	}

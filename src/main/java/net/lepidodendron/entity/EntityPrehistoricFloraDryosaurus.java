@@ -6,12 +6,17 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDryosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -39,12 +44,12 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLandBase implements IScreamer, IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int inPFLove;
+	//private int inPFLove;
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;
@@ -59,7 +64,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.12F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 35.0D;
+		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -67,6 +72,12 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		LONG_CHATTER_ANIMATION = Animation.create(this.getChatterLength());
 		ALARM_ANIMATION = Animation.create(this.getPanicLength());
 		LOOK_ANIMATION = Animation.create(this.getLookLength());
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_DRYOSAURUS;
 	}
 
 	public int getChatterLength() {
@@ -111,7 +122,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 0; //small
 	}
 
@@ -260,7 +271,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getChatterLength(), this.getGrappleAnimation(), 0.25));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.666F));
+		tasks.addTask(8, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D, 60));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -429,25 +440,29 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			EnumFacing facing = null;
 			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north()))) {
 				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.9D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.7D
+						&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.9D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south()))) {
 				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.9D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.7D
+						&& Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.9D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east()))) {
 				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.9D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.7D
+						&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.9D) {
 					test2 = true;
 				}
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west()))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.9D) {
+				if (Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() >= 0.7D
+						&& Functions.getEntityCentre(this).x - Functions.getEntityBlockPos(this).getX() <= 0.9D) {
 					test2 = true;
 				}
 			}
@@ -469,7 +484,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -502,6 +517,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_chatter"));
 	}
+
 	public SoundEvent getLongChatterSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:dryosaurid_long_chatter"));
@@ -540,7 +556,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			this.setAnimation(LOOK_ANIMATION);
 		}
 
-		if (this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);

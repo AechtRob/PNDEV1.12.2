@@ -29,7 +29,6 @@ import javax.annotation.Nullable;
 public abstract class EntityPrehistoricFloraSwimmingBottomWalkingWaterBase extends EntityPrehistoricFloraAgeableBase {
 
     public Animation EAT_ANIMATION;
-    private int inPFLove;
     private int jumpTicks;
 
     private static final DataParameter<Integer> SWIMTICK = EntityDataManager.createKey(EntityPrehistoricFloraSwimmingBottomWalkingWaterBase.class, DataSerializers.VARINT);

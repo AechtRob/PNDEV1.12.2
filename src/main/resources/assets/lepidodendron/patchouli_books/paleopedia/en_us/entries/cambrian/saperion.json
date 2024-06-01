@@ -1,0 +1,47 @@
+{
+	"name": "Saperion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/saperion_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_saperion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_saperion",
+			"title": "Saperion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Artiopoda $(br)>Trilobitomorpha $(br)>Conciliterga"
+		},
+        	{
+            "type": "entity",
+            "name": "S. glumaceum",
+            "entity": "lepidodendron:prehistoric_flora_saperion",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saperion",
+			"type": "text",
+			"text": "Saperion is a trilobite-like arthropod known from the Maotianshan Shales of China. It had a fused carapace, with around 19 furrows indicating the original trunk segments. It had small eyes underneath the carapace and about 25 pairs of biramous limbs used for walking."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_saperion"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_saperion"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_saperion"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_saperion"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_saperion"
+		}
+	]
+}

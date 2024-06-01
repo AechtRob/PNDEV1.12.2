@@ -1,0 +1,62 @@
+{
+	"name": "Adeopapposaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/adeopapposaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_adeopapposaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_adeopapposaurus",
+			"title": "Adeopapposaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropodomorpha $(br)>Massospondylidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. mognai",
+            "entity": "lepidodendron:prehistoric_flora_adeopapposaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adeopapposaurus",
+			"type": "text",
+			"text": "Adeopapposaurus is a genus of Sauropodomorph dinosaur from the Lower Jurassic of Argentina. Not particularly large for a Jurassic Sauropodomorph, reaching around 5 meters in length, Adeopapposaurus was most noticeable for its body proportions."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adeopapposaurus",
+			"type": "text",
+			"text": "Among its peers, the animal had an unusually long neck, robust limbs and a small cranium potentially sporting a keratinous beak. The known remains of the animal consist of two partial skulls and four incomplete skeletons, all found in the Cañón del Colorado Formation."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adeopapposaurus",
+			"type": "text",
+			"text": "Originally the animal was described as a species of Massospondylus however, further research, lead to its reclassification as its own genus in 2009 by Ricardo N. Martínez; today the animal is classified as a massospondylid."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_adeopapposaurus",
+			"type": "text",
+			"text": "The genus name of the animal roughly translates to \"Lizards that eats afar\" in reference to the large neck, while the specific epithet mognai was given in reference to Mogna, locality close to the fossil's original location."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_adeopapposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_adeopapposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_adeopapposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_adeopapposaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_adeopapposaurus"
+		}
+	]
+}

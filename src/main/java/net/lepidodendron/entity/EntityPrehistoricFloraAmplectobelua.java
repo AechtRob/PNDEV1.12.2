@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderAmplectobelua;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -32,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -40,16 +41,16 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraAmplectobelua(World world) {
 		super(world);
-		setSize(0.5F, 0.25F);
+		setSize(0.8F, 0.25F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.8F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 6.0D;
 	}
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.5;
 	}
 
 	public static String getPeriod() {return "Cambrian";}
@@ -82,7 +83,7 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return 12000;
 	} //Only adults!
 
 	@Override
@@ -101,7 +102,7 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 //		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraTrilobiteSwimBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -190,7 +191,11 @@ public class EntityPrehistoricFloraAmplectobelua extends EntityPrehistoricFloraA
 
 	@Override
 	public float getAgeScale() {
-		return 1;
+		float step = 1F / ((float)this.getAdultAge() + 1F);
+		if (this.getAgeTicks() >= this.getAdultAge()) {
+			return 1F;
+		}
+		return Math.max((this.minWidth/this.getMaxWidth()), (step * (float)this.getAgeTicks()));
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

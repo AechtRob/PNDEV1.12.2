@@ -1,11 +1,12 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
+import net.lepidodendron.util.Functions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.oredict.OreDictionary;
@@ -53,6 +54,13 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
 
     @Override
     public boolean shouldContinueExecuting() {
+        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.entity;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                LandBase.getNavigator().clearPath();
+                return false;
+            }
+        }
         if (this.targetItem == null || !this.targetItem.isEntityAlive()) {
             return false;
         }
@@ -74,7 +82,27 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
             }
         }
         //A helper for things flying above their targets:
-        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+//        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+//            if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
+//                if (this.targetItem != null && !this.targetItem.cannotPickup()) {
+//                    this.entity.setEatTarget(null);
+//                    this.entity.eatItem(this.targetItem.getItem());
+//                    this.targetItem.getItem().shrink(1);
+//                    this.targetItem.setPickupDelay(10);
+//                }
+//            }
+//        }
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingBase) {
+            if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
+                if (this.targetItem != null && !this.targetItem.cannotPickup()) {
+                    this.entity.setEatTarget(null);
+                    this.entity.eatItem(this.targetItem.getItem());
+                    this.targetItem.getItem().shrink(1);
+                    this.targetItem.setPickupDelay(10);
+                }
+            }
+        }
+        if (this.entity instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase) {
             if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
                 if (this.targetItem != null && !this.targetItem.cannotPickup()) {
                     this.entity.setEatTarget(null);
@@ -91,7 +119,7 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
 
     private EntityItem getNearestItem(int range) {
         String[] oreDictList = this.entity.getFoodOreDicts();
-        List<EntityItem> Items = this.entity.world.getEntitiesWithinAABB(EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range));
+        List<EntityItem> Items = Functions.getEntitiesWithinAABBPN(this.entity.world, EntityItem.class, this.entity.getEntityBoundingBox().grow(range, range, range), EntitySelectors.NOT_SPECTATING);
         Items.sort(this.targetSorter);
         for (EntityItem currentItem : Items) {
             if (!currentItem.getItem().isEmpty()) {
@@ -107,7 +135,12 @@ public class EatItemsEntityPrehistoricFloraAgeableBaseAI extends EntityAIBase {
     }
 
     public boolean cantReachItem(Entity item) {
-        if (this.entity instanceof EntityPrehistoricFloraLandBase) {
+        if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
+            if (item.isInWater() && (PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, item.getPosition()))) {
+                return true;
+            }
+        }
+        else if (this.entity instanceof EntityPrehistoricFloraLandBase && (!(this.entity instanceof EntityPrehistoricFloraLandWadingBase))) {
             if (item.isInWater()) {
                 return true;
             }

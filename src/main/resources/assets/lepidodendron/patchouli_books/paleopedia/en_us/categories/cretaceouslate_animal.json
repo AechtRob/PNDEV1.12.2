@@ -1,0 +1,7 @@
+{
+    "name": "Late Cretaceous Animals",
+    "description": "Animals of the Late Cretaceous ",
+    "icon": "lepidodendron:shell_parapuzosia",
+    "parent": "lepidodendron:cretaceouslate",
+    "sortnum": 1
+}

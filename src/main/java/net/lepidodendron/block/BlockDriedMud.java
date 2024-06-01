@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -50,8 +51,9 @@ public class BlockDriedMud extends ElementsLepidodendronMod.ModElement {
 			super(Material.GROUND);
 			setTranslationKey("pf_mud_dried");
 			setSoundType(SoundType.GROUND);
+			setHarvestLevel("shovel", 2);
 			setHardness(0.5F);
-			setResistance(1.5F);
+			setResistance(1.0F);
 			setLightLevel(0F);
 			setLightOpacity(255);
 			this.setTickRandomly(true);

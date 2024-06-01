@@ -67,10 +67,10 @@ public class ItemSpawnEggLacewingGrammolingia extends ElementsLepidodendronMod.M
 			return "Jurassic";
 		}
 
-		@Override
-		public String getHabitat() {
-			return "Terrestrial";
-		}
+		//@Override
+		//public String getHabitat() {
+		//	return "Terrestrial";
+		//}
 
 		@Override
 		@Nullable

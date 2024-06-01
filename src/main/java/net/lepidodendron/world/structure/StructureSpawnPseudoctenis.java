@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPseudoctenis;
 import net.lepidodendron.block.BlockPseudoctenisCone;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -169,10 +170,10 @@ public class StructureSpawnPseudoctenis extends ElementsLepidodendronMod.ModElem
 					}
 					int ii = random.nextInt(6);
 					if (ii == 0) {
-						world.setBlockState(spawnTo, BlockPseudoctenisCone.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPseudoctenisCone.block.getDefaultState());
 					}
 					else {
-						world.setBlockState(spawnTo, BlockPseudoctenis.block.getDefaultState());
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPseudoctenis.block.getDefaultState());
 					}
 				}
 

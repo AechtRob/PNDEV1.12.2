@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:leedsichthys_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_leedsichthys.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_leedsichthys.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_leedsichthys"
+		}
+	}
+}
+
+

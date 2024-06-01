@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockTreefernBurnishedLog;
 import net.lepidodendron.block.BlockTreefernBurnishedShoot;
 import net.lepidodendron.block.BlockTreefernBurnishedShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenTreefernBurnished extends ElementsLepidodendronMod
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure TreefernBurnished!");
 			return;
@@ -63,7 +65,7 @@ public class ProcedureWorldGenTreefernBurnished extends ElementsLepidodendronMod
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockTreefernBurnishedLog.block, EnumFacing.DOWN);
 				counter = counter + 1;
 			}
-			world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernBurnishedShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockTreefernBurnishedShoot.block.getDefaultState(), 3);
 		}
 			
 	}

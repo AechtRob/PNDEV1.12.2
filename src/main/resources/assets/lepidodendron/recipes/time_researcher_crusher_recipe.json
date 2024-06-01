@@ -1,0 +1,31 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:iron_bars"
+    },
+    "3": {
+      "item": "minecraft:iron_bars"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "5": {
+      "item": "minecraft:iron_bars"
+    },
+    "7": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:time_researcher_crusher_item",
+    "count": 1
+  }
+}

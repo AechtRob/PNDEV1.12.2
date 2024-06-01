@@ -15,6 +15,8 @@ public class RenderOnychodus extends RenderLiving<EntityPrehistoricFloraOnychodu
         super(mgr, new ModelOnychodus(), 0.6f);
     }
 
+    public static float getScaler() {return 0.750F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOnychodus entity) {
         return RenderOnychodus.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderOnychodus extends RenderLiving<EntityPrehistoricFloraOnychodu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOnychodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

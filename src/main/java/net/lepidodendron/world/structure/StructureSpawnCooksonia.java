@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockCooksonia;
 import net.lepidodendron.block.BlockCooksoniaSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -137,10 +138,10 @@ public class StructureSpawnCooksonia extends ElementsLepidodendronMod.ModElement
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockCooksonia.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockCooksonia.block.getDefaultState(), 3);
 				if ((Math.random() > 0.7)) {
 					if ((Math.random() > 0.7)) {
-						world.setBlockState(spawnTo, BlockCooksoniaSpore.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockCooksoniaSpore.block.getDefaultState(), 3);
 					}
 	        	}
 			}

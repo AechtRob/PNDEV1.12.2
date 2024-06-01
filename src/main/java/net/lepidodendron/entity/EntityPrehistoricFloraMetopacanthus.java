@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderMetopacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -39,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 
 	public BlockPos currentTarget;
@@ -488,9 +489,15 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		return 1.4F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return 1.2;
+		}
 		return 1.5;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return 1.1;
+		}
 		return 1.4;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
@@ -503,7 +510,7 @@ public class EntityPrehistoricFloraMetopacanthus extends EntityPrehistoricFloraA
 		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.5F;
+		return -0.2F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

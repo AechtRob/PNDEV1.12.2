@@ -250,13 +250,10 @@ public class ModelOnychodus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Body1.render(f5 * 0.750F);
+        this.Body1.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticFloor(float f) {
         this.Body1.rotateAngleY = (float) Math.toRadians(86);
         this.Head.rotateAngleY = (float) Math.toRadians(-12.5);
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(16.5);
@@ -265,12 +262,11 @@ public class ModelOnychodus extends AdvancedModelBase {
         this.Tail2.rotateAngleY = (float) Math.toRadians(7.5);
         this.Tail4.rotateAngleY = (float) Math.toRadians(7.5);
         this.Body1.offsetX = -0.09F;
-        this.Body1.offsetY = -0.02F;
+        this.Body1.offsetY = -0.20F;
         this.Body1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -325,7 +321,7 @@ public class ModelOnychodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Body1.rotateAngleZ = (float) Math.toRadians(90);
-            this.Body1.offsetY = 1.35F;
+            this.Body1.offsetY = 1.15F;
             this.bob(Body1, -speed * 1.8F, 1.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

@@ -159,6 +159,14 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
+                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
+                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
+                        if ((!tile.getIsProcessing())
+                                && (tile.isTankPaused())) {
+                            return true;
+                        }
+                    }
                     return false;
                 }
             }));
@@ -170,6 +178,14 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
+                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
+                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
+                        if ((!tile.getIsProcessing())
+                                && (tile.isTankPaused())) {
+                            return true;
+                        }
+                    }
                     return false;
                 }
             }));
@@ -181,6 +197,14 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
+                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
+                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
+                        if ((!tile.getIsProcessing())
+                                && (tile.isTankPaused())) {
+                            return true;
+                        }
+                    }
                     return false;
                 }
             }));
@@ -192,6 +216,14 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
+                    if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
+                        BlockAcidBathUp.TileEntityAcidBathUp tile = (BlockAcidBathUp.TileEntityAcidBathUp) te;
+                        if ((!tile.getIsProcessing())
+                                && (tile.isTankPaused())) {
+                            return true;
+                        }
+                    }
                     return false;
                 }
             }));

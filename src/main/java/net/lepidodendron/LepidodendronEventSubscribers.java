@@ -1,18 +1,26 @@
 package net.lepidodendron;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraGuanoBall;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.item.*;
+import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.WorldOverworldPortal;
+import net.lepidodendron.world.biome.FishingRodDrops;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -24,10 +32,11 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
@@ -36,8 +45,13 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
+import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
+import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.village.MerchantTradeOffersEvent;
@@ -47,7 +61,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -57,7 +71,113 @@ import java.util.Random;
 
 public class LepidodendronEventSubscribers {
 
-  @SubscribeEvent //Give the Palaeopedia on first join:
+
+	@SubscribeEvent //Stop vanilla fish in the dimensions:
+	public void onFishing(ItemFishedEvent event) {
+		if (event.getHookEntity().getEntityWorld().isRemote) {
+			return;
+		}
+		if (event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimSilurian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimDevonian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCarboniferous
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPermian
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousLate
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
+				&& event.getHookEntity().getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
+			return;
+		}
+
+		for (ItemStack itemstackVanilla : event.getDrops())
+		{
+			Item item = itemstackVanilla.getItem();
+			if (item == Items.FISH || item == Items.COOKED_FISH)
+			{
+				event.setCanceled(true);
+
+				//Replace with modded drops:
+				Entity bobber = event.getHookEntity();
+				World world = bobber.getEntityWorld();
+				EntityPlayer angler = event.getEntityPlayer();
+
+				//Try 64 times to find something:
+				ItemStack itemstack = null;
+				int tries = 0;
+				while (itemstack == null & tries < 64)
+				{
+					itemstack = FishingRodDrops.executeProcedure(bobber.world, bobber.getPosition(), bobber.world.rand, null, bobber);
+					tries ++;
+				}
+				if (itemstack == null) {
+					return;
+				}
+
+				EntityItem entityitem = new EntityItem(bobber.world, bobber.posX, bobber.posY, bobber.posZ, itemstack);
+				double d0 = angler.posX - bobber.posX;
+				double d1 = angler.posY - bobber.posY;
+				double d2 = angler.posZ - bobber.posZ;
+				double d3 = (double) MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+				entityitem.motionX = d0 * 0.1D;
+				entityitem.motionY = d1 * 0.1D + (double)MathHelper.sqrt(d3) * 0.08D;
+				entityitem.motionZ = d2 * 0.1D;
+				world.spawnEntity(entityitem);
+				angler.world.spawnEntity(new EntityXPOrb(angler.world, angler.posX, angler.posY + 0.5D, angler.posZ + 0.5D, world.rand.nextInt(6) + 1));
+			}
+		}
+	}
+
+	@SubscribeEvent //Manage Nether portals: when travelling to the Nether
+	// use the overworld (or other) portal, not a new Nether Portal in the Nether itself.
+	//This subscriber is also copied into the dimension mods to deal with those.
+	public void goToNether(EntityTravelToDimensionEvent event) {
+		if (LepidodendronConfig.oneWayPortalsNether && LepidodendronConfig.oneWayPortals) {
+			if (event.getDimension() == -1) {
+				//We are travelling to the Nether from here:
+				Entity entityIn = event.getEntity();
+				World worldIn = entityIn.getEntityWorld();
+
+			 	if (event.getEntity().getEntityWorld().provider.getDimensionType().getId() == 0) {
+					if (!worldIn.isRemote && !entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn instanceof EntityPlayerMP) {
+						EntityPlayerMP thePlayer = (EntityPlayerMP) entityIn;
+						if (thePlayer.dimension != event.getDimension()) {
+							thePlayer.timeUntilPortal = 10;
+							ReflectionHelper.setPrivateValue(EntityPlayerMP.class, thePlayer, true, "invulnerableDimensionChange", "field_184851_cj");
+							WorldOverworldPortal.BlockCustomPortal.transferPlayerToDimensionPN(thePlayer.server.getPlayerList(), thePlayer, event.getDimension(), WorldOverworldPortal.BlockCustomPortal.getTeleporterForDimension(thePlayer, entityIn.getPosition(), event.getDimension()));
+						}
+					}
+					event.setCanceled(true);
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent //Manage Nether portals: don't allow then to be lit in the Nether
+	public void makeNetherPortal(BlockEvent.PortalSpawnEvent event) {
+		if (LepidodendronConfig.oneWayPortalsNether && LepidodendronConfig.oneWayPortals && event.getWorld().provider.getDimensionType().getId() == -1) {
+			event.setCanceled(true);
+		}
+	}
+
+	@SubscribeEvent //Give the Palaeopedia on first join:
+	public void killedEntity(LivingDropsEvent event) {
+		if (event.getEntity().getClass() == EntityBat.class) {
+			int chancer = 30;
+			if (event.getLootingLevel() > 0) {
+				chancer = (int)Math.ceil(30.0D / ((double)event.getLootingLevel() + 1));
+			}
+			if (event.getEntity().getEntityWorld().rand.nextInt(chancer) == 0) {
+				event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemBatHeadItem.block, 1)));
+			}
+		}
+	}
+
+  	@SubscribeEvent //Give the Palaeopedia on first join:
 	public void playerJoined(EntityJoinWorldEvent event) {
 		if (!LepidodendronConfig.giveBook) {
 			return;
@@ -67,20 +187,107 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
+	@SubscribeEvent //Default to standard attack behaviour
+	public void attackTargetSet(LivingSetAttackTargetEvent event) {
+		  if (event.getEntity() instanceof EntityPrehistoricFloraAgeableBase) {
+			  ((EntityPrehistoricFloraAgeableBase)event.getEntity()).wasWarning = false;
+		  }
+	}
+
 	@SubscribeEvent //Some instructions for use of rideables
 	public void playerMounted(EntityMountEvent event) {
+		if (event.getWorldObj().isRemote) {
+			return;
+		}
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
-			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
-				player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
-				player.sendMessage(new TextComponentString("Left control panel: read battery; right control panel: add/remove battery"));
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && entity.world.getMinecraftServer() != null && !event.getEntityMounting().getEntityWorld().isRemote) {
+				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return entity.world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return entity.world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public Entity getCommandSenderEntity() {
+						return entity;
+					}
+				}, "/pninstruct " + player.getName() + " Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
+
+				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return entity.world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return entity.world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public Entity getCommandSenderEntity() {
+						return entity;
+					}
+				}, "/pninstruct " + player.getName() + " Left control panel: read battery; Right control panel: add/remove battery");
+
+				//player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+				//player.sendMessage(new TextComponentString("Left control panel: read battery; Right control panel: add/remove battery"));
+			}
+		}
+	}
+
+	@SubscribeEvent //Bat poo
+	public void guano(LivingEvent.LivingUpdateEvent event) {
+		if (event.getEntity() instanceof EntityBat && LepidodendronConfig.doGuanoBats) {
+			EntityBat bat = (EntityBat) event.getEntity();
+			if (bat.world.rand.nextInt(6000) == 0 && (!bat.world.isRemote)
+					&& bat.getIsBatHanging() && bat.world.isAirBlock(bat.getPosition().down())) {
+				EntityPrehistoricFloraGuanoBall guanoBall = new EntityPrehistoricFloraGuanoBall(bat.world, bat.posX, bat.posY - 0.5, bat.posZ);
+				guanoBall.setFromMob(true);
+				bat.world.spawnEntity(guanoBall);
 			}
 		}
 	}
 
 	@SubscribeEvent //Spawn Hadean meteors
-	public void meteors(WorldTickEvent event) {
+	public void meteors(TickEvent.WorldTickEvent event) {
 		boolean spawnShower = false;
 		if (event.world != null && !event.world.isRemote && LepidodendronConfig.doMeteorites) {
 			if (event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently, default 6000
@@ -135,7 +342,7 @@ public class LepidodendronEventSubscribers {
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene)
@@ -171,7 +378,7 @@ public class LepidodendronEventSubscribers {
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceousEarly
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene)
@@ -280,29 +487,30 @@ public class LepidodendronEventSubscribers {
 					}
 				}
 			}
-		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
-				&& event.getHand() == EnumHand.MAIN_HAND) {
-			TileEntity te = event.getWorld().getTileEntity(event.getPos());
-			if (te != null) {
-				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
-					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
-					if (tee.hasItem()) {
-						if (!(event.getWorld().isRemote)) {
-							ItemStack itemstack = tee.getStackInSlot(0);
-							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-
-							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
-							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-							event.getEntityPlayer().swingArm(event.getHand());
-						}
-						tee.setDisplay(ItemStack.EMPTY);
-						//return;
-						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
-						event.setCanceled(true);
-					}
-				}
-			}
 		}
+//		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
+//				&& event.getHand() == EnumHand.MAIN_HAND) {
+//			TileEntity te = event.getWorld().getTileEntity(event.getPos());
+//			if (te != null) {
+//				if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
+//					BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
+//					if (tee.hasItem()) {
+//						if (!(event.getWorld().isRemote)) {
+//							ItemStack itemstack = tee.getStackInSlot(0);
+//							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
+//
+//							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
+//							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+//							event.getEntityPlayer().swingArm(event.getHand());
+//						}
+//						tee.setDisplay(ItemStack.EMPTY);
+//						//return;
+//						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
+//						event.setCanceled(true);
+//					}
+//				}
+//			}
+//		}
 		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTaxidermyTable.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			TileEntity te = event.getWorld().getTileEntity(event.getPos());
@@ -579,7 +787,7 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent //Steam in the Hot Springs:
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		Random rand = new Random();
-		if (event.phase == TickEvent.Phase.END && event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian) {
+		if (event.phase == TickEvent.Phase.END && (event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian || event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous)) {
 			Entity entity = event.player;
 			World world = entity.world;
 			BlockPos pos = entity.getPosition();
@@ -591,7 +799,9 @@ public class LepidodendronEventSubscribers {
 					while (z <= entity.posZ + 16) {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
-							if (world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs") && rand.nextInt(150) == 0) {
+							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
+									&& rand.nextInt(150) == 0) {
 								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
 							}
@@ -606,9 +816,19 @@ public class LepidodendronEventSubscribers {
 
 	}
 
-	@SideOnly(Side.CLIENT) //Tooltips for vanilla items
+	@SideOnly(Side.CLIENT) //Tooltips for vanilla items etc
 	@SubscribeEvent
 	public void onEvent(ItemTooltipEvent event) throws NoSuchMethodException {
+
+		if (event.getItemStack().getItem() instanceof ItemPNTaxidermyItem) {
+			List<String> tt = event.getToolTip();
+			tt.add("Can be turned into taxidermy");
+		}
+		if (event.getItemStack().getItem() instanceof ItemGlassCaseDisplayItem) {
+			List<String> tt = event.getToolTip();
+			tt.add("Can be displayed in the Entomology Display Case");
+			tt.add("Can be turned into taxidermy");
+		}
 
 		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
 			if (event.getItemStack().getTagCompound() != null) {
@@ -616,6 +836,13 @@ public class LepidodendronEventSubscribers {
 					List<String> tt = event.getToolTip();
 					tt.add(I18n.translateToLocal("tooltip.palaeopedia.name").trim());
 				}
+			}
+		}
+
+		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.STONE)) {
+			if (event.getItemStack().getMetadata() == 0) {
+				List<String> tt = event.getToolTip();
+				tt.add("NOTE: Used to build a portal back to the Overworld");
 			}
 		}
 
@@ -714,10 +941,22 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 
+		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("lepidodendron:rubber_boots")) {
+			List<String> tt = event.getToolTip();
+			try {
+				tt.add(I18n.translateToLocal("helper.pf_rubber_boots.name"));
+			} catch (Throwable throwable) {
+				//Do nothing - it's all good
+			}
+		}
+
 	}
 
 	@SubscribeEvent //Add portal fossil trades
 	public void onEvent(MerchantTradeOffersEvent event) {
+		if (event.getMerchant() == null || event.getList() == null) {
+			return;
+		}
 		int i = -1;
 		if ((!event.getList().isEmpty()) && (!event.getMerchant().getWorld().isRemote)) {
 			MerchantRecipeList MerchantRecipeFinal = (MerchantRecipeList) event.getList().clone();
@@ -771,6 +1010,15 @@ public class LepidodendronEventSubscribers {
 						stackDicroidium.setTagCompound(stackNBT);
 						MerchantRecipe recipeDicroidium = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackDicroidium);
 						MerchantRecipeFinal.add(recipeDicroidium);
+
+						ItemStack stackGinkgo = new ItemStack(ItemFossilClean.block, 1);
+						plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "lepidodendron:ginkgo_sapling");
+						stackNBT = new NBTTagCompound();
+						stackNBT.setTag("PFPlant", plantNBT);
+						stackGinkgo.setTagCompound(stackNBT);
+						MerchantRecipe recipeGinkgo = new MerchantRecipe(new ItemStack(Items.EMERALD, 5), stackGinkgo);
+						MerchantRecipeFinal.add(recipeGinkgo);
 					}
 				}
 			}

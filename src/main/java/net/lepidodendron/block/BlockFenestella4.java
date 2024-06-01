@@ -13,6 +13,7 @@ import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -84,7 +85,6 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pndietEncruster", BlockFenestella4.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
@@ -94,7 +94,8 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
-				
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
 		) {
 			dimensionCriteria = true;
 		}
@@ -108,6 +109,7 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 				|| dimID == LepidodendronConfig.dimCarboniferous
 				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -116,7 +118,7 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genFenestellaBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -190,12 +192,25 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
+
+		if (biome instanceof BiomeTriassic)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach_black")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimCarboniferous
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))
+		if ((dimID == LepidodendronConfig.dimCarboniferous)
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
 		) {
 			multiplier = 2;
 		}
@@ -203,26 +218,30 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 		) {
 			multiplier = 12;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
+		) {
+			multiplier = 5;
+		}
 		int dimWeight = 1;
-		if ((dimID == LepidodendronConfig.dimCarboniferous)
+		if (dimID == LepidodendronConfig.dimCarboniferous || dimID == LepidodendronConfig.dimTriassic
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_coral"))
 		{
 			dimWeight = 2;
 		}
 		int minWaterDepth = 2 * dimWeight;
 		int maxWaterDepth = 18 * dimWeight;
-		int startHeight = world.getSeaLevel() - maxWaterDepth;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (blockpos1.getY() < world.getSeaLevel()
+						if (blockpos1.getY() < Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))
 								&& (Functions.isWater(world, blockpos1))
 								&& !world.isAirBlock(blockpos1.north())
 								&& !world.isAirBlock(blockpos1.south())
@@ -238,7 +257,7 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= world.getSeaLevel())) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;
@@ -263,10 +282,10 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
-									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockFenestella4.BlockCustom.FACING, enumfacing), 2);
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockFenestella1.BlockCustom.FACING, enumfacing), 2);
 									return true;
 								} else {
-									for (EnumFacing enumfacing1 : BlockFenestella4.BlockCustom.FACING.getAllowedValues()) {
+									for (EnumFacing enumfacing1 : BlockFenestella1.BlockCustom.FACING.getAllowedValues()) {
 										pos1 = blockpos1;
 
 										if (enumfacing1 == EnumFacing.NORTH) {
@@ -291,7 +310,7 @@ public class BlockFenestella4 extends ElementsLepidodendronMod.ModElement {
 														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
 														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
 												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
-											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockFenestella4.BlockCustom.FACING, enumfacing1), 2);
+											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockFenestella1.BlockCustom.FACING, enumfacing1), 2);
 											return true;
 										}
 									}

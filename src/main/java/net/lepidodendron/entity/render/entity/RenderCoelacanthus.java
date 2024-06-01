@@ -15,6 +15,10 @@ public class RenderCoelacanthus extends RenderLiving<EntityPrehistoricFloraCoela
         super(mgr, new ModelCoelacanthus(), 0.5f);
     }
 
+    public static float getScaler() {
+        return 0.315F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCoelacanthus entity) {
         return RenderCoelacanthus.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderCoelacanthus extends RenderLiving<EntityPrehistoricFloraCoela
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCoelacanthus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.125F;

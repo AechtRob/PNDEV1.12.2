@@ -92,7 +92,7 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genRedAlgaeMatBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -114,6 +114,7 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				 ) {
 			biomeCriteria = true;
 		}
@@ -140,6 +141,7 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 2;
 		}

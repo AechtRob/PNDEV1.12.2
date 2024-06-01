@@ -38,7 +38,7 @@ public class WorldGenStromatoliteReefCambrian extends WorldGenerator
         BlockPos pos;
         //Height calcs:
         int yy = 0;
-        yy = Math.min(position.getY() + 4, worldIn.getSeaLevel()+2);
+        yy = Math.min(position.getY() + 4, Functions.getAdjustedSeaLevel(worldIn, position)+2);
         boolean reef = false;
 //System.err.println("Reef start");
 
@@ -59,17 +59,17 @@ public class WorldGenStromatoliteReefCambrian extends WorldGenerator
                         && BlockStromatolite.block.canPlaceBlockAt(worldIn, pos)
                         && (worldIn.getBlockState(pos).getBlock() == Blocks.WATER)
                         && ((Math.pow(Math.abs(xct),2)) + (Math.pow(Math.abs(zct),2)) <= (Math.pow(Math.abs(layerRadius),2)))) {
-                            worldIn.setBlockState(pos, BlockStromatolite.block.getDefaultState(),3);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos, BlockStromatolite.block.getDefaultState(),3);
 
                             //System.err.println("Setting Strom: " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
                             reef = true;
                             //System.err.println("Block1 at " + pos.getX() + " "  + pos.getY() + " " + pos.getZ() + " : " + worldIn.getBlockState(pos).getBlock());
 
                             //Always a chance to grow straight up:
-                            if ((Math.random() > 0.45) && (position.getY() + layer + 1) < worldIn.getSeaLevel()+2) {
-                                worldIn.setBlockState(pos.up(), BlockStromatolite.block.getDefaultState(),3);
-                                if ((Math.random() > 0.45) && (position.getY() + layer + 2) < worldIn.getSeaLevel()+2) {
-                                    worldIn.setBlockState(pos.up(2), BlockStromatolite.block.getDefaultState(),3);
+                            if ((Math.random() > 0.45) && (position.getY() + layer + 1) < Functions.getAdjustedSeaLevel(worldIn, position)+2) {
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(), BlockStromatolite.block.getDefaultState(),3);
+                                if ((Math.random() > 0.45) && (position.getY() + layer + 2) < Functions.getAdjustedSeaLevel(worldIn, position)+2) {
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos.up(2), BlockStromatolite.block.getDefaultState(),3);
                                 }
                             }
                         }
@@ -100,7 +100,7 @@ public class WorldGenStromatoliteReefCambrian extends WorldGenerator
                             //First try regular uprights and then the rotations:
                             if ((((Math.random() > 0.9) && worldIn.getBlockState(pos1.down()).getBlockFaceShape(worldIn, pos1.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
                                 && (worldIn.getBlockState(pos1.down()).getBlock()) != BlockStromatolite.block)) {
-                            //worldIn.setBlockState(pos1, BlockNamapoikia.block.getDefaultState().withProperty(FACING, EnumFacing.UP));
+                            //Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1, BlockNamapoikia.block.getDefaultState().withProperty(FACING, EnumFacing.UP));
                             }
                             else {
                                 for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
@@ -124,7 +124,7 @@ public class WorldGenStromatoliteReefCambrian extends WorldGenerator
                                             ((worldIn.getBlockState(pos2).getBlockFaceShape(worldIn, pos2, enumfacing1) == BlockFaceShape.SOLID)
                                             ||
                                             (worldIn.getBlockState(pos2).getBlock()) == BlockStromatolite.block)) {
-                                        //worldIn.setBlockState(pos1, BlockNamapoikia.block.getDefaultState().withProperty(FACING, enumfacing1), 3);
+                                        //Functions.setBlockStateAndCheckForDoublePlant(worldIn,pos1, BlockNamapoikia.block.getDefaultState().withProperty(FACING, enumfacing1), 3);
                                         //System.err.println("Block at " + pos1.getX() + " "  + pos1.getY() + " " + pos1.getZ());
                                         break;
                                     }

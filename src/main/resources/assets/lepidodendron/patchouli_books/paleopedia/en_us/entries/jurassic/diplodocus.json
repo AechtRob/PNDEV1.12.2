@@ -1,0 +1,53 @@
+{
+	"name": "Diplodocus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diplodocus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_diplodocus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplodocus",
+			"title": "Diplodocus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Sauropoda $(br)>Diplodocoidea $(br)>Diplodocidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. longus",
+            "entity": "lepidodendron:prehistoric_flora_diplodocus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplodocus",
+			"type": "text",
+			"text": "Diplodocus was a genus of Diplodocid sauropod dinosaur which lived in what is now mid-western North America from about 154 to 152 million years ago, During the Kimmeridgian Age of the Morrison Formation. Being one of the best known sauropods, we know a lot about these dinosaurs with their long necks and tails. It is thought they would have been lighter than their fellow sauropods of similar sizes with Diplodocus being at 12-14.8 tons while Apatosaurus weighs 16.4-22.4 tons."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplodocus",
+			"type": "text",
+			"text": "With Diplodocus's generally lighter frame it is thought that they could move reletively quick for their large size with speed estimates being at 12-22 miles per hour. but with the stress it would cause to their limbs they may prefer to amble most of the time."
+		},
+
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplodocus"
+		}
+	]
+}

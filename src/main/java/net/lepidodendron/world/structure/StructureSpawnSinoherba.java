@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockSinoherba;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,7 +29,7 @@ public class StructureSpawnSinoherba extends ElementsLepidodendronMod.ModElement
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSinoherba))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genSinoherba && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genSinoherba && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
@@ -142,7 +143,7 @@ public class StructureSpawnSinoherba extends ElementsLepidodendronMod.ModElement
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockSinoherba.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockSinoherba.block.getDefaultState(), 3);
 			}
 		}
 	}

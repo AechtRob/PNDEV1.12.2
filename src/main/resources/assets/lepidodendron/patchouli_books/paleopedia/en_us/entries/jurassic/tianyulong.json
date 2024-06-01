@@ -1,0 +1,67 @@
+{
+	"name": "Tianyulong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/tianyulong_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_tianyulong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tianyulong",
+			"title": "Tianyulong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Ornithischia $(br)>Heterodontosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. confuciusi",
+            "entity": "lepidodendron:prehistoric_flora_tianyulong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tianyulong",
+			"type": "text",
+			"text": "Tianyulong is a genus of Heterodontosaurid Ornithischian from the Late Cretaceous of China. The holotype was roughly 70 cm long, however due to it not being fully grown, it's very probable this animal could grow larger than this. Originally dated to the Early Cretaceous, the animal for a while was considered to be from the Jehol Group, statement subsequently corrected when the "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tianyulong",
+			"type": "text",
+			"text": "correct origin of the holotype was pinpointed to the Late Jurassic of the Tiaojishan Formation, from which the current, and more correct, datation originated. Compared to other Heterodontosaurids, Tianyulong's proportions were quite unique; It had a large head attached to a short neck, a long tail, long legs and quite short forelimbs, unusual in other members of the group. Tianyulong's discovery was quite remarkable as its remains preserved traces of long filamentous integument,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tianyulong",
+			"type": "text",
+			"text": "similar to that seen in theropods; these filaments were not branched, were very long at times, and appeared quite rigid. Although for this representation we chose to portray integument spreading onto the face, it is actually unknown if any such integument reached that far. Although two specimens have been described, there are more yet to be analyzed, one of which known from a remarkably complete body and a ridiculously "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tianyulong",
+			"type": "text",
+			"text": "long tail, the so called Beijing specimen; Not only does this one preserve a complete specimen of the animal, but the fossil also preserve what seem to be feathers running down from the chest all the way down to the tip of the tail. Before Tianyulong's discovery, Heterodontosaurians were a group restricted to the Early Jurassic of South Africa."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tianyulong",
+			"type": "text",
+			"text": "Tianyulong was thus vital in understanding the extent of Heterodontosaurids in the Jurassic and to bring further evidence potentially suggesting feathering wasn't a derived trait of theropods as much as a basal trait in Dinosauria as a whole."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_tianyulong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_tianyulong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_tianyulong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_tianyulong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_tianyulong"
+		}
+	]
+}

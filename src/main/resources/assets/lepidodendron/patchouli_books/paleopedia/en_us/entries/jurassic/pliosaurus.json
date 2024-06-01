@@ -1,0 +1,61 @@
+{
+	"name": "Pliosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pliosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_pliosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pliosaurus",
+			"title": "Pliosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Reptilia $(br)>Sauropterygia $(br)>Plesiosauria $(br)>Pliosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pliosaurus.png"],
+			"title": "P. kevani",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pliosaurus",
+			"type": "text",
+			"text": "Pliosaurus is a genus of Pliosaurid marine reptile from the Late Jurassic of Europe and North America. Depending on the species this animal could achieve lengths between 8 m to estimates of 12 m, although these numbers are not always agreed upon universally. Undoubtedly a large marine predator, the diet of Pliosaurus probably consisted of a large variety of prey ranging from fishes to other marine reptiles."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pliosaurus",
+			"type": "text",
+			"text": "Perhaps most famous under the name \"Predator X\", this animal has been depicted oftentimes with grossly exaggerated size estimates, putting it at lengths up to 17-20 m by sensationalistic media. The famous \"Predator X\" remains often cited were not the first of the genus, in fact Pliosaurus was first described in the 1840s, while the famous giant specimen was only discovered in Svalbard in the years between 2006-2011, when the remains of it were first reported and extracted."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pliosaurus",
+			"type": "text",
+			"text": "Despite the precocious media attention the remains gathered, and the speculation surrounding the animal's size in life, the specimen was then officially examined and assigned to the species P. funkei, alongside an impressive yet smaller 12 m estimate compared to what the public was presented before. Over the years since Pliosaurus' original description, several species were assigned to the genus, six of which still recognized today,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pliosaurus",
+			"type": "text",
+			"text": "some under current evaluation and a number of others now considered invalid. Originally described by Richard Owen in 1841, the genus was initially desribed as Plesiosaurus under the subgenus Pleiosaurus; not a year later, in 1842, Owen reclassified the animal as it's own genus, misspelling Pleiosaurus as Pliosaurus. The genus name translates to \"More Lizard\" following Owen's belief that Pliosaurus was closer to lizards compared to Plesiosaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pliosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pliosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pliosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pliosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pliosaurus"
+		}
+	]
+}

@@ -1,6 +1,7 @@
 
 package net.lepidodendron.world.structure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
@@ -28,7 +29,7 @@ public class StructureSpawnJerseyanthus extends ElementsLepidodendronMod.ModElem
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimJerseyanthus))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genJerseyanthus && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
+		if (!LepidodendronConfigPlants.genJerseyanthus && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
@@ -151,7 +152,7 @@ public class StructureSpawnJerseyanthus extends ElementsLepidodendronMod.ModElem
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);

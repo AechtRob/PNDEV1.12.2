@@ -126,11 +126,16 @@ public class ModelCladoselache extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.17F;
+        this.body.offsetX = -0.25F;
+        this.body.offsetZ = 0.15F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.rotateAngleX = (float) Math.toRadians(-15);
         this.body2.rotateAngleX = (float) Math.toRadians(5);
@@ -138,11 +143,13 @@ public class ModelCladoselache extends AdvancedModelBase {
         this.body4.rotateAngleX = (float) Math.toRadians(7.5);
         this.body5.rotateAngleX = (float) Math.toRadians(10);
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
+        this.body.offsetY = -0.3F;
+        this.body.offsetZ = 0.2F;
+        this.body.offsetX = -0.25F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

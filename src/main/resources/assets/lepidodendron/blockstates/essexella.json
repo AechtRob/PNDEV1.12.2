@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:essexella"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:essexella", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:essexella", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:essexella", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:essexella", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:essexella"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:essexella", "x": 180}
+    ]
+  }
+}

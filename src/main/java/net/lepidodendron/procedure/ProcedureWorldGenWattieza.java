@@ -1,7 +1,9 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -17,7 +19,7 @@ public class ProcedureWorldGenWattieza extends ElementsLepidodendronMod.ModEleme
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenWattieza!");
 			return;
@@ -98,57 +100,57 @@ public class ProcedureWorldGenWattieza extends ElementsLepidodendronMod.ModEleme
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShoot.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShoot02.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShoot02.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShoot03.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShoot03.block.getDefaultState(), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockWattiezaShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 		}
 	}

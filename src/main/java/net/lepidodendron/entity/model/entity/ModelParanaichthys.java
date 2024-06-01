@@ -249,19 +249,25 @@ public class ModelParanaichthys extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Paranaichthys.render(f5 * 0.2F);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
         this.Paranaichthys.rotateAngleY = (float) Math.toRadians(90);
-        this.Paranaichthys.offsetX = -0.09F;
-        this.Paranaichthys.offsetY = -0.24F;
+        this.Paranaichthys.offsetY = -0.2F;
+        this.Paranaichthys.offsetX = -0.1F;
+        this.Paranaichthys.offsetZ = -0.33F;
         this.Paranaichthys.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Paranaichthys, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3F, 0.0F);
+        this.Paranaichthys.offsetY = -0.08F;
+        this.Paranaichthys.offsetZ = -0.04F;
+        this.Paranaichthys.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -1,0 +1,46 @@
+{
+	"name": "Dendrorhynchoides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dendrorhynchoides_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dendrorhynchoides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dendrorhynchoides",
+			"title": "Dendrorhynchoides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Pterodactyliformes $(br)>Anurognathidae $(br)>Anurognathinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/dendrorhynchoides.png"],
+			"title": "D. curvidentatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dendrorhynchoides",
+			"type": "text",
+			"text": "Dendrorhynchoides is an anurognathid pterosaur from the Jurassic Tiaojishan Formation of China. It was a small anurognathid, with a wingspan of 40 cm. It is theorized to be a tree dwelling insectivore, and with its large eye sockets, it may have had great eyesight, leading some researchers to theorize that it may be a nocturnal insectivore, like modern bats."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_anurognathid@dendrorhynchoides"
+		}
+	]
+}

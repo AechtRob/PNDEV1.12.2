@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEuropasaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -25,9 +26,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -45,8 +43,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLandBase {
-	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraEuropasaurus.class, DataSerializers.BOOLEAN);
+public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 
@@ -59,10 +56,11 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 		minWidth = 0.3F;
 		maxWidth = 1.5F;
 		maxHeight = 2.3F;
-		maxHealthAgeable = 58.0D;
+		maxHealthAgeable = 70.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		setgetMaxTurnDistancePerTick(10.0F);
 	}
 
 	@Override
@@ -103,28 +101,16 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(JUVENILE, false);
 		this.setScaleForAge(false);
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
-		compound.setBoolean("juvenile", this.getJuvenile());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setJuvenile(compound.getBoolean("juvenile"));
-	}
-
-	public void setJuvenile(boolean val)
-	{
-		this.dataManager.set(JUVENILE, val);
-	}
-
-	public boolean getJuvenile() {
-		return this.dataManager.get(JUVENILE);
 	}
 
 	@Override
@@ -136,8 +122,8 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public int getEggType() {
-		return 2; //large
+	public int getEggType(@Nullable String variantIn) {
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -227,11 +213,11 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new LandWanderNestAI(this));
 		tasks.addTask(5, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(6, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
+		tasks.addTask(6, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(10, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -304,7 +290,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean isDrinking()
 	{
-		if (getJuvenile()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 		
@@ -378,7 +364,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean isGrazing()
 	{
-		if (getJuvenile() || !this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return false;
 		}
 		
@@ -412,7 +398,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			EnumFacing facing = null;
 			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(3)))) {
 				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
 					test2 = true;
 				}
 			}
@@ -430,7 +416,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 			}
 			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(3)))) {
 				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
 					test2 = true;
 				}
 			}
@@ -451,7 +437,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(18.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(9.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -488,21 +474,7 @@ public class EntityPrehistoricFloraEuropasaurus extends EntityPrehistoricFloraLa
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (!world.isRemote) {
-			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
-			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
-			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
-			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-				if (!this.getJuvenile()) {
-					this.setJuvenile(true);
-				}
-			}
-			else if (this.getJuvenile()) {
-				this.setJuvenile(false);
-			}
-		}
-
-		if (this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
 				ItemStack item = world.getBlockState(this.getGrazingFrom()).getBlock().getPickBlock(world.getBlockState(this.getGrazingFrom()), null, world, this.getGrazingFrom(), null);
 				world.destroyBlock(this.getGrazingFrom(), true);

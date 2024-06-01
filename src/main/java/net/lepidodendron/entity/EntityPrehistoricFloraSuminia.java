@@ -10,6 +10,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.render.entity.RenderSuminia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IScreamer;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.minecraft.block.BlockDirectional;
@@ -36,7 +38,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandClimbingBase {
+public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandClimbingBase implements IScreamer, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -51,6 +53,11 @@ public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandCli
 		maxWidth = 0.30F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	@Override
+	public float getClimbSpeed() {
+		return 0.7F;
 	}
 
 	@Override

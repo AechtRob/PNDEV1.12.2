@@ -1,10 +1,12 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockPitysLeaves;
 import net.lepidodendron.block.BlockPitysLog;
 import net.lepidodendron.block.BlockPitysStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
@@ -18,7 +20,7 @@ public class ProcedureWorldGenPitys extends ElementsLepidodendronMod.ModElement 
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenPitys!");
 			return;
@@ -174,7 +176,7 @@ public class ProcedureWorldGenPitys extends ElementsLepidodendronMod.ModElement 
 
 	public static void setStrobilus(World world, int x, int y, int z) {
 		if (Math.random() > 0.2) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockPitysStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockPitysStrobilus.block.getDefaultState(), 3);
 			if (!world.isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);

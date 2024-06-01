@@ -122,9 +122,16 @@ public class ModelHaplophrentis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.base.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //Static renderer for taxidermy
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(hood, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(horn, -2.3F, 0.0F, 0.0F);
+        this.base.offsetZ = 0.0F;
+        this.base.offsetY = -0.05F;
+        this.base.offsetX = 0.0F;
+        this.base.render(0.01F);
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

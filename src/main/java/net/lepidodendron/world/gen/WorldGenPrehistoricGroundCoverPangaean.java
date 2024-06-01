@@ -1,7 +1,7 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockPrehistoricGroundCoverPlants;
 import net.lepidodendron.block.BlockPrehistoricGroundCoverPlantsPangaean;
+import net.lepidodendron.util.Functions;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -19,9 +19,9 @@ public class WorldGenPrehistoricGroundCoverPangaean extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrehistoricGroundCoverPlants.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrehistoricGroundCoverPlantsPangaean.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                worldIn.setBlockState(blockpos, BlockPrehistoricGroundCoverPlantsPangaean.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundCoverPlantsPangaean.block.getDefaultState(), 2);
                 flag = true;
             }
         }

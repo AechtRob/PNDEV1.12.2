@@ -419,7 +419,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
 
                     if (itemRender) {
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                         GlStateManager.enableCull();
                         GlStateManager.disableRescaleNormal();
@@ -427,7 +427,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                         GlStateManager.popMatrix();
                     }
                     else {
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();

@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.ai.LandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraClatrotitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatitan;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
@@ -36,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 
 
-public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFloraLandBase implements ITrappableAir {
 
 	private static final float[] CLATROTITAN_SIZE = new float[]{0.3F, 0.3F};
 	private static final float[] GIGATITAN_SIZE = new float[]{0.3F, 0.3F};

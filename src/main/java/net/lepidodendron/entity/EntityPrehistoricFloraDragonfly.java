@@ -8,10 +8,9 @@ import net.lepidodendron.block.BlockInsectEggsDragonfly;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerDragonflyWing;
-import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
-import net.lepidodendron.entity.render.entity.RenderConodont;
 import net.lepidodendron.entity.render.entity.RenderDragonfly;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -40,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
@@ -660,41 +659,6 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 				return RenderDragonfly.TEXTURE_DRAGONFLY10;
 		}
 	}
-			@SideOnly(Side.CLIENT)
-			public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
-				switch (EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant)) {
-					case DRAGONFLY1:
-					default:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY1;
-
-					case DRAGONFLY2:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY2;
-
-					case DRAGONFLY3:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY3;
-
-					case DRAGONFLY4:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY4;
-
-					case DRAGONFLY5:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY5;
-
-					case DRAGONFLY6:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY6;
-
-					case DRAGONFLY7:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY7;
-
-					case DRAGONFLY8:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY8;
-
-					case DRAGONFLY9:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY9;
-
-					case DRAGONFLY10:
-						return LayerDragonflyWing.TEXTURE_DRAGONFLY10;
-				}
-			}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay(@Nullable String variant) {
 		switch (EntityPrehistoricFloraDragonfly.Type.getTypeFromString(variant)) {

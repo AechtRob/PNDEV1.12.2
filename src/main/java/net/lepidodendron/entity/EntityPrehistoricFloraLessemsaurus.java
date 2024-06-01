@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderLessemsaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -34,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -53,6 +54,15 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		setgetMaxTurnDistancePerTick(10.0F);
+	}
+
+	@Override
+	public float getgetMaxTurnDistancePerTick() {
+		if ((!this.getIsFast()) && (!this.getLaying()) && (!this.isInLove())) {
+			return 2.0F + (18.0F - (18.0F * this.getAgeScale()));
+		}
+		return super.getgetMaxTurnDistancePerTick();
 	}
 
 	@Override
@@ -73,7 +83,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 3; //huge
 	}
 
@@ -85,11 +95,6 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	@Override
 	public int getRoarLength() {
 		return 50;
-	}
-
-	@Override
-	public float getMaxTurnDistancePerTick() {
-		return 10.0F;
 	}
 
 	public static String getPeriod() {return "late Triassic";}
@@ -186,11 +191,11 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new LandWanderHerd(this, 1.00D, this.getNavigator().getPathSearchRange()*0.75F));
+		tasks.addTask(7, new LandWanderHerd(this, 1.00D, Math.max(1, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
 		tasks.addTask(8, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(11, new EntityLookIdleAI(this));
+		tasks.addTask(11, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 

@@ -90,7 +90,7 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genPiledAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -109,6 +109,7 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 				 ) {
 			biomeCriteria = true;
 		}
@@ -121,6 +122,7 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 2;
 		}
@@ -153,6 +155,12 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
 			)
 				multiplier = 48;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore"))
+		{
+			multiplier = 8;
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")

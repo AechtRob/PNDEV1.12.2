@@ -1,0 +1,46 @@
+{
+	"name": "Semaeostomites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/semaeostomites_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_semaeostomites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_semaeostomites",
+			"title": "Semaeostomites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Cnidaria $(br)>Scyphozoa $(br)>Semaeostomatida"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/semaeostomites.png"],
+			"title": "S. zitteli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_semaeostomites",
+			"type": "text",
+			"text": "Semaeostomites is a semaeostomatid jellyfish known from the Solnhofen Limestone of Jurassic Germany. Like some modern semaeostomean jellyfish, it had a large bell and a few small tentacles protruding from its head. It was probably a free floating jellyfish and may have been preyed upon by other marine organisms from Solnhofen such as turtles like Solnhofia or fish."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_semaeostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_semaeostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_semaeostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_semaeostomites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_semaeostomites"
+		}
+	]
+}

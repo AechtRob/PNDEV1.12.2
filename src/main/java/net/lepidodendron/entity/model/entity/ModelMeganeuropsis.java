@@ -2,7 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraMeganeura;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -193,36 +192,57 @@ public class ModelMeganeuropsis extends AdvancedModelBase {
 
         updateDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetX = -0.01F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, -0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
+        this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
+        this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
+        this.setRotateAngle(legR2, 0.0F, -0.1F, -0.7F);
+        this.setRotateAngle(legL3, 0.0F, -0.3F, 1.0F);
+        this.setRotateAngle(legR3, 0.0F, 0.3F, -1.0F);
+        this.setRotateAngle(forewingL, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(hindwingL, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetX = -0.01F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleX = (float)Math.toRadians(90);
+        this.body.offsetY = -0.15F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.body.render(f5 * 0.29f);
-        if (entity instanceof EntityPrehistoricFloraMeganeura) {
-            this.body.render(f5);
-        }
-        else {
-            this.body.render(f5);
-        }
-        //GlStateManager.scale(0.88F, 0.88F, 0.88F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.body.render(f5);
     }
 
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.07F;
-        this.body.render(0.015F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
-    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -1,0 +1,46 @@
+{
+	"name": "Rotaciurca",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rotaciurca_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_rotaciurca",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rotaciurca",
+			"title": "Rotaciurca",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Hemichordata $(br)>Pterobranchia $(br)>Cephalodiscida"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/rotaciurca.png"],
+			"title": "R. superbus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rotaciurca",
+			"type": "text",
+			"text": "Rotaciurca is a cephalodiscid pterobranch known from the Bertie Group of the Silurian period. It is interpreted as a planktonic filter feeder, and its conical float would have acted as a floatation device. All other known cephalodiscids are sessile but Rotaciurca is the only known planktonic member, with graptolites being the only other planktonic hemichordates. The whole organism was about 4 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rotaciurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rotaciurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rotaciurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rotaciurca"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rotaciurca"
+		}
+	]
+}

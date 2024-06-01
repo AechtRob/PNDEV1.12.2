@@ -382,19 +382,74 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.05F);
+        this.setRotateAngle(lowerjaw, 0.2F, 0.0F, 0.0F);
         this.neck.offsetY = -0.08F;
-        this.head.rotateAngleX = (float)Math.toRadians(-10);
-        this.lowerjaw.rotateAngleX = (float)Math.toRadians(12.5);
+        this.neck.offsetX = 0.0F;
+        this.neck.offsetZ = -0.2F;
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.2F, 0.15F, 0.0F);
+        this.setRotateAngle(head, -0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(upperjaw, -0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.02F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.02F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(tail6, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(hindlegL, 0.7F, 0.0F, -1.3F);
+        this.setRotateAngle(hindlegL2, 0.6F, 0.0F, -0.2F);
+        this.setRotateAngle(hindlegL3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(hindlegR, 0.5F, 0.0F, 1.3F);
+        this.setRotateAngle(hindlegR2, 0.6F, 0.0F, 0.2F);
+        this.setRotateAngle(hindlegR3, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(forelegL, 0.5F, 0.0F, -1.3F);
+        this.setRotateAngle(forelegL2, -1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(forelegL3, 0.2F, -0.8F, 1.2F);
+        this.setRotateAngle(forelegR, 0.5F, 0.0F, 1.3F);
+        this.setRotateAngle(forelegR2, -1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(forelegR3, 0.2F, 0.8F, -1.2F);
+        this.body.offsetY = -0.03F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body, 0.08F, 0.1F, 0.02F);
+        this.setRotateAngle(body2, 0.15F, -0.1F, 0.02F);
+        this.setRotateAngle(neck, -0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(head, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.01F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.01F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.01F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.02F, -0.2F, 0.0F);
+        this.setRotateAngle(tail5, 0.02F, -0.2F, 0.0F);
+        this.setRotateAngle(tail6, 0.02F, -0.3F, 0.0F);
+        this.setRotateAngle(hindlegL, 1.3F, 0.4F, -0.2F);
+        this.setRotateAngle(hindlegL2, 0.0F, -1.2F, 0.2F);
+        this.setRotateAngle(hindlegL3, 1.3F, 0.0F, 0.0F);
+        this.setRotateAngle(hindlegR, 1.3F, -0.4F, 0.2F);
+        this.setRotateAngle(hindlegR2, 0.0F, 1.2F, -0.5F);
+        this.setRotateAngle(hindlegR3, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(forelegL, 1.7F, -0.2F, -2.5F);
+        this.setRotateAngle(forelegL2, 0.0F, 0.6F, 0.0F);
+        this.setRotateAngle(forelegL3, 1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(forelegR, 1.7F, 0.4F, 2.5F);
+        this.setRotateAngle(forelegR2, 0.2F, -0.6F, 0.2F);
+        this.setRotateAngle(forelegR3, 1.2F, 0.0F, 0.0F);
+        this.body.offsetY = 0.2F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

@@ -1,11 +1,12 @@
 
 package net.lepidodendron.world.structure;
-
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockArchaefructus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -140,7 +141,7 @@ public class StructureSpawnArchaefructus extends ElementsLepidodendronMod.ModEle
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);
@@ -151,7 +152,7 @@ public class StructureSpawnArchaefructus extends ElementsLepidodendronMod.ModEle
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockArchaefructus.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockArchaefructus.block.getDefaultState(), 3);
 					//System.err.println("Spawned " + i + " " + j + " " + k);
 				}
 

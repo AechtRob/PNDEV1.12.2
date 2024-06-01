@@ -1,9 +1,11 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockTreefernBlackLog;
 import net.lepidodendron.block.BlockTreefernBlackShoot;
 import net.lepidodendron.block.BlockTreefernBlackShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBlack;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -84,9 +86,9 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
                 }
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
@@ -96,7 +98,7 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
 
 					//Grab nearby positions too for clumps:
                     for (int ii = 0; ii < 12; ++ii) {
-                        BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+                        BlockPos blockpos = position.add(rand.nextInt(5) - rand.nextInt(5), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(5) - rand.nextInt(5));
                         if (!BlockTreefernBlackShootPlaceable.block.canPlaceBlockAt(worldIn, blockpos)) {
                             continue;
                         }
@@ -123,21 +125,21 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
                             isClear = false;
                         }
                         isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
-                        if (blockpos.getY() >= worldIn.getSeaLevel()-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {
+                        if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());
                             $_dependencies.put("world", worldIn);
                             $_dependencies.put("SaplingSpawn", false);
                             if (rand.nextInt(2) == 0) {
-                                worldIn.setBlockState(blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                                 BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
                             else if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && blockpos.getY() + (rand.nextInt(7) - 3) > 95)) {
                                 ProcedureWorldGenTreefernBlack.executeProcedure($_dependencies);
                             }
                             else {
-                                worldIn.setBlockState(blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                                 BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, blockpos, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
                         }

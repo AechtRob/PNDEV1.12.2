@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -11,6 +12,8 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -33,19 +36,27 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSwimmingAmphibianBase {
+public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
+	public Animation LICK_RIGHT_ANIMATION;
+	public Animation LICK_LEFT_ANIMATION;
+	public Animation LOOK_ANIMATION;
+	private int standCooldown;
+
 	public EntityPrehistoricFloraPlatyhystrix(World world) {
 		super(world);
-		setSize(0.7F, 0.75F);
+		setSize(0.5F, 0.465F);
 		minWidth = 0.1F;
-		maxWidth = 0.7F;
-		maxHeight = 0.75F;
-		maxHealthAgeable = 20.0D;
+		maxWidth = 0.5F;
+		maxHeight = 0.465F;
+		maxHealthAgeable = 15.0D;
+		LOOK_ANIMATION = Animation.create(55);
+		LICK_RIGHT_ANIMATION = Animation.create(50);
+		LICK_LEFT_ANIMATION = Animation.create(50);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -83,8 +94,13 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 		return false;
 	}
 
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, LICK_RIGHT_ANIMATION, LICK_LEFT_ANIMATION, LOOK_ANIMATION};
+	}
+
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.216F;
+		float calcSpeed = 0.13F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.36f;
 		}
@@ -128,7 +144,7 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 //		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(2, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraAmphibamus.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -220,6 +236,12 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -242,6 +264,34 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			int next = rand.nextInt(100);
+			if (next < 33) {
+				this.setAnimation(LICK_LEFT_ANIMATION);
+			} else if (next < 66) {
+				this.setAnimation(LICK_RIGHT_ANIMATION);
+			} else {
+				this.setAnimation(LOOK_ANIMATION);
+
+			}
+			this.standCooldown = 1000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == LICK_LEFT_ANIMATION && this.getAnimationTick() == LICK_LEFT_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 1000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == LICK_RIGHT_ANIMATION && this.getAnimationTick() == LICK_RIGHT_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 1000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
+		if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION && this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 1000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 				&& (BlockAmphibianSpawnPlatyhystrix.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
@@ -254,7 +304,7 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 			//}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnPlatyhystrix.block.getDefaultState();

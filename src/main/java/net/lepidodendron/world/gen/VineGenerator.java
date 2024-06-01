@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
@@ -34,11 +35,11 @@ public class VineGenerator extends WorldGenerator
     {
         for (int i = 0; i < 64; ++i)
         {
-            int j = position.getX() + rand.nextInt(8) - rand.nextInt(8);
+            int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
             int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-            int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
+            int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
-            if (k >= worldIn.getSeaLevel() && this.Vine.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
+            if (k >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k, l)) && this.Vine.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
@@ -52,57 +53,70 @@ public class VineGenerator extends WorldGenerator
 		        	if (enumfacing == EnumFacing.WEST) {pos = new BlockPos(j + 1, k, l);}
 
 		            if (this.Vine.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
-		            	&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD)
+		            	&& (worldIn.getBlockState(pos).getMaterial() == Material.WOOD
+						|| worldIn.getBlockState(pos).getMaterial() == Material.LEAVES))
 		            {
-						if (this.Vine == BlockAristolochia.block && rand.nextInt(6) == 0) {
-							this.state = BlockAristolochiaFlower.block.getDefaultState();
+						int vinecounter = 0;
+						while (worldIn.isAirBlock(new BlockPos(j, k - vinecounter, l)) && k - vinecounter > 0) {
+							try {
+								if (this.state == BlockAristolochiaFlower.block.getDefaultState()) {
+									this.state = BlockAristolochia.block.getDefaultState();
+								}
+								if (this.Vine == BlockAristolochia.block && rand.nextInt(6) == 0) {
+									this.state = BlockAristolochiaFlower.block.getDefaultState();
+								}
+								if (this.state == BlockHopsFruit.block.getDefaultState()) {
+									this.state = BlockHops.block.getDefaultState();
+								}
+								if (this.Vine == BlockHops.block && rand.nextInt(6) == 0) {
+									this.state = BlockHopsFruit.block.getDefaultState();
+								}
+								if (this.state == BlockVitisGrape.block.getDefaultState()) {
+									this.state = BlockVitis.block.getDefaultState();
+								}
+								if (this.Vine == BlockVitis.block && rand.nextInt(6) == 0) {
+									this.state = BlockVitisGrape.block.getDefaultState();
+								}
+								if (this.state == BlockHederaFruit.block.getDefaultState()) {
+									this.state = BlockHedera.block.getDefaultState();
+								}
+								if (this.Vine == BlockHedera.block && rand.nextInt(6) == 0) {
+									this.state = BlockHederaFruit.block.getDefaultState();
+								}
+								if (this.state == BlockActinideaFruit.block.getDefaultState()) {
+									this.state = BlockActinidea.block.getDefaultState();
+								}
+								if (this.Vine == BlockActinidea.block && rand.nextInt(6) == 0) {
+									this.state = BlockActinideaFruit.block.getDefaultState();
+								}
+								if (this.state == BlockKajanthusFlower.block.getDefaultState()) {
+									this.state = BlockKajanthus.block.getDefaultState();
+								}
+								if (this.Vine == BlockKajanthus.block && rand.nextInt(6) == 0) {
+									this.state = BlockKajanthusFlower.block.getDefaultState();
+								}
+								if (enumfacing == EnumFacing.NORTH) {
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn, new BlockPos(j, k - vinecounter, l), this.state.withProperty(BlockVine.SOUTH, true), 2);
+								}
+								if (enumfacing == EnumFacing.EAST) {
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn, new BlockPos(j, k - vinecounter, l), this.state.withProperty(BlockVine.WEST, true), 2);
+								}
+								if (enumfacing == EnumFacing.SOUTH) {
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn, new BlockPos(j, k - vinecounter, l), this.state.withProperty(BlockVine.NORTH, true), 2);
+								}
+								if (enumfacing == EnumFacing.WEST) {
+									Functions.setBlockStateAndCheckForDoublePlant(worldIn, new BlockPos(j, k - vinecounter, l), this.state.withProperty(BlockVine.EAST, true), 2);
+								}
+							}
+							catch (Exception e) {}
+							vinecounter = vinecounter + 1;
 						}
-						if (this.Vine == BlockHops.block && rand.nextInt(6) == 0) {
-							this.state = BlockHopsFruit.block.getDefaultState();
-						}
-						if (this.Vine == BlockVitis.block && rand.nextInt(6) == 0) {
-							this.state = BlockVitisGrape.block.getDefaultState();
-						}
-						if (this.Vine == BlockHedera.block && rand.nextInt(6) == 0) {
-							this.state = BlockHederaFruit.block.getDefaultState();
-						}
-						if (this.Vine == BlockActinidea.block && rand.nextInt(6) == 0) {
-							this.state = BlockActinideaFruit.block.getDefaultState();
-						}
-						if (enumfacing == EnumFacing.NORTH) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.SOUTH, true), 3);
-							return true;
-						}
-						if (enumfacing == EnumFacing.EAST) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.WEST, true), 3);
-							return true;
-						}
-						if (enumfacing == EnumFacing.SOUTH) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.NORTH, true), 3);
-							return true;
-						}
-						if (enumfacing == EnumFacing.WEST) {
-							worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockVine.EAST, true), 3);
-							return true;
-						}
-
+						return true;
 		            }
 		        }
             }
         }
         return true;
     }
-
-    public boolean shouldGenerateInDimension(int id, int[] dims) {
-		int[] var2 = dims;
-		int var3 = dims.length;
-		for (int var4 = 0; var4 < var3; ++var4) {
-			int dim = var2[var4];
-			if (dim == id) {
-				return true;
-			}
-		}
-		return false;
-	}
 
 }

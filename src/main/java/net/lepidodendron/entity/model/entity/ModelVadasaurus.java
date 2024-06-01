@@ -237,10 +237,6 @@ public class ModelVadasaurus extends AdvancedModelBaseExtended {
         this.Hips.render(f5);
     }
 
-    public void renderStaticPlinth(float f) {
-        this.Jaw.rotateAngleX = (float) Math.toRadians(23);
-        this.Hips.render(0.01F);
-    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(UpperLegR, 0.571F, 0.9951F, -0.5221F);
         this.setRotateAngle(UpperLegL, 0.571F, -0.9951F, 0.5221F);

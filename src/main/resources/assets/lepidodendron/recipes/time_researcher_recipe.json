@@ -1,0 +1,30 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "67 "
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:time_researcher_hopper_item"
+    },
+    "3": {
+      "item": "lepidodendron:time_researcher_main_item"
+    },
+    "4": {
+      "item": "lepidodendron:time_researcher_finder_top_item"
+    },
+    "6": {
+      "item": "lepidodendron:time_researcher_dispenser_item"
+    },
+    "7": {
+      "item": "lepidodendron:time_researcher_finder_bottom_item"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:time_researcher_item",
+    "count": 1
+  }
+}

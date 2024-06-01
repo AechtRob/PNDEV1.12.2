@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderLigulella;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -21,7 +22,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLigulella extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraLigulella extends EntityPrehistoricFloraFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -197,13 +198,13 @@ public class EntityPrehistoricFloraLigulella extends EntityPrehistoricFloraFishB
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.9;
+		return 0.27;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.01;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
@@ -225,6 +226,7 @@ public class EntityPrehistoricFloraLigulella extends EntityPrehistoricFloraFishB
 	public static float getScaler(@Nullable String variant) {
 		return RenderLigulella.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 
 }

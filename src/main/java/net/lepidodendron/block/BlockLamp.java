@@ -63,7 +63,7 @@ public class BlockLamp extends ElementsLepidodendronMod.ModElement {
 			super(Material.IRON, MapColor.AIR);
 			setTranslationKey("pf_lamp");
 			setSoundType(SoundType.METAL);
-			setHarvestLevel("pick_axe",0);
+			setHarvestLevel("pickaxe",0);
 			setHardness(3.5F);
 			setResistance(3.5F);
 			setLightOpacity(0);

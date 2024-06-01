@@ -2,8 +2,12 @@
 package net.lepidodendron.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.render.entity.RenderPseudotherium;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraMorganucodon {
+public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraMorganucodon implements ITrappableLand, IAdvancementGranter {
 
 	public EntityPrehistoricFloraPseudotherium(World world) {
 		super(world);
@@ -24,6 +28,12 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PSEUDOTHERIUM;
 	}
 
 	public static String getPeriod() {return "Triassic";}

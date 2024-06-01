@@ -1,0 +1,31 @@
+{
+	"name": "Orthograptus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/orthograptus_icon.png",
+	"category": "lepidodendron:ordovician_static",
+	"turnin": "lepidodendron:pf_adv_book_orthograptus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_orthograptus",
+			"title": "Orthograptus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Hemichordata $(br)>Pterobranchia $(br)>Graptolithina $(br)>Diplograptidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/orthograptus.png"],
+			"title": "Orthograptus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orthograptus",
+			"type": "text",
+			"text": "Orthograptus was a probable sessile graptolite known from all over the world during the Ordovician period. It is known from straight body fossils, which may have grouped together, being suspension feeders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orthograptus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

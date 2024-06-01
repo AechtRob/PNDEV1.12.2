@@ -36,7 +36,7 @@
 //
 //import javax.annotation.Nullable;
 //
-//public class EntityPrehistoricFloraPentecopterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase {
+//public class EntityPrehistoricFloraPentecopterus extends EntityPrehistoricFloraSwimmingBottomWalkingWaterBase implements ITrappableWater {
 //
 //	public Animation SWIM_ANIMATION;
 //	public Animation UNSWIM_ANIMATION;
@@ -149,7 +149,7 @@
 //				//}
 //			}
 //
-//			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
+//			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 //				//Is stationary for egg-laying:
 //				//System.err.println("Test2");
 //				IBlockState eggs = BlockEurypteridEggsSlimonia.block.getDefaultState();
@@ -310,7 +310,7 @@
 //		tasks.addTask(3, new SwimmingBottomWalkingWalk(this, NO_ANIMATION));
 //		tasks.addTask(4, new EntityLookIdleAI(this));
 //		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-//		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 ////		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
 ////		this.targetTasks.addTask(3, new HuntAI(this, EntitySquid.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 ////		this.targetTasks.addTask(3, new HuntAI(this, EntityPrehistoricFloraTrilobiteBottomBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

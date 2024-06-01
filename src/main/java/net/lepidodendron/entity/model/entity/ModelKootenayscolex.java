@@ -2086,19 +2086,24 @@ public class ModelKootenayscolex extends AdvancedModelBase {
         //this.head.render(f5 * 0.25F);
         this.body1.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body1.rotateAngleY = (float) Math.toRadians(90);
-        this.body1.offsetX = -0.F;
-        this.body1.offsetY = -0F;
-        this.body1.offsetZ = 0.0F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body11, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body12, 0.0F, 0.2F, 0.0F);
+        this.body1.offsetZ = -0.0F;
+        this.body1.offsetY = -0.05F;
+        this.body1.offsetX = 0.0F;
         this.body1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

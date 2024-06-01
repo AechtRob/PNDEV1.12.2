@@ -1,9 +1,12 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockCordaitesLeaves;
 import net.lepidodendron.block.BlockCordaitesLog;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +18,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 		super(instance, 13);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenCordaites!");
 			return;
@@ -60,6 +63,13 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 		Boolean topknot = true;
 		Boolean topleaves = true;
 		int secondshoot = 0;
+		double vines2chance = 0.6;
+		if (world.getBiome(new BlockPos((int) x, (int) y, (int) z)) instanceof BiomeCarboniferous) {
+			BiomeCarboniferous biomeC = (BiomeCarboniferous)world.getBiome(new BlockPos((int) x, (int) y, (int) z));
+			if (biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Fen) {
+				vines2chance = 0.33;
+			}
+		}
 		
 		if (((world.canSeeSky(new BlockPos((int) x, (int) y, (int) z)))) 
 			|| (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
@@ -72,6 +82,10 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			TrunkHeight = 15 + (int) Math.round(Math.random() * 15);
+			if (world.rand.nextInt(10) == 0 && !SaplingSpawn) {
+				//Smaller ones for vaired worldgen only:
+				TrunkHeight = (int)Math.round((double)TrunkHeight / 2D);
+			}
 
 			//Trunk:
 			counter = 2;
@@ -87,7 +101,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 				zz = z;
 				ProcedureVines.executeProcedure(xx, yy, zz, world);
 			}
-			if ((vines2) && (Math.random() > 0.6)) {
+			if ((vines2) && (Math.random() > vines2chance)) {
 				xx = x;
 				yy = y + (int) (TrunkHeight/3);
 				zz = z;
@@ -136,7 +150,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 				if ((vines) && (Math.random() > 0.95)) {
 					ProcedureVines.executeProcedure(xx, yy + 1, zz - 1, world);
 				}
-				if ((vines2) && (Math.random() > 0.95)) {
+				if ((vines2) && (Math.random() > vines2chance * 2)) {
 					ProcedureVines2.executeProcedure(xx, yy + 1, zz - 1, world);
 				}
 			}
@@ -176,7 +190,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 					if ((vines) && (Math.random() > 0.95)) {
 						ProcedureVines.executeProcedure(xx, yy + 1, zz - 1, world);
 					}
-					if ((vines2) && (Math.random() > 0.95)) {
+					if ((vines2) && (Math.random() > vines2chance * 2)) {
 						ProcedureVines2.executeProcedure(xx, yy + 1, zz - 1, world);
 					}
 				}
@@ -303,7 +317,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 				if ((vines) && (Math.random() > 0.95)) {
 					ProcedureVines.executeProcedure(xx, yy + 1, zz + 1, world);
 				}
-				if ((vines2) && (Math.random() > 0.95)) {
+				if ((vines2) && (Math.random() > vines2chance * 2)) {
 					ProcedureVines2.executeProcedure(xx, yy + 1, zz + 1, world);
 				}
 			}
@@ -343,7 +357,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 					if ((vines) && (Math.random() > 0.95)) {
 						ProcedureVines.executeProcedure(xx, yy + 1, zz + 1, world);
 					}
-					if ((vines2) && (Math.random() > 0.95)) {
+					if ((vines2) && (Math.random() > vines2chance * 2)) {
 						ProcedureVines2.executeProcedure(xx, yy + 1, zz + 1, world);
 					}
 				}
@@ -470,7 +484,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 				if ((vines) && (Math.random() > 0.95)) {
 					ProcedureVines.executeProcedure(xx + 1, yy + 1, zz, world);
 				}
-				if ((vines2) && (Math.random() > 0.95)) {
+				if ((vines2) && (Math.random() > vines2chance * 2)) {
 					ProcedureVines2.executeProcedure(xx + 1, yy + 1, zz, world);
 				}
 			}
@@ -510,7 +524,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 					if ((vines) && (Math.random() > 0.95)) {
 						ProcedureVines.executeProcedure(xx + 1, yy + 1, zz, world);
 					}
-					if ((vines2) && (Math.random() > 0.95)) {
+					if ((vines2) && (Math.random() > vines2chance * 2)) {
 						ProcedureVines2.executeProcedure(xx + 1, yy + 1, zz, world);
 					}
 				}
@@ -637,7 +651,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 				if ((vines) && (Math.random() > 0.95)) {
 					ProcedureVines.executeProcedure(xx - 1, yy + 1, zz, world);
 				}
-				if ((vines2) && (Math.random() > 0.95)) {
+				if ((vines2) && (Math.random() > vines2chance * 2)) {
 					ProcedureVines2.executeProcedure(xx - 1, yy + 1, zz, world);
 				}
 			}
@@ -677,7 +691,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 					if ((vines) && (Math.random() > 0.95)) {
 						ProcedureVines.executeProcedure(xx - 1, yy + 1, zz, world);
 					}
-					if ((vines2) && (Math.random() > 0.95)) {
+					if ((vines2) && (Math.random() > vines2chance * 2)) {
 						ProcedureVines2.executeProcedure(xx - 1, yy + 1, zz, world);
 					}
 				}

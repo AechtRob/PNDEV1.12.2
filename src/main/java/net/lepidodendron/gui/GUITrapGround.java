@@ -407,7 +407,13 @@ public class GUITrapGround extends ElementsLepidodendronMod.ModElement {
                     if (slot.getHasStack()) {
                         itemstack = slot.getStack();
                     }
-                    baitStr = TrapSpawner.testBait(world, new BlockPos(x, y, z), new Random(), itemstack, 2);
+                    try {
+                        baitStr = TrapSpawner.testBait(world, new BlockPos(x, y, z), new Random(), itemstack, 2);
+                    } catch (InstantiationException e) {
+                        //do nothing
+                    } catch (IllegalAccessException e) {
+                        //do nothing
+                    }
                 }
                 this.fontRenderer.drawString(baitStr,
                         (int)(this.xSize - (baitStr.length() * 4.5))/2,

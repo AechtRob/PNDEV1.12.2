@@ -7,8 +7,9 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraWaterGastropodBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemMaclurina;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -29,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilobiteBottomBase {
+public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraWaterGastropodBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

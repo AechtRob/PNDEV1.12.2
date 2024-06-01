@@ -11,6 +11,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderPhorcynis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -38,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraPhorcynis extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 
 	public BlockPos currentTarget;

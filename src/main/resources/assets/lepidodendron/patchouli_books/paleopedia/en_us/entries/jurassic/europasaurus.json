@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_europasaurus",
 			"type": "text",
-			"text": "Although Europasaurus is related to the giant Brachiosaurus and Giraffatitan, this sauropod had length of only around 6 m, as a full-sized adult. This is thught to be due to insular dwarfism, wherebvy animals living on an island island become smaller (although it's also known for larger variants of some animals to evolve on islands too). Described from Germany, Europasaurus lived in pre-European islands."
+			"text": "Although Europasaurus is related to the giant Brachiosaurus and Giraffatitan, this sauropod had length of only around 6 m, as a full-sized adult. This is thought to be due to insular dwarfism, whereby animals living on an island become smaller (although it's also known for larger variants of some animals to evolve on islands too). Described from Germany, Europasaurus lived in pre-European islands."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_europasaurus",
 			"type": "text",
-			"text": "The reduciton in size is thought to be an adaptation to a redduced supply of food on a small island. Multiple (at least 20) specimens at different growth stages are known from one place, suggesting it lived in herds, and who all died simultaneously, probably due to flash floods caused by storms."
+			"text": "The reduction in size is thought to be an adaptation to a reduced supply of food on a small island. Multiple (at least 20) specimens at different growth stages are known from one place, suggesting it lived in herds, and who all died simultaneously, probably due to flash floods caused by storms."
 		},
 		{
 			"type": "lepidodendron:diet",

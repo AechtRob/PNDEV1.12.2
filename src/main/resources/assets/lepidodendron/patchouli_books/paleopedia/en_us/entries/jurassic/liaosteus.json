@@ -1,0 +1,47 @@
+{
+	"name": "Liaosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/liaosteus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_liaosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_liaosteus",
+			"title": "Liaosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Acipenseriformes $(br)>Peipiaosteidae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. hongi",
+            "entity": "lepidodendron:prehistoric_flora_liaosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liaosteus",
+			"type": "text",
+			"text": "Liaosteus is genus of bony fish known from the Jurassic Haifanggou Formation of China. This fish is known from some remains of both adults and juveniles, and adults could grow up to around 20 cm. Liaosteus is member of Peipiaosteidae, related to modern sturgeons and paddlefish, and it is one of the oldest members of Peipiaosteidae. It is also the only known bony fish from the Yanliao Biota."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_liaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_liaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_liaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_liaosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_liaosteus"
+		}
+	]
+}

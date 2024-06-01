@@ -1,8 +1,10 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockSahnioxylonSapling;
 import net.lepidodendron.block.BlockSahnioxylonShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenSahnioxylon;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -16,21 +18,28 @@ public class WorldGenSahnioxylon extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-        return generate(worldIn, rand, position, false);
+        return generate(worldIn, rand, position, false, 0);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater) {
+        return generate(worldIn, rand, position, needsWater, 0);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, int minHeight)
     {
+        if (minHeight == 0) {
+            minHeight = Functions.getAdjustedSeaLevel(worldIn, position) - 4;
+        }
         boolean flag = false;
-        int offset = 7;
+        int offset = 4;
         if (needsWater) {
-            offset = 3;
+            offset = 2;
         }
         for (int i = 0; i < 36; ++i)
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSahnioxylonSapling.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() > minHeight + (rand.nextInt(5) - 2) && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSahnioxylonSapling.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 if ((worldIn.canSeeSky(blockpos))
@@ -38,10 +47,10 @@ public class WorldGenSahnioxylon extends WorldGenerator
 
                     //Grow:
                     if (Math.random() > 0.3) {
-                        worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                     }
                     else {
-                        HashMap<String, Object> $_dependencies = new HashMap<>();
+                        Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                         $_dependencies.put("x", blockpos.getX());
                         $_dependencies.put("y", blockpos.getY());
                         $_dependencies.put("z", blockpos.getZ());
@@ -76,10 +85,10 @@ public class WorldGenSahnioxylon extends WorldGenerator
                             && worldIn.isAirBlock(blockpos.up()) && worldIn.isAirBlock((blockpos.up(2))) && worldIn.isAirBlock((blockpos.up(3))) && worldIn.isAirBlock((blockpos.up(4)))) {
 
                         if (Math.random() > 0.3) {
-                            worldIn.setBlockState(blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSahnioxylonShootPlaceable.block.getDefaultState());
                         }
                         else {
-                            HashMap<String, Object> $_dependencies = new HashMap<>();
+                            Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
                             $_dependencies.put("x", blockpos.getX());
                             $_dependencies.put("y", blockpos.getY());
                             $_dependencies.put("z", blockpos.getZ());

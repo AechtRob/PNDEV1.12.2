@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockDioonLog;
 import net.lepidodendron.block.BlockDioonShoot;
 import net.lepidodendron.block.BlockDioonShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -16,7 +18,7 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenDioon!");
 			return;
@@ -68,8 +70,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShootPlaceable.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShootPlaceable.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}
@@ -79,8 +81,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}
@@ -94,8 +96,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1))), world, new BlockPos((int) x, (int) (y + 2), (int) (z + 1)))) {
 							block = world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1))).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1))), world, new BlockPos((int) x, (int) (y + 3), (int) (z + 1)))) {
-								world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), BlockDioonShoot.block.getDefaultState(), 3);
-								//world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1)), BlockDioonShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), BlockDioonShoot.block.getDefaultState(), 3);
+								//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 3), (int) (z + 1)), BlockDioonShootTop.block.getDefaultState(), 3);
 							}
 						}
 						ProcedureTreeLog.executeProcedure((int) x, (int) (y + 1), (int) (z - 1), world, BlockDioonLog.block, EnumFacing.DOWN);
@@ -103,8 +105,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1))), world, new BlockPos((int) x, (int) (y + 2), (int) (z - 1)))) {
 							block = world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1))).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1))), world, new BlockPos((int) x, (int) (y + 3), (int) (z - 1)))) {
-								world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), BlockDioonShoot.block.getDefaultState(), 3);
-								//world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1)), BlockDioonShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), BlockDioonShoot.block.getDefaultState(), 3);
+								//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 3), (int) (z - 1)), BlockDioonShootTop.block.getDefaultState(), 3);
 							}
 						}
 						
@@ -116,8 +118,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) (y + 2), (int) z)), world, new BlockPos((int) x + 1, (int) (y + 2), (int) z))) {
 							block = world.getBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z)), world, new BlockPos((int) x + 1, (int) (y + 3), (int) z))) {
-								world.setBlockState(new BlockPos((int) x + 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-								//world.setBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+								//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 							}
 						}
 						ProcedureTreeLog.executeProcedure((int) x - 1, (int) (y + 1), (int) z, world, BlockDioonLog.block, EnumFacing.DOWN);
@@ -125,8 +127,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) (y + 2), (int) z)), world, new BlockPos((int) x - 1, (int) (y + 2), (int) z))) {
 							block = world.getBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z)).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z)), world, new BlockPos((int) x - 1, (int) (y + 3), (int) z))) {
-								world.setBlockState(new BlockPos((int) x - 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-								//world.setBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+								//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 							}
 						}
 					}
@@ -136,8 +138,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 						block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-							world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-							//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+							Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+							//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 						}
 					}
 				}
@@ -148,8 +150,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 					}
 				}
 
@@ -162,8 +164,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 						if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1))), world, new BlockPos((int) x, (int) (y + 2), (int) (z - 1)))) {
 							block = world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1))).getBlock();
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1))), world, new BlockPos((int) x, (int) (y + 3), (int) (z - 1)))) {
-								world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), BlockDioonShoot.block.getDefaultState(), 3);
-								//world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1)), BlockDioonShootTop.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), BlockDioonShoot.block.getDefaultState(), 3);
+								//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 3), (int) (z - 1)), BlockDioonShootTop.block.getDefaultState(), 3);
 							}
 						}
 						if (TrunkHeight >=4) {
@@ -172,8 +174,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1))), world, new BlockPos((int) x, (int) (y + 3), (int) (z + 1)))) {
 								block = world.getBlockState(new BlockPos((int) x, (int) (y + 4), (int) (z + 1))).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 4), (int) (z + 1))), world, new BlockPos((int) x, (int) (y + 4), (int) (z + 1)))) {
-									world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1)), BlockDioonShoot.block.getDefaultState(), 3);
-									//world.setBlockState(new BlockPos((int) x, (int) (y + 4), (int) (z + 1)), BlockDioonShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 3), (int) (z + 1)), BlockDioonShoot.block.getDefaultState(), 3);
+									//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 4), (int) (z + 1)), BlockDioonShootTop.block.getDefaultState(), 3);
 								}
 							}
 						}
@@ -186,8 +188,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 							if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1))), world, new BlockPos((int) x, (int) (y + 2), (int) (z + 1)))) {
 								block = world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1))).getBlock();
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1))), world, new BlockPos((int) x, (int) (y + 3), (int) (z + 1)))) {
-									world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), BlockDioonShoot.block.getDefaultState(), 3);
-									//world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z + 1)), BlockDioonShootTop.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), BlockDioonShoot.block.getDefaultState(), 3);
+									//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 3), (int) (z + 1)), BlockDioonShootTop.block.getDefaultState(), 3);
 								}
 							}
 							if (TrunkHeight >=4) {
@@ -196,8 +198,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1))), world, new BlockPos((int) x, (int) (y + 3), (int) (z - 1)))) {
 									block = world.getBlockState(new BlockPos((int) x, (int) (y + 4), (int) (z - 1))).getBlock();
 									if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 4), (int) (z - 1))), world, new BlockPos((int) x, (int) (y + 4), (int) (z - 1)))) {
-										world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) (z - 1)), BlockDioonShoot.block.getDefaultState(), 3);
-										//world.setBlockState(new BlockPos((int) x, (int) (y + 4), (int) (z - 1)), BlockDioonShootTop.block.getDefaultState(), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 3), (int) (z - 1)), BlockDioonShoot.block.getDefaultState(), 3);
+										//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 4), (int) (z - 1)), BlockDioonShootTop.block.getDefaultState(), 3);
 									}
 								}
 							}
@@ -210,8 +212,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) (y + 2), (int) z)), world, new BlockPos((int) x + 1, (int) (y + 2), (int) z))) {
 									block = world.getBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z)).getBlock();
 									if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z)), world, new BlockPos((int) x + 1, (int) (y + 3), (int) z))) {
-										world.setBlockState(new BlockPos((int) x + 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-										//world.setBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+										//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 									}
 								}
 								if (TrunkHeight >=4) {
@@ -220,8 +222,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 									if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z)), world, new BlockPos((int) x - 1, (int) (y + 3), (int) z))) {
 										block = world.getBlockState(new BlockPos((int) x - 1, (int) (y + 4), (int) z)).getBlock();
 										if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 4), (int) z)), world, new BlockPos((int) x - 1, (int) (y + 4), (int) z))) {
-											world.setBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-											//world.setBlockState(new BlockPos((int) x - 1, (int) (y + 4), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + 3), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+											//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + 4), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 										}
 									}
 								}
@@ -233,8 +235,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 								if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) (y + 2), (int) z)), world, new BlockPos((int) x - 1, (int) (y + 2), (int) z))) {
 									block = world.getBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z)).getBlock();
 									if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z)), world, new BlockPos((int) x - 1, (int) (y + 3), (int) z))) {
-										world.setBlockState(new BlockPos((int) x - 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-										//world.setBlockState(new BlockPos((int) x - 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+										Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + 2), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+										//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x - 1, (int) (y + 3), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 									}
 								}
 								if (TrunkHeight >=4) {
@@ -243,8 +245,8 @@ public class ProcedureWorldGenDioon extends ElementsLepidodendronMod.ModElement 
 									if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z)), world, new BlockPos((int) x + 1, (int) (y + 3), (int) z))) {
 										block = world.getBlockState(new BlockPos((int) x + 1, (int) (y + 4), (int) z)).getBlock();
 										if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x + 1, (int) (y + 4), (int) z)), world, new BlockPos((int) x + 1, (int) (y + 4), (int) z))) {
-											world.setBlockState(new BlockPos((int) x + 1, (int) (y + 3), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
-											//world.setBlockState(new BlockPos((int) x + 1, (int) (y + 4), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
+											Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + 3), (int) z), BlockDioonShoot.block.getDefaultState(), 3);
+											//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x + 1, (int) (y + 4), (int) z), BlockDioonShootTop.block.getDefaultState(), 3);
 										}
 									}
 								}

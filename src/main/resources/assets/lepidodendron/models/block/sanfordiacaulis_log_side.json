@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/sanfordiacaulis_log",
+		"texture": "lepidodendron:blocks/sanfordiacaulis_log"
+	},
+	"elements": [
+		{
+			"from": [5, 5, 0],
+			"to": [11, 11, 5],
+			"faces": {
+				"north": {"uv": [7, 5, 13, 11], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [8, 5, 13, 11], "texture": "#texture"},
+				"west": {"uv": [0, 5, 5, 11], "texture": "#texture"},
+				"up": {"uv": [3, 0, 9, 5], "texture": "#texture"},
+				"down": {"uv": [3, 8, 9, 13], "texture": "#texture"}
+			}
+		}
+	]
+}

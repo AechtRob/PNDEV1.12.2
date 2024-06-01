@@ -103,7 +103,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genSeagrassBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -115,8 +115,6 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genSeagrassOverrideBiomes))
 			biomeCriteria = true;
 
-
-
 		if (dimID == LepidodendronConfig.dimPrecambrian
 				|| dimID == LepidodendronConfig.dimCambrian
 				|| dimID == LepidodendronConfig.dimOrdovician
@@ -126,6 +124,7 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			biomeCriteria = false;
 		}
@@ -134,6 +133,10 @@ public class BlockSeaGrass extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
+		if (dimID == LepidodendronConfig.dimCretaceousLate
+		) {
+			multiplier = 32;
+		}
 
 		for (int i = 0; i < (int) 20 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

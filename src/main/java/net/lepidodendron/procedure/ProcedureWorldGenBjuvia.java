@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockBjuviaLog;
 import net.lepidodendron.block.BlockBjuviaShoot;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenBjuvia extends ElementsLepidodendronMod.ModElement
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenBjuvia!");
 			return;
@@ -66,8 +68,8 @@ public class ProcedureWorldGenBjuvia extends ElementsLepidodendronMod.ModElement
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockBjuviaShoot.block.getDefaultState(), 3);
-					//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockBjuviaShootTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockBjuviaShoot.block.getDefaultState(), 3);
+					//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockBjuviaShootTop.block.getDefaultState(), 3);
 				}
 			}
 		}

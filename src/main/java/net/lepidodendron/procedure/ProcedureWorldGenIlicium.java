@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockIliciumFlower;
 import net.lepidodendron.block.BlockIliciumLeaves;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenIlicium!");
 			return;
@@ -105,7 +107,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 		if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(5) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {
-			world.setBlockState(pos.up(), BlockIliciumFlower.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockIliciumFlower.block.getDefaultState(), 3);
 			TileEntity tileEntity = world.getTileEntity(pos.up());
 			if (tileEntity instanceof BlockIliciumFlower.TileEntityCustom) {
 				tileEntity.getTileData().setBoolean("decayable", (true));
@@ -118,7 +120,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.north()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.north()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.north(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.north());
 						if (tileEntity instanceof BlockIliciumFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -130,7 +132,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.east()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.east()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.east(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.east());
 						if (tileEntity instanceof BlockIliciumFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -142,7 +144,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.south()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.south()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.south(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.south());
 						if (tileEntity instanceof BlockIliciumFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -154,7 +156,7 @@ public class ProcedureWorldGenIlicium extends ElementsLepidodendronMod.ModElemen
 					if (world.getBlockState(pos).getBlock() == BlockIliciumLeaves.block && world.rand.nextInt(7) == 0
 							&& world.getBlockState(pos.west()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.west()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.west(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.WEST), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockIliciumFlower.block.getDefaultState().withProperty(BlockIliciumFlower.BlockCustom.FACING, EnumFacing.WEST), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.west());
 						if (tileEntity instanceof BlockIliciumFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));

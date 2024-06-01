@@ -214,18 +214,68 @@ public class ModelLystrosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(30);
         this.Head.rotateAngleX = (float) Math.toRadians(-10);
+        this.Neck.offsetY = -0.025F;
         this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.1F, 0.2F);
+        this.setRotateAngle(Lowerjaw1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.0F, 0.0F, 1.8F);
+        this.setRotateAngle(Rightlowerarm, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(Rightfrontfoot, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.9F, 0.0F, 0.4F);
+        this.setRotateAngle(Lefthindfoot, 0.0F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.11F;
+        this.Hips.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = -0.50F;
+        this.Hips.offsetX = 0.0F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(130);
+        this.Hips.rotateAngleX = (float)Math.toRadians(9);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(-2);
+        this.Hips.scaleChildren = true;
+        float scaler = 1.1F;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Hips, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.1F, 0.2F);
+        this.setRotateAngle(Lowerjaw1, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.0F, 0.0F, 1.8F);
+        this.setRotateAngle(Rightlowerarm, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(Rightfrontfoot, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.9F, 0.0F, 0.4F);
+        this.setRotateAngle(Lefthindfoot, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

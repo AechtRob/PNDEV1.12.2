@@ -9,6 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderParanaichthys extends RenderLiving<EntityPrehistoricFloraParanaichthys> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paranaichthys.png");
+    public static float getScaler() {
+        return 0.23F;
+    }
 
     public RenderParanaichthys(RenderManager mgr) {
         super(mgr, new ModelParanaichthys(), 0.0f);

@@ -1,0 +1,42 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/fossil_finder_glass",
+		"particle": "lepidodendron:blocks/fossil_finder_glass"
+	},
+	"elements": [
+		{
+			"from": [7, 7, 7],
+			"to": [9, 9, 9],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 5, 8]},
+			"faces": {
+				"north": {"uv": [14, 0, 16, 2], "texture": "#0"},
+				"east": {"uv": [14, 0, 16, 2], "texture": "#0"},
+				"south": {"uv": [14, 0, 16, 2], "texture": "#0"},
+				"west": {"uv": [14, 0, 16, 2], "texture": "#0"},
+				"up": {"uv": [14, 0, 16, 2], "texture": "#0"},
+				"down": {"uv": [14, 0, 16, 2], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 5, 7.5],
+			"to": [8.5, 7, 8.5],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 5, 8]},
+			"faces": {
+				"north": {"uv": [15, 2, 16, 4], "texture": "#0"},
+				"east": {"uv": [15, 2, 16, 4], "texture": "#0"},
+				"south": {"uv": [15, 2, 16, 4], "texture": "#0"},
+				"west": {"uv": [15, 2, 16, 4], "texture": "#0"},
+				"up": {"uv": [14, 2, 15, 3], "texture": "#0"},
+				"down": {"uv": [14, 2, 15, 3], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, -55, 0],
+			"translation": [0, -1.5, 0],
+			"scale": [1.250, 1.250, 1.250]
+		}
+	}
+}

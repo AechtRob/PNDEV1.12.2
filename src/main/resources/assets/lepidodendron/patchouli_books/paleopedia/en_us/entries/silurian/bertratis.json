@@ -1,0 +1,46 @@
+{
+	"name": "Bertratis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/bertratis_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_bertratis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bertratis",
+			"title": "Bertratis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)>Cnidaria $(br)>Hydrozoa $(br)>Capitata $(br)>Porpitoidea"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/bertratis.png"],
+			"title": "B. ciurcae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bertratis",
+			"type": "text",
+			"text": "Bertratis is a Silurian porpitoid hydrozoan known from Ontario and New York State. It had a circular body, and is interpreted to have lived a similar lifestyle to the modern Porpita porpita, a marine hydrozoan which floats at the surface of the water with its tentacles spread out to its sides."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_bertratis"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_bertratis"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_bertratis"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_bertratis"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_bertratis"
+		}
+	]
+}

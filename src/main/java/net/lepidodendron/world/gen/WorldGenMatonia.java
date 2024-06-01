@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockMatonia;
 import net.lepidodendron.block.BlockMatoniaLarge;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -53,15 +54,15 @@ public class WorldGenMatonia extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(8) - rand.nextInt(8), rand.nextInt(offset) - rand.nextInt(offset));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockMatonia.block.canPlaceBlockAt(worldIn, blockpos)
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockMatonia.block.canPlaceBlockAt(worldIn, blockpos)
             )
             if (!needsWater) {
                 {
                     if (Math.random() >= 0.5) {
-                        worldIn.setBlockState(blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     flag = true;
                 }
@@ -88,10 +89,10 @@ public class WorldGenMatonia extends WorldGenerator
                 }
                 if (waterCriteria) {
                     if (Math.random() >= 0.5) {
-                        worldIn.setBlockState(blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatonia.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockMatoniaLarge.block.getDefaultState().withProperty(BlockDirectional.FACING, facing), 3);
                     }
                     flag = true;
                 }

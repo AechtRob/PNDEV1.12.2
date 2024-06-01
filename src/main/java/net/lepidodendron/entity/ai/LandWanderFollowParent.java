@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.ai.EntityAIBase;
 
 import java.util.List;
@@ -18,8 +19,34 @@ public class LandWanderFollowParent extends EntityAIBase
         this.moveSpeed = speed;
     }
 
+    public double getFollowDistanceSq() {
+        if (this.childAnimal.getMaxWidth() > 5) {
+            return 64.0D;
+        }
+        else if (this.childAnimal.getMaxWidth() > 4) {
+            return 42.0D;
+        }
+        else if (this.childAnimal.getMaxWidth() > 3) {
+            return 36.0D;
+        }
+        else if (this.childAnimal.getMaxWidth() > 2) {
+            return 25.0D;
+        }
+        else if (this.childAnimal.getMaxWidth() > 1) {
+            return 16.0D;
+        }
+        else return 9.0D;
+    }
+
     public boolean shouldExecute()
     {
+        if (this.childAnimal instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.childAnimal;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                return false;
+            }
+        }
+
         if (this.childAnimal.isPFAdult())
         {
             return false;
@@ -48,7 +75,7 @@ public class LandWanderFollowParent extends EntityAIBase
             {
                 return false;
             }
-            else if (d0 < 9.0D)
+            else if (d0 < getFollowDistanceSq())
             {
                 return false;
             }
@@ -62,6 +89,13 @@ public class LandWanderFollowParent extends EntityAIBase
 
     public boolean shouldContinueExecuting()
     {
+        if (this.childAnimal instanceof EntityPrehistoricFloraLandBase) {
+            EntityPrehistoricFloraLandBase LandBase = (EntityPrehistoricFloraLandBase) this.childAnimal;
+            if (LandBase.isAnimationDirectionLocked(LandBase.getAnimation())) {
+                LandBase.getNavigator().clearPath();
+                return false;
+            }
+        }
         if (this.childAnimal.isPFAdult())
         {
             return false;
@@ -73,7 +107,7 @@ public class LandWanderFollowParent extends EntityAIBase
         else
         {
             double d0 = this.childAnimal.getDistanceSq(this.parentAnimal);
-            return d0 >= 9.0D && d0 <= 256.0D;
+            return d0 >= getFollowDistanceSq() && d0 <= 256.0D;
         }
     }
 

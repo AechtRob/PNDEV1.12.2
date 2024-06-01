@@ -1,5 +1,6 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +29,7 @@ public class WorldGenDeadBush extends WorldGenerator
 
             if (worldIn.isAirBlock(blockpos) && Blocks.DEADBUSH.canBlockStay(worldIn, blockpos, Blocks.DEADBUSH.getDefaultState()))
             {
-                worldIn.setBlockState(blockpos, bush, 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, bush, 2);
             }
         }
 

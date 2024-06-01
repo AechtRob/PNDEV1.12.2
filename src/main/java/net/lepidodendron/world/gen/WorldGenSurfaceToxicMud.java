@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockToxicMud;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,7 +20,7 @@ public class WorldGenSurfaceToxicMud extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= worldIn.getSeaLevel() - 1) && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getMaterial() == Material.WATER)
+            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 1) && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getMaterial() == Material.WATER)
             	&& (
             		((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
             		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
@@ -29,7 +30,7 @@ public class WorldGenSurfaceToxicMud extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), BlockToxicMud.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockToxicMud.block.getDefaultState(), 2);
                 flag = true;
             }
         }

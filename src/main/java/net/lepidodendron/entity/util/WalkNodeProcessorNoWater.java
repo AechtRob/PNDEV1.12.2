@@ -2,6 +2,7 @@ package net.lepidodendron.entity.util;
 
 import com.google.common.collect.Sets;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -215,7 +216,7 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
             }
             else
             {
-                if (pathpoint == null && p_186332_4_ > 0 && pathnodetype != PathNodeType.FENCE && pathnodetype != PathNodeType.TRAPDOOR)
+                if (pathpoint == null && p_186332_4_ > 0 && (pathnodetype != PathNodeType.FENCE || p_186332_4_ > 1) && (pathnodetype != PathNodeType.TRAPDOOR || p_186332_4_ > 1))
                 {
                     pathpoint = this.getSafePoint(x, y + 1, z, p_186332_4_ - 1, p_186332_5_, facing);
 
@@ -355,10 +356,10 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
                         pathnodetype = PathNodeType.BLOCKED;
                     }
 
-                    if (pathnodetype == PathNodeType.RAIL && !(p_193577_1_.getBlockState(p_193577_12_).getBlock() instanceof BlockRailBase) && !(p_193577_1_.getBlockState(p_193577_12_.down()).getBlock() instanceof BlockRailBase))
-                    {
-                        pathnodetype = PathNodeType.FENCE;
-                    }
+//                    if (pathnodetype == PathNodeType.RAIL && !(p_193577_1_.getBlockState(p_193577_12_).getBlock() instanceof BlockRailBase) && !(p_193577_1_.getBlockState(p_193577_12_.down()).getBlock() instanceof BlockRailBase))
+//                    {
+//                        pathnodetype = PathNodeType.FENCE;
+//                    }
 
                     if (i == 0 && j == 0 && k == 0)
                     {
@@ -387,27 +388,34 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
     {
         PathNodeType pathnodetype = this.getPathNodeTypeRaw(blockaccessIn, x, y, z);
 
-        if (y >= 1) {
-            if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
-                if (entity != null) {
-                    if (entity.width > 1) {
-                        if (
-                                blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
-                                        && blockaccessIn.getBlockState(new BlockPos(-1, y - 1, z + 1)).getMaterial() == Material.WATER
-                        ) {
+        if (y >= 1 ) {
+            if (currentEntity != null) {
+                if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
+                    if (currentEntity.world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
+                        if (currentEntity.width > 1) {
+                            if (
+                                    blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x, y - 1, z + 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z)).getMaterial() == Material.WATER
+                                            && blockaccessIn.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getMaterial() == Material.WATER
+                            ) {
+                                pathnodetype = PathNodeType.BLOCKED;
+                            }
+                        }
+                        else {
                             pathnodetype = PathNodeType.BLOCKED;
                         }
                     }
-                }
-                else {
+                } else {
                     pathnodetype = PathNodeType.BLOCKED;
                 }
+            }
+            else {
+                pathnodetype = PathNodeType.BLOCKED;
             }
         }
         //if (blockaccessIn.getBlockState(new BlockPos(x, y , z)).getBlock() instanceof BlockPalisadePF)
@@ -416,21 +424,29 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
         //}
         if (pathnodetype == PathNodeType.OPEN && y >= 1)
         {
-            Block block = blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getBlock();
-            PathNodeType pathnodetype1 = this.getPathNodeTypeRaw(blockaccessIn, x, y - 1, z);
-            pathnodetype = pathnodetype1 != PathNodeType.WALKABLE && pathnodetype1 != PathNodeType.OPEN && pathnodetype1 != PathNodeType.WATER && pathnodetype1 != PathNodeType.LAVA ? PathNodeType.WALKABLE : PathNodeType.OPEN;
+            if (currentEntity != null) {
+                if (currentEntity.world.isBlockLoaded(new BlockPos(x, y - 1, z))) {
+                    Block block = blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getBlock();
+                    PathNodeType pathnodetype1 = this.getPathNodeTypeRaw(blockaccessIn, x, y - 1, z);
+                    pathnodetype = pathnodetype1 != PathNodeType.WALKABLE && pathnodetype1 != PathNodeType.OPEN && pathnodetype1 != PathNodeType.WATER && pathnodetype1 != PathNodeType.LAVA ? PathNodeType.WALKABLE : PathNodeType.OPEN;
 
-            if (pathnodetype1 == PathNodeType.DAMAGE_FIRE || block == Blocks.MAGMA)
-            {
-                pathnodetype = PathNodeType.DAMAGE_FIRE;
+                    if (pathnodetype1 == PathNodeType.DAMAGE_FIRE || block == Blocks.MAGMA) {
+                        pathnodetype = PathNodeType.DAMAGE_FIRE;
+                    }
+
+                    if (pathnodetype1 == PathNodeType.DAMAGE_CACTUS) {
+                        pathnodetype = PathNodeType.DAMAGE_CACTUS;
+                    }
+
+                    if (pathnodetype1 == PathNodeType.DAMAGE_OTHER) pathnodetype = PathNodeType.DAMAGE_OTHER;
+                }
+                else {
+                    pathnodetype = PathNodeType.BLOCKED;
+                }
             }
-
-            if (pathnodetype1 == PathNodeType.DAMAGE_CACTUS)
-            {
-                pathnodetype = PathNodeType.DAMAGE_CACTUS;
+            else {
+                pathnodetype = PathNodeType.BLOCKED;
             }
-
-            if (pathnodetype1 == PathNodeType.DAMAGE_OTHER) pathnodetype = PathNodeType.DAMAGE_OTHER;
         }
 
         pathnodetype = this.checkNeighborBlocks(blockaccessIn, x, y, z, pathnodetype);
@@ -480,7 +496,7 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
         boolean isTree = false;
         if (this.currentEntity instanceof EntityPrehistoricFloraLandBase) {
             EntityPrehistoricFloraLandBase landBase = (EntityPrehistoricFloraLandBase) this.currentEntity;
-            if (landBase.canSpawnOnLeaves())
+            if (landBase.canSpawnOnLeaves() && (!(landBase instanceof EntityPrehistoricFloraLandClimbingGlidingBase)))
                 isTree = true;
         }
 
@@ -539,7 +555,19 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
             }
             else
             {
-                return PathNodeType.FENCE;
+//                Edit to allow jumpers to jump on fences:
+                if (this.entity != null) {
+//                    if (this.entity.stepHeight == 2) {
+//                        Block blockUp = worldIn.getBlockState(blockpos.up()).getBlock();
+//                        return blockUp.isPassable(worldIn, blockpos.up()) ? PathNodeType.OPEN : PathNodeType.FENCE;
+//                    } else {
+                        return PathNodeType.FENCE;
+//                    }
+                }
+                else {
+                    return PathNodeType.FENCE;
+
+                }
             }
         }
         else

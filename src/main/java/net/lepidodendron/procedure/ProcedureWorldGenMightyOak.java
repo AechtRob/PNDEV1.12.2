@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
@@ -259,7 +260,7 @@ public class ProcedureWorldGenMightyOak extends ElementsLepidodendronMod.ModElem
                     if (state.getBlock().isAir(state, world, blockpos) || state.getBlock().isLeaves(state, world, blockpos))
                     {
                         //this.setBlockAndNotifyAdequately(world, blockpos, p_181631_3_);
-                        world.setBlockState(blockpos, p_181631_3_, 3);
+                        Functions.setBlockStateAndCheckForDoublePlant(world,blockpos, p_181631_3_, 3);
                         
                     }
                 }
@@ -311,7 +312,7 @@ public class ProcedureWorldGenMightyOak extends ElementsLepidodendronMod.ModElem
             BlockPos blockpos1 = p_175937_1_.add((double)(0.5F + (float)j * f), (double)(0.5F + (float)j * f1), (double)(0.5F + (float)j * f2));
             BlockLog.EnumAxis blocklog$enumaxis = getLogAxis(p_175937_1_, blockpos1);
             
-            world.setBlockState(blockpos1, Blocks.LOG.getStateFromMeta(0).getBlock().getDefaultState().withProperty(BlockLog.LOG_AXIS, blocklog$enumaxis), 3);
+            Functions.setBlockStateAndCheckForDoublePlant(world,blockpos1, Blocks.LOG.getStateFromMeta(0).getBlock().getDefaultState().withProperty(BlockLog.LOG_AXIS, blocklog$enumaxis), 3);
 			//System.err.println("limb set "  + blockpos1.getX() + " " + blockpos1.getY() + " " + blockpos1.getZ());
         }
     }

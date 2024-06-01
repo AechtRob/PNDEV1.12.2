@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockAridHorsetail;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -185,7 +186,7 @@ public class StructureSpawnAridHorsetail extends ElementsLepidodendronMod.ModEle
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					world.setBlockState(spawnTo, BlockAridHorsetail.block.getDefaultState());
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockAridHorsetail.block.getDefaultState());
 				}
 			}
 		}

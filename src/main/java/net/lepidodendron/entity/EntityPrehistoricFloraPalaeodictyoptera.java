@@ -10,6 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.LayerPalaeodictyopteraWing;
 import net.lepidodendron.entity.render.entity.RenderPalaeodictyoptera;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -39,7 +40,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
 
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
@@ -53,6 +54,8 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	private static final float[] SINODUNBARIA_SIZE = new float[]{0.16F, 0.32F};
 	private static final float[] STENODICTYA_SIZE = new float[]{0.20F, 0.40F};
 	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.30F, 0.60F};
+
+	private static final float[] PSYCHROPTILUS_SIZE = new float[]{0.15F, 0.30F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPalaeodictyoptera.class, DataSerializers.VARINT);
 
@@ -157,7 +160,8 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		LYCOCERCUS(6, "lycocercus"),
 		SINODUNBARIA(7, "sinodunbaria"),
 		STENODICTYA(8, "stenodictya"),
-		MAZOTHAIROS(9, "mazothairos")
+		MAZOTHAIROS(9, "mazothairos"),
+		PSYCHROPTILUS(10, "psychroptilus")
 		;
 
 		private final String name;
@@ -237,6 +241,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_LOOT_JAR;
+
+			case PSYCHROPTILUS:
+				return LepidodendronMod.PALAEODICTYOPTERA_PSYCHROPTILUS_LOOT_JAR;
 		}
 	}
 
@@ -268,6 +275,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return LepidodendronMod.PALAEODICTYOPTERA_MAZOTHAIROS_LOOT;
+
+			case PSYCHROPTILUS:
+				return LepidodendronMod.PALAEODICTYOPTERA_PSYCHROPTILUS_LOOT;
 		}
 	}
 
@@ -298,6 +308,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				return 3f;
 
 			case MAZOTHAIROS:
+				return 3f;
+
+			case PSYCHROPTILUS:
 				return 3f;
 		}
 	}
@@ -330,6 +343,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return MAZOTHAIROS_SIZE;
+
+			case PSYCHROPTILUS:
+				return PSYCHROPTILUS_SIZE;
 		}
 	}
 
@@ -387,7 +403,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 			float f = this.width;
 			this.width = width;
 			this.height = height;
-			if (this.width < f) {
+			if (this.width != f) {
 				double d0 = (double) width / 2.0D;
 				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
 			}
@@ -426,6 +442,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 				case STENODICTYA:
 					return new ItemStack(ItemSpawnEggPalaeodictyopteraStenodictya.block, 1);
+
+				case PSYCHROPTILUS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraPsychroptilus.block, 1);
 			}
 		}
 		return ItemStack.EMPTY;
@@ -588,7 +607,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				return 0.34;
 
 			case HOMOIOPTERA:
-				return 0.30;
+				return 0.29;
 
 			case LITHOMANTIS:
 				return 0.30;
@@ -597,13 +616,13 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 				return 0.31;
 
 			case SINODUNBARIA:
-				return 0.38;
+				return 0.27;
 
 			case STENODICTYA:
-				return 0.41;
+				return 0.36;
 
-			case MAZOTHAIROS:
-				return 0.35;
+			case PSYCHROPTILUS:
+				return 0.27;
 		}
 	}
 
@@ -635,32 +654,35 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return 0.01;
+
+			case PSYCHROPTILUS:
+				return 0.01;
 		}
 	}
 
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.67;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
 		return -0F;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return -0.0F;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.6;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;
@@ -669,11 +691,12 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		return -0.6F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return -0.06;
+		return -0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
 		return 0F;
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -705,6 +728,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return RenderPalaeodictyoptera.TEXTURE_MAZOTHAIROS;
+
+			case PSYCHROPTILUS:
+				return RenderPalaeodictyoptera.TEXTURE_PSYCHROPTILUS;
 		}
 	}
 
@@ -738,6 +764,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return LayerPalaeodictyopteraWing.TEXTURE_MAZOTHAIROS;
+
+			case PSYCHROPTILUS:
+				return LayerPalaeodictyopteraWing.TEXTURE_PSYCHROPTILUS;
 		}
 	}
 
@@ -771,6 +800,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 			case MAZOTHAIROS:
 				return RenderDisplays.modelPalaeodictyopteraLarge;
+
+			case PSYCHROPTILUS:
+				return RenderDisplays.modelPalaeodictyopteraSmall;
 		}
 	}
 

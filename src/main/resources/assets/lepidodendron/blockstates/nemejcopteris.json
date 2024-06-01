@@ -1,8 +1,7 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:nemejcopteris"},
-      {"model": "lepidodendron:nemejcopteris_rot"}
+      {"model": "lepidodendron:nemejcopteris"}
     ]
   }
 }

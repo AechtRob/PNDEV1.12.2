@@ -401,13 +401,17 @@ public class ModelCobelodus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Cobelodus.render(f5 * 0.5F);
+        this.Cobelodus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.Cobelodus.rotateAngleY = (float) Math.toRadians(90);
+        this.Cobelodus.offsetY = -0.18F;
+        this.Cobelodus.offsetX = -0.15F;
+        this.Cobelodus.offsetZ = -0.02F;
+        this.Cobelodus.render(0.01F);
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
         this.Cobelodus.rotateAngleY = (float) Math.toRadians(90);
         this.Head.rotateAngleY = (float) Math.toRadians(-20);
         this.Jaw.rotateAngleX = (float) Math.toRadians(27);
@@ -419,12 +423,11 @@ public class ModelCobelodus extends AdvancedModelBase {
         this.Body7.rotateAngleY = (float) Math.toRadians(-12.5);
         this.Body8.rotateAngleY = (float) Math.toRadians(-15);
         this.Cobelodus.offsetX = -0.2F;
-        this.Cobelodus.offsetY = -0.15F;
+        this.Cobelodus.offsetY = -0.375F;
         this.Cobelodus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -436,7 +439,7 @@ public class ModelCobelodus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.Cobelodus.offsetZ = -0.5F;
-        this.Cobelodus.offsetY = 0.7F;
+        //this.Cobelodus.offsetY = 0.7F;
 
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5, this.Body6, this.Body7, this.Body8};
 
@@ -477,7 +480,7 @@ public class ModelCobelodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Cobelodus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Cobelodus.offsetY = 0.9F;
+            this.Cobelodus.offsetY = 0.2F;
             this.bob(Cobelodus, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

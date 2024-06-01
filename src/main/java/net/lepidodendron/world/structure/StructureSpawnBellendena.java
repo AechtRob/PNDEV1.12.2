@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBellendena;
 import net.lepidodendron.block.BlockBellendenaSeeds;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -148,13 +149,13 @@ public class StructureSpawnBellendena extends ElementsLepidodendronMod.ModElemen
 					world.setBlockToAir(spawnTo.up());
 				}
 				if (random.nextInt(3 ) == 0) {
-					world.setBlockState(spawnTo, BlockBellendena.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBellendena.block.getDefaultState(), 3);
 				}
 				else if (random.nextInt(2) == 0) {
-					world.setBlockState(spawnTo, BlockBellendenaSeeds.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBellendenaSeeds.block.getDefaultState(), 3);
 				}
 				else {
-					world.setBlockState(spawnTo, BlockBellendena.block.getDefaultState().withProperty(BlockBellendena.BlockCustom.FLOWERS, true), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBellendena.block.getDefaultState().withProperty(BlockBellendena.BlockCustom.FLOWERS, true), 3);
 				}
 			}
 		}

@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsProtozygoptera;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -29,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFloraInsectFlyingBase implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

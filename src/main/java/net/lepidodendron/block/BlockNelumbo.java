@@ -264,7 +264,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 
-	    public boolean canFlowerPlaceAt(World worldIn, BlockPos pos) {
+	    public static boolean canFlowerPlaceAt(World worldIn, BlockPos pos) {
 	    	IBlockState iblockstate1 = worldIn.getBlockState(pos.down());
 			if (!isWaterBlock(worldIn, pos.down()))
 	    	{
@@ -287,7 +287,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 
-	    public boolean isWaterBlock(World world, BlockPos pos) {
+	    public static boolean isWaterBlock(World world, BlockPos pos) {
 			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {

@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockLavaRock;
 import net.lepidodendron.block.BlockVolcanicAsh;
 import net.lepidodendron.block.BlockVolcanicAshDark;
 import net.lepidodendron.block.BlockVolcanicAshLight;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -45,7 +46,7 @@ public class WorldGenAshes extends WorldGenerator
 
                     if (material != Material.GRASS && material != Material.ROCK
                     	&& material != Material.GROUND && material != Material.SAND
-                        && position.getY() <= worldIn.getSeaLevel())
+                        && position.getY() <= Functions.getAdjustedSeaLevel(worldIn, position))
                     {
                         break label50;
                     }
@@ -79,7 +80,7 @@ public class WorldGenAshes extends WorldGenerator
                         	if (Math.random() > 0.85) {
                         		blockIn = BlockVolcanicAshDark.block;
                         	}
-                            worldIn.setBlockState(blockpos, blockIn.getDefaultState(), 4);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
                         }
                     }
 

@@ -1,8 +1,10 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockThucydia;
 import net.lepidodendron.procedure.ProcedureWorldGenArchaeopteris;
 import net.lepidodendron.procedure.ProcedureWorldGenArchaeopterisStunted;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -82,9 +84,9 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp"));
 
-                if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
+                if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position)-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
-                    java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+                    Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
@@ -97,7 +99,7 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
                             )
                     ) {
-                        worldIn.setBlockState(position, BlockThucydia.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position, BlockThucydia.block.getDefaultState(), 2);
                         BlockThucydia.block.onBlockAdded(worldIn, position, BlockThucydia.block.getDefaultState());
                     }
                     else {
@@ -107,6 +109,18 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale"))
                             && rand.nextInt(3) != 0) {
                             ProcedureWorldGenArchaeopterisStunted.executeProcedure($_dependencies);
+                        }
+                        else  if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
+                        {
+                            if (position.getY() >= Functions.getAdjustedSeaLevel(worldIn, position) + 3 + rand.nextInt(3)) {
+                                if (rand.nextInt(3) != 0) {
+                                    ProcedureWorldGenArchaeopterisStunted.executeProcedure($_dependencies);
+                                }
+                                ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);
+                            }
+                            else {
+                                return false;
+                            }
                         }
                         else {
                             ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);

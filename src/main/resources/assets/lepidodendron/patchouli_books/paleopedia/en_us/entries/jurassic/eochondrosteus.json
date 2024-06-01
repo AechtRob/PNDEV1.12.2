@@ -1,0 +1,47 @@
+{
+	"name": "Eochondrosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eochondrosteus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_eochondrosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eochondrosteus",
+			"title": "Eochondrosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Acipenseriformes"
+		},
+        	{
+            "type": "entity",
+            "name": "E. sinensis",
+            "entity": "lepidodendron:prehistoric_flora_eochondrosteus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eochondrosteus",
+			"type": "text",
+			"text": "Eochondrosteus is a early Triassic fish known from China. It is suggested to be the most basal acipenseriform fish, although this classification is debated in later studies. If really an acipenseriform fish, this would push the group's origins close to the P-T extinction event, if not slightly before it in the Late Permian."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eochondrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eochondrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eochondrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eochondrosteus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eochondrosteus"
+		}
+	]
+}

@@ -1,11 +1,13 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockLygodium;
 import net.lepidodendron.block.BlockPodozamitesLeaves;
 import net.lepidodendron.block.BlockPodozamitesLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -29,7 +31,7 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 	public static final PropertyBool SOUTH = PropertyBool.create("south");
 	public static final PropertyBool WEST = PropertyBool.create("west");
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenPodozamites!");
 			return;
@@ -377,6 +379,16 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 					SpawnLygodium = false;
 				}
 			}
+			if ((world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly)
+			){
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")) {
+					SpawnLygodium = true;
+				}
+				else {
+					SpawnLygodium = false;
+				}
+			}
 
 			BlockPos posVine;
 			Random rand = new Random();
@@ -399,11 +411,11 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 								if ((Math.random() > 0.88)
 										&& (world.isAirBlock(new BlockPos(x + xct, (int) TrunkHeight + counter, (int) z + zct + 1)))) {
 									posVine = new BlockPos(x + xct, (int) TrunkHeight + counter, (int) z + zct + 1);
-									world.setBlockState(posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, true).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
+									Functions.setBlockStateAndCheckForDoublePlant(world,posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, true).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
 									vineLength = rand.nextInt((int)TrunkHeight) + 1;
 									vineCount = 1;
 									while (world.isAirBlock(posVine.down(vineCount)) && vineCount <= vineLength) {
-										world.setBlockState(posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, true).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
+										Functions.setBlockStateAndCheckForDoublePlant(world,posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, true).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
 										vineCount += 1;
 									}
 								}
@@ -411,11 +423,11 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 								if ((Math.random() > 0.88)
 										&& (world.isAirBlock(new BlockPos(x + xct, (int) TrunkHeight + counter, (int) z + zct - 1)))) {
 									posVine = new BlockPos(x + xct, (int) TrunkHeight + counter, (int) z + zct - 1);
-									world.setBlockState(posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, true).withProperty(WEST, false));
+									Functions.setBlockStateAndCheckForDoublePlant(world,posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, true).withProperty(WEST, false));
 									vineLength = rand.nextInt((int)TrunkHeight) + 1;
 									vineCount = 1;
 									while (world.isAirBlock(posVine.down(vineCount)) && vineCount <= vineLength) {
-										world.setBlockState(posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, true).withProperty(WEST, false));
+										Functions.setBlockStateAndCheckForDoublePlant(world,posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, true).withProperty(WEST, false));
 										vineCount += 1;
 									}
 								}
@@ -423,11 +435,11 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 								if ((Math.random() > 0.88)
 										&& (world.isAirBlock(new BlockPos(x + xct - 1, (int) TrunkHeight + counter, (int) z + zct)))) {
 									posVine = new BlockPos(x + xct - 1, (int) TrunkHeight + counter, (int) z + zct);
-									world.setBlockState(posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, true).withProperty(SOUTH, false).withProperty(WEST, false));
+									Functions.setBlockStateAndCheckForDoublePlant(world,posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, true).withProperty(SOUTH, false).withProperty(WEST, false));
 									vineLength = rand.nextInt((int)TrunkHeight) + 1;
 									vineCount = 1;
 									while (world.isAirBlock(posVine.down(vineCount)) && vineCount <= vineLength) {
-										world.setBlockState(posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, true).withProperty(SOUTH, false).withProperty(WEST, false));
+										Functions.setBlockStateAndCheckForDoublePlant(world,posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, true).withProperty(SOUTH, false).withProperty(WEST, false));
 										vineCount += 1;
 									}
 								}
@@ -435,11 +447,11 @@ public class ProcedureWorldGenPodozamites extends ElementsLepidodendronMod.ModEl
 								if ((Math.random() > 0.88)
 										&& (world.isAirBlock(new BlockPos(x + xct + 1, (int) TrunkHeight + counter, (int) z + zct)))) {
 									posVine = new BlockPos(x + xct + 1, (int) TrunkHeight + counter, (int) z + zct);
-									world.setBlockState(posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, true));
+									Functions.setBlockStateAndCheckForDoublePlant(world,posVine, BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, true));
 									vineLength = rand.nextInt((int)TrunkHeight) + 1;
 									vineCount = 1;
 									while (world.isAirBlock(posVine.down(vineCount)) && vineCount <= vineLength) {
-										world.setBlockState(posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, true));
+										Functions.setBlockStateAndCheckForDoublePlant(world,posVine.down(vineCount), BlockLygodium.block.getDefaultState().withProperty(UP, false).withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, true));
 										vineCount += 1;
 									}
 								}

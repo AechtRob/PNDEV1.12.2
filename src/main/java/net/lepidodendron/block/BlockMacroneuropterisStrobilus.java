@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
@@ -42,7 +43,7 @@ import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:macroneuropteris_strobilus")
+	@GameRegistry.ObjectHolder("lepidodendron:macroneuropteris_shoot")
 	public static final Block block = null;
 	public BlockMacroneuropterisStrobilus(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.macroneuropteris_strobilus);
@@ -50,22 +51,22 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("macroneuropteris_strobilus"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("macroneuropteris_shoot"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentitymacroneuropteris_strobilus");
+		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentitymacroneuropteris_shoot");
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:macroneuropteris_strobilus", "inventory"));
+				new ModelResourceLocation("lepidodendron:macroneuropteris_shoot", "inventory"));
 	}
-	public static class BlockCustom extends SeedSporeBlockBase implements ITileEntityProvider, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeBlockBase implements ITileEntityProvider {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -93,41 +94,25 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
-
-		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
 		
 		@Override
-		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
+		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
 
 		@Override
-		public boolean isFullCube(IBlockState state) {
+		public boolean isOpaqueCube(IBlockState state) {
 			return false;
 		}
 
-		@Override
-		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
-				case SOUTH :
-				default :
-					return new AxisAlignedBB(0.25D, 0.25D, 0D, 0.75D, 0.75D, 0.5D);
-				case NORTH :
-					return new AxisAlignedBB(0.25D, 0.25D, 1D, 0.75D, 0.75D, 0.5D);
-				case WEST :
-					return new AxisAlignedBB(1D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D);
-				case EAST :
-					return new AxisAlignedBB(0D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D);
-				case UP :
-					return new AxisAlignedBB(0.25D, 0D, 0.75D, 0.75D, 0.5D, 0.25D);
-				case DOWN :
-					return new AxisAlignedBB(0.25D, 1D, 0.75D, 0.75D, 0.5D, 0.25D);
-			}
-		}
+		public boolean isFullCube(IBlockState state)
+	    {
+	        return false;
+	    }
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
@@ -157,12 +142,7 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 		@Override
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
 				EntityLivingBase placer) {
-			return this.getDefaultState().withProperty(FACING, facing);
-		}
-
-		@Override
-		public boolean isOpaqueCube(IBlockState state) {
-			return false;
+			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
 		}
 
 		@Override
@@ -178,7 +158,7 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 		@Override
 		protected boolean canSilkHarvest()
 	    {
-	        return false;
+	        return true;
 	    }
 
 		@Override
@@ -202,10 +182,11 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
 			TileEntity tileentity = world.getTileEntity(pos);
 			//if (tileentity instanceof TileEntityNest)
-				//InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
+			//	InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
 			world.removeTileEntity(pos);
 			super.breakBlock(world, pos, state);
 		}
+
 
 		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
@@ -213,9 +194,9 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 
+			{
+				Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
@@ -224,7 +205,6 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 			}
 		}
 
-				
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
 			return BlockFaceShape.UNDEFINED;
@@ -240,7 +220,7 @@ public class BlockMacroneuropterisStrobilus extends ElementsLepidodendronMod.Mod
 			//	} else {
 			//	}
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);

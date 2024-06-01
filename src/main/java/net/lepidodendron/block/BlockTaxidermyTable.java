@@ -300,6 +300,17 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 				updated = true;
 			}
 
+			if (this.isProcessing && !(isItemValidForSlot(0, this.getStackInSlot(0))
+					&& isItemValidForSlot(2, this.getStackInSlot(2))
+					&& isItemValidForSlot(3, this.getStackInSlot(3))
+					&& this.getStackInSlot(1).isEmpty())) {
+				this.isProcessing = false;
+				this.processTick = 0;
+				this.notifyBlockUpdate();
+				markDirty();
+				return;
+			}
+
 			if (this.isProcessing && this.processTick > this.processTickTime) {
 				//System.err.println("Ending process");
 				this.processTick = 0;

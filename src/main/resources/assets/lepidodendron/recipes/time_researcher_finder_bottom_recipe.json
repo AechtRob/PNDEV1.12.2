@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    "   "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "slabIron"
+    },
+    "4": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:time_researcher_finder_bottom_item",
+    "count": 1
+  }
+}

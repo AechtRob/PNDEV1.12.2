@@ -1,0 +1,47 @@
+{
+	"name": "Mamulichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mamulichthys_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_mamulichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mamulichthys",
+			"title": "Mamulichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii $(br)>Discordichthyiformes $(br)>Discordichthyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. ignotus",
+            "entity": "lepidodendron:prehistoric_flora_mamulichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mamulichthys",
+			"type": "text",
+			"text": "Mamulichthys is a bony fish that lived in Russia during the Permian period. It had a large dorsal and pectoral spines, and the body was generally broad and high. Their relationship to other ray finned fish is dubious, and may be stem Actinopterygii that managed to survive into the Permian. Its name has no particular meaning, with \"Mamul\" being constructed from an arbitrary set of letters."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mamulichthys"
+		}
+	]
+}

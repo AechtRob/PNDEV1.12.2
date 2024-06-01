@@ -1,0 +1,47 @@
+{
+	"name": "Polysentor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/polysentor_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_polysentor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_polysentor",
+			"title": "Polysentor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Holocephali $(br)>Polysentoriformes $(br)>Polysentoridae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. gorbairdi",
+            "entity": "lepidodendron:prehistoric_flora_polysentor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_polysentor",
+			"type": "text",
+			"text": "Polysentor is a holocephalian chondrichthyan which is part of the Mazon Creek fauna of the Carboniferous. It is an enigmatic animal, being classified in its own order, and having a body plan that is unlike any other known chondrichthyan. It has two small dorsal spines with a dorsal fin running through both and a weirdly shaped head. Its diet is unknown, but it has been speculated to feed on shelled animals."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_polysentor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_polysentor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_polysentor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_polysentor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_polysentor"
+		}
+	]
+}

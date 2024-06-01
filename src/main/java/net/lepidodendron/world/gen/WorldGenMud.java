@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCarboniferousMud;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,7 +24,7 @@ public class WorldGenMud extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
 
-            if (nearSea && (blockpos.getY() - rand.nextInt(3)) > worldIn.getSeaLevel()) {
+            if (nearSea && (blockpos.getY() - rand.nextInt(3)) > Functions.getAdjustedSeaLevel(worldIn, blockpos)) {
 				continue;
 			}
 
@@ -36,7 +37,7 @@ public class WorldGenMud extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
 				worldIn.setBlockToAir(blockpos);
 				flag = true;
             }
@@ -53,7 +54,7 @@ public class WorldGenMud extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -68,7 +69,7 @@ public class WorldGenMud extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -83,7 +84,7 @@ public class WorldGenMud extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }
@@ -98,7 +99,7 @@ public class WorldGenMud extends WorldGenerator
             	)
 	            )
 	            {
-	                worldIn.setBlockState(blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
+	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockCarboniferousMud.block.getDefaultState(), 2);
 					worldIn.setBlockToAir(blockpos);
 					flag = true;
 	            }

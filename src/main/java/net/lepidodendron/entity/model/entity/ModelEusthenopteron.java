@@ -238,17 +238,30 @@ public class ModelEusthenopteron extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.25F;
+        this.body.offsetZ = 0.08F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.2F, 0.0F);
+        this.body.offsetZ = -0.2F;
+        this.body.offsetY = -0.05F;
+        this.body.offsetX = 0.032F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -260,8 +273,8 @@ public class ModelEusthenopteron extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        //this.body.offsetY = 1.0F;
-        this.body.offsetZ = -0.1F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetZ = -0.55F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5};
         ((EntityPrehistoricFloraEusthenopteron)e).tailBuffer.applyChainSwingBuffer(fishTail);
@@ -308,7 +321,7 @@ public class ModelEusthenopteron extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            //this.body.offsetY = 1.0F;
+            this.body.offsetY = -0.3F;
             this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

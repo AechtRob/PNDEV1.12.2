@@ -1,0 +1,47 @@
+{
+	"name": "Caihong",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caihong_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_caihong",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caihong",
+			"title": "Caihong",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Saurischia $(br)>Theropoda $(br)>Anchiornithidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. juji",
+            "entity": "lepidodendron:prehistoric_flora_caihong",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caihong",
+			"type": "text",
+			"text": "Caihong is a anchiornithid dinosaur from the Jurassic Tiaojishan Formation of China. It is known from beautifully preserved specimens with imprints of the feathers also discovered. It was a small animal, that likely had poor flight capabilities. Its coloration on its wings and some other parts of the body is also known to have been a deep black."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caihong"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caihong"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caihong"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caihong"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caihong"
+		}
+	]
+}

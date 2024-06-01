@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemFossilJurassic;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -54,7 +55,7 @@ public class BlockFossilJurassic extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPleistocene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPaleogene
-				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) && LepidodendronConfig.genFossil)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
@@ -63,7 +64,7 @@ public class BlockFossilJurassic extends ElementsLepidodendronMod.ModElement {
 		int blockCount = 8;
 
 		int dimDepth = 24;
-		if (dimID == LepidodendronConfig.dimCretaceous) {
+		if (dimID == LepidodendronConfig.dimCretaceousEarly) {
 			dimDepth = dimDepth - 16;
 			blockCount = 7;
 		}
@@ -77,7 +78,7 @@ public class BlockFossilJurassic extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimPleistocene) {
 			dimDepth = dimDepth - 4;
 		}
-		int yy = Math.max(world.getSeaLevel() - dimDepth, 1);
+		int yy = Math.max(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - dimDepth, 1);
 
 		for (int i = 0; i < 48; i++) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

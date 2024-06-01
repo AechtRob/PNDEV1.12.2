@@ -136,23 +136,28 @@ public class ModelSacabambaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-
         this.head.render(f5);
 
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetX = -0.13F;
-        this.head.offsetY = -0.19F;
-        this.head.offsetZ = 0.05F;
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = -0.12F;
+        this.head.offsetZ = -0.33F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.15F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, -0.15F, 0.05F);
+        this.setRotateAngle(tail1, 0.1F, -0.2F, 0.05F);
+        this.setRotateAngle(tail2, 0.2F, -0.25F, 0.05F);
+        this.head.offsetY = -0.15F;
+        this.head.offsetZ = -0.08F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

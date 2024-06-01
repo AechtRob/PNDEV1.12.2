@@ -378,19 +378,44 @@ public class ModelMelosaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Melosaurus.render(f5 * 0.63F);
+        this.Melosaurus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Lowerjaw.rotateAngleX = (float) Math.toRadians(25);
+        this.Neck.offsetY = -0.025F;
         this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Melosaurus, -0.2F, 0.0F, 0.1F);
+        this.setRotateAngle(Body, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(RArm, 1.5F, 0.8F, 0.3F);
+        this.setRotateAngle(RArm2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(RHand, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(LArm, 1.5F, -0.8F, 0.3F);
+        this.setRotateAngle(LArm2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(LHand, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(Neck, -0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Upperjaw, -0.4F, -0.1F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(Body2, 0.1F, -0.2F, -0.05F);
+        this.setRotateAngle(RLeg, 1.5F, 0.5F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(RFoot, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(LLeg, 1.5F, -0.9F, 0.0F);
+        this.setRotateAngle(LLeg2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(LFoot, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(Tail, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(Tail4, -0.1F, -0.2F, 0.0F);
+        this.Melosaurus.offsetY = -0.17F;
+        this.Melosaurus.render(0.01F);
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -401,7 +426,7 @@ public class ModelMelosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Melosaurus.offsetY = 0.54F; //72
+        this.Melosaurus.offsetY = -0.05F; //72
 
         EntityPrehistoricFloraMelosaurus MelosaurusEntity = (EntityPrehistoricFloraMelosaurus) e;
 
@@ -440,7 +465,7 @@ public class ModelMelosaurus extends AdvancedModelBaseExtended {
                 return;
             }
 
-            this.Melosaurus.offsetY = 0.52F; //72
+            //this.Melosaurus.offsetY = 0.52F; //72
 
             this.flap(RLeg, speed, 0.45F, false, 0, -0.35F, f2, 0.5F);
             this.swing(RLeg, speed, -0.5F, true, 5, 0.25F, f2, 0.5F);

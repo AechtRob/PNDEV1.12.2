@@ -125,6 +125,19 @@ public class LepidodendronHoeHandler {
             }
         }
 
+        if (block == BlockSandGrey.block || block == BlockSandGreySticky.block)
+        {
+            result = true;
+            world.setBlockState(pos, BlockSandGreyWavy.block.getDefaultState());
+        }
+        else {
+            if (block == BlockSandGreyWavy.block || block == BlockSandGreyWavySticky.block)
+            {
+                result = true;
+                world.setBlockState(pos, BlockSandGrey.block.getDefaultState());
+            }
+        }
+
         if ((block == BlockPrehistoricGroundLush.block)
                 || (block == BlockPrehistoricGroundBasic.block)
                 || (block == BlockPrehistoricGroundSand.block)
@@ -132,6 +145,7 @@ public class LepidodendronHoeHandler {
                 || (block == BlockPrehistoricGroundSandPangaean.block)
                 || (block == BlockPrehistoricGroundSandBlack.block)
                 || (block == BlockPrehistoricGroundSandWhite.block)
+                || (block == BlockPrehistoricGroundSandGrey.block)
                 || (block == BlockCoarseSandyDirtPangaean.block)
                 || (block == BlockCoarseSandyDirt.block)
                 || (block == BlockCoarseSandyDirtRed.block)
@@ -147,6 +161,11 @@ public class LepidodendronHoeHandler {
             {
                 result = true;
                 world.setBlockState(pos, BlockSandyDirtBlack.block.getDefaultState());
+            }
+            if (block == BlockCoarseSandyDirtGrey.block)
+            {
+                result = true;
+                world.setBlockState(pos, BlockSandyDirtGrey.block.getDefaultState());
             }
             if (block == BlockCoarseSandyDirtWhite.block)
             {

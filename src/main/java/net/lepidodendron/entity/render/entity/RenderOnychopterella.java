@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderOnychopterella extends RenderLiving<EntityPrehistoricFloraOnychopterella> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/onychopterella.png");
     public static float getScaler() {
-        return 0.43F;
+        return 0.28F;
     }
     public RenderOnychopterella(RenderManager mgr) {
         super(mgr, new ModelOnychopterella(), 0.5f);

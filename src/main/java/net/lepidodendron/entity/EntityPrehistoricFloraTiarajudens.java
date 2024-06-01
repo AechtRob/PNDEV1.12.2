@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.item.ItemRoots;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
@@ -33,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLandBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -49,7 +50,7 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 1; //medium
 	}
 

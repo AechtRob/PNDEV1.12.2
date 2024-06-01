@@ -11,8 +11,12 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderTorvosaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -35,7 +39,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -49,16 +53,17 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 	public EntityPrehistoricFloraTorvosaurus(World world) {
 		super(world);
 		setSize(1.8F, 3.2F);
-		stepHeight = 2;
+		extraStepHeight = 1F;
 		minWidth = 0.20F;
 		maxWidth = 1.8F;
 		maxHeight = 3.2F;
-		maxHealthAgeable = 112.0D;
+		maxHealthAgeable = 120.0D;
 		IDLE1_ANIMATION = Animation.create(103);
 		IDLE2_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		setgetMaxTurnDistancePerTick(15.0F);
 	}
 
 	@Override
@@ -91,14 +96,17 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 
 	@Override
 	protected float getJumpUpwardsMotion() {
-		return 0.6F;
+		if (this.isPFAdult()) {
+			return 0.6F;
+		}
+		return super.getJumpUpwardsMotion();
 	}
 
 	@Override
 	public int getEatTick() {return 12;}
 
 	@Override
-	public int getEggType() {
+	public int getEggType(@Nullable String variantIn) {
 		return 2; //large
 	}
 
@@ -212,11 +220,11 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 45));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(10, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 0.1F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
@@ -240,7 +248,7 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(16.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
 	}
@@ -285,9 +293,9 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 
 		int next = rand.nextInt(10);
 		//Sometimes stand up and look around:
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			if(next < 5) {
+			if (next < 5) {
 				this.setAnimation(IDLE1_ANIMATION);
 				this.standCooldown = 2000;
 			} else {
@@ -296,11 +304,11 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 			}
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if (this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE1_ANIMATION && this.getAnimationTick() == IDLE1_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
-		if (this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
+		if ((!this.world.isRemote) && this.getAnimation() == IDLE2_ANIMATION && this.getAnimationTick() == IDLE2_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
@@ -377,5 +385,55 @@ public class EntityPrehistoricFloraTorvosaurus extends EntityPrehistoricFloraLan
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.45;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.3;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.1;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderTorvosaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelTorvosaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderTorvosaurus.getScaler();
+	}
 
 }

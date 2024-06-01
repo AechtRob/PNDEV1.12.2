@@ -1,7 +1,9 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
@@ -19,7 +21,7 @@ public class ProcedureWorldGenSabal extends ElementsLepidodendronMod.ModElement 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyDirection FRUITFACING = BlockDirectional.FACING;
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenSabal!");
 			return;
@@ -111,130 +113,130 @@ public class ProcedureWorldGenSabal extends ElementsLepidodendronMod.ModElement 
 			yy = y + TrunkHeight;
 			zz = z;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.WEST), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.WEST), 3);
 			}
 
 			xx = x + 1;
 			yy = y + TrunkHeight;
 			zz = z;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.EAST), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.EAST), 3);
 			}
 
 			xx = x;
 			yy = y + TrunkHeight;
 			zz = z + 1;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.SOUTH), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.SOUTH), 3);
 			}
 
 			xx = x;
 			yy = y + TrunkHeight;
 			zz = z - 1;
 			if (Math.random() > 0.6) {
-				world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.NORTH), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalFruitBunch.block.getDefaultState().withProperty(FRUITFACING, EnumFacing.NORTH), 3);
 			}
 
 
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot02.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot02.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot03.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot03.block.getDefaultState(), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 4;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot04.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShoot04.block.getDefaultState(), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 1;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 1;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 2;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 2;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide02.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 3;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 			
 			xx = x;
 			yy = y + TrunkHeight + 3;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide03.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 			xx = x - 2;
 			yy = y + TrunkHeight + 4;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 3);
 
 			xx = x + 2;
 			yy = y + TrunkHeight + 4;
 			zz = z;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 4;
 			zz = z + 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 3);
 
 			xx = x;
 			yy = y + TrunkHeight + 4;
 			zz = z - 2;
-			world.setBlockState(new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) xx, (int) yy, (int) zz), BlockSabalShootSide04.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 3);
 
 		}
 	}

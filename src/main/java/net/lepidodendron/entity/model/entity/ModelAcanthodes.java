@@ -132,20 +132,30 @@ public class ModelAcanthodes extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodyfront.render(f5 * 0.15F);
+        this.Bodyfront.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetY = -0.2F;
+        this.Bodyfront.offsetX = -0.13F;
+        this.Bodyfront.offsetZ = -0.005F;
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.0F, -0.1F, 0.1F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail1, 0.05F, -0.2F, 0.05F);
+        this.setRotateAngle(Tail2, 0.05F, -0.2F, 0.05F);
+        this.setRotateAngle(Tail3, 0.05F, -0.2F, 0.05F);
+        this.Bodyfront.offsetZ = -0.05F;
+        this.Bodyfront.offsetY = 0.05F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -156,7 +166,7 @@ public class ModelAcanthodes extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.1F;
+        //this.Bodyfront.offsetY = 1.1F;
 
         if (e instanceof EntityLiving) {
             if (((EntityLiving)e).isAIDisabled()) {
@@ -184,7 +194,7 @@ public class ModelAcanthodes extends AdvancedModelBase {
             this.swing(Rightpectoralfin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodyfront.offsetY = 1.25F;
+                this.Bodyfront.offsetY = 0.50F;
                 this.bob(Bodyfront, -speed, 5F, false, f2, 1);
             }
         }

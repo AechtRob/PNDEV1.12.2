@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockSpinyCycadLog;
 import net.lepidodendron.block.BlockSpinyCycadShoot;
 import net.lepidodendron.block.BlockSpinyCycadShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
@@ -16,7 +18,7 @@ public class ProcedureWorldGenSpinyCycad extends ElementsLepidodendronMod.ModEle
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenSpinyCycad!");
 			return;
@@ -68,8 +70,8 @@ public class ProcedureWorldGenSpinyCycad extends ElementsLepidodendronMod.ModEle
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockSpinyCycadShootPlaceable.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockSpinyCycadShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockSpinyCycadShootPlaceable.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockSpinyCycadShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}
@@ -79,8 +81,8 @@ public class ProcedureWorldGenSpinyCycad extends ElementsLepidodendronMod.ModEle
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter), (int) z)), world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
 					block = world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)).getBlock();
 					if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z)), world, new BlockPos((int) x, (int) (y + counter + 1), (int) z))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + counter), (int) z), BlockSpinyCycadShoot.block.getDefaultState(), 3);
-						//world.setBlockState(new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockSpinyCycadShootTop.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter), (int) z), BlockSpinyCycadShoot.block.getDefaultState(), 3);
+						//Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + counter + 1), (int) z), BlockSpinyCycadShootTop.block.getDefaultState(), 3);
 					}
 				}
 			}

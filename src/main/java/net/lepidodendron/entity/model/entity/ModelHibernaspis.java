@@ -248,19 +248,29 @@ public class ModelHibernaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Body.render(f5 * 0.3F);
+        this.Body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Body.rotateAngleY = (float) Math.toRadians(90);
+
+    public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(90);
+        this.Body.offsetY = -0.0F;
+        this.Body.offsetZ = -0.175F;
         this.Body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Body, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail3, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(Tail4, -0.1F, 0.1F, 0.0F);
+        this.Body.offsetZ = -0.1F;
+        this.Body.offsetY = 0.28F;
+        this.Body.offsetX = -0.0F;
+        this.Body.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -271,9 +281,9 @@ public class ModelHibernaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Body.offsetY = 1.4F;
+        this.Body.offsetY = 1.3F;
         //this.Body.offsetX = 0.2F;
-        this.Body.offsetZ = -0.2F;
+        this.Body.offsetZ = -0.9F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
@@ -304,7 +314,7 @@ public class ModelHibernaspis extends AdvancedModelBase {
             this.swing(Body, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                //this.Body.offsetY = 0.95F;
+                this.Body.offsetY = 1.25F;
                 this.bob(Body, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

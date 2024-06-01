@@ -6,8 +6,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -85,7 +86,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!LepidodendronConfigPlants.genHemp && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
-		if (LepidodendronConfig.dimCretaceous == dimID)
+		if (LepidodendronConfig.dimCretaceousEarly == dimID)
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
@@ -108,12 +109,12 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genHempOverrideBiomes))
 			biomeCriteria = true;
-		if (LepidodendronConfig.dimCretaceous == dimID)
+		if (LepidodendronConfig.dimCretaceousEarly == dimID)
 			biomeCriteria = true;
 
 		boolean heightCheck = false;
 
-		if (biome instanceof BiomeCretaceous)
+		if (biome instanceof BiomeCretaceousEarly)
 		{
 //			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 //			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
@@ -143,7 +144,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 				GenChance = 15;
 		}
 
-		if (LepidodendronConfig.dimCretaceous == dimID) {
+		if (LepidodendronConfig.dimCretaceousEarly == dimID) {
 			GenChance = 25;
 		}
 
@@ -154,7 +155,7 @@ public class BlockHemp extends ElementsLepidodendronMod.ModElement {
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
 		if (heightCheck) {
-			minheight = world.getSeaLevel() + 2;
+			minheight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) + 2;
 		}
 		final int maxH = maxheight;
 		final int minH = minheight;

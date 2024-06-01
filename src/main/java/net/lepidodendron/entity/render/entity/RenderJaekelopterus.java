@@ -12,6 +12,9 @@ public class RenderJaekelopterus extends RenderLiving<EntityPrehistoricFloraJaek
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jaekelopterus.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jaekelopterus_young.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jaekelopterus_baby.png");
+    public static float getScaler() {
+        return 0.8F;
+    }
 
     public RenderJaekelopterus(RenderManager mgr) {
         super(mgr, new ModelJaekelopterus(), 0.5f);
@@ -37,7 +40,7 @@ public class RenderJaekelopterus extends RenderLiving<EntityPrehistoricFloraJaek
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraJaekelopterus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

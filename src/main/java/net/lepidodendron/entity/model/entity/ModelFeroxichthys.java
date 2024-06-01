@@ -247,22 +247,28 @@ public class ModelFeroxichthys extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Feroxichthys.render(f5 * 0.1642F);
+        this.Feroxichthys.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Feroxichthys.rotateAngleY = (float) Math.toRadians(90);
-        this.Feroxichthys.offsetX = -0.03F;
         this.Feroxichthys.offsetY = -0.19F;
-        this.Feroxichthys.offsetZ = 0.07F;
         this.Feroxichthys.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Feroxichthys, -0.1F, -0.0F, 0.05F);
+        this.setRotateAngle(body, 0.0F, -0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.Feroxichthys.offsetZ = 0.02F;
+        this.Feroxichthys.offsetY = 0.1F;
+        this.Feroxichthys.offsetX = 0.002F;
+        this.Feroxichthys.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -274,7 +280,7 @@ public class ModelFeroxichthys extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Feroxichthys.offsetY = 1.2F;
+        //this.Feroxichthys.offsetY = 1.2F;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
 
@@ -307,7 +313,7 @@ public class ModelFeroxichthys extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Feroxichthys.rotateAngleZ = (float) Math.toRadians(90);
-            this.Feroxichthys.offsetY = 1.23F;
+            this.Feroxichthys.offsetY = -0.06F;
             this.bob(Feroxichthys, -speed * 1.9F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F);
             this.chainSwing(fishTail, speed * 1.7F, 0.28F, -0.55, f2, 0.4F);

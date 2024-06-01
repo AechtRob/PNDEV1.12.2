@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDollyphyton;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
@@ -25,43 +26,43 @@ public class WorldGenDollyphyton extends WorldGenerator
 
         for (int i = 0; i < 64; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(3) - rand.nextInt(3));
+            BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(3) - rand.nextInt(3), rand.nextInt(4) - rand.nextInt(4));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && (blockpos.getY() < worldIn.getSeaLevel()+10) && worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && (blockpos.getY() < Functions.getAdjustedSeaLevel(worldIn, blockpos)+10) && worldIn.isAirBlock(blockpos) && ((worldIn.getLight(blockpos) > 3) || (worldIn.canSeeSky(blockpos)))
             && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockDollyphyton.block.canPlaceBlockAt(worldIn, blockpos))
             {
             	int orientation = rand.nextInt(6);
             	if (orientation == 0) { //North
             		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.NORTH)) {
-	                	worldIn.setBlockState(blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
+	                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.NORTH), 2);
 	                	flag = true;
             		}
             	}
             	else {
             		if (orientation == 1) { //South
 	            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.SOUTH)) {
-		                	worldIn.setBlockState(blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
+		                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.SOUTH), 2);
 		                	flag = true;
 	            		}
 	            	}
 	            	else {
 	            		if (orientation == 2) { //West
 		            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.WEST)) {
-			                	worldIn.setBlockState(blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
+			                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.WEST), 2);
 			                	flag = true;
 		            		}
 		            	}
 		            	else {
 		            		if (orientation == 3) { //East
 			            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.EAST)) {
-				                	worldIn.setBlockState(blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
+				                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.EAST), 2);
 				                	flag = true;
 			            		}
 			            	}
 			            	else {
 			            		if (orientation == 4) { //Up
 				            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
-					                	worldIn.setBlockState(blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
+					                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
 										PlaceEggs(rand, worldIn, blockpos);
 										flag = true;
 				            		}
@@ -69,7 +70,7 @@ public class WorldGenDollyphyton extends WorldGenerator
 				            	else {
 				            		if (orientation == 5) { //Down
 					            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.DOWN)) {
-						                	worldIn.setBlockState(blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
+						                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 2);
 						                	flag = true;
 					            		}
 					            	}

@@ -9,6 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPelurgaspis extends RenderLiving<EntityPrehistoricFloraPelurgaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pelurgaspis.png");
+    public static float getScaler() {
+        return 0.4F;
+    }
 
     public RenderPelurgaspis(RenderManager mgr) {
         super(mgr, new ModelPelurgaspis(), 0.0f);

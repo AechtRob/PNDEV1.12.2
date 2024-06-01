@@ -9,10 +9,20 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMeganeuropsis;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.render.entity.LayerMeganeuraWing;
+import net.lepidodendron.entity.render.entity.LayerMeganeuropsisWing;
+import net.lepidodendron.entity.render.entity.RenderMeganeura;
+import net.lepidodendron.entity.render.entity.RenderMeganeuropsis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -48,7 +58,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraInsectFlyingBase {
+public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraInsectFlyingBase implements IAdvancementGranter, ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -64,6 +74,12 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		super(world);
 		setSize(0.55F, 0.42F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_MEGANEUROPSIS;
 	}
 
 	@Override
@@ -327,15 +343,22 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 					if ((!world.isAirBlock(randomPos)) && (world.getBlockState(randomPos).getMaterial() != Material.WATER) && (world.getBlockState(randomPos).getMaterial() != Material.LAVA)) {
 						RayTraceResult rayTrace = world.rayTraceBlocks(EntityPrehistoricFloraMeganeuropsis.this.getPositionVector().add(0, 0.25, 0), new Vec3d(randomPos).add(0.5, 0.5, 0.5), true);
 						if (rayTrace != null && rayTrace.hitVec != null) {
-							if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
-								target = rayTrace.getBlockPos();
-								isGoingToAttach = true;
+							try {
+								if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
+									target = rayTrace.getBlockPos();
+									isGoingToAttach = true;
+								}
 							}
+							catch (Error e) {}
 						}
 					}
 				}
 			}
-
+			if (target != null) {
+				if (!world.isBlockLoaded(target)) {
+					return false;
+				}
+			}
 			target = EntityPrehistoricFloraMeganeuropsis.getPositionRelativetoGround(EntityPrehistoricFloraMeganeuropsis.this, EntityPrehistoricFloraMeganeuropsis.this.world, EntityPrehistoricFloraMeganeuropsis.this.posX + EntityPrehistoricFloraMeganeuropsis.this.rand.nextInt(17) - 8, EntityPrehistoricFloraMeganeuropsis.this.posZ + EntityPrehistoricFloraMeganeuropsis.this.rand.nextInt(17) - 8, EntityPrehistoricFloraMeganeuropsis.this.rand);
 			Material material = world.getBlockState(new BlockPos(target)).getMaterial();
 			Material material1 = world.getBlockState(new BlockPos(target).up()).getMaterial();
@@ -427,15 +450,13 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 	}
 
 	@Override
-	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
-	{
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
 			ResourceLocation resourcelocation = LepidodendronMod.MEGANEUROPSIS_LOOT_JAR;
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
-			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
-			{
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build())) {
 				NBTTagCompound variantNBT = new NBTTagCompound();
 				variantNBT.setString("PNType", "");
 				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
@@ -443,10 +464,47 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 				itemstack.setTagCompound(variantNBT);
 				this.entityDropItem(itemstack, 0.0F);
 			}
-		}
-		else {
+		} else {
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
+	}
+
+
+		//-------------------
+		//Displays general:
+		public static float getScaler(@Nullable String variant) {
+		return RenderMeganeuropsis.getScaler();
+	}
+		@SideOnly(Side.CLIENT)
+		public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderMeganeuropsis.TEXTURE;
+	}
+		@SideOnly(Side.CLIENT)
+		public static ResourceLocation textureDisplayTransparent(@Nullable String variant) {
+		return LayerMeganeuropsisWing.TEXTURE;
+	}
+		@SideOnly(Side.CLIENT)
+		public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelMeganeuropsis;
+	}
+		//-------------------
+
+
+		//-------------------
+		//Taxidermy:
+		public static double offsetWall(@Nullable String variant) {return 0.075;}
+		public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.55;}
+		public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+		public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
+		public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0F;}
+		public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+		public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return -0.15F;}
+		public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0;}
+		public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.45;}
+		public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+		public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.6F;}
+		public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
+	    public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+		//-------------------
 
 	}
-}

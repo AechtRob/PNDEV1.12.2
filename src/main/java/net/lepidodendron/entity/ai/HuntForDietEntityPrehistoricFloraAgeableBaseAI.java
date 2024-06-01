@@ -1,10 +1,9 @@
 package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -13,6 +12,7 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -34,17 +34,20 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
     private final double maxSize;
     private final boolean cannibal;
 
-    public HuntForDietEntityPrehistoricFloraAgeableBaseAI(EntityPrehistoricFloraAgeableBase entity, Class<T> classTarget, boolean checkSight, Predicate<? super T> targetSelector, double minSize, double maxSize, boolean cannibal) {
+    public HuntForDietEntityPrehistoricFloraAgeableBaseAI(EntityPrehistoricFloraAgeableBase entity, Class<T> classTarget, boolean checkSight, Predicate<? super T> targetSelector, double minSizeFraction, double maxSizeFraction, boolean cannibal) {
         super(entity, classTarget, 0, checkSight, true, targetSelector);
         this.entity = entity;
-        this.minSize = minSize;
-        this.maxSize = maxSize;
+        this.minSize = minSizeFraction;
+        this.maxSize = maxSizeFraction;
         this.cannibal  = cannibal;
         this.setMutexBits(1);
     }
 
     @Override
     public boolean shouldExecute() {
+
+        boolean playerChosen = false;
+        boolean villagerChosen = false;
 
         if (!this.entity.getWillHunt()) {
             //this.entity.setIsFast(false);
@@ -64,7 +67,8 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
             }
         }
 
-        List<T> list = this.taskOwner.world.<T>getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
+        //List<T> list = this.taskOwner.world.<T>getEntitiesWithinAABB(this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
+        List<T> list = Functions.getEntitiesWithinAABBPN(this.taskOwner.world, this.targetClass, this.getTargetableArea(this.getTargetDistance()), this.targetEntitySelector);
 
         if (list.isEmpty())
         {
@@ -83,15 +87,25 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                             targetOK = false; //Eurypterids and fish don't attack players on land:
                         }
                     }
-                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.minSize)
+                    if (this.entity instanceof EntityPrehistoricFloraLandWadingBase) {
+                        if (isTooDeepforWading(entityChooser)) {
+                            targetOK = false;
+                        }
+                    }
+                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() <= this.entity.getEntityBoundingBox().getAverageEdgeLength() * this.minSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
-                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.maxSize)
+                    if ((entityChooser.getEntityBoundingBox().getAverageEdgeLength() >= this.entity.getEntityBoundingBox().getAverageEdgeLength() * this.maxSize)
                     ) {
                         //this.entity.setIsFast(false);
                         targetOK = false;
+                    }
+                    if (entityChooser instanceof EntityPrehistoricFloraAgeableBase) {
+                        if (((EntityPrehistoricFloraAgeableBase)entityChooser).getAnimation() != null && ((EntityPrehistoricFloraAgeableBase)entityChooser).getAnimation() == EntityPrehistoricFloraAgeableBase.HIDE_ANIMATION) {
+                            targetOK = false;
+                        }
                     }
                     if ((!this.cannibal) && (entityChooser.getClass().toString().equalsIgnoreCase(this.entity.getClass().toString()))
                     ) { //Disallow cannibalism!
@@ -104,6 +118,12 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
                     if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietMeat")) {
                         this.targetEntity = entityChooser;
+                        if (entityChooser instanceof EntityPlayer) {
+                            playerChosen = true;
+                        }
+                        if (entityChooser instanceof EntityVillager) {
+                            villagerChosen = true;
+                        }
                         break;
                     }
                 }
@@ -125,25 +145,27 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     }
                     if (resourcelocation != null) {
                         LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE);
-
-                        for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
-                            //Loop over the itemstack to see what it is:
-                            String[] oreDictList = this.entity.getFoodOreDicts();
-                            for (String oreDict : oreDictList) {
-                                if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
-                                    dietOK = true;
+                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE).withDamageSource(DamageSource.GENERIC).withPlayer(null);
+                        List<ItemStack> itemstackpool = loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build());
+                        if (!itemstackpool.isEmpty()) {
+                            for (ItemStack itemstack : itemstackpool) {
+                                //Loop over the itemstacks to see what the drops are:
+                                String[] oreDictList = this.entity.getFoodOreDicts();
+                                for (String oreDict : oreDictList) {
+                                    if (OreDictionary.containsMatch(false, OreDictionary.getOres(oreDict), itemstack)) {
+                                        dietOK = true;
+                                        break;
+                                    }
+                                }
+                                if (dietOK) {
                                     break;
                                 }
-                            }
-                            if (dietOK) {
-                                break;
                             }
                         }
                     }
                 }
 
-                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager)) {
+                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL && playerChosen) || (entityChooser instanceof EntityVillager && villagerChosen))) {
                     this.targetEntity = entityChooser;
                     break;
                 }
@@ -159,7 +181,6 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 
         return this.targetEntity != null;
     }
-
     
     @Override
     public boolean shouldContinueExecuting() {
@@ -253,6 +274,58 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
 //        }
 
         return super.shouldContinueExecuting();
+    }
+
+    public boolean isTooDeepforWading(Entity entity) {
+        if (entity instanceof EntityPrehistoricFloraLandBase) {
+            if (!((EntityPrehistoricFloraLandBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraAgeableFishBase) {
+            if (!((EntityPrehistoricFloraAgeableFishBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraEurypteridBase) {
+            if (!((EntityPrehistoricFloraEurypteridBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraFishBase) {
+            if (!((EntityPrehistoricFloraFishBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraSwimmingAmphibianBase) {
+            if (!((EntityPrehistoricFloraSwimmingAmphibianBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+            if (!((EntityPrehistoricFloraSwimmingBottomWalkingWaterBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraNautiloidBase) {
+            if (!((EntityPrehistoricFloraNautiloidBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+            if (!((EntityPrehistoricFloraTrilobiteSwimBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (entity instanceof EntityPrehistoricFloraWalkingAmphibianBase) {
+            if (!((EntityPrehistoricFloraWalkingAmphibianBase)entity).isReallyInWater()) {
+                return false;
+            }
+        }
+        else if (!entity.isInWater()) {
+            return false;
+        }
+        return (PathNavigateGroundNoDeepWater.isTooDeep(this.entity.world, entity.getPosition()));
     }
 
     public boolean isInWaterforHunting(Entity entity) {

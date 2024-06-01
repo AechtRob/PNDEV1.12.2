@@ -31,7 +31,7 @@ public class RenderSillosuchus extends RenderLiving<EntityPrehistoricFloraSillos
     protected void preRenderCallback(EntityPrehistoricFloraSillosuchus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        //this.shadowSize = entity.width * scale * 0.86F;
+        this.shadowSize = entity.width * scale * 0.86F;
     }
 
 }

@@ -10,8 +10,8 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderBavariscyllium;
-import net.lepidodendron.entity.render.entity.RenderSqualoraja;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -34,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBavariscyllium extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraBavariscyllium extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 
 	public BlockPos currentTarget;

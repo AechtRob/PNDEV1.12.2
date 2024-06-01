@@ -1,0 +1,47 @@
+{
+	"name": "Surcaudalus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/surcaudalus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_surcaudalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_surcaudalus",
+			"title": "Surcaudalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes $(br)>Elasmobranchii"
+		},
+        	{
+            "type": "entity",
+            "name": "S. rostratus",
+            "entity": "lepidodendron:prehistoric_flora_surcaudalus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_surcaudalus",
+			"type": "text",
+			"text": "Surcaudalus is a Late Permian freshwater shark from Eastern Australia. It had a slender eel-like body and had a superficial resemblance to some smaller sharks that still live today. It had two dorsal fins, each paired with a dorsal spine. Surcaudalus is known from full body specimens, which is rare for prehistoric shark taxa, usually known from just teeth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_surcaudalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_surcaudalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_surcaudalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_surcaudalus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_surcaudalus"
+		}
+	]
+}

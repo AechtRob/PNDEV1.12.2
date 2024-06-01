@@ -1,0 +1,40 @@
+{
+	"name": "Wither",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/wither_icon.png",
+	"category": "lepidodendron:fantasy_golem",
+	"turnin": "lepidodendron:pf_adv_book_wither",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The Wither (Robotogolem marcescefer) is a native Minecraft creature: it is created by placing three Wither Kkulls onto a body of Soul Sand. It is extremely dangerous and hostile, capable of inflicting great damage to players, other entities, and the general landscape."
+		},
+		{
+			"type": "entity",
+			"name": "R. marcescefer",
+			"entity": "minecraft:wither",
+			"rotate": false,
+			"default_rotation": -30
+		},
+		{
+			"type": "multiblock",
+			"name": "Wither",
+			"enable_visualize": false,
+			"text": "To create a Wither, place three wither skulls on top of a body of soul sand.",
+			"multiblock": {
+				"pattern": [
+					[ "HHH" ],
+					[ "BBB" ],
+					[ " 0 " ],
+					[ " A " ]
+				],
+				"mapping": {
+					"H": "minecraft:skull[SkullType=1]",
+					"0": "minecraft:soul_sand",
+					"B": "minecraft:soul_sand",
+					"A": "minecraft:air"
+				}
+			}
+		}
+	]
+}

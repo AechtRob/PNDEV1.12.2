@@ -54,10 +54,11 @@ public class ShellyReefGenerator extends WorldGenerator
 		for (int i = 0; i < 32; ++i)
 		{
 			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
-			int k = worldIn.getSeaLevel() + rand.nextInt(4) - rand.nextInt(4);
+			//int k = Functions.getAdjustedSeaLevel(worldIn, blockpos) + rand.nextInt(4) - rand.nextInt(4);
 			int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
+			int k = Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) + rand.nextInt(4) - rand.nextInt(4);
 
-			if (k == worldIn.getSeaLevel() - 2) {
+			if (k == Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 2) {
 
 				if (this.reef.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 					&& (Functions.isWater(worldIn, new BlockPos(j, k, l)))
@@ -87,15 +88,15 @@ public class ShellyReefGenerator extends WorldGenerator
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 								&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 						) {
-							worldIn.setBlockState(new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j, k - 1, l - 1), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j, k - 1, l + 1), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l - 1), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l + 1), getShellyState(this.state, rand), 2);
 							if (rand.nextInt(10) ==0) {
-								worldIn.setBlockState(new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k - 1, l - 2), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k - 1, l + 2), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k, l - 1), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k, l + 1), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l - 2), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l + 2), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l - 1), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l + 1), getShellyState(this.state, rand), 2);
 							}
 						}
 					}
@@ -119,15 +120,15 @@ public class ShellyReefGenerator extends WorldGenerator
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 								&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 						) {
-							worldIn.setBlockState(new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j, k - 1, l - 1), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j, k - 1, l + 1), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l - 1), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l + 1), getShellyState(this.state, rand), 2);
 							if (rand.nextInt(10) ==0) {
-								worldIn.setBlockState(new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k - 1, l - 2), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k - 1, l + 2), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k, l - 1), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j, k, l + 1), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l - 2), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k - 1, l + 2), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l - 1), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l + 1), getShellyState(this.state, rand), 2);
 							}
 						}
 					}
@@ -151,15 +152,15 @@ public class ShellyReefGenerator extends WorldGenerator
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 								&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 						) {
-							worldIn.setBlockState(new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j - 1, k - 1, l), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j + 1, k - 1, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j - 1, k - 1, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j + 1, k - 1, l), getShellyState(this.state, rand), 2);
 							if (rand.nextInt(10) ==0) {
-								worldIn.setBlockState(new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j - 2, k - 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j + 2, k - 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j - 1, k, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j + 1, k, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j - 2, k - 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j + 2, k - 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j - 1, k, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j + 1, k, l), getShellyState(this.state, rand), 2);
 							}
 						}
 					}
@@ -183,15 +184,15 @@ public class ShellyReefGenerator extends WorldGenerator
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 								&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 						) {
-							worldIn.setBlockState(new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j - 1, k - 1, l), getShellyState(this.state, rand), 2);
-							worldIn.setBlockState(new BlockPos(j + 1, k - 1, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j - 1, k - 1, l), getShellyState(this.state, rand), 2);
+							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j + 1, k - 1, l), getShellyState(this.state, rand), 2);
 							if (rand.nextInt(10) ==0) {
-								worldIn.setBlockState(new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j - 2, k - 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j + 2, k - 1, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j - 1, k, l), getShellyState(this.state, rand), 2);
-								worldIn.setBlockState(new BlockPos(j + 1, k, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k + 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j - 2, k - 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j + 2, k - 1, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j - 1, k, l), getShellyState(this.state, rand), 2);
+								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j + 1, k, l), getShellyState(this.state, rand), 2);
 							}
 						}
 					}

@@ -9,6 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderTitanichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -24,7 +25,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -215,10 +216,10 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 		return -1.36;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 3;
+		return 2;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 2.7;
+		return 1.5;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
 		return 1.3;

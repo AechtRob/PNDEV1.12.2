@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -32,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -373,7 +374,7 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return 0.05;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.9;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
 		return 0.8;

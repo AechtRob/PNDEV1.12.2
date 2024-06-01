@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:bat_head",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:bat_head",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:bat_head",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:bat_head",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:bat_head",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:bat_head",
+      "y": 0
+    }
+  }
+}

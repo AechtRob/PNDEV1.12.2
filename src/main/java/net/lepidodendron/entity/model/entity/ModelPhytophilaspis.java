@@ -311,17 +311,14 @@ public class ModelPhytophilaspis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.phytophilaspis.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.phytophilaspis.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(phytophilaspis, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Cephalon, 0.0F, 0.05F, 0.0F);
+        this.phytophilaspis.offsetZ = 0.0F;
+        this.phytophilaspis.offsetY = 0.06F;
+        this.phytophilaspis.offsetX = 0.0F;
+        this.phytophilaspis.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

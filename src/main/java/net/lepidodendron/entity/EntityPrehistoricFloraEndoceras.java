@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWanderBottomFeed;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsEndoceras;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -26,7 +27,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNautiloidBase {
+public class EntityPrehistoricFloraEndoceras extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

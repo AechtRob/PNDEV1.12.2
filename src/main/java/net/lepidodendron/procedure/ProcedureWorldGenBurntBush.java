@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockBurntStem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -14,7 +16,7 @@ public class ProcedureWorldGenBurntBush extends ElementsLepidodendronMod.ModElem
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenBurntBush!");
 			return;
@@ -53,9 +55,9 @@ public class ProcedureWorldGenBurntBush extends ElementsLepidodendronMod.ModElem
 			//Tree height: 5-12 blocks
 			TreeHeight = 5 + Math.round(Math.random() * 7);
 
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockBurntStem.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockBurntStem.block.getDefaultState(), 3);
 
-			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+			Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 			$_dependencies.put("x", x);
 			$_dependencies.put("y", y + 1);
 			$_dependencies.put("z", z);

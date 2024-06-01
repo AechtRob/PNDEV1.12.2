@@ -1,7 +1,9 @@
 package net.lepidodendron.world.gen;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.block.BlockAulacera;
 import net.lepidodendron.procedure.ProcedureWorldGenAulacera;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
@@ -30,7 +32,7 @@ public class WorldGenAulaceraSponge extends WorldGenerator
 
             //System.err.println("Generator running 1");
 
-            if (blockpos.getY() < worldIn.getSeaLevel() && isSoil) {
+            if (blockpos.getY() < Functions.getAdjustedSeaLevel(worldIn, blockpos) && isSoil) {
 
                 //System.err.println("Generator running 2");
 
@@ -48,8 +50,8 @@ public class WorldGenAulaceraSponge extends WorldGenerator
                         && (worldIn.getBlockState(blockpos.north().up(2)).getBlock() != BlockAulacera.block)
                         && (worldIn.getBlockState(blockpos.south().up(2)).getBlock() != BlockAulacera.block)
                 ) {
-                    worldIn.setBlockState(position, BlockAulacera.block.getDefaultState(), 2);
-                    HashMap<String, Object> $_dependencies = new HashMap<>();
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,position, BlockAulacera.block.getDefaultState(), 2);
+                    Object2ObjectOpenHashMap<String, Object> $_dependencies = new Object2ObjectOpenHashMap <> ();
                     $_dependencies.put("x", blockpos.getX());
                     $_dependencies.put("y", blockpos.getY());
                     $_dependencies.put("z", blockpos.getZ());

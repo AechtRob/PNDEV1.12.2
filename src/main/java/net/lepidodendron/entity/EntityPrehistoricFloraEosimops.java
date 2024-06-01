@@ -4,8 +4,11 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.render.entity.RenderEosimops;
+import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.item.ItemRoots;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -25,7 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiictodon {
+public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiictodon implements ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -38,6 +41,12 @@ public class EntityPrehistoricFloraEosimops extends EntityPrehistoricFloraDiicto
 		maxWidth = 0.25F;
 		maxHeight = 0.30F;
 		maxHealthAgeable = 8.0D;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_EOSIMOPS;
 	}
 
 	public float getAISpeedLand() {

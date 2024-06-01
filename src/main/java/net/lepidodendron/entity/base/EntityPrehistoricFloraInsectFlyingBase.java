@@ -47,6 +47,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTameable implements IAnimatedEntity, IPrehistoricDiet {
@@ -67,11 +69,11 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     public float sitProgress;
     public int ticksSitted;
     protected boolean isSitting;
-    private EntityItem eatTarget;
+    public EntityItem eatTarget;
     public Animation ATTACK_ANIMATION;
     public Animation LAY_ANIMATION;
-    private int inPFLove;
-    private boolean laying;
+    public int inPFLove;
+    public boolean laying;
 
     public EntityPrehistoricFloraInsectFlyingBase(World world) {
         super(world);
@@ -97,6 +99,17 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             }
         }
         return false;
+    }
+
+    @Override
+    public float getEyeHeight() {
+        return 0.15F;
+    }
+
+    @Override
+    public BlockPos getPosition()
+    {
+        return new BlockPos(this.posX, this.posY + this.getEyeHeight(), this.posZ);
     }
 
     @Override
@@ -437,7 +450,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             float f = this.width;
             this.width = width;
             this.height = height;
-            if (this.width < f) {
+            if (this.width != f) {
                 double d0 = (double) width / 2.0D;
                 this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
             }
@@ -737,17 +750,21 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 RayTraceResult rayTrace = world.rayTraceBlocks(vec3d, vec3d2, true);
                 if (rayTrace != null && rayTrace.hitVec != null) {
                     BlockPos sidePos = rayTrace.getBlockPos();
-                    if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
-                        this.setAttachmentPos(sidePos);
-                        this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
-                        this.motionX = 0.0D;
-                        this.motionY = 0.0D;
-                        this.motionZ = 0.0D;
+                    try {
+                        if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
+                            this.setAttachmentPos(sidePos);
+                            this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
+                            this.motionX = 0.0D;
+                            this.motionY = 0.0D;
+                            this.motionZ = 0.0D;
+                        }
                     }
+                    catch (Error e) {}
                 }
             }
         } else {
             BlockPos pos = this.getAttachmentPos();
+
             if (world.isSideSolid(pos, this.getAttachmentFacing())) {
                 sitTickCt++;
                 sitCooldown = 150;
@@ -759,16 +776,16 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 this.prevRotationYawHead = 180.0F;
                 this.moveHelper.action = EntityMoveHelper.Action.WAIT;
                 if (this.getAttachmentFacing() == EnumFacing.NORTH) {
-                    this.posZ = this.getPosition().getZ() + (this.width/2F);
+                    this.posZ = this.getPosition().getZ() + (this.width / 2F);
                 }
                 if (this.getAttachmentFacing() == EnumFacing.SOUTH) {
-                    this.posZ = this.getPosition().getZ() + 1 - (this.width/2F);
+                    this.posZ = this.getPosition().getZ() + 1 - (this.width / 2F);
                 }
                 if (this.getAttachmentFacing() == EnumFacing.WEST) {
-                    this.posX = this.getPosition().getX() + (this.width/2F);
+                    this.posX = this.getPosition().getX() + (this.width / 2F);
                 }
                 if (this.getAttachmentFacing() == EnumFacing.EAST) {
-                    this.posX = this.getPosition().getX() + 1 - (this.width/2F);
+                    this.posX = this.getPosition().getX() + 1 - (this.width / 2F);
                 }
                 this.motionX = 0.0D;
                 this.motionY = 0.0D;
@@ -778,6 +795,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
                 this.setAttachmentPos(null);
             }
+
         }
         if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null && (this.getAttackTarget() != null || this.getEatTarget() != null)) {
             this.sitTickCt = 0;
@@ -992,10 +1010,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     if ((!world.isAirBlock(randomPos)) && (world.getBlockState(randomPos).getMaterial() != Material.WATER) && (world.getBlockState(randomPos).getMaterial() != Material.LAVA)) {
                         RayTraceResult rayTrace = world.rayTraceBlocks(EntityPrehistoricFloraInsectFlyingBase.this.getPositionVector().add(0, 0.25, 0), new Vec3d(randomPos).add(0.5, 0.5, 0.5), true);
                         if (rayTrace != null && rayTrace.hitVec != null) {
-                            if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
-                                target = rayTrace.getBlockPos();
-                                isGoingToAttach = true;
+                            try {
+                                if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
+                                    target = rayTrace.getBlockPos();
+                                    isGoingToAttach = true;
+                                }
                             }
+                            catch (Error e) {}
                         }
                     }
                 }
@@ -1007,12 +1028,16 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             else {
                 target = EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(17) - 8, EntityPrehistoricFloraInsectFlyingBase.this.rand);
             }
+            if (!world.isBlockLoaded(target)) {
+                return false;
+            }
             Material material = world.getBlockState(new BlockPos(target)).getMaterial();
             Material material1 = world.getBlockState(new BlockPos(target).up()).getMaterial();
             return (material1 != Material.LAVA) && (material1 != Material.WATER) && (material != Material.LAVA) && (material != Material.WATER) && !EntityPrehistoricFloraInsectFlyingBase.this.isSitting() && EntityPrehistoricFloraInsectFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target).add(0.5D, 0.5D, 0.5D)) && EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(4) == 0 && EntityPrehistoricFloraInsectFlyingBase.this.getAttachmentPos() == null;
         }
 
         public BlockPos getBennetiteTarget(boolean shorter) {
+            List<BlockPos> blockList = new ArrayList<>();
             int i = 0;
             if (shorter) {
                 i = 2;
@@ -1025,15 +1050,18 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     while (zPos <= 8 - i) {
                         if (world.getBlockState(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().add(xPos, yPos, zPos)).getBlock() instanceof IBennettites) {
                             if (shorter) {
-                                return new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3);
+                                blockList.add(new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(7) - 3));
                             }
-                            return new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4);
+                            blockList.add(new BlockPos(EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getX() + xPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getY() + yPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4, EntityPrehistoricFloraInsectFlyingBase.this.getPosition().getZ() + zPos + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(9) - 4));
                         }
                         zPos ++;
                     }
                     yPos++;
                 }
                 xPos++;
+            }
+            if (!blockList.isEmpty()) {
+                return (blockList.get(world.rand.nextInt(blockList.size())));
             }
             if (shorter) {
                 return EntityPrehistoricFloraInsectFlyingBase.getPositionRelativetoGround(EntityPrehistoricFloraInsectFlyingBase.this, EntityPrehistoricFloraInsectFlyingBase.this.world, EntityPrehistoricFloraInsectFlyingBase.this.posX + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.posZ + EntityPrehistoricFloraInsectFlyingBase.this.rand.nextInt(15) - 7, EntityPrehistoricFloraInsectFlyingBase.this.rand);

@@ -1,0 +1,43 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:retiophyllia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:retiophyllia_1"},
+      {"model": "lepidodendron:retiophyllia_2"},
+      {"model": "lepidodendron:retiophyllia_3"},
+      {"model": "lepidodendron:retiophyllia_4"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:retiophyllia_1", "y": 90},
+      {"model": "lepidodendron:retiophyllia_2", "y": 90},
+      {"model": "lepidodendron:retiophyllia_3", "y": 90},
+      {"model": "lepidodendron:retiophyllia_4", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:retiophyllia_1", "y": 180},
+      {"model": "lepidodendron:retiophyllia_2", "y": 180},
+      {"model": "lepidodendron:retiophyllia_3", "y": 180},
+      {"model": "lepidodendron:retiophyllia_4", "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:retiophyllia_1", "y": 270},
+      {"model": "lepidodendron:retiophyllia_2", "y": 270},
+      {"model": "lepidodendron:retiophyllia_3", "y": 270},
+      {"model": "lepidodendron:retiophyllia_4", "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:retiophyllia_1"},
+      {"model": "lepidodendron:retiophyllia_2"},
+      {"model": "lepidodendron:retiophyllia_3"},
+      {"model": "lepidodendron:retiophyllia_4"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:retiophyllia_1"},
+      {"model": "lepidodendron:retiophyllia_2"},
+      {"model": "lepidodendron:retiophyllia_3"},
+      {"model": "lepidodendron:retiophyllia_4"}
+    ]
+  }
+}

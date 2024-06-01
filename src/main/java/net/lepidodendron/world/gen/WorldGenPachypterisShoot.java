@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockPachypterisLog;
 import net.lepidodendron.block.BlockPachypterisShoot;
 import net.lepidodendron.block.BlockPachypterisShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,7 +22,7 @@ public class WorldGenPachypterisShoot extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
             	(
             		(worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
             		|| (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GRASS)
@@ -30,7 +31,7 @@ public class WorldGenPachypterisShoot extends WorldGenerator
             
             {
                 if (rand.nextInt(3) != 0) {
-                    worldIn.setBlockState(blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
                 }
                 else {
                     if (worldIn.getBlockState(blockpos.north()).getBlock() != BlockPachypterisLog.block
@@ -45,13 +46,13 @@ public class WorldGenPachypterisShoot extends WorldGenerator
                         int ii = rand.nextInt(3);
                         int iii = 0;
                         while (iii <= ii) {
-                            worldIn.setBlockState(blockpos.up(iii), BlockPachypterisLog.block.getDefaultState(), 2);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(iii), BlockPachypterisLog.block.getDefaultState(), 2);
                             iii += 1;
                         }
-                        worldIn.setBlockState(blockpos.up(iii), BlockPachypterisShoot.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.up(iii), BlockPachypterisShoot.block.getDefaultState(), 2);
                     }
                     else {
-                        worldIn.setBlockState(blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
+                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPachypterisShootPlaceable.block.getDefaultState(), 2);
                     }
                 }
                 flag = true;

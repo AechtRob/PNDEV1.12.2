@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPtilophyllumLeavesPlaceable;
 import net.lepidodendron.block.BlockPtilophyllumShootPlaceable;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -20,7 +21,7 @@ public class WorldGenPtilophyllumShoot extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) &&
             	(
             		(worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
             		|| (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GRASS)
@@ -29,10 +30,10 @@ public class WorldGenPtilophyllumShoot extends WorldGenerator
             
             {
                 if (rand.nextInt(4) == 0) {
-                    worldIn.setBlockState(blockpos, BlockPtilophyllumShootPlaceable.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPtilophyllumShootPlaceable.block.getDefaultState(), 2);
                 }
                 else {
-                    worldIn.setBlockState(blockpos, BlockPtilophyllumLeavesPlaceable.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPtilophyllumLeavesPlaceable.block.getDefaultState(), 2);
                 }
                 flag = true;
             }

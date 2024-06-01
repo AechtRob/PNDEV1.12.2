@@ -1,9 +1,11 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockArtocarpusFruitBlock;
 import net.lepidodendron.block.BlockArtocarpusLeaves;
 import net.lepidodendron.block.BlockArtocarpusLog;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap < String, Object > dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenArtocarpus!");
 			return;
@@ -148,7 +150,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 							if ((Math.abs(xct) != 4) && (Math.abs(zct) != 4)) {
 								ProcedureTreeLeaf.executeProcedure(x + xct, yy, z + zct, world, BlockArtocarpusLeaves.block);
 								if ((Math.random() > 0.85) && (Math.abs(xct) + Math.abs(zct) == 4) && (world.isAirBlock(new BlockPos(x + xct, yy - 1, z + zct))) && (world.getBlockState(new BlockPos(x + xct, yy, z + zct)).getBlock() == BlockArtocarpusLeaves.block)) {
-									world.setBlockState(new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
 								}
 							}
 						}
@@ -165,7 +167,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 						if (Math.abs(xct) + Math.abs(zct) <= 4) {
 							ProcedureTreeLeaf.executeProcedure(x + xct, yy, z + zct, world, BlockArtocarpusLeaves.block);
 							if ((Math.random() > 0.85) && (Math.abs(xct) + Math.abs(zct) == 4) && (world.isAirBlock(new BlockPos(x + xct, yy - 1, z + zct))) && (world.getBlockState(new BlockPos(x + xct, yy, z + zct)).getBlock() == BlockArtocarpusLeaves.block)) {
-								world.setBlockState(new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
 							}
 						}
 						zct = zct + 1;
@@ -181,7 +183,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 						if (Math.abs(xct) + Math.abs(zct) <= 5) {
 							ProcedureTreeLeaf.executeProcedure(x + xct, yy, z + zct, world, BlockArtocarpusLeaves.block);
 							if ((Math.random() > 0.85) && (Math.abs(xct) + Math.abs(zct) == 5) && (world.isAirBlock(new BlockPos(x + xct, yy - 1, z + zct))) && (world.getBlockState(new BlockPos(x + xct, yy, z + zct)).getBlock() == BlockArtocarpusLeaves.block)) {
-								world.setBlockState(new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
 							}
 						}
 						zct = zct + 1;
@@ -294,7 +296,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 							if ((Math.abs(xct) != 2) && (Math.abs(zct) != 2)) {
 								ProcedureTreeLeaf.executeProcedure(x + xct, yy, z + zct, world, BlockArtocarpusLeaves.block);
 								if ((Math.random() > 0.85) && (Math.abs(xct) + Math.abs(zct) == 2) && (world.isAirBlock(new BlockPos(x + xct, yy - 1, z + zct))) && (world.getBlockState(new BlockPos(x + xct, yy, z + zct)).getBlock() == BlockArtocarpusLeaves.block)) {
-									world.setBlockState(new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
 								}
 							}
 						}
@@ -312,7 +314,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 						if (Math.abs(xct) + Math.abs(zct) <= 3) {
 							ProcedureTreeLeaf.executeProcedure(x + xct, yy, z + zct, world, BlockArtocarpusLeaves.block);
 							if ((Math.random() > 0.85) && (Math.abs(xct) + Math.abs(zct) == 3) && (world.isAirBlock(new BlockPos(x + xct, yy - 1, z + zct))) && (world.getBlockState(new BlockPos(x + xct, yy, z + zct)).getBlock() == BlockArtocarpusLeaves.block)) {
-								world.setBlockState(new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
+								Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
 							}
 						}
 						zct = zct + 1;
@@ -328,7 +330,7 @@ public class ProcedureWorldGenArtocarpus extends ElementsLepidodendronMod.ModEle
 						if (Math.abs(xct) + Math.abs(zct) <= 4) {
 							ProcedureTreeLeaf.executeProcedure(x + xct, yy, z + zct, world, BlockArtocarpusLeaves.block);
 							if ((Math.random() > 0.85) && (Math.abs(xct) + Math.abs(zct) == 4) && (world.isAirBlock(new BlockPos(x + xct, yy - 1, z + zct))) && (world.getBlockState(new BlockPos(x + xct, yy, z + zct)).getBlock() == BlockArtocarpusLeaves.block)) {
-									world.setBlockState(new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
+									Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x + xct, yy - 1, z + zct), BlockArtocarpusFruitBlock.block.getDefaultState(), 3);
 								}
 							}
 						zct = zct + 1;

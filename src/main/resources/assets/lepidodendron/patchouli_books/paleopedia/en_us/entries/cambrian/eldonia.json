@@ -1,0 +1,46 @@
+{
+	"name": "Eldonia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/eldonia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_eldonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eldonia",
+			"title": "Eldonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Deuterostomia $(br)>Ambulacraria $(br)>Cambroernida $(br)>Eldoniidae"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/Eldonia.png"],
+			"title": "E. ludwigii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eldonia",
+			"type": "text",
+			"text": "Eldonia is a cambroernid known from the Burgess Shale of Canada and possible specimens attributed to it are known from the Ordovician of Morocco. It had a soft body, which was a round discoid shape. Within the disk, were its guts, which had a C shape. Eldonia is frequently found in association with Microdictyon, which is hypothesized to have fed or ridden on Eldonia."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_eldonia"
+		}
+	]
+}

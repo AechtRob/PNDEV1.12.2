@@ -15,6 +15,8 @@ public class RenderListracanthus extends RenderLiving<EntityPrehistoricFloraList
         super(mgr, new ModelListracanthus(), 1.0f);
     }
 
+    public static float getScaler() {return 0.6F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraListracanthus entity) {
         return RenderListracanthus.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderListracanthus extends RenderLiving<EntityPrehistoricFloraList
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraListracanthus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

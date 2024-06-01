@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -33,7 +34,9 @@ public class WaterCloverGenerator extends WorldGenerator
     	boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWaterClover))
 			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimJurassic))
+		if ((dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
+			)
 			{
 				dimensionCriteria = true;
 			}
@@ -43,6 +46,7 @@ public class WaterCloverGenerator extends WorldGenerator
 
 		int multiplier = 1;
 		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)
@@ -51,12 +55,12 @@ public class WaterCloverGenerator extends WorldGenerator
             int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
             int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
 
-            if (k >= worldIn.getSeaLevel() && canSurviveAt(worldIn, new BlockPos(j, k, l))
+            if (k >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k, l)) && canSurviveAt(worldIn, new BlockPos(j, k, l))
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
 
-		                worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 		                return true;
             }
         }

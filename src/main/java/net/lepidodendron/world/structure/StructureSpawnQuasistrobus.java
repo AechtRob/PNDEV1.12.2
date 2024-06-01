@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -163,41 +164,41 @@ public class StructureSpawnQuasistrobus extends ElementsLepidodendronMod.ModElem
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
 				{
-					world.setBlockState(spawnTo, BlockQuasistrobus.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(), BlockQuasistrobusCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.up(2), BlockQuasistrobusTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockQuasistrobus.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockQuasistrobusCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(2), BlockQuasistrobusTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.north(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.south(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.east(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.east().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.east().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.east(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.east().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.east().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.west(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.west().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.west().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.west(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.west().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.west().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.north().east(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().east().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().east().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().east(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().east().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().east().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.south().east(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().east().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().east().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().east(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().east().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().east().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.north().west(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().west().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.north().west().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().west(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().west().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.north().west().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 		
-					world.setBlockState(spawnTo.south().west(), BlockQuasistrobusSide.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().west().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
-					world.setBlockState(spawnTo.south().west().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().west(), BlockQuasistrobusSide.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().west().up(), BlockQuasistrobusSideCentre.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.south().west().up(2), BlockQuasistrobusSideTop.block.getDefaultState(), 3);
 				}
 			}
 		}

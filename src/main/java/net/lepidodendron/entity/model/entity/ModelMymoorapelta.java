@@ -3,7 +3,6 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraMymoorapelta;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
@@ -642,16 +641,83 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
         this.leftArm.setScale(0,0,0);
         this.rightArm.scaleChildren = true;
         this.leftArm.scaleChildren = true;
-        this.chest.offsetY = -0.05F;
+        this.chest.offsetY = 0.0F;
         this.chest.offsetX = 0.0F;
-        this.chest.offsetZ = 0.15F;
+        this.chest.offsetZ = 0.05F;
         this.chest.render(0.01F);
         this.rightArm.setScale(1,1,1);
         this.leftArm.setScale(1,1,1);
         resetToDefaultPose();
     }
-
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hips, 0.0F, 0.0F, -0.05F);
+        this.setRotateAngle(body, 0.0F, -0.05F, -0.025F);
+        this.setRotateAngle(chest, 0.0F, -0.1F, -0.05F);
+        this.setRotateAngle(neck1, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.3F, 0.3F, 0.0F);
+        this.setRotateAngle(leftArm, 0.5F, 0.3F, -0.2F);
+        this.setRotateAngle(leftArm2, -1.2F, 0.1F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm4, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.3F, -0.2F, 0.3F);
+        this.setRotateAngle(rightArm2, -1.0F, -0.1F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.7F, -0.05F, -0.1F);
+        this.setRotateAngle(rightArm4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.2F, -0.3F, -0.1F);
+        this.setRotateAngle(leftLeg2, 0.3F, 0.0F, 0.15F);
+        this.setRotateAngle(rightLeg, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(rightLeg2, 0.55F, 0.1F, -0.3F);
+        this.hips.offsetZ = -0.05F;
+        this.hips.offsetY = -0.12F;
+        this.hips.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hips.offsetY = -0.05F;
+        this.hips.offsetX = 0.35F;
+        this.hips.rotateAngleY = (float)Math.toRadians(150);
+        this.hips.rotateAngleX = (float)Math.toRadians(0);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.hips.scaleChildren = true;
+        float scaler = 0.8F;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(hips, 0.0F, -2.9F, -0.0F);
+        this.setRotateAngle(body, 0.0F, -0.05F, -0.025F);
+        this.setRotateAngle(chest, 0.0F, -0.1F, -0.05F);
+        this.setRotateAngle(neck1, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.4F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.3F, 0.3F, 0.0F);
+        this.setRotateAngle(leftArm, 0.5F, 0.3F, -0.2F);
+        this.setRotateAngle(leftArm2, -1.2F, 0.1F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm4, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.3F, -0.2F, 0.3F);
+        this.setRotateAngle(rightArm2, -1.0F, -0.1F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.7F, -0.05F, -0.1F);
+        this.setRotateAngle(rightArm4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.2F, -0.3F, -0.1F);
+        this.setRotateAngle(leftLeg2, 0.3F, 0.0F, 0.15F);
+        this.setRotateAngle(rightLeg, 0.0F, 0.1F, 0.3F);
+        this.setRotateAngle(rightLeg2, 0.55F, 0.1F, -0.3F);
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
         resetToDefaultPose();
     }
 
@@ -3708,7 +3774,7 @@ public class ModelMymoorapelta extends AdvancedModelBaseExtended {
     }
 
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraSilesaurus entity = (EntityPrehistoricFloraSilesaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraMymoorapelta entity = (EntityPrehistoricFloraMymoorapelta) entitylivingbaseIn;
 
         int animCycle = 20;
         double tickAnim = animTick + partialTickTime;

@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCaytoniales;
 import net.lepidodendron.block.BlockCaytonialesTop;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +16,7 @@ public class ProcedureWorldGenCaytoniales extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldCaytoniales!");
 			return;
@@ -52,8 +54,8 @@ public class ProcedureWorldGenCaytoniales extends ElementsLepidodendronMod.ModEl
 			if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y), (int) z)), world, new BlockPos((int) x, (int) (y), (int) z))) {
 				block = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock();
 				if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)), world, new BlockPos((int) x, (int) (y + 1), (int) z))) {
-					world.setBlockState(new BlockPos((int) x, (int) (y), (int) z), BlockCaytoniales.block.getDefaultState(), 3);
-					world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), BlockCaytonialesTop.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y), (int) z), BlockCaytoniales.block.getDefaultState(), 3);
+					Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) (y + 1), (int) z), BlockCaytonialesTop.block.getDefaultState(), 3);
 				}
 			}
 		}

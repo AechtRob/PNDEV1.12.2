@@ -192,15 +192,36 @@ public class ModelMoschops extends AdvancedModelBaseExtended {
         this.Hips.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.Neck.offsetY = -0.035F;
         this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.3F, 0.15F, -0.05F);
+        this.setRotateAngle(Belly, 0.05F, -0.1F, 0.1F);
+        this.setRotateAngle(Front, 0.2F, -0.15F, -0.1F);
+        this.setRotateAngle(Neck, -0.4F, -0.4F, -0.05F);
+        this.setRotateAngle(Head, 0.65F, -0.2F, -0.05F);
+        this.setRotateAngle(Tail1, -0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(Tail3, 0.3F, -0.3F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.4F, -0.2F, -0.3F);
+        this.setRotateAngle(Leftshin, 0.8F, -0.2F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, -0.2F, 0.1F, 0.3F);
+        this.setRotateAngle(Rightshin, 0.45F, -0.2F, -0.25F);
+        this.setRotateAngle(Righthindfoot, 0.05F, 0.0F, -0.1F);
+        this.setRotateAngle(Leftupperarm, -0.2F, -0.4F, -0.5F);
+        this.setRotateAngle(Leftlowerarm, -0.25F, 0.3F, 0.5F);
+        this.setRotateAngle(Leftfrontfoot, 0.65F, 0.0F, 0.1F);
+        this.setRotateAngle(Rightupperarm, 0.6F, 0.0F, 0.4F);
+        this.setRotateAngle(Rightlowerarm, -0.5F, -0.1F, -0.4F);
+        this.setRotateAngle(Rightfrontfoot, 0.0F, 0.0F, 0.0F);
+        this.root.offsetY = -0.1365F;
+        this.root.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

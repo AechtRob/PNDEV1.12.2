@@ -303,16 +303,40 @@ public class ModelLotosaurus extends AdvancedModelBaseExtended {
         this.Hips.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(25);
+        this.Neck.offsetY = -0.025F;
         this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Belly, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(Neck, -0.1F, 0.2F, 0.1F);
+        this.setRotateAngle(Head, -0.1F, 0.7F, 0.0F);
+        this.setRotateAngle(Lowerjawback, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.0F, -0.2F, 0.05F);
+        this.setRotateAngle(Tailmiddle, 0.0F, -0.2F, 0.1F);
+        this.setRotateAngle(Tailmiddleend, 0.0F, -0.2F, 0.1F);
+        this.setRotateAngle(Tailend, 0.0F, -0.2F, 0.1F);
+        this.setRotateAngle(Leftupperarm, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, -0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerarm, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfrontfoot, 0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftheel, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightheel, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Righttoes, -0.4F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.15F;
+        this.Hips.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

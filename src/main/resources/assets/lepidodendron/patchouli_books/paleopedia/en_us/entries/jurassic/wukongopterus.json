@@ -1,0 +1,47 @@
+{
+	"name": "Wukongopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/wukongopterus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_wukongopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wukongopterus",
+			"title": "Wukongopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Pterosauria $(br)>Wukongopteridae $(br)>Wukongopterinae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. lii",
+            "entity": "lepidodendron:prehistoric_flora_wukongopterus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wukongopterus",
+			"type": "text",
+			"text": "Wukongopterus is a pterosaur known from the Daohugou Beds of Late Jurassic China. It was described in 2009 by Wang Xiaolin, and it has a name derived from Sun Wukong, also known as the Monkey King, from the Chinese Novel, \"Journey to the West.\" This animal had a wingspan of just over 70 cm and was likely a tree dwelling pterosaur, being capable of climbing and would've probably fed on insects."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_wukongopterus"
+		}
+	]
+}

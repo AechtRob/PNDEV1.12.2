@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Triassic$(br2)>Pseudosuchia$(br)>Suchia$(br)>Poposauroidea$(br)>Shuvosauridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/effigia.png"],
-			"title": "E. okeeffeae",
-			"text": ""
+			"type": "entity",
+			"name": "E. okeeffeae",
+			"entity": "lepidodendron:prehistoric_flora_effigia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_effigia",

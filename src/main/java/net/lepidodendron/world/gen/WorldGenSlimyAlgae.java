@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockSlimyAlgaeLand;
 import net.lepidodendron.block.BlockSlimyAlgaeWater;
 import net.lepidodendron.item.ItemSlimyAlgaeItem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -24,14 +25,14 @@ public class WorldGenSlimyAlgae extends WorldGenerator
             BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
             IBlockState iblockstate = worldIn.getBlockState(blockpos.down());
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSlimyAlgaeLand.block.canPlaceBlockAt(worldIn, blockpos))
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSlimyAlgaeLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
-               	worldIn.setBlockState(blockpos, BlockSlimyAlgaeLand.block.getDefaultState(), 2);
+               	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSlimyAlgaeLand.block.getDefaultState(), 2);
                 flag = true;
             }
-            else if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemSlimyAlgaeItem.canSurviveAt(worldIn, blockpos)  && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))
+            else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemSlimyAlgaeItem.canSurviveAt(worldIn, blockpos)  && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))
             {
-                worldIn.setBlockState(blockpos, BlockSlimyAlgaeWater.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSlimyAlgaeWater.block.getDefaultState(), 2);
                 flag = true;
             }
         }

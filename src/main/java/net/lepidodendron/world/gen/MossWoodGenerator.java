@@ -3,6 +3,7 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockAncientMoss;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -54,11 +55,11 @@ public class MossWoodGenerator extends WorldGenerator
 
         for (int i = 0; i < 24; ++i)
         {
-            int j = position.getX() + rand.nextInt(8) - rand.nextInt(8);
+            int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
             int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-            int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
+            int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
-            if (k >= worldIn.getSeaLevel() && this.Moss.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
+            if (k >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k, l)) && this.Moss.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
@@ -77,7 +78,7 @@ public class MossWoodGenerator extends WorldGenerator
 		            if (BlockAncientMoss.block.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
 		            	&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD)
 		            {
-		                worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 		                return true;
 		            }
 		        }

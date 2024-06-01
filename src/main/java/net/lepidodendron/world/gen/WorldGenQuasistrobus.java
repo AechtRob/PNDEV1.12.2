@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockQuasistrobus;
 import net.lepidodendron.block.BlockTrichopitys;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -20,7 +21,7 @@ public class WorldGenQuasistrobus extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockQuasistrobus.block.canPlaceBlockAt(worldIn, blockpos) &&
+            if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockQuasistrobus.block.canPlaceBlockAt(worldIn, blockpos) &&
                     (
                         (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.GROUND)
                             || (worldIn.getBlockState(blockpos.down()).getMaterial() == Material.SAND)
@@ -46,7 +47,7 @@ public class WorldGenQuasistrobus extends WorldGenerator
                     xct = xct + 1;
                 }
                 if (waterCriteria) {
-                    worldIn.setBlockState(blockpos, BlockQuasistrobus.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockQuasistrobus.block.getDefaultState(), 2);
                     BlockQuasistrobus.block.onBlockAdded(worldIn, blockpos, BlockTrichopitys.block.getDefaultState());
                     flag = true;
                 }

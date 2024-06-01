@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:doratophyllum_inventory"
+    },
+    "var=false": {"model": "lepidodendron:doratophyllum"},
+    "var=true": {"model": "lepidodendron:doratophyllum", "y":  90}
+  }
+}

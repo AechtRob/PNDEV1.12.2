@@ -71,7 +71,7 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
 
         if (this.PrehistoricFloraAmphibianBase.getRNG().nextFloat() < 0.3F) {
             Path path = this.PrehistoricFloraAmphibianBase.getNavigator().getPath();
-            if (this.PrehistoricFloraAmphibianBase.isInWater()) {
+            if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
                 //Path path = this.PrehistoricFloraJellyfishBase.getNavigator().getPath();
                 if (
                         ((!this.PrehistoricFloraAmphibianBase.getNavigator().noPath())
@@ -152,34 +152,37 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
             if (this.PrehistoricFloraAmphibianBase.isBase()) {
                 for (int i = 0; i < 10; i++) {
                     Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
-                    //Prefer targets which are at the bottom:
-                    if (!(randPos.y < 1 || randPos.y >= 254)) {
-                        randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
-                    }
-                    Vec3d randPosVar = randPos;
-                    if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.85) {
-                        int ii = 0;
-                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                            randPosVar = randPos.add(0, -ii,0);
-                            ii = ii + 1;
-                        }
-                        //About half the time float over the bottom:
-                        randPos = randPosVar;
-                        if (Math.random() > 0.5) {
-                            randPos = randPosVar.add(0,1,0);
-                        }
-                    }
+                    if (this.PrehistoricFloraAmphibianBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                        //Prefer targets which are at the bottom:
 
-                    if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                        break; //This pos is not suitable
-                    }
-
-                    //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
-                    if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
                         if (!(randPos.y < 1 || randPos.y >= 254)) {
-                            return randPos;
+                            randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                        }
+                        Vec3d randPosVar = randPos;
+                        if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.85) {
+                            int ii = 0;
+                            while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                                randPosVar = randPos.add(0, -ii, 0);
+                                ii = ii + 1;
+                            }
+                            //About half the time float over the bottom:
+                            randPos = randPosVar;
+                            if (Math.random() > 0.5) {
+                                randPos = randPosVar.add(0, 1, 0);
+                            }
                         }
 
+                        if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
+                            break; //This pos is not suitable
+                        }
+
+                        //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
+                        if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                            if (!(randPos.y < 1 || randPos.y >= 254)) {
+                                return randPos;
+                            }
+
+                        }
                     }
                 }
             }

@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPeat;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
@@ -30,7 +31,7 @@ public class WorldGenPeat extends WorldGenerator
                 }
             }
 
-            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= worldIn.getSeaLevel() - 1) && worldIn.isAirBlock(blockpos)
+            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos) - 1) && worldIn.isAirBlock(blockpos)
             	&& (
             		((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
             		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
@@ -41,7 +42,7 @@ public class WorldGenPeat extends WorldGenerator
             )
             if (rand.nextInt(2) == 0)
             {
-                worldIn.setBlockState(blockpos.down(), BlockPeat.block.getDefaultState(), 2);
+                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), BlockPeat.block.getDefaultState(), 2);
                 flag = true;
             }
             else {
@@ -50,7 +51,7 @@ public class WorldGenPeat extends WorldGenerator
                         || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.SAND)
                         || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.ROCK)
                         || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.CLAY)) {
-                    worldIn.setBlockState(blockpos.down(2), BlockPeat.block.getDefaultState(), 2);
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(2), BlockPeat.block.getDefaultState(), 2);
                     flag = true;
                 }
             }

@@ -138,19 +138,32 @@ public class ModelAlbertonia extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodyfront.render(f5 * 0.15F);
+        this.Bodyfront.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetY = -0.15F;
+        this.Bodyfront.offsetX = -0.1F;
+        this.Bodyfront.offsetZ = 0.025F;
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, -0.2F, 0.2F, -0.3F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.Bodyfront.offsetZ = 0.01F;
+        this.Bodyfront.offsetX = -0.025F;
+        this.Bodyfront.offsetY = 0.15F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -161,7 +174,7 @@ public class ModelAlbertonia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.35F;
+        //this.Bodyfront.offsetY = 1.35F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tailbase, this.Tailend, this.Tailfin};
@@ -188,7 +201,7 @@ public class ModelAlbertonia extends AdvancedModelBase {
             this.swing(Bodyfront, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodyfront.offsetY = 1.4F;
+                this.Bodyfront.offsetY = 1.05F;
                 this.bob(Bodyfront, -speed, 5F, false, f2, 1);
             }
         }

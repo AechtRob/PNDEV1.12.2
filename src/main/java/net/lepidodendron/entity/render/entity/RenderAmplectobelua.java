@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderAmplectobelua extends RenderLiving<EntityPrehistoricFloraAmplectobelua> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amplectobelua.png");
 
-    public static float getScaler() {return 0.29F;}
+    public static float getScaler() {return 0.42F;}
     public RenderAmplectobelua(RenderManager mgr) {
         super(mgr, new ModelAmplectobelua(), 0.2f);
     }

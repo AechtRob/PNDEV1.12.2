@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockAdoketophyton;
 import net.lepidodendron.block.BlockAdoketophytonSpore;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -137,10 +138,10 @@ public class StructureSpawnAdoketophyton extends ElementsLepidodendronMod.ModEle
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockAdoketophyton.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockAdoketophyton.block.getDefaultState(), 3);
 				if ((Math.random() > 0.7)) {
 					if ((Math.random() > 0.7)) {
-						world.setBlockState(spawnTo, BlockAdoketophytonSpore.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockAdoketophytonSpore.block.getDefaultState(), 3);
 					}
 	        	}
 			}

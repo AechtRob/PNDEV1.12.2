@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockBumbudendronLand;
 import net.lepidodendron.block.BlockBumbudendronWater;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -143,10 +144,10 @@ public class StructureSpawnBumbudendron extends ElementsLepidodendronMod.ModElem
 					}
 					//System.err.println("Trying to spawn: " + i + " " + (j+1) + " " + k);
 					if (canSurviveAt(world, spawnTo)) {
-						world.setBlockState(spawnTo, BlockBumbudendronWater.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBumbudendronWater.block.getDefaultState(), 3);
 					}
 					else { //It must be the land version:
-						world.setBlockState(spawnTo, BlockBumbudendronLand.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockBumbudendronLand.block.getDefaultState(), 3);
 					}
 				}
 

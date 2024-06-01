@@ -1,0 +1,47 @@
+{
+	"name": "Timorebestia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/timorebestia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_timorebestia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_timorebestia",
+			"title": "Timorebestia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chaetognatha"
+		},
+        	{
+            "type": "entity",
+            "name": "T. koprii",
+            "entity": "lepidodendron:prehistoric_flora_timorebestia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_timorebestia",
+			"type": "text",
+			"text": "Timorebestia is a large stem-group chaetognath known from the Sirius Passet Lagerstatte of the Cambrian period. It grew up to around 20 cm in body length but smaller 2.2 cm specimens also exist. Timorebestia occupied a higher trophic level compared to modern chaetognaths, which are planktonic. This suggests that chaetognaths were once part of a predatory nektonic niche. It is also thought to have been one of the earliest examples of an apex predator."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_timorebestia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_timorebestia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_timorebestia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_timorebestia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_timorebestia"
+		}
+	]
+}

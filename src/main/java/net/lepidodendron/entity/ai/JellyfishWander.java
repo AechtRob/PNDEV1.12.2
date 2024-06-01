@@ -94,57 +94,56 @@ public class JellyfishWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         if (this.PrehistoricFloraJellyfishBase.getAttackTarget() == null) {
             for (int i = 0; i < 10; i++) {
                 Vec3d randPos = this.PrehistoricFloraJellyfishBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
-                boolean surfaceCheck = false;
-                int ii = 0;
-                while (ii < 6 && !surfaceCheck
-                    && this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).up(ii-1)).getMaterial() == Material.WATER)
-                { //Defines the top 6 layers of water for the jellyfish to be in
-                    if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(new BlockPos(randPos).up(ii))) {
-                        surfaceCheck = true;
-                    }
-                    ii = ii + 1;
-                }
+                if (this.PrehistoricFloraJellyfishBase.world.isBlockLoaded(new BlockPos(randPos))) {
+                    boolean surfaceCheck = false;
 
-                //Sometimes target a deeper water block:
-                if (Math.random() > 0.9) {
-                    Vec3d randPosV = this.PrehistoricFloraJellyfishBase.getPositionVector();
-                    int depth = 0;
-                    while ((this.PrehistoricFloraJellyfishBase.world.getBlockState(this.PrehistoricFloraJellyfishBase.getPosition().add(0, -depth, 0)).getMaterial() == Material.WATER)
-                            && (this.PrehistoricFloraJellyfishBase.getPositionVector().add(0, -depth, 0).y > 1)) {
-                        depth = depth + 1;
+                    int ii = 0;
+                    while (ii < 6 && !surfaceCheck
+                            && this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).up(ii - 1)).getMaterial() == Material.WATER) { //Defines the top 6 layers of water for the jellyfish to be in
+                        if (this.PrehistoricFloraJellyfishBase.world.isAirBlock(new BlockPos(randPos).up(ii))) {
+                            surfaceCheck = true;
+                        }
+                        ii = ii + 1;
                     }
-                    //Choose somewhere in that water column:
-                    if (depth >= 1) {
-                        randPosV = this.PrehistoricFloraJellyfishBase.getPositionVector().add(0, -(depth - rand.nextInt(depth)), 0);
-                        if (this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPosV.x, randPosV.y, randPosV.z))) {
-                            if (!(randPosV.y < 1 || randPosV.y >= 254)) {
-                                return randPosV;
+
+                    //Sometimes target a deeper water block:
+                    if (Math.random() > 0.9) {
+                        Vec3d randPosV = this.PrehistoricFloraJellyfishBase.getPositionVector();
+                        int depth = 0;
+                        while ((this.PrehistoricFloraJellyfishBase.world.getBlockState(this.PrehistoricFloraJellyfishBase.getPosition().add(0, -depth, 0)).getMaterial() == Material.WATER)
+                                && (this.PrehistoricFloraJellyfishBase.getPositionVector().add(0, -depth, 0).y > 1)) {
+                            depth = depth + 1;
+                        }
+                        //Choose somewhere in that water column:
+                        if (depth >= 1) {
+                            randPosV = this.PrehistoricFloraJellyfishBase.getPositionVector().add(0, -(depth - rand.nextInt(depth)), 0);
+                            if (this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPosV.x, randPosV.y, randPosV.z))) {
+                                if (!(randPosV.y < 1 || randPosV.y >= 254)) {
+                                    return randPosV;
+                                }
                             }
                         }
-                    }
-                }
-                else {
-                    //Target a block near the surface:
-                    if (surfaceCheck && this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER
-                        && this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
-                        if (!(randPos.y < 1 || randPos.y >= 254)) {
-                            return randPos;
-                        }
-                    }
-                    else {
-                        //If the jellyfish can just move randomly but generally upwards then do that:
-                        if (this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).add(0, 6, 0)).getMaterial() == Material.WATER
-                                && this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y + 6.0, randPos.z))) {
+                    } else {
+                        //Target a block near the surface:
+                        if (surfaceCheck && this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER
+                                && this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
                             if (!(randPos.y < 1 || randPos.y >= 254)) {
                                 return randPos;
                             }
-                        }
-                        else {
-                            //Otherwise just move randomly:
-                            if (this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER
-                                    && this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                        } else {
+                            //If the jellyfish can just move randomly but generally upwards then do that:
+                            if (this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos).add(0, 6, 0)).getMaterial() == Material.WATER
+                                    && this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y + 6.0, randPos.z))) {
                                 if (!(randPos.y < 1 || randPos.y >= 254)) {
                                     return randPos;
+                                }
+                            } else {
+                                //Otherwise just move randomly:
+                                if (this.PrehistoricFloraJellyfishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER
+                                        && this.PrehistoricFloraJellyfishBase.isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
+                                    if (!(randPos.y < 1 || randPos.y >= 254)) {
+                                        return randPos;
+                                    }
                                 }
                             }
                         }

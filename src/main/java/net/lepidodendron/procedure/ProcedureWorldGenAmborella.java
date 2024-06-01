@@ -1,8 +1,10 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockAmborellaFlower;
 import net.lepidodendron.block.BlockAmborellaLeaves;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -15,7 +17,7 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenAmborella!");
 			return;
@@ -32,10 +34,15 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 			System.err.println("Failed to load dependency world for procedure WorldGenAmborella!");
 			return;
 		}
+		if (dependencies.get("world") == null) {
+			System.err.println("Failed to load dependency hasFlowers for procedure WorldGenAmborella!");
+			return;
+		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean hasFlowers = (boolean) dependencies.get("hasFlowers");
 		double TreeHeight = 0;
 		double counter = 0;
 		int randomiser;
@@ -78,10 +85,10 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 								//Sometimes add a block above, sometimes add a flower above:
 								if (world.rand.nextInt(10) == 0) {
 									ProcedureNonDecayingTreeLeaf.executeProcedure(placePos.getX(), placePos.getY() + 1, placePos.getZ(), world, BlockAmborellaLeaves.block);
-									addFlower(world, placePos.up());
+									addFlower(hasFlowers,world, placePos.up());
 								}
 								else {
-									addFlower(world, placePos);
+									addFlower(hasFlowers,world, placePos);
 								}
 							}
 						}
@@ -95,11 +102,14 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 		}
 	}
 
-	public static void addFlower(World world, BlockPos pos) {
+	public static void addFlower(boolean hasFlowers, World world, BlockPos pos) {
+		if (!hasFlowers) {
+			return;
+		}
 		if (world.getBlockState(pos).getBlock() == BlockAmborellaLeaves.block && world.rand.nextInt(6) == 0
 				&& world.getBlockState(pos.up()).getMaterial().isReplaceable()
 				&& world.getBlockState(pos.up()).getMaterial() != Material.LEAVES) {
-			world.setBlockState(pos.up(), BlockAmborellaFlower.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.up(), BlockAmborellaFlower.block.getDefaultState(), 3);
 			TileEntity tileEntity = world.getTileEntity(pos.up());
 			if (tileEntity instanceof BlockAmborellaFlower.TileEntityCustom) {
 				tileEntity.getTileData().setBoolean("decayable", (true));
@@ -112,7 +122,7 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 					if (world.getBlockState(pos).getBlock() == BlockAmborellaLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.north()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.north()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.north(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.north(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.NORTH), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.north());
 						if (tileEntity instanceof BlockAmborellaFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -124,7 +134,7 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 					if (world.getBlockState(pos).getBlock() == BlockAmborellaLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.east()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.east()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.east(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.east(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.EAST), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.east());
 						if (tileEntity instanceof BlockAmborellaFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -136,7 +146,7 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 					if (world.getBlockState(pos).getBlock() == BlockAmborellaLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.south()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.south()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.south(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.south(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.SOUTH), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.south());
 						if (tileEntity instanceof BlockAmborellaFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));
@@ -148,7 +158,7 @@ public class ProcedureWorldGenAmborella extends ElementsLepidodendronMod.ModElem
 					if (world.getBlockState(pos).getBlock() == BlockAmborellaLeaves.block && world.rand.nextInt(8) == 0
 							&& world.getBlockState(pos.west()).getMaterial().isReplaceable()
 							&& world.getBlockState(pos.west()).getMaterial() != Material.LEAVES) {
-						world.setBlockState(pos.west(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.WEST), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,pos.west(), BlockAmborellaFlower.block.getDefaultState().withProperty(BlockAmborellaFlower.BlockCustom.FACING, EnumFacing.WEST), 3);
 						TileEntity tileEntity = world.getTileEntity(pos.west());
 						if (tileEntity instanceof BlockAmborellaFlower.TileEntityCustom) {
 							tileEntity.getTileData().setBoolean("decayable", (true));

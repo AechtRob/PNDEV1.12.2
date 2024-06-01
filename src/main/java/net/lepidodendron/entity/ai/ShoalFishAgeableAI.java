@@ -21,13 +21,24 @@ public class ShoalFishAgeableAI extends EntityAIBase {
     private final EntityPrehistoricFloraAgeableBase entity;
     private final double speed;
     private final boolean memory;
+    private float followdistance;
     private Path currentPath;
     private Random rand = new Random();
+
 
     public ShoalFishAgeableAI(EntityPrehistoricFloraAgeableBase entity, double speed, boolean memory) {
         this.entity = entity;
         this.speed = speed;
         this.memory = memory;
+        this.followdistance = 0;
+        this.setMutexBits(7);
+    }
+
+    public ShoalFishAgeableAI(EntityPrehistoricFloraAgeableBase entity, double speed, boolean memory, float followdistance) {
+        this.entity = entity;
+        this.speed = speed;
+        this.memory = memory;
+        this.followdistance = followdistance;
         this.setMutexBits(7);
     }
 
@@ -41,6 +52,9 @@ public class ShoalFishAgeableAI extends EntityAIBase {
             return false;
         }
         if (target == this.entity) {
+            return false;
+        }
+        if (this.entity.getDistance(target) <= this.followdistance ) {
             return false;
         }
         this.currentPath = this.entity.getNavigator().getPathToEntityLiving(target);
@@ -94,8 +108,10 @@ public class ShoalFishAgeableAI extends EntityAIBase {
             || this.entity instanceof EntityPrehistoricFloraEurypteridBase
         ) {
             blockpos = blockpos.add(rand.nextInt(3) - 1, rand.nextInt(3) - 1, rand.nextInt(3) - 1);
-            if (world.getBlockState(blockpos).getMaterial() == Material.WATER && ShoalingHelper.isDirectPathBetweenPoints(world, this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
-                return blockpos;
+            if (world.isBlockLoaded(blockpos)) {
+                if (world.getBlockState(blockpos).getMaterial() == Material.WATER && ShoalingHelper.isDirectPathBetweenPoints(world, this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
+                    return blockpos;
+                }
             }
         }
         return null;

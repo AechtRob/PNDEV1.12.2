@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPsilophyton;
 import net.lepidodendron.block.BlockPsilophytonSpore;
 import net.lepidodendron.block.BlockPsilophytonStem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -138,11 +139,11 @@ public class StructureSpawnPsilophyton extends ElementsLepidodendronMod.ModEleme
 					world.setBlockToAir(spawnTo);
 					world.setBlockToAir(spawnTo.up());
 				}
-				world.setBlockState(spawnTo, BlockPsilophyton.block.getDefaultState(), 3);
+				Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPsilophyton.block.getDefaultState(), 3);
 				if ((Math.random() > 0.7)) {
 					if ((Math.random() > 0.7)) {
-						world.setBlockState(spawnTo, BlockPsilophytonStem.block.getDefaultState(), 3);
-						world.setBlockState(spawnTo.up(), BlockPsilophytonSpore.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo, BlockPsilophytonStem.block.getDefaultState(), 3);
+						Functions.setBlockStateAndCheckForDoublePlant(world,spawnTo.up(), BlockPsilophytonSpore.block.getDefaultState(), 3);
 					}
 	        	}
 			}

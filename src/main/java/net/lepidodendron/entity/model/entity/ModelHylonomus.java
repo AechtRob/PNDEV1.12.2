@@ -156,19 +156,21 @@ public class ModelHylonomus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.2f);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.7F;
-        this.body.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(neck, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, 0.2F, 0.0F);
+        this.body.offsetY = 0.3295F;
+        this.body.render(0.01F);
+        this.resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -179,7 +181,7 @@ public class ModelHylonomus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.45F;
+        this.body.offsetY = 1.25F;
 
         EntityPrehistoricFloraHylonomus Hylonomus = (EntityPrehistoricFloraHylonomus) e;
 

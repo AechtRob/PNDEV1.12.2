@@ -195,22 +195,29 @@ public class ModelBlourugia extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Blourugia.render(f5 * 0.15F);
+        this.Blourugia.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Blourugia.rotateAngleY = (float) Math.toRadians(90);
-        this.Blourugia.offsetX = -0.08F;
         this.Blourugia.offsetY = -0.16F;
-        this.Blourugia.offsetZ = 0.07F;
         this.Blourugia.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Blourugia, 0.2F, 0.0F, -0.05F);
+        this.setRotateAngle(Body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.Blourugia.offsetX = -0.004F;
+        this.Blourugia.offsetZ = -0.03F;
+        this.Blourugia.offsetY = 0.15F;
+        this.Blourugia.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -221,7 +228,7 @@ public class ModelBlourugia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Blourugia.offsetY = 1.25F;
+        //this.Blourugia.offsetY = 1.25F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.body5};
@@ -244,7 +251,7 @@ public class ModelBlourugia extends AdvancedModelBase {
             this.swing(Blourugia, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.Blourugia.rotateAngleZ = (float) Math.toRadians(90);
-                this.Blourugia.offsetY = 1.3F;
+                this.Blourugia.offsetY = 0.05F;
                 this.bob(Blourugia, -speed, 5F, false, f2, 1);
             }
         }

@@ -1,0 +1,47 @@
+{
+	"name": "Climacograptus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/climacograptus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_climacograptus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_climacograptus",
+			"title": "Climacograptus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Hemichordata $(br)>Graptolithina"
+		},
+        	{
+            "type": "entity",
+            "name": "Climacograptus sp.",
+            "entity": "lepidodendron:prehistoric_flora_climacograptus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_climacograptus",
+			"type": "text",
+			"text": "Climacograptus is a graptolite known from all over the world during the Ordovician period. It is characterized by straight, almost pine needle-like fossils. These colonial organisms are thought to have been free floating."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_climacograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_climacograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_climacograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_climacograptus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_climacograptus"
+		}
+	]
+}

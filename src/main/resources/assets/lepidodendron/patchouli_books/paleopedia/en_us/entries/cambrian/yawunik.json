@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_yawunik",
 			"title": "Yawunik",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Megacheira"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda$(br)>Megacheira$(br)>Leanchoilida$(br)>Leanchoilidae"
 		},
 		{
 			"type": "image",

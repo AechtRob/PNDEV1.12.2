@@ -1,11 +1,13 @@
 package net.lepidodendron.procedure;
 
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockMacroneuropterisLeaves;
 import net.lepidodendron.block.BlockMacroneuropterisLeaves1;
 import net.lepidodendron.block.BlockMacroneuropterisLog;
 import net.lepidodendron.block.BlockMacroneuropterisStrobilus;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -20,7 +22,7 @@ public class ProcedureWorldGenMacroneuropteris extends ElementsLepidodendronMod.
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap <String, Object> dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenMacroneuropteris!");
 			return;
@@ -214,6 +216,12 @@ public class ProcedureWorldGenMacroneuropteris extends ElementsLepidodendronMod.
 				ProcedureTreeLeaf.executeProcedure(x, y + 2, z + 1, world, BlockMacroneuropterisLeaves.block);
 				ProcedureTreeLeaf.executeProcedure(x, y + 2, z - 1, world, BlockMacroneuropterisLeaves.block);
 
+				//Strobili here:
+				setStrobilus(world, new BlockPos(x + 1, y + 2, z), EnumFacing.EAST);
+				setStrobilus(world, new BlockPos(x - 1, y + 2, z), EnumFacing.WEST);
+				setStrobilus(world, new BlockPos(x, y + 2, z + 1), EnumFacing.SOUTH);
+				setStrobilus(world, new BlockPos(x, y + 2, z - 1), EnumFacing.NORTH);
+
 				ProcedureTreeLeaf.executeProcedure(x + 2, y + 2, z, world, BlockMacroneuropterisLeaves.block);
 				ProcedureTreeLeaf.executeProcedure(x + 2, y + 2, z + 1, world, BlockMacroneuropterisLeaves.block);
 				ProcedureTreeLeaf.executeProcedure(x + 2, y + 2, z - 1, world, BlockMacroneuropterisLeaves.block);
@@ -231,56 +239,32 @@ public class ProcedureWorldGenMacroneuropteris extends ElementsLepidodendronMod.
 				ProcedureTreeLeaf.executeProcedure(x - 1, y + 2, z - 2, world, BlockMacroneuropterisLeaves.block);
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 3, y + 3, z + 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 3, y + 3, z + 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 3, y + 3, z - 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 3, y + 3, z - 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 4, y + 3, z + 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 4, y + 3, z + 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 4, y + 3, z - 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 4, y + 3, z - 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 5, y + 2, z + 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 5, y + 2, z + 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 5, y + 2, z - 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 5, y + 2, z - 1));
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 3, y + 3, z + 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 3, y + 3, z + 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 3, y + 3, z - 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 3, y + 3, z - 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 4, y + 3, z + 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 4, y + 3, z + 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 4, y + 3, z - 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 4, y + 3, z - 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 5, y + 2, z + 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 5, y + 2, z + 1));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 5, y + 2, z - 1, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 5, y + 2, z - 1));
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 1, y + 3, z + 3, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(+ 1, y + 3, z + 3));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 1, y + 3, z + 3, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 1, y + 3, z + 3));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 1, y + 3, z + 4, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 1, y + 3, z + 4));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 1, y + 3, z + 4, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 1, y + 3, z + 4));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 1, y + 2, z + 5, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos( x + 1, y + 2, z + 5));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 1, y + 2, z + 5, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos( x - 1, y + 2, z + 5));
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 1, y + 3, z - 3, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(+ 1, y + 3, z - 3));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 1, y + 3, z - 3, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 1, y + 3, z - 3));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 1, y + 3, z - 4, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 1, y + 3, z - 4));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 1, y + 3, z - 4, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 1, y + 3, z - 4));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 1, y + 2, z - 5, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos( x + 1, y + 2, z - 5));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 1, y + 2, z - 5, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos( x - 1, y + 2, z - 5));
 
 			}
 			else { //Small variant
@@ -292,43 +276,37 @@ public class ProcedureWorldGenMacroneuropteris extends ElementsLepidodendronMod.
 				ProcedureTreeLeaf.executeProcedure(x, y + 2, z + 1, world, BlockMacroneuropterisLeaves.block);
 				ProcedureTreeLeaf.executeProcedure(x, y + 2, z - 1, world, BlockMacroneuropterisLeaves.block);
 
+				//Strobili here:
+				setStrobilus(world, new BlockPos(x + 1, y + 2, z), EnumFacing.EAST);
+				setStrobilus(world, new BlockPos(x - 1, y + 2, z), EnumFacing.WEST);
+				setStrobilus(world, new BlockPos(x, y + 2, z + 1), EnumFacing.SOUTH);
+				setStrobilus(world, new BlockPos(x, y + 2, z - 1), EnumFacing.NORTH);
+
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 2, y + 3, z, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 2, y + 3, z));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 3, y + 3, z, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 3, y + 3, z));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x + 4, y + 2, z, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x + 4, y + 2, z));
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 2, y + 3, z, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 2, y + 3, z));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 3, y + 3, z, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 3, y + 3, z));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x - 4, y + 2, z, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x - 4, y + 2, z));
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + 3, z + 2, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x, y + 3, z + 2));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + 3, z + 3, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x, y + 3, z + 3));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + 2, z + 4, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x, y + 2, z + 4));
 
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + 3, z - 2, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x, y + 3, z - 2));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + 3, z - 3, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x, y + 3, z - 3));
 				ProcedureNonDecayingTreeLeaf.executeProcedure(x, y + 2, z - 4, world, BlockMacroneuropterisLeaves1.block);
-				setStrobilus(world, new BlockPos(x, y + 2, z - 4));
 
 			}
 		}
 	}
 
-	public static void setStrobilus(World world, BlockPos pos) {
+	public static void setStrobilus(World world, BlockPos pos, EnumFacing facing) {
 		if ((world.getBlockState(pos).getBlock() == BlockMacroneuropterisLeaves.block
 			|| world.getBlockState(pos).getBlock() == BlockMacroneuropterisLeaves1.block)
 			&& world.isAirBlock(pos.down()) && Math.random() > 0.33D) {
-			world.setBlockState(pos.down(), BlockMacroneuropterisStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,pos.down(), BlockMacroneuropterisStrobilus.block.getDefaultState().withProperty(BlockMacroneuropterisStrobilus.BlockCustom.FACING, facing), 3);
 			if (!world.isRemote) {
 				TileEntity _tileEntity = world.getTileEntity(pos.down());
 				IBlockState _bs = world.getBlockState(pos.down());

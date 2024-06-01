@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
@@ -63,7 +64,7 @@ public class BlockEggsFadeniaPermotriassic extends ElementsLepidodendronMod.ModE
 		}
 		int minWaterDepth = 2;
 		int waterDepthCheckMax = 15;
-		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - waterDepthCheckMax;
 		for (int i = 0; i < (int) 3; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128 - startHeight) + startHeight;

@@ -1,0 +1,26 @@
+{
+	"name": "Essexella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/essexella_icon.png",
+	"category": "lepidodendron:carboniferous_static",
+	"turnin": "lepidodendron:pf_adv_book_essexella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_essexella",
+			"title": "Essexella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Cnidaria"
+		},
+        	{
+			"type": "image",
+			"images": ["paleopedia:textures/essexella.png"],
+			"title": "E. asherae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_essexella",
+			"type": "text",
+			"text": "Essexella is a prehistoric sea anemone known from many specimens excavated from Mazon Creek. It is a marine organism, being part of the Essex Biota, which forms the marine portion of the Mazon Creek. It was formerly interpreted as a jellyfish and even as a sponge, but recent studies place it as a weird sea anemone. Another Mazon Creek fossil, Reticulomedusa, is likely just Essexella preserved from a different angle."
+		}
+	]
+}

@@ -1,10 +1,13 @@
 package net.lepidodendron.procedure;
 
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockArthropitysLeaves;
 import net.lepidodendron.block.BlockArthropitysLog;
 import net.lepidodendron.block.BlockArthropitysStrobilus;
+import net.lepidodendron.block.BlockArthropitysRhizome;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +24,7 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 		super(instance, 42);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure ( Object2ObjectOpenHashMap < String, Object > dependencies ) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure WorldGenArthropitys!");
 			return;
@@ -50,8 +53,19 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean worldgen = (boolean) dependencies.get("worldgen");
 		boolean vines = (boolean) dependencies.get("vines");
 		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
+		if (!LepidodendronConfigPlants.spreadUnlimitedArthropitys) {
+			int parentx = (int) dependencies.get("parentx");
+			int parenty = (int) dependencies.get("parenty");
+			int parentz = (int) dependencies.get("parentz");
+		}
+		else {
+			int parentx = (int) dependencies.get("x");
+			int parenty = (int) dependencies.get("y");
+			int parentz = (int) dependencies.get("z");
+		}
 		int TrunkHeight = 0;
 		int counter = 0;
 		Random rand = new Random();
@@ -66,6 +80,40 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			&& material != Material.SAND
 			&& material != Material.WOOD
 			) {
+
+			//Place rhizome ticker:
+			if (world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getMaterial() == Material.WATER) {
+				//System.err.println("Water spawn: " + x + " " + y + " " + z);
+
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y, (int) z), BlockArthropitysRhizome.block.getDefaultState(), 3);
+				if (!world.isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					IBlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null) {
+						_tileEntity.getTileData().setBoolean("worldgen", worldgen);
+						_tileEntity.getTileData().setDouble("x", x);
+						_tileEntity.getTileData().setDouble("z", z);
+					}
+					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				y = y + 1;
+			}
+			else {
+				Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos((int) x, (int) y - 2, (int) z), BlockArthropitysRhizome.block.getDefaultState(), 3);
+				if (!world.isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y - 2, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					IBlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null) {
+						_tileEntity.getTileData().setBoolean("worldgen", worldgen);
+						_tileEntity.getTileData().setDouble("x", x);
+						_tileEntity.getTileData().setDouble("z", z);
+					}
+					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+			}
+			
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			//Trunk:
@@ -445,7 +493,7 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 
 	public static void addStrobilus(int x, int y, int z, World world) {
 		if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos(x, y + 1, z)))) {
-			world.setBlockState(new BlockPos(x, y + 1, z), BlockArthropitysStrobilus.block.getDefaultState(), 3);
+			Functions.setBlockStateAndCheckForDoublePlant(world,new BlockPos(x, y + 1, z), BlockArthropitysStrobilus.block.getDefaultState(), 3);
 			if (!world.isRemote) {
 				BlockPos _bp = new BlockPos(x, y + 1, z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);

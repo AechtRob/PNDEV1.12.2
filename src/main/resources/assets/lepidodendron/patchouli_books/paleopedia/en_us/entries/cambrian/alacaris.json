@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_alacaris",
 			"title": "Alacaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Camrbian$(br2)>Fuxianhuiida$(br)>Chengjiangocarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Fuxianhuiida$(br)>Chengjiangocarididae"
 		},
 		{
 			"type": "image",

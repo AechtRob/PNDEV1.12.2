@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.entity.render.entity.RenderHelenodora;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -34,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLandSlitheringBase {
+public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLandSlitheringBase implements ITrappableAir {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

@@ -1,0 +1,47 @@
+{
+	"name": "Capinatator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/capinatator_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_capinatator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_capinatator",
+			"title": "Capinatator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Animalia $(br)>Chaetognatha"
+		},
+        	{
+            "type": "entity",
+            "name": "C. praetermissus",
+            "entity": "lepidodendron:prehistoric_flora_capinatator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_capinatator",
+			"type": "text",
+			"text": "Capinatator is an arrow worm known from the Burgess Shale of Canada. It is distinguished by having around 50 spines around its mouth. These spines were used to grasp prey. This animal is thought to represent a stage of chaetognathan evolution before arrow worms became planktonic swimmers. Capinatator grew to around 10 cm long, much larger than most modern arrow worms and its name means \"grasping swimmer.\""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_capinatator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_capinatator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_capinatator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_capinatator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_capinatator"
+		}
+	]
+}

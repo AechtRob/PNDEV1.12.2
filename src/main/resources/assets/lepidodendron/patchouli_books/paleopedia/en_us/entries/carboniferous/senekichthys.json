@@ -1,0 +1,47 @@
+{
+	"name": "Senekichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/senekichthys_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_senekichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_senekichthys",
+			"title": "Senekichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Actinopterygii"
+		},
+        	{
+            "type": "entity",
+            "name": "S. hirundo",
+            "entity": "lepidodendron:prehistoric_flora_senekichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_senekichthys",
+			"type": "text",
+			"text": "Senekichthys is a ray finned fish from the Carboniferous of the Tuva Republic, Russia. It is characteriszed by a large crescent shaped tail fin and a pointed head. These fish grew to about 10 cm in length at its largest and the environment it lived in is uncertain."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_senekichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_senekichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_senekichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_senekichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_senekichthys"
+		}
+	]
+}

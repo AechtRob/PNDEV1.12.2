@@ -84,7 +84,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
-		if (dimID == LepidodendronConfig.dimCretaceous
+		if (dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			dimensionCriteria = true;
 		}
@@ -98,7 +98,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -112,7 +112,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genBivalvePrehistoricBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -144,7 +144,8 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+					|| biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Bay) {
 				biomeCriteria = true;
 			}
 			else {
@@ -194,7 +195,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 		}
 		if ((dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimJurassic
-			|| dimID == LepidodendronConfig.dimCretaceous)
+			|| dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 3;
 		}
@@ -206,11 +207,11 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 
 		int minWaterDepth = 15;
 		int maxWaterDepth = 40;
-		int startHeight = world.getSeaLevel() - maxWaterDepth;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
@@ -227,7 +228,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= world.getSeaLevel())) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;

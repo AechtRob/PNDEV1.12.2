@@ -197,19 +197,33 @@ public class ModelIniopteryx extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodyfront.render(f5 * 0.2F);
+        this.Bodyfront.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+
+    public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetX = -0.05F;
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Bodyfront, 0.0F, 0.3F, 0.3F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailstart, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Leftpectoralfinbase, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(Leftpectoralfin, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(Rightpectoralfinbase, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(Rightpectoralfin, 0.0F, 0.0F, 0.2F);
+        this.Bodyfront.offsetZ = -0.02F;
+        this.Bodyfront.offsetY = 0.12F;
+        this.Bodyfront.offsetX = 0.017F;
+        this.Bodyfront.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -220,7 +234,7 @@ public class ModelIniopteryx extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bodyfront.offsetY = 1.2F;
+        this.Bodyfront.offsetY = 0.5F;
 
         AdvancedModelRenderer[] finLeft = {this.Leftpectoralfinbase, this.Leftpectoralfin};
         AdvancedModelRenderer[] finRight = {this.Rightpectoralfinbase, this.Rightpectoralfin};

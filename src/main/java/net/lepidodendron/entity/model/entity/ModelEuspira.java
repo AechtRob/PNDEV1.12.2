@@ -90,5 +90,12 @@ public class ModelEuspira extends AdvancedModelBase {
         this.lefteyestalk.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
         this.righteyestalk.rotateAngleZ += f3 / (180F / (float) Math.PI) * 0.5;
         this.righteyestalk.rotateAngleX += f3 / (180F / (float) Math.PI) * 0.5;
+
+        this.foot.scaleChildren = true;
+        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
+        this.foot.setScaleZ(scaler);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        this.foot.setScaleX(scaler2 * 0.7F);
+        this.foot.scaleChildren = false;
     }
 }

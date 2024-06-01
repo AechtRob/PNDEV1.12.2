@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -37,7 +38,8 @@ public class FilamentousAlgaeGenerator extends WorldGenerator
 			|| (dimID == LepidodendronConfig.dimDevonian)
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
-			|| (dimID == LepidodendronConfig.dimJurassic))
+			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly))
 			{
 				dimensionCriteria = true;
 			}
@@ -50,20 +52,21 @@ public class FilamentousAlgaeGenerator extends WorldGenerator
 		if (dimID == LepidodendronConfig.dimCarboniferous
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {multiplier = 4;}
 
         for (int i = 0; i < (32 * multiplier); ++i)
         {
-            int j = position.getX() + rand.nextInt(8) - rand.nextInt(8);
+            int j = position.getX() + rand.nextInt(4) - rand.nextInt(4);
             int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-            int l = position.getZ() + rand.nextInt(8) - rand.nextInt(8);
+            int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
-            if (k >= worldIn.getSeaLevel() && canSurviveAt(worldIn, new BlockPos(j, k, l))
+            if (k >= Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, k, l)) && canSurviveAt(worldIn, new BlockPos(j, k, l))
             	&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial().isReplaceable())
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.WATER)
 					&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() != Material.LAVA) ){
 
-		                worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
+		                Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
 		                return true;
             }
         }

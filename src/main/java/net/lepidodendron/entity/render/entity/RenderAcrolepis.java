@@ -15,6 +15,8 @@ public class RenderAcrolepis extends RenderLiving<EntityPrehistoricFloraAcrolepi
         super(mgr, new ModelAcrolepis(), 0.0f);
     }
 
+    public static float getScaler() {return 0.342F; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcrolepis entity) {
         return RenderAcrolepis.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderAcrolepis extends RenderLiving<EntityPrehistoricFloraAcrolepi
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAcrolepis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.0F;

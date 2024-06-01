@@ -228,20 +228,33 @@ public class ModelMixopterus extends AdvancedModelBase {
         this.carapace.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.carapace.rotateAngleY = (float) Math.toRadians(90);
-        this.carapace.offsetX = -0.06F;
-        this.carapace.offsetY = 0F;
-        this.carapace.offsetZ = -0.02F;
+    public void renderStaticWall(float f) {
+        this.carapace.rotateAngleX = (float) Math.toRadians(90);
+        //this.carapace.offsetX = -0.06F;
+        this.carapace.offsetY = -0.225F;
+        //this.carapace.offsetZ = -0.02F;
         this.carapace.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(carapace, 0.1F, 0.0F, 0.05F);
+        this.setRotateAngle(body, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(tail6, 0.05F, 0.05F, 0.0F);
+        this.carapace.offsetZ = 0.0F;
+        this.carapace.offsetY = -0.1F;
+        this.carapace.offsetX = 0.0F;
+        this.carapace.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
