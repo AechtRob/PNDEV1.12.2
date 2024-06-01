@@ -191,16 +191,22 @@ public class ModelWodnika extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.bone.offsetY = 0.4F;
-        this.bone.offsetX = 0.55F;
+        this.bone.offsetY = -0.6F;
+        this.bone.offsetX = 0.4F;
         this.bone.rotateAngleY = (float)Math.toRadians(200);
         this.bone.rotateAngleX = (float)Math.toRadians(8);
         this.bone.rotateAngleZ = (float)Math.toRadians(-8);
         this.bone.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.0F;
         this.bone.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(bone, -0.2F, 3.9F, -0.2F);
+        this.setRotateAngle(head, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(body3, -0.05F, 0.5F, 0.0F);
+        this.setRotateAngle(body4, -0.05F, 1.5F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.bone.render(f);
         //Reset rotations, positions and sizing:

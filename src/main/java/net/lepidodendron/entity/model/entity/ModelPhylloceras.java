@@ -269,10 +269,10 @@ public class ModelPhylloceras extends AdvancedModelBaseExtended {
         this.root.rotateAngleX = (float)Math.toRadians(-50);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 3.5F;
+        float scaler = 2.9F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, -0.6F, 1.05F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
