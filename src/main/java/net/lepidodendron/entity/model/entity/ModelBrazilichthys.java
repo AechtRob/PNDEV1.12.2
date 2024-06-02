@@ -393,7 +393,13 @@ public class ModelBrazilichthys extends AdvancedModelBase {
         float scaler = 0.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, -0.5F, -2.3F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, -0.3F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
