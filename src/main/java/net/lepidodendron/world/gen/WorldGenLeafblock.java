@@ -107,7 +107,13 @@ public class WorldGenLeafblock extends WorldGenerator
         if (state.getBlock() == BlockPodocarpLeaves.block && Math.random() > 0.6) {
             state = BlockPodocarpLeavesBerries.block.getDefaultState();
         }
-        if (state.getBlock() == BlockYewLeaves.block && Math.random() > 0.6) {
+        else if (state.getBlock() == BlockRissikiaLeaves.block && Math.random() > 0.6) {
+            state = BlockRissikiaLeavesBerries.block.getDefaultState();
+        }
+        else if (state.getBlock() == BlockScarburgiaLeaves.block && Math.random() > 0.6) {
+            state = BlockScarburgiaLeavesBerries.block.getDefaultState();
+        }
+        else if (state.getBlock() == BlockYewLeaves.block && Math.random() > 0.6) {
             state = BlockYewLeavesBerries.block.getDefaultState();
         }
         return state;
