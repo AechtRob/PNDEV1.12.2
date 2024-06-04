@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenPodocarp;
+import net.lepidodendron.procedure.ProcedureWorldGenRissikia;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -48,32 +48,32 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockPodocarpSapling extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:podocarp_sapling")
+public class BlockRissikiaSapling extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:rissikia_sapling")
 	public static final Block block = null;
-	public BlockPodocarpSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.podocarp_sapling);
+	public BlockRissikiaSapling(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.rissikia_sapling);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("podocarp_sapling"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("rissikia_sapling"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:podocarp_sapling", "inventory"));
+				new ModelResourceLocation("lepidodendron:rissikia_sapling", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:podocarp_sapling", BlockPodocarpSapling.block);
-		OreDictionary.registerOre("treeSapling", BlockPodocarpSapling.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockPodocarpSapling.block);
-		OreDictionary.registerOre("plant", BlockPodocarpSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:rissikia_sapling", BlockRissikiaSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockRissikiaSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockRissikiaSapling.block);
+		OreDictionary.registerOre("plant", BlockRissikiaSapling.block);
 	}
 
 
@@ -87,14 +87,14 @@ public class BlockPodocarpSapling extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_podocarp_sapling");
+			setTranslationKey("pf_rissikia_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_PODOCARP;
+			return ModTriggers.CLICK_RISSIKIA;
 		}
 
 		@Override
@@ -155,7 +155,7 @@ public class BlockPodocarpSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
 					$_dependencies.put("SaplingSpawn", true);
-					ProcedureWorldGenPodocarp.executeProcedure($_dependencies);
+					ProcedureWorldGenRissikia.executeProcedure($_dependencies);
 				}
 	        }
 	    }
@@ -209,7 +209,7 @@ public class BlockPodocarpSapling extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Coniferous tree");
-				tooltip.add("Periods: Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Periods: Permian - Triassic");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

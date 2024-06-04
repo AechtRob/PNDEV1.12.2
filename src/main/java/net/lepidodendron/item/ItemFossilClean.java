@@ -1160,6 +1160,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pleuromeia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pneumodesmus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_podocarp_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rissikia_sapling_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_scarburgia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_podozamites_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_poleumita_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_polyspermophyllum_clean", "inventory"),

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:scarburgia_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:scarburgia_seed",
+    "count": 1
+  }
+}

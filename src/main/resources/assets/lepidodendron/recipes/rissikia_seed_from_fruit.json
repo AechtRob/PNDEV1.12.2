@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:rissikia_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:rissikia_seed",
+    "count": 1
+  }
+}
