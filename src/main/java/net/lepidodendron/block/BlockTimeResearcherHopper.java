@@ -429,9 +429,12 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 				if (this.processTick < 0) {
 					this.processTick = 0;
 				}
+				if ((!(isItemValidForSlot(0, this.getStackInSlot(0))))
+						&& !this.getStackInSlot(0).isEmpty()) {
+					this.setInventorySlotContents(0, ItemStack.EMPTY);
+				}
 				return;
 			}
-
 
 			IBlockState state = world.getBlockState(pos.down());
 			if (state.getBlock() != BlockTimeResearcher.block) {

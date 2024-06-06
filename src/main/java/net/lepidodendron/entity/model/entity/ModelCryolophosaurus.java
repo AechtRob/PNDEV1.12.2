@@ -680,7 +680,7 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraCryolophosaurus EntityMegalosaurus = (EntityPrehistoricFloraCryolophosaurus) e;
+        EntityPrehistoricFloraCryolophosaurus EntityCryolophosaurus = (EntityPrehistoricFloraCryolophosaurus) e;
 
         this.faceTarget(f3, f4, 8, neck);
         this.faceTarget(f3, f4, 8, neck2);
@@ -692,16 +692,16 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] ArmL = {this.armLeft, this.armLeft2, this.handLeft};
         AdvancedModelRenderer[] ArmR = {this.armRight, this.armRight2, this.handRight};
 
-        EntityMegalosaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        EntityCryolophosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
-        if (EntityMegalosaurus.getAnimation() == EntityMegalosaurus.LAY_ANIMATION) {
+        if (EntityCryolophosaurus.getAnimation() == EntityCryolophosaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
-            if (!EntityMegalosaurus.isReallyInWater()) {
+            if (!EntityCryolophosaurus.isReallyInWater()) {
 
-                if (f3 == 0.0F || !EntityMegalosaurus.getIsMoving()) {
+                if (f3 == 0.0F || !EntityCryolophosaurus.getIsMoving()) {
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                     this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
 
@@ -720,7 +720,7 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (EntityMegalosaurus.getIsFast()) { //Running
+                if (EntityCryolophosaurus.getIsFast()) { //Running
 
 
                 } else { //Walking

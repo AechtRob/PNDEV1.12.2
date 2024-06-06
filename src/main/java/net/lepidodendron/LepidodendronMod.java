@@ -2147,11 +2147,11 @@ public class LepidodendronMod {
 	public static final int ENTITY_HYDROCRASPEDOTA = 866;
 
 	public static final int ENTITY_ELDONIA = 867;
-	public static final ResourceLocation ELDONIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eldonia"));
+	//public static final ResourceLocation ELDONIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eldonia"));
 	public static final int ENTITY_PAROPSONEMA = 868;
-	public static final ResourceLocation PAROPSONEMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paropsonema"));
+	//public static final ResourceLocation PAROPSONEMA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paropsonema"));
 	public static final int ENTITY_DISCOPHYLLUM = 869;
-	public static final ResourceLocation DISCOPHYLLUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/discophyllum"));
+	//public static final ResourceLocation DISCOPHYLLUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/discophyllum"));
 	public static final int ENTITY_PAMPAPHONEUS = 870;
 	public static final ResourceLocation PAMPAPHONEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pampaphoneus"));
 	public static final ResourceLocation PAMPAPHONEUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pampaphoneus_young"));

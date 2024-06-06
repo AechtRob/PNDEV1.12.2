@@ -10225,5 +10225,25 @@
         "stream": false
       }
     ]
-  }
-}
+  },
+
+  "monolophosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:monolophosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:monolophosaurus_living02",
+        "stream": false
+      }
+    ]
+  },
+  "monolophosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:monolophosaurus_roar01",
+        "stream": false
+      }
+    ]
+},

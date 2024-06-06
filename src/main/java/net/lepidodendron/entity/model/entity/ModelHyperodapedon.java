@@ -397,7 +397,7 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         this.chainWave(Tail, (speed*0.6F), -0.05F, 0.2F, f2, 1F);
         this.chainSwing(Tail, (speed*0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
-        this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.5), false, 1.5F, f2, 1) + 0.4F;
+        this.hyperodapedon.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.5), false, 1.5F, f2, 1) + 0.4F;
 
     }
 

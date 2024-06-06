@@ -289,6 +289,7 @@ public class ModelSinomacrops extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(main, -1.5F, 3.15F, 0.0F);
         this.setRotateAngle(neck, 0.2F, 0.3F, 0.3F);
@@ -316,6 +317,7 @@ public class ModelSinomacrops extends AdvancedModelBaseExtended {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, -1.9F, 0.0F, 0.0F);
         this.setRotateAngle(neck, 0.5F, 0.0F, 0.0F);

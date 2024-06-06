@@ -6196,15 +6196,6 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraCryolophosaurus) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_CRYOLOPHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				deliverStatsEntity(event);
-				event.setCanceled(true);
-				return;
-			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraTanycolagreus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_TANYCOLAGREUS.trigger((EntityPlayerMP) event.getEntityPlayer());
