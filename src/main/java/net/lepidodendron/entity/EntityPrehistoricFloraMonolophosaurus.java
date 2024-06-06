@@ -152,7 +152,7 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 80;
+		return 50;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
