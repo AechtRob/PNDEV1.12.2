@@ -830,6 +830,35 @@ public class LepidodendronEventSubscribers {
 			tt.add("Can be turned into taxidermy");
 		}
 
+		if (Block.getBlockFromItem(event.getItemStack().getItem()) instanceof BlockFossil) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x1");
+		}
+		if (event.getItemStack().getItem() == ItemFossilPrecambrian.block
+				|| event.getItemStack().getItem() == ItemFossilCambrian.block
+				|| event.getItemStack().getItem() == ItemFossilOrdovician.block
+				|| event.getItemStack().getItem() == ItemFossilSilurian.block
+				|| event.getItemStack().getItem() == ItemFossilDevonian.block
+				|| event.getItemStack().getItem() == ItemFossilCarboniferous.block
+				|| event.getItemStack().getItem() == ItemFossilPermian.block
+				|| event.getItemStack().getItem() == ItemFossilTriassic.block
+				|| event.getItemStack().getItem() == ItemFossilJurassic.block
+				|| event.getItemStack().getItem() == ItemFossilCretaceous.block
+				|| event.getItemStack().getItem() == ItemFossilPaleogene.block
+				|| event.getItemStack().getItem() == ItemFossilNeogene.block
+				|| event.getItemStack().getItem() == ItemFossilPleistocene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+		}
+		if (event.getItemStack().getItem() == ItemFossilClean.block) {
+			if (event.getItemStack().hasTagCompound()) {
+				if (event.getItemStack().getTagCompound().hasKey("period")) {
+					List<String> tt = event.getToolTip();
+					tt.add("Time Research x5");
+				}
+			}
+		}
+
 		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
 			if (event.getItemStack().getTagCompound() != null) {
 				if (event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
