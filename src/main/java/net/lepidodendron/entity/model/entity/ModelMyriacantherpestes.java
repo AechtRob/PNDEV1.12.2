@@ -1162,6 +1162,7 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
         this.setRotateAngle(legR9, 0.0F, 0.0F, -0.2618F);
         this.setRotateAngle(telson, 0.0F, -0.1745F, 0.0F);
         this.main.offsetZ = -0.15F;
+        this.main.offsetY = 0.055F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }

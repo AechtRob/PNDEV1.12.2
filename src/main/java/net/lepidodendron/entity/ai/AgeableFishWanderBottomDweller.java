@@ -78,9 +78,10 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
             if (
                     ((!this.PrehistoricFloraAgeableFishBase.getNavigator().noPath())
                             && (!isDirectPathBetweenPoints(this.PrehistoricFloraAgeableFishBase, this.PrehistoricFloraAgeableFishBase.getPositionVector(), new Vec3d(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z))))
-                            ||
-                            (path != null && path.getFinalPathPoint() != null
-                                    && this.PrehistoricFloraAgeableFishBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraAgeableFishBase.width,2))
+//                            ||
+//                            (path != null && path.getFinalPathPoint() != null
+//                                    && this.PrehistoricFloraAgeableFishBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraAgeableFishBase.width,2)
+//                                    && path.getFinalPathPoint().y > this.PrehistoricFloraAgeableFishBase.getPositionVector().y - 0.2F)
             )
             {
                 this.PrehistoricFloraAgeableFishBase.getNavigator().clearPath();
@@ -101,7 +102,7 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
     }
 
     public boolean isDirectPathBetweenPoints(Entity entity, Vec3d vec1, Vec3d vec2) {
-        RayTraceResult movingobjectposition = entity.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y + (double) entity.height * 0.5D, vec2.z), false, true, false);
+        RayTraceResult movingobjectposition = entity.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
@@ -134,7 +135,7 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
                     Vec3d randPosVar = randPos;
                     if (this.PrehistoricFloraAgeableFishBase.world.getBlockState(new BlockPos(randPos).down(this.bottomdistance)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos).down(this.bottomdistance)) && Math.random() < 0.85) {
                         int ii = 0;
-                        while ((new BlockPos(randPos).down(ii + this.bottomdistance).getY() > 1) && this.PrehistoricFloraAgeableFishBase.world.getBlockState(new BlockPos(randPos).down(ii + this.bottomdistance)).getMaterial() == Material.WATER) {
+                        while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraAgeableFishBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
                             randPosVar = randPos.add(0, -ii, 0);
                             ii = ii + 1;
                         }
@@ -148,7 +149,7 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
                     //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
                     if (this.PrehistoricFloraAgeableFishBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && this.PrehistoricFloraAgeableFishBase.isDirectPathBetweenPoints(this.PrehistoricFloraAgeableFishBase.getPositionVector(), new Vec3d(randPos.x, randPos.y, randPos.z))) {
                         if (!(new BlockPos(randPos).getY() < 1 || new BlockPos(randPos).getY() >= 254)) {
-                            return randPos;
+                            return randPos.add(0,-1,0);
                         }
 
                         //return randPos;

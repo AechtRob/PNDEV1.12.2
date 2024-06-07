@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 	public EntityPrehistoricFloraPanderichthys(World world) {
 		super(world);
 		setSize(0.55F, 0.4F);
-		minWidth = 0.1F;
+		minWidth = 0.55F;
 		maxWidth = 0.55F;
 		maxHeight = 0.40F;
 		maxHealthAgeable = 10.0D;
