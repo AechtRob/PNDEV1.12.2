@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHypuronector;
-import net.lepidodendron.entity.EntityPrehistoricFloraLeedsichthys;
 import net.lepidodendron.entity.model.entity.ModelHypuronector;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
@@ -73,7 +72,7 @@ public class RenderHypuronector extends RenderLiving<EntityPrehistoricFloraHypur
                 break;
 
             case EAST: case WEST: case NORTH: case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.175F);
+                GlStateManager.translate(0.0F, 0.05F, -0.185F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
 
