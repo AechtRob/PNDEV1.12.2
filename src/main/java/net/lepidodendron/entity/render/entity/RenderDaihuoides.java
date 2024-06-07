@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDaihuoides;
-import net.lepidodendron.entity.model.entity.ModelCambrianJelly;
 import net.lepidodendron.entity.model.entity.ModelDaihuoides;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -34,7 +33,7 @@ public class RenderDaihuoides extends RenderLiving<EntityPrehistoricFloraDaihuoi
     protected void preRenderCallback(EntityPrehistoricFloraDaihuoides entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

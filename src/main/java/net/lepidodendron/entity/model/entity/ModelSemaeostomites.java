@@ -203,7 +203,7 @@ public class ModelSemaeostomites extends AdvancedModelBase {
             if (!e.isInWater()) {
                 this.resetToDefaultPose();
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
-                //this.main.offsetY = 1.2F;
+                this.main.offsetY = -0.1F;
                 this.main.scaleChildren = true;
                 this.main.setScaleX(0.2F);
                 this.main.setScaleZ(1.2F);

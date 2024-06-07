@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBurgessia;
-import net.lepidodendron.entity.EntityPrehistoricFloraMobulavermis;
 import net.lepidodendron.entity.model.entity.ModelBurgessia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
@@ -73,7 +72,7 @@ public class RenderBurgessia extends RenderLiving<EntityPrehistoricFloraBurgessi
             scale = 0.1f;
         }
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = 0;
+        this.shadowSize = 0F;
     }
 
 }

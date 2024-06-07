@@ -387,6 +387,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         if (!Dako.isReallyInWater()) { //will never happen as it should not be on land
             float speed = 0.3F;
             float outOfWater = 1.45f;
+            this.Body.offsetY = 0.05F;
 
             this.Body.bob(speed, 0.35F, false, f2, 1F);
 

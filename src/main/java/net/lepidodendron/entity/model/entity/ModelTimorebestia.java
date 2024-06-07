@@ -295,8 +295,12 @@ public class ModelTimorebestia extends AdvancedModelBase {
         AdvancedModelRenderer[] fishTail = {this.body1, this.body2, this.body3, this.body4};
 
 
-        this.chainWave(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
-        this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+//        this.chainWave(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
+//        this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+
+
+        this.chainSwing(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
+        this.chainWave(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
 
         //this.chainSwing(pincerL, speed * 3F, -0.1F, 0.5F, f2, 0.1F);
         //this.chainSwing(pincerR, speed *  3F, 0.1F, 0.5F, f2, 0.1F);
@@ -324,8 +328,10 @@ public class ModelTimorebestia extends AdvancedModelBase {
         this.flap(rightFin7, 0.5F, degreeFin, false, 5.0F, 0.4F, f2, 0.7F);
         this.flap(leftFin8, 0.5F, -degreeFin, false, 5.5F, -0.4F, f2, 0.7F);
         this.flap(rightFin8, 0.5F, degreeFin, false, 5.5F, 0.4F, f2, 0.7F);
-        this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-        this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+//        this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+//        this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+        this.chainSwing(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+        this.chainWave(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
 
 
 
@@ -333,8 +339,10 @@ public class ModelTimorebestia extends AdvancedModelBase {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
             //this.timorebestia.offsetY = 1.2F - 1.18F;
             this.bob(timorebestia, -speed * 3F, 2F, false, f2, 1);
-            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+//            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+//            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+            this.chainWave(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
         }
 
     }

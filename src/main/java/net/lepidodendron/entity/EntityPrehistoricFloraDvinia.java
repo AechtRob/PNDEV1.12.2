@@ -73,6 +73,7 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 	public Animation getGrappleAnimation() {
 		return this.LOOK_ANIMATION;
 	}
+
 	@Override
 	public int getEatLength() {
 		return 10;
@@ -267,13 +268,9 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 			launchAttack();
 		}
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
-	}
-
-	@Override
-	public void launchGrapple() {
-		if (this.getGrappleTarget() != null) {
+		if ((this.getAnimation() == LOOK_ANIMATION) && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+			launchGrapple();
 			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
 				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
 				grappleTarget.setGrappleTarget(null);
@@ -282,12 +279,35 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 			this.setGrappleTarget(null);
 			this.willGrapple = false;
 		}
+		else if ((this.getAnimation() == LOOK_ANIMATION) && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
+		}
+
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
+	}
+
+	@Override
+	public void onEntityUpdate() {
+
+		if ((this.getAnimation() == LOOK_ANIMATION) && this.getGrappleTarget() != null) {
+			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
+		}
+
+		super.onEntityUpdate();
+
+	}
+
+	@Override
+	public int headbutTick() {
+		//Just here to prevent the animation timing out:
+		return this.LOOK_ANIMATION.getDuration() - 1;
 	}
 
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(6.0F + size, 6.0F + size, 6.0F + size);
+		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
