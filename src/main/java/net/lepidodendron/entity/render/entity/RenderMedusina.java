@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMedusina extends RenderLiving<EntityPrehistoricFloraMedusina> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/medusina.png");
 
-    public static float getScaler() {return 0.2F;}
+    public static float getScaler() {return 0.42F;}
 
     public RenderMedusina(RenderManager mgr) {
         super(mgr, new ModelCambrianJelly(), 0.0f);
