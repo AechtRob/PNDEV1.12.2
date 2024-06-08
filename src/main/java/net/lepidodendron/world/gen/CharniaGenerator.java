@@ -138,7 +138,7 @@ public class CharniaGenerator extends WorldGenerator
 				dimensionCriteria = seaPens;
 				moddedBuff = 5.0D;
 				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.LUSH)) {
-					moddedBuff = 8.0F;
+					moddedBuff = 25.0F;
 				}
 			}
 		}
