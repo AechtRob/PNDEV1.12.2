@@ -118,25 +118,29 @@ public class CharniaGenerator extends WorldGenerator
 				upsideDown = true;
 			}
 
-			if (dimID == LepidodendronConfig.dimOrdovician
-					|| dimID == LepidodendronConfig.dimSilurian
-					|| dimID == LepidodendronConfig.dimDevonian
-					|| dimID == LepidodendronConfig.dimCarboniferous
-					|| dimID == LepidodendronConfig.dimPermian
-					|| dimID == LepidodendronConfig.dimTriassic
-					|| dimID == LepidodendronConfig.dimJurassic
-					|| dimID == LepidodendronConfig.dimCretaceousEarly
-					|| dimID == LepidodendronConfig.dimCretaceousLate
-					|| dimID == LepidodendronConfig.dimPaleogene
-					|| dimID == LepidodendronConfig.dimNeogene
-					|| dimID == LepidodendronConfig.dimPleistocene)
-			{
-				Biome biome = worldIn.getBiome(position);
-				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)) {
-					dimensionCriteria = seaPens;
+		}
+		double moddedBuff = 1.0D;
+		if (dimID == LepidodendronConfig.dimOrdovician
+				|| dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene)
+		{
+			Biome biome = worldIn.getBiome(position);
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)) {
+				dimensionCriteria = seaPens;
+				moddedBuff = 5.0D;
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.LUSH)) {
+					moddedBuff = 8.0F;
 				}
 			}
-
 		}
 		if (!dimensionCriteria)
 			return true;
@@ -150,7 +154,7 @@ public class CharniaGenerator extends WorldGenerator
 		double edicarandensity = LepidodendronConfig.genEdiacaran;
 
 		if (seaPens) {
-			edicarandensity = 0.15D;
+			edicarandensity = 0.15D * moddedBuff;
 		}
 
 		if (edicarandensity < 0.01) {
