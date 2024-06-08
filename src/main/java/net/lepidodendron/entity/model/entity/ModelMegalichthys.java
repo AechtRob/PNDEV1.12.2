@@ -291,13 +291,13 @@ public class ModelMegalichthys extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.4F;
-        this.main.offsetX = 0.55F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = 0.37F;
+        this.main.rotateAngleY = (float)Math.toRadians(245);
+        this.main.rotateAngleX = (float)Math.toRadians(12);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.3F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

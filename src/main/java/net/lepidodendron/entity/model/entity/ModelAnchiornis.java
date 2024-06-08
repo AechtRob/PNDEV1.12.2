@@ -596,6 +596,7 @@ public class ModelAnchiornis extends AdvancedModelBase {
         this.Anchiornis.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Anchiornis.offsetY = -1.0F;

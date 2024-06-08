@@ -127,12 +127,18 @@ public class ModelEoandromeda extends AdvancedModelBase {
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
+            this.disk.scaleChildren = true;
+            this.disk.setScale(1.0F, 1.0F, 1.0F);
             this.swing(disk, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
             this.walk(disk, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
             this.flap(disk, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
             this.bob(disk, -speed * 0.5F, 0.5F, false, f2, 0.6F);
             EntityPrehistoricFloraEoandromeda ee = (EntityPrehistoricFloraEoandromeda) e;
             this.disk.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
+        }
+        else {
+            this.disk.scaleChildren = true;
+            this.disk.setScale(1.25F, 0.1F, 1.25F);
         }
     }
 }

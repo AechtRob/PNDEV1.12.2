@@ -51,6 +51,26 @@ public class ModelClimacograptus extends AdvancedModelBase {
         this.main.render(f5);
     }
 
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = 0.2F;
+        this.main.rotateAngleY = (float)Math.toRadians(150);
+        this.main.rotateAngleX = (float)Math.toRadians(3);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 3.5F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

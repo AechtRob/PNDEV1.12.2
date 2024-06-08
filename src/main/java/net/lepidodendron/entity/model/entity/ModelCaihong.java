@@ -550,11 +550,11 @@ public class ModelCaihong extends AdvancedModelBase {
                     || ee.getClimbFacing() == EnumFacing.WEST
                     || ee.getIsClimbing()) {
                 if (!ee.getHeadCollided()) {
-                    animClimbing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+                    animClimbing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 }
                 else {
                     //Just pose with no animation running:
-                    animClimbing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
+                    animClimbing(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
                 }
             }
             else if (ee.getIsMoving()) {
@@ -7586,8 +7586,6 @@ public class ModelCaihong extends AdvancedModelBase {
     }
 
 
-
-
     public void animClimbing(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraCaihong entity = (EntityPrehistoricFloraCaihong) entitylivingbaseIn;
         int animCycle = 24;
@@ -7609,7 +7607,7 @@ public class ModelCaihong extends AdvancedModelBase {
             yy = 0;
             zz = 0;
         }
-        this.setRotateAngle(Anchiornis, Anchiornis.rotateAngleX + (float) Math.toRadians(xx), Anchiornis.rotateAngleY + (float) Math.toRadians(yy), Anchiornis.rotateAngleZ + (float) Math.toRadians(zz));
+        this.setRotateAngle(Anchiornis, Anchiornis.rotateAngleX + (float) Math.toRadians(xx) + (float) Math.toRadians(90), Anchiornis.rotateAngleY + (float) Math.toRadians(yy), Anchiornis.rotateAngleZ + (float) Math.toRadians(zz));
 
 
         if (tickAnim >= 0 && tickAnim < 24) {

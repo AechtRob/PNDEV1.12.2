@@ -70,6 +70,8 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
+            this.main.scaleChildren = true;
+            this.main.setScale(1.0F, 1.0F, 1.0F);
             if (e instanceof EntityPrehistoricFloraSlitheringWaterBase) {
                 EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) e;
                 this.main.scaleChildren = true;
@@ -89,5 +91,10 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
                 }
             }
         }
+        else {
+            this.main.scaleChildren = true;
+            this.main.setScale(1.25F, 0.1F, 1.25F);
+        }
+
     }
 }

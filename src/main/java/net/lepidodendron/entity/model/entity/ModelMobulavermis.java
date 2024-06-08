@@ -552,9 +552,9 @@ public class ModelMobulavermis extends AdvancedModelBase {
         if (!e.isInWater()) {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
             //this.Head.offsetY = 1.2F - 1.18F;
-            this.bob(Head, -speed * 2F, 1.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 2.5F, tailHdegree * 3F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * 2.5F, tailVdegree * 3F, -3, f2, 1);
+            this.bob(Head, -speed * 5F, 1.5F, false, f2, 1);
+            this.chainWave(fishTail, speed * 5.5F, tailHdegree * 0.05F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 5.5F, tailVdegree * 0.05F, -3, f2, 1);
         }
 
     }
