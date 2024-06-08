@@ -16,7 +16,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.BiomeDictionary;
 
 import java.util.Random;
 
@@ -58,11 +60,14 @@ public class CharniaGenerator extends WorldGenerator
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
 		boolean upsideDown = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran)) {
+		boolean seaPens = this.charnia == BlockSeaPenPink.block || this.charnia == BlockSeaPenYellow.block;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran) && !seaPens) {
+			dimensionCriteria = true;
+		}
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAnemone) && seaPens) {
 			dimensionCriteria = true;
 		}
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-
 			if (BlockArkarua.isPrecambrianUpdated()) {
 				if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
 						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
@@ -105,13 +110,31 @@ public class CharniaGenerator extends WorldGenerator
 				dimensionCriteria = false;
 			}
 
-
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
 				)
 					&& this.charnia == BlockGrypania.block
 			) {
 				upsideDown = true;
+			}
+
+			if (dimID == LepidodendronConfig.dimOrdovician
+					|| dimID == LepidodendronConfig.dimSilurian
+					|| dimID == LepidodendronConfig.dimDevonian
+					|| dimID == LepidodendronConfig.dimCarboniferous
+					|| dimID == LepidodendronConfig.dimPermian
+					|| dimID == LepidodendronConfig.dimTriassic
+					|| dimID == LepidodendronConfig.dimJurassic
+					|| dimID == LepidodendronConfig.dimCretaceousEarly
+					|| dimID == LepidodendronConfig.dimCretaceousLate
+					|| dimID == LepidodendronConfig.dimPaleogene
+					|| dimID == LepidodendronConfig.dimNeogene
+					|| dimID == LepidodendronConfig.dimPleistocene)
+			{
+				Biome biome = worldIn.getBiome(position);
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)) {
+					dimensionCriteria = seaPens;
+				}
 			}
 
 		}
@@ -125,6 +148,11 @@ public class CharniaGenerator extends WorldGenerator
 		double multiplier = 1;
 
 		double edicarandensity = LepidodendronConfig.genEdiacaran;
+
+		if (seaPens) {
+			edicarandensity = 0.15D;
+		}
+
 		if (edicarandensity < 0.01) {
 			edicarandensity = 0.01;
 		}
@@ -223,6 +251,11 @@ public class CharniaGenerator extends WorldGenerator
 					}
 				}
 			}
+		}
+
+		//Sea pens:
+		if (seaPens) {
+			multiplier = (double)12.0 * edicarandensity;
 		}
 
 		if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")

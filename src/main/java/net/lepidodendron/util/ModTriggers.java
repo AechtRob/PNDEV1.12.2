@@ -157,6 +157,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CHARNIA = new CustomTrigger("pf_book_charnia");
     public static final CustomTrigger CLICK_TUANSHANZIA = new CustomTrigger("pf_book_tuanshanzia");
     public static final CustomTrigger CLICK_CHARNIODISCUS = new CustomTrigger("pf_book_charniodiscus");
+    public static final CustomTrigger CLICK_SEA_PEN = new CustomTrigger("pf_book_sea_pen");
     public static final CustomTrigger CLICK_CHAUNOGRAPTUS = new CustomTrigger("pf_book_chaunograptus");
     public static final CustomTrigger CLICK_CINNAMON_FERN = new CustomTrigger("pf_book_cinnamon_fern");
     public static final CustomTrigger CLICK_CLADOPHLEBIS = new CustomTrigger("pf_book_cladophlebis");
@@ -1644,6 +1645,7 @@ public class ModTriggers
             CLICK_CHARNIA,
             CLICK_TUANSHANZIA,
             CLICK_CHARNIODISCUS,
+            CLICK_SEA_PEN,
             CLICK_CHAUNOGRAPTUS,
             CLICK_CINNAMON_FERN,
             CLICK_CLADOPHLEBIS,

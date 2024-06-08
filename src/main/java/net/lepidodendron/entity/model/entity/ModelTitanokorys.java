@@ -574,7 +574,7 @@ public class ModelTitanokorys extends AdvancedModelBase {
 
 
             if (!e.isInWater()) {
-                this.bob(Titanokorys, -speed * 1.5F, 3F, false, f2, 1);
+                this.bob(Titanokorys, -speed * 1.0F, 3F, false, f2, 1);
             } else {
                 if (!isAtBottom) {
                     this.bob(Titanokorys, -speed, 0.12F, false, f2, 2);
