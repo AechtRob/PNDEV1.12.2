@@ -2,14 +2,14 @@
 	"name": "Pacific Sea Nettle",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pacificsea_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:cretaceousearly_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish3",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_jellyfish3",
 			"title": "Pacific Sea Nettle",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
+			"text": "$(l)Temporal Range:$() Cretaceous+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
 		},
 		{
 			"type": "image",

@@ -1,0 +1,7 @@
+{
+    "name": "Pleistocene Statics",
+    "description": "Statics of the Pleistocene",
+    "icon": "paleopedia:textures/category_icon/icon_pleistocene.png",
+    "parent": "lepidodendron:pleistocene",
+    "sortnum": 2
+}

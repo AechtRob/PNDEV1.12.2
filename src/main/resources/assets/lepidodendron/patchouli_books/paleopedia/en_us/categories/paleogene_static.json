@@ -1,7 +1,0 @@
-{
-    "name": "Paleogene Statics",
-    "description": "Static Animals of the Paleogene",
-    "icon": "lepidodendron:ginkgo_sapling",
-    "parent": "lepidodendron:paleogene",
-    "sortnum": 2
-}

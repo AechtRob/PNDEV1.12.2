@@ -2,14 +2,14 @@
 	"name": "Lion's Mane Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/lions_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:pleistocene_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish6",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_jellyfish6",
 			"title": "Lion's Mane Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
+			"text": "$(l)Temporal Range:$() Pleistocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
 		},
 		{
 			"type": "image",
