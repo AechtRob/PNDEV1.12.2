@@ -1,9 +1,9 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelPrecambrianJelly extends AdvancedModelBase {
+public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cyclomedusabase;
     private final AdvancedModelRenderer ediacariabase;
@@ -55,6 +55,26 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
         this.main.render(f5);
         GlStateManager.disableBlend();
 
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -0.25F;
+        this.main.offsetX = -0.20F;
+        this.main.rotateAngleY = (float)Math.toRadians(125);
+        this.main.rotateAngleX = (float)Math.toRadians(2);
+        this.main.rotateAngleZ = (float)Math.toRadians(-2);
+        this.main.scaleChildren = true;
+        float scaler = 0.25F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

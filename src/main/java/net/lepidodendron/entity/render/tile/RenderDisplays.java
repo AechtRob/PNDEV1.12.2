@@ -348,6 +348,8 @@ public class RenderDisplays {
     public static final ModelKootenayscolex modelKootenayscolex = new ModelKootenayscolex();
     public static final ModelKichkassia modelKichkassia = new ModelKichkassia();
     public static final ModelKichkassia modelKichkassiaBook = new ModelKichkassia();
+    public static final ModelPrecambrianJelly modelPrecambrianJelly = new ModelPrecambrianJelly();
+    public static final ModelPrecambrianJelly modelPrecambrianJellyBook = new ModelPrecambrianJelly();
     public static final ModelLacewing modelLacewing = new ModelLacewing();
     public static final ModelLasanius modelLasanius = new ModelLasanius();
     public static final ModelLepidotes modelLepidotes = new ModelLepidotes();

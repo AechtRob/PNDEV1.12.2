@@ -3,18 +3,19 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEdiacaria;
 import net.lepidodendron.entity.model.entity.ModelPrecambrianJelly;
+import net.lepidodendron.entity.render.RenderLivingBaseModel;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEdiacaria extends RenderLiving<EntityPrehistoricFloraEdiacaria> {
+public class RenderEdiacaria extends RenderLivingBaseModel<EntityPrehistoricFloraEdiacaria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ediacaria.png");
 
     public static float getScaler() {return 0.6F;}
 
     public RenderEdiacaria(RenderManager mgr) {
-        super(mgr, new ModelPrecambrianJelly(), 0.0f);
+        super(mgr, new ModelPrecambrianJelly(), RenderDisplays.modelPrecambrianJellyBook, 0.0f);
     }
 
     @Override
