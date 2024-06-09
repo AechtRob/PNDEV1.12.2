@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.15F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 4.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			arthropleuraBuffer = new MillipedeBuffer();
 		}

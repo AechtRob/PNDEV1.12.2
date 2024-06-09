@@ -12,7 +12,7 @@ public class RenderCervifurca extends RenderLiving<EntityPrehistoricFloraCervifu
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cervifurca.png");
 
     public static float getScaler() {
-        return 0.7F * 0.5F;
+        return 0.7F * 0.5F*0.66f;
     }
     public RenderCervifurca(RenderManager mgr) {
         super(mgr, new ModelCervifurca(), 0.0f);
