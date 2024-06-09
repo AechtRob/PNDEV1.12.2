@@ -2,14 +2,14 @@
 	"name": "Barrel Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/barrel_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:oligocene_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish4",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_jellyfish4",
 			"title": "Barrel Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
+			"text": "$(l)Temporal Range:$() Oligocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Rhizostomeae$(br)>Rhizostomatidae$(br)>$(o)Rhizostoma"
 		},
 		{
 			"type": "image",

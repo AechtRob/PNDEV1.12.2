@@ -2,14 +2,14 @@
 	"name": "Purple Striped Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/purplestriped_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:pleistocene_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish5",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_jellyfish5",
 			"title": "Purple Striped Jelly",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Pelagia"
+			"text": "$(l)Temporal Range:$() Pleistocene+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Pelagia"
 		},
 		{
 			"type": "image",

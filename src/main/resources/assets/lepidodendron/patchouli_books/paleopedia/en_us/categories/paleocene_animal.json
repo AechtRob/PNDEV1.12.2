@@ -1,0 +1,7 @@
+{
+    "name": "Paleocene Animals",
+    "description": "Animals of the Paleocene",
+    "icon": "paleopedia:textures/category_icon/icon_paleocene.png",
+    "parent": "lepidodendron:paleocene",
+    "sortnum": 1
+}
