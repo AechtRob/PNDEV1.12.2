@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelBuoy extends AdvancedModelBase {
+public class ModelBuoy extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Glowybits;
     private final AdvancedModelRenderer bone;
     private final AdvancedModelRenderer cube_r1;

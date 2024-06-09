@@ -5,11 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraKeichousaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelKeichousaurus extends AdvancedModelBaseExtended {
+public class ModelKeichousaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Keichousaurus;
     private final AdvancedModelRenderer upperbody;
     private final AdvancedModelRenderer cube_r1;

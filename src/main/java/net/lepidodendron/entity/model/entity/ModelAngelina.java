@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraAngelina;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAngelina extends AdvancedModelBase {
+public class ModelAngelina extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Angelina;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;

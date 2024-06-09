@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelAlbertonia extends AdvancedModelBase {
+public class ModelAlbertonia extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Bodyfront;
     public AdvancedModelRenderer Bodyend;
     public AdvancedModelRenderer Bellymiddle;

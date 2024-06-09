@@ -2,9 +2,9 @@ package net.lepidodendron.procedure;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockPodocarpLog;
 import net.lepidodendron.block.BlockRissikiaLeaves;
 import net.lepidodendron.block.BlockRissikiaLeavesBerries;
-import net.lepidodendron.block.BlockPodocarpLog;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;

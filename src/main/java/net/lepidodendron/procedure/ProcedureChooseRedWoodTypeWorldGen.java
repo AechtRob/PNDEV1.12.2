@@ -4,8 +4,6 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.minecraft.world.World;
 
-import java.util.Map;
-
 @ElementsLepidodendronMod.ModElement.Tag
 public class ProcedureChooseRedWoodTypeWorldGen extends ElementsLepidodendronMod.ModElement {
 	public ProcedureChooseRedWoodTypeWorldGen(ElementsLepidodendronMod instance) {

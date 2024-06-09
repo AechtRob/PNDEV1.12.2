@@ -1,9 +1,11 @@
 package net.lepidodendron.entity.model;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
+import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 
-public abstract class ModelBasePalaeopedia extends AdvancedModelBase {
+public abstract class ModelBasePalaeopedia extends AdvancedModelBaseExtended {
 
-    public abstract void renderStaticBook(float f);
+    public void renderStaticBook(float f) {
+        //To be completed on each instance/child
+    }
 
 }

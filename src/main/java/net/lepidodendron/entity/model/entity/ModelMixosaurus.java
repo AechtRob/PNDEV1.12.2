@@ -5,11 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMixosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelMixosaurus extends AdvancedModelBaseExtended {
+public class ModelMixosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Mixosaurus;
     private final AdvancedModelRenderer Body1;
     private final AdvancedModelRenderer cube_r1;

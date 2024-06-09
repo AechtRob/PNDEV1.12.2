@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraWaaganella;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelWaaganella extends AdvancedModelBase {
+public class ModelWaaganella extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer whole;
     private final AdvancedModelRenderer lefteyestalk;
     private final AdvancedModelRenderer righteyestalk;

@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelPhytophilaspis extends AdvancedModelBase {
+public class ModelPhytophilaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer phytophilaspis;
     private final AdvancedModelRenderer Cephalon;
     private final AdvancedModelRenderer cube_r1;

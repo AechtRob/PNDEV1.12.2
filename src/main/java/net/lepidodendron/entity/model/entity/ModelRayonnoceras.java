@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.lepidodendron.entity.EntityPrehistoricFloraRayonnoceras;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelRayonnoceras extends AdvancedModelBaseExtended {
+public class ModelRayonnoceras extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended head;
     private final AdvancedModelRendererExtended shellcover1;

@@ -1,10 +1,10 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelNagini extends AdvancedModelBase {
+public class ModelNagini extends ModelBasePalaeopedia {
 
 
     public ModelNagini() {

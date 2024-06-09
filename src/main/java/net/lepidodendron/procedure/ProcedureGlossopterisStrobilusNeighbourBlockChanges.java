@@ -7,8 +7,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.Map;
-
 @ElementsLepidodendronMod.ModElement.Tag
 public class ProcedureGlossopterisStrobilusNeighbourBlockChanges extends ElementsLepidodendronMod.ModElement {
 	public ProcedureGlossopterisStrobilusNeighbourBlockChanges(ElementsLepidodendronMod instance) {

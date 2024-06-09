@@ -1,16 +1,11 @@
 package net.lepidodendron;
 
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.Reference2ReferenceOpenHashMap;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class EntityRegistries {
     private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {

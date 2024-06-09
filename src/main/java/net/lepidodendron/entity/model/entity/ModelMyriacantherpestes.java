@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.lepidodendron.entity.EntityPrehistoricFloraMyriacantherpestes;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
+public class ModelMyriacantherpestes extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended main;
     private final AdvancedModelRendererExtended Frontbody3;
     private final AdvancedModelRendererExtended cube_r1;

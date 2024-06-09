@@ -1,10 +1,10 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelTeraterpeton extends AdvancedModelBase {
+public class ModelTeraterpeton extends ModelBasePalaeopedia {
 
 
     public ModelTeraterpeton() {

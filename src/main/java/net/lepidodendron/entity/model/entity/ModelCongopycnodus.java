@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelCongopycnodus extends AdvancedModelBase {
+public class ModelCongopycnodus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Congopycnodus;
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;

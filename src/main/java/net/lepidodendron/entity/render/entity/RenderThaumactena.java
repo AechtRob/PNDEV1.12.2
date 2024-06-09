@@ -1,9 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraCyclomedusa;
 import net.lepidodendron.entity.EntityPrehistoricFloraThaumactena;
-import net.lepidodendron.entity.model.entity.ModelCombJelly;
 import net.lepidodendron.entity.model.entity.ModelThaumactena;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

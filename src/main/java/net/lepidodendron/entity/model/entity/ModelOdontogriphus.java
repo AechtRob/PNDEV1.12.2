@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraOdontogriphus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelOdontogriphus extends AdvancedModelBase {
+public class ModelOdontogriphus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer all;
     private final AdvancedModelRenderer bone;
     private final AdvancedModelRenderer cube_r1;

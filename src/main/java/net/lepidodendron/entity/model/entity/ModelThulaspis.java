@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelThulaspis extends AdvancedModelBase {
+public class ModelThulaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Thulaspis;
     private final AdvancedModelRenderer LEFTPLATE1;
     private final AdvancedModelRenderer RIGHTPLATE1;

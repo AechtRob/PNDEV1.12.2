@@ -1,9 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraPhantaspis;
 import net.lepidodendron.entity.EntityPrehistoricFloraSpriggina;
-import net.lepidodendron.entity.EntityPrehistoricFloraStensioella;
 import net.lepidodendron.entity.model.entity.ModelSpriggina;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

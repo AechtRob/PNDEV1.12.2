@@ -8,6 +8,8 @@ public class RenderDisplays {
     public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
     public static final ModelArchaeopteryx modelArchaeopteryx = new ModelArchaeopteryx();
     public static final ModelArchaeopteryx modelArchaeopteryxBook = new ModelArchaeopteryx();
+    public static final ModelCaihong modelCaihong = new ModelCaihong();
+    public static final ModelCaihong modelCaihongBook = new ModelCaihong();
     public static final ModelAnchiornis modelAnchiornis = new ModelAnchiornis();
     public static final ModelAnchiornis modelAnchiornisBook = new ModelAnchiornis();
     public static final ModelBanksiops modelBanksiops = new ModelBanksiops();

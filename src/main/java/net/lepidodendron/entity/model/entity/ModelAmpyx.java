@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmpyx;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAmpyx extends AdvancedModelBase {
+public class ModelAmpyx extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer AmpyxMain;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;

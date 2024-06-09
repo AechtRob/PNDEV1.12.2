@@ -8,7 +8,6 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderArchocyrtus;
-import net.lepidodendron.entity.render.entity.RenderBrazilichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;

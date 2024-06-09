@@ -11,12 +11,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public abstract class RenderLivingBaseModel<T extends EntityLiving> extends RenderLiving<T>
+public abstract class RenderLivingBaseWithBook<T extends EntityLiving> extends RenderLiving<T>
 {
 
     protected ModelBasePalaeopedia bookModel;
 
-    public RenderLivingBaseModel(RenderManager rendermanagerIn, ModelBase modelbaseIn, ModelBasePalaeopedia modelBaseBook, float shadowsizeIn) {
+    public RenderLivingBaseWithBook(RenderManager rendermanagerIn, ModelBase modelbaseIn, ModelBasePalaeopedia modelBaseBook, float shadowsizeIn) {
         super(rendermanagerIn, modelbaseIn, shadowsizeIn);
         this.bookModel = modelBaseBook;
     }
