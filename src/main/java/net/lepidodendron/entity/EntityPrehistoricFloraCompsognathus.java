@@ -141,9 +141,11 @@ public class EntityPrehistoricFloraCompsognathus extends EntityPrehistoricFloraL
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraCompsognathus> Compsognathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraCompsognathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraCompsognathus currentCompsognathus : Compsognathus) {
 				currentCompsognathus.setRevengeTarget(ee);
+				currentCompsognathus.setAlarmTarget(ee);
 				currentCompsognathus.alarmCooldown = rand.nextInt(20);
 			}
 		}

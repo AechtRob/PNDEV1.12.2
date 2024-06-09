@@ -151,9 +151,11 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraLimusaurus> Limusaurus = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraLimusaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
 			for (EntityPrehistoricFloraLimusaurus currentLimusaurus : Limusaurus) {
 				currentLimusaurus.setRevengeTarget(ee);
+				currentLimusaurus.setAlarmTarget(ee);
 				currentLimusaurus.alarmCooldown = rand.nextInt(20);
 			}
 		}
@@ -172,7 +174,7 @@ public class EntityPrehistoricFloraLimusaurus extends EntityPrehistoricFloraLand
 		}
 
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
 

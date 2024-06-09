@@ -1,0 +1,47 @@
+{
+	"name": "Attenborites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/attenborites_icon.png",
+	"category": "lepidodendron:precambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_attenborites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_attenborites",
+			"title": "Attenborites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Cnidaria"
+		},
+		{
+			"type": "entity",
+			"name": "A. janeae",
+			"entity": "lepidodendron:prehistoric_flora_attenborites",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_attenborites",
+			"type": "text",
+			"text": "Attenborites is a lifeform from the late Ediacaran with fossils from Australia. They are small in size, 4.2–24mm, with an slightly wrinkled oval body shape, and are thought to have drifted through the water column. This genus is named after the British naturalist, David Attenborough, and was described in 2018."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_attenborites"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_attenborites"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_attenborites"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_attenborites"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_attenborites"
+		}
+	]
+}

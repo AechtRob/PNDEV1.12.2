@@ -629,6 +629,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIADECTES = new CustomTrigger("pf_book_diadectes");
     public static final CustomTrigger CLICK_DIANIA = new CustomTrigger("pf_book_diania");
     public static final CustomTrigger CLICK_DICKINSONIA = new CustomTrigger("pf_book_dickinsonia");
+    public static final CustomTrigger CLICK_ATTENBORITES = new CustomTrigger("pf_book_attenborites");
     public static final CustomTrigger CLICK_DIDYMOGRAPTUS = new CustomTrigger("pf_book_didymograptus");
     public static final CustomTrigger CLICK_DIICTODON = new CustomTrigger("pf_book_diictodon");
     public static final CustomTrigger CLICK_DIMETRODON = new CustomTrigger("pf_book_dimetrodon");
@@ -773,6 +774,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_MAZOTHAIROS = new CustomTrigger("pf_book_palaeodictyoptera_mazothairos");
     public static final CustomTrigger CLICK_PALAEOISOPUS = new CustomTrigger("pf_book_palaeoisopus");
     public static final CustomTrigger CLICK_ANCIENT_JELLY = new CustomTrigger("pf_book_ancientjelly");
+    public static final CustomTrigger CLICK_YUNNANOASCUS = new CustomTrigger("pf_book_yunnanoascus ");
     public static final CustomTrigger CLICK_PALAEONTINID = new CustomTrigger("pf_book_palaeontinid");
     public static final CustomTrigger CLICK_PANDERICHTHYS = new CustomTrigger("pf_book_panderichthys");
     public static final CustomTrigger CLICK_PANTYLUS = new CustomTrigger("pf_book_pantylus");
@@ -2047,6 +2049,7 @@ public class ModTriggers
             CLICK_AMPHIBAMUS,
             CLICK_AMPLECTOBELUA,
             CLICK_ANCIENT_JELLY,
+            CLICK_YUNNANOASCUS,
             CLICK_ANOMALOCARIS,
             CLICK_ANTARCTICARCINUS,
             CLICK_ANTEOSAURUS,
@@ -2144,6 +2147,7 @@ public class ModTriggers
             CLICK_DIADECTES,
             CLICK_DIANIA,
             CLICK_DICKINSONIA,
+            CLICK_ATTENBORITES,
             CLICK_DIDYMOGRAPTUS,
             CLICK_DIICTODON,
             CLICK_DIMETRODON,

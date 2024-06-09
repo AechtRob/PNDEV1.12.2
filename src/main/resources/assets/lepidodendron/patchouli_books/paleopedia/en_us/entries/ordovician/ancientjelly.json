@@ -2,20 +2,42 @@
 	"name": "Ancient Jellyfish",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/ancientjelly_icon.png",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeojelly",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_palaeojelly",
 			"title": "Ancient Jellyfish",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Cnidaria"
+			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)>Cnidaria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ancientjelly_lightpink.png", "paleopedia:textures/ancientjelly_blue.png", "paleopedia:textures/ancientjelly_green.png", "paleopedia:textures/ancientjelly_pink.png"],
-			"title": "Ancient Jellyfish",
-			"text": ""
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_palaeojelly1",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_palaeojelly2",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_palaeojelly3",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish_precambrian",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeojelly",

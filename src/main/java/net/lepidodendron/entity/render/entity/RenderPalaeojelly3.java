@@ -3,15 +3,16 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraJellyfish_Palaeo3;
 import net.lepidodendron.entity.model.entity.ModelPalaeoJelly3;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPalaeojelly3 extends RenderLiving<EntityPrehistoricFloraJellyfish_Palaeo3> {
+public class RenderPalaeojelly3 extends RenderLivingBaseWithBook<EntityPrehistoricFloraJellyfish_Palaeo3> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeojelly3.png");
 
     public RenderPalaeojelly3(RenderManager mgr) {
-        super(mgr, new ModelPalaeoJelly3(), 0.0f);
+        super(mgr, new ModelPalaeoJelly3(), RenderDisplays.modelPalaeoJelly3Book, 0.0f);
     }
 
     @Override

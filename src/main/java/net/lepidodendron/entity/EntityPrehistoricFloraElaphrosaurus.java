@@ -213,7 +213,7 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 		}
 
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 
 			this.setAnimation(STAND_ANIMATION);
@@ -340,9 +340,11 @@ public class EntityPrehistoricFloraElaphrosaurus extends EntityPrehistoricFloraL
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase && this.hasAlarm()) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraElaphrosaurus> Elaphrosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraElaphrosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraElaphrosaurus currentElaphrosaurus : Elaphrosaurus) {
 				currentElaphrosaurus.setRevengeTarget(ee);
+				currentElaphrosaurus.setAlarmTarget(ee);
 				currentElaphrosaurus.alarmCooldown = rand.nextInt(20);
 			}
 		}
