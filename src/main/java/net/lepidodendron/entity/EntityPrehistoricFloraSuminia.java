@@ -95,9 +95,11 @@ public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandCli
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraSuminia> Suminia = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraSuminia.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraSuminia currentSuminia : Suminia) {
 				currentSuminia.setRevengeTarget(ee);
+				currentSuminia.setAlarmTarget(ee);
 				currentSuminia.alarmCooldown = rand.nextInt(20);
 			}
 		}

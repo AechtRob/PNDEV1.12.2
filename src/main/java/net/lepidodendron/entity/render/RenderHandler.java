@@ -5645,6 +5645,12 @@ public class RenderHandler {
                 return new RenderPliosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAttenborites.class, new IRenderFactory<EntityPrehistoricFloraAttenborites>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAttenborites> createRenderFor(RenderManager manager) {
+                return new RenderAttenborites(manager);
+            }
+        });
         
         
         

@@ -70,9 +70,11 @@ public class EntityPrehistoricFloraXuanhuaceratops extends EntityPrehistoricFlor
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraXuanhuaceratops> Xuanhuaceratops = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraXuanhuaceratops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraXuanhuaceratops currentXuanhuaceratops : Xuanhuaceratops) {
 				currentXuanhuaceratops.setRevengeTarget(ee);
+				currentXuanhuaceratops.setAlarmTarget(ee);
 				currentXuanhuaceratops.alarmCooldown = rand.nextInt(20);
 			}
 		}

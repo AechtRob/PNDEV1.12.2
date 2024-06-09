@@ -2317,6 +2317,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_PLIOSAURUS = 939;
 	public static final ResourceLocation PLIOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pliosaurus"));
 	public static final ResourceLocation PLIOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pliosaurus_young"));
+	public static final int ENTITY_ATTENBORITES = 940;
 
 	public static final int GUI_TIME_RESEARCHER_ID = 940;
 	public static final int GUI_TIME_RESEARCHER_FINDER_ID = 941;

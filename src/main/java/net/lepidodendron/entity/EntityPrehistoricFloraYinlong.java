@@ -70,9 +70,11 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraYinlong> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraYinlong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraYinlong currentYinlong : Yinlong) {
 				currentYinlong.setRevengeTarget(ee);
+				currentYinlong.setAlarmTarget(ee);
 				currentYinlong.alarmCooldown = rand.nextInt(20);
 			}
 		}

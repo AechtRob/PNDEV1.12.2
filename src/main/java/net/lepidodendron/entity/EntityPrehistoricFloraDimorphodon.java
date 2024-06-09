@@ -61,9 +61,11 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 		boolean result = super.attackEntityFrom(ds, i);
 		if (ds.getTrueSource() instanceof EntityLivingBase && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) ds.getTrueSource();
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDimorphodon> dimorphodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDimorphodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDimorphodon currentDimorphodon : dimorphodon) {
 				currentDimorphodon.setRevengeTarget(ee);
+				currentDimorphodon.setAlarmTarget(ee);
 				currentDimorphodon.screamAlarmCooldown = rand.nextInt(20);
 				if (
 						(!currentDimorphodon.getIsFlying())
@@ -125,7 +127,7 @@ public class EntityPrehistoricFloraDimorphodon extends EntityPrehistoricFloraLan
 			}
 
 			//Screaming handling:
-			if (this.getRevengeTarget() == null && !this.isBurning()) {
+			if (this.getAlarmTarget() == null && !this.isBurning()) {
 				this.setScreaming(false);
 			} else {
 				this.setIsFast(true);
