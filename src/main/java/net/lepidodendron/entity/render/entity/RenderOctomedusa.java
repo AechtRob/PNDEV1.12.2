@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderOctomedusa extends RenderLiving<EntityPrehistoricFloraOctomedusa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/octomedusa.png");
 
-    public static float getScaler() {return 0.3F;}
+    public static float getScaler() {return 0.23F;}
 
     public RenderOctomedusa(RenderManager mgr) {
         super(mgr, new ModelOctomedusa(), 0.0f);

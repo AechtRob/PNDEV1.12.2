@@ -15,7 +15,7 @@ public class RenderLebachacanthus extends RenderLiving<EntityPrehistoricFloraLeb
         super(mgr, new ModelLebachacanthus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.59F; }
+    public static float getScaler() {return 0.59F*1.25f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraLebachacanthus entity) {
