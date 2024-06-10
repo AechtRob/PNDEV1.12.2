@@ -153,6 +153,11 @@ public class ModelOreochima extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetZ = -0.38F;

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTeleocrater;
 import net.lepidodendron.entity.model.entity.ModelTeleocrater;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTeleocrater extends RenderLiving<EntityPrehistoricFloraTeleocrater> {
+public class RenderTeleocrater extends RenderLivingBaseWithBook<EntityPrehistoricFloraTeleocrater> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teleocrater.png");
 
     public RenderTeleocrater(RenderManager mgr) {

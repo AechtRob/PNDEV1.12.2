@@ -942,6 +942,11 @@ public class ModelStegosaurus extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(neck3, 0.1392F, 0.346F, 0.0475F);
         this.setRotateAngle(neck2, -0.2317F, 0.3405F, -0.0786F);

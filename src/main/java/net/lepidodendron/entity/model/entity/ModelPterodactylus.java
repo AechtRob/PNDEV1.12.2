@@ -465,6 +465,7 @@ public class ModelPterodactylus extends ModelBasePalaeopedia {
         //GlStateManager.popMatrix();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -0.7F;
@@ -711,7 +712,6 @@ public class ModelPterodactylus extends ModelBasePalaeopedia {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
-
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

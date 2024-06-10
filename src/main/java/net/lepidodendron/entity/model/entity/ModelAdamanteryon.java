@@ -238,6 +238,11 @@ public class ModelAdamanteryon extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(belly, 0.0F, 0.0F, 0.0F);

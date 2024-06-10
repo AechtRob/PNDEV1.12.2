@@ -209,6 +209,7 @@ public class ModelSaperion extends ModelBasePalaeopedia {
         this.main.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -1.6F;

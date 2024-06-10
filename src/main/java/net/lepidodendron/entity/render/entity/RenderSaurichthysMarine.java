@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSaurichthysMarine;
 import net.lepidodendron.entity.model.entity.ModelSaurichthys;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSaurichthysMarine extends RenderLiving<EntityPrehistoricFloraSaurichthysMarine> {
+public class RenderSaurichthysMarine extends RenderLivingBaseWithBook<EntityPrehistoricFloraSaurichthysMarine> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurichthys_marine.png");
 
     public RenderSaurichthysMarine(RenderManager mgr) {

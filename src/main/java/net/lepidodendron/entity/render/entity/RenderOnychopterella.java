@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOnychopterella;
 import net.lepidodendron.entity.model.entity.ModelOnychopterella;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOnychopterella extends RenderLiving<EntityPrehistoricFloraOnychopterella> {
+public class RenderOnychopterella extends RenderLivingBaseWithBook<EntityPrehistoricFloraOnychopterella> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/onychopterella.png");
     public static float getScaler() {
         return 0.28F;

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraVachonisia;
 import net.lepidodendron.entity.model.entity.ModelVachonisia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderVachonisia extends RenderLiving<EntityPrehistoricFloraVachonisia> {
+public class RenderVachonisia extends RenderLivingBaseWithBook<EntityPrehistoricFloraVachonisia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vachonisia.png");
 
     public static float getScaler() {

@@ -644,6 +644,11 @@ public class ModelDysaloTaxi extends ModelBasePalaeopedia {
         this.Dryosaurus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Neck1.rotateAngleX = 0.2F;
         this.Neck1.render(0.01F);

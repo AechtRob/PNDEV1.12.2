@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTanaocrossus;
 import net.lepidodendron.entity.model.entity.ModelTanaocrossus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderTanaocrossus extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tanaocrossus.png");
 
     public RenderTanaocrossus(RenderManager mgr) {
-        super(mgr, new ModelTanaocrossus(), RenderDisplays.modelTanaocrossusBook, 0.0f);
+        super(mgr, new ModelTanaocrossus(), 0.0f);
     }
 
     public static float getScaler() {return 0.2F; }

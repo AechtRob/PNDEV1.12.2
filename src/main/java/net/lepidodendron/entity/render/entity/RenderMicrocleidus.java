@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMicrocleidus;
 import net.lepidodendron.entity.model.entity.ModelMicrocleidus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMicrocleidus extends RenderLiving<EntityPrehistoricFloraMicrocleidus> {
+public class RenderMicrocleidus extends RenderLivingBaseWithBook<EntityPrehistoricFloraMicrocleidus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microcleidus.png");
 
     public RenderMicrocleidus(RenderManager mgr) {

@@ -680,6 +680,11 @@ public class ModelDracopelta extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         resetToDefaultPose();
     }

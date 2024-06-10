@@ -246,6 +246,11 @@ public class ModelTurboscinetes extends ModelBasePalaeopedia {
         this.Turboscinetes.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Turboscinetes.rotateAngleY = (float) Math.toRadians(90);
         this.Turboscinetes.offsetY = -0.14F;

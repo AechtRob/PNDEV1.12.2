@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMamenchisaurus;
 import net.lepidodendron.entity.model.entity.ModelMamenchisaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderMamenchisaurus extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mamenchisaurus.png");
 
     public RenderMamenchisaurus(RenderManager mgr) {
-        super(mgr, new ModelMamenchisaurus(), RenderDisplays.modelMamenchisaurusBook, 0.3f);
+        super(mgr, new ModelMamenchisaurus(), 0.3f);
     }
 
     public static float getScaler() {

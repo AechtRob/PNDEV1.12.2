@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEugaleaspis;
 import net.lepidodendron.entity.model.entity.ModelEugaleaspis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEugaleaspis extends RenderLiving<EntityPrehistoricFloraEugaleaspis> {
+public class RenderEugaleaspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraEugaleaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eugaleaspis.png");
 
     public static float getScaler() {

@@ -324,6 +324,12 @@ public class ModelSaccocoma extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);        this.Base.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Arm1, 0.3F, -0.3F, 0.0F);
         this.setRotateAngle(Arm2, -0.7F, 0.3F, 0.0F);

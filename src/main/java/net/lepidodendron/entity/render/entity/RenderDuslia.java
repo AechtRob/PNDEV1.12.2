@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDuslia;
 import net.lepidodendron.entity.model.entity.ModelDuslia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDuslia extends RenderLiving<EntityPrehistoricFloraDuslia> {
+public class RenderDuslia extends RenderLivingBaseWithBook<EntityPrehistoricFloraDuslia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/duslia.png");
 
     public static float getScaler() {

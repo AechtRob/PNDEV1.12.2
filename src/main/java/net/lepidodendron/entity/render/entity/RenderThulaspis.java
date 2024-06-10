@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraThulaspis;
 import net.lepidodendron.entity.model.entity.ModelThulaspis;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderThulaspis extends RenderLivingBaseWithBook<EntityPrehistoricF
     }
 
     public RenderThulaspis(RenderManager mgr) {
-        super(mgr, new ModelThulaspis(), RenderDisplays.modelThulaspisBook, 0.0f);
+        super(mgr, new ModelThulaspis(), 0.0f);
     }
 
     @Override

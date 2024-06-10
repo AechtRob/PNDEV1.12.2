@@ -150,6 +150,11 @@ public class ModelOphiopsis extends ModelBasePalaeopedia {
         this.Body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(jaw, 1.0036F, 0.0F, 0.0F);

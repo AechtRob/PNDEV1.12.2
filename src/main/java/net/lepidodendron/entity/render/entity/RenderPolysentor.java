@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPolysentor;
 import net.lepidodendron.entity.model.entity.ModelPolysentor;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderPolysentor extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/polysentor.png");
 
     public RenderPolysentor(RenderManager mgr) {
-        super(mgr, new ModelPolysentor(), RenderDisplays.modelPolysentorBook, 0.0f);
+        super(mgr, new ModelPolysentor(), 0.0f);
     }
 
     public static float getScaler() {return 0.26F; }

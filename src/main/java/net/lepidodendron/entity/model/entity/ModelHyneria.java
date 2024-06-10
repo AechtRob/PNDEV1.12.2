@@ -255,6 +255,11 @@ public class ModelHyneria extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(86);
         this.head.rotateAngleY = (float) Math.toRadians(-12.5);

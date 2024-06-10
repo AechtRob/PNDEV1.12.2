@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGigantspinosaurus;
 import net.lepidodendron.entity.model.entity.ModelGigantspinosaurus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGigantspinosaurus extends RenderLiving<EntityPrehistoricFloraGigantspinosaurus> {
+public class RenderGigantspinosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraGigantspinosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gigantspinosaurus.png");
 
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gigantspinosaurus_baby.png");

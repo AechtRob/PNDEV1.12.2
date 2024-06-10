@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRoachoidAridInsect;
 import net.lepidodendron.entity.model.entity.ModelRoachoid;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRoachoidArid extends RenderLiving<EntityPrehistoricFloraRoachoidAridInsect> {
+public class RenderRoachoidArid extends RenderLivingBaseWithBook<EntityPrehistoricFloraRoachoidAridInsect> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_arid.png");
 
     public RenderRoachoidArid(RenderManager mgr) {

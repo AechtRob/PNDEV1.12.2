@@ -57,6 +57,7 @@ public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
 
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.25F;

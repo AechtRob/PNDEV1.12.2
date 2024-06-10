@@ -204,6 +204,11 @@ public class ModelSteurbautichthys extends ModelBasePalaeopedia {
         this.Steurbautichthys.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Steurbautichthys.rotateAngleY = (float) Math.toRadians(90);
         this.Steurbautichthys.offsetZ = 0.05F;

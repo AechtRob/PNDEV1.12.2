@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraXenusion;
 import net.lepidodendron.entity.model.entity.ModelXenusion;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderXenusion extends RenderLiving<EntityPrehistoricFloraXenusion> {
+public class RenderXenusion extends RenderLivingBaseWithBook<EntityPrehistoricFloraXenusion> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xenusion.png");
 
     public RenderXenusion(RenderManager mgr) {

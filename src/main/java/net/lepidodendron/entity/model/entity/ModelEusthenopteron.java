@@ -239,6 +239,11 @@ public class ModelEusthenopteron extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetY = -0.2F;

@@ -304,6 +304,11 @@ public class ModelKaykay extends ModelBasePalaeopedia {
         this.Kaykay.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(Kaykay, 0.25F, 0.0F, 0.0F);
         this.Kaykay.offsetY = -0.1F;

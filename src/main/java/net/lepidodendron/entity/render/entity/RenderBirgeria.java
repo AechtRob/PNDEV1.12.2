@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBirgeria;
 import net.lepidodendron.entity.model.entity.ModelBirgeria;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBirgeria extends RenderLiving<EntityPrehistoricFloraBirgeria> {
+public class RenderBirgeria extends RenderLivingBaseWithBook<EntityPrehistoricFloraBirgeria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/birgeria.png");
 
     public RenderBirgeria(RenderManager mgr) {

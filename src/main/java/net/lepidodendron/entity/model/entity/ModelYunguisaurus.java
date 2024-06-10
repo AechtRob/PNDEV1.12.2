@@ -424,6 +424,7 @@ public class ModelYunguisaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Yunguisaurus.offsetY = -0.4F;

@@ -3,14 +3,14 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSanctacaris;
 import net.lepidodendron.entity.model.entity.ModelSanctacaris;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Calendar;
 
-public class RenderSanctacaris extends RenderLiving<EntityPrehistoricFloraSanctacaris> {
+public class RenderSanctacaris extends RenderLivingBaseWithBook<EntityPrehistoricFloraSanctacaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris.png");
     public static final ResourceLocation TEXTURE_XMAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sanctacaris_xmas.png");
 

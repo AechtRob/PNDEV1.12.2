@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPomatrum;
 import net.lepidodendron.entity.model.entity.ModelPomatrum;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPomatrum extends RenderLiving<EntityPrehistoricFloraPomatrum> {
+public class RenderPomatrum extends RenderLivingBaseWithBook<EntityPrehistoricFloraPomatrum> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pomatrum.png");
 
     public RenderPomatrum(RenderManager mgr) {

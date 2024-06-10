@@ -1124,6 +1124,7 @@ public class ModelParapeytoia extends ModelBasePalaeopedia {
         this.head.render(f5 * 0.18F);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -0.15F;
@@ -1155,6 +1156,7 @@ public class ModelParapeytoia extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

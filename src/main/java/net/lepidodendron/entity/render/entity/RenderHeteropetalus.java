@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHeteropetalus;
 import net.lepidodendron.entity.model.entity.ModelHeteropetalus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -14,7 +13,7 @@ public class RenderHeteropetalus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heteropetalus_f.png");
 
     public RenderHeteropetalus(RenderManager mgr) {
-        super(mgr, new ModelHeteropetalus(), RenderDisplays.modelHeteropetalusBook, 0.0f);
+        super(mgr, new ModelHeteropetalus(), 0.0f);
     }
 
     @Override

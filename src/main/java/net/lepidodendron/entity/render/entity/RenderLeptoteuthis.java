@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLeptoteuthis;
 import net.lepidodendron.entity.model.entity.ModelLeptoteuthis;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderLeptoteuthis extends RenderLivingBaseWithBook<EntityPrehistor
         return 0.5f;
     }
     public RenderLeptoteuthis(RenderManager mgr) {
-        super(mgr, new ModelLeptoteuthis(), RenderDisplays.modelLeptoteuthisBook, 0.0f);
+        super(mgr, new ModelLeptoteuthis(), 0.0f);
     }
 
     @Override

@@ -570,6 +570,7 @@ public class ModelKleptothule extends ModelBasePalaeopedia {
         this.Kleptothule.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Kleptothule.offsetY = -3.65F;

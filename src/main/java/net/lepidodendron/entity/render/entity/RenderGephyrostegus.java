@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGephyrostegus;
 import net.lepidodendron.entity.model.entity.ModelGephyrostegus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGephyrostegus extends RenderLiving<EntityPrehistoricFloraGephyrostegus> {
+public class RenderGephyrostegus extends RenderLivingBaseWithBook<EntityPrehistoricFloraGephyrostegus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gephyrostegus.png");
 
     public static float getScaler() {

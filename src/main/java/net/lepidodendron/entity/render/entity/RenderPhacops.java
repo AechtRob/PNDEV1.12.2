@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhacops;
 import net.lepidodendron.entity.model.entity.ModelPhacops;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderPhacops extends RenderLivingBaseWithBook<EntityPrehistoricFlo
     }
 
     public RenderPhacops(RenderManager mgr) {
-        super(mgr, new ModelPhacops(), RenderDisplays.modelPhacopsBook, 0.0f);
+        super(mgr, new ModelPhacops(), 0.0f);
     }
 
     @Override

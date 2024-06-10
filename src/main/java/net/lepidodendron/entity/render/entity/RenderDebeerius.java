@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDebeerius;
 import net.lepidodendron.entity.model.entity.ModelDebeerius;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderDebeerius extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/debeerius.png");
 
     public RenderDebeerius(RenderManager mgr) {
-        super(mgr, new ModelDebeerius(), RenderDisplays.modelDebeeriusBook, 0.5f);
+        super(mgr, new ModelDebeerius(), 0.5f);
     }
     public static float getScaler() {
         return 0.3F;

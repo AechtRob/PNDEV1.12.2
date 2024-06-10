@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostomatops;
 import net.lepidodendron.entity.model.entity.ModelAcanthostomatops;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAcanthostomatops extends RenderLiving<EntityPrehistoricFloraAcanthostomatops> {
+public class RenderAcanthostomatops extends RenderLivingBaseWithBook<EntityPrehistoricFloraAcanthostomatops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acanthostomatops.png");
     public static float getScaler() {return 0.283F;}
     public RenderAcanthostomatops(RenderManager mgr) {

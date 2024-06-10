@@ -816,6 +816,7 @@ public class ModelUrokodia extends ModelBasePalaeopedia {
         this.root.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.2F;

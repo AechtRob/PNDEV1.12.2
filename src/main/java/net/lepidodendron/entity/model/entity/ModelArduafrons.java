@@ -193,6 +193,11 @@ public class ModelArduafrons extends ModelBasePalaeopedia {
         this.Arduafrons.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Arduafrons.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;

@@ -208,6 +208,11 @@ public class ModelQuasimodichthys extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.main.offsetZ = -0.4F;

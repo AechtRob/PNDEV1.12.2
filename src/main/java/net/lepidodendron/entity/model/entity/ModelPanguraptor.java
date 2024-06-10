@@ -333,6 +333,11 @@ public class ModelPanguraptor extends ModelBasePalaeopedia {
         this.Hips.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Neck.render(0.01F);
         resetToDefaultPose();

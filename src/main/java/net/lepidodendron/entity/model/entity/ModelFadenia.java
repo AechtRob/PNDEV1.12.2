@@ -260,6 +260,11 @@ public class ModelFadenia extends ModelBasePalaeopedia {
         this.head.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(80);
         this.setRotateAngle(cube_r1, -0.1309F, 0.0F, 0.0F);

@@ -1017,6 +1017,11 @@ public class ModelHuayangosaurus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.chest.rotateAngleX = (float) Math.toRadians(20);
         this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);

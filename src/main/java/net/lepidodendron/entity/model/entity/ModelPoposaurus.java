@@ -326,6 +326,12 @@ public class ModelPoposaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Poposaurus.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Neck.offsetY = -0.001F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(35);

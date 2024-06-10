@@ -262,6 +262,7 @@ public class ModelIsoxys extends ModelBasePalaeopedia {
         this.base.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -0.0F;
@@ -282,6 +283,7 @@ public class ModelIsoxys extends ModelBasePalaeopedia {
         this.base.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

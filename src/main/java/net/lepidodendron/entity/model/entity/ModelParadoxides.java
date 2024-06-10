@@ -332,6 +332,7 @@ public class ModelParadoxides extends ModelBasePalaeopedia {
         this.head.render(f5 * 0.36F);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -0.45F;
@@ -363,6 +364,7 @@ public class ModelParadoxides extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

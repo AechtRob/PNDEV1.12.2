@@ -214,6 +214,11 @@ public class ModelAnaethalion extends ModelBasePalaeopedia {
         this.Anaethalion.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Anaethalion.rotateAngleY = (float) Math.toRadians(90);
         this.Anaethalion.offsetY = -0.13F;

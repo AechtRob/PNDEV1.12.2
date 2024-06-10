@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSuminia;
 import net.lepidodendron.entity.model.entity.ModelSuminia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSuminia extends RenderLiving<EntityPrehistoricFloraSuminia> {
+public class RenderSuminia extends RenderLivingBaseWithBook<EntityPrehistoricFloraSuminia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/suminia.png");
 
     public static float getScaler() {

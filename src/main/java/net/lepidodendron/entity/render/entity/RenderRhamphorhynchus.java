@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhamphorhynchus;
 import net.lepidodendron.entity.model.entity.ModelRhamphorhynchus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderRhamphorhynchus extends RenderLivingBaseWithBook<EntityPrehis
     }
 
     public RenderRhamphorhynchus(RenderManager mgr) {
-        super(mgr, new ModelRhamphorhynchus(), RenderDisplays.modelRhamphorhynchusBook, 0.15f);
+        super(mgr, new ModelRhamphorhynchus(), 0.15f);
     }
 
     @Override

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAscendonanus;
 import net.lepidodendron.entity.model.entity.ModelAscendonanus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAscendonanus extends RenderLiving<EntityPrehistoricFloraAscendonanus> {
+public class RenderAscendonanus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAscendonanus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ascendonanus.png");
 
     public RenderAscendonanus(RenderManager mgr) {

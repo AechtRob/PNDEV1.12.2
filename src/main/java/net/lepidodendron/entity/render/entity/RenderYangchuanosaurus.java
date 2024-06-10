@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraYangchuanosaurus;
 import net.lepidodendron.entity.model.entity.ModelYangchuanosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderYangchuanosaurus extends RenderLivingBaseWithBook<EntityPrehi
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yangchuanosaurus.png");
 
     public RenderYangchuanosaurus(RenderManager mgr) {
-        super(mgr, new ModelYangchuanosaurus(), RenderDisplays.modelYangchuanosaurusBook, 0.3f);
+        super(mgr, new ModelYangchuanosaurus(), 0.3f);
     }
 
     public static float getScaler() {

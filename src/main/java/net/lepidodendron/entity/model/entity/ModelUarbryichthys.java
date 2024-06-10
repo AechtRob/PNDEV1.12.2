@@ -181,6 +181,11 @@ public class ModelUarbryichthys extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.offsetY = -0.18F;
         this.body.offsetX = -0.05F;

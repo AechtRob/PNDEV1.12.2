@@ -345,6 +345,11 @@ public class ModelEurhinosaurus extends ModelBasePalaeopedia {
         this.Eurhinosaurus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Head.offsetY = -0.01F;
         this.Head.offsetX = 0.01F;

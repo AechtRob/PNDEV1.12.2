@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLacewing;
 import net.lepidodendron.entity.model.entity.ModelLacewing;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderLacewing extends RenderLiving<EntityPrehistoricFloraLacewing> {
+public class RenderLacewing extends RenderLivingBaseWithBook<EntityPrehistoricFloraLacewing> {
     public static final ResourceLocation TEXTURE_AETHEOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_aetheogramma.png");
     public static final ResourceLocation TEXTURE_CRETAPSYCHOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_cretapsychops.png");
     public static final ResourceLocation TEXTURE_LACCOSMYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lacewing_laccosmylus.png");

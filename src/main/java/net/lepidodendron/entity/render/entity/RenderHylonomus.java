@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHylonomus;
 import net.lepidodendron.entity.model.entity.ModelHylonomus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderHylonomus extends RenderLiving<EntityPrehistoricFloraHylonomus> {
+public class RenderHylonomus extends RenderLivingBaseWithBook<EntityPrehistoricFloraHylonomus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus.png");
 
     public RenderHylonomus(RenderManager mgr) {

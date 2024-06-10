@@ -209,6 +209,11 @@ public class ModelCaturus extends ModelBasePalaeopedia {
         this.Body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Body.offsetY = -0.195F;
         this.Body.offsetX = -0.066F;

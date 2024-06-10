@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraParapeytoia;
 import net.lepidodendron.entity.model.entity.ModelParapeytoia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
@@ -12,7 +11,7 @@ public class RenderParapeytoia extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parapeytoia.png");
 
     public RenderParapeytoia(RenderManager mgr) {
-        super(mgr, new ModelParapeytoia(), RenderDisplays.modelParapeytoiaBook, 0.0f);
+        super(mgr, new ModelParapeytoia(), 0.0f);
     }
 
     @Override

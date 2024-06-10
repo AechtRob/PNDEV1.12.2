@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLochmanolenellus;
 import net.lepidodendron.entity.model.entity.ModelLochmanolenellus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderLochmanolenellus extends RenderLiving<EntityPrehistoricFloraLochmanolenellus> {
+public class RenderLochmanolenellus extends RenderLivingBaseWithBook<EntityPrehistoricFloraLochmanolenellus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lochmanolenellus.png");
 
     public RenderLochmanolenellus(RenderManager mgr) {

@@ -217,6 +217,7 @@ public class ModelDiictodon extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.5F;

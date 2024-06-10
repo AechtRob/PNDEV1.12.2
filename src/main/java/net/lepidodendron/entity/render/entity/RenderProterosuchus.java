@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraProterosuchus;
 import net.lepidodendron.entity.model.entity.ModelProterosuchus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderProterosuchus extends RenderLiving<EntityPrehistoricFloraProterosuchus> {
+public class RenderProterosuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraProterosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterosuchus.png");
 
     public RenderProterosuchus(RenderManager mgr) {

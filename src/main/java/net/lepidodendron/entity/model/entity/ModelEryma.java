@@ -368,6 +368,7 @@ public class ModelEryma extends ModelBasePalaeopedia {
         this.bone.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bone.offsetY = 0.4F;

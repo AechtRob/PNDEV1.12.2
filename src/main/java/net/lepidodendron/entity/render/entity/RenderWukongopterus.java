@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWukongopterus;
 import net.lepidodendron.entity.model.entity.ModelWukongopterus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderWukongopterus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE_WUKONGOPTERUS_KING_MONKEY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/wukongopterus_king_monkey.png");
 
     public RenderWukongopterus(RenderManager mgr) {
-        super(mgr, new ModelWukongopterus(), RenderDisplays.modelWukongopterusBook, 0.5F);
+        super(mgr, new ModelWukongopterus(), 0.5F);
     }
 
     public static float getScaler() {

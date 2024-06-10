@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraJellyfish_Palaeo4;
 import net.lepidodendron.entity.model.entity.ModelPalaeoJelly4;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
@@ -12,7 +11,7 @@ public class RenderPalaeojelly4 extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeojelly4.png");
 
     public RenderPalaeojelly4(RenderManager mgr) {
-        super(mgr, new ModelPalaeoJelly4(), RenderDisplays.modelPalaeoJelly4Book, 0.0f);
+        super(mgr, new ModelPalaeoJelly4(), 0.0f);
     }
 
     @Override

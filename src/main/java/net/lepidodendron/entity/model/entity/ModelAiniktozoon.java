@@ -357,6 +357,11 @@ public class ModelAiniktozoon extends ModelBasePalaeopedia {
         this.bones.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

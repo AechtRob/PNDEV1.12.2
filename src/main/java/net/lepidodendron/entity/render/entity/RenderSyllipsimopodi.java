@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSyllipsimopodi;
 import net.lepidodendron.entity.model.entity.ModelSyllipsimopodi;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSyllipsimopodi extends RenderLiving<EntityPrehistoricFloraSyllipsimopodi> {
+public class RenderSyllipsimopodi extends RenderLivingBaseWithBook<EntityPrehistoricFloraSyllipsimopodi> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/syllipsimopodi.png");
 
     public RenderSyllipsimopodi(RenderManager mgr) {

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrnitholestes;
 import net.lepidodendron.entity.model.entity.ModelOrnitholestes;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderOrnitholestes extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ornitholestes.png");
 
     public RenderOrnitholestes(RenderManager mgr) {
-        super(mgr, new ModelOrnitholestes(), RenderDisplays.modelOrnitholestesBook, 0.3f);
+        super(mgr, new ModelOrnitholestes(), 0.3f);
     }
 
     public static float getScaler() {

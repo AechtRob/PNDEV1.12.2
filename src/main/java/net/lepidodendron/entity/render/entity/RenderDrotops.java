@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDrotops;
 import net.lepidodendron.entity.model.entity.ModelDrotops;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDrotops extends RenderLiving<EntityPrehistoricFloraDrotops> {
+public class RenderDrotops extends RenderLivingBaseWithBook<EntityPrehistoricFloraDrotops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drotops.png");
 
     public RenderDrotops(RenderManager mgr) {

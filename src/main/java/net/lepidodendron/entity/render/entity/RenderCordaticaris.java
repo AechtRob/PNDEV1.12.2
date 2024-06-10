@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCordaticaris;
 import net.lepidodendron.entity.model.entity.ModelCordaticaris;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderCordaticaris extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public RenderCordaticaris(RenderManager mgr) {
-        super(mgr, new ModelCordaticaris(), RenderDisplays.modelCordaticarisBook, 0.2f);
+        super(mgr, new ModelCordaticaris(), 0.2f);
     }
 
     @Override

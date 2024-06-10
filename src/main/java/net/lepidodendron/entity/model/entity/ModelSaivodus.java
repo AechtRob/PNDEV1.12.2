@@ -226,6 +226,12 @@ public class ModelSaivodus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.all.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.head.offsetY = -0.001F;
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(35);

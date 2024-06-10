@@ -396,6 +396,7 @@ public class ModelCordaticaris extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -2.25F;

@@ -109,6 +109,7 @@ public class ModelPalaeoJelly4 extends ModelBasePalaeopedia {
 
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.19F;

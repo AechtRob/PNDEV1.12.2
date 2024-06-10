@@ -340,6 +340,7 @@ public class ModelEffigia extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.50F;

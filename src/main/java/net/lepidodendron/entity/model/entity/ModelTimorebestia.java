@@ -229,6 +229,7 @@ public class ModelTimorebestia extends ModelBasePalaeopedia {
         this.timorebestia.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.timorebestia.offsetY = -0.8F;
@@ -253,6 +254,7 @@ public class ModelTimorebestia extends ModelBasePalaeopedia {
         this.timorebestia.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

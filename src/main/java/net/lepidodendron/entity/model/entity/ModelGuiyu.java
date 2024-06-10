@@ -225,6 +225,11 @@ public class ModelGuiyu extends ModelBasePalaeopedia {
         this.Guiyu.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Guiyu.rotateAngleY = (float) Math.toRadians(90);
         this.Guiyu.offsetY = -0.20F;

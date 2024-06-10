@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCongopycnodus;
 import net.lepidodendron.entity.model.entity.ModelCongopycnodus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCongopycnodus extends RenderLiving<EntityPrehistoricFloraCongopycnodus> {
+public class RenderCongopycnodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraCongopycnodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/congopycnodus.png");
 
     public static float getScaler() {

@@ -376,6 +376,11 @@ public class ModelChaoyangsaurus extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, -0.2182F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r10, 0.6415F, 0.1323F, 0.2611F);

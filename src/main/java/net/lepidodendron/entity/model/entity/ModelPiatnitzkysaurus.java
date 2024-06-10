@@ -437,6 +437,11 @@ public class ModelPiatnitzkysaurus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(neck3, 0.05F, 0.0F, 0.0F);
         this.setRotateAngle(neck2, -0.05F, 0.0F, 0.0F);

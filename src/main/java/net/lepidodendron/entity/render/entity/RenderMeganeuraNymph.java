@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuraNymph;
 import net.lepidodendron.entity.model.entity.ModelMeganeuropsisNymph;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMeganeuraNymph extends RenderLiving<EntityPrehistoricFloraMeganeuraNymph> {
+public class RenderMeganeuraNymph extends RenderLivingBaseWithBook<EntityPrehistoricFloraMeganeuraNymph> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/meganeuropsis_nymph.png");
 
     public RenderMeganeuraNymph(RenderManager mgr) {

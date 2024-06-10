@@ -368,4 +368,9 @@ public class ModelGuanoGolem extends ModelBasePalaeopedia {
         this.root.render(scale);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
 }

@@ -239,6 +239,7 @@ public class ModelRobertia extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.0F;

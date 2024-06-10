@@ -527,6 +527,11 @@ public class ModelTanycolagreus extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         resetToDefaultPose();
     }

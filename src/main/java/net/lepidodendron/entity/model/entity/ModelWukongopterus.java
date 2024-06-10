@@ -513,6 +513,7 @@ public class ModelWukongopterus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
     
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.5F;
@@ -555,7 +556,7 @@ public class ModelWukongopterus extends ModelBasePalaeopedia {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
-    
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaryosyntrips;
 import net.lepidodendron.entity.model.entity.ModelCaryosyntrips;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderCaryosyntrips extends RenderLivingBaseWithBook<EntityPrehisto
     }
 
     public RenderCaryosyntrips(RenderManager mgr) {
-        super(mgr, new ModelCaryosyntrips(), RenderDisplays.modelCaryosyntripsBook, 0.2f);
+        super(mgr, new ModelCaryosyntrips(), 0.2f);
     }
 
     @Override

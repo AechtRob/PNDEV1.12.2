@@ -657,6 +657,7 @@ public class ModelCaryosyntrips extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.75F;

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraIchthyosaurus;
 import net.lepidodendron.entity.model.entity.ModelIchthyosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderIchthyosaurus extends RenderLivingBaseWithBook<EntityPrehisto
         return 0.695F;
     }
     public RenderIchthyosaurus(RenderManager mgr) {
-        super(mgr, new ModelIchthyosaurus(), RenderDisplays.modelIchthyosaurusBook, 0.0f);
+        super(mgr, new ModelIchthyosaurus(), 0.0f);
     }
 
     @Override

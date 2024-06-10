@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCancrinos;
 import net.lepidodendron.entity.model.entity.ModelCancrinos;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCancrinos extends RenderLiving<EntityPrehistoricFloraCancrinos> {
+public class RenderCancrinos extends RenderLivingBaseWithBook<EntityPrehistoricFloraCancrinos> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cancrinos.png");
 
     public static float getScaler() {

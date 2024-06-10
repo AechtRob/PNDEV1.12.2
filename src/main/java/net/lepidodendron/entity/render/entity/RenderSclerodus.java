@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSclerodus;
 import net.lepidodendron.entity.model.entity.ModelSclerodus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSclerodus extends RenderLiving<EntityPrehistoricFloraSclerodus> {
+public class RenderSclerodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraSclerodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sclerodus.png");
 
     public static float getScaler() {

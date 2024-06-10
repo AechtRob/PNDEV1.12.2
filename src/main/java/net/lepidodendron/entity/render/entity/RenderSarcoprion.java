@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSarcoprion;
 import net.lepidodendron.entity.model.entity.ModelSarcoprion;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -14,7 +13,7 @@ public class RenderSarcoprion extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sarcoprion_f.png");
 
     public RenderSarcoprion(RenderManager mgr) {
-        super(mgr, new ModelSarcoprion(), RenderDisplays.modelSarcoprionBook, 0.0f);
+        super(mgr, new ModelSarcoprion(),0.0f);
     }
 
     @Override

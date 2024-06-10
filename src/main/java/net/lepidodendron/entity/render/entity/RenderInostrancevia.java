@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraInostrancevia;
 import net.lepidodendron.entity.model.entity.ModelInostrancevia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderInostrancevia extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/inostrancevia.png");
 
     public RenderInostrancevia(RenderManager mgr) {
-        super(mgr, new ModelInostrancevia(), RenderDisplays.modelInostranceviaBook, 0.5f);
+        super(mgr, new ModelInostrancevia(), 0.5f);
     }
 
     public static float getScaler() {return 0.775f; }

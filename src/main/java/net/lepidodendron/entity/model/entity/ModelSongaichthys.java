@@ -201,6 +201,11 @@ public class ModelSongaichthys extends ModelBasePalaeopedia {
         this.Songaichthys.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Songaichthys.rotateAngleY = (float) Math.toRadians(90);
         this.Songaichthys.offsetY = -0.25F;

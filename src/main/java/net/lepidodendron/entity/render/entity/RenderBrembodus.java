@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBrembodus;
 import net.lepidodendron.entity.model.entity.ModelBrembodus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBrembodus extends RenderLiving<EntityPrehistoricFloraBrembodus> {
+public class RenderBrembodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraBrembodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/brembodus.png");
 
     public RenderBrembodus(RenderManager mgr) {

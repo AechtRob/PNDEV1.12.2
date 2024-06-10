@@ -376,6 +376,11 @@ public class ModelMegalosaurus extends ModelBasePalaeopedia {
         this.Hips.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(Hips, -0.0122F, 0.0F, 0.0F);
         this.setRotateAngle(Bodymiddle, 0.0475F, -0.1308F, -0.0062F);

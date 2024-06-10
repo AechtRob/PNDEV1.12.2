@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPraearcturus;
 import net.lepidodendron.entity.model.entity.ModelPraearcturus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +14,7 @@ public class RenderPraearcturus extends RenderLivingBaseWithBook<EntityPrehistor
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/praearcturus_baby.png");
 
     public RenderPraearcturus(RenderManager mgr) {
-        super(mgr, new ModelPraearcturus(), RenderDisplays.modelPraearcturusBook, 0.0f);
+        super(mgr, new ModelPraearcturus(), 0.0f);
     }
 
     public static float getScaler() {

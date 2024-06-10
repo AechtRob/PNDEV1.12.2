@@ -200,6 +200,11 @@ public class ModelPhialaspis extends ModelBasePalaeopedia {
         this.Body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Body.rotateAngleX = (float) Math.toRadians(90);
         this.Body.offsetY = -0.2F;

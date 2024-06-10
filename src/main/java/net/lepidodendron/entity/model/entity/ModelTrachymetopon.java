@@ -288,6 +288,12 @@ public class ModelTrachymetopon extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(Body, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, 0.1F, 0.0F);

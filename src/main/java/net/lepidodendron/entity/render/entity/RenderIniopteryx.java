@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraIniopteryx;
 import net.lepidodendron.entity.model.entity.ModelIniopteryx;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderIniopteryx extends RenderLiving<EntityPrehistoricFloraIniopteryx> {
+public class RenderIniopteryx extends RenderLivingBaseWithBook<EntityPrehistoricFloraIniopteryx> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/iniopteryx.png");
 
     public RenderIniopteryx(RenderManager mgr) {

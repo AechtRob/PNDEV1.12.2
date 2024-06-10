@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraProceratosaurus;
 import net.lepidodendron.entity.model.entity.ModelProceratosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderProceratosaurus extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proceratosaurus.png");
 
     public RenderProceratosaurus(RenderManager mgr) {
-        super(mgr, new ModelProceratosaurus(), RenderDisplays.modelProceratosaurusBook, 0.3f);
+        super(mgr, new ModelProceratosaurus(), 0.3f);
     }
 
     public static float getScaler() {

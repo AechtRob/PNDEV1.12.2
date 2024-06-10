@@ -181,6 +181,11 @@ public class ModelCambroraster extends ModelBasePalaeopedia {
         this.bodybase.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

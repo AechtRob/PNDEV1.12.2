@@ -120,6 +120,7 @@ public class ModelPlectronoceras extends ModelBasePalaeopedia {
         this.bone.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bone.offsetY = -1.345F;
@@ -146,6 +147,7 @@ public class ModelPlectronoceras extends ModelBasePalaeopedia {
         this.bone.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

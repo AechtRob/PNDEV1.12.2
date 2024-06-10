@@ -516,6 +516,7 @@ public class ModelDiplodocus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 1.95F;

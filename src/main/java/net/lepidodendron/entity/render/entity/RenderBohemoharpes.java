@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBohemoharpes;
 import net.lepidodendron.entity.model.entity.ModelBohemoharpes;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBohemoharpes extends RenderLiving<EntityPrehistoricFloraBohemoharpes> {
+public class RenderBohemoharpes extends RenderLivingBaseWithBook<EntityPrehistoricFloraBohemoharpes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bohemoharpes.png");
 
     public static float getScaler() {

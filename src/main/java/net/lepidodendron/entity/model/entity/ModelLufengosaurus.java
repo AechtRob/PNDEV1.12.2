@@ -352,6 +352,7 @@ public class ModelLufengosaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.25F;

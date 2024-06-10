@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWiwaxia;
 import net.lepidodendron.entity.model.entity.ModelWiwaxia;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderWiwaxia extends RenderLiving<EntityPrehistoricFloraWiwaxia> {
+public class RenderWiwaxia extends RenderLivingBaseWithBook<EntityPrehistoricFloraWiwaxia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/wiwaxia.png");
 
     public RenderWiwaxia(RenderManager mgr) {

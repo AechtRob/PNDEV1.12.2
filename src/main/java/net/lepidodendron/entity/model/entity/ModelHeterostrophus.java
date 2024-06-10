@@ -228,6 +228,7 @@ public class ModelHeterostrophus extends ModelBasePalaeopedia {
         this.Heterostrophus.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Heterostrophus.offsetY = -1.0F;

@@ -411,6 +411,7 @@ public class ModelShunosaurus extends ModelBasePalaeopedia {
     }
 
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.30F;

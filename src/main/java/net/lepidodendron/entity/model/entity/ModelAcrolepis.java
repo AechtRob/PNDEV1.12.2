@@ -301,6 +301,11 @@ public class ModelAcrolepis extends ModelBasePalaeopedia {
         this.Acrolepis.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Acrolepis.rotateAngleY = (float) Math.toRadians(90);
         this.Acrolepis.offsetY = -0.15F;

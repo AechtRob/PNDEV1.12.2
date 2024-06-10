@@ -64,6 +64,11 @@ public class ModelCyclonema extends ModelBasePalaeopedia {
         body.render(f5 * 0.4F);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

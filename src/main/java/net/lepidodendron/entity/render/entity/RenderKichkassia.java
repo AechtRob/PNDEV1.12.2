@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKichkassia;
 import net.lepidodendron.entity.model.entity.ModelKichkassia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderKichkassia extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kichkassia.png");
 
     public RenderKichkassia(RenderManager mgr) {
-        super(mgr, new ModelKichkassia(), RenderDisplays.modelKichkassiaBook, 0.0f);
+        super(mgr, new ModelKichkassia(), 0.0f);
     }
 
     public static float getScaler() {return 0.3F; }

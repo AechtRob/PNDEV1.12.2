@@ -156,6 +156,12 @@ public class ModelOxyosteus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
         this.Body.offsetX = -0.06F;

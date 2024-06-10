@@ -441,6 +441,7 @@ public class ModelCapinatator extends ModelBasePalaeopedia {
         this.root.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.4F;
@@ -468,6 +469,7 @@ public class ModelCapinatator extends ModelBasePalaeopedia {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

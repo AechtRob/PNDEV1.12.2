@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAdelophthalmus;
 import net.lepidodendron.entity.model.entity.ModelAdelophthalmus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAdelophthalmus extends RenderLiving<EntityPrehistoricFloraAdelophthalmus> {
+public class RenderAdelophthalmus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAdelophthalmus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/adelophthalmus.png");
 
     public RenderAdelophthalmus(RenderManager mgr) {

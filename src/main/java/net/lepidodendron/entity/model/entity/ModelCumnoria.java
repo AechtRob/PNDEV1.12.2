@@ -575,6 +575,7 @@ public class ModelCumnoria extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Cumnoria.offsetY = -0.2F;

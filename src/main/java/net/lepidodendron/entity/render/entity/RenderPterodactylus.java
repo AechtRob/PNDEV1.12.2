@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPterodactylus;
 import net.lepidodendron.entity.model.entity.ModelPterodactylus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderPterodactylus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pterodactylus.png");
 
     public RenderPterodactylus(RenderManager mgr) {
-        super(mgr, new ModelPterodactylus(), RenderDisplays.modelPterodactylusBook, 0.5F);
+        super(mgr, new ModelPterodactylus(), 0.5F);
     }
 
     public static float getScaler() {

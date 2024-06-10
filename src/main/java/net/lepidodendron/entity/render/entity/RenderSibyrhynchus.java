@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSibyrhynchus;
 import net.lepidodendron.entity.model.entity.ModelSibyrhynchus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSibyrhynchus extends RenderLiving<EntityPrehistoricFloraSibyrhynchus> {
+public class RenderSibyrhynchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraSibyrhynchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sibyrhynchus.png");
 
     public static float getScaler() {

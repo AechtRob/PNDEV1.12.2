@@ -348,6 +348,11 @@ public class ModelSaurosuchus extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Head.rotateAngleX = (float) Math.toRadians(2.83);
         this.Jaw.rotateAngleX = (float) Math.toRadians(51.7);

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEryma;
 import net.lepidodendron.entity.model.entity.ModelEryma;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderEryma extends RenderLivingBaseWithBook<EntityPrehistoricFlora
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryma.png");
 
     public RenderEryma(RenderManager mgr) {
-        super(mgr, new ModelEryma(), RenderDisplays.modelErymaBook, 0.0f);
+        super(mgr, new ModelEryma(), 0.0f);
     }
 
     public static float getScaler() {return 0.3F; }

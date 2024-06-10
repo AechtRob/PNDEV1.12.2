@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAttenborites;
 import net.lepidodendron.entity.model.entity.ModelAttenborites;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -19,7 +18,7 @@ public class RenderAttenborites extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public RenderAttenborites(RenderManager mgr) {
-        super(mgr, new ModelAttenborites(), RenderDisplays.modelAttenboritesBook, 0.0f);
+        super(mgr, new ModelAttenborites(), 0.0f);
         this.addLayer(new LayerAttenborites1(this));
         this.addLayer(new LayerAttenborites2(this));
     }

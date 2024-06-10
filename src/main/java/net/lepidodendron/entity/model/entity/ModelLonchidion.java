@@ -155,6 +155,11 @@ public class ModelLonchidion extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.head.rotateAngleX = (float) Math.toRadians(-15);

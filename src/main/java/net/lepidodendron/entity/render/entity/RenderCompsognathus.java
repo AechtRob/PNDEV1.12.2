@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCompsognathus;
 import net.lepidodendron.entity.model.entity.ModelCompsognathus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderCompsognathus extends RenderLivingBaseWithBook<EntityPrehisto
     }
 
     public RenderCompsognathus(RenderManager mgr) {
-        super(mgr, new ModelCompsognathus(), RenderDisplays.modelCompsognathusBook, 0.3f);
+        super(mgr, new ModelCompsognathus(), 0.3f);
     }
 
     @Override

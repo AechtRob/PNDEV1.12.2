@@ -258,6 +258,11 @@ public class ModelMussaurus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.chest.offsetY = -0.03F;
         this.neck1.rotateAngleY = (float) Math.toRadians(-10);

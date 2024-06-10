@@ -640,6 +640,11 @@ public class ModelEchinochimaera extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.offsetY = -0.01F;
         this.body.offsetX = 0.01F;

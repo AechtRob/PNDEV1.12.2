@@ -458,6 +458,7 @@ public class ModelAdeopapposaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = 0.0F;

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRobertia;
 import net.lepidodendron.entity.model.entity.ModelRobertia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderRobertia extends RenderLivingBaseWithBook<EntityPrehistoricFl
     }
 
     public RenderRobertia(RenderManager mgr) {
-        super(mgr, new ModelRobertia(), RenderDisplays.modelRobertiaBook, 0.5f);
+        super(mgr, new ModelRobertia(), 0.5f);
     }
 
     @Override

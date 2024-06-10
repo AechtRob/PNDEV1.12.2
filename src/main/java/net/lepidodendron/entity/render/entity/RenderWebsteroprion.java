@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprion;
 import net.lepidodendron.entity.model.entity.ModelWebsteroprion;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderWebsteroprion extends RenderLiving<EntityPrehistoricFloraWebsteroprion> {
+public class RenderWebsteroprion extends RenderLivingBaseWithBook<EntityPrehistoricFloraWebsteroprion> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/websteroprion.png");
 
     public RenderWebsteroprion(RenderManager mgr) {

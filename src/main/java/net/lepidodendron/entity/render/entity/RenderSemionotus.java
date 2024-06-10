@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSemionotus;
 import net.lepidodendron.entity.model.entity.ModelSemionotus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSemionotus extends RenderLiving<EntityPrehistoricFloraSemionotus> {
+public class RenderSemionotus extends RenderLivingBaseWithBook<EntityPrehistoricFloraSemionotus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/semionotus.png");
     public static float getScaler() {
         return 0.5F * 0.385F;

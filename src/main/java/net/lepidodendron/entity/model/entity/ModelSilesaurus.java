@@ -386,6 +386,11 @@ public class ModelSilesaurus extends ModelBasePalaeopedia {
         this.Silesaurus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Jaw.rotateAngleX = (float) Math.toRadians(20);
         this.Chest.offsetY = -0.07F;

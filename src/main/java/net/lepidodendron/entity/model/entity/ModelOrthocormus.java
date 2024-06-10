@@ -317,6 +317,12 @@ public class ModelOrthocormus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Root.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);

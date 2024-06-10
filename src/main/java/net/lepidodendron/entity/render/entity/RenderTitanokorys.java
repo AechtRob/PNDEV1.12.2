@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTitanokorys;
 import net.lepidodendron.entity.model.entity.ModelTitanokorys;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderTitanokorys extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanokorys.png");
 
     public RenderTitanokorys(RenderManager mgr) {
-        super(mgr, new ModelTitanokorys(), RenderDisplays.modelTitanokorysBook, 0.0f);
+        super(mgr, new ModelTitanokorys(), 0.0f);
     }
 
     public static float getScaler() {return 0.4F; }

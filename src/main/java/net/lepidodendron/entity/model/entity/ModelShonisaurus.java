@@ -517,6 +517,11 @@ public class ModelShonisaurus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.neck2.offsetY = -0.001F;
         this.jaw1.rotateAngleX = (float) Math.toRadians(25);

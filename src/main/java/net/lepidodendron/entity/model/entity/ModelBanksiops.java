@@ -470,6 +470,7 @@ public class ModelBanksiops extends ModelBasePalaeopedia {
         this.hip.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hip.offsetY = -1.0F;

@@ -266,6 +266,11 @@ public class ModelMixosaurus extends ModelBasePalaeopedia {
         this.Mixosaurus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Mixosaurus.offsetY = -0.2F;
         this.Body2.scaleChildren = true;

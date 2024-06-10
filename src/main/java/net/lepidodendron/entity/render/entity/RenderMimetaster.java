@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMimetaster;
 import net.lepidodendron.entity.model.entity.ModelMimetaster;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMimetaster extends RenderLiving<EntityPrehistoricFloraMimetaster> {
+public class RenderMimetaster extends RenderLivingBaseWithBook<EntityPrehistoricFloraMimetaster> {
     private static final ResourceLocation TEXTURE_0 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mimetaster.png");
     private static final ResourceLocation TEXTURE_1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mimetaster_sponge_1_blue.png");
     private static final ResourceLocation TEXTURE_2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mimetaster_sponge_2_yellow.png");

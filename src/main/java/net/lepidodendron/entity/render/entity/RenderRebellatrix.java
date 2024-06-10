@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRebellatrix;
 import net.lepidodendron.entity.model.entity.ModelRebellatrix;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRebellatrix extends RenderLiving<EntityPrehistoricFloraRebellatrix> {
+public class RenderRebellatrix extends RenderLivingBaseWithBook<EntityPrehistoricFloraRebellatrix> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rebellatrix.png");
 
     public RenderRebellatrix(RenderManager mgr) {

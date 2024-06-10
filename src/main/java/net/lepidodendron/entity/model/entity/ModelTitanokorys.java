@@ -477,6 +477,7 @@ public class ModelTitanokorys extends ModelBasePalaeopedia {
         this.Titanokorys.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Titanokorys.offsetY = -0.9F;

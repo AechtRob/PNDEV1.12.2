@@ -322,6 +322,7 @@ public class ModelGerarus extends ModelBasePalaeopedia {
         modelRenderer.rotateAngleZ = z;
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.gerarus.offsetY = -1.5F;

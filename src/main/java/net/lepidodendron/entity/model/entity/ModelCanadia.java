@@ -573,6 +573,7 @@ public class ModelCanadia extends ModelBasePalaeopedia {
         this.Canadia.render(f5 * 0.09F);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Canadia.offsetY = -0.40F;
@@ -603,6 +604,7 @@ public class ModelCanadia extends ModelBasePalaeopedia {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -198,6 +198,11 @@ public class ModelBlourugia extends ModelBasePalaeopedia {
         this.Blourugia.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Blourugia.rotateAngleY = (float) Math.toRadians(90);
         this.Blourugia.offsetY = -0.16F;

@@ -273,6 +273,11 @@ public class ModelTanyrhinichthys extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;

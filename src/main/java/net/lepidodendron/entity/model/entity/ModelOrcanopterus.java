@@ -306,6 +306,7 @@ public class ModelOrcanopterus extends ModelBasePalaeopedia {
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.6F;

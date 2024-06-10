@@ -238,6 +238,7 @@ public class ModelDipteronotus extends ModelBasePalaeopedia {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -2.5F;

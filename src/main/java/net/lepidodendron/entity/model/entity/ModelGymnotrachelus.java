@@ -267,6 +267,12 @@ public class ModelGymnotrachelus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.main.offsetX = -0.12F;

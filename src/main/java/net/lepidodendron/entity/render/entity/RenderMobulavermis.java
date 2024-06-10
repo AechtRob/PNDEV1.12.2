@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMobulavermis;
 import net.lepidodendron.entity.model.entity.ModelMobulavermis;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderMobulavermis extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public RenderMobulavermis(RenderManager mgr) {
-        super(mgr, new ModelMobulavermis(), RenderDisplays.modelMobulavermisBook, 0.2f);
+        super(mgr, new ModelMobulavermis(), 0.2f);
     }
 
     @Override

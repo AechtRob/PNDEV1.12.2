@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGeosaurus;
 import net.lepidodendron.entity.model.entity.ModelGeosaurus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGeosaurus extends RenderLiving<EntityPrehistoricFloraGeosaurus> {
+public class RenderGeosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraGeosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/geosaurus.png");
 
     public RenderGeosaurus(RenderManager mgr) {

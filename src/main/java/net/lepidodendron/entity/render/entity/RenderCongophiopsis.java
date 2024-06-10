@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCongophiopsis;
 import net.lepidodendron.entity.model.entity.ModelCongophiopsis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCongophiopsis extends RenderLiving<EntityPrehistoricFloraCongophiopsis> {
+public class RenderCongophiopsis extends RenderLivingBaseWithBook<EntityPrehistoricFloraCongophiopsis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/congophiopsis.png");
 
     public static float getScaler() {

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraChotecops;
 import net.lepidodendron.entity.model.entity.ModelChotecops;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderChotecops extends RenderLiving<EntityPrehistoricFloraChotecops> {
+public class RenderChotecops extends RenderLivingBaseWithBook<EntityPrehistoricFloraChotecops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chotecops.png");
 
     public RenderChotecops(RenderManager mgr) {

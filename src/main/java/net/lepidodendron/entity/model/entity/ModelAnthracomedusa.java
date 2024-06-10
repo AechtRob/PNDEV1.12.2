@@ -834,6 +834,11 @@ public class ModelAnthracomedusa extends ModelBasePalaeopedia {
         GlStateManager.disableBlend();
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(AdvancedModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

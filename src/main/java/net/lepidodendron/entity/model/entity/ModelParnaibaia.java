@@ -272,6 +272,12 @@ public class ModelParnaibaia extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
         this.root.offsetY = -0.2F;

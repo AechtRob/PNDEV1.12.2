@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPassaloteuthis;
 import net.lepidodendron.entity.model.entity.ModelPassaloteuthis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPassaloteuthis extends RenderLiving<EntityPrehistoricFloraPassaloteuthis> {
+public class RenderPassaloteuthis extends RenderLivingBaseWithBook<EntityPrehistoricFloraPassaloteuthis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/passaloteuthis.png");
 
     public static float getScaler() {

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhenocystis;
 import net.lepidodendron.entity.model.entity.ModelRhenocystis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRhenocystis extends RenderLiving<EntityPrehistoricFloraRhenocystis> {
+public class RenderRhenocystis extends RenderLivingBaseWithBook<EntityPrehistoricFloraRhenocystis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhenocystis.png");
 
     public static float getScaler() {

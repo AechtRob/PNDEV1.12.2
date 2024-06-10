@@ -437,6 +437,11 @@ public class ModelXuanhuaceratops extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, -0.2182F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r10, -0.7418F, 0.0F, 0.0F);

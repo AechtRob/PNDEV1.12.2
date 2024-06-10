@@ -332,6 +332,11 @@ public class ModelSubmarine extends ModelBasePalaeopedia {
         this.submarine.offsetY = -0.8F;
         this.submarine.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
     
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

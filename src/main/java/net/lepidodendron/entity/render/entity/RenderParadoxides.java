@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraParadoxides;
 import net.lepidodendron.entity.model.entity.ModelParadoxides;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
@@ -12,7 +11,7 @@ public class RenderParadoxides extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paradoxides.png");
 
     public RenderParadoxides(RenderManager mgr) {
-        super(mgr, new ModelParadoxides(), RenderDisplays.modelParadoxidesBook, 0.2f);
+        super(mgr, new ModelParadoxides(), 0.2f);
     }
 
     @Override

@@ -313,6 +313,11 @@ public class ModelAcanthostomatops extends ModelBasePalaeopedia {
         this.bone.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
@@ -355,6 +360,7 @@ public class ModelAcanthostomatops extends ModelBasePalaeopedia {
 
         resetToDefaultPose();
     }
+
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

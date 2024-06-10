@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Coroniceras;
 import net.lepidodendron.entity.model.entity.ModelAmmonite50cm;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAmmonite_Coroniceras extends RenderLiving<EntityPrehistoricFloraAmmonite_Coroniceras> {
+public class RenderAmmonite_Coroniceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraAmmonite_Coroniceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_coroniceras.png");
 
     public RenderAmmonite_Coroniceras(RenderManager mgr) {

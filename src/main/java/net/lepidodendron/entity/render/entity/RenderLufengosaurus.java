@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLufengosaurus;
 import net.lepidodendron.entity.model.entity.ModelLufengosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +14,7 @@ public class RenderLufengosaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static float getScaler() {return 0.7272F;}
 
     public RenderLufengosaurus(RenderManager mgr) {
-        super(mgr, new ModelLufengosaurus(), RenderDisplays.modelLufengosaurusBook, 0.5f);
+        super(mgr, new ModelLufengosaurus(), 0.5f);
     }
 
     @Override

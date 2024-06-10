@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCanadia;
 import net.lepidodendron.entity.model.entity.ModelCanadia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -14,7 +13,7 @@ public class RenderCanadia extends RenderLivingBaseWithBook<EntityPrehistoricFlo
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/canadia.png");
 
     public RenderCanadia(RenderManager mgr) {
-        super(mgr, new ModelCanadia(), RenderDisplays.modelCanadiaBook, 0.0f);
+        super(mgr, new ModelCanadia(), 0.0f);
         this.addLayer(new LayerCanadiaFrills(this));
     }
 

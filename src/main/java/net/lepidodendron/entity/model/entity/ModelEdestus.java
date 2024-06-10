@@ -192,6 +192,11 @@ public class ModelEdestus extends ModelBasePalaeopedia {
         this.Bodyfront.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Headback.offsetY = -0.025F;
         this.Headback.offsetZ = 0.11F;

@@ -337,6 +337,11 @@ public class ModelOphthalmosaurus extends ModelBasePalaeopedia {
         this.Ophthalmosaurus.render(f5 * 1F);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Head.offsetY = -0.01F;
         this.Head.offsetX = 0.01F;

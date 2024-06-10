@@ -169,6 +169,11 @@ public class ModelCongophiopsis extends ModelBasePalaeopedia {
         this.Congophiopsis.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Congophiopsis.rotateAngleY = (float) Math.toRadians(90);
         this.Congophiopsis.offsetZ = 0.03F;

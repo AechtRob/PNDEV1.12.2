@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Parapuzosia;
 import net.lepidodendron.entity.model.entity.ModelAmmonite200pluscm;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAmmonite_Parapuzosia extends RenderLiving<EntityPrehistoricFloraAmmonite_Parapuzosia> {
+public class RenderAmmonite_Parapuzosia extends RenderLivingBaseWithBook<EntityPrehistoricFloraAmmonite_Parapuzosia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_parapuzosia.png");
 
     public RenderAmmonite_Parapuzosia(RenderManager mgr) {

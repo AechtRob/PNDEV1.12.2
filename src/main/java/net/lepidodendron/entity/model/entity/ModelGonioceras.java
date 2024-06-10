@@ -213,6 +213,11 @@ public class ModelGonioceras extends ModelBasePalaeopedia {
         this.bone.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(AdvancedModelRendererExtended AdvancedModelRendererExtended, float x, float y, float z) {
         AdvancedModelRendererExtended.rotateAngleX = x;
         AdvancedModelRendererExtended.rotateAngleY = y;

@@ -321,13 +321,18 @@ public class ModelPlesiosaurus extends ModelBasePalaeopedia {
         this.Hips.render(f5);
     }
 
-        public void renderStaticWall(float f) {
+    @Override
+    public void renderStaticBook(float f) {
 
-            resetToDefaultPose();
-        }
-        public void renderStaticFloor(float f) {
+    }
 
-            resetToDefaultPose();
+    public void renderStaticWall(float f) {
+
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+
+        resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
 

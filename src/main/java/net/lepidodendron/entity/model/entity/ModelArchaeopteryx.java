@@ -538,7 +538,7 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Archaeopteryx.render(f5);
     }
-    
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -604,6 +604,8 @@ public class ModelArchaeopteryx extends ModelBasePalaeopedia {
         this.Archaeopteryx.render(0.01F);
         resetToDefaultPose();
     }
+
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Archaeopteryx.offsetY = -2.30F;

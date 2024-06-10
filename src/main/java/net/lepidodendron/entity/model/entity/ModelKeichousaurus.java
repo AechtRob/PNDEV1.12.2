@@ -214,6 +214,12 @@ public class ModelKeichousaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Keichousaurus.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(upperbody, -0.1F, 0.2F, 0.0F);
         this.setRotateAngle(neck, -0.1F, 0.1F, 0.0F);

@@ -363,6 +363,11 @@ public class ModelThecodontosaurus extends ModelBasePalaeopedia {
         this.Thecodontosaurus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(HindlimbR, -0.4538F, 0.0F, 0.0F);
         this.setRotateAngle(KneeR, 0.8727F, 0.0F, 0.0F);

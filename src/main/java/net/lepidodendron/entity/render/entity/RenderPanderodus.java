@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPanderodus;
 import net.lepidodendron.entity.model.entity.ModelPanderodus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPanderodus extends RenderLiving<EntityPrehistoricFloraPanderodus> {
+public class RenderPanderodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPanderodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panderodus.png");
     public static float getScaler() {
         return 0.09F;

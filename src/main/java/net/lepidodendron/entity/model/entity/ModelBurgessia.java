@@ -179,6 +179,7 @@ public class ModelBurgessia extends ModelBasePalaeopedia {
         this.Burgessia.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Burgessia.offsetY = -2.0F;

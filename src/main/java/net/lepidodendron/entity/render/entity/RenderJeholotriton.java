@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraJeholotriton;
 import net.lepidodendron.entity.model.entity.ModelJeholotriton;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderJeholotriton extends RenderLiving<EntityPrehistoricFloraJeholotriton> {
+public class RenderJeholotriton extends RenderLivingBaseWithBook<EntityPrehistoricFloraJeholotriton> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jeholotriton.png");
 
     public static float getScaler() {

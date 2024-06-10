@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCassinoceras;
 import net.lepidodendron.entity.model.entity.ModelCassinoceras;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCassinoceras extends RenderLiving<EntityPrehistoricFloraCassinoceras> {
+public class RenderCassinoceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraCassinoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cassinoceras.png");
 
     public RenderCassinoceras(RenderManager mgr) {

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBurgessia;
 import net.lepidodendron.entity.model.entity.ModelBurgessia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderBurgessia extends RenderLivingBaseWithBook<EntityPrehistoricF
     }
 
     public RenderBurgessia(RenderManager mgr) {
-        super(mgr, new ModelBurgessia(), RenderDisplays.modelBurgessiaBook, 0.0f);
+        super(mgr, new ModelBurgessia(), 0.0f);
     }
 
     @Override

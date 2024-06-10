@@ -574,6 +574,7 @@ public class ModelUteodon extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Uteodon.offsetY = -0.0F;

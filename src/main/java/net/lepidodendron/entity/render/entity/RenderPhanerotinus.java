@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhanerotinus;
 import net.lepidodendron.entity.model.entity.ModelPhanerotinus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPhanerotinus extends RenderLiving<EntityPrehistoricFloraPhanerotinus> {
+public class RenderPhanerotinus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPhanerotinus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phanerotinus.png");
 
     public RenderPhanerotinus(RenderManager mgr) {
