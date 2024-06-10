@@ -1044,6 +1044,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_mooreoceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_morganucodon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_moschops_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_deuterosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_mussaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_nagini_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_namacalathus_clean", "inventory"),
