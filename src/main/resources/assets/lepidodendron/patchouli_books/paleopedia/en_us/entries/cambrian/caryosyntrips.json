@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/caryosyntrips.png"],
-			"title": "C. serratus",
-			"text": ""
+			"type": "entity",
+			"name": "C. serratus",
+			"entity": "lepidodendron:prehistoric_flora_caryosyntrips",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caryosyntrips",

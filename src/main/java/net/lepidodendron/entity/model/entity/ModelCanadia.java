@@ -572,6 +572,27 @@ public class ModelCanadia extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Canadia.render(f5 * 0.09F);
     }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Canadia.offsetY = -0.40F;
+        this.Canadia.offsetX = -0.25F;
+        this.Canadia.rotateAngleY = (float)Math.toRadians(45);
+        this.Canadia.rotateAngleX = (float)Math.toRadians(-35);
+        this.Canadia.rotateAngleZ = (float)Math.toRadians(-20);
+        this.Canadia.scaleChildren = true;
+        float scaler = 0.65F;
+        this.Canadia.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Canadia.render(f);
+        //Reset rotations, positions and sizing:
+        this.Canadia.setScale(1.0F, 1.0F, 1.0F);
+        this.Canadia.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

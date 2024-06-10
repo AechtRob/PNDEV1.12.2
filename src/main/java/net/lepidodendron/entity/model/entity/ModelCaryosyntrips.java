@@ -657,6 +657,26 @@ public class ModelCaryosyntrips extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -1.75F;
+        this.body.offsetX = -0.20F;
+        this.body.rotateAngleY = (float)Math.toRadians(155);
+        this.body.rotateAngleX = (float)Math.toRadians(25);
+        this.body.rotateAngleZ = (float)Math.toRadians(-2);
+        this.body.scaleChildren = true;
+        float scaler = 2.6F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void renderStaticDisplayCase(float f) {
         this.body.offsetZ = -0.1F;
         this.body.offsetY = 0.12F;

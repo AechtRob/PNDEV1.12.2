@@ -23,8 +23,7 @@
 				"mapping": {
 					"1": "lepidodendron:orthograptus",
 					"0": "minecraft:air"
-				},
-				"offset": [0, 1, 0]
+				}
 			}
 		},
 		{

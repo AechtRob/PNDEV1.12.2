@@ -3,19 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKleptothule;
 import net.lepidodendron.entity.model.entity.ModelKleptothule;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderKleptothule extends RenderLiving<EntityPrehistoricFloraKleptothule> {
+public class RenderKleptothule extends RenderLivingBaseWithBook<EntityPrehistoricFloraKleptothule> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kleptothule.png");
 
     public static float getScaler() {
         return 0.7F * 0.3F;
     }
     public RenderKleptothule(RenderManager mgr) {
-        super(mgr, new ModelKleptothule(), 0.0f);
+        super(mgr, new ModelKleptothule(), RenderDisplays.modelKleptothuleBook, 0.0f);
     }
 
     @Override

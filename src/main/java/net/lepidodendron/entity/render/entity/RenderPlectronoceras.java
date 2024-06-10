@@ -3,19 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlectronoceras;
 import net.lepidodendron.entity.model.entity.ModelPlectronoceras;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPlectronoceras extends RenderLiving<EntityPrehistoricFloraPlectronoceras> {
+public class RenderPlectronoceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraPlectronoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plectronoceras.png");
 
     public static float getScaler() {
         return 0.7F * 0.4F;
     }
     public RenderPlectronoceras(RenderManager mgr) {
-        super(mgr, new ModelPlectronoceras(), 0.0f);
+        super(mgr, new ModelPlectronoceras(), RenderDisplays.modelPlectronocerasBook, 0.0f);
     }
 
     @Override
