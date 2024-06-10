@@ -12,10 +12,17 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha$(br)>Charniidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/charnia.png"],
-			"title": "C. masoni",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. masoni",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "0" ]
+				],
+				"mapping": {
+					"0": "lepidodendron:charnia"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_charnia",
