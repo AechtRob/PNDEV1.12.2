@@ -17,10 +17,12 @@
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [
+					[ "1" ],
 					[ "0" ]
 				],
 				"mapping": {
-					"0": "lepidodendron:orthograptus"
+					"1": "lepidodendron:orthograptus",
+					"0": "minecraft:air"
 				},
 				"offset": [0, 1, 0]
 			}

@@ -37,6 +37,21 @@ public class EntityPrehistoricFloraKootenayscolex extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 15;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -82,8 +97,9 @@ public class EntityPrehistoricFloraKootenayscolex extends EntityPrehistoricFlora
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
-		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityLookIdleAI(this));
+		tasks.addTask(1, new ShoalTrilobiteBottomAI(this, 1, true));
+		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
 	}
 

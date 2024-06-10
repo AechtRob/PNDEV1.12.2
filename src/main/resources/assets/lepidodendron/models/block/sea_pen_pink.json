@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "lepidodendron:items/entities/sea_pen_pink_inventory",
-    "particle": "lepidodendron:items/entities/sea_pen_pink_inventory"
+    "cross": "lepidodendron:items/sea_pen_pink_inventory",
+    "particle": "lepidodendron:items/sea_pen_pink_inventory"
   }
 }

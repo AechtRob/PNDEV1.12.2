@@ -1,7 +1,7 @@
 {
     "parent": "lepidodendron:block/cube_noao",
     "textures": {
-        "particle": "lepidodendron:items/conulariid_brown",
+        "particle": "lepidodendron:items/conulariid_brown_inventory",
         "plant": "lepidodendron:blocks/conulariid_brown"
     },
     "elements": [
