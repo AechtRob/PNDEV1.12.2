@@ -4,6 +4,7 @@ import net.lepidodendron.entity.model.entity.*;
 
 public class RenderDisplays {
 
+    public static final ModelAcadoaradoxides modelAcadoaradoxides = new ModelAcadoaradoxides();
     public static final ModelAcadoaradoxides modelAcadoaradoxidesBook = new ModelAcadoaradoxides();
     public static final ModelAcanthodes modelAcanthodes = new ModelAcanthodes();
     public static final ModelAcanthodes modelAcanthodesBook = new ModelAcanthodes();
@@ -1671,6 +1672,5 @@ public class RenderDisplays {
     public static final ModelYuxisaurus modelYuxisaurusBook = new ModelYuxisaurus();
     public static final ModelZenaspis modelZenaspis = new ModelZenaspis();
     public static final ModelZenaspis modelZenaspisBook = new ModelZenaspis();
-    public static final ModelAcadoaradoxides modelAcadoaradoxides = new ModelAcadoaradoxides();
 
 }
