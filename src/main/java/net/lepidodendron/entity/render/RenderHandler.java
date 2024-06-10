@@ -5645,6 +5645,12 @@ public class RenderHandler {
                 return new RenderPliosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAttenborites.class, new IRenderFactory<EntityPrehistoricFloraAttenborites>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAttenborites> createRenderFor(RenderManager manager) {
+                return new RenderAttenborites(manager);
+            }
+        });
         
         
         
@@ -5721,6 +5727,10 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFacivermis.class, new RenderFacivermis());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockOesia.TileEntityCustom.class, new RenderOesia());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGangtoucunia.class, new RenderGangtoucunia());
+        //General:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSeaPenPink.TileEntityCustom.class, new RenderSeaPenPink());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSeaPenYellow.TileEntityCustom.class, new RenderSeaPenYellow());
+
 
         //Tile Entities Nautiloid shells etc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockFurcaster.TileEntityCustom.class, new RenderFurcasterItem());

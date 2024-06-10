@@ -32,7 +32,7 @@ public class RenderDiscophyllum extends RenderLiving<EntityPrehistoricFloraDisco
     protected void preRenderCallback(EntityPrehistoricFloraDiscophyllum entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

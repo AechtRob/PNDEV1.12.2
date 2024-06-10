@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelLiaosteus extends AdvancedModelBase {
+public class ModelLiaosteus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -148,13 +148,13 @@ public class ModelLiaosteus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = 0.4F;
-        this.body.offsetX = 0.55F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.offsetY = -1.2F;
+        this.body.offsetX = 1.05F;
+        this.body.rotateAngleY = (float)Math.toRadians(245);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
 

@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelSpinoaequalis extends AdvancedModelBase {
+public class ModelSpinoaequalis extends ModelBasePalaeopedia {
 
     //boxes:
     public AdvancedModelRenderer MAIN;

@@ -31,8 +31,13 @@ public class RenderFlowerCalycanthus extends TileEntitySpecialRenderer<BlockCaly
     @Override
     public void render(BlockCalycanthusFlower.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.UP;
-        if (entity != null && entity.hasWorld()) {
-            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+        try { //to support book rendering:
+            if (entity != null && entity.hasWorld()) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            }
+        }
+        catch (Exception e){
+            facing = EnumFacing.NORTH;
         }
 
         long i = MathHelper.getCoordinateRandom(entity.getPos().getX(), entity.getPos().getY(), entity.getPos().getZ());

@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelLeptoteuthis extends AdvancedModelBaseExtended {
+public class ModelLeptoteuthis extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended body;
     private final AdvancedModelRendererExtended cube_r1;
     private final AdvancedModelRendererExtended cube_r2;
@@ -339,16 +339,26 @@ public class ModelLeptoteuthis extends AdvancedModelBaseExtended {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = 0.4F;
-        this.body.offsetX = 0.55F;
+        this.body.offsetY = -0.6F;
+        this.body.offsetX = 0.0F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.0F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, 0.7F, 3.8F, 0.0F);
+        this.setRotateAngle(finL, 0.0F, 0.0F, -0.9F);
+        this.setRotateAngle(finL2, -0.1F, 0.0F, -0.7F);
+        this.setRotateAngle(finL3, -0.05F, 0.0F, -0.5F);
+        this.setRotateAngle(finL4, -0.1F, 0.0F, -0.3F);
+        this.setRotateAngle(finL5, -0.05F, 0.0F, -0.1F);
+        this.setRotateAngle(finR, 0.0F, 0.0F, 0.9F);
+        this.setRotateAngle(finR2, -0.1F, 0.0F, 0.7F);
+        this.setRotateAngle(finR3, -0.05F, 0.0F, 0.5F);
+        this.setRotateAngle(finR4, -0.1F, 0.0F, 0.3F);
+        this.setRotateAngle(finR5, -0.05F, 0.0F, 0.1F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

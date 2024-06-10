@@ -1,7 +1,7 @@
 {
 	"name": "Phylloceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/phylloceras_icon.png",
+	"icon": "lepidodendron:textures/items/shell_phylloceras.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_phylloceras",
 	"pages": [
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_phylloceras",
 			"type": "text",
-			"text": ""
+			"text": "Phylloceras is an ammonite known from the Jurassic and Cretaceous periods from all over the world. It had a shell diameter of about 20 cm maximum, and the suture lines in this animal are reminiscent of the leaves of plants, hence the naming. Their shells were flattened laterally, and were mostly smooth, with almost no bumps."
 		},
 		{
 			"type": "lepidodendron:diet",

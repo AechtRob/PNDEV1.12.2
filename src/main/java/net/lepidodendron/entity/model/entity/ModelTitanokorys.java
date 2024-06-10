@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelTitanokorys extends AdvancedModelBase {
+public class ModelTitanokorys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Titanokorys;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -479,16 +479,21 @@ public class ModelTitanokorys extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Titanokorys.offsetY = 0.4F;
-        this.Titanokorys.offsetX = 0.55F;
+        this.Titanokorys.offsetY = -0.9F;
+        this.Titanokorys.offsetX = 0.0F;
         this.Titanokorys.rotateAngleY = (float)Math.toRadians(200);
         this.Titanokorys.rotateAngleX = (float)Math.toRadians(8);
         this.Titanokorys.rotateAngleZ = (float)Math.toRadians(-8);
         this.Titanokorys.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.5F;
         this.Titanokorys.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Titanokorys, 0.15F, -3.6F, -0.1F);
+        this.setRotateAngle(body1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(appendageLeft, -1.2F, 0.2F, 0.3F);
+        this.setRotateAngle(appendageRight, -1.7F, 0.1F, -0.2F);
         //End of pose, now render the model:
         this.Titanokorys.render(f);
         //Reset rotations, positions and sizing:
@@ -569,7 +574,7 @@ public class ModelTitanokorys extends AdvancedModelBase {
 
 
             if (!e.isInWater()) {
-                this.bob(Titanokorys, -speed * 1.5F, 3F, false, f2, 1);
+                this.bob(Titanokorys, -speed * 1.75F, 0.5F, false, f2, 1);
             } else {
                 if (!isAtBottom) {
                     this.bob(Titanokorys, -speed, 0.12F, false, f2, 2);

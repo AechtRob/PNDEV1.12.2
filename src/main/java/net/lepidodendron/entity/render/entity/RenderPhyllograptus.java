@@ -3,19 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhyllograptus;
 import net.lepidodendron.entity.model.entity.ModelPhyllograptus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPhyllograptus extends RenderLiving<EntityPrehistoricFloraPhyllograptus> {
+public class RenderPhyllograptus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPhyllograptus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phyllograptus.png");
     public static float getScaler() {
         return 0.25F;
     }
 
     public RenderPhyllograptus(RenderManager mgr) {
-        super(mgr, new ModelPhyllograptus(), 0.0f);
+        super(mgr, new ModelPhyllograptus(), RenderDisplays.modelPhyllograptusBook, 0.0f);
     }
 
     @Override

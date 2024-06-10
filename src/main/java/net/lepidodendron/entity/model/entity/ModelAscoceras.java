@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAscoceras extends AdvancedModelBaseExtended {
+public class ModelAscoceras extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended shell;
     private final AdvancedModelRendererExtended cube_r1;
     private final AdvancedModelRendererExtended cube_r2;

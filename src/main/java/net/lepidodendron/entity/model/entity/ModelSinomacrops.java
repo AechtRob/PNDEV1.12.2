@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnurognathid;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelSinomacrops extends AdvancedModelBaseExtended {
+public class ModelSinomacrops extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer leftwing;
@@ -289,6 +289,7 @@ public class ModelSinomacrops extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(main, -1.5F, 3.15F, 0.0F);
         this.setRotateAngle(neck, 0.2F, 0.3F, 0.3F);
@@ -316,6 +317,7 @@ public class ModelSinomacrops extends AdvancedModelBaseExtended {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, -1.9F, 0.0F, 0.0F);
         this.setRotateAngle(neck, 0.5F, 0.0F, 0.0F);

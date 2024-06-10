@@ -1,14 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraBurgessia;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoredlichia;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelBurgessia extends AdvancedModelBase {
+public class ModelBurgessia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Burgessia;
     private final AdvancedModelRenderer LEFTSHELL1;
     private final AdvancedModelRenderer LEFTSHELL2;
@@ -182,16 +181,19 @@ public class ModelBurgessia extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Burgessia.offsetY = 0.4F;
+        this.Burgessia.offsetY = -2.0F;
         this.Burgessia.offsetX = 0.55F;
         this.Burgessia.rotateAngleY = (float)Math.toRadians(200);
         this.Burgessia.rotateAngleX = (float)Math.toRadians(8);
         this.Burgessia.rotateAngleZ = (float)Math.toRadians(-8);
         this.Burgessia.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 7.5F;
         this.Burgessia.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Burgessia, 0.5F, 3.0F, 0.0F);
+        this.setRotateAngle(tail, 0.2F, 0.3F, 0.0F);
+        this.setRotateAngle(leftAntenna, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightAntenna, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Burgessia.render(f);
         //Reset rotations, positions and sizing:

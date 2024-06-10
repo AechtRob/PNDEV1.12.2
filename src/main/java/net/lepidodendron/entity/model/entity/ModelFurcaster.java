@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelFurcaster extends AdvancedModelBase {
+public class ModelFurcaster extends ModelBasePalaeopedia {
     public AdvancedModelRenderer core;
     public AdvancedModelRenderer arm1base;
     public AdvancedModelRenderer arm2base;

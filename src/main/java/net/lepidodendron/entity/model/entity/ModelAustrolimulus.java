@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraAustrolimulus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelAustrolimulus extends AdvancedModelBase {
+public class ModelAustrolimulus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer carapace;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;

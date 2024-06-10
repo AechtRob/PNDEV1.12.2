@@ -1,14 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.minecraft.block.material.Material;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.BlockPos;
 
-public class ModelCapinatator extends AdvancedModelBase {
+public class ModelCapinatator extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer neck;
@@ -445,16 +443,24 @@ public class ModelCapinatator extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.4F;
-        this.root.offsetX = 0.55F;
+        this.root.offsetY = -2.4F;
+        this.root.offsetX = -0.5F;
         this.root.rotateAngleY = (float)Math.toRadians(200);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 6.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, -0.3F, 2.5F, 0.05F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.6F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, -0.5F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
@@ -490,8 +496,10 @@ public class ModelCapinatator extends AdvancedModelBase {
         AdvancedModelRenderer[] teethL = {this.lefttooth7, this.lefttooth, this.lefttooth2, this.lefttooth3, this.lefttooth4, this.lefttooth5, this.lefttooth6, this.lefttooth8};
         AdvancedModelRenderer[] teethR = {this.righttooth7, this.righttooth, this.righttooth2, this.righttooth3, this.righttooth4, this.righttooth5, this.righttooth6, this.righttooth8};
 
-        this.chainWave(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
-        this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+//        this.chainWave(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
+//        this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+        this.chainSwing(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
+        this.chainWave(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
 
         this.chainFlap(teethL, speed * 3F, -0.3F, 1, f2, 1F);
         this.chainFlap(teethR, speed *  3F, 0.3F, 1, f2, 1F);
@@ -500,8 +508,10 @@ public class ModelCapinatator extends AdvancedModelBase {
         if (f3 == 0.0) {
             feedModifier = 0.15F;
         }
-        this.chainWave(fishTail, 0.2F, tailHdegree * 3F, -3, f2, 1);
-        this.chainSwing(fishTail, 0.2F, tailVdegree * 3F, -3, f2, 1);
+//        this.chainWave(fishTail, 0.2F, tailHdegree * 3F, -3, f2, 1);
+//        this.chainSwing(fishTail, 0.2F, tailVdegree * 3F, -3, f2, 1);
+        this.chainSwing(fishTail, 0.2F, tailHdegree * 3F, -3, f2, 1);
+        this.chainWave(fishTail, 0.2F, tailVdegree * 3F, -3, f2, 1);
         float degreeFin = 0.285F;
         this.chainSwing(bodyF, 0.2F, 0.1F, -3, f2, 1.0F);
         this.flap(leftFin, 0.3F, -degreeFin, false, 2.0F, -0.4F, f2, 0.7F);
@@ -526,8 +536,10 @@ public class ModelCapinatator extends AdvancedModelBase {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
             //this.root.offsetY = 1.2F - 1.18F;
             this.bob(root, -speed * 3F, 2F, false, f2, 1);
-            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+//            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+//            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+            this.chainWave(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
         }
 
     }

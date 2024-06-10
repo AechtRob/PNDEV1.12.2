@@ -1,10 +1,10 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelEusaurosphargis extends AdvancedModelBase {
+public class ModelEusaurosphargis extends ModelBasePalaeopedia {
 
 
     public ModelEusaurosphargis() {

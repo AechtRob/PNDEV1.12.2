@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelAiniktozoon extends AdvancedModelBase {
+public class ModelAiniktozoon extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer bones;
     private final AdvancedModelRenderer bodybase;
     private final AdvancedModelRenderer legL;

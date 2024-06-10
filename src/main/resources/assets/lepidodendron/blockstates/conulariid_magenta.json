@@ -4,22 +4,28 @@
       {"model": "lepidodendron:conulariid_magenta"}
     ],
     "facing=north": [
-      {"model": "lepidodendron:conulariid_magenta", "x": 90}
+      {"model": "lepidodendron:conulariid_magenta", "x": 90},
+      {"model": "lepidodendron:conulariid_magenta_var", "x": 90}
     ],
     "facing=east": [
-      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 90}
+      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 90},
+      {"model": "lepidodendron:conulariid_magenta_var", "x": 90, "y": 90}
     ],
     "facing=south": [
-      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 180}
+      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 180},
+      {"model": "lepidodendron:conulariid_magenta_var", "x": 90, "y": 180}
     ],
-  "facing=west": [
-      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 270}
+    "facing=west": [
+      {"model": "lepidodendron:conulariid_magenta", "x": 90, "y": 270},
+      {"model": "lepidodendron:conulariid_magenta_var", "x": 90, "y": 270}
     ],
-  "facing=up": [
-      {"model": "lepidodendron:conulariid_magenta"}
+    "facing=up": [
+      {"model": "lepidodendron:conulariid_magenta"},
+      {"model": "lepidodendron:conulariid_magenta_var"}
     ],
     "facing=down": [
-      {"model": "lepidodendron:conulariid_magenta", "x": 180}
+      {"model": "lepidodendron:conulariid_magenta", "x": 180},
+      {"model": "lepidodendron:conulariid_magenta_var", "x": 180}
     ]
   }
 }

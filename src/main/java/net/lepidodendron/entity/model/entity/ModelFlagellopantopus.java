@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraFlagellopantopus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelFlagellopantopus extends AdvancedModelBaseExtended {
+public class ModelFlagellopantopus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer talson;
     private final AdvancedModelRenderer tail;
@@ -351,16 +351,49 @@ public class ModelFlagellopantopus extends AdvancedModelBaseExtended {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = 0.4F;
-        this.Body.offsetX = 0.55F;
+        this.Body.offsetY = -1.5F;
+        this.Body.offsetX = -0.55F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 3.45F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Body, -0.2F, 2.5F, 0.3F);
+        this.setRotateAngle(tail, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(legR1, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(legRs1, 0.0F, 0.0F, 0.9F);
+        this.setRotateAngle(legRss1, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(legRsss1, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(legR2, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(legRs2, 0.0F, 0.0F, 2.0F);
+        this.setRotateAngle(legRss2, 0.0F, 0.0F, -2.3F);
+        this.setRotateAngle(legRsss2, 0.0F, 0.0F, -1.8F);
+        this.setRotateAngle(legR3, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(legRs3, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(legRss3, 0.0F, 0.0F, -0.7F);
+        this.setRotateAngle(legRsss3, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(legR4, -0.2F, 0.5F, -1.0F);
+        this.setRotateAngle(legRs4, 0.0F, 0.0F, 2.0F);
+        this.setRotateAngle(legRss4, 0.0F, 0.0F, -2.1F);
+        this.setRotateAngle(legRsss4, 0.0F, 0.0F, -2.0F);
+        this.setRotateAngle(legL1, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(legLs1, 0.0F, 0.0F, -0.9F);
+        this.setRotateAngle(legLss1, 0.0F, 0.0F, 0.7F);
+        this.setRotateAngle(legLsss1, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(legL2, 0.0F, 0.0F, 1.0F);
+        this.setRotateAngle(legLs2, 0.0F, 0.0F, -2.0F);
+        this.setRotateAngle(legLss2, 0.0F, 0.0F, 2.3F);
+        this.setRotateAngle(legLsss2, 0.0F, 0.0F, 1.8F);
+        this.setRotateAngle(legL3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(legLs3, 0.0F, 0.0F, -1.0F);
+        this.setRotateAngle(legLss3, 0.0F, 0.0F, 0.7F);
+        this.setRotateAngle(legLsss3, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(legL4, -0.2F, -0.5F, 1.0F);
+        this.setRotateAngle(legLs4, 0.0F, 0.0F, -2.0F);
+        this.setRotateAngle(legLss4, 0.0F, 0.0F, 2.1F);
+        this.setRotateAngle(legLsss4, 0.0F, 0.0F, 2.0F);
         //End of pose, now render the model:
         this.Body.render(f);
         //Reset rotations, positions and sizing:

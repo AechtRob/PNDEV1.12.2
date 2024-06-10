@@ -112,6 +112,11 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public float getAgeScale() {
+		return 1F;
+	}
+
+	@Override
 	public float getClimbSpeed() {
 		switch (this.getPNType()) {
 			case ANUROGNTHUS:

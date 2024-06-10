@@ -1,0 +1,47 @@
+{
+	"name": "Wodnika",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/wodnika_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_wodnika",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wodnika",
+			"title": "Wodnika",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Chondrichthyes $(br)>Elasmobranchii $(br)>Ctenacanthiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "W. striatula",
+            "entity": "lepidodendron:prehistoric_flora_wodnika",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wodnika",
+			"type": "text",
+			"text": "Wodnika is a ctenacanth from the Permian period of Europe. It had a streamlined body, measuring 1m in length. Its cartilaginous skeleton is preserved in its fossil, giving us a good idea of what it looked like. This animal may have inhabited brackish or freshwater environments."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_wodnika"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_wodnika"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_wodnika"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_wodnika"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_wodnika"
+		}
+	]
+}

@@ -1,16 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHadranax;
-import net.lepidodendron.entity.EntityPrehistoricFloraSiberion;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelHadranax extends AdvancedModelBase {
+public class ModelHadranax extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer leftLeg1;
     private final AdvancedModelRenderer rightLeg1;
@@ -414,16 +413,22 @@ public class ModelHadranax extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = 0.4F;
-        this.head.offsetX = 0.55F;
+        this.head.offsetY = -0.5F;
+        this.head.offsetX = 0.1F;
         this.head.rotateAngleY = (float)Math.toRadians(200);
         this.head.rotateAngleX = (float)Math.toRadians(8);
         this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.7F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(head, -0.4F, 3.5F, 0.0F);
+        this.setRotateAngle(body1, 0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftAppendage1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightAppendage1, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.head.render(f);
         //Reset rotations, positions and sizing:

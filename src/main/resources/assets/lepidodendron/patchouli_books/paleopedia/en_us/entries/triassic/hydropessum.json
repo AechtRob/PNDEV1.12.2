@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hydropessum",
 			"title": "Hydropessum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Perleidiformes"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Perleidiformes $(br)>Cleithrolepidae"
 		},
         	{
             "type": "entity",
@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hydropessum",
 			"type": "text",
-			"text": ""
+			"text": "Hydropessum is a ray finned fish that lived in the Triassic period. It lived in freshwater environments and was pretty small, with body lengths less than 20 cm. It had a rhombus shaped body, giving it some physical similarity to modern angelfish."
 		},
 		{
 			"type": "lepidodendron:diet",

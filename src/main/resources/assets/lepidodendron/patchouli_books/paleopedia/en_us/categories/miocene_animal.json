@@ -1,0 +1,7 @@
+{
+    "name": "Miocene Animals",
+    "description": "Animals of the Miocene",
+    "icon": "paleopedia:textures/category_icon/icon_miocene.png",
+    "parent": "lepidodendron:miocene",
+    "sortnum": 1
+}

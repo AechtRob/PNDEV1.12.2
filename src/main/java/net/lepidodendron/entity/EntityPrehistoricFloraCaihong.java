@@ -81,8 +81,10 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 		boolean result = super.attackEntityFrom(ds, i);
 		if (ds.getTrueSource() instanceof EntityLivingBase && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) ds.getTrueSource();
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraCaihong> caihong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraCaihong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraCaihong currentCaihong : caihong) {
+				currentCaihong.setAlarmTarget(ee);
 				currentCaihong.setRevengeTarget(ee);
 				currentCaihong.screamAlarmCooldown = rand.nextInt(20);
 			}
@@ -94,7 +96,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 	public void playThreatSound()
 	{
 		SoundEvent soundevent = (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:anchiornis_threat"));
+				.getObject(new ResourceLocation("lepidodendron:caihong_threat"));
 		if (soundevent != null)
 		{
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
@@ -116,7 +118,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:anchiornis_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:caihong_alarm"));
 	}
 
 	public void setScreaming(boolean screaming) {
@@ -141,7 +143,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 			}
 
 			//Screaming handling:
-			if (this.getRevengeTarget() == null && !this.isBurning()) {
+			if (this.getAlarmTarget() == null && !this.isBurning()) {
 				this.setScreaming(false);
 			} else {
 				this.setIsFast(true);
@@ -225,7 +227,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 		}
 
 		//random idle animations
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getAlarmTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && !this.getIsFlying() && !this.getIsClimbing() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			if (rand.nextInt(5) != 0) {
 				this.setAnimation(STAND_ANIMATION);
@@ -301,19 +303,19 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:anchiornis_idle"));
+			.getObject(new ResourceLocation("lepidodendron:caihong_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:anchiornis_hurt"));
+			.getObject(new ResourceLocation("lepidodendron:caihong_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:anchiornis_death"));
+			.getObject(new ResourceLocation("lepidodendron:caihong_death"));
 	}
 
 	@Override

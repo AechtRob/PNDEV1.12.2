@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraLandSnail;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelLandSnail extends AdvancedModelBase {
+public class ModelLandSnail extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Snail;
     private final AdvancedModelRenderer foot;
     private final AdvancedModelRenderer Antenna;

@@ -8,8 +8,14 @@ public class RenderDisplays {
     public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
     public static final ModelArchaeopteryx modelArchaeopteryx = new ModelArchaeopteryx();
     public static final ModelArchaeopteryx modelArchaeopteryxBook = new ModelArchaeopteryx();
+    public static final ModelAttenborites modelAttenborites = new ModelAttenborites();
+    public static final ModelAttenborites modelAttenboritesBook = new ModelAttenborites();
+    public static final ModelCaihong modelCaihong = new ModelCaihong();
+    public static final ModelCaihong modelCaihongBook = new ModelCaihong();
     public static final ModelAnchiornis modelAnchiornis = new ModelAnchiornis();
     public static final ModelAnchiornis modelAnchiornisBook = new ModelAnchiornis();
+    public static final ModelBanksiops modelBanksiops = new ModelBanksiops();
+    public static final ModelBanksiops modelBanksiopsBook = new ModelBanksiops();
     public static final ModelAnchisaurus modelAnchisaurus = new ModelAnchisaurus();
     public static final ModelAnchisaurus modelAnchisaurusBook = new ModelAnchisaurus();
     public static final ModelLongisquama modelLongisquama = new ModelLongisquama();
@@ -69,6 +75,8 @@ public class RenderDisplays {
     public static final ModelBunostegos modelBunostegos = new ModelBunostegos();
     public static final ModelBrachiosaurus modelBrachiosaurus = new ModelBrachiosaurus();
     public static final ModelBrachiosaurus modelBrachiosaurusBook = new ModelBrachiosaurus();
+    public static final ModelGosfordia modelGosfordia = new ModelGosfordia();
+    public static final ModelGosfordia modelGosfordiaBook = new ModelGosfordia();
     public static final ModelBelantsea modelBelantsea = new ModelBelantsea();
     public static final ModelBirgeria modelBirgeria = new ModelBirgeria();
     public static final ModelBirkenia modelBirkenia = new ModelBirkenia();
@@ -116,6 +124,10 @@ public class RenderDisplays {
     public static final ModelCiurcopterus modelCiurcopterus = new ModelCiurcopterus();
     public static final ModelClarkeiteuthis modelClarkeiteuthis = new ModelClarkeiteuthis();
     public static final ModelClimatius modelClimatius = new ModelClimatius();
+    public static final ModelClimacograptus modelClimacograptus = new ModelClimacograptus();
+    public static final ModelClimacograptus modelClimacograptusBook = new ModelClimacograptus();
+    public static final ModelPhyllograptus modelPhyllograptus = new ModelPhyllograptus();
+    public static final ModelPhyllograptus modelPhyllograptusBook = new ModelPhyllograptus();
     public static final ModelCoccoderma modelCoccoderma = new ModelCoccoderma();
     public static final ModelCoelophysis modelCoelophysis = new ModelCoelophysis();
     public static final ModelCometicercus modelCometicercus = new ModelCometicercus();
@@ -340,6 +352,8 @@ public class RenderDisplays {
     public static final ModelKootenayscolex modelKootenayscolex = new ModelKootenayscolex();
     public static final ModelKichkassia modelKichkassia = new ModelKichkassia();
     public static final ModelKichkassia modelKichkassiaBook = new ModelKichkassia();
+    public static final ModelPrecambrianJelly modelPrecambrianJelly = new ModelPrecambrianJelly();
+    public static final ModelPrecambrianJelly modelPrecambrianJellyBook = new ModelPrecambrianJelly();
     public static final ModelLacewing modelLacewing = new ModelLacewing();
     public static final ModelLasanius modelLasanius = new ModelLasanius();
     public static final ModelLepidotes modelLepidotes = new ModelLepidotes();
@@ -445,6 +459,14 @@ public class RenderDisplays {
     public static final ModelOlenellus modelOlenellus = new ModelOlenellus();
     public static final ModelOrcanopterus modelOrcanopterus = new ModelOrcanopterus();
     public static final ModelOrcanopterus modelOrcanopterusBook = new ModelOrcanopterus();
+    public static final ModelPalaeoJelly1 modelPalaeoJelly1 = new ModelPalaeoJelly1();
+    public static final ModelPalaeoJelly1 modelPalaeoJelly1Book = new ModelPalaeoJelly1();
+    public static final ModelPalaeoJelly2 modelPalaeoJelly2 = new ModelPalaeoJelly2();
+    public static final ModelPalaeoJelly2 modelPalaeoJelly2Book = new ModelPalaeoJelly2();
+    public static final ModelPalaeoJelly3 modelPalaeoJelly3 = new ModelPalaeoJelly3();
+    public static final ModelPalaeoJelly3 modelPalaeoJelly3Book = new ModelPalaeoJelly3();
+    public static final ModelPalaeoJelly4 modelPalaeoJelly4 = new ModelPalaeoJelly4();
+    public static final ModelPalaeoJelly4 modelPalaeoJelly4Book = new ModelPalaeoJelly4();
     public static final ModelOzarkodina modelOzarkodina = new ModelOzarkodina();
     public static final ModelPalaeocarcharias modelPalaeocarcharias = new ModelPalaeocarcharias();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();
@@ -614,6 +636,8 @@ public class RenderDisplays {
     public static final ModelSenekichthys modelSenekichthysBook = new ModelSenekichthys();
     public static final ModelSargodon modelSargodon = new ModelSargodon();
     public static final ModelSargodon modelSargodonBook = new ModelSargodon();
+    public static final ModelSarcoprion modelSarcoprion = new ModelSarcoprion();
+    public static final ModelSarcoprion modelSarcoprionBook = new ModelSarcoprion();
     public static final ModelSylvohymen modelSylvohymen = new ModelSylvohymen();
     public static final ModelTamisiocaris modelTamisiocaris = new ModelTamisiocaris();
     public static final ModelTanycolagreus modelTanycolagreus = new ModelTanycolagreus();

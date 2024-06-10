@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
@@ -197,7 +196,7 @@ public class EntityPrehistoricFloraDiscophyllum extends EntityPrehistoricFloraAg
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.DISCOPHYLLUM_LOOT;
+		return null;
 	}
 
 	@Nullable

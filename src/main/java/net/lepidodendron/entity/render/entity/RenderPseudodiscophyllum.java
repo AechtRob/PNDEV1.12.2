@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPseudodiscophyllum;
-import net.lepidodendron.entity.model.entity.ModelCambrianJelly;
 import net.lepidodendron.entity.model.entity.ModelPseudodiscophyllum;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -30,6 +29,7 @@ public class RenderPseudodiscophyllum extends RenderLiving<EntityPrehistoricFlor
     protected void preRenderCallback(EntityPrehistoricFloraPseudodiscophyllum entity, float f) {
         float scale = 0.2F;
         GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = 0F;
     }
 
 }

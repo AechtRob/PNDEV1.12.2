@@ -5,14 +5,14 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchaeopteryx;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 
-public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
+public class ModelArchaeopteryx extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Archaeopteryx;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer UpperLegR;

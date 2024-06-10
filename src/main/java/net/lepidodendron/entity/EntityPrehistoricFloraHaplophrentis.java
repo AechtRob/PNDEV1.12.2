@@ -10,7 +10,6 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderHaplophrentis;
-import net.lepidodendron.entity.render.entity.RenderKleptothule;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;

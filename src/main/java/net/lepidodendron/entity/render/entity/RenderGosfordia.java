@@ -3,16 +3,17 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGosfordia;
 import net.lepidodendron.entity.model.entity.ModelGosfordia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGosfordia extends RenderLiving<EntityPrehistoricFloraGosfordia> {
+public class RenderGosfordia extends RenderLivingBaseWithBook<EntityPrehistoricFloraGosfordia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gosfordia.png");
 
     public RenderGosfordia(RenderManager mgr) {
-        super(mgr, new ModelGosfordia(), 0.0f);
+        super(mgr, new ModelGosfordia(), RenderDisplays.modelGosfordiaBook, 0.0f);
     }
 
     public static float getScaler() {return 0.4F; }

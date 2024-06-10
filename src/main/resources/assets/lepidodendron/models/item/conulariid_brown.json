@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/conulariid_brown"
+    "layer0": "lepidodendron:items/conulariid_brown_inventory"
   }
 }

@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -19,12 +20,10 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -37,14 +36,11 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
-	private static final DataParameter<Integer> FEEDTICKS = EntityDataManager.createKey(EntityPrehistoricFloraLeedsichthys.class, DataSerializers.VARINT);
-
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-	private int animationTick;
+	public Animation STAND_ANIMATION;
 	private int standCooldown;
-	private Animation animation = NO_ANIMATION;
 
 	public EntityPrehistoricFloraLeedsichthys(World world) {
 		super(world);
@@ -53,26 +49,10 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		maxWidth = 3F;
 		maxHeight = 2.5F;
 		maxHealthAgeable = 80.0D;
+		STAND_ANIMATION = Animation.create(385);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-	}
-	public int getFeedTicks() {
-		if (this.dataManager.get(FEEDTICKS) == null) {
-			this.setFeedTicks(0);
-			return 0;
-		}
-		return this.dataManager.get(FEEDTICKS);
-	}
-
-	public void setFeedTicks(int feedticks) {
-		this.dataManager.set(FEEDTICKS, feedticks);
-	}
-
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(FEEDTICKS, 0);
 	}
 
 	@Override
@@ -86,24 +66,25 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.standCooldown = rand.nextInt(2000);
+		this.standCooldown = rand.nextInt(1500);
 		return livingdata;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, STAND_ANIMATION};
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("standCooldown", this.standCooldown);
-		compound.setInteger("FeedTicks", this.getFeedTicks());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.standCooldown = compound.getInteger("standCooldown");
-		this.setFeedTicks(compound.getInteger("FeedTicks"));
 	}
-
-
 
 	@Override
 	public boolean isSmall() {
@@ -150,36 +131,11 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 	}
 
 	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
-	}
-
-	@Override
-	public void setAnimationTick(int tick) {
-		animationTick = tick;
-	}
-
-	@Override
-	public Animation getAnimation() {
-		return null;
-	}
-
-	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
 			return super.attackEntityFrom(source, (amount * 0.5F));
 		}
 		return super.attackEntityFrom(source, amount);
-	}
-
-	@Override
-	public void setAnimation(Animation animation) {
-		this.animation = animation;
-	}
-
-	@Override
-	public Animation[] getAnimations() {
-		return null;
 	}
 
 	protected void initEntityAI() {
@@ -194,6 +150,14 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(6.0, 4.00, 6.0);
+		}
+		return this.getEntityBoundingBox();
+	}
 
 	@Override
 	public boolean isAIDisabled() {
@@ -249,13 +213,6 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (!this.world.isRemote) {
-			if ((!(getFeedTicks() > 0)) || getFeedTicks() > 750) {
-				setFeedTicks(0);
-			}
-			setFeedTicks(getFeedTicks() + rand.nextInt(3));
-		}
-
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
@@ -273,22 +230,6 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 
 	}
 
-	public float mouthAngle() {
-		if (getFeedTicks() < 600F) {
-			return 1F;
-		}
-		if (getFeedTicks() >= 630F && getFeedTicks() <= 720F) {
-			return 0F;
-		}
-		else if (getFeedTicks() < 630F) {
-			return (630F - getFeedTicks()) / 30F;
-		}
-		else if (getFeedTicks() > 720F) {
-			return (getFeedTicks() - 720F) / 30F;
-		}
-		return 1F;
-	}
-
 	@Override
 	public int getAttackLength() {
 		return 385;
@@ -299,24 +240,23 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		super.onEntityUpdate();
 			//random idle animations
 			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-				int next = rand.nextInt(10);
+					&& (this.getAnimation() == NO_ANIMATION || this.getAnimation() == null ) && standCooldown == 0) {
+				//int next = rand.nextInt(10);
 				//if (next < 5) {
-				//this.setAnimation(STAND_ANIMATION);
+				this.setAnimation(STAND_ANIMATION);
 				//} else {
-				this.setAnimation(ATTACK_ANIMATION);
+				//this.setAnimation(ATTACK_ANIMATION);
 				//}
-				this.standCooldown = 2000;
+				this.standCooldown = 1500;
 			}
 //			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
 //				this.standCooldown = 2000;
 //				this.setAnimation(NO_ANIMATION);
 //			}
-			if ((!this.world.isRemote) && this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == ATTACK_ANIMATION.getDuration() - 1) {
-				this.standCooldown = 2000;
+			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 1500;
 				this.setAnimation(NO_ANIMATION);
 			}
-
 
 	}
 

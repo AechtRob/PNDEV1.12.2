@@ -1,16 +1,16 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelBrazilichthys extends AdvancedModelBase {
+public class ModelBrazilichthys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -384,16 +384,22 @@ public class ModelBrazilichthys extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.4F;
-        this.root.offsetX = 0.55F;
-        this.root.rotateAngleY = (float)Math.toRadians(200);
-        this.root.rotateAngleX = (float)Math.toRadians(8);
+        this.root.offsetY = -1.4F;
+        this.root.offsetX = -0.60F;
+        this.root.rotateAngleY = (float)Math.toRadians(120);
+        this.root.rotateAngleX = (float)Math.toRadians(2);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.0F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        //this.setRotateAngle(root, -0.5F, -2.3F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, -0.3F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

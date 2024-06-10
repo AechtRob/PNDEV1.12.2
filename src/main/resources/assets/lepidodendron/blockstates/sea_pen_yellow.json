@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sea_pen_yellow"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:sea_pen_yellow", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:sea_pen_yellow", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:sea_pen_yellow", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:sea_pen_yellow", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:sea_pen_yellow"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:sea_pen_yellow", "x": 180}
+    ]
+  }
+}

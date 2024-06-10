@@ -1,0 +1,47 @@
+{
+	"name": "Heterostrophus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/heterostrophus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_heterostrophus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_heterostrophus",
+			"title": "Heterostrophus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Dapediiformes $(br)>Dapediidae"
+		},
+        	{
+            "type": "entity",
+            "name": "H. latus",
+            "entity": "lepidodendron:prehistoric_flora_heterostrophus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_heterostrophus",
+			"type": "text",
+			"text": "Heterostrophus is a ray finned fish from the Jurassic period of Europe. It was one of the last known dapediids, living near the end of the Jurassic period. It had a rounded circular body which was covered in ganoid scales and this animal had teeth adapted for a durophagus diet."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_heterostrophus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_heterostrophus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_heterostrophus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_heterostrophus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_heterostrophus"
+		}
+	]
+}

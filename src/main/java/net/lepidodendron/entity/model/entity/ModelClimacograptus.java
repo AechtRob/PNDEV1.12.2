@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraClimacograptus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelClimacograptus extends AdvancedModelBase {
+public class ModelClimacograptus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -49,6 +49,26 @@ public class ModelClimacograptus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
+    }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = 0.2F;
+        this.main.rotateAngleY = (float)Math.toRadians(150);
+        this.main.rotateAngleX = (float)Math.toRadians(3);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
+        this.main.scaleChildren = true;
+        float scaler = 3.5F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

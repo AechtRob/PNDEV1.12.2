@@ -31,7 +31,7 @@ public class RenderRhizostomites extends RenderLiving<EntityPrehistoricFloraRhiz
     protected void preRenderCallback(EntityPrehistoricFloraRhizostomites entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

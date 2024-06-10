@@ -1,0 +1,47 @@
+{
+	"name": "Foordella",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/foordella_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_foordella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_foordella",
+			"title": "Foordella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Mollusca $(br)>Gastropoda $(br)>Pleurotomariida"
+		},
+        	{
+            "type": "entity",
+            "name": "F. hibernica",
+            "entity": "lepidodendron:prehistoric_flora_foordella",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_foordella",
+			"type": "text",
+			"text": "Foordella is a Pleurotomarioid snail, a group of highly diverse snails that once dominated the oceans but are now relegated to the deep sea. Foordella hibernica was discovered in 1912 by Mary Jane Longstaff, a British malacologist who specializes in molluscs of the Paleozoic. As a woman back then, she had difficulty getting access to museum collections. However, her work on taxonomic evaluations of obscure taxa remain relevant to the modern day. Foordella can be easily distinguished for its tall pointed shell."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_foordella"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_foordella"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_foordella"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_foordella"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_foordella"
+		}
+	]
+}

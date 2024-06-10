@@ -1,0 +1,62 @@
+{
+	"name": "Pseudoangustidontus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pseudoangustidontus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_pseudoangustidontus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pseudoangustidontus",
+			"title": "Pseudoangustidontus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "P. izdigua",
+            "entity": "lepidodendron:prehistoric_flora_pseudoangustidontus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudoangustidontus",
+			"type": "text",
+			"text": "Pseudoangustidontus is a genus of Hurdiid Radiodont from the Early Ordovician of Morocco. The animal, maybe just shy of 1 m long or just above, is the second described Ordovician radiodont from Morocco. Known from a total of 35 different specimens comprising an exhaustive record of its frontal appendages, the animal probably was anatomically close to its cousin Aegirocassis."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudoangustidontus",
+			"type": "text",
+			"text": "The Appendages would bear 6 major endites, each hosting a row (or two) of setae the animal would use to feed.\nMuch like Aegirocassis, this animal was a filter feeder rather than a macropredator. Despite it's potentially smaller size, Pseudoangustidontus more or less as abundant as Aegirocassis in the analysis conducted for the "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudoangustidontus",
+			"type": "text",
+			"text": "study, which was able to identify 44 appendages of this species in a pool of 121 total analysed; of the remaining ones 43 were of Aegirocassis, a further 8 from another unnamed relative of it and another 9 of a non related hurdiid, the remaining appendages were of non sifter-feeding radiodonts. The abundance of frontal appendages was enough to allow pinpointing two different species in the genus, one of which new, and some other nonspecific material."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pseudoangustidontus",
+			"type": "text",
+			"text": "Like Aegirocassis, Pseudoangustidontus would've been a suspension feeder which would've preyed on mesoplankton, as in organisms between 0.2-20mm, which in the Early Paleozoic would've been trilobitomorphs larvae, agnostid trilobites, ostracods, bradoriids, copepods, malacostracans and branchiopod arthropods, as well as graptolites and chitinozoans."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_pseudoangustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_pseudoangustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_pseudoangustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_pseudoangustidontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_pseudoangustidontus"
+		}
+	]
+}

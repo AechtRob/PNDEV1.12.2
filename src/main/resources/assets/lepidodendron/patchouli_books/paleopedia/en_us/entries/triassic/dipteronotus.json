@@ -1,0 +1,47 @@
+{
+	"name": "Dipteronotus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/dipteronotus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dipteronotus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dipteronotus",
+			"title": "Dipteronotus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Actinopterygii $(br)>Perleidiformes"
+		},
+        	{
+            "type": "entity",
+            "name": "D. cyphus",
+            "entity": "lepidodendron:prehistoric_flora_dipteronotus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dipteronotus",
+			"type": "text",
+			"text": "Dipteronotus is a ray finned fish from the Triassic period of Europe and Morocco. It was a small fish, and had an elongated first dorsal fin, which looked like a spine. This elongated dorsal fin was made out of ridge scales which lined the front of its dorsal fin."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_dipteronotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_dipteronotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_dipteronotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_dipteronotus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_dipteronotus"
+		}
+	]
+}

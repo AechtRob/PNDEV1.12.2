@@ -1366,6 +1366,26 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "dakosaurus_hurt")));
 		sounds.put(new ResourceLocation("lepidodendron", "dakosaurus_death"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "dakosaurus_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "monolophosaurus_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "monolophosaurus_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "monolophosaurus_roar"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "monolophosaurus_roar")));
+		sounds.put(new ResourceLocation("lepidodendron", "caihong_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "caihong_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "caihong_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "caihong_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "caihong_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "caihong_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "caihong_alarm"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "caihong_alarm")));
+		sounds.put(new ResourceLocation("lepidodendron", "caihong_threat"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "caihong_threat")));
+		sounds.put(new ResourceLocation("lepidodendron", "pampaphoneus_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "pampaphoneus_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "pampaphoneus_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "pampaphoneus_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "pampaphoneus_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "pampaphoneus_death")));
 
 	}
 

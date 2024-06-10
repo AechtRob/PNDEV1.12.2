@@ -31,7 +31,7 @@ public class RenderEulithota extends RenderLiving<EntityPrehistoricFloraEulithot
     protected void preRenderCallback(EntityPrehistoricFloraEulithota entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

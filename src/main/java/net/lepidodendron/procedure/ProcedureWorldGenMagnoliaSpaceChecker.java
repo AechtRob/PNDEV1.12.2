@@ -6,8 +6,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.Map;
-
 @ElementsLepidodendronMod.ModElement.Tag
 public class ProcedureWorldGenMagnoliaSpaceChecker extends ElementsLepidodendronMod.ModElement {
 	public ProcedureWorldGenMagnoliaSpaceChecker(ElementsLepidodendronMod instance) {

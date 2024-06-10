@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAmmonite100cm extends AdvancedModelBaseExtended {
+public class ModelAmmonite100cm extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended Shell1;
     public AdvancedModelRendererExtended Shell2;
     public AdvancedModelRendererExtended Mantle;

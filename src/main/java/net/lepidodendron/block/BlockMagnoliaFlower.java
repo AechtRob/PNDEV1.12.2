@@ -42,8 +42,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag

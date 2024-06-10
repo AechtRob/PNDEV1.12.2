@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelHeterostrophus extends AdvancedModelBase {
+public class ModelHeterostrophus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Heterostrophus;
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;
@@ -230,16 +230,23 @@ public class ModelHeterostrophus extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Heterostrophus.offsetY = 0.4F;
-        this.Heterostrophus.offsetX = 0.55F;
+        this.Heterostrophus.offsetY = -1.0F;
+        this.Heterostrophus.offsetX = -0.35F;
         this.Heterostrophus.rotateAngleY = (float)Math.toRadians(200);
         this.Heterostrophus.rotateAngleX = (float)Math.toRadians(8);
         this.Heterostrophus.rotateAngleZ = (float)Math.toRadians(-8);
         this.Heterostrophus.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 3.5F;
         this.Heterostrophus.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Heterostrophus, 0.0F, 2.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.Heterostrophus.render(f);
         //Reset rotations, positions and sizing:

@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnurognathid;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
+public class ModelDendrorhynchoides extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer rightwing;
     private final AdvancedModelRenderer rightwing2;
@@ -251,18 +251,178 @@ public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
         this.main.render(f5);
     }
 
-    public void renderStaticSuspended(float f) {
-
-    }
-
     public void renderStaticWall(float f) {
+        main.setRotationPoint(0.0F, 20.25F, -2.5F);
+        rightwing.setRotationPoint(-2.5F, -0.5F, -2.15F);
+        rightwing2.setRotationPoint(-4.0F, 0.0F, 2.0F);
+        rightwing3.setRotationPoint(-7.0F, 0.5F, -3.0F);
+        rightmembrane.setRotationPoint(-4.0F, 0.5F, -4.0F);
+        righthand.setRotationPoint(0.5F, 0.0F, -0.25F);
+        cube_r1.setRotationPoint(0.0F, 0.0F, 1.0F);
+        leftwing.setRotationPoint(2.5F, -0.5F, -2.15F);
+        leftwing2.setRotationPoint(4.0F, 0.0F, 2.0F);
+        leftwing3.setRotationPoint(7.0F, 0.5F, -3.0F);
+        leftmembrane.setRotationPoint(4.0F, 0.5F, -4.0F);
+        lefthand.setRotationPoint(-0.5F, 0.0F, -0.25F);
+        cube_r2.setRotationPoint(0.0F, 0.0F, 1.0F);
+        neck.setRotationPoint(0.0F, -1.5F, -1.325F);
+        Head.setRotationPoint(0.5F, 0.1F, -3.575F);
+        cube_r3.setRotationPoint(-2.6F, 0.85F, -3.25F);
+        cube_r4.setRotationPoint(-1.0F, 1.25F, -5.0F);
+        cube_r5.setRotationPoint(-2.0F, 1.7F, -5.0F);
+        cube_r6.setRotationPoint(1.0F, 1.7F, -5.0F);
+        cube_r7.setRotationPoint(0.0F, 1.25F, 0.0F);
+        jaw.setRotationPoint(0.0F, 2.15F, 0.0F);
+        cube_r8.setRotationPoint(0.0F, 1.0F, -4.0F);
+        tail.setRotationPoint(0.0F, -1.25F, 5.5F);
+        tail2.setRotationPoint(0.0F, 0.45F, 0.525F);
+        leftleg.setRotationPoint(1.7875F, 0.0F, 4.65F);
+        leftleg2.setRotationPoint(-0.0375F, 2.25F, 0.0F);
+        leftleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+        rightleg.setRotationPoint(-1.7875F, 0.0F, 4.65F);
+        rightleg2.setRotationPoint(0.0375F, 2.25F, 0.0F);
+        rightleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+        this.setRotateAngle(main, -1.5F, 3.15F, 0.0F);
+        this.setRotateAngle(neck, 0.2F, 0.3F, 0.3F);
+        this.setRotateAngle(Head, 0.3F, 0.0F, 0.1F);
+        this.setRotateAngle(jaw, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(leftleg, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftleg2, -0.8F, -0.0F, 0.2F);
+        this.setRotateAngle(leftleg3, 1.5F, -1.5F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightleg2, -0.8F, 0.0F, -0.3F);
+        this.setRotateAngle(rightleg3, 1.8F, 1.5F, 0.0F);
+        this.setRotateAngle(leftwing, 0.05F, 0.2F, 0.08F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.3F, 0.1F);
+        this.setRotateAngle(leftwing3, 0.0F, 2.0F, 0.1F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.05F, 0.2F, -0.08F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.3F, -0.1F);
+        this.setRotateAngle(rightwing3, 0.0F, -2.7F, 0.1F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = 0.0F;
+        this.main.offsetZ = -0.005F;
+        this.main.render(0.01F);
         resetToDefaultPose();
-
     }
 
-    public void renderStaticDisplayCase(float f) {
+    public void renderStaticFloor(float f) {
+        main.setRotationPoint(0.0F, 20.25F, -2.5F);
+        rightwing.setRotationPoint(-2.5F, -0.5F, -2.15F);
+        rightwing2.setRotationPoint(-4.0F, 0.0F, 2.0F);
+        rightwing3.setRotationPoint(-7.0F, 0.5F, -3.0F);
+        rightmembrane.setRotationPoint(-4.0F, 0.5F, -4.0F);
+        righthand.setRotationPoint(0.5F, 0.0F, -0.25F);
+        cube_r1.setRotationPoint(0.0F, 0.0F, 1.0F);
+        leftwing.setRotationPoint(2.5F, -0.5F, -2.15F);
+        leftwing2.setRotationPoint(4.0F, 0.0F, 2.0F);
+        leftwing3.setRotationPoint(7.0F, 0.5F, -3.0F);
+        leftmembrane.setRotationPoint(4.0F, 0.5F, -4.0F);
+        lefthand.setRotationPoint(-0.5F, 0.0F, -0.25F);
+        cube_r2.setRotationPoint(0.0F, 0.0F, 1.0F);
+        neck.setRotationPoint(0.0F, -1.5F, -1.325F);
+        Head.setRotationPoint(0.5F, 0.1F, -3.575F);
+        cube_r3.setRotationPoint(-2.6F, 0.85F, -3.25F);
+        cube_r4.setRotationPoint(-1.0F, 1.25F, -5.0F);
+        cube_r5.setRotationPoint(-2.0F, 1.7F, -5.0F);
+        cube_r6.setRotationPoint(1.0F, 1.7F, -5.0F);
+        cube_r7.setRotationPoint(0.0F, 1.25F, 0.0F);
+        jaw.setRotationPoint(0.0F, 2.15F, 0.0F);
+        cube_r8.setRotationPoint(0.0F, 1.0F, -4.0F);
+        tail.setRotationPoint(0.0F, -1.25F, 5.5F);
+        tail2.setRotationPoint(0.0F, 0.45F, 0.525F);
+        leftleg.setRotationPoint(1.7875F, 0.0F, 4.65F);
+        leftleg2.setRotationPoint(-0.0375F, 2.25F, 0.0F);
+        leftleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+        rightleg.setRotationPoint(-1.7875F, 0.0F, 4.65F);
+        rightleg2.setRotationPoint(0.0375F, 2.25F, 0.0F);
+        rightleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+        this.setRotateAngle(main, -1.9F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.0F, -0.3F, -1.2F);
+        this.setRotateAngle(leftleg2, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg3, 2.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.3F, 1.2F);
+        this.setRotateAngle(rightleg2, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg3, 2.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(leftwing3, 0.0F, -3.15F, 0.2F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, -0.1F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(rightwing3, 0.0F, 3.15F, -0.2F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
+        this.main.offsetZ = 0.025F;
+        this.main.offsetX = 0.0F;
+        this.main.offsetY = -0.7F;
+        this.main.render(0.01F);
         resetToDefaultPose();
+    }
 
+    public void renderStaticSuspended(float f) {
+        main.setRotationPoint(0.0F, 20.25F, -2.5F);
+        rightwing.setRotationPoint(-2.5F, -0.5F, -2.15F);
+        rightwing2.setRotationPoint(-4.0F, 0.0F, 2.0F);
+        rightwing3.setRotationPoint(-7.0F, 0.5F, -3.0F);
+        rightmembrane.setRotationPoint(-4.0F, 0.5F, -4.0F);
+        righthand.setRotationPoint(0.5F, 0.0F, -0.25F);
+        cube_r1.setRotationPoint(0.0F, 0.0F, 1.0F);
+        leftwing.setRotationPoint(2.5F, -0.5F, -2.15F);
+        leftwing2.setRotationPoint(4.0F, 0.0F, 2.0F);
+        leftwing3.setRotationPoint(7.0F, 0.5F, -3.0F);
+        leftmembrane.setRotationPoint(4.0F, 0.5F, -4.0F);
+        lefthand.setRotationPoint(-0.5F, 0.0F, -0.25F);
+        cube_r2.setRotationPoint(0.0F, 0.0F, 1.0F);
+        neck.setRotationPoint(0.0F, -1.5F, -1.325F);
+        Head.setRotationPoint(0.5F, 0.1F, -3.575F);
+        cube_r3.setRotationPoint(-2.6F, 0.85F, -3.25F);
+        cube_r4.setRotationPoint(-1.0F, 1.25F, -5.0F);
+        cube_r5.setRotationPoint(-2.0F, 1.7F, -5.0F);
+        cube_r6.setRotationPoint(1.0F, 1.7F, -5.0F);
+        cube_r7.setRotationPoint(0.0F, 1.25F, 0.0F);
+        jaw.setRotationPoint(0.0F, 2.15F, 0.0F);
+        cube_r8.setRotationPoint(0.0F, 1.0F, -4.0F);
+        tail.setRotationPoint(0.0F, -1.25F, 5.5F);
+        tail2.setRotationPoint(0.0F, 0.45F, 0.525F);
+        leftleg.setRotationPoint(1.7875F, 0.0F, 4.65F);
+        leftleg2.setRotationPoint(-0.0375F, 2.25F, 0.0F);
+        leftleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+        rightleg.setRotationPoint(-1.7875F, 0.0F, 4.65F);
+        rightleg2.setRotationPoint(0.0375F, 2.25F, 0.0F);
+        rightleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+        this.setRotateAngle(main, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, 0.0F, -0.3F, -1.2F);
+        this.setRotateAngle(leftleg2, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg3, 2.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.3F, 1.2F);
+        this.setRotateAngle(rightleg2, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg3, 2.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(leftwing3, 0.0F, -3.15F, 0.4F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(rightwing3, 0.0F, 3.15F, -0.4F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.02F;
+        this.main.offsetX = -0.0F;
+        this.main.offsetY = 0.13F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -302,6 +462,38 @@ public class ModelDendrorhynchoides extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraAnurognathid entityAnurognathid = (EntityPrehistoricFloraAnurognathid) e;
         if (entityAnurognathid.getAttachmentPos() == null) {
             //flight pose
+
+            main.setRotationPoint(0.0F, 20.25F, -2.5F);
+            rightwing.setRotationPoint(-2.5F, -0.5F, -2.15F);
+            rightwing2.setRotationPoint(-4.0F, 0.0F, 2.0F);
+            rightwing3.setRotationPoint(-7.0F, 0.5F, -3.0F);
+            rightmembrane.setRotationPoint(-4.0F, 0.5F, -4.0F);
+            righthand.setRotationPoint(0.5F, 0.0F, -0.25F);
+            cube_r1.setRotationPoint(0.0F, 0.0F, 1.0F);
+            leftwing.setRotationPoint(2.5F, -0.5F, -2.15F);
+            leftwing2.setRotationPoint(4.0F, 0.0F, 2.0F);
+            leftwing3.setRotationPoint(7.0F, 0.5F, -3.0F);
+            leftmembrane.setRotationPoint(4.0F, 0.5F, -4.0F);
+            lefthand.setRotationPoint(-0.5F, 0.0F, -0.25F);
+            cube_r2.setRotationPoint(0.0F, 0.0F, 1.0F);
+            neck.setRotationPoint(0.0F, -1.5F, -1.325F);
+            Head.setRotationPoint(0.5F, 0.1F, -3.575F);
+            cube_r3.setRotationPoint(-2.6F, 0.85F, -3.25F);
+            cube_r4.setRotationPoint(-1.0F, 1.25F, -5.0F);
+            cube_r5.setRotationPoint(-2.0F, 1.7F, -5.0F);
+            cube_r6.setRotationPoint(1.0F, 1.7F, -5.0F);
+            cube_r7.setRotationPoint(0.0F, 1.25F, 0.0F);
+            jaw.setRotationPoint(0.0F, 2.15F, 0.0F);
+            cube_r8.setRotationPoint(0.0F, 1.0F, -4.0F);
+            tail.setRotationPoint(0.0F, -1.25F, 5.5F);
+            tail2.setRotationPoint(0.0F, 0.45F, 0.525F);
+            leftleg.setRotationPoint(1.7875F, 0.0F, 4.65F);
+            leftleg2.setRotationPoint(-0.0375F, 2.25F, 0.0F);
+            leftleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+            rightleg.setRotationPoint(-1.7875F, 0.0F, 4.65F);
+            rightleg2.setRotationPoint(0.0375F, 2.25F, 0.0F);
+            rightleg3.setRotationPoint(0.0F, -0.25F, 4.25F);
+
             this.setRotateAngle(main, -0.0436F, 0.0F, 0.0F);
             this.setRotateAngle(rightwing, 0.2346F, -0.1622F, 0.0055F);
             this.setRotateAngle(rightwing2, -0.024F, 0.1382F, -0.1671F);

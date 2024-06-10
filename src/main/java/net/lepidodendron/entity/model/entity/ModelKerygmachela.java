@@ -1,71 +1,49 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelKerygmachela extends AdvancedModelBase {
+public class ModelKerygmachela extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer mouthtentacle;
     private final AdvancedModelRenderer body1;
     private final AdvancedModelRenderer finL1;
     private final AdvancedModelRenderer finR1;
-    private final AdvancedModelRenderer legL1;
-    private final AdvancedModelRenderer legR1;
     private final AdvancedModelRenderer body2;
     private final AdvancedModelRenderer finL2;
     private final AdvancedModelRenderer finR2;
-    private final AdvancedModelRenderer legL2;
-    private final AdvancedModelRenderer legR2;
     private final AdvancedModelRenderer body3;
     private final AdvancedModelRenderer finL3;
     private final AdvancedModelRenderer finR3;
-    private final AdvancedModelRenderer legL3;
-    private final AdvancedModelRenderer legR3;
     private final AdvancedModelRenderer body4;
     private final AdvancedModelRenderer finL4;
     private final AdvancedModelRenderer finR4;
-    private final AdvancedModelRenderer legL4;
-    private final AdvancedModelRenderer legR4;
     private final AdvancedModelRenderer body5;
     private final AdvancedModelRenderer finL5;
     private final AdvancedModelRenderer finR5;
-    private final AdvancedModelRenderer legL5;
-    private final AdvancedModelRenderer legR5;
     private final AdvancedModelRenderer body6;
     private final AdvancedModelRenderer finL6;
     private final AdvancedModelRenderer finR6;
-    private final AdvancedModelRenderer legL6;
-    private final AdvancedModelRenderer legR6;
     private final AdvancedModelRenderer body7;
     private final AdvancedModelRenderer finL7;
     private final AdvancedModelRenderer finR7;
-    private final AdvancedModelRenderer legL7;
-    private final AdvancedModelRenderer legR7;
     private final AdvancedModelRenderer body8;
     private final AdvancedModelRenderer finL8;
     private final AdvancedModelRenderer finR8;
-    private final AdvancedModelRenderer legL8;
-    private final AdvancedModelRenderer legR8;
     private final AdvancedModelRenderer body9;
     private final AdvancedModelRenderer finL9;
     private final AdvancedModelRenderer finR9;
-    private final AdvancedModelRenderer legL9;
-    private final AdvancedModelRenderer legR9;
     private final AdvancedModelRenderer body10;
     private final AdvancedModelRenderer finL10;
     private final AdvancedModelRenderer finR10;
-    private final AdvancedModelRenderer legL10;
-    private final AdvancedModelRenderer legR10;
     private final AdvancedModelRenderer body11;
     private final AdvancedModelRenderer finL11;
     private final AdvancedModelRenderer finR11;
-    private final AdvancedModelRenderer legL11;
-    private final AdvancedModelRenderer legR11;
     private final AdvancedModelRenderer tail;
     private final AdvancedModelRenderer appendageR;
     private final AdvancedModelRenderer cube_r1;
@@ -81,11 +59,11 @@ public class ModelKerygmachela extends AdvancedModelBase {
     private final AdvancedModelRenderer appendageL1;
 
     public ModelKerygmachela() {
-        this.textureWidth = 64;
-        this.textureHeight = 64;
+        this.textureWidth = 40;
+        this.textureHeight = 24;
 
         this.head = new AdvancedModelRenderer(this);
-        this.head.setRotationPoint(0.0F, 22.75F, 1.0F);
+        this.head.setRotationPoint(0.0F, 23.75F, 0.0F);
         this.head.cubeList.add(new ModelBox(head, 9, 0, -1.0F, -2.0F, -8.0F, 2, 1, 1, 0.0F, false));
         this.head.cubeList.add(new ModelBox(head, 0, 0, -1.51F, -2.01F, -7.0F, 3, 2, 3, 0.0F, false));
 
@@ -109,18 +87,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.body1.addChild(finR1);
         this.finR1.cubeList.add(new ModelBox(finR1, 0, 11, -2.5F, 0.0F, -0.5F, 4, 0, 1, 0.0F, false));
 
-        this.legL1 = new AdvancedModelRenderer(this);
-        this.legL1.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body1.addChild(legL1);
-        this.setRotateAngle(legL1, 0.0F, 0.0F, 0.5672F);
-        this.legL1.cubeList.add(new ModelBox(legL1, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR1 = new AdvancedModelRenderer(this);
-        this.legR1.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body1.addChild(legR1);
-        this.setRotateAngle(legR1, 0.0F, 0.0F, -0.5672F);
-        this.legR1.cubeList.add(new ModelBox(legR1, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
         this.body2 = new AdvancedModelRenderer(this);
         this.body2.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.body1.addChild(body2);
@@ -135,18 +101,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.finR2.setRotationPoint(-1.5F, 0.0F, 0.5F);
         this.body2.addChild(finR2);
         this.finR2.cubeList.add(new ModelBox(finR2, 0, 11, -3.0F, -0.005F, -0.5F, 4, 0, 1, 0.0F, false));
-
-        this.legL2 = new AdvancedModelRenderer(this);
-        this.legL2.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body2.addChild(legL2);
-        this.setRotateAngle(legL2, 0.0F, 0.0F, 0.5672F);
-        this.legL2.cubeList.add(new ModelBox(legL2, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR2 = new AdvancedModelRenderer(this);
-        this.legR2.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body2.addChild(legR2);
-        this.setRotateAngle(legR2, 0.0F, 0.0F, -0.5672F);
-        this.legR2.cubeList.add(new ModelBox(legR2, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
 
         this.body3 = new AdvancedModelRenderer(this);
         this.body3.setRotationPoint(0.0F, 0.0F, 1.0F);
@@ -163,18 +117,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.body3.addChild(finR3);
         this.finR3.cubeList.add(new ModelBox(finR3, 0, 11, -3.25F, -0.01F, -0.5F, 4, 0, 1, 0.0F, false));
 
-        this.legL3 = new AdvancedModelRenderer(this);
-        this.legL3.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body3.addChild(legL3);
-        this.setRotateAngle(legL3, 0.0F, 0.0F, 0.5672F);
-        this.legL3.cubeList.add(new ModelBox(legL3, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR3 = new AdvancedModelRenderer(this);
-        this.legR3.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body3.addChild(legR3);
-        this.setRotateAngle(legR3, 0.0F, 0.0F, -0.5672F);
-        this.legR3.cubeList.add(new ModelBox(legR3, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
         this.body4 = new AdvancedModelRenderer(this);
         this.body4.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.body3.addChild(body4);
@@ -189,18 +131,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.finR4.setRotationPoint(-1.5F, 0.0F, 0.5F);
         this.body4.addChild(finR4);
         this.finR4.cubeList.add(new ModelBox(finR4, 0, 11, -3.5F, -0.015F, -0.5F, 4, 0, 1, 0.0F, false));
-
-        this.legL4 = new AdvancedModelRenderer(this);
-        this.legL4.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body4.addChild(legL4);
-        this.setRotateAngle(legL4, 0.0F, 0.0F, 0.5672F);
-        this.legL4.cubeList.add(new ModelBox(legL4, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR4 = new AdvancedModelRenderer(this);
-        this.legR4.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body4.addChild(legR4);
-        this.setRotateAngle(legR4, 0.0F, 0.0F, -0.5672F);
-        this.legR4.cubeList.add(new ModelBox(legR4, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
 
         this.body5 = new AdvancedModelRenderer(this);
         this.body5.setRotationPoint(0.0F, 0.0F, 1.0F);
@@ -217,18 +147,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.body5.addChild(finR5);
         this.finR5.cubeList.add(new ModelBox(finR5, 0, 11, -3.5F, -0.02F, -0.5F, 4, 0, 1, 0.0F, false));
 
-        this.legL5 = new AdvancedModelRenderer(this);
-        this.legL5.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body5.addChild(legL5);
-        this.setRotateAngle(legL5, 0.0F, 0.0F, 0.5672F);
-        this.legL5.cubeList.add(new ModelBox(legL5, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR5 = new AdvancedModelRenderer(this);
-        this.legR5.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body5.addChild(legR5);
-        this.setRotateAngle(legR5, 0.0F, 0.0F, -0.5672F);
-        this.legR5.cubeList.add(new ModelBox(legR5, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
         this.body6 = new AdvancedModelRenderer(this);
         this.body6.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.body5.addChild(body6);
@@ -243,18 +161,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.finR6.setRotationPoint(-1.5F, 0.0F, 0.5F);
         this.body6.addChild(finR6);
         this.finR6.cubeList.add(new ModelBox(finR6, 0, 11, -3.25F, -0.025F, -0.5F, 4, 0, 1, 0.0F, false));
-
-        this.legL6 = new AdvancedModelRenderer(this);
-        this.legL6.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body6.addChild(legL6);
-        this.setRotateAngle(legL6, 0.0F, 0.0F, 0.5672F);
-        this.legL6.cubeList.add(new ModelBox(legL6, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR6 = new AdvancedModelRenderer(this);
-        this.legR6.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body6.addChild(legR6);
-        this.setRotateAngle(legR6, 0.0F, 0.0F, -0.5672F);
-        this.legR6.cubeList.add(new ModelBox(legR6, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
 
         this.body7 = new AdvancedModelRenderer(this);
         this.body7.setRotationPoint(0.0F, 0.0F, 1.0F);
@@ -271,18 +177,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.body7.addChild(finR7);
         this.finR7.cubeList.add(new ModelBox(finR7, 0, 11, -3.25F, -0.03F, -0.5F, 4, 0, 1, 0.0F, false));
 
-        this.legL7 = new AdvancedModelRenderer(this);
-        this.legL7.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body7.addChild(legL7);
-        this.setRotateAngle(legL7, 0.0F, 0.0F, 0.5672F);
-        this.legL7.cubeList.add(new ModelBox(legL7, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR7 = new AdvancedModelRenderer(this);
-        this.legR7.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body7.addChild(legR7);
-        this.setRotateAngle(legR7, 0.0F, 0.0F, -0.5672F);
-        this.legR7.cubeList.add(new ModelBox(legR7, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
         this.body8 = new AdvancedModelRenderer(this);
         this.body8.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.body7.addChild(body8);
@@ -297,18 +191,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.finR8.setRotationPoint(-1.5F, 0.0F, 0.5F);
         this.body8.addChild(finR8);
         this.finR8.cubeList.add(new ModelBox(finR8, 0, 11, -3.0F, -0.035F, -0.5F, 4, 0, 1, 0.0F, false));
-
-        this.legL8 = new AdvancedModelRenderer(this);
-        this.legL8.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body8.addChild(legL8);
-        this.setRotateAngle(legL8, 0.0F, 0.0F, 0.5672F);
-        this.legL8.cubeList.add(new ModelBox(legL8, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR8 = new AdvancedModelRenderer(this);
-        this.legR8.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body8.addChild(legR8);
-        this.setRotateAngle(legR8, 0.0F, 0.0F, -0.5672F);
-        this.legR8.cubeList.add(new ModelBox(legR8, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
 
         this.body9 = new AdvancedModelRenderer(this);
         this.body9.setRotationPoint(0.0F, 0.0F, 1.0F);
@@ -325,18 +207,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.body9.addChild(finR9);
         this.finR9.cubeList.add(new ModelBox(finR9, 0, 11, -2.75F, -0.04F, -0.5F, 4, 0, 1, 0.0F, false));
 
-        this.legL9 = new AdvancedModelRenderer(this);
-        this.legL9.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body9.addChild(legL9);
-        this.setRotateAngle(legL9, 0.0F, 0.0F, 0.5672F);
-        this.legL9.cubeList.add(new ModelBox(legL9, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR9 = new AdvancedModelRenderer(this);
-        this.legR9.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body9.addChild(legR9);
-        this.setRotateAngle(legR9, 0.0F, 0.0F, -0.5672F);
-        this.legR9.cubeList.add(new ModelBox(legR9, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
         this.body10 = new AdvancedModelRenderer(this);
         this.body10.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.body9.addChild(body10);
@@ -351,18 +221,6 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.finR10.setRotationPoint(-1.5F, 0.0F, 0.5F);
         this.body10.addChild(finR10);
         this.finR10.cubeList.add(new ModelBox(finR10, 0, 11, -2.5F, -0.045F, -0.5F, 4, 0, 1, 0.0F, false));
-
-        this.legL10 = new AdvancedModelRenderer(this);
-        this.legL10.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body10.addChild(legL10);
-        this.setRotateAngle(legL10, 0.0F, 0.0F, 0.5672F);
-        this.legL10.cubeList.add(new ModelBox(legL10, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR10 = new AdvancedModelRenderer(this);
-        this.legR10.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body10.addChild(legR10);
-        this.setRotateAngle(legR10, 0.0F, 0.0F, -0.5672F);
-        this.legR10.cubeList.add(new ModelBox(legR10, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
 
         this.body11 = new AdvancedModelRenderer(this);
         this.body11.setRotationPoint(0.0F, 0.0F, 1.0F);
@@ -379,22 +237,10 @@ public class ModelKerygmachela extends AdvancedModelBase {
         this.body11.addChild(finR11);
         this.finR11.cubeList.add(new ModelBox(finR11, 0, 11, -2.25F, -0.05F, -0.5F, 4, 0, 1, 0.0F, false));
 
-        this.legL11 = new AdvancedModelRenderer(this);
-        this.legL11.setRotationPoint(1.25F, 0.5F, 0.5F);
-        this.body11.addChild(legL11);
-        this.setRotateAngle(legL11, 0.0F, 0.0F, 0.5672F);
-        this.legL11.cubeList.add(new ModelBox(legL11, 14, 15, 0.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
-        this.legR11 = new AdvancedModelRenderer(this);
-        this.legR11.setRotationPoint(-1.25F, 0.5F, 0.5F);
-        this.body11.addChild(legR11);
-        this.setRotateAngle(legR11, 0.0F, 0.0F, -0.5672F);
-        this.legR11.cubeList.add(new ModelBox(legR11, 10, 15, -2.0F, -0.25F, 0.0F, 2, 1, 0, 0.0F, false));
-
         this.tail = new AdvancedModelRenderer(this);
         this.tail.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.body11.addChild(tail);
-        this.tail.cubeList.add(new ModelBox(tail, 0, 0, -0.5F, 0.0F, 0.0F, 1, 0, 15, 0.0F, false));
+        this.tail.cubeList.add(new ModelBox(tail, 0, 0, -0.75F, 0.0F, 0.0F, 1, 0, 15, 0.0F, false));
 
         this.appendageR = new AdvancedModelRenderer(this);
         this.appendageR.setRotationPoint(-1.5F, -1.25F, -5.75F);
@@ -523,8 +369,8 @@ public class ModelKerygmachela extends AdvancedModelBase {
             speed = 0.7F * 0.2F;
         }
 
-        AdvancedModelRenderer[] legsL = {this.legL1, this.legL2, this.legL3, this.legL4, this.legL5, this.legL6, this.legL7, this.legL8, this.legL9, this.legL10, this.legL11};
-        AdvancedModelRenderer[] legsR = {this.legR1, this.legR2, this.legR3, this.legR4, this.legR5, this.legR6, this.legR7, this.legR8, this.legR9, this.legR10, this.legR11};
+        //AdvancedModelRenderer[] legsL = {this.legL1, this.legL2, this.legL3, this.legL4, this.legL5, this.legL6, this.legL7, this.legL8, this.legL9, this.legL10, this.legL11};
+        //AdvancedModelRenderer[] legsR = {this.legR1, this.legR2, this.legR3, this.legR4, this.legR5, this.legR6, this.legR7, this.legR8, this.legR9, this.legR10, this.legR11};
         AdvancedModelRenderer[] bodyF = {this.body4,this.body5,this.body6,this.body7};
         AdvancedModelRenderer[] fishTail = {this.body6, this.body7, this.body8, this.body9, this.body10, this.body11, this.tail};
         AdvancedModelRenderer[] pincerL = {this.appendageL, this.appendageL1};
@@ -568,107 +414,107 @@ public class ModelKerygmachela extends AdvancedModelBase {
 
         if (isAtBottom && e.isInWater()) {
             if (f3 != 0.0) {
-                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-                this.flap(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-                this.flap(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-                this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-                this.flap(legL5, 0.5F, -0.5F, false, 42.0F, -0.5F, f2, 0.3F);
-                this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-                this.flap(legL6, 0.5F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-                this.flap(legR6, 0.5F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-                this.flap(legL7, 0.5F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
-                this.flap(legR7, 0.5F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
-                this.flap(legL8, 0.5F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
-                this.flap(legR8, 0.5F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
-                this.flap(legL9, 0.5F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
-                this.flap(legR9, 0.5F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
-                this.flap(legL10, 0.5F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
-                this.flap(legR10, 0.5F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
-                this.flap(legL11, 0.5F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
-                this.flap(legR11, 0.5F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
-
-                this.swing(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-                this.swing(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-                this.swing(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.swing(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.swing(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.swing(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.swing(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.swing(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-                this.swing(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-                this.swing(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-                this.swing(legL6, 0.5F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-                this.swing(legR6, 0.5F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-                this.swing(legL7, 0.5F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
-                this.swing(legR7, 0.5F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
-                this.swing(legL8, 0.5F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
-                this.swing(legR8, 0.5F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
-                this.swing(legL9, 0.5F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
-                this.swing(legR9, 0.5F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
-                this.swing(legL10, 0.5F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
-                this.swing(legR10, 0.5F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
-                this.swing(legL11, 0.5F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
-                this.swing(legR11, 0.5F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
-                
+//                this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+//                this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
+//                this.flap(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+//                this.flap(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+//                this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL5, 0.5F, -0.5F, false, 42.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL6, 0.5F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR6, 0.5F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL7, 0.5F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR7, 0.5F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL8, 0.5F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR8, 0.5F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL9, 0.5F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR9, 0.5F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL10, 0.5F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR10, 0.5F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
+//                this.flap(legL11, 0.5F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
+//                this.flap(legR11, 0.5F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
+//
+//                this.swing(legL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+//                this.swing(legR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+//                this.swing(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL6, 0.5F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR6, 0.5F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL7, 0.5F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR7, 0.5F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL8, 0.5F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR8, 0.5F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL9, 0.5F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR9, 0.5F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL10, 0.5F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR10, 0.5F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
+//                this.swing(legL11, 0.5F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
+//                this.swing(legR11, 0.5F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
+//
                 //this.walk(body6, 0.8F, -0.015f, false, 2, 0.2F, f2, 1F);
                 this.chainWave(bodyF, 0.8F, 0.03f, 0.5, f2, 0.3F);
             }
             this.chainSwing(bodyF, 0.1F, 0.1F, -3, f2, 1.0F);
         }
         else if (e.isInWater()) {
-            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
-            this.chainWave(legsR, 0.25F, 0.2F, -3, f2, 1);
-            this.flap(legL1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(legR1, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(legL2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR2, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL3, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR3, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL4, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(legR4, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(legL5, 0.2F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-            this.flap(legR5, 0.2F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-            this.flap(legL6, 0.2F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-            this.flap(legR6, 0.2F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-            this.flap(legL7, 0.2F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
-            this.flap(legR7, 0.2F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
-            this.flap(legL8, 0.2F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
-            this.flap(legR8, 0.2F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
-            this.flap(legL9, 0.2F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
-            this.flap(legR9, 0.2F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
-            this.flap(legL10, 0.2F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
-            this.flap(legR10, 0.2F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
-            this.flap(legL11, 0.2F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
-            this.flap(legR11, 0.2F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
-
-            this.swing(legL1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.swing(legR1, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.swing(legL2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.swing(legR2, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.swing(legL3, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.swing(legR3, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.swing(legL4, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.swing(legR4, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.swing(legL5, 0.2F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-            this.swing(legR5, 0.2F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-            this.swing(legL6, 0.2F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
-            this.swing(legR6, 0.2F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
-            this.swing(legL7, 0.2F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
-            this.swing(legR7, 0.2F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
-            this.swing(legL8, 0.2F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
-            this.swing(legR8, 0.2F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
-            this.swing(legL9, 0.2F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
-            this.swing(legR9, 0.2F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
-            this.swing(legL10, 0.2F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
-            this.swing(legR10, 0.2F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
-            this.swing(legL11, 0.2F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
-            this.swing(legR11, 0.2F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
+//            this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
+//            this.chainWave(legsR, 0.25F, 0.2F, -3, f2, 1);
+//            this.flap(legL1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+//            this.flap(legR1, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+//            this.flap(legL2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR2, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL3, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR3, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL4, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR4, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL5, 0.2F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR5, 0.2F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL6, 0.2F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR6, 0.2F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL7, 0.2F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR7, 0.2F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL8, 0.2F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR8, 0.2F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL9, 0.2F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR9, 0.2F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL10, 0.2F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR10, 0.2F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
+//            this.flap(legL11, 0.2F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
+//            this.flap(legR11, 0.2F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
+//
+//            this.swing(legL1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+//            this.swing(legR1, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+//            this.swing(legL2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR2, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL3, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR3, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL4, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR4, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL5, 0.2F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR5, 0.2F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL6, 0.2F, -0.5F, false, 5.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR6, 0.2F, 0.5F, false, 5.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL7, 0.2F, -0.5F, false, 6.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR7, 0.2F, 0.5F, false, 6.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL8, 0.2F, -0.5F, false, 7.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR8, 0.2F, 0.5F, false, 7.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL9, 0.2F, -0.5F, false, 8.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR9, 0.2F, 0.5F, false, 8.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL10, 0.2F, -0.5F, false, 9.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR10, 0.2F, 0.5F, false, 9.0F, 0.5F, f2, 0.3F);
+//            this.swing(legL11, 0.2F, -0.5F, false, 10.0F, -0.5F, f2, 0.3F);
+//            this.swing(legR11, 0.2F, 0.5F, false, 10.0F, 0.5F, f2, 0.3F);
 
             this.chainSwing(bodyF, 0.2F, 0.1F, -1, f2, 0.5F);
             this.chainWave(bodyF, 0.5F, 0.08f, -0.25, f2, 0.65F);

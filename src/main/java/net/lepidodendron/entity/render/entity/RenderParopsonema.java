@@ -32,7 +32,7 @@ public class RenderParopsonema extends RenderLiving<EntityPrehistoricFloraParops
     protected void preRenderCallback(EntityPrehistoricFloraParopsonema entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

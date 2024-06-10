@@ -1,0 +1,47 @@
+{
+	"name": "Nesonektris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/nesonektris_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_nesonektris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nesonektris",
+			"title": "Nesonektris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Vetulicolia $(br)>Vetulicolida $(br)>Vetulicolata $(br)>Didazoonidae"
+		},
+        	{
+            "type": "entity",
+            "name": "N. aldridgei",
+            "entity": "lepidodendron:prehistoric_flora_nesonektris",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nesonektris",
+			"type": "text",
+			"text": "Nesonektris is a vetulicolian chordate known from the Emu Bay Shale of Cambrian Australia.  It is one of the few vetulicolians known from deposits outside of the Maotianshan Shales in China. Nesonektris had a paddle like tail and a long notochord running inside its tail, demonstrating that the animal was indeed a chordate."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_nesonektris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_nesonektris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_nesonektris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_nesonektris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_nesonektris"
+		}
+	]
+}

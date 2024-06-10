@@ -5,13 +5,13 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderDilophosaurus;
-import net.lepidodendron.entity.render.entity.RenderGuanlong;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.lepidodendron.entity.render.entity.RenderMonolophosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -41,13 +41,12 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFloraLandBase implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFloraLandCarnivoreBase implements IAdvancementGranter, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation SCRATCH_ANIMATION;
-	public Animation HURT_ANIMATION;
 	private int standCooldown;
 
 	public EntityPrehistoricFloraMonolophosaurus(World world) {
@@ -56,12 +55,36 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 		minWidth = 0.20F;
 		maxWidth = 0.8F;
 		maxHeight = 1.25F;
-		maxHealthAgeable = 35;
+		maxHealthAgeable = 50;
 		SCRATCH_ANIMATION = Animation.create(65);
-		HURT_ANIMATION = Animation.create(15);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getWalkCycleLength() {
+		return 40;
+	}
+
+	@Override
+	public int getFootstepOffset() {
+		return 5;
+	}
+
+	@Override
+	public int getRunCycleLength() {
+		return 15;
+	}
+
+	@Override
+	public int getRunFootstepOffset() {
+		return 0;
+	}
+
+	@Override
+	public int getHurtLength() {
+		return 15;
 	}
 
 	@Override
@@ -72,6 +95,16 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 		}
 	}
 
+	@Override
+	public int getNoiseLength() {
+		return 30;
+	}
+
+	@Override
+	public String getTexture() {
+		return this.getTexture();
+	}
+	
 	@Override
 	public boolean isAnimationDirectionLocked(Animation animation) {
 		return animation == SCRATCH_ANIMATION || animation == ROAR_ANIMATION
@@ -104,7 +137,7 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, HURT_ANIMATION, SCRATCH_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, HURT_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, MAKE_NEST_ANIMATION, SCRATCH_ANIMATION};
 	}
 
 	@Override
@@ -119,7 +152,7 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 80;
+		return 50;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -134,11 +167,6 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 	@Override
 	public int getAttackLength() {
 		return 20;
-	}
-
-	@Override
-	public String getTexture() {
-		return this.getTexture();
 	}
 
 	@Override
@@ -164,7 +192,7 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 3.425F;
+			speedBase = speedBase * 2.325F;
 		}
 		return speedBase;
 	}
@@ -176,12 +204,21 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 92000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		float size = this.getRenderSizeModifier() * 1.50F * this.getAgeScale();
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.2F, 0.5F + size);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override
@@ -190,12 +227,18 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 		return Math.max(super.getEyeHeight(), this.height * 0.95F);
 	}
 
+	@Override
+	public float getSwimHeight()
+	{
+		return this.height * 1.1F;
+	}
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
+		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
@@ -213,11 +256,6 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.MEAT);
 	}
-
-	@Override
-	public boolean panics() {
-		return true;
-	}
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -233,26 +271,33 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(9.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
+	}
+
+	@Override
+	public SoundEvent getRoarSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:monolophosaurus_roar"));
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:monolophosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:cryolophosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:guanlong_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:cryolophosaurus_hurt"));
 	}
 
 	@Override
@@ -269,8 +314,18 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
+			if (this.getAnimationTick() == 18) {
+				double d1 = this.posX - this.getAttackTarget().posX;
+				double d0;
+				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
+				{
+					d1 = (Math.random() - Math.random()) * 0.01D;
+				}
+				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
+				this.getAttackTarget().addVelocity(0, 0.115, 0);
+				launchAttack();
+			}
 		}
 
 		if (this.standCooldown > 0) {
@@ -291,20 +346,8 @@ public class EntityPrehistoricFloraMonolophosaurus extends EntityPrehistoricFlor
 		//System.err.println("Testing laying conditions");
 		BlockPos posNest = pos;
 		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
+			TileEntity te = world.getTileEntity(pos);
+			return (((BlockNest.TileEntityNest)te).getStackInSlot(0).isEmpty());
 		}
 		return false;
 	}

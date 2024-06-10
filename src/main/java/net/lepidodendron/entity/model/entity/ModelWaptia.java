@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelWaptia extends AdvancedModelBase {
+public class ModelWaptia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer base;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer body1;
@@ -355,16 +355,20 @@ public class ModelWaptia extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = 0.4F;
-        this.base.offsetX = 0.55F;
+        this.base.offsetY = -2.0F;
+        this.base.offsetX = -0.9F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 4.5F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(base, -0.2F, 2.0F, 0.1F);
+        this.setRotateAngle(body1, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.1F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

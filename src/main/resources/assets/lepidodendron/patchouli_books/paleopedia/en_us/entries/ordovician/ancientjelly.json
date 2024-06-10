@@ -1,0 +1,68 @@
+{
+	"name": "Ancient Jellyfish",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ancientjelly_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_palaeojelly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeojelly",
+			"title": "Ancient Jellyfish",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)>Cnidaria"
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_palaeojelly1",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_palaeojelly2",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_palaeojelly3",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"type": "entity",
+			"name": "Ancient Jellyfish",
+			"entity": "lepidodendron:prehistoric_flora_jellyfish_precambrian",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeojelly",
+			"type": "text",
+			"text": "Jellyfish were some of the earliest recognizable animals, having their roots back as early as the Cambrian! From then to now, Jellyfish still have a very similar appearance and similar lifestyles."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_palaeojelly1"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_palaeojelly1"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_palaeojelly1"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_palaeojelly1"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_palaeojelly1"
+		}
+	]
+}

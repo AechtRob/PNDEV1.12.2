@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelPhacops extends AdvancedModelBase {
+public class ModelPhacops extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -255,16 +255,16 @@ public class ModelPhacops extends AdvancedModelBase {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = -0.0F;
-        this.Body.offsetX = -0.0F;
+        this.Body.offsetY = -0.4F;
+        this.Body.offsetX = 0.1F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 2.5F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(Body, 0.2F, 3.0F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);

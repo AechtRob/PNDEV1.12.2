@@ -8,7 +8,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
 import net.lepidodendron.entity.render.entity.RenderAnchiornis;
-import net.lepidodendron.entity.render.entity.RenderDimorphodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -87,8 +86,10 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 		boolean result = super.attackEntityFrom(ds, i);
 		if (ds.getTrueSource() instanceof EntityLivingBase && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) ds.getTrueSource();
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraAnchiornis> anchiornis = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnchiornis.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraAnchiornis currentAnchiornis : anchiornis) {
+				currentAnchiornis.setAlarmTarget(ee);
 				currentAnchiornis.setRevengeTarget(ee);
 				currentAnchiornis.screamAlarmCooldown = rand.nextInt(20);
 			}
@@ -147,7 +148,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 			}
 
 			//Screaming handling:
-			if (this.getRevengeTarget() == null && !this.isBurning()) {
+			if (this.getAlarmTarget() == null && !this.isBurning()) {
 				this.setScreaming(false);
 			} else {
 				this.setIsFast(true);
@@ -231,7 +232,7 @@ public class EntityPrehistoricFloraAnchiornis extends EntityPrehistoricFloraLand
 		}
 
 		//random idle animations
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getAlarmTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && !this.getIsFlying() && !this.getIsClimbing() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			if (rand.nextInt(5) != 0) {
 				this.setAnimation(STAND_ANIMATION);

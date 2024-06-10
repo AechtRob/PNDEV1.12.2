@@ -1,0 +1,47 @@
+{
+	"name": "Urokodia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/urokodia_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_urokodia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_urokodia",
+			"title": "Urokodia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Mollisoniida"
+		},
+        	{
+            "type": "entity",
+            "name": "U. aequalis",
+            "entity": "lepidodendron:prehistoric_flora_urokodia",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_urokodia",
+			"type": "text",
+			"text": "Urokodia is a Cambrian arthropod known from the Maotianshan Shales of China. It superficially resembles a millipede with thorny spikes on each of the carapace segments. Urokodia was probably blind, and has been suggested to be a stem-chelicerate, featuring a benthic lifestyle."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_urokodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_urokodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_urokodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_urokodia"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_urokodia"
+		}
+	]
+}

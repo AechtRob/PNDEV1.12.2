@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelSargodon extends AdvancedModelBase {
+public class ModelSargodon extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -282,20 +282,19 @@ public class ModelSargodon extends AdvancedModelBase {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.0F;
-        this.main.offsetX = -0.0F;
+        this.main.offsetX = 0.15F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 1.5F;
+        float scaler = 1.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(main, -0.3F, 3.7F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

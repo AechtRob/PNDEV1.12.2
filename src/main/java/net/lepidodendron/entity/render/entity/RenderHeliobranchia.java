@@ -32,7 +32,7 @@ public class RenderHeliobranchia extends RenderLiving<EntityPrehistoricFloraHeli
     protected void preRenderCallback(EntityPrehistoricFloraHeliobranchia entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

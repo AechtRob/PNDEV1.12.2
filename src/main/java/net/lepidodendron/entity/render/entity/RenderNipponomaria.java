@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAkasakiella;
 import net.lepidodendron.entity.EntityPrehistoricFloraNipponomaria;
 import net.lepidodendron.entity.model.entity.ModelNipponomaria;
 import net.minecraft.client.renderer.GlStateManager;

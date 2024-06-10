@@ -5,13 +5,13 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraProterogyrinus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelProterogyrinus extends AdvancedModelBaseExtended {
+public class ModelProterogyrinus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended main;
     private final AdvancedModelRendererExtended bodyfront;
     private final AdvancedModelRendererExtended bodyfrontfluke_r1;

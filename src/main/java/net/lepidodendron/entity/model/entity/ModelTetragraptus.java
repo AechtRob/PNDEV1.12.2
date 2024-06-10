@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelTetragraptus extends AdvancedModelBase {
+public class ModelTetragraptus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer full;
     private final AdvancedModelRenderer west;
     private final AdvancedModelRenderer leftw;

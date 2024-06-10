@@ -1,16 +1,11 @@
 package net.lepidodendron;
 
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.Reference2ReferenceOpenHashMap;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.boats.EntityPNBoat;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class EntityRegistries {
     private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {
@@ -922,9 +917,7 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_pentecopterus", EntityPrehistoricFloraPentecopterus.class, LepidodendronMod.ENTITY_PENTECOPTERUS, 84,-5347787,-12178662);
         registerEntity("prehistoric_flora_leedsichthys", EntityPrehistoricFloraLeedsichthys.class, LepidodendronMod.ENTITY_LEEDSICHTHYS, 164,-12368053,-4671057);
         registerEntity("prehistoric_flora_pliosaurus", EntityPrehistoricFloraPliosaurus.class, LepidodendronMod.ENTITY_PLIOSAURUS, 164,-13421773,-4671057);
-
-
-
+        registerEntity("prehistoric_flora_attenborites", EntityPrehistoricFloraAttenborites.class, LepidodendronMod.ENTITY_ATTENBORITES, 48,-9590956,-15756152);
 
         registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
         registerEntityNoEgg("prehistoric_flora_submarine", PrehistoricFloraSubmarine.class, LepidodendronMod.ENTITY_SUBMARINE, 80);

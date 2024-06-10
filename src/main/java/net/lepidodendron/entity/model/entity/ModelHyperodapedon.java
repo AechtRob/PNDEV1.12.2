@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHyperodapedon;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelHyperodapedon extends AdvancedModelBaseExtended {
+public class ModelHyperodapedon extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended hyperodapedon;
     private final AdvancedModelRendererExtended hip;
     private final AdvancedModelRendererExtended cube_r1;
@@ -397,7 +397,7 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         this.chainWave(Tail, (speed*0.6F), -0.05F, 0.2F, f2, 1F);
         this.chainSwing(Tail, (speed*0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
-        this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.5), false, 1.5F, f2, 1) + 0.4F;
+        this.hyperodapedon.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.5), false, 1.5F, f2, 1) + 0.4F;
 
     }
 

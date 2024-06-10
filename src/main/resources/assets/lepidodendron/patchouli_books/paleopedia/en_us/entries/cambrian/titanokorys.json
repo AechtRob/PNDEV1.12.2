@@ -1,0 +1,47 @@
+{
+	"name": "Titanokorys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/titanokorys_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_titanokorys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_titanokorys",
+			"title": "Titanokorys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
+		},
+        	{
+            "type": "entity",
+            "name": "T. gainesi",
+            "entity": "lepidodendron:prehistoric_flora_titanokorys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_titanokorys",
+			"type": "text",
+			"text": "Titanokorys is a large hurdiid radiodont known from the Marble Canyon of Canada. It had a large ovular carapace and shares many similarities to Cambroraster. Titanokorys was larger however, growing to roughly half a meter long and having a pointed and larger sclerite. It was likely a nektobenthic animal that swam slowly above the seabed and sifted through the sediments for food, using its carapace to guide food into its mouth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_titanokorys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_titanokorys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_titanokorys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_titanokorys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_titanokorys"
+		}
+	]
+}

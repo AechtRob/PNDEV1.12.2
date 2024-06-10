@@ -10225,5 +10225,167 @@
         "stream": false
       }
     ]
+  },
+
+  "monolophosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:monolophosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:monolophosaurus_living02",
+        "stream": false
+      }
+    ]
+  },
+  "monolophosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:monolophosaurus_roar01",
+        "stream": false
+      }
+    ]
+  },
+
+  "caihong_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caihong_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_living07",
+        "stream": false
+      }
+    ]
+  },
+  "caihong_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caihong_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "caihong_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caihong_death",
+        "stream": false
+      }
+    ]
+  },
+  "caihong_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caihong_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_alarm04",
+        "stream": false
+      }
+    ]
+  },
+  "caihong_threat": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caihong_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caihong_threat03",
+        "stream": false
+      }
+    ]
+  },
+  "pampaphoneus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pampaphoneus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pampaphoneus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pampaphoneus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pampaphoneus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pampaphoneus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "pampaphoneus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pampaphoneus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pampaphoneus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pampaphoneus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "pampaphoneus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pampaphoneus_death",
+        "stream": false
+      }
+    ]
   }
 }

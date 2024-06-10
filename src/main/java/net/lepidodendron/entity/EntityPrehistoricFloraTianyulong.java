@@ -168,9 +168,11 @@ public class EntityPrehistoricFloraTianyulong extends EntityPrehistoricFloraLand
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraTianyulong> Tianyulong = Functions.getEntitiesWithinAABBPN(this.world, EntityPrehistoricFloraTianyulong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)), EntitySelectors.NOT_SPECTATING);
 			for (EntityPrehistoricFloraTianyulong currentTianyulong : Tianyulong) {
 				currentTianyulong.setRevengeTarget(ee);
+				currentTianyulong.setAlarmTarget(ee);
 				currentTianyulong.alarmCooldown = rand.nextInt(20);
 			}
 		}
@@ -198,7 +200,7 @@ public class EntityPrehistoricFloraTianyulong extends EntityPrehistoricFloraLand
 		}
 
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 
 			if (rand.nextInt(2) == 0) {

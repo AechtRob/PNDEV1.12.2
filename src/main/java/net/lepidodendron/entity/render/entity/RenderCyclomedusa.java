@@ -31,7 +31,7 @@ public class RenderCyclomedusa extends RenderLiving<EntityPrehistoricFloraCyclom
     protected void preRenderCallback(EntityPrehistoricFloraCyclomedusa entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        //this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

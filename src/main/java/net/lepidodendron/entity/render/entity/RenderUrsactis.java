@@ -12,11 +12,11 @@ public class RenderUrsactis extends RenderLiving<EntityPrehistoricFloraUrsactis>
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ursactis.png");
 
     public static float getScaler() {
-        return 0.45F;
+        return 0.45F*0.75f;
     }
 
     public RenderUrsactis(RenderManager mgr) {
-        super(mgr, new ModelUrsactis(), 0.2f);
+        super(mgr, new ModelUrsactis(), 0.0f);
     }
 
     @Override

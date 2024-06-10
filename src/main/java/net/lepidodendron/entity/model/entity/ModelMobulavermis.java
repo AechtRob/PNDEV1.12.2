@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelMobulavermis extends AdvancedModelBase {
+public class ModelMobulavermis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -414,6 +414,7 @@ public class ModelMobulavermis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Head.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Head, -0.2F, -0.2F, -0.2F);
         this.setRotateAngle(body1, 0.0F, 0.1F, 0.1F);
@@ -429,23 +430,32 @@ public class ModelMobulavermis extends AdvancedModelBase {
         this.Head.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticDisplayCase(float f) {
         this.Head.offsetZ = 0.030F;
         this.Head.render(0.01f);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Head.offsetY = 0.4F;
-        this.Head.offsetX = 0.55F;
+        this.Head.offsetY = -2.9F;
+        this.Head.offsetX = 0.4F;
         this.Head.rotateAngleY = (float)Math.toRadians(200);
         this.Head.rotateAngleX = (float)Math.toRadians(8);
         this.Head.rotateAngleZ = (float)Math.toRadians(-8);
         this.Head.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 2.9F;
         this.Head.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Head, -0.9F, 0.5F, -0.2F);
+        this.setRotateAngle(body1, 0.0F, 0.2F, 0.1F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.1F);
+        this.setRotateAngle(body3, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail1, 0.1F, -0.5F, 0.1F);
+        this.setRotateAngle(tail2, 0.1F, -0.5F, 0.1F);
+        this.setRotateAngle(leftAppendage1, -0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(rightAppendage1, -0.2F, 0.3F, 0.0F);
         //End of pose, now render the model:
         this.Head.render(f);
         //Reset rotations, positions and sizing:
@@ -453,6 +463,7 @@ public class ModelMobulavermis extends AdvancedModelBase {
         this.Head.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -541,9 +552,9 @@ public class ModelMobulavermis extends AdvancedModelBase {
         if (!e.isInWater()) {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
             //this.Head.offsetY = 1.2F - 1.18F;
-            this.bob(Head, -speed * 3F, 2F, false, f2, 1);
-            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+            this.bob(Head, -speed * 5F, 1.5F, false, f2, 1);
+            this.chainWave(fishTail, speed * 5.5F, tailHdegree * 0.05F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 5.5F, tailVdegree * 0.05F, -3, f2, 1);
         }
 
     }

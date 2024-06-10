@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraPhantaspis;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelPhantaspis extends AdvancedModelBase {
+public class ModelPhantaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Group;
     private final AdvancedModelRenderer Cephalon;
     private final AdvancedModelRenderer CranidiumDiagnostic_r1;

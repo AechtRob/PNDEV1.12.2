@@ -1,16 +1,16 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraSarcoprion;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelSarcoprion extends AdvancedModelBase {
+public class ModelSarcoprion extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer leftpectoral;
@@ -304,6 +304,27 @@ public class ModelSarcoprion extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.25F;
+        this.root.offsetX = -0.20F;
+        this.root.rotateAngleY = (float)Math.toRadians(125);
+        this.root.rotateAngleX = (float)Math.toRadians(2);
+        this.root.rotateAngleZ = (float)Math.toRadians(-2);
+        this.root.scaleChildren = true;
+        float scaler = 0.25F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void renderStaticWall(float f) {
         resetToDefaultPose();
     }
