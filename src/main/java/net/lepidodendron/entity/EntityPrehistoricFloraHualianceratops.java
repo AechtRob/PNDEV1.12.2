@@ -70,9 +70,11 @@ public class EntityPrehistoricFloraHualianceratops extends EntityPrehistoricFlor
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraHualianceratops> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHualianceratops.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraHualianceratops currentYinlong : Yinlong) {
 				currentYinlong.setRevengeTarget(ee);
+				currentYinlong.setAlarmTarget(ee);
 				currentYinlong.alarmCooldown = rand.nextInt(20);
 			}
 		}

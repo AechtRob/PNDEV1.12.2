@@ -8,6 +8,8 @@ public class RenderDisplays {
     public static final ModelAcutiramus modelAcutiramus = new ModelAcutiramus();
     public static final ModelArchaeopteryx modelArchaeopteryx = new ModelArchaeopteryx();
     public static final ModelArchaeopteryx modelArchaeopteryxBook = new ModelArchaeopteryx();
+    public static final ModelAttenborites modelAttenborites = new ModelAttenborites();
+    public static final ModelAttenborites modelAttenboritesBook = new ModelAttenborites();
     public static final ModelCaihong modelCaihong = new ModelCaihong();
     public static final ModelCaihong modelCaihongBook = new ModelCaihong();
     public static final ModelAnchiornis modelAnchiornis = new ModelAnchiornis();
@@ -457,6 +459,14 @@ public class RenderDisplays {
     public static final ModelOlenellus modelOlenellus = new ModelOlenellus();
     public static final ModelOrcanopterus modelOrcanopterus = new ModelOrcanopterus();
     public static final ModelOrcanopterus modelOrcanopterusBook = new ModelOrcanopterus();
+    public static final ModelPalaeoJelly1 modelPalaeoJelly1 = new ModelPalaeoJelly1();
+    public static final ModelPalaeoJelly1 modelPalaeoJelly1Book = new ModelPalaeoJelly1();
+    public static final ModelPalaeoJelly2 modelPalaeoJelly2 = new ModelPalaeoJelly2();
+    public static final ModelPalaeoJelly2 modelPalaeoJelly2Book = new ModelPalaeoJelly2();
+    public static final ModelPalaeoJelly3 modelPalaeoJelly3 = new ModelPalaeoJelly3();
+    public static final ModelPalaeoJelly3 modelPalaeoJelly3Book = new ModelPalaeoJelly3();
+    public static final ModelPalaeoJelly4 modelPalaeoJelly4 = new ModelPalaeoJelly4();
+    public static final ModelPalaeoJelly4 modelPalaeoJelly4Book = new ModelPalaeoJelly4();
     public static final ModelOzarkodina modelOzarkodina = new ModelOzarkodina();
     public static final ModelPalaeocarcharias modelPalaeocarcharias = new ModelPalaeocarcharias();
     public static final ModelPalaeodictyopteraLarge modelPalaeodictyopteraLarge = new ModelPalaeodictyopteraLarge();

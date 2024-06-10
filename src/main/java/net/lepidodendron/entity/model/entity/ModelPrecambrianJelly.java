@@ -70,7 +70,12 @@ public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
         //Start of pose:
 
         //End of pose, now render the model:
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.45F);
         this.main.render(f);
+        GlStateManager.disableBlend();
+
         //Reset rotations, positions and sizing:
         this.main.setScale(1.0F, 1.0F, 1.0F);
         this.main.scaleChildren = false;

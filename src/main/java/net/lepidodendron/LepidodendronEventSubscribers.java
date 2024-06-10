@@ -833,28 +833,170 @@ public class LepidodendronEventSubscribers {
 		if (Block.getBlockFromItem(event.getItemStack().getItem()) instanceof BlockFossil) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x1");
+			if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPrecambrian.block) {
+				tt.add("§2Precambrian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCambrian.block) {
+				tt.add("§2Cambrian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilOrdovician.block) {
+				tt.add("§2Ordovician");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilSilurian.block) {
+				tt.add("§2Silurian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilDevonian.block) {
+				tt.add("§2Devonian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCarboniferous.block) {
+				tt.add("§2Carboniferous");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPermian.block) {
+				tt.add("§2Permian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilTriassic.block) {
+				tt.add("§2Triassic");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilJurassic.block) {
+				tt.add("§2Jurassic");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCretaceous.block) {
+				tt.add("§2Cretaceous");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPaleogene.block) {
+				tt.add("§2Paleogene");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilNeogene.block) {
+				tt.add("§2Neogene");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPleistocene.block) {
+				tt.add("§2Pleistocene");
+			}
 		}
-		if (event.getItemStack().getItem() == ItemFossilPrecambrian.block
-				|| event.getItemStack().getItem() == ItemFossilCambrian.block
-				|| event.getItemStack().getItem() == ItemFossilOrdovician.block
-				|| event.getItemStack().getItem() == ItemFossilSilurian.block
-				|| event.getItemStack().getItem() == ItemFossilDevonian.block
-				|| event.getItemStack().getItem() == ItemFossilCarboniferous.block
-				|| event.getItemStack().getItem() == ItemFossilPermian.block
-				|| event.getItemStack().getItem() == ItemFossilTriassic.block
-				|| event.getItemStack().getItem() == ItemFossilJurassic.block
-				|| event.getItemStack().getItem() == ItemFossilCretaceous.block
-				|| event.getItemStack().getItem() == ItemFossilPaleogene.block
-				|| event.getItemStack().getItem() == ItemFossilNeogene.block
-				|| event.getItemStack().getItem() == ItemFossilPleistocene.block) {
+		else if (event.getItemStack().getItem() == ItemFossilPrecambrian.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
+			tt.add("§2Precambrian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilCambrian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Cambrian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilOrdovician.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Ordovician");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilSilurian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Silurian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilDevonian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Devonian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilCarboniferous.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Carboniferous");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPermian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Permian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilTriassic.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Triassic");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilJurassic.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Jurassic");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilCretaceous.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Cretaceous");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPaleogene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Paleogene");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilNeogene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Neogene");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPleistocene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add("§2Pleistocene");
 		}
 		if (event.getItemStack().getItem() == ItemFossilClean.block) {
 			if (event.getItemStack().hasTagCompound()) {
 				if (event.getItemStack().getTagCompound().hasKey("period")) {
 					List<String> tt = event.getToolTip();
 					tt.add("Time Research x5");
+					int period = event.getItemStack().getTagCompound().getInteger("period");
+					switch (period) {
+						case 1: default:
+							tt.add("§2Precambrian");
+							break;
+
+						case 2:
+							tt.add("§2Cambrian");
+							break;
+
+						case 3:
+							tt.add("§2Ordovician");
+							break;
+
+						case 4:
+							tt.add("§2Silurian");
+							break;
+
+						case 5:
+							tt.add("§2Devonian");
+							break;
+
+						case 6:
+							tt.add("§2Carboniferous");
+							break;
+
+						case 7:
+							tt.add("§2Permian");
+							break;
+
+						case 8:
+							tt.add("§2Triassic");
+							break;
+
+						case 9:
+							tt.add("§2Jurassic");
+							break;
+
+						case 10:
+							tt.add("§2Cretaceous");
+							break;
+
+						case 11:
+							tt.add("§2Paleogene");
+							break;
+
+						case 12:
+							tt.add("§2Neogene");
+							break;
+
+						case 13:
+							tt.add("§2Pleistocene");
+							break;
+					}
 				}
 			}
 		}

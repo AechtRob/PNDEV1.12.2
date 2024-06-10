@@ -144,7 +144,7 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 		super.onEntityUpdate();
 
 		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 
 			int next = rand.nextInt(2);
@@ -237,9 +237,11 @@ public class EntityPrehistoricFloraHeterodontosaurus extends EntityPrehistoricFl
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraHeterodontosaurus> Heterodontosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHeterodontosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraHeterodontosaurus currentHeterodontosaurus : Heterodontosaurus) {
 				currentHeterodontosaurus.setRevengeTarget(ee);
+				currentHeterodontosaurus.setAlarmTarget(ee);
 				currentHeterodontosaurus.alarmCooldown = rand.nextInt(20);
 			}
 		}
