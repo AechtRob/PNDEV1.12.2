@@ -403,7 +403,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
                                                                     if (biome instanceof BiomeTriassic) {
                                                                         if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
-                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef"))) {
                                                                             isGenericOcean = true;
                                                                         }
                                                                     }
@@ -548,7 +549,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
                                                                     if (biome instanceof BiomeTriassic) {
                                                                         if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
-                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef"))) {
                                                                             isGenericOcean = true;
                                                                         }
                                                                     }
@@ -799,7 +801,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
                                                                     if (biome instanceof BiomeTriassic) {
                                                                         if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
-                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef"))) {
                                                                             isGenericOcean = true;
                                                                         }
                                                                     }
@@ -944,7 +947,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                                 if (biome instanceof BiomeTriassic) {
                                                                     if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
-                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef"))) {
                                                                         isGenericOcean = true;
                                                                     }
                                                                 }

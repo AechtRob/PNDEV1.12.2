@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 		return true;
 	}
 
-	public static String getPeriod() {return "[Carboniferous -] Permian [- Triassic]";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
