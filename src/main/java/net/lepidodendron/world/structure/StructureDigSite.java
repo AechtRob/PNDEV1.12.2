@@ -68,6 +68,9 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(world.getBiome(new BlockPos(i2 + 16, 0, k2 + 16)), LepidodendronConfig.digsiteBiomeBlacklist)) {
 			return;
 		}
+		if (BiomeDictionary.hasType(world.getBiome(new BlockPos(i2 + 16, 0, k2 + 16)), BiomeDictionary.Type.VOID)) {
+			return;
+		}
 
 		int GenChance = LepidodendronConfig.digsiteRarity;
 		if (GenChance <= 0) {

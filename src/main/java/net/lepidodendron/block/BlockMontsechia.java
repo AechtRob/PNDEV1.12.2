@@ -76,6 +76,8 @@ public class BlockMontsechia extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 
 		if (biome instanceof BiomeCretaceousEarly)

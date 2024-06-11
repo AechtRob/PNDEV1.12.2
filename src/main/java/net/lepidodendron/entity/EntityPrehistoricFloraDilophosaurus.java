@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraDilophosaurus extends EntityPrehistoricFloraL
 	public EntityPrehistoricFloraDilophosaurus(World world) {
 		super(world);
 		setSize(0.98F, 1.9F);
-		minWidth = 0.50F;
+		minWidth = 0.12F;
 		maxWidth = 0.98F;
 		maxHeight = 1.9F;
 		maxHealthAgeable = 70.0D;

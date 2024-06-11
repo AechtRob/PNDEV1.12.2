@@ -84,6 +84,8 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if ((!LepidodendronConfigPlants.genPrototaxites && !LepidodendronConfig.genAllPlants)
 			|| dimID == LepidodendronConfig.dimSilurian) //Exclude this dim as it has its own generator already
