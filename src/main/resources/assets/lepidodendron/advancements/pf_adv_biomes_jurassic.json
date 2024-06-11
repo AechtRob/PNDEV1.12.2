@@ -333,6 +333,12 @@
 			"conditions": {
 				"biome": "lepidodendron:jurassic_creek_desert"
 			}
+		},
+		"jurassic_island_forested": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_island_forested"
+			}
 		}
 	},
 	"requirements": [
@@ -448,6 +454,9 @@
 		],
 		[
 			"jurassic_island_sandy_hills"
+		],
+		[
+			"jurassic_island_forested"
 		],
 		[
 			"jurassic_island_sandy_white",

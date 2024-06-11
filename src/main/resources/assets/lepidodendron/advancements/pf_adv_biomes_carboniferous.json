@@ -16,6 +16,12 @@
 		"experience": 500
 	},
 	"criteria": {
+		"carboniferous_bay": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_bay"
+			}
+		},
 		"carboniferous_beach": {
 			"trigger": "minecraft:location",
 			"conditions": {
@@ -118,6 +124,12 @@
 				"biome": "lepidodendron:carboniferous_estuary_helper"
 			}
 		},
+		"carboniferous_fen": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_fen"
+			}
+		},
 		"carboniferous_cold_savanna": {
 			"trigger": "minecraft:location",
 			"conditions": {
@@ -130,10 +142,40 @@
 				"biome": "lepidodendron:carboniferous_swamp_river_border"
 			}
 		},
+		"carboniferous_swamp_flat": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_swamp_flat"
+			}
+		},
 		"carboniferous_cold_woodland": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:carboniferous_cold_woodland"
+			}
+		},
+		"carboniferous_volcanic_tarns": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_volcanic_tarns"
+			}
+		},
+		"carboniferous_volcanic_tarns_ash": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_volcanic_tarns_ash"
+			}
+		},
+		"carboniferous_volcanic_tarns_crater": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_volcanic_tarns_crater"
+			}
+		},
+		"carboniferous_volcanic_tarns_crater_water": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
 			}
 		}
 	},
@@ -175,7 +217,8 @@
 		[
 			"carboniferous_swamp",
 			"carboniferous_swamp_hills",
-			"carboniferous_swamp_river_border"
+			"carboniferous_swamp_river_border",
+			"carboniferous_swamp_flat"
 		],
 		[
 			"carboniferous_swamp_burnt"
@@ -185,6 +228,17 @@
 		],
 		[
 			"carboniferous_cold_woodland"
+		],
+		[
+			"carboniferous_fen"
+		],
+		[
+			"carboniferous_volcanic_tarns",
+			"carboniferous_volcanic_tarns_ash"
+		],
+		[
+			"carboniferous_volcanic_tarns_crater",
+			"carboniferous_volcanic_tarns_crater_water"
 		]
 	]
 }

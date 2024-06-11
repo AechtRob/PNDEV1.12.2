@@ -46,36 +46,6 @@
 				"biome": "lepidodendron:permian_cold_glossopteris_beach"
 			}
 		},
-		"permian_cold_glossopteris_forest": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_cold_glossopteris_forest"
-			}
-		},
-		"permian_cold_glossopteris_forest_light": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
-			}
-		},
-		"permian_cold_glossopteris_forest_ocean": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
-			}
-		},
-		"permian_temperate_glossopteris_copse": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_temperate_glossopteris_copse"
-			}
-		},
-		"permian_temperate_glossopteris": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:permian_temperate_glossopteris"
-			}
-		},
 		"permian_desert": {
 			"trigger": "minecraft:location",
 			"conditions": {
@@ -92,6 +62,54 @@
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:permian_floodbasalt_edge"
+			}
+		},
+		"permian_cold_glossopteris_swamp": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_cold_glossopteris_swamp"
+			}
+		},
+		"permian_cold_glossopteris_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_cold_glossopteris_forest"
+			}
+		},
+		"permian_drumlin": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_drumlin"
+			}
+		},
+		"permian_cold_glossopteris_forest_ocean": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
+			}
+		},
+		"permian_temperate_glossopteris_copse": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_temperate_glossopteris_copse"
+			}
+		},
+		"permian_cold_glossopteris_forest_light": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+			}
+		},
+		"permian_cold_glossopteris_forest_craggy": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_cold_glossopteris_forest_craggy"
+			}
+		},
+		"permian_temperate_glossopteris": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_temperate_glossopteris"
 			}
 		},
 		"permian_highlands": {
@@ -195,6 +213,12 @@
 			"conditions": {
 				"biome": "lepidodendron:permian_ocean_sponge_reef"
 			}
+		},
+		"permian_wetlands_hummocks": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_wetlands_hummocks"
+			}
 		}
 	},
 	"requirements": [
@@ -209,22 +233,27 @@
 		],
 		[
 			"permian_cold_glossopteris_forest",
+			"permian_cold_glossopteris_swamp",
 			"permian_cold_glossopteris_beach"
 		],
 		[
-			"permian_cold_glossopteris_forest_light"
+			"permian_drumlin"
+		],
+		[
+			"permian_cold_glossopteris_forest_ocean"
 		],
 		[
 			"permian_temperate_glossopteris_copse"
+		],
+		[
+			"permian_cold_glossopteris_forest_light",
+			"permian_cold_glossopteris_forest_craggy"
 		],
 		[
 			"permian_temperate_glossopteris"
 		],
 		[
 			"permian_beach"
-		],
-		[
-			"permian_cold_glossopteris_forest_ocean"
 		],
 		[
 			"permian_desert"
@@ -277,6 +306,9 @@
 		],
 		[
 			"permian_stony_depression"
+		],
+		[
+			"permian_wetlands_hummocks"
 		]
 	]
 }
