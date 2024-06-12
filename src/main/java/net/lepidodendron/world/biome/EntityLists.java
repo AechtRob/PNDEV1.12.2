@@ -570,8 +570,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsBayReborn);
             }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_ash")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")) {
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_ash")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsTarnsPF);
             }
@@ -581,7 +580,8 @@ public class EntityLists {
             if (LepidodendronConfig.doSpawnsReborn) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsTarnsReborn);
             }
-        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")) {
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsTarnsWaterPF);
             }
