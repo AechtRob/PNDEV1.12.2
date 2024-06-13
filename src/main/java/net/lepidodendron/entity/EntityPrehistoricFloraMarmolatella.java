@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraMarmolatella extends EntityPrehistoricFloraSl
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
