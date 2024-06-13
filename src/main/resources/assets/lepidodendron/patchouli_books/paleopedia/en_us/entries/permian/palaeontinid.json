@@ -1,5 +1,5 @@
 {
-	"name": "Palaeontinid",
+	"name": "Palaeontinoid",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/palaeontinid_icon.png",
 	"category": "lepidodendron:permian_animal",
@@ -7,7 +7,7 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_palaeontinid",
-			"title": "Palaeontinid",
+			"title": "Palaeontinoid",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian-Cretaceous$(br2)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>Palaeontinidea"
 		},
