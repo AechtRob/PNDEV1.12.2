@@ -1322,6 +1322,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 for (int i = 0; i < spawnQty; ++i) {
 
                                                                     //Is the nbt string made of alternates?
+                                                                    //String type = "";
                                                                     if (nbtStr.indexOf("@") > 0) {
                                                                         String[] arrSplit = nbtStr.split("@");
                                                                         nbtStr = arrSplit[rand.nextInt(arrSplit.length)];
