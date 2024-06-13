@@ -217,9 +217,6 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
 				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCasineria.block, (int) (1)));
 			}
-//				else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_drepanosaurus")) {
-//					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsDrepanosaurus.block, (int) (1)));
-//				}
 			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
 				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHylonomus.block, (int) (1)));
 			}
@@ -231,6 +228,12 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			}
 			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
 				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCeltedens.block, (int) (1)));
+			}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_longisquama")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsLongisquama.block, (int) (1)));
+			}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hypuronector")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHypuronector.block, (int) (1)));
 			}
 			return null;
 		}

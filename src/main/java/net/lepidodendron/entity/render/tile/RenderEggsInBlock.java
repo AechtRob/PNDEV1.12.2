@@ -27,6 +27,8 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
     private static final ResourceLocation TEXTURE_LABIDOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
     private static final ResourceLocation TEXTURE_CELTEDENS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens_eggs.png");
+    private static final ResourceLocation TEXTURE_LONGISQUAMA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/longisquama_eggs.png");
+    private static final ResourceLocation TEXTURE_HYPURONECTOR_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypuronector_eggs.png");
 
     //Insects etc:
     private static final ModelInsectEggs insect_eggs = new ModelInsectEggs();
@@ -125,6 +127,20 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_CELTEDENS_EGGS);
+                rotten_wood_eggs.renderAll(0.075F);
+                GlStateManager.popMatrix();
+            }
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_longisquama")) {
+                GlStateManager.pushMatrix();
+                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_LONGISQUAMA_EGGS);
+                rotten_wood_eggs.renderAll(0.075F);
+                GlStateManager.popMatrix();
+            }
+            else if (eggRenderType.equals(LepidodendronMod.MODID + ":prehistoric_flora_hypuronector")) {
+                GlStateManager.pushMatrix();
+                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_HYPURONECTOR_EGGS);
                 rotten_wood_eggs.renderAll(0.075F);
                 GlStateManager.popMatrix();
             }

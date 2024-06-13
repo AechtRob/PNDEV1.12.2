@@ -4,11 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
+import net.lepidodendron.util.patchouli.SpawnLocations1;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -56,7 +53,10 @@ public class BlockEggsLonchidion extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		if (
-			(dimID != LepidodendronConfig.dimJurassic)
+			(dimID != LepidodendronConfig.dimTriassic
+				&& dimID != LepidodendronConfig.dimJurassic
+				&& dimID != LepidodendronConfig.dimCretaceousEarly
+				&& dimID != LepidodendronConfig.dimCretaceousLate)
 		)
 		{
 			return;
@@ -69,25 +69,8 @@ public class BlockEggsLonchidion extends ElementsLepidodendronMod.ModElement {
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			//prep for cretaceous egg generation
-			/*if (biome instanceof BiomeCretaceous) {
-				BiomeCretaceous biomeC = (BiomeCretaceous) biome;
-				if (biomeC.getBiomeType() == EnumBiomeTypeCretaceous.River) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
-			}
-			*/
-			if (biome instanceof BiomeJurassic) {
-				BiomeJurassic biomeP = (BiomeJurassic) biome;
-				if (biomeP.getBiomeType() == EnumBiomeTypeJurassic.River) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
-			}
-			if (biome instanceof BiomeTriassic) {
-				BiomeTriassic biomeT = (BiomeTriassic) biome;
-				if (biomeT.getBiomeType() == EnumBiomeTypeTriassic.River) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
+			if (SpawnLocations1.spawnsHere("lepidodendron:prehistoric_flora_lonchidion", biome.getRegistryName().toString())) {
+				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}
