@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.item.ItemPalaeodictyopteraEggsItem;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.util.patchouli.SpawnLocations1;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -82,7 +82,7 @@ public class BlockInsectEggsPalaeodictyoptera extends ElementsLepidodendronMod.M
 
 			ArrayList<String> variantString = new ArrayList<String>();
 			for (EntityPrehistoricFloraPalaeodictyoptera.Type Type : EntityPrehistoricFloraPalaeodictyoptera.Type.values()) {
-				if (SpawnLocations1.spawnsHere("lepidodendron:prehistoric_flora_palaeodictyoptera@" + Type.getName(), biome.getRegistryName().toString())) {
+				if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_palaeodictyoptera@" + Type.getName(), biome.getRegistryName().toString())) {
 					variantString.add(Type.getName());
 				}
 			}

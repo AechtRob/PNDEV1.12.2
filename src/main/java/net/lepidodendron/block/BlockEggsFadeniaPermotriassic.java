@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.util.patchouli.SpawnLocations1;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -67,7 +67,7 @@ public class BlockEggsFadeniaPermotriassic extends ElementsLepidodendronMod.ModE
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (SpawnLocations1.spawnsHere("lepidodendron:prehistoric_flora_fadenia_permotriassic", biome.getRegistryName().toString())) {
+			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_fadenia_permotriassic", biome.getRegistryName().toString())) {
 				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}

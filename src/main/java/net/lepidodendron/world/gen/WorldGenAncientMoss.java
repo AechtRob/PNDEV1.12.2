@@ -4,7 +4,7 @@ import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.util.patchouli.SpawnLocations1;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
@@ -191,7 +191,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();
 			for (String mob : mobString) {
-				if (SpawnLocations1.spawnsHere(mob, biome.getRegistryName().toString())) {
+				if (SpawnLocations.spawnsHere(mob, biome.getRegistryName().toString())) {
 					if (mob.contains("@")) {
 						mob = mob.substring(0, mob.indexOf("@"));
 					}
