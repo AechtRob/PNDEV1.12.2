@@ -7,6 +7,7 @@ import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.FernEpiphyteGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -94,6 +95,7 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfigPlants.genBirdsnestFern && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene
@@ -120,27 +122,24 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genBirdsnestFernOverrideBiomes))
 			biomeCriteria = true;
 
-//		if (biome instanceof BiomeJurassic)
-//		{
-//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 28;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")) {
+			GenChance = 128;
+		}
 
 		double GenMultiplier = LepidodendronConfigPlants.multiplierBirdsnestFern;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}

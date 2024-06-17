@@ -97,6 +97,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene
@@ -143,17 +144,18 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		if (biome instanceof BiomeCretaceousEarly)
-		{
+
+
+		if (biome instanceof BiomeCretaceousEarly) {
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica
-				) {
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
 		}
+
 		if (!biomeCriteria)
 			return;
 
