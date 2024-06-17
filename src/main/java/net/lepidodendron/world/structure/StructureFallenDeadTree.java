@@ -5,10 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.procedure.ProcedureTreeLog;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -23,8 +22,8 @@ import net.minecraftforge.fluids.BlockFluidBase;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModElement {
-	public StructureJurassicRaftSunk(ElementsLepidodendronMod instance) {
+public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement {
+	public StructureFallenDeadTree(ElementsLepidodendronMod instance) {
 		super(instance, 44);
 	}
 
@@ -33,13 +32,16 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 		if (world.isRemote)
 			return;
 
-		if (dimID != LepidodendronConfig.dimJurassic)
+		if (dimID != LepidodendronConfig.dimCretaceousEarly)
 			return;
 
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if (biome instanceof BiomeJurassic) {
-			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biomeJurassic.getBiomeType() != EnumBiomeTypeJurassic.Ocean) {
+		if (biome instanceof BiomeCretaceousEarly) {
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_flats"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats"))
+					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream"))
+			) {
 				return;
 			}
 		}
@@ -49,8 +51,11 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 
 		int GenChance = 1500;
 		int genTries = 1;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")) {
-			GenChance = 250000;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_flats")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream")
+		) {
+			GenChance = 120000;
 			genTries = random.nextInt(3) + 1;
 		}
 		for (int tryGo = 1; tryGo <= genTries; tryGo++) {
@@ -60,8 +65,10 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 				int k = k2 + random.nextInt(16) + 8;
 				int height = ChunkGenSpawner.getTopSolidBlock(new BlockPos(i, 0, k), world).getY();
 				if (
-					world.getBlockState(new BlockPos(i, height + 1, k)).getMaterial() == Material.WATER
-					&& world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.SAND
+						(world.getBlockState(new BlockPos(i, height + 1, k)).getMaterial() == Material.AIR
+						|| world.getBlockState(new BlockPos(i, height + 1, k)).getMaterial() == Material.WATER)
+					&& (world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.SAND
+						|| world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.GROUND)
 				) {
 				} else {
 					doSpawn = false;
@@ -78,21 +85,9 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 				int z = k;
 
 				//System.err.println("Spawned log " + x + " " + y + " " + z);
-				Block log = BlockBrachyphyllumLog.block;
+				Block log = BlockDeadLog.block;
 				boolean fat = false;
 				boolean big = true;
-				if (random.nextInt(8) == 0) {
-					log = BlockDeadLog.block;
-					big = false;
-				}
-				if (random.nextInt(6) == 0) {
-					log = BlockGinkgoLog.block;
-					big = false;
-				}
-				if (random.nextInt(3) == 0) {
-					log = BlockTallAraucariaLog.block;
-					fat = true;
-				}
 
 				int dir = random.nextInt(4);
 				int l = 3 + random.nextInt(8);

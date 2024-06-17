@@ -142,7 +142,7 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")) {
-			GenChance = 64;
+			GenChance = 92;
 		}
 
 		double GenMultiplier = LepidodendronConfigPlants.multiplierBirdsnestFern;

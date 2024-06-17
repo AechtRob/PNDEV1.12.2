@@ -83,8 +83,9 @@ public class BlockSiltyDirt extends ElementsLepidodendronMod.ModElement {
 			}
 			switch (plantType)
 			{
-				case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
+				case Cave:   return true;
 				case Plains: return true;
+				case Desert: return true;
 				case Beach:
 					boolean hasWater = (world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
 							world.getBlockState(pos.west()).getMaterial() == Material.WATER ||

@@ -64,6 +64,7 @@ public class ProcedureTreeLog extends ElementsLepidodendronMod.ModElement {
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.SAND)
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WEB)
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WATER)
+				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.AIR)
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.PLANTS)
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.LEAVES)
 				|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == Material.WOOD && !block.isFullCube(world.getBlockState(new BlockPos((int) x, (int) y, (int) z))))) {
