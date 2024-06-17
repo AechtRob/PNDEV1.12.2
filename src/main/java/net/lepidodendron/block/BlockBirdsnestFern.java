@@ -124,7 +124,9 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCretaceousEarly)
 		{
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -137,7 +139,9 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 
 		int GenChance = 28;
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")) {
 			GenChance = 128;
 		}
 

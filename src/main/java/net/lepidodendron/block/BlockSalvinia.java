@@ -139,6 +139,13 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int GenChance = 30;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")) {
+			GenChance = 64;
+		}
+
 //		double GenMultiplier = LepidodendronConfigPlants.weightSalvinia;
 //		if (GenMultiplier < 0) {GenMultiplier = 0;}
 //		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
