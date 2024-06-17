@@ -119,7 +119,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 						}
 					}
 					else { //NSEWU
-						if (this.FernEpiphyte.canPlaceBlockOnSide(worldIn, pos, enumfacing)
+						if (this.FernEpiphyte.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
 								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
 							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							return true;

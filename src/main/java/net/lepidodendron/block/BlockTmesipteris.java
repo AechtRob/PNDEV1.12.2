@@ -178,7 +178,7 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 		int GenChance = 30;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierTmesipteris;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
-		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
+		GenChance = Math.min(256, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
