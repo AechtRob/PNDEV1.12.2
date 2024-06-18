@@ -244,6 +244,11 @@ public class AlgaeGenerator extends WorldGenerator
 							&& gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
 						waterDepthCheckMin = false;
 					}
+					if (algae && (worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+							|| worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")
+					)) {
+						waterDepthCheckMin = true;
+					}
 
 					if (waterDepthCheckMin) {
 						//figure out a position and facing to place this at!

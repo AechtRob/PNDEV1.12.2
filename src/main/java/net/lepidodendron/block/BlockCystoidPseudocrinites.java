@@ -84,7 +84,6 @@ public class BlockCystoidPseudocrinites extends ElementsLepidodendronMod.ModElem
 		OreDictionary.registerOre("pndietCrinoid", BlockCystoidPseudocrinites.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 		

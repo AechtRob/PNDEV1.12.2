@@ -263,6 +263,10 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		)
 			multiplier = 42;
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+		)
+			multiplier = 64;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_estuary")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_hills")

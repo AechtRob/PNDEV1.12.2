@@ -5,6 +5,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -29,6 +31,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -38,6 +43,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockNautiloidShellAmmonite_Ceratites extends ElementsLepidodendronMod.ModElement {
@@ -65,6 +71,39 @@ public class BlockNautiloidShellAmmonite_Ceratites extends ElementsLepidodendron
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:shell_ceratites", "inventory"));
 		//ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNautiloidShellAmmonite_ceratites.LEVEL).build());
+	}
+
+	@Override
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+
+		if (random.nextInt(10) != 0) {
+			return;
+		}
+
+		for (int i = 0; i < 10; i++) {
+			int l6 = chunkX + random.nextInt(16) + 8;
+			int l14 = chunkZ + random.nextInt(16) + 8;
+			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
+			if (!(
+					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_volcanic_islands")
+			)
+			) {
+				break;
+			}
+			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
+			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3) {
+				world.setBlockState(pos, block.getDefaultState());
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null) {
+					TileEntityCustom te = (TileEntityCustom) tileEntity;
+					//get a random rotation in increments of 15 degrees:
+					int rotation = random.nextInt(24) * 15;
+					te.getTileData().setInteger("rotation", rotation);
+					return;
+				}
+			}
+		}
 	}
 
 	public static class BlockCustom extends BlockPNTaxidermyItem {

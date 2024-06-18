@@ -159,6 +159,10 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 				multiplier = 48;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+		)
+			multiplier = 64;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore"))
 		{
