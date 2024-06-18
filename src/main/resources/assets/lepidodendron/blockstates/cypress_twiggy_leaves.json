@@ -1,7 +1,8 @@
 {
   "variants": {
-    "normal": {
-      "model": "lepidodendron:cypress_twiggy_leaves"
-    }
+    "normal": [
+      { "model": "lepidodendron:cypress_twiggy_leaves"},
+      { "model": "lepidodendron:cypress_twiggy_leaves_var"}
+    ]
   }
 }

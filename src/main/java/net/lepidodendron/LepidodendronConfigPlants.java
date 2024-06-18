@@ -2863,6 +2863,7 @@ public class LepidodendronConfigPlants {
         MinecraftForge.EVENT_BUS.register(instance);
         syncConfigPlantsPart1();
         syncConfigPlantsPart2();
+        syncConfigPlantsPart3();
     }
 
     @SubscribeEvent
@@ -2870,6 +2871,7 @@ public class LepidodendronConfigPlants {
         if (event.getModID().equals("lepidodendron")) {
             syncConfigPlantsPart1();
             syncConfigPlantsPart2();
+            syncConfigPlantsPart3();
         }
 
     }
@@ -13488,7 +13490,18 @@ public class LepidodendronConfigPlants {
         multiplierRufloria = prop.getDouble();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("WorldGen Zygopteris", "genZygopteris", genZygopteris);
+        boolean changed = false;
+        if (cfg.hasChanged()) {
+            cfg.save();
+            changed = true;
+        }
+
+        return changed;
+    }
+
+    public static boolean syncConfigPlantsPart3() {
+        ObjectList<String> propOrder = new ObjectArrayList<>();
+        Property prop = cfg.get("WorldGen Zygopteris", "genZygopteris", genZygopteris);
         prop.setComment("Set to true to generate Zygopteris naturally [default: false]");
         genZygopteris = prop.getBoolean();
         propOrder.add(prop.getName());
