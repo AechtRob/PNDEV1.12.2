@@ -1774,6 +1774,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightScrubbyPine = 0;
     public static double multiplierScrubbyPine = 1;
 
+    public static boolean genTwiggyCypress = false;
+    public static String[] genTwiggyCypressBlacklistBiomes = new String[0];
+    public static String[] genTwiggyCypressOverrideBiomes = new String[0];
+    public static int[] dimTwiggyCypress = new int[]{0};
+    public static int minheightTwiggyCypress = 1;
+    public static int maxheightTwiggyCypress = 0;
+    public static double multiplierTwiggyCypress = 1;
+
     public static boolean genWachtlerina = false;
     public static String[] genWachtlerinaBlacklistBiomes = new String[0];
     public static String[] genWachtlerinaOverrideBiomes = new String[0];
@@ -12224,6 +12232,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen ScrubbyPine", "multiplierScrubbyPine", multiplierScrubbyPine);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierScrubbyPine = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen TwiggyCypress", "genTwiggyCypress", genTwiggyCypress);
+        prop.setComment("Set to true to generate Twiggy Cypress naturally [default: false]");
+        genTwiggyCypress = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "genTwiggyCypressBlacklistBiomes", genTwiggyCypressBlacklistBiomes);
+        prop.setComment("List of biomes Twiggy Cypress are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genTwiggyCypressBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "genTwiggyCypressOverrideBiomes", genTwiggyCypressOverrideBiomes);
+        prop.setComment("List of biomes Twiggy Cypress are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genTwiggyCypressOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen TwiggyCypress", "dimTwiggyCypress", dimTwiggyCypress);
+        prop.setComment("List of dimension IDs Twiggy Cypress can generate in [default: 0]");
+        dimTwiggyCypress = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "minheightTwiggyCypress", minheightTwiggyCypress);
+        prop.setComment("Minimum height that Twiggy Cypress can generate (1 to 250) [default: 1]");
+        minheightTwiggyCypress = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "maxheightTwiggyCypress", maxheightTwiggyCypress);
+        prop.setComment("Maximum height that Twiggy Cypress can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightTwiggyCypress = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "multiplierTwiggyCypress", multiplierTwiggyCypress);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierTwiggyCypress = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Chloranthus", "genChloranthus", genChloranthus);

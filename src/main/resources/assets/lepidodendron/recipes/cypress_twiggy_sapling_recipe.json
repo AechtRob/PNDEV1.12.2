@@ -1,0 +1,17 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:cypress_twiggy_seed"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:cypress_twiggy_sapling",
+    "count": 1
+  }
+}
