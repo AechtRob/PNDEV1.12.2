@@ -4,6 +4,7 @@ import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -302,6 +303,11 @@ public class BiomeDecoratorPN extends BiomeDecorator {
         }
         if (biomeIn instanceof BiomeJurassic) {
             desertBiome = ((BiomeJurassic)biomeIn).getBiomeType() == EnumBiomeTypeJurassic.Desert;
+        }
+        if (biomeIn instanceof BiomeCretaceousEarly) {
+            desertBiome = biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_sandy_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_sandy_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes");
         }
 
         if (this.generateFalls && !desertBiome)
