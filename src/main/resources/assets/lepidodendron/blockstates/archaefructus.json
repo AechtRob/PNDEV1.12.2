@@ -1,7 +1,9 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:archaefructus"}
+      {"model": "lepidodendron:archaefructus"},
+      {"model": "lepidodendron:archaefructus_1"},
+      {"model": "lepidodendron:archaefructus_2"}
     ]
   }
 }
