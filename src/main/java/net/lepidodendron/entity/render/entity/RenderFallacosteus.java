@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraFallacosteus;
 import net.lepidodendron.entity.model.entity.ModelFallacosteus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderFallacosteus extends RenderLiving<EntityPrehistoricFloraFallacosteus> {
+public class RenderFallacosteus extends RenderLivingBaseWithBook<EntityPrehistoricFloraFallacosteus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fallacosteus.png");
 
     public static float getScaler() {

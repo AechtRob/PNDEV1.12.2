@@ -191,6 +191,12 @@ public class ModelTeleocrater extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 );
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(armL, 0.48F, 0.0F, 0.0F);
         this.setRotateAngle(armL2, -1.1781F, 0.0F, 0.0F);

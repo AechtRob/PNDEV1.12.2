@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWaptia;
 import net.lepidodendron.entity.model.entity.ModelWaptia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderWaptia extends RenderLivingBaseWithBook<EntityPrehistoricFlor
         return 0.7F * 0.3F;
     }
     public RenderWaptia(RenderManager mgr) {
-        super(mgr, new ModelWaptia(), RenderDisplays.modelWaptiaBook, 0.0f);
+        super(mgr, new ModelWaptia(), 0.0f);
     }
 
     @Override

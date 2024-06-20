@@ -411,6 +411,7 @@ public class ModelHadranax extends ModelBasePalaeopedia {
         this.head.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -0.5F;
@@ -436,6 +437,7 @@ public class ModelHadranax extends ModelBasePalaeopedia {
         this.head.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

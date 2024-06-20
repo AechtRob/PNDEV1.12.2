@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHughmilleria;
 import net.lepidodendron.entity.model.entity.ModelHughmilleria;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderHughmilleria extends RenderLivingBaseWithBook<EntityPrehistor
         return 0.2F;
     }
     public RenderHughmilleria(RenderManager mgr) {
-        super(mgr, new ModelHughmilleria(), RenderDisplays.modelHughmilleriaBook, 0.5f);
+        super(mgr, new ModelHughmilleria(), 0.5f);
     }
 
     @Override

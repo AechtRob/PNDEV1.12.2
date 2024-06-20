@@ -329,6 +329,11 @@ public class ModelOrodus extends ModelBasePalaeopedia {
         this.Orodus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.Orodus.rotateAngleY = (float) Math.toRadians(70);
         this.Cephalon.rotateAngleY = (float) Math.toRadians(-12.5);

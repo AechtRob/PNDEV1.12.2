@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSelenopeltis;
 import net.lepidodendron.entity.model.entity.ModelSelenopeltis;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSelenopeltis extends RenderLiving<EntityPrehistoricFloraSelenopeltis> {
+public class RenderSelenopeltis extends RenderLivingBaseWithBook<EntityPrehistoricFloraSelenopeltis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Selenopeltis.png");
 
     public RenderSelenopeltis(RenderManager mgr) {

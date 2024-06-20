@@ -213,6 +213,7 @@ public class ModelSenekichthys extends ModelBasePalaeopedia {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.8F;

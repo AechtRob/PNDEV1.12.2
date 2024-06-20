@@ -4,12 +4,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Pulmonoscorpius;
 import net.lepidodendron.entity.model.entity.ModelScorpion;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderScorpion_Pulmonoscorpius extends RenderLiving<EntityPrehistoricFloraScorpion_Pulmonoscorpius> {
+public class RenderScorpion_Pulmonoscorpius extends RenderLivingBaseWithBook<EntityPrehistoricFloraScorpion_Pulmonoscorpius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_pulmonoscorpius.png");
     private static final ResourceLocation TEXTURE_WITH_BABIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_pulmonoscorpius_withbaby.png");
     public static final ResourceLocation TEXTURE_PP = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_pulmonoscorpius_pp.png");

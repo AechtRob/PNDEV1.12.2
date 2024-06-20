@@ -219,6 +219,11 @@ public class ModelDiplacanthus extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.main.offsetY = -0.21F;

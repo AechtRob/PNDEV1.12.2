@@ -679,6 +679,7 @@ public class ModelMymoorapelta extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -0.05F;

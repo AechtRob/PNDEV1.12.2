@@ -466,6 +466,7 @@ public class ModelHypuronector extends ModelBasePalaeopedia {
         this.Hypuronector.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Hypuronector.offsetY = -1.3F;
@@ -508,6 +509,7 @@ public class ModelHypuronector extends ModelBasePalaeopedia {
         this.Hypuronector.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

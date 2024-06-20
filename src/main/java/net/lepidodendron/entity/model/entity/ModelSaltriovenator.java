@@ -463,6 +463,11 @@ public class ModelSaltriovenator extends ModelBasePalaeopedia {
         this.Hips.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Lowerjaw.rotateAngleX = (float) Math.toRadians(23.9);
         this.Neck1.offsetY = -0.01F;

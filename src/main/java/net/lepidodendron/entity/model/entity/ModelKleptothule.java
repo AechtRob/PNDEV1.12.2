@@ -569,6 +569,28 @@ public class ModelKleptothule extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Kleptothule.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Kleptothule.offsetY = -3.65F;
+        this.Kleptothule.offsetX = -1.00F;
+        this.Kleptothule.rotateAngleY = (float)Math.toRadians(25);
+        this.Kleptothule.rotateAngleX = (float)Math.toRadians(-25);
+        this.Kleptothule.rotateAngleZ = (float)Math.toRadians(5);
+        this.Kleptothule.scaleChildren = true;
+        float scaler = 3.44F;
+        this.Kleptothule.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Kleptothule.render(f);
+        //Reset rotations, positions and sizing:
+        this.Kleptothule.setScale(1.0F, 1.0F, 1.0F);
+        this.Kleptothule.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Kleptothule, 0.2F, 0.0F, 0.05F);
         this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);

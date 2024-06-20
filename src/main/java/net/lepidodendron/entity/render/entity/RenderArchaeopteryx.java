@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchaeopteryx;
 import net.lepidodendron.entity.model.entity.ModelArchaeopteryx;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderArchaeopteryx extends RenderLivingBaseWithBook<EntityPrehisto
     }
 
     public RenderArchaeopteryx(RenderManager mgr) {
-        super(mgr, new ModelArchaeopteryx(), RenderDisplays.modelArchaeopteryxBook, 0.0f);
+        super(mgr, new ModelArchaeopteryx(), 0.0f);
     }
 
     @Override

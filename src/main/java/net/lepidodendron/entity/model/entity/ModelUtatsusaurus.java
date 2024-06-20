@@ -238,6 +238,11 @@ public class ModelUtatsusaurus extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.chest.offsetY = -0.0F;
         this.chest.offsetX = -0.0F;

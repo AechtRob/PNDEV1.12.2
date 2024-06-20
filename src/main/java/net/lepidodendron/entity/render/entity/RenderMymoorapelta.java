@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMymoorapelta;
 import net.lepidodendron.entity.model.entity.ModelMymoorapelta;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderMymoorapelta extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mymoorapelta.png");
 
     public RenderMymoorapelta(RenderManager mgr) {
-        super(mgr, new ModelMymoorapelta(), RenderDisplays.modelMymoorapeltaBook, 0.3f);
+        super(mgr, new ModelMymoorapelta(), 0.3f);
     }
 
     public static float getScaler() {

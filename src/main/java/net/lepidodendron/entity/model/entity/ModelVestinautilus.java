@@ -446,6 +446,11 @@ public class ModelVestinautilus extends ModelBasePalaeopedia {
         this.whole.render(f5 * 0.076F);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

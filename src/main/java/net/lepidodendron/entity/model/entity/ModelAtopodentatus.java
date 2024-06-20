@@ -244,6 +244,12 @@ public class ModelAtopodentatus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(arm1, 0.0F, -0.8727F, 0.6109F);
         this.setRotateAngle(arm1finger1, 0.0F, -0.5236F, 0.0F);

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPolybranchiaspis;
 import net.lepidodendron.entity.model.entity.ModelPolybranchiaspis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPolybranchiaspis extends RenderLiving<EntityPrehistoricFloraPolybranchiaspis> {
+public class RenderPolybranchiaspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraPolybranchiaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/polybranchiaspis.png");
 
     public static float getScaler() {

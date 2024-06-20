@@ -255,6 +255,12 @@ public class ModelArizonasaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Base.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Body2.offsetY = 0.04F;
         this.Body2.offsetZ = 0.095F;

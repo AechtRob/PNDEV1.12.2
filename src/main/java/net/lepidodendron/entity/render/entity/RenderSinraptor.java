@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSinraptor;
 import net.lepidodendron.entity.model.entity.ModelSinraptor;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderSinraptor extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sinraptor.png");
 
     public RenderSinraptor(RenderManager mgr) {
-        super(mgr, new ModelSinraptor(), RenderDisplays.modelSinraptorBook, 0.3f);
+        super(mgr, new ModelSinraptor(), 0.3f);
     }
 
     public static float getScaler() {

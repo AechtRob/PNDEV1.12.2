@@ -312,21 +312,27 @@ public class ModelGeosaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-        public void renderStaticWall(float f) {
-            this.Body.rotateAngleX = (float) Math.toRadians(20);
-            this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Neck, 0.0F, -0.2F, 0.0F);
-            this.setRotateAngle(Head, 0.0F, 0.28F, 0.0F);
-            this.setRotateAngle(Lowerjaw, 0.2F, 0.0F, 0.0F);
-            this.Body2.setScale(0,0,0);
-            this.Body2.setScale(0,0,0);
-            this.Body2.scaleChildren = true;
-            this.Body.offsetY = -0.18F;
-            this.Body.offsetX = 0.0F;
-            this.Body.offsetZ = -0.45F;
-            this.Body.render(0.01F);
-            this.Body2.setScale(1,1,1);
-            this.Body2.setScale(1,1,1);
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
+    public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.28F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.Body2.setScale(0,0,0);
+        this.Body2.setScale(0,0,0);
+        this.Body2.scaleChildren = true;
+        this.Body.offsetY = -0.18F;
+        this.Body.offsetX = 0.0F;
+        this.Body.offsetZ = -0.45F;
+        this.Body.render(0.01F);
+        this.Body2.setScale(1,1,1);
+        this.Body2.setScale(1,1,1);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {

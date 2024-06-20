@@ -456,6 +456,7 @@ public class ModelCamarasaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = 0.50F;

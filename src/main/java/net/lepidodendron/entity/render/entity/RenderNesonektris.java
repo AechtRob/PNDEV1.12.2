@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraNesonektris;
 import net.lepidodendron.entity.model.entity.ModelNesonektris;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderNesonektris extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nesonektris.png");
 
     public RenderNesonektris(RenderManager mgr) {
-        super(mgr, new ModelNesonektris(), RenderDisplays.modelNesonektrisBook, 0.0f);
+        super(mgr, new ModelNesonektris(), 0.0f);
     }
 
     public static float getScaler() {return 0.4F; }

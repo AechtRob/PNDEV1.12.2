@@ -221,6 +221,7 @@ public class ModelErasipteroides extends ModelBasePalaeopedia {
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.8F;
@@ -261,6 +262,7 @@ public class ModelErasipteroides extends ModelBasePalaeopedia {
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

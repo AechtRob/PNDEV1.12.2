@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPampaphoneus;
 import net.lepidodendron.entity.model.entity.ModelPampaphoneus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderPampaphoneus extends RenderLivingBaseWithBook<EntityPrehistor
         return 0.7F;
     }
     public RenderPampaphoneus(RenderManager mgr) {
-        super(mgr, new ModelPampaphoneus(), RenderDisplays.modelPampaphoneusBook, 0.0f);
+        super(mgr, new ModelPampaphoneus(), 0.0f);
     }
 
     @Override

@@ -12,10 +12,23 @@
 			"text": "$(l)Temporal Range:$() Silurian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida$(br)>Encrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Encrinus.png"],
-			"title": "Encrinus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Encrinus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "3" ],
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"3": "lepidodendron:crinoid_encrinus[topshoot=true]",
+					"2": "lepidodendron:crinoid_encrinus[topshoot=false]",
+					"1": "lepidodendron:crinoid_encrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_encrinus",

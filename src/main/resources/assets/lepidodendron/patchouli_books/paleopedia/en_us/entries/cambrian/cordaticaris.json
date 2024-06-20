@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Arthropoda $(br)>Dinocaridida $(br)>Radiodonta $(br)>Hurdiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cordaticaris.png"],
-			"title": "C. striatus",
-			"text": ""
+			"type": "entity",
+			"name": "C. striatus",
+			"entity": "lepidodendron:prehistoric_flora_cordaticaris",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cordaticaris",

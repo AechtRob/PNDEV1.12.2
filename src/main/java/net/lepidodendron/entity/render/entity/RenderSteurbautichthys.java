@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSteurbautichthys;
 import net.lepidodendron.entity.model.entity.ModelSteurbautichthys;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSteurbautichthys extends RenderLiving<EntityPrehistoricFloraSteurbautichthys> {
+public class RenderSteurbautichthys extends RenderLivingBaseWithBook<EntityPrehistoricFloraSteurbautichthys> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/steurbautichthys.png");
 
     public static float getScaler() {

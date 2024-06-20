@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPharyngolepis;
 import net.lepidodendron.entity.model.entity.ModelPharyngolepis;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPharyngolepis extends RenderLiving<EntityPrehistoricFloraPharyngolepis> {
+public class RenderPharyngolepis extends RenderLivingBaseWithBook<EntityPrehistoricFloraPharyngolepis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pharyngolepis.png");
     public static float getScaler() {
         return 0.65F * 0.343F;

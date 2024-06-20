@@ -35,6 +35,7 @@ public class ModelPlaceholderLand extends ModelBasePalaeopedia {
         this.Silesaurus.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Silesaurus.offsetY = -0.50F;

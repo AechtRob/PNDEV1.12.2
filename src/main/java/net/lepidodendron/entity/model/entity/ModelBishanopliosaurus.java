@@ -405,6 +405,12 @@ public class ModelBishanopliosaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Bodyfront, 0.1274F, 0.0F, 0.0F);
         this.setRotateAngle(Bodymiddle, 0.0848F, 0.0F, 0.0F);

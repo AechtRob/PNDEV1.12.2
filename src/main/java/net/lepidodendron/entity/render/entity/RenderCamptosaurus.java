@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCamptosaurus;
 import net.lepidodendron.entity.model.entity.ModelCamptosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderCamptosaurus extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public RenderCamptosaurus(RenderManager mgr) {
-        super(mgr, new ModelCamptosaurus(), RenderDisplays.modelCamptosaurusBook,0.9f);
+        super(mgr, new ModelCamptosaurus(),0.9f);
     }
 
     @Override

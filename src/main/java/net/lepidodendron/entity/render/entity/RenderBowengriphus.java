@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBowengriphus;
 import net.lepidodendron.entity.model.entity.ModelBowengriphus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderBowengriphus extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public RenderBowengriphus(RenderManager mgr) {
-        super(mgr, new ModelBowengriphus(), RenderDisplays.modelBowengriphusBook, 0.0f);
+        super(mgr, new ModelBowengriphus(), 0.0f);
     }
 
     @Override

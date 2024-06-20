@@ -274,6 +274,7 @@ public class ModelStoermeropterus extends ModelBasePalaeopedia {
         this.carapace.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.carapace.offsetY = -0.4F;

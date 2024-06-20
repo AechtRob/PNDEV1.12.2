@@ -178,6 +178,11 @@ public class ModelCoelacanthus extends ModelBasePalaeopedia {
         this.Bodyfront.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodyfront.offsetY = -0.03F;

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEramoscorpius;
 import net.lepidodendron.entity.model.entity.ModelEramoscorpius;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +14,7 @@ public class RenderEramoscorpius extends RenderLivingBaseWithBook<EntityPrehisto
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eramoscorpius_baby.png");
 
     public RenderEramoscorpius(RenderManager mgr) {
-        super(mgr, new ModelEramoscorpius(), RenderDisplays.modelEramoscorpiusBook, 0.0f);
+        super(mgr, new ModelEramoscorpius(), 0.0f);
     }
 
     public static float getScaler() {

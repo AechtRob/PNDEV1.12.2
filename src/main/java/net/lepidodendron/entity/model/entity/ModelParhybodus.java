@@ -239,6 +239,12 @@ public class ModelParhybodus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hybodus.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Hybodus.rotateAngleY = (float) Math.toRadians(90);
         this.Hybodus.offsetY = -0.1F;

@@ -274,6 +274,11 @@ public class ModelHupehsuchus extends ModelBasePalaeopedia {
         this.Hupehsuchus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Neck, 0.4F, 0.3F, 0.0F);
         this.setRotateAngle(Head, -0.3F, 0.3F, 0.0F);

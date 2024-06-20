@@ -623,6 +623,12 @@ public class ModelCtenorhabdotus extends ModelBasePalaeopedia {
         GlStateManager.disableBlend();
 
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

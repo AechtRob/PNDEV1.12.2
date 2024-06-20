@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraNagini;
 import net.lepidodendron.entity.model.entity.ModelNagini;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderNagini extends RenderLiving<EntityPrehistoricFloraNagini> {
+public class RenderNagini extends RenderLivingBaseWithBook<EntityPrehistoricFloraNagini> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nagini.png");
 
     public RenderNagini(RenderManager mgr) {

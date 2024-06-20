@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWodnika;
 import net.lepidodendron.entity.model.entity.ModelWodnika;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderWodnika extends RenderLivingBaseWithBook<EntityPrehistoricFlo
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/wodnika.png");
 
     public RenderWodnika(RenderManager mgr) {
-        super(mgr, new ModelWodnika(), RenderDisplays.modelWodnikaBook, 0.5f);
+        super(mgr, new ModelWodnika(), 0.5f);
     }
     public static float getScaler() {
         return 0.7F;

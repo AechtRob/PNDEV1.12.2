@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBundenbachiellus;
 import net.lepidodendron.entity.model.entity.ModelBundenbachiellus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBundenbachiellus extends RenderLiving<EntityPrehistoricFloraBundenbachiellus> {
+public class RenderBundenbachiellus extends RenderLivingBaseWithBook<EntityPrehistoricFloraBundenbachiellus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bundenbachiellus.png");
 
     public static float getScaler() {

@@ -207,6 +207,11 @@ public class ModelBirgeria extends ModelBasePalaeopedia {
         this.head.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
         this.head.offsetX = -0.14F;

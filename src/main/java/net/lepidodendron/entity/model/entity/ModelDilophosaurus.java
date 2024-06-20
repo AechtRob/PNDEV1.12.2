@@ -677,6 +677,7 @@ public class ModelDilophosaurus extends ModelBasePalaeopedia {
         this.Dilophosaurus.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Dilophosaurus.offsetY = 0.3F;

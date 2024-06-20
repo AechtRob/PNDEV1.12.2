@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCladoselache;
 import net.lepidodendron.entity.model.entity.ModelCladoselache;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCladoselache extends RenderLiving<EntityPrehistoricFloraCladoselache> {
+public class RenderCladoselache extends RenderLivingBaseWithBook<EntityPrehistoricFloraCladoselache> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cladoselache.png");
 
     public RenderCladoselache(RenderManager mgr) {

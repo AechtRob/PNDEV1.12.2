@@ -35,6 +35,7 @@ public class ModelAttenborites extends ModelBasePalaeopedia {
         GlStateManager.disableBlend();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bb_main.offsetY = 1.45F;

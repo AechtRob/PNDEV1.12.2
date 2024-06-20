@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSargodon;
 import net.lepidodendron.entity.model.entity.ModelSargodon;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderSargodon extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sargodon.png");
 
     public RenderSargodon(RenderManager mgr) {
-        super(mgr, new ModelSargodon(), RenderDisplays.modelSargodonBook, 0.0f);
+        super(mgr, new ModelSargodon(), 0.0f);
     }
 
     public static float getScaler() {return 0.7F; }

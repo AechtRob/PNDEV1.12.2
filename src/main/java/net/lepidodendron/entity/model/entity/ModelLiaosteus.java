@@ -146,6 +146,7 @@ public class ModelLiaosteus extends ModelBasePalaeopedia {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.2F;

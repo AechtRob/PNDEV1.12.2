@@ -313,6 +313,12 @@ public class ModelSillosuchus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bodyback.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.bodyfront.rotateAngleY = (float) Math.toRadians(0);
         this.setRotateAngle(ArmL, 0.6F, -0.0F, 0.0F);

@@ -230,6 +230,11 @@ public class ModelEorhynchochelys extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body3, 0.0873F, 0.0F, 0.0F);
         this.setRotateAngle(backleftleg, -0.521F, -0.8538F, 0.8763F);

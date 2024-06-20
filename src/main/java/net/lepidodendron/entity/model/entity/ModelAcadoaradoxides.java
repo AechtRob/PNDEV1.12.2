@@ -297,6 +297,7 @@ public class ModelAcadoaradoxides extends ModelBasePalaeopedia {
         this.head.render(f5 * 0.48F);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.head.offsetY = -0.50F;

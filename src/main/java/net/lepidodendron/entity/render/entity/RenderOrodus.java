@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrodus;
 import net.lepidodendron.entity.model.entity.ModelOrodus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOrodus extends RenderLiving<EntityPrehistoricFloraOrodus> {
+public class RenderOrodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraOrodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orodus.png");
 
     public RenderOrodus(RenderManager mgr) {

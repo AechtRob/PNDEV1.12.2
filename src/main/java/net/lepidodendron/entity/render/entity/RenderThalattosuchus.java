@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraThalattosuchus;
 import net.lepidodendron.entity.model.entity.ModelThalattosuchus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderThalattosuchus extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thalattosuchus.png");
 
     public RenderThalattosuchus(RenderManager mgr) {
-        super(mgr, new ModelThalattosuchus(), RenderDisplays.modelThalattosuchusBook, 0.5f);
+        super(mgr, new ModelThalattosuchus(), 0.5f);
     }
     public static float getScaler() {
         return 0.5913F;

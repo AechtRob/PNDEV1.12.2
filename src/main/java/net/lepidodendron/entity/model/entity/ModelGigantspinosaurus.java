@@ -729,6 +729,11 @@ public class ModelGigantspinosaurus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
 
         resetToDefaultPose();

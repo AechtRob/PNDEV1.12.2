@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHeterostrophus;
 import net.lepidodendron.entity.model.entity.ModelHeterostrophus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderHeterostrophus extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterostrophus.png");
 
     public RenderHeterostrophus(RenderManager mgr) {
-        super(mgr, new ModelHeterostrophus(), RenderDisplays.modelHeterostrophusBook, 0.0f);
+        super(mgr, new ModelHeterostrophus(), 0.0f);
     }
 
     @Override

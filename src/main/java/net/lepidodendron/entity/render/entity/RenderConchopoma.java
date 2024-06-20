@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraConchopoma;
 import net.lepidodendron.entity.model.entity.ModelConchopoma;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderConchopoma extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/conchopoma.png");
 
     public RenderConchopoma(RenderManager mgr) {
-        super(mgr, new ModelConchopoma(), RenderDisplays.modelConchopomaBook, 0.0f);
+        super(mgr, new ModelConchopoma(), 0.0f);
     }
 
     public static float getScaler() {return 0.3F; }

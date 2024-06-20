@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaihong;
 import net.lepidodendron.entity.model.entity.ModelCaihong;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderCaihong extends RenderLivingBaseWithBook<EntityPrehistoricFlo
     }
 
     public RenderCaihong(RenderManager mgr) {
-        super(mgr, new ModelCaihong(), RenderDisplays.modelCaihongBook, 0.0f);
+        super(mgr, new ModelCaihong(), 0.0f);
     }
 
     @Override

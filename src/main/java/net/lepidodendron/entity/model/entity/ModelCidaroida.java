@@ -167,6 +167,11 @@ public class ModelCidaroida extends ModelBasePalaeopedia {
         //animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 1.0F);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
     
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();

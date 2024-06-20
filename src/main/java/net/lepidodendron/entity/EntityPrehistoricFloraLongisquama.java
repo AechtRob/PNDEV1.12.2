@@ -57,6 +57,11 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public boolean noMossEggs() {
+		return true;
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, CHATTER_ANIMATION};
 	}
@@ -327,10 +332,6 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-						|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-						|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
 		) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -348,14 +349,6 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
 							&& faceshape != BlockFaceShape.SOLID)) {
 						//This is solid for laying:
-						return true;
-					}
-				}
-				else {
-					//Is it upward-facing?
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
-					if (facing == EnumFacing.UP) {
-						//This is OK for laying mosses
 						return true;
 					}
 				}

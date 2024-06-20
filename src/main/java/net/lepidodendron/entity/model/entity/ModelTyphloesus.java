@@ -106,6 +106,12 @@ public class ModelTyphloesus extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.head.rotateAngleX = (float) Math.toRadians(90);
         this.head.offsetY = -0.2F;

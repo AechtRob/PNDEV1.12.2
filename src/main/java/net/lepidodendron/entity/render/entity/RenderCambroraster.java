@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCambroraster;
 import net.lepidodendron.entity.model.entity.ModelCambroraster;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCambroraster extends RenderLiving<EntityPrehistoricFloraCambroraster> {
+public class RenderCambroraster extends RenderLivingBaseWithBook<EntityPrehistoricFloraCambroraster> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cambroraster.png");
 
     public static float getScaler() {

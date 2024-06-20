@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMontecaris;
 import net.lepidodendron.entity.model.entity.ModelMontecaris;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMontecaris extends RenderLiving<EntityPrehistoricFloraMontecaris> {
+public class RenderMontecaris extends RenderLivingBaseWithBook<EntityPrehistoricFloraMontecaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/montecaris.png");
 
     public RenderMontecaris(RenderManager mgr) {

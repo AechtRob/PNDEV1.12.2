@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
 import net.lepidodendron.entity.model.entity.ModelDorygnathus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderDorygnathus extends RenderLivingBaseWithBook<EntityPrehistori
     }
 
     public RenderDorygnathus(RenderManager mgr) {
-        super(mgr, new ModelDorygnathus(), RenderDisplays.modelDorygnathusBook, 0.15f);
+        super(mgr, new ModelDorygnathus(), 0.15f);
     }
 
     @Override

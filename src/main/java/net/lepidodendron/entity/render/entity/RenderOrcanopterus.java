@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrcanopterus;
 import net.lepidodendron.entity.model.entity.ModelOrcanopterus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderOrcanopterus extends RenderLivingBaseWithBook<EntityPrehistor
         return 0.3F;
     }
     public RenderOrcanopterus(RenderManager mgr) {
-        super(mgr, new ModelOrcanopterus(), RenderDisplays.modelOrcanopterusBook, 0.5f);
+        super(mgr, new ModelOrcanopterus(), 0.5f);
     }
 
     @Override

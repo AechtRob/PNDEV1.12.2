@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMicrobrachius;
 import net.lepidodendron.entity.model.entity.ModelMicrobrachius;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMicrobrachius extends RenderLiving<EntityPrehistoricFloraMicrobrachius> {
+public class RenderMicrobrachius extends RenderLivingBaseWithBook<EntityPrehistoricFloraMicrobrachius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microbrachius_male.png");
     public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microbrachius_female.png");
 

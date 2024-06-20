@@ -1813,7 +1813,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 //}
             }
             else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -47 && this.getTicks() < 0) {
-                //Is stationary for egg-laying and this is a totten-log lay
+                //Is stationary for egg-laying and this is a rotten-log lay
                 //System.err.println("Laying an egg in it");
 
                 //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);

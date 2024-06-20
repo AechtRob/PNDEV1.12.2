@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMcnamaraspis;
 import net.lepidodendron.entity.model.entity.ModelMcnamaraspis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMcnamaraspis extends RenderLiving<EntityPrehistoricFloraMcnamaraspis> {
+public class RenderMcnamaraspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraMcnamaraspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mcnamaraspis.png");
 
     public RenderMcnamaraspis(RenderManager mgr) {

@@ -597,6 +597,7 @@ public class ModelAnchiornis extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Anchiornis.offsetY = -1.0F;
@@ -638,7 +639,7 @@ public class ModelAnchiornis extends ModelBasePalaeopedia {
         this.Anchiornis.scaleChildren = false;
         resetToDefaultPose();
     }
-    
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

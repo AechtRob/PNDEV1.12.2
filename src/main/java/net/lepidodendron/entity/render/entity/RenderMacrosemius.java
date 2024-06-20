@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMacrosemius;
 import net.lepidodendron.entity.model.entity.ModelMacrosemius;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMacrosemius extends RenderLiving<EntityPrehistoricFloraMacrosemius> {
+public class RenderMacrosemius extends RenderLivingBaseWithBook<EntityPrehistoricFloraMacrosemius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/macrosemius.png");
 
     public static float getScaler() {

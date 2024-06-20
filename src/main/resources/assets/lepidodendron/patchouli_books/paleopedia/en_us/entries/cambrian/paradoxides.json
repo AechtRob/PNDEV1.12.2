@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Trilobita$(br)>Redlichiida$(br)>Paradoxididae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/paradoxides.png"],
-			"title": "Paradoxides sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Paradoxides sp.",
+			"entity": "lepidodendron:prehistoric_flora_paradoxides",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_paradoxides",

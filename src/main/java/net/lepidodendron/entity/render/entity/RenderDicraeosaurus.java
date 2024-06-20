@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDicraeosaurus;
 import net.lepidodendron.entity.model.entity.ModelDicraeosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderDicraeosaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dicraeosaurus.png");
 
     public RenderDicraeosaurus(RenderManager mgr) {
-        super(mgr, new ModelDicraeosaurus(), RenderDisplays.modelDicraeosaurusBook, 0.3f);
+        super(mgr, new ModelDicraeosaurus(), 0.3f);
     }
 
     public static float getScaler() {

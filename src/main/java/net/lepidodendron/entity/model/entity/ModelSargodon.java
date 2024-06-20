@@ -279,6 +279,7 @@ public class ModelSargodon extends ModelBasePalaeopedia {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -0.0F;

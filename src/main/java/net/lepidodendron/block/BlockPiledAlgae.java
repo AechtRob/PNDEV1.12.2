@@ -95,6 +95,8 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genPiledAlgaeOverrideBiomes))
 			biomeCriteria = true;
@@ -156,6 +158,10 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 			)
 				multiplier = 48;
 		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+		)
+			multiplier = 64;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore"))

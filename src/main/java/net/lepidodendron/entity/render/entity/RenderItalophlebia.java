@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraItalophlebia;
 import net.lepidodendron.entity.model.entity.ModelProtozygoptera;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderItalophlebia extends RenderLiving<EntityPrehistoricFloraItalophlebia> {
+public class RenderItalophlebia extends RenderLivingBaseWithBook<EntityPrehistoricFloraItalophlebia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/italophlebia.png");
 
     public RenderItalophlebia(RenderManager mgr) {

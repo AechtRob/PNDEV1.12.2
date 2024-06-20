@@ -256,6 +256,7 @@ public class ModelXenacanthus extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.50F;
@@ -287,6 +288,7 @@ public class ModelXenacanthus extends ModelBasePalaeopedia {
         this.body.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -51,6 +51,7 @@ public class ModelClimacograptus extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -1.0F;

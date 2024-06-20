@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMicrodictyon;
 import net.lepidodendron.entity.model.entity.ModelMicrodictyon;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMicrodictyon extends RenderLiving<EntityPrehistoricFloraMicrodictyon> {
+public class RenderMicrodictyon extends RenderLivingBaseWithBook<EntityPrehistoricFloraMicrodictyon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/microdictyon.png");
 
     public RenderMicrodictyon(RenderManager mgr) {

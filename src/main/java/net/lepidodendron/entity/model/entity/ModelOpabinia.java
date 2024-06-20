@@ -720,6 +720,12 @@ public class ModelOpabinia extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.head.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticDisplayCase(float f) {
         this.setRotateAngle(head, 0.0F, -0.5F, 0.0F);
         this.head.offsetX = 0.0F;

@@ -962,6 +962,7 @@ public class ModelTianyulong extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Hips.offsetY = -0.2F;

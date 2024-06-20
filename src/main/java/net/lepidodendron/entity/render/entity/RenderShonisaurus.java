@@ -3,14 +3,14 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraShonisaurus;
 import net.lepidodendron.entity.model.entity.ModelShonisaurus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
-public class RenderShonisaurus extends RenderLiving<EntityPrehistoricFloraShonisaurus> {
+public class RenderShonisaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraShonisaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shonisaurus.png");
 
     public RenderShonisaurus(RenderManager mgr) {

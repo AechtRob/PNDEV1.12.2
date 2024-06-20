@@ -244,6 +244,11 @@ public class ModelHenodus extends ModelBasePalaeopedia {
         this.henodus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.henodus.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(shell, 0.2382F, -0.1096F, 0.4232F);

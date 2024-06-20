@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBethesdaichthys;
 import net.lepidodendron.entity.model.entity.ModelBethesdaichthys;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderBethesdaichthys extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bethesdaichthys.png");
 
     public RenderBethesdaichthys(RenderManager mgr) {
-        super(mgr, new ModelBethesdaichthys(), RenderDisplays.modelBethesdaichthysBook,  0.0f);
+        super(mgr, new ModelBethesdaichthys(),  0.0f);
     }
 
     public static float getScaler() {return 0.2F; }

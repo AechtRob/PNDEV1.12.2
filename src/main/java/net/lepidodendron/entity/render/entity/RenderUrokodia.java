@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraUrokodia;
 import net.lepidodendron.entity.model.entity.ModelUrokodia;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderUrokodia extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urokodia.png");
 
     public RenderUrokodia(RenderManager mgr) {
-        super(mgr, new ModelUrokodia(), RenderDisplays.modelUrokodiaBook, 0.0f);
+        super(mgr, new ModelUrokodia(), 0.0f);
     }
 
     public static float getScaler() {return 0.19F; }

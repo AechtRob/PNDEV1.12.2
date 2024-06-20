@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDubreuillosaurus;
 import net.lepidodendron.entity.model.entity.ModelDubreuillosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +14,7 @@ public class RenderDubreuillosaurus extends RenderLivingBaseWithBook<EntityPrehi
     public static float getScaler() {return 0.6F;}
 
     public RenderDubreuillosaurus(RenderManager mgr) {
-        super(mgr, new ModelDubreuillosaurus(), RenderDisplays.modelDubreuillosaurusBook, 0.5f);
+        super(mgr, new ModelDubreuillosaurus(), 0.5f);
     }
 
     @Override

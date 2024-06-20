@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeoniscum;
 import net.lepidodendron.entity.model.entity.ModelPalaeoniscum;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPalaeoniscum extends RenderLiving<EntityPrehistoricFloraPalaeoniscum> {
+public class RenderPalaeoniscum extends RenderLivingBaseWithBook<EntityPrehistoricFloraPalaeoniscum> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoniscum.png");
     public static float getScaler() {
         return 0.14F;

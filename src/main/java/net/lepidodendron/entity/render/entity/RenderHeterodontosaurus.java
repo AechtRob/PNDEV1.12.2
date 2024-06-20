@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHeterodontosaurus;
 import net.lepidodendron.entity.model.entity.ModelHeterodontosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderHeterodontosaurus extends RenderLivingBaseWithBook<EntityPreh
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heterodontosaurus.png");
 
     public RenderHeterodontosaurus(RenderManager mgr) {
-        super(mgr, new ModelHeterodontosaurus(), RenderDisplays.modelHeterodontosaurusBook, 0.3f);
+        super(mgr, new ModelHeterodontosaurus(), 0.3f);
     }
 
     public static float getScaler() {

@@ -451,6 +451,11 @@ public class ModelSmok extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.head1.rotateAngleX = (float) Math.toRadians(-14.9);
         this.jaw1.rotateAngleX = (float) Math.toRadians(42.5);

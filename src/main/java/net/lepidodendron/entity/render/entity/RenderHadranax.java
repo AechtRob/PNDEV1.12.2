@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHadranax;
 import net.lepidodendron.entity.model.entity.ModelHadranax;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderHadranax extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hadranax.png");
 
     public RenderHadranax(RenderManager mgr) {
-        super(mgr, new ModelHadranax(), RenderDisplays.modelHadranaxBook, 0.0f);
+        super(mgr, new ModelHadranax(), 0.0f);
     }
 
     public static float getScaler() {return 0.2F; }

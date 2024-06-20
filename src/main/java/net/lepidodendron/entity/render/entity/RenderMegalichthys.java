@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegalichthys;
 import net.lepidodendron.entity.model.entity.ModelMegalichthys;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderMegalichthys extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalichthys.png");
 
     public RenderMegalichthys(RenderManager mgr) {
-        super(mgr, new ModelMegalichthys(), RenderDisplays.modelMegalichthysBook, 0.0f);
+        super(mgr, new ModelMegalichthys(), 0.0f);
     }
 
     public static float getScaler() {return 0.5F; }

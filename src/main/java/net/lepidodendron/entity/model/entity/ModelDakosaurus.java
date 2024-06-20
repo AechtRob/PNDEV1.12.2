@@ -306,6 +306,11 @@ public class ModelDakosaurus extends ModelBasePalaeopedia {
         this.Body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(Body, 0.0F, -0.0436F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, -0.0436F, -0.0436F);

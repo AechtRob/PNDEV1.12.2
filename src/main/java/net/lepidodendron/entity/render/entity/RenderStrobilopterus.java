@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraStrobilopterus;
 import net.lepidodendron.entity.model.entity.ModelStrobilopterus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderStrobilopterus extends RenderLivingBaseWithBook<EntityPrehist
         return 0.7F * 0.3F;
     }
     public RenderStrobilopterus(RenderManager mgr) {
-        super(mgr, new ModelStrobilopterus(), RenderDisplays.modelStrobilopterusBook, 0.0f);
+        super(mgr, new ModelStrobilopterus(), 0.0f);
     }
 
     @Override

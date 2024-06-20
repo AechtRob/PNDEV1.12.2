@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPoleumita;
 import net.lepidodendron.entity.model.entity.ModelPoleumita;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPoleumita extends RenderLiving<EntityPrehistoricFloraPoleumita> {
+public class RenderPoleumita extends RenderLivingBaseWithBook<EntityPrehistoricFloraPoleumita> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poleumita.png");
 
     public RenderPoleumita(RenderManager mgr) {

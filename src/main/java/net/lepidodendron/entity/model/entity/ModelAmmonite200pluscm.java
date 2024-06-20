@@ -223,6 +223,11 @@ public class ModelAmmonite200pluscm extends ModelBasePalaeopedia {
         this.Shell1.render(f5 * 2.0F);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

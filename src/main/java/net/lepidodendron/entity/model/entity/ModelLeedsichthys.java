@@ -404,6 +404,11 @@ public class ModelLeedsichthys extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(0);
         this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);

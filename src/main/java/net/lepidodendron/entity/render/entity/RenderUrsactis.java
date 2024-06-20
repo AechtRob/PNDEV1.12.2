@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraUrsactis;
 import net.lepidodendron.entity.model.entity.ModelUrsactis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderUrsactis extends RenderLiving<EntityPrehistoricFloraUrsactis> {
+public class RenderUrsactis extends RenderLivingBaseWithBook<EntityPrehistoricFloraUrsactis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ursactis.png");
 
     public static float getScaler() {

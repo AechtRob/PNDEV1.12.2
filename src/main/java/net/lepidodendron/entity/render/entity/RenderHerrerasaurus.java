@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHerrerasaurus;
 import net.lepidodendron.entity.model.entity.ModelHerrerasaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +14,7 @@ public class RenderHerrerasaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static float getScaler() {return 0.785F;}
 
     public RenderHerrerasaurus(RenderManager mgr) {
-        super(mgr, new ModelHerrerasaurus(), RenderDisplays.modelHerrerasaurusBook, 0.6f);
+        super(mgr, new ModelHerrerasaurus(), 0.6f);
     }
 
     @Override

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRutgersella;
 import net.lepidodendron.entity.model.entity.ModelRutgersella;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRutgersella extends RenderLiving<EntityPrehistoricFloraRutgersella> {
+public class RenderRutgersella extends RenderLivingBaseWithBook<EntityPrehistoricFloraRutgersella> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Rutgersella.png");
 
     public static float getScaler() {

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBeishanichthys;
 import net.lepidodendron.entity.model.entity.ModelBeishanichthys;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBeishanichthys extends RenderLiving<EntityPrehistoricFloraBeishanichthys> {
+public class RenderBeishanichthys extends RenderLivingBaseWithBook<EntityPrehistoricFloraBeishanichthys> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/beishanichthys.png");
 
     public static float getScaler() {return 0.4F;}

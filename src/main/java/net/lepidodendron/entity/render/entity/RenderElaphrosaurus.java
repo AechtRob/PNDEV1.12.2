@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraElaphrosaurus;
 import net.lepidodendron.entity.model.entity.ModelElaphrosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderElaphrosaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elaphrosaurus.png");
 
     public RenderElaphrosaurus(RenderManager mgr) {
-        super(mgr, new ModelElaphrosaurus(), RenderDisplays.modelElaphrosaurusBook, 0.3f);
+        super(mgr, new ModelElaphrosaurus(), 0.3f);
     }
 
     public static float getScaler() {

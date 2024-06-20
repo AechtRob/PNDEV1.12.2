@@ -418,6 +418,11 @@ public class ModelYohoia extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticDisplayCase(float f) {
         this.body.rotateAngleX = (float) Math.toRadians(30);
         this.body.offsetY = -0.025F;

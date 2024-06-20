@@ -537,6 +537,7 @@ public class ModelCompsognathus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Compsognathus.offsetY = -0.2F;

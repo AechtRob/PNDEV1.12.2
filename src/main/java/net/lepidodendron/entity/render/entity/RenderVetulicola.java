@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraVetulicola;
 import net.lepidodendron.entity.model.entity.ModelVetulicola;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderVetulicola extends RenderLiving<EntityPrehistoricFloraVetulicola> {
+public class RenderVetulicola extends RenderLivingBaseWithBook<EntityPrehistoricFloraVetulicola> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vetulicola.png");
 
     public static float getScaler() {return 0.25F;}

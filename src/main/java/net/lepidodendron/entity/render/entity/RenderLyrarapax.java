@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLyrarapax;
 import net.lepidodendron.entity.model.entity.ModelLyrarapax;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderLyrarapax extends RenderLiving<EntityPrehistoricFloraLyrarapax> {
+public class RenderLyrarapax extends RenderLivingBaseWithBook<EntityPrehistoricFloraLyrarapax> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lyrarapax.png");
 
     public RenderLyrarapax(RenderManager mgr) {

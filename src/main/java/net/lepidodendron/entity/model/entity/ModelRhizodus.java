@@ -283,6 +283,11 @@ public class ModelRhizodus extends ModelBasePalaeopedia {
         this.bodybase.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.bodybase.rotateAngleY = (float) Math.toRadians(90);
         this.bodybase.offsetY = -0.2F;

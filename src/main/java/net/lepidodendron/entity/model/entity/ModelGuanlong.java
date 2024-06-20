@@ -660,6 +660,7 @@ public class ModelGuanlong extends ModelBasePalaeopedia {
         AdvancedModelRenderer.rotateAngleZ = z;
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.00F;

@@ -323,6 +323,11 @@ public class ModelSclerodus extends ModelBasePalaeopedia {
         this.Sclerodus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Sclerodus.rotateAngleX = (float) Math.toRadians(90);
         this.Sclerodus.offsetY = -0.18F;

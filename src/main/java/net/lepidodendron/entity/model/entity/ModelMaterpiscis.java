@@ -248,6 +248,11 @@ public class ModelMaterpiscis extends ModelBasePalaeopedia {
         this.Bodyfront.offsetY = -0.1F;
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

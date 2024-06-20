@@ -299,6 +299,11 @@ public class ModelSaurostomus extends ModelBasePalaeopedia {
         this.Saurostomus.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(Saurostomus, 0.25F, 0.0F, 0.0F);
         this.Saurostomus.offsetY = -0.1F;

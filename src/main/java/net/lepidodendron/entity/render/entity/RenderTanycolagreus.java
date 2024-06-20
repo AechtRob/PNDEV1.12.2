@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTanycolagreus;
 import net.lepidodendron.entity.model.entity.ModelTanycolagreus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTanycolagreus extends RenderLiving<EntityPrehistoricFloraTanycolagreus> {
+public class RenderTanycolagreus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTanycolagreus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tanycolagreus.png");
 
     public RenderTanycolagreus(RenderManager mgr) {

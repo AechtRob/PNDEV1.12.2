@@ -365,6 +365,11 @@ public class ModelAcutiramus extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.829F, 0.0F, 0.0F);
         this.setRotateAngle(eyeL_r1, 0.0F, 0.0873F, 0.0F);

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGuiyu;
 import net.lepidodendron.entity.model.entity.ModelGuiyu;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGuiyu extends RenderLiving<EntityPrehistoricFloraGuiyu> {
+public class RenderGuiyu extends RenderLivingBaseWithBook<EntityPrehistoricFloraGuiyu> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/guiyu.png");
 
     public static float getScaler() {

@@ -519,6 +519,7 @@ public class ModelCamptosaurus extends ModelBasePalaeopedia {
         this.Camptosaurus.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Camptosaurus.offsetY = 0.10F;

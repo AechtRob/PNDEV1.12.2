@@ -415,6 +415,12 @@ public class ModelPiranhamesodon extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Piranhamesodon.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Piranhamesodon.rotateAngleY = (float) Math.toRadians(90);
         this.Piranhamesodon.offsetX = -0.05F;

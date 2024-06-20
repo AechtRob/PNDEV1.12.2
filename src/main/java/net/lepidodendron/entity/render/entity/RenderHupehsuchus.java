@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHupehsuchus;
 import net.lepidodendron.entity.model.entity.ModelHupehsuchus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderHupehsuchus extends RenderLiving<EntityPrehistoricFloraHupehsuchus> {
+public class RenderHupehsuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraHupehsuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hupehsuchus.png");
 
     public static float getScaler() {

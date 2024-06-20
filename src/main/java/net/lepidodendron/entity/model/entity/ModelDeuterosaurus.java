@@ -589,6 +589,7 @@ public class ModelDeuterosaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         resetToDefaultPose();
     }

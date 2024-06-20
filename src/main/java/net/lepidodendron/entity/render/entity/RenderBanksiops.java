@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBanksiops;
 import net.lepidodendron.entity.model.entity.ModelBanksiops;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderBanksiops extends RenderLivingBaseWithBook<EntityPrehistoricF
         return 0.571F;
     }
     public RenderBanksiops(RenderManager mgr) {
-        super(mgr, new ModelBanksiops(), RenderDisplays.modelBanksiopsBook, 0.0f);
+        super(mgr, new ModelBanksiops(), 0.0f);
     }
 
     @Override

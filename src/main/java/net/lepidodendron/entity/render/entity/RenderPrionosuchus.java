@@ -3,14 +3,14 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPrionosuchus;
 import net.lepidodendron.entity.model.entity.ModelPrionosuchus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
-public class RenderPrionosuchus extends RenderLiving<EntityPrehistoricFloraPrionosuchus> {
+public class RenderPrionosuchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPrionosuchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prionosuchus.png");
 
     public RenderPrionosuchus(RenderManager mgr) {

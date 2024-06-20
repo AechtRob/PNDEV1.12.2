@@ -511,6 +511,12 @@ public class ModelListracanthus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.bodybase.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.jaw.rotateAngleX = (float) Math.toRadians(20);
         this.body.rotateAngleY = (float) Math.toRadians(15);

@@ -243,6 +243,7 @@ public class ModelLystrosaurus extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Hips.offsetY = -0.50F;

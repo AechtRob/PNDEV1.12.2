@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPneumodesmus;
 import net.lepidodendron.entity.model.entity.ModelPneumodesmus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPneumodesmus extends RenderLiving<EntityPrehistoricFloraPneumodesmus> {
+public class RenderPneumodesmus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPneumodesmus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pneumodesmus.png");
 
     public RenderPneumodesmus(RenderManager mgr) {

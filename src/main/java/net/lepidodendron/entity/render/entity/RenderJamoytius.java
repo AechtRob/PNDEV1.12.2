@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraJamoytius;
 import net.lepidodendron.entity.model.entity.ModelJamoytius;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderJamoytius extends RenderLiving<EntityPrehistoricFloraJamoytius> {
+public class RenderJamoytius extends RenderLivingBaseWithBook<EntityPrehistoricFloraJamoytius> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jamoytius.png");
 
     public static float getScaler() {

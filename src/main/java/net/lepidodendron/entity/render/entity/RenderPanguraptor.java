@@ -3,13 +3,13 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPanguraptor;
 import net.lepidodendron.entity.model.entity.ModelPanguraptor;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
-public class RenderPanguraptor extends RenderLiving<EntityPrehistoricFloraPanguraptor> {
+public class RenderPanguraptor extends RenderLivingBaseWithBook<EntityPrehistoricFloraPanguraptor> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panguraptor.png");
     public static final ResourceLocation TEXTURE_PINGU = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pinguraptor.png");
 

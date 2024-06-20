@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTrimerus;
 import net.lepidodendron.entity.model.entity.ModelTrimerus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTrimerus extends RenderLiving<EntityPrehistoricFloraTrimerus> {
+public class RenderTrimerus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTrimerus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trimerus.png");
 
     public RenderTrimerus(RenderManager mgr) {

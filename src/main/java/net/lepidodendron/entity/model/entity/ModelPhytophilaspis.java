@@ -311,6 +311,12 @@ public class ModelPhytophilaspis extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.phytophilaspis.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(phytophilaspis, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Cephalon, 0.0F, 0.05F, 0.0F);

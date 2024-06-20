@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraClimacograptus;
 import net.lepidodendron.entity.model.entity.ModelClimacograptus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +15,7 @@ public class RenderClimacograptus extends RenderLivingBaseWithBook<EntityPrehist
     }
 
     public RenderClimacograptus(RenderManager mgr) {
-        super(mgr, new ModelClimacograptus(), RenderDisplays.modelClimacograptusBook,0.0f);
+        super(mgr, new ModelClimacograptus(),0.0f);
     }
 
     @Override

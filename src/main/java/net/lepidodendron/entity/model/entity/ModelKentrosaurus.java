@@ -519,6 +519,11 @@ public class ModelKentrosaurus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Jaw.rotateAngleX = (float) Math.toRadians(20);
         this.Rightarm1.scaleChildren = true;

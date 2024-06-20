@@ -344,6 +344,12 @@ public class ModelBesanosaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Besanosaurus.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Head.offsetY = 0.33F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(8);

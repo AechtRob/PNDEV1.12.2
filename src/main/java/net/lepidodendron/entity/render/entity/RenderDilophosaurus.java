@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDilophosaurus;
 import net.lepidodendron.entity.model.entity.ModelDilophosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderDilophosaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dilophosaurus.png");
 
     public RenderDilophosaurus(RenderManager mgr) {
-        super(mgr, new ModelDilophosaurus(), RenderDisplays.modelDilophosaurusBook, 0.3f);
+        super(mgr, new ModelDilophosaurus(), 0.3f);
     }
 
     public static float getScaler() {

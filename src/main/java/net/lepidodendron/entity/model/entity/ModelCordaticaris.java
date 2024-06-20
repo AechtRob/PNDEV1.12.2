@@ -396,6 +396,27 @@ public class ModelCordaticaris extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -2.25F;
+        this.main.offsetX = -0.00F;
+        this.main.rotateAngleY = (float)Math.toRadians(160);
+        this.main.rotateAngleX = (float)Math.toRadians(35);
+        this.main.rotateAngleZ = (float)Math.toRadians(10);
+        this.main.scaleChildren = true;
+        float scaler = 2.25F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void renderStaticDisplayCase(float f) {
         this.main.offsetZ = -0.15F;
         this.main.offsetY = -0.13F;

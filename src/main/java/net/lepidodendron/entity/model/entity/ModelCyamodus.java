@@ -293,6 +293,11 @@ public class ModelCyamodus extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body, 0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(body2, -0.1745F, 0.1309F, 0.0F);

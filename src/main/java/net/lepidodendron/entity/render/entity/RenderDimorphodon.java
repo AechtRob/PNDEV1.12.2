@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDimorphodon;
 import net.lepidodendron.entity.model.entity.ModelDimorphodon;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderDimorphodon extends RenderLivingBaseWithBook<EntityPrehistori
     }
 
     public RenderDimorphodon(RenderManager mgr) {
-        super(mgr, new ModelDimorphodon(), RenderDisplays.modelDimorphodonBook, 0.0f);
+        super(mgr, new ModelDimorphodon(), 0.0f);
     }
 
     @Override

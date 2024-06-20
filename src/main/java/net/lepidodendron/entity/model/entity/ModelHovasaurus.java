@@ -227,6 +227,12 @@ public class ModelHovasaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, 0.4F, 0.2F, 0.3F);
         this.setRotateAngle(body, 0.0F, -0.4F, 0.0F);

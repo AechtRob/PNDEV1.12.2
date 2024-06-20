@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTianyulong;
 import net.lepidodendron.entity.model.entity.ModelTianyulong;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderTianyulong extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tianyulong.png");
 
     public RenderTianyulong(RenderManager mgr) {
-        super(mgr, new ModelTianyulong(), RenderDisplays.modelTianyulongBook, 0.3f);
+        super(mgr, new ModelTianyulong(), 0.3f);
     }
 
     public static float getScaler() {

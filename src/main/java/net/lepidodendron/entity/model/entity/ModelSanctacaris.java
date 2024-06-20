@@ -777,6 +777,11 @@ public class ModelSanctacaris extends ModelBasePalaeopedia {
         this.Head.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);

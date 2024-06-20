@@ -444,6 +444,7 @@ public class ModelThulaspis extends ModelBasePalaeopedia {
         this.Thulaspis.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Thulaspis.offsetY = -1.7F;

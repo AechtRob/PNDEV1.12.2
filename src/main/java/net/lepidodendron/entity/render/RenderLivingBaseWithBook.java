@@ -21,12 +21,22 @@ public abstract class RenderLivingBaseWithBook<T extends EntityLiving> extends R
         this.bookModel = modelBaseBook;
     }
 
+    public RenderLivingBaseWithBook(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
+        super(rendermanagerIn, modelbaseIn, shadowsizeIn);
+        try {
+            this.bookModel = (ModelBasePalaeopedia) modelbaseIn.getClass().newInstance();
+        }
+        catch (Exception e) {
+            this.bookModel = null;
+        }
+    }
+
     @Override
     public void doRender(T entity, double x, double y, double z, float entityYaw, float partialTicks) {
         try {
             StackTraceElement[] elements = new Throwable().getStackTrace();
             String  callerClass = elements[4].getClassName();
-            if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
+            if (this.bookModel != null && callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageEntity")) {
                 GlStateManager.pushMatrix();
                 GlStateManager.disableCull();
                 GlStateManager.enableAlpha();

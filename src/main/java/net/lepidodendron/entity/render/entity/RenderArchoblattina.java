@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchoblattinaInsect;
 import net.lepidodendron.entity.model.entity.ModelArchoblattina;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderArchoblattina extends RenderLiving<EntityPrehistoricFloraArchoblattinaInsect> {
+public class RenderArchoblattina extends RenderLivingBaseWithBook<EntityPrehistoricFloraArchoblattinaInsect> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archoblattina.png");
 
     public RenderArchoblattina(RenderManager mgr) {

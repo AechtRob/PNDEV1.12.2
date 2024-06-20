@@ -119,12 +119,35 @@ public class ModelPlectronoceras extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = -1.345F;
+        this.bone.offsetX = 0.2F;
+        this.bone.rotateAngleY = (float)Math.toRadians(210);
+        this.bone.rotateAngleX = (float)Math.toRadians(20);
+        this.bone.rotateAngleZ = (float)Math.toRadians(0);
+        this.bone.scaleChildren = true;
+        float scaler = 2.85F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    
     public void renderStaticFloor(float f) {
         this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
         this.bone.offsetY = 0.05F;
         this.bone.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

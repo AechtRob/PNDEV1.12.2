@@ -834,6 +834,11 @@ public class ModelAnthracomedusa extends ModelBasePalaeopedia {
         GlStateManager.disableBlend();
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(AdvancedModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -928,7 +933,7 @@ public class ModelAnthracomedusa extends ModelBasePalaeopedia {
             if (!e.isInWater()) {
                 this.resetToDefaultPose();
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.6F;
+                this.body.offsetY = 0.9F;
                 this.body.offsetX = -0.7F;
                 this.body.offsetZ = -0.3F;
                 this.body.scaleChildren = true;

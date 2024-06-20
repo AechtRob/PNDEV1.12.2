@@ -445,6 +445,7 @@ public class ModelAllosaurus extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Root.offsetY = 0.3F;

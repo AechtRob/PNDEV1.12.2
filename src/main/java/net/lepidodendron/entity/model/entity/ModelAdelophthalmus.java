@@ -151,6 +151,11 @@ public class ModelAdelophthalmus extends ModelBasePalaeopedia {
 
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

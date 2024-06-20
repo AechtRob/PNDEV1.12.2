@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnchiornis;
 import net.lepidodendron.entity.model.entity.ModelAnchiornis;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,7 @@ public class RenderAnchiornis extends RenderLivingBaseWithBook<EntityPrehistoric
     }
 
     public RenderAnchiornis(RenderManager mgr) {
-        super(mgr, new ModelAnchiornis(), RenderDisplays.modelAnchiornisBook, 0.0f);
+        super(mgr, new ModelAnchiornis(), 0.0f);
     }
 
     @Override

@@ -3032,6 +3032,7 @@ public class ModelMiragaia extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = 0.1F;

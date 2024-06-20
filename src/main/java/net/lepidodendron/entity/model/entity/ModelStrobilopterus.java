@@ -196,6 +196,7 @@ public class ModelStrobilopterus extends ModelBasePalaeopedia {
         this.Body.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Body.offsetY = 0.0F;

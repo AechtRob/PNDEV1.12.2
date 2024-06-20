@@ -7,7 +7,7 @@
 //import net.minecraft.client.renderer.entity.RenderManager;
 //import net.minecraft.util.ResourceLocation;
 //
-//public class RenderPromissum extends RenderLiving<EntityPrehistoricFloraPromissum> {
+//public class RenderPromissum extends RenderLivingBaseWithBook<EntityPrehistoricFloraPromissum> {
 //    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/promissum.png");
 //
 //    public RenderPromissum(RenderManager mgr) {

@@ -123,6 +123,7 @@ public class ModelBowengriphus extends ModelBasePalaeopedia {
         this.all.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.all.offsetY = -2.7F;
@@ -143,6 +144,7 @@ public class ModelBowengriphus extends ModelBasePalaeopedia {
         this.all.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

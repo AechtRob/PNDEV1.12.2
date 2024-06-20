@@ -253,6 +253,11 @@ public class ModelOnychodus extends ModelBasePalaeopedia {
         this.Body1.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.Body1.rotateAngleY = (float) Math.toRadians(86);
         this.Head.rotateAngleY = (float) Math.toRadians(-12.5);

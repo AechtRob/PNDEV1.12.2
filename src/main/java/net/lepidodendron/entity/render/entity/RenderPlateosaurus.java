@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.model.entity.ModelPlateosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -15,7 +14,7 @@ public class RenderPlateosaurus extends RenderLivingBaseWithBook<EntityPrehistor
     public static float getScaler() {return 0.88F;}
 
     public RenderPlateosaurus(RenderManager mgr) {
-        super(mgr, new ModelPlateosaurus(), RenderDisplays.modelPlateosaurusBook, 0.5f);
+        super(mgr, new ModelPlateosaurus(), 0.5f);
         //EDIT NEEDED WHEN MODEL IS FIXED!
     }
 

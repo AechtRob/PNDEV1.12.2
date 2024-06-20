@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTorvosaurus;
 import net.lepidodendron.entity.model.entity.ModelTorvosaurus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ public class RenderTorvosaurus extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/torvosaurus.png");
 
     public RenderTorvosaurus(RenderManager mgr) {
-        super(mgr, new ModelTorvosaurus(), RenderDisplays.modelTorvosaurusBook, 0.65f);
+        super(mgr, new ModelTorvosaurus(), 0.65f);
     }
 
     public static float getScaler() {

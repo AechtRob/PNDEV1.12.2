@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeontinid;
 import net.lepidodendron.entity.model.entity.ModelPalaeontinid;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPalaeontinid extends RenderLiving<EntityPrehistoricFloraPalaeontinid> {
+public class RenderPalaeontinid extends RenderLivingBaseWithBook<EntityPrehistoricFloraPalaeontinid> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid.png");
 
     public RenderPalaeontinid(RenderManager mgr) {

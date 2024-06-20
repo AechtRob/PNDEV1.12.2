@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDysalotosaurus;
 import net.lepidodendron.entity.model.entity.ModelDryosaurus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDysalotosaurus extends RenderLiving<EntityPrehistoricFloraDysalotosaurus> {
+public class RenderDysalotosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraDysalotosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dysalotosaurus.png");
 
     public RenderDysalotosaurus(RenderManager mgr) {

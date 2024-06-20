@@ -344,6 +344,11 @@ public class ModelFurca extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.body.rotateAngleX = -(float) Math.toRadians(22.5);
         this.body.offsetY = 0.05F;

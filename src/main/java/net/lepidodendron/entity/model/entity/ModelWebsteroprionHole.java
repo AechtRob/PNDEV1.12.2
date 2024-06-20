@@ -570,6 +570,11 @@ public class ModelWebsteroprionHole extends ModelBasePalaeopedia {
         this.body.render(f5 * 0.45F);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

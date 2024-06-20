@@ -274,6 +274,11 @@ public class ModelMacrosemius extends ModelBasePalaeopedia {
         this.Macrosemius.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Macrosemius.rotateAngleY = (float) Math.toRadians(90);
         this.Macrosemius.offsetZ = -0.0F;

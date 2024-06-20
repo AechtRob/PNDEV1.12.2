@@ -242,6 +242,7 @@ public class ModelVarialepis extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.varialepis.offsetY = -0.50F;
@@ -266,6 +267,7 @@ public class ModelVarialepis extends ModelBasePalaeopedia {
         this.varialepis.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

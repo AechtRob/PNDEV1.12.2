@@ -10,7 +10,6 @@ import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -99,14 +98,14 @@ public class BlockShankouclava extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
-				|| (dimID == LepidodendronConfig.dimCambrian)
+				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimOrdovician)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
 		) {
 			dimensionCriteria = false;
 		}
-		if ((dimID == LepidodendronConfig.dimCarboniferous)
+		if ((dimID == LepidodendronConfig.dimCambrian)
 		) {
 			dimensionCriteria = true;
 		}
@@ -116,7 +115,7 @@ public class BlockShankouclava extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCarboniferous
+		if (dimID == LepidodendronConfig.dimCambrian
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -133,6 +132,8 @@ public class BlockShankouclava extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
@@ -141,10 +142,8 @@ public class BlockShankouclava extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
-		if (biome instanceof BiomeCarboniferous) {
-			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_bay")
-			) {
+		if (dimID == LepidodendronConfig.dimCambrian) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -156,7 +155,7 @@ public class BlockShankouclava extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimCarboniferous)
+		if ((dimID == LepidodendronConfig.dimCambrian)
 		) {
 			multiplier = 10;
 		}

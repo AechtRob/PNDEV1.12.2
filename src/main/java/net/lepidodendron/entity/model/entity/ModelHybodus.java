@@ -240,13 +240,19 @@ public class ModelHybodus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hybodus.render(f5);
     }
-        public void renderStaticWall(float f) {
-            this.Hybodus.rotateAngleY = (float) Math.toRadians(90);
-            this.Hybodus.offsetY = -0.1F;
-            this.Hybodus.offsetX = -0.05F;
-            this.Hybodus.offsetZ = -0.05F;
-            this.Hybodus.render(0.01F);
-            resetToDefaultPose();
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
+    public void renderStaticWall(float f) {
+        this.Hybodus.rotateAngleY = (float) Math.toRadians(90);
+        this.Hybodus.offsetY = -0.1F;
+        this.Hybodus.offsetX = -0.05F;
+        this.Hybodus.offsetZ = -0.05F;
+        this.Hybodus.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Hybodus, 0.0F, 0.0F, 0.0F);

@@ -339,6 +339,12 @@ public class ModelEoraptor extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.jaw1.rotateAngleX = (float) Math.toRadians(23);
         this.body.offsetY = -0.05F;

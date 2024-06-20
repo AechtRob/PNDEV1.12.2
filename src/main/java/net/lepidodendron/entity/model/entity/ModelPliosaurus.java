@@ -519,10 +519,16 @@ public class ModelPliosaurus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-        public void renderStaticWall(float f) {
-            resetToDefaultPose();
-        }
-        public void renderStaticFloor(float f) {
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
+    public void renderStaticWall(float f) {
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
             resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {

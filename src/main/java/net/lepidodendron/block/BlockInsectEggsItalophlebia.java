@@ -4,9 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -53,7 +52,7 @@ public class BlockInsectEggsItalophlebia extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (dimID != LepidodendronConfig.dimCarboniferous) {
+		if (dimID != LepidodendronConfig.dimTriassic) {
 			return;
 		}
 		int minWaterDepth = 2;
@@ -64,13 +63,8 @@ public class BlockInsectEggsItalophlebia extends ElementsLepidodendronMod.ModEle
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomeTriassic) {
-				BiomeTriassic biomeT = (BiomeTriassic) biome;
-				if (biomeT.getBiomeType() == EnumBiomeTypeTriassic.River
-						|| biomeT.getBiomeType() == EnumBiomeTypeTriassic.Warm
-						|| biomeT.getBiomeType() == EnumBiomeTypeTriassic.Xeric) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
+			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_italophlebia", biome.getRegistryName().toString())) {
+				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}

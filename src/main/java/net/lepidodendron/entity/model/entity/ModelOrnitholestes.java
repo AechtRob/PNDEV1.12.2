@@ -481,6 +481,7 @@ public class ModelOrnitholestes extends ModelBasePalaeopedia {
         AdvancedModelRenderer.rotateAngleZ = z;
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = 0.250F;

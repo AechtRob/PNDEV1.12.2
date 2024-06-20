@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBanffia;
 import net.lepidodendron.entity.model.entity.ModelBanffia;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBanffia extends RenderLiving<EntityPrehistoricFloraBanffia> {
+public class RenderBanffia extends RenderLivingBaseWithBook<EntityPrehistoricFloraBanffia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/banffia.png");
 
     public RenderBanffia(RenderManager mgr) {

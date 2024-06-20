@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLonchodomas;
 import net.lepidodendron.entity.model.entity.ModelLonchodomas;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderLonchodomas extends RenderLiving<EntityPrehistoricFloraLonchodomas> {
+public class RenderLonchodomas extends RenderLivingBaseWithBook<EntityPrehistoricFloraLonchodomas> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchodomas.png");
 
     public RenderLonchodomas(RenderManager mgr) {

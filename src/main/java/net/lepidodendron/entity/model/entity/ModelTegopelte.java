@@ -126,6 +126,11 @@ public class ModelTegopelte extends ModelBasePalaeopedia {
         this.body.render(f5 * 0.25F);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

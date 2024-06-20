@@ -501,6 +501,11 @@ public class ModelKulindadromeus extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
             this.setRotateAngle(Hips, -0.2F, 0.0F, 0.0F);
             this.setRotateAngle(Tail1, 0.0F, -0.1F, 0.0F);

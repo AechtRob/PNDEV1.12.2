@@ -42,6 +42,7 @@ public class TmesipterisGenerator extends WorldGenerator
 		if (dimID == LepidodendronConfig.dimCarboniferous
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimCretaceousEarly
+			|| dimID == LepidodendronConfig.dimCretaceousLate
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic)
 			{

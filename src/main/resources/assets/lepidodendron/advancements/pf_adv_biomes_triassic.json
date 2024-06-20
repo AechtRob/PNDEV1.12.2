@@ -207,6 +207,12 @@
 			"conditions": {
 				"biome": "lepidodendron:triassic_woodland_polje_edge"
 			}
+		},
+		"triassic_ocean_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_ocean_reef"
+			}
 		}
 	},
 	"requirements": [
@@ -291,6 +297,9 @@
 		],
 		[
 			"triassic_woodland_polje"
+		],
+		[
+			"triassic_ocean_reef"
 		]
 	]
 }

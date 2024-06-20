@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraUrosthenes;
 import net.lepidodendron.entity.model.entity.ModelUrosthenes;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderUrosthenes extends RenderLiving<EntityPrehistoricFloraUrosthenes> {
+public class RenderUrosthenes extends RenderLivingBaseWithBook<EntityPrehistoricFloraUrosthenes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urosthenes.png");
 
     public RenderUrosthenes(RenderManager mgr) {
