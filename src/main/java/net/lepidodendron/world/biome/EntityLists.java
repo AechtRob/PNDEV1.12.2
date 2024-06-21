@@ -784,9 +784,7 @@ public class EntityLists {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsRiverReborn);
                 }
-            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWetlandsPF);
@@ -797,6 +795,17 @@ public class EntityLists {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWetlandsReborn);
                 }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWetlandsWoodedPF);
+            }
+            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWetlandsFA);
+            }
+            if (LepidodendronConfig.doSpawnsReborn) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsWetlandsReborn);
+            }
             } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_hummocks")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPermian.dimPermianMobsHummocksPF);
