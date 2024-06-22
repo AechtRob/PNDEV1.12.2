@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -81,7 +82,7 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:dollyphyton", "inventory"));
 	}
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
 
 		public static final PropertyBool NORTH = PropertyBool.create("north");
    		public static final PropertyBool EAST = PropertyBool.create("east");
@@ -562,7 +563,7 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 			
 			if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
-				//Test the orientation of this block and then check if it is still connected:
+			//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = world.getBlockState(pos.south());
 				if (world.isAirBlock(pos.south()) || 

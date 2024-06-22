@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -206,10 +207,7 @@ public class EntityPrehistoricFloraDaohugoucossus extends EntityPrehistoricFlora
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 			world.getBlockState(pos).getBlock() == BlockRottenLog.block
-				|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-				|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-				|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-				|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
+				|| (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
 		) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {

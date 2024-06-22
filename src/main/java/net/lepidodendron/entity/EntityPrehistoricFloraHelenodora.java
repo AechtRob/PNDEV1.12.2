@@ -11,6 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.entity.render.entity.RenderHelenodora;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.block.BlockDirectional;
@@ -178,10 +179,7 @@ public class EntityPrehistoricFloraHelenodora extends EntityPrehistoricFloraLand
 		//Eat moss!
 		BlockPos pos = this.getPosition();
 		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
-				&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
-				|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
-				|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
-				|| (this.world.getBlockState(pos).getBlock() == BlockSelaginella.block))
+				&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
 		) {
 			this.world.destroyBlock(pos, false);
 			this.setHealth(this.getHealth() + 0.5F);

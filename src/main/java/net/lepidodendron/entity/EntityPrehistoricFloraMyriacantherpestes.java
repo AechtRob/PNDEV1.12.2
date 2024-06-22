@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.render.entity.RenderMyriacantherpestes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -214,10 +215,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 		//Eat moss!
 		BlockPos pos = this.getPosition();
 		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
-			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockSelaginella.block))
+			&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
 		) {
 			this.world.destroyBlock(pos,false);
 			this.setHealth(this.getHealth() + 0.5F);
@@ -259,10 +257,7 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 			world.getBlockState(pos).getBlock() == BlockRottenLog.block
-			|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-			|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-			|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-			|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
+			|| (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
 		) {
 			String eggRenderType = "";
 			TileEntity te = world.getTileEntity(pos);
