@@ -1181,6 +1181,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             }
                                                                         }
                                                                     }
+                                                                    else {
+                                                                        //Do not spawn this as there is no room for the burrow:
+                                                                        break;
+                                                                    }
                                                                 }
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraHaldanodon) {
@@ -1226,6 +1230,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 }
                                                                             }
                                                                         }
+                                                                    }
+                                                                    else {
+                                                                        //Do not spawn this as there is no room for the burrow:
+                                                                        break;
                                                                     }
                                                                 }
                                                             }
