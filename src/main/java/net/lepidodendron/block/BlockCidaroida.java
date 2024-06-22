@@ -94,6 +94,7 @@ public class BlockCidaroida extends ElementsLepidodendronMod.ModElement {
 			boolean isBeach = BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH);
 			if (!(isBeach
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_black")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")

@@ -81,7 +81,9 @@ public class BlockArchaeocidaris extends ElementsLepidodendronMod.ModElement {
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_forest")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_shore")
 			)
 			) {
 				break;

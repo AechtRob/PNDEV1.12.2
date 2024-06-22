@@ -86,6 +86,7 @@ public class BlockNautiloidShellAmmonite_Dactylioceras extends ElementsLepidoden
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_black")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")

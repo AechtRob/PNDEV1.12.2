@@ -86,6 +86,7 @@ public class BlockNautiloidShellAmmonite_Cylolobus extends ElementsLepidodendron
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_shore")
 			)
 			) {
 				break;

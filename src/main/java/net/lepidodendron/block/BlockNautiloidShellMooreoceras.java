@@ -84,8 +84,8 @@ public class BlockNautiloidShellMooreoceras extends ElementsLepidodendronMod.Mod
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_desert_edge")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_desert")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_beach")
 			)
 			) {

@@ -1138,7 +1138,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             //EntityLiving entity = (EntityLiving) ee.newInstance(world);
                                                             if (entity instanceof EntityPrehistoricFloraDiictodon) {
                                                                 EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
-                                                                if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) && spawnPos.getY() > Functions.getAdjustedSeaLevel(world, spawnPos)) {
+                                                                if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) && spawnPos.getY() >= Functions.getAdjustedSeaLevel(world, spawnPos)) {
 
                                                                     boolean isLoaded = true;
                                                                     int x = -6;
@@ -1189,7 +1189,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraHaldanodon) {
                                                                 EntityPrehistoricFloraHaldanodon EntityLandBase = (EntityPrehistoricFloraHaldanodon) entity;
-                                                                if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) && spawnPos.getY() > Functions.getAdjustedSeaLevel(world, spawnPos)) {
+                                                                if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) && spawnPos.getY() >= Functions.getAdjustedSeaLevel(world, spawnPos)) {
                                                                     boolean isLoaded = true;
                                                                     int x = -6;
                                                                     while (x <= 6) {
@@ -1238,7 +1238,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 }
                                                             }
                                                             else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
-                                                                if ((Math.random() > 0.8 || ((EntityPrehistoricFloraLandBase)entity).homesToNest()) && spawnPos.getY() > Functions.getAdjustedSeaLevel(world, spawnPos)) { // 1:5 chance of nest coming too
+                                                                if ((Math.random() > 0.8 || ((EntityPrehistoricFloraLandBase)entity).homesToNest()) && spawnPos.getY() >= Functions.getAdjustedSeaLevel(world, spawnPos)) { // 1:5 chance of nest coming too
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                     if (EntityLandBase.hasNest() ) {
                                                                         if ((!EntityLandBase.isNestMound()) && world.getBlockState(spawnPos).getBlock() != BlockNest.block

@@ -74,7 +74,7 @@ public class BlockNautiloidShellEndoceras extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (random.nextInt(10) != 0) {
+		if (random.nextInt(35) != 0) {
 			return;
 		}
 

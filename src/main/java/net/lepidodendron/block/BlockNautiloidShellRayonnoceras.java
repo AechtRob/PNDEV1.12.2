@@ -84,6 +84,7 @@ public class BlockNautiloidShellRayonnoceras extends ElementsLepidodendronMod.Mo
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")
 			)
 			) {
 				break;

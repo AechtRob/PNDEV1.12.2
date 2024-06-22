@@ -86,6 +86,7 @@ public class BlockNautiloidShellAmmonite_Ceratites extends ElementsLepidodendron
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_volcanic_islands")
 			)
 			) {
