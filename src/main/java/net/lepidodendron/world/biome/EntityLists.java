@@ -443,18 +443,27 @@ public class EntityLists {
         }
 
         //CARBONIFEROUS:
-        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean")
-                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach")
+        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanDeepPF);
+            }
+            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanDeepFA);
+            }
+            if (LepidodendronConfig.doSpawnsReborn) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanDeepReborn);
+            }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_coastal")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanShallowPF);
             }
             if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanFA);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanShallowFA);
             }
             if (LepidodendronConfig.doSpawnsReborn) {
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanReborn);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsCarboniferous.dimCarboniferousMobsOceanShallowReborn);
             }
         } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
