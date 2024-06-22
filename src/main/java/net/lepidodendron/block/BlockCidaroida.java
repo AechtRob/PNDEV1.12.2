@@ -111,7 +111,7 @@ public class BlockCidaroida extends ElementsLepidodendronMod.ModElement {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null) {
-					BlockNautiloidShellPhylloceras.TileEntityCustom te = (BlockNautiloidShellPhylloceras.TileEntityCustom) tileEntity;
+					TileEntityCustom te = (TileEntityCustom) tileEntity;
 					//get a random rotation in increments of 15 degrees:
 					int rotation = random.nextInt(24) * 15;
 					te.getTileData().setInteger("rotation", rotation);

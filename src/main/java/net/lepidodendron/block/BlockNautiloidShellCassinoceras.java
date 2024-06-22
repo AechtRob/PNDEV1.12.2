@@ -93,7 +93,7 @@ public class BlockNautiloidShellCassinoceras extends ElementsLepidodendronMod.Mo
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null) {
-					BlockNautiloidShellAmmonite_Asteroceras.TileEntityCustom te = (BlockNautiloidShellAmmonite_Asteroceras.TileEntityCustom) tileEntity;
+					TileEntityCustom te = (TileEntityCustom) tileEntity;
 					//get a random rotation in increments of 15 degrees:
 					int rotation = random.nextInt(24) * 15;
 					te.getTileData().setInteger("rotation", rotation);
