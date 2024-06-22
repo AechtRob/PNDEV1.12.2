@@ -269,7 +269,13 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
 					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
 						&& faceshape != BlockFaceShape.SOLID)) {
@@ -279,7 +285,13 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 				}
 				else {
 					//Is it upward-facing?
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					if (facing == EnumFacing.UP) {
 						//This is OK for laying mosses
 						return true;
