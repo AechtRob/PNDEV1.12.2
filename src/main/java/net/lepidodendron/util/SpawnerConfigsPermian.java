@@ -34,7 +34,7 @@ public class SpawnerConfigsPermian {
     public static String[] dimPermianMobsAridLandsLushFA = new String[0];
     public static String[] dimPermianMobsStonyFA = new String[0];
     public static String[] dimPermianMobsRiverFA = new String[0];
-    public static String[] dimPermianMobsLowlandsFA = new String[]{"fossil:fossil.diplocaulus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:10}],Health:10}:3:12:3"};
+    public static String[] dimPermianMobsLowlandsFA = new String[0];
     public static String[] dimPermianMobsLowlandForestFA = new String[0];
     public static String[] dimPermianMobsFloodbasaltFA = new String[0];
     public static String[] dimPermianMobsHighlandsFA = new String[0];
@@ -53,10 +53,10 @@ public class SpawnerConfigsPermian {
     public static String[] dimPermianMobsAridLandsLushReborn = new String[0];
     public static String[] dimPermianMobsStonyReborn = new String[0];
     public static String[] dimPermianMobsRiverReborn = new String[0];
-    public static String[] dimPermianMobsLowlandsReborn = new String[]{"rebornmod:entities.diplocaulus:2:7:3", "rebornmod:entities.dimetrodon:2:-6:1"};
+    public static String[] dimPermianMobsLowlandsReborn = new String[]{"rebornmod:entities.dimetrodon:2:-6:1"};
     public static String[] dimPermianMobsLowlandForestReborn = new String[0];
     public static String[] dimPermianMobsFloodbasaltReborn = new String[0];
-    public static String[] dimPermianMobsHighlandsReborn = new String[0];
+    public static String[] dimPermianMobsHighlandsReborn = new String[]{"rebornmod:entities.dimetrodon:1:-1:1"};
     public static String[] dimPermianMobsDesertReborn = new String[0];
     public static String[] dimPermianMobsMountainsReborn = new String[0];
     public static String[] dimPermianMobsHummocksReborn = new String[0];
