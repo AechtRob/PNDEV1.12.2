@@ -418,16 +418,19 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			if (state.getValue(BlockCustom.EXTRACTING) > 0 && extractable == null) {
 				if (!world.isRemote) {
 					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 0));
+					world.notifyBlockUpdate(pos, world.getBlockState(this.getPos()), world.getBlockState(this.getPos()), 3);
 				}
 			}
 			else if (state.getValue(BlockCustom.EXTRACTING) == 0 && extractable == BlockResin.block) {
 				if (!world.isRemote) {
 					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 1));
+					world.notifyBlockUpdate(pos, world.getBlockState(this.getPos()), world.getBlockState(this.getPos()), 3);
 				}
 			}
 			else if (state.getValue(BlockCustom.EXTRACTING) == 0 && extractable == BlockLatex.block) {
 				if (!world.isRemote) {
 					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 2));
+					world.notifyBlockUpdate(pos, world.getBlockState(this.getPos()), world.getBlockState(this.getPos()), 3);
 				}
 			}
 
