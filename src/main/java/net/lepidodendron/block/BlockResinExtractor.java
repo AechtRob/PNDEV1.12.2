@@ -523,6 +523,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 					(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
+						&& (world.getBlockState(position.down()).getMaterial() != Material.WOOD)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.CLAY)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
 			) {
@@ -536,7 +537,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				}
 				i += 1;
 			}
-			//Is this a an extractable block?
+			//Is this an extractable block?
 			try {
 				if (
 						block.getPickBlock(blockstate, null, world, position, null) != null
