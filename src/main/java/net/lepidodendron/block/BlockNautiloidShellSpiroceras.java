@@ -97,7 +97,8 @@ public class BlockNautiloidShellSpiroceras extends ElementsLepidodendronMod.ModE
 				break;
 			}
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
-			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3) {
+			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
+				&& world.isSideSolid(pos.down(), EnumFacing.UP)) {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null) {

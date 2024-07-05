@@ -264,10 +264,14 @@ public class LepidodendronEventSubscribers {
 					}
 				}, "/pninstruct " + player.getName() + " Left control panel: read battery; Right control panel: add/remove battery");
 
+				event.setCanceled(false);
+
 				//player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
 				//player.sendMessage(new TextComponentString("Left control panel: read battery; Right control panel: add/remove battery"));
 			}
+			event.setCanceled(false);
 		}
+		event.setCanceled(false);
 	}
 
 	@SubscribeEvent //Bat poo

@@ -132,7 +132,6 @@ public class EntityPrehistoricFloraEorhynchochelys extends EntityPrehistoricFlor
 		return true;
 	}
 
-
 	@Override
 	public int getAdultAge() {
 		return 56000;

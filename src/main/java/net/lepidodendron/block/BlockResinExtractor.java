@@ -170,7 +170,6 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			return BlockRenderLayer.CUTOUT;
 		}
 
-
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction,
 			float hitX, float hitY, float hitZ) {
