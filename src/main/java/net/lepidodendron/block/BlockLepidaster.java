@@ -89,7 +89,9 @@ public class BlockLepidaster extends ElementsLepidodendronMod.ModElement {
 			}
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
 			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
-				&& world.isSideSolid(pos.down(), EnumFacing.UP)) {
+					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null) {
