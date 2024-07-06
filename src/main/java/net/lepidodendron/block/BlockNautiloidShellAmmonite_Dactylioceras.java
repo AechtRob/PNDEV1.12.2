@@ -86,6 +86,7 @@ public class BlockNautiloidShellAmmonite_Dactylioceras extends ElementsLepidoden
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_black")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")
@@ -99,7 +100,10 @@ public class BlockNautiloidShellAmmonite_Dactylioceras extends ElementsLepidoden
 				break;
 			}
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
-			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3) {
+			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
+					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null) {

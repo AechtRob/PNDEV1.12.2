@@ -54,6 +54,10 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfig.genFossil) {
 			return;
 		}
+		
+		if (!world.getWorldInfo().isMapFeaturesEnabled()) {
+			return;
+		}
 
 		List<BlockPos> FenceArray = new ArrayList<>();
 		List<BlockPos> DigArray = new ArrayList<>();

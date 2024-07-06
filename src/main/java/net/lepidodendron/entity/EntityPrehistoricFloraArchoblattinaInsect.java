@@ -8,6 +8,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -102,10 +103,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-					|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-					|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-					|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-					|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
+					|| (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
 		) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -118,7 +116,13 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
 					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
 							&& faceshape != BlockFaceShape.SOLID)) {
@@ -128,7 +132,13 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 				}
 				else {
 					//Is it upward-facing?
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					if (facing == EnumFacing.UP) {
 						//This is OK for laying mosses
 						return true;

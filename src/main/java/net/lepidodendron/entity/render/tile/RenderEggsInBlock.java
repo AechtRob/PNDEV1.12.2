@@ -64,7 +64,13 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
         }
         if (!eggRenderType.equals("")) {
 
-            EnumFacing facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            EnumFacing facing = EnumFacing.UP;
+            try {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            }
+            catch (Exception e) {
+                //Do nothing
+            }
             BlockFaceShape faceshape = entity.getWorld().getBlockState(entity.getPos().down()).getBlockFaceShape(entity.getWorld(), entity.getPos().down(), EnumFacing.UP);
 
             GlStateManager.pushMatrix();

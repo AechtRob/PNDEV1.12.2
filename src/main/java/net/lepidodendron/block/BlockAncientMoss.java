@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -189,7 +190,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
+	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -666,7 +667,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		{
 			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
-				//Test the orientation of this block and then check if it is still connected:
+			//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.south());
 				if (worldIn.isAirBlock(pos.south()) || 

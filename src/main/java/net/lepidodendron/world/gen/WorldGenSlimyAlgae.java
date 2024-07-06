@@ -28,6 +28,7 @@ public class WorldGenSlimyAlgae extends WorldGenerator
             if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockSlimyAlgaeLand.block.canPlaceBlockAt(worldIn, blockpos))
             {
                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockSlimyAlgaeLand.block.getDefaultState(), 2);
+                WorldGenAncientMoss.PlaceEggs(rand, worldIn, blockpos);
                 flag = true;
             }
             else if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && ItemSlimyAlgaeItem.canSurviveAt(worldIn, blockpos)  && (iblockstate.getMaterial() == Material.WATER && ((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0))

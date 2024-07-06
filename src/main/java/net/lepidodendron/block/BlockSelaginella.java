@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -82,7 +83,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:selaginella", "inventory"));
 	}
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");

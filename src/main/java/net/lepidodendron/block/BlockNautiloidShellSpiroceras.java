@@ -84,6 +84,7 @@ public class BlockNautiloidShellSpiroceras extends ElementsLepidodendronMod.ModE
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
 					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white")
@@ -96,7 +97,10 @@ public class BlockNautiloidShellSpiroceras extends ElementsLepidodendronMod.ModE
 				break;
 			}
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
-			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3) {
+			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
+					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null) {

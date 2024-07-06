@@ -5821,6 +5821,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEdwardsiphyton.TileEntityCustom.class, new RenderEdwardsiphyton());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockAncientMoss.TileEntityCustom.class, new RenderAncientMoss());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSelaginella.TileEntityCustom.class, new RenderSelaginella());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSlimyAlgaeLand.TileEntityCustom.class, new RenderSlimyAlgaeLand());
 
         //Nests and land eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNest.TileEntityNest.class, new RenderNest());

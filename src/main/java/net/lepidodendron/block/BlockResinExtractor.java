@@ -170,7 +170,6 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			return BlockRenderLayer.CUTOUT;
 		}
 
-
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction,
 			float hitX, float hitY, float hitZ) {
@@ -418,16 +417,19 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			if (state.getValue(BlockCustom.EXTRACTING) > 0 && extractable == null) {
 				if (!world.isRemote) {
 					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 0));
+					world.notifyBlockUpdate(pos, world.getBlockState(this.getPos()), world.getBlockState(this.getPos()), 3);
 				}
 			}
 			else if (state.getValue(BlockCustom.EXTRACTING) == 0 && extractable == BlockResin.block) {
 				if (!world.isRemote) {
 					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 1));
+					world.notifyBlockUpdate(pos, world.getBlockState(this.getPos()), world.getBlockState(this.getPos()), 3);
 				}
 			}
 			else if (state.getValue(BlockCustom.EXTRACTING) == 0 && extractable == BlockLatex.block) {
 				if (!world.isRemote) {
 					world.setBlockState(this.getPos(), BlockResinExtractor.block.getDefaultState().withProperty(BlockCustom.FACING, state.getValue(BlockCustom.FACING)).withProperty(BlockCustom.EXTRACTING, 2));
+					world.notifyBlockUpdate(pos, world.getBlockState(this.getPos()), world.getBlockState(this.getPos()), 3);
 				}
 			}
 
@@ -520,6 +522,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 					(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
+						&& (world.getBlockState(position.down()).getMaterial() != Material.WOOD)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.CLAY)
 						&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
 			) {
@@ -533,7 +536,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 				}
 				i += 1;
 			}
-			//Is this a an extractable block?
+			//Is this an extractable block?
 			try {
 				if (
 						block.getPickBlock(blockstate, null, world, position, null) != null

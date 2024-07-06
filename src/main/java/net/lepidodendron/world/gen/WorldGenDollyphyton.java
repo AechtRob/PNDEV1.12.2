@@ -1,13 +1,9 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDollyphyton;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -63,7 +59,7 @@ public class WorldGenDollyphyton extends WorldGenerator
 			            		if (orientation == 4) { //Up
 				            		if (BlockDollyphyton.block.canPlaceBlockOnSide(worldIn, blockpos, EnumFacing.UP)) {
 					                	Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockDollyphyton.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 2);
-										PlaceEggs(rand, worldIn, blockpos);
+										WorldGenAncientMoss.PlaceEggs(rand, worldIn, blockpos);
 										flag = true;
 				            		}
 				            	}
@@ -85,45 +81,4 @@ public class WorldGenDollyphyton extends WorldGenerator
         return flag;
     }
 
-	public void PlaceEggs(Random rand, World worldIn, BlockPos pos) {
-		if (Math.random() > 0.925) {
-			int dimID = worldIn.provider.getDimension();
-			String stringEgg = "";
-			int i;
-
-			if (dimID == LepidodendronConfig.dimSilurian) {
-				i = rand.nextInt(2); //Trigonotarbid or Eoarthropleura
-				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os";}
-				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";}
-			}
-
-			if (dimID == LepidodendronConfig.dimDevonian) {
-				i = rand.nextInt(4); //Attercopus, Trigonotarbid, Pneumodesmus or Eoarthropleura
-				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_dev";}
-				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";}
-				if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_pneumodesmus";}
-				if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_attercopus";}
-			}
-
-			if (dimID == LepidodendronConfig.dimCarboniferous) {
-				i = rand.nextInt(2); //Trigonotarbid
-				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
-				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
-			}
-
-			//if (dimID == LepidodendronConfig.dimPermianWetlands) {
-			//	i = rand.nextInt(2); //Permian Trigonotarbid
-			//	if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
-			//	if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
-			//}
-
-			TileEntity te = worldIn.getTileEntity(pos);
-			if (te != null) {
-				te.getTileData().setString("egg", stringEgg);
-			}
-			IBlockState state = worldIn.getBlockState(pos);
-			worldIn.notifyBlockUpdate(pos, state, state, 3);
-			//System.err.println("Eggs placed: " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
-		}
-	}
 }

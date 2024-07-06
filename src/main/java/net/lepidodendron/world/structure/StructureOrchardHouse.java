@@ -34,6 +34,10 @@ public class StructureOrchardHouse extends ElementsLepidodendronMod.ModElement {
         if (world.isRemote)
             return;
 
+        if (!world.getWorldInfo().isMapFeaturesEnabled()) {
+            return;
+        }
+
         if (world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2)) != BiomeAppleOrchard.biome) {
             return;
         }
