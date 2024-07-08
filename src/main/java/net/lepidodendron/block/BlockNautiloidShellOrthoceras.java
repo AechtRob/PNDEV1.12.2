@@ -10,6 +10,7 @@ import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -92,7 +93,7 @@ public class BlockNautiloidShellOrthoceras extends ElementsLepidodendronMod.ModE
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
 			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
 					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
-					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE
 					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
