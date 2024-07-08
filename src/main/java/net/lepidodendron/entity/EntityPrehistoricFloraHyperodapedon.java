@@ -196,7 +196,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 	}
 
 	private boolean isBlockGrazable(IBlockState state) {
-		return (state.getMaterial() == Material.GROUND);
+		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.SAND);
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
