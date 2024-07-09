@@ -77,8 +77,8 @@ public class BlockNautiloidShellAmmonite_Dactylioceras extends ElementsLepidoden
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (random.nextInt(10) != 0) {
-			return;
+		if (random.nextInt(36) != 0) {
+			return; //shells
 		}
 
 		for (int i = 0; i < 10; i++) {

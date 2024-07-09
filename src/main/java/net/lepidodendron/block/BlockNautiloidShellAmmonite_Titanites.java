@@ -76,8 +76,8 @@ public class BlockNautiloidShellAmmonite_Titanites extends ElementsLepidodendron
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (random.nextInt(10) != 0) {
-			return;
+		if (random.nextInt(56) != 0) {
+			return; //shells
 		}
 
 		for (int i = 0; i < 10; i++) {
