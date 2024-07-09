@@ -362,8 +362,8 @@ public class ModelKayentatherium extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         //this.body2.offsetY = 1.28F;
 
-        EntityPrehistoricFloraKayentatherium doco = (EntityPrehistoricFloraKayentatherium) e;
-        float masterSpeed = doco.getTravelSpeed();
+        EntityPrehistoricFloraKayentatherium kayentatherium = (EntityPrehistoricFloraKayentatherium) e;
+        float masterSpeed = kayentatherium.getTravelSpeed();
 
         this.faceTarget(f3, f4, 2, Neck);
         this.faceTarget(f3, f4, 4, Head);
@@ -376,14 +376,14 @@ public class ModelKayentatherium extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] FrontLeft = {this.Rightupperarm, this.Rightlowerarm, this.Rightfrontfoot};
         AdvancedModelRenderer[] FrontRight = {this.Leftupperarm, this.Leftlowerarm, this.Leftfrontfoot};
 
-        if (doco.getAnimation() == doco.LAY_ANIMATION) {
+        if (kayentatherium.getAnimation() == kayentatherium.LAY_ANIMATION) {
             //this.swing(Neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             //this.walk(Neck, 0.5F * 2, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
             return;
         }
 
-        if (!doco.isReallyInWater()) {
-            if ((f3 == 0.0F || !doco.getIsMoving())) { //Not moving
+        if (!kayentatherium.isReallyInWater()) {
+            if ((f3 == 0.0F || !kayentatherium.getIsMoving())) { //Not moving
                 this.swing(Neck, 0.06F, 0.10F, false, 0.5F, -0.05F, f2, 0.8F);
                 this.walk(Neck, 0.06F * 2F, -0.05F, false, 0.5F, 0.025F, f2, 0.8F);
                 this.chainWave(Tail, (0.06F * 0.9F), -0.06F, 2.10F, f2, 1F);
@@ -392,7 +392,7 @@ public class ModelKayentatherium extends ModelBasePalaeopedia {
             }
 
             float speed = masterSpeed / 0.965F;
-            if (doco.getIsFast()) {
+            if (kayentatherium.getIsFast()) {
                 speed = speed * 1.5F;
             }
 
