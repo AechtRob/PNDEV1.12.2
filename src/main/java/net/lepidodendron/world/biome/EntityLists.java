@@ -1082,18 +1082,27 @@ public class EntityLists {
             }
 
             //JURASSIC:
-            else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_coastal_creek")) {
+            else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanPF);
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanDeepPF);
                 }
                 if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanFA);
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanDeepFA);
                 }
                 if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanReborn);
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanDeepReborn);
+                }
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_coastal_creek")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanShallowPF);
+                }
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanShallowFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsOceanShallowReborn);
                 }
             } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
@@ -1469,8 +1478,7 @@ public class EntityLists {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsCalderaSwampReborn);
                 }
-            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_forested")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_forested")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandPF);
                 }
@@ -1480,7 +1488,18 @@ public class EntityLists {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandReborn);
                 }
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandBeachPF);
+                }
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsJurassic.dimJurassicMobsForestIslandReborn);
+                }
             }
+
 
         return MobString;
     }
