@@ -1329,6 +1329,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 nbtStr = "{variant:" + world.rand.nextInt(4) + "}";
                                                             }
 
+                                                            if (mobToSpawn.equalsIgnoreCase("lepidodendron:prehistoric_flora_turboscinetes")
+                                                                && world.rand.nextInt(32) == 0) {
+                                                                mobToSpawn = "lepidodendron:prehistoric_flora_pirinhamesodon";
+                                                                nbtStr = "";
+                                                            }
+
                                                             if (!(TriassicCanyons && spawnPos.getY() > 70)) {
                                                                 for (int i = 0; i < spawnQty; ++i) {
 
