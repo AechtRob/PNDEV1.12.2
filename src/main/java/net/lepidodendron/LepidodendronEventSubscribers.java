@@ -62,6 +62,10 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -69,6 +73,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 public class LepidodendronEventSubscribers {
 
@@ -200,13 +205,51 @@ public class LepidodendronEventSubscribers {
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
-			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && entity.world.getMinecraftServer() != null && !event.getEntityMounting().getEntityWorld().isRemote) {
-				ITextComponent itextcomponent =  new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
-				itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
-				player.sendMessage(itextcomponent);
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
+				//ITextComponent itextcomponent =  new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
+				//itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+				//player.sendMessage(itextcomponent);
 			}
 		}
 	}
+
+	public static class SubmarineMountMessageHandler implements IMessageHandler<SubmarineMountMessage, IMessage> {
+		@Override
+		public IMessage onMessage(SubmarineMountMessage message, MessageContext context) {
+			EntityPlayer player = context.getServerHandler().player.world.getPlayerEntityByUUID(UUID.fromString(message.player));
+			if (!context.getServerHandler().player.world.isRemote) {
+				ITextComponent itextcomponent = new TextComponentString(message.message);
+				itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+				player.sendMessage(itextcomponent);
+			}
+			return null;
+		}
+	}
+
+	public static class SubmarineMountMessage implements IMessage {
+		String player, message;
+		public SubmarineMountMessage() {
+		}
+
+		public SubmarineMountMessage(String player, String message) {
+			this.player = player;
+			this.message = message;
+		}
+
+		@Override
+		public void toBytes(io.netty.buffer.ByteBuf buf) {
+			ByteBufUtils.writeUTF8String(buf, player);
+			ByteBufUtils.writeUTF8String(buf, message);
+		}
+
+		@Override
+		public void fromBytes(io.netty.buffer.ByteBuf buf) {
+			player = ByteBufUtils.readUTF8String(buf);
+			message = ByteBufUtils.readUTF8String(buf);
+		}
+	}
+
 
 	@SubscribeEvent //Bat poo
 	public void guano(LivingEvent.LivingUpdateEvent event) {

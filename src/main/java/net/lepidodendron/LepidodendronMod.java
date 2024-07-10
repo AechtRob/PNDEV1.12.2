@@ -2330,6 +2330,7 @@ public class LepidodendronMod {
 		GameRegistry.registerFuelHandler(elements);
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new ElementsLepidodendronMod.GuiHandler());
 		elements.preInit(event);
+		elements.addNetworkMessage(LepidodendronEventSubscribers.SubmarineMountMessageHandler.class, LepidodendronEventSubscribers.SubmarineMountMessage.class, Side.SERVER);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));
 		EntityRegistries.registerEntities();
