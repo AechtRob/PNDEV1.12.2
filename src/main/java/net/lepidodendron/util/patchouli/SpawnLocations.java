@@ -44,6 +44,13 @@ public class SpawnLocations {
                 spawns = true;
             }
         }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_dorygnathus")) {
+            if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")
+                    || biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
+            {
+                spawns = true;
+            }
+        }
         return spawns;
     }
 
