@@ -206,10 +206,7 @@ public class LepidodendronEventSubscribers {
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
-				//ITextComponent itextcomponent =  new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
-				//itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
-				//player.sendMessage(itextcomponent);
 			}
 		}
 	}
@@ -218,7 +215,7 @@ public class LepidodendronEventSubscribers {
 		@Override
 		public IMessage onMessage(SubmarineMountMessage message, MessageContext context) {
 			EntityPlayer player = context.getServerHandler().player.world.getPlayerEntityByUUID(UUID.fromString(message.player));
-			if (!context.getServerHandler().player.world.isRemote) {
+			if (context.getServerHandler().player == player && !context.getServerHandler().player.world.isRemote) {
 				ITextComponent itextcomponent = new TextComponentString(message.message);
 				itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 				player.sendMessage(itextcomponent);
@@ -249,7 +246,6 @@ public class LepidodendronEventSubscribers {
 			message = ByteBufUtils.readUTF8String(buf);
 		}
 	}
-
 
 	@SubscribeEvent //Bat poo
 	public void guano(LivingEvent.LivingUpdateEvent event) {
