@@ -6,12 +6,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -98,9 +96,6 @@ public class WorldGenRockPiles extends WorldGenerator
                                     blockIn = Blocks.SAND;
                                 }
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn.getDefaultState(), 16);
-                                for (Entity e : worldIn.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(blockpos))) {
-                                    e.setDead(); //Dont entomb entities!
-                                }
                                 spawnLife(worldIn, blockpos.getX(), blockpos.getY(), blockpos.getZ(), rand);
                             }
                         }
