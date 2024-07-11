@@ -182,6 +182,9 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
                 return blockpos1;
             }
         }
+        if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraAmphibianBase.getPosition())) {
+            return this.PrehistoricFloraAmphibianBase.getPositionVector().add(0, 1, 0);
+        }
         return null;
     }
 

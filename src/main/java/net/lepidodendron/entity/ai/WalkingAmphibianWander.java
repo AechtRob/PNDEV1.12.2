@@ -185,6 +185,9 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
                 return blockpos1;
             }
         }
+        if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraWalkingAmphibianBase.getPosition())) {
+            return this.PrehistoricFloraWalkingAmphibianBase.getPositionVector().add(0, 1, 0);
+        }
         return null;
     }
 
