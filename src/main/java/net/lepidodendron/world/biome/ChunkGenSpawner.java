@@ -89,6 +89,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral")
                 ){
                     Creeks = true;
                 }
