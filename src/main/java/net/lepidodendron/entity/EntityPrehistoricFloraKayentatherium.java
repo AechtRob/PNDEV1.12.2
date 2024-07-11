@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 			return 0.0F;
 		}
 		if (this.getIsFast() || this.isReallyInWater()) {
-			speedBase = speedBase * 1.85F;
+			speedBase = speedBase * 2.15F;
 		}
 		return speedBase;
 	}
@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 		tasks.addTask(4, new PanicAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(7, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.1, 90, 4));
+		tasks.addTask(7, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.1, 90, 8));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(10, new EntityLookIdleAI(this));

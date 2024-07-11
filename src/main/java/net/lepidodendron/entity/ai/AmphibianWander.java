@@ -173,7 +173,7 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                         }
 
                         if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                            break; //This pos is not suitable
+                            continue; //This pos is not suitable
                         }
 
                         //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
@@ -190,7 +190,7 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 for (int i = 0; i < 64; i++) {
                     Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2));
                     if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                        break; //This pos is not suitable
+                        continue; //This pos is not suitable
                     }
                     boolean visibility = true;
                     if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {

@@ -161,7 +161,7 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
                 Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2));
                 if (this.PrehistoricFloraAmphibianBase.world.isBlockLoaded(new BlockPos(randPos))) {
                     if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                        break; //This pos is not suitable
+                        continue; //This pos is not suitable
                     }
 
                     boolean visibility = true;
