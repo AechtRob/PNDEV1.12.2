@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 			return 0.0F;
 		}
 		if (this.getIsFast() || this.isReallyInWater()) {
-			speedBase = speedBase * 2.15F;
+			speedBase = speedBase * 2.35F;
 		}
 		return speedBase;
 	}

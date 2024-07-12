@@ -106,6 +106,18 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
                     vec3 = this.findWaterTarget(16);
                 }
 
+                if (this.PrehistoricFloraAmphibianBase.getPosition() != null && vec3 != null) {
+                    if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraAmphibianBase.getPosition())
+                            && isTooDeep(new BlockPos(vec3))) {
+                        vec3 = this.PrehistoricFloraAmphibianBase.getPositionVector().add(0, 2, 0);
+                    }
+                }
+                else if (this.PrehistoricFloraAmphibianBase.getPosition() != null && vec3 == null) {
+                    if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraAmphibianBase.getPosition())) {
+                        vec3 = this.PrehistoricFloraAmphibianBase.getPositionVector().add(0, 2, 0);
+                    }
+                }
+
                 if (vec3 != null) {
 //                    double Xoffset = this.PrehistoricFloraAmphibianBase.posX - this.PrehistoricFloraAmphibianBase.getPosition().getX();
 //                    double Zoffset = this.PrehistoricFloraAmphibianBase.posZ - this.PrehistoricFloraAmphibianBase.getPosition().getZ();
@@ -181,9 +193,6 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
             if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(blockpos1)).getMaterial() == Material.WATER) {
                 return blockpos1;
             }
-        }
-        if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraAmphibianBase.getPosition())) {
-            return this.PrehistoricFloraAmphibianBase.getPositionVector().add(0, 1, 0);
         }
         return null;
     }
