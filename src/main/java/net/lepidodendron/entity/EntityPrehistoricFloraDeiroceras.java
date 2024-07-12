@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraDeiroceras extends EntityPrehistoricFloraNaut
 	}
 
 	public static String getPeriod() {
-		return "Ordovician - [Silurian] - Devonian";
+		return "Ordovician - Silurian - Devonian";
 	}
 
 	//public static String getHabitat() {return "Aquatic";}
