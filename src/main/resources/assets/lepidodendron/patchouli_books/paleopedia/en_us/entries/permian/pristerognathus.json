@@ -1,5 +1,5 @@
 {
-	"name": "Pristerognathus",
+	"name": "Alopecognathus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pristerognathus_icon.png",
 	"category": "lepidodendron:permian_animal",
@@ -7,20 +7,20 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_pristerognathus",
-			"title": "Pristerognathus",
+			"title": "Alopecognathus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/pristerognathus.png"],
-			"title": "P. polyodon",
+			"title": "A. angusticeps",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
 			"type": "text",
-			"text": "Pristerognathus is a therocephalian from the Middle Permian period. It was a predator with large canines and it was about the size of a dog, reaching 1.5 meters in length. Its fossils have been discovered in South Africa and they likely lived in wooded areas and preyed on smaller therapsids of the time."
+			"text": "Alopecognathus is a therocephalian from the Middle Permian period. It was a predator with large canines and it was about the size of a dog, reaching 1.5 meters in length. Its fossils have been discovered in South Africa and they likely lived in wooded areas and preyed on smaller therapsids of the time."
 		},
 		{
 			"type": "lepidodendron:diet",

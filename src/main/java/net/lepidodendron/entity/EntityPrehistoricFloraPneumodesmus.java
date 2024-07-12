@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		return LepidodendronMod.MODID + ":insect_eggs_pneumodesmus";
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
