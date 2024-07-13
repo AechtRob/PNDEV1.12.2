@@ -129,6 +129,8 @@ public class AcidBathOutputMobs {
         String[] resLoc = {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAcadoaradoxides.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAlacaris.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraNimbia.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraEdiacaria.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAnomalocaris.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraBanffia.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraCambroraster.class)).getRegistryName().toString(),

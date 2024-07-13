@@ -31,8 +31,15 @@ public class EntityLists {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimMesoproterozoicMobsPF);
                 }
             } else if (((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Neoproterozoic) {
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimNeoproterozoicMobsPF);
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
+                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                        MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimCryogenianMobsPF);
+                    }
+                }
+                else {
+                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                        MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimNeoproterozoicMobsPF);
+                    }
                 }
             }
             if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
