@@ -324,7 +324,7 @@ public class ModelPikaia extends ModelBasePalaeopedia {
 
             if (!e.isInWater()) {
                 this.Bodymiddle.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodymiddle.offsetY = 1.30F - 1.45F;
+                this.Bodymiddle.offsetY = 1.3F;
                 this.bob(Bodymiddle, -speed, 2F, false, f2, 1);
             }
         }
