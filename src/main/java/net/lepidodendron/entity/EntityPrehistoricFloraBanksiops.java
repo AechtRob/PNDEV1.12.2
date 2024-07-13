@@ -263,19 +263,19 @@ public class EntityPrehistoricFloraBanksiops extends EntityPrehistoricFloraSwimm
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:metoposaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:banksiops_idle"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:metoposaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:banksiops_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:metoposaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:banksiops_death"));
 	}
 
 	@Override

@@ -716,8 +716,11 @@ public class ModelDeuterosaurus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) { // not present
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The roar anim
+        else if (ee.getAnimation() == ee.GRAPPLE_ANIMATION) { //The roar anim
             animTerritorial(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //Ambient noise, closed-mouth, no amim
+            //animTerritorial(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
 
