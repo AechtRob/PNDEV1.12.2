@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:ctenorhabdotus_raw"
+			"item": "lepidodendron:advancement_placeholder"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_ctenorhabdotus.title"
