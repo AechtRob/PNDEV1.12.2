@@ -12,7 +12,7 @@ public class RenderKleptothule extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kleptothule.png");
 
     public static float getScaler() {
-        return 0.7F * 0.3F;
+        return 0.7F * 0.2F;
     }
     public RenderKleptothule(RenderManager mgr) {
         super(mgr, new ModelKleptothule(), 0.0f);
