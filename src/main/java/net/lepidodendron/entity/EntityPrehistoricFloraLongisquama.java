@@ -129,7 +129,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.165F;
+		float speedBase = 0.1925F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
