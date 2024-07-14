@@ -167,7 +167,7 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
                     }
 
                     if (this.maxDepth > 0 & isTooDeep(new BlockPos(randPos))) {
-                        break; //This pos is not suitable
+                        continue; //This pos is not suitable
                     }
                     //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());
                     if (this.PrehistoricFloraWalkingAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER) {

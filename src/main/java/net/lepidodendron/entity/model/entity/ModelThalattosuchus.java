@@ -353,6 +353,7 @@ public class ModelThalattosuchus extends ModelBasePalaeopedia {
         this.Body.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -363,7 +364,7 @@ public class ModelThalattosuchus extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
-        this.Body.offsetY = 0.25F;
+        this.Body.offsetY = -0.10F;
         this.Body.offsetZ = -0.4F;
 
         EntityPrehistoricFloraThalattosuchus Dako = (EntityPrehistoricFloraThalattosuchus) e;

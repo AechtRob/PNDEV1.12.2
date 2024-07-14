@@ -17,6 +17,10 @@ public class SpawnLocations {
             pnVariant = mobID.substring(i + 1);
             mobID = mobID.substring(0, i);
         }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_piranhamesodon")) {
+            mobID = "lepidodendron:prehistoric_flora_turboscinetes";
+            //They school with this
+        }
         if (matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs)
             || (
                     mobID.contains("lepidodendron:prehistoric_flora_roachoid_") && matchMob("lepidodendron:prehistoric_flora_roachoid_", possibleMobs)
@@ -40,6 +44,13 @@ public class SpawnLocations {
                 || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef")
                 || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef_transition")
                 || biomeID.equalsIgnoreCase("lepidodendron:devonian_beach"))
+            {
+                spawns = true;
+            }
+        }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_dorygnathus")) {
+            if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")
+                    || biomeID.equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
             {
                 spawns = true;
             }

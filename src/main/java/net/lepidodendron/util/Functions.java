@@ -221,6 +221,12 @@ public class Functions {
         }
 
         worldIn.setBlockState(pos, state, flags);
+
+        if (state.causesSuffocation()) {
+            for (Entity e : worldIn.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(pos))) {
+                e.setDead(); //Dont entomb entities!
+            }
+        }
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state) {

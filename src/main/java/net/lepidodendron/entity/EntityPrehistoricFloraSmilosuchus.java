@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 		setSize(1.65F, 0.99F);
 		minWidth = 0.15F;
 		maxWidth = 1.65F;
-		maxHeight = 0.99F;
+		maxHeight = 0.785F;
 		maxHeightLand = 1.66F;
 		maxHealthAgeable = 76.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -272,6 +272,13 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
+		}
+
+		if (this.isInWater()) {
+			this.setSizer(this.width, this.getAgeScale() * this.maxHeight);
+		}
+		else {
+			this.setSizer(this.width, this.getAgeScale() * this.maxHeightLand);
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

@@ -15,7 +15,6 @@ import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
@@ -32,11 +31,13 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
@@ -61,6 +62,10 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -68,6 +73,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 public class LepidodendronEventSubscribers {
 
@@ -199,79 +205,46 @@ public class LepidodendronEventSubscribers {
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
-			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && entity.world.getMinecraftServer() != null && !event.getEntityMounting().getEntityWorld().isRemote) {
-				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-					@Override
-					public String getName() {
-						return "";
-					}
-
-					@Override
-					public boolean canUseCommand(int permission, String command) {
-						return true;
-					}
-
-					@Override
-					public World getEntityWorld() {
-						return entity.world;
-					}
-
-					@Override
-					public MinecraftServer getServer() {
-						return entity.world.getMinecraftServer();
-					}
-
-					@Override
-					public boolean sendCommandFeedback() {
-						return false;
-					}
-
-					@Override
-					public Entity getCommandSenderEntity() {
-						return entity;
-					}
-				}, "/pninstruct " + player.getName() + " Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
-
-				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-					@Override
-					public String getName() {
-						return "";
-					}
-
-					@Override
-					public boolean canUseCommand(int permission, String command) {
-						return true;
-					}
-
-					@Override
-					public World getEntityWorld() {
-						return entity.world;
-					}
-
-					@Override
-					public MinecraftServer getServer() {
-						return entity.world.getMinecraftServer();
-					}
-
-					@Override
-					public boolean sendCommandFeedback() {
-						return false;
-					}
-
-					@Override
-					public Entity getCommandSenderEntity() {
-						return entity;
-					}
-				}, "/pninstruct " + player.getName() + " Left control panel: read battery; Right control panel: add/remove battery");
-
-				event.setCanceled(false);
-
-				//player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
-				//player.sendMessage(new TextComponentString("Left control panel: read battery; Right control panel: add/remove battery"));
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
+				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
 			}
-			event.setCanceled(false);
 		}
-		event.setCanceled(false);
+	}
+
+	public static class SubmarineMountMessageHandler implements IMessageHandler<SubmarineMountMessage, IMessage> {
+		@Override
+		public IMessage onMessage(SubmarineMountMessage message, MessageContext context) {
+			EntityPlayer player = context.getServerHandler().player.world.getPlayerEntityByUUID(UUID.fromString(message.player));
+			if (context.getServerHandler().player == player && !context.getServerHandler().player.world.isRemote) {
+				ITextComponent itextcomponent = new TextComponentString(message.message);
+				itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+				player.sendMessage(itextcomponent);
+			}
+			return null;
+		}
+	}
+
+	public static class SubmarineMountMessage implements IMessage {
+		String player, message;
+		public SubmarineMountMessage() {
+		}
+
+		public SubmarineMountMessage(String player, String message) {
+			this.player = player;
+			this.message = message;
+		}
+
+		@Override
+		public void toBytes(io.netty.buffer.ByteBuf buf) {
+			ByteBufUtils.writeUTF8String(buf, player);
+			ByteBufUtils.writeUTF8String(buf, message);
+		}
+
+		@Override
+		public void fromBytes(io.netty.buffer.ByteBuf buf) {
+			player = ByteBufUtils.readUTF8String(buf);
+			message = ByteBufUtils.readUTF8String(buf);
+		}
 	}
 
 	@SubscribeEvent //Bat poo

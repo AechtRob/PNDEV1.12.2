@@ -34,7 +34,7 @@ public class RenderHypuronector extends RenderLivingBaseWithBook<EntityPrehistor
                 break;
 
             case EAST: case WEST: case NORTH: case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.185F);
+                GlStateManager.translate(0.0F, 0.05F, -0.205F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
 

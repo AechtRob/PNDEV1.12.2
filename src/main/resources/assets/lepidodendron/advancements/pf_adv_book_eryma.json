@@ -1,20 +1,20 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:daihua"
+			"item": "lepidodendron:eryma_raw"
 		},
 		"title": {
-			"translate": "advancements.pf_adv_book_daihua.title"
+			"translate": "advancements.pf_adv_book_eryma.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_daihua.description"
+			"translate": "advancements.pf_adv_book_eryma.description"
 		}
 	},
 	"parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_daihua"
+			"trigger": "pf_book_eryma"
 		}
 	}
 }

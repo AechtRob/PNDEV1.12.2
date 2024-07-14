@@ -4,6 +4,8 @@ package net.lepidodendron.world.structure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.Functions;
@@ -12,6 +14,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityList;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -442,6 +447,25 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 	public void spawnLife(World world, int x, int y, int z, Random random) {
 		int c;
 		int cc;
+		if (random.nextInt(256) == 0) {
+			//Dorygnathus:
+			if (world.isAirBlock(new BlockPos(x, (y + 1), z))
+				&& BlockNest.block.canPlaceBlockAt(world, new BlockPos(x, (y + 1), z))) {
+				world.setBlockState(new BlockPos(x, (y + 1), z), BlockNest.block.getDefaultState());
+				if (world.rand.nextInt(3) != 0) {
+					//Place some eggs too:
+					TileEntity te = world.getTileEntity(new BlockPos(x, (y + 1), z));
+					te.getTileData().setString("creature", "lepidodendron:prehistoric_flora_dorygnathus");
+					te.getTileData().setBoolean("isMound", false);
+					ItemStack stack = BlockNest.BlockCustom.getEggItemStack("lepidodendron:prehistoric_flora_dorygnathus");
+					stack.setCount(1);
+					((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+				}
+				if (!(world.isRemote)) {
+					EntityPrehistoricFloraAgeableBase.summon(world, EntityList.getKey(EntityPrehistoricFloraDorygnathus.class).toString(), "{AgeTicks:" + (new EntityPrehistoricFloraDorygnathus(world)).getAdultAge() + "}", x + 0.5 , y + 1.01, z + 0.5);
+				}
+			}
+		}
 		if (random.nextInt(10) != 0) {
 			c = 1;
 			if (random.nextInt(3) != 0) {

@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraNimbia extends EntityPrehistoricFloraSlitheri
 		return true;
 	}
 
-	public static String getPeriod() {return "Cryogenian - Ediacaran - [Earliest Cambrian]";}
+	public static String getPeriod() {return "Neoproterozoic (Cryogenian - Ediacaran) - earliest Cambrian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

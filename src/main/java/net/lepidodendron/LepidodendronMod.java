@@ -9,7 +9,6 @@ import net.lepidodendron.item.crafting.RecipeCookedMeatsandSeeds;
 import net.lepidodendron.item.crafting.RecipeOresAndBlocks;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
 import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
-import net.lepidodendron.util.CommandMountVehicle;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDispenser;
@@ -2196,8 +2195,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_UROKODIA = 886;
 	public static final ResourceLocation UROKODIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urokodia"));
 	public static final int ENTITY_THELXIOPE = 887;
-	public static final ResourceLocation THELXIOPE_SPINOSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope"));
-	public static final ResourceLocation THELXIOPE_SP_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope_sp"));
+//	public static final ResourceLocation THELXIOPE_SPINOSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope"));
+//	public static final ResourceLocation THELXIOPE_SP_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope_sp"));
 	public static final int ENTITY_TITANOKORYS = 888;
 	public static final ResourceLocation TITANOKORYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanokorys"));
 	public static final int ENTITY_ERYMA = 889;
@@ -2331,6 +2330,7 @@ public class LepidodendronMod {
 		GameRegistry.registerFuelHandler(elements);
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new ElementsLepidodendronMod.GuiHandler());
 		elements.preInit(event);
+		elements.addNetworkMessage(LepidodendronEventSubscribers.SubmarineMountMessageHandler.class, LepidodendronEventSubscribers.SubmarineMountMessage.class, Side.SERVER);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));
 		EntityRegistries.registerEntities();
@@ -2414,8 +2414,6 @@ public class LepidodendronMod {
 		elements.getElements().forEach(element -> element.serverLoad(event));
 		proxy.serverLoad(event);
 		//event.registerServerCommand(new Summoner());
-
-		event.registerServerCommand(new CommandMountVehicle());
 	}
 
 	@SubscribeEvent

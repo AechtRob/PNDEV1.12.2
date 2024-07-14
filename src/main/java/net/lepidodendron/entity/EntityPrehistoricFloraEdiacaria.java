@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraEdiacaria extends EntityPrehistoricFloraEoand
         return true;
     }
 
-    public static String getPeriod() {return "Precambrian";}
+    public static String getPeriod() {return "Precambrian - Cambrian";}
 
     //public static String getHabitat() {return "Aquatic";}
 

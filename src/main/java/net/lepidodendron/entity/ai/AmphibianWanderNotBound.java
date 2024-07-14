@@ -106,6 +106,18 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
                     vec3 = this.findWaterTarget(16);
                 }
 
+                if (this.PrehistoricFloraAmphibianBase.getPosition() != null && vec3 != null) {
+                    if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraAmphibianBase.getPosition())
+                            && isTooDeep(new BlockPos(vec3))) {
+                        vec3 = this.PrehistoricFloraAmphibianBase.getPositionVector().add(0, 2, 0);
+                    }
+                }
+                else if (this.PrehistoricFloraAmphibianBase.getPosition() != null && vec3 == null) {
+                    if (this.maxDepth > 0 && isTooDeep(this.PrehistoricFloraAmphibianBase.getPosition())) {
+                        vec3 = this.PrehistoricFloraAmphibianBase.getPositionVector().add(0, 2, 0);
+                    }
+                }
+
                 if (vec3 != null) {
 //                    double Xoffset = this.PrehistoricFloraAmphibianBase.posX - this.PrehistoricFloraAmphibianBase.getPosition().getX();
 //                    double Zoffset = this.PrehistoricFloraAmphibianBase.posZ - this.PrehistoricFloraAmphibianBase.getPosition().getZ();
@@ -161,7 +173,7 @@ public class AmphibianWanderNotBound extends AnimationAINoAnimation<EntityPrehis
                 Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt(dist+1) - (int) (dist/2));
                 if (this.PrehistoricFloraAmphibianBase.world.isBlockLoaded(new BlockPos(randPos))) {
                     if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                        break; //This pos is not suitable
+                        continue; //This pos is not suitable
                     }
 
                     boolean visibility = true;

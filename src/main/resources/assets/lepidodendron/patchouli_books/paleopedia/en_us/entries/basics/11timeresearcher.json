@@ -1,0 +1,44 @@
+{
+	"name": "Time Researcher",
+	"icon": "lepidodendron:time_researcher_item",
+	"category": "lepidodendron:revival",
+	"sortnum": 11,
+	"pages": [
+		{
+			"type": "text",
+			"text": "The time-researcher is a complex machine used to obtain specialised knowledge about the past. As you obtain knowledge about the various time-periods you will be able to use its laser-analysers to more accurately obtain specific life-forms from fossils."
+		},
+		{
+			"type": "text",
+			"text": "Feed fossiliferous stone or raw fossils into the crusher hopper at the top-left of the machine and the GUI in the block underneath this will show you your research progress. As you increase reasarch, your ability to accurately obtain specific fossils from fossiliferous stone improves:"
+		},
+		{
+			"type": "text",
+			"text": "To try to obtain a specific fossil, open the GUI of the block underneath the laser chamber on the right of the machine and select from the list (at the top) the life-form you are looking for. Then add the correct fossiliferous stone to the GUI and the lasers will start work trying to extract it."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_crusher_recipe",
+			"recipe2": "lepidodendron:time_researcher_hopper_recipe",
+			"title": "Crusher recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_laser_recipe",
+			"recipe2": "lepidodendron:time_researcher_finder_top_recipe",
+			"title": "Laser recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_finder_main_recipe",
+			"recipe2": "lepidodendron:time_researcher_finder_bottom_recipe",
+			"title": "Other parts"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_dispenser_recipe",
+			"recipe2": "lepidodendron:time_researcher_recipe",
+			"title": "Final parts"
+		}
+	]
+}

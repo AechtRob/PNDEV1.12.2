@@ -2,14 +2,14 @@
 	"name": "Eugaleaspis",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/eugaleaspis_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eugaleaspis",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_eugaleaspis",
 			"title": "Eugaleaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)>Galeaspida$(br)>Eugaleaspidiformes$(br)>Eugaleaspidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",
 			"type": "text",
-			"text": "Eugaleaspis is the namesake genus to the order Eugaleaspiformes, it lived in the lower Devonian of the Yunnan province of China. The animal, in many aspects similar to the slightly older Dunyu, was a small jawless fish possessing a long and thin medial opening on the top of the head, around 6 times longer than wide."
+			"text": "Eugaleaspis is the namesake genus to the order Eugaleaspiformes, it lived in the upper Silurian to lower Devonian of the Yunnan province of China. The animal, in many aspects similar to the slightly older Dunyu, was a small jawless fish possessing a long and thin medial opening on the top of the head, around 6 times longer than wide."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eugaleaspis",

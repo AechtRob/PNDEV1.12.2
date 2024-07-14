@@ -23,7 +23,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraMorganucodon implements IAdvancementGranter, ITrappableLand {
+public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFloraHaldanodon implements IAdvancementGranter, ITrappableLand {
 
 	public EntityPrehistoricFloraKayentatherium(World world) {
 		super(world);
@@ -50,16 +50,16 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
 
-	public float getAISpeedLand() {
-		float speedBase = 0.26F;
+	public float getAISpeedSwimmingAmphibian() {
+		float speedBase = 0.175F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
-		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+		if (this.getIsFast() || this.isReallyInWater()) {
+			speedBase = speedBase * 2.35F;
 		}
 		return speedBase;
 	}
@@ -68,17 +68,15 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new NightFindNestAI(this, true));
-		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new PanicAI(this, 1.0));
-		tasks.addTask(6, new LandWanderNestAI(this));
-		tasks.addTask(7, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(8, new LandWanderHerd(this, 1.00D, Math.max(1F, this.width) * this.getNavigator().getPathSearchRange() * 0.75F));
-		tasks.addTask(9, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(11, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(12, new EntityLookIdleAI(this));
+		tasks.addTask(2, new NightFindNestAquaticAI(this, false));
+		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.1, 90, 8));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
@@ -111,12 +109,10 @@ public class EntityPrehistoricFloraKayentatherium extends EntityPrehistoricFlora
 	            .getObject(new ResourceLocation("lepidodendron:kayentatherium_death"));
 	}
 
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.KAYENTATHERIUM_LOOT;
 	}
-
 
 	//Rendering taxidermy:
 	//--------------------

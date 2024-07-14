@@ -2,8 +2,8 @@ package net.lepidodendron.procedure;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockCypressTwiggyLeaves;
 import net.lepidodendron.block.BlockCypressLog;
+import net.lepidodendron.block.BlockCypressTwiggyLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;

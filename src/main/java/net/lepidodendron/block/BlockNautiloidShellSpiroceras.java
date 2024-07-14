@@ -10,6 +10,7 @@ import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -74,8 +75,8 @@ public class BlockNautiloidShellSpiroceras extends ElementsLepidodendronMod.ModE
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (random.nextInt(10) != 0) {
-			return;
+		if (random.nextInt(36) != 0) {
+			return; //shells
 		}
 
 		for (int i = 0; i < 10; i++) {
@@ -89,8 +90,6 @@ public class BlockNautiloidShellSpiroceras extends ElementsLepidodendronMod.ModE
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white_edge")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_flat")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_helper")
 			)
 			) {
@@ -99,7 +98,7 @@ public class BlockNautiloidShellSpiroceras extends ElementsLepidodendronMod.ModE
 			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
 			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
 					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
-					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE 
+					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE
 					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
 				world.setBlockState(pos, block.getDefaultState());
 				TileEntity tileEntity = world.getTileEntity(pos);
