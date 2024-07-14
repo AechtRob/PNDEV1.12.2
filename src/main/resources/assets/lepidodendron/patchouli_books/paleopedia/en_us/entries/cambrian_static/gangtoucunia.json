@@ -12,6 +12,13 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria"
 		},
 		{
+			"type": "entity",
+			"name": "G. aspera",
+			"entity": "lepidodendron:tileentitygangtoucunia",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
 			"type": "multiblock",
 			"name": "G. aspera",
 			"enable_visualize": false,
