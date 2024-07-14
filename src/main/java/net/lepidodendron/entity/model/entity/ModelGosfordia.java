@@ -202,19 +202,60 @@ public class ModelGosfordia extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
-    @Override
+
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(Tail2, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.7081F, -0.2008F, -0.1259F);
+        this.setRotateAngle(cube_r8, 0.3622F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.6152F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -1.6101F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 1.333F, 0.1393F, 0.4608F);
+        this.setRotateAngle(cube_r13, 1.333F, -0.1393F, -0.4608F);
+        this.setRotateAngle(cube_r12, 0.7081F, 0.2008F, 0.1259F);
+        this.setRotateAngle(cube_r11, 0.7081F, 0.2008F, 0.1259F);
+        this.setRotateAngle(cube_r10, 0.7081F, -0.2008F, -0.1259F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetY = -0.18F;
+        this.main.offsetZ = -0.098F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.9F;
-        this.main.offsetX = 0.20F;
-        this.main.rotateAngleY = (float)Math.toRadians(65);
-        this.main.rotateAngleX = (float)Math.toRadians(2);
-        this.main.rotateAngleZ = (float)Math.toRadians(2);
+        this.main.offsetY = -2.0F;
+        this.main.offsetX = -0.6F;
+        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.rotateAngleX = (float)Math.toRadians(3);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 2.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Tail3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(Jaw, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.7081F, -0.2008F, -0.1259F);
+        this.setRotateAngle(cube_r8, 0.3622F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.6152F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -1.6101F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 1.333F, 0.1393F, 0.4608F);
+        this.setRotateAngle(cube_r13, 1.333F, -0.1393F, -0.4608F);
+        this.setRotateAngle(cube_r12, 0.7081F, 0.2008F, 0.1259F);
+        this.setRotateAngle(cube_r11, 0.7081F, 0.2008F, 0.1259F);
+        this.setRotateAngle(cube_r10, 0.7081F, -0.2008F, -0.1259F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.088F, -0.1304F, -0.0115F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:
@@ -223,13 +264,29 @@ public class ModelGosfordia extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
-    public void renderStaticWall(float f) {
-
-        resetToDefaultPose();
-    }
-
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(Tail3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(Jaw, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.7081F, -0.2008F, -0.1259F);
+        this.setRotateAngle(cube_r8, 0.3622F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.4712F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.4014F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.6152F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -1.6101F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 1.333F, 0.1393F, 0.4608F);
+        this.setRotateAngle(cube_r13, 1.333F, -0.1393F, -0.4608F);
+        this.setRotateAngle(cube_r12, 0.7081F, 0.2008F, 0.1259F);
+        this.setRotateAngle(cube_r11, 0.7081F, 0.2008F, 0.1259F);
+        this.setRotateAngle(cube_r10, 0.7081F, -0.2008F, -0.1259F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.088F, -0.1304F, -0.0115F);
+        this.main.offsetY = -0.3F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
 
