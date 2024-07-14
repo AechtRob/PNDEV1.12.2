@@ -17,6 +17,10 @@ public class SpawnLocations {
             pnVariant = mobID.substring(i + 1);
             mobID = mobID.substring(0, i);
         }
+        if (mobID.equalsIgnoreCase("lepidodendron:prehistoric_flora_piranhamesodon")) {
+            mobID = "lepidodendron:prehistoric_flora_turboscinetes";
+            //They school with this
+        }
         if (matchMob(mobID + ":", possibleMobs) || matchMob(mobID + "{", possibleMobs)
             || (
                     mobID.contains("lepidodendron:prehistoric_flora_roachoid_") && matchMob("lepidodendron:prehistoric_flora_roachoid_", possibleMobs)
