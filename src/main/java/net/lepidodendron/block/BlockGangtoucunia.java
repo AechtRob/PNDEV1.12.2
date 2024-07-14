@@ -415,7 +415,10 @@ public class BlockGangtoucunia extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			if (LepidodendronConfig.renderAnimations) {
+				return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			}
+			return EnumBlockRenderType.MODEL;
 		}
 
 		@Override

@@ -1335,7 +1335,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
                                                             if (mobToSpawn.equalsIgnoreCase("lepidodendron:prehistoric_flora_turboscinetes")
                                                                 && world.rand.nextInt(32) == 0) {
-                                                                mobToSpawn = "lepidodendron:prehistoric_flora_pirinhamesodon";
+                                                                mobToSpawn = "lepidodendron:prehistoric_flora_piranhamesodon";
                                                                 nbtStr = "";
                                                             }
 
