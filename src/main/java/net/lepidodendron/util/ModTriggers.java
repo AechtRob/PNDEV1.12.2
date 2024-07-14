@@ -773,6 +773,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_STENODICTYA = new CustomTrigger("pf_book_palaeodictyoptera_stenodictya");
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_SINODUNBARIA = new CustomTrigger("pf_book_palaeodictyoptera_sinodunbaria");
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_MAZOTHAIROS = new CustomTrigger("pf_book_palaeodictyoptera_mazothairos");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_PSYCHROPTILUS = new CustomTrigger("pf_book_palaeodictyoptera_psychroptilus");
     public static final CustomTrigger CLICK_PALAEOISOPUS = new CustomTrigger("pf_book_palaeoisopus");
     public static final CustomTrigger CLICK_ANCIENT_JELLY = new CustomTrigger("pf_book_ancientjelly");
     public static final CustomTrigger CLICK_YUNNANOASCUS = new CustomTrigger("pf_book_yunnanoascus");
@@ -1447,7 +1448,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CONCHOPOMA = new CustomTrigger("pf_book_conchopoma");
     public static final CustomTrigger CLICK_SURCAUDALUS = new CustomTrigger("pf_book_surcaudalus");
     public static final CustomTrigger CLICK_BETHESDAICHTHYS = new CustomTrigger("pf_book_bethesdaichthys");
-    public static final CustomTrigger CLICK_PSYCHROPTILUS = new CustomTrigger("pf_book_psychroptilus");
     public static final CustomTrigger CLICK_NAMUROTYPUS = new CustomTrigger("pf_book_namurotypus");
     public static final CustomTrigger CLICK_ERASIPTEROIDES = new CustomTrigger("pf_book_erasipteroides");
     public static final CustomTrigger CLICK_LEPTOTEUTHIS = new CustomTrigger("pf_book_leptoteuthis");
@@ -2341,6 +2341,7 @@ public class ModTriggers
             CLICK_PALAEODICTYOPTERA_SINODUNBARIA,
             CLICK_PALAEODICTYOPTERA_STENODICTYA,
             CLICK_PALAEODICTYOPTERA_MAZOTHAIROS,
+            CLICK_PALAEODICTYOPTERA_PSYCHROPTILUS,
             CLICK_PALAEOISOPUS,
             CLICK_PALAEONISCUM,
             CLICK_PALAEONTINID,
@@ -2927,7 +2928,6 @@ public class ModTriggers
             CLICK_CONCHOPOMA,
             CLICK_SURCAUDALUS,
             CLICK_BETHESDAICHTHYS,
-            CLICK_PSYCHROPTILUS,
             CLICK_NAMUROTYPUS,
             CLICK_ERASIPTEROIDES,
             CLICK_LEPTOTEUTHIS,
