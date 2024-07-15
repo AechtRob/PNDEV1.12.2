@@ -20,7 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
 			"type": "text",
-			"text": "Alopecognathus is a therocephalian from the Middle Permian period. It was a predator with large canines and it was about the size of a dog, reaching 1.5 meters in length. Its fossils have been discovered in South Africa and they likely lived in wooded areas and preyed on smaller therapsids of the time."
+			"text": "Alopecognathus is a Permian therocephalian synapsid from South Africa. Alopecognathus means \"Fox Jaw\" in Greek due to the similarities in the shape of the jaws in both animals; the species name angusticep  means 'Narrow-headed.' Its remains have been found in the Lycosuchus - Eunotosaurus Subzone, which deposited after the Capitanian mass extinction, around ~260 Mya."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
+			"type": "text",
+			"text": "This species has had a long and complicated taxonomic history; first discovered by Robert Broom in 1915, Alopecognathus was one of many taxa that the author and his colleges named based on minor differences in anatomy, prompting many authors such as Kammerer in 2023 to go over their findings and reassigning certain specimens of Glanosuchus, Cynariognathus, and Pristerognathus to Alopecognathus"
 		},
 		{
 			"type": "lepidodendron:diet",
