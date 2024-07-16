@@ -133,6 +133,7 @@ public class EntityPrehistoricFloraScutosaurus extends EntityPrehistoricFloraLan
 		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(11, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
 
 	@Override
