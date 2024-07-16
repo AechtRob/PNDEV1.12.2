@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraConchopoma extends EntityPrehistoricFloraSwim
 	public EntityPrehistoricFloraConchopoma(World world) {
 		super(world);
 		setSize(0.5F, 0.5F);
-		minWidth = 0.2F;
+		minWidth = 0.5F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 6.0D;

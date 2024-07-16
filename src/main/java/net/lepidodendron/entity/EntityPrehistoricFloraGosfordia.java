@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraGosfordia extends EntityPrehistoricFloraSwimm
 	public EntityPrehistoricFloraGosfordia(World world) {
 		super(world);
 		setSize(0.4F, 0.3F);
-		minWidth = 0.2F;
+		minWidth = 0.4F;
 		maxWidth = 0.4F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;

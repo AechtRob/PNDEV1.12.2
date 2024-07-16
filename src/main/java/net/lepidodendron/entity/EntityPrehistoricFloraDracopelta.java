@@ -43,7 +43,6 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	public ChainBuffer tailBuffer;
 
 	//private int inPFLove;
-	public Animation HIDE_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	public Animation RELAX_ANIMATION;
 	private int standCooldown;
@@ -72,6 +71,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
 	}
+
 	@Override
 	public int getEatLength() {
 		return 35;
