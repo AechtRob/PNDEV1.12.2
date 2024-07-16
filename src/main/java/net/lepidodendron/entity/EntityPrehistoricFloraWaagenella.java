@@ -11,7 +11,7 @@ import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemWaaganella;
+import net.lepidodendron.item.entities.ItemWaagenella;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -33,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraWaaganella extends EntityPrehistoricFloraSlitheringWaterBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraWaagenella extends EntityPrehistoricFloraSlitheringWaterBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraWaaganella extends EntityPrehistoricFloraSlit
 	private Animation animation = NO_ANIMATION;
 	private int jumpTicks;
 
-	public EntityPrehistoricFloraWaaganella(World world) {
+	public EntityPrehistoricFloraWaagenella(World world) {
 		super(world, 26);
 		setSize(0.3F, 0.2F);
 	}
@@ -192,7 +192,7 @@ public class EntityPrehistoricFloraWaaganella extends EntityPrehistoricFloraSlit
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (!this.world.isRemote && !this.isDead) {
 			if ("player".equals(source.getDamageType())) {
-				EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemWaaganella.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(world, this.posX, this.posY, this.posZ, new ItemStack(ItemWaagenella.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
 				if (this.world instanceof WorldServer)
@@ -208,7 +208,7 @@ public class EntityPrehistoricFloraWaaganella extends EntityPrehistoricFloraSlit
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_WAAGANELLA;
+		return ModTriggers.CLICK_WAAGENELLA;
 	}
 
 }

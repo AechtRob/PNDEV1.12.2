@@ -4,7 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraWaaganella;
+import net.lepidodendron.entity.EntityPrehistoricFloraWaagenella;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityList;
@@ -28,12 +28,12 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemWaaganella extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:waaganella_item")
+public class ItemWaagenella extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:waagenella_item")
 	public static final Item block = null;
 
-	public ItemWaaganella(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.waaganella_item);
+	public ItemWaagenella(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.waagenella_item);
 	}
 
 	@Override
@@ -44,23 +44,23 @@ public class ItemWaaganella extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/waaganella_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/waagenella_item", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_waaganella", ItemWaaganella.block);
-		OreDictionary.registerOre("itemShellfish", ItemWaaganella.block);
-		OreDictionary.registerOre("pnfurnaceSnail", ItemWaaganella.block);
-		OreDictionary.registerOre("pndietShellfish", ItemWaaganella.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_waagenella", ItemWaagenella.block);
+		OreDictionary.registerOre("itemShellfish", ItemWaagenella.block);
+		OreDictionary.registerOre("pnfurnaceSnail", ItemWaagenella.block);
+		OreDictionary.registerOre("pndietShellfish", ItemWaagenella.block);
 	}
 
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setTranslationKey("pf_waaganella_item");
-			setRegistryName("waaganella_item");
+			setTranslationKey("pf_waagenella_item");
+			setRegistryName("waagenella_item");
 			maxStackSize = 1;
 			setCreativeTab(TabLepidodendronMobile.tab);
 		}
@@ -73,7 +73,7 @@ public class ItemWaaganella extends ElementsLepidodendronMod.ModElement {
 			if (!worldIn.isRemote)
 			{
 				//Place it here:
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraWaaganella.class).toString(), "", (double) target.getX() + 0.5D, (double) target.getY(), (double) target.getZ() + 0.5D);
+				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraWaagenella.class).toString(), "", (double) target.getX() + 0.5D, (double) target.getY(), (double) target.getZ() + 0.5D);
 				return true;
 			}
 			return false;

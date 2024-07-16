@@ -1481,7 +1481,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIPTERONOTUS = new CustomTrigger("pf_book_dipteronotus");
     public static final CustomTrigger CLICK_HETEROSTROPHUS = new CustomTrigger("pf_book_heterostrophus");
     public static final CustomTrigger CLICK_MONOLOPHOSAURUS = new CustomTrigger("pf_book_monolophosaurus");
-    public static final CustomTrigger CLICK_WAAGANELLA = new CustomTrigger("pf_book_waaganella");
+    public static final CustomTrigger CLICK_WAAGENELLA = new CustomTrigger("pf_book_waagenella");
     public static final CustomTrigger CLICK_AKASAKIELLA = new CustomTrigger("pf_book_akasakiella");
     public static final CustomTrigger CLICK_FOORDELLA = new CustomTrigger("pf_book_foordella");
     public static final CustomTrigger CLICK_CHIPPEWAELLA = new CustomTrigger("pf_book_chippewaella");
@@ -2962,7 +2962,7 @@ public class ModTriggers
             CLICK_HETEROSTROPHUS,
             CLICK_FLAGELLOPANTOPUS,
             CLICK_MONOLOPHOSAURUS,
-            CLICK_WAAGANELLA,
+            CLICK_WAAGENELLA,
             CLICK_AKASAKIELLA,
             CLICK_FOORDELLA,
             CLICK_CHIPPEWAELLA,

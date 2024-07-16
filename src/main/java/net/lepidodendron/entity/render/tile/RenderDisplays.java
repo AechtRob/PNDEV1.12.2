@@ -808,7 +808,7 @@ public class RenderDisplays {
     public static final ModelVillebrunaster modelVillebrunaster = new ModelVillebrunaster();
     public static final ModelVivaxosaurus modelVivaxosaurus = new ModelVivaxosaurus();
     public static final ModelViviparus modelViviparus = new ModelViviparus();
-    public static final ModelWaaganella modelWaaganella = new ModelWaaganella();
+    public static final ModelWaagenella modelWaagenella = new ModelWaagenella();
     public static final ModelWalliserops modelWalliserops = new ModelWalliserops();
     public static final ModelWaptia modelWaptia = new ModelWaptia();
     public static final ModelWarneticaris modelWarneticaris = new ModelWarneticaris();

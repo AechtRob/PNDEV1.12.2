@@ -2292,7 +2292,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation DIPTERONOTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dipteronotus"));
 	public static final int ENTITY_HETEROSTROPHUS = 929;
 	public static final ResourceLocation HETEROSTROPHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterostrophus"));
-	public static final int ENTITY_WAAGANELLA = 930;
+	public static final int ENTITY_WAAGENELLA = 930;
 	public static final int ENTITY_AKASAKIELLA = 931;
 	public static final int ENTITY_FOORDELLA = 932;
 	public static final int ENTITY_CHIPPEWAELLA = 933;

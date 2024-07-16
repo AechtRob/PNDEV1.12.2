@@ -905,7 +905,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_dipteronotus", EntityPrehistoricFloraDipteronotus.class, LepidodendronMod.ENTITY_DIPTERONOTUS, 48,-10196639,-4417987);
         registerEntity("prehistoric_flora_heterostrophus", EntityPrehistoricFloraHeterostrophus.class, LepidodendronMod.ENTITY_HETEROSTROPHUS, 48,-14340294,-5201079);
         registerEntity("prehistoric_flora_flagellopantopus", EntityPrehistoricFloraFlagellopantopus.class, LepidodendronMod.ENTITY_FLAGELLOPANTOPUS, 48,-9346510,-2765388);
-        registerEntity("prehistoric_flora_waaganella", EntityPrehistoricFloraWaaganella.class, LepidodendronMod.ENTITY_WAAGANELLA, 64,-9741496,-6139858);
+        registerEntity("prehistoric_flora_waagenella", EntityPrehistoricFloraWaagenella.class, LepidodendronMod.ENTITY_WAAGENELLA, 64,-9741496,-6139858);
         registerEntity("prehistoric_flora_akasakiella", EntityPrehistoricFloraAkasakiella.class, LepidodendronMod.ENTITY_AKASAKIELLA, 48,-11588588,-14344152);
         registerEntity("prehistoric_flora_foordella", EntityPrehistoricFloraFoordella.class, LepidodendronMod.ENTITY_FOORDELLA, 48,-1790804,-1651281);
         registerEntity("prehistoric_flora_chippewaella", EntityPrehistoricFloraChippewaella.class, LepidodendronMod.ENTITY_CHIPPEWAELLA, 48,-1655218,-7431270);

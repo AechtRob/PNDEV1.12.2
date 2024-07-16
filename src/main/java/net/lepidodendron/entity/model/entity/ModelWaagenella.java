@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraWaaganella;
+import net.lepidodendron.entity.EntityPrehistoricFloraWaagenella;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelWaaganella extends ModelBasePalaeopedia {
+public class ModelWaagenella extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer whole;
     private final AdvancedModelRenderer lefteyestalk;
     private final AdvancedModelRenderer righteyestalk;
@@ -20,7 +20,7 @@ public class ModelWaaganella extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer tail;
     private final AdvancedModelRenderer tail2;
 
-    public ModelWaaganella() {
+    public ModelWaagenella() {
         this.textureWidth = 40;
         this.textureHeight = 40;
 
@@ -112,7 +112,7 @@ public class ModelWaaganella extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
        // this.snail.offsetY = 0.83F;
 
-        EntityPrehistoricFloraWaaganella ee = (EntityPrehistoricFloraWaaganella) e;
+        EntityPrehistoricFloraWaagenella ee = (EntityPrehistoricFloraWaagenella) e;
 
         this.body.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;

@@ -5608,10 +5608,10 @@ public class RenderHandler {
                 return new RenderAkasakiella(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWaaganella.class, new IRenderFactory<EntityPrehistoricFloraWaaganella>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWaagenella.class, new IRenderFactory<EntityPrehistoricFloraWaagenella>() {
             @Override
-            public Render<? super EntityPrehistoricFloraWaaganella> createRenderFor(RenderManager manager) {
-                return new RenderWaaganella(manager);
+            public Render<? super EntityPrehistoricFloraWaagenella> createRenderFor(RenderManager manager) {
+                return new RenderWaagenella(manager);
             }
         });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFoordella.class, new IRenderFactory<EntityPrehistoricFloraFoordella>() {
