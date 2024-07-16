@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraScorpion_Gondwanascorpio extends EntityPrehis
 		maxWidth = 0.30F;
 		maxHeight = 0.30F;
 		if (getIsBaby()) {
-			maxHealthAgeable = 4.0D;
+			maxHealthAgeable = 1.0D;
 		}
 		else {
-			maxHealthAgeable = 6.0D;
+			maxHealthAgeable = 3.0D;
 		}
 	}
 

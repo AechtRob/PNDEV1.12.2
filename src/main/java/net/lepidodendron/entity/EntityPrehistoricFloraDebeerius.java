@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraDebeerius extends EntityPrehistoricFloraAgeab
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.15F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override
