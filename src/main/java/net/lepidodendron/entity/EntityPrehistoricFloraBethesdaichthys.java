@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraBethesdaichthys extends EntityPrehistoricFlor
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.17F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override
@@ -70,8 +70,8 @@ public class EntityPrehistoricFloraBethesdaichthys extends EntityPrehistoricFlor
 
 	@Override
 	public int getAdultAge() {
-		return 36000;
-	} //Only adults!
+		return 0;
+	}
 
 	@Override
 	protected float getAISpeedFish() {
