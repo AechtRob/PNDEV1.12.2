@@ -38,7 +38,8 @@ public class ItemWaptiaRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_waptia", ItemWaptiaRaw.block);
-		OreDictionary.registerOre("pnfurnaceSeafood", ItemWaptiaRaw.block);
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemWaptiaRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemWaptiaRaw.block);
 
 	}
 
