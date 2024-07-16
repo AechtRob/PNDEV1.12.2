@@ -64,6 +64,7 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockTuanshanzia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tuanshanzia", BlockHorodyskia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

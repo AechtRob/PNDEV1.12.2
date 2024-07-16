@@ -1583,6 +1583,28 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_helenodora_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_compsognathus_clean", "inventory"),
 
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_algae_mat_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_chara_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_codium_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_crusted_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_filamentous_algae_item_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_leafy_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_sprouting_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_green_stemmed_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_piled_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_red_algae_mat_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_red_leafy_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_red_tufted_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_slimy_algae_item_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_stalked_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_stalky_brown_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_leafy_brown_algae_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_algae_brown_ascending_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coralline_algae_item_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_nereocystis_kelp_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_macrocystis_kelp_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_seaweed_clean", "inventory"),
+
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")
 

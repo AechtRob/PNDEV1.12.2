@@ -808,109 +808,109 @@ public class LepidodendronEventSubscribers {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x1");
 			if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPrecambrian.block) {
-				tt.add("§2Precambrian");
+				tt.add(TextFormatting.DARK_RED + "Precambrian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCambrian.block) {
-				tt.add("§2Cambrian");
+				tt.add(TextFormatting.DARK_GREEN + "Cambrian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilOrdovician.block) {
-				tt.add("§2Ordovician");
+				tt.add(TextFormatting.DARK_AQUA + "Ordovician");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilSilurian.block) {
-				tt.add("§2Silurian");
+				tt.add(TextFormatting.AQUA + "Silurian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilDevonian.block) {
-				tt.add("§2Devonian");
+				tt.add(TextFormatting.GOLD + "Devonian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCarboniferous.block) {
-				tt.add("§2Carboniferous");
+				tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPermian.block) {
-				tt.add("§2Permian");
+				tt.add(TextFormatting.RED + "Permian");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilTriassic.block) {
-				tt.add("§2Triassic");
+				tt.add(TextFormatting.DARK_PURPLE + "Triassic");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilJurassic.block) {
-				tt.add("§2Jurassic");
+				tt.add(TextFormatting.BLUE + "Jurassic");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCretaceous.block) {
-				tt.add("§2Cretaceous");
+				tt.add(TextFormatting.GREEN + "Cretaceous");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPaleogene.block) {
-				tt.add("§2Paleogene");
+				tt.add(TextFormatting.GOLD + "Paleogene");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilNeogene.block) {
-				tt.add("§2Neogene");
+				tt.add(TextFormatting.YELLOW + "Neogene");
 			}
 			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPleistocene.block) {
-				tt.add("§2Pleistocene");
+				tt.add(TextFormatting.GRAY + "Pleistocene");
 			}
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPrecambrian.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Precambrian");
+			tt.add(TextFormatting.DARK_RED + "Precambrian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilCambrian.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Cambrian");
+			tt.add(TextFormatting.DARK_GREEN + "Cambrian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilOrdovician.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Ordovician");
+			tt.add(TextFormatting.DARK_AQUA + "Ordovician");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilSilurian.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Silurian");
+			tt.add(TextFormatting.AQUA + "Silurian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilDevonian.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Devonian");
+			tt.add(TextFormatting.GOLD + "Devonian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilCarboniferous.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Carboniferous");
+			tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPermian.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Permian");
+			tt.add(TextFormatting.RED + "Permian");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilTriassic.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Triassic");
+			tt.add(TextFormatting.DARK_PURPLE + "Triassic");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilJurassic.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Jurassic");
+			tt.add(TextFormatting.BLUE + "Jurassic");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilCretaceous.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Cretaceous");
+			tt.add(TextFormatting.GREEN + "Cretaceous");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPaleogene.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Paleogene");
+			tt.add(TextFormatting.GOLD + "Paleogene");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilNeogene.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Neogene");
+			tt.add(TextFormatting.YELLOW + "Neogene");
 		}
 		else if (event.getItemStack().getItem() == ItemFossilPleistocene.block) {
 			List<String> tt = event.getToolTip();
 			tt.add("Time Research x2");
-			tt.add("§2Pleistocene");
+			tt.add(TextFormatting.GRAY + "Pleistocene");
 		}
 		if (event.getItemStack().getItem() == ItemFossilClean.block) {
 			if (event.getItemStack().hasTagCompound()) {
@@ -920,55 +920,55 @@ public class LepidodendronEventSubscribers {
 					int period = event.getItemStack().getTagCompound().getInteger("period");
 					switch (period) {
 						case 1: default:
-							tt.add("§2Precambrian");
+							tt.add(TextFormatting.DARK_RED + "Precambrian");
 							break;
 
 						case 2:
-							tt.add("§2Cambrian");
+							tt.add(TextFormatting.DARK_GREEN + "Cambrian");
 							break;
 
 						case 3:
-							tt.add("§2Ordovician");
+							tt.add(TextFormatting.DARK_AQUA + "Ordovician");
 							break;
 
 						case 4:
-							tt.add("§2Silurian");
+							tt.add(TextFormatting.AQUA + "Silurian");
 							break;
 
 						case 5:
-							tt.add("§2Devonian");
+							tt.add(TextFormatting.GOLD + "Devonian");
 							break;
 
 						case 6:
-							tt.add("§2Carboniferous");
+							tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
 							break;
 
 						case 7:
-							tt.add("§2Permian");
+							tt.add(TextFormatting.RED + "Permian");
 							break;
 
 						case 8:
-							tt.add("§2Triassic");
+							tt.add(TextFormatting.DARK_PURPLE + "Triassic");
 							break;
 
 						case 9:
-							tt.add("§2Jurassic");
+							tt.add(TextFormatting.BLUE + "Jurassic");
 							break;
 
 						case 10:
-							tt.add("§2Cretaceous");
+							tt.add(TextFormatting.GREEN + "Cretaceous");
 							break;
 
 						case 11:
-							tt.add("§2Paleogene");
+							tt.add(TextFormatting.GOLD + "Paleogene");
 							break;
 
 						case 12:
-							tt.add("§2Neogene");
+							tt.add(TextFormatting.YELLOW + "Neogene");
 							break;
 
 						case 13:
-							tt.add("§2Pleistocene");
+							tt.add(TextFormatting.GRAY + "Pleistocene");
 							break;
 					}
 				}

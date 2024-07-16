@@ -62,6 +62,7 @@ public class BlockStalkyBrownAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockStalkyBrownAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:stalky_brown_algae", BlockStalkyBrownAlgae.block);
 	}
 
 	@Override

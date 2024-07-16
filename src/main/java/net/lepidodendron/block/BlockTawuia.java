@@ -74,7 +74,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:tawuia", BlockTawuia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tawuia", BlockTawuia.block);
 		OreDictionary.registerOre("pndietMicrobial", BlockTawuia.block);
 	}
 
