@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraSargodon extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

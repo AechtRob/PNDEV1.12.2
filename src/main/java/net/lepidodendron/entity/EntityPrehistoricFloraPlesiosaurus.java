@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraPlesiosaurus extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

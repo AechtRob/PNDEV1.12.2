@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 		minWidth = 0.3F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 35.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		RELAX_ANIMATION = Animation.create(760);
 		ALERT_ANIMATION = Animation.create(141);

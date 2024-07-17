@@ -62,10 +62,10 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		maxWidth = 0.30F;
 		maxHeight = 0.15F;
 		if (getIsBaby()) {
-			maxHealthAgeable = 4.0D;
+			maxHealthAgeable = 1.0D;
 		}
 		else {
-			maxHealthAgeable = 6.0D;
+			maxHealthAgeable = 3.0D;
 		}
 	}
 	@Override

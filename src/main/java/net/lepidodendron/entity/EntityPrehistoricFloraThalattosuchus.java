@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraThalattosuchus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 18.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

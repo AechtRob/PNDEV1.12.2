@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 		minWidth = 0.10F;
 		maxWidth = 0.30F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 		CHATTER_ANIMATION = Animation.create(this.getChatterLength());
 	}
 

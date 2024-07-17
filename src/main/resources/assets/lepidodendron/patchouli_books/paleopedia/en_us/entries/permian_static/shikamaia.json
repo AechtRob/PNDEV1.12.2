@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/bivalve_shikamaia.png"],
+			"images": ["paleopedia:textures/shikamaia.png"],
 			"title": "S. akasakaensis",
 			"text": ""
 		},

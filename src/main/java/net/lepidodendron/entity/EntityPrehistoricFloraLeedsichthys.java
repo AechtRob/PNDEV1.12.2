@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraLeedsichthys extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 3F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 80.0D;
+		maxHealthAgeable = 100.0D;
 		STAND_ANIMATION = Animation.create(385);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraWodnika extends EntityPrehistoricFloraAgeable
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.575F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 14.0D;
 	}
 
 	@Override

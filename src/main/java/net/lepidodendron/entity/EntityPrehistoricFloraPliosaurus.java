@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraPliosaurus extends EntityPrehistoricFloraAgea
 		minWidth = 0.2F;
 		maxWidth = 2.7F;
 		maxHeight = 2.25F;
-		maxHealthAgeable = 55.0D;
+		maxHealthAgeable = 68.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
