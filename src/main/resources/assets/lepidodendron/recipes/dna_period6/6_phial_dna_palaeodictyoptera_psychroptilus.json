@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"}}
+ "nbt": {"period":6,"PFMob":{"id":"lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"}}
  },
  {
  "item": "lepidodendron:phial_empty"
