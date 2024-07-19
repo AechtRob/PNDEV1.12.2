@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/umaltolepis_inventory",
-    "particle": "lepidodendron:items/umaltolepis_inventory"
+    "layer0": "lepidodendron:items/umaltolepis_inventory"
   }
 }

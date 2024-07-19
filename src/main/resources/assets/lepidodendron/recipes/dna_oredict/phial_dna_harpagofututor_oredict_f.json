@@ -6,10 +6,8 @@
  "item": "lepidodendron:bottle_of_dna_solvent"
  },
  {
- "type": "minecraft:item_nbt",
- "item": "lepidodendron:fossil_clean",
- "count": 1,
- "nbt": {"period":4,"PFMob":{"id":"lepidodendron:prehistoric_flora_harpagofututor@gendered"}}
+ "type": "forge:ore_dict",
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_harpagofututor@female"
  },
  {
  "item": "lepidodendron:phial_empty"

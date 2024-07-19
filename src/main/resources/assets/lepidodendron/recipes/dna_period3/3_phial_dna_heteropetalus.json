@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"period":3,"PFMob":{"id":"lepidodendron:prehistoric_flora_heteropetalus"}}
+ "nbt": {"period":3,"PFMob":{"id":"lepidodendron:prehistoric_flora_heteropetalus@gendered"}}
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -19,6 +19,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_heteropetalus"}}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_heteropetalus@gendered"}}
  }
 }

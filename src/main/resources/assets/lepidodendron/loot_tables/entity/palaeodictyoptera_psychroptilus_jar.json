@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "mazothairos",
+      "name": "psychroptilus",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:palaeodictyoptera_mazothairos_raw",
+          "name": "lepidodendron:palaeodictyoptera_psychroptilus_raw",
           "weight": 1,
           "functions": [
             {

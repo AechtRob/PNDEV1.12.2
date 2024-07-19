@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/pelourdea_inventory",
-    "particle": "lepidodendron:items/pelourdea_inventory"
+    "layer0": "lepidodendron:items/pelourdea_inventory"
   }
 }
