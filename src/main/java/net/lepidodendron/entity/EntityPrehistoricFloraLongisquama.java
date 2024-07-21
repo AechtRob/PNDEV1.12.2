@@ -397,46 +397,50 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.LONGISQUAMA_LOOT;
 	}
+
+
+
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return 0.01;
+		return -0.225;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return 0.0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -449,6 +453,5 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	public static float getScaler(@Nullable String variant) {
 		return RenderLongisquama.getScaler();
 	}
-
 
 }
