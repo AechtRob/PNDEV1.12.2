@@ -5608,10 +5608,10 @@ public class RenderHandler {
                 return new RenderAkasakiella(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWaaganella.class, new IRenderFactory<EntityPrehistoricFloraWaaganella>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWaagenella.class, new IRenderFactory<EntityPrehistoricFloraWaagenella>() {
             @Override
-            public Render<? super EntityPrehistoricFloraWaaganella> createRenderFor(RenderManager manager) {
-                return new RenderWaaganella(manager);
+            public Render<? super EntityPrehistoricFloraWaagenella> createRenderFor(RenderManager manager) {
+                return new RenderWaagenella(manager);
             }
         });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFoordella.class, new IRenderFactory<EntityPrehistoricFloraFoordella>() {
@@ -5863,7 +5863,9 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockBatHead.TileEntityCustom.class, new RenderBatHead());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSauroSkeleton.TileEntityCustom.class, new RenderSauroSkeleton());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockAngiopteris.TileEntityAngiopteris.class, new RenderAngiopteris());
-
+        if (LepidodendronConfig.modFlowerpot) {
+            ClientRegistry.bindTileEntitySpecialRenderer(BlockFlowerpotPN.TileEntityFlowerPotPN.class, new RenderFlowerPotPN());
+        }
 
     }
 }

@@ -470,6 +470,20 @@ public class ModelBanksiops extends ModelBasePalaeopedia {
         this.hip.render(f5);
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.4F, 0.0F, 0.05F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.hip.offsetZ = -0.05F;
+        this.hip.offsetY = -0.1F;
+        this.hip.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:

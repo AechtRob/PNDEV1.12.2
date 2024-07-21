@@ -70,6 +70,7 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockNereocystisKelp.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nereocystis_kelp", BlockNereocystisKelp.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -104,6 +105,9 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
+				|| dimID == LepidodendronConfig.dimPaleogene
 		)
 			return;
 

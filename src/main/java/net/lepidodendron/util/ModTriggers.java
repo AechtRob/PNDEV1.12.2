@@ -773,9 +773,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_STENODICTYA = new CustomTrigger("pf_book_palaeodictyoptera_stenodictya");
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_SINODUNBARIA = new CustomTrigger("pf_book_palaeodictyoptera_sinodunbaria");
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA_MAZOTHAIROS = new CustomTrigger("pf_book_palaeodictyoptera_mazothairos");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_PSYCHROPTILUS = new CustomTrigger("pf_book_palaeodictyoptera_psychroptilus");
     public static final CustomTrigger CLICK_PALAEOISOPUS = new CustomTrigger("pf_book_palaeoisopus");
     public static final CustomTrigger CLICK_ANCIENT_JELLY = new CustomTrigger("pf_book_ancientjelly");
-    public static final CustomTrigger CLICK_YUNNANOASCUS = new CustomTrigger("pf_book_yunnanoascus ");
+    public static final CustomTrigger CLICK_YUNNANOASCUS = new CustomTrigger("pf_book_yunnanoascus");
     public static final CustomTrigger CLICK_PALAEONTINID = new CustomTrigger("pf_book_palaeontinid");
     public static final CustomTrigger CLICK_PANDERICHTHYS = new CustomTrigger("pf_book_panderichthys");
     public static final CustomTrigger CLICK_PANTYLUS = new CustomTrigger("pf_book_pantylus");
@@ -1447,7 +1448,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CONCHOPOMA = new CustomTrigger("pf_book_conchopoma");
     public static final CustomTrigger CLICK_SURCAUDALUS = new CustomTrigger("pf_book_surcaudalus");
     public static final CustomTrigger CLICK_BETHESDAICHTHYS = new CustomTrigger("pf_book_bethesdaichthys");
-    public static final CustomTrigger CLICK_PSYCHROPTILUS = new CustomTrigger("pf_book_psychroptilus");
     public static final CustomTrigger CLICK_NAMUROTYPUS = new CustomTrigger("pf_book_namurotypus");
     public static final CustomTrigger CLICK_ERASIPTEROIDES = new CustomTrigger("pf_book_erasipteroides");
     public static final CustomTrigger CLICK_LEPTOTEUTHIS = new CustomTrigger("pf_book_leptoteuthis");
@@ -1481,13 +1481,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIPTERONOTUS = new CustomTrigger("pf_book_dipteronotus");
     public static final CustomTrigger CLICK_HETEROSTROPHUS = new CustomTrigger("pf_book_heterostrophus");
     public static final CustomTrigger CLICK_MONOLOPHOSAURUS = new CustomTrigger("pf_book_monolophosaurus");
-    public static final CustomTrigger CLICK_WAAGANELLA = new CustomTrigger("pf_book_waaganella");
+    public static final CustomTrigger CLICK_WAAGENELLA = new CustomTrigger("pf_book_waagenella");
     public static final CustomTrigger CLICK_AKASAKIELLA = new CustomTrigger("pf_book_akasakiella");
     public static final CustomTrigger CLICK_FOORDELLA = new CustomTrigger("pf_book_foordella");
     public static final CustomTrigger CLICK_CHIPPEWAELLA = new CustomTrigger("pf_book_chippewaella");
     public static final CustomTrigger CLICK_DEUTEROSAURUS = new CustomTrigger("pf_book_deuterosaurus");
     public static final CustomTrigger CLICK_DRACOPELTA = new CustomTrigger("pf_book_dracopelta");
-    public static final CustomTrigger CLICK_SHIKAMAIA = new CustomTrigger("pf_book_shikamaia");
     public static final CustomTrigger CLICK_SINOPHONEUS = new CustomTrigger("pf_book_sinophoneus");
     public static final CustomTrigger CLICK_STONEFLY = new CustomTrigger("pf_book_stonefly");
 
@@ -1504,6 +1503,7 @@ public class ModTriggers
      */
     public static final CustomTrigger[] TRIGGER_ARRAY = new CustomTrigger[] {
             WELCOME,
+            ENTER_OVERWORLD,
             ENTER_PRECAMBRIAN,
             ENTER_CAMBRIAN,
             ENTER_ORDOVICIAN,
@@ -1873,6 +1873,8 @@ public class ModTriggers
             CLICK_FIG_BANYAN,
             CLICK_PLEUROMEIA,
             CLICK_PODOCARP,
+            CLICK_SCARBURGIA,
+            CLICK_RISSIKIA,
             CLICK_PODOZAMITES,
             CLICK_POLYSPERMOPHYLLUM,
             CLICK_PRIMAEVAL_GRASS,
@@ -2339,6 +2341,7 @@ public class ModTriggers
             CLICK_PALAEODICTYOPTERA_SINODUNBARIA,
             CLICK_PALAEODICTYOPTERA_STENODICTYA,
             CLICK_PALAEODICTYOPTERA_MAZOTHAIROS,
+            CLICK_PALAEODICTYOPTERA_PSYCHROPTILUS,
             CLICK_PALAEOISOPUS,
             CLICK_PALAEONISCUM,
             CLICK_PALAEONTINID,
@@ -2517,7 +2520,6 @@ public class ModTriggers
             CLICK_BALHUTICARIS,
             CLICK_CERATIOCARIS,
             CLICK_PLECTODISCUS,
-            CLICK_FLAGELLOPANTOPUS,
             CLICK_VACHONISIA,
             CLICK_BUNDENBACHIELLUS,
             CLICK_WINGERTSHELLICUS,
@@ -2847,7 +2849,6 @@ public class ModTriggers
             CLICK_BATRACHOGNATHUS,
             CLICK_CASCOCAUDA,
             CLICK_DENDRORHYNCHOIDES,
-            CLICK_JEHOLOPTERUS,
             CLICK_DIMORPHODON,
             CLICK_ARCHAEOPTERYX,
             CLICK_COMPSOGNATHUS,
@@ -2927,7 +2928,6 @@ public class ModTriggers
             CLICK_CONCHOPOMA,
             CLICK_SURCAUDALUS,
             CLICK_BETHESDAICHTHYS,
-            CLICK_PSYCHROPTILUS,
             CLICK_NAMUROTYPUS,
             CLICK_ERASIPTEROIDES,
             CLICK_LEPTOTEUTHIS,
@@ -2962,13 +2962,12 @@ public class ModTriggers
             CLICK_HETEROSTROPHUS,
             CLICK_FLAGELLOPANTOPUS,
             CLICK_MONOLOPHOSAURUS,
-            CLICK_WAAGANELLA,
+            CLICK_WAAGENELLA,
             CLICK_AKASAKIELLA,
             CLICK_FOORDELLA,
             CLICK_CHIPPEWAELLA,
             CLICK_DEUTEROSAURUS,
             CLICK_DRACOPELTA,
-            CLICK_SHIKAMAIA,
             CLICK_SINOPHONEUS,
             CLICK_STONEFLY
 

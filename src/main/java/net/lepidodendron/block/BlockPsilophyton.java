@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.CustomTrigger;
@@ -77,7 +78,7 @@ public class BlockPsilophyton extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockPsilophyton.block);
 	}
 
-	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -94,6 +95,11 @@ public class BlockPsilophyton extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_psilophyton");
 			setRegistryName("psilophyton");
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockPsilophytonSpore.block.getDefaultState();
 		}
 
 		@Nullable

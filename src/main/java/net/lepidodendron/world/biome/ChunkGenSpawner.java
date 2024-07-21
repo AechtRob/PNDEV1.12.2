@@ -96,6 +96,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_reef")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_coral")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
                 ){
                     Creeks = true;
                 }
@@ -1332,7 +1335,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
                                                             if (mobToSpawn.equalsIgnoreCase("lepidodendron:prehistoric_flora_turboscinetes")
                                                                 && world.rand.nextInt(32) == 0) {
-                                                                mobToSpawn = "lepidodendron:prehistoric_flora_pirinhamesodon";
+                                                                mobToSpawn = "lepidodendron:prehistoric_flora_piranhamesodon";
                                                                 nbtStr = "";
                                                             }
 

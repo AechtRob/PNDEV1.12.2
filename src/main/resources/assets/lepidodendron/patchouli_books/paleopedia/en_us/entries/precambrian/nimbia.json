@@ -2,7 +2,7 @@
 	"name": "Nimbia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/nimbia_icon.png",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_nimbia",
 	"pages": [
 		{

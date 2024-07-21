@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockRedTuftedAlgae;
 import net.lepidodendron.block.BlockSlimyAlgaeLand;
 import net.lepidodendron.block.BlockSlimyAlgaeWater;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
@@ -53,6 +54,7 @@ public class ItemSlimyAlgaeItem extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", ItemSlimyAlgaeItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:slimy_algae_item", ItemSlimyAlgaeItem.block);
 	}
 
 	@SideOnly(Side.CLIENT)

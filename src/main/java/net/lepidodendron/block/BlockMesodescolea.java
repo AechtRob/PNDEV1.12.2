@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -76,7 +77,7 @@ public class BlockMesodescolea extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockMesodescolea.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_mesodescolea");
@@ -261,6 +262,11 @@ public class BlockMesodescolea extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public EnumOffsetType getOffsetType() {
 			return EnumOffsetType.XZ;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockMesodescoleaCone.block.getDefaultState();
 		}
 	}
 }

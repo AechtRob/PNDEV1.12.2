@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/glossophyllum_shoot_inventory",
-    "particle": "lepidodendron:items/glossophyllum_shoot_inventory"
+    "layer0": "lepidodendron:items/glossophyllum_shoot_inventory"
   }
 }

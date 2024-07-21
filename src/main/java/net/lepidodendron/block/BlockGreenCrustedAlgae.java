@@ -61,6 +61,7 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockGreenCrustedAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_crusted_algae", BlockGreenCrustedAlgae.block);
 	}
 
 	@Override

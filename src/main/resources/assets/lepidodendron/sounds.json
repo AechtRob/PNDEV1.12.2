@@ -570,7 +570,9 @@
         "stream": false
       }
     ]
-  },"eryops_idle": {
+  },
+  
+  "eryops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:eryops_idle01",
@@ -10384,6 +10386,119 @@
     "sounds": [
       {
         "name": "lepidodendron:pampaphoneus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "banksiops_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:banksiops_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:banksiops_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:banksiops_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:banksiops_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:banksiops_living05",
+        "stream": false
+      }
+    ]
+  },
+  "banksiops_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:banksiops_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:banksiops_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:banksiops_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "banksiops_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:banksiops_death",
+        "stream": false
+      }
+    ]
+  },
+  "deuterosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deuterosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "deuterosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deuterosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "deuterosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deuterosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "deuterosaurus_threat": {
+    "sounds": [
+      {
+        "name": "lepidodendron:deuterosaurus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:deuterosaurus_threat03",
         "stream": false
       }
     ]

@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	}
 
 	public int getGrappleLength() {
-		return 200;
+		return 100;
 	}
 
 	@Override
@@ -97,6 +97,7 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	public int getAttackLength() {
 		return 40;
 	}
+
 	@Override
 	public int getEatLength() {
 		return 40;
@@ -122,8 +123,8 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == GRAPPLE_ANIMATION && this.getAnimationTick() < this.headbutTick()) {
-			return 0.0F; //Is roaring prior to a headbut
+		if (this.getAnimation() == GRAPPLE_ANIMATION) {
+			return 0.0F; //Is talking
 		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
@@ -151,7 +152,7 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public AxisAlignedBB getGrappleBoundingBox() {
-		float size = this.getRenderSizeModifier() * 0.25F;
+		float size = this.getRenderSizeModifier() * 0.65F;
 		return this.getEntityBoundingBox().grow(2.0F + size, 2.0F + size, 2.0F + size);
 	}
 
@@ -237,19 +238,19 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anteosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:deuterosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anteosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:deuterosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:anteosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:deuterosaurus_death"));
 	}
 
 	@Override
@@ -265,11 +266,10 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public int headbutTick() {
-		return 180;
+		return this.GRAPPLE_ANIMATION.getDuration() - 1;
 	}
 
 	@Override
@@ -283,7 +283,7 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 
 		if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10, 10);
-			if (!this.world.isRemote && this.getAnimationTick() == 110) {
+			if (!this.world.isRemote && this.getAnimationTick() == 1) {
 				this.playSound((SoundEvent) SoundEvent.REGISTRY
 						.getObject(this.ThreatSound()), this.getSoundVolume(), 1);
 			}
@@ -294,32 +294,13 @@ public class EntityPrehistoricFloraDeuterosaurus extends EntityPrehistoricFloraL
 	}
 
 	public ResourceLocation ThreatSound() {
-		return new ResourceLocation("lepidodendron:anteosaurus_threat");
-	}
-
-
-	public ResourceLocation HeadbutSound() {
-		return new ResourceLocation("lepidodendron:tapinocephalus_headbut");
+		return new ResourceLocation("lepidodendron:deuterosaurus_threat");
 	}
 
 	@Override
 	public void launchGrapple() {
 		if (this.getGrappleTarget() != null) {
-			if (!this.world.isRemote) {
-				this.playSound((SoundEvent) SoundEvent.REGISTRY
-						.getObject(this.HeadbutSound()), this.getSoundVolume(), 1);
-			}
-			double d1 = this.posX - this.getGrappleTarget().posX;
-			double d0;
-
-			for (d0 = this.posZ -  this.getGrappleTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
-			{
-				d1 = (Math.random() - Math.random()) * 0.01D;
-			}
-			this.getGrappleTarget().knockBack(this, 0.4F, d1, d0);
-
-			this.getGrappleTarget().addVelocity(0, 0.065, 0);
-
+			//Just a social thing no damage
 		}
 	}
 

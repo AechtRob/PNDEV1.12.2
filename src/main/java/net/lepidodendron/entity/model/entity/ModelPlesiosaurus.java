@@ -408,6 +408,30 @@ public class ModelPlesiosaurus extends ModelBasePalaeopedia {
             this.Hips.offsetY = -0.4F;
             this.Hips.render(0.01f);
             resetToDefaultPose();
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Hips.offsetY = 0.2F;
+        this.Hips.offsetX = -0.05F;
+        this.Hips.rotateAngleY = (float)Math.toRadians(-120);
+        this.Hips.rotateAngleX = (float)Math.toRadians(15);
+        this.Hips.rotateAngleZ = (float)Math.toRadians(-10);
+        float scaler = 0.60F;
+        this.Hips.scaleChildren = true;
+        this.Hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.Hips.setScale(1.0F, 1.0F, 1.0F);
+        this.Hips.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
+
+
     }
     public void renderStaticSuspended(float f) {
 

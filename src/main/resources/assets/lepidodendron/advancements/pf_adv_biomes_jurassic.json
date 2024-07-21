@@ -226,6 +226,12 @@
 				"biome": "lepidodendron:jurassic_mudflats_helper"
 			}
 		},
+		"jurassic_mudflats_estuary_copse": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_mudflats_estuary_copse"
+			}
+		},
 		"jurassic_ocean": {
 			"trigger": "minecraft:location",
 			"conditions": {
@@ -339,6 +345,12 @@
 			"conditions": {
 				"biome": "lepidodendron:jurassic_island_forested"
 			}
+		},
+		"jurassic_beach_forested_island": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:jurassic_beach_forested_island"
+			}
 		}
 	},
 	"requirements": [
@@ -423,6 +435,9 @@
 			"jurassic_mudflats_helper"
 		],
 		[
+			"jurassic_mudflats_estuary_copse"
+		],
+		[
 			"jurassic_mudflats_estuary",
 			"jurassic_mudflats_estuary_helper"
 		],
@@ -456,7 +471,8 @@
 			"jurassic_island_sandy_hills"
 		],
 		[
-			"jurassic_island_forested"
+			"jurassic_island_forested",
+			"jurassic_beach_forested_island"
 		],
 		[
 			"jurassic_island_sandy_white",

@@ -272,6 +272,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("dirt", new ItemStack(Blocks.DIRT, 1, 0));
 		OreDictionary.registerOre("dirt", new ItemStack(Blocks.DIRT, 1, 1));
 
+		OreDictionary.registerOre("peat", BlockPeat.block);
+		OreDictionary.registerOre("blockPeat", BlockPeat.block);
+
 		OreDictionary.registerOre("blockSulphur", BlockSulphur.block);
 		OreDictionary.registerOre("blockSulfur", BlockSulphur.block);
 		OreDictionary.registerOre("oreSulphur", BlockSulphurOre.block);

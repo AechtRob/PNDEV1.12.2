@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.IBennettites;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -72,7 +73,7 @@ public class BlockNilssoniopteris extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter, IBennettites {
+	public static class BlockCustomFlower extends SeedSporeBushBase implements IAdvancementGranter, IBennettites, IPottable {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -187,6 +188,11 @@ public class BlockNilssoniopteris extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item blockItem() {
 			return null;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 	

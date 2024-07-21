@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -77,7 +78,7 @@ public class BlockSanmiguelia extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockSanmiguelia.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_sanmiguelia");
@@ -257,6 +258,11 @@ public class BlockSanmiguelia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public int offsetY() {
 			return 1;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

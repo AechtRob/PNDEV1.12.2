@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -72,7 +73,7 @@ public class BlockRellimia extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter {
+	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter, IPottable {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
@@ -177,6 +178,11 @@ public class BlockRellimia extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return EnumOffsetType.XZ;
 	    }
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockRellimiaSpore.block.getDefaultState();
+		}
 	}
 	
 }

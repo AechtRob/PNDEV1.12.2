@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraIchthyosaurus extends EntityPrehistoricFloraA
 		minWidth = 0.15F;
 		maxWidth = 1.2F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 35.0D;
+		maxHealthAgeable = 26.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

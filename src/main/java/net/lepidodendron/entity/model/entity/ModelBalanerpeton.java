@@ -1327,7 +1327,7 @@ public class ModelBalanerpeton extends ModelBasePalaeopedia {
         animator.startKeyframe(5);
         //animator.move(this.neck, 0,0,-1F);
         animator.rotate(this.head, (float) Math.toRadians(-30), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.resetKeyframe(2);
@@ -1336,7 +1336,7 @@ public class ModelBalanerpeton extends ModelBasePalaeopedia {
         animator.startKeyframe(10);
         //animator.move(this.neck, 0,0,-1F);
         animator.rotate(this.head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.resetKeyframe(10);

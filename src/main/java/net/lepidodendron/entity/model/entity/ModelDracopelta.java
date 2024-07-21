@@ -682,7 +682,23 @@ public class ModelDracopelta extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = 0.2F;
+        this.main.offsetX = -0.05F;
+        this.main.rotateAngleY = (float)Math.toRadians(-120);
+        this.main.rotateAngleX = (float)Math.toRadians(15);
+        this.main.rotateAngleZ = (float)Math.toRadians(-10);
+        float scaler = 0.60F;
+        this.main.scaleChildren = true;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {

@@ -30,7 +30,7 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
     public void render(TileEntityGangtoucunia entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
         int cluster = 1;
-        int hidden = 1;
+        int hidden = 361;
         float offset1 = 1;
         float offset2 = 1;
         if (entity != null && entity.hasWorld()) {

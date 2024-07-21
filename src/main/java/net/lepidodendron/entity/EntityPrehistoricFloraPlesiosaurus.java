@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraPlesiosaurus extends EntityPrehistoricFloraAg
 	public EntityPrehistoricFloraPlesiosaurus(World world) {
 		super(world);
 		setSize(1.5F, 0.8F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockBatHead;
 import net.lepidodendron.block.BlockFirePF;
+import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.item.ItemBatHeadItem;
@@ -2195,8 +2196,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_UROKODIA = 886;
 	public static final ResourceLocation UROKODIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urokodia"));
 	public static final int ENTITY_THELXIOPE = 887;
-	public static final ResourceLocation THELXIOPE_SPINOSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope"));
-	public static final ResourceLocation THELXIOPE_SP_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope_sp"));
+//	public static final ResourceLocation THELXIOPE_SPINOSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope"));
+//	public static final ResourceLocation THELXIOPE_SP_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thelxiope_sp"));
 	public static final int ENTITY_TITANOKORYS = 888;
 	public static final ResourceLocation TITANOKORYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanokorys"));
 	public static final int ENTITY_ERYMA = 889;
@@ -2292,7 +2293,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation DIPTERONOTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dipteronotus"));
 	public static final int ENTITY_HETEROSTROPHUS = 929;
 	public static final ResourceLocation HETEROSTROPHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterostrophus"));
-	public static final int ENTITY_WAAGANELLA = 930;
+	public static final int ENTITY_WAAGENELLA = 930;
 	public static final int ENTITY_AKASAKIELLA = 931;
 	public static final int ENTITY_FOORDELLA = 932;
 	public static final int ENTITY_CHIPPEWAELLA = 933;
@@ -2436,6 +2437,12 @@ public class LepidodendronMod {
 		if (LepidodendronConfig.modFire) {
 			BlockFirePF newFire = (BlockFirePF) (new BlockFirePF()).setHardness(0.0F).setLightLevel(1.0F).setTranslationKey("fire").setRegistryName(Objects.requireNonNull(Blocks.FIRE.getRegistryName()));
 			event.getRegistry().register(newFire);
+		}
+
+		if (LepidodendronConfig.modFlowerpot) {
+			GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
+			BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
+			event.getRegistry().register(newPot);
 		}
 
 	}
