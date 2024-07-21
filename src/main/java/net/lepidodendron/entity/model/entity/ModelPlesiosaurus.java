@@ -408,6 +408,7 @@ public class ModelPlesiosaurus extends ModelBasePalaeopedia {
             this.Hips.offsetY = -0.4F;
             this.Hips.render(0.01f);
             resetToDefaultPose();
+        }
 
     @Override
     public void renderStaticBook(float f) {
@@ -430,13 +431,11 @@ public class ModelPlesiosaurus extends ModelBasePalaeopedia {
         resetToDefaultPose();
     }
 
-
-
-    }
     public void renderStaticSuspended(float f) {
 
         resetToDefaultPose();
     }
+    
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;
@@ -1597,9 +1596,5 @@ public class ModelPlesiosaurus extends ModelBasePalaeopedia {
         animator.update(entity);
     }
 
-    @Override
-    public void renderStaticBook(float f) {
-
-    }
 }
 
