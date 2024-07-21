@@ -4,8 +4,10 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockSwampHorsetailLand;
 import net.lepidodendron.block.BlockSwampHorsetailLandNoSpore;
 import net.lepidodendron.block.BlockSwampHorsetailWaterNoSpore;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
@@ -64,7 +66,7 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 		OreDictionary.registerOre("leavesHorsetail", ItemSwampHorsetailItem.block);
 	}
 
-	public static class ItemCustom extends Item {
+	public static class ItemCustom extends Item implements IPottable {
 		public ItemCustom() {
 			setTranslationKey("pf_swamp_horsetail_item");
 			setRegistryName("swamp_horsetail_item");
@@ -149,6 +151,11 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockSwampHorsetailLand.block.getDefaultState();
+		}
 	}
 
 	public static boolean canSurviveAt(World worldIn, BlockPos pos) {

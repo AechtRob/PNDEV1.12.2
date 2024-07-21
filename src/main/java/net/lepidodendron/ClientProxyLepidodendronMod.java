@@ -1,8 +1,10 @@
 package net.lepidodendron;
 
+import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.block.BlockZirconGlass;
 import net.lepidodendron.entity.render.RenderHandler;
 import net.lepidodendron.item.entities.spawneggs.ItemPNSpawnEgg;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -54,6 +56,17 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 				return worldIn != null && pos != null ? BiomeColorHelper.getWaterColorAtPos(worldIn, pos) : -1;
 			}
 		}, BlockZirconGlass.block);
+
+		for (Block block : ForgeRegistries.BLOCKS) {
+			if (block instanceof BlockFlowerpotPN) {
+				blockColors.registerBlockColorHandler(new IBlockColor() {
+					public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
+					{
+						return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : -1;
+					}
+				}, block);
+			}
+		}
 
 		ItemColors itemColors = Minecraft.getMinecraft().getItemColors();
 		for (Item item : ForgeRegistries.ITEMS) {

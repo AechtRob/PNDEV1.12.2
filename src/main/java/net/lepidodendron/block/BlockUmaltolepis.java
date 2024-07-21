@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemUmaltolepisFruit;
 import net.lepidodendron.util.CustomTrigger;
@@ -76,7 +77,7 @@ public class BlockUmaltolepis extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockUmaltolepis.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_umaltolepis");
@@ -303,5 +304,9 @@ public class BlockUmaltolepis extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
+		}
 	}
 }

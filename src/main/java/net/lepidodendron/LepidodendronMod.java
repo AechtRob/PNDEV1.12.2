@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockBatHead;
 import net.lepidodendron.block.BlockFirePF;
+import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.item.ItemBatHeadItem;
@@ -2436,6 +2437,12 @@ public class LepidodendronMod {
 		if (LepidodendronConfig.modFire) {
 			BlockFirePF newFire = (BlockFirePF) (new BlockFirePF()).setHardness(0.0F).setLightLevel(1.0F).setTranslationKey("fire").setRegistryName(Objects.requireNonNull(Blocks.FIRE.getRegistryName()));
 			event.getRegistry().register(newFire);
+		}
+
+		if (LepidodendronConfig.modFlowerpot) {
+			GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
+			BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
+			event.getRegistry().register(newPot);
 		}
 
 	}

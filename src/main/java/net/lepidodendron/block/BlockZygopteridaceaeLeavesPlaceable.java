@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -69,7 +70,7 @@ public class BlockZygopteridaceaeLeavesPlaceable extends ElementsLepidodendronMo
 		OreDictionary.registerOre("treeLeaves", BlockZygopteridaceaeLeavesPlaceable.block);
 	}
 
-	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeLeavesBase implements IAdvancementGranter, IPottable {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			//super(Material.PLANTS);
@@ -486,6 +487,11 @@ public class BlockZygopteridaceaeLeavesPlaceable extends ElementsLepidodendronMo
 		@Override
 		public int offsetY() {
 			return 1;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }
