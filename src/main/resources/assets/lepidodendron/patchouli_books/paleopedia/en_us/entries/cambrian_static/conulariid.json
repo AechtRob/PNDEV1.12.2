@@ -11,11 +11,35 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Precambrian? - Triassic$(br2)>Cnidaria $(br)>Conulatae $(br)>Conulariida"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/conulariid_brown.png", "paleopedia:textures/conulariid_magenta.png"],
-			"title": "Conulariida",
-			"text": ""
+		{
+			"type": "multiblock",
+			"name": "Conulariida",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:conulariid_brown",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Conulariida",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:conulariid_magenta",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_conulariid",

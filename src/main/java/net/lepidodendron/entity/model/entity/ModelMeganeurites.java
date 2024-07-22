@@ -250,12 +250,12 @@ public class ModelMeganeurites extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = 0.2F;
-        this.body.offsetX = -0.05F;
-        this.body.rotateAngleY = (float)Math.toRadians(-120);
-        this.body.rotateAngleX = (float)Math.toRadians(15);
-        this.body.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 0.60F;
+        this.body.offsetY = -1.6F;
+        this.body.offsetX = 0.15F;
+        this.body.rotateAngleY = (float)Math.toRadians(-10);
+        this.body.rotateAngleX = (float)Math.toRadians(60);
+        this.body.rotateAngleZ = (float)Math.toRadians(-50);
+        float scaler = 1.80F;
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:

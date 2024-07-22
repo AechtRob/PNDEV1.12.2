@@ -369,12 +369,12 @@ public class ModelHarpagofututor extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = 0.2F;
-        this.head.offsetX = -0.05F;
-        this.head.rotateAngleY = (float)Math.toRadians(-120);
+        this.head.offsetY = -1.3F;
+        this.head.offsetX = 1.75F;
+        this.head.rotateAngleY = (float)Math.toRadians(-115);
         this.head.rotateAngleX = (float)Math.toRadians(15);
         this.head.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 0.60F;
+        float scaler = 2.60F;
         this.head.scaleChildren = true;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
