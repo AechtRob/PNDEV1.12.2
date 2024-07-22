@@ -346,13 +346,13 @@ public class ModelLongisquama extends ModelBasePalaeopedia {
     }
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body2.offsetY = 0.1F;
-        this.body2.offsetX = -0.2F;
-        this.body2.rotateAngleY = (float)Math.toRadians(255);
-        this.body2.rotateAngleX = (float)Math.toRadians(5);
+        this.body2.offsetY = -0.8F;
+        this.body2.offsetX = 0.65F;
+        this.body2.rotateAngleY = (float)Math.toRadians(245);
+        this.body2.rotateAngleX = (float)Math.toRadians(10);
         this.body2.rotateAngleZ = (float)Math.toRadians(-10);
         this.body2.scaleChildren = true;
-        float scaler = 0.9F;
+        float scaler = 2.15F;
         this.body2.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(upperjaw, 0.0436F, 0.0F, 0.0F);
@@ -391,7 +391,6 @@ public class ModelLongisquama extends ModelBasePalaeopedia {
         this.setRotateAngle(cube_r3, 0.0F, -0.1833F, 0.0F);
         this.setRotateAngle(cube_r2, 0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r1, 0.1833F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, -0.0873F, 0.0F, 0.0F);
         this.setRotateAngle(body, 0.1309F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.body2.render(f);
