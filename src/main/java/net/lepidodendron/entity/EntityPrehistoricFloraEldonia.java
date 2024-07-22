@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraEldonia extends EntityPrehistoricFloraAgeable
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.07F;
+		return 0.03F;
 	}
 
 	@Override

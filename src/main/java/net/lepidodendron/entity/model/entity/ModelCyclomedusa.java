@@ -59,11 +59,17 @@ public class ModelCyclomedusa extends ModelBasePalaeopedia {
 
         EntityPrehistoricFloraCyclomedusa ee = (EntityPrehistoricFloraCyclomedusa) e;
 
-        this.bone.scaleChildren = true;
-        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.085F) + 1F;
-        this.bone.setScaleZ(scaler);
-        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.085F);
-        this.bone.setScaleX(scaler2 * 0.5F);
-
+        if (e.isInWater()) {
+            this.bone.scaleChildren = true;
+            float scaler = ((float) (((double) ee.getSlitherStage()) / 10D) * 0.085F) + 1F;
+            this.bone.setScaleZ(scaler);
+            float scaler2 = 2F - (float) ((((double) ee.getSlitherStage()) / 10D) * 0.085F);
+            this.bone.setScaleX(scaler2 * 0.5F);
+        }
+        else {
+            this.bone.scaleChildren = true;
+            this.bone.setScale(1.25F, 0.1F, 1.25F);
+            this.bone.offsetY = 0F;
+        }
     }
 }

@@ -24,7 +24,8 @@ public class RenderCyclomedusa extends RenderLivingBaseWithBook<EntityPrehistori
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraCyclomedusa entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
-        super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        //super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
+        GlStateManager.rotate(180.0F - entityLiving.getTickOffset(), 0.0F, 1.0F, 0.0F);
     }
 
     @Override
