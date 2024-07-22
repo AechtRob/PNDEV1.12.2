@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_megalichthys"}}
+ "nbt": {"period":11,"PFMob":{"id":"lepidodendron:prehistoric_flora_megalichthys"}}
  },
  {
  "item": "lepidodendron:phial_empty"

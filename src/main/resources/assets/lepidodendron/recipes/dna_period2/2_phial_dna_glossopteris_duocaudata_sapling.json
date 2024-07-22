@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:glossopteris_duocaudata_sapling"}}
+ "nbt": {"period":2,"PFPlant":{"id":"lepidodendron:glossopteris_duocaudata_sapling"}}
  },
  {
  "item": "lepidodendron:phial_empty"

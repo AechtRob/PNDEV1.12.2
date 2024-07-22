@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraBethesdaichthys extends EntityPrehistoricFlor
 	public EntityPrehistoricFloraBethesdaichthys(World world) {
 		super(world);
 		setSize(0.3F, 0.17F);
-		minWidth = 0.1F;
+		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.17F;
 		maxHealthAgeable = 6.0D;
@@ -89,9 +89,6 @@ public class EntityPrehistoricFloraBethesdaichthys extends EntityPrehistoricFlor
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
 		return super.attackEntityFrom(source, amount);
 	}
 

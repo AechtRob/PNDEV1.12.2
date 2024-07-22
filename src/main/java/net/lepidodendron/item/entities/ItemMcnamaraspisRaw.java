@@ -39,7 +39,7 @@ public class ItemMcnamaraspisRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_mcnamaraspis", ItemMcnamaraspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMcnamaraspisRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemMcnamaraspisRaw.block);
-		OreDictionary.registerOre("pndietFish", ItemAcanthodesRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemMcnamaraspisRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

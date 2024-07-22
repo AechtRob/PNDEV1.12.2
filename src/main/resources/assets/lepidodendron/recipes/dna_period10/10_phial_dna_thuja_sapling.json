@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:thuja_sapling"}}
+ "nbt": {"period":10,"PFPlant":{"id":"lepidodendron:thuja_sapling"}}
  },
  {
  "item": "lepidodendron:phial_empty"

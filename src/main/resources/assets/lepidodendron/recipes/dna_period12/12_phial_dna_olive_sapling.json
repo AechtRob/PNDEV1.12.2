@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:olive_sapling"}}
+ "nbt": {"period":12,"PFPlant":{"id":"lepidodendron:olive_sapling"}}
  },
  {
  "item": "lepidodendron:phial_empty"

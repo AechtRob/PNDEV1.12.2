@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFStatic":{"id":"lepidodendron:coral_stony_pipe_stack"}}
+ "nbt": {"period":10,"PFStatic":{"id":"lepidodendron:coral_stony_pipe_stack"}}
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -9,7 +9,7 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:fossil_clean",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:chloranthus"}}
+ "nbt": {"period":12,"PFPlant":{"id":"lepidodendron:chloranthus"}}
  },
  {
  "item": "lepidodendron:phial_empty"
