@@ -349,7 +349,7 @@ public class BlockCharnia extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return new AxisAlignedBB(pos, pos.add(1, 2, 1));
+			return new AxisAlignedBB(pos.add(-1, 0, -1), pos.add(1, 2, 1));
 		}
 
 		@SideOnly(Side.CLIENT)

@@ -23,6 +23,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ChunkCache;
 import net.minecraft.world.IBlockAccess;
@@ -462,6 +463,11 @@ public class BlockFlowerpotPN extends BlockFlowerPot {
 		@Override
 		public void handleUpdateTag(NBTTagCompound tag) {
 			this.readFromNBT(tag);
+		}
+
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos.add(-2, 0, -2), pos.add(2, 3, 2));
 		}
 	}
 }
