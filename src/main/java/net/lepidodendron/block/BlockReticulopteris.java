@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -217,7 +218,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter {
+	public static class BlockCustomFlower extends SeedSporeReedBase implements IAdvancementGranter, IPottable {
 
 		public static final PropertyBool BASE = PropertyBool.create("base");
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
@@ -382,6 +383,11 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item blockItem() {
 			return null;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 	

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemPalaeognetaleanaFruit;
 import net.lepidodendron.util.CustomTrigger;
@@ -75,7 +76,7 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemMossForStone", BlockPalaeognetaleana.block);
 	}
 
-	public static class BlockCustom extends BlockVine implements IAdvancementGranter {
+	public static class BlockCustom extends BlockVine implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
@@ -143,5 +144,9 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
+		}
 	}
 }

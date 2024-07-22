@@ -1,7 +1,7 @@
 {
   "variants": 
   {"inventory": {
-      "model": "lepidodendron:shrubby_sphenophyllales_var"
+      "model": "lepidodendron:shrubby_sphenophyllales_inventory"
     },
     "normal": [
       {"model": "lepidodendron:shrubby_sphenophyllales"},

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -77,7 +78,7 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustom extends BlockBush implements IAdvancementGranter {
+	public static class BlockCustom extends BlockBush implements IAdvancementGranter, IPottable {
 
 		public static final PropertyBool FLOWERS = PropertyBool.create("flowers");
 
@@ -92,6 +93,11 @@ public class BlockBellendena extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_bellendena");
 			setRegistryName("bellendena");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FLOWERS, false));
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockBellendenaSeeds.block.getDefaultState();
 		}
 
 		@Nullable

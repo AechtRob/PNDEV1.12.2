@@ -3,10 +3,12 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDeadBush;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -40,7 +42,7 @@ public class BlockDeadPlantBleached extends ElementsLepidodendronMod.ModElement 
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 			new ModelResourceLocation("lepidodendron:dead_plant_bleached", "inventory"));
 	}
-	public static class BlockCustom extends BlockDeadBush {
+	public static class BlockCustom extends BlockDeadBush implements IPottable {
 		public BlockCustom() {
 			setSoundType(SoundType.PLANT);
 			setTranslationKey("pf_dead_plant_bleached");
@@ -73,5 +75,9 @@ public class BlockDeadPlantBleached extends ElementsLepidodendronMod.ModElement 
 			return net.minecraftforge.common.EnumPlantType.Desert;
 		}
 
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
+		}
 	}
 }

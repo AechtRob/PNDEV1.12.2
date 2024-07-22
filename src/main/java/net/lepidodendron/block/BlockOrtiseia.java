@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemOrtiseiaFruit;
 import net.lepidodendron.util.CustomTrigger;
@@ -76,7 +77,7 @@ public class BlockOrtiseia extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockOrtiseia.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_ortiseia");
@@ -280,6 +281,10 @@ public class BlockOrtiseia extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return true;
 	    }
-	    
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
+		}
 	}
 }

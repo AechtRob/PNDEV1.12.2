@@ -204,7 +204,12 @@ public class LepidodendronBookSubscribers {
 
 		String nestString = "";
 		BlockPos nestPos = null;
-		if (entity instanceof EntityPrehistoricFloraLandBase) {
+		if (entity instanceof EntityPrehistoricFloraScorpion
+				|| entity instanceof EntityPrehistoricFloraEramoscorpius
+				|| entity instanceof EntityPrehistoricFloraPraearcturus) {
+			nestString = " carries eggs";
+		}
+		else if (entity instanceof EntityPrehistoricFloraLandBase) {
 			if (((EntityPrehistoricFloraLandBase) entity).createPFChild(((EntityPrehistoricFloraLandBase) entity)) != null) {
 				nestString = " gives birth to live young";
 			}
@@ -231,9 +236,6 @@ public class LepidodendronBookSubscribers {
 						nestString = " requires a nest to lay into";
 					}
 				}
-			}
-			else if (entity instanceof EntityPrehistoricFloraScorpion) {
-				nestString = " carries eggs";
 			}
 			else if (((EntityPrehistoricFloraLandBase) entity).dropsEggs()) {
 				nestString = " drops egg items";

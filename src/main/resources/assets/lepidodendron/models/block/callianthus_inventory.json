@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/callianthus_inventory",
-    "particle": "lepidodendron:items/callianthus_inventory"
+    "layer0": "lepidodendron:items/callianthus_inventory"
   }
 }

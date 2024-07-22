@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/schmeissneria_inventory",
-    "particle": "lepidodendron:items/schmeissneria_inventory"
+    "layer0": "lepidodendron:items/schmeissneria_inventory"
   }
 }

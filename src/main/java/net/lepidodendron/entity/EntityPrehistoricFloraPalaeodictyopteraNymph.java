@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		SINODUNBARIA(7, "sinodunbaria"),
 		STENODICTYA(8, "stenodictya"),
 		MAZOTHAIROS(9, "mazothairos"),
-		PSYCHROPTILUS(10, "mazothairos")
+		PSYCHROPTILUS(10, "psychroptilus")
 		;
 	
 		private final String name;

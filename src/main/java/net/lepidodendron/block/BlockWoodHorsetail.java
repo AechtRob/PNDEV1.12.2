@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
@@ -76,7 +77,7 @@ public class BlockWoodHorsetail extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("leavesHorsetail", BlockWoodHorsetail.block);
 	}
 
-	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -329,6 +330,11 @@ public class BlockWoodHorsetail extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item blockItem() {
 			return null;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

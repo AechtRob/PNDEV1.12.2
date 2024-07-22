@@ -53,6 +53,7 @@ public class BlockPeat extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:peat", "inventory"));
 	}
+
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.GROUND, MapColor.BROWN);

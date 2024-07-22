@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDeadBush;
@@ -48,7 +49,7 @@ public class BlockDeadConifer extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 			new ModelResourceLocation("lepidodendron:dead_conifer", "inventory"));
 	}
-	public static class BlockCustom extends BlockDeadBush {
+	public static class BlockCustom extends BlockDeadBush implements IPottable {
 		public BlockCustom() {
 			setSoundType(SoundType.PLANT);
 			setTranslationKey("pf_dead_conifer");
@@ -91,5 +92,9 @@ public class BlockDeadConifer extends ElementsLepidodendronMod.ModElement {
 			return net.minecraftforge.common.EnumPlantType.Desert;
 		}
 
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
+		}
 	}
 }
