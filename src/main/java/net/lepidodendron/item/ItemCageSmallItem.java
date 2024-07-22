@@ -218,7 +218,7 @@ public class ItemCageSmallItem extends ElementsLepidodendronMod.ModElement {
 							double depth = currentEntity.getEntityBoundingBox().maxZ-currentEntity.getEntityBoundingBox().minZ;
 							double height = currentEntity.getEntityBoundingBox().maxY-currentEntity.getEntityBoundingBox().minY;
 
-							if (height <= 0.9375 && width <= 1.0 && depth <= 1.0 && (!( currentEntity instanceof MultiPartEntityPart))) {
+							if (height <= 0.976 && width <= 1.0 && depth <= 1.0 && (!( currentEntity instanceof MultiPartEntityPart))) {
 								//Check that the mob isn't already in a neigbouring cage:
 								if (worldIn.getBlockState(currentEntity.getPosition()).getBlock() != BlockCageSmall.block) {
 									currentEntity.setPosition(pos.getX() + 0.5D, pos.getY() + 0.0625D, pos.getZ() + 0.5D);

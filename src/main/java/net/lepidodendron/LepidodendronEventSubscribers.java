@@ -18,11 +18,14 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -80,6 +83,19 @@ import java.util.UUID;
 
 public class LepidodendronEventSubscribers {
 
+	@SubscribeEvent //Stop ageing things in the cages:
+	public void onTickEntity(LivingEvent.LivingUpdateEvent event) {
+		EntityLivingBase entity = event.getEntityLiving();
+		if (entity instanceof EntityAgeable) {
+			if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockCageSmall.block) {
+				int i = Math.max(((EntityAgeable)entity).getGrowingAge(), -23999);
+				if (entity instanceof EntityVillager) {
+					i = Math.max(((EntityAgeable) entity).getGrowingAge(), -5999);
+				}
+				((EntityAgeable)entity).setGrowingAge(i - 1);
+			}
+		}
+	}
 
 	@SubscribeEvent //Stop vanilla fish in the dimensions:
 	public void onFishing(ItemFishedEvent event) {
