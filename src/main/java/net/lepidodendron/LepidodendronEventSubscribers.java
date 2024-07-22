@@ -5,6 +5,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraGuanoBall;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
+import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.item.*;
 import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
@@ -15,6 +16,7 @@ import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.item.EntityItem;
@@ -71,6 +73,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -790,6 +793,289 @@ public class LepidodendronEventSubscribers {
 
 	}
 
+	public static boolean hasTaxidermy(ItemStack itemstack) {
+		Class[] params = new Class[1];
+		boolean itemRender = false;
+		String PNVariant = null;
+		params[0] = String.class;
+		double offsetWall = 0;
+		double upperfrontverticallinedepth = 0;
+		double upperbackverticallinedepth = 0;
+		double upperfrontlineoffset = 0;
+		double upperfrontlineoffsetperpendiular = 0;
+		double upperbacklineoffset = 0;
+		double upperbacklineoffsetperpendiular = 0;
+		double lowerfrontverticallinedepth = 0;
+		double lowerbackverticallinedepth = 0;
+		double lowerfrontlineoffset = 0;
+		double lowerfrontlineoffsetperpendiular = 0;
+		double lowerbacklineoffset = 0;
+		double lowerbacklineoffsetperpendiular = 0F;
+		ResourceLocation textureDisplay = null;
+		ModelBase modelDisplay = null;
+		float getScaler = 0.0F;
+
+		//Convert oreDict to NBT:
+		String id_dna = "";
+		String tag = "";
+		int[] oreDicts = OreDictionary.getOreIDs(itemstack);
+		int var = oreDicts.length;
+		for (int var2 = 0; var2 < var; ++var2) {
+			int oreDictID = oreDicts[var2];
+			String oreName = OreDictionary.getOreName(oreDictID);
+			if (oreName.startsWith("mobdnaPN")) {
+				id_dna = oreName.substring(8);
+				tag = "PFMob";
+			}
+		}
+		if (itemstack.getItem() instanceof ItemGlassCaseDisplayItem) {
+			PNVariant = ((ItemGlassCaseDisplayItem)itemstack.getItem()).getVariantStr();
+			if (PNVariant != null) {
+				if (PNVariant.equalsIgnoreCase("gendered")) {
+					if ((new Random()).nextInt(2) == 0) {
+						PNVariant = "male";
+					} else {
+						PNVariant = "female";
+					}
+				}
+			}
+		}
+		if (itemstack.getItem() instanceof ItemPNTaxidermyItem) {
+			PNVariant = ((ItemPNTaxidermyItem)itemstack.getItem()).getVariantStr();
+			if (PNVariant != null) {
+				if (PNVariant.equalsIgnoreCase("gendered")) {
+					if ((new Random()).nextInt(2) == 0) {
+						PNVariant = "male";
+					}
+					else {
+						PNVariant = "female";
+					}
+				}
+			}
+		}
+		ItemStack outputStack = new ItemStack(ItemTaxidermyDisplayItem.block, 1);
+		NBTTagCompound parentNBT = new NBTTagCompound();
+		parentNBT.setString("id", id_dna);
+		NBTTagCompound stackNBT = new NBTTagCompound();
+		stackNBT.setTag(tag, parentNBT);
+		if (PNVariant != null) {
+			stackNBT.setString("PNVariant", PNVariant);
+		}
+		outputStack.setTagCompound(stackNBT);
+
+		Class classEntity = RenderDisplayWallMount.getEntityFromNBT(outputStack);
+		if (classEntity != null) {
+			itemRender = false;
+
+			//Is there a variant included?
+			if (outputStack.hasTagCompound()) {
+				if (outputStack.getTagCompound().hasKey("PNVariant")) {
+					PNVariant = outputStack.getTagCompound().getString("PNVariant");
+				}
+				if (RenderDisplayWallMount.getVariantFromNBT(outputStack) != null) {
+					PNVariant = RenderDisplayWallMount.getVariantFromNBT(outputStack);
+				}
+			}
+
+			Method method = RenderDisplayWallMount.testAndGetMethod(classEntity, "offsetWall", params);
+			if (method != null) {
+				try {
+					offsetWall = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
+			if (method != null) {
+				try {
+					upperfrontverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
+			if (method != null) {
+				try {
+					upperbackverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
+			if (method != null) {
+				try {
+					upperfrontlineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					upperfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperbacklineoffset", params);
+			if (method != null) {
+				try {
+					upperbacklineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					upperbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
+			if (method != null) {
+				try {
+					lowerfrontverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
+			if (method != null) {
+				try {
+					lowerbackverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
+			if (method != null) {
+				try {
+					lowerfrontlineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					lowerfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
+			if (method != null) {
+				try {
+					lowerbacklineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					lowerbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "textureDisplay", params);
+			if (method != null) {
+				try {
+					textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "modelDisplay", params);
+			if (method != null) {
+				try {
+					modelDisplay = (ModelBase) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "getScaler", params);
+			if (method != null) {
+				try {
+					getScaler = (float) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+		}
+		else {
+			itemRender = true;
+		}
+
+		if (itemRender) {
+			return false;
+		}
+
+		return testRenderTaxidermy(EnumFacing.UP, modelDisplay)
+				|| testRenderTaxidermy(EnumFacing.DOWN, modelDisplay)
+				|| testRenderTaxidermy(EnumFacing.NORTH, modelDisplay);
+	}
+
+	public static boolean testRenderTaxidermy(EnumFacing facing, ModelBase model) {
+
+		boolean flag1 = true;
+		boolean flag2 = true;
+		boolean flag3 = true;
+
+		if (facing == EnumFacing.DOWN) {
+			Method renderMethod = RenderDisplayWallMount.testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
+			if (renderMethod == null) {
+				flag1 = false;
+			}
+		} else if (facing == EnumFacing.UP) {
+			Method renderMethod = RenderDisplayWallMount.testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[]{float.class});
+			if (renderMethod == null) {
+				flag2 = false;
+			}
+		} else if (facing == EnumFacing.NORTH) {
+			Method renderMethod = RenderDisplayWallMount.testAndGetMethod(model.getClass(), "renderStaticWall", new Class[]{float.class});
+			if (renderMethod == null) {
+				flag3 = false;
+			}
+		}
+		return flag1 || flag2 || flag3;
+	}
+
 	@SideOnly(Side.CLIENT) //Tooltips for vanilla items etc
 	@SubscribeEvent
 	public void onEvent(ItemTooltipEvent event) throws NoSuchMethodException {
@@ -797,11 +1083,17 @@ public class LepidodendronEventSubscribers {
 		if (event.getItemStack().getItem() instanceof ItemPNTaxidermyItem) {
 			List<String> tt = event.getToolTip();
 			tt.add("Can be turned into taxidermy");
+			if (!hasTaxidermy(event.getItemStack())) {
+				tt.add("Sorry: not yet coded for this item");
+			}
 		}
 		if (event.getItemStack().getItem() instanceof ItemGlassCaseDisplayItem) {
 			List<String> tt = event.getToolTip();
 			tt.add("Can be displayed in the Entomology Display Case");
 			tt.add("Can be turned into taxidermy");
+			if (!hasTaxidermy(event.getItemStack())) {
+				tt.add("Sorry: not yet coded for this item");
+			}
 		}
 
 		if (Block.getBlockFromItem(event.getItemStack().getItem()) instanceof BlockFossil) {
