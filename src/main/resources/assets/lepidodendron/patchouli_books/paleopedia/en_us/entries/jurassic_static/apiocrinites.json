@@ -12,10 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Millericrinida$(br)>Apiocrinitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/apiocrinites.png"],
-			"title": "A. negevensis",
-			"text": ""
+			"type": "multiblock",
+			"name": "A. negevensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_apiocrinites[topshoot=true]",
+					"1": "lepidodendron:crinoid_apiocrinites[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_apiocrinites",

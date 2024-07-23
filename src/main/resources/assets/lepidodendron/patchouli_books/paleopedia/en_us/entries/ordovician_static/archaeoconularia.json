@@ -11,11 +11,20 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Cnidaria $(br)>Conulariida $(br)>Conulariidae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/archaeoconularia.png"],
-			"title": "A. insignis",
-			"text": ""
+		{
+			"type": "multiblock",
+			"name": "A. insignis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:archaeoconularia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_archaeoconularia",

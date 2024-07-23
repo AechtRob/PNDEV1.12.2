@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Chordata"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/burykhia.png"],
-			"title": "B. hunti",
-			"text": ""
+			"type": "multiblock",
+			"name": "B. hunti",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:burykhia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_burykhia",
