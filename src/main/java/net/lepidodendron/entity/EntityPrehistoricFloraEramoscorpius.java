@@ -125,7 +125,6 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		return false;
 	}
 
-
 	@Override
 	public int getAttackLength() {
 		return 15;
@@ -137,10 +136,13 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		//float speed = (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
+
 		if (this.getIsFast()) {
 			return (float) Math.min(1F, (this.getAgeScale() * 1.60F)) * 0.34F;
 		}
 		return (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
+		//return 0.5F;
 	}
 
 	@Override

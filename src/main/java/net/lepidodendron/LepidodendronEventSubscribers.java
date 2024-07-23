@@ -202,13 +202,31 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-  	@SubscribeEvent //Give the Palaeopedia on first join:
+  	@SubscribeEvent //Give the Palaeopedia on first join and notify about flowerpots:
 	public void playerJoined(EntityJoinWorldEvent event) {
 		if (!LepidodendronConfig.giveBook) {
 			return;
 		}
 		if ((event.getEntity() instanceof EntityPlayerMP)) {
 			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+		}
+
+		if (LepidodendronConfig.modFlowerpot) {
+			if ((Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entity;
+					if ((event.getEntity() instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) {
+						if (!(((EntityPlayerMP) event.getEntity()).getAdvancements().getProgress(((WorldServer) entity.world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_quark_nag"))).isDone())) {
+							ITextComponent itextcomponent = new TextComponentString("You have Quark installed, and Quark has its own modded flower pots, which we don't know if you're using! If you want to use Prehistoric Nature flower pots and not Quark ones, you should disable Quark ones in the Quark config, and also amend the Prehistoric Nature config file to make Prehistoric Nature ones load.");
+							itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+							entity.sendMessage(itextcomponent);
+							ModTriggers.QUARK_NAG.trigger((EntityPlayerMP) event.getEntity());
+						}
+					}
+				}
+			}
 		}
 	}
 
