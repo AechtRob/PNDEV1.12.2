@@ -36,32 +36,31 @@ import net.minecraftforge.oredict.OreDictionary;
 import java.util.Random;
 
 
-
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockPrehistoricGroundLush extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:lush_prehistoric_ground_cover")
+public class BlockPrehistoricGroundEarlyAngiosperm extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:early_angiosperm_prehistoric_ground_cover")
 	public static final Block block = null;
-	public BlockPrehistoricGroundLush(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.lush_prehistoric_ground_cover);
+	public BlockPrehistoricGroundEarlyAngiosperm(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.early_angiosperm_prehistoric_ground_cover);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("lush_prehistoric_ground_cover"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("early_angiosperm_prehistoric_ground_cover"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dirt", BlockPrehistoricGroundLush.block);
+		OreDictionary.registerOre("dirt", BlockPrehistoricGroundEarlyAngiosperm.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:lush_prehistoric_ground_cover", "inventory"));
+				new ModelResourceLocation("lepidodendron:early_angiosperm_prehistoric_ground_cover", "inventory"));
 	}
 
 	public static final PropertyBool SNOWY = PropertyBool.create("snowy");
@@ -69,7 +68,7 @@ public class BlockPrehistoricGroundLush extends ElementsLepidodendronMod.ModElem
 	public static class BlockCustom extends Block implements IGrowable {
 		public BlockCustom() {
 			super(Material.GROUND);
-			setTranslationKey("pf_dirt_lush_prehistoric_ground_cover");
+			setTranslationKey("pf_dirt_early_angiosperm_prehistoric_ground_cover");
 			setSoundType(SoundType.PLANT);
         	setDefaultState(this.blockState.getBaseState().withProperty(SNOWY, Boolean.valueOf(false)));
         	setTickRandomly(true);
@@ -153,7 +152,7 @@ public class BlockPrehistoricGroundLush extends ElementsLepidodendronMod.ModElem
 								&& (worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
 								)
 	                        {
-	                            worldIn.setBlockState(blockpos, BlockPrehistoricGroundLush.block.getDefaultState());
+	                            worldIn.setBlockState(blockpos, BlockPrehistoricGroundEarlyAngiosperm.block.getDefaultState());
 	                        }
 	                    }
 	                }
@@ -195,7 +194,7 @@ public class BlockPrehistoricGroundLush extends ElementsLepidodendronMod.ModElem
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			drops.add(new ItemStack(Blocks.DIRT, (int) (1), 0));
 			if (Math.random() > 0.05) {
-			drops.add(new ItemStack(BlockPrehistoricGroundCoverPlantsLush.block, (int) (1), 0));
+			drops.add(new ItemStack(BlockPrehistoricGroundCoverPlantsEarlyAngiosperm.block, (int) (1), 0));
 	        }
 		}
 
@@ -234,7 +233,7 @@ public class BlockPrehistoricGroundLush extends ElementsLepidodendronMod.ModElem
 	                    if (worldIn.isAirBlock(blockpos1))
 	                    {
 
-                            IBlockState iblockstate1 = BlockPrehistoricGroundCoverPlantsLush.block.getDefaultState();
+                            IBlockState iblockstate1 = BlockPrehistoricGroundCoverPlantsEarlyAngiosperm.block.getDefaultState();
 
                             if (worldIn.getBlockState(blockpos1.down()).getBlock() == this)
                             {

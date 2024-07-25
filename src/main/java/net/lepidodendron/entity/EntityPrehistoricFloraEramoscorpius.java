@@ -174,6 +174,16 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 
 	public static String getPeriod() {return "Silurian";}
 
+	@Override
+	public int airTime() {
+		return 10000;
+	}
+
+	@Override
+	public boolean breathesAir() {
+		return true;
+	}
+
 	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override

@@ -668,12 +668,29 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //Let eggs drop their right items:
+	@SubscribeEvent
 	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
 		if ((!event.getWorld().isRemote)) {
 			if (event.getPlayer() != null) {
+				//Let eggs drop their right items:
 				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {
 					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), BlockEggs.BlockCustom.getEggItemStack(event.getWorld(), event.getPos()));
+					entityToSpawn.setPickupDelay(10);
+					event.getWorld().spawnEntity(entityToSpawn);
+				}
+				//Let small angiosperm seeds drop sometimes:
+				if (!event.getPlayer().isCreative()
+						&& (event.getState().getMaterial() == Material.GROUND ||  event.getState().getMaterial() == Material.GRASS)
+						&& event.getWorld().rand.nextInt(50) == 0
+						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousLate
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPaleogene
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimNeogene
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPleistocene
+							|| event.getWorld().provider.getDimension() == 0
+						)
+				) {
+					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(ItemSmallAngiospermSeeds.block, 1));
 					entityToSpawn.setPickupDelay(10);
 					event.getWorld().spawnEntity(entityToSpawn);
 				}

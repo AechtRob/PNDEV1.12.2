@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/prehistoric_ground_cover_var",
+  "textures": {
+    "var": "lepidodendron:blocks/prehistoric_ground_early_angiosperm_3",
+    "particle": "lepidodendron:blocks/prehistoric_ground_early_angiosperm_3"
+  }
+}
