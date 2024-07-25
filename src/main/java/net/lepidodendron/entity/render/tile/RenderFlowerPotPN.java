@@ -9,6 +9,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -69,6 +70,8 @@ public class RenderFlowerPotPN extends TileEntitySpecialRenderer<BlockFlowerpotP
 
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        RenderHelper.enableStandardItemLighting();
         if (block instanceof BlockCactus) {
             GlStateManager.translate(x + 0.371, y + 0.2, z + 0.362);
         }
