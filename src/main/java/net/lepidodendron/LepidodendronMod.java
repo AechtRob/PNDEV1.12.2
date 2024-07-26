@@ -2341,6 +2341,11 @@ public class LepidodendronMod {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		if (LepidodendronConfig.modFlowerpot) {
+			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
+			}
+		}
 		elements.getElements().forEach(element -> element.init(event));
 		proxy.init(event);
 
@@ -2442,7 +2447,6 @@ public class LepidodendronMod {
 
 		if (LepidodendronConfig.modFlowerpot) {
 			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
-				GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
 				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
 				event.getRegistry().register(newPot);
 			}
