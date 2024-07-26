@@ -40,6 +40,7 @@ public class ItemFlagellopantopusRaw extends ElementsLepidodendronMod.ModElement
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_flagellopantopus", ItemFlagellopantopusRaw.block);
 		OreDictionary.registerOre("pnfurnaceSeafood", ItemFlagellopantopusRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemFlagellopantopusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

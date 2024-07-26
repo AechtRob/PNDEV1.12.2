@@ -14,6 +14,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -220,13 +221,44 @@ public class Functions {
             }
         }
 
-        worldIn.setBlockState(pos, state, flags);
-
-        if (state.causesSuffocation()) {
-            for (Entity e : worldIn.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(pos))) {
-                e.setDead(); //Dont entomb entities!
+        if (state.causesSuffocation()) { //If we are about to place a block that could kill an entity here:
+            List<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
+            if (!getEntities.isEmpty()) {
+                int ascendor = 0;
+                boolean isMoved = false;
+                //Are we replacing water, and is the block above us up to 8 high a suitable water?
+                if (worldIn.getBlockState(pos).getMaterial() == Material.WATER) {
+                    for (int n = 1; n < 8; n++) {
+                        if (worldIn.getBlockState(pos.up(n)).getMaterial() == Material.WATER) {
+                            //Move the entity to here:
+                            isMoved = true;
+                            ascendor = n;
+                            break;
+                        }
+                    }
+                }
+                else { //Was not water, so check for something that isn't water and which is safe
+                    for (int n = 1; n < 8; n++) {
+                        if ((!worldIn.getBlockState(pos.up(n)).causesSuffocation()) && worldIn.getBlockState(pos.up(n)).getMaterial() != Material.WATER) {
+                            //Move the entity to here:
+                            isMoved = true;
+                            ascendor = n;
+                            break;
+                        }
+                    }
+                }
+                for (Entity e : getEntities) {
+                    if (!isMoved) {
+                        e.setDead(); //Dont entomb entities!
+                    } else {
+                        e.setPosition(e.posX, pos.up(ascendor).getY(), e.posZ);
+                    }
+                }
             }
         }
+
+        //Finally, set the blockstate:
+        worldIn.setBlockState(pos, state, flags);
     }
 
     public static void setBlockStateAndCheckForDoublePlant(World worldIn, BlockPos pos, IBlockState state) {

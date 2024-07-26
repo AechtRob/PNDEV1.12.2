@@ -73,13 +73,13 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
             }
             BlockFaceShape faceshape = entity.getWorld().getBlockState(entity.getPos().down()).getBlockFaceShape(entity.getWorld(), entity.getPos().down(), EnumFacing.UP);
 
-            GlStateManager.pushMatrix();
-
             if  (isLog && (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
                 && faceshape != BlockFaceShape.SOLID
             ) {
                 return;
             }
+
+            GlStateManager.pushMatrix();
 
             if (isLog) {
                 GlStateManager.translate(x + 0.5F, y + 0.970F, z + 0.5F);

@@ -440,7 +440,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     @Nullable
-    public Class getEntityFromNBT(ItemStack stack) {
+    public static Class getEntityFromNBT(ItemStack stack) {
         if (!stack.hasTagCompound()) {
             return null;
         }
@@ -461,7 +461,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     @Nullable
-    public String getVariantFromNBT(ItemStack stack) {
+    public static String getVariantFromNBT(ItemStack stack) {
         if (!stack.hasTagCompound()) {
             return null;
         }

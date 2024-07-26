@@ -47,6 +47,7 @@ public class ItemGreenFilamentousAlgaeItem extends ElementsLepidodendronMod.ModE
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", ItemGreenFilamentousAlgaeItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_filamentous_algae_item", ItemGreenFilamentousAlgaeItem.block);
 	}
 
 	@Override

@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraParioscorpio extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 3.0D;
 	}
 //
 //	@Override

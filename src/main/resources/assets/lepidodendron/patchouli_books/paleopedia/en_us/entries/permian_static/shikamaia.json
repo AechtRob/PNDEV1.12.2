@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida $(br)>Alatoconchidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bivalve_shikamaia.png"],
-			"title": "S. akasakaensis",
-			"text": ""
+			"type": "multiblock",
+			"name": "S. akasakaensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bivalve_shikamaia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bivalve_shikamaia",

@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockBrownAlgae;
 import net.lepidodendron.block.BlockCorallineAlgae;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -48,6 +49,7 @@ public class ItemCorallineAlgaeItem extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", ItemCorallineAlgaeItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:coralline_algae_item", ItemCorallineAlgaeItem.block);
 	}
 
 	@Override

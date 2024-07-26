@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockBatHead;
 import net.lepidodendron.block.BlockFirePF;
+import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.item.ItemBatHeadItem;
@@ -37,6 +38,7 @@ import net.minecraftforge.common.util.ModFixs;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -2292,7 +2294,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation DIPTERONOTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dipteronotus"));
 	public static final int ENTITY_HETEROSTROPHUS = 929;
 	public static final ResourceLocation HETEROSTROPHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/heterostrophus"));
-	public static final int ENTITY_WAAGANELLA = 930;
+	public static final int ENTITY_WAAGENELLA = 930;
 	public static final int ENTITY_AKASAKIELLA = 931;
 	public static final int ENTITY_FOORDELLA = 932;
 	public static final int ENTITY_CHIPPEWAELLA = 933;
@@ -2436,6 +2438,14 @@ public class LepidodendronMod {
 		if (LepidodendronConfig.modFire) {
 			BlockFirePF newFire = (BlockFirePF) (new BlockFirePF()).setHardness(0.0F).setLightLevel(1.0F).setTranslationKey("fire").setRegistryName(Objects.requireNonNull(Blocks.FIRE.getRegistryName()));
 			event.getRegistry().register(newFire);
+		}
+
+		if (LepidodendronConfig.modFlowerpot) {
+			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
+				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
+				event.getRegistry().register(newPot);
+			}
 		}
 
 	}

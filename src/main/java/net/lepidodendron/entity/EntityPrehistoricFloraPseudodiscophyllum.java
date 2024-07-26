@@ -113,7 +113,7 @@ public class EntityPrehistoricFloraPseudodiscophyllum extends EntityPrehistoricF
 
     @Override
     protected float getAISpeedJelly() {
-        return 0.043f;
+        return 0.0273f;
     }
 
     @Override

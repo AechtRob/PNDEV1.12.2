@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/nuphar_inventory",
-    "particle": "lepidodendron:items/nuphar_inventory"
+    "layer0": "lepidodendron:items/nuphar_inventory"
   }
 }

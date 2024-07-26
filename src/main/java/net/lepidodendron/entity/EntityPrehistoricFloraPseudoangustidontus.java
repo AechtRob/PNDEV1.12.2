@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraPseudoangustidontus extends EntityPrehistoric
 		minWidth = 0.2F;
 		maxWidth = 0.7F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

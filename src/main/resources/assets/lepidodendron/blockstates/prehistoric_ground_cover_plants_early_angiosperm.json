@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "normal":[
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_2"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_3"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_4"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_5"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_6"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_2a"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_3a"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_4a"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_5a"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_plants_early_angiosperm_6a"}
+    ]
+  }
+}

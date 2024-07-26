@@ -12,10 +12,49 @@
 			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>Blastoidea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Blastoids.png"],
-			"title": "Class: Blastoidea",
-			"text": ""
+			"type": "multiblock",
+			"name": "Blastoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blastoid_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Blastoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blastoid_2",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Blastoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blastoid_3",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_blastoids",

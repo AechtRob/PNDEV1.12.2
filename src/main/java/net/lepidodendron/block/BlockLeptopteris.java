@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -221,7 +222,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter, IPottable {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -445,6 +446,11 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 				case EAST: case WEST:
 					return new Vec3d(0.0D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, ((double) ((float) (i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
 			}
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

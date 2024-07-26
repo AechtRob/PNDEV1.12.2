@@ -249,7 +249,7 @@ public class ModelPseudodiscophyllum extends ModelBasePalaeopedia {
         this.Body.setScaleX(1.0F);
         this.Body.setScaleZ(1.0F);
         this.Body.scaleChildren = false;
-        this.Body.offsetY = 0.20F;
+        this.Body.offsetY = 0.165F;
 
         AdvancedModelRenderer[] tentacleF1 = {this.tentacle, this.tentacles};
         AdvancedModelRenderer[] tentacleF2 = {this.tentacle2, this.tentacles2};

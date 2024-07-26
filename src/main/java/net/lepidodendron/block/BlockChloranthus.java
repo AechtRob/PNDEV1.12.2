@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemChloranthusSeeds;
 import net.lepidodendron.util.CustomTrigger;
@@ -74,7 +75,7 @@ public class BlockChloranthus extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter {
+	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter, IPottable {
 		public BlockCustomFlower() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -215,6 +216,11 @@ public class BlockChloranthus extends ElementsLepidodendronMod.ModElement {
 				}
 				return true;
 			}
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 	

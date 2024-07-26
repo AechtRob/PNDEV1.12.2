@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/sahnioxylon_flower_inventory",
-    "particle": "lepidodendron:items/sahnioxylon_flower_inventory"
+    "layer0": "lepidodendron:items/sahnioxylon_flower_inventory"
   }
 }

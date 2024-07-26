@@ -32,6 +32,7 @@ public class ModTriggers
     public static final CustomTrigger TAIL = new CustomTrigger("pf_eat_tail");
     public static final CustomTrigger DNA_CRAFT = new CustomTrigger("pf_dna_craft");
     public static final CustomTrigger PALAEOPEDIA_GIVEN = new CustomTrigger("pf_palaeopedia_given");
+    public static final CustomTrigger QUARK_NAG = new CustomTrigger("pf_quark_nag");
 
     //Knowledge of blocks:
     public static final CustomTrigger CLICK_ACACIA = new CustomTrigger("pf_book_acacia");
@@ -1481,7 +1482,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIPTERONOTUS = new CustomTrigger("pf_book_dipteronotus");
     public static final CustomTrigger CLICK_HETEROSTROPHUS = new CustomTrigger("pf_book_heterostrophus");
     public static final CustomTrigger CLICK_MONOLOPHOSAURUS = new CustomTrigger("pf_book_monolophosaurus");
-    public static final CustomTrigger CLICK_WAAGANELLA = new CustomTrigger("pf_book_waaganella");
+    public static final CustomTrigger CLICK_WAAGENELLA = new CustomTrigger("pf_book_waagenella");
     public static final CustomTrigger CLICK_AKASAKIELLA = new CustomTrigger("pf_book_akasakiella");
     public static final CustomTrigger CLICK_FOORDELLA = new CustomTrigger("pf_book_foordella");
     public static final CustomTrigger CLICK_CHIPPEWAELLA = new CustomTrigger("pf_book_chippewaella");
@@ -1523,6 +1524,7 @@ public class ModTriggers
             TAIL,
             DNA_CRAFT,
             PALAEOPEDIA_GIVEN,
+            QUARK_NAG,
 
             //BLOCKS:
             //----------
@@ -2962,7 +2964,7 @@ public class ModTriggers
             CLICK_HETEROSTROPHUS,
             CLICK_FLAGELLOPANTOPUS,
             CLICK_MONOLOPHOSAURUS,
-            CLICK_WAAGANELLA,
+            CLICK_WAAGENELLA,
             CLICK_AKASAKIELLA,
             CLICK_FOORDELLA,
             CLICK_CHIPPEWAELLA,

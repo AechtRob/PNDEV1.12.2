@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/sphenophyllales1_inventory",
-    "particle": "lepidodendron:items/sphenophyllales1_inventory"
+    "layer0": "lepidodendron:items/sphenophyllales1_inventory"
   }
 }

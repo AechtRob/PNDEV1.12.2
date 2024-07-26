@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraRhizodus extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.1F;
 		maxWidth = 0.95F;
 		maxHeight = 0.95F;
-		maxHealthAgeable = 28.0D;
+		maxHealthAgeable = 35.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

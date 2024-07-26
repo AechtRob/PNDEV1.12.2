@@ -12,19 +12,10 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria"
 		},
 		{
-			"type": "multiblock",
-			"name": "G. aspera",
-			"enable_visualize": false,
-			"multiblock": {
-				"pattern": [
-					[ "1" ],
-					[ "0" ]
-				],
-				"mapping": {
-					"1": "lepidodendron:gangtoucunia",
-					"0": "minecraft:air"
-				}
-			}
+			"type": "image",
+			"images": ["paleopedia:textures/gangtoucunia.png"],
+			"title": "G. aspera",
+			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gangtoucunia",

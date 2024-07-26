@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -76,7 +77,7 @@ public class BlockPseudoctenis extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockPseudoctenis.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_pseudoctenis");
@@ -259,5 +260,9 @@ public class BlockPseudoctenis extends ElementsLepidodendronMod.ModElement {
 		}
 
 
+		@Override
+		public IBlockState getPotState() {
+			return BlockPseudoctenisCone.block.getDefaultState();
+		}
 	}
 }

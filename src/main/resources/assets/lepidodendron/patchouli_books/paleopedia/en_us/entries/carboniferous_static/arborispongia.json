@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_arborispongia",
 			"title": "Arborispongia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Bay(br2)>Porifera $(br)>Demospongia $(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Bay$(br2)>Porifera $(br)>Demospongia $(br)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/arborispongia.png"],
-			"title": "A. delicatula",
-			"text": ""
+			"type": "multiblock",
+			"name": "A. delicatula",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:arborispongia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arborispongia",

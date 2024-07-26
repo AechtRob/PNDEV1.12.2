@@ -591,6 +591,22 @@ public class ModelDeuterosaurus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hips.offsetY = 0.1F;
+        this.hips.offsetX = -0.15F;
+        this.hips.rotateAngleY = (float)Math.toRadians(-130);
+        this.hips.rotateAngleX = (float)Math.toRadians(19);
+        this.hips.rotateAngleZ = (float)Math.toRadians(-10);
+        float scaler = 0.55F;
+        this.hips.scaleChildren = true;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
         resetToDefaultPose();
     }
 

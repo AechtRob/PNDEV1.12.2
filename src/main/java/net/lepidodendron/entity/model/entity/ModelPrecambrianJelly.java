@@ -60,13 +60,13 @@ public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -0.25F;
-        this.main.offsetX = -0.20F;
-        this.main.rotateAngleY = (float)Math.toRadians(125);
-        this.main.rotateAngleX = (float)Math.toRadians(2);
-        this.main.rotateAngleZ = (float)Math.toRadians(-2);
+        this.main.offsetY = -0.75F;
+        this.main.offsetX = -0.F;
+        this.main.rotateAngleY = (float)Math.toRadians(165);
+        this.main.rotateAngleX = (float)Math.toRadians(22);
+        this.main.rotateAngleZ = (float)Math.toRadians(-28);
         this.main.scaleChildren = true;
-        float scaler = 0.25F;
+        float scaler = 2.25F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

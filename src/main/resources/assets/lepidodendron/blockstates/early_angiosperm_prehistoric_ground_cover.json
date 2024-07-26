@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "snowy=false": [ 
+        	{"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1" },
+        	{"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1", "y": 90 },
+            {"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1", "y": 180 },
+            {"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1", "y": 270 },
+            {"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1a" },
+            {"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1a", "y": 90 },
+            {"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1a", "y": 180 },
+            {"model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_1a", "y": 270 }
+       ],
+        "snowy=true": [
+        	{ "model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_snowed" },
+        	{ "model": "lepidodendron:early_angiosperm_prehistoric_ground_cover_snowed", "y": 90 }
+        ]
+    }
+}

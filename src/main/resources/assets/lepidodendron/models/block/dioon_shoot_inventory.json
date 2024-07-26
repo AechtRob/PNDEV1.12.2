@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/dioon_shoot_inventory",
-    "particle": "lepidodendron:items/dioon_shoot_inventory"
+    "layer0": "lepidodendron:items/dioon_shoot_inventory"
   }
 }

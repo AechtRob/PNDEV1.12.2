@@ -70,6 +70,7 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockGreenAlgaeMat.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_algae_mat", BlockGreenAlgaeMat.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

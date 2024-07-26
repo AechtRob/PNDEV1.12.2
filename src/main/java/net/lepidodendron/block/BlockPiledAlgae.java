@@ -67,6 +67,7 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockPiledAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:piled_algae", BlockPiledAlgae.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

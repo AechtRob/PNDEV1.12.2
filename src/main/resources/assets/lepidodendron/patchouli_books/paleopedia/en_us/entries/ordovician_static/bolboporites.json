@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Eocrinoidea$(br)>Bolboporitidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Bolboporites.png"],
-			"title": "Bolboporites sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Bolboporites sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cystoid_bolboporites",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cystoid_bolboporites",

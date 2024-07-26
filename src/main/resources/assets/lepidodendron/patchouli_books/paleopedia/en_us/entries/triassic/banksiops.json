@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_banksiops",
 			"type": "text",
-			"text": "Banksiops is a brachyopid temnospondyl from the Triassic period of Tasmania. It had a broad and flattened head and may have spent its life stationary at the riverbed waiting for prey. It was originally named Banksia in 1998, but this was changed when the authors discovered a mite had been named Banksia to commemorate Nathan Banks, which it also shares with a flowering plant named after Joseph Banks. Thus the name Banksiops was proposed in order to commemorate geologist Max Banks."
+			"text": "Banksiops is a brachyopid temnospondyl from the Triassic period of Tasmania. It had a broad and flattened head and may have spent its life stationary at the riverbed waiting for prey. It was originally named Banksia in 1998, but this was changed when the authors discovered a mite had been named Banksia to commemorate Nathan Banks, which it also shares with a flowering plant named after Joseph Banks."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_banksiops",
+			"type": "text",
+			"text": "Thus the name Banksiops was proposed in order to commemorate geologist Max Banks."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1406,14 +1406,20 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public boolean isTankPaused() {
 			IBlockState state = this.getWorld().getBlockState(this.getPos());
 			EnumFacing face = EnumFacing.NORTH;
-			if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.NORTH) {
-				face = EnumFacing.SOUTH;
-			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
-				face = EnumFacing.NORTH;
-			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
-				face = EnumFacing.WEST;
-			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
-				face = EnumFacing.EAST;
+			if (state != null && state.getBlock() == BlockAcidBathUp.block) {
+				if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.NORTH) {
+					face = EnumFacing.SOUTH;
+				} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
+					face = EnumFacing.NORTH;
+				} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
+					face = EnumFacing.WEST;
+				} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
+					face = EnumFacing.EAST;
+				}
+			}
+
+			else {
+				return false;
 			}
 			if (this.getWorld().isSidePowered(this.getPos().offset(face), face.getOpposite())
 					||

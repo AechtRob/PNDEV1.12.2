@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Chordata$(br)>Tunicata$(br)>Ascidiacea"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ausia.png"],
-			"title": "A. fenestrata",
-			"text": ""
+			"type": "multiblock",
+			"name": "A. fenestrata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:ausia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ausia",

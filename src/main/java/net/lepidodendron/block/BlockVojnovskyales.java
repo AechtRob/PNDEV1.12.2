@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemVojnovskyalesFruit;
 import net.lepidodendron.util.CustomTrigger;
@@ -76,7 +77,7 @@ public class BlockVojnovskyales extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockVojnovskyales.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_vojnovskyales");
@@ -284,6 +285,11 @@ public class BlockVojnovskyales extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public EnumOffsetType getOffsetType() {
 			return EnumOffsetType.XZ;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

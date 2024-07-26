@@ -144,6 +144,7 @@ public class ModelEoandromeda extends ModelBasePalaeopedia {
         else {
             this.disk.scaleChildren = true;
             this.disk.setScale(1.25F, 0.1F, 1.25F);
+            this.disk.offsetY = 1.225F;
         }
     }
 }

@@ -144,6 +144,7 @@ public class BlockPrehistoricGroundBasic extends ElementsLepidodendronMod.ModEle
 										|| (iblockstate1.getBlock() == BlockSiltyDirt.block)
 										|| (iblockstate1.getBlock() == BlockSandyDirtWhite.block)
 										|| (iblockstate1.getBlock() == BlockSandyDirtBlack.block)
+										|| (iblockstate1.getBlock() == BlockSandyDirtGrey.block)
 								)
 								&& (worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
 							)

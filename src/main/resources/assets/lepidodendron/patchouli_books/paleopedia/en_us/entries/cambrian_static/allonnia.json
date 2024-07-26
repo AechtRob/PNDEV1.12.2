@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$(br)>Coeloscleritophora$(br)>Chancelloriida$(br)>Chancelloriidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Allonnia.png"],
-			"title": "Allonnia sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Allonnia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:allonnia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_allonnia",

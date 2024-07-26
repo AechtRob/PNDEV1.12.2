@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraStrobilopterus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 4.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

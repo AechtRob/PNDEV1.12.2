@@ -37,7 +37,7 @@ public class ItemSyringocrinusRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_syringocrinus", ItemSyringocrinusRaw.block);
 		OreDictionary.registerOre("pnfurnaceSeafood", ItemSyringocrinusRaw.block);
-		OreDictionary.registerOre("pndietCrinoid", ItemSynophalosRaw.block);
+		OreDictionary.registerOre("pndietCrinoid", ItemSyringocrinusRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

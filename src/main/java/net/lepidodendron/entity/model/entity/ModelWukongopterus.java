@@ -416,6 +416,7 @@ public class ModelWukongopterus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(chest, -1.5F, 3.1F, 0.0F);
         this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
@@ -756,7 +757,6 @@ public class ModelWukongopterus extends ModelBasePalaeopedia {
                 this.setRotateAngle(jaw2, 0.1309F, 0.0F, 0.0F);
                 this.setRotateAngle(cube_r13, -0.1231F, 0.0447F, 0.3463F);
                 this.setRotateAngle(cube_r14, -0.1231F, -0.0447F, -0.3463F);
-
             }
         }
 

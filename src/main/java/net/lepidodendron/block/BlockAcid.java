@@ -71,35 +71,40 @@ public class BlockAcid extends ElementsLepidodendronMod.ModElement {
 							|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundBasic.block
 							|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundLush.block
 							|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundFern.block
-							|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundMossy.block) {
+							|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundMossy.block
+							|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundEarlyAngiosperm.block) {
 						world.setBlockState(pos.north(), Blocks.DIRT.getStateFromMeta(0));
 					}
 					if (world.getBlockState(pos.south()).getBlock() == Blocks.GRASS
 							|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundBasic.block
 							|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundLush.block
 							|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundFern.block
-							|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundMossy.block) {
+							|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundMossy.block
+							|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundEarlyAngiosperm.block) {
 						world.setBlockState(pos.south(), Blocks.DIRT.getStateFromMeta(0));
 					}
 					if (world.getBlockState(pos.east()).getBlock() == Blocks.GRASS
 							|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundBasic.block
 							|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundLush.block
 							|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundFern.block
-							|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundMossy.block) {
+							|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundMossy.block
+							|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundEarlyAngiosperm.block) {
 						world.setBlockState(pos.east(), Blocks.DIRT.getStateFromMeta(0));
 					}
 					if (world.getBlockState(pos.west()).getBlock() == Blocks.GRASS
 							|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundBasic.block
 							|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundLush.block
 							|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundFern.block
-							|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundMossy.block) {
+							|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundMossy.block
+							|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundEarlyAngiosperm.block) {
 						world.setBlockState(pos.west(), Blocks.DIRT.getStateFromMeta(0));
 					}
 					if (world.getBlockState(pos.down()).getBlock() == Blocks.GRASS
 							|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundBasic.block
 							|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundLush.block
 							|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundFern.block
-							|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundMossy.block) {
+							|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundMossy.block
+							|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundEarlyAngiosperm.block) {
 						world.setBlockState(pos.down(), Blocks.DIRT.getStateFromMeta(0));
 					}
 
