@@ -551,7 +551,7 @@ public class BlockFlowerpotPN extends Block {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return new AxisAlignedBB(pos.add(-2, 0, -2), pos.add(2, 3, 2));
+			return new AxisAlignedBB(pos.add(-1, 0, -1), pos.add(2, 3, 2));
 		}
 	}
 }
