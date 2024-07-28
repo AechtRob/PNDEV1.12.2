@@ -288,7 +288,13 @@ public class GUITimeResearcherFinderSelector extends GuiScreen
                 mobIn = mobIn.replace("@", "_").substring(10);
             }
             else {
-                mobIn = mobIn.replace("@", "_").substring(LepidodendronMod.MODID.length() + 1);
+                int colonPos = mobIn.indexOf(":");
+                if (!(colonPos > 0)) {
+                    mobIn = "- NONE -";
+                }
+                else {
+                    mobIn = mobIn.replace("@", "_").substring(colonPos + 1);
+                }
             }
 
             String name = "entity." + mobIn + ".name";
