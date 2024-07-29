@@ -809,6 +809,13 @@ public class LepidodendronConfigPlants {
     public static int minheightHorsetail = 55;
     public static int maxheightHorsetail = 100;
     public static double multiplierHorsetail = 1;
+    public static boolean genJurassicHorsetail = false;
+    public static String[] genJurassicHorsetailBlacklistBiomes = new String[0];
+    public static String[] genJurassicHorsetailOverrideBiomes = new String[0];
+    public static int[] dimJurassicHorsetail = new int[]{0};
+    public static int minheightJurassicHorsetail = 55;
+    public static int maxheightJurassicHorsetail = 100;
+    public static double multiplierJurassicHorsetail = 1;
     public static boolean genReticulopteris = false;
     public static String[] genReticulopterisBlacklistBiomes = new String[0];
     public static String[] genReticulopterisOverrideBiomes = new String[0];
@@ -6179,6 +6186,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Giant Horsetails", "multiplierHorsetail", multiplierHorsetail);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierHorsetail = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Jurassic Horsetails", "genJurassicHorsetail", genJurassicHorsetail);
+        prop.setComment("Set to true to generate Jurassic Horsetails naturally [default: false]");
+        genJurassicHorsetail = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "genJurassicHorsetailBlacklistBiomes", genJurassicHorsetailBlacklistBiomes);
+        prop.setComment("List of biomes Jurassic Horsetails are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genJurassicHorsetailBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "genJurassicHorsetailOverrideBiomes", genJurassicHorsetailOverrideBiomes);
+        prop.setComment("List of biomes Jurassic Horsetails are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genJurassicHorsetailOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Jurassic Horsetails", "dimJurassicHorsetail", dimJurassicHorsetail);
+        prop.setComment("List of dimension IDs Jurassic Horsetails can generate in [default: 0]");
+        dimJurassicHorsetail = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "minheightJurassicHorsetail", minheightJurassicHorsetail);
+        prop.setComment("Minimum height that Jurassic Horsetails can generate (1 to 250) [default: 55]");
+        minheightJurassicHorsetail = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "maxheightJurassicHorsetail", maxheightJurassicHorsetail);
+        prop.setComment("Maximum height that Jurassic Horsetails can generate (1 to 250, or set to 0 for unlimited) [default: 100]");
+        maxheightJurassicHorsetail = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "multiplierJurassicHorsetail", multiplierJurassicHorsetail);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierJurassicHorsetail = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Cooksonia", "genCooksonia", genCooksonia);
