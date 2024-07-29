@@ -1657,6 +1657,9 @@ public class LepidodendronConfigPlants {
     public static String[] genLygodiumBlacklistBiomes = new String[0];
     public static String[] genLygodiumOverrideBiomes = new String[0];
     public static int[] dimLygodium = new int[]{0};
+    public static boolean genLygodium = false;
+    public static double multiplierLygodium = 1;
+    
     public static boolean genPalaeognetaleanaGlossopteris = false;
     public static String[] genPalaeognetaleanaBlacklistBiomes = new String[0];
     public static String[] genPalaeognetaleanaOverrideBiomes = new String[0];
@@ -9180,6 +9183,13 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lygodium", "dimLygodium", dimLygodium);
         prop.setComment("List of dimension IDs Lygodium can generate in [default: 0]");
         dimLygodium = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lygodium", "genLygodium", genLygodium);
+        prop.setComment("Set to true to generate Lygodium naturally [default: false]");
+        genLygodium = prop.getBoolean();
+        prop = cfg.get("WorldGen Lygodium", "multiplierLygodium", multiplierLygodium);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierLygodium = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Cinnamon Fern", "genCinnamonFern", genCinnamonFern);
