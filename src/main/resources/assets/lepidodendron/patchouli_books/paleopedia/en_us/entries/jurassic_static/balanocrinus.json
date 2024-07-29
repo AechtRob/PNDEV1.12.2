@@ -12,10 +12,21 @@
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Isocrinidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/balanocrinus.png"],
-			"title": "B. subteres",
-			"text": ""
+			"type": "multiblock",
+			"name": "B. subteres",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_balanocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_balanocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_crinoid_balanocrinus",

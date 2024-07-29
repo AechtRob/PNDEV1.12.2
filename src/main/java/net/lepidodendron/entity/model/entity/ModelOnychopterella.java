@@ -173,7 +173,7 @@ public class ModelOnychopterella extends ModelBasePalaeopedia {
         this.setRotateAngle(Body5, 0.3F, 0.0F, 0.0F);
         this.setRotateAngle(legL4, 0.0F, -0.6F, 0.8F);
         this.setRotateAngle(legR4, 0.0F, 0.6F, -0.8F);
-        this.Body.offsetY = -0.05F;
+        this.Body.offsetY = 0.06F;
         this.Body.render(0.01F);
         resetToDefaultPose();
     }

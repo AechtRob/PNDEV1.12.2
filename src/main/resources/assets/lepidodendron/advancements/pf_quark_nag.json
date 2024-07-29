@@ -1,0 +1,7 @@
+{
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_quark_nag"
+		}
+	}
+}

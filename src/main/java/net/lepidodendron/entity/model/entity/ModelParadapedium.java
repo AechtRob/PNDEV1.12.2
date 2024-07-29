@@ -312,7 +312,7 @@ public class ModelParadapedium extends ModelBasePalaeopedia {
             speed = 0.7F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
+            this.chainSwing(fishTail, speed, 0.8F, -3, f2, 1);
             this.swing(Paradapedium, speed, 0.3F, true, 0, 0, f2, 1);
             this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.walk(PectoralL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);

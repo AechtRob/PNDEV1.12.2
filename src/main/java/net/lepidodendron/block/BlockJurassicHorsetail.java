@@ -83,9 +83,9 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHorsetail))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimJurassicHorsetail))
 			dimensionCriteria = true;
-		if ((!LepidodendronConfigPlants.genHorsetail) && (!LepidodendronConfig.genAllPlants))
+		if ((!LepidodendronConfigPlants.genJurassicHorsetail) && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
 			)
@@ -96,7 +96,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genHorsetailBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genJurassicHorsetailBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
@@ -112,7 +112,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genHorsetailOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genJurassicHorsetailOverrideBiomes))
 			biomeCriteria = true;
 
 		if (biome instanceof BiomeJurassic) {
@@ -132,7 +132,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			return;
 			
 		int GenChance = 5;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierHorsetail;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierJurassicHorsetail;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -159,8 +159,8 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			GenChance = 32;
 		}
 
-		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;
-		int minheight = LepidodendronConfigPlants.minheightHorsetail;
+		int maxheight = LepidodendronConfigPlants.maxheightJurassicHorsetail;
+		int minheight = LepidodendronConfigPlants.minheightJurassicHorsetail;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

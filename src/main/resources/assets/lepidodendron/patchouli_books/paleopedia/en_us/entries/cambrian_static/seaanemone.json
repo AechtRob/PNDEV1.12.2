@@ -12,10 +12,139 @@
 			"text": "$(l)Temporal Range:$() Cambrian+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hexacorallia$(br)>Actiniaria"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/anemone.png"],
-			"title": "Actiniaria",
-			"text": ""
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_2",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_3",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_4",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_5",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_6",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_7",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_8",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Actiniaria",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:sea_anemone_9",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_seaanemone",

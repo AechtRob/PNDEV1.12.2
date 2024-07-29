@@ -5440,6 +5440,12 @@ public class RenderHandler {
                 return new RenderErasipteroides(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraErasipteroidesNymph.class, new IRenderFactory<EntityPrehistoricFloraErasipteroidesNymph>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraErasipteroidesNymph> createRenderFor(RenderManager manager) {
+                return new RenderErasipteroidesNymph(manager);
+            }
+        });
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMonolophosaurus.class, new IRenderFactory<EntityPrehistoricFloraMonolophosaurus>() {
             @Override

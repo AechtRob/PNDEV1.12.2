@@ -107,7 +107,7 @@ public class EntityPrehistoricFloraBurgessomedusa extends EntityPrehistoricFlora
 
     @Override
     protected float getAISpeedJelly() {
-        return 0.07f;
+        return 0.03f;
     }
 
     @Override

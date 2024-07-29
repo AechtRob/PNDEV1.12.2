@@ -38,6 +38,7 @@ import net.minecraftforge.common.util.ModFixs;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -60,7 +61,7 @@ import java.util.function.Supplier;
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
-	public static final String VERSION = "60.0";
+	public static final String VERSION = "60.03";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
     @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
@@ -2340,6 +2341,11 @@ public class LepidodendronMod {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		if (LepidodendronConfig.modFlowerpot) {
+			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
+			}
+		}
 		elements.getElements().forEach(element -> element.init(event));
 		proxy.init(event);
 
@@ -2440,9 +2446,10 @@ public class LepidodendronMod {
 		}
 
 		if (LepidodendronConfig.modFlowerpot) {
-			GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
-			BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
-			event.getRegistry().register(newPot);
+			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
+				event.getRegistry().register(newPot);
+			}
 		}
 
 	}

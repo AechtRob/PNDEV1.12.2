@@ -9,12 +9,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.math.BlockPos;
+import org.lwjgl.opengl.GL11;
 
 public class RenderFlowerPotPN extends TileEntitySpecialRenderer<BlockFlowerpotPN.TileEntityFlowerPotPN> {
 
@@ -69,6 +71,9 @@ public class RenderFlowerPotPN extends TileEntitySpecialRenderer<BlockFlowerpotP
 
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        RenderHelper.enableStandardItemLighting();
         if (block instanceof BlockCactus) {
             GlStateManager.translate(x + 0.371, y + 0.2, z + 0.362);
         }
@@ -82,12 +87,12 @@ public class RenderFlowerPotPN extends TileEntitySpecialRenderer<BlockFlowerpotP
         else {
             GlStateManager.scale(0.80D, 0.80D, 0.80D);
         }
-        BlockRendererDispatcher renderer = Minecraft.getMinecraft().getBlockRendererDispatcher();
         Minecraft.getMinecraft().renderEngine.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-
+        BlockRendererDispatcher renderer = Minecraft.getMinecraft().getBlockRendererDispatcher();
         renderer.renderBlockBrightness(state, te.getWorld().getCombinedLight(new BlockPos(x, y, z), 0));
 
         GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
         GlStateManager.popMatrix();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 

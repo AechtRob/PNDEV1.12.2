@@ -18,11 +18,14 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -80,6 +83,19 @@ import java.util.UUID;
 
 public class LepidodendronEventSubscribers {
 
+	@SubscribeEvent //Stop ageing things in the cages:
+	public void onTickEntity(LivingEvent.LivingUpdateEvent event) {
+		EntityLivingBase entity = event.getEntityLiving();
+		if (entity instanceof EntityAgeable) {
+			if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockCageSmall.block) {
+				int i = Math.max(((EntityAgeable)entity).getGrowingAge(), -23999);
+				if (entity instanceof EntityVillager) {
+					i = Math.max(((EntityAgeable) entity).getGrowingAge(), -5999);
+				}
+				((EntityAgeable)entity).setGrowingAge(i - 1);
+			}
+		}
+	}
 
 	@SubscribeEvent //Stop vanilla fish in the dimensions:
 	public void onFishing(ItemFishedEvent event) {
@@ -186,13 +202,31 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-  	@SubscribeEvent //Give the Palaeopedia on first join:
+  	@SubscribeEvent //Give the Palaeopedia on first join and notify about flowerpots:
 	public void playerJoined(EntityJoinWorldEvent event) {
 		if (!LepidodendronConfig.giveBook) {
 			return;
 		}
 		if ((event.getEntity() instanceof EntityPlayerMP)) {
 			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+		}
+
+		if (LepidodendronConfig.modFlowerpot) {
+			if ((Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entity;
+					if ((event.getEntity() instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) {
+						if (!(((EntityPlayerMP) event.getEntity()).getAdvancements().getProgress(((WorldServer) entity.world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_quark_nag"))).isDone())) {
+							ITextComponent itextcomponent = new TextComponentString("You have Quark installed, and Quark has its own modded flower pots, which we don't know if you're using! If you want to use Prehistoric Nature flower pots and not Quark ones, you should disable Quark ones in the Quark config, and also amend the Prehistoric Nature config file to make Prehistoric Nature ones load.");
+							itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+							entity.sendMessage(itextcomponent);
+							ModTriggers.QUARK_NAG.trigger((EntityPlayerMP) event.getEntity());
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -634,12 +668,29 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //Let eggs drop their right items:
+	@SubscribeEvent
 	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
 		if ((!event.getWorld().isRemote)) {
 			if (event.getPlayer() != null) {
+				//Let eggs drop their right items:
 				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {
 					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), BlockEggs.BlockCustom.getEggItemStack(event.getWorld(), event.getPos()));
+					entityToSpawn.setPickupDelay(10);
+					event.getWorld().spawnEntity(entityToSpawn);
+				}
+				//Let small angiosperm seeds drop sometimes:
+				if (!event.getPlayer().isCreative()
+						&& (event.getState().getMaterial() == Material.GROUND ||  event.getState().getMaterial() == Material.GRASS)
+						&& event.getWorld().rand.nextInt(50) == 0
+						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousLate
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPaleogene
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimNeogene
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPleistocene
+							|| event.getWorld().provider.getDimension() == 0
+						)
+				) {
+					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(ItemSmallAngiospermSeeds.block, 1));
 					entityToSpawn.setPickupDelay(10);
 					event.getWorld().spawnEntity(entityToSpawn);
 				}
@@ -761,10 +812,15 @@ public class LepidodendronEventSubscribers {
 		//}
 	}
 
-	@SubscribeEvent //Steam in the Hot Springs:
+	@SubscribeEvent //Steam in the right places:
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		Random rand = new Random();
-		if (event.phase == TickEvent.Phase.END && (event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian || event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous)) {
+		if (event.phase == TickEvent.Phase.END &&
+				(event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+				)
+		) {
 			Entity entity = event.player;
 			World world = entity.world;
 			BlockPos pos = entity.getPosition();
@@ -777,7 +833,9 @@ public class LepidodendronEventSubscribers {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
 							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
-									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift"))
 									&& rand.nextInt(150) == 0) {
 								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());

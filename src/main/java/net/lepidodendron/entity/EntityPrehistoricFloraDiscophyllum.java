@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraDiscophyllum extends EntityPrehistoricFloraAg
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.07F;
+		return 0.03F;
 	}
 
 	@Override

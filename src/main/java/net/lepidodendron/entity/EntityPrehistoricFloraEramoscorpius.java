@@ -125,7 +125,6 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		return false;
 	}
 
-
 	@Override
 	public int getAttackLength() {
 		return 15;
@@ -137,10 +136,12 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		float speed = 0.365F;
+
 		if (this.getIsFast()) {
-			return (float) Math.min(1F, (this.getAgeScale() * 1.60F)) * 0.34F;
+			return speed * 1.65F;
 		}
-		return (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
+		return speed;
 	}
 
 	@Override
@@ -172,6 +173,16 @@ public class EntityPrehistoricFloraEramoscorpius extends EntityPrehistoricFloraW
 	}
 
 	public static String getPeriod() {return "Silurian";}
+
+	@Override
+	public int airTime() {
+		return 10000;
+	}
+
+	@Override
+	public boolean breathesAir() {
+		return true;
+	}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
