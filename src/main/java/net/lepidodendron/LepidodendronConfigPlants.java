@@ -10127,34 +10127,6 @@ public class LepidodendronConfigPlants {
         multiplierHydrangea = prop.getDouble();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("WorldGen Angiopteris", "genAngiopteris", genAngiopteris);
-        prop.setComment("Set to true to generate Angiopteris naturally [default: false]");
-        genAngiopteris = prop.getBoolean();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisBlacklistBiomes", genAngiopterisBlacklistBiomes);
-        prop.setComment("List of biomes Angiopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
-        genAngiopterisBlacklistBiomes = prop.getStringList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisOverrideBiomes", genAngiopterisOverrideBiomes);
-        prop.setComment("List of biomes Angiopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
-        genAngiopterisOverrideBiomes = prop.getStringList();
-        prop = cfg.get("WorldGen Angiopteris", "dimAngiopteris", dimAngiopteris);
-        prop.setComment("List of dimension IDs Angiopteris can generate in [default: 0]");
-        dimAngiopteris = prop.getIntList();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Angiopteris", "minheightAngiopteris", minheightAngiopteris);
-        prop.setComment("Minimum height that Angiopteris can generate (1 to 250) [default: 1]");
-        minheightAngiopteris = prop.getInt();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Angiopteris", "maxheightAngiopteris", maxheightAngiopteris);
-        prop.setComment("Maximum height that Angiopteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
-        maxheightAngiopteris = prop.getInt();
-        propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Angiopteris", "multiplierAngiopteris", multiplierAngiopteris);
-        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
-        multiplierAngiopteris = prop.getDouble();
-        propOrder.add(prop.getName());
-
         prop = cfg.get("WorldGen Lophosoria", "genLophosoria", genLophosoria);
         prop.setComment("Set to true to generate Lophosoria naturally [default: false]");
         genLophosoria = prop.getBoolean();
@@ -13607,6 +13579,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lichen", "radiusLichen", radiusLichen);
         prop.setComment("Radius Lichen can spread (0 to 8). Increasing this may cause lag. [default: 2]");
         radiusLichen = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopteris", genAngiopteris);
+        prop.setComment("Set to true to generate Angiopteris naturally [default: false]");
+        genAngiopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisBlacklistBiomes", genAngiopterisBlacklistBiomes);
+        prop.setComment("List of biomes Angiopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAngiopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisOverrideBiomes", genAngiopterisOverrideBiomes);
+        prop.setComment("List of biomes Angiopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAngiopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Angiopteris", "dimAngiopteris", dimAngiopteris);
+        prop.setComment("List of dimension IDs Angiopteris can generate in [default: 0]");
+        dimAngiopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "minheightAngiopteris", minheightAngiopteris);
+        prop.setComment("Minimum height that Angiopteris can generate (1 to 250) [default: 1]");
+        minheightAngiopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "maxheightAngiopteris", maxheightAngiopteris);
+        prop.setComment("Maximum height that Angiopteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightAngiopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "multiplierAngiopteris", multiplierAngiopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAngiopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
 

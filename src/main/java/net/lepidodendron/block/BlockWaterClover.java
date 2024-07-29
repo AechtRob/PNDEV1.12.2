@@ -117,6 +117,14 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 					biomeCriteria = true;
 				}
 			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")) {
+					biomeCriteria = true;
+				}
+				else {
+					biomeCriteria = false;
+				}
+			}
 			else {
 				biomeCriteria = false;
 			}
