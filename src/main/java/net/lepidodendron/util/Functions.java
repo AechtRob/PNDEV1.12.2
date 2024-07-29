@@ -221,7 +221,7 @@ public class Functions {
             }
         }
 
-        if (state.causesSuffocation()) { //If we are about to place a block that could kill an entity here:
+        if (state.causesSuffocation() && state.getMaterial() != Material.WOOD) { //If we are about to place a block that could kill an entity here (but which isn't a tree):
             List<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
             if (!getEntities.isEmpty()) {
                 int ascendor = 0;
@@ -237,7 +237,7 @@ public class Functions {
                         }
                     }
                 }
-                else if (worldIn.getBlockState(pos).getMaterial() == Material.WOOD) { //Was not water, so check for something that isn't water and which is safe, but which isn't a tree being put here
+                else { //Was not water, so check for something that isn't water and which is safe
                     for (int n = 1; n < 8; n++) {
                         if ((!worldIn.getBlockState(pos.up(n)).causesSuffocation()) && worldIn.getBlockState(pos.up(n)).getMaterial() != Material.WATER) {
                             //Move the entity to here:
