@@ -237,7 +237,7 @@ public class Functions {
                         }
                     }
                 }
-                else { //Was not water, so check for something that isn't water and which is safe
+                else if (worldIn.getBlockState(pos).getMaterial() == Material.WOOD) { //Was not water, so check for something that isn't water and which is safe, but which isn't a tree being put here
                     for (int n = 1; n < 8; n++) {
                         if ((!worldIn.getBlockState(pos.up(n)).causesSuffocation()) && worldIn.getBlockState(pos.up(n)).getMaterial() != Material.WATER) {
                             //Move the entity to here:
