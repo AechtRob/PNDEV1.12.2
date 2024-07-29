@@ -2059,6 +2059,13 @@ public class LepidodendronConfigPlants {
     public static int minheightLophosoria = 1;
     public static int maxheightLophosoria = 90;
     public static double multiplierLophosoria = 1;
+    public static boolean genAngiopteris = false;
+    public static String[] genAngiopterisBlacklistBiomes = new String[0];
+    public static String[] genAngiopterisOverrideBiomes = new String[0];
+    public static int[] dimAngiopteris = new int[]{0};
+    public static int minheightAngiopteris = 1;
+    public static int maxheightAngiopteris = 90;
+    public static double multiplierAngiopteris = 1;
     public static boolean genHydrangea = false;
     public static String[] genHydrangeaBlacklistBiomes = new String[0];
     public static String[] genHydrangeaOverrideBiomes = new String[0];
@@ -10118,6 +10125,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Hydrangea", "multiplierHydrangea", multiplierHydrangea);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierHydrangea = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopteris", genAngiopteris);
+        prop.setComment("Set to true to generate Angiopteris naturally [default: false]");
+        genAngiopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisBlacklistBiomes", genAngiopterisBlacklistBiomes);
+        prop.setComment("List of biomes Angiopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAngiopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisOverrideBiomes", genAngiopterisOverrideBiomes);
+        prop.setComment("List of biomes Angiopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAngiopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Angiopteris", "dimAngiopteris", dimAngiopteris);
+        prop.setComment("List of dimension IDs Angiopteris can generate in [default: 0]");
+        dimAngiopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "minheightAngiopteris", minheightAngiopteris);
+        prop.setComment("Minimum height that Angiopteris can generate (1 to 250) [default: 1]");
+        minheightAngiopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "maxheightAngiopteris", maxheightAngiopteris);
+        prop.setComment("Maximum height that Angiopteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightAngiopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "multiplierAngiopteris", multiplierAngiopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAngiopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Lophosoria", "genLophosoria", genLophosoria);
