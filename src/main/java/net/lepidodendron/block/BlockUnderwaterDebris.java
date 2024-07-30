@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -176,6 +177,29 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 				if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake) {
 					multiplier = 50;
 				}
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+//			if (biomeCretaceousEarly.getBiomeType() != EnumBiomeTypeCretaceousEarly.Ocean
+//					&& biomeCretaceousEarly.getBiomeType() != EnumBiomeTypeCretaceousEarly.Garrigue) {
+//				biomeCriteria = true;
+//				if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.River) {
+//					multiplier = 5;
+//				}
+//				if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Lake) {
+//					multiplier = 50;
+//				}
+//			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_boggy_glades")) {
+				multiplier = 3;
+				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;

@@ -221,7 +221,7 @@ public class Functions {
             }
         }
 
-        if (state.causesSuffocation()) { //If we are about to place a block that could kill an entity here:
+        if (state.causesSuffocation() && state.getMaterial() != Material.WOOD) { //If we are about to place a block that could kill an entity here (but which isn't a tree):
             List<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
             if (!getEntities.isEmpty()) {
                 int ascendor = 0;
