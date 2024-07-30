@@ -36,7 +36,7 @@ public class WorldGenSlab extends WorldGenerator
         for (int i = 0; i < 25; ++i)
         {
             BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
-            boolean isSuitable = true;
+            boolean isSuitable = worldIn.getBlockState(blockpos.down()).isTopSolid();
 
             if (worldIn.getBlockState(blockpos.down()).getMaterial() != Material.GROUND
                     && worldIn.getBlockState(blockpos.down()).getMaterial() != Material.SAND
