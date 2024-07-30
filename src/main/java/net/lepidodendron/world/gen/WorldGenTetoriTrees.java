@@ -11,10 +11,10 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenTetoriTree extends WorldGenAbstractTree
+public class WorldGenTetoriTrees extends WorldGenAbstractTree
 {
 
-    public WorldGenTetoriTree(boolean notify)
+    public WorldGenTetoriTrees(boolean notify)
     {
         super(notify);
     }
@@ -83,7 +83,12 @@ public class WorldGenTetoriTree extends WorldGenAbstractTree
                         ProcedureWorldGenPodozamites.executeProcedure($_dependencies);
                     }
                     else if (position.getY() == 64) {
-                        ProcedureWorldGenCzekanowskia.executeProcedure($_dependencies);
+                        if (rand.nextInt(2) == 0) {
+                            ProcedureWorldGenCzekanowskia.executeProcedure($_dependencies);
+                        }
+                        else {
+                            ProcedureWorldGenPodozamites.executeProcedure($_dependencies);
+                        }
                     }
                     else if (position.getY() == 65) {
                         if (rand.nextInt(2) == 0) {
