@@ -197,7 +197,8 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCretaceousEarly)
 		{
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_boggy_glades")) {
 				biomeCriteria = true;
 			}
 			else {
