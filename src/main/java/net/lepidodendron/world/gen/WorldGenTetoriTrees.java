@@ -78,6 +78,7 @@ public class WorldGenTetoriTrees extends WorldGenAbstractTree
 					$_dependencies.put("x", position.getX());
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
+                    $_dependencies.put("SaplingSpawn",false);
 					$_dependencies.put("world", worldIn);
                     if (position.getY() == 63) {
                         ProcedureWorldGenPodozamites.executeProcedure($_dependencies);

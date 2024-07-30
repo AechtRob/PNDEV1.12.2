@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -191,13 +192,28 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
+
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
 		int multiplier = 1;
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-			|| dimID == LepidodendronConfig.dimDevonian
-			|| dimID == LepidodendronConfig.dimJurassic
+		if (dimID == LepidodendronConfig.dimOrdovician
+				|| dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			multiplier = 2;
 		}
@@ -207,7 +223,7 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 			multiplier = 10;
 		}
 
-		if ((dimID == LepidodendronConfig.dimTriassic)
+		if ((dimID == LepidodendronConfig.dimTriassic )
 		) {
 			multiplier = 5;
 		}
