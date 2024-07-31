@@ -34,7 +34,7 @@ public class WorldGenEarlyCretaceousBandedDesertNearWater extends WorldGenerator
                 //Check for water and make denser near water:
                 int ii = 0;
                 int water = 0;
-                while (ii < 6 && water == 0) {
+                while (ii < 4 && water == 0) {
                     int xx = -ii;
                     while (xx <= ii && water == 0) {
                         int zz = -ii;
@@ -54,10 +54,10 @@ public class WorldGenEarlyCretaceousBandedDesertNearWater extends WorldGenerator
                 if (p >= 65) {
                     iblockstate = BlockDriedMud.block.getDefaultState();
                 }
-                else if (p >= 55) {
+                else if (p >= 35) {
                     iblockstate = BlockRedClay.block.getDefaultState();
                 }
-                else if (p >= 45) {
+                else if (p >= 25) {
                     if (rand.nextInt(2) == 0) {
                         iblockstate = Blocks.SAND.getStateFromMeta(1);
                     }
@@ -65,14 +65,14 @@ public class WorldGenEarlyCretaceousBandedDesertNearWater extends WorldGenerator
                         iblockstate = BlockSandRedWavy.block.getDefaultState();
                     }
                 }
-                else if (p >= 40) {
+                else if (p >= 15) {
                     iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
                 }
                 else if (p >= 35) {
                     iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
                 }
 
-                //water is a number between 0 and 6:
+                //water is a number between 0 and 4:
                 if (water != 0) {
                     if (rand.nextInt(water + 1) == 0) {
                         Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos.down(), iblockstate, 2);
