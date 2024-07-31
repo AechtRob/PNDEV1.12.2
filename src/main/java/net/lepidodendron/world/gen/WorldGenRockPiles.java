@@ -29,10 +29,14 @@ public class WorldGenRockPiles extends WorldGenerator
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
-        return generate(worldIn, rand, position, false);
+        return generate(worldIn, rand, position, false, true);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy) {
+        return generate(worldIn, rand, position, mossy, true);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy, boolean sandy)
     {
         while (true)
         {
@@ -94,6 +98,9 @@ public class WorldGenRockPiles extends WorldGenerator
                                 }
                                 if (Math.random() > 0.85) {
                                     blockIn = Blocks.SAND;
+                                    if (!sandy) {
+                                        blockIn = Blocks.GRAVEL;
+                                    }
                                 }
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn.getDefaultState(), 16);
                                 spawnLife(worldIn, blockpos.getX(), blockpos.getY(), blockpos.getZ(), rand);
