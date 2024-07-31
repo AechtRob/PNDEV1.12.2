@@ -98,10 +98,10 @@ public class ModelWaagenella extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.whole.offsetY = 0.0F;
-        this.whole.offsetX = 0.1F;
+        this.whole.offsetY = -1.5F;
+        this.whole.offsetX = -0.15F;
         this.whole.rotateAngleY = (float)Math.toRadians(220);
-        this.whole.rotateAngleX = (float)Math.toRadians(0);
+        this.whole.rotateAngleX = (float)Math.toRadians(9);
         this.whole.rotateAngleZ = (float)Math.toRadians(0);
         float scaler = 3.5F;
         this.whole.scaleChildren = true;
