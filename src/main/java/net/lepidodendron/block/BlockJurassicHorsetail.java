@@ -7,6 +7,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
@@ -88,6 +89,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 		if ((!LepidodendronConfigPlants.genJurassicHorsetail) && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 			)
 			dimensionCriteria = true;
 
@@ -128,6 +130,16 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousEarly) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
+			 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 			
@@ -159,6 +171,11 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			GenChance = 32;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")) {
+			GenChance = 256;
+		}
+
 		int maxheight = LepidodendronConfigPlants.maxheightJurassicHorsetail;
 		int minheight = LepidodendronConfigPlants.minheightJurassicHorsetail;
 		if (maxheight < 0) {maxheight = 0;}
@@ -177,6 +194,23 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 20; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")) {
+							if (world.getBlockState(blockpos1.down().north()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west(2)).getMaterial() != Material.WATER) {
+								continue;
+							}
+						}
 						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0) ) {
 							int j = 1 + random.nextInt(random.nextInt(plantLimit) + 1);
 							j = Math.max(2, j);
@@ -390,7 +424,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        	tooltip.add("Periods: Jurassic");
+	        	tooltip.add("Periods: Jurassic - early Cretaceous");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
