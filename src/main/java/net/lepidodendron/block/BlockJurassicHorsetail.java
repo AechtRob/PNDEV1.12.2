@@ -7,6 +7,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -173,7 +174,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")) {
-			GenChance = 256;
+			GenChance = 16; //Also has a specific surface-finding override to make these common, below:
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightJurassicHorsetail;
@@ -197,6 +198,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
 								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")
 								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills")) {
+							blockpos1 = ChunkGenSpawner.getTopSolidBlock(blockpos1, world).up();
 							if (world.getBlockState(blockpos1.down().north()).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().east()).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().south()).getMaterial() != Material.WATER
@@ -208,7 +210,11 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 									&& world.getBlockState(blockpos1.down().north(2)).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().east(2)).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().south(2)).getMaterial() != Material.WATER
-									&& world.getBlockState(blockpos1.down().west(2)).getMaterial() != Material.WATER) {
+									&& world.getBlockState(blockpos1.down().west(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north(3)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east(3)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south(3)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west(3)).getMaterial() != Material.WATER) {
 								continue;
 							}
 						}
