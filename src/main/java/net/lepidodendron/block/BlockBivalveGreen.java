@@ -79,7 +79,6 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pndietShellfish", BlockBivalveGreen.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
@@ -90,6 +89,7 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 		) {
 			dimensionCriteria = true;
 		}
@@ -103,6 +103,7 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 			|| dimID == LepidodendronConfig.dimPermian
 			|| dimID == LepidodendronConfig.dimTriassic
 			|| dimID == LepidodendronConfig.dimJurassic
+			|| dimID == LepidodendronConfig.dimCretaceousEarly
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -200,7 +201,9 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_boggy_glades")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")) {
 				biomeCriteria = true;
 			}
 			else {
