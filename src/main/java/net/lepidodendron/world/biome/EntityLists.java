@@ -446,7 +446,8 @@ public class EntityLists {
             if (LepidodendronConfig.doSpawnsReborn) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsSpringsReborn);
             }
-        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_savanna")) {
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_savanna")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_savanna")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsSavannaPF);
             }
@@ -456,7 +457,8 @@ public class EntityLists {
             if (LepidodendronConfig.doSpawnsReborn) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsSavannaReborn);
             }
-        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale")) {
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale")
+            || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_vale")) {
             if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsDevonian.dimDevonianMobsValePF);
             }
