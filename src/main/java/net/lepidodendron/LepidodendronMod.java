@@ -2323,6 +2323,35 @@ public class LepidodendronMod {
 	public static final int GUI_TIME_RESEARCHER_ID = 940;
 	public static final int GUI_TIME_RESEARCHER_FINDER_ID = 941;
 
+	public static final int ENTITY_LUSOTITAN = 942;
+	public static final ResourceLocation LUSOTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lusotitan"));
+	public static final ResourceLocation LUSOTITAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lusotitan_young"));
+	public static final int ENTITY_EUSTREPTOSPONDYLUS = 943;
+	public static final ResourceLocation EUSTREPTOSPONDYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eustreptospondylus"));
+	public static final ResourceLocation EUSTREPTOSPONDYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eustreptospondylus_young"));
+
+	public static final int ENTITY_ORESTIACANTHUS = 944;
+	public static final ResourceLocation ORESTIACANTHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orestiacanthus"));
+	public static final ResourceLocation ORESTIACANTHUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orestiacanthus_f"));
+	public static final int ENTITY_ROMERODUS = 945;
+	public static final ResourceLocation ROMERODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/romerodus"));
+	public static final int ENTITY_CHONDRENCHELYS = 946;
+	public static final ResourceLocation CHONDRENCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chondrenchelys"));
+	public static final int ENTITY_GREGORIUS = 947;
+	public static final ResourceLocation GREGORIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gregorius"));
+	public static final int ENTITY_SRIANTA = 948;
+	public static final ResourceLocation SRIANTA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/srianta"));
+	public static final int ENTITY_GANSUSELACHE = 949;
+	public static final ResourceLocation GANSUSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gansuselache"));
+	public static final ResourceLocation GANSUSELACHE_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gansuselache_f"));
+
+	public static final int ENTITY_GOODRICHTHYS = 950;
+	public static final ResourceLocation GOODRICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/goodrichthys"));
+
+
+	public static final int ENTITY_OBRUCHEVODUS = 951;
+	public static final ResourceLocation OBRUCHEVODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/obruchevodus"));
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

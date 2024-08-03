@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraXenacanthus extends EntityPrehistoricFloraAge
 		return this.getAgeScale() < 0.5;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
