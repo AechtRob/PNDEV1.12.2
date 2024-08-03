@@ -14,7 +14,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.12.2-60.03'
+version = '1.12.2-61.0'
 group = 'com.github.aechtrob.prehistoricflora' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'lepidodendron'
 
@@ -134,6 +134,7 @@ publishing {
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
+    zip64=true
 	classifier = 'sources'
 	from sourceSets.main.allSource
 }
