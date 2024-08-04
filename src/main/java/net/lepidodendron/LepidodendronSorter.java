@@ -4924,5 +4924,17 @@ public class LepidodendronSorter {
     public static final int gansuselache_raw = 5009;
     public static final int goodrichthys_raw = 5010;
     public static final int obruchevodus_raw = 5011;
+    public static final int mooreodontus_raw = 5012;
+    public static final int hagenoselache_raw = 5013;
+    public static final int diplodoselache_raw = 5014;
+    public static final int archaeothyris_raw = 5015;
+    public static final int idmonarachne_raw = 5016;
+    public static final int trigonotarbid_gondwanarachne_raw = 5017;
+    public static final int eggs_mooreodontus = 5018;
+    public static final int eggs_mooreodontus_worldgen = 5019;
+    public static final int eggs_diplodoselache = 5020;
+    public static final int eggs_diplodoselache_worldgen = 5021;
+    public static final int eggs_archaeothyris = 5022;
+    public static final int insect_eggs_idmonarachne = 5023;
 
 }

@@ -235,6 +235,9 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hypuronector")) {
 				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHypuronector.block, (int) (1)));
 			}
+			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_archaeothyris")) {
+				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsArchaeothyris.block, (int) (1)));
+			}
 			return null;
 		}
 

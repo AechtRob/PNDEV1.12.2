@@ -2352,6 +2352,21 @@ public class LepidodendronMod {
 	public static final int ENTITY_OBRUCHEVODUS = 951;
 	public static final ResourceLocation OBRUCHEVODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/obruchevodus"));
 
+	public static final int ENTITY_HAGENOSELACHE = 952;
+	public static final ResourceLocation HAGENOSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hagenoselache"));
+	public static final int ENTITY_DIPLODOSELACHE = 953;
+	public static final ResourceLocation DIPLODOSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diplodoselache"));
+	public static final int ENTITY_MOOREODONTUS = 954;
+	public static final ResourceLocation MOOREODONTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mooreodontus"));
+	public static final int ENTITY_IDMONARACHNE = 955;
+	public static final int ENTITY_TRIGONOTARBID_GONDWANARACHNE = 956;
+	public static final ResourceLocation GONDWANARACHNE_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gondwanarachne_jar"));
+	public static final ResourceLocation IDMONARACHNE_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/idmonarachne_jar"));
+
+	public static final int ENTITY_ARCHAEOTHYRIS = 957;
+	public static final ResourceLocation ARCHAEOTHYRIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaeothyris"));
+
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

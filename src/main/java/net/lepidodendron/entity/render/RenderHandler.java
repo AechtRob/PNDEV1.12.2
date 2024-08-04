@@ -5718,6 +5718,43 @@ public class RenderHandler {
                 return new RenderSrianta(manager);
             }
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIdmonarachne.class, new IRenderFactory<EntityPrehistoricFloraIdmonarachne>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIdmonarachne> createRenderFor(RenderManager manager) {
+                return new RenderIdmonarachne(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTrigonotarbid_Gondwanarachne.class, new IRenderFactory<EntityPrehistoricFloraTrigonotarbid_Gondwanarachne>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTrigonotarbid_Gondwanarachne> createRenderFor(RenderManager manager) {
+                return new RenderTrigonotarbid_Gondwanarachne(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeothyris.class, new IRenderFactory<EntityPrehistoricFloraArchaeothyris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeothyris> createRenderFor(RenderManager manager) {
+                return new RenderArchaeothyris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMooreodontus.class, new IRenderFactory<EntityPrehistoricFloraMooreodontus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMooreodontus> createRenderFor(RenderManager manager) {
+                return new RenderMooreodontus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHagenoselache.class, new IRenderFactory<EntityPrehistoricFloraHagenoselache>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHagenoselache> createRenderFor(RenderManager manager) {
+                return new RenderHagenoselache(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiplodoselache.class, new IRenderFactory<EntityPrehistoricFloraDiplodoselache>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDiplodoselache> createRenderFor(RenderManager manager) {
+                return new RenderDiplodoselache(manager);
+            }
+        });
         
         
         
