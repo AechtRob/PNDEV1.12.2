@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.BlockLogPF;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -15,6 +16,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EntitySelectors;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -44,6 +46,10 @@ public class Functions {
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")) {
                 return 87;
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_a")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_b")) {
+                return 140;
             }
         }
         return world.getSeaLevel();
@@ -337,6 +343,39 @@ public class Functions {
             num /= newBase;
         }
         return new StringBuffer(result).reverse().toString();
+    }
+
+
+
+    public static void restoreLogs(World worldIn, BlockPos position) {
+        IBlockState state = null;
+        if (worldIn.getBlockState(position.up()).getBlock() instanceof BlockLogPF) {
+            IBlockState blocklog = worldIn.getBlockState(position.up());
+            if (blocklog.getValue(BlockLogPF.FACING) == EnumFacing.NORTH) {
+                state = blocklog.withProperty(BlockLogPF.FACING, EnumFacing.NORTH);
+            }
+        }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockCycasLog.block) {
+            state = BlockCycasLog.block.getDefaultState();
+        }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockCycadeoideaLog.block) {
+            state = BlockCycadeoideaLog.block.getDefaultState();
+        }
+        if (state != null && state.getBlock() instanceof BlockLogPF) {
+            worldIn.setBlockState(position, state, 16);
+            if (!worldIn.getBlockState(position.down()).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(2)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(2), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(3)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(3), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(4)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(4), state, 16);
+            }
+        }
     }
 
 }

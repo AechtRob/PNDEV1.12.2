@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:rogersia"},
+      {"model": "lepidodendron:rogersia"},
+      {"model": "lepidodendron:rogersia"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:rogersia"
+    }
+  }
+}
