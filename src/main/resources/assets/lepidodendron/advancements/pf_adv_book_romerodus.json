@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:romerodus_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_romerodus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_romerodus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_romerodus"
+		}
+	}
+}
