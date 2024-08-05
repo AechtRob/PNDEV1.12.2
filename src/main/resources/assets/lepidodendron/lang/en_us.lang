@@ -8474,6 +8474,7 @@ tile.pf_sublepidodendron.name=Sublepidodendron
 tile.pf_sublepidodendron_shoot.name=Sublepidodendron
 tile.pf_sulfuric_acid.name=Lab-Grade Sulfuric Acid
 tile.pf_sulphur_block.name=Sulphur Block
+tile.pf_sulphur_block_raw.name=Raw Sulphur Block
 tile.pf_sulphur_ore.name=Sulphur Ore
 tile.pf_sulphur_ore_lava.name=Lava Rock Sulphur Ore
 tile.pf_sulphur_ore_netherrack.name=Netherrack Sulphur Ore
