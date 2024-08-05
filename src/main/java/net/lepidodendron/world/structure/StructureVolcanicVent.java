@@ -2,6 +2,7 @@
 package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockSulphurOre;
 import net.lepidodendron.block.BlockToxicMud;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.material.Material;
@@ -108,6 +109,19 @@ public class StructureVolcanicVent extends ElementsLepidodendronMod.ModElement {
 					world.setBlockToAir(bp);
 					world.setBlockState(bp.down(), BlockToxicMud.block.getDefaultState());
 				}
+				for (BlockPos bp : ventPos) {
+					placeSulphur(world, bp);
+				}
+			}
+		}
+	}
+
+	public static void placeSulphur(World world, BlockPos pos) {
+		for (int x = -1; x <= 1; x++) {
+			for (int z = -1; z <= 1; z++) {
+				if (!world.isAirBlock(pos.add(x, 0, z)) && world.rand.nextInt(4) == 0) {
+					world.setBlockState(pos.add(x, 0, z), BlockSulphurOre.block.getDefaultState());
+				}
 			}
 		}
 	}
@@ -117,17 +131,20 @@ public class StructureVolcanicVent extends ElementsLepidodendronMod.ModElement {
 		if (!world.isBlockLoaded(pos)) {
 			return false;
 		}
-		if (!world.isBlockLoaded(pos.north())) {
-			return false;
+		for (int x = -2; x <= 2; x++) {
+			for (int z = -2; z <= 2; z++) {
+				if (!world.isBlockLoaded(pos.add(x, 0, z))) {
+					return false;
+				}
+			}
 		}
-		if (!world.isBlockLoaded(pos.south())) {
-			return false;
-		}
-		if (!world.isBlockLoaded(pos.east())) {
-			return false;
-		}
-		if (!world.isBlockLoaded(pos.west())) {
-			return false;
+
+		for (int x = -1; x <= 1; x++) {
+			for (int z = -1; z <= 1; z++) {
+				if (world.isAirBlock(pos.add(x, 0, z))) {
+					return false;
+				}
+			}
 		}
 
 		IBlockState block = world.getBlockState(pos);
