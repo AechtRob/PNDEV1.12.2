@@ -199,7 +199,8 @@ public class BlockUnderwaterDebris extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_boggy_glades")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
 				multiplier = 3;
 				biomeCriteria = true;
 			}
