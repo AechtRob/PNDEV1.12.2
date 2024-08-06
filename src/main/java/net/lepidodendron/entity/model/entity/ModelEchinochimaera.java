@@ -646,10 +646,11 @@ public class ModelEchinochimaera extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.setRotateAngle(body, 0.1F, 1.5F, 0.05F);
         this.body.offsetY = -0.01F;
         this.body.offsetX = 0.01F;
-        this.body.offsetZ = 0.13F;
-        this.malejaw.rotateAngleX = (float) Math.toRadians(22.5);
+        this.body.offsetZ = 0.04F;
+        this.malejaw.rotateAngleX = (float) Math.toRadians(23);
         this.body.rotateAngleX = (float) Math.toRadians(0);
         this.body.rotateAngleZ = (float) Math.toRadians(0);
         this.body.render(0.01F);

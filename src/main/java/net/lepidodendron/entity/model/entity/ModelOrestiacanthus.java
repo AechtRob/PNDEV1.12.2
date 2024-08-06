@@ -229,15 +229,16 @@ public class ModelOrestiacanthus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-
-    public void renderStaticWall(float f) {
-        this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetX = -0.035F;
-        this.main.offsetY = 0.03F;
-        this.main.render(0.01F);
-        this.resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.05F;
+        this.main.offsetY = -0.06F;
+        this.main.render(0.01F);
         this.resetToDefaultPose();
     }
 

@@ -348,16 +348,16 @@ public class ModelYunguisaurus extends ModelBasePalaeopedia {
         this.Yunguisaurus.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.neck.rotateAngleY = (float) Math.toRadians(90);
-        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(lowerjaw, 0.0F, 0.0F, 0.0F);
-        this.neck.offsetY = -0.04F;
+        this.setRotateAngle(neck, 0.2F, -0.18F, 0.0F);
+        this.setRotateAngle(neck2, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(neck3, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(neck4, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(neck5, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.neck.offsetY = 0.01F;
         this.neck.offsetX = 0.0F;
-        this.neck.offsetZ = 0.0F;
+        this.neck.offsetZ = 0.15F;
         this.neck.render(0.01F);
         resetToDefaultPose();
     }

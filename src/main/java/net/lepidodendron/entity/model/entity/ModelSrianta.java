@@ -311,11 +311,24 @@ public class ModelSrianta extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(main, 0.0F, 1.58F, 0.0F);
+        this.main.offsetZ = -0.285F;
+        this.main.offsetY = -0.2F;
+        this.main.offsetX = -0.03F;
+        this.main.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(main, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, -0.2F, 0.2F);
+        this.setRotateAngle(tail4, 0.2F, -0.4F, 0.2F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.0F;
+        this.main.offsetY = -0.1F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     @Override

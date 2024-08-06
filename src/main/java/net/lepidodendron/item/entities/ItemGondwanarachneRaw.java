@@ -4,6 +4,7 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemGondwanarachneRaw extends ElementsLepidodendronMod.ModElement {
@@ -38,13 +41,25 @@ public class ItemGondwanarachneRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("pnfurnaceBug", ItemGondwanarachneRaw.block);
 		OreDictionary.registerOre("pndietBug", ItemGondwanarachneRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
+	public static class ItemFoodCustom extends ItemGlassCaseDisplayItem {
 		public ItemFoodCustom() {
 			super(1, 0.05f, false);
 			setTranslationKey("pf_gondwanarachne_raw");
 			setRegistryName("gondwanarachne_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne";
+		}
+
+		@Nullable
+		@Override
+		public String getVariantStr() {
+			return null;
 		}
 	}
 }

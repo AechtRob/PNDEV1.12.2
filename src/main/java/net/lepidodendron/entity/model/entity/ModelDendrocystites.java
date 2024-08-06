@@ -96,14 +96,6 @@ public class ModelDendrocystites extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStaticWall(float f) {
-        this.main.rotateAngleX = (float) Math.toRadians(90);
-        this.main.offsetY = 0.04F;
-        this.main.offsetX = 0.0F;
-        this.main.offsetZ = 0.0F;
-        this.main.render(0.01F);
-        resetToDefaultPose();
-    }
 
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, 0.1F, 0.0F, 0.0F);

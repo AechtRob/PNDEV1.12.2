@@ -175,10 +175,10 @@ public class ModelAteleaspis extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetY = -0.15F;
-        this.head.offsetX = -0.1F;
-        this.head.offsetZ = 0.025F;
+        this.setRotateAngle(head, 1.5F, 0.0F, -0.0F);
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = -0.0F;
+        this.head.offsetZ = 0.0F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }

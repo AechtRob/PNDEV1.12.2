@@ -376,6 +376,31 @@ public class ModelArchaeothyris extends ModelBasePalaeopedia {
         this.hips.render(f5);
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hips, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(leftarm, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightarm, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(rightarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, -0.2F, -0.4F, -0.4F);
+        this.setRotateAngle(leftleg2, 0.6F, 0.0F, 0.3F);
+        this.setRotateAngle(leftfoot, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfoot, 0.0F, 0.0F, 0.0F);
+        this.hips.offsetY = 0.15F;
+        this.hips.offsetX = -0.0F;
+        this.hips.render(0.01F);
         this.resetToDefaultPose();
     }
     @Override
@@ -390,7 +415,28 @@ public class ModelArchaeothyris extends ModelBasePalaeopedia {
         this.hips.scaleChildren = true;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.25F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(leftarm, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(leftarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightarm, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(rightarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftleg, -0.2F, -0.4F, -0.4F);
+        this.setRotateAngle(leftleg2, 0.6F, 0.0F, 0.3F);
+        this.setRotateAngle(leftfoot, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfoot, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

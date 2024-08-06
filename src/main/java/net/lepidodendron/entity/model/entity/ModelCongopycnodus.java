@@ -216,6 +216,11 @@ public class ModelCongopycnodus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.setRotateAngle(Congopycnodus, 0.0F, 1.5F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+        this.Congopycnodus.offsetY = -0.18F;
+        this.Congopycnodus.offsetZ = 0.02F;
+        this.Congopycnodus.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {

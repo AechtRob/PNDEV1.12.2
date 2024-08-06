@@ -335,6 +335,12 @@ public class ModelEunotosaurus extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.setRotateAngle(head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.0F;
+        this.neck.offsetZ = 0.05F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {

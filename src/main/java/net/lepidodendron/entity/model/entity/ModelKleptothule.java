@@ -603,9 +603,9 @@ public class ModelKleptothule extends ModelBasePalaeopedia {
         this.setRotateAngle(body8, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(body9, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(body10, 0.0F, -0.2F, 0.0F);
-        this.Kleptothule.offsetZ = 0.0F;
-        this.Kleptothule.offsetY = 0.0F;
-        this.Kleptothule.offsetX = 0.001F;
+        this.Kleptothule.offsetZ = 0.01F;
+        this.Kleptothule.offsetY = 0.1F;
+        this.Kleptothule.offsetX = 0.0F;
         this.Kleptothule.render(0.01F);
         this.resetToDefaultPose();
     }

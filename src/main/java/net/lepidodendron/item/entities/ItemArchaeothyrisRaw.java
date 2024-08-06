@@ -14,14 +14,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-import javax.annotation.Nullable;
-
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemGansuselacheRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:gansuselache_raw")
+public class ItemArchaeothyrisRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:archaeothyris_raw")
 	public static final Item block = null;
-	public ItemGansuselacheRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.gansuselache_raw);
+	public ItemArchaeothyrisRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.archaeothyris_raw);
 	}
 
 	@Override
@@ -32,27 +30,22 @@ public class ItemGansuselacheRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/gansuselache_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/archaeothyris_raw", "inventory"));
 	}
-	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gansuselache", ItemGansuselacheRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemGansuselacheRaw.block);
-		OreDictionary.registerOre("pnfurnaceFish", ItemGansuselacheRaw.block);
-		OreDictionary.registerOre("pndietFish", ItemGansuselacheRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_archaeothyris", ItemArchaeothyrisRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemArchaeothyrisRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemArchaeothyrisRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemArchaeothyrisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_gansuselache_raw");
-			setRegistryName("gansuselache_raw");
+			setTranslationKey("pf_archaeothyris_raw");
+			setRegistryName("archaeothyris_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
-		}
-		@Nullable
-		public String getVariantStr() {
-			return "male";
 		}
 
 	}

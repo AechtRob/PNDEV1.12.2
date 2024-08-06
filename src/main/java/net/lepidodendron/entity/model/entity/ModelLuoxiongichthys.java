@@ -188,6 +188,7 @@ public class ModelLuoxiongichthys extends ModelBasePalaeopedia {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetX = -0.02F;
         this.body.offsetY = -0.16F;
+        this.body.offsetZ = -0.02F;
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }

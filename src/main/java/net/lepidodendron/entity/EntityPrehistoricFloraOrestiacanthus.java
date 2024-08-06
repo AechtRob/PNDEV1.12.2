@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderOrestiacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -349,25 +350,37 @@ public class EntityPrehistoricFloraOrestiacanthus extends EntityPrehistoricFlora
 
 	//Rendering taxidermy:
 	//--------------------
-
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		if (variant.equalsIgnoreCase("female")) {
-//			return RenderOrestiacanthus.TEXTURE_F;
-//		}
-//		return RenderOrestiacanthus.TEXTURE;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelOrestiacanthus;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		if (variant.equalsIgnoreCase("female")) {
-//			return RenderOrestiacanthus.getScaler() * 0.8F;
-//		}
-//		return RenderOrestiacanthus.getScaler();
-//	}
-//	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.3;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return -0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.0;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderOrestiacanthus.TEXTURE_F;
+		}
+		return RenderOrestiacanthus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelOrestiacanthus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		if (variant.equalsIgnoreCase("female")) {
+			return RenderOrestiacanthus.getScaler() * 0.8F;
+		}
+		return RenderOrestiacanthus.getScaler();
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.03F;}
 
 	@Nullable
 	@Override

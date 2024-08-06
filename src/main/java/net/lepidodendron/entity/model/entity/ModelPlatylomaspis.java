@@ -218,10 +218,10 @@ public class ModelPlatylomaspis extends ModelBasePalaeopedia {
         this.Platylomaspis.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Platylomaspis.rotateAngleY = (float) Math.toRadians(90);
-        this.Platylomaspis.offsetY = -0.03F;
-        this.Platylomaspis.offsetX = -0.05F;
-        this.Platylomaspis.offsetZ = -0.37F;
+        this.setRotateAngle(Platylomaspis, 1.55F, 0.0F, 0.0F);
+        this.Platylomaspis.offsetY = -0.25F;
+        this.Platylomaspis.offsetX = -0.00F;
+        this.Platylomaspis.offsetZ = -0.41F;
         this.Platylomaspis.render(0.01F);
         resetToDefaultPose();
     }

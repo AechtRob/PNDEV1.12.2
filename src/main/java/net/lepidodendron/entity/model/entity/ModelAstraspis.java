@@ -179,10 +179,10 @@ public class ModelAstraspis extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-        this.Astraspis.rotateAngleY = (float) Math.toRadians(90);
-        this.Astraspis.offsetY = -0.15F;
-        this.Astraspis.offsetX = -0.1F;
-        this.Astraspis.offsetZ = 0.025F;
+        this.setRotateAngle(Astraspis, 0.0F, 1.5F, 0.0F);
+        this.Astraspis.offsetY = -0.2F;
+        this.Astraspis.offsetX = -0.05F;
+        this.Astraspis.offsetZ = -0.045F;
         this.Astraspis.render(0.01F);
         this.resetToDefaultPose();
     }

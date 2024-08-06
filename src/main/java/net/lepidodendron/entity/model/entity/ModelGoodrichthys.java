@@ -226,9 +226,24 @@ public class ModelGoodrichthys extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.main.offsetX = -0.01F;
+        this.main.offsetZ = -0.2F;
+        this.main.offsetY = -0.2F;
+        this.main.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.15F, 0.0F, 0.1F);
+        this.setRotateAngle(tail, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.0F;
+        this.main.offsetY = -0.3F;
+        this.main.render(0.01F);
         this.resetToDefaultPose();
     }
 
