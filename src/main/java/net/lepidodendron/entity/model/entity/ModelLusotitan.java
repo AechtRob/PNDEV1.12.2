@@ -544,12 +544,64 @@ public class ModelLusotitan extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(neck1, -0.45F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, -0.2F, 0.0F, 0.02F);
+        this.setRotateAngle(neck5, -0.1F, 0.0F, 0.02F);
+        this.setRotateAngle(neck6, 0.1F, 0.0F, 0.02F);
+        this.setRotateAngle(neck7, 0.1F, 0.0F, 0.02F);
+        this.setRotateAngle(neck8, 0.3F, 0.01F, 0.01F);
+        this.setRotateAngle(neck9, 0.5F, 0.01F, 0.01F);
+        this.setRotateAngle(head, 0.8F, 0.01F, 0.01F);
+        this.setRotateAngle(jaw, 0.12F, 0.0F, 0.0F);
+        this.neck1.offsetY = 0.1F;
+        this.neck1.offsetX = -0.0F;
+        this.neck1.offsetZ = 0.18F;
+        this.neck1.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hips, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.02F, 0.0F);
+        this.setRotateAngle(chest, 0.1F, 0.01F, 0.02F);
+        this.setRotateAngle(neck1, -0.8F, 0.05F, 0.02F);
+        this.setRotateAngle(neck2, -0.3F, 0.04F, 0.03F);
+        this.setRotateAngle(neck3, -0.2F, 0.03F, 0.03F);
+        this.setRotateAngle(neck4, -0.1F, 0.02F, 0.03F);
+        this.setRotateAngle(neck5, 0.0F, 0.03F, 0.04F);
+        this.setRotateAngle(neck6, 0.0F, 0.03F, 0.04F);
+        this.setRotateAngle(neck7, 0.2F, 0.02F, 0.02F);
+        this.setRotateAngle(neck8, 0.3F, 0.02F, 0.02F);
+        this.setRotateAngle(neck9, 0.4F, 0.02F, 0.02F);
+        this.setRotateAngle(head, 0.8F, 0.01F, 0.01F);
+        this.setRotateAngle(jaw, -0.42F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.1F, 0.01F);
+        this.setRotateAngle(tail5, 0.05F, -0.1F, 0.01F);
+        this.setRotateAngle(tail6, 0.1F, -0.1F, 0.01F);
+        this.setRotateAngle(tail7, 0.1F, -0.1F, 0.01F);
+        this.setRotateAngle(tail8, 0.1F, -0.1F, 0.01F);
+        this.setRotateAngle(leftArm, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.13F, 0.0F, -0.02F);
+        this.setRotateAngle(rightArm2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg4, 0.0F, 0.0F, 0.0F);
+        this.hips.offsetY = -0.15F;
+        this.hips.offsetX = -0.0F;
+        this.hips.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -565,7 +617,42 @@ public class ModelLusotitan extends ModelBasePalaeopedia {
         float scaler = 0.575F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hips, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.02F, 0.0F);
+        this.setRotateAngle(chest, 0.1F, 0.01F, 0.02F);
+        this.setRotateAngle(neck1, -0.8F, 0.05F, 0.02F);
+        this.setRotateAngle(neck2, -0.3F, 0.04F, 0.03F);
+        this.setRotateAngle(neck3, -0.2F, 0.03F, 0.03F);
+        this.setRotateAngle(neck4, -0.1F, 0.02F, 0.03F);
+        this.setRotateAngle(neck5, 0.0F, 0.03F, 0.04F);
+        this.setRotateAngle(neck6, 0.0F, 0.03F, 0.04F);
+        this.setRotateAngle(neck7, 0.2F, 0.02F, 0.02F);
+        this.setRotateAngle(neck8, 0.3F, 0.02F, 0.02F);
+        this.setRotateAngle(neck9, 0.4F, 0.02F, 0.02F);
+        this.setRotateAngle(head, 0.8F, 0.01F, 0.01F);
+        this.setRotateAngle(jaw, -0.42F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, -0.05F, -0.05F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, -0.1F, 0.01F);
+        this.setRotateAngle(tail5, 0.05F, -0.1F, 0.01F);
+        this.setRotateAngle(tail6, 0.1F, -0.1F, 0.01F);
+        this.setRotateAngle(tail7, 0.1F, -0.1F, 0.01F);
+        this.setRotateAngle(tail8, 0.1F, -0.1F, 0.01F);
+        this.setRotateAngle(leftArm, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm, 0.13F, 0.0F, -0.02F);
+        this.setRotateAngle(rightArm2, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg, -0.35F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg2, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg3, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(rightLeg4, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

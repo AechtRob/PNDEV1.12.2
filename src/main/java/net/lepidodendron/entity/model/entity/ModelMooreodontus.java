@@ -168,9 +168,24 @@ public class ModelMooreodontus extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, 0.1F, 0.0F, -0.2F);
+        this.setRotateAngle(body, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetZ = -0.0F;
+        this.base.offsetY = -0.2F;
+        this.base.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticWall(float f) {
+        this.setRotateAngle(base, 0.0F, 1.6F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetZ = -0.11F;
+        this.base.offsetY = -0.17F;
+        this.base.offsetX = -0.04F;
+        this.base.render(0.01F);
         this.resetToDefaultPose();
     }
 
@@ -186,10 +201,11 @@ public class ModelMooreodontus extends ModelBasePalaeopedia {
         float scaler = 1.1F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(base, 0.1F, 0.0F, -0.2F);
+        this.setRotateAngle(body, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, -0.3F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);

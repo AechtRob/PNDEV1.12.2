@@ -129,17 +129,18 @@ public class ModelGondwanarachne extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.offsetY = 0.165F;
-        this.body.render(0.015f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.0F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.3F, 0.0F, 0.0F);
+        this.body.offsetY = 0.235F;
+        this.body.offsetZ = -0.0F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
     }
 
     @Override
