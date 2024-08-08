@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sulphur_block_raw_1"},
+      {"model": "lepidodendron:sulphur_block_raw_2"},
+      {"model": "lepidodendron:sulphur_block_raw_3"},
+      {"model": "lepidodendron:sulphur_block_raw_4"},
+      {"model": "lepidodendron:sulphur_block_raw_5"}
+    ]
+  }
+}
