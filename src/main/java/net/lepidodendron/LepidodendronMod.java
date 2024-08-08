@@ -2366,6 +2366,15 @@ public class LepidodendronMod {
 	public static final int ENTITY_ARCHAEOTHYRIS = 957;
 	public static final ResourceLocation ARCHAEOTHYRIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaeothyris"));
 
+	public static final int ENTITY_WESTRICHUS = 958;
+	public static final ResourceLocation WESTRICHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/westrichus"));
+	public static final int ENTITY_CARIDOSUCTOR = 959;
+	public static final ResourceLocation CARIDOSUCTOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/caridosuctor"));
+	public static final int ENTITY_SCHOENESMAHL = 960;
+	public static final ResourceLocation SCHOENESMAHL_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/schoenesmahl"));
+	public static final int ENTITY_CRICOSAURUS = 961;
+	public static final ResourceLocation CRICOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cricosaurus"));
+
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

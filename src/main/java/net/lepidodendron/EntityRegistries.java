@@ -938,10 +938,10 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_stenokranio", EntityPrehistoricFloraStenokranio.class, LepidodendronMod.ENTITY_STENOKRANIO, 48,-12368053,-4671057);
         registerEntity("prehistoric_flora_idmonarachne", EntityPrehistoricFloraIdmonarachne.class, LepidodendronMod.ENTITY_IDMONARACHNE, 48,-6145518,-13760512);
         registerEntity("prehistoric_flora_trigonotarbid_gondwanarachne", EntityPrehistoricFloraTrigonotarbid_Gondwanarachne.class, LepidodendronMod.ENTITY_TRIGONOTARBID_GONDWANARACHNE, 48,-13557726,-1909539);
-//        registerEntity("prehistoric_flora_cricosaurus", EntityPrehistoricFloraCricosaurus.class, LepidodendronMod.ENTITY_CRICOSAURUS, 64,-12368053,-4671057);
-//        registerEntity("prehistoric_flora_schoenesmahl", EntityPrehistoricFloraSchoenesmahl.class, LepidodendronMod.ENTITY_SCHOENESMAHL, 48,-12368053,-4671057);
-//        registerEntity("prehistoric_flora_westrichus", EntityPrehistoricFloraWestrichus.class, LepidodendronMod.ENTITY_WESTRICHUS, 48,-12368053,-4671057);
-//        registerEntity("prehistoric_flora_caridosuctor", EntityPrehistoricFloraCaridosuctor.class, LepidodendronMod.ENTITY_CARIDOSUCTOR, 48,-12368053,-4671057);
+        registerEntity("prehistoric_flora_cricosaurus", EntityPrehistoricFloraCricosaurus.class, LepidodendronMod.ENTITY_CRICOSAURUS, 64,-8886176,-13159631);
+        registerEntity("prehistoric_flora_schoenesmahl", EntityPrehistoricFloraSchoenesmahl.class, LepidodendronMod.ENTITY_SCHOENESMAHL, 48,-3425153,-12812105);
+        registerEntity("prehistoric_flora_westrichus", EntityPrehistoricFloraWestrichus.class, LepidodendronMod.ENTITY_WESTRICHUS, 48,-4220649,-8960743);
+        registerEntity("prehistoric_flora_caridosuctor", EntityPrehistoricFloraCaridosuctor.class, LepidodendronMod.ENTITY_CARIDOSUCTOR, 48,-4220649,-7444404);
 //        registerEntity("prehistoric_flora_rhabdoderma", EntityPrehistoricFloraRhabdoderma.class, LepidodendronMod.ENTITY_RHABDODERMA, 48,-12368053,-4671057);
 //        registerEntity("prehistoric_flora_phanerorhynchus", EntityPrehistoricFloraPhanerorhynchus.class, LepidodendronMod.ENTITY_PHANERORHYNCHUS, 48,-12368053,-4671057);
 //        registerEntity("prehistoric_flora_lagosuchus", EntityPrehistoricFloraLagosuchus.class, LepidodendronMod.ENTITY_LAGOSUCHUS, 64,-12368053,-4671057);

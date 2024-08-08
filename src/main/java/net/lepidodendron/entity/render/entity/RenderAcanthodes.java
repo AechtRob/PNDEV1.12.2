@@ -15,7 +15,7 @@ public class RenderAcanthodes extends RenderLivingBaseWithBook<EntityPrehistoric
         super(mgr, new ModelAcanthodes(), 0.0f);
     }
 
-    public static float getScaler() {return 0.15F; }
+    public static float getScaler() {return 0.2F;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcanthodes entity) {

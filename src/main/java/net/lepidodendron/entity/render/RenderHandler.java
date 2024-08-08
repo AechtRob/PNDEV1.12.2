@@ -5755,15 +5755,45 @@ public class RenderHandler {
                 return new RenderDiplodoselache(manager);
             }
         });
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWestrichus.class, new IRenderFactory<EntityPrehistoricFloraWestrichus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWestrichus> createRenderFor(RenderManager manager) {
+                return new RenderWestrichus(manager);
+            }
+        });
+
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCaridosuctor.class, new IRenderFactory<EntityPrehistoricFloraCaridosuctor>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCaridosuctor> createRenderFor(RenderManager manager) {
+                return new RenderCaridosuctor(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSchoenesmahl.class, new IRenderFactory<EntityPrehistoricFloraSchoenesmahl>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSchoenesmahl> createRenderFor(RenderManager manager) {
+                return new RenderSchoenesmahl(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCricosaurus.class, new IRenderFactory<EntityPrehistoricFloraCricosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCricosaurus> createRenderFor(RenderManager manager) {
+                return new RenderCricosaurus(manager);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
         //Specials:
         RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {
             @Override
