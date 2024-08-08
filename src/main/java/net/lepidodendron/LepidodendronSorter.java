@@ -4936,5 +4936,19 @@ public class LepidodendronSorter {
     public static final int eggs_diplodoselache_worldgen = 5021;
     public static final int eggs_archaeothyris = 5022;
     public static final int insect_eggs_idmonarachne = 5023;
+    public static final int eggs_schoenesmahl = 5024;
+    public static final int schoenesmahl_raw = 5025;
+    public static final int westrichus_raw = 5026;
+    public static final int caridosuctor_raw = 5027;
+    public static final int cricosaurus_raw = 5028;
+    public static final int rhabdoderma_raw = 5029;
+    public static final int phanerorhynchus_raw = 5030;
+    public static final int eggs_germanodactylus = 5031;
+    public static final int germanodactylus_raw = 5032;
+    public static final int eggs_lagosuchus = 5033;
+    public static final int amphibian_spawn_stenokranio = 5034;
+    public static final int amphibian_spawn_stenokranio_worldgen = 5035;
+    public static final int stenokranio_raw = 5036;
+
 
 }
