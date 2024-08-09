@@ -5785,6 +5785,28 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPhanerorhynchus.class, new IRenderFactory<EntityPrehistoricFloraPhanerorhynchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPhanerorhynchus> createRenderFor(RenderManager manager) {
+                return new RenderPhanerorhynchus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhabdoderma.class, new IRenderFactory<EntityPrehistoricFloraRhabdoderma>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhabdoderma> createRenderFor(RenderManager manager) {
+                return new RenderRhabdoderma(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGermanodactylus.class, new IRenderFactory<EntityPrehistoricFloraGermanodactylus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGermanodactylus> createRenderFor(RenderManager manager) {
+                return new RenderGermanodactylus(manager);
+            }
+        });
+
+
 
 
 

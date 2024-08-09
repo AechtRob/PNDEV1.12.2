@@ -4949,6 +4949,10 @@ public class LepidodendronSorter {
     public static final int amphibian_spawn_stenokranio = 5034;
     public static final int amphibian_spawn_stenokranio_worldgen = 5035;
     public static final int stenokranio_raw = 5036;
+    public static final int eggs_harpactognathus = 5037;
+    public static final int eggs_dearc = 5038;
+    public static final int dearc_raw = 5039;
+    public static final int harpactognathus_raw = 5040;
 
 
 }

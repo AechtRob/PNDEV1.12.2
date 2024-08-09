@@ -942,11 +942,11 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_schoenesmahl", EntityPrehistoricFloraSchoenesmahl.class, LepidodendronMod.ENTITY_SCHOENESMAHL, 48,-3425153,-12812105);
         registerEntity("prehistoric_flora_westrichus", EntityPrehistoricFloraWestrichus.class, LepidodendronMod.ENTITY_WESTRICHUS, 48,-4220649,-8960743);
         registerEntity("prehistoric_flora_caridosuctor", EntityPrehistoricFloraCaridosuctor.class, LepidodendronMod.ENTITY_CARIDOSUCTOR, 48,-4220649,-7444404);
-//        registerEntity("prehistoric_flora_rhabdoderma", EntityPrehistoricFloraRhabdoderma.class, LepidodendronMod.ENTITY_RHABDODERMA, 48,-12368053,-4671057);
-//        registerEntity("prehistoric_flora_phanerorhynchus", EntityPrehistoricFloraPhanerorhynchus.class, LepidodendronMod.ENTITY_PHANERORHYNCHUS, 48,-12368053,-4671057);
+        registerEntity("prehistoric_flora_rhabdoderma", EntityPrehistoricFloraRhabdoderma.class, LepidodendronMod.ENTITY_RHABDODERMA, 48,-13618647,-2645374);
+        registerEntity("prehistoric_flora_phanerorhynchus", EntityPrehistoricFloraPhanerorhynchus.class, LepidodendronMod.ENTITY_PHANERORHYNCHUS, 48,-13818592,-7258842);
 //        registerEntity("prehistoric_flora_lagosuchus", EntityPrehistoricFloraLagosuchus.class, LepidodendronMod.ENTITY_LAGOSUCHUS, 64,-12368053,-4671057);
 //        registerEntity("prehistoric_flora_dearc", EntityPrehistoricFloraDearc.class, LepidodendronMod.ENTITY_DEARC, 64,-12368053,-4671057);
-//        registerEntity("prehistoric_flora_germanodactylus", EntityPrehistoricFloraGermanodactylus.class, LepidodendronMod.ENTITY_GERMANODACTYLUS, 64,-12368053,-4671057);
+//        registerEntity("prehistoric_flora_germanodactylus", EntityPrehistoricFloraGermanodactylus.class, LepidodendronMod.ENTITY_GERMANODACTYLUS, 64,-9074784,-3704969);
 //        registerEntity("prehistoric_flora_harpactognathus", EntityPrehistoricFloraHarpactognathus.class, LepidodendronMod.ENTITY_HARPACTOGNATHUS, 64,-12368053,-4671057);
 
         registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
