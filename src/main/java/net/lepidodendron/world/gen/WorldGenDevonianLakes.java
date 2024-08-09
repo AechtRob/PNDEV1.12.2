@@ -105,6 +105,11 @@ public class WorldGenDevonianLakes extends WorldGenerator
                         {
                             if (i4 >= 4) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
+                                worldIn.immediateBlockTick(position.add(l1 + 1, i4, i3), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1 - 1, i4, i3), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1, i4, i3 + 1), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1, i4, i3 - 1), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1, i4 + 1, i3), Blocks.AIR.getDefaultState(), rand);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
                                     //fix for floating plants and half-plants:

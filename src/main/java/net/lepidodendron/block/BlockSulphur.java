@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.item.ItemSulphur;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -13,7 +12,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -45,25 +43,14 @@ public class BlockSulphur extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.ROCK, MapColor.YELLOW_STAINED_HARDENED_CLAY);
 			setTranslationKey("pf_sulphur_block");
 			setSoundType(SoundType.STONE);
-			setHarvestLevel("pickaxe", 0);
 			setHardness(0.5F);
 			setResistance(2F);
 			setLightLevel(0F);
 			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronMisc.tab);
-		}
-
-		@Override
-		protected boolean canSilkHarvest() {
-			return true;
-		}
-
-		@Override
-		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
-			return new ItemStack(ItemSulphur.block, (int) (1)).getItem();
 		}
 
 		@Override

@@ -138,7 +138,8 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
 				biomeCriteria = true;
 			}
 			else {

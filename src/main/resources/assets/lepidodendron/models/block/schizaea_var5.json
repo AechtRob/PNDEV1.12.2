@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/schizaea_var5",
+    "particle": "lepidodendron:blocks/schizaea_var5"
+  }
+}

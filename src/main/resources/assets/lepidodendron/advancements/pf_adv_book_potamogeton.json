@@ -4,10 +4,10 @@
 			"item": "lepidodendron:potamogeton_item"
 		 },
 		"title": {
-			"translate": "advancements.pf_adv_book_potamogetons.title"
+			"translate": "advancements.pf_adv_book_potamogeton.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_potamogetons.description"
+			"translate": "advancements.pf_adv_book_potamogeton.description"
 		}
 	},
  "parent": "lepidodendron:pf_base_adv_knowledge",
