@@ -920,7 +920,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_attenborites", EntityPrehistoricFloraAttenborites.class, LepidodendronMod.ENTITY_ATTENBORITES, 48,-9590956,-15756152);
 
 
-//        registerEntity("prehistoric_flora_lusovenator", EntityPrehistoricFloraLusovenator.class, LepidodendronMod.ENTITY_LUSOVENATOR, 164,-12368053,-4671057);
+        registerEntity("prehistoric_flora_lusovenator", EntityPrehistoricFloraLusovenator.class, LepidodendronMod.ENTITY_LUSOVENATOR, 164,-10530756,-3360361);
         registerEntity("prehistoric_flora_lusotitan", EntityPrehistoricFloraLusotitan.class, LepidodendronMod.ENTITY_LUSOTITAN, 164,-13486536,-9801099);
         registerEntity("prehistoric_flora_romerodus", EntityPrehistoricFloraRomerodus.class, LepidodendronMod.ENTITY_ROMERODUS, 48,-10520705,-1977027);
         registerEntity("prehistoric_flora_gregorius", EntityPrehistoricFloraGregorius.class, LepidodendronMod.ENTITY_GREGORIUS, 48,-3282967,-14330538);

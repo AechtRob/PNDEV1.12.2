@@ -4956,6 +4956,8 @@ public class LepidodendronSorter {
     public static final int eggs_dearc = 5038;
     public static final int dearc_raw = 5039;
     public static final int harpactognathus_raw = 5040;
+    public static final int eggs_lusovenator = 5041;
+    public static final int lusovenator_raw = 5042;
 
 
 }

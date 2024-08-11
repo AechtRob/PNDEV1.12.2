@@ -5806,6 +5806,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLusovenator.class, new IRenderFactory<EntityPrehistoricFloraLusovenator>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLusovenator> createRenderFor(RenderManager manager) {
+                return new RenderLusovenator(manager);
+            }
+        });
+
 
 
 
