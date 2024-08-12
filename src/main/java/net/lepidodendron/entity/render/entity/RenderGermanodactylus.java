@@ -6,19 +6,20 @@ import net.lepidodendron.entity.model.entity.ModelGermanodactylus;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderGermanodactylus extends RenderLivingBaseWithBook<EntityPrehistoricFloraGermanodactylus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/germanodactylus.png");
-    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/germanodactylus_f.png");
+    public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/germanodactylus_female.png");
 
     public RenderGermanodactylus(RenderManager mgr) {
         super(mgr, new ModelGermanodactylus(), 0.5F);
     }
 
     public static float getScaler() {
-        return 0.1825F;
+        return 0.2525F;
     }
 
     @Override
