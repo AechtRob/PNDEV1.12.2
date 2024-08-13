@@ -935,7 +935,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_mooreodontus", EntityPrehistoricFloraMooreodontus.class, LepidodendronMod.ENTITY_MOOREODONTUS, 64,-11709899,-2379887);
         registerEntity("prehistoric_flora_hagenoselache", EntityPrehistoricFloraHagenoselache.class, LepidodendronMod.ENTITY_HAGENOSELACHE, 48,-9384000,-7332841);
         registerEntity("prehistoric_flora_diplodoselache", EntityPrehistoricFloraDiplodoselache.class, LepidodendronMod.ENTITY_DIPLODOSELACHE, 64,-13030101,-7569026);
-//        registerEntity("prehistoric_flora_stenokranio", EntityPrehistoricFloraStenokranio.class, LepidodendronMod.ENTITY_STENOKRANIO, 48,-12368053,-4671057);
+        registerEntity("prehistoric_flora_stenokranio", EntityPrehistoricFloraStenokranio.class, LepidodendronMod.ENTITY_STENOKRANIO, 48,-4741869,-14145767);
         registerEntity("prehistoric_flora_idmonarachne", EntityPrehistoricFloraIdmonarachne.class, LepidodendronMod.ENTITY_IDMONARACHNE, 48,-6145518,-13760512);
         registerEntity("prehistoric_flora_trigonotarbid_gondwanarachne", EntityPrehistoricFloraTrigonotarbid_Gondwanarachne.class, LepidodendronMod.ENTITY_TRIGONOTARBID_GONDWANARACHNE, 48,-13557726,-1909539);
         registerEntity("prehistoric_flora_cricosaurus", EntityPrehistoricFloraCricosaurus.class, LepidodendronMod.ENTITY_CRICOSAURUS, 64,-8886176,-13159631);

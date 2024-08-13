@@ -5812,6 +5812,12 @@ public class RenderHandler {
                 return new RenderLusovenator(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStenokranio.class, new IRenderFactory<EntityPrehistoricFloraStenokranio>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraStenokranio> createRenderFor(RenderManager manager) {
+                return new RenderStenokranio(manager);
+            }
+        });
 
 
 
