@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.BlockLogPF;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -15,6 +16,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EntitySelectors;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -44,6 +46,10 @@ public class Functions {
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")) {
                 return 87;
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_a")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_b")) {
+                return 140;
             }
         }
         return world.getSeaLevel();
@@ -221,7 +227,7 @@ public class Functions {
             }
         }
 
-        if (state.causesSuffocation()) { //If we are about to place a block that could kill an entity here:
+        if (state.causesSuffocation() && state.getMaterial() != Material.WOOD) { //If we are about to place a block that could kill an entity here (but which isn't a tree):
             List<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
             if (!getEntities.isEmpty()) {
                 int ascendor = 0;
@@ -272,5 +278,104 @@ public class Functions {
         return false;
     }
 
+    public static int convertFromAnyBaseToDecimal(String num, int base) {
+        if (base < 2 || (base > 10 && base != 16)) {
+            return -1;
+        }
+        int val = 0;
+        int power = 1;
+        for (int i = num.length() - 1; i >= 0; i--) {
+            int digit = charToDecimal(num.charAt(i));
+            if (digit < 0 || digit >= base) {
+                return -1;
+            }
+            val += digit * power;
+            power = power * base;
+        }
+        return val;
+    }
+    public static int charToDecimal(char c) {
+        if (c >= '0' && c <= '9') {
+            return (int) c - '0';
+        } else {
+            return (int) c - 'A' + 10;
+        }
+    }
+
+    public static String convertNumberToNewBaseCustom(String num, int base, int newBase) {
+        int decimalNumber = convertFromAnyBaseToDecimal(num, base);
+        String targetBase = "";
+        try {
+            targetBase = convertFromDecimalToBaseX(decimalNumber, newBase);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        return  targetBase;
+    }
+
+    public static String convertFromDecimalToBaseX(int num, int newBase) throws IllegalArgumentException {
+        if ((newBase < 2 || newBase > 10) && newBase != 16) {
+            throw new IllegalArgumentException("New base must be from 2 - 10 or 16");
+        }
+        String result = "";
+        int remainder;
+        while (num > 0) {
+            remainder = num % newBase;
+            if (newBase == 16) {
+                if (remainder == 10) {
+                    result += 'A';
+                } else if (remainder == 11) {
+                    result += 'B';
+                } else if (remainder == 12) {
+                    result += 'C';
+                } else if (remainder == 13) {
+                    result += 'D';
+                } else if (remainder == 14) {
+                    result += 'E';
+                } else if (remainder == 15) {
+                    result += 'F';
+                } else {
+                    result += remainder;
+                }
+            } else {
+                result += remainder;
+            }
+            num /= newBase;
+        }
+        return new StringBuffer(result).reverse().toString();
+    }
+
+
+
+    public static void restoreLogs(World worldIn, BlockPos position) {
+        IBlockState state = null;
+        if (worldIn.getBlockState(position.up()).getBlock() instanceof BlockLogPF) {
+            IBlockState blocklog = worldIn.getBlockState(position.up());
+            if (blocklog.getValue(BlockLogPF.FACING) == EnumFacing.NORTH) {
+                state = blocklog.withProperty(BlockLogPF.FACING, EnumFacing.NORTH);
+            }
+        }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockCycasLog.block) {
+            state = BlockCycasLog.block.getDefaultState();
+        }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockCycadeoideaLog.block) {
+            state = BlockCycadeoideaLog.block.getDefaultState();
+        }
+        if (state != null && state.getBlock() instanceof BlockLogPF) {
+            worldIn.setBlockState(position, state, 16);
+            if (!worldIn.getBlockState(position.down()).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(2)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(2), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(3)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(3), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(4)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(4), state, 16);
+            }
+        }
+    }
 
 }

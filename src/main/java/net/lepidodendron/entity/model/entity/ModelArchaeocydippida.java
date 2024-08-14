@@ -12,16 +12,6 @@ import net.minecraft.entity.EntityLivingBase;
 public class ModelArchaeocydippida extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
-    private final AdvancedModelRenderer tail;
-    private final AdvancedModelRenderer tail2;
-    private final AdvancedModelRenderer tail3;
-    private final AdvancedModelRenderer tail4;
-    private final AdvancedModelRenderer tail5;
-    private final AdvancedModelRenderer tail6;
-    private final AdvancedModelRenderer tail7;
-    private final AdvancedModelRenderer tail8;
-    private final AdvancedModelRenderer tail9;
-    private final AdvancedModelRenderer tail10;
     private final AdvancedModelRenderer lumitop;
     private final AdvancedModelRenderer lumipix73;
     private final AdvancedModelRenderer lumipix79;
@@ -110,76 +100,6 @@ public class ModelArchaeocydippida extends ModelBasePalaeopedia {
         this.main.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.0F, -0.7854F, 0.0F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 35, -1.5F, -1.975F, -1.0F, 3, 5, 2, 0.0F, false));
-
-        this.tail = new AdvancedModelRenderer(this);
-        this.tail.setRotationPoint(-3.0F, 0.4937F, -0.25F);
-        this.main.addChild(tail);
-        this.setRotateAngle(tail, 0.0F, 0.0F, 0.3054F);
-        this.tail.cubeList.add(new ModelBox(tail, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, false));
-        this.tail.cubeList.add(new ModelBox(tail, 40, 2, -1.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, false));
-
-        this.tail2 = new AdvancedModelRenderer(this);
-        this.tail2.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail.addChild(tail2);
-        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.3054F);
-        this.tail2.cubeList.add(new ModelBox(tail2, 40, 2, -1.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, false));
-        this.tail2.cubeList.add(new ModelBox(tail2, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, false));
-
-        this.tail3 = new AdvancedModelRenderer(this);
-        this.tail3.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail2.addChild(tail3);
-        this.setRotateAngle(tail3, 0.0F, 0.0F, -0.2618F);
-        this.tail3.cubeList.add(new ModelBox(tail3, 40, 2, -1.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, false));
-        this.tail3.cubeList.add(new ModelBox(tail3, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, false));
-
-        this.tail4 = new AdvancedModelRenderer(this);
-        this.tail4.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail3.addChild(tail4);
-        this.setRotateAngle(tail4, 0.0F, 0.0F, -0.2182F);
-        this.tail4.cubeList.add(new ModelBox(tail4, 40, 2, -1.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, false));
-        this.tail4.cubeList.add(new ModelBox(tail4, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, false));
-
-        this.tail5 = new AdvancedModelRenderer(this);
-        this.tail5.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail4.addChild(tail5);
-        this.setRotateAngle(tail5, 0.0F, 0.0F, -0.1745F);
-        this.tail5.cubeList.add(new ModelBox(tail5, 40, 2, -1.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, false));
-        this.tail5.cubeList.add(new ModelBox(tail5, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, false));
-
-        this.tail6 = new AdvancedModelRenderer(this);
-        this.tail6.setRotationPoint(3.0F, 0.4937F, -0.25F);
-        this.main.addChild(tail6);
-        this.setRotateAngle(tail6, 0.0F, 0.0F, -0.3054F);
-        this.tail6.cubeList.add(new ModelBox(tail6, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, true));
-        this.tail6.cubeList.add(new ModelBox(tail6, 40, 2, 0.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, true));
-
-        this.tail7 = new AdvancedModelRenderer(this);
-        this.tail7.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail6.addChild(tail7);
-        this.setRotateAngle(tail7, 0.0F, 0.0F, -0.3054F);
-        this.tail7.cubeList.add(new ModelBox(tail7, 40, 2, 0.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, true));
-        this.tail7.cubeList.add(new ModelBox(tail7, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, true));
-
-        this.tail8 = new AdvancedModelRenderer(this);
-        this.tail8.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail7.addChild(tail8);
-        this.setRotateAngle(tail8, 0.0F, 0.0F, 0.2618F);
-        this.tail8.cubeList.add(new ModelBox(tail8, 40, 2, 0.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, true));
-        this.tail8.cubeList.add(new ModelBox(tail8, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, true));
-
-        this.tail9 = new AdvancedModelRenderer(this);
-        this.tail9.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail8.addChild(tail9);
-        this.setRotateAngle(tail9, 0.0F, 0.0F, 0.2182F);
-        this.tail9.cubeList.add(new ModelBox(tail9, 40, 2, 0.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, true));
-        this.tail9.cubeList.add(new ModelBox(tail9, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, true));
-
-        this.tail10 = new AdvancedModelRenderer(this);
-        this.tail10.setRotationPoint(0.0F, 3.0F, 0.0F);
-        this.tail9.addChild(tail10);
-        this.setRotateAngle(tail10, 0.0F, 0.0F, 0.1745F);
-        this.tail10.cubeList.add(new ModelBox(tail10, 40, 2, 0.0F, 1.0F, -0.5F, 1, 1, 1, 0.0F, true));
-        this.tail10.cubeList.add(new ModelBox(tail10, 33, 1, 0.0F, 0.0F, -0.5F, 0, 3, 1, 0.0F, true));
 
         this.lumitop = new AdvancedModelRenderer(this);
         this.lumitop.setRotationPoint(0.0F, -5.5063F, 0.0F);
@@ -1051,27 +971,9 @@ public class ModelArchaeocydippida extends ModelBasePalaeopedia {
         this.lumipix75.rotationPointX = this.lumipix75.rotationPointX + (float)(0);
         this.lumipix75.rotationPointY = this.lumipix75.rotationPointY - (float)(-0.05+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-90))*0.1);
         this.lumipix75.rotationPointZ = this.lumipix75.rotationPointZ + (float)(0);
+     }
 
-
-        this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-30))*-2), tail.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90))*3), tail.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45))*-3));
-        this.tail.setScale((float)1,(float)(1.1+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+90))*0.03),(float)1);
-
-
-        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-30))*-2), tail5.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90))*3), tail5.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45))*-3));
-
-
-        this.setRotateAngle(tail6, tail6.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-30))*-2), tail6.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90))*3), tail6.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45))*-8));
-
-
-        this.setRotateAngle(tail7, tail7.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-30))*-2), tail7.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90-50))*3), tail7.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-60))*-5));
-
-
-        this.setRotateAngle(tail8, tail8.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-30))*-2), tail8.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90-20))*3), tail8.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-80))*-5));
-
-
-        this.setRotateAngle(tail9, tail9.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45-90))*-4), tail9.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90))*3), tail9.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*45))*-5));
-    }
-        public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
             EntityPrehistoricFloraArchaeocydippida e = (EntityPrehistoricFloraArchaeocydippida) entity;
         animator.update(entity);
 

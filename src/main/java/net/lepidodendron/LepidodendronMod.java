@@ -61,7 +61,7 @@ import java.util.function.Supplier;
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
-	public static final String VERSION = "60.0";
+	public static final String VERSION = "61.0";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
     @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
@@ -2323,6 +2323,50 @@ public class LepidodendronMod {
 	public static final int GUI_TIME_RESEARCHER_ID = 940;
 	public static final int GUI_TIME_RESEARCHER_FINDER_ID = 941;
 
+	public static final int ENTITY_LUSOTITAN = 942;
+	public static final ResourceLocation LUSOTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lusotitan"));
+	public static final ResourceLocation LUSOTITAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lusotitan_young"));
+	public static final int ENTITY_EUSTREPTOSPONDYLUS = 943;
+	public static final ResourceLocation EUSTREPTOSPONDYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eustreptospondylus"));
+	public static final ResourceLocation EUSTREPTOSPONDYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eustreptospondylus_young"));
+
+	public static final int ENTITY_ORESTIACANTHUS = 944;
+	public static final ResourceLocation ORESTIACANTHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orestiacanthus"));
+	public static final ResourceLocation ORESTIACANTHUS_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orestiacanthus_f"));
+	public static final int ENTITY_ROMERODUS = 945;
+	public static final ResourceLocation ROMERODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/romerodus"));
+	public static final int ENTITY_CHONDRENCHELYS = 946;
+	public static final ResourceLocation CHONDRENCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/chondrenchelys"));
+	public static final int ENTITY_GREGORIUS = 947;
+	public static final ResourceLocation GREGORIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gregorius"));
+	public static final int ENTITY_SRIANTA = 948;
+	public static final ResourceLocation SRIANTA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/srianta"));
+	public static final int ENTITY_GANSUSELACHE = 949;
+	public static final ResourceLocation GANSUSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gansuselache"));
+	public static final ResourceLocation GANSUSELACHE_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gansuselache_f"));
+
+	public static final int ENTITY_GOODRICHTHYS = 950;
+	public static final ResourceLocation GOODRICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/goodrichthys"));
+
+
+	public static final int ENTITY_OBRUCHEVODUS = 951;
+	public static final ResourceLocation OBRUCHEVODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/obruchevodus"));
+
+	public static final int ENTITY_HAGENOSELACHE = 952;
+	public static final ResourceLocation HAGENOSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hagenoselache"));
+	public static final int ENTITY_DIPLODOSELACHE = 953;
+	public static final ResourceLocation DIPLODOSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diplodoselache"));
+	public static final int ENTITY_MOOREODONTUS = 954;
+	public static final ResourceLocation MOOREODONTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mooreodontus"));
+	public static final int ENTITY_IDMONARACHNE = 955;
+	public static final int ENTITY_TRIGONOTARBID_GONDWANARACHNE = 956;
+	public static final ResourceLocation GONDWANARACHNE_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gondwanarachne_jar"));
+	public static final ResourceLocation IDMONARACHNE_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/idmonarachne_jar"));
+
+	public static final int ENTITY_ARCHAEOTHYRIS = 957;
+	public static final ResourceLocation ARCHAEOTHYRIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/archaeothyris"));
+
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);
@@ -2341,6 +2385,11 @@ public class LepidodendronMod {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		if (LepidodendronConfig.modFlowerpot) {
+			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
+			}
+		}
 		elements.getElements().forEach(element -> element.init(event));
 		proxy.init(event);
 
@@ -2442,7 +2491,6 @@ public class LepidodendronMod {
 
 		if (LepidodendronConfig.modFlowerpot) {
 			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
-				GameRegistry.registerTileEntity(BlockFlowerpotPN.TileEntityFlowerPotPN.class, "lepidodendron:tileentityflowerpotpn");
 				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
 				event.getRegistry().register(newPot);
 			}

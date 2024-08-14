@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:schizaea_var1"},
+      {"model": "lepidodendron:schizaea_var2"},
+      {"model": "lepidodendron:schizaea_var3"},
+      {"model": "lepidodendron:schizaea_var4"},
+      {"model": "lepidodendron:schizaea_var5", "weight": 3 },
+      {"model": "lepidodendron:schizaea_var6", "weight": 3 },
+      {"model": "lepidodendron:schizaea_var7", "weight": 3 },
+      {"model": "lepidodendron:schizaea_var8", "weight": 3 }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:schizaea_var8"
+    }
+  }
+}

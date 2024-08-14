@@ -7,6 +7,8 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
@@ -83,11 +85,12 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHorsetail))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimJurassicHorsetail))
 			dimensionCriteria = true;
-		if ((!LepidodendronConfigPlants.genHorsetail) && (!LepidodendronConfig.genAllPlants))
+		if ((!LepidodendronConfigPlants.genJurassicHorsetail) && (!LepidodendronConfig.genAllPlants))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
 			)
 			dimensionCriteria = true;
 
@@ -96,7 +99,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genHorsetailBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genJurassicHorsetailBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
@@ -112,7 +115,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genHorsetailOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genJurassicHorsetailOverrideBiomes))
 			biomeCriteria = true;
 
 		if (biome instanceof BiomeJurassic) {
@@ -128,11 +131,21 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			}
 		}
 
+		if (biome instanceof BiomeCretaceousEarly) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
+			 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 5;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierHorsetail;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierJurassicHorsetail;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -159,8 +172,13 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 			GenChance = 32;
 		}
 
-		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;
-		int minheight = LepidodendronConfigPlants.minheightHorsetail;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")) {
+			GenChance = 16; //Also has a specific surface-finding override to make these common, below:
+		}
+
+		int maxheight = LepidodendronConfigPlants.maxheightJurassicHorsetail;
+		int minheight = LepidodendronConfigPlants.minheightJurassicHorsetail;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}
@@ -177,6 +195,29 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 20; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_refugium")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_refugium")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills")) {
+							blockpos1 = ChunkGenSpawner.getTopSolidBlock(blockpos1, world).up();
+							if (world.getBlockState(blockpos1.down().north()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south().east()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south().west()).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west(2)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().north(3)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().east(3)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().south(3)).getMaterial() != Material.WATER
+									&& world.getBlockState(blockpos1.down().west(3)).getMaterial() != Material.WATER) {
+								continue;
+							}
+						}
 						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0) ) {
 							int j = 1 + random.nextInt(random.nextInt(plantLimit) + 1);
 							j = Math.max(2, j);
@@ -390,7 +431,7 @@ public class BlockJurassicHorsetail extends ElementsLepidodendronMod.ModElement 
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail shrub");
-	        	tooltip.add("Periods: Jurassic");
+	        	tooltip.add("Periods: Jurassic - early Cretaceous");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

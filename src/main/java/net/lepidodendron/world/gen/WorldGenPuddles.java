@@ -14,7 +14,11 @@ import java.util.Random;
 public class WorldGenPuddles extends WorldGenerator
 {
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, 0, 255);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight)
     {
         boolean flag = false;
 
@@ -22,7 +26,8 @@ public class WorldGenPuddles extends WorldGenerator
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) 
+            if (blockpos.down().getY() >= minHeight && blockpos.down().getY() <= maxHeight
+                && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254)
             	&& !worldIn.isAirBlock(blockpos.down(2)) && !worldIn.isAirBlock(blockpos.down().east()) 
             	&& !worldIn.isAirBlock(blockpos.down().west()) 
             	&& !worldIn.isAirBlock(blockpos.down().south()) && !worldIn.isAirBlock(blockpos.down().north()) 

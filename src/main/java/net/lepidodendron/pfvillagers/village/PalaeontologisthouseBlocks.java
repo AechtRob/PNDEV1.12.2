@@ -1,5 +1,6 @@
 package net.lepidodendron.pfvillagers.village;
 
+import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.block.BlockLamp;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.*;
@@ -48,7 +49,8 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
             Template.BlockInfo newInfo = new Template.BlockInfo(pos, blockInfoIn.blockState, tag);
             return newInfo;
         } else {
-            if (blockInfoIn.blockState.getBlock() instanceof BlockFlowerPot) {
+            if (blockInfoIn.blockState.getBlock() instanceof BlockFlowerPot
+                    || blockInfoIn.blockState.getBlock() instanceof BlockFlowerpotPN) {
                 NBTTagCompound tag = blockInfoIn.tileentityData == null ? new NBTTagCompound() : blockInfoIn.tileentityData;
                 tag.setString("Item", "minecraft:tallgrass");
                 tag.setInteger("Data", 2);

@@ -812,10 +812,15 @@ public class LepidodendronEventSubscribers {
 		//}
 	}
 
-	@SubscribeEvent //Steam in the Hot Springs:
+	@SubscribeEvent //Steam in the right places:
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		Random rand = new Random();
-		if (event.phase == TickEvent.Phase.END && (event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian || event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous)) {
+		if (event.phase == TickEvent.Phase.END &&
+				(event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+				)
+		) {
 			Entity entity = event.player;
 			World world = entity.world;
 			BlockPos pos = entity.getPosition();
@@ -828,7 +833,9 @@ public class LepidodendronEventSubscribers {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
 							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
-									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_shrubland_springs"))
 									&& rand.nextInt(150) == 0) {
 								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());

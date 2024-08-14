@@ -21,7 +21,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_longisquama",
 			"type": "text",
-			"text": "Longisquama is a neodiapsid known from the Madygen Formation of Triassic Kyrgyzstan. It is known from a partial specimen which preserves long structures growing from its back. The purpose of these structures is not known and only one specimen, the holotype, preserves the integuments. Longisquama is classified as a neodiapsid, though due to the strange structures it possesses, relationships within the group is hard to assess. The name Longisquama means \"long scales\" and references the long strange scales found in the holotype specimen."
+			"text": "Longisquama is a neodiapsid known from the Madygen Formation of Triassic Kyrgyzstan. It is known from a partial specimen which preserves long structures growing from its back. The purpose of these structures is not known and only one specimen, the holotype, preserves the integuments. Longisquama is classified as a neodiapsid, though due to the strange structures it possesses, relationships within the group is hard to assess."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_longisquama",
+			"type": "text",
+			"text": "The name Longisquama means \"long scales\" and references the long strange scales found in the holotype specimen."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -1,6 +1,6 @@
 {
     "name": "Pleistocene",
-    "description": "$(l)An (N)Ice Age$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "$(l)An N-Ice Age$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_pleistocene.png",
     "sortnum": 12
 }

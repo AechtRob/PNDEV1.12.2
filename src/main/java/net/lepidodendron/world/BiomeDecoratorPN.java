@@ -93,9 +93,17 @@ public class BiomeDecoratorPN extends BiomeDecorator {
                 worldgenabstracttree.setDecorationDefaults();
                 BlockPos blockpos = worldIn.getHeight(this.chunkPos.add(k6, 0, l));
 
-                if (worldgenabstracttree.generate(worldIn, random, blockpos))
-                {
-                    worldgenabstracttree.generateSaplings(worldIn, random, blockpos);
+                boolean BandedCheck = true;
+                if ((biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert"))
+                    && blockpos.getY() > 68) {
+                    BandedCheck = false;
+                }
+
+                if (BandedCheck) {
+                    if (worldgenabstracttree.generate(worldIn, random, blockpos)) {
+                        worldgenabstracttree.generateSaplings(worldIn, random, blockpos);
+                    }
                 }
             }
 

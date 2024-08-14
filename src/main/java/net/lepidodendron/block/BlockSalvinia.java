@@ -140,12 +140,6 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 
 		int GenChance = 30;
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")) {
-			GenChance = 64;
-		}
-
 //		double GenMultiplier = LepidodendronConfigPlants.weightSalvinia;
 //		if (GenMultiplier < 0) {GenMultiplier = 0;}
 //		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
@@ -155,6 +149,15 @@ public class BlockSalvinia extends ElementsLepidodendronMod.ModElement {
 			GenChance = Math.min(GenChance * 10, 100);
 		}
 		if (biome instanceof BiomeCretaceousEarly) {
+			GenChance = 64;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")) {
 			GenChance = 192;
 		}
 
