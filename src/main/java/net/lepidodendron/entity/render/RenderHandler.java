@@ -5818,6 +5818,18 @@ public class RenderHandler {
                 return new RenderStenokranio(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHarpactognathus.class, new IRenderFactory<EntityPrehistoricFloraHarpactognathus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHarpactognathus> createRenderFor(RenderManager manager) {
+                return new RenderHarpactognathus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDearc.class, new IRenderFactory<EntityPrehistoricFloraDearc>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDearc> createRenderFor(RenderManager manager) {
+                return new RenderDearc(manager);
+            }
+        });
 
 
 
