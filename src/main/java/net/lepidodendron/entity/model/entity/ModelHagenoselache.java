@@ -153,9 +153,24 @@ public class ModelHagenoselache extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.01F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.01F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.02F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.03F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetX = -0.01F;
+        this.base.offsetY = -0.2F;
+        this.base.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticWall(float f) {
+        this.base.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.base.offsetX = -0.075F;
+        this.base.offsetZ = -0.12F;
+        this.base.offsetY = -0.2F;
+        this.base.render(0.01F);
         this.resetToDefaultPose();
     }
 
