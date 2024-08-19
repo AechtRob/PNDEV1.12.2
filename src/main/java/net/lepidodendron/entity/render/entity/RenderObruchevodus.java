@@ -19,7 +19,7 @@ public class RenderObruchevodus extends RenderLivingBaseWithBook<EntityPrehistor
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraObruchevodus entity) {
         return RenderObruchevodus.TEXTURE;
     }
-    public static float getScaler() {return 0.325F;}
+    public static float getScaler() {return 0.26F;}
 
     @Override
     protected void applyRotations(EntityPrehistoricFloraObruchevodus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {

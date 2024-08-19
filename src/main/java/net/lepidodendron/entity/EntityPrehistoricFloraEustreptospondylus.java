@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 
 	@Override
 	public int getDrinkLength() {
-		return 551;
+		return 760;
 	}
 
 	@Override
@@ -227,7 +227,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 	}
 
 	@Override
-	public int getRoarLength() { return 40; } //Warn/threat
+	public int getRoarLength() { return 65; } //Warn/threat
 
 
 	@Override
@@ -264,7 +264,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.32F;
+			speedBase = speedBase * 1.6F;
 
 		}
 		return speedBase;

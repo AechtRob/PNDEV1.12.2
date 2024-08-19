@@ -1,5 +1,5 @@
 {
-	"name": "Palaeoctenophora",
+	"name": "Paleoctenophora",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/palaeoctenophora_icon.png",
 	"category": "lepidodendron:devonian_animal",
@@ -7,7 +7,7 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_palaeoctenophora",
-			"title": "Palaeoctenophora",
+			"title": "Paleoctenophora",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)>Ctenophora $(br)>Tentaculata $(br)>Cydippida"
 		},
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeoctenophora",
 			"type": "text",
-			"text": "Palaeoctenophora is a fossil ctenophore, found in the Hunsruck Slate of Devonian Germany. It is poorly preserved although parts of its comb rows are preserved. It is assumed to have looked like modern sea gooseberries, given the two long tentacles it possessed. Its specimen was too delicate to prepare and information was gathered through radiography."
+			"text": "Paleoctenophora is a fossil ctenophore, found in the Hunsruck Slate of Devonian Germany. It is poorly preserved although parts of its comb rows are preserved. It is assumed to have looked like modern sea gooseberries, given the two long tentacles it possessed. Its specimen was too delicate to prepare and information was gathered through radiography."
 		},
 		{
 			"type": "lepidodendron:diet",

@@ -11,18 +11,15 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPikaia extends RenderLivingBaseWithBook<EntityPrehistoricFloraPikaia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia.png");
-    public static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia_nerf.png");
+    //public static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia_nerf.png");
 
-    public static float getScaler() {return 0.025F;}
+    public static float getScaler() {return 0.13F;}
     public RenderPikaia(RenderManager mgr) {
         super(mgr, new ModelPikaia(), 0.0f);
     }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPikaia entity) {
-        if (LepidodendronConfig.doLowRes) {
-            return RenderPikaia.TEXTURE_NERF;
-        }
         return RenderPikaia.TEXTURE;
     }
 
