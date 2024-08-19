@@ -291,7 +291,7 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
