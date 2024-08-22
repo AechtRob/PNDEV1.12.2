@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			if (this.getAnimationTick() == 445) {
+			if (this.getAnimationTick() == 623) {
 				if (this.world instanceof WorldServer) {
 					Vec3d eventpos = new Vec3d(this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY(), this.getDrinkingFrom().getZ() + 0.5);
 					for (int j = 0; (float) j < 200F; ++j) {

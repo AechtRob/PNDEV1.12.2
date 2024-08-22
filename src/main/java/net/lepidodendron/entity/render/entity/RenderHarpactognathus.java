@@ -12,7 +12,7 @@ public class RenderHarpactognathus extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harpactognathus.png");
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.33F;
     }
 
     public RenderHarpactognathus(RenderManager mgr) {

@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:amphibian_spawn_stenokranio", "x": 180}
+    ]
+  }
+}
