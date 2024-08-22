@@ -148,9 +148,9 @@ public class ModelAlbertonia extends ModelBasePalaeopedia {
 
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetY = -0.15F;
-        this.Bodyfront.offsetX = -0.1F;
-        this.Bodyfront.offsetZ = 0.025F;
+        this.Bodyfront.offsetY = -0.05F;
+        this.Bodyfront.offsetX = -0.03F;
+        this.Bodyfront.offsetZ = -0.01F;
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }

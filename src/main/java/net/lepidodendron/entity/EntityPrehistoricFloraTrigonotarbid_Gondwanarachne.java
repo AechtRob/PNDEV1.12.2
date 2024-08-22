@@ -8,11 +8,14 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
+import net.lepidodendron.entity.render.entity.RenderTrigonotarbid_Gondwanarachne;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -33,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTrigonotarbid_Gondwanarachne extends EntityPrehistoricFloraLandClimbingBase implements ITrappableAir {
+public class EntityPrehistoricFloraTrigonotarbid_Gondwanarachne extends EntityPrehistoricFloraLandClimbingBase implements ITrappableAir  {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -180,6 +183,38 @@ public class EntityPrehistoricFloraTrigonotarbid_Gondwanarachne extends EntityPr
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.TRIGONOTARBID_LOOT;
 	}
+
+	//-------------------
+	//Displays general:
+	public static float getScaler(@Nullable String variant) {
+		return RenderTrigonotarbid_Gondwanarachne.getScaler();
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderTrigonotarbid_Gondwanarachne.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelGondwanarachne;}
+	//Entomology Case
+	public static double offsetCase(@Nullable String variant) {return 0.25;}
+	//-------------------
+
+
+	//-------------------
+	//Taxidermy:
+	public static double offsetWall(@Nullable String variant) {return 0.075;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.59;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.02;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return -0F;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return -0.15F;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.6F;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return -0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0F;}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+	//-------------------
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 

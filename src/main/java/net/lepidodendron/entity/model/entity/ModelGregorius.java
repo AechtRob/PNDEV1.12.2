@@ -249,11 +249,25 @@ public class ModelGregorius extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(root, 0.0F, 1.6F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.45F;
+        this.root.offsetY = -0.2F;
+        this.root.offsetX = -0.03F;
+        this.root.render(0.01F);
         this.resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.1F, 0.0F, 0.0F);
+        this.root.offsetZ = -0.0F;
+        this.root.offsetY = -0.0F;
+        this.root.render(0.01F);
         resetToDefaultPose();
     }
     @Override

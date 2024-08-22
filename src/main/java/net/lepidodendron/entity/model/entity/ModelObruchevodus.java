@@ -205,10 +205,23 @@ public class ModelObruchevodus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
+        this.setRotateAngle(body, 0.0F, 1.6F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.18F;
+        this.body.offsetY = -0.22F;
+        this.body.offsetX = -0.03F;
+        this.body.render(0.01F);
         this.resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.0F;
+        this.body.offsetY = -0.0F;
+        this.body.render(0.01F);
         this.resetToDefaultPose();
     }
 
@@ -224,7 +237,10 @@ public class ModelObruchevodus extends ModelBasePalaeopedia {
         this.body.scaleChildren = true;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:
