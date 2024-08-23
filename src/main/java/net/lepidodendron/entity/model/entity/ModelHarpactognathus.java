@@ -3078,7 +3078,6 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembranebeg9.rotationPointZ = this.wingmembranebeg9.rotationPointZ + (float)(0);
 
 
-
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
