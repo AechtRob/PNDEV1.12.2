@@ -237,9 +237,25 @@ public class ModelPhanerorhynchus extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.resetToDefaultPose();
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.body.offsetY = -0.21F;
+        this.body.offsetX = -0.08F;
+        this.body.offsetZ = -0.18F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = 0.02F;
+        this.body.offsetY = -0.12F;
+        this.body.offsetX = -0.0044F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     @Override
