@@ -146,14 +146,19 @@ public class StructureSpawnArthropitys extends ElementsLepidodendronMod.ModEleme
 				int x = spawnTo.getX();
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
+				boolean worldgen = true;
 				{
 					Object2ObjectOpenHashMap <String, Object> $_dependencies = new Object2ObjectOpenHashMap<>();
 					$_dependencies.put("x", i);
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
+					$_dependencies.put("worldgen", worldgen);
 					$_dependencies.put("vines", true);
 					$_dependencies.put("SaplingSpawn", false);
+					$_dependencies.put("parentx", i);
+					$_dependencies.put("parenty", j + 1);
+					$_dependencies.put("parentz", k);
 					if ((world.canSeeSky(spawnTo)) || 
 					(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
 					&& world.canSeeSky(spawnTo.up()))) {
