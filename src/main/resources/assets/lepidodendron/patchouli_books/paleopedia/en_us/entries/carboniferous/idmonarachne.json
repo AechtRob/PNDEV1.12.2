@@ -1,0 +1,47 @@
+{
+	"name": "Idmonarachne",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/idmonarachne_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_idmonarachne",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_idmonarachne",
+			"title": "Idmonarachne",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida $(br)>Tetrapulmonata"
+		},
+        	{
+            "type": "entity",
+            "name": "I. brasieri",
+            "entity": "lepidodendron:prehistoric_flora_idmonarachne",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_idmonarachne",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		}
+	]
+}

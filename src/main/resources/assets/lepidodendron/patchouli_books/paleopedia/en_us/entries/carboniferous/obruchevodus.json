@@ -1,0 +1,47 @@
+{
+	"name": "Obruchevodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/obruchevodus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_obruchevodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_obruchevodus",
+			"title": "Obruchevodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Holocephali $(br)>Petalodontiformes $(br)>Belantseidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. griffithi",
+            "entity": "lepidodendron:prehistoric_flora_obruchevodus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_obruchevodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_obruchevodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_obruchevodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_obruchevodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_obruchevodus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_obruchevodus"
+		}
+	]
+}
