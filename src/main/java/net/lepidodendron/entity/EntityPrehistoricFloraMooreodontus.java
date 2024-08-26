@@ -46,10 +46,10 @@ public class EntityPrehistoricFloraMooreodontus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraMooreodontus(World world) {
 		super(world);
-		setSize(0.68F, 0.88F);
+		setSize(0.68F, 0.6F);
 		minWidth = 0.1F;
 		maxWidth = 0.68F;
-		maxHeight = 0.88F;
+		maxHeight = 0.6F;
 		maxHealthAgeable = 22.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

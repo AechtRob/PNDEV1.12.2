@@ -3,22 +3,24 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderThecodontosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +29,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -35,20 +38,26 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand {
+public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
 
+
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
+
+
 	public EntityPrehistoricFloraLagosuchus(World world) {
 		super(world);
-		setSize(0.425F, 0.675F);
+		setSize(0.425F, 0.4F);
 		minWidth = 0.05F;
 		maxWidth = 0.425F;
-		maxHeight = 0.675F;
-		maxHealthAgeable = 28.0D;
+		maxHeight = 0.4F;
+		maxHealthAgeable = 10.0D;
+		STAND_ANIMATION = Animation.create(85);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -87,13 +96,18 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 	//public static String getHabitat() {return "Terrestrial Pseudosuchian";}
 
 	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+	}
+
+	@Override
 	public boolean hasNest() {
 		return true;
 	}
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 8;
 	}
 
 	@Override
@@ -112,11 +126,11 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.6915F;
+		float speedBase = 0.4215F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -165,7 +179,7 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.BUG), DietString.MEAT);
+		return ArrayUtils.addAll(ArrayUtils.addAll(DietString.PLANTS, DietString.BUG));
 	}
 
 	@Override
@@ -222,11 +236,56 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(2000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		//Sometimes stand up and look around:
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
+
+	}
+
+	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
+		}
+
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
@@ -275,6 +334,12 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.LAGOSUCHUS_LOOT;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_LAGOSUCHUS;
 	}
 
 	//Rendering taxidermy:

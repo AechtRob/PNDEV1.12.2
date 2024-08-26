@@ -50,10 +50,10 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraGermanodactylus(World world) {
 		super(world);
-		setSize(0.85F, 0.5F);
+		setSize(0.4F, 0.3F);
 		minWidth = 0.10F;
-		maxWidth = 0.85F;
-		maxHeight = 0.5F;
+		maxWidth = 0.4F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 10.0D;
 		setNoAI(!true);
 		enablePersistence();
@@ -291,7 +291,7 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
