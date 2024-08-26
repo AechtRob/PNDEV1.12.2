@@ -12,7 +12,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderDubreuillosaurus;
+import net.lepidodendron.entity.render.entity.RenderEustreptospondylus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			if (this.getAnimationTick() == 445) {
+			if (this.getAnimationTick() == 623) {
 				if (this.world instanceof WorldServer) {
 					Vec3d eventpos = new Vec3d(this.getDrinkingFrom().getX() + 0.5, this.getDrinkingFrom().getY(), this.getDrinkingFrom().getZ() + 0.5);
 					for (int j = 0; (float) j < 200F; ++j) {
@@ -95,7 +95,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 
 	@Override
 	public int getDrinkLength() {
-		return 551;
+		return 760;
 	}
 
 	@Override
@@ -227,7 +227,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 	}
 
 	@Override
-	public int getRoarLength() { return 40; } //Warn/threat
+	public int getRoarLength() { return 65; } //Warn/threat
 
 
 	@Override
@@ -264,7 +264,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.32F;
+			speedBase = speedBase * 1.6F;
 
 		}
 		return speedBase;
@@ -434,17 +434,65 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 		return LepidodendronMod.EUSTREPTOSPONDYLUS_LOOT;
 	}
 
-	//Rendering taxidermy:
+//Rendering taxidermy:
 	//--------------------
-
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.3;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -1.3F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.035;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.8F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderEustreptospondylus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelEustreptospondylus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderEustreptospondylus.getScaler();
+	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_EUSTREPTOSPONDYLUS;
 	}
-	//Rendering taxidermy:
-	//--------------------
+
 
 
 }

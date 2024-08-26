@@ -143,22 +143,33 @@ public class ModelAmpyx extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.AmpyxMain.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.AmpyxMain.offsetZ = 0.1F;
-        this.AmpyxMain.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(AmpyxMain, 0.0F, 0.0F, 0.0F);
+        this.AmpyxMain.offsetZ = 0.02F;
+        this.AmpyxMain.offsetY = 0.124F;
+        this.AmpyxMain.render(0.01F);
+        resetToDefaultPose();
     }
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.AmpyxMain.offsetY = 0.7F;
+        this.AmpyxMain.offsetX = 0.1F;
+        this.AmpyxMain.rotateAngleY = (float) Math.toRadians(210);
+        this.AmpyxMain.rotateAngleX = (float) Math.toRadians(8);
+        this.AmpyxMain.rotateAngleZ = (float) Math.toRadians(-4);
+        this.AmpyxMain.scaleChildren = true;
+        float scaler = 0.575F;
+        this.AmpyxMain.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(AmpyxMain, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.AmpyxMain.render(f);
+        //Reset rotations, positions and sizing:
+        this.AmpyxMain.setScale(1.0F, 1.0F, 1.0F);
+        this.AmpyxMain.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEustreptospondylus extends RenderLivingBaseWithBook<EntityPrehistoricFloraEustreptospondylus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eustreptospondylus.png");
 
-    public static float getScaler() {return 0.6F;}
+    public static float getScaler() {return 0.85F;}
 
     public RenderEustreptospondylus(RenderManager mgr) {
         super(mgr, new ModelEustreptospondylus(), 0.5f);

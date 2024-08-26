@@ -150,20 +150,44 @@ public class ModelAdelophthalmus extends ModelBasePalaeopedia {
         this.carapace.render(f5 * 0.3F);
 
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(carapace, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(segment, 0.02F, 0.1F, 0.0F);
+        this.setRotateAngle(segment2, 0.02F, -0.1F, 0.0F);
+        this.setRotateAngle(segment3, 0.02F, -0.2F, 0.0F);
+        this.setRotateAngle(segment4, 0.02F, -0.05F, 0.0F);
+        this.setRotateAngle(segment5, 0.02F, -0.05F, 0.0F);
+        this.setRotateAngle(segment6, 0.02F, -0.05F, 0.0F);
+        this.carapace.offsetY = 0.045F;
+        this.carapace.render(0.01F);
+        resetToDefaultPose();
+    }
 
     @Override
     public void renderStaticBook(float f) {
-
-    }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.carapace.offsetZ = -0.13F;
-        this.carapace.render(0.02F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        //Rotations, positions and sizing:
+        this.carapace.offsetY = 0.7F;
+        this.carapace.offsetX = 0.1F;
+        this.carapace.rotateAngleY = (float) Math.toRadians(210);
+        this.carapace.rotateAngleX = (float) Math.toRadians(8);
+        this.carapace.rotateAngleZ = (float) Math.toRadians(-4);
+        this.carapace.scaleChildren = true;
+        float scaler = 0.575F;
+        this.carapace.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(carapace, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(segment6, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.carapace.render(f);
+        //Reset rotations, positions and sizing:
+        this.carapace.setScale(1.0F, 1.0F, 1.0F);
+        this.carapace.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

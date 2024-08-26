@@ -3,146 +3,183 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
 public class ModelBelantsea extends ModelBasePalaeopedia {
-    public AdvancedModelRenderer Bodyfront;
-    public AdvancedModelRenderer Bodymiddle;
-    public AdvancedModelRenderer Firstdorsalfin;
-    public AdvancedModelRenderer Leftpelvicfin;
-    public AdvancedModelRenderer Rightpelvicfin;
-    public AdvancedModelRenderer Head;
-    public AdvancedModelRenderer Dorsalfinflesh;
-    public AdvancedModelRenderer Bodyend;
-    public AdvancedModelRenderer Tailbase;
-    public AdvancedModelRenderer Seconddorsalfinstart;
-    public AdvancedModelRenderer Bellyend;
-    public AdvancedModelRenderer Tailend;
-    public AdvancedModelRenderer Seconddorsalfinend;
-    public AdvancedModelRenderer Tailunderside;
-    public AdvancedModelRenderer Tailfin;
-    public AdvancedModelRenderer Analfin;
-    public AdvancedModelRenderer Throat;
-    public AdvancedModelRenderer Headslope;
-    public AdvancedModelRenderer Face;
-    public AdvancedModelRenderer Lowerjaw;
-    public AdvancedModelRenderer Upperlips;
-    public AdvancedModelRenderer Upperteeth;
-    public AdvancedModelRenderer Lowerteeth;
+    private final AdvancedModelRenderer root;
+    private final AdvancedModelRenderer Bodyfront;
+    private final AdvancedModelRenderer Bodymiddle;
+    private final AdvancedModelRenderer Bodyend;
+    private final AdvancedModelRenderer Tailbase;
+    private final AdvancedModelRenderer Tailend;
+    private final AdvancedModelRenderer Tailfin;
+    private final AdvancedModelRenderer Seconddorsalfinend;
+    private final AdvancedModelRenderer Tailunderside;
+    private final AdvancedModelRenderer Analfinleft;
+    private final AdvancedModelRenderer Analfinright;
+    private final AdvancedModelRenderer Seconddorsalfinstart;
+    private final AdvancedModelRenderer Bellyend;
+    private final AdvancedModelRenderer Firstdorsalfin;
+    private final AdvancedModelRenderer Leftpelvicfin;
+    private final AdvancedModelRenderer Rightpelvicfin;
+    private final AdvancedModelRenderer Head;
+    private final AdvancedModelRenderer Throat;
+    private final AdvancedModelRenderer Headslope;
+    private final AdvancedModelRenderer Face;
+    private final AdvancedModelRenderer Upperlips;
+    private final AdvancedModelRenderer Upperteeth;
+    private final AdvancedModelRenderer Lowerjaw;
+    private final AdvancedModelRenderer Lowerteeth;
+    private final AdvancedModelRenderer Dorsalfinflesh;
 
     public ModelBelantsea() {
         this.textureWidth = 100;
         this.textureHeight = 100;
-        this.Throat = new AdvancedModelRenderer(this, 30, 79);
-        this.Throat.setRotationPoint(0.0F, 7.0F, -6.0F);
-        this.Throat.addBox(-1.5F, -2.0F, 0.0F, 3, 2, 3, 0.0F);
-        this.setRotateAngle(Throat, -0.5731661290180989F, 0.0F, 0.0F);
-        this.Bodyend = new AdvancedModelRenderer(this, 0, 49);
-        this.Bodyend.setRotationPoint(0.0F, -0.4000000059604645F, 3.0F);
-        this.Bodyend.addBox(-1.0F, -1.5F, 0.0F, 2, 9, 4, 0.0F);
-        this.setRotateAngle(Bodyend, 0.021293017373673524F, 0.0F, 0.0F);
-        this.Tailbase = new AdvancedModelRenderer(this, 0, 38);
-        this.Tailbase.setRotationPoint(0.009999999776482582F, 0.5F, 3.0F);
-        this.Tailbase.addBox(-1.0F, -1.5F, 0.0F, 2, 5, 5, 0.0F);
-        this.Seconddorsalfinend = new AdvancedModelRenderer(this, 27, 0);
-        this.Seconddorsalfinend.setRotationPoint(0.009999999776482582F, -1.0F, 0.0F);
-        this.Seconddorsalfinend.addBox(0.0F, -7.0F, 0.0F, 0, 8, 7, 0.0F);
-        this.Upperlips = new AdvancedModelRenderer(this, 46, 78);
-        this.Upperlips.setRotationPoint(0.0F, 4.699999809265137F, -0.20000000298023224F);
-        this.Upperlips.addBox(-2.0F, 0.0F, 0.0F, 4, 1, 4, 0.0F);
-        this.setRotateAngle(Upperlips, 0.23352505591421208F, 0.0F, 0.0F);
-        this.Analfin = new AdvancedModelRenderer(this, 19, 14);
-        this.Analfin.setRotationPoint(0.0F, 0.0F, 2.0F);
-        this.Analfin.addBox(0.0F, 0.0F, -3.5F, 0, 5, 7, 0.0F);
-        this.Tailfin = new AdvancedModelRenderer(this, 28, 21);
-        this.Tailfin.setRotationPoint(-0.009999999776482582F, 0.5F, 1.5F);
-        this.Tailfin.addBox(0.0F, -3.5F, 0.0F, 0, 7, 6, 0.0F);
-        this.Leftpelvicfin = new AdvancedModelRenderer(this, 3, 65);
-        this.Leftpelvicfin.setRotationPoint(1.899999976158142F, 8.0F, -2.0F);
-        this.Leftpelvicfin.addBox(0.0F, 0.0F, -6.0F, 7, 0, 12, 0.0F);
-        this.setRotateAngle(Leftpelvicfin, 0.0F, 0.0F, 0.4457571069383183F);
-        this.Face = new AdvancedModelRenderer(this, 52, 91);
-        this.Face.setRotationPoint(0.0F, -2.0F, -6.0F);
-        this.Face.addBox(-1.5F, 0.0F, 0.0F, 3, 5, 4, 0.0F);
-        this.setRotateAngle(Face, -0.5307546228683145F, 0.0F, 0.0F);
-        this.Headslope = new AdvancedModelRenderer(this, 19, 81);
-        this.Headslope.setRotationPoint(0.0F, -3.299999952316284F, -2.200000047683716F);
-        this.Headslope.addBox(-1.5F, 0.0F, -4.0F, 3, 2, 4, 0.0F);
-        this.setRotateAngle(Headslope, 0.33964105645913F, 0.0F, 0.0F);
-        this.Tailunderside = new AdvancedModelRenderer(this, 10, 33);
-        this.Tailunderside.setRotationPoint(0.0F, 6.5F, 1.0F);
-        this.Tailunderside.addBox(-0.5F, -3.0F, 0.0F, 1, 3, 5, 0.0F);
-        this.setRotateAngle(Tailunderside, 0.6579891413176677F, 0.0F, 0.0F);
-        this.Bodyfront = new AdvancedModelRenderer(this, 0, 78);
+
+        this.root = new AdvancedModelRenderer(this);
+        this.root.setRotationPoint(0.0F, 15.0F, 2.0F);
+
+
+        this.Bodyfront = new AdvancedModelRenderer(this);
         this.Bodyfront.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.Bodyfront.addBox(-2.0F, -3.0F, -7.0F, 4, 12, 10, 0.0F);
-        this.Upperteeth = new AdvancedModelRenderer(this, 59, 76);
-        this.Upperteeth.setRotationPoint(0.0F, 1.0F, 0.20000000298023224F);
-        this.Upperteeth.addBox(-1.5F, 0.0F, 0.0F, 3, 1, 3, 0.0F);
-        this.setRotateAngle(Upperteeth, 0.1911135497644277F, 0.0F, 0.0F);
-        this.Rightpelvicfin = new AdvancedModelRenderer(this, 10, 52);
-        this.Rightpelvicfin.setRotationPoint(-1.899999976158142F, 8.0F, -2.0F);
-        this.Rightpelvicfin.addBox(-7.0F, 0.0F, -6.0F, 7, 0, 12, 0.0F);
-        this.setRotateAngle(Rightpelvicfin, 0.0F, 0.0F, -0.4457571069383183F);
-        this.Dorsalfinflesh = new AdvancedModelRenderer(this, 7, 21);
-        this.Dorsalfinflesh.setRotationPoint(0.0F, -2.0F, -5.199999809265137F);
-        this.Dorsalfinflesh.addBox(-0.5F, -2.0F, -1.0F, 1, 2, 9, 0.0F);
-        this.setRotateAngle(Dorsalfinflesh, 0.12740903872453743F, 0.0F, 0.0F);
-        this.Bodymiddle = new AdvancedModelRenderer(this, 0, 63);
-        this.Bodymiddle.setRotationPoint(0.0F, 0.6000000238418579F, 2.0F);
-        this.Bodymiddle.addBox(-1.5F, -2.0F, 0.0F, 3, 10, 4, 0.0F);
-        this.setRotateAngle(Bodymiddle, -0.021293017373673524F, 0.0F, 0.0F);
-        this.Firstdorsalfin = new AdvancedModelRenderer(this, 0, 0);
-        this.Firstdorsalfin.setRotationPoint(0.0F, -2.299999952316284F, -1.5F);
-        this.Firstdorsalfin.addBox(0.0F, -6.5F, -6.5F, 0, 7, 13, 0.0F);
-        this.Seconddorsalfinstart = new AdvancedModelRenderer(this, 20, 3);
+        this.root.addChild(Bodyfront);
+        this.Bodyfront.cubeList.add(new ModelBox(Bodyfront, 0, 78, -2.0F, -3.0F, -7.0F, 4, 12, 10, 0.0F, false));
+
+        this.Bodymiddle = new AdvancedModelRenderer(this);
+        this.Bodymiddle.setRotationPoint(0.0F, 0.6F, 2.0F);
+        this.Bodyfront.addChild(Bodymiddle);
+        this.setRotateAngle(Bodymiddle, -0.0213F, 0.0F, 0.0F);
+        this.Bodymiddle.cubeList.add(new ModelBox(Bodymiddle, 0, 63, -1.5F, -2.0F, 0.0F, 3, 10, 4, 0.0F, false));
+
+        this.Bodyend = new AdvancedModelRenderer(this);
+        this.Bodyend.setRotationPoint(0.0F, -0.4F, 3.0F);
+        this.Bodymiddle.addChild(Bodyend);
+        this.setRotateAngle(Bodyend, 0.0213F, 0.0F, 0.0F);
+        this.Bodyend.cubeList.add(new ModelBox(Bodyend, 0, 49, -1.0F, -1.5F, 0.0F, 2, 9, 4, 0.0F, false));
+
+        this.Tailbase = new AdvancedModelRenderer(this);
+        this.Tailbase.setRotationPoint(-0.01F, 0.5F, 3.0F);
+        this.Bodyend.addChild(Tailbase);
+        this.Tailbase.cubeList.add(new ModelBox(Tailbase, 0, 38, -1.0F, -1.5F, 0.0F, 2, 5, 5, 0.0F, false));
+
+        this.Tailend = new AdvancedModelRenderer(this);
+        this.Tailend.setRotationPoint(0.0F, 0.6F, 4.5F);
+        this.Tailbase.addChild(Tailend);
+        this.Tailend.cubeList.add(new ModelBox(Tailend, 0, 30, -0.5F, -1.0F, 0.0F, 1, 3, 4, 0.0F, false));
+
+        this.Tailfin = new AdvancedModelRenderer(this);
+        this.Tailfin.setRotationPoint(0.01F, 0.5F, 1.5F);
+        this.Tailend.addChild(Tailfin);
+        this.Tailfin.cubeList.add(new ModelBox(Tailfin, 28, 21, 0.0F, -3.5F, 0.0F, 0, 7, 6, 0.0F, false));
+
+        this.Seconddorsalfinend = new AdvancedModelRenderer(this);
+        this.Seconddorsalfinend.setRotationPoint(-0.01F, -1.0F, 0.0F);
+        this.Tailbase.addChild(Seconddorsalfinend);
+        this.Seconddorsalfinend.cubeList.add(new ModelBox(Seconddorsalfinend, 27, 0, 0.0F, -7.0F, 0.0F, 0, 8, 7, 0.0F, false));
+
+        this.Tailunderside = new AdvancedModelRenderer(this);
+        this.Tailunderside.setRotationPoint(0.0F, 6.5F, 1.0F);
+        this.Tailbase.addChild(Tailunderside);
+        this.setRotateAngle(Tailunderside, 0.658F, 0.0F, 0.0F);
+        this.Tailunderside.cubeList.add(new ModelBox(Tailunderside, 10, 33, -0.49F, -3.0F, 0.0F, 1, 3, 5, 0.0F, false));
+
+        this.Analfinleft = new AdvancedModelRenderer(this);
+        this.Analfinleft.setRotationPoint(0.5F, 0.0F, 2.0F);
+        this.Tailunderside.addChild(Analfinleft);
+        this.setRotateAngle(Analfinleft, 0.0F, 0.0F, -0.6981F);
+        this.Analfinleft.cubeList.add(new ModelBox(Analfinleft, 19, 14, 0.01F, 0.0F, -3.5F, 0, 5, 7, 0.0F, false));
+
+        this.Analfinright = new AdvancedModelRenderer(this);
+        this.Analfinright.setRotationPoint(-0.48F, 0.0F, 2.0F);
+        this.Tailunderside.addChild(Analfinright);
+        this.setRotateAngle(Analfinright, 0.0F, 0.0F, 0.6981F);
+        this.Analfinright.cubeList.add(new ModelBox(Analfinright, 19, 14, -0.01F, 0.0F, -3.5F, 0, 5, 7, 0.0F, true));
+
+        this.Seconddorsalfinstart = new AdvancedModelRenderer(this);
         this.Seconddorsalfinstart.setRotationPoint(0.0F, -1.5F, 1.0F);
-        this.Seconddorsalfinstart.addBox(0.0F, -6.0F, 0.0F, 0, 6, 3, 0.0F);
-        this.Tailend = new AdvancedModelRenderer(this, 0, 30);
-        this.Tailend.setRotationPoint(0.0F, 0.6000000238418579F, 4.5F);
-        this.Tailend.addBox(-0.5F, -1.0F, 0.0F, 1, 3, 4, 0.0F);
-        this.Head = new AdvancedModelRenderer(this, 29, 85);
-        this.Head.setRotationPoint(0.0F, 0.0F, -4.099999904632568F);
-        this.Head.addBox(-2.5F, -2.0F, -6.0F, 5, 9, 6, 0.0F);
-        this.setRotateAngle(Head, 0.12740903872453743F, 0.0F, 0.0F);
-        this.Bellyend = new AdvancedModelRenderer(this, 11, 59);
-        this.Bellyend.setRotationPoint(0.0F, 8.399999618530273F, 0.0F);
-        this.Bellyend.addBox(-0.5F, -1.0F, 0.0F, 1, 1, 4, 0.0F);
-        this.setRotateAngle(Bellyend, 0.23352505591421208F, 0.0F, 0.0F);
-        this.Lowerjaw = new AdvancedModelRenderer(this, 46, 84);
-        this.Lowerjaw.setRotationPoint(0.0F, 4.099999904632568F, -4.949999809265137F);
-        this.Lowerjaw.addBox(-2.0F, 0.0F, -4.0F, 4, 2, 4, 0.0F);
-        //this.setRotateAngle(Lowerjaw, -0.2972295835988592F, 0.0F, 0.0F);
-        this.setRotateAngle(Lowerjaw, -0.1F, 0.0F, 0.0F);
-        this.Lowerteeth = new AdvancedModelRenderer(this, 60, 81);
-        this.Lowerteeth.setRotationPoint(0.009999999776482582F, 0.0F, -3.799999952316284F);
-        this.Lowerteeth.addBox(-1.5F, -1.0F, 0.0F, 3, 1, 3, 0.0F);
-        this.setRotateAngle(Lowerteeth, -0.169820528229565F, 0.0F, 0.0F);
-        this.Head.addChild(this.Throat);
-        this.Bodymiddle.addChild(this.Bodyend);
-        this.Bodyend.addChild(this.Tailbase);
-        this.Tailbase.addChild(this.Seconddorsalfinend);
-        this.Face.addChild(this.Upperlips);
-        this.Tailunderside.addChild(this.Analfin);
-        this.Tailend.addChild(this.Tailfin);
-        this.Bodyfront.addChild(this.Leftpelvicfin);
-        this.Head.addChild(this.Face);
-        this.Head.addChild(this.Headslope);
-        this.Tailbase.addChild(this.Tailunderside);
-        this.Upperlips.addChild(this.Upperteeth);
-        this.Bodyfront.addChild(this.Rightpelvicfin);
-        this.Bodyfront.addChild(this.Dorsalfinflesh);
-        this.Bodyfront.addChild(this.Bodymiddle);
-        this.Bodyfront.addChild(this.Firstdorsalfin);
-        this.Bodyend.addChild(this.Seconddorsalfinstart);
-        this.Tailbase.addChild(this.Tailend);
-        this.Bodyfront.addChild(this.Head);
-        this.Bodyend.addChild(this.Bellyend);
-        this.Head.addChild(this.Lowerjaw);
-        this.Lowerjaw.addChild(this.Lowerteeth);
+        this.Bodyend.addChild(Seconddorsalfinstart);
+        this.Seconddorsalfinstart.cubeList.add(new ModelBox(Seconddorsalfinstart, 20, 3, 0.0F, -6.0F, 0.0F, 0, 6, 3, 0.0F, false));
+
+        this.Bellyend = new AdvancedModelRenderer(this);
+        this.Bellyend.setRotationPoint(0.0F, 8.4F, 0.0F);
+        this.Bodyend.addChild(Bellyend);
+        this.setRotateAngle(Bellyend, 0.2335F, 0.0F, 0.0F);
+        this.Bellyend.cubeList.add(new ModelBox(Bellyend, 11, 59, -0.5F, -1.0F, 0.0F, 1, 1, 4, 0.0F, false));
+
+        this.Firstdorsalfin = new AdvancedModelRenderer(this);
+        this.Firstdorsalfin.setRotationPoint(0.0F, -2.3F, -1.5F);
+        this.Bodyfront.addChild(Firstdorsalfin);
+        this.Firstdorsalfin.cubeList.add(new ModelBox(Firstdorsalfin, 0, 0, 0.0F, -6.5F, -6.5F, 0, 7, 13, 0.0F, false));
+
+        this.Leftpelvicfin = new AdvancedModelRenderer(this);
+        this.Leftpelvicfin.setRotationPoint(-1.9F, 8.0F, -2.0F);
+        this.Bodyfront.addChild(Leftpelvicfin);
+        this.setRotateAngle(Leftpelvicfin, 0.0F, 0.0F, -0.4458F);
+        this.Leftpelvicfin.cubeList.add(new ModelBox(Leftpelvicfin, 10, 52, -7.0F, 0.0F, -6.0F, 7, 0, 12, 0.0F, false));
+
+        this.Rightpelvicfin = new AdvancedModelRenderer(this);
+        this.Rightpelvicfin.setRotationPoint(1.9F, 8.0F, -2.0F);
+        this.Bodyfront.addChild(Rightpelvicfin);
+        this.setRotateAngle(Rightpelvicfin, 0.0F, 0.0F, 0.4458F);
+        this.Rightpelvicfin.cubeList.add(new ModelBox(Rightpelvicfin, 3, 65, 0.0F, 0.0F, -6.0F, 7, 0, 12, 0.0F, false));
+
+        this.Head = new AdvancedModelRenderer(this);
+        this.Head.setRotationPoint(0.0F, 0.0F, -4.1F);
+        this.Bodyfront.addChild(Head);
+        this.setRotateAngle(Head, 0.1274F, 0.0F, 0.0F);
+        this.Head.cubeList.add(new ModelBox(Head, 29, 85, -2.5F, -2.0F, -6.0F, 5, 9, 6, 0.0F, false));
+
+        this.Throat = new AdvancedModelRenderer(this);
+        this.Throat.setRotationPoint(0.0F, 7.0F, -6.0F);
+        this.Head.addChild(Throat);
+        this.setRotateAngle(Throat, -0.5732F, 0.0F, 0.0F);
+        this.Throat.cubeList.add(new ModelBox(Throat, 30, 79, -1.5F, -2.0F, 0.0F, 3, 2, 3, 0.0F, false));
+
+        this.Headslope = new AdvancedModelRenderer(this);
+        this.Headslope.setRotationPoint(0.0F, -3.3F, -2.2F);
+        this.Head.addChild(Headslope);
+        this.setRotateAngle(Headslope, 0.3396F, 0.0F, 0.0F);
+        this.Headslope.cubeList.add(new ModelBox(Headslope, 19, 81, -1.5F, 0.0F, -4.0F, 3, 2, 4, 0.0F, false));
+
+        this.Face = new AdvancedModelRenderer(this);
+        this.Face.setRotationPoint(0.0F, -2.0F, -6.0F);
+        this.Head.addChild(Face);
+        this.setRotateAngle(Face, -0.5308F, 0.0F, 0.0F);
+        this.Face.cubeList.add(new ModelBox(Face, 52, 91, -1.5F, 0.0F, 0.0F, 3, 5, 4, 0.0F, false));
+
+        this.Upperlips = new AdvancedModelRenderer(this);
+        this.Upperlips.setRotationPoint(0.0F, 4.7F, -0.2F);
+        this.Face.addChild(Upperlips);
+        this.setRotateAngle(Upperlips, 0.2335F, 0.0F, 0.0F);
+        this.Upperlips.cubeList.add(new ModelBox(Upperlips, 46, 78, -2.0F, 0.0F, 0.0F, 4, 1, 4, 0.0F, false));
+
+        this.Upperteeth = new AdvancedModelRenderer(this);
+        this.Upperteeth.setRotationPoint(0.0F, 1.0F, 0.2F);
+        this.Upperlips.addChild(Upperteeth);
+        this.setRotateAngle(Upperteeth, 0.1911F, 0.0F, 0.0F);
+        this.Upperteeth.cubeList.add(new ModelBox(Upperteeth, 59, 76, -1.5F, 0.0F, 0.0F, 3, 1, 3, 0.0F, false));
+
+        this.Lowerjaw = new AdvancedModelRenderer(this);
+        this.Lowerjaw.setRotationPoint(0.0F, 4.1F, -4.95F);
+        this.Head.addChild(Lowerjaw);
+        this.setRotateAngle(Lowerjaw, -0.2972F, 0.0F, 0.0F);
+        this.Lowerjaw.cubeList.add(new ModelBox(Lowerjaw, 46, 84, -2.0F, 0.0F, -4.0F, 4, 2, 4, 0.0F, false));
+
+        this.Lowerteeth = new AdvancedModelRenderer(this);
+        this.Lowerteeth.setRotationPoint(-0.01F, 0.0F, -3.8F);
+        this.Lowerjaw.addChild(Lowerteeth);
+        this.setRotateAngle(Lowerteeth, -0.1698F, 0.0F, 0.0F);
+        this.Lowerteeth.cubeList.add(new ModelBox(Lowerteeth, 60, 81, -1.5F, -1.0F, 0.0F, 3, 1, 3, 0.0F, false));
+
+        this.Dorsalfinflesh = new AdvancedModelRenderer(this);
+        this.Dorsalfinflesh.setRotationPoint(0.0F, -2.0F, -5.2F);
+        this.Bodyfront.addChild(Dorsalfinflesh);
+        this.setRotateAngle(Dorsalfinflesh, 0.1274F, 0.0F, 0.0F);
+        this.Dorsalfinflesh.cubeList.add(new ModelBox(Dorsalfinflesh, 7, 21, -0.5F, -2.0F, -1.0F, 1, 2, 9, 0.0F, false));
 
         updateDefaultPose();
     }

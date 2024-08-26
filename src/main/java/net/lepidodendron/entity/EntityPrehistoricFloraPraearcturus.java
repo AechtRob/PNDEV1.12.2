@@ -139,7 +139,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 		if (this.getIsFast()) {
 			return (float) Math.min(1F, (this.getAgeScale() * 1.60F)) * 0.34F;
 		}
-		return (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
+		return (float) Math.min(1F, (1 * 0.30F)) * 0.55F;
 	}
 
 	@Override

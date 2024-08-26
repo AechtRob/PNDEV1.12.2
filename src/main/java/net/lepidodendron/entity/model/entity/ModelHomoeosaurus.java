@@ -215,13 +215,19 @@ public class ModelHomoeosaurus extends ModelBasePalaeopedia {
     }
         public void renderStaticWall(float f) {
             this.Body.rotateAngleY = (float) Math.toRadians(0);
-            this.setRotateAngle(Body, 0.7F, 0.0F, -0.25F);
-            this.setRotateAngle(Neck, -0.5F, 0.0F, 0.0F);
+            this.setRotateAngle(Body, 0.2F, 0.0F, 0.0F);
+            this.setRotateAngle(Neck, -0.8F, 0.0F, 0.0F);
             this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+            this.UpperArmR.setScale(0,0,0);
+            this.UpperArmL.setScale(0,0,0);
+            this.UpperArmR.scaleChildren = true;
+            this.UpperArmL.scaleChildren = true;
             this.Body.offsetY = 0.0F;
             this.Body.offsetX = 0.0F;
-            this.Body.offsetZ = -0.5F;
+            this.Body.offsetZ = -0.75F;
             this.Body.render(0.01F);
+            this.UpperArmR.setScale(1,1,1);
+            this.UpperArmL.setScale(1,1,1);
             resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {

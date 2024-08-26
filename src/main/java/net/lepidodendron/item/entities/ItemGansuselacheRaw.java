@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemGansuselacheRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:gansuselache_raw")
@@ -47,6 +49,10 @@ public class ItemGansuselacheRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("gansuselache_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+		@Nullable
+		public String getVariantStr() {
+			return "male";
 		}
 
 	}
