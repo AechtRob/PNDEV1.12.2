@@ -193,7 +193,7 @@ public class ModelMeganeuropsis extends ModelBasePalaeopedia {
         updateDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, -0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.2F);
         this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
         this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
         this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
@@ -205,7 +205,7 @@ public class ModelMeganeuropsis extends ModelBasePalaeopedia {
         this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
         this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
         this.body.offsetY = -0.15F;
-        this.body.offsetX = -0.01F;
+        this.body.offsetX = -0.02F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }

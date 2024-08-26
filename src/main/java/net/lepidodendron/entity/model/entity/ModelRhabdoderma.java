@@ -256,9 +256,26 @@ public class ModelRhabdoderma extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.resetToDefaultPose();
+        this.base.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetY = -0.21F;
+        this.base.offsetX = -0.09F;
+        this.base.offsetZ = -0.205F;
+        this.base.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.base.offsetZ = -0.0F;
+        this.base.offsetY = -0.12F;
+        this.base.offsetX = -0.01F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
     @Override

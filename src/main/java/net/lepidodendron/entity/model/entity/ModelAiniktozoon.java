@@ -356,21 +356,43 @@ public class ModelAiniktozoon extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bones.render(f5);
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bones, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(body1, 0.0F, 0.01F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.01F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.02F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1F, 0.0F);
+        this.bones.offsetZ = -0.0F;
+        this.bones.offsetY = -0.1F;
+        this.bones.render(0.01F);
+        resetToDefaultPose();
+    }
 
     @Override
     public void renderStaticBook(float f) {
-
-    }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.bones.render(0.02F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        //Rotations, positions and sizing:
+        this.bones.offsetY = 0.7F;
+        this.bones.offsetX = 0.1F;
+        this.bones.rotateAngleY = (float) Math.toRadians(210);
+        this.bones.rotateAngleX = (float) Math.toRadians(8);
+        this.bones.rotateAngleZ = (float) Math.toRadians(-4);
+        this.bones.scaleChildren = true;
+        float scaler = 0.575F;
+        this.bones.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bones, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.bones.render(f);
+        //Reset rotations, positions and sizing:
+        this.bones.setScale(1.0F, 1.0F, 1.0F);
+        this.bones.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

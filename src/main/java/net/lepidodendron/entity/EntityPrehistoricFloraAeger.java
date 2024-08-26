@@ -5,8 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.render.entity.RenderAcanthostega;
+import net.lepidodendron.entity.render.entity.RenderAeger;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -254,55 +258,56 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteri
 
 	//Rendering taxidermy:
 	//--------------------
-//	public static double offsetCase(@Nullable String variant) { return 0.19; }
-//
-//	public static double offsetWall(@Nullable String variant) {
-//		return 0.01;
-//	}
-//	public static double upperfrontverticallinedepth(@Nullable String variant) {
-//		return 1.4;
-//	}
-//	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.8;}
-//	public static double upperfrontlineoffset(@Nullable String variant) {
-//		return 0.4;
-//	}
-//	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return -0F;
-//	}
-//	public static double upperbacklineoffset(@Nullable String variant) {
-//		return 0.4;
-//	}
-//	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-//		return -0.15F;
-//	}
-//	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerbackverticallinedepth(@Nullable String variant) {
-//		return 0.06;
-//	}
-//	public static double lowerfrontlineoffset(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-//		return -0F;
-//	}
-//	public static double lowerbacklineoffset(@Nullable String variant) {
-//		return 0;
-//	}
-//	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-//		return -0F;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ResourceLocation textureDisplay(@Nullable String variant) {
-//		return RenderDisplays.TEXTURE_TYRANNOPHONTES;
-//	}
-//	@SideOnly(Side.CLIENT)
-//	public static ModelBase modelDisplay(@Nullable String variant) {
-//		return RenderDisplays.modelTyrannophontes;
-//	}
-//	public static float getScaler(@Nullable String variant) {
-//		return RenderTyrannophontes.getScaler();
-//	}
+	public static double offsetWall(@Nullable String variant) {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0F;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.35;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return -0.0F;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderAeger.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelAeger;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderAeger.getScaler();
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.01F;}
 
 }
