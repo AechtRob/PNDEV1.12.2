@@ -17,10 +17,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemRedClayBall extends ElementsLepidodendronMod.ModElement {
+public class ItemClayBallRed extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:clay_red_ball")
 	public static final Item block = null;
-	public ItemRedClayBall(ElementsLepidodendronMod instance) {
+	public ItemClayBallRed(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.clay_red_ball);
 	}
 
@@ -32,7 +32,7 @@ public class ItemRedClayBall extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemClay", ItemRedClayBall.block);
+		OreDictionary.registerOre("itemClay", ItemClayBallRed.block);
 	}
 
 	@SideOnly(Side.CLIENT)
