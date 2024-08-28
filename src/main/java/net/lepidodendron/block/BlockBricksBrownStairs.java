@@ -22,16 +22,16 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAdobeStairs extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:adobe_stairs")
+public class BlockBricksBrownStairs extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:brick_brown_stairs")
 	public static final Block block = null;
-	public BlockAdobeStairs(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.adobe_stairs);
+	public BlockBricksBrownStairs(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.brick_brown_stairs);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("adobe_stairs"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("brick_brown_stairs"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -39,16 +39,16 @@ public class BlockAdobeStairs extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:adobe_stairs", "inventory"));
+				new ModelResourceLocation("lepidodendron:brick_brown_stairs", "inventory"));
 	}
 	public static class BlockCustom extends BlockStairs {
 		public BlockCustom() {
-			super(new Block(Material.ROCK, MapColor.ADOBE).getDefaultState());
-			setTranslationKey("pf_adobe_stairs");
+			super(new Block(Material.ROCK, MapColor.BROWN).getDefaultState());
+			setTranslationKey("pf_brick_brown_stairs");
 			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 1);
-			setHardness(0.5F);
-			setResistance(2F);
+			setHardness(2.0F);
+			setResistance(10.0F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
@@ -66,7 +66,7 @@ public class BlockAdobeStairs extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.ADOBE;
+			return MapColor.BROWN;
 		}
 	}
 }
