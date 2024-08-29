@@ -4,16 +4,21 @@ import net.lepidodendron.block.BlockBrownstone;
 import net.lepidodendron.block.BlockDriedMud;
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
 import net.lepidodendron.block.BlockPrehistoricGroundSandBlack;
+import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+import java.lang.reflect.Method;
 import java.util.Random;
 
 public class WorldGenPrehistoricLakes extends WorldGenerator
@@ -120,7 +125,26 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                 }
                             }
                             else {
-                                Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), this.block.getDefaultState(), 2);
+                                Functions.setBlockStateAndCheckForDoublePlant(worldIn, position.add(l1, i4, i3), this.block.getDefaultState(), 2);
+                                if (worldIn.getBlockState(position.add(l1, i4, i3).down()).getMaterial().blocksMovement()) {
+                                    IBlockState iBlockState = worldIn.getBlockState(position.add(l1, i4, i3).down());
+                                    IChunkGenerator chunkGenerator = worldIn.provider.createChunkGenerator();
+                                    Class classGenerator = chunkGenerator.getClass();
+                                    Class[] params = new Class[4];
+                                    params[0] = Biome.class;
+                                    params[1] = int.class;
+                                    params[2] = IBlockState.class;
+                                    params[3] = Random.class;
+
+                                    Method method = RenderDisplayWallMount.testAndGetMethod(classGenerator, "getIBlockstateForWater", params);
+                                    if (method != null) {
+                                        try {
+                                            iBlockState = (IBlockState) method.invoke(null, worldIn.getBiome(position), position.getY(), iBlockState, rand);
+                                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, position.add(l1, i4, i3).down(), iBlockState, 2);
+                                        } catch (Exception e) {
+                                        }
+                                    }
+                                }
                             }
                             //Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState() : this.block.getDefaultState(), 2);
                         }
