@@ -30,6 +30,9 @@ public class RecipeOresAndBlocks  {
 
 		GameRegistry.addSmelting(new ItemStack(BlockLavaRock.block, (int) (1)), new ItemStack(BlockLavaRockPolished.block, (int) (1)), 0.1F);
 
+		GameRegistry.addSmelting(new ItemStack(BlockPebblestone.block, (int) (1)), new ItemStack(Blocks.STONE, (int) (1)), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(BlockPebblestoneMossy.block, (int) (1)), new ItemStack(Blocks.STONE, (int) (1)), 0.1F);
+
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrick.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrickMossy.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrickCarved.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
