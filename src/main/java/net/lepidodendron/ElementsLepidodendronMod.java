@@ -1400,7 +1400,50 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "deuterosaurus_death")));
 		sounds.put(new ResourceLocation("lepidodendron", "deuterosaurus_threat"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "deuterosaurus_threat")));
-	
+
+		sounds.put(new ResourceLocation("lepidodendron", "lagosuchus_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "lagosuchus_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "lagosuchus_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "lagosuchus_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "lagosuchus_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "lagosuchus_death")));
+
+		sounds.put(new ResourceLocation("lepidodendron", "stenokranio_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "stenokranio_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "stenokranio_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "stenokranio_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "stenokranio_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "stenokranio_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "dearc_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "dearc_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "dearc_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "dearc_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "dearc_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "dearc_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "dearc_alarm"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "dearc_alarm")));
+		sounds.put(new ResourceLocation("lepidodendron", "germanodactylus_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "germanodactylus_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "germanodactylus_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "germanodactylus_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "germanodactylus_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "germanodactylus_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "germanodactylus_alarm"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "germanodactylus_alarm")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_alarm"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_alarm")));
+
+		sounds.put(new ResourceLocation("lepidodendron", "schoenesmahl_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "schoenesmahl_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "schoenesmahl_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "schoenesmahl_death")));
+
 	}
 
 
