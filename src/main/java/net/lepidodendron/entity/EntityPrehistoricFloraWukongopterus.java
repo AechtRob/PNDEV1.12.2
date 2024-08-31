@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.render.entity.RenderWukongopterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -41,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
+public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, IGuano, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -264,10 +265,12 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraWukongopterus> wukongopterus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraWukongopterus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraWukongopterus currentWukongopterus : wukongopterus) {
+				currentWukongopterus.setAlarmTarget(ee);
 				currentWukongopterus.setRevengeTarget(ee);
 				currentWukongopterus.screamAlarmCooldown = rand.nextInt(20);
 				currentWukongopterus.setFlying();

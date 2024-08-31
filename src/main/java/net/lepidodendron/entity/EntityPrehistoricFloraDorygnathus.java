@@ -104,10 +104,12 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDorygnathus> dorygnathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDorygnathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDorygnathus currentDorygnathus : dorygnathus) {
+				currentDorygnathus.setAlarmTarget(ee);
 				currentDorygnathus.setRevengeTarget(ee);
 				currentDorygnathus.screamAlarmCooldown = rand.nextInt(20);
 				currentDorygnathus.setFlying();

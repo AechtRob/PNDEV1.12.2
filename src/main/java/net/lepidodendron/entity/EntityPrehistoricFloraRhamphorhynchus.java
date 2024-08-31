@@ -104,13 +104,15 @@ public class EntityPrehistoricFloraRhamphorhynchus extends EntityPrehistoricFlor
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraRhamphorhynchus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraRhamphorhynchus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraRhamphorhynchus currentPterodactylus : rhamphorhynchus) {
-				currentPterodactylus.setRevengeTarget(ee);
-				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
-				currentPterodactylus.setFlying();
+			for (EntityPrehistoricFloraRhamphorhynchus currentRhamphorhynchus : rhamphorhynchus) {
+				currentRhamphorhynchus.setAlarmTarget(ee);
+				currentRhamphorhynchus.setRevengeTarget(ee);
+				currentRhamphorhynchus.screamAlarmCooldown = rand.nextInt(20);
+				currentRhamphorhynchus.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
