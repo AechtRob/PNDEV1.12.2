@@ -386,7 +386,7 @@ public class ModelEustreptospondylus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = 0.3F;
-        this.hips.offsetX = 0.9F;
+        this.hips.offsetX = -0.7F;
         this.hips.rotateAngleY = (float)Math.toRadians(-150);
         this.hips.rotateAngleX = (float)Math.toRadians(6);
         this.hips.rotateAngleZ = (float)Math.toRadians(-2);
@@ -394,6 +394,33 @@ public class ModelEustreptospondylus extends ModelBasePalaeopedia {
         float scaler = 0.7F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
+        this.setRotateAngle(hips, 0.1F, 2.5F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(chest, 0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(neck1, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(neck2, -0.5F, 0.2F, 0.0F);
+        this.setRotateAngle(neck3, 0.45F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.1F, 0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1F, -0.5F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, -0.5F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, -0.5F, 0.0F);
+        this.setRotateAngle(tail4, -0.1F, -0.5F, 0.0F);
+        this.setRotateAngle(tail5, -0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(leftArm, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(leftArm2, -1.0F, 0.3F, 0.0F);
+        this.setRotateAngle(leftArm3, 0.8F, 0.2F, 0.0F);
+        this.setRotateAngle(rightArm, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(rightArm2, -0.8F, -0.3F, 0.0F);
+        this.setRotateAngle(rightArm3, 0.8F, -0.2F, 0.0F);
+        this.setRotateAngle(leftLeg, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg2, 0.5F, 0.0F, 0.1F);
+        this.setRotateAngle(leftLeg3, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(leftLeg4, -0.3F, -0.2F, -0.1F);
+        this.setRotateAngle(rightLeg, -0.5F, 0.3F, 0.1F);
+        this.setRotateAngle(rightLeg2, 1.3F, -0.0F, -0.05F);
+        this.setRotateAngle(rightLeg3, -0.55F, 0.0F, -0.1F);
+        this.setRotateAngle(rightLeg4, 0.73F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.hips.render(f);
         //Reset rotations, positions and sizing:

@@ -534,21 +534,36 @@ public class ModelTrimerus extends ModelBasePalaeopedia {
         this.Trimerus.render(f5 * 0.38F);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.Trimerus.offsetZ = 0.1F;
-        this.Trimerus.render(0.022f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Trimerus, 0.15F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.Trimerus.offsetZ = -0.03F;
+        this.Trimerus.offsetY = 0.35F;
+        this.Trimerus.render(0.01F);
+        resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.Trimerus.offsetY = -2.0F;
+        this.Trimerus.offsetX = -1.338F;
+        this.Trimerus.rotateAngleY = (float)Math.toRadians(200);
+        this.Trimerus.rotateAngleX = (float)Math.toRadians(8);
+        this.Trimerus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Trimerus.scaleChildren = true;
+        float scaler = 1.63F;
+        this.Trimerus.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Trimerus, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Trimerus.render(f);
+        //Reset rotations, positions and sizing:
+        this.Trimerus.setScale(1.0F, 1.0F, 1.0F);
+        this.Trimerus.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

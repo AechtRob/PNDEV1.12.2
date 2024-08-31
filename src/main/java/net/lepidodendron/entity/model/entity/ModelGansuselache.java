@@ -215,8 +215,8 @@ public class ModelGansuselache extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.2F;
-        this.base.offsetX = 1.05F;
+        this.base.offsetY = -1.5F;
+        this.base.offsetX = 1.4F;
         this.base.rotateAngleY = (float)Math.toRadians(245);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
@@ -224,7 +224,12 @@ public class ModelGansuselache extends ModelBasePalaeopedia {
         float scaler = 2.0F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(base, 0.0F, -2.0F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

@@ -265,20 +265,57 @@ public class ModelPikaia extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = -0.1F;
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.body.offsetY = -0.25F;
+        this.body.offsetX = -0.15F;
+        this.body.offsetZ = -0.5F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, -0.2F, 0.0F);
+        this.body.offsetZ = -0.05F;
+        this.body.offsetY = 0.04F;
+        this.body.offsetX = -0.018F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -2.0F;
+        this.body.offsetX = -1.338F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 1.63F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

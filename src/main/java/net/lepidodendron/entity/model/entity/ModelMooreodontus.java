@@ -192,26 +192,26 @@ public class ModelMooreodontus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.body.offsetY = -0.50F;
-        this.body.offsetX = 0.0F;
-        this.body.rotateAngleY = (float)Math.toRadians(130);
-        this.body.rotateAngleX = (float)Math.toRadians(9);
-        this.body.rotateAngleZ = (float)Math.toRadians(-2);
-        this.body.scaleChildren = true;
-        float scaler = 1.1F;
-        this.body.setScale(scaler, scaler, scaler);
+        this.base.offsetY = -0.0F;
+        this.base.offsetX = 0.2F;
+        this.base.rotateAngleY = (float)Math.toRadians(130);
+        this.base.rotateAngleX = (float)Math.toRadians(9);
+        this.base.rotateAngleZ = (float)Math.toRadians(-2);
+        this.base.scaleChildren = true;
+        float scaler = 1.5F;
+        this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, 0.1F, 0.0F, -0.2F);
+        this.setRotateAngle(base, 0.1F, 3.5F, -0.2F);
         this.setRotateAngle(body, 0.1F, 0.2F, 0.0F);
         this.setRotateAngle(body2, 0.1F, -0.2F, 0.0F);
         this.setRotateAngle(body3, 0.1F, -0.3F, 0.0F);
         this.setRotateAngle(body4, 0.1F, -0.3F, 0.0F);
         this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
-        this.body.render(f);
+        this.base.render(f);
         //Reset rotations, positions and sizing:
-        this.body.setScale(1.0F, 1.0F, 1.0F);
-        this.body.scaleChildren = false;
+        this.base.setScale(1.0F, 1.0F, 1.0F);
+        this.base.scaleChildren = false;
         resetToDefaultPose();
     }
 
