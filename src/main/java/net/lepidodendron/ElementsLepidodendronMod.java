@@ -1430,14 +1430,14 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "germanodactylus_death")));
 		sounds.put(new ResourceLocation("lepidodendron", "germanodactylus_alarm"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "germanodactylus_alarm")));
-		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_idle"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_idle")));
-		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_hurt"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_hurt")));
-		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_death"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_death")));
-		sounds.put(new ResourceLocation("lepidodendron", "harpactognathius_alarm"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathius_alarm")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathus_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathus_idle")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathus_hurt"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathus_hurt")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathus_death"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathus_death")));
+		sounds.put(new ResourceLocation("lepidodendron", "harpactognathus_alarm"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "harpactognathus_alarm")));
 
 		sounds.put(new ResourceLocation("lepidodendron", "schoenesmahl_hurt"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "schoenesmahl_hurt")));

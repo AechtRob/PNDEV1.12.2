@@ -10737,74 +10737,74 @@
       }
     ]
   },
-  "harpactnognathus_idle": {
+  "harpactognathus_idle": {
     "sounds": [
       {
-        "name": "lepidodendron:harpactnognathus_living01",
+        "name": "lepidodendron:harpactognathus_living01",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_living02",
+        "name": "lepidodendron:harpactognathus_living02",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_living03",
+        "name": "lepidodendron:harpactognathus_living03",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_living04",
+        "name": "lepidodendron:harpactognathus_living04",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_living05",
+        "name": "lepidodendron:harpactognathus_living05",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_living06",
+        "name": "lepidodendron:harpactognathus_living06",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_living07",
+        "name": "lepidodendron:harpactognathus_living07",
         "stream": false
       }
     ]
   },
-  "harpactnognathus_hurt": {
+  "harpactognathus_hurt": {
     "sounds": [
       {
-        "name": "lepidodendron:harpactnognathus_hurt01",
+        "name": "lepidodendron:harpactognathus_hurt01",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_hurt02",
+        "name": "lepidodendron:harpactognathus_hurt02",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_hurt03",
+        "name": "lepidodendron:harpactognathus_hurt03",
         "stream": false
       }
     ]
   },
-  "harpactnognathus_death": {
+  "harpactognathus_death": {
     "sounds": [
       {
-        "name": "lepidodendron:harpactnognathus_death",
+        "name": "lepidodendron:harpactognathus_death",
         "stream": false
       }
     ]
   },
-  "harpactnognathus_alarm": {
+  "harpactognathus_alarm": {
     "sounds": [
       {
-        "name": "lepidodendron:harpactnognathus_alarm01",
+        "name": "lepidodendron:harpactognathus_alarm01",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_alarm02",
+        "name": "lepidodendron:harpactognathus_alarm02",
         "stream": false
       },
       {
-        "name": "lepidodendron:harpactnognathus_alarm03",
+        "name": "lepidodendron:harpactognathus_alarm03",
         "stream": false
       }
     ]
