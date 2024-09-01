@@ -284,22 +284,22 @@ public class EntityPrehistoricFloraHarpactognathus extends EntityPrehistoricFlor
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:harpactognathus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:harpactognathus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:harpactognathus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:harpactognathus_alarm"));
 	}
 
 	public void playAlarmSound()
