@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraEoarthropleura(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		minWidth = 0.1F;
+		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
