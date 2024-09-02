@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/pebblestone_mossy_3",
+    "top": "lepidodendron:blocks/pebblestone_mossy_3",
+    "side": "lepidodendron:blocks/pebblestone_mossy_3"
+  }
+}

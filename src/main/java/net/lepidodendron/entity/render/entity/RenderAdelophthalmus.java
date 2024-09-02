@@ -9,6 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAdelophthalmus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAdelophthalmus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/adelophthalmus.png");
+    public static float getScaler() {return 0.3F;}
 
     public RenderAdelophthalmus(RenderManager mgr) {
         super(mgr, new ModelAdelophthalmus(), 0.0f);

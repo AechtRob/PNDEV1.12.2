@@ -1,0 +1,23 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:bricks_brown"
+    },
+    "1": {
+      "item": "lepidodendron:bricks_brown"
+    },
+    "2": {
+      "item": "lepidodendron:bricks_brown"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:brick_brown_slab",
+    "data": 0,
+    "count": 6
+  }
+}

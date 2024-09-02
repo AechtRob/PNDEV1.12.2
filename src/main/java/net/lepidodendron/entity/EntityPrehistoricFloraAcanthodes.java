@@ -96,6 +96,11 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraAgea
 	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
 	public int getShoalSize() {
 		return 10;
 	}

@@ -1,0 +1,47 @@
+{
+	"name": "Westrichus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/westrichus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_westrichus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_westrichus",
+			"title": "Westrichus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Acanthodii $(br)>Acanthodiiformes $(br)>Acanthodidae"
+		},
+        	{
+            "type": "entity",
+            "name": "W. kraetschmeri",
+            "entity": "lepidodendron:prehistoric_flora_westrichus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_westrichus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_westrichus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_westrichus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_westrichus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_westrichus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_westrichus"
+		}
+	]
+}

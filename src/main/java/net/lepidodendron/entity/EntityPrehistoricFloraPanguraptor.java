@@ -184,8 +184,6 @@ public class EntityPrehistoricFloraPanguraptor extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	
-	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;

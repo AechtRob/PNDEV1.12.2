@@ -62,15 +62,18 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 		World world = (World) dependencies.get("world");
 		boolean worldgen = (boolean) dependencies.get("worldgen");
 		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
+		int parentx;
+		int parenty;
+		int parentz;
 		if (!LepidodendronConfigPlants.spreadUnlimitedCalamites) {
-			int parentx = (int) dependencies.get("parentx");
-			int parenty = (int) dependencies.get("parenty");
-			int parentz = (int) dependencies.get("parentz");
+			parentx = (int) dependencies.get("parentx");
+			parenty = (int) dependencies.get("parenty");
+			parentz = (int) dependencies.get("parentz");
 		}
 		else {
-			int parentx = (int) dependencies.get("x");
-			int parenty = (int) dependencies.get("y");
-			int parentz = (int) dependencies.get("z");
+			parentx = (int) dependencies.get("x");
+			parenty = (int) dependencies.get("y");
+			parentz = (int) dependencies.get("z");
 		}
 		
 		double TrunkHeight = 0;
@@ -100,8 +103,8 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 					IBlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setBoolean("worldgen", worldgen);
-						_tileEntity.getTileData().setDouble("x", x);
-						_tileEntity.getTileData().setDouble("z", z);
+						_tileEntity.getTileData().setDouble("x", (double)parentx);
+						_tileEntity.getTileData().setDouble("z", (double)parentz);
 					}
 					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
@@ -115,8 +118,8 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 					IBlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setBoolean("worldgen", worldgen);
-						_tileEntity.getTileData().setDouble("x", x);
-						_tileEntity.getTileData().setDouble("z", z);
+						_tileEntity.getTileData().setDouble("x", (double)parentx);
+						_tileEntity.getTileData().setDouble("z", (double)parentz);
 					}
 					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}

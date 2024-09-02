@@ -85,7 +85,7 @@ public class ItemGuano extends ElementsLepidodendronMod.ModElement {
 						int i = ((Integer) iblockstate.getValue(BlockSnow.LAYERS)).intValue();
 
 						if (i < 8) {
-							IBlockState iblockstate1 = iblockstate.withProperty(BlockSnow.LAYERS, Integer.valueOf(i + 1));
+							IBlockState iblockstate1 = iblockstate.withProperty(BlockGuano.DECAYABLE, false).withProperty(BlockSnow.LAYERS, Integer.valueOf(i + 1));
 							AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(worldIn, blockpos);
 
 							if (axisalignedbb != Block.NULL_AABB && worldIn.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && worldIn.setBlockState(blockpos, iblockstate1, 10)) {
@@ -116,7 +116,7 @@ public class ItemGuano extends ElementsLepidodendronMod.ModElement {
 							blockpos = blockpos.offset(facing);
 						}
 						if (!itemstack.isEmpty() && playerIn.canPlayerEdit(blockpos, facing, itemstack) && worldIn.mayPlace(BlockGuano.block, blockpos, false, facing, playerIn)) {
-							IBlockState iblockstate1 = BlockGuano.block.getDefaultState().withProperty(BlockSnow.LAYERS, Integer.valueOf(1));
+							IBlockState iblockstate1 = BlockGuano.block.getDefaultState().withProperty(BlockGuano.DECAYABLE, false).withProperty(BlockSnow.LAYERS, Integer.valueOf(1));
 							AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(worldIn, blockpos);
 
 							if (axisalignedbb != Block.NULL_AABB && worldIn.checkNoEntityCollision(axisalignedbb.offset(blockpos))) {

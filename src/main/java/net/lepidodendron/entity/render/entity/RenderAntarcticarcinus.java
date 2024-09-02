@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAntarcticarcinus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAntarcticarcinus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
+    public static float getScaler() {
+        return 0.33F;
+    }
 
     public RenderAntarcticarcinus(RenderManager mgr) {
         super(mgr, new ModelAntarcticarcinus(), 0.0f);

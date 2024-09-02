@@ -69,7 +69,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/orestiacanthus_male_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/orestiacanthus_female_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/goodrichthys_bucket", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/gansuselache_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/gansuselache_male_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/gansuselache_female_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/mooreodontus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/hagenoselache_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/diplodoselache_bucket", "inventory"),
@@ -794,6 +795,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/akasakiella_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/foordella_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/chippewaella_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/attenborites_bucket", "inventory"),
 
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)
 

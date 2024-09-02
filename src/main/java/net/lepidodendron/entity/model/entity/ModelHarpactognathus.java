@@ -119,13 +119,13 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembranebeg.cubeList.add(new ModelBox(wingmembranebeg, 0, 41, -9.8F, -12.6F, -4.0F, 1, 11, 5, 0.0F, false));
 
         this.wingmembranebeg7 = new AdvancedModelRendererExtended(this);
-        this.wingmembranebeg7.setRotationPoint(7.7F, 7.625F, 4.9F);
+        this.wingmembranebeg7.setRotationPoint(9.8843F, -3.982F, 4.6029F);
         this.rightwing2.addChild(wingmembranebeg7);
         this.setRotateAngle(wingmembranebeg7, 0.3921F, -0.1862F, 0.4211F);
 
 
         this.cube_r1 = new AdvancedModelRendererExtended(this);
-        this.cube_r1.setRotationPoint(-10.4F, -3.65F, 2.45F);
+        this.cube_r1.setRotationPoint(-7.0343F, 6.182F, -0.9529F);
         this.wingmembranebeg7.addChild(cube_r1);
         this.setRotateAngle(cube_r1, -0.3553F, 0.196F, 0.0128F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 44, 65, 1.0F, -10.0F, -5.0F, 0, 12, 10, 0.0F, true));
@@ -159,12 +159,12 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembraneend.cubeList.add(new ModelBox(wingmembraneend, 0, 64, -0.8F, -5.575F, -6.0F, 1, 4, 27, -0.01F, false));
 
         this.wingmembranebeg9 = new AdvancedModelRendererExtended(this);
-        this.wingmembranebeg9.setRotationPoint(9.3F, -0.4F, -4.0F);
+        this.wingmembranebeg9.setRotationPoint(0.0031F, -2.1436F, 11.0F);
         this.rightwing4.addChild(wingmembranebeg9);
 
 
         this.cube_r2 = new AdvancedModelRendererExtended(this);
-        this.cube_r2.setRotationPoint(-10.525F, -4.875F, 17.0F);
+        this.cube_r2.setRotationPoint(-1.2281F, 0.8686F, 2.0F);
         this.wingmembranebeg9.addChild(cube_r2);
         this.setRotateAngle(cube_r2, 0.0F, 0.0F, 0.1178F);
         this.cube_r2.cubeList.add(new ModelBox(cube_r2, 36, 41, 1.0F, -4.0F, -13.0F, 0, 4, 22, 0.0F, true));
@@ -193,15 +193,15 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembranebeg2.cubeList.add(new ModelBox(wingmembranebeg2, 0, 41, 8.8F, -12.6F, -4.0F, 1, 11, 5, 0.0F, true));
 
         this.wingmembranebeg4 = new AdvancedModelRendererExtended(this);
-        this.wingmembranebeg4.setRotationPoint(-10.225F, 7.625F, 4.9F);
+        this.wingmembranebeg4.setRotationPoint(-3.6907F, -3.982F, 5.5029F);
         this.leftwing2.addChild(wingmembranebeg4);
         this.setRotateAngle(wingmembranebeg4, -0.0706F, -0.4088F, 0.1761F);
 
 
         this.cube_r3 = new AdvancedModelRendererExtended(this);
-        this.cube_r3.setRotationPoint(7.775F, -10.375F, -2.7F);
+        this.cube_r3.setRotationPoint(3.8546F, 1.3043F, -0.6637F);
         this.wingmembranebeg4.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, -0.1319F, 0.0303F, -1.0027F);
+        this.setRotateAngle(cube_r3, -0.1331F, 0.1385F, -1.0172F);
         this.cube_r3.cubeList.add(new ModelBox(cube_r3, 44, 65, -1.0F, -10.0F, -5.0F, 0, 12, 10, 0.0F, false));
 
         this.leftwing3 = new AdvancedModelRendererExtended(this);
@@ -216,13 +216,13 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembranemiddle2.cubeList.add(new ModelBox(wingmembranemiddle2, 0, 57, -0.1F, -6.575F, -6.7F, 1, 4, 9, -0.01F, true));
 
         this.wingmembranebeg5 = new AdvancedModelRendererExtended(this);
-        this.wingmembranebeg5.setRotationPoint(-0.375F, -9.4F, 6.125F);
+        this.wingmembranebeg5.setRotationPoint(-0.8828F, -5.5961F, 3.5877F);
         this.leftwing3.addChild(wingmembranebeg5);
         this.setRotateAngle(wingmembranebeg5, 0.0F, 0.0F, -0.1309F);
 
 
         this.cube_r4 = new AdvancedModelRendererExtended(this);
-        this.cube_r4.setRotationPoint(0.0F, 5.725F, -2.125F);
+        this.cube_r4.setRotationPoint(1.0F, 2.0199F, 0.4123F);
         this.wingmembranebeg5.addChild(cube_r4);
         this.setRotateAngle(cube_r4, -1.6144F, 0.0F, 0.0F);
         this.cube_r4.cubeList.add(new ModelBox(cube_r4, 60, 57, -1.0F, -3.0F, -7.0F, 0, 7, 10, 0.0F, false));
@@ -239,12 +239,12 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembraneend2.cubeList.add(new ModelBox(wingmembraneend2, 0, 64, -0.2F, -5.575F, -6.0F, 1, 4, 27, -0.01F, true));
 
         this.wingmembranebeg6 = new AdvancedModelRendererExtended(this);
-        this.wingmembranebeg6.setRotationPoint(-9.3F, -0.4F, -4.0F);
+        this.wingmembranebeg6.setRotationPoint(-0.0031F, -2.1436F, 11.0F);
         this.leftwing4.addChild(wingmembranebeg6);
 
 
         this.cube_r5 = new AdvancedModelRendererExtended(this);
-        this.cube_r5.setRotationPoint(10.525F, -4.875F, 17.0F);
+        this.cube_r5.setRotationPoint(1.2281F, 1.8686F, 2.0F);
         this.wingmembranebeg6.addChild(cube_r5);
         this.setRotateAngle(cube_r5, 0.0F, 0.0F, -0.1178F);
         this.cube_r5.cubeList.add(new ModelBox(cube_r5, 36, 41, -1.0F, -4.0F, -13.0F, 0, 4, 22, 0.0F, false));
@@ -612,57 +612,6 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
 
         }
         else if (ee.isReallyFlying() || ee.getAnimation() == ee.UNFLY_ANIMATION) {
-            this.setRotateAngle(body1, -0.2419F, 0.0F, 0.0F);
-            this.setRotateAngle(chest, -0.0262F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r1, -0.3553F, -0.196F, -0.0128F);
-            this.setRotateAngle(cube_r10, 0.0F, 0.0F, 0.1309F);
-            this.setRotateAngle(cube_r11, -0.4331F, 0.0552F, 0.1188F);
-            this.setRotateAngle(cube_r12, -0.4331F, -0.0552F, -0.1188F);
-            this.setRotateAngle(cube_r13, 0.0F, 0.0F, -0.1309F);
-            this.setRotateAngle(cube_r14, 0.2051F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r15, 0.0524F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r16, 0.144F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r17, -0.1091F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r18, -0.1309F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r19, 0.0F, -0.1309F, 0.0F);
-            this.setRotateAngle(cube_r2, 0.0F, 0.0F, -0.1178F);
-            this.setRotateAngle(cube_r20, 0.0F, 0.1309F, 0.0F);
-            this.setRotateAngle(cube_r21, -0.0873F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r3, -0.3553F, 0.196F, 0.0128F);
-            this.setRotateAngle(cube_r4, 0.0F, 0.0F, 0.1178F);
-            this.setRotateAngle(cube_r5, -0.1484F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r6, 0.1396F, 0.0F, 0.0F);
-            this.setRotateAngle(cube_r7, 0.0F, 0.0F, 0.0873F);
-            this.setRotateAngle(cube_r8, 0.0F, 0.0F, -0.0873F);
-            this.setRotateAngle(cube_r9, -0.0873F, 0.0F, 0.0F);
-            this.setRotateAngle(head2, 0.5541F, 0.0F, 0.0F);
-            this.setRotateAngle(head3, 0.1309F, 0.0F, 0.0F);
-            this.setRotateAngle(jaw2, 0.1309F, 0.0F, 0.0F);
-            this.setRotateAngle(leftfoot, 0.7358F, 0.0823F, 0.1035F);
-            this.setRotateAngle(lefthand, -0.0383F, -0.504F, -2.9933F);
-            this.setRotateAngle(leftleg, 0.1883F, 0.1369F, -1.4127F);
-            this.setRotateAngle(leftleg2, 0.8278F, 0.0515F, -0.0472F);
-            this.setRotateAngle(leftwing, 0.0F, 0.0F, -0.0654F);
-            this.setRotateAngle(leftwing2, 0.0F, 0.0F, -1.6755F);
-            this.setRotateAngle(leftwing3, -1.5795F, 0.0F, 0.1745F);
-            this.setRotateAngle(leftwing4, 0.1396F, -0.0567F, 0.0F);
-            this.setRotateAngle(neck, -0.096F, 0.0F, 0.0F);
-            this.setRotateAngle(neck2, -0.3229F, 0.0F, 0.0F);
-            this.setRotateAngle(rightfoot, 0.7358F, -0.0823F, -0.1035F);
-            this.setRotateAngle(righthand, -0.0383F, 0.504F, 2.9933F);
-            this.setRotateAngle(rightleg, 0.1883F, -0.1369F, 1.4127F);
-            this.setRotateAngle(rightleg2, 0.8278F, -0.0515F, 0.0472F);
-            this.setRotateAngle(rightwing, 0.0F, 0.0F, 0.0654F);
-            this.setRotateAngle(rightwing2, 0.0F, 0.0F, 1.6755F);
-            this.setRotateAngle(rightwing3, -1.5795F, 0.0F, -0.1745F);
-            this.setRotateAngle(rightwing4, 0.1396F, 0.0567F, 0.0F);
-            this.setRotateAngle(tail1, -0.0106F, 0.0F, 0.0F);
-            this.setRotateAngle(tail2, 0.1023F, 0.0F, 0.0F);
-            this.setRotateAngle(tail3, 0.1328F, 0.0F, 0.0F);
-            this.setRotateAngle(tail4, 0.0456F, 0.0F, 0.0F);
-            this.setRotateAngle(tail5, 0.0456F, 0.0F, 0.0F);
-            this.setRotateAngle(wingmembranebeg5, 0.0F, 0.0F, -0.1309F);
-            this.setRotateAngle(wingmembranebeg8, 0.0F, 0.0F, 0.1309F);
             //flight pose
             //Already baked into the animations based on the default pose for this model
         } else if (ee.getAttachmentPos() != null) {
@@ -679,14 +628,14 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         if (ee.getAttachmentPos() == null && ee.getAnimation() != ee.FLY_ANIMATION) {
             if (ee.getIsMoving()) {
                 if (ee.getIsFast()) { //Flying fast
-                    animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
                 else { //Flying regular
                     animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
                 }
             }
             else { //Flying regular but stright upwards
-                animFlyFast(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                animFly(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
         }
         else if (ee.getAttachmentPos() != null) {
@@ -720,6 +669,7 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
 
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraHarpactognathus entity = (EntityPrehistoricFloraHarpactognathus) entitylivingbaseIn;
+
         int animCycle = 10;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -827,10 +777,12 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
+
     }
 
     public void animAlert(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraHarpactognathus entity = (EntityPrehistoricFloraHarpactognathus) entitylivingbaseIn;
+
         int animCycle = 40;
         double tickAnim = animTick + partialTickTime;
         double xx = 0;
@@ -1336,841 +1288,13 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembranebeg4.rotationPointY = this.wingmembranebeg4.rotationPointY - (float)(yy);
         this.wingmembranebeg4.rotationPointZ = this.wingmembranebeg4.rotationPointZ + (float)(zz);
 
-    }
-
-    public void animFlyFast(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraHarpactognathus entity = (EntityPrehistoricFloraHarpactognathus) entitylivingbaseIn;
-        int animCycle = 80;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
-        double xx = 0;
-        double yy = 0;
-        double zz = 0;
-        this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*5), chest.rotateAngleY + (float) Math.toRadians(0), chest.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+60))*2.5));
-        this.chest.rotationPointX = this.chest.rotationPointX + (float)(0);
-        this.chest.rotationPointY = this.chest.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-60))*-0.5);
-        this.chest.rotationPointZ = this.chest.rotationPointZ + (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-60))*-2);
-
-
-        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+60))*-2.5), body1.rotateAngleY + (float) Math.toRadians(0), body1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+120))*-2.5));
-
-
-        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+60))*-5), tail1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360))*2.5), tail1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+60))*-2.5));
-
-
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(-2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+30))*-2.5), tail2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-60))*2.5), tail2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-30))*-2.5));
-
-
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(-2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*-2.5), tail3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-120))*2.5), tail3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180-60))*-2.5));
-
-
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(-2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-30))*-2.5), tail4.rotateAngleY + (float) Math.toRadians(0), tail4.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(-2.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*-2.5), tail5.rotateAngleY + (float) Math.toRadians(0), tail5.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(-3.5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-60))*-5), neck.rotateAngleY + (float) Math.toRadians(0), neck.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180))*-2.5));
-
-
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(1.25+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*-5), neck2.rotateAngleY + (float) Math.toRadians(0), neck2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*180+60))*-2.5));
-
-
-        this.setRotateAngle(leftwing, leftwing.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+75))*-9.895), leftwing.rotateAngleY + (float) Math.toRadians(1.6557+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+105))*-5), leftwing.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*-31.131));
-        this.leftwing.rotationPointX = this.leftwing.rotationPointX + (float)(0);
-        this.leftwing.rotationPointY = this.leftwing.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+60))*0.5);
-        this.leftwing.rotationPointZ = this.leftwing.rotationPointZ + (float)(0);
-
-
-
-        if (tickAnim >= 0 && tickAnim < 5) {
-            xx = -0.2493+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 0) / 5) * (1.95525-(-0.2493+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 0) / 5) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 0) / 5) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 5 && tickAnim < 9) {
-            xx = 1.95525 + (((tickAnim - 5) / 4) * (2.7507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(1.95525)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 5) / 4) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 5) / 4) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 9 && tickAnim < 18) {
-            xx = 2.7507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 9) / 9) * (6.2507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(2.7507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 9) / 9) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 9) / 9) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 18 && tickAnim < 48) {
-            xx = 6.2507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 18) / 30) * (0.63726-(6.2507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 18) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 18) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 48 && tickAnim < 68) {
-            xx = 0.63726 + (((tickAnim - 48) / 20) * (0.01476-(0.63726)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 48) / 20) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 48) / 20) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 68 && tickAnim < 75) {
-            xx = 0.01476 + (((tickAnim - 68) / 7) * (-0.40802-(0.01476)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 68) / 7) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 68) / 7) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 75 && tickAnim < 78) {
-            xx = -0.40802 + (((tickAnim - 75) / 3) * (-1.33444-(-0.40802)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 75) / 3) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 75) / 3) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else if (tickAnim >= 78 && tickAnim < 80) {
-            xx = -1.33444 + (((tickAnim - 78) / 2) * (-0.2493+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(-1.33444)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75 + (((tickAnim - 78) / 2) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 78) / 2) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(xx), leftwing2.rotateAngleY + (float) Math.toRadians(yy), leftwing2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.setRotateAngle(leftwing3, leftwing3.rotateAngleX + (float) Math.toRadians(0), leftwing3.rotateAngleY + (float) Math.toRadians(0), leftwing3.rotateAngleZ + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-120))*-25));
-
-
-        this.setRotateAngle(leftwing4, leftwing4.rotateAngleX + (float) Math.toRadians(0), leftwing4.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*10), leftwing4.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(2+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360-60))*2), jaw.rotateAngleY + (float) Math.toRadians(0), jaw.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(rightwing, rightwing.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+75))*-9.405), rightwing.rotateAngleY + (float) Math.toRadians(0.4397+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+105))*5), rightwing.rotateAngleZ + (float) Math.toRadians(-7.4171+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720))*31.131));
-        this.rightwing.rotationPointX = this.rightwing.rotationPointX + (float)(0);
-        this.rightwing.rotationPointY = this.rightwing.rotationPointY - (float)(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720+60))*0.5);
-        this.rightwing.rotationPointZ = this.rightwing.rotationPointZ + (float)(0);
-
-
-
-        if (tickAnim >= 0 && tickAnim < 5) {
-            xx = -0.2493+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 0) / 5) * (1.95525-(-0.2493+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 0) / 5) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 0) / 5) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 5 && tickAnim < 9) {
-            xx = 1.95525 + (((tickAnim - 5) / 4) * (2.7507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(1.95525)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 5) / 4) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 5) / 4) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 9 && tickAnim < 18) {
-            xx = 2.7507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 9) / 9) * (6.2507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(2.7507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 9) / 9) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 9) / 9) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 18 && tickAnim < 48) {
-            xx = 6.2507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 18) / 30) * (0.63726-(6.2507+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 18) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 18) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 48 && tickAnim < 68) {
-            xx = 0.63726 + (((tickAnim - 48) / 20) * (0.01476-(0.63726)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 48) / 20) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 48) / 20) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 68 && tickAnim < 75) {
-            xx = 0.01476 + (((tickAnim - 68) / 7) * (-0.40802-(0.01476)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 68) / 7) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 68) / 7) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 75 && tickAnim < 78) {
-            xx = -0.40802 + (((tickAnim - 75) / 3) * (-1.33444-(-0.40802)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 75) / 3) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 75) / 3) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else if (tickAnim >= 78 && tickAnim < 80) {
-            xx = -1.33444 + (((tickAnim - 78) / 2) * (-0.2493+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(-1.33444)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75 + (((tickAnim - 78) / 2) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.75)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 78) / 2) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightwing2, rightwing2.rotateAngleX + (float) Math.toRadians(xx), rightwing2.rotateAngleY + (float) Math.toRadians(yy), rightwing2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-        this.setRotateAngle(rightwing3, rightwing3.rotateAngleX + (float) Math.toRadians(0), rightwing3.rotateAngleY + (float) Math.toRadians(0), rightwing3.rotateAngleZ + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-120))*25));
-
-
-        this.setRotateAngle(rightwing4, rightwing4.rotateAngleX + (float) Math.toRadians(0), rightwing4.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*720-150))*-10), rightwing4.rotateAngleZ + (float) Math.toRadians(0));
-
-
-    }
-
-    public void animFly(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraHarpactognathus entity = (EntityPrehistoricFloraHarpactognathus) entitylivingbaseIn;
-        int animCycle = 80;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
-        double xx = 0;
-        double yy = 0;
-        double zz = 0;
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5 + (((tickAnim - 30) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5)));
-            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5 + (((tickAnim - 60) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5)));
-            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 70) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(xx), chest.rotateAngleY + (float) Math.toRadians(yy), chest.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.chest.rotationPointX = this.chest.rotationPointX + (float)(xx);
-        this.chest.rotationPointY = this.chest.rotationPointY - (float)(yy);
-        this.chest.rotationPointZ = this.chest.rotationPointZ + (float)(zz);
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 30) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 60) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5 + (((tickAnim - 70) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(xx), body1.rotateAngleY + (float) Math.toRadians(yy), body1.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-1 + (((tickAnim - 0) / 30) * (-3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-1)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*0.75-(-3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25 + (((tickAnim - 30) / 30) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*0.75 + (((tickAnim - 60) / 10) * (0.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*0.75)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-1-(0.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(xx), tail1.rotateAngleY + (float) Math.toRadians(yy), tail1.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(xx), tail2.rotateAngleY + (float) Math.toRadians(yy), tail2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(xx), tail3.rotateAngleY + (float) Math.toRadians(yy), tail3.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5)));
-            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5)));
-            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(xx), tail4.rotateAngleY + (float) Math.toRadians(yy), tail4.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
-            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
-            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(xx), tail5.rotateAngleY + (float) Math.toRadians(yy), tail5.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -1.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5 + (((tickAnim - 0) / 30) * (-2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-5-(-1.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-9-(-2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-5)));
-            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-9 + (((tickAnim - 60) / 10) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-9)));
-            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5 + (((tickAnim - 70) / 10) * (-1.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5 + (((tickAnim - 0) / 30) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 30) / 30) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
-            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 60) / 10) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
-            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5 + (((tickAnim - 70) / 10) * (4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(xx), neck2.rotateAngleY + (float) Math.toRadians(yy), neck2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5 + (((tickAnim - 0) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5)));
-            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5)));
-            zz = -10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25 + (((tickAnim - 0) / 30) * (-15+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5-(-10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25 + (((tickAnim - 30) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25)));
-            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
-            zz = -15+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5 + (((tickAnim - 30) / 30) * (-15+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5-(-15+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25)));
-            yy = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 60) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
-            zz = -15+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5 + (((tickAnim - 60) / 10) * (-10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25-(-15+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5)));
-            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5 + (((tickAnim - 70) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5)));
-            zz = -10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25 + (((tickAnim - 70) / 10) * (-10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25-(-10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftwing, leftwing.rotateAngleX + (float) Math.toRadians(xx), leftwing.rotateAngleY + (float) Math.toRadians(yy), leftwing.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
-            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
-            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
-            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.leftwing.rotationPointX = this.leftwing.rotationPointX + (float)(xx);
-        this.leftwing.rotationPointY = this.leftwing.rotationPointY - (float)(yy);
-        this.leftwing.rotationPointZ = this.leftwing.rotationPointZ + (float)(zz);
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -0.4984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 0) / 30) * (2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-0.4984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.25 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-13 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-13)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (0.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 60) / 10) * (0.9968+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(0.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0007-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0.9968+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 70) / 10) * (-0.4984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(0.9968+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0007 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0007)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-10 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-13-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-10)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(xx), leftwing2.rotateAngleY + (float) Math.toRadians(yy), leftwing2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 60) / 10) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftwing3, leftwing3.rotateAngleX + (float) Math.toRadians(xx), leftwing3.rotateAngleY + (float) Math.toRadians(yy), leftwing3.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*10 + (((tickAnim - 0) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*10)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 30) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
-            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
-            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15)));
-            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftwing4, leftwing4.rotateAngleX + (float) Math.toRadians(xx), leftwing4.rotateAngleY + (float) Math.toRadians(yy), leftwing4.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-1.25)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-10 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-10)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-10 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-10)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-10 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-10)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-10 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-10)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(leftleg, leftleg.rotateAngleX + (float) Math.toRadians(xx), leftleg.rotateAngleY + (float) Math.toRadians(yy), leftleg.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*5 + (((tickAnim - 30) / 30) * (-11.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*10 + (((tickAnim - 30) / 30) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*10)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*10 + (((tickAnim - 30) / 30) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*10)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = -11.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*5-(-11.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*5)));
-            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*10 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*10)));
-            zz = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*10 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*10)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightleg, rightleg.rotateAngleX + (float) Math.toRadians(xx), rightleg.rotateAngleY + (float) Math.toRadians(yy), rightleg.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        if (tickAnim >= 70 && tickAnim < 80) {
-            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-4.9631-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5)));
-            yy = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*5 + (((tickAnim - 70) / 10) * (-4.4351+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*5)));
-            zz = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*25 + (((tickAnim - 70) / 10) * (2.5211+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*25-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*25)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightwing, rightwing.rotateAngleX + (float) Math.toRadians(xx), rightwing.rotateAngleY + (float) Math.toRadians(yy), rightwing.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
-            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
-            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
-            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.rightwing.rotationPointX = this.rightwing.rotationPointX + (float)(xx);
-        this.rightwing.rotationPointY = this.rightwing.rotationPointY - (float)(yy);
-        this.rightwing.rotationPointZ = this.rightwing.rotationPointZ + (float)(zz);
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = -0.4984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 0) / 30) * (2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-0.4984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.25 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*13 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*13)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (0.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 60) / 10) * (0.9968+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(0.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0007-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0.9968+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 70) / 10) * (-0.4984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(0.9968+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0007 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0007)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*10 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*13-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*10)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightwing2, rightwing2.rotateAngleX + (float) Math.toRadians(xx), rightwing2.rotateAngleY + (float) Math.toRadians(yy), rightwing2.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 60) / 10) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*2.5)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightwing3, rightwing3.rotateAngleX + (float) Math.toRadians(xx), rightwing3.rotateAngleY + (float) Math.toRadians(yy), rightwing3.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-10 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-10)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 60) {
-            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 30) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
-            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 60 && tickAnim < 70) {
-            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
-            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
-        }
-        else if (tickAnim >= 70 && tickAnim < 80) {
-            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15)));
-            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(rightwing4, rightwing4.rotateAngleX + (float) Math.toRadians(xx), rightwing4.rotateAngleY + (float) Math.toRadians(yy), rightwing4.rotateAngleZ + (float) Math.toRadians(zz));
-
 
     }
 
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraHarpactognathus entity = (EntityPrehistoricFloraHarpactognathus) entitylivingbaseIn;
+
         int animCycle = 25;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
@@ -3075,24 +2199,19 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 12) {
-            xx = 0.11531 + (((tickAnim - 0) / 12) * (0-(0.11531)));
-            yy = 4.23972 + (((tickAnim - 0) / 12) * (0-(4.23972)));
-            zz = 29.68281 + (((tickAnim - 0) / 12) * (0-(29.68281)));
+            xx = 0 + (((tickAnim - 0) / 12) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 12) * (0-(0)));
+            zz = 18 + (((tickAnim - 0) / 12) * (0-(18)));
         }
-        else if (tickAnim >= 12 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 12) / 7) * (11.31224-(0)));
-            yy = 0 + (((tickAnim - 12) / 7) * (3.3672-(0)));
-            zz = 0 + (((tickAnim - 12) / 7) * (-14.86386-(0)));
+        else if (tickAnim >= 12 && tickAnim < 18) {
+            xx = 0 + (((tickAnim - 12) / 6) * (0-(0)));
+            yy = 0 + (((tickAnim - 12) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 12) / 6) * (-28.5-(0)));
         }
-        else if (tickAnim >= 19 && tickAnim < 20) {
-            xx = 11.31224 + (((tickAnim - 19) / 1) * (11.31224-(11.31224)));
-            yy = 3.3672 + (((tickAnim - 19) / 1) * (3.3672-(3.3672)));
-            zz = -14.86386 + (((tickAnim - 19) / 1) * (-14.86386-(-14.86386)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 25) {
-            xx = 11.31224 + (((tickAnim - 20) / 5) * (0.11531-(11.31224)));
-            yy = 3.3672 + (((tickAnim - 20) / 5) * (4.23972-(3.3672)));
-            zz = -14.86386 + (((tickAnim - 20) / 5) * (29.68281-(-14.86386)));
+        else if (tickAnim >= 18 && tickAnim < 25) {
+            xx = 0 + (((tickAnim - 18) / 7) * (0-(0)));
+            yy = 0 + (((tickAnim - 18) / 7) * (0-(0)));
+            zz = -28.5 + (((tickAnim - 18) / 7) * (18-(-28.5)));
         }
         else {
             xx = 0;
@@ -3103,24 +2222,19 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
 
 
         if (tickAnim >= 0 && tickAnim < 12) {
-            xx = -2.7 + (((tickAnim - 0) / 12) * (0-(-2.7)));
-            yy = 4.425 + (((tickAnim - 0) / 12) * (0-(4.425)));
-            zz = 4.325 + (((tickAnim - 0) / 12) * (0-(4.325)));
+            xx = 1.225 + (((tickAnim - 0) / 12) * (-0.3-(1.225)));
+            yy = 0.175 + (((tickAnim - 0) / 12) * (0-(0.175)));
+            zz = 1.45 + (((tickAnim - 0) / 12) * (-0.6-(1.45)));
         }
-        else if (tickAnim >= 12 && tickAnim < 19) {
-            xx = 0 + (((tickAnim - 12) / 7) * (1.31-(0)));
-            yy = 0 + (((tickAnim - 12) / 7) * (-2.255-(0)));
-            zz = 0 + (((tickAnim - 12) / 7) * (3.82-(0)));
+        else if (tickAnim >= 12 && tickAnim < 18) {
+            xx = -0.3 + (((tickAnim - 12) / 6) * (-1.85-(-0.3)));
+            yy = 0 + (((tickAnim - 12) / 6) * (-2.1-(0)));
+            zz = -0.6 + (((tickAnim - 12) / 6) * (1.825-(-0.6)));
         }
-        else if (tickAnim >= 19 && tickAnim < 20) {
-            xx = 1.31 + (((tickAnim - 19) / 1) * (1.31-(1.31)));
-            yy = -2.255 + (((tickAnim - 19) / 1) * (-2.255-(-2.255)));
-            zz = 3.82 + (((tickAnim - 19) / 1) * (3.82-(3.82)));
-        }
-        else if (tickAnim >= 20 && tickAnim < 25) {
-            xx = 1.31 + (((tickAnim - 20) / 5) * (-2.7-(1.31)));
-            yy = -2.255 + (((tickAnim - 20) / 5) * (4.425-(-2.255)));
-            zz = 3.82 + (((tickAnim - 20) / 5) * (4.325-(3.82)));
+        else if (tickAnim >= 18 && tickAnim < 25) {
+            xx = -1.85 + (((tickAnim - 18) / 7) * (1.225-(-1.85)));
+            yy = -2.1 + (((tickAnim - 18) / 7) * (0.175-(-2.1)));
+            zz = 1.825 + (((tickAnim - 18) / 7) * (1.45-(1.825)));
         }
         else {
             xx = 0;
@@ -3134,25 +2248,20 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
 
 
 
-        if (tickAnim >= 0 && tickAnim < 5) {
-            xx = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 5) * (0-(0)));
-            zz = 6.25 + (((tickAnim - 0) / 5) * (38.44-(6.25)));
+        if (tickAnim >= 0 && tickAnim < 6) {
+            xx = -0.3598 + (((tickAnim - 0) / 6) * (3.9228-(-0.3598)));
+            yy = 6.94135 + (((tickAnim - 0) / 6) * (-3.97816-(6.94135)));
+            zz = 20.11477 + (((tickAnim - 0) / 6) * (50.37453-(20.11477)));
         }
-        else if (tickAnim >= 5 && tickAnim < 7) {
-            xx = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            yy = 0 + (((tickAnim - 5) / 2) * (0-(0)));
-            zz = 38.44 + (((tickAnim - 5) / 2) * (39.62-(38.44)));
-        }
-        else if (tickAnim >= 7 && tickAnim < 12) {
-            xx = 0 + (((tickAnim - 7) / 5) * (0-(0)));
-            yy = 0 + (((tickAnim - 7) / 5) * (0-(0)));
-            zz = 39.62 + (((tickAnim - 7) / 5) * (0-(39.62)));
+        else if (tickAnim >= 6 && tickAnim < 12) {
+            xx = 3.9228 + (((tickAnim - 6) / 6) * (-0.22799-(3.9228)));
+            yy = -3.97816 + (((tickAnim - 6) / 6) * (7.88485-(-3.97816)));
+            zz = 50.37453 + (((tickAnim - 6) / 6) * (17.79587-(50.37453)));
         }
         else if (tickAnim >= 12 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 12) / 13) * (0-(0)));
-            yy = 0 + (((tickAnim - 12) / 13) * (0-(0)));
-            zz = 0 + (((tickAnim - 12) / 13) * (6.25-(0)));
+            xx = -0.22799 + (((tickAnim - 12) / 13) * (-0.3598-(-0.22799)));
+            yy = 7.88485 + (((tickAnim - 12) / 13) * (6.94135-(7.88485)));
+            zz = 17.79587 + (((tickAnim - 12) / 13) * (20.11477-(17.79587)));
         }
         else {
             xx = 0;
@@ -3162,20 +2271,20 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.setRotateAngle(wingmembranebeg7, wingmembranebeg7.rotateAngleX + (float) Math.toRadians(xx), wingmembranebeg7.rotateAngleY + (float) Math.toRadians(yy), wingmembranebeg7.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-        if (tickAnim >= 0 && tickAnim < 7) {
-            xx = -0.425 + (((tickAnim - 0) / 7) * (-5.955-(-0.425)));
-            yy = -1.05 + (((tickAnim - 0) / 7) * (-2.36-(-1.05)));
-            zz = 0 + (((tickAnim - 0) / 7) * (3.05-(0)));
+        if (tickAnim >= 0 && tickAnim < 6) {
+            xx = 0.2 + (((tickAnim - 0) / 6) * (-0.075-(0.2)));
+            yy = -2.5 + (((tickAnim - 0) / 6) * (-7.7-(-2.5)));
+            zz = -1.075 + (((tickAnim - 0) / 6) * (3.22-(-1.075)));
         }
-        else if (tickAnim >= 7 && tickAnim < 12) {
-            xx = -5.955 + (((tickAnim - 7) / 5) * (0-(-5.955)));
-            yy = -2.36 + (((tickAnim - 7) / 5) * (0.525-(-2.36)));
-            zz = 3.05 + (((tickAnim - 7) / 5) * (5.9-(3.05)));
+        else if (tickAnim >= 6 && tickAnim < 12) {
+            xx = -0.075 + (((tickAnim - 6) / 6) * (0.25-(-0.075)));
+            yy = -7.7 + (((tickAnim - 6) / 6) * (-2-(-7.7)));
+            zz = 3.22 + (((tickAnim - 6) / 6) * (0.5-(3.22)));
         }
         else if (tickAnim >= 12 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 12) / 13) * (-0.425-(0)));
-            yy = 0.525 + (((tickAnim - 12) / 13) * (-1.05-(0.525)));
-            zz = 5.9 + (((tickAnim - 12) / 13) * (0-(5.9)));
+            xx = 0.25 + (((tickAnim - 12) / 13) * (0.2-(0.25)));
+            yy = -2 + (((tickAnim - 12) / 13) * (-2.5-(-2)));
+            zz = 0.5 + (((tickAnim - 12) / 13) * (-1.075-(0.5)));
         }
         else {
             xx = 0;
@@ -3240,12 +2349,732 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
 
 
         this.wingmembranebeg6.rotationPointX = this.wingmembranebeg6.rotationPointX + (float)(0);
-        this.wingmembranebeg6.rotationPointY = this.wingmembranebeg6.rotationPointY - (float)(-4);
+        this.wingmembranebeg6.rotationPointY = this.wingmembranebeg6.rotationPointY - (float)(-0.225);
         this.wingmembranebeg6.rotationPointZ = this.wingmembranebeg6.rotationPointZ + (float)(0);
 
 
         this.wingmembranebeg9.rotationPointX = this.wingmembranebeg9.rotationPointX + (float)(0);
-        this.wingmembranebeg9.rotationPointY = this.wingmembranebeg9.rotationPointY - (float)(-4);
+        this.wingmembranebeg9.rotationPointY = this.wingmembranebeg9.rotationPointY - (float)(-1.175);
+        this.wingmembranebeg9.rotationPointZ = this.wingmembranebeg9.rotationPointZ + (float)(0);
+
+
+
+    }
+
+    public void animFly(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        EntityPrehistoricFloraHarpactognathus entity = (EntityPrehistoricFloraHarpactognathus) entitylivingbaseIn;
+
+        int animCycle = 80;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5 + (((tickAnim - 30) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5)));
+            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5 + (((tickAnim - 60) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*5)));
+            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5 + (((tickAnim - 70) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*5)));
+            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(xx), chest.rotateAngleY + (float) Math.toRadians(yy), chest.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-0.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-0.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*90-60))*-5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.chest.rotationPointX = this.chest.rotationPointX + (float)(xx);
+        this.chest.rotationPointY = this.chest.rotationPointY - (float)(yy);
+        this.chest.rotationPointZ = this.chest.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 30) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 60) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5 + (((tickAnim - 70) / 10) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-2.5)));
+            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+120))*-2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(xx), body1.rotateAngleY + (float) Math.toRadians(yy), body1.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-1 + (((tickAnim - 0) / 30) * (-3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-1)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*0.75-(-3.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25 + (((tickAnim - 30) / 30) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*0.75 + (((tickAnim - 60) / 10) * (0.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+60))*0.75)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 0.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-1-(0.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*2.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(xx), tail1.rotateAngleY + (float) Math.toRadians(yy), tail1.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360+30))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+30))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-60))*2.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-30))*-2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(xx), tail2.rotateAngleY + (float) Math.toRadians(yy), tail2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-120))*2.5)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(xx), tail3.rotateAngleY + (float) Math.toRadians(yy), tail3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5)));
+            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360-30))*-2.5)));
+            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-30))*-2.5)));
+            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(xx), tail4.rotateAngleY + (float) Math.toRadians(yy), tail4.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 0) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 30) / 30) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
+            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5 + (((tickAnim - 60) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*360))*-2.5)));
+            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5 + (((tickAnim - 70) / 10) * (-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5-(-2.5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-2.5)));
+            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(tail5, tail5.rotateAngleX + (float) Math.toRadians(xx), tail5.rotateAngleY + (float) Math.toRadians(yy), tail5.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -1.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5 + (((tickAnim - 0) / 30) * (-2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-5-(-1.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-9-(-2+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-5)));
+            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-9 + (((tickAnim - 60) / 10) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-9)));
+            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5 + (((tickAnim - 70) / 10) * (-1.75+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-5)));
+            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5 + (((tickAnim - 0) / 30) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5)));
+            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 30) / 30) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
+            yy = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5 + (((tickAnim - 60) / 10) * (10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-5)));
+            yy = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5 + (((tickAnim - 70) / 10) * (4.25+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5-(10+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-5)));
+            yy = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-2.5)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(xx), neck2.rotateAngleY + (float) Math.toRadians(yy), neck2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.9092 + (((tickAnim - 0) / 30) * (-8.0104+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.9092)));
+            yy = 2.9623+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*5 + (((tickAnim - 0) / 30) * (1.5012+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(2.9623+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*5)));
+            zz = 37.4914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*35 + (((tickAnim - 0) / 30) * (44.6977+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*5-(37.4914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*35)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -8.0104+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25 + (((tickAnim - 30) / 30) * (-4.4479+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25-(-8.0104+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25)));
+            yy = 1.5012+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (7.2448+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5-(1.5012+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            zz = 44.6977+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*5 + (((tickAnim - 30) / 30) * (41.1614+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*5-(44.6977+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -4.4479+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.8565-(-4.4479+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25)));
+            yy = 7.2448+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5 + (((tickAnim - 60) / 10) * (3.0438+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5-(7.2448+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.5)));
+            zz = 41.1614+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*5 + (((tickAnim - 60) / 10) * (36.4933+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*25-(41.1614+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.8565 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.9092-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.8565)));
+            yy = 3.0438+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5 + (((tickAnim - 70) / 10) * (2.9623+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*5-(3.0438+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5)));
+            zz = 36.4933+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*25 + (((tickAnim - 70) / 10) * (37.4914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*35-(36.4933+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*25)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightwing, rightwing.rotateAngleX + (float) Math.toRadians(xx), rightwing.rotateAngleY + (float) Math.toRadians(yy), rightwing.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
+            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
+            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
+            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.rightwing.rotationPointX = this.rightwing.rotationPointX + (float)(xx);
+        this.rightwing.rotationPointY = this.rightwing.rotationPointY - (float)(yy);
+        this.rightwing.rotationPointZ = this.rightwing.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -3.4789+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 0) / 30) * (-6.4107+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-3.4789+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0989 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-4.4971-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0989)));
+            zz = 26.9121-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+120))*33 + (((tickAnim - 0) / 30) * (39.6794+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*1-(26.9121-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+120))*33)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -6.4107+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (-5.9268+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-6.4107+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-4.4971 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.768-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-4.4971)));
+            zz = 39.6794+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*1 + (((tickAnim - 30) / 30) * (29-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1-(39.6794+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*1)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -5.9268+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 60) / 10) * (-4.1725+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(-5.9268+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.768 + (((tickAnim - 60) / 10) * (-0.1781+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.6074-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.768)));
+            zz = 29-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1 + (((tickAnim - 60) / 10) * (28.0805-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20-(29-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -4.1725+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 70) / 10) * (-3.4789+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(-4.1725+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
+            yy = -0.1781+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.6074 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0989-(-0.1781+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.6074)));
+            zz = 28.0805-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20 + (((tickAnim - 70) / 10) * (26.9121-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+120))*33-(28.0805-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-20)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightwing2, rightwing2.rotateAngleX + (float) Math.toRadians(xx), rightwing2.rotateAngleY + (float) Math.toRadians(yy), rightwing2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -79.96258 + (((tickAnim - 0) / 30) * (-83.74403-(-79.96258)));
+            yy = -4.92385 + (((tickAnim - 0) / 30) * (-1.9696+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(-4.92385)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*30 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.8474-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*30)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -83.74403 + (((tickAnim - 30) / 30) * (-81-(-83.74403)));
+            yy = -1.9696+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(-1.9696+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.8474 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.8474)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -81 + (((tickAnim - 60) / 10) * (-88-(-81)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 60) / 10) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -88 + (((tickAnim - 70) / 10) * (-79.96258-(-88)));
+            yy = 0 + (((tickAnim - 70) / 10) * (-4.92385-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*30-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*25)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightwing3, rightwing3.rotateAngleX + (float) Math.toRadians(xx), rightwing3.rotateAngleY + (float) Math.toRadians(yy), rightwing3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -70 + (((tickAnim - 0) / 30) * (-71-(-70)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-10 + (((tickAnim - 0) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-10)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -71 + (((tickAnim - 30) / 30) * (-70-(-71)));
+            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 30) / 30) * (5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-5-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
+            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -70 + (((tickAnim - 60) / 10) * (-67.5-(-70)));
+            yy = 5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-15-(5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-5)));
+            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -67.5 + (((tickAnim - 70) / 10) * (-70-(-67.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-15 + (((tickAnim - 70) / 10) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*-15)));
+            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightwing4, rightwing4.rotateAngleX + (float) Math.toRadians(xx), rightwing4.rotateAngleY + (float) Math.toRadians(yy), rightwing4.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.116 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-10.2992-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.116)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.3969 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.0099-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.3969)));
+            zz = 52.047+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10 + (((tickAnim - 0) / 30) * (69.817-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*1-(52.047+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-10.2992 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-0.9981-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-10.2992)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.0099 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.1701-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.0099)));
+            zz = 69.817-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*1 + (((tickAnim - 30) / 30) * (64.1295-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1-(69.817-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*1)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-0.9981 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.1095-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-0.9981)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.1701 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.366-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.1701)));
+            zz = 64.1295-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1 + (((tickAnim - 60) / 10) * (52.2948-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10-(64.1295-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.1095 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.116-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.1095)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.366 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.3969-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.366)));
+            zz = 52.2948-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10 + (((tickAnim - 70) / 10) * (52.047+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10-(52.2948-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(rightleg, rightleg.rotateAngleX + (float) Math.toRadians(xx), rightleg.rotateAngleY + (float) Math.toRadians(yy), rightleg.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.9092 + (((tickAnim - 0) / 30) * (-8.0104+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.9092)));
+            yy = -2.9623+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5 + (((tickAnim - 0) / 30) * (1.5012+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-2.9623+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5)));
+            zz = -37.4914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-35 + (((tickAnim - 0) / 30) * (-44.6977+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5-(-37.4914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-35)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -8.0104+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25 + (((tickAnim - 30) / 30) * (-4.4479+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25-(-8.0104+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25)));
+            yy = 1.5012+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (-7.2448+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(1.5012+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            zz = -44.6977+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5 + (((tickAnim - 30) / 30) * (-41.1614+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5-(-44.6977+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -4.4479+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.8565-(-4.4479+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440+60))*-1.25)));
+            yy = -7.2448+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 60) / 10) * (3.0438+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5-(-7.2448+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            zz = -41.1614+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5 + (((tickAnim - 60) / 10) * (-36.4933+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25-(-41.1614+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+30))*-5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.8565 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.9092-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-6.8565)));
+            yy = 3.0438+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5 + (((tickAnim - 70) / 10) * (-2.9623+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5-(3.0438+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+90))*-5)));
+            zz = -36.4933+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25 + (((tickAnim - 70) / 10) * (-37.4914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-35-(-36.4933+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-25)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftwing, leftwing.rotateAngleX + (float) Math.toRadians(xx), leftwing.rotateAngleY + (float) Math.toRadians(yy), leftwing.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
+            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180+60))*-0.25)));
+            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.5)));
+            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.leftwing.rotationPointX = this.leftwing.rotationPointX + (float)(xx);
+        this.leftwing.rotationPointY = this.leftwing.rotationPointY - (float)(yy);
+        this.leftwing.rotationPointZ = this.leftwing.rotationPointZ + (float)(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -3.4789+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 0) / 30) * (-6.4107+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-3.4789+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0989 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-4.4971-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0989)));
+            zz = -26.9121-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+120))*-33 + (((tickAnim - 0) / 30) * (-39.6794+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1-(-26.9121-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+120))*-33)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -6.4107+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 30) / 30) * (-5.9268+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5-(-6.4107+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-4.4971 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.768-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-4.4971)));
+            zz = -39.6794+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1 + (((tickAnim - 30) / 30) * (-29-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1-(-39.6794+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -5.9268+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5 + (((tickAnim - 60) / 10) * (-4.1725+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(-5.9268+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*2.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.768 + (((tickAnim - 60) / 10) * (-0.1781+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.6074-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*-1.768)));
+            zz = -29-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1 + (((tickAnim - 60) / 10) * (-28.0805-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20-(-29-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-120))*-1)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -4.1725+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5 + (((tickAnim - 70) / 10) * (-3.4789+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5-(-4.1725+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*2.5)));
+            yy = -0.1781+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.6074 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*-0.0989-(-0.1781+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+60))*0.6074)));
+            zz = -28.0805-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20 + (((tickAnim - 70) / 10) * (-26.9121-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720+120))*-33-(-28.0805-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*20)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftwing2, leftwing2.rotateAngleX + (float) Math.toRadians(xx), leftwing2.rotateAngleY + (float) Math.toRadians(yy), leftwing2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -79.96258 + (((tickAnim - 0) / 30) * (-83.74403-(-79.96258)));
+            yy = -4.92385 + (((tickAnim - 0) / 30) * (-1.9696+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(-4.92385)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-30 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.8474-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-30)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -83.74403 + (((tickAnim - 30) / 30) * (-81-(-83.74403)));
+            yy = -1.9696+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25-(-1.9696+Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.8474 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.8474)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -81 + (((tickAnim - 60) / 10) * (-88-(-81)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25 + (((tickAnim - 60) / 10) * (0-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*1440))*1.25)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*-2.5)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -88 + (((tickAnim - 70) / 10) * (-79.96258-(-88)));
+            yy = 0 + (((tickAnim - 70) / 10) * (-4.92385-(0)));
+            zz = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-30-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-120))*-25)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftwing3, leftwing3.rotateAngleX + (float) Math.toRadians(xx), leftwing3.rotateAngleY + (float) Math.toRadians(yy), leftwing3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = -70 + (((tickAnim - 0) / 30) * (-71-(-70)));
+            yy = 0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*10 + (((tickAnim - 0) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*10)));
+            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = -71 + (((tickAnim - 30) / 30) * (-70-(-71)));
+            yy = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 30) / 30) * (-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
+            zz = 0 + (((tickAnim - 30) / 30) * (0-(0)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = -70 + (((tickAnim - 60) / 10) * (-67.5-(-70)));
+            yy = -5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15-(-5+Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-150))*5)));
+            zz = 0 + (((tickAnim - 60) / 10) * (0-(0)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = -67.5 + (((tickAnim - 70) / 10) * (-70-(-67.5)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15 + (((tickAnim - 70) / 10) * (0+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*10-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-150))*15)));
+            zz = 0 + (((tickAnim - 70) / 10) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftwing4, leftwing4.rotateAngleX + (float) Math.toRadians(xx), leftwing4.rotateAngleY + (float) Math.toRadians(yy), leftwing4.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+        this.setRotateAngle(wingmembranebeg4, wingmembranebeg4.rotateAngleX + (float) Math.toRadians(-9.48984), wingmembranebeg4.rotateAngleY + (float) Math.toRadians(23.3483), wingmembranebeg4.rotateAngleZ + (float) Math.toRadians(41.91884));
+        this.wingmembranebeg4.rotationPointX = this.wingmembranebeg4.rotationPointX + (float)(2.45);
+        this.wingmembranebeg4.rotationPointY = this.wingmembranebeg4.rotationPointY - (float)(-7.55);
+        this.wingmembranebeg4.rotationPointZ = this.wingmembranebeg4.rotationPointZ + (float)(5.025);
+
+
+        this.setRotateAngle(wingmembranebeg5, wingmembranebeg5.rotateAngleX + (float) Math.toRadians(92.28641), wingmembranebeg5.rotateAngleY + (float) Math.toRadians(-2.76025), wingmembranebeg5.rotateAngleZ + (float) Math.toRadians(5.24497));
+        this.wingmembranebeg5.rotationPointX = this.wingmembranebeg5.rotationPointX + (float)(0.925);
+        this.wingmembranebeg5.rotationPointY = this.wingmembranebeg5.rotationPointY - (float)(3);
+        this.wingmembranebeg5.rotationPointZ = this.wingmembranebeg5.rotationPointZ + (float)(2.375);
+
+
+        this.wingmembranebeg6.rotationPointX = this.wingmembranebeg6.rotationPointX + (float)(0);
+        this.wingmembranebeg6.rotationPointY = this.wingmembranebeg6.rotationPointY - (float)(5.7);
+        this.wingmembranebeg6.rotationPointZ = this.wingmembranebeg6.rotationPointZ + (float)(1.15);
+
+
+
+        if (tickAnim >= 0 && tickAnim < 30) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.116 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-10.6492-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.116)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.3969 + (((tickAnim - 0) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.0023-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.3969)));
+            zz = -52.047+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10 + (((tickAnim - 0) / 30) * (-59.811-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1-(-52.047+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10)));
+        }
+        else if (tickAnim >= 30 && tickAnim < 60) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-10.6492 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-0.9981-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-10.6492)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.0023 + (((tickAnim - 30) / 30) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.1701-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.0023)));
+            zz = -59.811-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1 + (((tickAnim - 30) / 30) * (-64.1295-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1-(-59.811-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1)));
+        }
+        else if (tickAnim >= 60 && tickAnim < 70) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-0.9981 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.1095-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-90))*-0.9981)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.1701 + (((tickAnim - 60) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.366-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*180))*-2.1701)));
+            zz = -64.1295-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1 + (((tickAnim - 60) / 10) * (-52.2948-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10-(-64.1295-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-60))*-1)));
+        }
+        else if (tickAnim >= 70 && tickAnim < 80) {
+            xx = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.1095 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.116-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-90))*-5.1095)));
+            yy = Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.366 + (((tickAnim - 70) / 10) * (Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.3969-(Math.sin((Math.PI/180)*(((double)tickAnim/20)*720))*-0.366)));
+            zz = -52.2948-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10 + (((tickAnim - 70) / 10) * (-52.047+Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*10-(-52.2948-Math.sin((Math.PI/180)*(((double)tickAnim/20)*720-60))*-10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(leftleg, leftleg.rotateAngleX + (float) Math.toRadians(xx), leftleg.rotateAngleY + (float) Math.toRadians(yy), leftleg.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+        this.setRotateAngle(leftleg2, leftleg2.rotateAngleX + (float) Math.toRadians(0), leftleg2.rotateAngleY + (float) Math.toRadians(0), leftleg2.rotateAngleZ + (float) Math.toRadians(-13.5));
+
+
+        this.setRotateAngle(leftfoot, leftfoot.rotateAngleX + (float) Math.toRadians(61.25), leftfoot.rotateAngleY + (float) Math.toRadians(0), leftfoot.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(head2, head2.rotateAngleX + (float) Math.toRadians(-17), head2.rotateAngleY + (float) Math.toRadians(0), head2.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(rightleg2, rightleg2.rotateAngleX + (float) Math.toRadians(0), rightleg2.rotateAngleY + (float) Math.toRadians(0), rightleg2.rotateAngleZ + (float) Math.toRadians(13.5));
+
+
+        this.setRotateAngle(rightfoot, rightfoot.rotateAngleX + (float) Math.toRadians(61.25), rightfoot.rotateAngleY + (float) Math.toRadians(0), rightfoot.rotateAngleZ + (float) Math.toRadians(0));
+
+
+        this.setRotateAngle(wingmembranebeg7, wingmembranebeg7.rotateAngleX + (float) Math.toRadians(-22.25697), wingmembranebeg7.rotateAngleY + (float) Math.toRadians(7.36231), wingmembranebeg7.rotateAngleZ + (float) Math.toRadians(-20.48711));
+        this.wingmembranebeg7.rotationPointX = this.wingmembranebeg7.rotationPointX + (float)(-2.975);
+        this.wingmembranebeg7.rotationPointY = this.wingmembranebeg7.rotationPointY - (float)(-6.25);
+        this.wingmembranebeg7.rotationPointZ = this.wingmembranebeg7.rotationPointZ + (float)(5.925);
+
+
+        this.setRotateAngle(wingmembranebeg8, wingmembranebeg8.rotateAngleX + (float) Math.toRadians(83.32533), wingmembranebeg8.rotateAngleY + (float) Math.toRadians(1.31185), wingmembranebeg8.rotateAngleZ + (float) Math.toRadians(7.1305));
+        this.wingmembranebeg8.rotationPointX = this.wingmembranebeg8.rotationPointX + (float)(0.3);
+        this.wingmembranebeg8.rotationPointY = this.wingmembranebeg8.rotationPointY - (float)(4.825);
+        this.wingmembranebeg8.rotationPointZ = this.wingmembranebeg8.rotationPointZ + (float)(4.35);
+
+
+        this.wingmembranebeg9.rotationPointX = this.wingmembranebeg9.rotationPointX + (float)(0);
+        this.wingmembranebeg9.rotationPointY = this.wingmembranebeg9.rotationPointY - (float)(4);
         this.wingmembranebeg9.rotationPointZ = this.wingmembranebeg9.rotationPointZ + (float)(0);
 
 
@@ -3273,117 +3102,7 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);
 
-        animator.setAnimation(e.FLY_ANIMATION);
-        animator.startKeyframe(e.flyTransitionLength()); //move to this keyframe over the right length
-//        animator.rotate(body1, ((0.0037F)-(-0.0456F)), ((0.0F)-(0.0F)),((-0.0309F)-(0.0F)));
-//        animator.rotate(chest, ((0.1143F)-(-0.0456F)), ((0.0F)-(0.0F)),((0.0421F)-(0.0F)));
-//        animator.rotate(cube_r1, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(cube_r10, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((2.618F)-(2.618F)));
-//        animator.rotate(cube_r11, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((-2.618F)-(-2.618F)));
-//        animator.rotate(cube_r12, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((2.618F)-(2.618F)));
-//        animator.rotate(cube_r13, ((-0.48F)-(-0.48F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(cube_r14, ((-0.5672F)-(-0.5672F)), ((0.0F)-(0.0F)),((-2.4435F)-(-2.4435F)));
-//        animator.rotate(cube_r15, ((-0.5672F)-(-0.5672F)), ((0.0F)-(0.0F)),((2.4435F)-(2.4435F)));
-//        animator.rotate(cube_r16, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((-2.618F)-(-2.618F)));
-//        animator.rotate(cube_r17, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((2.618F)-(2.618F)));
-//        animator.rotate(cube_r2, ((-0.3491F)-(-0.3491F)), ((0.0F)-(0.0F)),((-0.48F)-(-0.48F)));
-//        animator.rotate(cube_r3, ((-0.3491F)-(-0.3491F)), ((0.0F)-(0.0F)),((0.48F)-(0.48F)));
-//        animator.rotate(cube_r4, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((-0.829F)-(-0.829F)));
-//        animator.rotate(cube_r5, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((0.829F)-(0.829F)));
-//        animator.rotate(cube_r6, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((-0.48F)-(-0.48F)));
-//        animator.rotate(cube_r7, ((-0.1745F)-(-0.1745F)), ((0.0F)-(0.0F)),((0.48F)-(0.48F)));
-//        animator.rotate(cube_r8, ((-0.3272F)-(-0.3272F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(cube_r9, ((0.0F)-(0.0F)), ((0.0F)-(0.0F)),((-2.618F)-(-2.618F)));
-//        animator.rotate(footleft, ((1.3355F)-(-0.4098F)), ((0.4554F)-(-0.5918F)),((0.0094F)-(0.2276F)));
-//        animator.rotate(footright, ((1.3355F)-(-0.4098F)), ((-0.4554F)-(0.5918F)),((-0.0094F)-(-0.2276F)));
-//        animator.rotate(handleft, ((0.0F)-(0.0F)), ((0.0265F)-(0.6374F)),((1.5727F)-(0.0456F)));
-//        animator.rotate(handright, ((0.0F)-(0.0F)), ((-0.0265F)-(-0.6374F)),((-1.5727F)-(-0.0456F)));
-//        animator.rotate(head, ((0.3018F)-(0.48F)), ((0.0F)-(0.0F)),((0.0309F)-(0.0F)));
-//        animator.rotate(head2, ((0.1745F)-(0.1745F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(head3, ((0.2379F)-(0.2379F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(jaw, ((0.0171F)-(0.00F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(jaw2, ((0.1745F)-(0.1745F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(jaw3, ((0.3927F)-(0.3927F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(legwing2, ((-0.0911F)-(-0.0911F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(legwing4, ((-0.0911F)-(-0.0911F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(lowerlegleft, ((0.501F)-(0.7741F)), ((0.0F)-(0.0F)),((0.0227F)-(0.5463F)));
-//        animator.rotate(lowerlegright, ((0.501F)-(0.7741F)), ((0.0F)-(0.0F)),((-0.0227F)-(-0.5463F)));
-//        animator.rotate(neck1, ((0.0034F)-(-0.1309F)), ((0.0F)-(0.0F)),((-0.0113F)-(0.0F)));
-//        animator.rotate(neck2, ((-0.1599F)-(-0.2618F)), ((0.0F)-(0.0F)),((-0.0421F)-(0.0F)));
-//        animator.rotate(tail1, ((-0.2963F)-(-0.0456F)), ((0.0212F)-(0.0F)),((-0.0421F)-(0.0F)));
-//        animator.rotate(tail2, ((-0.0414F)-(0.0456F)), ((-0.0212F)-(0.0F)),((0.0113F)-(0.0F)));
-//        animator.rotate(tail3, ((-0.035F)-(0.0456F)), ((-0.0424F)-(0.0F)),((0.0309F)-(0.0F)));
-//        animator.rotate(tail4, ((-0.0187F)-(0.0456F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(tail5, ((-0.035F)-(0.0456F)), ((0.0F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(upperlegleft, ((0.3753F)-(-0.3643F)), ((-0.2484F)-(0.0F)),((-1.3667F)-(-0.5009F)));
-//        animator.rotate(upperlegright, ((0.3753F)-(-0.3643F)), ((0.2484F)-(0.0F)),((1.3667F)-(0.5009F)));
-//        animator.rotate(wingleft1, ((-0.0762F)-(0.0F)), ((0.0542F)-(0.182F)),((-0.5594F)-(-0.0911F)));
-//        animator.rotate(wingleft2, ((0.03F)-(0.0F)), ((-0.0046F)-(0.0F)),((-1.4427F)-(-0.0456F)));
-//        animator.rotate(wingleft3, ((-1.5708F)-(0.0F)), ((0.001F)-(0.0F)),((0.5418F)-(0.0911F)));
-//        animator.rotate(wingleft4, ((0.203F)-(1.1629F)), ((-0.1731F)-(0.0F)),((0.0F)-(0.0F)));
-//        animator.rotate(wingright1, ((-0.0762F)-(0.0F)), ((-0.0542F)-(-0.182F)),((0.5594F)-(0.0911F)));
-//        animator.rotate(wingright2, ((-0.051F)-(0.0F)), ((0.0724F)-(0.0F)),((1.442F)-(0.0456F)));
-//        animator.rotate(wingright3, ((-1.5708F)-(0.0F)), ((-0.001F)-(0.0F)),((-0.5418F)-(-0.0911F)));
-//        animator.rotate(wingright4, ((0.203F)-(1.1629F)), ((0.1731F)-(0.0F)),((0.0F)-(0.0F)));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(0);
-        animator.resetKeyframe(0);
 
-        animator.setAnimation(e.UNFLY_ANIMATION);
-        animator.startKeyframe(e.unflyTransitionLength()); //move to this keyframe over the right length
-//        animator.rotate(body1, -((0.0037F)-(-0.0456F)), -((0.0F)-(0.0F)),-((-0.0309F)-(0.0F)));
-//        animator.rotate(chest, -((0.1143F)-(-0.0456F)), -((0.0F)-(0.0F)),-((0.0421F)-(0.0F)));
-//        animator.rotate(cube_r1, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(cube_r10, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((2.618F)-(2.618F)));
-//        animator.rotate(cube_r11, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((-2.618F)-(-2.618F)));
-//        animator.rotate(cube_r12, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((2.618F)-(2.618F)));
-//        animator.rotate(cube_r13, -((-0.48F)-(-0.48F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(cube_r14, -((-0.5672F)-(-0.5672F)), -((0.0F)-(0.0F)),-((-2.4435F)-(-2.4435F)));
-//        animator.rotate(cube_r15, -((-0.5672F)-(-0.5672F)), -((0.0F)-(0.0F)),-((2.4435F)-(2.4435F)));
-//        animator.rotate(cube_r16, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((-2.618F)-(-2.618F)));
-//        animator.rotate(cube_r17, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((2.618F)-(2.618F)));
-//        animator.rotate(cube_r2, -((-0.3491F)-(-0.3491F)), -((0.0F)-(0.0F)),-((-0.48F)-(-0.48F)));
-//        animator.rotate(cube_r3, -((-0.3491F)-(-0.3491F)), -((0.0F)-(0.0F)),-((0.48F)-(0.48F)));
-//        animator.rotate(cube_r4, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((-0.829F)-(-0.829F)));
-//        animator.rotate(cube_r5, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((0.829F)-(0.829F)));
-//        animator.rotate(cube_r6, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((-0.48F)-(-0.48F)));
-//        animator.rotate(cube_r7, -((-0.1745F)-(-0.1745F)), -((0.0F)-(0.0F)),-((0.48F)-(0.48F)));
-//        animator.rotate(cube_r8, -((-0.3272F)-(-0.3272F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(cube_r9, -((0.0F)-(0.0F)), -((0.0F)-(0.0F)),-((-2.618F)-(-2.618F)));
-//        animator.rotate(footleft, -((1.3355F)-(-0.4098F)), -((0.4554F)-(-0.5918F)),-((0.0094F)-(0.2276F)));
-//        animator.rotate(footright, -((1.3355F)-(-0.4098F)), -((-0.4554F)-(0.5918F)),-((-0.0094F)-(-0.2276F)));
-//        animator.rotate(handleft, -((0.0F)-(0.0F)), -((0.0265F)-(0.6374F)),-((1.5727F)-(0.0456F)));
-//        animator.rotate(handright, -((0.0F)-(0.0F)), -((-0.0265F)-(-0.6374F)),-((-1.5727F)-(-0.0456F)));
-//        animator.rotate(head, -((0.3018F)-(0.48F)), -((0.0F)-(0.0F)),-((0.0309F)-(0.0F)));
-//        animator.rotate(head2, -((0.1745F)-(0.1745F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(head3, -((0.2379F)-(0.2379F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(jaw, -((0.0171F)-(0.00F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(jaw2, -((0.1745F)-(0.1745F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(jaw3, -((0.3927F)-(0.3927F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(legwing2, -((-0.0911F)-(-0.0911F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(legwing4, -((-0.0911F)-(-0.0911F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(lowerlegleft, -((0.501F)-(0.7741F)), -((0.0F)-(0.0F)),-((0.0227F)-(0.5463F)));
-//        animator.rotate(lowerlegright, -((0.501F)-(0.7741F)), -((0.0F)-(0.0F)),-((-0.0227F)-(-0.5463F)));
-//        animator.rotate(neck1, -((0.0034F)-(-0.1309F)), -((0.0F)-(0.0F)),-((-0.0113F)-(0.0F)));
-//        animator.rotate(neck2, -((-0.1599F)-(-0.2618F)), -((0.0F)-(0.0F)),-((-0.0421F)-(0.0F)));
-//        animator.rotate(tail1, -((-0.2963F)-(-0.0456F)), -((0.0212F)-(0.0F)),-((-0.0421F)-(0.0F)));
-//        animator.rotate(tail2, -((-0.0414F)-(0.0456F)), -((-0.0212F)-(0.0F)),-((0.0113F)-(0.0F)));
-//        animator.rotate(tail3, -((-0.035F)-(0.0456F)), -((-0.0424F)-(0.0F)),-((0.0309F)-(0.0F)));
-//        animator.rotate(tail4, -((-0.0187F)-(0.0456F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(tail5, -((-0.035F)-(0.0456F)), -((0.0F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(upperlegleft, -((0.3753F)-(-0.3643F)), -((-0.2484F)-(0.0F)),-((-1.3667F)-(-0.5009F)));
-//        animator.rotate(upperlegright, -((0.3753F)-(-0.3643F)), -((0.2484F)-(0.0F)),-((1.3667F)-(0.5009F)));
-//        animator.rotate(wingleft1, -((-0.0762F)-(0.0F)), -((0.0542F)-(0.182F)),-((-0.5594F)-(-0.0911F)));
-//        animator.rotate(wingleft2, -((0.03F)-(0.0F)), -((-0.0046F)-(0.0F)),-((-1.4427F)-(-0.0456F)));
-//        animator.rotate(wingleft3, -((-1.5708F)-(0.0F)), -((0.001F)-(0.0F)),-((0.5418F)-(0.0911F)));
-//        animator.rotate(wingleft4, -((0.203F)-(1.1629F)), -((-0.1731F)-(0.0F)),-((0.0F)-(0.0F)));
-//        animator.rotate(wingright1, -((-0.0762F)-(0.0F)), -((-0.0542F)-(-0.182F)),-((0.5594F)-(0.0911F)));
-//        animator.rotate(wingright2, -((-0.051F)-(0.0F)), -((0.0724F)-(0.0F)),-((1.442F)-(0.0456F)));
-//        animator.rotate(wingright3, -((-1.5708F)-(0.0F)), -((-0.001F)-(0.0F)),-((-0.5418F)-(-0.0911F)));
-//        animator.rotate(wingright4, -((0.203F)-(1.1629F)), -((0.1731F)-(0.0F)),-((0.0F)-(0.0F)));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(0);
-        animator.resetKeyframe(0);
 
     }
 }

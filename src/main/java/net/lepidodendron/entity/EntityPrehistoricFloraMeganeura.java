@@ -157,7 +157,7 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 		return 0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.95;
+		return 0.45;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0;

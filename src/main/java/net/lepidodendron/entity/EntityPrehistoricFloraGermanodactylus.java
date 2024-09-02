@@ -8,15 +8,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.render.entity.RenderRhamphorhynchus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -32,8 +29,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -50,10 +45,10 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	public EntityPrehistoricFloraGermanodactylus(World world) {
 		super(world);
-		setSize(0.85F, 0.5F);
+		setSize(0.4F, 0.3F);
 		minWidth = 0.10F;
-		maxWidth = 0.85F;
-		maxHeight = 0.5F;
+		maxWidth = 0.4F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 10.0D;
 		setNoAI(!true);
 		enablePersistence();
@@ -107,13 +102,15 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraGermanodactylus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraGermanodactylus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraGermanodactylus currentPterodactylus : rhamphorhynchus) {
-				currentPterodactylus.setRevengeTarget(ee);
-				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
-				currentPterodactylus.setFlying();
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraGermanodactylus> germanodactylus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraGermanodactylus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraGermanodactylus currentGermanodactylus : germanodactylus) {
+				currentGermanodactylus.setAlarmTarget(ee);
+				currentGermanodactylus.setRevengeTarget(ee);
+				currentGermanodactylus.screamAlarmCooldown = rand.nextInt(20);
+				currentGermanodactylus.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -291,7 +288,7 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	@Override
 	public int getRoarLength() {
-		return 10;
+		return 15;
 	}
 
 	@Override
@@ -316,22 +313,22 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodactylus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:germanodactylus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodactylus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:germanodactylus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:pterodactylus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:germanodactylus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:pterodactylus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:germanodactylus_alarm"));
 	}
 
 	public void playAlarmSound()

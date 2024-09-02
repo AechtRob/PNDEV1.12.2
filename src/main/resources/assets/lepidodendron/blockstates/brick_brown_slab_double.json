@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:brick_brown_slab_double"
+    }
+  }
+}

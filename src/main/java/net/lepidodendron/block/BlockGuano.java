@@ -58,6 +58,7 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyBool EAST = PropertyBool.create("east");
 	public static final PropertyBool SOUTH = PropertyBool.create("south");
 	public static final PropertyBool WEST = PropertyBool.create("west");
+	public static final PropertyBool DECAYABLE = PropertyBool.create("decayable");
 
 	public static class BlockCustom extends BlockSnow {
 		public BlockCustom() {
@@ -69,12 +70,46 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 			setDefaultSlipperiness(0.8f);
 			setHardness(0.1F);
 			setLightOpacity(0);
-			this.setTickRandomly(false);
-			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false));
+			this.setTickRandomly(true);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(DECAYABLE, false) .withProperty(NORTH, false).withProperty(EAST, false).withProperty(SOUTH, false).withProperty(WEST, false).withProperty(LAYERS, Integer.valueOf(1)));
 		}
 
+		@Override
+		public IBlockState getStateFromMeta(int meta)
+		{
+			//return this.getDefaultState().withProperty(LAYERS, Integer.valueOf((meta & 7) + 1));
+
+			return this.getDefaultState().withProperty(LAYERS, Integer.valueOf((meta & 7) + 1)).withProperty(DECAYABLE, Boolean.valueOf((meta & 8) > 0));
+
+		}
+
+		@Override
+		public int getMetaFromState(IBlockState state)
+		{
+			//return ((Integer)state.getValue(LAYERS)).intValue() - 1;
+
+			int i = 0;
+			i = i | ((Integer)state.getValue(LAYERS) - 1);
+
+			if (!((Boolean)state.getValue(DECAYABLE)).booleanValue())
+			{
+				i |= 8;
+			}
+
+			return i;
+
+		}
+
+//		@Override
+//		public void setHarvestLevel(String toolClass, int level, IBlockState state)
+//		{
+//			int idx = this.getMetaFromState(state);
+//			this.harvestTool[idx] = toolClass;
+//			this.harvestLevel[idx] = level;
+//		}
+
 		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, new IProperty[]{NORTH, EAST, SOUTH, WEST, LAYERS});
+			return new BlockStateContainer(this, new IProperty[]{NORTH, EAST, SOUTH, WEST, LAYERS, DECAYABLE});
 		}
 
 		@Override
@@ -165,6 +200,15 @@ public class BlockGuano extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+			if (!state.getValue(DECAYABLE)) {
+				return;
+			}
+			if (state.getValue(LAYERS) > 1) {
+				worldIn.setBlockState(pos, state.withProperty(LAYERS, state.getValue(LAYERS) - 1));
+			}
+			else {
+				worldIn.setBlockToAir(pos);
+			}
 		}
 
 		@SideOnly(Side.CLIENT)
