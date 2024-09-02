@@ -360,10 +360,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.getNavigator().clearPath();
         this.setDrinkingFrom(null);
         this.setGrazingFrom(null);
-        if (this.getAnimation() != this.HIDE_ANIMATION) {
-            return super.attackEntityFrom(ds, i);
+        if (this.getAnimation() == this.HIDE_ANIMATION && this.HIDE_ANIMATION != null && this.getAnimation() != null) {
+            return false;
         }
-        return false;
+        return super.attackEntityFrom(ds, i);
     }
 
     public float getTravelSpeed() {
