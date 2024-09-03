@@ -10502,5 +10502,336 @@
         "stream": false
       }
     ]
+  },
+
+  "lagosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lagosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "lagosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lagosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lagosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "lagosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lagosuchus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "stenokranio_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stenokranio_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stenokranio_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stenokranio_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stenokranio_living04",
+        "stream": false
+      }
+    ]
+  },
+  "stenokranio_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stenokranio_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stenokranio_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:stenokranio_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "stenokranio_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:stenokranio_death",
+        "stream": false
+      }
+    ]
+  },
+  "dearc_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dearc_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_living04",
+        "stream": false
+      }
+    ]
+  },
+  "dearc_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dearc_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "dearc_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dearc_death",
+        "stream": false
+      }
+    ]
+  },
+  "dearc_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:dearc_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:dearc_alarm03",
+        "stream": false
+      }
+    ]
+  },
+  "germanodactylus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:germanodactylus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "germanodactylus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:germanodactylus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "germanodactylus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:germanodactylus_death",
+        "stream": false
+      }
+    ]
+  },
+  "germanodactylus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:germanodactylus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:germanodactylus_alarm03",
+        "stream": false
+      }
+    ]
+  },
+  "harpactognathus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:harpactognathus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "harpactognathus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:harpactognathus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "harpactognathus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:harpactognathus_death",
+        "stream": false
+      }
+    ]
+  },
+  "harpactognathus_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:harpactognathus_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:harpactognathus_alarm03",
+        "stream": false
+      }
+    ]
+  },
+
+  "schoenesmahl_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:schoenesmahl_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:schoenesmahl_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:schoenesmahl_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "schoenesmahl_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:schoenesmahl_death",
+        "stream": false
+      }
+    ]
   }
 }

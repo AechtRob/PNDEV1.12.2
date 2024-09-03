@@ -144,7 +144,7 @@ public class WorldGenPaleoproterozoicLakes extends WorldGenerator
                                     }
                                 }
                                 if (this.block.getDefaultState().getMaterial() == Material.WATER) {
-                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockRedClay.block.getDefaultState(), 2);
+                                    Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockClayRed.block.getDefaultState(), 2);
                                 }
                             }
                         }

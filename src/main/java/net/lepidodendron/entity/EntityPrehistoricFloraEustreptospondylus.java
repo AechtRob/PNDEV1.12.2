@@ -229,7 +229,6 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 	@Override
 	public int getRoarLength() { return 65; } //Warn/threat
 
-
 	@Override
 	public boolean hasNest() {
 		return true;

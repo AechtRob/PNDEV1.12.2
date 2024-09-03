@@ -8,15 +8,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.render.entity.RenderRhamphorhynchus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -28,8 +25,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -102,13 +97,15 @@ public class EntityPrehistoricFloraHarpactognathus extends EntityPrehistoricFlor
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraHarpactognathus> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHarpactognathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraHarpactognathus currentPterodactylus : rhamphorhynchus) {
-				currentPterodactylus.setRevengeTarget(ee);
-				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
-				currentPterodactylus.setFlying();
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraHarpactognathus> harpactognathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraHarpactognathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraHarpactognathus currentHarpactognathus : harpactognathus) {
+				currentHarpactognathus.setAlarmTarget(ee);
+				currentHarpactognathus.setRevengeTarget(ee);
+				currentHarpactognathus.screamAlarmCooldown = rand.nextInt(20);
+				currentHarpactognathus.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -287,22 +284,22 @@ public class EntityPrehistoricFloraHarpactognathus extends EntityPrehistoricFlor
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:harpactognathus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:harpactognathus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:harpactognathus_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:harpactognathus_alarm"));
 	}
 
 	public void playAlarmSound()

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pebblestone_1"},
+      {"model": "lepidodendron:pebblestone_2"},
+      {"model": "lepidodendron:pebblestone_3"},
+      {"model": "lepidodendron:pebblestone_4"},
+      {"model": "lepidodendron:pebblestone_5"}
+    ]
+  }
+}

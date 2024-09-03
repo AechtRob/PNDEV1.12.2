@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "half=bottom,variant=default": [
+      {"model": "lepidodendron:pebblestone_slab_1"},
+      {"model": "lepidodendron:pebblestone_slab_2"},
+      {"model": "lepidodendron:pebblestone_slab_3"},
+      {"model": "lepidodendron:pebblestone_slab_4"},
+      {"model": "lepidodendron:pebblestone_slab_5"}
+    ],
+    "half=top,variant=default": [
+      {"model": "lepidodendron:pebblestone_slab_top_1"},
+      {"model": "lepidodendron:pebblestone_slab_top_2"},
+      {"model": "lepidodendron:pebblestone_slab_top_3"},
+      {"model": "lepidodendron:pebblestone_slab_top_4"},
+      {"model": "lepidodendron:pebblestone_slab_top_5"}
+    ]
+  }
+}

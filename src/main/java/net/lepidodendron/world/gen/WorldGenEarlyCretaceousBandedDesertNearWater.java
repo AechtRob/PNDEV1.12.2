@@ -55,7 +55,7 @@ public class WorldGenEarlyCretaceousBandedDesertNearWater extends WorldGenerator
                     iblockstate = BlockDriedMud.block.getDefaultState();
                 }
                 else if (p >= 35) {
-                    iblockstate = BlockRedClay.block.getDefaultState();
+                    iblockstate = BlockClayRed.block.getDefaultState();
                 }
                 else if (p >= 25) {
                     if (rand.nextInt(2) == 0) {

@@ -342,7 +342,14 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
-        this.setIsDrinking(1000);
+        if (this.getAnimation() == DRINK_ANIMATION) {
+            this.setAnimation(NO_ANIMATION);
+            this.setIsDrinking(rand.nextInt(1000));
+        }
+        if (this.getAnimation() == GRAZE_ANIMATION) {
+            this.setAnimation(NO_ANIMATION);
+            this.setIsGrazing(rand.nextInt(1000));
+        }
         if (!(this instanceof EntityPrehistoricFloraLandClimbingFlyingWalkingBase)) {
             if (this.getAnimation() != this.ATTACK_ANIMATION) {
                 if (this.getAnimation() != this.HIDE_ANIMATION) {
@@ -353,10 +360,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.getNavigator().clearPath();
         this.setDrinkingFrom(null);
         this.setGrazingFrom(null);
-        if (this.getAnimation() != this.HIDE_ANIMATION) {
-            return super.attackEntityFrom(ds, i);
+        if (this.getAnimation() == this.HIDE_ANIMATION && this.HIDE_ANIMATION != null && this.getAnimation() != null) {
+            return false;
         }
-        return false;
+        return super.attackEntityFrom(ds, i);
     }
 
     public float getTravelSpeed() {

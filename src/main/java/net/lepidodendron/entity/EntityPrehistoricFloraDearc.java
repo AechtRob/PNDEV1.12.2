@@ -35,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
+public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -106,13 +106,15 @@ public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimb
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
-			List<EntityPrehistoricFloraDearc> rhamphorhynchus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDearc.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
-			for (EntityPrehistoricFloraDearc currentPterodactylus : rhamphorhynchus) {
-				currentPterodactylus.setRevengeTarget(ee);
-				currentPterodactylus.screamAlarmCooldown = rand.nextInt(20);
-				currentPterodactylus.setFlying();
+			this.setAlarmTarget(ee);
+			List<EntityPrehistoricFloraDearc> dearc = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDearc.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraDearc currentDearc : dearc) {
+				currentDearc.setAlarmTarget(ee);
+				currentDearc.setRevengeTarget(ee);
+				currentDearc.screamAlarmCooldown = rand.nextInt(20);
+				currentDearc.setFlying();
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -291,22 +293,22 @@ public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimb
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:dearc_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:dearc_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_death"));
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:dearc_death"));
 	}
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:rhamphorhynchus_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:dearc_alarm"));
 	}
 
 	public void playAlarmSound()

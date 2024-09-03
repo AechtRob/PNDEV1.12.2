@@ -1,0 +1,32 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:pebblestone"
+    },
+    "1": {
+      "item": "lepidodendron:pebblestone"
+    },
+    "2": {
+      "item": "lepidodendron:pebblestone"
+    },
+    "3": {
+      "item": "lepidodendron:pebblestone"
+    },
+    "4": {
+      "item": "lepidodendron:pebblestone"
+    },
+    "5": {
+      "item": "lepidodendron:pebblestone"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:pebblestone_wall",
+    "count": 6
+  }
+}

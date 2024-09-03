@@ -166,6 +166,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 				"lepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus",
 				"lepidodendron:prehistoric_flora_trigonotarbid_palaeotarbus",
 				"lepidodendron:prehistoric_flora_trigonotarbid_permotarbus",
+				"lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne"
 			};
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();
