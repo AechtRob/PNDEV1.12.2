@@ -281,16 +281,21 @@ public class ModelRhabdoderma extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.4F;
-        this.base.offsetX = -0.3F;
+        this.base.offsetY = -1.0F;
+        this.base.offsetX = 1.35F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 2.7F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(base, 0.3F, 3.5F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

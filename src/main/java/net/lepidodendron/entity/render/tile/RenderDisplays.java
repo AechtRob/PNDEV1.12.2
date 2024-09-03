@@ -456,6 +456,7 @@ public class RenderDisplays {
     public static final ModelLufengosaurus modelLufengosaurus = new ModelLufengosaurus();
     public static final ModelLunaspis modelLunaspis = new ModelLunaspis();
     public static final ModelLunataspis modelLunataspis = new ModelLunataspis();
+    public static final ModelLagosuchus modelLagosuchus = new ModelLagosuchus();
     public static final ModelLungmenshanaspis modelLungmenshanaspis = new ModelLungmenshanaspis();
     public static final ModelLuoxiongichthys modelLuoxiongichthys = new ModelLuoxiongichthys();
     public static final ModelLyrarapax modelLyrarapax = new ModelLyrarapax();

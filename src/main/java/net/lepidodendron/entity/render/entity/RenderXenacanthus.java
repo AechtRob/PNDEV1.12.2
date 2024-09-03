@@ -11,9 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderXenacanthus extends RenderLivingBaseWithBook<EntityPrehistoricFloraXenacanthus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xenacanthus.png");
-    public static float getScaler() {
-        return 0.48f;
-    }
+    public static float getScaler() {return 0.48f;}
     public RenderXenacanthus(RenderManager mgr) {
         super(mgr, new ModelXenacanthus(), RenderDisplays.modelXenacanthus, 0.5f);
     }

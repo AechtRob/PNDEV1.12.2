@@ -9,7 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTrimerus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTrimerus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trimerus.png");
-
+    public static float getScaler() {
+        return 0.7F * 0.2F;
+    }
     public RenderTrimerus(RenderManager mgr) {
         super(mgr, new ModelTrimerus(), 0.0f);
     }
