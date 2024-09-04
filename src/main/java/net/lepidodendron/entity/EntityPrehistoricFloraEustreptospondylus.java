@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -29,6 +30,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -46,6 +48,7 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricFloraLandWadingBase implements IAdvancementGranter, ITrappableLand {
 
+	public static Animation NOISE_ANIMATION; //Ambient noises (roar is re-purposed for warning)
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
@@ -60,6 +63,35 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		NOISE_ANIMATION = Animation.create(this.getNoiseLength());
+	}
+
+	@Override
+	public void playLivingSound() {
+		if (this.getAnimation() == NO_ANIMATION && (!this.getIsSneaking())) {
+			if (!this.world.isRemote) {
+				this.setAnimation(NOISE_ANIMATION);
+				SoundEvent soundevent = this.getAmbientSound();
+				if (soundevent != null)
+				{
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
+	}
+
+	public int getNoiseLength() {
+		return 40;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, HURT_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, MAKE_NEST_ANIMATION};
+	}
+
+	@Override
+	public boolean isAnimationDirectionLocked(Animation animation) {
+		return animation == ROAR_ANIMATION || animation == DRINK_ANIMATION; //warning a player
 	}
 
 	@Override
@@ -91,7 +123,20 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 				this.playSound(this.getSplashSound(), 1.0F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
 			}
 		}
+
+		if (this.getAnimation() == EAT_ANIMATION) {
+			if (this.getAnimationTick() == getEatTick()) {
+				SoundEvent soundevent = SoundEvents.ENTITY_GENERIC_EAT;
+				this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+		}
+
+		if (this.getAnimation() == ROAR_ANIMATION && this.getWarnTarget() != null) {
+			this.faceEntity(this.getWarnTarget(), 10, 10);
+		}
 	}
+
+	public int getEatTick() {return 1;}
 
 	@Override
 	public int getDrinkLength() {
@@ -303,16 +348,16 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		//tasks.addTask(2, new AgeableWarnEntity(this, EntityPlayer.class, 4));
-		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new LandWanderNestAI(this));
-		tasks.addTask(4, new LandWanderFollowParent(this, 1.05D));
-		tasks.addTask(5, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
-		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
-		tasks.addTask(9, new EntityWatchClosestAI(this, EntityLivingBase.class, 8.0F));
-		tasks.addTask(10, new EntityLookIdleAI(this));
+		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
+		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
+		tasks.addTask(7, new LandWanderAvoidDeepWaterAI(this, 0.7D, 120));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 6.0F));
+		tasks.addTask(9, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableFishBase.class, 8.0F));
+		tasks.addTask(10, new EntityWatchClosestAI(this, EntityPlayer.class, 8.0F));
+		tasks.addTask(11, new EntityWatchClosestAI(this, EntityLivingBase.class, 8.0F));
+		tasks.addTask(12, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -343,6 +388,12 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(11.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.8D);
+	}
+
+	@Nullable
+	public SoundEvent getRoarSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:eustreptospondylus_roar"));
 	}
 
 	@Override
