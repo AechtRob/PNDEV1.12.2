@@ -2,10 +2,7 @@
 package net.lepidodendron.item.crafting;
 
 import net.lepidodendron.block.*;
-import net.lepidodendron.item.ItemBalticAmberChunk;
-import net.lepidodendron.item.ItemDominicanAmberChunk;
-import net.lepidodendron.item.ItemRedClayBall;
-import net.lepidodendron.item.ItemZircon;
+import net.lepidodendron.item.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -33,6 +30,9 @@ public class RecipeOresAndBlocks  {
 
 		GameRegistry.addSmelting(new ItemStack(BlockLavaRock.block, (int) (1)), new ItemStack(BlockLavaRockPolished.block, (int) (1)), 0.1F);
 
+		GameRegistry.addSmelting(new ItemStack(BlockPebblestone.block, (int) (1)), new ItemStack(Blocks.STONE, (int) (1)), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(BlockPebblestoneMossy.block, (int) (1)), new ItemStack(Blocks.STONE, (int) (1)), 0.1F);
+
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrick.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrickMossy.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrickCarved.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
@@ -44,11 +44,14 @@ public class RecipeOresAndBlocks  {
 		GameRegistry.addSmelting(new ItemStack(BlockSandstonePangaean.block, (int) (1)), new ItemStack(BlockSandstonePangaeanSmooth.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockSandstonePaleoproterozoic.block, (int) (1)), new ItemStack(BlockSandstonePaleoproterozoicSmooth.block, (int) (1)), 0.1F);
 
-		GameRegistry.addSmelting(new ItemStack(ItemRedClayBall.block, (int) (1)), new ItemStack(Items.BRICK, (int) (1)), 0.3F);
+		GameRegistry.addSmelting(new ItemStack(ItemClayBallRed.block, (int) (1)), new ItemStack(Items.BRICK, (int) (1)), 0.3F);
+		GameRegistry.addSmelting(new ItemStack(ItemClayBallBrown.block, (int) (1)), new ItemStack(ItemBrickBrown.block, (int) (1)), 0.3F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockLavaRockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
 
-		GameRegistry.addSmelting(new ItemStack(BlockRedClay.block, (int) (1)), new ItemStack(Blocks.HARDENED_CLAY, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(BlockClayRed.block, (int) (1)), new ItemStack(Blocks.HARDENED_CLAY, (int) (1)), 0.35F);
+
+		GameRegistry.addSmelting(new ItemStack(BlockClayBrown.block, (int) (1)), new ItemStack(Blocks.HARDENED_CLAY, (int) (4)), 0.35F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockCarboniferousMud.block, (int) (1)), new ItemStack(BlockDriedMud.block, (int) (1)), 0.15F);
 

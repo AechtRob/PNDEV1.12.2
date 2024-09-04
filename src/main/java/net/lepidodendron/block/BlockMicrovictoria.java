@@ -9,6 +9,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -34,6 +35,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -333,17 +335,20 @@ public class BlockMicrovictoria extends ElementsLepidodendronMod.ModElement {
 			int colWater = 1;
 			boolean isAir = false;
 	    	while (colWater < 6 && isWaterBlock(worldIn, pos.up(colWater))) {
-	    		//Check the water column:
-	    		if (worldIn.isAirBlock(pos.up(colWater + 1))
-	    			|| worldIn.getBlockState(pos.up(colWater + 1)).getMaterial() == Material.ICE
-					|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock().isReplaceable(worldIn, pos.up(colWater + 1))
-	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockMicrovictoriaBud.block
-	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockMicrovictoriaFlower.block
-	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockMicrovictoriaFlowerPlaceable.block)
-	    		{
-	    			isAir = true;
-	    		}
-	    		colWater = colWater + 1;
+				//Check the water column:
+				if (worldIn.isAirBlock(pos.up(colWater + 1))
+						|| worldIn.getBlockState(pos.up(colWater + 1)).getMaterial() == Material.ICE
+						|| (worldIn.getBlockState(pos.up(colWater + 1)).getBlock().isReplaceable(worldIn, pos.up(colWater + 1))
+						&& (!(worldIn.getBlockState(pos.up(colWater + 1)).getBlock() instanceof BlockFluidBase))
+						&& (!(worldIn.getBlockState(pos.up(colWater + 1)).getBlock() instanceof BlockLiquid))
+				)
+						|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNelumboBud.block
+						|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNelumboFlower.block
+						|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNelumboFlowerPlaceable.block)
+				{
+					isAir = true;
+				}
+				colWater = colWater + 1;
 	    	}
 	    	if (!isAir) {return false;}
 	        

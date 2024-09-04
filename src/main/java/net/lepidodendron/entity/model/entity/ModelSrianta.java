@@ -335,15 +335,21 @@ public class ModelSrianta extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.main.offsetY = -1.2F;
-        this.main.offsetX = 1.05F;
+        this.main.offsetX = 0.05F;
         this.main.rotateAngleY = (float)Math.toRadians(245);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 2.5F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, -0.2F, 3.8F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(tail, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.2F, -0.2F, 0.2F);
+        this.setRotateAngle(tail4, 0.2F, -0.4F, 0.2F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:

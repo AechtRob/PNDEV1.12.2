@@ -299,27 +299,43 @@ public class ModelCaridosuctor extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.resetToDefaultPose();
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.8F, 0.0F, 0.0F);
+        this.main.offsetY = -0.21F;
+        this.main.offsetX = -0.02F;
+        this.main.offsetZ = -0.255F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, -0.2F, 0.0F, -0.1F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.main.offsetZ = -0.0F;
+        this.main.offsetY = -0.12F;
+        this.main.offsetX = 0.005F;
+        this.main.render(0.01F);
         resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -1.4F;
-        this.main.offsetX = -0.3F;
+        this.main.offsetY = -0.5F;
+        this.main.offsetX = 0.3F;
         this.main.rotateAngleY = (float)Math.toRadians(200);
         this.main.rotateAngleX = (float)Math.toRadians(8);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 4.2F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(main, -0.3F, 2.0F, 0.1F);
-        this.setRotateAngle(head, 0.0F, 0.02F, 0.0F);
-        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(main, -0.2F, -3.8F, -0.1F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.2F, 0.0F);
         this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);

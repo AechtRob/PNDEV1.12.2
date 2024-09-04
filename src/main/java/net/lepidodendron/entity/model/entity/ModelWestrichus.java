@@ -178,24 +178,49 @@ public class ModelWestrichus extends ModelBasePalaeopedia {
         this.base.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.resetToDefaultPose();
+        this.base.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.base.offsetY = -0.21F;
+        this.base.offsetX = -0.12F;
+        this.base.offsetZ = -0.24F;
+        this.base.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(base, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, -0.1F, 0.0F, 0.0F);
+        this.base.offsetZ = -0.03F;
+        this.base.offsetY = -0.12F;
+        this.base.offsetX = -0.005F;
+        this.base.render(0.01F);
         resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.4F;
-        this.base.offsetX = -0.3F;
+        this.base.offsetY = -2.0F;
+        this.base.offsetX = -1.338F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 1.63F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, -0.3F, 2.0F, 0.1F);
+        this.setRotateAngle(base, -0.5F, 2.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);

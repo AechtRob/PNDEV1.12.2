@@ -90,9 +90,11 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 			Entity e = ds.getTrueSource();
 			if (e instanceof EntityLivingBase && this.hasAlarm()) {
 				EntityLivingBase ee = (EntityLivingBase) e;
+				this.setAlarmTarget(ee);
 				List<EntityPrehistoricFloraAnurognathid> anurognathid = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraAnurognathid.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 				for (EntityPrehistoricFloraAnurognathid currentAnurognathid : anurognathid) {
 					if (currentAnurognathid.getPNType() == this.getPNType()) {
+						currentAnurognathid.setAlarmTarget(ee);
 						currentAnurognathid.setRevengeTarget(ee);
 						currentAnurognathid.screamAlarmCooldown = rand.nextInt(20);
 						currentAnurognathid.setFlying();

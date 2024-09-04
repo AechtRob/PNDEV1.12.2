@@ -197,6 +197,7 @@ public class RenderDisplays {
     public static final ModelCymbospondylus modelCymbospondylus = new ModelCymbospondylus();
     public static final ModelCynognathus modelCynognathus = new ModelCynognathus();
     public static final ModelCyrtoceras modelCyrtoceras = new ModelCyrtoceras();
+    public static final ModelCaridosuctor modelCaridosuctor = new ModelCaridosuctor();
     public static final ModelDaedalichthys modelDaedalichthys = new ModelDaedalichthys();
     public static final ModelDaihuoides modelDaihuoides = new ModelDaihuoides();
     public static final ModelDakosaurus modelDakosaurus = new ModelDakosaurus();
@@ -248,6 +249,7 @@ public class RenderDisplays {
     public static final ModelDvinia modelDvinia = new ModelDvinia();
     public static final ModelDvinosaurus modelDvinosaurus = new ModelDvinosaurus();
     public static final ModelDiplodoselache modelDiplodoselache = new ModelDiplodoselache();
+    public static final ModelDearc modelDearc = new ModelDearc();
     public static final ModelEastmanosteus modelEastmanosteus = new ModelEastmanosteus();
     public static final ModelEbenaqua modelEbenaqua = new ModelEbenaqua();
     public static final ModelEchinochimaera modelEchinochimaera = new ModelEchinochimaera();
@@ -293,6 +295,7 @@ public class RenderDisplays {
     public static final ModelEurypterus modelEurypterus = new ModelEurypterus();
     public static final ModelEuspira modelEuspira = new ModelEuspira();
     public static final ModelEusthenopteron modelEusthenopteron = new ModelEusthenopteron();
+    public static final ModelEustreptospondylus modelEustreptospondylus = new ModelEustreptospondylus();
     public static final ModelFadenia modelFadenia = new ModelFadenia();
     public static final ModelFalcatus modelFalcatus = new ModelFalcatus();
     public static final ModelFallacosteus modelFallacosteus = new ModelFallacosteus();
@@ -453,6 +456,7 @@ public class RenderDisplays {
     public static final ModelLufengosaurus modelLufengosaurus = new ModelLufengosaurus();
     public static final ModelLunaspis modelLunaspis = new ModelLunaspis();
     public static final ModelLunataspis modelLunataspis = new ModelLunataspis();
+    public static final ModelLagosuchus modelLagosuchus = new ModelLagosuchus();
     public static final ModelLungmenshanaspis modelLungmenshanaspis = new ModelLungmenshanaspis();
     public static final ModelLuoxiongichthys modelLuoxiongichthys = new ModelLuoxiongichthys();
     public static final ModelLyrarapax modelLyrarapax = new ModelLyrarapax();
@@ -662,6 +666,7 @@ public class RenderDisplays {
     public static final ModelPurlovia modelPurlovia = new ModelPurlovia();
     public static final ModelPycnophlebia modelPycnophlebia = new ModelPycnophlebia();
     public static final ModelPygopterus modelPygopterus = new ModelPygopterus();
+    public static final ModelPhanerorhynchus modelPhanerorhynchus = new ModelPhanerorhynchus();
     public static final ModelQilinyu modelQilinyu = new ModelQilinyu();
     public static final ModelQuasimodichthys modelQuasimodichthys = new ModelQuasimodichthys();
     public static final ModelRainerichthys modelRainerichthys = new ModelRainerichthys();
@@ -684,6 +689,7 @@ public class RenderDisplays {
     public static final ModelRotaciurca modelRotaciurca = new ModelRotaciurca();
     public static final ModelRubidgea modelRubidgea = new ModelRubidgea();
     public static final ModelRutgersella modelRutgersella = new ModelRutgersella();
+    public static final ModelRhabdoderma modelRhabdoderma = new ModelRhabdoderma();
     public static final ModelSacabambaspis modelSacabambaspis = new ModelSacabambaspis();
     public static final ModelSaccocoma modelSaccocoma = new ModelSaccocoma();
     public static final ModelSaivodus modelSaivodus = new ModelSaivodus();
@@ -837,6 +843,7 @@ public class RenderDisplays {
     public static final ModelWodnika modelWodnika = new ModelWodnika();
     public static final ModelWukongopterus modelWukongopterus = new ModelWukongopterus();
     public static final ModelWuttagoonaspis modelWuttagoonaspis = new ModelWuttagoonaspis();
+    public static final ModelWestrichus modelWestrichus = new ModelWestrichus();
     public static final ModelXenacanthus modelXenacanthus = new ModelXenacanthus();
     public static final ModelXenusion modelXenusion = new ModelXenusion();
     public static final ModelXinpusaurus modelXinpusaurus = new ModelXinpusaurus();

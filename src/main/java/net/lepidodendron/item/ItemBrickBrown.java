@@ -17,11 +17,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemRedClayBall extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:clay_red_ball")
+public class ItemBrickBrown extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:brick_brown")
 	public static final Item block = null;
-	public ItemRedClayBall(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.clay_red_ball);
+	public ItemBrickBrown(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.brick_brown);
 	}
 
 	@Override
@@ -32,20 +32,20 @@ public class ItemRedClayBall extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemClay", ItemRedClayBall.block);
+		OreDictionary.registerOre("itemBrick", ItemBrickBrown.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:clay_red_ball", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:brick_brown", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
 			maxStackSize = 64;
-			setTranslationKey("pf_clay_red_ball");
-			setRegistryName("clay_red_ball");
+			setTranslationKey("pf_brick_brown");
+			setRegistryName("brick_brown");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "lepidodendron:blocks/pebblestone_4",
+    "top": "lepidodendron:blocks/pebblestone_4",
+    "side": "lepidodendron:blocks/pebblestone_4"
+  }
+}

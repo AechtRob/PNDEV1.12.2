@@ -10,7 +10,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderThecodontosaurus;
+import net.lepidodendron.entity.render.entity.RenderLagosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -277,7 +277,7 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 6 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
 
@@ -344,5 +344,24 @@ public class EntityPrehistoricFloraLagosuchus extends EntityPrehistoricFloraLand
 
 	//Rendering taxidermy:
 	//--------------------
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.25;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.2;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.1;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0.05;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderLagosuchus.TEXTURE;}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelLagosuchus;}
+	public static float getScaler(@Nullable String variant) {return RenderLagosuchus.getScaler();}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 }

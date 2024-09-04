@@ -540,36 +540,41 @@ public class ModelAcadoaradoxides extends ModelBasePalaeopedia {
         this.head.render(f5);
     }
 
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.05F, 0.0F);
+        this.head.offsetZ = -0.0F;
+        this.head.offsetY = 0.135F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -0.50F;
-        this.head.offsetX = 0.0F;
-        this.head.rotateAngleY = (float)Math.toRadians(0);
-        this.head.rotateAngleX = (float)Math.toRadians(-88);
-        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.offsetY = -2.0F;
+        this.head.offsetX = -1.338F;
+        this.head.rotateAngleY = (float)Math.toRadians(200);
+        this.head.rotateAngleX = (float)Math.toRadians(8);
+        this.head.rotateAngleZ = (float)Math.toRadians(-8);
         this.head.scaleChildren = true;
-        float scaler = 0.6F;
+        float scaler = 1.63F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.head.render(f);
         //Reset rotations, positions and sizing:
         this.head.setScale(1.0F, 1.0F, 1.0F);
         this.head.scaleChildren = false;
-        resetToDefaultPose();
-    }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.render(0.022F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
         resetToDefaultPose();
     }
 

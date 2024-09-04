@@ -111,13 +111,20 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
                 if (i < 8 && blockable) {
                     if (!this.world.isRemote) {
                         IBlockState iblockstate1 = iblockstate.withProperty(BlockSnow.LAYERS, Integer.valueOf(i + 1));
+                        if (this.isFromMob && i == 7 && iblockstate.getValue(BlockGuano.DECAYABLE)) {
+                            iblockstate1 = iblockstate.withProperty(BlockSnow.LAYERS, Integer.valueOf(i));
+                        }
+                        if (!this.isFromMob) {
+                            iblockstate1 = iblockstate1.withProperty(BlockGuano.DECAYABLE, false);
+                        }
                         AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(this.world, blockpos);
-
-                        if (axisalignedbb != Block.NULL_AABB && this.world.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && this.world.setBlockState(blockpos, iblockstate1, 10)) {
-                            SoundType soundtype = BlockGuano.block.getSoundType(iblockstate1, this.world, blockpos, null);
-                            this.world.playSound(null, blockpos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
-                            if (this.world.getBlockState(blockpos).getValue(BlockSnow.LAYERS) == 8) {
-                                this.world.setBlockState(blockpos, BlockGuanoBlock.block.getDefaultState());
+                        if (!(this.isFromMob && !iblockstate.getValue(BlockGuano.DECAYABLE))) {
+                            if (axisalignedbb != Block.NULL_AABB && this.world.checkNoEntityCollision(axisalignedbb.offset(blockpos)) && this.world.setBlockState(blockpos, iblockstate1, 10)) {
+                                SoundType soundtype = BlockGuano.block.getSoundType(iblockstate1, this.world, blockpos, null);
+                                this.world.playSound(null, blockpos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                                if (this.world.getBlockState(blockpos).getValue(BlockSnow.LAYERS) == 8) {
+                                   this.world.setBlockState(blockpos, BlockGuanoBlock.block.getDefaultState());
+                                }
                             }
                         }
                     }
@@ -156,6 +163,9 @@ public class EntityPrehistoricFloraGuanoBall extends EntityThrowable
                 }
                 else if (this.world.mayPlace(BlockGuano.block, blockpos, false, facing, null)) {
                     IBlockState iblockstate1 = BlockGuano.block.getDefaultState().withProperty(BlockSnow.LAYERS, Integer.valueOf(1));
+                    if (this.isFromMob) {
+                        iblockstate1 = iblockstate1.withProperty(BlockGuano.DECAYABLE, true);
+                    }
                     AxisAlignedBB axisalignedbb = iblockstate1.getCollisionBoundingBox(this.world, blockpos);
 
                     if (axisalignedbb != Block.NULL_AABB && this.world.checkNoEntityCollision(axisalignedbb.offset(blockpos))) {

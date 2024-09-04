@@ -273,16 +273,22 @@ public class ModelGregorius extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -1.2F;
-        this.root.offsetX = 1.05F;
+        this.root.offsetY = -1.6F;
+        this.root.offsetX = 0.05F;
         this.root.rotateAngleY = (float)Math.toRadians(245);
         this.root.rotateAngleX = (float)Math.toRadians(8);
         this.root.rotateAngleZ = (float)Math.toRadians(-8);
         this.root.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 4.0F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(root, 0.5F, -2.5F, -0.5F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

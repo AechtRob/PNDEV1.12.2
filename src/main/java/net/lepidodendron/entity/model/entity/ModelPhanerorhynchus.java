@@ -237,24 +237,44 @@ public class ModelPhanerorhynchus extends ModelBasePalaeopedia {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.resetToDefaultPose();
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.body.offsetY = -0.21F;
+        this.body.offsetX = -0.08F;
+        this.body.offsetZ = -0.18F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.body.offsetZ = 0.02F;
+        this.body.offsetY = -0.12F;
+        this.body.offsetX = -0.0044F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.4F;
-        this.body.offsetX = -0.3F;
+        this.body.offsetX = -1.3F;
         this.body.rotateAngleY = (float)Math.toRadians(200);
         this.body.rotateAngleX = (float)Math.toRadians(8);
         this.body.rotateAngleZ = (float)Math.toRadians(-8);
         this.body.scaleChildren = true;
-        float scaler = 3.2F;
+        float scaler = 3.5F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 2.5F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:

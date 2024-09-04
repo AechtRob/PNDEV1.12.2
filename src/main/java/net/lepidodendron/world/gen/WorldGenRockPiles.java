@@ -127,7 +127,7 @@ public class WorldGenRockPiles extends WorldGenerator
     }
 
     public void spawnLife(World world, int x, int y, int z, Random random) {
-        if (random.nextInt(24) == 0) {
+        if (random.nextInt(56) == 0) {
             if (world.getBiome(new BlockPos(x, (y + 1), z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral")) {
                 //Dorygnathus:
                 if (world.isAirBlock(new BlockPos(x, (y + 1), z))

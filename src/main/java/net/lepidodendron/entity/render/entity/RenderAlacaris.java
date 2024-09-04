@@ -9,6 +9,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAlacaris extends RenderLivingBaseWithBook<EntityPrehistoricFloraAlacaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/alacaris.png");
+    public static float getScaler() {
+        return 0.33F;
+    }
 
     public RenderAlacaris(RenderManager mgr) {
         super(mgr, new ModelAlacaris(), 0.0f);

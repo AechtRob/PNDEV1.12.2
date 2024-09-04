@@ -575,19 +575,54 @@ public class ModelDearc extends ModelBasePalaeopedia {
         this.root.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.6F, -0.0F, -0.2F);
+        this.setRotateAngle(jaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(leftwing, -0.0F, 0.4F, -0.4F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -1.5F);
+        this.setRotateAngle(leftwing3, -1.3F, 0.0F, 0.5F);
+        this.setRotateAngle(leftwing4, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F,-0.0F, 1.5F);
+        this.setRotateAngle(rightwing, 0.0F, -0.4F, 0.4F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 1.5F);
+        this.setRotateAngle(rightwing3, -1.3F, 0.0F, -0.5F);
+        this.setRotateAngle(rightwing4, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F,0.0F, 0.0F);
+        this.body1.setScale(0,0,0);
+        this.body1.setScale(0,0,0);
+        this.body1.scaleChildren = true;
+        this.root.offsetY = -0.15F;
+        this.root.offsetX = 0.0F;
+        this.root.offsetZ = -0.09F;
+        this.root.render(0.01F);
+        this.body1.setScale(1,1,1);
+        this.body1.setScale(1,1,1);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-
-        this.root.offsetY = 0.03F;
-        this.root.render(0.01F);
-        resetToDefaultPose();
-    }
-
-    public void renderStaticSuspended(float f) {
-
-        this.root.offsetY = -0.0F;
+        this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, -0.1F);
+        this.setRotateAngle(neck2, 0.0F, -0.3F, 0.1F);
+        this.setRotateAngle(head2, -0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.3F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.2F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail5, 0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.1F, -0.2F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftwing3, 0.0F, 0.0F, 0.03F);
+        this.setRotateAngle(leftwing4, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, -0.1F, 0.3F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing3, 0.0F, 0.0F, -0.02F);
+        this.setRotateAngle(rightwing4, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
+        this.root.offsetY = -0.05F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
@@ -595,16 +630,36 @@ public class ModelDearc extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.5F;
-        this.root.offsetX = 0F;
+        this.root.offsetY = -0.1F;
+        this.root.offsetX = 0.5F;
         this.root.rotateAngleY = (float)Math.toRadians(130);
         this.root.rotateAngleX = (float)Math.toRadians(10);
         this.root.rotateAngleZ = (float)Math.toRadians(2);
         this.root.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 1.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        
+        this.setRotateAngle(chest, 0.0F, 1.0F, 0.0F);
+        this.setRotateAngle(body1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, -0.1F);
+        this.setRotateAngle(neck2, 0.0F, -0.3F, 0.1F);
+        this.setRotateAngle(head2, -0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.5F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.4F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail5, 0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.1F, -0.2F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftwing3, 0.0F, 0.0F, 0.03F);
+        this.setRotateAngle(leftwing4, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, -0.1F, 0.3F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing3, 0.0F, 0.0F, -0.02F);
+        this.setRotateAngle(rightwing4, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
