@@ -188,29 +188,52 @@ public class ModelBelantsea extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bodyfront.render(f5);
     }
-
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetY = -0.05F;
-        this.Bodyfront.offsetZ = -0.01F;
+        this.setRotateAngle(Lowerjaw, 0.7F, 0.0F, 0.0F);
+        this.Bodyfront.offsetY = -0.03F;
+        this.Bodyfront.offsetX = -0.02F;
+        this.Bodyfront.offsetZ = -0.25F;
         this.Bodyfront.render(0.01F);
-        this.resetToDefaultPose();
+        resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(Bodyfront, -0.2F, 0.0F, 0.0F);
-        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.1F);
-        this.setRotateAngle(Bodyend, 0.0F, 0.2F, 0.1F);
-        this.setRotateAngle(Tailbase, 0.0F, 0.25F, 0.1F);
-        this.setRotateAngle(Tailend, 0.0F, -0.3F, 0.1F);
-        this.Bodyfront.offsetY = 0.12F;
+        this.setRotateAngle(Bodyfront, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Tailend, 0.2F, -0.2F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.Bodyfront.offsetZ = -0.0F;
+        this.Bodyfront.offsetY = -0.03F;
         this.Bodyfront.render(0.01F);
-        this.resetToDefaultPose();
+        resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.Bodyfront.offsetY = -2.0F;
+        this.Bodyfront.offsetX = -1.338F;
+        this.Bodyfront.rotateAngleY = (float)Math.toRadians(200);
+        this.Bodyfront.rotateAngleX = (float)Math.toRadians(8);
+        this.Bodyfront.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Bodyfront.scaleChildren = true;
+        float scaler = 1.63F;
+        this.Bodyfront.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(Bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyend, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailend, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.Bodyfront.render(f);
+        //Reset rotations, positions and sizing:
+        this.Bodyfront.setScale(1.0F, 1.0F, 1.0F);
+        this.Bodyfront.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

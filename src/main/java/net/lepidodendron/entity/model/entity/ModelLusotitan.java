@@ -608,27 +608,27 @@ public class ModelLusotitan extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.7F;
+        this.hips.offsetY = 2.0F;
         this.hips.offsetX = 0.1F;
         this.hips.rotateAngleY = (float)Math.toRadians(210);
         this.hips.rotateAngleX = (float)Math.toRadians(8);
         this.hips.rotateAngleZ = (float)Math.toRadians(-4);
         this.hips.scaleChildren = true;
-        float scaler = 0.575F;
+        float scaler = 0.6F;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(hips, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(hips, -0.1F, 0.8F, 0.0F);
         this.setRotateAngle(body, 0.1F, 0.02F, 0.0F);
-        this.setRotateAngle(chest, 0.1F, 0.01F, 0.02F);
-        this.setRotateAngle(neck1, -0.8F, 0.05F, 0.02F);
-        this.setRotateAngle(neck2, -0.3F, 0.04F, 0.03F);
-        this.setRotateAngle(neck3, -0.2F, 0.03F, 0.03F);
-        this.setRotateAngle(neck4, -0.1F, 0.02F, 0.03F);
-        this.setRotateAngle(neck5, 0.0F, 0.03F, 0.04F);
-        this.setRotateAngle(neck6, 0.0F, 0.03F, 0.04F);
-        this.setRotateAngle(neck7, 0.2F, 0.02F, 0.02F);
-        this.setRotateAngle(neck8, 0.3F, 0.02F, 0.02F);
-        this.setRotateAngle(neck9, 0.4F, 0.02F, 0.02F);
+        this.setRotateAngle(chest, 0.1F, 0.01F, 0.1F);
+        this.setRotateAngle(neck1, -0.7F, 0.1F, 0.1F);
+        this.setRotateAngle(neck2, -0.3F, 0.1F, 0.1F);
+        this.setRotateAngle(neck3, -0.2F, 0.1F, 0.1F);
+        this.setRotateAngle(neck4, -0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(neck5, 0.1F, 0.1F, 0.2F);
+        this.setRotateAngle(neck6, 0.1F, 0.1F, 0.2F);
+        this.setRotateAngle(neck7, 0.2F, 0.02F, 0.2F);
+        this.setRotateAngle(neck8, 0.3F, 0.02F, 0.2F);
+        this.setRotateAngle(neck9, 0.4F, 0.02F, 0.2F);
         this.setRotateAngle(head, 0.8F, 0.01F, 0.01F);
         this.setRotateAngle(jaw, -0.42F, 0.0F, 0.0F);
         this.setRotateAngle(tail1, -0.1F, 0.0F, 0.0F);

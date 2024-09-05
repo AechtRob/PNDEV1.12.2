@@ -4,8 +4,6 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchaeothyris;
-import net.lepidodendron.entity.EntityPrehistoricFloraArchaeothyris;
-import net.lepidodendron.entity.EntityPrehistoricFloraLimusaurus;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -406,24 +404,24 @@ public class ModelArchaeothyris extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.hips.offsetY = 0.2F;
-        this.hips.offsetX = -0.05F;
+        this.hips.offsetY = -2.0F;
+        this.hips.offsetX = 0.5F;
         this.hips.rotateAngleY = (float)Math.toRadians(-120);
         this.hips.rotateAngleX = (float)Math.toRadians(15);
         this.hips.rotateAngleZ = (float)Math.toRadians(-10);
-        float scaler = 0.60F;
+        float scaler = 3.9F;
         this.hips.scaleChildren = true;
         this.hips.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(hips, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(hips, 0.2F, 3.5F, 0.0F);
         this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
         this.setRotateAngle(neck, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(head, 0.1F, 0.1F, 0.0F);
-        this.setRotateAngle(jaw, 0.25F, 0.0F, 0.0F);
-        this.setRotateAngle(tail, 0.2F, 0.1F, 0.0F);
-        this.setRotateAngle(tail2, 0.05F, 0.1F, 0.0F);
-        this.setRotateAngle(tail3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.1F, 0.0F);
         this.setRotateAngle(tail4, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(leftarm, 0.1F, 0.2F, 0.0F);
         this.setRotateAngle(leftarm2, 0.0F, 0.0F, 0.0F);

@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderAcanthodes;
 import net.lepidodendron.entity.render.entity.RenderBelantsea;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -165,56 +166,25 @@ public class EntityPrehistoricFloraBelantsea extends EntityPrehistoricFloraFishB
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.2;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
+	public static double offsetWall(@Nullable String variant) {return -0.45;}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperbackverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.0;}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.5;}
+	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return -0.0;}
+	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
 	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderBelantsea.TEXTURE;
-	}
+	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderBelantsea.TEXTURE;}
 	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelBelantsea;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderBelantsea.getScaler();
-	}
+	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelBelantsea;}
+	public static float getScaler(@Nullable String variant) {return RenderBelantsea.getScaler();}
+	public static float widthSupport(@Nullable String variant) {return 0.04F;}
 
 	@Nullable
 	@Override

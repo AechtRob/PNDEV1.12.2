@@ -18,9 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ItemArchaeothyrisRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:archaeothyris_raw")
 	public static final Item block = null;
-	public ItemArchaeothyrisRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.archaeothyris_raw);
-	}
+	public ItemArchaeothyrisRaw(ElementsLepidodendronMod instance) {super(instance, LepidodendronSorter.archaeothyris_raw);}
 
 	@Override
 	public void initElements() {

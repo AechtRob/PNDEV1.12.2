@@ -630,16 +630,36 @@ public class ModelDearc extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.root.offsetY = -0.5F;
-        this.root.offsetX = 0F;
+        this.root.offsetY = -0.1F;
+        this.root.offsetX = 0.5F;
         this.root.rotateAngleY = (float)Math.toRadians(130);
         this.root.rotateAngleX = (float)Math.toRadians(10);
         this.root.rotateAngleZ = (float)Math.toRadians(2);
         this.root.scaleChildren = true;
-        float scaler = 0.65F;
+        float scaler = 1.5F;
         this.root.setScale(scaler, scaler, scaler);
         //Start of pose:
-        
+        this.setRotateAngle(chest, 0.0F, 1.0F, 0.0F);
+        this.setRotateAngle(body1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, -0.1F);
+        this.setRotateAngle(neck2, 0.0F, -0.3F, 0.1F);
+        this.setRotateAngle(head2, -0.2F, 0.4F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.5F, -0.1F, 0.0F);
+        this.setRotateAngle(tail2, 0.4F, -0.1F, 0.0F);
+        this.setRotateAngle(tail3, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.1F, -0.3F, 0.0F);
+        this.setRotateAngle(tail5, 0.1F, -0.4F, 0.0F);
+        this.setRotateAngle(leftwing, 0.0F, 0.1F, -0.2F);
+        this.setRotateAngle(leftwing2, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(leftwing3, 0.0F, 0.0F, 0.03F);
+        this.setRotateAngle(leftwing4, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthand, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing, 0.0F, -0.1F, 0.3F);
+        this.setRotateAngle(rightwing2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(rightwing3, 0.0F, 0.0F, -0.02F);
+        this.setRotateAngle(rightwing4, 1.0F, 0.0F, 0.0F);
+        this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:
