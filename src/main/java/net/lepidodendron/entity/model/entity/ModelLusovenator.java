@@ -3382,12 +3382,12 @@ public class ModelLusovenator extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 11) / 7) * (0-(0)));
         }
         else if (tickAnim >= 18 && tickAnim < 35) {
-            xx = 17.86 + (((tickAnim - 18) / 17) * (15-(17.86)));
+            xx = 17.86 + (((tickAnim - 18) / 17) * (-15-(17.86)));
             yy = 0 + (((tickAnim - 18) / 17) * (0-(0)));
             zz = 0 + (((tickAnim - 18) / 17) * (0-(0)));
         }
         else if (tickAnim >= 35 && tickAnim < 61) {
-            xx = 15 + (((tickAnim - 35) / 26) * (22.5-(15)));
+            xx = -15 + (((tickAnim - 35) / 26) * (22.5-(-15)));
             yy = 0 + (((tickAnim - 35) / 26) * (0-(0)));
             zz = 0 + (((tickAnim - 35) / 26) * (0-(0)));
         }
