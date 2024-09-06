@@ -3,7 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.block.BlockDeadLog;
+import net.lepidodendron.block.BlockBurntLog;
 import net.lepidodendron.procedure.ProcedureTreeLog;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
@@ -19,8 +19,8 @@ import net.minecraft.world.gen.IChunkGenerator;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement {
-	public StructureFallenDeadTree(ElementsLepidodendronMod instance) {
+public class StructureFallenBurnedTree extends ElementsLepidodendronMod.ModElement {
+	public StructureFallenBurnedTree(ElementsLepidodendronMod instance) {
 		super(instance, 44);
 	}
 
@@ -35,9 +35,7 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
 		if (biome instanceof BiomeCretaceousEarly) {
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_flats"))
-					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats"))
-					&& (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream"))
+			if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland"))
 			) {
 				return;
 			}
@@ -48,11 +46,9 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 
 		int GenChance = 1500;
 		int genTries = 1;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_flats")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_flats_stream")
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland")
 		) {
-			GenChance = 120000;
+			GenChance = 220000;
 			genTries = random.nextInt(3) + 1;
 		}
 		for (int tryGo = 1; tryGo <= genTries; tryGo++) {
@@ -82,7 +78,7 @@ public class StructureFallenDeadTree extends ElementsLepidodendronMod.ModElement
 				int z = k;
 
 				//System.err.println("Spawned log " + x + " " + y + " " + z);
-				Block log = BlockDeadLog.block;
+				Block log = BlockBurntLog.block;
 				boolean fat = false;
 				boolean big = true;
 
