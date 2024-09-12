@@ -32,6 +32,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class Functions {
@@ -344,6 +345,18 @@ public class Functions {
                 worldIn.setBlockState(position.down(4), state, 16);
             }
         }
+    }
+
+    @Nullable
+    public static Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
+        Method methodToFind = null;
+
+        try {
+            methodToFind = clazz.getMethod(methodname, params);
+        } catch (SecurityException | NoSuchMethodException var5) {
+        }
+
+        return methodToFind;
     }
 
 }

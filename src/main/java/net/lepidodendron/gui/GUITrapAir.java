@@ -3,7 +3,7 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockTrapAir;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.TrapSpawner;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -293,7 +293,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
                 Class classEntity = getEntity().getClass();
                 params[0] = String.class;
 
-//                Method method = RenderDisplayWallMount.testAndGetMethod(classEntity, "hasPNVariants", null);
+//                Method method = Functions.testAndGetMethod(classEntity, "hasPNVariants", null);
 //                if (method != null) {
 //                    try {
 //                        getScaler = (float) method.invoke(null, PNVariant) * 100;
@@ -305,7 +305,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
 //                }
 
                 params[0] = String.class;
-                Method method = RenderDisplayWallMount.testAndGetMethod(classEntity, "getScaler", params);
+                Method method = Functions.testAndGetMethod(classEntity, "getScaler", params);
                 if (method != null) {
                     try {
                         getScaler = (float) method.invoke(null, PNVariant) * 100;
