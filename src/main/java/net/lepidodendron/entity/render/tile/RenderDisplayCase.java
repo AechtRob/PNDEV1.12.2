@@ -4,6 +4,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockDisplayCase;
 import net.lepidodendron.item.ItemGlassCaseDisplayItem;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -84,7 +85,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 PNVariant = displayItem.getVariantStr();
                             }
 
-                            Method method = testAndGetMethod(classEntity, "offsetCase", params);
+                            Method method = Functions.testAndGetMethod(classEntity, "offsetCase", params);
                             if (method != null) {
                                 try {
                                     offsetCase = (double) method.invoke(null, PNVariant);
@@ -94,7 +95,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "textureDisplay", params);
+                            method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
                             if (method != null) {
                                 try {
                                     textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
@@ -104,7 +105,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "textureDisplayTransparent", params);
+                            method = Functions.testAndGetMethod(classEntity, "textureDisplayTransparent", params);
                             if (method != null) {
                                 try {
                                     textureDisplayTransparent = (ResourceLocation) method.invoke(null, PNVariant);
@@ -114,7 +115,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 //Do not worry if there is no transparent layer
                             }
-                            method = testAndGetMethod(classEntity, "modelDisplay", params);
+                            method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
                             if (method != null) {
                                 try {
                                     modelDisplay = (ModelBase) method.invoke(null, PNVariant);
@@ -124,7 +125,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "getScaler", params);
+                            method = Functions.testAndGetMethod(classEntity, "getScaler", params);
                             if (method != null) {
                                 try {
                                     getScaler = (float) method.invoke(null, PNVariant);
@@ -174,7 +175,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             }
 
                             params[0] = String.class;
-                            Method method = testAndGetMethod(classEntity, "offsetCase", params);
+                            Method method = Functions.testAndGetMethod(classEntity, "offsetCase", params);
                             if (method != null) {
                                 try {
                                     offsetCase = (double) method.invoke(null, PNVariant);
@@ -184,7 +185,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "textureDisplay", params);
+                            method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
                             if (method != null) {
                                 try {
                                     textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
@@ -194,7 +195,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "textureDisplayTransparent", params);
+                            method = Functions.testAndGetMethod(classEntity, "textureDisplayTransparent", params);
                             if (method != null) {
                                 try {
                                     textureDisplayTransparent = (ResourceLocation) method.invoke(null, PNVariant);
@@ -204,7 +205,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 //Do not worry if there is no transparent layer
                             }
-                            method = testAndGetMethod(classEntity, "modelDisplay", params);
+                            method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
                             if (method != null) {
                                 try {
                                     modelDisplay = (ModelBase) method.invoke(null, PNVariant);
@@ -214,7 +215,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "getScaler", params);
+                            method = Functions.testAndGetMethod(classEntity, "getScaler", params);
                             if (method != null) {
                                 try {
                                     getScaler = (float) method.invoke(null, PNVariant);
@@ -377,7 +378,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         boolean flag1 = true;
         boolean flag2 = true;
         boolean flag3 = true;
-        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase", new Class[]{float.class});
+        Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticDisplayCase", new Class[]{float.class});
         if (renderMethod != null) {
             if (transparent) {
                 GlStateManager.pushMatrix();
@@ -433,16 +434,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
             GlStateManager.popMatrix();
         }
         return flag1 && flag2 && flag3;
-    }
-
-    @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname, @Nullable Class[] params) {
-        Method methodToFind = null;
-        try {
-            methodToFind = clazz.getMethod(methodname, params);
-        } catch (NoSuchMethodException | SecurityException e) {
-        }
-        return methodToFind;
     }
 
 }

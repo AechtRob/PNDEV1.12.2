@@ -9,6 +9,7 @@ import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.item.*;
 import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.WorldOverworldPortal;
 import net.lepidodendron.world.biome.FishingRodDrops;
@@ -935,7 +936,7 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 
-			Method method = RenderDisplayWallMount.testAndGetMethod(classEntity, "offsetWall", params);
+			Method method = Functions.testAndGetMethod(classEntity, "offsetWall", params);
 			if (method != null) {
 				try {
 					offsetWall = (double) method.invoke(null, PNVariant);
@@ -945,7 +946,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
+			method = Functions.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
 			if (method != null) {
 				try {
 					upperfrontverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -955,7 +956,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
+			method = Functions.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
 			if (method != null) {
 				try {
 					upperbackverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -965,7 +966,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
+			method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
 			if (method != null) {
 				try {
 					upperfrontlineoffset = (double) method.invoke(null, PNVariant);
@@ -975,7 +976,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
+			method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
 			if (method != null) {
 				try {
 					upperfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -985,7 +986,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperbacklineoffset", params);
+			method = Functions.testAndGetMethod(classEntity, "upperbacklineoffset", params);
 			if (method != null) {
 				try {
 					upperbacklineoffset = (double) method.invoke(null, PNVariant);
@@ -995,7 +996,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
+			method = Functions.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
 			if (method != null) {
 				try {
 					upperbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -1005,7 +1006,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
+			method = Functions.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
 			if (method != null) {
 				try {
 					lowerfrontverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -1015,7 +1016,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
+			method = Functions.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
 			if (method != null) {
 				try {
 					lowerbackverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -1025,7 +1026,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
+			method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
 			if (method != null) {
 				try {
 					lowerfrontlineoffset = (double) method.invoke(null, PNVariant);
@@ -1035,7 +1036,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
+			method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
 			if (method != null) {
 				try {
 					lowerfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -1045,7 +1046,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
+			method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
 			if (method != null) {
 				try {
 					lowerbacklineoffset = (double) method.invoke(null, PNVariant);
@@ -1055,7 +1056,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
+			method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
 			if (method != null) {
 				try {
 					lowerbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -1065,7 +1066,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "textureDisplay", params);
+			method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
 			if (method != null) {
 				try {
 					textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
@@ -1075,7 +1076,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "modelDisplay", params);
+			method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
 			if (method != null) {
 				try {
 					modelDisplay = (ModelBase) method.invoke(null, PNVariant);
@@ -1085,7 +1086,7 @@ public class LepidodendronEventSubscribers {
 			} else {
 				itemRender = true;
 			}
-			method = RenderDisplayWallMount.testAndGetMethod(classEntity, "getScaler", params);
+			method = Functions.testAndGetMethod(classEntity, "getScaler", params);
 			if (method != null) {
 				try {
 					getScaler = (float) method.invoke(null, PNVariant);
@@ -1116,17 +1117,17 @@ public class LepidodendronEventSubscribers {
 		boolean flag3 = true;
 
 		if (facing == EnumFacing.DOWN) {
-			Method renderMethod = RenderDisplayWallMount.testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
+			Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
 			if (renderMethod == null) {
 				flag1 = false;
 			}
 		} else if (facing == EnumFacing.UP) {
-			Method renderMethod = RenderDisplayWallMount.testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[]{float.class});
+			Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[]{float.class});
 			if (renderMethod == null) {
 				flag2 = false;
 			}
 		} else if (facing == EnumFacing.NORTH) {
-			Method renderMethod = RenderDisplayWallMount.testAndGetMethod(model.getClass(), "renderStaticWall", new Class[]{float.class});
+			Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticWall", new Class[]{float.class});
 			if (renderMethod == null) {
 				flag3 = false;
 			}
