@@ -21,7 +21,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_stenokranio",
 			"type": "text",
-			"text": ""
+			"text": "Stenokranio is a temnospondyl known from the Remigiusberg Formation, which is dated to the Carboniferous-Permian boundary. It is known from a few specimens and it had a proportionally narrow skull. Stenokranio lacks lateral line grooves on the skull, which implies that the animal was relatively terrestrial."
 		},
 		{
 			"type": "lepidodendron:diet",
