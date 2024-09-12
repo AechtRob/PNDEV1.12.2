@@ -1,5 +1,5 @@
 {
-	"name": "Belonostomus sp.1",
+	"name": "Long Nosed Belonostomus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/belonostomus_cretaceous_icon.png",
 	"category": "lepidodendron:cretaceousearly_animal",
@@ -7,14 +7,14 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
-			"title": "Belonostomus sp.1",
+			"title": "Long Nosed Belonostomus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Early - Late Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii $(br)>Aspidorhynchiformes $(br)>Aspidorhynchidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/belonostomus_cretaceous.png"],
-			"title": "Belonostomus sp.1",
+			"title": "Belonostomus sp.",
 			"text": ""
 		},
 		{
