@@ -1,5 +1,5 @@
 {
-	"name": "Belonostomus kochii",
+	"name": "Belonostomus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/belonostomus_jurassic_icon.png",
 	"category": "lepidodendron:jurassic_animal",
@@ -7,9 +7,9 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_belonostomus_jurassic",
-			"title": "Belonostomus kochii",
+			"title": "Belonostomus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Actinopterygii $(br)>Aspidorhynchiformes $(br)>Aspidorhynchidae"
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)>Actinopterygii $(br)>Aspidorhynchiformes $(br)>Aspidorhynchidae"
 		},
 		{
 			"type": "image",
