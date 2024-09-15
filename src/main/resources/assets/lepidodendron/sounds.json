@@ -10833,5 +10833,70 @@
         "stream": false
       }
     ]
+  },
+
+  "eustreptospondylus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "eustreptospondylus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eustreptospondylus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_death",
+        "stream": false
+      }
+    ]
+  },
+  "eustreptospondylus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_threat03",
+        "stream": false
+      }
+    ]
   }
 }
