@@ -78,6 +78,9 @@ public class FossilSorterHooks
     public static boolean insertHook(BlockSorterFossil.TileEntitySorterFossil hopper)
     {
         EnumFacing hopperFacing = BlockHopper.getFacing(hopper.getBlockMetadata());
+        if (hopperFacing == null || hopperFacing == EnumFacing.UP || hopperFacing == EnumFacing.DOWN) {
+            hopperFacing = EnumFacing.NORTH;
+        }
         Pair<IItemHandler, Object> destinationResultFront = getItemHandler(hopper, hopperFacing);
         Pair<IItemHandler, Object> destinationResultBack = getItemHandler(hopper, hopperFacing.rotateY().rotateY());
         Pair<IItemHandler, Object> destinationResultLeft = getItemHandler(hopper, hopperFacing.getOpposite().rotateY());
