@@ -10898,5 +10898,66 @@
         "stream": false
       }
     ]
+  },
+
+  "lusotitan_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living07",
+        "stream": false
+      }
+    ]
+  },
+  "lusotitan_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "lusotitan_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_death",
+        "stream": false
+      }
+    ]
+  },
+  "lusotitan_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living08",
+        "stream": false
+      }
+    ]
   }
 }
