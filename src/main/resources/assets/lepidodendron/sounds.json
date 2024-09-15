@@ -11008,5 +11008,27 @@
         "stream": false
       }
     ]
+  },
+
+
+  "lusovenator_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusovenator_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusovenator_living02",
+        "stream": false
+      }
+    ]
+  },
+  "lusovenator_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusovenator_roar01",
+        "stream": false
+      }
+    ]
   }
 }
