@@ -25,12 +25,10 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.relauncher.Side;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -48,13 +46,6 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
     public static HashMap guistate = new HashMap();
     public GUITimeResearcherFinder(ElementsLepidodendronMod instance) {
         super(instance, 1);
-    }
-
-    @Override
-    public void preInit(FMLPreInitializationEvent event) {
-        elements.addNetworkMessage(GUIButtonPressedMessageHandler.class, GUIButtonPressedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUILifeChangedMessageHandler.class, GUILifeChangedMessage.class, Side.SERVER);
     }
 
     public static class GUILepidodendronTimeResearcherFinder extends Container implements Supplier<Map<Integer, Slot>> {
@@ -703,12 +694,17 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
     public static class GUILifeChangedMessageHandler implements IMessageHandler<GUILifeChangedMessage, IMessage> {
         @Override
         public IMessage onMessage(GUILifeChangedMessage message, MessageContext context) {
+
+            //Check if this is running at all
+            //System.err.println("Running a GUILifeChangedMessageHandler " + message.mobID);
+
             EntityPlayerMP entity = context.getServerHandler().player;
             TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
             if (te != null) {
                 if (te instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
                     ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).setSelectedLife(message.mobID);
-                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).markDirty();
+                    te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                    te.markDirty();
                 }
             }
             return null;

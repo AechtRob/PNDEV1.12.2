@@ -17,11 +17,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.relauncher.Side;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -36,12 +34,6 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
     public static HashMap guistate = new HashMap();
     public GUICoalTarProcessor(ElementsLepidodendronMod instance) {
         super(instance, 1);
-    }
-
-    @Override
-    public void preInit(FMLPreInitializationEvent event) {
-        elements.addNetworkMessage(GUIButtonPressedMessageHandler.class, GUIButtonPressedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
     }
 
     public static class GUILepidodendronCoalTarProcessor extends Container implements Supplier<Map<Integer, Slot>> {
