@@ -28,6 +28,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -355,6 +356,60 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             this.drawDefaultBackground();
             super.drawScreen(mouseX, mouseY, partialTicks);
             this.renderHoveredToolTip(mouseX, mouseY);
+            if (LepidodendronConfig.machinesRF) {
+                this.renderRF(mouseX, mouseY);
+            }
+        }
+
+        protected void renderRF(int mouseX, int mouseY)
+        {
+            int k = (this.width - this.xSize) / 2;
+            int l = (this.height - this.ySize) / 2;
+
+            if (mouseX >= k + 20 && mouseX <= k + 20 + 18
+                    && mouseY >= l + 51 - 8 && mouseY <= l + 51 - 8 + 26)
+            {
+                DecimalFormat df = new DecimalFormat("###,###,###");
+                this.drawHoveringText(df.format(this.getCurrentRF()) + " / " + df.format(this.getMaxRF()) + " RF", mouseX, mouseY);
+            }
+        }
+
+        private int getCurrentRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
+                    BlockPos RFStorage = new BlockPos(x, y, z);
+                    RFStorage = RFStorage.offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+                    TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+                    if (tileEntity2 != null) {
+                        if (tileEntity2 instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                            BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity2;
+                            //return (int)Math.round(te.progressFraction() * 70D);
+                            return te.getEnergyStored();
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+
+        private int getMaxRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
+                    BlockPos RFStorage = new BlockPos(x, y, z);
+                    RFStorage = RFStorage.offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+                    TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+                    if (tileEntity2 != null) {
+                        if (tileEntity2 instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                            BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity2;
+                            //return (int)Math.round(te.progressFraction() * 70D);
+                            return te.getMaxEnergyStored();
+                        }
+                    }
+                }
+            }
+            return 0;
         }
 
         @Override

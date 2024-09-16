@@ -1,8 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraAcadoaradoxides;
-import net.lepidodendron.entity.EntityPrehistoricFloraAcanthodes;
 import net.lepidodendron.entity.EntityPrehistoricFloraParadoxides;
 import net.lepidodendron.entity.model.entity.ModelParadoxides;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

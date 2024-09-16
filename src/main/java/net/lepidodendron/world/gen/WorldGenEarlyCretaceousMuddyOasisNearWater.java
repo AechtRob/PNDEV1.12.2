@@ -1,6 +1,9 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockCarboniferousMud;
+import net.lepidodendron.block.BlockCoarseSandyDirtBlack;
+import net.lepidodendron.block.BlockDriedMud;
+import net.lepidodendron.block.BlockPeat;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
