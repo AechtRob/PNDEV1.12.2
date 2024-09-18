@@ -18,11 +18,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.relauncher.Side;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -39,12 +37,6 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
     public static HashMap guistate = new HashMap();
     public GUITimeResearcher(ElementsLepidodendronMod instance) {
         super(instance, 1);
-    }
-
-    @Override
-    public void preInit(FMLPreInitializationEvent event) {
-        elements.addNetworkMessage(GUIButtonPressedMessageHandler.class, GUIButtonPressedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
     }
 
     public static class GUILepidodendronTimeResearcher extends Container implements Supplier<Map<Integer, Slot>> {
@@ -139,6 +131,44 @@ public class GUITimeResearcher extends ElementsLepidodendronMod.ModElement {
             this.drawDefaultBackground();
             super.drawScreen(mouseX, mouseY, partialTicks);
             this.renderHoveredToolTip(mouseX, mouseY);
+            if (LepidodendronConfig.machinesRF) {
+                this.renderRF(mouseX, mouseY);
+            }
+        }
+
+        protected void renderRF(int mouseX, int mouseY)
+        {
+            int k = (this.width - this.xSize) / 2;
+            int l = (this.height - this.ySize) / 2;
+
+            if (mouseX >= k + 25 && mouseX <= k + 25 + 200
+                    && mouseY >= l + 23 && mouseY <= l + 23 + 10)
+            {
+                DecimalFormat df = new DecimalFormat("###,###,###");
+                this.drawHoveringText(df.format(this.getCurrentRF()) + " / " + df.format(this.getMaxRF()) + " RF", mouseX, mouseY);
+            }
+        }
+
+        private int getCurrentRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    return te.getEnergyStored();
+                }
+            }
+            return 0;
+        }
+
+        private int getMaxRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                    return te.getMaxEnergyStored();
+                }
+            }
+            return 0;
         }
 
         @Override

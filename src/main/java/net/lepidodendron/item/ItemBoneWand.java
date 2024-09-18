@@ -170,5 +170,11 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 			return true;
 		}
 
+		@Override
+		public boolean shouldRotateAroundWhenRendering()
+		{
+			return true;
+		}
+
 	}
 }

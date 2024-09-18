@@ -1,5 +1,6 @@
 package net.lepidodendron.world.structure;
 
+import net.lepidodendron.block.BlockFossilOrdovician;
 import net.lepidodendron.block.BlockFossilPrecambrian;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,8 @@ public class StructureDigSiteProcess implements ITemplateProcessor {
     }
 
     protected IBlockState getBiomeSpecificBlockState(IBlockState blockstateIn, IBlockState fossil) {
-        if (blockstateIn.getBlock() == BlockFossilPrecambrian.block) {
+        if (blockstateIn.getBlock() == BlockFossilPrecambrian.block
+            || blockstateIn.getBlock() == BlockFossilOrdovician.block) { //Seems to be a random Ordovician fossil in here somewhere!
             return fossil;
         }
         return blockstateIn;

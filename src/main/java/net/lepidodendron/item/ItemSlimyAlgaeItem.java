@@ -4,7 +4,6 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockRedTuftedAlgae;
 import net.lepidodendron.block.BlockSlimyAlgaeLand;
 import net.lepidodendron.block.BlockSlimyAlgaeWater;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;

@@ -77,7 +77,6 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(TileEntityTimeResearcherFinderBottom.class, "lepidodendron:tileentitytime_researcher_finder_bottom");
-		elements.addNetworkMessage(BlockTimeResearcherFinderBottom.ParticlePacket.Handler.class, BlockTimeResearcherFinderBottom.ParticlePacket.class, Side.CLIENT);
 	}
 
 //	@SideOnly(Side.CLIENT)

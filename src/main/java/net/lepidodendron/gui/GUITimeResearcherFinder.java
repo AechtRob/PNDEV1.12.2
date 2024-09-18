@@ -25,12 +25,10 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.relauncher.Side;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -48,13 +46,6 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
     public static HashMap guistate = new HashMap();
     public GUITimeResearcherFinder(ElementsLepidodendronMod instance) {
         super(instance, 1);
-    }
-
-    @Override
-    public void preInit(FMLPreInitializationEvent event) {
-        elements.addNetworkMessage(GUIButtonPressedMessageHandler.class, GUIButtonPressedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUILifeChangedMessageHandler.class, GUILifeChangedMessage.class, Side.SERVER);
     }
 
     public static class GUILepidodendronTimeResearcherFinder extends Container implements Supplier<Map<Integer, Slot>> {
@@ -334,6 +325,22 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
             this.drawDefaultBackground();
             super.drawScreen(mouseX, mouseY, partialTicks);
             this.renderHoveredToolTip(mouseX, mouseY);
+            if (LepidodendronConfig.machinesRF) {
+                this.renderRF(mouseX, mouseY);
+            }
+        }
+
+        protected void renderRF(int mouseX, int mouseY)
+        {
+            int k = (this.width - this.xSize) / 2;
+            int l = (this.height - this.ySize) / 2;
+
+            if (mouseX >= k + 20 && mouseX <= k + 20 + 18
+                && mouseY >= l + 76 && mouseY <= l + 76 + 26)
+            {
+                DecimalFormat df = new DecimalFormat("###,###,###");
+                this.drawHoveringText(df.format(this.getCurrentRF()) + " / " + df.format(this.getMaxRF()) + " RF", mouseX, mouseY);
+            }
         }
 
         @Override
@@ -376,6 +383,42 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
                             BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity2;
                             double fraction = te.getEnergyFraction();
                             return (int) Math.round(fraction * 24D);
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+
+        private int getMaxRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockPos RFStorage = new BlockPos(x, y + 1, z);
+                    RFStorage = RFStorage.offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockTimeResearcher.BlockCustom.FACING).rotateY());
+                    TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+                    if (tileEntity2 != null) {
+                        if (tileEntity2 instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                            BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity2;
+                            return te.getMaxEnergyStored();
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+
+        private int getCurrentRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockPos RFStorage = new BlockPos(x, y + 1, z);
+                    RFStorage = RFStorage.offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockTimeResearcher.BlockCustom.FACING).rotateY());
+                    TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+                    if (tileEntity2 != null) {
+                        if (tileEntity2 instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
+                            BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity2;
+                            return te.getEnergyStored();
                         }
                     }
                 }
@@ -703,12 +746,17 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
     public static class GUILifeChangedMessageHandler implements IMessageHandler<GUILifeChangedMessage, IMessage> {
         @Override
         public IMessage onMessage(GUILifeChangedMessage message, MessageContext context) {
+
+            //Check if this is running at all
+            //System.err.println("Running a GUILifeChangedMessageHandler " + message.mobID);
+
             EntityPlayerMP entity = context.getServerHandler().player;
             TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
             if (te != null) {
                 if (te instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
                     ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).setSelectedLife(message.mobID);
-                    ((BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) te).markDirty();
+                    te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                    te.markDirty();
                 }
             }
             return null;
