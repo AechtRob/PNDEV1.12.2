@@ -2345,7 +2345,6 @@ public class LepidodendronMod {
 	public static final ResourceLocation SRIANTA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/srianta"));
 	public static final int ENTITY_GANSUSELACHE = 949;
 	public static final ResourceLocation GANSUSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gansuselache"));
-	public static final ResourceLocation GANSUSELACHE_LOOT_F = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gansuselache_f"));
 
 	public static final int ENTITY_GOODRICHTHYS = 950;
 	public static final ResourceLocation GOODRICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/goodrichthys"));

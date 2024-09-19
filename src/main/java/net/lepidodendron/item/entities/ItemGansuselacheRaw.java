@@ -37,7 +37,7 @@ public class ItemGansuselacheRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gansuselache", ItemGansuselacheRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gansuselache@gendered", ItemGansuselacheRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGansuselacheRaw.block);
 		OreDictionary.registerOre("pnfurnaceFish", ItemGansuselacheRaw.block);
 		OreDictionary.registerOre("pndietFish", ItemGansuselacheRaw.block);
@@ -50,10 +50,10 @@ public class ItemGansuselacheRaw extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
+
 		@Nullable
 		public String getVariantStr() {
-			return "male";
+			return "gendered";
 		}
-
 	}
 }
