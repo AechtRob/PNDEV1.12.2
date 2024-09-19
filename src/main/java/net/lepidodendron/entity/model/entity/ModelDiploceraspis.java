@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiploceraspis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelDiploceraspis extends AdvancedModelBaseExtended {
+public class ModelDiploceraspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer forelegR;
     private final AdvancedModelRenderer forelegR2;
@@ -315,6 +315,11 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
         resetToDefaultPose();
 
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

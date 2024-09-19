@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelParadapedium extends AdvancedModelBase {
+public class ModelParadapedium extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Paradapedium;
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;
@@ -286,6 +286,11 @@ public class ModelParadapedium extends AdvancedModelBase {
         this.Paradapedium.render(0.01F);
         this.resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -307,7 +312,7 @@ public class ModelParadapedium extends AdvancedModelBase {
             speed = 0.7F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
+            this.chainSwing(fishTail, speed, 0.8F, -3, f2, 1);
             this.swing(Paradapedium, speed, 0.3F, true, 0, 0, f2, 1);
             this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.walk(PectoralL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);

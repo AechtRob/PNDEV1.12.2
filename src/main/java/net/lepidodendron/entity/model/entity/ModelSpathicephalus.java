@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraSpathicephalus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelSpathicephalus extends AdvancedModelBase {
+public class ModelSpathicephalus extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Hips;
     public AdvancedModelRenderer Bodymiddle;
     public AdvancedModelRenderer Tail1;
@@ -311,6 +311,11 @@ public class ModelSpathicephalus extends AdvancedModelBase {
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Perisphinctes;
 import net.lepidodendron.entity.model.entity.ModelAmmonite_Perisphinctes;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAmmonite_Perisphinctes extends RenderLiving<EntityPrehistoricFloraAmmonite_Perisphinctes> {
+public class RenderAmmonite_Perisphinctes extends RenderLivingBaseWithBook<EntityPrehistoricFloraAmmonite_Perisphinctes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/perisphinctes_ammonite.png");
 
     public static float getScaler() {

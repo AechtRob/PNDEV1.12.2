@@ -5,13 +5,13 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraParmastega;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelParmastega extends AdvancedModelBaseExtended {
+public class ModelParmastega extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Parmastega;
     private final AdvancedModelRendererExtended cube_r1;
     private final AdvancedModelRendererExtended Neck;
@@ -316,6 +316,11 @@ public class ModelParmastega extends AdvancedModelBaseExtended {
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

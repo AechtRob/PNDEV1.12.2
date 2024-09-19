@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGroenlandaspis;
 import net.lepidodendron.entity.model.entity.ModelGroenlandaspis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGroenlandaspis extends RenderLiving<EntityPrehistoricFloraGroenlandaspis> {
+public class RenderGroenlandaspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraGroenlandaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/groenlandaspis.png");
 
     public RenderGroenlandaspis(RenderManager mgr) {

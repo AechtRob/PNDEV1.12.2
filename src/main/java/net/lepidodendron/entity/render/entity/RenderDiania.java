@@ -4,11 +4,11 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiania;
 import net.lepidodendron.entity.model.entity.ModelDiania;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDiania extends RenderLiving<EntityPrehistoricFloraDiania> {
+public class RenderDiania extends RenderLivingBaseWithBook<EntityPrehistoricFloraDiania> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania.png");
     public static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania_nerf.png");
 

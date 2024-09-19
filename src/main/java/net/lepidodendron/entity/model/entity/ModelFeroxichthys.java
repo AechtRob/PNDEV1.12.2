@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelFeroxichthys extends AdvancedModelBase {
+public class ModelFeroxichthys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Feroxichthys;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -249,6 +249,12 @@ public class ModelFeroxichthys extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Feroxichthys.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Feroxichthys.rotateAngleY = (float) Math.toRadians(90);
         this.Feroxichthys.offsetY = -0.19F;

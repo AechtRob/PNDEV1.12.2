@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraArthropleura;
 import net.lepidodendron.entity.model.entity.ModelArthropleura;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderArthropleura extends RenderLiving<EntityPrehistoricFloraArthropleura> {
+public class RenderArthropleura extends RenderLivingBaseWithBook<EntityPrehistoricFloraArthropleura> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arthropleura.png");
     private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arthropleura_baby.png");
 

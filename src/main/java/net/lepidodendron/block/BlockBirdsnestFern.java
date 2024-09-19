@@ -6,8 +6,8 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.FernEpiphyteGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -95,6 +95,7 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfigPlants.genBirdsnestFern && (!LepidodendronConfig.genAllPlants) && (!LepidodendronConfig.genAllPlantsModern))
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene
@@ -114,36 +115,41 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 
 		if (matchBiome(biome, LepidodendronConfigPlants.genBirdsnestFernOverrideBiomes))
 			biomeCriteria = true;
 
-//		if (biome instanceof BiomeJurassic)
-//		{
-//			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-//			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandRock
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.IslandSand
-//					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
-//				biomeCriteria = true;
-//			}
-//			else {
-//				biomeCriteria = false;
-//			}
-//		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 28;
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")) {
+			GenChance = 92;
+		}
+
 		double GenMultiplier = LepidodendronConfigPlants.multiplierBirdsnestFern;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
-		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
+		GenChance = Math.min(256, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
@@ -152,8 +158,10 @@ public class BlockBirdsnestFern extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (int) GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			int yMin = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14));
+			int yMax = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14)) + 50;
+			int i11 = yMin + random.nextInt(yMax - yMin);
 			(new FernEpiphyteGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}

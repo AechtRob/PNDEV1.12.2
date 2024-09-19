@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Cylolobus;
 import net.lepidodendron.entity.model.entity.ModelAmmonite50cm;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAmmonite_Cylolobus extends RenderLiving<EntityPrehistoricFloraAmmonite_Cylolobus> {
+public class RenderAmmonite_Cylolobus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAmmonite_Cylolobus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_cylolobus.png");
 
     public RenderAmmonite_Cylolobus(RenderManager mgr) {

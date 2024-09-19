@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHarpes;
 import net.lepidodendron.entity.model.entity.ModelHarpes;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderHarpes extends RenderLiving<EntityPrehistoricFloraHarpes> {
+public class RenderHarpes extends RenderLivingBaseWithBook<EntityPrehistoricFloraHarpes> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harpes.png");
 
     public RenderHarpes(RenderManager mgr) {

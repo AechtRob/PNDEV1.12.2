@@ -16,7 +16,6 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.common.BiomeDictionary;
 
-import java.util.HashMap;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -48,6 +47,8 @@ public class StructureSpawnBanksia extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;

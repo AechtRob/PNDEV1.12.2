@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEllipsocephalus;
 import net.lepidodendron.entity.model.entity.ModelEllipsocephalus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEllipsocephalus extends RenderLiving<EntityPrehistoricFloraEllipsocephalus> {
+public class RenderEllipsocephalus extends RenderLivingBaseWithBook<EntityPrehistoricFloraEllipsocephalus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ellipsocephalus.png");
 
     public RenderEllipsocephalus(RenderManager mgr) {

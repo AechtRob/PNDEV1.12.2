@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHelenodora;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelHelenodora extends AdvancedModelBase {
+public class ModelHelenodora extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body5;
     private final AdvancedModelRenderer legR5;
     private final AdvancedModelRenderer legL5;
@@ -273,6 +273,11 @@ public class ModelHelenodora extends AdvancedModelBase {
         this.body5.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

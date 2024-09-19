@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelMegalichthys extends AdvancedModelBase {
+public class ModelMegalichthys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -289,15 +289,16 @@ public class ModelMegalichthys extends AdvancedModelBase {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = 0.4F;
-        this.main.offsetX = 0.55F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
+        this.main.offsetY = -1.0F;
+        this.main.offsetX = 0.37F;
+        this.main.rotateAngleY = (float)Math.toRadians(245);
+        this.main.rotateAngleX = (float)Math.toRadians(12);
         this.main.rotateAngleZ = (float)Math.toRadians(-8);
         this.main.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.3F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
 

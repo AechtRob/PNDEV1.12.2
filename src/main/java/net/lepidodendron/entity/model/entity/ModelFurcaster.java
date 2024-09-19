@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelFurcaster extends AdvancedModelBase {
+public class ModelFurcaster extends ModelBasePalaeopedia {
     public AdvancedModelRenderer core;
     public AdvancedModelRenderer arm1base;
     public AdvancedModelRenderer arm2base;
@@ -175,6 +175,11 @@ public class ModelFurcaster extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.core.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

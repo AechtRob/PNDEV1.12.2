@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -76,7 +77,7 @@ public class BlockAntarcticycas extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockAntarcticycas.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_antarcticycas");
@@ -87,6 +88,11 @@ public class BlockAntarcticycas extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockAntarcticycasCone.block.getDefaultState();
 		}
 
 		@Nullable

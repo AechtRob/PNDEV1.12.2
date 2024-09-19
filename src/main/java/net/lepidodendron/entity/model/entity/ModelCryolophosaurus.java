@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCryolophosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
+public class ModelCryolophosaurus extends ModelBasePalaeopedia {
 
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended hips;
@@ -624,6 +624,11 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.chest.rotateAngleX = (float) Math.toRadians(20);
         this.setRotateAngle(chest, 0.1F, -0.0F, 0.0F);
@@ -680,7 +685,7 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
 
-        EntityPrehistoricFloraCryolophosaurus EntityMegalosaurus = (EntityPrehistoricFloraCryolophosaurus) e;
+        EntityPrehistoricFloraCryolophosaurus EntityCryolophosaurus = (EntityPrehistoricFloraCryolophosaurus) e;
 
         this.faceTarget(f3, f4, 8, neck);
         this.faceTarget(f3, f4, 8, neck2);
@@ -692,16 +697,16 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] ArmL = {this.armLeft, this.armLeft2, this.handLeft};
         AdvancedModelRenderer[] ArmR = {this.armRight, this.armRight2, this.handRight};
 
-        EntityMegalosaurus.tailBuffer.applyChainSwingBuffer(Tail);
+        EntityCryolophosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
-        if (EntityMegalosaurus.getAnimation() == EntityMegalosaurus.LAY_ANIMATION) {
+        if (EntityCryolophosaurus.getAnimation() == EntityCryolophosaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
         }
         else {
-            if (!EntityMegalosaurus.isReallyInWater()) {
+            if (!EntityCryolophosaurus.isReallyInWater()) {
 
-                if (f3 == 0.0F || !EntityMegalosaurus.getIsMoving()) {
+                if (f3 == 0.0F || !EntityCryolophosaurus.getIsMoving()) {
                     this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                     this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
 
@@ -720,7 +725,7 @@ public class ModelCryolophosaurus extends AdvancedModelBaseExtended {
                     return;
                 }
 
-                if (EntityMegalosaurus.getIsFast()) { //Running
+                if (EntityCryolophosaurus.getIsFast()) { //Running
 
 
                 } else { //Walking

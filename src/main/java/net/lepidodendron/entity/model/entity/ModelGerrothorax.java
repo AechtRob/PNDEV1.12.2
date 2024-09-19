@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGerrothorax;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelGerrothorax extends AdvancedModelBaseExtended {
+public class ModelGerrothorax extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer neck;
     private final AdvancedModelRenderer cube_r1;
@@ -336,6 +336,11 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

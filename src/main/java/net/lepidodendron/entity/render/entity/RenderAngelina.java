@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAngelina;
 import net.lepidodendron.entity.model.entity.ModelAngelina;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAngelina extends RenderLiving<EntityPrehistoricFloraAngelina> {
+public class RenderAngelina extends RenderLivingBaseWithBook<EntityPrehistoricFloraAngelina> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/angelina.png");
 
     public static float getScaler() {

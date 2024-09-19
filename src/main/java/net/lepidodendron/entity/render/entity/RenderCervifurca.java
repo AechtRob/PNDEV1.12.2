@@ -3,16 +3,16 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCervifurca;
 import net.lepidodendron.entity.model.entity.ModelCervifurca;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCervifurca extends RenderLiving<EntityPrehistoricFloraCervifurca> {
+public class RenderCervifurca extends RenderLivingBaseWithBook<EntityPrehistoricFloraCervifurca> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cervifurca.png");
 
     public static float getScaler() {
-        return 0.7F * 0.5F;
+        return 0.7F * 0.5F*0.66f;
     }
     public RenderCervifurca(RenderManager mgr) {
         super(mgr, new ModelCervifurca(), 0.0f);

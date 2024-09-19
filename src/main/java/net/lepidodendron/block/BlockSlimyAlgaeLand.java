@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.item.ItemSlimyAlgaeItem;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -19,6 +20,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -27,6 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -47,14 +53,13 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
-	//@SideOnly(Side.CLIENT)
-	//@Override
-	//public void registerModels(ModelRegistryEvent event) {
-	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-	//			new ModelResourceLocation("lepidodendron:primeval_grass_land", "inventory"));
-	//}
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		GameRegistry.registerTileEntity(BlockSlimyAlgaeLand.TileEntityCustom.class, "lepidodendron:tileentityslimy_algae_land");
+	}
 	
-	public static class BlockCustom extends BlockBush implements net.minecraftforge.common.IShearable, IAdvancementGranter {
+	public static class BlockCustom extends BlockBush implements net.minecraftforge.common.IShearable, IAdvancementGranter, ILayableMoss {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -65,6 +70,28 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setTranslationKey("pf_slimy_algae_land");
 			setRegistryName("slimy_algae_land");
+		}
+
+		@Override
+		public boolean hasTileEntity(IBlockState state) {
+			return true;
+		}
+
+		@Nullable
+		@Override
+		public TileEntity createTileEntity(World world, IBlockState state) {
+			return new BlockSlimyAlgaeLand.TileEntityCustom();
+		}
+
+		public BlockSlimyAlgaeLand.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
+			return new BlockSlimyAlgaeLand.TileEntityCustom();
+		}
+
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
 		}
 
 		@Nullable
@@ -108,7 +135,7 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -163,6 +190,7 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 			{
 		        if (!canSurviveAt(world, pos))
 		        {
+
 		            world.scheduleUpdate(pos, this, 1);
 		        }
 		    }
@@ -225,6 +253,59 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 	    	 
 	    }
 	    
+
+	}
+
+	public static class TileEntityCustom extends TileEntity {
+
+		private String egg;
+
+		@Override
+		public SPacketUpdateTileEntity getUpdatePacket() {
+			NBTTagCompound tag = new NBTTagCompound();
+			this.writeToNBT(tag);
+			return new SPacketUpdateTileEntity(pos, 1, tag);
+		}
+
+		@Override
+		public void onDataPacket(NetworkManager netManager, SPacketUpdateTileEntity packet) {
+			readFromNBT(packet.getNbtCompound());
+		}
+
+		@Override
+		public NBTTagCompound getUpdateTag() {
+			return this.writeToNBT(new NBTTagCompound());
+		}
+
+		@Override
+		public void handleUpdateTag(NBTTagCompound tag) {
+			this.readFromNBT(tag);
+		}
+
+		@Override
+		public void readFromNBT(NBTTagCompound compound)
+		{
+			super.readFromNBT(compound);
+			if (compound.hasKey("egg")) {
+				this.egg = compound.getString("egg");
+			}
+		}
+
+		@Override
+		public NBTTagCompound writeToNBT(NBTTagCompound compound)
+		{
+			super.writeToNBT(compound);
+			if (this.hasEgg())
+			{
+				compound.setString("egg", this.egg);
+			}
+			return compound;
+		}
+
+		public boolean hasEgg()
+		{
+			return this.egg != null;
+		}
 
 	}
 }

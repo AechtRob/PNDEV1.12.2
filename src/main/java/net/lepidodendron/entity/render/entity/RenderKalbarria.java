@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKalbarria;
 import net.lepidodendron.entity.model.entity.ModelKalbarria;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderKalbarria extends RenderLiving<EntityPrehistoricFloraKalbarria> {
+public class RenderKalbarria extends RenderLivingBaseWithBook<EntityPrehistoricFloraKalbarria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalbarria.png");
 
     public RenderKalbarria(RenderManager mgr) {

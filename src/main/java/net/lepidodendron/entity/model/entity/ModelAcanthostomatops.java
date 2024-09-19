@@ -5,14 +5,14 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostomatops;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
+public class ModelAcanthostomatops extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended bone;
     private final AdvancedModelRendererExtended head;
     private final AdvancedModelRendererExtended cube_r1;
@@ -313,6 +313,11 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
         this.bone.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(body2, 0.0F, 0.1309F, 0.0F);
         this.setRotateAngle(cube_r1, 0.0F, 0.5672F, 0.0F);
@@ -355,6 +360,7 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
 
         resetToDefaultPose();
     }
+
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemHydrangeaFlowerBlue;
 import net.lepidodendron.item.ItemHydrangeaFlowerPink;
@@ -83,7 +84,7 @@ public class BlockHydrangea extends ElementsLepidodendronMod.ModElement {
 	}
 
 
-	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter {
+	public static class BlockCustomFlower extends BlockBush implements IAdvancementGranter, IPottable {
 		public static final PropertyInteger COLOUR = PropertyInteger.create("colour", 0, 2);
 
 		public BlockCustomFlower() {
@@ -300,6 +301,11 @@ public class BlockHydrangea extends ElementsLepidodendronMod.ModElement {
 			else {
 				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 			}
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

@@ -95,6 +95,8 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genFernEpiphyteOverrideBiomes))
 			biomeCriteria = true;
@@ -151,11 +153,27 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
 		if (biome instanceof BiomeCretaceousEarly)
 		{
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_north_america_braided")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_patagonia")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field_copse")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_swamp_lakes")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_swamp_lakes_edge")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland_copse")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_patagonia")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp_mound")) {
 				biomeCriteria = true;
 			}
 			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
@@ -165,6 +183,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -174,13 +193,14 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_australia_antarctica")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp_mound")) {
 			GenChance = 64;
 		}
 
 		double GenMultiplier = LepidodendronConfigPlants.multiplierFernEpiphyte;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
-		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
+		GenChance = Math.min(256, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
@@ -189,8 +209,10 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 		
 		for (int i = 0; i < (int) GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			int yMin = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14));
+			int yMax = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14)) + 50;
+			int i11 = yMin + random.nextInt(yMax - yMin);
 			(new FernEpiphyteGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}

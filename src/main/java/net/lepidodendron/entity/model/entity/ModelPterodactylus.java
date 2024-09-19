@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPterodactylus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -13,7 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 
-public class ModelPterodactylus extends AdvancedModelBaseExtended {
+public class ModelPterodactylus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended chest;
     private final AdvancedModelRendererExtended chest_r1;
@@ -465,6 +465,7 @@ public class ModelPterodactylus extends AdvancedModelBaseExtended {
         //GlStateManager.popMatrix();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -0.7F;
@@ -711,7 +712,6 @@ public class ModelPterodactylus extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
-
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

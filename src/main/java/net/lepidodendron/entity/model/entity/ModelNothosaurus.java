@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraNothosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelNothosaurus extends AdvancedModelBaseExtended {
+public class ModelNothosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended Hips;
     private final AdvancedModelRendererExtended Bodymiddle;
@@ -401,6 +401,12 @@ public class ModelNothosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Neckbase.offsetZ = -0.3F;
         this.Head.rotateAngleY = (float)Math.toRadians(17.4);

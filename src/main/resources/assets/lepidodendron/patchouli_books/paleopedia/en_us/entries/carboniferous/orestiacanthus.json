@@ -1,0 +1,47 @@
+{
+	"name": "Orestiacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/orestiacanthus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_orestiacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_orestiacanthus",
+			"title": "Orestiacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Symmoriiformes $(br)>Symmoriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "O. fergusi",
+            "entity": "lepidodendron:prehistoric_flora_orestiacanthus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orestiacanthus",
+			"type": "text",
+			"text": "Orestiacanthus is a Stethacanthid shark known from Carboniferous North America of Bear Gulch. It grew to around 30 cm in length, and had a dorsal ornament that looked a little closer to Falcatus, not forming the full anvil like in Stethacanthus, but also not as elongated as in Falcatus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_orestiacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_orestiacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_orestiacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_orestiacanthus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_orestiacanthus"
+		}
+	]
+}

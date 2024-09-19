@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBirkenia;
 import net.lepidodendron.entity.model.entity.ModelBirkenia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBirkenia extends RenderLiving<EntityPrehistoricFloraBirkenia> {
+public class RenderBirkenia extends RenderLivingBaseWithBook<EntityPrehistoricFloraBirkenia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/birkenia.png");
 
     public static float getScaler() {

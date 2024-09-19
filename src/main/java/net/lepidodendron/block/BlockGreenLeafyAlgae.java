@@ -61,6 +61,7 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockGreenLeafyAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_leafy_algae", BlockGreenLeafyAlgae.block);
 	}
 
 	@Override
@@ -97,6 +98,8 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genGreenLeafyAlgaeOverrideBiomes))

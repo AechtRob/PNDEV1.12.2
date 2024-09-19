@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraChilesaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelChilesaurus extends AdvancedModelBaseExtended {
+public class ModelChilesaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer hips;
     private final AdvancedModelRenderer bodyMiddle;
@@ -705,6 +705,7 @@ public class ModelChilesaurus extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.250F;

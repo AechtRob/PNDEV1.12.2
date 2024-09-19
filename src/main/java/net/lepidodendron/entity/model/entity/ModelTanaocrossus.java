@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelTanaocrossus extends AdvancedModelBase {
+public class ModelTanaocrossus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer rightpectoral;
@@ -217,6 +217,7 @@ public class ModelTanaocrossus extends AdvancedModelBase {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.0F;

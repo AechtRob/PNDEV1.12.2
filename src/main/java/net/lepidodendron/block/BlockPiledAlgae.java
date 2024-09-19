@@ -67,6 +67,7 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockPiledAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:piled_algae", BlockPiledAlgae.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -94,6 +95,8 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 		if (!matchBiome(biome, LepidodendronConfigPlants.genPiledAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genPiledAlgaeOverrideBiomes))
@@ -156,6 +159,10 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 			)
 				multiplier = 48;
 		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+		)
+			multiplier = 64;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore"))

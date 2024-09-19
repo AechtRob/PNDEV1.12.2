@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelDoryaspis extends AdvancedModelBase {
+public class ModelDoryaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Doryaspis;
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;
@@ -144,6 +144,11 @@ public class ModelDoryaspis extends AdvancedModelBase {
         this.Doryaspis.offsetY = 0.05F;
         this.Doryaspis.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

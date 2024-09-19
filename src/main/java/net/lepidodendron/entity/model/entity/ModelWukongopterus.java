@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraWukongopterus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -13,7 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 
-public class ModelWukongopterus extends AdvancedModelBaseExtended {
+public class ModelWukongopterus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended chest;
     private final AdvancedModelRendererExtended body1;
@@ -416,6 +416,7 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(chest, -1.5F, 3.1F, 0.0F);
         this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
@@ -513,6 +514,7 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
     
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -2.5F;
@@ -555,7 +557,7 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
-    
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -755,7 +757,6 @@ public class ModelWukongopterus extends AdvancedModelBaseExtended {
                 this.setRotateAngle(jaw2, 0.1309F, 0.0F, 0.0F);
                 this.setRotateAngle(cube_r13, -0.1231F, 0.0447F, 0.3463F);
                 this.setRotateAngle(cube_r14, -0.1231F, -0.0447F, -0.3463F);
-
             }
         }
 

@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnurognathid;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelAnurognathus extends AdvancedModelBaseExtended {
+public class ModelAnurognathus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer upperbody;
     private final AdvancedModelRenderer neck;
@@ -413,6 +413,11 @@ public class ModelAnurognathus extends AdvancedModelBaseExtended {
         this.main.offsetZ = 0.02F;
         this.main.render(0.01F);
         resetToDefaultPose();
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockPrimevalGrassLand;
 import net.lepidodendron.block.BlockPrimevalGrassWater;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
@@ -64,7 +65,7 @@ public class ItemPrimevalGrassItem extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("leavesHay", ItemPrimevalGrassItem.block);
 	}
 
-	public static class ItemCustom extends Item {
+	public static class ItemCustom extends Item implements IPottable {
 		public ItemCustom() {
 			setTranslationKey("pf_primaeval_grass_item");
 			setRegistryName("primaeval_grass_item");
@@ -149,6 +150,11 @@ public class ItemPrimevalGrassItem extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Propagation: flowers");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockPrimevalGrassLand.block.getDefaultState();
+		}
 	}
 
 	public static boolean canSurviveAt(World worldIn, BlockPos pos) {

@@ -11,11 +11,20 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician - Silurian$(br2)>Hemichordata $(br)>Pterobranchia $(br)>Graptolithina $(br)>Diplograptidae"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/orthograptus.png"],
-			"title": "Orthograptus sp.",
-			"text": ""
+		{
+			"type": "multiblock",
+			"name": "Orthograptus sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:orthograptus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_orthograptus",

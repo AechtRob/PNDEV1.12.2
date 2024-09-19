@@ -77,7 +77,6 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(TileEntityTimeResearcherFinderBottom.class, "lepidodendron:tileentitytime_researcher_finder_bottom");
-		elements.addNetworkMessage(BlockTimeResearcherFinderBottom.ParticlePacket.Handler.class, BlockTimeResearcherFinderBottom.ParticlePacket.class, Side.CLIENT);
 	}
 
 //	@SideOnly(Side.CLIENT)
@@ -413,7 +412,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			if (hasEnergy && this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime) - 80) {
 				//Give the processed block now:
 				if (!getStackInSlot(1).isEmpty()) {
-					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 1.0F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
+					this.world.playSound(null, pos.getX() + 0.5, pos.getY()+ 1.25, pos.getZ() + 0.5, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 0.65F, (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F);
 
 					LepidodendronMod.PACKET_HANDLER.sendToAll(new ParticlePacket(pos.getX(), pos.getY(), pos.getZ()));
 
@@ -434,6 +433,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 1);
 										found = true;
 									}
 									if (!found) {
@@ -446,6 +446,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 1);
 											found = true;
 										}
 									}
@@ -459,6 +460,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 1);
 										}
 									}
 								}
@@ -481,6 +483,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 2);
 										found = true;
 									}
 									if (!found) {
@@ -493,6 +496,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 2);
 											found = true;
 										}
 									}
@@ -506,6 +510,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 2);
 										}
 									}
 								}
@@ -528,6 +533,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 3);
 										found = true;
 									}
 									if (!found) {
@@ -540,6 +546,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 3);
 											found = true;
 										}
 									}
@@ -553,6 +560,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 3);
 										}
 									}
 								}
@@ -575,6 +583,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 4);
 										found = true;
 									}
 									if (!found) {
@@ -587,6 +596,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 4);
 											found = true;
 										}
 									}
@@ -600,6 +610,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 4);
 										}
 									}
 								}
@@ -622,6 +633,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 5);
 										found = true;
 									}
 									if (!found) {
@@ -634,6 +646,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 5);
 											found = true;
 										}
 									}
@@ -647,6 +660,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 5);
 										}
 									}
 								}
@@ -669,6 +683,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 6);
 										found = true;
 									}
 									if (!found) {
@@ -681,6 +696,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 6);
 											found = true;
 										}
 									}
@@ -694,6 +710,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 6);
 										}
 									}
 								}
@@ -716,6 +733,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 7);
 										found = true;
 									}
 									if (!found) {
@@ -728,6 +746,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 7);
 											found = true;
 										}
 									}
@@ -741,6 +760,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 7);
 										}
 									}
 								}
@@ -763,6 +783,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 8);
 										found = true;
 									}
 									if (!found) {
@@ -775,6 +796,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 8);
 											found = true;
 										}
 									}
@@ -788,6 +810,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 8);
 										}
 									}
 								}
@@ -810,6 +833,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 9);
 										found = true;
 									}
 									if (!found) {
@@ -822,6 +846,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 9);
 											found = true;
 										}
 									}
@@ -835,6 +860,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 9);
 										}
 									}
 								}
@@ -858,6 +884,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 10);
 										found = true;
 									}
 									if (!found) {
@@ -870,6 +897,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 10);
 											found = true;
 										}
 									}
@@ -883,6 +911,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 10);
 										}
 									}
 								}
@@ -905,6 +934,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 11);
 										found = true;
 									}
 									if (!found) {
@@ -917,6 +947,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 11);
 											found = true;
 										}
 									}
@@ -930,6 +961,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 11);
 										}
 									}
 								}
@@ -952,6 +984,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 12);
 										found = true;
 									}
 									if (!found) {
@@ -964,6 +997,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 12);
 											found = true;
 										}
 									}
@@ -977,6 +1011,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 12);
 										}
 									}
 								}
@@ -999,6 +1034,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 										NBTTagCompound stackNBT = new NBTTagCompound();
 										stackNBT.setTag("PFMob", plantNBT);
 										result.setTagCompound(stackNBT);
+										result.getTagCompound().setInteger("period", 13);
 										found = true;
 									}
 									if (!found) {
@@ -1011,6 +1047,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFPlant", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 13);
 											found = true;
 										}
 									}
@@ -1024,6 +1061,7 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 											NBTTagCompound stackNBT = new NBTTagCompound();
 											stackNBT.setTag("PFStatic", plantNBT);
 											result.setTagCompound(stackNBT);
+											result.getTagCompound().setInteger("period", 13);
 										}
 									}
 								}

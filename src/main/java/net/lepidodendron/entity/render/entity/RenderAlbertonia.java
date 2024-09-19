@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAlbertonia;
 import net.lepidodendron.entity.model.entity.ModelAlbertonia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAlbertonia extends RenderLiving<EntityPrehistoricFloraAlbertonia> {
+public class RenderAlbertonia extends RenderLivingBaseWithBook<EntityPrehistoricFloraAlbertonia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/albertonia.png");
 
     public RenderAlbertonia(RenderManager mgr) {

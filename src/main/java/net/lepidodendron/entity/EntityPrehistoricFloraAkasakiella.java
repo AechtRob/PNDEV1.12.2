@@ -210,4 +210,6 @@ public class EntityPrehistoricFloraAkasakiella extends EntityPrehistoricFloraSli
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_AKASAKIELLA;
 	}
+
+
 }

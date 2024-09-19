@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTrigonotarbid_Palaeocharinus;
 import net.lepidodendron.entity.model.entity.ModelTrigonotarbid;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTrigonotarbid_Palaeocharinus extends RenderLiving<EntityPrehistoricFloraTrigonotarbid_Palaeocharinus> {
+public class RenderTrigonotarbid_Palaeocharinus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTrigonotarbid_Palaeocharinus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_palaeocharinus.png");
 
     public RenderTrigonotarbid_Palaeocharinus(RenderManager mgr) {

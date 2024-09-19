@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHomoeosaurus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelHomoeosaurus extends AdvancedModelBase {
+public class ModelHomoeosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Hips;
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer Neck;
@@ -215,13 +215,19 @@ public class ModelHomoeosaurus extends AdvancedModelBase {
     }
         public void renderStaticWall(float f) {
             this.Body.rotateAngleY = (float) Math.toRadians(0);
-            this.setRotateAngle(Body, 0.7F, 0.0F, -0.25F);
-            this.setRotateAngle(Neck, -0.5F, 0.0F, 0.0F);
+            this.setRotateAngle(Body, 0.2F, 0.0F, 0.0F);
+            this.setRotateAngle(Neck, -0.8F, 0.0F, 0.0F);
             this.setRotateAngle(Jaw, 0.3F, 0.0F, 0.0F);
+            this.UpperArmR.setScale(0,0,0);
+            this.UpperArmL.setScale(0,0,0);
+            this.UpperArmR.scaleChildren = true;
+            this.UpperArmL.scaleChildren = true;
             this.Body.offsetY = 0.0F;
             this.Body.offsetX = 0.0F;
-            this.Body.offsetZ = -0.5F;
+            this.Body.offsetZ = -0.75F;
             this.Body.render(0.01F);
+            this.UpperArmR.setScale(1,1,1);
+            this.UpperArmL.setScale(1,1,1);
             resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
@@ -247,6 +253,11 @@ public class ModelHomoeosaurus extends AdvancedModelBase {
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

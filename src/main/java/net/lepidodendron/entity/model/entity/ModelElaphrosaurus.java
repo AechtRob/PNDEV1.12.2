@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraElaphrosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
+public class ModelElaphrosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer Hips;
     private final AdvancedModelRenderer Bodymiddle;
@@ -380,6 +380,7 @@ public class ModelElaphrosaurus extends AdvancedModelBaseExtended {
         this.Hips.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = 0.4F;

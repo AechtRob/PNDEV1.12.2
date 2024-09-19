@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPoraspis;
 import net.lepidodendron.entity.model.entity.ModelPoraspis;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPoraspis extends RenderLiving<EntityPrehistoricFloraPoraspis> {
+public class RenderPoraspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraPoraspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poraspis.png");
     public static float getScaler() {
         return 0.7F * 0.39F;

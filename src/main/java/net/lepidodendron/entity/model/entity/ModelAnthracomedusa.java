@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelAnthracomedusa extends AdvancedModelBase {
+public class ModelAnthracomedusa extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer legbase1_r1;
     private final AdvancedModelRenderer tentacle;
@@ -834,6 +834,11 @@ public class ModelAnthracomedusa extends AdvancedModelBase {
         GlStateManager.disableBlend();
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(AdvancedModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -928,7 +933,7 @@ public class ModelAnthracomedusa extends AdvancedModelBase {
             if (!e.isInWater()) {
                 this.resetToDefaultPose();
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.6F;
+                this.body.offsetY = 0.9F;
                 this.body.offsetX = -0.7F;
                 this.body.offsetZ = -0.3F;
                 this.body.scaleChildren = true;

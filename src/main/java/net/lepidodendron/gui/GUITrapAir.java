@@ -3,7 +3,7 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockTrapAir;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.TrapSpawner;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -24,11 +24,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.relauncher.Side;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -48,12 +46,6 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
         super(instance, 1);
     }
     private static final Class[] params = new Class[1];
-
-    @Override
-    public void preInit(FMLPreInitializationEvent event) {
-        elements.addNetworkMessage(GUIButtonPressedMessageHandler.class, GUIButtonPressedMessage.class, Side.SERVER);
-        elements.addNetworkMessage(GUISlotChangedMessageHandler.class, GUISlotChangedMessage.class, Side.SERVER);
-    }
 
     public static class GUILepidodendronTrapAir extends Container implements Supplier<Map<Integer, Slot>> {
         private IInventory internal;
@@ -293,7 +285,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
                 Class classEntity = getEntity().getClass();
                 params[0] = String.class;
 
-//                Method method = RenderDisplayWallMount.testAndGetMethod(classEntity, "hasPNVariants", null);
+//                Method method = Functions.testAndGetMethod(classEntity, "hasPNVariants", null);
 //                if (method != null) {
 //                    try {
 //                        getScaler = (float) method.invoke(null, PNVariant) * 100;
@@ -305,7 +297,7 @@ public class GUITrapAir extends ElementsLepidodendronMod.ModElement {
 //                }
 
                 params[0] = String.class;
-                Method method = RenderDisplayWallMount.testAndGetMethod(classEntity, "getScaler", params);
+                Method method = Functions.testAndGetMethod(classEntity, "getScaler", params);
                 if (method != null) {
                     try {
                         getScaler = (float) method.invoke(null, PNVariant) * 100;

@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAmmonite200pluscm extends AdvancedModelBaseExtended {
+public class ModelAmmonite200pluscm extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended Shell1;
     public AdvancedModelRendererExtended Shell2;
     public AdvancedModelRendererExtended Mantle;
@@ -221,6 +221,11 @@ public class ModelAmmonite200pluscm extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Shell1.render(f5 * 2.0F);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

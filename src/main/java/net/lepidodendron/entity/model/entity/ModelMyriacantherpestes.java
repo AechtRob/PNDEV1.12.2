@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.lepidodendron.entity.EntityPrehistoricFloraMyriacantherpestes;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
+public class ModelMyriacantherpestes extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended main;
     private final AdvancedModelRendererExtended Frontbody3;
     private final AdvancedModelRendererExtended cube_r1;
@@ -1162,8 +1162,14 @@ public class ModelMyriacantherpestes extends AdvancedModelBaseExtended {
         this.setRotateAngle(legR9, 0.0F, 0.0F, -0.2618F);
         this.setRotateAngle(telson, 0.0F, -0.1745F, 0.0F);
         this.main.offsetZ = -0.15F;
+        this.main.offsetY = 0.055F;
         this.main.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOlenellus;
 import net.lepidodendron.entity.model.entity.ModelOlenellus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOlenellus extends RenderLiving<EntityPrehistoricFloraOlenellus> {
+public class RenderOlenellus extends RenderLivingBaseWithBook<EntityPrehistoricFloraOlenellus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/olenellus.png");
 
     public static float getScaler() {

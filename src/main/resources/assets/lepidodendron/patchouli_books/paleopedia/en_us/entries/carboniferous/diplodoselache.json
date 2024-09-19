@@ -1,0 +1,47 @@
+{
+	"name": "Diplodoselache",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/diplodoselache_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_diplodoselache",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplodoselache",
+			"title": "Diplodoselache",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Elasmobranchii $(br)>Xenacanthida $(br)>Diplodoselachidae"
+		},
+        	{
+            "type": "entity",
+            "name": "D. woodi",
+            "entity": "lepidodendron:prehistoric_flora_diplodoselache",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplodoselache",
+			"type": "text",
+			"text": "Diplodoselache is a Xenacanth known from the Early Carboniferous Wardie Shales of Scotland. It is unusual for xenacanthids because it still had a shark-like tail fin, showing a basal trait for the group. This animal would have grown to be around 2m in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_diplodoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_diplodoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_diplodoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_diplodoselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_diplodoselache"
+		}
+	]
+}

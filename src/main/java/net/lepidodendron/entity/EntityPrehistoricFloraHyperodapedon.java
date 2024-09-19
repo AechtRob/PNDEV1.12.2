@@ -107,7 +107,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.535F;
+		float speedBase = 0.235F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -196,7 +196,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 	}
 
 	private boolean isBlockGrazable(IBlockState state) {
-		return (state.getMaterial() == Material.GROUND);
+		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.SAND);
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {

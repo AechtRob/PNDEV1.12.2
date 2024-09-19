@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEuchambersia;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelEuchambersia extends AdvancedModelBaseExtended {
+public class ModelEuchambersia extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Euchambersia;
     private final AdvancedModelRendererExtended LArm;
     private final AdvancedModelRendererExtended LArm2;
@@ -261,6 +261,11 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         this.Euchambersia.offsetX = -0.1F;
         this.Euchambersia.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

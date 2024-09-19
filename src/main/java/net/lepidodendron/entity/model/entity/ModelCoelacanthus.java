@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelCoelacanthus extends AdvancedModelBase {
+public class ModelCoelacanthus extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Bodyfront;
     public AdvancedModelRenderer Bodyback;
     public AdvancedModelRenderer Headbase;
@@ -176,6 +176,11 @@ public class ModelCoelacanthus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bodyfront.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void renderStaticWall(float f) {

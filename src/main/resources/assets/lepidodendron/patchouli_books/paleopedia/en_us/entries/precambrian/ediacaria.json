@@ -2,7 +2,7 @@
 	"name": "Ediacaria",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/ediacaria_icon.png",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ediacaria",
 	"pages": [
 		{
@@ -11,11 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Precambrian - Cambrian$(br2)>Cnidaria $(br)>Scyphozoa"
 		},
-        	{
-			"type": "image",
-			"images": ["paleopedia:textures/ediacaria.png"],
-			"title": "E. flindersi",
-			"text": ""
+		{
+			"type": "entity",
+			"name": "E. flindersi",
+			"entity": "lepidodendron:prehistoric_flora_ediacaria",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ediacaria",

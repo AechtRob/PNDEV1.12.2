@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelKleptothule extends AdvancedModelBase {
+public class ModelKleptothule extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Kleptothule;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -569,6 +569,28 @@ public class ModelKleptothule extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Kleptothule.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.Kleptothule.offsetY = -3.65F;
+        this.Kleptothule.offsetX = -1.00F;
+        this.Kleptothule.rotateAngleY = (float)Math.toRadians(25);
+        this.Kleptothule.rotateAngleX = (float)Math.toRadians(-25);
+        this.Kleptothule.rotateAngleZ = (float)Math.toRadians(5);
+        this.Kleptothule.scaleChildren = true;
+        float scaler = 3.44F;
+        this.Kleptothule.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.Kleptothule.render(f);
+        //Reset rotations, positions and sizing:
+        this.Kleptothule.setScale(1.0F, 1.0F, 1.0F);
+        this.Kleptothule.scaleChildren = false;
+        resetToDefaultPose();
+    }
+    
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Kleptothule, 0.2F, 0.0F, 0.05F);
         this.setRotateAngle(head, 0.0F, 0.2F, 0.0F);
@@ -581,9 +603,9 @@ public class ModelKleptothule extends AdvancedModelBase {
         this.setRotateAngle(body8, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(body9, 0.0F, -0.2F, 0.0F);
         this.setRotateAngle(body10, 0.0F, -0.2F, 0.0F);
-        this.Kleptothule.offsetZ = 0.0F;
-        this.Kleptothule.offsetY = 0.0F;
-        this.Kleptothule.offsetX = 0.001F;
+        this.Kleptothule.offsetZ = 0.01F;
+        this.Kleptothule.offsetY = 0.1F;
+        this.Kleptothule.offsetX = 0.0F;
         this.Kleptothule.render(0.01F);
         this.resetToDefaultPose();
     }

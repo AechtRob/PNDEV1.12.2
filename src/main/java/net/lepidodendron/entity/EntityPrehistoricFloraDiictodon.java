@@ -95,6 +95,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 				&& (!(this instanceof EntityPrehistoricFloraEosimops))
 				&& (!(this instanceof EntityPrehistoricFloraProsictodon))) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDiictodon> Diictodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDiictodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDiictodon currentDiictodon : Diictodon) {
 				if (
@@ -103,6 +104,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 					&& (!(currentDiictodon instanceof EntityPrehistoricFloraProsictodon))
 				) {
 					currentDiictodon.setRevengeTarget(ee);
+					currentDiictodon.setAlarmTarget(ee);
 					currentDiictodon.screamAlarmCooldown = rand.nextInt(20);
 				}
 			}

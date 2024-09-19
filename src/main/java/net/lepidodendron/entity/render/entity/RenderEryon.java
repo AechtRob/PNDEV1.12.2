@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEryon;
 import net.lepidodendron.entity.model.entity.ModelEryon;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEryon extends RenderLiving<EntityPrehistoricFloraEryon> {
+public class RenderEryon extends RenderLivingBaseWithBook<EntityPrehistoricFloraEryon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryon.png");
 
     public static float getScaler() {

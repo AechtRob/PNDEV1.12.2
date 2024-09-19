@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
 import net.lepidodendron.entity.model.entity.ModelKalligrammatid;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderKalligrammatid extends RenderLiving<EntityPrehistoricFloraKalligrammatid> {
+public class RenderKalligrammatid extends RenderLivingBaseWithBook<EntityPrehistoricFloraKalligrammatid> {
     public static final ResourceLocation TEXTURE_KALLIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_kalligramma.png");
     public static final ResourceLocation TEXTURE_APOCHRYSOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_apochrysogramma.png");
     private static final ResourceLocation TEXTURE_HUIYINGOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_huiyingogramma.png");

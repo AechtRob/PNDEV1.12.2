@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraThanahita;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelThanahita extends AdvancedModelBase {
+public class ModelThanahita extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer armR3;
     private final AdvancedModelRenderer armL2;
@@ -216,6 +216,11 @@ public class ModelThanahita extends AdvancedModelBase {
         this.body.offsetY = 0.55F;
         this.body.render(0.01F);
         resetToDefaultPose();
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

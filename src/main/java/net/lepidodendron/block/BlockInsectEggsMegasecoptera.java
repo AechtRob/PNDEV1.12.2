@@ -4,10 +4,10 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.entity.EntityPrehistoricFloraMegasecoptera;
 import net.lepidodendron.item.ItemMegasecopteraEggsItem;
-import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -33,6 +33,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -66,7 +67,8 @@ public class BlockInsectEggsMegasecoptera extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (dimID != LepidodendronConfig.dimPermian) {
+		if (dimID != LepidodendronConfig.dimCarboniferous
+			&& dimID != LepidodendronConfig.dimPermian) {
 			return;
 		}
 		int minWaterDepth = 2;
@@ -77,29 +79,17 @@ public class BlockInsectEggsMegasecoptera extends ElementsLepidodendronMod.ModEl
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomePermian) {
-				BiomePermian biomeC = (BiomePermian) biome;
-				if (biomeC.getBiomeType() == EnumBiomeTypePermian.Glossopteris
-						|| biomeC.getBiomeType() == EnumBiomeTypePermian.Forest) {
-					int ii = random.nextInt(8);
-					String variant = null;
-					switch (ii) {
-						case 0: default:
-							variant = "sylvohymen";
-							break;
-					}
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, variant);
+
+			ArrayList<String> variantString = new ArrayList<String>();
+			for (EntityPrehistoricFloraMegasecoptera.Type Type : EntityPrehistoricFloraMegasecoptera.Type.values()) {
+				if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_megasecoptera@" + Type.getName(), biome.getRegistryName().toString())) {
+					variantString.add(Type.getName());
 				}
 			}
-
-//			if (biome instanceof BiomePermian) {
-//				BiomePermian biomeP = (BiomePermian) biome;
-//				if (biomeP.getBiomeType() == EnumBiomeTypePermian.Wetlands
-//						|| biomeP.getBiomeType() == EnumBiomeTypePermian.Lowlands) {
-//					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, "dunbaria");
-//				}
-//			}
-
+			if (!variantString.isEmpty()) {
+				String variant = variantString.get(random.nextInt(variantString.size()));
+				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, variant);
+			}
 		}
 	}
 

@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelOnychodus extends AdvancedModelBase {
+public class ModelOnychodus extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Body1;
     public AdvancedModelRenderer Body2;
     public AdvancedModelRenderer Leftpectoralarm;
@@ -251,6 +251,11 @@ public class ModelOnychodus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body1.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void renderStaticFloor(float f) {

@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/nelumbo_inventory",
-    "particle": "lepidodendron:items/nelumbo_inventory"
+    "layer0": "lepidodendron:items/nelumbo_inventory"
   }
 }

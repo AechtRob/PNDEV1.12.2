@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLaidleria;
 import net.lepidodendron.entity.model.entity.ModelLaidleria;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderLaidleria extends RenderLiving<EntityPrehistoricFloraLaidleria> {
+public class RenderLaidleria extends RenderLivingBaseWithBook<EntityPrehistoricFloraLaidleria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/laidleria.png");
 
     public static float getScaler() {

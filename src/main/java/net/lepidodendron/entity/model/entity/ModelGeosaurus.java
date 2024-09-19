@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGeosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelGeosaurus extends AdvancedModelBaseExtended {
+public class ModelGeosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer Neck;
     private final AdvancedModelRenderer Head;
@@ -312,21 +312,27 @@ public class ModelGeosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Body.render(f5);
     }
-        public void renderStaticWall(float f) {
-            this.Body.rotateAngleX = (float) Math.toRadians(20);
-            this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Neck, 0.0F, -0.2F, 0.0F);
-            this.setRotateAngle(Head, 0.0F, 0.28F, 0.0F);
-            this.setRotateAngle(Lowerjaw, 0.2F, 0.0F, 0.0F);
-            this.Body2.setScale(0,0,0);
-            this.Body2.setScale(0,0,0);
-            this.Body2.scaleChildren = true;
-            this.Body.offsetY = -0.18F;
-            this.Body.offsetX = 0.0F;
-            this.Body.offsetZ = -0.45F;
-            this.Body.render(0.01F);
-            this.Body2.setScale(1,1,1);
-            this.Body2.setScale(1,1,1);
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
+    public void renderStaticWall(float f) {
+        this.Body.rotateAngleX = (float) Math.toRadians(20);
+        this.setRotateAngle(Body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.28F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.2F, 0.0F, 0.0F);
+        this.Body2.setScale(0,0,0);
+        this.Body2.setScale(0,0,0);
+        this.Body2.scaleChildren = true;
+        this.Body.offsetY = -0.18F;
+        this.Body.offsetX = 0.0F;
+        this.Body.offsetZ = -0.45F;
+        this.Body.render(0.01F);
+        this.Body2.setScale(1,1,1);
+        this.Body2.setScale(1,1,1);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {

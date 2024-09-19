@@ -1,0 +1,47 @@
+{
+	"name": "Gondwanarachne",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/trigonotarbid_gondwanarachne_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_gondwanarachne",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_gondwanarachne",
+			"title": "Gondwanarachne",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida $(br)>Trigonotarbida $(br)>Kreischeriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. argentinensis",
+            "entity": "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_gondwanarachne",
+			"type": "text",
+			"text": "Gondwanarachne is a trigonotarbid known from the Bajo de Veliz Formation from the Carboniferous Period. It had a body length about 2 cm and was related to Kreischeria. It is one of the only known arachnids known from Carboniferous Gondwana, making it a unique discovery."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_trigonotarbid_gondwanarachne"
+		}
+	]
+}

@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeurites;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelErasipteroides extends AdvancedModelBase {
+public class ModelErasipteroides extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer legR2;
     private final AdvancedModelRenderer legL3;
@@ -221,6 +221,7 @@ public class ModelErasipteroides extends AdvancedModelBase {
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -1.8F;
@@ -261,6 +262,7 @@ public class ModelErasipteroides extends AdvancedModelBase {
         this.body.render(0.01f);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

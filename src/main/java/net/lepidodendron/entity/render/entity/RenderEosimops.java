@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEosimops;
 import net.lepidodendron.entity.model.entity.ModelDiictodon;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEosimops extends RenderLiving<EntityPrehistoricFloraEosimops> {
+public class RenderEosimops extends RenderLivingBaseWithBook<EntityPrehistoricFloraEosimops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eosimops.png");
 
     public RenderEosimops(RenderManager mgr) {

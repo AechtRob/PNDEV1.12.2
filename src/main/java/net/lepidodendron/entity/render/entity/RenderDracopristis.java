@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDracopristis;
 import net.lepidodendron.entity.model.entity.ModelDracopristis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDracopristis extends RenderLiving<EntityPrehistoricFloraDracopristis> {
+public class RenderDracopristis extends RenderLivingBaseWithBook<EntityPrehistoricFloraDracopristis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dracopristis.png");
 
     public RenderDracopristis(RenderManager mgr) {

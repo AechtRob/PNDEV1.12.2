@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAscendonanus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAscendonanus extends AdvancedModelBase {
+public class ModelAscendonanus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer AscendonanusBase;
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer Body2;
@@ -263,6 +263,27 @@ public class ModelAscendonanus extends AdvancedModelBase {
         //GlStateManager.popMatrix();
     }
     
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.AscendonanusBase.offsetY = -0.15F;
+        this.AscendonanusBase.offsetX = -0.05F;
+        this.AscendonanusBase.rotateAngleY = (float)Math.toRadians(105);
+        this.AscendonanusBase.rotateAngleX = (float)Math.toRadians(2);
+        this.AscendonanusBase.rotateAngleZ = (float)Math.toRadians(15);
+        this.AscendonanusBase.scaleChildren = true;
+        float scaler = 0.22F;
+        this.AscendonanusBase.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.AscendonanusBase.render(f);
+        //Reset rotations, positions and sizing:
+        this.AscendonanusBase.setScale(1.0F, 1.0F, 1.0F);
+        this.AscendonanusBase.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

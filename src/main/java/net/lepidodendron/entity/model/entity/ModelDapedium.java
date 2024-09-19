@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelDapedium extends AdvancedModelBase {
+public class ModelDapedium extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Dapedium;
     private final AdvancedModelRenderer Body1;
     private final AdvancedModelRenderer cube_r1;
@@ -214,6 +214,12 @@ public class ModelDapedium extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Dapedium.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Dapedium.rotateAngleY = (float) Math.toRadians(90);
         this.Dapedium.rotateAngleX = (float) Math.toRadians(0);

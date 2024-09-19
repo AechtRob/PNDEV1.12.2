@@ -1,16 +1,16 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprion;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelWebsteroprion extends AdvancedModelBase {
+public class ModelWebsteroprion extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer tentacle;
     private final AdvancedModelRenderer tentacle2;
@@ -621,6 +621,11 @@ public class ModelWebsteroprion extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

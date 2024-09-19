@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelSubmarine extends AdvancedModelBase {
+public class ModelSubmarine extends ModelBasePalaeopedia {
 
     private final AdvancedModelRenderer submarine;
     private final AdvancedModelRenderer Cockpitmetal;
@@ -331,6 +331,11 @@ public class ModelSubmarine extends AdvancedModelBase {
         this.submarine.offsetZ = -0.40F;
         this.submarine.offsetY = -0.8F;
         this.submarine.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
     
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

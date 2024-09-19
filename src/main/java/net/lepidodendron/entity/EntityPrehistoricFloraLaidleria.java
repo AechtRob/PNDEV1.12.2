@@ -10,7 +10,6 @@ import net.lepidodendron.block.BlockAmphibianSpawnLaidleria;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.render.entity.RenderLaidleria;
-import net.lepidodendron.entity.render.entity.RenderTanyrhinichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
@@ -195,7 +194,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 
 	@Override
 	public int getAdultAge() {
-		return 128000;
+		return 48000;
 	}
 
 //	@Override

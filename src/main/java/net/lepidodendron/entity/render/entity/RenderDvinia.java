@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDvinia;
 import net.lepidodendron.entity.model.entity.ModelDvinia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDvinia extends RenderLiving<EntityPrehistoricFloraDvinia> {
+public class RenderDvinia extends RenderLivingBaseWithBook<EntityPrehistoricFloraDvinia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinia.png");
 
     public RenderDvinia(RenderManager mgr) {

@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelDendrocystites extends AdvancedModelBase {
+public class ModelDendrocystites extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -96,11 +96,11 @@ public class ModelDendrocystites extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
+
     public void renderStaticWall(float f) {
-        this.main.rotateAngleX = (float) Math.toRadians(90);
-        this.main.offsetY = 0.04F;
-        this.main.offsetX = 0.0F;
-        this.main.offsetZ = 0.0F;
+        this.setRotateAngle(main, 1.55F, 0.0F, 0.0F);
+        this.main.offsetY = -0.28F;
+        this.main.offsetZ = 0.01F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
@@ -120,6 +120,11 @@ public class ModelDendrocystites extends AdvancedModelBase {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

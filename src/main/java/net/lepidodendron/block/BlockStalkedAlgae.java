@@ -67,6 +67,7 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockStalkedAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:stalked_algae", BlockStalkedAlgae.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -94,6 +95,8 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 		if (!matchBiome(biome, LepidodendronConfigPlants.genStalkedAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genStalkedAlgaeOverrideBiomes))

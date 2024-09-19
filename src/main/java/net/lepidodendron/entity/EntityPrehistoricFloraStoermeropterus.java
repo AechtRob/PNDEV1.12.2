@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraStoermeropterus extends EntityPrehistoricFlor
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 5.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

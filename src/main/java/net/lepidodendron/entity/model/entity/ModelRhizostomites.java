@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelRhizostomites extends AdvancedModelBase {
+public class ModelRhizostomites extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer tentacleA;
     private final AdvancedModelRenderer tentacleA2;
@@ -176,6 +176,11 @@ public class ModelRhizostomites extends AdvancedModelBase {
 
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -217,7 +222,7 @@ public class ModelRhizostomites extends AdvancedModelBase {
             if (!e.isInWater()) {
                 this.resetToDefaultPose();
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
-                //this.main.offsetY = 1.2F;
+                this.main.offsetY = 0.50F;
                 this.main.scaleChildren = true;
                 this.main.setScaleX(0.2F);
                 this.main.setScaleZ(1.2F);

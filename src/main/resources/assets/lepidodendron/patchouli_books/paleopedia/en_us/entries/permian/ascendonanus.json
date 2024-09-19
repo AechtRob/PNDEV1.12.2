@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Permian$(br2)>Synapsida$(br)>Varanopidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/ascendonanus.png"],
-			"title": "A. nestleri",
-			"text": ""
+			"type": "entity",
+			"name": "A. nestleri",
+			"entity": "lepidodendron:prehistoric_flora_ascendonanus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ascendonanus",

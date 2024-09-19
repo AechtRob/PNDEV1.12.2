@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelCenoceras extends AdvancedModelBaseExtended {
+public class ModelCenoceras extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended shell;
     private final AdvancedModelRendererExtended cube_r1;
     private final AdvancedModelRendererExtended hood;
@@ -317,6 +317,11 @@ public class ModelCenoceras extends AdvancedModelBaseExtended {
         this.shell.offsetY = 0.1F;
         this.shell.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

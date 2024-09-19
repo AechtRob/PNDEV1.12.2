@@ -9,15 +9,12 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderYuxisaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -43,7 +40,6 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 	public ChainBuffer tailBuffer;
 
 	//private int inPFLove;
-	public Animation HIDE_ANIMATION;
 	public Animation ALERT_ANIMATION;
 	public Animation RELAX_ANIMATION;
 	private int standCooldown;
@@ -56,7 +52,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 		minWidth = 0.3F;
 		maxWidth = 0.9F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 35.0D;
 		HIDE_ANIMATION = Animation.create(this.hideAnimationLength());
 		RELAX_ANIMATION = Animation.create(760);
 		ALERT_ANIMATION = Animation.create(141);
@@ -72,6 +68,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
 	}
+
 	@Override
 	public int getEatLength() {
 		return 35;
@@ -460,58 +457,7 @@ public class EntityPrehistoricFloraDracopelta extends EntityPrehistoricFloraLand
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return 0.15;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.00F;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.00F;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.325;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.00F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.125;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.01F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderYuxisaurus.TEXTURE;
-	}
 
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelYuxisaurus;
-	}
-
-	public static float getScaler(@Nullable String variant) {
-		return RenderYuxisaurus.getScaler();
-	}
 
 
 	@Nullable

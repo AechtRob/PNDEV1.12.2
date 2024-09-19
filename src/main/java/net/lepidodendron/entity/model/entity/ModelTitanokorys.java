@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelTitanokorys extends AdvancedModelBase {
+public class ModelTitanokorys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Titanokorys;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -477,6 +477,7 @@ public class ModelTitanokorys extends AdvancedModelBase {
         this.Titanokorys.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Titanokorys.offsetY = -0.9F;
@@ -574,7 +575,7 @@ public class ModelTitanokorys extends AdvancedModelBase {
 
 
             if (!e.isInWater()) {
-                this.bob(Titanokorys, -speed * 1.5F, 3F, false, f2, 1);
+                this.bob(Titanokorys, -speed * 1.75F, 0.5F, false, f2, 1);
             } else {
                 if (!isAtBottom) {
                     this.bob(Titanokorys, -speed, 0.12F, false, f2, 2);

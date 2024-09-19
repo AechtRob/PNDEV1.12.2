@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCartorhynchus;
 import net.lepidodendron.entity.model.entity.ModelCartorhynchus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCartorhynchus extends RenderLiving<EntityPrehistoricFloraCartorhynchus> {
+public class RenderCartorhynchus extends RenderLivingBaseWithBook<EntityPrehistoricFloraCartorhynchus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cartorhynchus.png");
 
     public RenderCartorhynchus(RenderManager mgr) {

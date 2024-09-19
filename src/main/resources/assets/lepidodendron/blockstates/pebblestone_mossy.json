@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pebblestone_mossy_1"},
+      {"model": "lepidodendron:pebblestone_mossy_2"},
+      {"model": "lepidodendron:pebblestone_mossy_3"},
+      {"model": "lepidodendron:pebblestone_mossy_4"},
+      {"model": "lepidodendron:pebblestone_mossy_5"}
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Lusotitan",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lusotitan_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_lusotitan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lusotitan",
+			"title": "Lusotitan",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Sauropoda $(br)>Macronaria $(br)>Brachiosauridae"
+		},
+        	{
+            "type": "entity",
+            "name": "L. atalaiensis",
+            "entity": "lepidodendron:prehistoric_flora_lusotitan",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lusotitan",
+			"type": "text",
+			"text": "Lusotitan is a sauropod dinosaur known from the Jurassic Portuguese Lourinha Formation. It was originally named as a species of Brachiosaurus that was moved to its own genus in 2003. The skeletal remains are fragmentary, but it is thought to have measured 21 meters in length. The Portuguese Lourinha Formation has many analogs with the American Morrison Formation, with Lusotitan being comparable to Brachiosaurus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lusotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lusotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lusotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lusotitan"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lusotitan"
+		}
+	]
+}

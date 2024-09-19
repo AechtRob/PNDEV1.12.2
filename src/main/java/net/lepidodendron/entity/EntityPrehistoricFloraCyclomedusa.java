@@ -66,7 +66,10 @@ public class EntityPrehistoricFloraCyclomedusa extends EntityPrehistoricFloraSli
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.04f;
+		if (this.rand.nextInt(5) != 0) {
+			return 0;
+		}
+		return 0.03f;
 	}
 
 	protected void initEntityAI() {

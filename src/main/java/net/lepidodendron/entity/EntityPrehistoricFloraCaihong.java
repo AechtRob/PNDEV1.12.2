@@ -7,12 +7,15 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
+import net.lepidodendron.entity.render.entity.RenderCaihong;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.IScreamer;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -28,6 +31,8 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
@@ -81,8 +86,10 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 		boolean result = super.attackEntityFrom(ds, i);
 		if (ds.getTrueSource() instanceof EntityLivingBase && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) ds.getTrueSource();
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraCaihong> caihong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraCaihong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraCaihong currentCaihong : caihong) {
+				currentCaihong.setAlarmTarget(ee);
 				currentCaihong.setRevengeTarget(ee);
 				currentCaihong.screamAlarmCooldown = rand.nextInt(20);
 			}
@@ -94,7 +101,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 	public void playThreatSound()
 	{
 		SoundEvent soundevent = (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:anchiornis_threat"));
+				.getObject(new ResourceLocation("lepidodendron:caihong_threat"));
 		if (soundevent != null)
 		{
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
@@ -116,7 +123,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 
 	public SoundEvent getAlarmSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:anchiornis_alarm"));
+				.getObject(new ResourceLocation("lepidodendron:caihong_alarm"));
 	}
 
 	public void setScreaming(boolean screaming) {
@@ -141,7 +148,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 			}
 
 			//Screaming handling:
-			if (this.getRevengeTarget() == null && !this.isBurning()) {
+			if (this.getAlarmTarget() == null && !this.isBurning()) {
 				this.setScreaming(false);
 			} else {
 				this.setIsFast(true);
@@ -225,7 +232,7 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 		}
 
 		//random idle animations
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getAlarmTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && !this.getIsFlying() && !this.getIsClimbing() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			if (rand.nextInt(5) != 0) {
 				this.setAnimation(STAND_ANIMATION);
@@ -301,19 +308,19 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:anchiornis_idle"));
+			.getObject(new ResourceLocation("lepidodendron:caihong_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:anchiornis_hurt"));
+			.getObject(new ResourceLocation("lepidodendron:caihong_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-			.getObject(new ResourceLocation("lepidodendron:anchiornis_death"));
+			.getObject(new ResourceLocation("lepidodendron:caihong_death"));
 	}
 
 	@Override
@@ -371,4 +378,59 @@ public class EntityPrehistoricFloraCaihong extends EntityPrehistoricFloraLandCli
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return 0.7;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.7;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static float widthSupport(@Nullable String variant) {return 0.03F;}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderCaihong.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelCaihong;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderCaihong.getScaler();
+	}
+
+
 }

@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraBishanopliosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelBishanopliosaurus extends AdvancedModelBaseExtended {
+public class ModelBishanopliosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer Hips;
     private final AdvancedModelRenderer Bodymiddle;
@@ -405,6 +405,12 @@ public class ModelBishanopliosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Bodyfront, 0.1274F, 0.0F, 0.0F);
         this.setRotateAngle(Bodymiddle, 0.0848F, 0.0F, 0.0F);

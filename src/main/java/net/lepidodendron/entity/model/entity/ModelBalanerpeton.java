@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraBalanerpeton;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelBalanerpeton extends AdvancedModelBaseExtended {
+public class ModelBalanerpeton extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer base;
     private final AdvancedModelRenderer hip;
     private final AdvancedModelRenderer upperlegright;
@@ -294,12 +294,18 @@ public class ModelBalanerpeton extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.base.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -1321,7 +1327,7 @@ public class ModelBalanerpeton extends AdvancedModelBaseExtended {
         animator.startKeyframe(5);
         //animator.move(this.neck, 0,0,-1F);
         animator.rotate(this.head, (float) Math.toRadians(-30), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(30), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(2);
         animator.resetKeyframe(2);
@@ -1330,7 +1336,7 @@ public class ModelBalanerpeton extends AdvancedModelBaseExtended {
         animator.startKeyframe(10);
         //animator.move(this.neck, 0,0,-1F);
         animator.rotate(this.head, (float) Math.toRadians(-35), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.resetKeyframe(10);

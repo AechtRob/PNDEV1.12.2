@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSqualoraja;
 import net.lepidodendron.entity.model.entity.ModelSqualoraja;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSqualoraja extends RenderLiving<EntityPrehistoricFloraSqualoraja> {
+public class RenderSqualoraja extends RenderLivingBaseWithBook<EntityPrehistoricFloraSqualoraja> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/squaloraja.png");
     public static final ResourceLocation TEXTURE_F = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/squaloraja_f.png");
 

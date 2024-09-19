@@ -9,7 +9,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderDebeerius;
-import net.lepidodendron.entity.render.entity.RenderKichkassia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -44,7 +43,7 @@ public class EntityPrehistoricFloraDebeerius extends EntityPrehistoricFloraAgeab
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.15F;
-		maxHealthAgeable = 6.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override

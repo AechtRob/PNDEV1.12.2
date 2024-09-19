@@ -49,6 +49,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 							|| (dimID == LepidodendronConfig.dimTriassic)
 							|| (dimID == LepidodendronConfig.dimJurassic)
 							|| (dimID == LepidodendronConfig.dimCretaceousEarly)
+							|| (dimID == LepidodendronConfig.dimCretaceousLate)
 							|| (dimID == LepidodendronConfig.dimPaleogene)
 							|| (dimID == LepidodendronConfig.dimNeogene)
 							|| (dimID == LepidodendronConfig.dimPleistocene)
@@ -64,6 +65,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 			if (
 					(dimID == LepidodendronConfig.dimJurassic)
 							|| (dimID == LepidodendronConfig.dimCretaceousEarly)
+							|| (dimID == LepidodendronConfig.dimCretaceousLate)
 							|| (dimID == LepidodendronConfig.dimPaleogene)
 							|| (dimID == LepidodendronConfig.dimNeogene)
 							|| (dimID == LepidodendronConfig.dimPleistocene)
@@ -78,6 +80,7 @@ public class FernEpiphyteGenerator extends WorldGenerator
 			}
 			if (
 					(dimID == LepidodendronConfig.dimCretaceousEarly)
+							|| (dimID == LepidodendronConfig.dimCretaceousLate)
 							|| (dimID == LepidodendronConfig.dimPaleogene)
 							|| (dimID == LepidodendronConfig.dimNeogene)
 							|| (dimID == LepidodendronConfig.dimPleistocene)
@@ -109,14 +112,14 @@ public class FernEpiphyteGenerator extends WorldGenerator
 					if (enumfacing == EnumFacing.UP) {pos = new BlockPos(j, k - 1, l);}
 
 					if (this.FernEpiphyte == BlockFernEpiphyte.block) { //NSEW only
-						if ( BlockFernEpiphyte.BlockCustom.canPlaceAt(worldIn, new BlockPos(j, k, l), enumfacing)
+						if (BlockFernEpiphyte.BlockCustom.canPlaceAt(worldIn, new BlockPos(j, k, l), enumfacing)
 								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
 							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							return true;
 						}
 					}
 					else { //NSEWU
-						if (this.FernEpiphyte.canPlaceBlockOnSide(worldIn, pos, enumfacing)
+						if (this.FernEpiphyte.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
 								&& worldIn.getBlockState(pos).getMaterial() == Material.WOOD) {
 							Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 							return true;

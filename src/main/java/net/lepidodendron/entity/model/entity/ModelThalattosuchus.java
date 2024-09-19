@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraThalattosuchus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelThalattosuchus extends AdvancedModelBaseExtended {
+public class ModelThalattosuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer Neck;
     private final AdvancedModelRenderer Head;
@@ -323,18 +323,29 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         this.Body.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Body.offsetY = 0.4F;
-        this.Body.offsetX = 0.55F;
+        this.Body.offsetY = -0.4F;
+        this.Body.offsetX = 1.25F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);
         this.Body.scaleChildren = true;
-        float scaler = 0.5F;
+        float scaler = 1.1F;
         this.Body.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(Body, 0.4F, -3.0F, 0.1F);
+        this.setRotateAngle(Neck, -0.3F, -0.2F, -0.0F);
+        this.setRotateAngle(Head, -0.3F, -0.4F, -0.0F);
+        this.setRotateAngle(Lowerjaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(Body2, -0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(Tail, 0.2F, 0.4F, 0.1F);
+        this.setRotateAngle(Tail2, 0.3F, 0.4F, 0.1F);
+        this.setRotateAngle(Tail3, 0.4F, 0.7F, 0.1F);
+        this.setRotateAngle(Tail4, 0.5F, 0.9F, 0.2F);
         //End of pose, now render the model:
         this.Body.render(f);
         //Reset rotations, positions and sizing:
@@ -342,6 +353,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         this.Body.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -352,7 +364,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
-        this.Body.offsetY = 0.25F;
+        this.Body.offsetY = -0.10F;
         this.Body.offsetZ = -0.4F;
 
         EntityPrehistoricFloraThalattosuchus Dako = (EntityPrehistoricFloraThalattosuchus) e;
@@ -377,6 +389,7 @@ public class ModelThalattosuchus extends AdvancedModelBaseExtended {
         if (!Dako.isReallyInWater()) { //will never happen as it should not be on land
             float speed = 0.3F;
             float outOfWater = 1.45f;
+            this.Body.offsetY = 0.05F;
 
             this.Body.bob(speed, 0.35F, false, f2, 1F);
 

@@ -1,8 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraCeratodus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelCeratodus extends AdvancedModelBase {
+public class ModelCeratodus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer Bodymiddlefront;
     private final AdvancedModelRenderer Bodymiddleback;
@@ -252,6 +252,11 @@ public class ModelCeratodus extends AdvancedModelBase {
         this.Bodymiddlefront.offsetY = -0.15F;
         this.Bodymiddlefront.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

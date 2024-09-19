@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGreererpeton;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelGreererpeton extends AdvancedModelBaseExtended {
+public class ModelGreererpeton extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Hips;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer Tail;
@@ -344,6 +344,11 @@ public class ModelGreererpeton extends AdvancedModelBaseExtended {
         this.Hips.offsetY = -0.14F;
         this.Hips.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

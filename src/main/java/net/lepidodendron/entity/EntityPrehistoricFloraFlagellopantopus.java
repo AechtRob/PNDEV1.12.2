@@ -3,12 +3,14 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteSwimBase;
-import net.lepidodendron.entity.render.entity.RenderDipteronotus;
 import net.lepidodendron.entity.render.entity.RenderFlagellopantopus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -23,7 +25,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFloraTrilobiteSwimBase implements ITrappableWater {
+public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFloraTrilobiteSwimBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -208,4 +210,10 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 		return RenderFlagellopantopus.getScaler();
 	}
 	public static float widthSupport(@Nullable String variant) {return 0.02F;}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_FLAGELLOPANTOPUS;
+	}
 }

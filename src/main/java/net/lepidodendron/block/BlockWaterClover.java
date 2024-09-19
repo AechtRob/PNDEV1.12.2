@@ -82,6 +82,8 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genWaterCloverOverrideBiomes))
 			biomeCriteria = true;
@@ -113,6 +115,16 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 				}
 				else {
 					biomeCriteria = true;
+				}
+			}
+			else if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia")
+				 		|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")) {
+					biomeCriteria = true;
+				}
+				else {
+					biomeCriteria = false;
 				}
 			}
 			else {

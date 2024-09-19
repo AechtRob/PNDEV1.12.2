@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelPlatysomus extends AdvancedModelBase {
+public class ModelPlatysomus extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Body;
     public AdvancedModelRenderer Headbase;
     public AdvancedModelRenderer Tailbase;
@@ -131,6 +131,12 @@ public class ModelPlatysomus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5 * 0.15F);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
         this.Body.offsetY = -0.05F;

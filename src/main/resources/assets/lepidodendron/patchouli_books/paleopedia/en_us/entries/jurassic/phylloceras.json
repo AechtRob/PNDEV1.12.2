@@ -1,7 +1,7 @@
 {
 	"name": "Phylloceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/phylloceras_icon.png",
+	"icon": "lepidodendron:textures/items/shell_phylloceras.png",
 	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_phylloceras",
 	"pages": [

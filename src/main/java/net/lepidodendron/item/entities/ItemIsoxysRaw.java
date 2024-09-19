@@ -38,8 +38,8 @@ public class ItemIsoxysRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_isoxys", ItemIsoxysRaw.block);
-		OreDictionary.registerOre("pnfurnaceSeafood", ItemIsoxysRaw.block);
-
+		OreDictionary.registerOre("pnfurnaceCrustacean", ItemIsoxysRaw.block);
+		OreDictionary.registerOre("pndietCrustacean", ItemIsoxysRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {

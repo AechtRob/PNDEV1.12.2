@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "particle": "lepidodendron:blocks/prehistoric_ground_early_angiosperm_1",
+        "bottom": "lepidodendron:blocks/prehistoric_ground",
+        "top": "lepidodendron:blocks/prehistoric_ground_early_angiosperm_1",
+        "side": "lepidodendron:blocks/prehistoric_ground_angiosperm_side_snowed"
+    }
+}

@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraYilingia;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelYilingia extends AdvancedModelBase {
+public class ModelYilingia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body27;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer body26;
@@ -370,6 +370,11 @@ public class ModelYilingia extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body27.render(f5 * 0.3F);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -4,6 +4,7 @@ import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -137,7 +138,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 }
                             }
 
-                            Method method = testAndGetMethod(classEntity, "offsetWall", params);
+                            Method method = Functions.testAndGetMethod(classEntity, "offsetWall", params);
                             if (method != null) {
                                 try {
                                     offsetWall = (double) method.invoke(null, PNVariant);
@@ -147,7 +148,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
+                            method = Functions.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
                             if (method != null) {
                                 try {
                                     upperfrontverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -157,7 +158,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
+                            method = Functions.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
                             if (method != null) {
                                 try {
                                     upperbackverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -167,7 +168,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "upperfrontlineoffset", params);
+                            method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
                             if (method != null) {
                                 try {
                                     upperfrontlineoffset = (double) method.invoke(null, PNVariant);
@@ -177,7 +178,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
+                            method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
                             if (method != null) {
                                 try {
                                     upperfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -187,7 +188,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "upperbacklineoffset", params);
+                            method = Functions.testAndGetMethod(classEntity, "upperbacklineoffset", params);
                             if (method != null) {
                                 try {
                                     upperbacklineoffset = (double) method.invoke(null, PNVariant);
@@ -197,7 +198,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
+                            method = Functions.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
                             if (method != null) {
                                 try {
                                     upperbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -207,7 +208,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
+                            method = Functions.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
                             if (method != null) {
                                 try {
                                     lowerfrontverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -217,7 +218,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
+                            method = Functions.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
                             if (method != null) {
                                 try {
                                     lowerbackverticallinedepth = (double) method.invoke(null, PNVariant);
@@ -227,7 +228,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
+                            method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
                             if (method != null) {
                                 try {
                                     lowerfrontlineoffset = (double) method.invoke(null, PNVariant);
@@ -237,7 +238,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
+                            method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
                             if (method != null) {
                                 try {
                                     lowerfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -247,7 +248,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "lowerbacklineoffset", params);
+                            method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
                             if (method != null) {
                                 try {
                                     lowerbacklineoffset = (double) method.invoke(null, PNVariant);
@@ -257,7 +258,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
+                            method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
                             if (method != null) {
                                 try {
                                     lowerbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
@@ -267,7 +268,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "textureDisplay", params);
+                            method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
                             if (method != null) {
                                 try {
                                     textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
@@ -277,7 +278,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "textureDisplayTransparent", params);
+                            method = Functions.testAndGetMethod(classEntity, "textureDisplayTransparent", params);
                             if (method != null) {
                                 try {
                                     textureDisplayTransparent = (ResourceLocation) method.invoke(null, PNVariant);
@@ -287,7 +288,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 //Do not worry if there is no transparent layer
                             }
-                            method = testAndGetMethod(classEntity, "modelDisplay", params);
+                            method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
                             if (method != null) {
                                 try {
                                     modelDisplay = (ModelBase) method.invoke(null, PNVariant);
@@ -297,7 +298,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "getScaler", params);
+                            method = Functions.testAndGetMethod(classEntity, "getScaler", params);
                             if (method != null) {
                                 try {
                                     getScaler = (float) method.invoke(null, PNVariant);
@@ -307,7 +308,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             } else {
                                 itemRender = true;
                             }
-                            method = testAndGetMethod(classEntity, "widthSupport", params);
+                            method = Functions.testAndGetMethod(classEntity, "widthSupport", params);
                             if (method != null) {
                                 try {
                                     widthSupport = (float) method.invoke(null, PNVariant);
@@ -440,7 +441,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     @Nullable
-    public Class getEntityFromNBT(ItemStack stack) {
+    public static Class getEntityFromNBT(ItemStack stack) {
         if (!stack.hasTagCompound()) {
             return null;
         }
@@ -461,7 +462,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     @Nullable
-    public String getVariantFromNBT(ItemStack stack) {
+    public static String getVariantFromNBT(ItemStack stack) {
         if (!stack.hasTagCompound()) {
             return null;
         }
@@ -564,7 +565,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glPopMatrix();
                 }
             }
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
+            Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
             if (renderMethod != null) {
                 if (!transparent) {
                     if (upperfrontverticallinedepth > 0) {
@@ -624,7 +625,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glPopMatrix();
                 }
             }
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[]{float.class});
+            Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[]{float.class});
             if (renderMethod != null) {
                 if (!transparent) {
                     if (lowerfrontverticallinedepth > 0) {
@@ -662,7 +663,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             }
         }
         else if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST || facing == EnumFacing.WEST) {
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticWall", new Class[]{float.class});
+            Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticWall", new Class[]{float.class});
             if (renderMethod != null) {
                 if (!transparent) {
                     setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
@@ -688,16 +689,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             GlStateManager.popMatrix();
         }
         return flag1 && flag2 && flag3;
-    }
-
-    @Nullable
-    public static Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
-        Method methodToFind = null;
-        try {
-            methodToFind = clazz.getMethod(methodname, params);
-        } catch (NoSuchMethodException | SecurityException e) {
-        }
-        return methodToFind;
     }
 
     public void renderSupports(float x, float y, float z, float xoffsetter, float zoffsetter, float length, float width) {

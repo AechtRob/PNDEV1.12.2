@@ -32,7 +32,7 @@ public class PanicScreamAI extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        if (this.creature.getRevengeTarget() == null && !this.creature.isBurning())
+        if (this.creature.getAlarmTarget() == null && !this.creature.isBurning())
         {
             if (this.creature instanceof EntityPrehistoricFloraAgeableBase) {
                 EntityPrehistoricFloraAgeableBase entity = (EntityPrehistoricFloraAgeableBase) this.creature;

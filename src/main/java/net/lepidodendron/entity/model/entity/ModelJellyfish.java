@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelJellyfish extends AdvancedModelBase {
+public class ModelJellyfish extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Mainbody;
     public AdvancedModelRenderer Dome;
     public AdvancedModelRenderer Oralarm1a;
@@ -203,6 +203,11 @@ public class ModelJellyfish extends AdvancedModelBase {
 
         this.Mainbody.render(f5);
         GlStateManager.disableBlend();
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

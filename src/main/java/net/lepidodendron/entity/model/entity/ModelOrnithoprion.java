@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelOrnithoprion extends AdvancedModelBase {
+public class ModelOrnithoprion extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer ornithoprion;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -166,6 +166,11 @@ public class ModelOrnithoprion extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.ornithoprion.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void renderStaticWall(float f) {

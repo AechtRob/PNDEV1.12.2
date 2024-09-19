@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelAlbertonia extends AdvancedModelBase {
+public class ModelAlbertonia extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Bodyfront;
     public AdvancedModelRenderer Bodyend;
     public AdvancedModelRenderer Bellymiddle;
@@ -141,11 +141,16 @@ public class ModelAlbertonia extends AdvancedModelBase {
         this.Bodyfront.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        this.Bodyfront.offsetY = -0.15F;
-        this.Bodyfront.offsetX = -0.1F;
-        this.Bodyfront.offsetZ = 0.025F;
+        this.Bodyfront.offsetY = -0.05F;
+        this.Bodyfront.offsetX = -0.03F;
+        this.Bodyfront.offsetZ = -0.01F;
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
     }

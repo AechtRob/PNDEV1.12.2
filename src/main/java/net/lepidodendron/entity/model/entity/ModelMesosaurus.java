@@ -5,11 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMesosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.entity.Entity;
 
-public class ModelMesosaurus extends AdvancedModelBaseExtended {
+public class ModelMesosaurus extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended body;
     public AdvancedModelRendererExtended bodyfront;
     public AdvancedModelRendererExtended pelvis;
@@ -274,6 +274,12 @@ public class ModelMesosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.115f);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

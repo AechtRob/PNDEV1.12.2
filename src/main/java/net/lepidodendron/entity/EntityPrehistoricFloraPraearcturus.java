@@ -139,7 +139,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 		if (this.getIsFast()) {
 			return (float) Math.min(1F, (this.getAgeScale() * 1.60F)) * 0.34F;
 		}
-		return (float) Math.min(1F, (1 * 0.30F)) * 0.34F;
+		return (float) Math.min(1F, (1 * 0.30F)) * 0.55F;
 	}
 
 	@Override
@@ -306,7 +306,7 @@ public class EntityPrehistoricFloraPraearcturus extends EntityPrehistoricFloraWa
 	@Override
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityAILeapAtTarget(this, 0.16F));
+		tasks.addTask(1, new EntityAILeapAtTarget(this, 0.26F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new EntityTemptAI(this, 1, true, true, (float) 0.5F));
 		tasks.addTask(4, new WalkingAmphibianWander(this, NO_ANIMATION, 0.9, 0));

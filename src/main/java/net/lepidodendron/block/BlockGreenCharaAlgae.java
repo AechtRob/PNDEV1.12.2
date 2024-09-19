@@ -66,6 +66,7 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockGreenCharaAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_chara_algae", BlockGreenCharaAlgae.block);
 	}
 
 	@Override
@@ -103,6 +104,8 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genGreenCharaAlgaeOverrideBiomes))
@@ -258,8 +261,14 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")
 		)
 			multiplier = 42;
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
+		)
+			multiplier = 64;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_estuary")
@@ -273,6 +282,7 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_flooded_forest")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_plain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_warm_lakeland")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_xeric")
 

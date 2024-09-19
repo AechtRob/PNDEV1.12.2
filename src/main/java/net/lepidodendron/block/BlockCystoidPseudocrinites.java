@@ -84,7 +84,6 @@ public class BlockCystoidPseudocrinites extends ElementsLepidodendronMod.ModElem
 		OreDictionary.registerOre("pndietCrinoid", BlockCystoidPseudocrinites.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 		
@@ -100,6 +99,8 @@ public class BlockCystoidPseudocrinites extends ElementsLepidodendronMod.ModElem
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))

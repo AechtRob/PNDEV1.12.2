@@ -134,6 +134,8 @@ public class BlockGangtoucunia extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
@@ -579,7 +581,7 @@ public class BlockGangtoucunia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Sessile lobopod");
+				tooltip.add("Type: Sessile Cnidarian");
 				tooltip.add("Periods: Cambrian");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

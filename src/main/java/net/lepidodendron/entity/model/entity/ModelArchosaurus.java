@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelArchosaurus extends AdvancedModelBaseExtended {
+public class ModelArchosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Archosaurus;
     private final AdvancedModelRendererExtended Body2;
     private final AdvancedModelRendererExtended rightThigh;
@@ -309,6 +309,11 @@ public class ModelArchosaurus extends AdvancedModelBaseExtended {
         this.Archosaurus.offsetY = -0.035F;
         this.Archosaurus.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

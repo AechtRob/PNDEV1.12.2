@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelMuensterella extends AdvancedModelBaseExtended {
+public class ModelMuensterella extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended bone;
     private final AdvancedModelRendererExtended finsR;
     private final AdvancedModelRendererExtended finR1;
@@ -509,6 +509,11 @@ public class ModelMuensterella extends AdvancedModelBaseExtended {
         this.bone.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

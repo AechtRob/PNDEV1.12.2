@@ -11,9 +11,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderCeratodus;
 import net.lepidodendron.entity.render.entity.RenderConchopoma;
-import net.lepidodendron.entity.render.entity.RenderKichkassia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -44,7 +42,7 @@ public class EntityPrehistoricFloraConchopoma extends EntityPrehistoricFloraSwim
 	public EntityPrehistoricFloraConchopoma(World world) {
 		super(world);
 		setSize(0.5F, 0.5F);
-		minWidth = 0.2F;
+		minWidth = 0.5F;
 		maxWidth = 0.5F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 6.0D;

@@ -103,6 +103,11 @@ public class WorldGenPangaeanDryLakes extends WorldGenerator
                         {
                             if (i4 >= 2) {
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3), Blocks.AIR.getDefaultState(), 2);
+                                worldIn.immediateBlockTick(position.add(l1 + 1, i4, i3), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1 - 1, i4, i3), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1, i4, i3 + 1), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1, i4, i3 - 1), Blocks.AIR.getDefaultState(), rand);
+                                worldIn.immediateBlockTick(position.add(l1, i4 + 1, i3), Blocks.AIR.getDefaultState(), rand);
                                 Block blockPlant = worldIn.getBlockState(position.add(l1, i4, i3).up()).getBlock();
                                 if (blockPlant == Blocks.DOUBLE_PLANT || blockPlant == Blocks.RED_FLOWER || blockPlant == Blocks.YELLOW_FLOWER) {
                                     //fix for floating plants and half-plants:
@@ -172,22 +177,30 @@ public class WorldGenPangaeanDryLakes extends WorldGenerator
                     {
 
                         if (worldIn.getBlockState(position.add(k2, 2, l3)).getMaterial() == Material.WATER
+                                && position.getY() + 2 >= Functions.getAdjustedSeaLevel(worldIn, position)
                         )
                         {
                             //worldIn.setBlockToAir(position.add(k2, 2, l3)); //Forge
                             worldIn.setBlockState(position.add(k2, 2, l3), Blocks.AIR.getDefaultState(), 16);
+                            Functions.restoreLogs(worldIn, position.add(k2, 2, l3));
+
                         }
                         if (worldIn.getBlockState(position.add(k2, 1, l3)).getMaterial() == Material.WATER
+                                && position.getY() + 1 > Functions.getAdjustedSeaLevel(worldIn, position)
                         )
                         {
                             //worldIn.setBlockToAir(position.add(k2, 1, l3)); //Forge
                             worldIn.setBlockState(position.add(k2, 1, l3), Blocks.AIR.getDefaultState(), 16);
+                            Functions.restoreLogs(worldIn, position.add(k2, 1, l3));
+
                         }
                         if (worldIn.getBlockState(position.add(k2, 0, l3)).getMaterial() == Material.WATER
+                                && position.getY() + 0 > Functions.getAdjustedSeaLevel(worldIn, position)
                         )
                         {
                             //worldIn.setBlockToAir(position.add(k2, 0, l3)); //Forge
                             worldIn.setBlockState(position.add(k2, 0, l3), Blocks.AIR.getDefaultState(), 16);
+                            Functions.restoreLogs(worldIn, position.add(k2, 0, l3));
                         }
                     }
                 }

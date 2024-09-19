@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraStanocephalosaurus;
 import net.lepidodendron.entity.model.entity.ModelStanocephalosaurus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderStanocephalosaurus extends RenderLiving<EntityPrehistoricFloraStanocephalosaurus> {
+public class RenderStanocephalosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraStanocephalosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stanocephalosaurus.png");
 
     public static float getScaler() {

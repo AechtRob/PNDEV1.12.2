@@ -5,7 +5,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderMegazostrodon;
-import net.lepidodendron.entity.render.entity.RenderMorganucodon;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;

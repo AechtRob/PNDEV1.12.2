@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemSapindopsisFruit;
 import net.lepidodendron.util.CustomTrigger;
@@ -76,7 +77,7 @@ public class BlockSapindopsis extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockSapindopsis.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_sapindopsis");
@@ -272,7 +273,7 @@ public class BlockSapindopsis extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 		{
-			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
+			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 		}
 
 		@Override
@@ -284,6 +285,11 @@ public class BlockSapindopsis extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public EnumOffsetType getOffsetType() {
 			return EnumOffsetType.XZ;
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPliosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelPliosaurus extends AdvancedModelBaseExtended {
+public class ModelPliosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Hips;
     private final AdvancedModelRenderer basin_r1;
     private final AdvancedModelRenderer basin_r2;
@@ -519,10 +519,16 @@ public class ModelPliosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
-        public void renderStaticWall(float f) {
-            resetToDefaultPose();
-        }
-        public void renderStaticFloor(float f) {
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
+    public void renderStaticWall(float f) {
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
             resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {

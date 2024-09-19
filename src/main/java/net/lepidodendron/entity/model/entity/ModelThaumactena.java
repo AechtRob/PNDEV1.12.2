@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelThaumactena extends AdvancedModelBase {
+public class ModelThaumactena extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -77,6 +77,11 @@ public class ModelThaumactena extends AdvancedModelBase {
 
         this.body.render(f5 * 0.28F);
         GlStateManager.disableBlend();
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

@@ -53,6 +53,7 @@ public class ItemSlimyAlgaeItem extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", ItemSlimyAlgaeItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:slimy_algae_item", ItemSlimyAlgaeItem.block);
 	}
 
 	@SideOnly(Side.CLIENT)

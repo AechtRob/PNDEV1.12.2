@@ -70,9 +70,11 @@ public class EntityPrehistoricFloraChaoyangsaurus extends EntityPrehistoricFlora
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraChaoyangsaurus> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraChaoyangsaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraChaoyangsaurus currentYinlong : Yinlong) {
 				currentYinlong.setRevengeTarget(ee);
+				currentYinlong.setAlarmTarget(ee);
 				currentYinlong.alarmCooldown = rand.nextInt(20);
 			}
 		}

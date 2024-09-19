@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGasosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelGasosaurus extends AdvancedModelBaseExtended {
+public class ModelGasosaurus extends ModelBasePalaeopedia {
 
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended hips;
@@ -464,6 +464,12 @@ public class ModelGasosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);

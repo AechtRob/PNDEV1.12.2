@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
@@ -56,7 +55,7 @@ public class EntityPrehistoricFloraEdiacaria extends EntityPrehistoricFloraEoand
         return true;
     }
 
-    public static String getPeriod() {return "Precambrian";}
+    public static String getPeriod() {return "Precambrian - Cambrian";}
 
     //public static String getHabitat() {return "Aquatic";}
 

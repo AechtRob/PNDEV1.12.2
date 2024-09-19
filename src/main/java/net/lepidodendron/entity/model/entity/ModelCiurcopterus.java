@@ -1,17 +1,17 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCiurcopterus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelCiurcopterus extends AdvancedModelBase {
+public class ModelCiurcopterus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Ciurcopterus;
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer eyeR_r1;
@@ -421,6 +421,11 @@ public class ModelCiurcopterus extends AdvancedModelBase {
         this.Ciurcopterus.offsetY = -0.05F;
         this.Ciurcopterus.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

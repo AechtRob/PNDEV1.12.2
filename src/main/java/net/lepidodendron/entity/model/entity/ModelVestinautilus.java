@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelVestinautilus extends AdvancedModelBaseExtended {
+public class ModelVestinautilus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended whole;
     private final AdvancedModelRendererExtended topmiddleright;
     private final AdvancedModelRendererExtended topmiddleleft;
@@ -444,6 +444,11 @@ public class ModelVestinautilus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.whole.render(f5 * 0.076F);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

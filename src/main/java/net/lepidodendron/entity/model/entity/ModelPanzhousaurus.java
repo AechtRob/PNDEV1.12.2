@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPanzhousaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelPanzhousaurus extends AdvancedModelBaseExtended {
+public class ModelPanzhousaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended main;
     private final AdvancedModelRendererExtended body;
     private final AdvancedModelRendererExtended body3;
@@ -210,6 +210,12 @@ public class ModelPanzhousaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.115f);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

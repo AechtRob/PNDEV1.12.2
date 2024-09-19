@@ -255,31 +255,31 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		return 0.08;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.4;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
+		return 0.4;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.35;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return -1.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.5;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
+		return 0.5;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.7;
+		return 0.9;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.6;
+		return 0.7;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
+		return -0.1;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
 		return 0.5;
@@ -288,7 +288,7 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		return 0.155;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.3;
+		return -0.5;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraBelonostomusJurassic;
 import net.lepidodendron.entity.model.entity.ModelBelonostomus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBelonostomusJurassic extends RenderLiving<EntityPrehistoricFloraBelonostomusJurassic> {
+public class RenderBelonostomusJurassic extends RenderLivingBaseWithBook<EntityPrehistoricFloraBelonostomusJurassic> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/belonostomus_jurassic.png");
 
     public static float getScaler() {

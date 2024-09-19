@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelSpriggina extends AdvancedModelBase {
+public class ModelSpriggina extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body1;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -124,6 +124,11 @@ public class ModelSpriggina extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body1.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

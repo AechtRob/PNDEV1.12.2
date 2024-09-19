@@ -1,0 +1,47 @@
+{
+	"name": "Lusovenator",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/lusovenator_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_lusovenator",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lusovenator",
+			"title": "Lusovenator",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)>Dinosauria $(br)>Theropoda $(br)>Carcharodontosauria"
+		},
+        	{
+            "type": "entity",
+            "name": "L. santosi",
+            "entity": "lepidodendron:prehistoric_flora_lusovenator",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lusovenator",
+			"type": "text",
+			"text": "Lusovenator is a Carcharodontosaurian dinosaur from the Jurassic Portuguese Lourinha Formation. It was named in 2020, and recognized as one of the earliest carcharodontosaurians. Its skeletal remains are fragmentary, but preserve much of the post crania as well as parts of the skull. It was a medium sized theropod, measuring around 7 meters in length. It would have lived alongside larger animals like Lusotitan."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_lusovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_lusovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_lusovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_lusovenator"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_lusovenator"
+		}
+	]
+}

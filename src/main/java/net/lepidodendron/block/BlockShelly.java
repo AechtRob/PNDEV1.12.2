@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.ShellyReefGenerator;
 import net.minecraft.block.Block;
@@ -99,6 +98,8 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genShellyReefOverrideBiomes))

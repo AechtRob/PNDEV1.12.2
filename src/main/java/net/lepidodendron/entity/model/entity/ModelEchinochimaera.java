@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEchinochimaera;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelEchinochimaera extends AdvancedModelBase {
+public class ModelEchinochimaera extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
@@ -640,11 +640,17 @@ public class ModelEchinochimaera extends AdvancedModelBase {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
+        this.setRotateAngle(body, 0.1F, 1.5F, 0.05F);
         this.body.offsetY = -0.01F;
         this.body.offsetX = 0.01F;
-        this.body.offsetZ = 0.13F;
-        this.malejaw.rotateAngleX = (float) Math.toRadians(22.5);
+        this.body.offsetZ = 0.04F;
+        this.malejaw.rotateAngleX = (float) Math.toRadians(23);
         this.body.rotateAngleX = (float) Math.toRadians(0);
         this.body.rotateAngleZ = (float) Math.toRadians(0);
         this.body.render(0.01F);

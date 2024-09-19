@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelIniopteryx extends AdvancedModelBase {
+public class ModelIniopteryx extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Bodyfront;
     public AdvancedModelRenderer Head;
     public AdvancedModelRenderer Bodymiddle;
@@ -222,6 +222,11 @@ public class ModelIniopteryx extends AdvancedModelBase {
         this.Bodyfront.offsetX = 0.017F;
         this.Bodyfront.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

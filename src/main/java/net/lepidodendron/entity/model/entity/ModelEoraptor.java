@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEoraptor;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelEoraptor extends AdvancedModelBaseExtended {
+public class ModelEoraptor extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended basin;
     private final AdvancedModelRendererExtended body;
@@ -339,6 +339,12 @@ public class ModelEoraptor extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.jaw1.rotateAngleX = (float) Math.toRadians(23);
         this.body.offsetY = -0.05F;

@@ -68,6 +68,7 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockRedTuftedAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:red_tufted_algae", BlockRedTuftedAlgae.block);
 	}
 
 	@Override
@@ -104,6 +105,8 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genRedTuftedAlgaeOverrideBiomes))

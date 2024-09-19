@@ -1,15 +1,15 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegalocephalus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelMegalocephalus extends AdvancedModelBase {
+public class ModelMegalocephalus extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Hips;
     public AdvancedModelRenderer Bodymiddle;
     public AdvancedModelRenderer Tail1;
@@ -299,6 +299,11 @@ public class ModelMegalocephalus extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

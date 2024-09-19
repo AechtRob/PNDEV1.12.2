@@ -6,9 +6,9 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.LichenGenerator;
 import net.minecraft.block.Block;
@@ -88,6 +88,11 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			}
 		}
+		if (biome instanceof BiomeCretaceousEarly) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")) {
+				biomeCriteria = true;
+			}
+		}
 
 		else if (dimID == 0) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
@@ -95,6 +100,8 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		else {
@@ -109,6 +116,9 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			GenChance = 38;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains_spikes")) {
+			GenChance = 38;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")) {
 			GenChance = 38;
 		}
 		//if (GenMultiplier < 0) {GenMultiplier = 0;}

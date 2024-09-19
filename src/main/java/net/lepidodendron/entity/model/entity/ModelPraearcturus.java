@@ -1,16 +1,16 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEramoscorpius;
 import net.lepidodendron.entity.EntityPrehistoricFloraPraearcturus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelPraearcturus extends AdvancedModelBase {
+public class ModelPraearcturus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer carapace_r1;
@@ -313,6 +313,7 @@ public class ModelPraearcturus extends AdvancedModelBase {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.1F;
@@ -342,6 +343,7 @@ public class ModelPraearcturus extends AdvancedModelBase {
         this.body.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

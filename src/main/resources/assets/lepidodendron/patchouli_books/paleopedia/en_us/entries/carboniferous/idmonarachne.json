@@ -1,0 +1,52 @@
+{
+	"name": "Idmonarachne",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/idmonarachne_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_idmonarachne",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_idmonarachne",
+			"title": "Idmonarachne",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Arachnida $(br)>Tetrapulmonata"
+		},
+        	{
+            "type": "entity",
+            "name": "I. brasieri",
+            "entity": "lepidodendron:prehistoric_flora_idmonarachne",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_idmonarachne",
+			"type": "text",
+			"text": "Idmonarachne is a tetrapulmonate arachnid known from the latest Carboniferous of Montceau-les-Mines, France. It was described by Russell Garwood et al. in 2016, who recognized it as a unique animal, outside of any previously known order of arthropods, extinct or extant, despite an obvious resemblance to spiders. Preserved in 3 dimensions, CT scanning revealed immaculate details in the fossil."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_idmonarachne",
+			"type": "text",
+			"text": " They found that it had neither the spinnerets expected of a spider, nor the long flagellum of their closest extinct relatives, the Uraraneidans. Their cladistic analysis instead suggested that it belonged to a sister lineage to spiders, representing their closest known relatives outside the Araneae. It seems likely that the Carboniferous was a period of significant diversification among arachnids, as Idmonarachne represents one among several lineages which make their first appearance during this period."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_idmonarachne"
+		}
+	]
+}

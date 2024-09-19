@@ -9,7 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderMicrocleidus;
+import net.lepidodendron.entity.render.entity.RenderPlesiosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraPlesiosaurus extends EntityPrehistoricFloraAg
 	public EntityPrehistoricFloraPlesiosaurus(World world) {
 		super(world);
 		setSize(1.5F, 0.8F);
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -244,6 +244,58 @@ public class EntityPrehistoricFloraPlesiosaurus extends EntityPrehistoricFloraAg
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_PLESIOSAURUS;
+	}
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall(@Nullable String variant) {
+		return -0.225;
+	}
+	public static double upperfrontverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbackverticallinedepth(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {
+		return 1.2;
+	}
+	public static double lowerbackverticallinedepth(@Nullable String variant) {
+		return 1.1;
+	}
+	public static double lowerfrontlineoffset(@Nullable String variant) {
+		return 0.0;
+	}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
+		return 0.5;
+	}
+	public static double lowerbacklineoffset(@Nullable String variant) {
+		return -0.08;
+	}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
+		return -0.7;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay(@Nullable String variant) {
+		return RenderPlesiosaurus.TEXTURE;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay(@Nullable String variant) {
+		return RenderDisplays.modelPlesiosaurus;
+	}
+	public static float getScaler(@Nullable String variant) {
+		return RenderPlesiosaurus.getScaler();
 	}
 
 }

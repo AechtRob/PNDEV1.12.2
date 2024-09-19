@@ -1,0 +1,47 @@
+{
+	"name": "Goodrichthys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/goodrichthys_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_goodrichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_goodrichthys",
+			"title": "Goodrichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Elasmobranchii $(br)>Ctenacanthiformes $(br)>Ctenacanthidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. eskdalensis",
+            "entity": "lepidodendron:prehistoric_flora_goodrichthys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_goodrichthys",
+			"type": "text",
+			"text": "Goodrichthys is an Early Carboniferous Ctenacanth shark from Scotland. It was a medium sized shark, and had a body plan very similar to its other ctenacanth relatives. They had dorsal spines on both of their dorsal fins, and their body was streamlined similar to a modern shark. This animal grew to around 2.5m in length, and its fossils were found in the Glencartholm Volcanic Beds."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_goodrichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_goodrichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_goodrichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_goodrichthys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_goodrichthys"
+		}
+	]
+}

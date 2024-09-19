@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraNahecaris;
 import net.lepidodendron.entity.model.entity.ModelNahecaris;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderNahecaris extends RenderLiving<EntityPrehistoricFloraNahecaris> {
+public class RenderNahecaris extends RenderLivingBaseWithBook<EntityPrehistoricFloraNahecaris> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nahecaris.png");
 
     public RenderNahecaris(RenderManager mgr) {

@@ -1,8 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelEoandromeda extends AdvancedModelBase {
+public class ModelEoandromeda extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer disk;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -112,6 +112,11 @@ public class ModelEoandromeda extends AdvancedModelBase {
 
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -127,12 +132,19 @@ public class ModelEoandromeda extends AdvancedModelBase {
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
+            this.disk.scaleChildren = true;
+            this.disk.setScale(1.0F, 1.0F, 1.0F);
             this.swing(disk, speed * 0.4F, 0.25F, true, 0, 0, f2, 0.6F);
             this.walk(disk, speed * 0.3F, 0.4F, true, 0, 0, f2, 0.6F);
             this.flap(disk, speed * 0.2F, 0.4F, true, 0, 0, f2, 0.6F);
             this.bob(disk, -speed * 0.5F, 0.5F, false, f2, 0.6F);
             EntityPrehistoricFloraEoandromeda ee = (EntityPrehistoricFloraEoandromeda) e;
             this.disk.rotateAngleY = (float) Math.toRadians(ee.getRotationDegree());
+        }
+        else {
+            this.disk.scaleChildren = true;
+            this.disk.setScale(1.25F, 0.1F, 1.25F);
+            this.disk.offsetY = 1.225F;
         }
     }
 }

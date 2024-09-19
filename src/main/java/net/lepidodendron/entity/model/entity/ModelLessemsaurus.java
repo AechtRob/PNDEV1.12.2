@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraLessemsaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelLessemsaurus extends AdvancedModelBaseExtended {
+public class ModelLessemsaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended basin;
     private final AdvancedModelRendererExtended tail1;
@@ -391,6 +391,11 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
         this.root.offsetY = -0.15F;
         this.root.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

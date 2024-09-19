@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelAeger extends AdvancedModelBase {
+public class ModelAeger extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer bone;
     private final AdvancedModelRenderer antennaL1;
     private final AdvancedModelRenderer antennaL2;
@@ -393,17 +393,45 @@ public class ModelAeger extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.bone.offsetZ = -0.08F;
-        this.bone.render(0.037F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.1F, 0.0F, 0.0F);
+        this.bone.offsetZ = -0.0F;
+        this.bone.offsetY = -0.0F;
+        this.bone.render(0.01F);
+        resetToDefaultPose();
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.bone.offsetY = 0.7F;
+        this.bone.offsetX = 0.1F;
+        this.bone.rotateAngleY = (float) Math.toRadians(210);
+        this.bone.rotateAngleX = (float) Math.toRadians(8);
+        this.bone.rotateAngleZ = (float) Math.toRadians(-4);
+        this.bone.scaleChildren = true;
+        float scaler = 0.575F;
+        this.bone.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(bone, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.bone.render(f);
+        //Reset rotations, positions and sizing:
+        this.bone.setScale(1.0F, 1.0F, 1.0F);
+        this.bone.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

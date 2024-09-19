@@ -5,8 +5,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockArthropitysLeaves;
 import net.lepidodendron.block.BlockArthropitysLog;
-import net.lepidodendron.block.BlockArthropitysStrobilus;
 import net.lepidodendron.block.BlockArthropitysRhizome;
+import net.lepidodendron.block.BlockArthropitysStrobilus;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -56,15 +56,18 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 		boolean worldgen = (boolean) dependencies.get("worldgen");
 		boolean vines = (boolean) dependencies.get("vines");
 		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
-		if (!LepidodendronConfigPlants.spreadUnlimitedArthropitys) {
-			int parentx = (int) dependencies.get("parentx");
-			int parenty = (int) dependencies.get("parenty");
-			int parentz = (int) dependencies.get("parentz");
+		int parentx;
+		int parenty;
+		int parentz;
+		if (!LepidodendronConfigPlants.spreadUnlimitedCalamites) {
+			parentx = (int) dependencies.get("parentx");
+			parenty = (int) dependencies.get("parenty");
+			parentz = (int) dependencies.get("parentz");
 		}
 		else {
-			int parentx = (int) dependencies.get("x");
-			int parenty = (int) dependencies.get("y");
-			int parentz = (int) dependencies.get("z");
+			parentx = (int) dependencies.get("x");
+			parenty = (int) dependencies.get("y");
+			parentz = (int) dependencies.get("z");
 		}
 		int TrunkHeight = 0;
 		int counter = 0;
@@ -92,8 +95,8 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 					IBlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setBoolean("worldgen", worldgen);
-						_tileEntity.getTileData().setDouble("x", x);
-						_tileEntity.getTileData().setDouble("z", z);
+						_tileEntity.getTileData().setDouble("x", (double)parentx);
+						_tileEntity.getTileData().setDouble("z", (double)parentz);
 					}
 					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
@@ -107,8 +110,8 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 					IBlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null) {
 						_tileEntity.getTileData().setBoolean("worldgen", worldgen);
-						_tileEntity.getTileData().setDouble("x", x);
-						_tileEntity.getTileData().setDouble("z", z);
+						_tileEntity.getTileData().setDouble("x", (double)parentx);
+						_tileEntity.getTileData().setDouble("z", (double)parentz);
 					}
 					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}

@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderGooloogongia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -103,8 +103,6 @@ public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAg
 		return true;
 	}
 
-
-
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
@@ -114,7 +112,7 @@ public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAg
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}

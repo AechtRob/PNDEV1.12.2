@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -65,6 +64,7 @@ public class BlockMacrocystisKelp extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockMacrocystisKelp.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:macrocystis_kelp", BlockMacrocystisKelp.block);
 	}
 
 	@Override
@@ -97,13 +97,16 @@ public class BlockMacrocystisKelp extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAlgae))
 			dimensionCriteria = true;
 		if (!dimensionCriteria || dimID == LepidodendronConfig.dimPrecambrian
-			|| dimID == LepidodendronConfig.dimCambrian
-			|| dimID == LepidodendronConfig.dimDevonian
-			|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-			|| dimID == LepidodendronConfig.dimCarboniferous
-			|| dimID == LepidodendronConfig.dimPermian
-			|| dimID == LepidodendronConfig.dimTriassic
-			|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
+				|| dimID == LepidodendronConfig.dimPaleogene
 			)
 			return;
 
@@ -115,6 +118,8 @@ public class BlockMacrocystisKelp extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genMacrocystisOverrideBiomes))

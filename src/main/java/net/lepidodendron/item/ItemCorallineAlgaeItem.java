@@ -48,6 +48,7 @@ public class ItemCorallineAlgaeItem extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", ItemCorallineAlgaeItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:coralline_algae_item", ItemCorallineAlgaeItem.block);
 	}
 
 	@Override

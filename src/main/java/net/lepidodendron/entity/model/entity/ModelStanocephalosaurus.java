@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraStanocephalosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelStanocephalosaurus extends AdvancedModelBaseExtended {
+public class ModelStanocephalosaurus extends ModelBasePalaeopedia {
 
     private final AdvancedModelRenderer body3;
     private final AdvancedModelRenderer cube_r1;
@@ -292,6 +292,11 @@ public class ModelStanocephalosaurus extends AdvancedModelBaseExtended {
         this.neck.offsetZ = 0.1F;
         this.neck.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

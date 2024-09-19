@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTeraterpeton;
 import net.lepidodendron.entity.model.entity.ModelTeraterpeton;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTeraterpeton extends RenderLiving<EntityPrehistoricFloraTeraterpeton> {
+public class RenderTeraterpeton extends RenderLivingBaseWithBook<EntityPrehistoricFloraTeraterpeton> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/teraterpeton.png");
 
     public RenderTeraterpeton(RenderManager mgr) {

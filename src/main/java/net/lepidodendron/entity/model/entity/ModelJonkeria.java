@@ -3,12 +3,12 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraJonkeria;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelJonkeria extends AdvancedModelBaseExtended {
+public class ModelJonkeria extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended body1;
     public AdvancedModelRendererExtended chest1;
     public AdvancedModelRendererExtended body2;
@@ -290,6 +290,11 @@ public class ModelJonkeria extends AdvancedModelBaseExtended {
         this.body1.offsetY = -0.07F;
         this.body1.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

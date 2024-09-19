@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCasineria;
 import net.lepidodendron.entity.model.entity.ModelCasineria;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCasineria extends RenderLiving<EntityPrehistoricFloraCasineria> {
+public class RenderCasineria extends RenderLivingBaseWithBook<EntityPrehistoricFloraCasineria> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria.png");
 
     public RenderCasineria(RenderManager mgr) {

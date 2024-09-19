@@ -1,10 +1,10 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -12,7 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelMixopterus extends AdvancedModelBase {
+public class ModelMixopterus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer carapace;
     private final AdvancedModelRenderer legsR;
     private final AdvancedModelRenderer l1R;
@@ -253,6 +253,11 @@ public class ModelMixopterus extends AdvancedModelBase {
         this.carapace.offsetX = 0.0F;
         this.carapace.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

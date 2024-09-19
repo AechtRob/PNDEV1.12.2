@@ -2,15 +2,13 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCordubia;
-import net.lepidodendron.entity.EntityPrehistoricFloraCyclomedusa;
 import net.lepidodendron.entity.model.entity.ModelCambrianJelly;
-import net.lepidodendron.entity.model.entity.ModelCombJelly;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCordubia extends RenderLiving<EntityPrehistoricFloraCordubia> {
+public class RenderCordubia extends RenderLivingBaseWithBook<EntityPrehistoricFloraCordubia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cordubia.png");
 
     public static float getScaler() {return 0.5F;}
@@ -33,7 +31,7 @@ public class RenderCordubia extends RenderLiving<EntityPrehistoricFloraCordubia>
     protected void preRenderCallback(EntityPrehistoricFloraCordubia entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

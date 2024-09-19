@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraForeyia;
 import net.lepidodendron.entity.model.entity.ModelForeyia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderForeyia extends RenderLiving<EntityPrehistoricFloraForeyia> {
+public class RenderForeyia extends RenderLivingBaseWithBook<EntityPrehistoricFloraForeyia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/foreyia.png");
 
     public RenderForeyia(RenderManager mgr) {

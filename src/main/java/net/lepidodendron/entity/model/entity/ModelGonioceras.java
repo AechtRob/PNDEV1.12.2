@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelGonioceras extends AdvancedModelBaseExtended {
+public class ModelGonioceras extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended bone;
     private final AdvancedModelRendererExtended cube_r1;
     private final AdvancedModelRendererExtended cube_r2;
@@ -211,6 +211,11 @@ public class ModelGonioceras extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.bone.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(AdvancedModelRendererExtended AdvancedModelRendererExtended, float x, float y, float z) {

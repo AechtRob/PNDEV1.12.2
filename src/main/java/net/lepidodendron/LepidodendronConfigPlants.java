@@ -809,6 +809,13 @@ public class LepidodendronConfigPlants {
     public static int minheightHorsetail = 55;
     public static int maxheightHorsetail = 100;
     public static double multiplierHorsetail = 1;
+    public static boolean genJurassicHorsetail = false;
+    public static String[] genJurassicHorsetailBlacklistBiomes = new String[0];
+    public static String[] genJurassicHorsetailOverrideBiomes = new String[0];
+    public static int[] dimJurassicHorsetail = new int[]{0};
+    public static int minheightJurassicHorsetail = 55;
+    public static int maxheightJurassicHorsetail = 100;
+    public static double multiplierJurassicHorsetail = 1;
     public static boolean genReticulopteris = false;
     public static String[] genReticulopterisBlacklistBiomes = new String[0];
     public static String[] genReticulopterisOverrideBiomes = new String[0];
@@ -1650,6 +1657,9 @@ public class LepidodendronConfigPlants {
     public static String[] genLygodiumBlacklistBiomes = new String[0];
     public static String[] genLygodiumOverrideBiomes = new String[0];
     public static int[] dimLygodium = new int[]{0};
+    public static boolean genLygodium = false;
+    public static double multiplierLygodium = 1;
+    
     public static boolean genPalaeognetaleanaGlossopteris = false;
     public static String[] genPalaeognetaleanaBlacklistBiomes = new String[0];
     public static String[] genPalaeognetaleanaOverrideBiomes = new String[0];
@@ -1773,6 +1783,14 @@ public class LepidodendronConfigPlants {
     public static int minheightScrubbyPine = 1;
     public static int maxheightScrubbyPine = 0;
     public static double multiplierScrubbyPine = 1;
+
+    public static boolean genTwiggyCypress = false;
+    public static String[] genTwiggyCypressBlacklistBiomes = new String[0];
+    public static String[] genTwiggyCypressOverrideBiomes = new String[0];
+    public static int[] dimTwiggyCypress = new int[]{0};
+    public static int minheightTwiggyCypress = 1;
+    public static int maxheightTwiggyCypress = 0;
+    public static double multiplierTwiggyCypress = 1;
 
     public static boolean genWachtlerina = false;
     public static String[] genWachtlerinaBlacklistBiomes = new String[0];
@@ -2044,6 +2062,13 @@ public class LepidodendronConfigPlants {
     public static int minheightLophosoria = 1;
     public static int maxheightLophosoria = 90;
     public static double multiplierLophosoria = 1;
+    public static boolean genAngiopteris = false;
+    public static String[] genAngiopterisBlacklistBiomes = new String[0];
+    public static String[] genAngiopterisOverrideBiomes = new String[0];
+    public static int[] dimAngiopteris = new int[]{0};
+    public static int minheightAngiopteris = 1;
+    public static int maxheightAngiopteris = 90;
+    public static double multiplierAngiopteris = 1;
     public static boolean genHydrangea = false;
     public static String[] genHydrangeaBlacklistBiomes = new String[0];
     public static String[] genHydrangeaOverrideBiomes = new String[0];
@@ -2855,6 +2880,7 @@ public class LepidodendronConfigPlants {
         MinecraftForge.EVENT_BUS.register(instance);
         syncConfigPlantsPart1();
         syncConfigPlantsPart2();
+        syncConfigPlantsPart3();
     }
 
     @SubscribeEvent
@@ -2862,6 +2888,7 @@ public class LepidodendronConfigPlants {
         if (event.getModID().equals("lepidodendron")) {
             syncConfigPlantsPart1();
             syncConfigPlantsPart2();
+            syncConfigPlantsPart3();
         }
 
     }
@@ -6171,6 +6198,34 @@ public class LepidodendronConfigPlants {
         multiplierHorsetail = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen Jurassic Horsetails", "genJurassicHorsetail", genJurassicHorsetail);
+        prop.setComment("Set to true to generate Jurassic Horsetails naturally [default: false]");
+        genJurassicHorsetail = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "genJurassicHorsetailBlacklistBiomes", genJurassicHorsetailBlacklistBiomes);
+        prop.setComment("List of biomes Jurassic Horsetails are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genJurassicHorsetailBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "genJurassicHorsetailOverrideBiomes", genJurassicHorsetailOverrideBiomes);
+        prop.setComment("List of biomes Jurassic Horsetails are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genJurassicHorsetailOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Jurassic Horsetails", "dimJurassicHorsetail", dimJurassicHorsetail);
+        prop.setComment("List of dimension IDs Jurassic Horsetails can generate in [default: 0]");
+        dimJurassicHorsetail = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "minheightJurassicHorsetail", minheightJurassicHorsetail);
+        prop.setComment("Minimum height that Jurassic Horsetails can generate (1 to 250) [default: 55]");
+        minheightJurassicHorsetail = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "maxheightJurassicHorsetail", maxheightJurassicHorsetail);
+        prop.setComment("Maximum height that Jurassic Horsetails can generate (1 to 250, or set to 0 for unlimited) [default: 100]");
+        maxheightJurassicHorsetail = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Jurassic Horsetails", "multiplierJurassicHorsetail", multiplierJurassicHorsetail);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierJurassicHorsetail = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Cooksonia", "genCooksonia", genCooksonia);
         prop.setComment("Set to true to generate Cooksonia naturally [default: false]");
         genCooksonia = prop.getBoolean();
@@ -9128,6 +9183,13 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lygodium", "dimLygodium", dimLygodium);
         prop.setComment("List of dimension IDs Lygodium can generate in [default: 0]");
         dimLygodium = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lygodium", "genLygodium", genLygodium);
+        prop.setComment("Set to true to generate Lygodium naturally [default: false]");
+        genLygodium = prop.getBoolean();
+        prop = cfg.get("WorldGen Lygodium", "multiplierLygodium", multiplierLygodium);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierLygodium = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Cinnamon Fern", "genCinnamonFern", genCinnamonFern);
@@ -12226,6 +12288,34 @@ public class LepidodendronConfigPlants {
         multiplierScrubbyPine = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("WorldGen TwiggyCypress", "genTwiggyCypress", genTwiggyCypress);
+        prop.setComment("Set to true to generate Twiggy Cypress naturally [default: false]");
+        genTwiggyCypress = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "genTwiggyCypressBlacklistBiomes", genTwiggyCypressBlacklistBiomes);
+        prop.setComment("List of biomes Twiggy Cypress are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genTwiggyCypressBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "genTwiggyCypressOverrideBiomes", genTwiggyCypressOverrideBiomes);
+        prop.setComment("List of biomes Twiggy Cypress are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genTwiggyCypressOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen TwiggyCypress", "dimTwiggyCypress", dimTwiggyCypress);
+        prop.setComment("List of dimension IDs Twiggy Cypress can generate in [default: 0]");
+        dimTwiggyCypress = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "minheightTwiggyCypress", minheightTwiggyCypress);
+        prop.setComment("Minimum height that Twiggy Cypress can generate (1 to 250) [default: 1]");
+        minheightTwiggyCypress = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "maxheightTwiggyCypress", maxheightTwiggyCypress);
+        prop.setComment("Maximum height that Twiggy Cypress can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightTwiggyCypress = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen TwiggyCypress", "multiplierTwiggyCypress", multiplierTwiggyCypress);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierTwiggyCypress = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("WorldGen Chloranthus", "genChloranthus", genChloranthus);
         prop.setComment("Set to true to generate Chloranthus naturally [default: false]");
         genChloranthus = prop.getBoolean();
@@ -13452,7 +13542,18 @@ public class LepidodendronConfigPlants {
         multiplierRufloria = prop.getDouble();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("WorldGen Zygopteris", "genZygopteris", genZygopteris);
+        boolean changed = false;
+        if (cfg.hasChanged()) {
+            cfg.save();
+            changed = true;
+        }
+
+        return changed;
+    }
+
+    public static boolean syncConfigPlantsPart3() {
+        ObjectList<String> propOrder = new ObjectArrayList<>();
+        Property prop = cfg.get("WorldGen Zygopteris", "genZygopteris", genZygopteris);
         prop.setComment("Set to true to generate Zygopteris naturally [default: false]");
         genZygopteris = prop.getBoolean();
         propOrder.add(prop.getName());
@@ -13488,6 +13589,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Lichen", "radiusLichen", radiusLichen);
         prop.setComment("Radius Lichen can spread (0 to 8). Increasing this may cause lag. [default: 2]");
         radiusLichen = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopteris", genAngiopteris);
+        prop.setComment("Set to true to generate Angiopteris naturally [default: false]");
+        genAngiopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisBlacklistBiomes", genAngiopterisBlacklistBiomes);
+        prop.setComment("List of biomes Angiopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAngiopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "genAngiopterisOverrideBiomes", genAngiopterisOverrideBiomes);
+        prop.setComment("List of biomes Angiopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAngiopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Angiopteris", "dimAngiopteris", dimAngiopteris);
+        prop.setComment("List of dimension IDs Angiopteris can generate in [default: 0]");
+        dimAngiopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "minheightAngiopteris", minheightAngiopteris);
+        prop.setComment("Minimum height that Angiopteris can generate (1 to 250) [default: 1]");
+        minheightAngiopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "maxheightAngiopteris", maxheightAngiopteris);
+        prop.setComment("Maximum height that Angiopteris can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightAngiopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Angiopteris", "multiplierAngiopteris", multiplierAngiopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAngiopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
 

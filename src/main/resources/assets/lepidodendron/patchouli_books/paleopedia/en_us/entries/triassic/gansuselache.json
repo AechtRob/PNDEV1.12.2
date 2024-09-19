@@ -1,0 +1,47 @@
+{
+	"name": "Gansuselache",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gansuselache_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_gansuselache",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gansuselache",
+			"title": "Gansuselache",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chondrichthyes $(br)>Elasmobranchii $(br)>Hybodontiformes $(br)>Lonchidiidae?"
+		},
+        	{
+            "type": "entity",
+            "name": "G. tungshengi",
+            "entity": "lepidodendron:prehistoric_flora_gansuselache",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gansuselache",
+			"type": "text",
+			"text": "Gansuselache is a Triassic Hybodont from the Gansu province of China. It was previously interpreted as being from the Permian, but is now known to have lived in the earliest Triassic. They grew to almost 50 cm long and it had large eyes and a round body. This fish would have lived in lacustrine environments, alongside Eochondrosteus."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gansuselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gansuselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gansuselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gansuselache"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gansuselache"
+		}
+	]
+}

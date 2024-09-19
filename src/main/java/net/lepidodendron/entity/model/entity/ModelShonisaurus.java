@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelShonisaurus extends AdvancedModelBase {
+public class ModelShonisaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer tailbase1;
     private final AdvancedModelRenderer tail1;
@@ -517,8 +517,14 @@ public class ModelShonisaurus extends AdvancedModelBase {
         this.root.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
-        this.neck2.offsetY = -0.001F;
+        this.neck2.offsetZ = -0.03F;
+        this.neck2.offsetY = -0.015F;
         this.jaw1.rotateAngleX = (float) Math.toRadians(25);
         this.head1.rotateAngleX = (float) Math.toRadians(-15);
         this.neck2.render(0.01F);

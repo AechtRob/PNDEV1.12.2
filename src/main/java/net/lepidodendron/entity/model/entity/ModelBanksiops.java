@@ -4,16 +4,14 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraBanksiops;
-import net.lepidodendron.entity.EntityPrehistoricFloraBanksiops;
-import net.lepidodendron.entity.EntityPrehistoricFloraPampaphoneus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelBanksiops extends AdvancedModelBaseExtended {
+public class ModelBanksiops extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer hip;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer body;
@@ -470,6 +468,41 @@ public class ModelBanksiops extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, -0.4F, 0.0F, 0.05F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.05F);
+        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.hip.offsetZ = -0.05F;
+        this.hip.offsetY = -0.1F;
+        this.hip.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hip.offsetY = -1.0F;
+        this.hip.offsetX = -0.20F;
+        this.hip.rotateAngleY = (float)Math.toRadians(-167);
+        this.hip.rotateAngleX = (float)Math.toRadians(16);
+        this.hip.rotateAngleZ = (float)Math.toRadians(-8);
+        this.hip.scaleChildren = true;
+        float scaler = 2.0F;
+        this.hip.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.hip.render(f);
+        //Reset rotations, positions and sizing:
+        this.hip.setScale(1.0F, 1.0F, 1.0F);
+        this.hip.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {

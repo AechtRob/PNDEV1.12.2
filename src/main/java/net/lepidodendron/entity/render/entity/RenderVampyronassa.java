@@ -3,14 +3,14 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraVampyronassa;
 import net.lepidodendron.entity.model.entity.ModelVampyronassa;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Calendar;
 
-public class RenderVampyronassa extends RenderLiving<EntityPrehistoricFloraVampyronassa> {
+public class RenderVampyronassa extends RenderLivingBaseWithBook<EntityPrehistoricFloraVampyronassa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa.png");
     public static final ResourceLocation TEXTURE_HALLOWEEN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vampyronassa_halloween.png");
 

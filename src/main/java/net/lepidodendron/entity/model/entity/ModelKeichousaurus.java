@@ -5,11 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraKeichousaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelKeichousaurus extends AdvancedModelBaseExtended {
+public class ModelKeichousaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Keichousaurus;
     private final AdvancedModelRenderer upperbody;
     private final AdvancedModelRenderer cube_r1;
@@ -214,6 +214,12 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Keichousaurus.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(upperbody, -0.1F, 0.2F, 0.0F);
         this.setRotateAngle(neck, -0.1F, 0.1F, 0.0F);

@@ -1,28 +1,24 @@
 package net.lepidodendron.entity.render.entity;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPikaia;
 import net.lepidodendron.entity.model.entity.ModelPikaia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPikaia extends RenderLiving<EntityPrehistoricFloraPikaia> {
+public class RenderPikaia extends RenderLivingBaseWithBook<EntityPrehistoricFloraPikaia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia.png");
-    public static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia_nerf.png");
+    //public static final ResourceLocation TEXTURE_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia_nerf.png");
 
-    public static float getScaler() {return 0.035F;}
+    public static float getScaler() {return 0.13F;}
     public RenderPikaia(RenderManager mgr) {
         super(mgr, new ModelPikaia(), 0.0f);
     }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPikaia entity) {
-        if (LepidodendronConfig.doLowRes) {
-            return RenderPikaia.TEXTURE_NERF;
-        }
         return RenderPikaia.TEXTURE;
     }
 

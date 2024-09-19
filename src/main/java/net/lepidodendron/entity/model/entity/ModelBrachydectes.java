@@ -1,10 +1,10 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelBrachydectes extends AdvancedModelBase {
+public class ModelBrachydectes extends ModelBasePalaeopedia {
 
 
     public ModelBrachydectes() {
@@ -21,6 +21,11 @@ public class ModelBrachydectes extends AdvancedModelBase {
     public void renderStatic(float f) {
         //Static renderer for taxidermy
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

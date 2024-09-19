@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelMeganeuropsisNymph extends AdvancedModelBase {
+public class ModelMeganeuropsisNymph extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -204,6 +204,11 @@ public class ModelMeganeuropsisNymph extends AdvancedModelBase {
         //setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 
         this.body.render(f5 * 0.03F);
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

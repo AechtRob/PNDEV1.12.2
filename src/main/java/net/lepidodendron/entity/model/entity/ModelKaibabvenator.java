@@ -1,16 +1,16 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraKaibabvenator;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelKaibabvenator extends AdvancedModelBase {
+public class ModelKaibabvenator extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer all;
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
@@ -226,6 +226,12 @@ public class ModelKaibabvenator extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.all.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.head.offsetY = -0.001F;
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(35);

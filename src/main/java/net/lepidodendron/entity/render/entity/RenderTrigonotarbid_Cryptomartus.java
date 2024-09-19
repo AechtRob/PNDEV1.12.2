@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTrigonotarbid_Cryptomartus;
 import net.lepidodendron.entity.model.entity.ModelTrigonotarbid;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTrigonotarbid_Cryptomartus extends RenderLiving<EntityPrehistoricFloraTrigonotarbid_Cryptomartus> {
+public class RenderTrigonotarbid_Cryptomartus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTrigonotarbid_Cryptomartus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_anthracomartus.png");
 
     public RenderTrigonotarbid_Cryptomartus(RenderManager mgr) {

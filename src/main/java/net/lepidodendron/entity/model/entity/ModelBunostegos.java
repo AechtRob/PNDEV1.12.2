@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraBunostegos;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelBunostegos extends AdvancedModelBaseExtended {
+public class ModelBunostegos extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended bunostegos;
     private final AdvancedModelRendererExtended lowerbody;
     private final AdvancedModelRendererExtended cube_r1;
@@ -425,6 +425,11 @@ public class ModelBunostegos extends AdvancedModelBaseExtended {
         this.bunostegos.render(0.01F);
 
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

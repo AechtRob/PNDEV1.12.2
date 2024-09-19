@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelAntarcticarcinus extends AdvancedModelBase {
+public class ModelAntarcticarcinus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer antennaL;
     private final AdvancedModelRenderer antennaR;
@@ -335,16 +335,55 @@ public class ModelAntarcticarcinus extends AdvancedModelBase {
         this.body.render(f5 * 0.3F);
 
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body11, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body12, 0.0F, 0.1F, 0.0F);
+        this.body.offsetZ = 0.02F;
+        this.body.offsetY = 0.03F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.7F;
+        this.body.offsetX = 0.1F;
+        this.body.rotateAngleY = (float) Math.toRadians(210);
+        this.body.rotateAngleX = (float) Math.toRadians(8);
+        this.body.rotateAngleZ = (float) Math.toRadians(-4);
+        this.body.scaleChildren = true;
+        float scaler = 0.575F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body11, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body12, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

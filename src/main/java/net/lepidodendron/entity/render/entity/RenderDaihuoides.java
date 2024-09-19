@@ -2,14 +2,13 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDaihuoides;
-import net.lepidodendron.entity.model.entity.ModelCambrianJelly;
 import net.lepidodendron.entity.model.entity.ModelDaihuoides;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDaihuoides extends RenderLiving<EntityPrehistoricFloraDaihuoides> {
+public class RenderDaihuoides extends RenderLivingBaseWithBook<EntityPrehistoricFloraDaihuoides> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/daihuoides.png");
 
     public static float getScaler() {return 0.4F;}
@@ -34,7 +33,7 @@ public class RenderDaihuoides extends RenderLiving<EntityPrehistoricFloraDaihuoi
     protected void preRenderCallback(EntityPrehistoricFloraDaihuoides entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

@@ -46,7 +46,9 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:respawner", "inventory"));
+		if (LepidodendronConfig.doReSpawner) {
+			ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:respawner", "inventory"));
+		}
 	}
 
 	public static class ItemCustom extends Item {

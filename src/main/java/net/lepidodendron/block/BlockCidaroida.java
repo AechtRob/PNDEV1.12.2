@@ -2,8 +2,11 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -24,8 +27,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -59,6 +66,60 @@ public class BlockCidaroida extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:entities/cidaroida_item", "inventory"));
 		//ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNautiloidShellAmmonite_Asteroceras.LEVEL).build());
+	}
+
+	@Override
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+
+		if (random.nextInt(36) != 0) {
+			return; //shells
+		}
+
+		if (dimID != LepidodendronConfig.dimTriassic
+				&& dimID != LepidodendronConfig.dimJurassic
+				&& dimID != LepidodendronConfig.dimCretaceousEarly
+				&& dimID != LepidodendronConfig.dimCretaceousLate
+				&& dimID != LepidodendronConfig.dimPaleogene
+				&& dimID != LepidodendronConfig.dimNeogene
+				&& dimID != LepidodendronConfig.dimPleistocene
+				&& dimID != 0) {
+			return;
+		}
+
+		for (int i = 0; i < 10; i++) {
+			int l6 = chunkX + random.nextInt(16) + 8;
+			int l14 = chunkZ + random.nextInt(16) + 8;
+			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
+			boolean isBeach = BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH);
+			if (!(isBeach
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_black")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white_edge")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_helper")
+			)
+			) {
+				break;
+			}
+			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
+			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
+					&& world.isSideSolid(pos.down(), EnumFacing.UP)
+					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE
+					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
+				world.setBlockState(pos, block.getDefaultState());
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null) {
+					TileEntityCustom te = (TileEntityCustom) tileEntity;
+					//get a random rotation in increments of 15 degrees:
+					int rotation = random.nextInt(24) * 15;
+					te.getTileData().setInteger("rotation", rotation);
+					return;
+				}
+			}
+		}
 	}
 
 	public static class BlockCustom extends Block {

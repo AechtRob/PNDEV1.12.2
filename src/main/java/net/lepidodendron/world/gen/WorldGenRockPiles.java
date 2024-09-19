@@ -1,9 +1,15 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.entity.EntityPrehistoricFloraDorygnathus;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityList;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -23,10 +29,14 @@ public class WorldGenRockPiles extends WorldGenerator
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
-        return generate(worldIn, rand, position, false);
+        return generate(worldIn, rand, position, false, true);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy)
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy) {
+        return generate(worldIn, rand, position, mossy, true);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy, boolean sandy)
     {
         while (true)
         {
@@ -88,8 +98,12 @@ public class WorldGenRockPiles extends WorldGenerator
                                 }
                                 if (Math.random() > 0.85) {
                                     blockIn = Blocks.SAND;
+                                    if (!sandy) {
+                                        blockIn = Blocks.GRAVEL;
+                                    }
                                 }
                                 Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn.getDefaultState(), 16);
+                                spawnLife(worldIn, blockpos.getX(), blockpos.getY(), blockpos.getZ(), rand);
                             }
                         }
                     }
@@ -109,6 +123,30 @@ public class WorldGenRockPiles extends WorldGenerator
                 return true;
             }
             position = position.down();
+        }
+    }
+
+    public void spawnLife(World world, int x, int y, int z, Random random) {
+        if (random.nextInt(56) == 0) {
+            if (world.getBiome(new BlockPos(x, (y + 1), z)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral")) {
+                //Dorygnathus:
+                if (world.isAirBlock(new BlockPos(x, (y + 1), z))
+                        && BlockNest.block.canPlaceBlockAt(world, new BlockPos(x, (y + 1), z))) {
+                    world.setBlockState(new BlockPos(x, (y + 1), z), BlockNest.block.getDefaultState());
+                    if (world.rand.nextInt(3) != 0) {
+                        //Place some eggs too:
+                        TileEntity te = world.getTileEntity(new BlockPos(x, (y + 1), z));
+                        te.getTileData().setString("creature", "lepidodendron:prehistoric_flora_dorygnathus");
+                        te.getTileData().setBoolean("isMound", false);
+                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack("lepidodendron:prehistoric_flora_dorygnathus");
+                        stack.setCount(1);
+                        ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                    }
+                    if (!(world.isRemote)) {
+                        EntityPrehistoricFloraAgeableBase.summon(world, EntityList.getKey(EntityPrehistoricFloraDorygnathus.class).toString(), "{AgeTicks:" + (new EntityPrehistoricFloraDorygnathus(world)).getAdultAge() + "}", x + 0.5, y + 1.01, z + 0.5);
+                    }
+                }
+            }
         }
     }
 }

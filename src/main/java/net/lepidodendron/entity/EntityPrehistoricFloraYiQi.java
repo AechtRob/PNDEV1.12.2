@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.render.entity.RenderAnchiornis;
 import net.lepidodendron.entity.render.entity.RenderYiQi;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;

@@ -5,7 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockRhyniaLand;
+import net.lepidodendron.block.BlockRhyniaLandSpore;
 import net.lepidodendron.block.BlockRhyniaWater;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockLiquid;
@@ -63,7 +65,7 @@ public class ItemRhyniaItem extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", ItemRhyniaItem.block);
 	}
 
-	public static class ItemCustom extends Item {
+	public static class ItemCustom extends Item implements IPottable {
 		public ItemCustom() {
 			setTranslationKey("pf_rhynia_item");
 			setRegistryName("rhynia_item");
@@ -148,6 +150,11 @@ public class ItemRhyniaItem extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockRhyniaLandSpore.block.getDefaultState();
+		}
 	}
 
 	public static boolean canSurviveAt(World worldIn, BlockPos pos) {

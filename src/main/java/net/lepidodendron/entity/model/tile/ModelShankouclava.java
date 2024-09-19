@@ -57,7 +57,7 @@ public class ModelShankouclava extends AdvancedModelBase {
     }
 
     public void renderAll(float f) {
-
+        this.resetToDefaultPose();
         this.main.render(f);
     }
 

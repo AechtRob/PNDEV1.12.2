@@ -3,14 +3,14 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHypuronector;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelHypuronector extends AdvancedModelBaseExtended {
+public class ModelHypuronector extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Hypuronector;
     private final AdvancedModelRendererExtended lowerbody;
     private final AdvancedModelRendererExtended cube_r1;
@@ -466,6 +466,7 @@ public class ModelHypuronector extends AdvancedModelBaseExtended {
         this.Hypuronector.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Hypuronector.offsetY = -1.3F;
@@ -508,6 +509,7 @@ public class ModelHypuronector extends AdvancedModelBaseExtended {
         this.Hypuronector.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

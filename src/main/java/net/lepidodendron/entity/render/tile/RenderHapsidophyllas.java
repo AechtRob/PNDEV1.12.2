@@ -24,8 +24,13 @@ public class RenderHapsidophyllas extends TileEntitySpecialRenderer<BlockHapsido
     @Override
     public void render(BlockHapsidophyllas.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
-            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+        try { //to support book rendering:
+            if (entity != null && entity.hasWorld()) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            }
+        }
+        catch (Exception e){
+            facing = EnumFacing.NORTH;
         }
         this.bindTexture(TEXTURE);
         ModelHapsidophyllas modelHapsidophyllas = this.modelHapsidophyllas;

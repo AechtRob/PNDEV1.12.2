@@ -4,14 +4,14 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCtenorhabdotus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import org.lwjgl.opengl.GL11;
 
-public class ModelCtenorhabdotus extends AdvancedModelBaseExtended {
+public class ModelCtenorhabdotus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer jellypart;
     private final AdvancedModelRenderer southluminescent;
@@ -623,6 +623,12 @@ public class ModelCtenorhabdotus extends AdvancedModelBaseExtended {
         GlStateManager.disableBlend();
 
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

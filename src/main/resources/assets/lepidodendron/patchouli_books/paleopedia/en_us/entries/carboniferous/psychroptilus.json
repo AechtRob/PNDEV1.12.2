@@ -1,7 +1,7 @@
 {
 	"name": "Psychroptilus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/palaeodictyoptera_psychroptilus_icon.png",
+	"icon": "paleopedia:textures/items/psychroptilus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_psychroptilus",
 	"pages": [
@@ -11,13 +11,12 @@
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Insecta $(br)>Palaeodictyoptera $(br)>Psychroptilidae"
 		},
-        	{
-            "type": "entity",
-            "name": "P. burrettae",
-            "entity": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus",
-            "rotate": false,
-            "default_rotation": 0
-       	},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/psychroptilus.png"],
+			"title": "P. burrettae",
+			"text": ""
+		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_psychroptilus",
 			"type": "text",
@@ -25,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera_psychroptilus"
+			"mob": "lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus"
 		}
 	]
 }

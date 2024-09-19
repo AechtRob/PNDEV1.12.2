@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelTimorebestia extends AdvancedModelBase {
+public class ModelTimorebestia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer timorebestia;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -229,6 +229,7 @@ public class ModelTimorebestia extends AdvancedModelBase {
         this.timorebestia.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.timorebestia.offsetY = -0.8F;
@@ -253,6 +254,7 @@ public class ModelTimorebestia extends AdvancedModelBase {
         this.timorebestia.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -295,8 +297,12 @@ public class ModelTimorebestia extends AdvancedModelBase {
         AdvancedModelRenderer[] fishTail = {this.body1, this.body2, this.body3, this.body4};
 
 
-        this.chainWave(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
-        this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+//        this.chainWave(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
+//        this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
+
+
+        this.chainSwing(fishTail, speed, tailVdegree * 0.3f, -0.5F, f2, 0.5F);
+        this.chainWave(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
 
         //this.chainSwing(pincerL, speed * 3F, -0.1F, 0.5F, f2, 0.1F);
         //this.chainSwing(pincerR, speed *  3F, 0.1F, 0.5F, f2, 0.1F);
@@ -324,8 +330,10 @@ public class ModelTimorebestia extends AdvancedModelBase {
         this.flap(rightFin7, 0.5F, degreeFin, false, 5.0F, 0.4F, f2, 0.7F);
         this.flap(leftFin8, 0.5F, -degreeFin, false, 5.5F, -0.4F, f2, 0.7F);
         this.flap(rightFin8, 0.5F, degreeFin, false, 5.5F, 0.4F, f2, 0.7F);
-        this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-        this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+//        this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+//        this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+        this.chainSwing(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+        this.chainWave(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
 
 
 
@@ -333,8 +341,10 @@ public class ModelTimorebestia extends AdvancedModelBase {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
             //this.timorebestia.offsetY = 1.2F - 1.18F;
             this.bob(timorebestia, -speed * 3F, 2F, false, f2, 1);
-            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+//            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+//            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
+            this.chainWave(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
         }
 
     }

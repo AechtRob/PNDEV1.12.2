@@ -3,12 +3,12 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCynognathus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelCynognathus extends AdvancedModelBaseExtended {
+public class ModelCynognathus extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended Hips;
     public AdvancedModelRendererExtended Belly;
     public AdvancedModelRendererExtended Leftthigh;
@@ -326,6 +326,11 @@ public class ModelCynognathus extends AdvancedModelBaseExtended {
         this.Hips.offsetY = -0.075F;
         this.Hips.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

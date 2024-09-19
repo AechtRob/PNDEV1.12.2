@@ -5,14 +5,14 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchaeopteryx;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 
-public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
+public class ModelArchaeopteryx extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Archaeopteryx;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer UpperLegR;
@@ -538,7 +538,7 @@ public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Archaeopteryx.render(f5);
     }
-    
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -604,6 +604,8 @@ public class ModelArchaeopteryx extends AdvancedModelBaseExtended {
         this.Archaeopteryx.render(0.01F);
         resetToDefaultPose();
     }
+
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Archaeopteryx.offsetY = -2.30F;

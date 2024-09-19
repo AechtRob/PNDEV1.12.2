@@ -8,12 +8,12 @@ import net.lepidodendron.entity.EntityPrehistoricFloraGlaurung;
 import net.lepidodendron.entity.EntityPrehistoricFloraRautiania;
 import net.lepidodendron.entity.EntityPrehistoricFloraWeigeltisaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelWeigeltisaurid extends AdvancedModelBaseExtended {
+public class ModelWeigeltisaurid extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended body;
     public AdvancedModelRendererExtended neck;
     public AdvancedModelRendererExtended pelvis;
@@ -195,6 +195,11 @@ public class ModelWeigeltisaurid extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

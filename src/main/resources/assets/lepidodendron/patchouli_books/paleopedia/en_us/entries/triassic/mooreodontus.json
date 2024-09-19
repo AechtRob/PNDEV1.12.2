@@ -1,0 +1,47 @@
+{
+	"name": "Mooreodontus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/mooreodontus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_mooreodontus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mooreodontus",
+			"title": "Mooreodontus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)>Chondrichthyes $(br)>Elasmobranchii $(br)>Xenacanthida $(br)>Xenacanthidae"
+		},
+        	{
+            "type": "entity",
+            "name": "M. moorei",
+            "entity": "lepidodendron:prehistoric_flora_mooreodontus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mooreodontus",
+			"type": "text",
+			"text": "Mooreodontus is a Triassic xenacanth known from many places around the world. It was once a species of Xenacanthus, but studies have shown that all Triassic Xenacanthus specimens actually represent a distinct genus, Mooreodontus. This animal is known mostly from teeth and may have been 1-2m long."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_mooreodontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_mooreodontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_mooreodontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_mooreodontus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_mooreodontus"
+		}
+	]
+}

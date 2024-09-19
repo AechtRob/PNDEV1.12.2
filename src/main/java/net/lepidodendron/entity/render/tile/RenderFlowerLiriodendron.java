@@ -27,8 +27,13 @@ public class RenderFlowerLiriodendron extends TileEntitySpecialRenderer<BlockLir
     @Override
     public void render(BlockLiriodendronFlower.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.UP;
-        if (entity != null && entity.hasWorld()) {
-            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+        try { //to support book rendering:
+            if (entity != null && entity.hasWorld()) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            }
+        }
+        catch (Exception e){
+            facing = EnumFacing.NORTH;
         }
         this.bindTexture(TEXTURE);
         ModelFlowerLiriodendron modelFlowerLiriodendron = this.modelFlowerLiriodendron;

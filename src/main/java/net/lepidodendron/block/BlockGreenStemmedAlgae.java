@@ -64,6 +64,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockGreenStemmedAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_stemmed_algae", BlockGreenStemmedAlgae.block);
 	}
 
 	@Override
@@ -116,6 +117,8 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genGreenStemmedAlgaeOverrideBiomes))
 			biomeCriteria = true;
@@ -151,6 +154,7 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_flooded_forest")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_plain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_warm_lakeland")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_xeric")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")
@@ -176,6 +180,9 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")
+
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_drooping_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_asia_drooping_swamp")
 		)
 		{
 			multiplier = 8;

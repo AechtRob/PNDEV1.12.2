@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCumnoria;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelCumnoria extends AdvancedModelBaseExtended {
+public class ModelCumnoria extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Cumnoria;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer LegL;
@@ -575,6 +575,7 @@ public class ModelCumnoria extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Cumnoria.offsetY = -0.2F;

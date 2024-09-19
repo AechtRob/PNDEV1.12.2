@@ -1,8 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlatylomaspis;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelPlatylomaspis extends AdvancedModelBase {
+public class ModelPlatylomaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Platylomaspis;
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer Cephalon;
@@ -218,10 +218,10 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
         this.Platylomaspis.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Platylomaspis.rotateAngleY = (float) Math.toRadians(90);
-        this.Platylomaspis.offsetY = -0.03F;
-        this.Platylomaspis.offsetX = -0.05F;
-        this.Platylomaspis.offsetZ = -0.37F;
+        this.setRotateAngle(Platylomaspis, 1.55F, 0.0F, 0.0F);
+        this.Platylomaspis.offsetY = -0.25F;
+        this.Platylomaspis.offsetX = -0.00F;
+        this.Platylomaspis.offsetZ = -0.41F;
         this.Platylomaspis.render(0.01F);
         resetToDefaultPose();
     }
@@ -235,6 +235,11 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
         this.Platylomaspis.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

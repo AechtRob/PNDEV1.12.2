@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingFlyingWalkingBase;
 import net.lepidodendron.entity.render.entity.RenderDorygnathus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.IGuano;
 import net.lepidodendron.entity.util.IScreamerFlier;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
@@ -34,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IScreamerFlier, ITrappableLand {
+public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLandClimbingFlyingWalkingBase implements IAdvancementGranter, IGuano, IScreamerFlier, ITrappableLand {
 
 	private boolean screaming;
 	public int screamAlarmCooldown;
@@ -103,10 +104,12 @@ public class EntityPrehistoricFloraDorygnathus extends EntityPrehistoricFloraLan
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {
 		Entity e = ds.getTrueSource();
-		if (e instanceof EntityLivingBase && this.hasAlarm()) {
+		if (e instanceof EntityLivingBase && this.hasAlarm() && !this.world.isRemote) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraDorygnathus> dorygnathus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDorygnathus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDorygnathus currentDorygnathus : dorygnathus) {
+				currentDorygnathus.setAlarmTarget(ee);
 				currentDorygnathus.setRevengeTarget(ee);
 				currentDorygnathus.screamAlarmCooldown = rand.nextInt(20);
 				currentDorygnathus.setFlying();

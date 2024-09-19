@@ -3,14 +3,14 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelDiictodon extends AdvancedModelBaseExtended {
+public class ModelDiictodon extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended hips;
     private final AdvancedModelRendererExtended cube_r1;
     private final AdvancedModelRendererExtended rightleg1;
@@ -217,6 +217,7 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hips.offsetY = -1.5F;

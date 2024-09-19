@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.BlockLogPF;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
@@ -14,6 +15,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EntitySelectors;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -27,6 +30,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class Functions {
@@ -43,6 +47,10 @@ public class Functions {
                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_peaks")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner")) {
                 return 87;
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_a")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_b")) {
+                return 140;
             }
         }
         return world.getSeaLevel();
@@ -220,6 +228,43 @@ public class Functions {
             }
         }
 
+        if (state.causesSuffocation() && state.getMaterial() != Material.WOOD) { //If we are about to place a block that could kill an entity here (but which isn't a tree):
+            List<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
+            if (!getEntities.isEmpty()) {
+                int ascendor = 0;
+                boolean isMoved = false;
+                //Are we replacing water, and is the block above us up to 8 high a suitable water?
+                if (worldIn.getBlockState(pos).getMaterial() == Material.WATER) {
+                    for (int n = 1; n < 8; n++) {
+                        if (worldIn.getBlockState(pos.up(n)).getMaterial() == Material.WATER) {
+                            //Move the entity to here:
+                            isMoved = true;
+                            ascendor = n;
+                            break;
+                        }
+                    }
+                }
+                else { //Was not water, so check for something that isn't water and which is safe
+                    for (int n = 1; n < 8; n++) {
+                        if ((!worldIn.getBlockState(pos.up(n)).causesSuffocation()) && worldIn.getBlockState(pos.up(n)).getMaterial() != Material.WATER) {
+                            //Move the entity to here:
+                            isMoved = true;
+                            ascendor = n;
+                            break;
+                        }
+                    }
+                }
+                for (Entity e : getEntities) {
+                    if (!isMoved) {
+                        e.setDead(); //Dont entomb entities!
+                    } else {
+                        e.setPosition(e.posX, pos.up(ascendor).getY(), e.posZ);
+                    }
+                }
+            }
+        }
+
+        //Finally, set the blockstate:
         worldIn.setBlockState(pos, state, flags);
     }
 
@@ -234,5 +279,81 @@ public class Functions {
         return false;
     }
 
+    public static String convertFromDecimalToBaseX(int num, int newBase) throws IllegalArgumentException {
+        if ((newBase < 2 || newBase > 10) && newBase != 16) {
+            throw new IllegalArgumentException("New base must be from 2 - 10 or 16");
+        }
+        String result = "";
+        int remainder;
+        while (num > 0) {
+            remainder = num % newBase;
+            if (newBase == 16) {
+                if (remainder == 10) {
+                    result += 'A';
+                } else if (remainder == 11) {
+                    result += 'B';
+                } else if (remainder == 12) {
+                    result += 'C';
+                } else if (remainder == 13) {
+                    result += 'D';
+                } else if (remainder == 14) {
+                    result += 'E';
+                } else if (remainder == 15) {
+                    result += 'F';
+                } else {
+                    result += remainder;
+                }
+            } else {
+                result += remainder;
+            }
+            num /= newBase;
+        }
+        return new StringBuffer(result).reverse().toString();
+    }
+
+
+
+    public static void restoreLogs(World worldIn, BlockPos position) {
+        IBlockState state = null;
+        if (worldIn.getBlockState(position.up()).getBlock() instanceof BlockLogPF) {
+            IBlockState blocklog = worldIn.getBlockState(position.up());
+            if (blocklog.getValue(BlockLogPF.FACING) == EnumFacing.NORTH) {
+                state = blocklog.withProperty(BlockLogPF.FACING, EnumFacing.NORTH);
+            }
+        }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockCycasLog.block) {
+            state = BlockCycasLog.block.getDefaultState();
+        }
+        if (worldIn.getBlockState(position.up()).getBlock() == BlockCycadeoideaLog.block) {
+            state = BlockCycadeoideaLog.block.getDefaultState();
+        }
+        if (state != null && state.getBlock() instanceof BlockLogPF) {
+            worldIn.setBlockState(position, state, 16);
+            if (!worldIn.getBlockState(position.down()).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(2)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(2), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(3)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(3), state, 16);
+            }
+            if (!worldIn.getBlockState(position.down(4)).getMaterial().blocksMovement()) {
+                worldIn.setBlockState(position.down(4), state, 16);
+            }
+        }
+    }
+
+    @Nullable
+    public static Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
+        Method methodToFind = null;
+
+        try {
+            methodToFind = clazz.getMethod(methodname, params);
+        } catch (SecurityException | NoSuchMethodException var5) {
+        }
+
+        return methodToFind;
+    }
 
 }

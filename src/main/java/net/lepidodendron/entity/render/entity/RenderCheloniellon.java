@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCheloniellon;
 import net.lepidodendron.entity.model.entity.ModelCheloniellon;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCheloniellon extends RenderLiving<EntityPrehistoricFloraCheloniellon> {
+public class RenderCheloniellon extends RenderLivingBaseWithBook<EntityPrehistoricFloraCheloniellon> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cheloniellon.png");
 
     public RenderCheloniellon(RenderManager mgr) {

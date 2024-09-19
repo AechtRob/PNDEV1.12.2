@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Manticoceras;
 import net.lepidodendron.entity.model.entity.ModelAmmonite50cm;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAmmonite_Manticoceras extends RenderLiving<EntityPrehistoricFloraAmmonite_Manticoceras> {
+public class RenderAmmonite_Manticoceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraAmmonite_Manticoceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_manticoceras.png");
 
     public RenderAmmonite_Manticoceras(RenderManager mgr) {

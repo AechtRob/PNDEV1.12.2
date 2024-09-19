@@ -3,12 +3,12 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraVivaxosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelVivaxosaurus extends AdvancedModelBaseExtended {
+public class ModelVivaxosaurus extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended Hips;
     public AdvancedModelRendererExtended Bodymiddle;
     public AdvancedModelRendererExtended Tail1;
@@ -237,6 +237,11 @@ public class ModelVivaxosaurus extends AdvancedModelBaseExtended {
         this.Hips.render(0.01F);
         this.resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

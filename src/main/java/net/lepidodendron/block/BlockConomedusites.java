@@ -115,6 +115,8 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {

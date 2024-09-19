@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelAteleaspis extends AdvancedModelBase {
+public class ModelAteleaspis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -175,10 +175,10 @@ public class ModelAteleaspis extends AdvancedModelBase {
     }
 
     public void renderStaticWall(float f) {
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetY = -0.15F;
-        this.head.offsetX = -0.1F;
-        this.head.offsetZ = 0.025F;
+        this.setRotateAngle(head, 1.5F, 0.0F, -0.0F);
+        this.head.offsetY = -0.2F;
+        this.head.offsetX = -0.0F;
+        this.head.offsetZ = 0.0F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
@@ -192,6 +192,11 @@ public class ModelAteleaspis extends AdvancedModelBase {
         this.head.offsetY = 0.0F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

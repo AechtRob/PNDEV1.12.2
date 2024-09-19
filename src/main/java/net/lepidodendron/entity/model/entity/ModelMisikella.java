@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelMisikella extends AdvancedModelBase {
+public class ModelMisikella extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer eyeR;
     private final AdvancedModelRenderer eyeL;
@@ -135,6 +135,11 @@ public class ModelMisikella extends AdvancedModelBase {
         this.head.offsetY = -0.15F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -4,11 +4,11 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCoelophysis;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.entity.Entity;
 
-public class ModelCoelophysis extends AdvancedModelBaseExtended {
+public class ModelCoelophysis extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended Hips;
     public AdvancedModelRendererExtended Bodymiddle;
     public AdvancedModelRendererExtended Tailbase;
@@ -314,6 +314,12 @@ public class ModelCoelophysis extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Neckbase.render(0.01F);
         resetToDefaultPose();

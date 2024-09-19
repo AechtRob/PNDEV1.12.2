@@ -5,7 +5,8 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockRottenLog;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
@@ -14,6 +15,8 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -39,7 +42,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLandClimbingBase implements ITrappableLand {
+public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLandClimbingBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -52,8 +55,13 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 		minWidth = 0.10F;
 		maxWidth = 0.30F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 		CHATTER_ANIMATION = Animation.create(this.getChatterLength());
+	}
+
+	@Override
+	public boolean noMossEggs() {
+		return true;
 	}
 
 	@Override
@@ -124,7 +132,7 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.165F;
+		float speedBase = 0.1925F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -327,10 +335,6 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-						|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-						|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
 		) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -343,19 +347,17 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
 					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
 							&& faceshape != BlockFaceShape.SOLID)) {
 						//This is solid for laying:
-						return true;
-					}
-				}
-				else {
-					//Is it upward-facing?
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
-					if (facing == EnumFacing.UP) {
-						//This is OK for laying mosses
 						return true;
 					}
 				}
@@ -398,46 +400,50 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.LONGISQUAMA_LOOT;
 	}
+
+
+
+
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall(@Nullable String variant) {
-		return 0.01;
+		return -0.225;
 	}
 	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
+		return 0.0;
 	}
 	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
+		return 0.0;
 	}
 	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0;
 	}
 	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return 0.0;
 	}
 	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.4;
+		return 0.0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
+		return 0.0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -451,5 +457,9 @@ public class EntityPrehistoricFloraLongisquama extends EntityPrehistoricFloraLan
 		return RenderLongisquama.getScaler();
 	}
 
-
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_LONGISQUAMA;
+	}
 }

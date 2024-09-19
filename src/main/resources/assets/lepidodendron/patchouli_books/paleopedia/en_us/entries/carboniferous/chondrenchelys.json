@@ -1,0 +1,47 @@
+{
+	"name": "Chondrenchelys",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/chondrenchelys_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_chondrenchelys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chondrenchelys",
+			"title": "Chondrenchelys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Chondrenchelyiformes $(br)>Chondrenchelyidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. problematica",
+            "entity": "lepidodendron:prehistoric_flora_chondrenchelys",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chondrenchelys",
+			"type": "text",
+			"text": "Chondrenchelys is a cartilaginous fish, known from Scotland and is likely the earliest Holocephalian known from complete specimens. It was eel-shaped, growing to around 18cm long and did not possess head ornaments like its relative, Harpagofututor. It had a long and tapered dorsal fin that ran down its body."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_chondrenchelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_chondrenchelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_chondrenchelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_chondrenchelys"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_chondrenchelys"
+		}
+	]
+}

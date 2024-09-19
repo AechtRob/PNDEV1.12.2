@@ -76,7 +76,7 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:horodyskia", BlockHorodyskia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:horodyskia", BlockHorodyskia.block);
 	}
 
 	public static boolean isPrecambrianUpdated() {

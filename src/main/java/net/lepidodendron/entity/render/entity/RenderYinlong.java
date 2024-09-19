@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.lepidodendron.entity.model.entity.ModelYinlong;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderYinlong extends RenderLiving<EntityPrehistoricFloraYinlong> {
+public class RenderYinlong extends RenderLivingBaseWithBook<EntityPrehistoricFloraYinlong> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yinlong.png");
 
     public RenderYinlong(RenderManager mgr) {

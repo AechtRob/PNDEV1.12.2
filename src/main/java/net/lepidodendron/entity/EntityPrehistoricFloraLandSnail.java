@@ -4,13 +4,10 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.block.BlockAncientMoss;
-import net.lepidodendron.block.BlockDollyphyton;
-import net.lepidodendron.block.BlockEdwardsiphyton;
-import net.lepidodendron.block.BlockSelaginella;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemLandSnail;
 import net.minecraft.block.Block;
@@ -172,10 +169,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 		//Eat moss!
 		BlockPos pos = this.getPosition();
 		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
-			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockSelaginella.block))
+			&& (this.world.getBlockState(pos).getBlock() instanceof ILayableMoss)
 		) {
 			this.world.destroyBlock(pos,false);
 			this.setHealth(this.getHealth() + 0.5F);

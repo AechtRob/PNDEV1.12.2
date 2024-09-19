@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/sabal_shoot_inventory",
-    "particle": "lepidodendron:items/sabal_shoot_inventory"
+    "layer0": "lepidodendron:items/sabal_shoot_inventory"
   }
 }

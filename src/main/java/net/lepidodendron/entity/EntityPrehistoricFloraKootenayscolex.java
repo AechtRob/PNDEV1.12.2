@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderKootenayscolex;
-import net.lepidodendron.entity.render.entity.RenderSokkaejaecystis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;
@@ -35,6 +34,21 @@ public class EntityPrehistoricFloraKootenayscolex extends EntityPrehistoricFlora
 	public EntityPrehistoricFloraKootenayscolex(World world) {
 		super(world);
 		setSize(0.33F, 0.2F);
+	}
+
+	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 15;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -83,8 +97,9 @@ public class EntityPrehistoricFloraKootenayscolex extends EntityPrehistoricFlora
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
-		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
-		tasks.addTask(2, new EntityLookIdleAI(this));
+		tasks.addTask(1, new ShoalTrilobiteBottomAI(this, 1, true));
+		tasks.addTask(2, new TrilobiteWanderBottom(this, NO_ANIMATION));
+		tasks.addTask(3, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
 	}
 

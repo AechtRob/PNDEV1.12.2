@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCompsognathus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelCompsognathus extends AdvancedModelBaseExtended {
+public class ModelCompsognathus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Compsognathus;
     private final AdvancedModelRenderer basin_r1;
     private final AdvancedModelRenderer LegL;
@@ -537,6 +537,7 @@ public class ModelCompsognathus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Compsognathus.offsetY = -0.2F;

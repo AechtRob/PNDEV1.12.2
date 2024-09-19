@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEretmorhipis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelEretmorhipis extends AdvancedModelBaseExtended {
+public class ModelEretmorhipis extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Eretmorhipis;
     private final AdvancedModelRendererExtended LArm;
     private final AdvancedModelRendererExtended LArm2;
@@ -188,6 +188,12 @@ public class ModelEretmorhipis extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Eretmorhipis.render(f5 * 0.215f);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();

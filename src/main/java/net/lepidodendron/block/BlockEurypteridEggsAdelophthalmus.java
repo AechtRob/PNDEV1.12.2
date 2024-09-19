@@ -4,13 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -69,26 +64,7 @@ public class BlockEurypteridEggsAdelophthalmus extends ElementsLepidodendronMod.
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomeDevonian) {
-				BiomeDevonian biomeD = (BiomeDevonian) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean
-					&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hypersaline_sinkhole")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hypersaline_sinkhole_transition"))) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
-			}
-			else if (biome instanceof BiomeCarboniferous) {
-				BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
-				if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
-			}
-			else if (biome instanceof BiomePermian) {
-				BiomePermian biomeP = (BiomePermian) biome;
-				if (biomeP.getBiomeType() != EnumBiomeTypePermian.Ocean) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
-			}
-			else {
+			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_adelophthalmus", biome.getRegistryName().toString())) {
 				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}

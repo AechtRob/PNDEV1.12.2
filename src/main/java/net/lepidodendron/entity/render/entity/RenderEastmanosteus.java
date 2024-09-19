@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEastmanosteus;
 import net.lepidodendron.entity.model.entity.ModelEastmanosteus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEastmanosteus extends RenderLiving<EntityPrehistoricFloraEastmanosteus> {
+public class RenderEastmanosteus extends RenderLivingBaseWithBook<EntityPrehistoricFloraEastmanosteus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eastmanosteus.png");
 
     public static float getScaler() {return 0.6F;}

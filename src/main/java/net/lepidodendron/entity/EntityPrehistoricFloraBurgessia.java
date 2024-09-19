@@ -8,7 +8,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.lepidodendron.entity.render.entity.RenderBurgessia;
-import net.lepidodendron.entity.render.entity.RenderMobulavermis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;

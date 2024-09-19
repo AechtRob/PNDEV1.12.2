@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelPalaeoJelly1 extends AdvancedModelBase {
+public class ModelPalaeoJelly1 extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer tentacle1;
     private final AdvancedModelRenderer tentacle1_1;
@@ -181,6 +181,32 @@ public class ModelPalaeoJelly1 extends AdvancedModelBase {
         this.body.render(f5 * 0.5F);
         GlStateManager.disableBlend();
 
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.19F;
+        this.body.offsetX = 0;
+        this.body.rotateAngleY = (float)Math.toRadians(125);
+        this.body.rotateAngleX = (float)Math.toRadians(-6);
+        this.body.rotateAngleZ = (float)Math.toRadians(-2);
+        this.body.scaleChildren = true;
+        float scaler = 0.7F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.45F);
+        this.body.render(f);
+        GlStateManager.disableBlend();
+
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

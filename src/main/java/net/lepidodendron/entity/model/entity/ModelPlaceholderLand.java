@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelPlaceholderLand extends AdvancedModelBaseExtended {
+public class ModelPlaceholderLand extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Silesaurus;
 
 
@@ -35,6 +35,7 @@ public class ModelPlaceholderLand extends AdvancedModelBaseExtended {
         this.Silesaurus.render(f5);
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Silesaurus.offsetY = -0.50F;

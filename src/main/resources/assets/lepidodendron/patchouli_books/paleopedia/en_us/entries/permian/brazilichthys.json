@@ -2,14 +2,14 @@
 	"name": "Brazilichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/brazilichthys_icon.png",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_brazilichthys",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_brazilichthys",
 			"title": "Brazilichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Actinopterygii $(br)>Brazilichthyidae"
 		},
         	{
             "type": "entity",

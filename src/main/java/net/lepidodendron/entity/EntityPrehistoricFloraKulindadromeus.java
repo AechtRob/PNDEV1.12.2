@@ -196,9 +196,11 @@ public class EntityPrehistoricFloraKulindadromeus extends EntityPrehistoricFlora
 		Entity e = ds.getTrueSource();
 		if (e instanceof EntityLivingBase) {
 			EntityLivingBase ee = (EntityLivingBase) e;
+			this.setAlarmTarget(ee);
 			List<EntityPrehistoricFloraKulindadromeus> Kulindadromeus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraKulindadromeus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraKulindadromeus currentKulindadromeus : Kulindadromeus) {
 				currentKulindadromeus.setRevengeTarget(ee);
+				currentKulindadromeus.setAlarmTarget(ee);
 				currentKulindadromeus.alarmCooldown = rand.nextInt(20);
 			}
 		}

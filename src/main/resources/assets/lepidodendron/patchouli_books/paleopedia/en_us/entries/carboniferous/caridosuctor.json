@@ -1,0 +1,47 @@
+{
+	"name": "Caridosuctor",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/caridosuctor_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_caridosuctor",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caridosuctor",
+			"title": "Caridosuctor",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Sarcopterygii $(br)>Actinistia $(br)>Coelacanthiformes $(br)>Rhabdodermatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. populosum",
+            "entity": "lepidodendron:prehistoric_flora_caridosuctor",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caridosuctor",
+			"type": "text",
+			"text": "Caridosuctor is a marine coelacanth known from the Bear Gulch Limestone of Montana. It is known from many well preserved fossil slab specimens. It had a robust and short body, and it did not exceed 20 cm in length."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_caridosuctor"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_caridosuctor"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_caridosuctor"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_caridosuctor"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_caridosuctor"
+		}
+	]
+}

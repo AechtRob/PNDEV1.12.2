@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraOrnitholestes;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelOrnitholestes extends AdvancedModelBaseExtended {
+public class ModelOrnitholestes extends ModelBasePalaeopedia {
 
     private final AdvancedModelRenderer base;
     private final AdvancedModelRenderer hips;
@@ -481,6 +481,7 @@ public class ModelOrnitholestes extends AdvancedModelBaseExtended {
         AdvancedModelRenderer.rotateAngleZ = z;
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = 0.250F;

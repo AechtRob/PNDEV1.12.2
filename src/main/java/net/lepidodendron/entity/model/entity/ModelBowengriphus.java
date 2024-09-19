@@ -1,14 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraBowengriphus;
-import net.lepidodendron.entity.EntityPrehistoricFloraCalvapilosa;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelBowengriphus extends AdvancedModelBase {
+public class ModelBowengriphus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer all;
     private final AdvancedModelRenderer bone;
     private final AdvancedModelRenderer cube_r1;
@@ -124,6 +123,7 @@ public class ModelBowengriphus extends AdvancedModelBase {
         this.all.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.all.offsetY = -2.7F;
@@ -144,6 +144,7 @@ public class ModelBowengriphus extends AdvancedModelBase {
         this.all.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

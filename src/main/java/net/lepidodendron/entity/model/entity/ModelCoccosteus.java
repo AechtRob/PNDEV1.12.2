@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelCoccosteus extends AdvancedModelBase {
+public class ModelCoccosteus extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Body1;
     public AdvancedModelRenderer Body2;
     public AdvancedModelRenderer Head1;
@@ -192,6 +192,11 @@ public class ModelCoccosteus extends AdvancedModelBase {
         this.Body1.offsetY = 0.3F;
         this.Body1.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

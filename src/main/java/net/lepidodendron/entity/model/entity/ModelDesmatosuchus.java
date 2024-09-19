@@ -3,14 +3,14 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDesmatosuchus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
+public class ModelDesmatosuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Desmatosuchus;
     private final AdvancedModelRendererExtended body3;
     private final AdvancedModelRendererExtended tail;
@@ -453,6 +453,11 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -1,7 +1,7 @@
 {
 	"name": "Essexella",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/essexella_icon.png",
+	"icon": "lepidodendron:essexella",
 	"category": "lepidodendron:carboniferous_static",
 	"turnin": "lepidodendron:pf_adv_book_essexella",
 	"pages": [

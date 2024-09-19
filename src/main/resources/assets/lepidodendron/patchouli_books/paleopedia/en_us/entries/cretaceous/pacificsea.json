@@ -1,0 +1,46 @@
+{
+	"name": "Pacific Sea Nettle",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/pacificsea_icon.png",
+	"category": "lepidodendron:cretaceousearly_animal",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish3",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish3",
+			"title": "Pacific Sea Nettle",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cretaceous+$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/jelly_pacific.png"],
+			"title": "C. fuscescens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish3",
+			"type": "text",
+			"text": "Jellyfish in modern forms have existed since at least the Cambrian period, and in very similar forms before even then. This exact species is a modern species but entirely similar to what has existed since ancient times. The Pacific sea nettle is a jellyfish which lived mainly along the west coast of North America, in the Pacific Ocean. They are carnivorous and catch prey with their tentacles which they then transport to their mouth."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish3"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish3"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish3"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish3"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_jellyfish3"
+		}
+	]
+}

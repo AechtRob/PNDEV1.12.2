@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraNotostracan;
 import net.lepidodendron.entity.model.entity.ModelNotostracan;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderNotostracan extends RenderLiving<EntityPrehistoricFloraNotostracan> {
+public class RenderNotostracan extends RenderLivingBaseWithBook<EntityPrehistoricFloraNotostracan> {
     public static final ResourceLocation TEXTURE_STRUDOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/strudops.png");
     public static final ResourceLocation TEXTURE_TRIOPS1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/triops1.png");
     public static final ResourceLocation TEXTURE_TRIOPS2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/triops2.png");

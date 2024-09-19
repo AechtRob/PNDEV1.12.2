@@ -70,6 +70,7 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockGreenAlgaeMat.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:green_algae_mat", BlockGreenAlgaeMat.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -97,6 +98,8 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		if (!matchBiome(biome, LepidodendronConfigPlants.genGreenAlgaeMatBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genGreenAlgaeMatOverrideBiomes))

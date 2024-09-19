@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraNimbia extends EntityPrehistoricFloraSlitheri
 		return true;
 	}
 
-	public static String getPeriod() {return "Cryogenian - Ediacaran - [Earliest Cambrian]";}
+	public static String getPeriod() {return "Neoproterozoic (Cryogenian - Ediacaran) - earliest Cambrian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -66,7 +66,10 @@ public class EntityPrehistoricFloraNimbia extends EntityPrehistoricFloraSlitheri
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.04f;
+		if (this.rand.nextInt(5) != 0) {
+			return 0;
+		}
+		return 0.03f;
 	}
 
 	protected void initEntityAI() {
@@ -83,7 +86,7 @@ public class EntityPrehistoricFloraNimbia extends EntityPrehistoricFloraSlitheri
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 

@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
-public class ModelGerarus extends AdvancedModelBase {
+public class ModelGerarus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer gerarus;
     private final AdvancedModelRenderer thorax;
     private final AdvancedModelRenderer cube_r1;
@@ -322,6 +322,7 @@ public class ModelGerarus extends AdvancedModelBase {
         modelRenderer.rotateAngleZ = z;
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.gerarus.offsetY = -1.5F;

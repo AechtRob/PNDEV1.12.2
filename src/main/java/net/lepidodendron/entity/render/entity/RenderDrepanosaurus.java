@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDrepanosaurus;
 import net.lepidodendron.entity.model.entity.ModelDrepanosaurus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDrepanosaurus extends RenderLiving<EntityPrehistoricFloraDrepanosaurus> {
+public class RenderDrepanosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraDrepanosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanosaurus.png");
 
     public RenderDrepanosaurus(RenderManager mgr) {

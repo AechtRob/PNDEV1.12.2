@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTerataspis;
 import net.lepidodendron.entity.model.entity.ModelTerataspis;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderTerataspis extends RenderLiving<EntityPrehistoricFloraTerataspis> {
+public class RenderTerataspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraTerataspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/terataspis.png");
 
     public RenderTerataspis(RenderManager mgr) {

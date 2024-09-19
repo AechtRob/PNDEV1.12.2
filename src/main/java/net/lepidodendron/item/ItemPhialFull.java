@@ -159,15 +159,17 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_urocordylus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_whatcheeria", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_xenacanthus", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_hughmilleria", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_banksiops", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_erettopterus", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_stonefly", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_sarcoprion", "inventory")
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_hughmilleria", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_banksiops", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_wodnika", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_namurotypus", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_erasipteroides", "inventory"),
+			//new ModelResourceLocation("lepidodendron:entities/phial_eggs_erettopterus", "inventory"),
+			//new ModelResourceLocation("lepidodendron:entities/phial_eggs_stonefly", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_sarcoprion", "inventory")
 
 
-
-				);
+		);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			if (stack.hasTagCompound()) {

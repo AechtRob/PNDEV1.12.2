@@ -5,13 +5,13 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcanthostega;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelAcanthostega extends AdvancedModelBaseExtended {
+public class ModelAcanthostega extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended chest;
     public AdvancedModelRendererExtended body;
     public AdvancedModelRendererExtended upperarm1;
@@ -201,16 +201,82 @@ public class ModelAcanthostega extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.chest.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.chest.offsetZ = -0.1F;
-        this.chest.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticWall(float f) {
+        this.chest.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(neck1, 0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(head1, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(jaw1, 0.2F, 0.0F, 0.0F);
+        this.chest.offsetY = -0.1F;
+        this.chest.offsetX = -0.15F;
+        this.chest.offsetZ = 0.07F;
+        this.chest.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(chest, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(neck1, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(head1, -0.1F, -0.1F, 0.0F);
+        this.setRotateAngle(jaw1, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.1F, 0.1F, 0.1F);
+        this.setRotateAngle(tail2, 0.1F, -0.2F, 0.1F);
+        this.setRotateAngle(tail3, 0.1F, -0.2F, 0.1F);
+        this.setRotateAngle(upperarm1, -0.3F, 0.3F, 0.3F);
+        this.setRotateAngle(arm1, -0.3F, 0.0F, 0.3F);
+        this.setRotateAngle(hand1, 0.F, 0.0F, 0.3F);
+        this.setRotateAngle(upperarm2, 0.3F, -0.3F, -0.3F);
+        this.setRotateAngle(arm2, 0.3F, 0.0F, -0.3F);
+        this.setRotateAngle(hand2, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(upperleg1, 0.3F, 0.0F, 0.5F);
+        this.setRotateAngle(leg1, 0.3F, 0.3F, 0.3F);
+        this.setRotateAngle(feet1, 0.0F, -0.3F, -0.2F);
+        this.setRotateAngle(upperleg2, 0.3F, 0.0F, -0.5F);
+        this.setRotateAngle(leg2, 0.3F, 0.3F, 0.3F);
+        this.setRotateAngle(feet2, 0.0F, -0.3F, 0.2F);
+        this.chest.offsetZ = -0.05F;
+        this.chest.offsetY = -0.0F;
+        this.chest.render(0.01F);
+        resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.chest.offsetY = 0.7F;
+        this.chest.offsetX = 0.1F;
+        this.chest.rotateAngleY = (float) Math.toRadians(210);
+        this.chest.rotateAngleX = (float) Math.toRadians(8);
+        this.chest.rotateAngleZ = (float) Math.toRadians(-4);
+        this.chest.scaleChildren = true;
+        float scaler = 0.575F;
+        this.chest.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arm1, 0.10F, 0.0F, 0.0F);
+        this.setRotateAngle(hand1, 0.F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(arm2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(hand2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leg1, 0.10F, 0.0F, 0.0F);
+        this.setRotateAngle(feet1, 0.F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(leg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(feet2, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.chest.render(f);
+        //Reset rotations, positions and sizing:
+        this.chest.setScale(1.0F, 1.0F, 1.0F);
+        this.chest.scaleChildren = false;
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

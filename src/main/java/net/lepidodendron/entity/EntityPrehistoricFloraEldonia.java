@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
@@ -84,7 +83,7 @@ public class EntityPrehistoricFloraEldonia extends EntityPrehistoricFloraAgeable
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.07F;
+		return 0.03F;
 	}
 
 	@Override
@@ -197,7 +196,7 @@ public class EntityPrehistoricFloraEldonia extends EntityPrehistoricFloraAgeable
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.ELDONIA_LOOT;
+		return null;
 	}
 
 	@Nullable

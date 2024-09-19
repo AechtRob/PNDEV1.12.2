@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDoswellia;
 import net.lepidodendron.entity.model.entity.ModelDoswellia;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDoswellia extends RenderLiving<EntityPrehistoricFloraDoswellia> {
+public class RenderDoswellia extends RenderLivingBaseWithBook<EntityPrehistoricFloraDoswellia> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/doswellia.png");
 
     public RenderDoswellia(RenderManager mgr) {

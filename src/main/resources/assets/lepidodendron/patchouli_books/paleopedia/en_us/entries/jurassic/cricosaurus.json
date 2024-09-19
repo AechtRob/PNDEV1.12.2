@@ -1,0 +1,47 @@
+{
+	"name": "Cricosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cricosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cricosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cricosaurus",
+			"title": "Cricosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Early Cretaceous$(br2)>Crocodyliformes $(br)>Thalattosuchia $(br)>Metriorhynchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "C. elegans",
+            "entity": "lepidodendron:prehistoric_flora_cricosaurus",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cricosaurus",
+			"type": "text",
+			"text": "Cricosaurus is a small sized marine crocodylian from the Jurassic period of Germany. It measured around 2 meters in length and is known mostly from skull material and a well preserved slab of the entire skeleton. It was a pelagic predator, and it is thought to have niche partitioned with Dakosaurus, which lived at the same time in the same environment. Due to the shape of the hip of Cricosaurus, it is also believed to have been viviparous."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cricosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cricosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cricosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cricosaurus"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cricosaurus"
+		}
+	]
+}

@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraSmilosuchus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelSmilosuchus extends AdvancedModelBaseExtended {
+public class ModelSmilosuchus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended body;
     private final AdvancedModelRendererExtended body2;
     private final AdvancedModelRendererExtended cube_r1;
@@ -382,6 +382,12 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(neck, 0.0F, 0.0F, 0.05F);
         this.setRotateAngle(head, 0.0F, 0.0F, 0.05F);

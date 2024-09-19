@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.lepidodendron.entity.EntityPrehistoricFloraDeiroceras;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelDeiroceras extends AdvancedModelBaseExtended {
+public class ModelDeiroceras extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended shellbase;
     public AdvancedModelRendererExtended shellbasebottom;
     public AdvancedModelRendererExtended shellbasetop;
@@ -435,6 +435,11 @@ public class ModelDeiroceras extends AdvancedModelBaseExtended {
         this.shellbase.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

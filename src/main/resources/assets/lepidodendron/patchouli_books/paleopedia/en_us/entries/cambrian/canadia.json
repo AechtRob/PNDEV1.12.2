@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Annelida$(br)>Polychaeta"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/Canadia.png"],
-			"title": "C. spinosa",
-			"text": ""
+			"type": "entity",
+			"name": "C. spinosa",
+			"entity": "lepidodendron:prehistoric_flora_canadia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_canadia",

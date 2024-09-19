@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelHibernaspis extends AdvancedModelBase {
+public class ModelHibernaspis extends ModelBasePalaeopedia {
     public AdvancedModelRenderer Body;
     public AdvancedModelRenderer shape10;
     public AdvancedModelRenderer shape11;
@@ -269,6 +269,11 @@ public class ModelHibernaspis extends AdvancedModelBase {
         this.Body.offsetX = -0.0F;
         this.Body.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

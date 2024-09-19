@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.CustomTrigger;
@@ -77,7 +78,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockAdoketophyton.block);
 	}
 
-	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter {
+	public static class BlockCustom extends BlockBush implements IGrowable, IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -94,6 +95,11 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_adoketophyton");
 			setRegistryName("adoketophyton");
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return BlockAdoketophytonSpore.block.getDefaultState();
 		}
 
 		@Override

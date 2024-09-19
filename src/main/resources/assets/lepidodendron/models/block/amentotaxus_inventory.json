@@ -1,7 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "lepidodendron:items/amentotaxus_inventory",
-    "particle": "lepidodendron:items/amentotaxus_inventory"
+    "layer0": "lepidodendron:items/amentotaxus_inventory"
   }
 }

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOphthalmothule;
 import net.lepidodendron.entity.model.entity.ModelOphthalmothule;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOphthalmothule extends RenderLiving<EntityPrehistoricFloraOphthalmothule> {
+public class RenderOphthalmothule extends RenderLivingBaseWithBook<EntityPrehistoricFloraOphthalmothule> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ophthalmothule.png");
 
     public RenderOphthalmothule(RenderManager mgr) {

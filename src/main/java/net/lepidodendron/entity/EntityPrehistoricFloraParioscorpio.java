@@ -6,7 +6,10 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderParioscorpio;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
@@ -41,7 +44,7 @@ public class EntityPrehistoricFloraParioscorpio extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.6F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 3.0D;
 	}
 //
 //	@Override

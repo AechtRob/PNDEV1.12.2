@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelWaptia extends AdvancedModelBase {
+public class ModelWaptia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer base;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer body1;
@@ -353,6 +353,7 @@ public class ModelWaptia extends AdvancedModelBase {
         this.base.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.base.offsetY = -2.0F;
@@ -376,6 +377,7 @@ public class ModelWaptia extends AdvancedModelBase {
         this.base.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

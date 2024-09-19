@@ -1,0 +1,47 @@
+{
+	"name": "Gregorius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/gregorius_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_gregorius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gregorius",
+			"title": "Gregorius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Chondrichthyes $(br)>Euchondrocephali $(br)>Gregoriidae"
+		},
+        	{
+            "type": "entity",
+            "name": "G. rexi",
+            "entity": "lepidodendron:prehistoric_flora_gregorius",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gregorius",
+			"type": "text",
+			"text": "Gregorius is a Carboniferous cartilaginous fish known from the Bear Gulch Limestone of Montana. It is known from a body imprint as well as skull and teeth fossils. It was around 10 cm long and had a torpedo shaped body, with dorsal spines pairing both dorsal fins. "
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_gregorius"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_gregorius"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_gregorius"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_gregorius"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_gregorius"
+		}
+	]
+}

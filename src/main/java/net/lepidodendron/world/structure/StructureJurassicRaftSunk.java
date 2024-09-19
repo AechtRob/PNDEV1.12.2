@@ -63,16 +63,6 @@ public class StructureJurassicRaftSunk extends ElementsLepidodendronMod.ModEleme
 					world.getBlockState(new BlockPos(i, height + 1, k)).getMaterial() == Material.WATER
 					&& world.getBlockState(new BlockPos(i, height, k)).getMaterial() == Material.SAND
 				) {
-//					int d = 1;
-//					while (d < 10 && doSpawn) {
-//						if (!(world.getBlockState(new BlockPos(i, (height - d), k)).getMaterial() == Material.WATER
-//								&& (world.getBlockState(new BlockPos(i, (height - d), k)).getBlock() instanceof BlockFluidBase
-//								|| world.getBlockState(new BlockPos(i, (height - d), k)).getBlock() instanceof BlockLiquid)
-//						)) {
-//							doSpawn = false;
-//						}
-//						d += 1;
-//					}
 				} else {
 					doSpawn = false;
 				}

@@ -11,7 +11,11 @@ import java.util.Random;
 public class WorldGenPrehistoricGroundCoverSandy extends WorldGenerator
 {
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, 0, 255);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight)
     {
         boolean flag = false;
 
@@ -21,8 +25,10 @@ public class WorldGenPrehistoricGroundCoverSandy extends WorldGenerator
 
             if (blockpos.getY() >= Functions.getAdjustedSeaLevel(worldIn, blockpos)-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockPrehistoricGroundCoverPlantsSandy.block.canPlaceBlockAt(worldIn, blockpos))
             {
-                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, BlockPrehistoricGroundCoverPlantsSandy.block.getDefaultState(), 2);
-                flag = true;
+                if (blockpos.getY() >= minHeight && blockpos.getY() <= maxHeight) {
+                    Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, BlockPrehistoricGroundCoverPlantsSandy.block.getDefaultState(), 2);
+                    flag = true;
+                }
             }
         }
 

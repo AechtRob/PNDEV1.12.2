@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelHaikouichthys extends AdvancedModelBase {
+public class ModelHaikouichthys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer bone2;
     private final AdvancedModelRenderer bone;
     private final AdvancedModelRenderer cube_r1;
@@ -122,6 +122,11 @@ public class ModelHaikouichthys extends AdvancedModelBase {
             this.bone2.render(0.01F);
             resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

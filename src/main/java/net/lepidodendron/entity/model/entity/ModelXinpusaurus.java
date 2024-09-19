@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraXinpusaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelXinpusaurus extends AdvancedModelBaseExtended {
+public class ModelXinpusaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Xinpusaurus;
     private final AdvancedModelRenderer Chest;
     private final AdvancedModelRenderer Neck;
@@ -387,6 +387,11 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
         this.Xinpusaurus.offsetX = 0.0F;
         this.Xinpusaurus.render(0.01F);
         resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

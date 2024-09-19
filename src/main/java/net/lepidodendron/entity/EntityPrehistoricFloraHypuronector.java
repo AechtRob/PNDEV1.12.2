@@ -4,7 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -56,7 +56,12 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 		minWidth = 0.10F;
 		maxWidth = 0.30F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
+	}
+
+	@Override
+	public boolean noMossEggs() {
+		return true;
 	}
 
 	@Override
@@ -301,10 +306,6 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-						|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-						|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
 		) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -317,19 +318,17 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
 					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
 							&& faceshape != BlockFaceShape.SOLID)) {
 						//This is solid for laying:
-						return true;
-					}
-				}
-				else {
-					//Is it upward-facing?
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
-					if (facing == EnumFacing.UP) {
-						//This is OK for laying mosses
 						return true;
 					}
 				}

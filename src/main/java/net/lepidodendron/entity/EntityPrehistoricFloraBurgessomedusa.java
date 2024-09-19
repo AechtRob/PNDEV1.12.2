@@ -8,18 +8,14 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -111,7 +107,7 @@ public class EntityPrehistoricFloraBurgessomedusa extends EntityPrehistoricFlora
 
     @Override
     protected float getAISpeedJelly() {
-        return 0.07f;
+        return 0.03f;
     }
 
     @Override

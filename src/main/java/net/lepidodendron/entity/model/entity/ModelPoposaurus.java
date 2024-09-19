@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPoposaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelPoposaurus extends AdvancedModelBaseExtended {
+public class ModelPoposaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended Poposaurus;
     private final AdvancedModelRendererExtended Basin;
     private final AdvancedModelRendererExtended Body;
@@ -326,6 +326,12 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Poposaurus.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.Neck.offsetY = -0.001F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(35);

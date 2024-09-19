@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelSteurbautichthys extends AdvancedModelBase {
+public class ModelSteurbautichthys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Steurbautichthys;
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;
@@ -202,6 +202,11 @@ public class ModelSteurbautichthys extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Steurbautichthys.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void renderStaticWall(float f) {

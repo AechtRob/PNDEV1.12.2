@@ -5,10 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
+import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -75,7 +77,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		return LepidodendronMod.MODID + ":insect_eggs_pneumodesmus";
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
@@ -197,10 +199,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		//Eat moss!
 		BlockPos pos = this.getPosition();
 		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
-			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)
-			|| (this.world.getBlockState(pos).getBlock() == BlockSelaginella.block))
+			&& ((world.getBlockState(pos).getBlock() instanceof ILayableMoss))
 		) {
 			this.world.destroyBlock(pos,false);
 			this.setHealth(this.getHealth() + 0.5F);
@@ -213,10 +212,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-						|| world.getBlockState(pos).getBlock() == BlockAncientMoss.block
-						|| world.getBlockState(pos).getBlock() == BlockDollyphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
-						|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
+						|| (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
 		) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -229,7 +225,13 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
 					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
 							&& faceshape != BlockFaceShape.SOLID)) {
@@ -239,7 +241,13 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 				}
 				else {
 					//Is it upward-facing?
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
+					EnumFacing facing = EnumFacing.UP;
+					try {
+						facing = world.getBlockState(pos).getValue(FACING);
+					}
+					catch (Exception e) {
+						//Do nothing
+					}
 					if (facing == EnumFacing.UP) {
 						//This is OK for laying mosses
 						return true;

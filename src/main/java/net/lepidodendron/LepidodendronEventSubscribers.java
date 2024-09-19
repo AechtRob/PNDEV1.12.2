@@ -5,9 +5,11 @@ import net.lepidodendron.entity.EntityPrehistoricFloraGuanoBall;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
+import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.item.*;
 import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.WorldOverworldPortal;
 import net.lepidodendron.world.biome.FishingRodDrops;
@@ -15,13 +17,16 @@ import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.command.ICommandSender;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -32,11 +37,13 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
@@ -61,16 +68,35 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 public class LepidodendronEventSubscribers {
 
+	@SubscribeEvent //Stop ageing things in the cages:
+	public void onTickEntity(LivingEvent.LivingUpdateEvent event) {
+		EntityLivingBase entity = event.getEntityLiving();
+		if (entity instanceof EntityAgeable) {
+			if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockCageSmall.block) {
+				int i = Math.max(((EntityAgeable)entity).getGrowingAge(), -23999);
+				if (entity instanceof EntityVillager) {
+					i = Math.max(((EntityAgeable) entity).getGrowingAge(), -5999);
+				}
+				((EntityAgeable)entity).setGrowingAge(i - 1);
+			}
+		}
+	}
 
 	@SubscribeEvent //Stop vanilla fish in the dimensions:
 	public void onFishing(ItemFishedEvent event) {
@@ -177,13 +203,31 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-  	@SubscribeEvent //Give the Palaeopedia on first join:
+  	@SubscribeEvent //Give the Palaeopedia on first join and notify about flowerpots:
 	public void playerJoined(EntityJoinWorldEvent event) {
 		if (!LepidodendronConfig.giveBook) {
 			return;
 		}
 		if ((event.getEntity() instanceof EntityPlayerMP)) {
 			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+		}
+
+		if (LepidodendronConfig.modFlowerpot) {
+			if ((Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityPlayer) {
+					EntityPlayer player = (EntityPlayer) entity;
+					if ((event.getEntity() instanceof EntityPlayerMP) && (entity.world instanceof WorldServer)) {
+						if (!(((EntityPlayerMP) event.getEntity()).getAdvancements().getProgress(((WorldServer) entity.world).getAdvancementManager()
+							.getAdvancement(new ResourceLocation("lepidodendron:pf_quark_nag"))).isDone())) {
+							ITextComponent itextcomponent = new TextComponentString("You have Quark installed, and Quark has its own modded flower pots, which we don't know if you're using! If you want to use Prehistoric Nature flower pots and not Quark ones, you should disable Quark ones in the Quark config, and also amend the Prehistoric Nature config file to make Prehistoric Nature ones load.");
+							itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+							entity.sendMessage(itextcomponent);
+							ModTriggers.QUARK_NAG.trigger((EntityPlayerMP) event.getEntity());
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -196,80 +240,48 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Some instructions for use of rideables
 	public void playerMounted(EntityMountEvent event) {
-		if (event.getWorldObj().isRemote) {
-			return;
-		}
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
-			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && entity.world.getMinecraftServer() != null && !event.getEntityMounting().getEntityWorld().isRemote) {
-				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-					@Override
-					public String getName() {
-						return "";
-					}
-
-					@Override
-					public boolean canUseCommand(int permission, String command) {
-						return true;
-					}
-
-					@Override
-					public World getEntityWorld() {
-						return entity.world;
-					}
-
-					@Override
-					public MinecraftServer getServer() {
-						return entity.world.getMinecraftServer();
-					}
-
-					@Override
-					public boolean sendCommandFeedback() {
-						return false;
-					}
-
-					@Override
-					public Entity getCommandSenderEntity() {
-						return entity;
-					}
-				}, "/pninstruct " + player.getName() + " Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName());
-
-				entity.world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-					@Override
-					public String getName() {
-						return "";
-					}
-
-					@Override
-					public boolean canUseCommand(int permission, String command) {
-						return true;
-					}
-
-					@Override
-					public World getEntityWorld() {
-						return entity.world;
-					}
-
-					@Override
-					public MinecraftServer getServer() {
-						return entity.world.getMinecraftServer();
-					}
-
-					@Override
-					public boolean sendCommandFeedback() {
-						return false;
-					}
-
-					@Override
-					public Entity getCommandSenderEntity() {
-						return entity;
-					}
-				}, "/pninstruct " + player.getName() + " Left control panel: read battery; Right control panel: add/remove battery");
-
-				//player.sendMessage(new TextComponentString("Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
-				//player.sendMessage(new TextComponentString("Left control panel: read battery; Right control panel: add/remove battery"));
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
+				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
 			}
+		}
+	}
+
+	public static class SubmarineMountMessageHandler implements IMessageHandler<SubmarineMountMessage, IMessage> {
+		@Override
+		public IMessage onMessage(SubmarineMountMessage message, MessageContext context) {
+			EntityPlayer player = context.getServerHandler().player.world.getPlayerEntityByUUID(UUID.fromString(message.player));
+			if (context.getServerHandler().player == player && !context.getServerHandler().player.world.isRemote) {
+				ITextComponent itextcomponent = new TextComponentString(message.message);
+				itextcomponent.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+				player.sendMessage(itextcomponent);
+			}
+			return null;
+		}
+	}
+
+	public static class SubmarineMountMessage implements IMessage {
+		String player, message;
+		public SubmarineMountMessage() {
+		}
+
+		public SubmarineMountMessage(String player, String message) {
+			this.player = player;
+			this.message = message;
+		}
+
+		@Override
+		public void toBytes(io.netty.buffer.ByteBuf buf) {
+			ByteBufUtils.writeUTF8String(buf, player);
+			ByteBufUtils.writeUTF8String(buf, message);
+		}
+
+		@Override
+		public void fromBytes(io.netty.buffer.ByteBuf buf) {
+			player = ByteBufUtils.readUTF8String(buf);
+			message = ByteBufUtils.readUTF8String(buf);
 		}
 	}
 
@@ -657,12 +669,29 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //Let eggs drop their right items:
+	@SubscribeEvent
 	public void onBlockPreBreak(BlockEvent.BreakEvent event) {
 		if ((!event.getWorld().isRemote)) {
 			if (event.getPlayer() != null) {
+				//Let eggs drop their right items:
 				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {
 					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), BlockEggs.BlockCustom.getEggItemStack(event.getWorld(), event.getPos()));
+					entityToSpawn.setPickupDelay(10);
+					event.getWorld().spawnEntity(entityToSpawn);
+				}
+				//Let small angiosperm seeds drop sometimes:
+				if (!event.getPlayer().isCreative()
+						&& (event.getState().getMaterial() == Material.GROUND ||  event.getState().getMaterial() == Material.GRASS)
+						&& event.getWorld().rand.nextInt(50) == 0
+						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousLate
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPaleogene
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimNeogene
+							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPleistocene
+							|| event.getWorld().provider.getDimension() == 0
+						)
+				) {
+					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(ItemSmallAngiospermSeeds.block, 1));
 					entityToSpawn.setPickupDelay(10);
 					event.getWorld().spawnEntity(entityToSpawn);
 				}
@@ -784,10 +813,15 @@ public class LepidodendronEventSubscribers {
 		//}
 	}
 
-	@SubscribeEvent //Steam in the Hot Springs:
+	@SubscribeEvent //Steam in the right places:
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		Random rand = new Random();
-		if (event.phase == TickEvent.Phase.END && (event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian || event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous)) {
+		if (event.phase == TickEvent.Phase.END &&
+				(event.player.world.provider.getDimension() == LepidodendronConfig.dimDevonian
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
+						|| event.player.world.provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
+				)
+		) {
 			Entity entity = event.player;
 			World world = entity.world;
 			BlockPos pos = entity.getPosition();
@@ -800,7 +834,9 @@ public class LepidodendronEventSubscribers {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
 							if ((world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs")
-									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns"))
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_rift")
+									|| world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_shrubland_springs"))
 									&& rand.nextInt(150) == 0) {
 								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
@@ -816,6 +852,289 @@ public class LepidodendronEventSubscribers {
 
 	}
 
+	public static boolean hasTaxidermy(ItemStack itemstack) {
+		Class[] params = new Class[1];
+		boolean itemRender = false;
+		String PNVariant = null;
+		params[0] = String.class;
+		double offsetWall = 0;
+		double upperfrontverticallinedepth = 0;
+		double upperbackverticallinedepth = 0;
+		double upperfrontlineoffset = 0;
+		double upperfrontlineoffsetperpendiular = 0;
+		double upperbacklineoffset = 0;
+		double upperbacklineoffsetperpendiular = 0;
+		double lowerfrontverticallinedepth = 0;
+		double lowerbackverticallinedepth = 0;
+		double lowerfrontlineoffset = 0;
+		double lowerfrontlineoffsetperpendiular = 0;
+		double lowerbacklineoffset = 0;
+		double lowerbacklineoffsetperpendiular = 0F;
+		ResourceLocation textureDisplay = null;
+		ModelBase modelDisplay = null;
+		float getScaler = 0.0F;
+
+		//Convert oreDict to NBT:
+		String id_dna = "";
+		String tag = "";
+		int[] oreDicts = OreDictionary.getOreIDs(itemstack);
+		int var = oreDicts.length;
+		for (int var2 = 0; var2 < var; ++var2) {
+			int oreDictID = oreDicts[var2];
+			String oreName = OreDictionary.getOreName(oreDictID);
+			if (oreName.startsWith("mobdnaPN")) {
+				id_dna = oreName.substring(8);
+				tag = "PFMob";
+			}
+		}
+		if (itemstack.getItem() instanceof ItemGlassCaseDisplayItem) {
+			PNVariant = ((ItemGlassCaseDisplayItem)itemstack.getItem()).getVariantStr();
+			if (PNVariant != null) {
+				if (PNVariant.equalsIgnoreCase("gendered")) {
+					if ((new Random()).nextInt(2) == 0) {
+						PNVariant = "male";
+					} else {
+						PNVariant = "female";
+					}
+				}
+			}
+		}
+		if (itemstack.getItem() instanceof ItemPNTaxidermyItem) {
+			PNVariant = ((ItemPNTaxidermyItem)itemstack.getItem()).getVariantStr();
+			if (PNVariant != null) {
+				if (PNVariant.equalsIgnoreCase("gendered")) {
+					if ((new Random()).nextInt(2) == 0) {
+						PNVariant = "male";
+					}
+					else {
+						PNVariant = "female";
+					}
+				}
+			}
+		}
+		ItemStack outputStack = new ItemStack(ItemTaxidermyDisplayItem.block, 1);
+		NBTTagCompound parentNBT = new NBTTagCompound();
+		parentNBT.setString("id", id_dna);
+		NBTTagCompound stackNBT = new NBTTagCompound();
+		stackNBT.setTag(tag, parentNBT);
+		if (PNVariant != null) {
+			stackNBT.setString("PNVariant", PNVariant);
+		}
+		outputStack.setTagCompound(stackNBT);
+
+		Class classEntity = RenderDisplayWallMount.getEntityFromNBT(outputStack);
+		if (classEntity != null) {
+			itemRender = false;
+
+			//Is there a variant included?
+			if (outputStack.hasTagCompound()) {
+				if (outputStack.getTagCompound().hasKey("PNVariant")) {
+					PNVariant = outputStack.getTagCompound().getString("PNVariant");
+				}
+				if (RenderDisplayWallMount.getVariantFromNBT(outputStack) != null) {
+					PNVariant = RenderDisplayWallMount.getVariantFromNBT(outputStack);
+				}
+			}
+
+			Method method = Functions.testAndGetMethod(classEntity, "offsetWall", params);
+			if (method != null) {
+				try {
+					offsetWall = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
+			if (method != null) {
+				try {
+					upperfrontverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
+			if (method != null) {
+				try {
+					upperbackverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
+			if (method != null) {
+				try {
+					upperfrontlineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					upperfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "upperbacklineoffset", params);
+			if (method != null) {
+				try {
+					upperbacklineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					upperbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
+			if (method != null) {
+				try {
+					lowerfrontverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
+			if (method != null) {
+				try {
+					lowerbackverticallinedepth = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
+			if (method != null) {
+				try {
+					lowerfrontlineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					lowerfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
+			if (method != null) {
+				try {
+					lowerbacklineoffset = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
+			if (method != null) {
+				try {
+					lowerbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
+			if (method != null) {
+				try {
+					textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
+			if (method != null) {
+				try {
+					modelDisplay = (ModelBase) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+			method = Functions.testAndGetMethod(classEntity, "getScaler", params);
+			if (method != null) {
+				try {
+					getScaler = (float) method.invoke(null, PNVariant);
+				} catch (Exception e) {
+					itemRender = true;
+				}
+			} else {
+				itemRender = true;
+			}
+		}
+		else {
+			itemRender = true;
+		}
+
+		if (itemRender) {
+			return false;
+		}
+
+		return testRenderTaxidermy(EnumFacing.UP, modelDisplay)
+				|| testRenderTaxidermy(EnumFacing.DOWN, modelDisplay)
+				|| testRenderTaxidermy(EnumFacing.NORTH, modelDisplay);
+	}
+
+	public static boolean testRenderTaxidermy(EnumFacing facing, ModelBase model) {
+
+		boolean flag1 = true;
+		boolean flag2 = true;
+		boolean flag3 = true;
+
+		if (facing == EnumFacing.DOWN) {
+			Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[]{float.class});
+			if (renderMethod == null) {
+				flag1 = false;
+			}
+		} else if (facing == EnumFacing.UP) {
+			Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[]{float.class});
+			if (renderMethod == null) {
+				flag2 = false;
+			}
+		} else if (facing == EnumFacing.NORTH) {
+			Method renderMethod = Functions.testAndGetMethod(model.getClass(), "renderStaticWall", new Class[]{float.class});
+			if (renderMethod == null) {
+				flag3 = false;
+			}
+		}
+		return flag1 || flag2 || flag3;
+	}
+
 	@SideOnly(Side.CLIENT) //Tooltips for vanilla items etc
 	@SubscribeEvent
 	public void onEvent(ItemTooltipEvent event) throws NoSuchMethodException {
@@ -823,11 +1142,188 @@ public class LepidodendronEventSubscribers {
 		if (event.getItemStack().getItem() instanceof ItemPNTaxidermyItem) {
 			List<String> tt = event.getToolTip();
 			tt.add("Can be turned into taxidermy");
+			if (!hasTaxidermy(event.getItemStack())) {
+				tt.add("Sorry: not yet coded for this item");
+			}
 		}
 		if (event.getItemStack().getItem() instanceof ItemGlassCaseDisplayItem) {
 			List<String> tt = event.getToolTip();
 			tt.add("Can be displayed in the Entomology Display Case");
 			tt.add("Can be turned into taxidermy");
+			if (!hasTaxidermy(event.getItemStack())) {
+				tt.add("Sorry: not yet coded for this item");
+			}
+		}
+
+		if (Block.getBlockFromItem(event.getItemStack().getItem()) instanceof BlockFossil) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x1");
+			if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPrecambrian.block) {
+				tt.add(TextFormatting.DARK_RED + "Precambrian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCambrian.block) {
+				tt.add(TextFormatting.DARK_GREEN + "Cambrian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilOrdovician.block) {
+				tt.add(TextFormatting.DARK_AQUA + "Ordovician");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilSilurian.block) {
+				tt.add(TextFormatting.AQUA + "Silurian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilDevonian.block) {
+				tt.add(TextFormatting.GOLD + "Devonian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCarboniferous.block) {
+				tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPermian.block) {
+				tt.add(TextFormatting.RED + "Permian");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilTriassic.block) {
+				tt.add(TextFormatting.DARK_PURPLE + "Triassic");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilJurassic.block) {
+				tt.add(TextFormatting.BLUE + "Jurassic");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilCretaceous.block) {
+				tt.add(TextFormatting.GREEN + "Cretaceous");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPaleogene.block) {
+				tt.add(TextFormatting.GOLD + "Paleogene");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilNeogene.block) {
+				tt.add(TextFormatting.YELLOW + "Neogene");
+			}
+			else if (Block.getBlockFromItem(event.getItemStack().getItem()) == BlockFossilPleistocene.block) {
+				tt.add(TextFormatting.GRAY + "Pleistocene");
+			}
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPrecambrian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.DARK_RED + "Precambrian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilCambrian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.DARK_GREEN + "Cambrian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilOrdovician.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.DARK_AQUA + "Ordovician");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilSilurian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.AQUA + "Silurian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilDevonian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.GOLD + "Devonian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilCarboniferous.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPermian.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.RED + "Permian");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilTriassic.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.DARK_PURPLE + "Triassic");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilJurassic.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.BLUE + "Jurassic");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilCretaceous.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.GREEN + "Cretaceous");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPaleogene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.GOLD + "Paleogene");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilNeogene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.YELLOW + "Neogene");
+		}
+		else if (event.getItemStack().getItem() == ItemFossilPleistocene.block) {
+			List<String> tt = event.getToolTip();
+			tt.add("Time Research x2");
+			tt.add(TextFormatting.GRAY + "Pleistocene");
+		}
+		if (event.getItemStack().getItem() == ItemFossilClean.block) {
+			if (event.getItemStack().hasTagCompound()) {
+				if (event.getItemStack().getTagCompound().hasKey("period")) {
+					List<String> tt = event.getToolTip();
+					tt.add("Time Research x5");
+					int period = event.getItemStack().getTagCompound().getInteger("period");
+					switch (period) {
+						case 1: default:
+							tt.add(TextFormatting.DARK_RED + "Precambrian");
+							break;
+
+						case 2:
+							tt.add(TextFormatting.DARK_GREEN + "Cambrian");
+							break;
+
+						case 3:
+							tt.add(TextFormatting.DARK_AQUA + "Ordovician");
+							break;
+
+						case 4:
+							tt.add(TextFormatting.AQUA + "Silurian");
+							break;
+
+						case 5:
+							tt.add(TextFormatting.GOLD + "Devonian");
+							break;
+
+						case 6:
+							tt.add(TextFormatting.DARK_BLUE + "Carboniferous");
+							break;
+
+						case 7:
+							tt.add(TextFormatting.RED + "Permian");
+							break;
+
+						case 8:
+							tt.add(TextFormatting.DARK_PURPLE + "Triassic");
+							break;
+
+						case 9:
+							tt.add(TextFormatting.BLUE + "Jurassic");
+							break;
+
+						case 10:
+							tt.add(TextFormatting.GREEN + "Cretaceous");
+							break;
+
+						case 11:
+							tt.add(TextFormatting.GOLD + "Paleogene");
+							break;
+
+						case 12:
+							tt.add(TextFormatting.YELLOW + "Neogene");
+							break;
+
+						case 13:
+							tt.add(TextFormatting.GRAY + "Pleistocene");
+							break;
+					}
+				}
+			}
 		}
 
 		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {

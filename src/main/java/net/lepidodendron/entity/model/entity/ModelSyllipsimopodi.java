@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelSyllipsimopodi extends AdvancedModelBaseExtended {
+public class ModelSyllipsimopodi extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended body;
     private final AdvancedModelRendererExtended body2;
     private final AdvancedModelRendererExtended body3;
@@ -204,6 +204,11 @@ public class ModelSyllipsimopodi extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

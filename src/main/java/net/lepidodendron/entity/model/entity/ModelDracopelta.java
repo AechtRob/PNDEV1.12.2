@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDracopelta;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelDracopelta extends AdvancedModelBaseExtended {
+public class ModelDracopelta extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -678,6 +678,27 @@ public class ModelDracopelta extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = 0.2F;
+        this.main.offsetX = -0.05F;
+        this.main.rotateAngleY = (float)Math.toRadians(-120);
+        this.main.rotateAngleX = (float)Math.toRadians(15);
+        this.main.rotateAngleZ = (float)Math.toRadians(-10);
+        float scaler = 0.60F;
+        this.main.scaleChildren = true;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.main.render(f);
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {

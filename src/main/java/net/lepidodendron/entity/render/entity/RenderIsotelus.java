@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraIsotelus;
 import net.lepidodendron.entity.model.entity.ModelIsotelus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderIsotelus extends RenderLiving<EntityPrehistoricFloraIsotelus> {
+public class RenderIsotelus extends RenderLivingBaseWithBook<EntityPrehistoricFloraIsotelus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/isotelus.png");
 
     public RenderIsotelus(RenderManager mgr) {

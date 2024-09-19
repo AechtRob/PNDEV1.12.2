@@ -116,6 +116,8 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genBivalvePrehistoricOverrideBiomes))
 			biomeCriteria = true;

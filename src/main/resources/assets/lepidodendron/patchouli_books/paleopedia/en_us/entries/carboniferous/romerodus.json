@@ -1,0 +1,47 @@
+{
+	"name": "",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/replace_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_replace",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_replace",
+			"title": "",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() $(br2)>"
+		},
+        	{
+            "type": "entity",
+            "name": "",
+            "entity": "lepidodendron:prehistoric_flora_replace",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_replace",
+			"type": "text",
+			"text": "Romerodus is a Carboniferous eugeneodontid cartilaginous fish from Nebraska.  It is known from an incredibly well preserved fossil slab that preserves the body, tail, and soft tissue impressions. Eugeneodontids post cranial details are known only from the family Caseodontidae, and thus differences in the body morphology of other Eugeneodontid families are not known."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_replace"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_replace"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_replace"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_replace"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_replace"
+		}
+	]
+}

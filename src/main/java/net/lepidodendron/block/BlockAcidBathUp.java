@@ -655,6 +655,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 1);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(2);
@@ -670,6 +671,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 2);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(3);
@@ -685,6 +687,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 3);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(4);
@@ -700,6 +703,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 4);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(5);
@@ -715,6 +719,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 5);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(6);
@@ -730,6 +735,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 6);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(7);
@@ -745,6 +751,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 7);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(8);
@@ -760,6 +767,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 8);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(9);
@@ -775,6 +783,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 9);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(10);
@@ -790,6 +799,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 10);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(11);
@@ -805,6 +815,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 11);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(12);
@@ -820,6 +831,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 12);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputPlants.resLocPlants(13);
@@ -835,6 +847,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFPlant", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 13);
 				return finalItem;
 			}
 			return null;
@@ -858,6 +871,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 1);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(2);
@@ -873,6 +887,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 2);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(3);
@@ -888,6 +903,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 3);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(4);
@@ -903,6 +919,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 4);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(5);
@@ -918,6 +935,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 5);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(6);
@@ -933,6 +951,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 6);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(7);
@@ -948,6 +967,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 7);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(8);
@@ -963,6 +983,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 8);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(9);
@@ -978,6 +999,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 9);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(10);
@@ -993,6 +1015,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 10);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(11);
@@ -1008,6 +1031,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 11);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(12);
@@ -1023,6 +1047,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 12);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(13);
@@ -1038,6 +1063,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 13);
 				return finalItem;
 			}
 			return null;
@@ -1061,6 +1087,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 1);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(2);
@@ -1076,6 +1103,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 2);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(3);
@@ -1091,6 +1119,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 3);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(4);
@@ -1106,6 +1135,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 4);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(5);
@@ -1121,6 +1151,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 5);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(6);
@@ -1136,6 +1167,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 6);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(7);
@@ -1151,6 +1183,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 7);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(8);
@@ -1166,6 +1199,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 8);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(9);
@@ -1181,6 +1215,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 9);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(10);
@@ -1196,6 +1231,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 10);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(11);
@@ -1211,6 +1247,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 11);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(12);
@@ -1226,6 +1263,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 12);
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputStatics.resLocStatics(13);
@@ -1241,6 +1279,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound stackNBT = new NBTTagCompound();
 				stackNBT.setTag("PFStatic", plantNBT);
 				finalItem.setTagCompound(stackNBT);
+				finalItem.getTagCompound().setInteger("period", 13);
 				return finalItem;
 			}
 			return null;
@@ -1367,14 +1406,20 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public boolean isTankPaused() {
 			IBlockState state = this.getWorld().getBlockState(this.getPos());
 			EnumFacing face = EnumFacing.NORTH;
-			if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.NORTH) {
-				face = EnumFacing.SOUTH;
-			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
-				face = EnumFacing.NORTH;
-			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
-				face = EnumFacing.WEST;
-			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
-				face = EnumFacing.EAST;
+			if (state != null && state.getBlock() == BlockAcidBathUp.block) {
+				if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.NORTH) {
+					face = EnumFacing.SOUTH;
+				} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
+					face = EnumFacing.NORTH;
+				} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
+					face = EnumFacing.WEST;
+				} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
+					face = EnumFacing.EAST;
+				}
+			}
+
+			else {
+				return false;
 			}
 			if (this.getWorld().isSidePowered(this.getPos().offset(face), face.getOpposite())
 					||

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAmmonite_Pachydiscus;
 import net.lepidodendron.entity.model.entity.ModelAmmonite100cm;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderAmmonite_Pachydiscus extends RenderLiving<EntityPrehistoricFloraAmmonite_Pachydiscus> {
+public class RenderAmmonite_Pachydiscus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAmmonite_Pachydiscus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ammonite_pachydiscus.png");
 
     public RenderAmmonite_Pachydiscus(RenderManager mgr) {

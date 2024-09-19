@@ -54,6 +54,10 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 		if (!LepidodendronConfig.genFossil) {
 			return;
 		}
+		
+		if (!world.getWorldInfo().isMapFeaturesEnabled()) {
+			return;
+		}
 
 		List<BlockPos> FenceArray = new ArrayList<>();
 		List<BlockPos> DigArray = new ArrayList<>();
@@ -66,6 +70,9 @@ public class StructureDigSite extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 		if (matchBiome(world.getBiome(new BlockPos(i2 + 16, 0, k2 + 16)), LepidodendronConfig.digsiteBiomeBlacklist)) {
+			return;
+		}
+		if (BiomeDictionary.hasType(world.getBiome(new BlockPos(i2 + 16, 0, k2 + 16)), BiomeDictionary.Type.VOID)) {
 			return;
 		}
 

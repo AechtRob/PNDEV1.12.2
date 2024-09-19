@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraRotaciurca;
 import net.lepidodendron.entity.model.entity.ModelRotaciurca;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRotaciurca extends RenderLiving<EntityPrehistoricFloraRotaciurca> {
+public class RenderRotaciurca extends RenderLivingBaseWithBook<EntityPrehistoricFloraRotaciurca> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rotaciurca.png");
 
     public static float getScaler() {return 0.35F;}
@@ -32,7 +32,7 @@ public class RenderRotaciurca extends RenderLiving<EntityPrehistoricFloraRotaciu
     protected void preRenderCallback(EntityPrehistoricFloraRotaciurca entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

@@ -1,0 +1,47 @@
+{
+	"name": "Archaeothyris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/archaeothyris_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_archaeothyris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_archaeothyris",
+			"title": "Archaeothyris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Synapsida $(br)>Ophiacodontidae"
+		},
+        	{
+            "type": "entity",
+            "name": "A. florensis",
+            "entity": "lepidodendron:prehistoric_flora_archaeothyris",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_archaeothyris",
+			"type": "text",
+			"text": "Archaeothyris is an ophiacodontid synapsid that lived in the Carboniferous period of Canada. It is one of the oldest undisputed synapsids known and it had a superficial resemblence to lizards, which are sauropsids. It lived in a coal forest, and had a sprawling stance, as well as a strong jaw. Its name means 'ancient window,' referring to the opening in its skull."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_archaeothyris"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_archaeothyris"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_archaeothyris"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_archaeothyris"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_archaeothyris"
+		}
+	]
+}

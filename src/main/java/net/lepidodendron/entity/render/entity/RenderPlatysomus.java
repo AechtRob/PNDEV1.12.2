@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlatysomus;
 import net.lepidodendron.entity.model.entity.ModelPlatysomus;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPlatysomus extends RenderLiving<EntityPrehistoricFloraPlatysomus> {
+public class RenderPlatysomus extends RenderLivingBaseWithBook<EntityPrehistoricFloraPlatysomus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platysomus.png");
     public static float getScaler() {
         return 0.7F * 0.22F;

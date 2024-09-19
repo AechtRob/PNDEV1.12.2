@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -70,6 +69,7 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockSeaweed.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:seaweed", BlockSeaweed.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -95,6 +95,17 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAlgae))
 			dimensionCriteria = true;
+		if (!dimensionCriteria || dimID == LepidodendronConfig.dimPrecambrian
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
+		)
+			return;
 		if (!dimensionCriteria)
 			return;
 
@@ -106,6 +117,8 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genSeaweedOverrideBiomes))
@@ -177,7 +190,7 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -332,7 +345,7 @@ public class BlockSeaweed extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine Algae");
-	        	tooltip.add("Periods: [Neoproterozoic (Tonian (?) - Cryogenian (?) - Ediacaran (?)) - Cambrian (?) - Ordovician (?) - Silurian (?) - Devonian (?) - Carboniferous (?) - Permian (?) - Triassic (?) - Jurassic (?) - Cretaceous (?) - Paleogene (?) -] Neogene - Pleistocene [- present]");
+	        	tooltip.add("Periods: [Neoproterozoic (Tonian (?) - Cryogenian (?) - Ediacaran (?)) - Cambrian (?) - Ordovician (?) - Silurian (?) - Devonian (?) - Carboniferous (?) - Permian (?) - Triassic (?) - Jurassic (?) - Early Cretaceous (?) -] Late Cretaceous (?) - Paleogene (?) - Neogene - Pleistocene - present");
 	        	tooltip.add("Propagation: water");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

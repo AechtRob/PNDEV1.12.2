@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMarmolatella;
 import net.lepidodendron.entity.model.entity.ModelMarmolatella;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMarmolatella extends RenderLiving<EntityPrehistoricFloraMarmolatella> {
+public class RenderMarmolatella extends RenderLivingBaseWithBook<EntityPrehistoricFloraMarmolatella> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/marmolatella.png");
 
     public static float getScaler() {

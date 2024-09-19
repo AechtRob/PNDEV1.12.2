@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
-public class ModelMobulavermis extends AdvancedModelBase {
+public class ModelMobulavermis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Head;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -414,6 +414,7 @@ public class ModelMobulavermis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Head.render(f5);
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Head, -0.2F, -0.2F, -0.2F);
         this.setRotateAngle(body1, 0.0F, 0.1F, 0.1F);
@@ -429,11 +430,14 @@ public class ModelMobulavermis extends AdvancedModelBase {
         this.Head.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticDisplayCase(float f) {
         this.Head.offsetZ = 0.030F;
         this.Head.render(0.01f);
         resetToDefaultPose();
     }
+
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Head.offsetY = -2.9F;
@@ -460,6 +464,7 @@ public class ModelMobulavermis extends AdvancedModelBase {
         this.Head.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -548,9 +553,9 @@ public class ModelMobulavermis extends AdvancedModelBase {
         if (!e.isInWater()) {
             //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
             //this.Head.offsetY = 1.2F - 1.18F;
-            this.bob(Head, -speed * 3F, 2F, false, f2, 1);
-            this.chainWave(fishTail, speed * 4F, tailHdegree * 3F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * 4F, tailVdegree * 3F, -3, f2, 1);
+            this.bob(Head, -speed * 5F, 1.5F, false, f2, 1);
+            this.chainWave(fishTail, speed * 5.5F, tailHdegree * 0.05F, -3, f2, 1);
+            this.chainSwing(fishTail, speed * 5.5F, tailVdegree * 0.05F, -3, f2, 1);
         }
 
     }

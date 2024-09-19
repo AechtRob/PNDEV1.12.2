@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEffigia;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelEffigia extends AdvancedModelBaseExtended {
+public class ModelEffigia extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended body;
     private final AdvancedModelRendererExtended bodyback;
     private final AdvancedModelRendererExtended legR;
@@ -340,6 +340,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -0.50F;

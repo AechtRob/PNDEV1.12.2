@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemFurcifoliumFruit;
 import net.lepidodendron.util.CustomTrigger;
@@ -76,7 +77,7 @@ public class BlockFurcifolium extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockFurcifolium.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter {
+	public static class BlockCustom extends BlockLeaves implements IAdvancementGranter, IPottable {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_furcifolium");
@@ -266,6 +267,10 @@ public class BlockFurcifolium extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return true;
 	    }
-	    
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
+		}
 	}
 }

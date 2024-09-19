@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraBurgessia;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelBurgessia extends AdvancedModelBase {
+public class ModelBurgessia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Burgessia;
     private final AdvancedModelRenderer LEFTSHELL1;
     private final AdvancedModelRenderer LEFTSHELL2;
@@ -179,6 +179,7 @@ public class ModelBurgessia extends AdvancedModelBase {
         this.Burgessia.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Burgessia.offsetY = -2.0F;

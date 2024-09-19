@@ -10,7 +10,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import java.util.HashMap;
 import java.util.Random;
 
 public class WorldGenDicksonia extends WorldGenAbstractTree

@@ -1,11 +1,11 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelAphetoceras extends AdvancedModelBaseExtended {
+public class ModelAphetoceras extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended shellbase;
     public AdvancedModelRendererExtended head;
     public AdvancedModelRendererExtended shell1;
@@ -283,6 +283,11 @@ public class ModelAphetoceras extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.shellbase.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

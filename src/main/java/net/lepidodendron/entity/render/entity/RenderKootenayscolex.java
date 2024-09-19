@@ -3,20 +3,20 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraKootenayscolex;
 import net.lepidodendron.entity.model.entity.ModelKootenayscolex;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderKootenayscolex extends RenderLiving<EntityPrehistoricFloraKootenayscolex> {
+public class RenderKootenayscolex extends RenderLivingBaseWithBook<EntityPrehistoricFloraKootenayscolex> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kootenayscolex.png");
 
     public static float getScaler() {
-        return 0.4F;
+        return 0.4F*0.75f;
     }
 
     public RenderKootenayscolex(RenderManager mgr) {
-        super(mgr, new ModelKootenayscolex(), 0.2f);
+        super(mgr, new ModelKootenayscolex(), 0.0f);
     }
 
     @Override

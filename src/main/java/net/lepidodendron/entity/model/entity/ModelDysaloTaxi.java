@@ -2,11 +2,11 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelDysaloTaxi extends AdvancedModelBaseExtended {
+public class ModelDysaloTaxi extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Dryosaurus;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer Body;
@@ -642,6 +642,11 @@ public class ModelDysaloTaxi extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Dryosaurus.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void renderStaticWall(float f) {

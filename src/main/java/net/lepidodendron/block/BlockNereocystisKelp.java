@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -71,6 +70,7 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockNereocystisKelp.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nereocystis_kelp", BlockNereocystisKelp.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -105,6 +105,9 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPermian
 				|| dimID == LepidodendronConfig.dimTriassic
 				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
+				|| dimID == LepidodendronConfig.dimPaleogene
 		)
 			return;
 
@@ -116,6 +119,8 @@ public class BlockNereocystisKelp extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genNereocystisOverrideBiomes))

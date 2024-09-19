@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDoryaspis;
 import net.lepidodendron.entity.model.entity.ModelDoryaspis;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDoryaspis extends RenderLiving<EntityPrehistoricFloraDoryaspis> {
+public class RenderDoryaspis extends RenderLivingBaseWithBook<EntityPrehistoricFloraDoryaspis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/doryaspis.png");
 
     public RenderDoryaspis(RenderManager mgr) {

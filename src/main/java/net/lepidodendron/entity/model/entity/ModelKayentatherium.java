@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraKayentatherium;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelKayentatherium extends AdvancedModelBaseExtended {
+public class ModelKayentatherium extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended root;
     private final AdvancedModelRendererExtended Hips;
     private final AdvancedModelRendererExtended Tailbase;
@@ -345,6 +345,11 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -357,8 +362,8 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         //this.body2.offsetY = 1.28F;
 
-        EntityPrehistoricFloraKayentatherium doco = (EntityPrehistoricFloraKayentatherium) e;
-        float masterSpeed = doco.getTravelSpeed();
+        EntityPrehistoricFloraKayentatherium kayentatherium = (EntityPrehistoricFloraKayentatherium) e;
+        float masterSpeed = kayentatherium.getTravelSpeed();
 
         this.faceTarget(f3, f4, 2, Neck);
         this.faceTarget(f3, f4, 4, Head);
@@ -371,14 +376,14 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] FrontLeft = {this.Rightupperarm, this.Rightlowerarm, this.Rightfrontfoot};
         AdvancedModelRenderer[] FrontRight = {this.Leftupperarm, this.Leftlowerarm, this.Leftfrontfoot};
 
-        if (doco.getAnimation() == doco.LAY_ANIMATION) {
+        if (kayentatherium.getAnimation() == kayentatherium.LAY_ANIMATION) {
             //this.swing(Neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             //this.walk(Neck, 0.5F * 2, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
             return;
         }
 
-        if (!doco.isReallyInWater()) {
-            if ((f3 == 0.0F || !doco.getIsMoving())) { //Not moving
+        if (!kayentatherium.isReallyInWater()) {
+            if ((f3 == 0.0F || !kayentatherium.getIsMoving())) { //Not moving
                 this.swing(Neck, 0.06F, 0.10F, false, 0.5F, -0.05F, f2, 0.8F);
                 this.walk(Neck, 0.06F * 2F, -0.05F, false, 0.5F, 0.025F, f2, 0.8F);
                 this.chainWave(Tail, (0.06F * 0.9F), -0.06F, 2.10F, f2, 1F);
@@ -387,7 +392,7 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
             }
 
             float speed = masterSpeed / 0.965F;
-            if (doco.getIsFast()) {
+            if (kayentatherium.getIsFast()) {
                 speed = speed * 1.5F;
             }
 
@@ -439,7 +444,7 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
             this.chainSwing(Tail, (speed * 0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
             this.Hips.offsetZ = this.moveBoxExtended(speed * 2 * speedmodifier, (float) Math.toRadians(1.2), false, 1.5F, f2, 1);
-        } else {
+        } else { //swimming
             this.setRotateAngle(Bodyfront, -0.0213F, 0.0F, 0.0F);
             this.setRotateAngle(Bodymiddle, 0.0531F, 0.0F, 0.0F);
             this.setRotateAngle(Chestslope, -0.1698F, 0.0F, 0.0F);
@@ -480,6 +485,27 @@ public class ModelKayentatherium extends AdvancedModelBaseExtended {
             this.setRotateAngle(Tailbase, -0.2759F, 0.0F, 0.0F);
             this.setRotateAngle(Tailend, 0.1485F, 0.0F, 0.0F);
             this.setRotateAngle(Tailmiddle, 0.1485F, 0.0F, 0.0F);
+
+            float speed = masterSpeed / 1.265F;
+            if (kayentatherium.getIsFast()) {
+                speed = speed * 1.5F;
+            }
+
+            speed = speed * 1.5F;
+
+            this.chainWave(Whole, speed, 0.08F, -3.2, f2, 1);
+            this.chainSwing(Whole, speed * 2, 0.02F, -3.2, f2, 1);
+            this.walk(Neck, speed, -0.10F, false, 0F, -0.05F, f2, 1F);
+            this.chainWaveExtended(BackLeft, speed, -0.05F, -0.05, 0F, f2, 1);
+            this.chainWaveExtended(BackRight, speed, -0.05F, -0.05, 3F, f2, 1);
+            this.chainWaveExtended(FrontLeft, speed, -0.05F, -0.05, 3F, f2, 1);
+            this.chainWaveExtended(FrontRight, speed, -0.05F, -0.05, 0F, f2, 1);
+            this.bob(root, speed, 0.15F, false, f2, 1);
+            this.walk(root, speed, 0.08F, false, 0F, 0.04F, f2, 1);
+
+            if (f3 == 0.0F) {
+                return;
+            }
         }
 
     }

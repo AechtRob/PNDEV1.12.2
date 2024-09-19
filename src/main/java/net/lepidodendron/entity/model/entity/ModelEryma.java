@@ -1,17 +1,17 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEryma;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelEryma extends AdvancedModelBase {
+public class ModelEryma extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer bone;
     private final AdvancedModelRenderer eyeR;
     private final AdvancedModelRenderer eyeL;
@@ -368,6 +368,7 @@ public class ModelEryma extends AdvancedModelBase {
         this.bone.render(0.01f);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.bone.offsetY = 0.4F;

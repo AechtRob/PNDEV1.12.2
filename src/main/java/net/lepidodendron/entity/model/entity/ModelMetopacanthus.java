@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraMetopacanthus;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelMetopacanthus extends AdvancedModelBase {
+public class ModelMetopacanthus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -389,14 +389,6 @@ public class ModelMetopacanthus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStaticWall(float f) {
-        this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetY = -0.2F;
-        this.main.offsetX = -0.0F;
-        this.main.offsetZ = -0.53F;
-        this.main.render(0.01F);
-        resetToDefaultPose();
-    }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(clasper, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(horn, 0.0F, 0.0F, 0.0F);
@@ -410,6 +402,11 @@ public class ModelMetopacanthus extends AdvancedModelBase {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

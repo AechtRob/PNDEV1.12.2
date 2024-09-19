@@ -112,6 +112,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
@@ -212,7 +214,17 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")
 					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland_copse")) {
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland_copse")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_savanna_hole")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_savanna_hole_centre")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -269,18 +281,28 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 256;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_scrub")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland_copse")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_shrubland_copse")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_swamp")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp_open")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_africa_swamp")) {
 			GenChance = 64;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_wet")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_large_field")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_transition")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_savanna_hole")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_savanna_hole_centre")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
 			GenChance = 30;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_north_america_braided")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")) {
 			GenChance = 192;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")
@@ -295,12 +317,18 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
+			maxheight = 160;
+		}
 		final int maxH = maxheight;
 		final int minH = minheight;
 	
 		for (int i = 0; i < GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")) {
+				i11 = 140 + random.nextInt(40);
+			}
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
@@ -308,7 +336,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 20; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
-							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_europe_field")) {
+							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes")
+							|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")) {
 							if (world.getBlockState(blockpos1.down().north()).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().east()).getMaterial() != Material.WATER
 									&& world.getBlockState(blockpos1.down().south()).getMaterial() != Material.WATER

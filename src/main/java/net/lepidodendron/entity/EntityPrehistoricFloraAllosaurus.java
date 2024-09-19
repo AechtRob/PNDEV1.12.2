@@ -110,6 +110,7 @@ public class EntityPrehistoricFloraAllosaurus extends EntityPrehistoricFloraLand
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, STAND_ANIMATION, HURT_ANIMATION, LOOKDOWNLEFT_ANIMATION, LOOKDOWNRIGHT_ANIMATION, LOOK_RIGHT_ANIMATION, SNIFF_ANIMATION};
 	}
+
 	public static String getPeriod() {return "Jurassic";}
 
 	@Override

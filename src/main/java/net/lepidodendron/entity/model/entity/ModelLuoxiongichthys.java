@@ -1,12 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelLuoxiongichthys extends AdvancedModelBase {
+public class ModelLuoxiongichthys extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
@@ -179,10 +179,16 @@ public class ModelLuoxiongichthys extends AdvancedModelBase {
         this.body.render(f5);
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetX = -0.02F;
         this.body.offsetY = -0.16F;
+        this.body.offsetZ = -0.02F;
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }

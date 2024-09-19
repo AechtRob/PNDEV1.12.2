@@ -2,7 +2,10 @@ package net.lepidodendron.procedure;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockParadoxopterisLeaves;
+import net.lepidodendron.block.BlockParadoxopterisLog;
+import net.lepidodendron.block.BlockParadoxopterisLogWater;
+import net.lepidodendron.block.BlockParadoxopterisSapling;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;

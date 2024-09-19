@@ -5,14 +5,14 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraYiQi;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingGlidingBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 
-public class ModelYiQi extends AdvancedModelBaseExtended {
+public class ModelYiQi extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer hips;
     private final AdvancedModelRenderer Basin_r1;
@@ -589,6 +589,7 @@ public class ModelYiQi extends AdvancedModelBaseExtended {
         this.root.render(0.01F);
         resetToDefaultPose();
     }
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.root.offsetY = -1.5F;
@@ -617,7 +618,7 @@ public class ModelYiQi extends AdvancedModelBaseExtended {
         this.root.scaleChildren = false;
         resetToDefaultPose();
     }
-    
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

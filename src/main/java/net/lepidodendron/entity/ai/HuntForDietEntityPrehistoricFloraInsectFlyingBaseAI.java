@@ -4,8 +4,10 @@ import com.google.common.base.Predicate;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuropsis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.util.Functions;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.monster.AbstractIllager;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -85,12 +87,12 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                 }
 
 
-                if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
+                if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager || entityChooser instanceof AbstractIllager) {
                     this.targetEntity = entityChooser;
                     break;
                 }
 
-                if (targetOK) {
+                if (targetOK && entityChooser instanceof EntityLiving) {
                     //Next figure out if this entity drops loot I can eat:
                     ResourceLocation resourcelocation = null;
                     try { //Uggggh, reflection :(
@@ -125,7 +127,7 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                     }
                 }
 
-                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager)) {
+                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager || entityChooser instanceof AbstractIllager)) {
                     this.targetEntity = entityChooser;
                     break;
                 }
@@ -171,7 +173,7 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                     }
 
 
-                    if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager) {
+                    if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager || entityChooser instanceof AbstractIllager) {
                         this.targetEntity = entityChooser;
                         break;
                     }
@@ -211,7 +213,7 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                         }
                     }
 
-                    if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager)) {
+                    if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager || entityChooser instanceof AbstractIllager)) {
                         if (this.entity.getDistance(entityChooser) < this.entity.getDistance(this.entity.getAttackTarget())) {
                             this.targetEntity = entityChooser;
                             this.entity.setAttackTarget(this.targetEntity);

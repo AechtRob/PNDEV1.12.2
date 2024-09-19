@@ -64,6 +64,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("itemAlgae", BlockBrownAscendingAlgae.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:algae_brown_ascending", BlockBrownAscendingAlgae.block);
 	}
 
 	@Override
@@ -115,6 +116,8 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genBrownAscendingAlgaeOverrideBiomes))
@@ -188,6 +191,7 @@ public class BlockBrownAscendingAlgae extends ElementsLepidodendronMod.ModElemen
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_flooded_forest")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_plain")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_warm_lakeland")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_xeric")
 

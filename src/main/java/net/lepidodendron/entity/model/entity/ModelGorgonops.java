@@ -3,12 +3,12 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGorgonops;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelGorgonops extends AdvancedModelBaseExtended {
+public class ModelGorgonops extends ModelBasePalaeopedia {
     public AdvancedModelRendererExtended Hips;
     public AdvancedModelRendererExtended Belly;
     public AdvancedModelRendererExtended Leftthigh;
@@ -260,6 +260,11 @@ public class ModelGorgonops extends AdvancedModelBaseExtended {
         this.Hips.offsetY = -0.05F;
         this.Hips.render(0.01F);
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

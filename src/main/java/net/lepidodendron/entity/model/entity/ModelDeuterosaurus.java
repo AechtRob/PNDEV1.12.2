@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraDeuterosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelDeuterosaurus extends AdvancedModelBaseExtended {
+public class ModelDeuterosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer hips;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer leftleg;
@@ -589,7 +589,24 @@ public class ModelDeuterosaurus extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.hips.offsetY = -0.0F;
+        this.hips.offsetX = -0.10F;
+        this.hips.rotateAngleY = (float)Math.toRadians(-145);
+        this.hips.rotateAngleX = (float)Math.toRadians(2);
+        this.hips.rotateAngleZ = (float)Math.toRadians(1);
+        float scaler = 0.575F;
+        this.hips.scaleChildren = true;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
         resetToDefaultPose();
     }
 
@@ -715,8 +732,11 @@ public class ModelDeuterosaurus extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) { // not present
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The roar anim
+        else if (ee.getAnimation() == ee.GRAPPLE_ANIMATION) { //The roar anim
             animTerritorial(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //Ambient noise, closed-mouth, no amim
+            //animTerritorial(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
 

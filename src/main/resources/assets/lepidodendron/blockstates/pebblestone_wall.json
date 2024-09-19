@@ -1,0 +1,43 @@
+{
+    "multipart": [
+        {   "when": { "up": "true" },
+            "apply": { "model": "lepidodendron:pebblestone_wall_post" }
+        },
+        {   "when": { "north": "true" },
+            "apply": [
+                { "model": "lepidodendron:pebblestone_wall_side_1", "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_2", "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_3", "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_4", "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_5", "uvlock": true }
+            ]
+        },
+        {   "when": { "east": "true" },
+            "apply": [
+                { "model": "lepidodendron:pebblestone_wall_side_1", "y": 90, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_2", "y": 90, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_3", "y": 90, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_4", "y": 90, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_5", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "south": "true" },
+            "apply": [
+                { "model": "lepidodendron:pebblestone_wall_side_1", "y": 180, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_2", "y": 180, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_3", "y": 180, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_4", "y": 180, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_5", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "west": "true" },
+            "apply": [
+                { "model": "lepidodendron:pebblestone_wall_side_1", "y": 270, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_2", "y": 270, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_3", "y": 270, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_4", "y": 270, "uvlock": true },
+                { "model": "lepidodendron:pebblestone_wall_side_5", "y": 270, "uvlock": true }
+            ]
+        }
+    ]
+}

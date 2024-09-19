@@ -1,0 +1,24 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:bottle_of_dna_solvent"
+    },
+    {
+      "type": "minecraft:item_nbt",
+      "item": "lepidodendron:fossil_clean",
+      "count": 1,
+      "nbt": {"period":1,"PFStatic":{"id":"lepidodendron:tabulata_block_3"}}
+    },
+    {
+      "item": "lepidodendron:phial_empty"
+    }
+  ],
+  "result": {
+    "type": "minecraft:item_nbt",
+    "item": "lepidodendron:phial_dna",
+    "count": 1,
+    "nbt": {"PFStatic":{"id":"lepidodendron:tabulata_block_3"}}
+  }
+}

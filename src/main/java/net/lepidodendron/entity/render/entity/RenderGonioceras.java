@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraGonioceras;
 import net.lepidodendron.entity.model.entity.ModelGonioceras;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGonioceras extends RenderLiving<EntityPrehistoricFloraGonioceras> {
+public class RenderGonioceras extends RenderLivingBaseWithBook<EntityPrehistoricFloraGonioceras> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gonioceras.png");
     public static float getScaler() {return 0.36F;}
 

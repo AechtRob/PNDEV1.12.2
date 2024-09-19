@@ -2,6 +2,7 @@ package net.lepidodendron.entity.ai;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import net.lepidodendron.entity.EntityPrehistoricFloraEustreptospondylus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
@@ -109,6 +110,9 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                     SoundEvent soundevent = null;
                     if (ageableBase instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         soundevent = ((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).getRoarSound();
+                    }
+                    else if (ageableBase instanceof EntityPrehistoricFloraEustreptospondylus) {
+                        soundevent = ((EntityPrehistoricFloraEustreptospondylus) ageableBase).getRoarSound();
                     }
                     else {
                         soundevent = ageableBase.getAmbientSoundPublic();

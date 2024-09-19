@@ -1,16 +1,16 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class ModelHarpagofututor extends AdvancedModelBase {
+public class ModelHarpagofututor extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer immobile;
@@ -364,6 +364,27 @@ public class ModelHarpagofututor extends AdvancedModelBase {
     }
     public void renderStaticFloor(float f) {
         this.resetToDefaultPose();
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -1.3F;
+        this.head.offsetX = 1.75F;
+        this.head.rotateAngleY = (float)Math.toRadians(-115);
+        this.head.rotateAngleX = (float)Math.toRadians(15);
+        this.head.rotateAngleZ = (float)Math.toRadians(-10);
+        float scaler = 2.60F;
+        this.head.scaleChildren = true;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

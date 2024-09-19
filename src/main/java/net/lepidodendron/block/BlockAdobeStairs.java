@@ -66,7 +66,7 @@ public class BlockAdobeStairs extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.STONE;
+			return MapColor.ADOBE;
 		}
 	}
 }

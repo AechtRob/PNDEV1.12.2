@@ -11,7 +11,6 @@ import net.lepidodendron.block.BlockEurypteridEggsStrobilopterus;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
-import net.lepidodendron.entity.render.entity.RenderOrcanopterus;
 import net.lepidodendron.entity.render.entity.RenderStrobilopterus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
@@ -35,6 +34,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -63,12 +63,16 @@ public class EntityPrehistoricFloraStrobilopterus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 4.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	public static String getHabitat() {
+		return I18n.translateToLocal("helper.pf_aquatic.name");
 	}
 
 	//an array of all the animations

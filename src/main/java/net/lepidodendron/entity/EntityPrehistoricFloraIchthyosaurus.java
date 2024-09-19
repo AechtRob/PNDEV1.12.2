@@ -6,14 +6,15 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderIchthyosaurus;
-import net.lepidodendron.entity.render.entity.RenderLeedsichthys;
-import net.lepidodendron.entity.render.entity.RenderOphthalmosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -34,7 +35,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraIchthyosaurus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraIchthyosaurus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,7 +47,7 @@ public class EntityPrehistoricFloraIchthyosaurus extends EntityPrehistoricFloraA
 		minWidth = 0.15F;
 		maxWidth = 1.2F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 35.0D;
+		maxHealthAgeable = 26.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -324,6 +325,10 @@ public class EntityPrehistoricFloraIchthyosaurus extends EntityPrehistoricFloraA
 		return RenderIchthyosaurus.getScaler();
 	}
 
-
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ICHTHYOSAURUS;
+	}
 }
 

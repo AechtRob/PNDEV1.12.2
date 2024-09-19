@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "fruits=true":  { "model": "lepidodendron:scarburgia_leaves_berries" },
+    "fruits=false":  { "model": "lepidodendron:scarburgia_leaves" },
+    "normal": [
+      {"model": "lepidodendron:scarburgia_leaves_berries"}
+    ]
+  }
+}

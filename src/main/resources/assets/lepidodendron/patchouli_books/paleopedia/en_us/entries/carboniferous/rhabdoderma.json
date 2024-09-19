@@ -1,0 +1,47 @@
+{
+	"name": "Rhabdoderma",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/rhabdoderma_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_rhabdoderma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhabdoderma",
+			"title": "Rhabdoderma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Sarcopterygii $(br)>Actinistia $(br)>Coelacanthiformes $(br)>Rhabdodermatidae"
+		},
+        	{
+            "type": "entity",
+            "name": "R. elegans",
+            "entity": "lepidodendron:prehistoric_flora_rhabdoderma",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhabdoderma",
+			"type": "text",
+			"text": "Rhabdoderma is a Carboniferous coelacanth known from several sites. Its Triassic record is considered dubious, and its definitive species are all Carboniferous. It grew to about 40 cm long and lived in freshwater and lagoonal environments. It is known from a few complete specimens."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_rhabdoderma"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_rhabdoderma"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_rhabdoderma"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_rhabdoderma"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_rhabdoderma"
+		}
+	]
+}

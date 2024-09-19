@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.IAdvancementGranter;
+import net.lepidodendron.block.base.IPottable;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.CustomTrigger;
@@ -97,6 +98,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimJurassic
 				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene
@@ -115,6 +117,8 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 
@@ -141,17 +145,18 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		if (biome instanceof BiomeCretaceousEarly)
-		{
+
+
+		if (biome instanceof BiomeCretaceousEarly) {
 			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica
-				) {
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
 		}
+
 		if (!biomeCriteria)
 			return;
 
@@ -163,7 +168,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 
 		double GenMultiplier = LepidodendronConfigPlants.multiplierLeptopterisEpiphyte;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
-		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
+		GenChance = Math.min(256, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
@@ -172,8 +177,10 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (int) GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			int yMin = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14));
+			int yMax = world.getChunk(chunkX, chunkZ).getHeight(new BlockPos(l6, 0, l14)) + 50;
+			int i11 = yMin + random.nextInt(yMax - yMin);
 			(new FernEpiphyteGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
@@ -215,7 +222,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements IAdvancementGranter, IPottable {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -439,6 +446,11 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 				case EAST: case WEST:
 					return new Vec3d(0.0D, ((double)((float)(i >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D, ((double) ((float) (i >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D);
 			}
+		}
+
+		@Override
+		public IBlockState getPotState() {
+			return this.getDefaultState();
 		}
 	}
 }

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraXuanhuaceratops;
 import net.lepidodendron.entity.model.entity.ModelXuanhuaceratops;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderXuanhuaceratops extends RenderLiving<EntityPrehistoricFloraXuanhuaceratops> {
+public class RenderXuanhuaceratops extends RenderLivingBaseWithBook<EntityPrehistoricFloraXuanhuaceratops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xuanhuaceratops.png");
 
     public RenderXuanhuaceratops(RenderManager mgr) {

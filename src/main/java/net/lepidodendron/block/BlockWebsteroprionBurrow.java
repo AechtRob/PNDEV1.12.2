@@ -134,6 +134,8 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genWebsteroprionOverrideBiomes))
 			biomeCriteria = true;
@@ -402,7 +404,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 					|| stateDown.getBlock() == BlockSandPangaeanWavySticky.block
 			) {type = 5;} //pangaean sand
 			if (stateDown.getMaterial() == Material.CLAY) {type = 6;} //clay
-			if (stateDown.getBlock() == BlockRedClay.block) {type = 7;} //red clay
+			if (stateDown.getBlock() == BlockClayRed.block) {type = 7;} //red clay
 			if (stateDown.getBlock() == BlockSiltyDirt.block
 				|| stateDown.getBlock() == BlockCoarseSiltyDirt.block
 			) {type = 8;} //silty dirt

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSpathicephalus;
 import net.lepidodendron.entity.model.entity.ModelSpathicephalus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderSpathicephalus extends RenderLiving<EntityPrehistoricFloraSpathicephalus> {
+public class RenderSpathicephalus extends RenderLivingBaseWithBook<EntityPrehistoricFloraSpathicephalus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spathicephalus.png");
 
     public static float getScaler() {return 0.275f;}

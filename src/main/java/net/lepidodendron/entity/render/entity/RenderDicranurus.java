@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDicranurus;
 import net.lepidodendron.entity.model.entity.ModelDicranurus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDicranurus extends RenderLiving<EntityPrehistoricFloraDicranurus> {
+public class RenderDicranurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraDicranurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dicranurus.png");
 
     public static float getScaler() {

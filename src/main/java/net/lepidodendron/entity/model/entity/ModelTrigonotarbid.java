@@ -1,14 +1,14 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelTrigonotarbid extends AdvancedModelBase {
+public class ModelTrigonotarbid extends ModelBasePalaeopedia {
 
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer headattercopus_r1;
@@ -427,17 +427,40 @@ public class ModelTrigonotarbid extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.080F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(abdomen, 0.3F, 0.0F, 0.0F);
+        this.body.offsetY = 0.44F;
+        this.body.offsetZ = -0.0F;
+        this.body.render(0.01f);
+        resetToDefaultPose();
+    }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.body.offsetY = 0.165F;
-        this.body.render(0.015f);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = 0.2F;
+        this.body.offsetX = -0.05F;
+        this.body.rotateAngleY = (float)Math.toRadians(-120);
+        this.body.rotateAngleX = (float)Math.toRadians(15);
+        this.body.rotateAngleZ = (float)Math.toRadians(-10);
+        float scaler = 0.60F;
+        this.body.scaleChildren = true;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

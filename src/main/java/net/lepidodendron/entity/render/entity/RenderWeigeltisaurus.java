@@ -3,13 +3,13 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraWeigeltisaurus;
 import net.lepidodendron.entity.model.entity.ModelWeigeltisaurid;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
-public class RenderWeigeltisaurus extends RenderLiving<EntityPrehistoricFloraWeigeltisaurus> {
+public class RenderWeigeltisaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraWeigeltisaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus.png");
     private static final ResourceLocation TEXTURE_REX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rex.png");
 

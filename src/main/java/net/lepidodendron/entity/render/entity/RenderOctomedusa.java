@@ -2,17 +2,16 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOctomedusa;
-import net.lepidodendron.entity.model.entity.ModelCambrianJelly;
 import net.lepidodendron.entity.model.entity.ModelOctomedusa;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOctomedusa extends RenderLiving<EntityPrehistoricFloraOctomedusa> {
+public class RenderOctomedusa extends RenderLivingBaseWithBook<EntityPrehistoricFloraOctomedusa> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/octomedusa.png");
 
-    public static float getScaler() {return 0.3F;}
+    public static float getScaler() {return 0.23F;}
 
     public RenderOctomedusa(RenderManager mgr) {
         super(mgr, new ModelOctomedusa(), 0.0f);
@@ -32,7 +31,7 @@ public class RenderOctomedusa extends RenderLiving<EntityPrehistoricFloraOctomed
     protected void preRenderCallback(EntityPrehistoricFloraOctomedusa entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

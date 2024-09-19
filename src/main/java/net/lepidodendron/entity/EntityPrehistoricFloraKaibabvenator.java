@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraKaibabvenator extends EntityPrehistoricFloraA
 		minWidth = 0.1F;
 		maxWidth = 0.99F;
 		maxHeight = 0.89F;
-		maxHealthAgeable = 58.0D;
+		maxHealthAgeable = 40.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

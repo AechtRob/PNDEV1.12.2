@@ -1,13 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelMeganeuropsis extends AdvancedModelBase {
+public class ModelMeganeuropsis extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer body;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r1;
@@ -193,7 +193,7 @@ public class ModelMeganeuropsis extends AdvancedModelBase {
         updateDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, -0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(body, -0.0F, 0.0F, 0.2F);
         this.setRotateAngle(legL1, 0.0F, 0.3F, 0.8F);
         this.setRotateAngle(legR1, 0.0F, -0.3F, -0.8F);
         this.setRotateAngle(legL2, 0.0F, 0.1F, 0.7F);
@@ -205,7 +205,7 @@ public class ModelMeganeuropsis extends AdvancedModelBase {
         this.setRotateAngle(forewingR, 0.0F, 0.0F, -0.5F);
         this.setRotateAngle(hindwingR, 0.0F, 0.0F, 0.5F);
         this.body.offsetY = -0.15F;
-        this.body.offsetX = -0.01F;
+        this.body.offsetX = -0.02F;
         this.body.render(0.01f);
         resetToDefaultPose();
     }
@@ -241,6 +241,11 @@ public class ModelMeganeuropsis extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
+
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

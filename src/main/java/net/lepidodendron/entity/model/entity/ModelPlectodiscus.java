@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelPlectodiscus extends AdvancedModelBase {
+public class ModelPlectodiscus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Body;
     private final AdvancedModelRenderer tentacle;
     private final AdvancedModelRenderer tentacles;
@@ -230,6 +230,11 @@ public class ModelPlectodiscus extends AdvancedModelBase {
 
         this.Body.render(f5);
         GlStateManager.disableBlend();
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

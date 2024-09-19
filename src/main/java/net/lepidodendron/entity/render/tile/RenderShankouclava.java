@@ -1,21 +1,17 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAngiopteris;
 import net.lepidodendron.block.BlockShankouclava;
 import net.lepidodendron.entity.model.tile.ModelShankouclava;
-import net.lepidodendron.entity.render.entity.LayerOdaraiaShell;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.lwjgl.opengl.GL11;
 
 public class RenderShankouclava extends TileEntitySpecialRenderer<BlockShankouclava.TileEntityCustom> {
 

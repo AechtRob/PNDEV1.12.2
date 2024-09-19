@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCiurcopterus;
 import net.lepidodendron.entity.model.entity.ModelCiurcopterus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderCiurcopterus extends RenderLiving<EntityPrehistoricFloraCiurcopterus> {
+public class RenderCiurcopterus extends RenderLivingBaseWithBook<EntityPrehistoricFloraCiurcopterus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ciurcopterus.png");
 
     public static float getScaler() {

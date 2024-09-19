@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Entoprocta"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/cotyledion.png"],
-			"title": "C. tylodes",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. tylodes",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:cotyledion",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cotyledion",

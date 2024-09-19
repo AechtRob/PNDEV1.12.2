@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPricyclopyge;
 import net.lepidodendron.entity.model.entity.ModelPricyclopyge;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPricyclopyge extends RenderLiving<EntityPrehistoricFloraPricyclopyge> {
+public class RenderPricyclopyge extends RenderLivingBaseWithBook<EntityPrehistoricFloraPricyclopyge> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pricyclopyge.png");
 
     public static float getScaler() {

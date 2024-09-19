@@ -5,7 +5,11 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. Latex is a gummy fluid which ia able to be crafted into rubber items, such as special boots to avoid you getting stuck on mud blocks. To obtain these fluids, you extract them from certain trees using a fluid extractor. This machine should be placed up against a tree of suitable size and type (various conifers for resins, and figs for latex). After a while the extractor will slowly start to fill with fluid."
+			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. Latex is a gummy fluid which is able to be crafted into rubber items, such as special boots to avoid you getting stuck on mud blocks. To obtain these fluids, you extract them from certain trees using a fluid extractor."
+		},
+		{
+			"type": "text",
+			"text": "This machine should be placed up against a tree of suitable size and type (various conifers for resins, and figs for latex). After a while the extractor will slowly start to fill with fluid."
 		},
 		{
 			"type": "crafting",

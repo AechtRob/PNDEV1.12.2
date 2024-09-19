@@ -4,9 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -16,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -62,11 +62,9 @@ public class BlockEurypteridEggsAntarcticarcinus extends ElementsLepidodendronMo
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			if (world.getBiome(new BlockPos(l6, i11, l14)) instanceof BiomeCarboniferous) {
-				if (((BiomeCarboniferous) world.getBiome(new BlockPos(l6, i11, l14))).getBiomeType() == EnumBiomeTypeCarboniferous.Ice)
-				{
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
+			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
+			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_antarcticarcinus", biome.getRegistryName().toString())) {
+				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}

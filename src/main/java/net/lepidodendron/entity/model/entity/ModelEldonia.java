@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelEldonia extends AdvancedModelBase {
+public class ModelEldonia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer center;
     private final AdvancedModelRenderer centercube;
@@ -98,6 +98,11 @@ public class ModelEldonia extends AdvancedModelBase {
 
         this.main.render(f5);
         GlStateManager.disableBlend();
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

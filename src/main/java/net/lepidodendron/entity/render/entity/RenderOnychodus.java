@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraOnychodus;
 import net.lepidodendron.entity.model.entity.ModelOnychodus;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOnychodus extends RenderLiving<EntityPrehistoricFloraOnychodus> {
+public class RenderOnychodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraOnychodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/onychodus.png");
 
     public RenderOnychodus(RenderManager mgr) {

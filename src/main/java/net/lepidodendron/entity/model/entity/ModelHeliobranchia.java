@@ -1,15 +1,13 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import org.lwjgl.opengl.GL11;
 
-public class ModelHeliobranchia extends AdvancedModelBase {
+public class ModelHeliobranchia extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer innertent;
     private final AdvancedModelRenderer tent;
@@ -308,6 +306,11 @@ public class ModelHeliobranchia extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
+
+    }
+
+    @Override
+    public void renderStaticBook(float f) {
 
     }
 

@@ -4,12 +4,12 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraUteodon;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelUteodon extends AdvancedModelBaseExtended {
+public class ModelUteodon extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Uteodon;
     private final AdvancedModelRenderer Basin_r1;
     private final AdvancedModelRenderer LegL;
@@ -574,6 +574,7 @@ public class ModelUteodon extends AdvancedModelBaseExtended {
         resetToDefaultPose();
     }
 
+    @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Uteodon.offsetY = -0.0F;

@@ -71,6 +71,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
 
+    private EntityLivingBase alarmTarget;
+    private int alarmTimer;
     //public float minSize;
     public float minWidth;
     public float maxWidth;
@@ -110,6 +112,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
         getMaxTurnDistancePerTick = 20.0F;
+    }
+
+    @Nullable
+    public EntityLivingBase getAlarmTarget()
+    {
+        return this.alarmTarget;
+    }
+
+    public int getAlarmTimer()
+    {
+        return this.alarmTimer;
+    }
+
+    public void setAlarmTarget(@Nullable EntityLivingBase livingBase)
+    {
+        this.alarmTarget = livingBase;
+        this.alarmTimer = this.ticksExisted;
     }
 
     public void setgetMaxTurnDistancePerTick(float turn) {
@@ -995,6 +1014,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("homeCooldown", this.homeCooldown);
         compound.setBoolean("juvenile", this.getJuvenile());
         compound.setInteger("mateable", this.getMateable());
+        compound.setInteger("AlarmByTimestamp", this.alarmTimer);
         if (this.getNestLocation() != null) {
             compound.setInteger("PosX", this.getNestLocation().getX());
             compound.setInteger("PosY", this.getNestLocation().getY());
@@ -1017,6 +1037,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.homeCooldown = compound.getInteger("homeCooldown");
         this.setJuvenile(compound.getBoolean("juvenile"));
         this.setMateable(compound.getInteger("mateable"));
+        this.alarmTimer = compound.getInteger("AlarmByTimestamp");
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
             int j = compound.getInteger("PosY");
@@ -1406,6 +1427,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     {
         super.onEntityUpdate();
 
+        if (this.alarmTarget != null)
+        {
+            if (this.ticksExisted - this.alarmTimer > 100)
+            {
+                this.setAlarmTarget((EntityLivingBase)null);
+            }
+        }
+
         if (this.getAttackTarget() != null) {
             if (this.getAttackTarget() instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer) this.getAttackTarget();
@@ -1784,7 +1813,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 //}
             }
             else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -47 && this.getTicks() < 0) {
-                //Is stationary for egg-laying and this is a totten-log lay
+                //Is stationary for egg-laying and this is a rotten-log lay
                 //System.err.println("Laying an egg in it");
 
                 //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);

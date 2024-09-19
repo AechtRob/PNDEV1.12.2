@@ -7,8 +7,10 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.*;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
+import net.lepidodendron.util.Functions;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -113,6 +115,8 @@ public class BlockOrthograptus extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))

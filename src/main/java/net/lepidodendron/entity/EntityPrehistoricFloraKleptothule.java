@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.render.entity.RenderKleptothule;
-import net.lepidodendron.entity.render.entity.RenderTullimonstrum;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
@@ -224,12 +223,12 @@ public class EntityPrehistoricFloraKleptothule extends EntityPrehistoricFloraEur
 	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {return 0.0;}
 	public static double upperbacklineoffset(@Nullable String variant) {return 0.0;}
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {return 0.0;}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.265;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.26;}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {return 0.21;}
 	public static double lowerfrontlineoffset(@Nullable String variant) {return 0.0;}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.22;}
+	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {return 0.15;}
 	public static double lowerbacklineoffset(@Nullable String variant) {return 0.0;}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.05;}
+	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {return -0.03;}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {return RenderKleptothule.TEXTURE;}
 	@SideOnly(Side.CLIENT)

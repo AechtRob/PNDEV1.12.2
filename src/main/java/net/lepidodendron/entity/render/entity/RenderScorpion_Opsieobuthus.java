@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraScorpion_Opsieobuthus;
 import net.lepidodendron.entity.model.entity.ModelScorpion;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderScorpion_Opsieobuthus extends RenderLiving<EntityPrehistoricFloraScorpion_Opsieobuthus> {
+public class RenderScorpion_Opsieobuthus extends RenderLivingBaseWithBook<EntityPrehistoricFloraScorpion_Opsieobuthus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus.png");
     private static final ResourceLocation TEXTURE_WITH_BABIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus_withbaby.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_baby.png");

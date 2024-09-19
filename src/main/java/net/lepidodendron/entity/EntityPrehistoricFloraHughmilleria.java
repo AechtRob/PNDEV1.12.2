@@ -11,7 +11,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
 import net.lepidodendron.entity.render.entity.RenderHughmilleria;
-import net.lepidodendron.entity.render.entity.RenderHypuronector;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -60,7 +59,7 @@ public class EntityPrehistoricFloraHughmilleria extends EntityPrehistoricFloraSw
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 8.0D;
+		maxHealthAgeable = 4.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {

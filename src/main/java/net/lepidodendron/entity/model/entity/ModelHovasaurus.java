@@ -5,12 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraHovasaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 
-public class ModelHovasaurus extends AdvancedModelBaseExtended {
+public class ModelHovasaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended main;
     private final AdvancedModelRendererExtended backleftlegbase;
     private final AdvancedModelRendererExtended backleftleg;
@@ -227,6 +227,12 @@ public class ModelHovasaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
+
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, 0.4F, 0.2F, 0.3F);
         this.setRotateAngle(body, 0.0F, -0.4F, 0.0F);

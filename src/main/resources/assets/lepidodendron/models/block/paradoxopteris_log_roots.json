@@ -2,7 +2,8 @@
 	"ambientocclusion": false,
 	"textures": {
 		"0": "lepidodendron:blocks/paradoxopteris_log_roots",
-		"1": "lepidodendron:blocks/paradoxopteris_log_roots_top"
+		"1": "lepidodendron:blocks/paradoxopteris_log_roots_top",
+		"particle": "lepidodendron:blocks/paradoxopteris_log"
 	},
 	"elements": [
 		{

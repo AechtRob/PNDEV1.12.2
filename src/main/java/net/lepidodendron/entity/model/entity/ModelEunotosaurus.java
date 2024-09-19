@@ -3,13 +3,13 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEunotosaurus;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelEunotosaurus extends AdvancedModelBaseExtended {
+public class ModelEunotosaurus extends ModelBasePalaeopedia {
     private final AdvancedModelRendererExtended body;
     private final AdvancedModelRendererExtended body2;
     private final AdvancedModelRendererExtended body3;
@@ -335,6 +335,12 @@ public class ModelEunotosaurus extends AdvancedModelBaseExtended {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
+        this.setRotateAngle(head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4F, 0.0F, 0.0F);
+        this.neck.offsetY = -0.0F;
+        this.neck.offsetZ = 0.05F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
@@ -353,6 +359,11 @@ public class ModelEunotosaurus extends AdvancedModelBaseExtended {
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+    @Override
+    public void renderStaticBook(float f) {
+
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

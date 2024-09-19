@@ -1,9 +1,9 @@
 package net.lepidodendron.entity.model.entity;
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraEoandromeda;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import org.lwjgl.opengl.GL11;
 
-public class ModelPrecambrianJelly extends AdvancedModelBase {
+public class ModelPrecambrianJelly extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
     private final AdvancedModelRenderer cyclomedusabase;
     private final AdvancedModelRenderer ediacariabase;
@@ -57,6 +57,32 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
 
     }
 
+    @Override
+    public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.main.offsetY = -0.75F;
+        this.main.offsetX = -0.F;
+        this.main.rotateAngleY = (float)Math.toRadians(165);
+        this.main.rotateAngleX = (float)Math.toRadians(22);
+        this.main.rotateAngleZ = (float)Math.toRadians(-28);
+        this.main.scaleChildren = true;
+        float scaler = 2.25F;
+        this.main.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.45F);
+        this.main.render(f);
+        GlStateManager.disableBlend();
+
+        //Reset rotations, positions and sizing:
+        this.main.setScale(1.0F, 1.0F, 1.0F);
+        this.main.scaleChildren = false;
+        resetToDefaultPose();
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -70,6 +96,8 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
 
         float speed = 0.1F;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled() && e.isInWater()) {
+            this.main.scaleChildren = true;
+            this.main.setScale(1.0F, 1.0F, 1.0F);
             if (e instanceof EntityPrehistoricFloraSlitheringWaterBase) {
                 EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) e;
                 this.main.scaleChildren = true;
@@ -89,5 +117,10 @@ public class ModelPrecambrianJelly extends AdvancedModelBase {
                 }
             }
         }
+        else {
+            this.main.scaleChildren = true;
+            this.main.setScale(1.25F, 0.1F, 1.25F);
+        }
+
     }
 }

@@ -3,12 +3,12 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiscophyllum;
 import net.lepidodendron.entity.model.entity.ModelEldonia;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderDiscophyllum extends RenderLiving<EntityPrehistoricFloraDiscophyllum> {
+public class RenderDiscophyllum extends RenderLivingBaseWithBook<EntityPrehistoricFloraDiscophyllum> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/discophyllum.png");
 
     public static float getScaler() {return 0.4F;}
@@ -32,7 +32,7 @@ public class RenderDiscophyllum extends RenderLiving<EntityPrehistoricFloraDisco
     protected void preRenderCallback(EntityPrehistoricFloraDiscophyllum entity, float f) {
         float scale = getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = 0F;
     }
 
 }

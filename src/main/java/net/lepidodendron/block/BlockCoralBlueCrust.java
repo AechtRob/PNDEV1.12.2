@@ -7,7 +7,10 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.*;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -101,6 +104,8 @@ public class BlockCoralBlueCrust extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCoralOverrideBiomes))

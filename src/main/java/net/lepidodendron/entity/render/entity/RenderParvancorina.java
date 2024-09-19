@@ -3,11 +3,11 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraParvancorina;
 import net.lepidodendron.entity.model.entity.ModelParvancorina;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderParvancorina extends RenderLiving<EntityPrehistoricFloraParvancorina> {
+public class RenderParvancorina extends RenderLivingBaseWithBook<EntityPrehistoricFloraParvancorina> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parvancorina.png");
 
     public RenderParvancorina(RenderManager mgr) {
