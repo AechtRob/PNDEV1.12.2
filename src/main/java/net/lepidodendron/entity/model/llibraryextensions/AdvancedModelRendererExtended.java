@@ -4,7 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 
 public class AdvancedModelRendererExtended extends AdvancedModelRenderer {
 
-    private AdvancedModelBaseExtended model;
+    private final AdvancedModelBaseExtended model;
 
     public AdvancedModelRendererExtended(AdvancedModelBaseExtended model, String name) {
         super(model, name);
