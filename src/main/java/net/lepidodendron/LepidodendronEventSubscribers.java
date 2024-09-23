@@ -84,14 +84,13 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import org.lwjgl.opengl.GL11;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
-
-import org.lwjgl.opengl.GL11;
 
 public class LepidodendronEventSubscribers {
 	
@@ -1575,13 +1574,13 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 	}
-	
+
+	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void spawnClientMeteors(ClientTickEvent event) {
 		
 		Minecraft mc = Minecraft.getMinecraft();
-		
-		
+
 		 if (event.phase == Phase.START && !Minecraft.getMinecraft().isGamePaused()) {
 	            // Check if the player is in the specified dimension
 	        EntityPlayer player = Minecraft.getMinecraft().player;
