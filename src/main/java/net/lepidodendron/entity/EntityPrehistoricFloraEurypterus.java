@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEury
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.8F;
 	}
 
 	public static String getPeriod() {return "Silurian";}

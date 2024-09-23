@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraAmmonite_Parapuzosia extends EntityPrehistori
 		minWidth = 0.1F;
 		maxWidth = 1.0F;
 		maxHeight = 0.99F;
-		maxHealthAgeable = 10;
+		maxHealthAgeable = 30;
 	}
 
 	@Override

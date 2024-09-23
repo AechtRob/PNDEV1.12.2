@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraJellyfishBaseAI;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
@@ -11,6 +12,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownPlanula;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,7 +29,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJellyfishBase implements ITrappableWater {
+import javax.annotation.Nullable;
+
+public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJellyfishBase implements ITrappableWater, IAdvancementGranter {
 
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
@@ -189,4 +194,9 @@ public class EntityPrehistoricFloraJellyfish5 extends EntityPrehistoricFloraJell
         return null;
     }
 
+    @Nullable
+    @Override
+    public CustomTrigger getModTrigger() {
+        return ModTriggers.CLICK_JELLYFISH5;
+    }
 }

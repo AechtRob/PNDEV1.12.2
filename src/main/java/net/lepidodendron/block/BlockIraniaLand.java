@@ -99,6 +99,11 @@ public class BlockIraniaLand extends ElementsLepidodendronMod.ModElement {
 					(worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)) {
 				return false;
 			}
+
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
 			return true;
 		}
 

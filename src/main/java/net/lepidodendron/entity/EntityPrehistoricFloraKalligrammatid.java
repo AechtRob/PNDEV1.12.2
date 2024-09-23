@@ -455,6 +455,9 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 
 			case SOPHOGRAMMA:
 				return RenderKalligrammatid.TEXTURE_SOPHOGRAMMA;
+
+			case HUIYINGOGRAMMA:
+				return RenderKalligrammatid.TEXTURE_HUIYINGOGRAMMA;
 		}
 	}
 	@SideOnly(Side.CLIENT)
@@ -486,6 +489,9 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 				return RenderDisplays.modelKalligrammatid;
 
 			case SOPHOGRAMMA:
+				return RenderDisplays.modelKalligrammatid;
+
+			case HUIYINGOGRAMMA:
 				return RenderDisplays.modelKalligrammatid;
 		}
 	}
@@ -690,4 +696,6 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.PLANTS);
 	}
+
+
 }

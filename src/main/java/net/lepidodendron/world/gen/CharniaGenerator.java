@@ -140,6 +140,9 @@ public class CharniaGenerator extends WorldGenerator
 				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.LUSH)) {
 					moddedBuff = 25.0F;
 				}
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")) {
+					dimensionCriteria = false;
+				}
 			}
 		}
 		if (!dimensionCriteria)

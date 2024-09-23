@@ -211,6 +211,11 @@ public class BlockBellendenaSeeds extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
+
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
 			return true;
 	    }
 

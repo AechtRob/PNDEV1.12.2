@@ -299,6 +299,11 @@ public class BlockPrimevalGrassLand extends ElementsLepidodendronMod.ModElement 
 	    		return false;
 	    	}
 
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
+
 	    	double getLight = worldIn.getLight(pos);
 	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
 	    	{
