@@ -17,7 +17,13 @@ import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
@@ -68,6 +74,8 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
@@ -78,11 +86,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+import org.lwjgl.opengl.GL11;
+
 public class LepidodendronEventSubscribers {
+	
+	public static ArrayList<Meteor> meteors = new ArrayList();
+	public static ArrayList<Meteor> fragments = new ArrayList();
+	public static ArrayList<Meteor> smoke = new ArrayList();
+
 
 	@SubscribeEvent //Stop ageing things in the cages:
 	public void onTickEntity(LivingEvent.LivingUpdateEvent event) {
@@ -1558,6 +1574,202 @@ public class LepidodendronEventSubscribers {
 				ModTriggers.DNA_CRAFT.trigger((EntityPlayerMP) event.player);
 			}
 		}
+	}
+	
+	@SubscribeEvent
+	public void spawnClientMeteors(ClientTickEvent event) {
+		
+		Minecraft mc = Minecraft.getMinecraft();
+		
+		
+		 if (event.phase == Phase.START && !Minecraft.getMinecraft().isGamePaused()) {
+	            // Check if the player is in the specified dimension
+	        EntityPlayer player = Minecraft.getMinecraft().player;
+	        WorldClient world = Minecraft.getMinecraft().world;
+
+         	Random rand = new Random();
+         
+         	if(world != null)
+         	{
+         		if(world.provider.getDimension() == LepidodendronConfig.dimOrdovician)
+         		{
+         			if(rand.nextInt(64)==0)
+                 	{
+                         	Meteor meteor = new Meteor((player.posX+rand.nextInt(16000))-8000, 2017, (player.posZ+rand.nextInt(16000))-8000);
+                         	meteors.add(meteor);
+                 	}
+         		}
+         		
+         		if(world.provider.getDimension() == LepidodendronConfig.dimPrecambrian)
+         		{
+         			BlockPos pos = new BlockPos(player.posX,0,player.posZ);
+         			Biome biome = player.world.getBiome(pos);
+             		if(biome  instanceof BiomePrecambrian)
+             		{
+             			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+                 			if(rand.nextInt(32)==0)
+                         	{
+                                 	Meteor meteor = new Meteor((player.posX+rand.nextInt(16000))-8000, 2017, (player.posZ+rand.nextInt(16000))-8000, MeteorType.STANDARD, (rand.nextFloat()*100)-50, -20.8, (rand.nextFloat()*100)-50);
+                                 	meteors.add(meteor);
+                         	}
+             			}
+             			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+                 			if(rand.nextInt(4)==0)
+                         	{
+                 				Meteor meteor = new Meteor((player.posX+rand.nextInt(16000))-8000, 2017, (player.posZ+rand.nextInt(16000))-8000, MeteorType.STANDARD, (rand.nextFloat()*100)-50, -20.8, (rand.nextFloat()*100)-50);
+                                 	meteors.add(meteor);
+                         	}
+             			}
+             		}
+         		}
+         	}
+	        
+			for(Meteor meteor : meteors) {
+				if(!Minecraft.getMinecraft().isGamePaused())
+				meteor.update();
+			}
+			for(Meteor fragment : fragments) {
+				if(!Minecraft.getMinecraft().isGamePaused())
+				fragment.update();
+			}
+			for(Meteor smoke : smoke) {
+				if(!Minecraft.getMinecraft().isGamePaused())
+				smoke.update();
+			}
+			meteors.removeIf(x -> x.isDead);
+			fragments.removeIf(x -> x.isDead);
+			smoke.removeIf(x -> x.isDead);
+		 }
+	}
+
+
+	public static void renderMeteorGlow(double y, float partialTicks) {
+		GL11.glPushMatrix();
+		GL11.glEnable(GL11.GL_BLEND);
+		float f4 = 1.0F;
+		float f5 = 0.5F;
+		float f6 = 0.5F;
+        GL11.glRotatef(180.0F - Minecraft.getMinecraft().getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-Minecraft.getMinecraft().getRenderManager().playerViewX, 1.0F, 0.0F, 0.0F);    
+        double visibility = (1-Minecraft.getMinecraft().world.rainingStrength);
+		GL11.glColor4d(visibility, visibility, visibility, visibility);
+		Tessellator tess = Tessellator.getInstance();
+		TextureManager tex = Minecraft.getMinecraft().getTextureManager();
+		BufferBuilder buff = tess.getBuffer();
+		buff.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX_NORMAL);
+		
+		buff.pos(0.0F - f5, 0.0F - f6, 0.0D).tex(1, 0).normal(0.0F, 1.0F, 0.0F).endVertex();
+		buff.pos(f4 - f5, 0.0F - f6, 0.0D).tex(0, 0).normal(0.0F, 1.0F, 0.0F).endVertex();
+		buff.pos(f4 - f5, f4 - f6, 0.0D).tex(0, 1).normal(0.0F, 1.0F, 0.0F).endVertex();
+		buff.pos(0.0F - f5, f4 - f6, 0.0D).tex(1, 1).normal(0.0F, 1.0F, 0.0F).endVertex();
+		tex.bindTexture(new ResourceLocation(LepidodendronMod.MODID + ":textures/environment/meteor.png"));
+		tess.draw();
+		GL11.glDisable(GL11.GL_BLEND);
+		GL11.glPopMatrix();
+
+	}
+	
+	public static void renderMeteorSmoke(long age) {
+		GL11.glPushMatrix();
+		GL11.glEnable(GL11.GL_BLEND);
+		float f4 = 1.0F;
+		float f5 = 0.5F;
+		float f6 = 0.5F;
+		float visibility = (1-Minecraft.getMinecraft().world.rainingStrength) - Math.min(((float)(age) / (float)(100f * 0.35F)), 1f);
+        GL11.glRotatef(180.0F - Minecraft.getMinecraft().getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-Minecraft.getMinecraft().getRenderManager().playerViewX, 1.0F, 0.0F, 0.0F);
+		GL11.glColor4d(0.75*visibility, 0.75*visibility, 0.65*visibility, 1);
+		Tessellator tess = Tessellator.getInstance();
+		TextureManager tex = Minecraft.getMinecraft().getTextureManager();
+		BufferBuilder buff = tess.getBuffer();
+		buff.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX_NORMAL);
+		
+		buff.pos(0.0F - f5, 0.0F - f6, 0.0D).tex(1, 0).normal(0.0F, 1.0F, 0.0F).endVertex();
+		buff.pos(f4 - f5, 0.0F - f6, 0.0D).tex(0, 0).normal(0.0F, 1.0F, 0.0F).endVertex();
+		buff.pos(f4 - f5, f4 - f6, 0.0D).tex(0, 1).normal(0.0F, 1.0F, 0.0F).endVertex();
+		buff.pos(0.0F - f5, f4 - f6, 0.0D).tex(1, 1).normal(0.0F, 1.0F, 0.0F).endVertex();
+
+		tex.bindTexture(new ResourceLocation(LepidodendronMod.MODID + ":textures/environment/meteorsmoke.png"));
+		tess.draw();
+		GL11.glDisable(GL11.GL_BLEND);
+		GL11.glPopMatrix();
+
+	}
+
+	
+	public static class Meteor {
+
+		public double posX;
+		public double posY;
+		public double posZ;
+		public double prevPosX;
+		public double prevPosY;
+		public double prevPosZ;
+		public double motionX;
+		public double motionY;
+		public double motionZ;
+		public double size;
+		public boolean isDead = false;
+		public long age;
+		public long maxAge;
+		public MeteorType type;
+
+		public Meteor(double posX, double posY, double posZ)
+		{
+			this(posX, posY, posZ, MeteorType.STANDARD, -31.2, -20.8, 0);
+		}
+
+		public Meteor(double posX, double posY, double posZ, MeteorType type, double motionX, double motionY, double motionZ) {
+			this.posX = posX;
+			this.posY = posY;
+			this.posZ = posZ;
+			this.type = type;
+			this.motionX = motionX;
+			this.motionY = motionY;
+			this.motionZ = motionZ;
+			//System.out.println("Added"+this.posX+" "+this.posY+" "+this.posZ);
+		}
+
+		private void update() {
+			//this.isDead=true;
+			Random rand = new Random();
+			if(this.type != MeteorType.SMOKE && this.type != MeteorType.FRAGMENT)
+			{
+				Meteor meteor = new Meteor((this.posX+rand.nextInt(16))-8, (this.posY+rand.nextInt(16)), (this.posZ+rand.nextInt(16))-8, MeteorType.SMOKE,0,0,0);
+				meteor.maxAge=60;
+	        	smoke.add(meteor);
+            	if(rand.nextInt(4)==0)
+            	{
+            		//double spreadY = rand.nextDouble()*(Math.abs(this.motionY*0.05d))-0.5;
+            		//double spreadZ = rand.nextDouble()*(Math.abs(this.motionZ*0.05d))-0.5;
+    				Meteor frag = new Meteor((this.posX+rand.nextInt(16))-8, (this.posY+rand.nextInt(16)), (this.posZ+rand.nextInt(16))-8, MeteorType.FRAGMENT,this.motionX*0.5,(this.motionY*0.5),(this.motionZ*0.5));
+    				fragments.add(frag);
+            	}
+			}
+			if(this.posY <=500 && this.type != MeteorType.SMOKE)
+			{
+				this.isDead=true;
+			}
+			if(this.type == MeteorType.SMOKE)
+			{
+				this.age++;
+				if(this.age >=this.maxAge)
+				this.isDead=true;
+			}
+			
+			this.prevPosX = this.posX;
+			this.prevPosY = this.posY;
+			this.prevPosZ = this.posZ;
+			this.posX += this.motionX;
+			this.posY += this.motionY;
+			this.posZ += this.motionZ;
+		}
+	}
+
+	public static enum MeteorType {
+		STANDARD,
+		FRAGMENT,
+		SMOKE
 	}
 
 }
