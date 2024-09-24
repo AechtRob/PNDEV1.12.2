@@ -1,11 +1,15 @@
 package net.lepidodendron.world;
 
 import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockFlower;
@@ -328,20 +332,49 @@ public class BiomeDecoratorPN extends BiomeDecorator {
         }
 
         boolean hillsBiome = false;
+        boolean hillsBiomeSilkverfish = false;
+        if (biomeIn instanceof BiomePrecambrian) {
+            hillsBiome = ((BiomePrecambrian)biomeIn).getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land;
+        }
+        if (biomeIn instanceof BiomeCambrian) {
+            hillsBiome = ((BiomeCambrian)biomeIn).getBiomeType() == EnumBiomeTypeCambrian.BarrenLand;
+        }
+        if (biomeIn instanceof BiomeOrdovician) {
+            hillsBiome = ((BiomeOrdovician)biomeIn).getBiomeType() == EnumBiomeTypeOrdovician.FrozenLand
+                || ((BiomeOrdovician)biomeIn).getBiomeType() == EnumBiomeTypeOrdovician.BarrenLand;
+        }
+        if (biomeIn instanceof BiomeSilurian) {
+            hillsBiome = ((BiomeSilurian)biomeIn).getBiomeType() == EnumBiomeTypeSilurian.BarrenLand;
+        }
         if (biomeIn instanceof BiomeDevonian) {
             hillsBiome = ((BiomeDevonian)biomeIn).getBiomeType() == EnumBiomeTypeDevonian.Mountains;
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
         }
         if (biomeIn instanceof BiomeCarboniferous) {
             hillsBiome = ((BiomeCarboniferous)biomeIn).getBiomeType() == EnumBiomeTypeCarboniferous.Hills;
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
         }
         if (biomeIn instanceof BiomePermian) {
             hillsBiome = ((BiomePermian)biomeIn).getBiomeType() == EnumBiomeTypePermian.Highlands;
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
         }
         if (biomeIn instanceof BiomeTriassic) {
             hillsBiome = ((BiomeTriassic)biomeIn).getBiomeType() == EnumBiomeTypeTriassic.Mountain;
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
         }
         if (biomeIn instanceof BiomeJurassic) {
             hillsBiome = ((BiomeJurassic)biomeIn).getBiomeType() == EnumBiomeTypeJurassic.Highlands;
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
         }
         if (biomeIn instanceof BiomeCretaceousEarly) {
             hillsBiome = biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_peaks")
@@ -355,6 +388,9 @@ public class BiomeDecoratorPN extends BiomeDecorator {
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_mountains")
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_mountains");
+            if (hillsBiome) {
+                hillsBiomeSilkverfish = true;
+            }
         }
 
         if (hillsBiome) {
@@ -362,12 +398,14 @@ public class BiomeDecoratorPN extends BiomeDecorator {
             if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, emeralds, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.EMERALD))
                 emeralds.generate(worldIn, random, this.chunkPos);
 
-            for (int j1 = 0; j1 < 7; ++j1) {
-                int k2 = random.nextInt(16);
-                int l1 = random.nextInt(64);
-                int i2 = random.nextInt(16);
-                if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, silverfishSpawner, this.chunkPos.add(k2, l1, i2), net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.SILVERFISH))
-                    this.silverfishSpawner.generate(worldIn, random, this.chunkPos.add(k2, l1, i2));
+            if (hillsBiomeSilkverfish) {
+                for (int j1 = 0; j1 < 7; ++j1) {
+                    int k2 = random.nextInt(16);
+                    int l1 = random.nextInt(64);
+                    int i2 = random.nextInt(16);
+                    if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, silverfishSpawner, this.chunkPos.add(k2, l1, i2), net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.SILVERFISH))
+                        this.silverfishSpawner.generate(worldIn, random, this.chunkPos.add(k2, l1, i2));
+                }
             }
         }
 
