@@ -117,7 +117,13 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                 }
 
 
-                if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL) || entityChooser instanceof EntityVillager || entityChooser instanceof AbstractIllager) {
+                if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL)
+                        || entityChooser instanceof EntityVillager
+                        || entityChooser instanceof AbstractIllager
+                        || entityChooser instanceof EntityWitch
+                        || entityChooser instanceof EntityLlama
+                        || entityChooser instanceof EntityDonkey
+                        || entityChooser instanceof EntityHorse) {
                     if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietMeat")) {
                         this.targetEntity = entityChooser;
                         if (entityChooser instanceof EntityPlayer) {
