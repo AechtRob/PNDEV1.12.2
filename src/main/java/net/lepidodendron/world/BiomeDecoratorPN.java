@@ -1,29 +1,29 @@
 package net.lepidodendron.world;
 
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.BlockSilverfish;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenDeadBush;
-import net.minecraft.world.gen.feature.WorldGenLiquids;
-import net.minecraft.world.gen.feature.WorldGenPumpkin;
+import net.minecraft.world.gen.feature.*;
 
 import java.util.Random;
 
 public class BiomeDecoratorPN extends BiomeDecorator {
+
+    private final WorldGenerator silverfishSpawner = new WorldGenMinable(Blocks.MONSTER_EGG.getDefaultState().withProperty(BlockSilverfish.VARIANT, BlockSilverfish.EnumType.STONE), 9);
 
     protected void genDecorations(Biome biomeIn, World worldIn, Random random)
     {
@@ -315,7 +315,60 @@ public class BiomeDecoratorPN extends BiomeDecorator {
         if (biomeIn instanceof BiomeCretaceousEarly) {
             desertBiome = biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_sandy_desert")
                     || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_sandy_desert")
-                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes");
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_arid")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_samerica_sandy_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_arid")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_arid_spikes")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes");
+        }
+
+        boolean hillsBiome = false;
+        if (biomeIn instanceof BiomeDevonian) {
+            hillsBiome = ((BiomeDevonian)biomeIn).getBiomeType() == EnumBiomeTypeDevonian.Mountains;
+        }
+        if (biomeIn instanceof BiomeCarboniferous) {
+            hillsBiome = ((BiomeCarboniferous)biomeIn).getBiomeType() == EnumBiomeTypeCarboniferous.Hills;
+        }
+        if (biomeIn instanceof BiomePermian) {
+            hillsBiome = ((BiomePermian)biomeIn).getBiomeType() == EnumBiomeTypePermian.Highlands;
+        }
+        if (biomeIn instanceof BiomeTriassic) {
+            hillsBiome = ((BiomeTriassic)biomeIn).getBiomeType() == EnumBiomeTypeTriassic.Mountain;
+        }
+        if (biomeIn instanceof BiomeJurassic) {
+            hillsBiome = ((BiomeJurassic)biomeIn).getBiomeType() == EnumBiomeTypeJurassic.Highlands;
+        }
+        if (biomeIn instanceof BiomeCretaceousEarly) {
+            hillsBiome = biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_peaks")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_pinnacles")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_africa_valley")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_a")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_b")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_mountains")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_asia_yixian_foothills")
+                    || biomeIn.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_mountains");
+        }
+
+        if (hillsBiome) {
+            WorldGenerator emeralds = new EmeraldGenerator();
+            if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, emeralds, this.chunkPos, net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.EMERALD))
+                emeralds.generate(worldIn, random, this.chunkPos);
+
+            for (int j1 = 0; j1 < 7; ++j1) {
+                int k2 = random.nextInt(16);
+                int l1 = random.nextInt(64);
+                int i2 = random.nextInt(16);
+                if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(worldIn, random, silverfishSpawner, this.chunkPos.add(k2, l1, i2), net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.SILVERFISH))
+                    this.silverfishSpawner.generate(worldIn, random, this.chunkPos.add(k2, l1, i2));
+            }
         }
 
         if (this.generateFalls && !desertBiome)

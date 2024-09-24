@@ -131,16 +131,10 @@ public class LepidodendronOreHandler {
 			}
 		}
 		if (event.getType().equals(EventType.SILVERFISH )){
-			if (LepidodendronConfig.dimDevonian == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimOrdovician == (int) event.getWorld().provider.getDimension()
+			if (LepidodendronConfig.dimOrdovician == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimSilurian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimCambrian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimCarboniferous == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimPermian == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimTriassic == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimJurassic == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimCretaceousEarly == (int) event.getWorld().provider.getDimension()
 			)
 				event.setResult(Event.Result.DENY);
 		}

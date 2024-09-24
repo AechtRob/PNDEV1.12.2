@@ -178,6 +178,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 			) {
 				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockAdoketophyton.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
+				entityToSpawn.setVelocity(0,0,0);
 				worldIn.spawnEntity(entityToSpawn);
 			}
 			else {
