@@ -10,8 +10,8 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.item.EntityBoat;
-import net.minecraft.entity.monster.AbstractIllager;
-import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.monster.*;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -123,9 +123,50 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                         if (entityChooser instanceof EntityPlayer) {
                             playerChosen = true;
                         }
-                        if (entityChooser instanceof EntityVillager || entityChooser instanceof AbstractIllager) {
+                        if (entityChooser instanceof EntityVillager
+                                || entityChooser instanceof AbstractIllager
+                                || entityChooser instanceof EntityWitch
+                                || entityChooser instanceof EntityLlama
+                                || entityChooser instanceof EntityDonkey
+                                || entityChooser instanceof EntityHorse) {
                             villagerChosen = true;
                         }
+                        break;
+                    }
+                }
+
+                if (entityChooser instanceof EntitySilverfish
+                        || entityChooser instanceof EntitySpider) {
+                    if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietBug")) {
+                        this.targetEntity = entityChooser;
+                        villagerChosen = true;
+                        break;
+                    }
+                }
+
+                if (entityChooser instanceof EntitySkeleton
+                        || entityChooser instanceof EntitySkeletonHorse
+                        || entityChooser instanceof EntityWitherSkeleton) {
+                    if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietBone")) {
+                        this.targetEntity = entityChooser;
+                        villagerChosen = true;
+                        break;
+                    }
+                }
+
+                if (entityChooser instanceof EntityZombie
+                        || entityChooser instanceof EntityZombieHorse) {
+                    if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietRotten")) {
+                        this.targetEntity = entityChooser;
+                        villagerChosen = true;
+                        break;
+                    }
+                }
+
+                if (entityChooser instanceof EntityGuardian) {
+                    if (Arrays.asList(this.entity.getFoodOreDicts()).contains("pndietFish")) {
+                        this.targetEntity = entityChooser;
+                        villagerChosen = true;
                         break;
                     }
                 }
@@ -167,7 +208,10 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                     }
                 }
 
-                if ((targetOK && dietOK) || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL && playerChosen) || (entityChooser instanceof EntityVillager && villagerChosen) || (entityChooser instanceof AbstractIllager && villagerChosen))) {
+                if ((targetOK && dietOK)
+                        || ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL && playerChosen)
+                        || (entityChooser instanceof EntityVillager && villagerChosen)
+                        || (entityChooser instanceof EntityMob && villagerChosen))) {
                     this.targetEntity = entityChooser;
                     break;
                 }

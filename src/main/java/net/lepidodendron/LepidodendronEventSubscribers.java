@@ -7,6 +7,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.item.*;
+import net.lepidodendron.item.entities.ItemBugRaw;
 import net.lepidodendron.item.entities.ItemPNTaxidermyItem;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.Functions;
@@ -30,6 +31,9 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.monster.EntityCaveSpider;
+import net.minecraft.entity.monster.EntitySilverfish;
+import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.passive.EntityVillager;
@@ -215,6 +219,11 @@ public class LepidodendronEventSubscribers {
 			if (event.getEntity().getEntityWorld().rand.nextInt(chancer) == 0) {
 				event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemBatHeadItem.block, 1)));
 			}
+		}
+		if (event.getEntity().getClass() == EntitySilverfish.class
+				|| event.getEntity().getClass() == EntitySpider.class
+				|| event.getEntity().getClass() == EntityCaveSpider.class) {
+			event.getDrops().add(new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, new ItemStack(ItemBugRaw.block, 1)));
 		}
 	}
 
