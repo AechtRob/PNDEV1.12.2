@@ -90,6 +90,7 @@ dependencies {
 
     compile files('libs/llibrary-1.7.20-1.12.2.jar')
     compile files('libs/prehistoricnaturedeco-1.12.2-1.0.jar')
+    compile files('libs/BiomesOPlenty-1.12.2-7.0.1.2445-universal.jar')
     compile "vazkii.patchouli:Patchouli:1.0-21.4"
 
     // For more info...

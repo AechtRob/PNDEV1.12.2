@@ -1,9 +1,6 @@
 package net.lepidodendron;
 
-import net.lepidodendron.block.BlockBatHead;
-import net.lepidodendron.block.BlockFirePF;
-import net.lepidodendron.block.BlockFlowerpotPN;
-import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
+import net.lepidodendron.block.*;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.gui.*;
@@ -59,7 +56,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-@Mod(modid = LepidodendronMod.MODID, name = LepidodendronMod.NAME, version = LepidodendronMod.VERSION, dependencies = "required-after:llibrary,patchouli")
+@Mod(modid = LepidodendronMod.MODID, name = LepidodendronMod.NAME, version = LepidodendronMod.VERSION, dependencies = "required-after:llibrary,patchouli;after:biomesoplenty,quark")
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
@@ -2561,6 +2558,11 @@ public class LepidodendronMod {
 				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
 				event.getRegistry().register(newPot);
 			}
+		}
+
+		if (Loader.isModLoaded("biomesoplenty")) {
+			BlockBOPMudPF newMud = (BlockBOPMudPF) (new BlockBOPMudPF()).setTranslationKey("mud.mud").setRegistryName("biomesoplenty:mud");
+			event.getRegistry().register(newMud);
 		}
 
 	}
