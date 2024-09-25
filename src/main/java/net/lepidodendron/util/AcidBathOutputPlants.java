@@ -301,7 +301,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenCharaAlgae.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemGreenFilamentousAlgaeItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCarboniferous);
         return resLoc;
@@ -394,7 +396,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenCharaAlgae.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemGreenFilamentousAlgaeItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPermian);
         return resLoc;
@@ -506,7 +510,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockGreenCharaAlgae.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemSlimyAlgaeItem.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemGreenFilamentousAlgaeItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockGreenStemmedAlgae.block).toString(),
+                "minecraft:small_fern",
+                "minecraft:large_fern"
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsTriassic);
@@ -637,7 +643,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockStalkyBrownAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrownAlgae.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrownAscendingAlgae.block).toString(),
-                ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString()
+                ForgeRegistries.ITEMS.getKey(ItemCorallineAlgaeItem.block).toString(),
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsJurassic);
         return resLoc;
@@ -855,7 +863,9 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockSeaweed.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
-                "minecraft:spruce_sapling"
+                "minecraft:spruce_sapling",
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCretaceous);
         return resLoc;
@@ -1007,7 +1017,9 @@ public class AcidBathOutputPlants {
                 "minecraft:dark_oak_sapling",
                 "minecraft:jungle_sapling",
                 "minecraft:birch_sapling",
-                "minecraft:spruce_sapling"
+                "minecraft:spruce_sapling",
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPaleogene);
         return resLoc;
@@ -1157,7 +1169,9 @@ public class AcidBathOutputPlants {
                 "minecraft:dark_oak_sapling",
                 "minecraft:jungle_sapling",
                 "minecraft:birch_sapling",
-                "minecraft:spruce_sapling"
+                "minecraft:spruce_sapling",
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsNeogene);
         return resLoc;
@@ -1307,7 +1321,9 @@ public class AcidBathOutputPlants {
                 "minecraft:dark_oak_sapling",
                 "minecraft:jungle_sapling",
                 "minecraft:birch_sapling",
-                "minecraft:spruce_sapling"
+                "minecraft:spruce_sapling",
+                "minecraft:small_fern",
+                "minecraft:large_fern"
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPleistocene);
         return resLoc;

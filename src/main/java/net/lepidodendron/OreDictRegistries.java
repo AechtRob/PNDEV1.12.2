@@ -240,7 +240,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 
 		//Vanilla ferns - for the fern organic ground block recipe:
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.TALLGRASS, 1, 2));
+		OreDictionary.registerOre("plantdnaPNminecraft:small_fern", new ItemStack(Blocks.TALLGRASS, 1, 2));
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+		OreDictionary.registerOre("plantdnaPNminecraft:large_fern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 
 		//Moss:
 		OreDictionary.registerOre("itemMossForStone", new ItemStack(Blocks.VINE, 1, 0));

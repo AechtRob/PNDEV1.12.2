@@ -1,0 +1,21 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:tallgrass",
+			"data": 2
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_fern.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_fern.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_fern"
+		}
+	}
+}

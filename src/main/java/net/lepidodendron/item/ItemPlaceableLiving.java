@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -205,6 +206,12 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 					else if (stringDNA.equalsIgnoreCase("minecraft:spruce_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(1);
 					}
+					else if (stringDNA.equalsIgnoreCase("minecraft:small_fern")) {
+						blockOut = Blocks.TALLGRASS.getStateFromMeta(2);
+					}
+					else if (stringDNA.equalsIgnoreCase("minecraft:large_fern")) {
+						blockOut = Blocks.DOUBLE_PLANT.getStateFromMeta(3);
+					}
 					else {
 						blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA)).getDefaultState();
 					}
@@ -389,9 +396,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						//System.err.println("block " + block);
 
 						//Deal with vanilla first:
-						if (block.getBlock() == Blocks.SAPLING) {
+						if (block.getBlock() == Blocks.SAPLING || block.getBlock() == Blocks.TALLGRASS) {
 							if (block.getBlock().canPlaceBlockAt(worldIn, blockpos.offset(raytraceresult.sideHit))) {
 								worldIn.setBlockState(blockpos.offset(raytraceresult.sideHit), block);
+								block.getBlock().onBlockAdded(worldIn, blockpos.offset(raytraceresult.sideHit), block);
 								worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_GRASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 								if (!playerIn.isCreative()) {
 									itemstack.shrink(1);
@@ -399,6 +407,19 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 							}
 						}
+						else if (block.getBlock() == Blocks.DOUBLE_PLANT) {
+							if (block.getBlock().canPlaceBlockAt(worldIn, blockpos.offset(raytraceresult.sideHit))) {
+								worldIn.setBlockState(blockpos.offset(raytraceresult.sideHit), block);
+								((BlockDoublePlant)block.getBlock()).placeAt(worldIn, blockpos.offset(raytraceresult.sideHit), block.getValue(BlockDoublePlant.VARIANT), 3);
+								block.getBlock().onBlockAdded(worldIn, blockpos.offset(raytraceresult.sideHit), block);
+								worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_GRASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+								if (!playerIn.isCreative()) {
+									itemstack.shrink(1);
+								}
+								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
+							}
+						}
+
 						//Now modded:
 						else if (block != null) {
 							if (block.getBlock() != Blocks.AIR) {
