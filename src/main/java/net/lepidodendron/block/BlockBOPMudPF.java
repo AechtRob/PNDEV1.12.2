@@ -5,6 +5,8 @@ import biomesoplenty.common.block.BlockBOPMud;
 import net.lepidodendron.item.armor.ArmorInit;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -24,6 +26,22 @@ public class BlockBOPMudPF extends BlockBOPMud {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
 				if (player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+					return;
+				}
+			}
+		}
+		if (entity instanceof EntityVillager) {
+			EntityVillager villager = (EntityVillager) entity;
+			if (villager.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+				if (villager.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
+					return;
+				}
+			}
+		}
+		if (entity instanceof EntityMob) {
+			EntityMob mob = (EntityMob) entity;
+			if (mob.getItemStackFromSlot(EntityEquipmentSlot.FEET) != ItemStack.EMPTY) {
+				if (mob.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ArmorInit.RUBBER_BOOTS) {
 					return;
 				}
 			}
