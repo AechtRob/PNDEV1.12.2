@@ -49,6 +49,7 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 	public ChainBuffer chainBuffer;
 	public Animation SCRATCH_ANIMATION;
 	public Animation REST_ANIMATION;
+	public Animation CALL_ANIMATION;
 
 	private int standCooldown;
 
@@ -61,6 +62,12 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 		maxHealthAgeable = 8.0D;
 		REST_ANIMATION = Animation.create(335);
 		SCRATCH_ANIMATION = Animation.create(110);
+		CALL_ANIMATION = Animation.create(20);
+	}
+
+	@Override
+	public int getEatLength() {
+		return 20;
 	}
 
 	@Override
@@ -116,7 +123,7 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SCRATCH_ANIMATION, REST_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, SCRATCH_ANIMATION, REST_ANIMATION, CALL_ANIMATION};
 	}
 
 	protected void initEntityAI() {
@@ -156,6 +163,11 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(0.8D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+	}
+
+	public SoundEvent getCallSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:archaeothyris_call"));
 	}
 
 	@Override
@@ -259,15 +271,28 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 
 	@Override
 	public void onEntityUpdate() {
-		int next = rand.nextInt(10);
+		int next = rand.nextInt(3);
 		super.onEntityUpdate();
 			//random idle animations
 			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-				if (next < 5) {
-				this.setAnimation(REST_ANIMATION);
-				} else {
-				this.setAnimation(SCRATCH_ANIMATION);
+				switch (next) {
+					case 0: default:
+						this.setAnimation(REST_ANIMATION);
+						break;
+
+					case 1:
+						this.setAnimation(SCRATCH_ANIMATION);
+						break;
+
+					case 2:
+						this.setAnimation(CALL_ANIMATION);
+						SoundEvent soundevent = this.getCallSound();
+						if (soundevent != null)
+						{
+							this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+						}
+						break;
 				}
 				this.standCooldown = 2000;
 			}
@@ -277,6 +302,10 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 			}
 			if ((!this.world.isRemote) && this.getAnimation() == SCRATCH_ANIMATION && this.getAnimationTick() == SCRATCH_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
+				this.setAnimation(NO_ANIMATION);
+			}
+			if ((!this.world.isRemote) && this.getAnimation() == CALL_ANIMATION && this.getAnimationTick() == CALL_ANIMATION.getDuration() - 1) {
+				this.standCooldown = rand.nextInt(1800) + 200;
 				this.setAnimation(NO_ANIMATION);
 			}
 
