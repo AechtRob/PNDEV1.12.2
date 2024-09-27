@@ -459,22 +459,20 @@ public class ModelArchaeothyris extends ModelBasePalaeopedia {
         EntityPrehistoricFloraArchaeothyris ee = (EntityPrehistoricFloraArchaeothyris) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
-            if (ee.getIsMoving()) {
-                if (ee.getIsFast()) { //Running
-                    animRun(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            if (ee.getIsFast()) { //Running
+                animRun(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
 
-                } else { //Walking
-                    animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
+            } else { //Walking
+                animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
         }
-        else {
-            //Swimming pose:
-            if (!ee.getIsMoving()) { //static in water
-                //
+        else { //In water
+            if (ee.getIsFast()) { //Running
+                animRun(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+
+            } else { //Walking
+                animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
             }
-            //moving in water
-            //
         }
         if (ee.getAnimation() == ee.EAT_ANIMATION) {
             animEat(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

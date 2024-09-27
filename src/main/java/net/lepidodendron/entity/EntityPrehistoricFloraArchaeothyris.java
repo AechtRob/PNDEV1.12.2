@@ -66,6 +66,16 @@ public class EntityPrehistoricFloraArchaeothyris extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int animSpeedAdder() {
+		if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
+				&& this.getTicks() >= 0
+		) {
+			return 1;
+		}
+		return 0;
+	}
+
+	@Override
 	public int getEatLength() {
 		return 20;
 	}
