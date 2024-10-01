@@ -239,6 +239,7 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.base.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.base.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(lowerjaw, 0.3F, 0.0F, 0.0F);
