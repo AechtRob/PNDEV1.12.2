@@ -2,6 +2,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "lepidodendron:items/fossil_clean_background",
-    "layer1": "lepidodendron:items/fossil_gondwanarachne_clean"
+    "layer1": "lepidodendron:items/fossil_trigonotarbid_gondwanarachne_clean"
   }
 }

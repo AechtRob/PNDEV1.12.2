@@ -268,6 +268,7 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
         this.base.render(0.01F);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
@@ -280,12 +281,17 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
         float scaler = 1.63F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(base, (float)Math.toRadians(5), (float)Math.toRadians(110), (float)Math.toRadians(-5));
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjawjointleft, 0.0F, 0.5F, 0.0F);
+        this.setRotateAngle(lowerjawjointright, 0.0F, -0.5F, 0.0F);
+        this.setRotateAngle(jawjointleft, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(jawjointright, 0.0F, -0.7F, 0.0F);
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:
@@ -293,6 +299,7 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
         this.base.scaleChildren = false;
         resetToDefaultPose();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;

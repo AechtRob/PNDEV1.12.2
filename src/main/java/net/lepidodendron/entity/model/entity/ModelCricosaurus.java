@@ -315,7 +315,7 @@ public class ModelCricosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Body.offsetY = -0.4F;
-        this.Body.offsetX = 1.25F;
+        this.Body.offsetX = 0.31F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);

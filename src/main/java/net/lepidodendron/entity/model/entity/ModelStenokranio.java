@@ -531,12 +531,12 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hip.offsetY = -0.4F;
-        this.hip.offsetX = 0.35F;
+        this.hip.offsetX = -0.0F;
         this.hip.rotateAngleY = (float)Math.toRadians(-250);
         this.hip.rotateAngleX = (float)Math.toRadians(3);
-        this.hip.rotateAngleZ = (float)Math.toRadians(12);
+        this.hip.rotateAngleZ = (float)Math.toRadians(-1);
         this.hip.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 0.8F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
 

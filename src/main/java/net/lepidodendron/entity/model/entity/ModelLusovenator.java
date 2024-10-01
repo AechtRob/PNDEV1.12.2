@@ -525,12 +525,26 @@ public class ModelLusovenator extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hips.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
+        this.hips.offsetY = 0.3F;
+        this.hips.offsetX = 0F;
+        this.hips.rotateAngleY = (float)Math.toRadians(125);
+        this.hips.rotateAngleX = (float)Math.toRadians(-9);
+        this.hips.rotateAngleZ = (float)Math.toRadians(0);
+        this.hips.scaleChildren = true;
+        float scaler = 0.55F;
+        this.hips.setScale(scaler, scaler, scaler);
+        //Start of pose:
 
+        //End of pose, now render the model:
+        this.hips.render(f);
+        //Reset rotations, positions and sizing:
+        this.hips.setScale(1.0F, 1.0F, 1.0F);
+        this.hips.scaleChildren = false;
         resetToDefaultPose();
+
     }
 
     public void renderStaticWall(float f) {
