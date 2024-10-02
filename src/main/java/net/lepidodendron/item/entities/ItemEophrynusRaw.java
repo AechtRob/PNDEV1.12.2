@@ -15,6 +15,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemEophrynusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:eophrynus_raw")
@@ -48,6 +50,18 @@ public class ItemEophrynusRaw extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("eophrynus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		@Override
+		public String getMobStr() {
+			return "lepidodendron:prehistoric_flora_trigonotarbid_eophrynus";
+		}
+
+		@Nullable
+		@Override
+		public String getVariantStr() {
+			return null;
 		}
 	}
 }
