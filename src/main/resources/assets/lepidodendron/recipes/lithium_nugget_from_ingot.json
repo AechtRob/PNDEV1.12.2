@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:lithium_ingot"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:lithium_nugget",
+    "count": 9
+  }
+}

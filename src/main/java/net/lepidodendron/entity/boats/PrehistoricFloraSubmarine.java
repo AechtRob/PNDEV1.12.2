@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.item.ItemSubmarineBatterypack;
+import net.lepidodendron.item.ItemSubmarineBatterypackEnhanced;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -45,6 +46,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(PrehistoricFloraSubmarine.class, DataSerializers.FLOAT);
     private static final DataParameter<Integer> RF_SUPPLY = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ENHANCED = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
     private final float[] paddlePositions;
     private float momentum;
@@ -92,7 +94,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     }
 
     public double getEnergyFraction() {
-       return ((double) this.getRF()) / 1000000D;
+        if (this.getEnhanced()) {
+            return ((double) this.getRF()) / 5000000D;
+        }
+        return ((double) this.getRF()) / 1000000D;
     }
 
     public void setRF(int rf)
@@ -105,16 +110,28 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         return (this.dataManager.get(RF_SUPPLY));
     }
 
+    public void setEnhanced(boolean enhanced)
+    {
+        this.dataManager.set(ENHANCED, enhanced);
+    }
+
+    public boolean getEnhanced()
+    {
+        return (this.dataManager.get(ENHANCED));
+    }
+
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound)
     {
         compound.setInteger("RF", this.getRF());
+        compound.setBoolean("enhanced", this.getEnhanced());
     }
 
     @Override
     protected void readEntityFromNBT(NBTTagCompound compound)
     {
         this.setRF(compound.getInteger("RF"));
+        this.setEnhanced(compound.getBoolean("enhanced"));
     }
 
     @Override
@@ -136,6 +153,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         this.dataManager.register(FORWARD_DIRECTION, Integer.valueOf(1));
         this.dataManager.register(DAMAGE_TAKEN, Float.valueOf(0.0F));
         this.dataManager.register(RF_SUPPLY, Integer.valueOf(-1));
+        this.dataManager.register(ENHANCED, Boolean.valueOf(false));
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -201,6 +219,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         if (this.getRF() >= 0) {
                             NBTTagCompound stackNBT = new NBTTagCompound();
                             stackNBT.setInteger("rf", this.getRF());
+                            stackNBT.setBoolean("enhanced", this.getEnhanced());
                             stack.setTagCompound(stackNBT);
                         }
                         Block.spawnAsEntity(world, this.getPosition(), stack);
@@ -248,6 +267,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         if (this.getRF() >= 0) {
             NBTTagCompound stackNBT = new NBTTagCompound();
             stackNBT.setInteger("rf", this.getRF());
+            stackNBT.setBoolean("enhanced", this.getEnhanced());
             stack.setTagCompound(stackNBT);
         }
         return stack;
@@ -790,7 +810,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat
 
             if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown)
             {
-                f += 0.005F;
+                if (this.getEnhanced()) {
+                    f += 0.02F;
+                }
+                else {
+                    f += 0.005F;
+                }
             }
 
             this.rotationYaw += this.deltaRotation;
@@ -798,12 +823,22 @@ public class PrehistoricFloraSubmarine extends EntityBoat
 
             if (this.forwardInputDown)
             {
-                f += 0.04F;
+                if (this.getEnhanced()) {
+                    f += 0.175F;
+                }
+                else {
+                    f += 0.04F;
+                }
             }
 
             if (this.backInputDown)
             {
-                f -= 0.005F;
+                if (this.getEnhanced()) {
+                    f -= 0.02F;
+                }
+                else {
+                    f -= 0.005F;
+                }
             }
 
             if (this.upInputDown &&
@@ -827,7 +862,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 += 0.035F;
+                if (this.getEnhanced()) {
+                    f2 += 0.100F;
+                }
+                else {
+                    f2 += 0.035F;
+                }
             }
 
             if (this.leftStrafeInputDown && f == 0.0 &&
@@ -835,7 +875,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                             || this.status == Status.UNDER_WATER
                             || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f2 -= 0.035F;
+                if (this.getEnhanced()) {
+                    f2 -= 0.100F;
+                }
+                else {
+                    f2 -= 0.035F;
+                }
             }
 
             this.motionY += (double) (f1);
@@ -961,60 +1006,102 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             }
             //Left panel (read battery)
             if (player.rotationYaw - this.rotationYaw > -65 && player.rotationYaw - this.rotationYaw < -38 && player.rotationPitch - this.rotationPitch > -55 && player.rotationPitch - this.rotationPitch < -30) {
-                if (player.world.isRemote) {
+                if (!(player.world.isRemote)) {
                     if (this.getRF() == -1) {
                         player.sendMessage(new TextComponentString("Submarine power: no battery!"));
                     }
                     else {
-                        if (LepidodendronConfig.machinesRF) {
-                            player.sendMessage(new TextComponentString("Submarine power: powered"));
+                        if (!LepidodendronConfig.machinesRF) {
+                            if (this.getEnhanced()) {
+                                player.sendMessage(new TextComponentString("Submarine power: powered (enhanced)"));
+                            }
+                            else {
+                                player.sendMessage(new TextComponentString("Submarine power: powered"));
+                            }
                         } else {
                             DecimalFormat df = new DecimalFormat("###.#");
-                            player.sendMessage(new TextComponentString("Submarine power: " + df.format(this.getEnergyFraction() * 100) + "%"));
+                            if (this.getEnhanced()) {
+                                player.sendMessage(new TextComponentString("Submarine power (enhanced): " + df.format(this.getEnergyFraction() * 100) + "%"));
+                            }
+                            else {
+                                player.sendMessage(new TextComponentString("Submarine power: " + df.format(this.getEnergyFraction() * 100) + "%"));
+                            }
                         }
                     }
                 }
             }
             //Right panel (remove or add battery)
             if (player.rotationYaw - this.rotationYaw > 38 && player.rotationYaw - this.rotationYaw < 65 && player.rotationPitch - this.rotationPitch > -55 && player.rotationPitch - this.rotationPitch < -30) {
-                if (!player.world.isRemote) {
+//                if (!player.world.isRemote) {
                     if (this.getRF() == -1) {
                         //There is no battery: can we add one from our hand?
                         if (player.getHeldItem(hand).getItem() == ItemSubmarineBatterypack.block) {
-                            int rf = 1000000;
-                            ItemStack stack = player.getHeldItem(hand);
-                            if (LepidodendronConfig.machinesRF) {
-                                if (stack.hasTagCompound()) {
-                                    if (stack.getTagCompound().hasKey("rf")) {
-                                        rf = stack.getTagCompound().getInteger("rf");
+                            if (!player.world.isRemote) {
+                                int rf = 1000000;
+                                ItemStack stack = player.getHeldItem(hand);
+                                if (LepidodendronConfig.machinesRF) {
+                                    if (stack.hasTagCompound()) {
+                                        if (stack.getTagCompound().hasKey("rf")) {
+                                            rf = stack.getTagCompound().getInteger("rf");
+                                        }
+                                        else {
+                                            rf = 0;
+                                        }
                                     }
                                     else {
                                         rf = 0;
                                     }
                                 }
-                                else {
-                                    rf = 0;
-                                }
+                                this.setRF(rf);
+                                stack.shrink(1);
+                                world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
                             }
-                            this.setRF(rf);
-                            stack.shrink(1);
-                            world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+                            this.setEnhanced(false);
+                        }
+                        else if (player.getHeldItem(hand).getItem() == ItemSubmarineBatterypackEnhanced.block) {
+                            if (!player.world.isRemote) {
+                                int rf = 1000000;
+                                ItemStack stack = player.getHeldItem(hand);
+                                if (LepidodendronConfig.machinesRF) {
+                                    if (stack.hasTagCompound()) {
+                                        if (stack.getTagCompound().hasKey("rf")) {
+                                            rf = stack.getTagCompound().getInteger("rf");
+                                        }
+                                        else {
+                                            rf = 0;
+                                        }
+                                    }
+                                    else {
+                                        rf = 0;
+                                    }
+                                }
+                                this.setRF(rf);
+                                stack.shrink(1);
+                                world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+                            }
+                            this.setEnhanced(true);
                         }
                     }
                     else {
                         //Is our hand empty to remove the battery?
                         if (player.getHeldItem(hand).isEmpty()) {
-                            ItemStack stack = new ItemStack(ItemSubmarineBatterypack.block, 1);
-                            int rf = this.getRF();
-                            NBTTagCompound stackNBT = new NBTTagCompound();
-                            stackNBT.setInteger("rf", rf);
-                            stack.setTagCompound(stackNBT);
-                            ItemHandlerHelper.giveItemToPlayer(player, stack);
-                            world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
-                            this.setRF(Integer.valueOf(-1));
+                            if (!player.world.isRemote) {
+                                ItemStack stack = new ItemStack(ItemSubmarineBatterypack.block, 1);
+                                if (this.getEnhanced()) {
+                                    stack = new ItemStack(ItemSubmarineBatterypackEnhanced.block, 1);
+                                }
+                                int rf = this.getRF();
+                                NBTTagCompound stackNBT = new NBTTagCompound();
+                                stackNBT.setInteger("rf", rf);
+                                stack.setTagCompound(stackNBT);
+                                ItemHandlerHelper.giveItemToPlayer(player, stack);
+                                world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+                                this.setRF(Integer.valueOf(-1));
+                            }
+                            this.setEnhanced(false);
                         }
                     }
-                }
+//                }
             }
             return true;
         }
@@ -1022,25 +1109,48 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         {
             return false;
         }
-        else if ((!this.world.isRemote) && player.getHeldItem(hand).getItem() == ItemSubmarineBatterypack.block && this.getRF() == -1) {
-            int rf = 1000000;
-            ItemStack stack = player.getHeldItem(hand);
-            if (LepidodendronConfig.machinesRF) {
-                if (stack.hasTagCompound()) {
-                    if (stack.getTagCompound().hasKey("rf")) {
-                        rf = stack.getTagCompound().getInteger("rf");
-                    }
-                    else {
+        else if (player.getHeldItem(hand).getItem() == ItemSubmarineBatterypack.block && this.getRF() == -1) {
+            if (!player.world.isRemote) {
+                int rf = 1000000;
+                ItemStack stack = player.getHeldItem(hand);
+                if (LepidodendronConfig.machinesRF) {
+                    if (stack.hasTagCompound()) {
+                        if (stack.getTagCompound().hasKey("rf")) {
+                            rf = stack.getTagCompound().getInteger("rf");
+                        } else {
+                            rf = 0;
+                        }
+                    } else {
                         rf = 0;
                     }
                 }
-                else {
-                    rf = 0;
-                }
+                this.setRF(rf);
+                stack.shrink(1);
+                world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
             }
-            this.setRF(rf);
-            stack.shrink(1);
-            world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+            this.setEnhanced(false);
+            return true;
+        }
+        else if (player.getHeldItem(hand).getItem() == ItemSubmarineBatterypackEnhanced.block && this.getRF() == -1) {
+            if (!player.world.isRemote) {
+                int rf = 5000000;
+                ItemStack stack = player.getHeldItem(hand);
+                if (LepidodendronConfig.machinesRF) {
+                    if (stack.hasTagCompound()) {
+                        if (stack.getTagCompound().hasKey("rf")) {
+                            rf = stack.getTagCompound().getInteger("rf");
+                        } else {
+                            rf = 0;
+                        }
+                    } else {
+                        rf = 0;
+                    }
+                }
+                this.setRF(rf);
+                stack.shrink(1);
+                world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+            }
+            this.setEnhanced(true);
             return true;
         }
         else
@@ -1085,6 +1195,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                                 if (this.getRF() >= 0) {
                                     NBTTagCompound stackNBT = new NBTTagCompound();
                                     stackNBT.setInteger("rf", this.getRF());
+                                    stackNBT.setBoolean("enhanced", this.getEnhanced());
                                     stack.setTagCompound(stackNBT);
                                 }
                                 Block.spawnAsEntity(world, this.getPosition(), stack);
