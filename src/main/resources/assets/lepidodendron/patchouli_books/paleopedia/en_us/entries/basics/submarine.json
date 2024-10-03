@@ -13,10 +13,19 @@
 			"text": "add or remove a battery. The upper-left control panel will tell you the current battery power remaining. By default the battery does not drain.$(br2)If you switch on the need for RF power to machines in the mod config, the battery will first need to be charged and will slowly drain as it is used. The submarine in this case will stop working when the battery is flat!"
 		},
 		{
+			"type": "text",
+			"text": "There is a standard battery and also an enhanced battery. The enhanced battery holds more RF and makes the submarine travel much faster."
+		},
+		{
 			"type": "crafting",
-			"title": "Submarine and battery",
-			"recipe": "lepidodendron:submarine_recipe",
-			"recipe2": "lepidodendron:submarine_battery"
+			"title": "Submarine",
+			"recipe": "lepidodendron:submarine_recipe"
+		},
+		{
+			"type": "crafting",
+			"title": "Submarine batteries",
+			"recipe": "lepidodendron:submarine_battery",
+			"recipe2": "lepidodendron:submarine_battery_enhanced"
 		},
 		{
 			"type": "image",
