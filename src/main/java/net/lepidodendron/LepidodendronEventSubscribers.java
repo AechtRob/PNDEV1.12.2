@@ -229,13 +229,11 @@ public class LepidodendronEventSubscribers {
 
   	@SubscribeEvent //Give the Palaeopedia on first join and notify about flowerpots:
 	public void playerJoined(EntityJoinWorldEvent event) {
-		if (!LepidodendronConfig.giveBook) {
-			return;
+		if (LepidodendronConfig.giveBook) {
+			if ((event.getEntity() instanceof EntityPlayerMP)) {
+				ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+			}
 		}
-		if ((event.getEntity() instanceof EntityPlayerMP)) {
-			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
-		}
-
 		if (LepidodendronConfig.modFlowerpot) {
 			if ((Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
 				Entity entity = event.getEntity();
