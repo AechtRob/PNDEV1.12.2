@@ -64,16 +64,17 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
         int currentRotation = 0;
         if (entity != null && entity.hasWorld()) {
             currentRotation = entity.getTileData().getInteger("rotation");
-            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockDisplayCaseMagnifying.block) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
-            TileEntity te = world.getTileEntity(pos);
-            if (te != null) {
-                if (te instanceof BlockDisplayCaseMagnifying.TileEntityDisplayCase) {
-                    BlockDisplayCaseMagnifying.TileEntityDisplayCase tee = (BlockDisplayCaseMagnifying.TileEntityDisplayCase) te;
-                    ItemStack itemstack = tee.getStackInSlot(0);
-                    if (itemstack.isEmpty()) {
-                        return;
-                    }
+                TileEntity te = world.getTileEntity(pos);
+                if (te != null) {
+                    if (te instanceof BlockDisplayCaseMagnifying.TileEntityDisplayCase) {
+                        BlockDisplayCaseMagnifying.TileEntityDisplayCase tee = (BlockDisplayCaseMagnifying.TileEntityDisplayCase) te;
+                        ItemStack itemstack = tee.getStackInSlot(0);
+                        if (itemstack.isEmpty()) {
+                            return;
+                        }
 
                     /*
                     GlStateManager.enableRescaleNormal();
@@ -84,10 +85,10 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                     GlStateManager.pushMatrix();
                      */
 
-                    GlStateManager.pushMatrix();
-                    GlStateManager.disableCull();
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.enableAlpha();
+                        GlStateManager.pushMatrix();
+                        GlStateManager.disableCull();
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.enableAlpha();
 
                     /*
                     if (itemstack.getItem() == ItemAiniktozoonRaw.block) {
@@ -366,8 +367,8 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
 
                      */
 
-                    // ********************************************************************
-                    //else { //standard items
+                        // ********************************************************************
+                        //else { //standard items
                         itemRender = true;
 
                         GlStateManager.alphaFunc(516, 0.1F);
@@ -415,24 +416,24 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                         //model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
                         Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
                         Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
-                    //}
+                        //}
 
-                    if (itemRender) {
-                        GlStateManager.disableRescaleNormal();
-                        //GlStateManager.disableAlpha();
-                        GlStateManager.disableBlend();
-                        GlStateManager.enableCull();
-                        GlStateManager.disableRescaleNormal();
-                        RenderHelper.disableStandardItemLighting();
-                        GlStateManager.popMatrix();
-                    }
-                    else {
-                        //GlStateManager.disableAlpha();
-                        GlStateManager.disableRescaleNormal();
-                        GlStateManager.enableCull();
-                        GlStateManager.popMatrix();
-                    }
+                        if (itemRender) {
+                            GlStateManager.disableRescaleNormal();
+                            //GlStateManager.disableAlpha();
+                            GlStateManager.disableBlend();
+                            GlStateManager.enableCull();
+                            GlStateManager.disableRescaleNormal();
+                            RenderHelper.disableStandardItemLighting();
+                            GlStateManager.popMatrix();
+                        } else {
+                            //GlStateManager.disableAlpha();
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
 
+                    }
                 }
             }
         }

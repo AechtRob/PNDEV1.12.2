@@ -89,352 +89,352 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
 
         if (entity != null && entity.hasWorld()) {
             currentRotation = entity.getTileData().getInteger("rotation");
-            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockDisplayWallMount.block) {
+                facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+                TileEntity te = world.getTileEntity(pos);
+                if (te != null) {
+                    if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
+                        BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
+                        ItemStack itemstack = tee.getStackInSlot(0);
+                        if (itemstack.isEmpty()) {
+                            return;
+                        }
 
-            TileEntity te = world.getTileEntity(pos);
-            if (te != null) {
-                if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
-                    BlockDisplayWallMount.TileEntityDisplayWallMount tee = (BlockDisplayWallMount.TileEntityDisplayWallMount) te;
-                    ItemStack itemstack = tee.getStackInSlot(0);
-                    if (itemstack.isEmpty()) {
-                        return;
-                    }
+                        GlStateManager.pushMatrix();
+                        GlStateManager.disableCull();
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.enableAlpha();
 
-                    GlStateManager.pushMatrix();
-                    GlStateManager.disableCull();
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.enableAlpha();
+                        if (itemstack.getItem() == ItemTaxidermyDisplayItem.block) {
+                            Class classEntity = getEntityFromNBT(itemstack);
+                            if (classEntity != null) {
+                                itemRender = false;
+                                double offsetWall = 0;
+                                double upperfrontverticallinedepth = 0;
+                                double upperbackverticallinedepth = 0;
+                                double upperfrontlineoffset = 0;
+                                double upperfrontlineoffsetperpendiular = 0;
+                                double upperbacklineoffset = 0;
+                                double upperbacklineoffsetperpendiular = 0;
+                                double lowerfrontverticallinedepth = 0;
+                                double lowerbackverticallinedepth = 0;
+                                double lowerfrontlineoffset = 0;
+                                double lowerfrontlineoffsetperpendiular = 0;
+                                double lowerbacklineoffset = 0;
+                                double lowerbacklineoffsetperpendiular = 0F;
+                                ResourceLocation textureDisplay = null;
+                                ResourceLocation textureDisplayTransparent = null;
+                                ModelBase modelDisplay = null;
+                                float getScaler = 0.0F;
+                                float widthSupport = 0.0F;
 
-                    if (itemstack.getItem() == ItemTaxidermyDisplayItem.block) {
-                        Class classEntity = getEntityFromNBT(itemstack);
-                        if (classEntity != null) {
-                            itemRender = false;
-                            double offsetWall = 0;
-                            double upperfrontverticallinedepth = 0;
-                            double upperbackverticallinedepth = 0;
-                            double upperfrontlineoffset = 0;
-                            double upperfrontlineoffsetperpendiular = 0;
-                            double upperbacklineoffset = 0;
-                            double upperbacklineoffsetperpendiular = 0;
-                            double lowerfrontverticallinedepth = 0;
-                            double lowerbackverticallinedepth = 0;
-                            double lowerfrontlineoffset = 0;
-                            double lowerfrontlineoffsetperpendiular = 0;
-                            double lowerbacklineoffset = 0;
-                            double lowerbacklineoffsetperpendiular = 0F;
-                            ResourceLocation textureDisplay = null;
-                            ResourceLocation textureDisplayTransparent = null;
-                            ModelBase modelDisplay = null;
-                            float getScaler = 0.0F;
-                            float widthSupport = 0.0F;
-
-                            //Is there a variant included?
-                            if (itemstack.hasTagCompound()) {
-                                if (itemstack.getTagCompound().hasKey("PNVariant")) {
-                                    PNVariant = itemstack.getTagCompound().getString("PNVariant");
-                                }
-                                if (getVariantFromNBT(itemstack) != null) {
-                                    PNVariant = getVariantFromNBT(itemstack);
-                                }
-                            }
-
-                            Method method = Functions.testAndGetMethod(classEntity, "offsetWall", params);
-                            if (method != null) {
-                                try {
-                                    offsetWall = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
-                            if (method != null) {
-                                try {
-                                    upperfrontverticallinedepth = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
-                            if (method != null) {
-                                try {
-                                    upperbackverticallinedepth = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
-                            if (method != null) {
-                                try {
-                                    upperfrontlineoffset = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
-                            if (method != null) {
-                                try {
-                                    upperfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "upperbacklineoffset", params);
-                            if (method != null) {
-                                try {
-                                    upperbacklineoffset = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
-                            if (method != null) {
-                                try {
-                                    upperbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
-                            if (method != null) {
-                                try {
-                                    lowerfrontverticallinedepth = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
-                            if (method != null) {
-                                try {
-                                    lowerbackverticallinedepth = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
-                            if (method != null) {
-                                try {
-                                    lowerfrontlineoffset = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
-                            if (method != null) {
-                                try {
-                                    lowerfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
-                            if (method != null) {
-                                try {
-                                    lowerbacklineoffset = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
-                            if (method != null) {
-                                try {
-                                    lowerbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
-                            if (method != null) {
-                                try {
-                                    textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "textureDisplayTransparent", params);
-                            if (method != null) {
-                                try {
-                                    textureDisplayTransparent = (ResourceLocation) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    //Do not worry if there is no transparent layer
-                                }
-                            } else {
-                                //Do not worry if there is no transparent layer
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
-                            if (method != null) {
-                                try {
-                                    modelDisplay = (ModelBase) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "getScaler", params);
-                            if (method != null) {
-                                try {
-                                    getScaler = (float) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            } else {
-                                itemRender = true;
-                            }
-                            method = Functions.testAndGetMethod(classEntity, "widthSupport", params);
-                            if (method != null) {
-                                try {
-                                    widthSupport = (float) method.invoke(null, PNVariant);
-                                } catch (Exception e) {
-                                    widthSupport = 0;
-                                }
-                            } else {
-                                widthSupport = 0;
-                            }
-
-
-                            if (!itemRender) {
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                        textureDisplay, getScaler, modelDisplay,
-                                        offsetWall, 0, 0,
-                                        upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                        lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,
-                                        false, widthSupport);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                                if (textureDisplayTransparent != null) {
-                                    try { //Add in any transaprency
-                                        itemRender = itemRender || !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            textureDisplayTransparent, getScaler, modelDisplay,
-                                            offsetWall, 0, 0,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,
-                                            true, widthSupport);
-                                    } catch (Exception e) {
-                                        //Ignore this if there are no transparent parts
+                                //Is there a variant included?
+                                if (itemstack.hasTagCompound()) {
+                                    if (itemstack.getTagCompound().hasKey("PNVariant")) {
+                                        PNVariant = itemstack.getTagCompound().getString("PNVariant");
+                                    }
+                                    if (getVariantFromNBT(itemstack) != null) {
+                                        PNVariant = getVariantFromNBT(itemstack);
                                     }
                                 }
+
+                                Method method = Functions.testAndGetMethod(classEntity, "offsetWall", params);
+                                if (method != null) {
+                                    try {
+                                        offsetWall = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "upperfrontverticallinedepth", params);
+                                if (method != null) {
+                                    try {
+                                        upperfrontverticallinedepth = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "upperbackverticallinedepth", params);
+                                if (method != null) {
+                                    try {
+                                        upperbackverticallinedepth = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffset", params);
+                                if (method != null) {
+                                    try {
+                                        upperfrontlineoffset = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", params);
+                                if (method != null) {
+                                    try {
+                                        upperfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "upperbacklineoffset", params);
+                                if (method != null) {
+                                    try {
+                                        upperbacklineoffset = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", params);
+                                if (method != null) {
+                                    try {
+                                        upperbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "lowerfrontverticallinedepth", params);
+                                if (method != null) {
+                                    try {
+                                        lowerfrontverticallinedepth = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "lowerbackverticallinedepth", params);
+                                if (method != null) {
+                                    try {
+                                        lowerbackverticallinedepth = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffset", params);
+                                if (method != null) {
+                                    try {
+                                        lowerfrontlineoffset = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", params);
+                                if (method != null) {
+                                    try {
+                                        lowerfrontlineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffset", params);
+                                if (method != null) {
+                                    try {
+                                        lowerbacklineoffset = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", params);
+                                if (method != null) {
+                                    try {
+                                        lowerbacklineoffsetperpendiular = (double) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "textureDisplay", params);
+                                if (method != null) {
+                                    try {
+                                        textureDisplay = (ResourceLocation) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "textureDisplayTransparent", params);
+                                if (method != null) {
+                                    try {
+                                        textureDisplayTransparent = (ResourceLocation) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        //Do not worry if there is no transparent layer
+                                    }
+                                } else {
+                                    //Do not worry if there is no transparent layer
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "modelDisplay", params);
+                                if (method != null) {
+                                    try {
+                                        modelDisplay = (ModelBase) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "getScaler", params);
+                                if (method != null) {
+                                    try {
+                                        getScaler = (float) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = Functions.testAndGetMethod(classEntity, "widthSupport", params);
+                                if (method != null) {
+                                    try {
+                                        widthSupport = (float) method.invoke(null, PNVariant);
+                                    } catch (Exception e) {
+                                        widthSupport = 0;
+                                    }
+                                } else {
+                                    widthSupport = 0;
+                                }
+
+
+                                if (!itemRender) {
+                                    try {
+                                        itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                                textureDisplay, getScaler, modelDisplay,
+                                                offsetWall, 0, 0,
+                                                upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
+                                                lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,
+                                                false, widthSupport);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                    if (textureDisplayTransparent != null) {
+                                        try { //Add in any transaprency
+                                            itemRender = itemRender || !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                                    textureDisplayTransparent, getScaler, modelDisplay,
+                                                    offsetWall, 0, 0,
+                                                    upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
+                                                    lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular,
+                                                    true, widthSupport);
+                                        } catch (Exception e) {
+                                            //Ignore this if there are no transparent parts
+                                        }
+                                    }
+                                }
+
+                            } else {
+                                itemRender = true;
                             }
-
                         }
-                        else {
+
+
+                        // ********************************************************************
+                        if (itemRender) { //just render the Taxidermy Kit itself
                             itemRender = true;
-                        }
-                    }
 
-
-                    // ********************************************************************
-                    if (itemRender) { //just render the Taxidermy Kit itself
-                        itemRender = true;
-
-                        float scale = 2.75F;
-                        float yy = 0.25F;
-                        if (entity != null && entity.hasWorld()) {
-                            //TileEntity te = world.getTileEntity(pos);
-                            //if (te != null) {
+                            float scale = 2.75F;
+                            float yy = 0.25F;
+                            if (entity != null && entity.hasWorld()) {
+                                //TileEntity te = world.getTileEntity(pos);
+                                //if (te != null) {
                                 //if (te instanceof BlockTaxidermyTable.TileEntityTaxidermyTable) {
-                                    //BlockTaxidermyTable.TileEntityTaxidermyTable tee = (BlockTaxidermyTable.TileEntityTaxidermyTable) te;
-                                    //ItemStack itemstack = ItemStack.EMPTY;
+                                //BlockTaxidermyTable.TileEntityTaxidermyTable tee = (BlockTaxidermyTable.TileEntityTaxidermyTable) te;
+                                //ItemStack itemstack = ItemStack.EMPTY;
 //                                    if (!((BlockTaxidermyTable.TileEntityTaxidermyTable) te).getStackInSlot(1).isEmpty()) {
 //                                        itemstack = tee.getStackInSlot(1);
 //                                    }
 //                                    if (!(itemstack.isEmpty() || tee.isEmpty())) {
 
-                                        GlStateManager.enableRescaleNormal();
-                                        //GlStateManager.enableAlpha();
-                                        GlStateManager.alphaFunc(516, 0.1F);
-                                        GlStateManager.enableBlend();
-                                        RenderHelper.enableStandardItemLighting();
-                                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-                                        GlStateManager.pushMatrix();
+                                GlStateManager.enableRescaleNormal();
+                                //GlStateManager.enableAlpha();
+                                GlStateManager.alphaFunc(516, 0.1F);
+                                GlStateManager.enableBlend();
+                                RenderHelper.enableStandardItemLighting();
+                                GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+                                GlStateManager.pushMatrix();
 
-                                        double dd = 0.30D;
-                                        if (facing == EnumFacing.NORTH) {
-                                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
-                                            GlStateManager.rotate(180F, 0, 1, 0);
-                                        }
-                                        if (facing == EnumFacing.SOUTH) {
-                                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
-                                            //GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
-                                        }
-                                        if (facing == EnumFacing.EAST) {
-                                            GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
-                                            GlStateManager.rotate(90F, 0, 1, 0);
-                                        }
-                                        if (facing == EnumFacing.WEST) {
-                                            GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
-                                            GlStateManager.rotate(270F, 0, 1, 0);
-                                        }
-                                        if (facing == EnumFacing.UP) {
-                                            GlStateManager.translate(x + 0.5, y - 0.175, z + 0.5);
-                                            GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
-                                        }
-                                        if (facing == EnumFacing.DOWN) {
-                                            GlStateManager.translate(x + 0.5, y + 0.575, z + 0.5);
-                                            GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
-                                        }
-                                        GlStateManager.scale(scale, scale, scale);
+                                double dd = 0.30D;
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
+                                    GlStateManager.rotate(180F, 0, 1, 0);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
+                                    //GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
+                                    GlStateManager.rotate(90F, 0, 1, 0);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
+                                    GlStateManager.rotate(270F, 0, 1, 0);
+                                }
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y - 0.175, z + 0.5);
+                                    GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + 0.575, z + 0.5);
+                                    GlStateManager.rotate(((BlockDisplayWallMount.TileEntityDisplayWallMount) te).getTileData().getInteger("rotation"), 0, 1, 0);
+                                }
+                                GlStateManager.scale(scale, scale, scale);
 
-                                        IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
-                                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
-                                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-                                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+                                IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
+                                model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
+                                Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                                Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
 
-                                        GlStateManager.popMatrix();
-                                        GlStateManager.disableRescaleNormal();
-                                        //GlStateManager.disableAlpha();
-                                        GlStateManager.disableBlend();
-                                        //hasResult = true;
-                                    //}
+                                GlStateManager.popMatrix();
+                                GlStateManager.disableRescaleNormal();
+                                //GlStateManager.disableAlpha();
+                                GlStateManager.disableBlend();
+                                //hasResult = true;
                                 //}
-                            //}
+                                //}
+                                //}
+                            }
                         }
-                    }
 
-                    if (itemRender) {
-                        GlStateManager.disableRescaleNormal();
-                        //GlStateManager.disableAlpha();
-                        GlStateManager.disableBlend();
-                        GlStateManager.enableCull();
-                        GlStateManager.disableRescaleNormal();
-                        RenderHelper.disableStandardItemLighting();
-                        GlStateManager.popMatrix();
-                    } else {
-                        //GlStateManager.disableAlpha();
-                        GlStateManager.disableRescaleNormal();
-                        GlStateManager.enableCull();
-                        GlStateManager.popMatrix();
-                    }
+                        if (itemRender) {
+                            GlStateManager.disableRescaleNormal();
+                            //GlStateManager.disableAlpha();
+                            GlStateManager.disableBlend();
+                            GlStateManager.enableCull();
+                            GlStateManager.disableRescaleNormal();
+                            RenderHelper.disableStandardItemLighting();
+                            GlStateManager.popMatrix();
+                        } else {
+                            //GlStateManager.disableAlpha();
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
 
+                    }
                 }
             }
         }
