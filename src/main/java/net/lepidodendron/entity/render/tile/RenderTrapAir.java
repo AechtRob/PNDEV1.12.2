@@ -29,7 +29,7 @@ public class RenderTrapAir extends TileEntitySpecialRenderer<BlockTrapAir.TileEn
     @Override
     public void render(BlockTrapAir.TileEntityTrapAir entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockTrapAir.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockTrapAir.BlockCustom.FACING);
         }
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {

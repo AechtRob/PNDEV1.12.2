@@ -27,7 +27,7 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
     @Override
     public void render(BlockHerpetogaster.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockHerpetogaster.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
             int rotation = 0;

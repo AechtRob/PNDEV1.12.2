@@ -25,7 +25,7 @@ public class RenderPrimocandelabrum1 extends TileEntitySpecialRenderer<BlockPrim
     public void render(BlockPrimocandelabrum1.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
         try { //to support book rendering:
-            if (entity != null && entity.hasWorld()) {
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPrimocandelabrum1.block) {
                 facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
             }
         }

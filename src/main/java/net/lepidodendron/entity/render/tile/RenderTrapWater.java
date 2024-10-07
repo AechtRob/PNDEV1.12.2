@@ -29,7 +29,7 @@ public class RenderTrapWater extends TileEntitySpecialRenderer<BlockTrapWater.Ti
     @Override
     public void render(BlockTrapWater.TileEntityTrapWater entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockTrapWater.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockTrapWater.BlockCustom.FACING);
         }
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {

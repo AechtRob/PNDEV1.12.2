@@ -25,7 +25,7 @@ public class RenderCharnia extends TileEntitySpecialRenderer<BlockCharnia.TileEn
     public void render(BlockCharnia.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
         try { //to support book rendering:
-            if (entity != null && entity.hasWorld()) {
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockCharnia.block) {
                 facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
             }
         }
