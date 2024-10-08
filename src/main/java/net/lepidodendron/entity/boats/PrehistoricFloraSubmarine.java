@@ -1170,6 +1170,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             if (passenger instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer) passenger;
                 IBlockState state = world.getBlockState(new BlockPos(passenger.posX, passenger.getPosition().getY() + passenger.getEyeHeight(), passenger.posZ));
+                if (this.passengerWaterBreathingUUID == player.getUniqueID()
+                        || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
+                    player.removePotionEffect(MobEffects.WATER_BREATHING);
+                }
                 if (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) {
                     player.setAir(300);
                 }
