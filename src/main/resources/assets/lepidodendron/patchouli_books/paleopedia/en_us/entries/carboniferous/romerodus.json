@@ -1,17 +1,17 @@
 {
-	"name": "Romerodus",
+	"name": "",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/romerodus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_romerodus",
 	"pages": [
-		{
-			"trigger": "lepidodendron:pf_adv_book_romerodus",
-			"title": "Romerodus",
-			"type": "quest",
-			"text": "$(l)Temporal Range: Carboniferous$() $(br2)>"
-		},
-        	{
+	{
+		"trigger": "lepidodendron:pf_adv_book_romerodus",
+		"title": "Romerodus",
+		"type": "quest",
+		"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
+	},
+	{
             "type": "entity",
             "name": "R. orodontus",
             "entity": "lepidodendron:prehistoric_flora_romerodus",
@@ -41,7 +41,7 @@
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_romerodus"
+			"mob": "lepidodendron:prehistoric_flora_replace"
 		}
 	]
 }
