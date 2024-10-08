@@ -68,11 +68,28 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 			DecimalFormat df = new DecimalFormat("###.#");
 			if (stack.hasTagCompound()) {
 				if (stack.getTagCompound().hasKey("rf")) {
-					if (LepidodendronConfig.machinesRF) {
-						return super.getItemStackDisplayName(stack) + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+					if (stack.getTagCompound().hasKey("enhanced")) {
+						if (stack.getTagCompound().getBoolean("enhanced")) {
+							if (LepidodendronConfig.machinesRF) {
+								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 5000000D) + "%";
+							} else {
+								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced.name");
+							}
+						}
+						else {
+							if (LepidodendronConfig.machinesRF) {
+								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+							} else {
+								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
+							}
+						}
 					}
 					else {
-						return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
+						if (LepidodendronConfig.machinesRF) {
+							return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+						} else {
+							return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
+						}
 					}
 				}
 			}
@@ -142,6 +159,9 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 					if (itemstack.hasTagCompound()) {
 						if (itemstack.getTagCompound().hasKey("rf")) {
 							entityPNsubmarine.setRF(itemstack.getTagCompound().getInteger("rf"));
+						}
+						if (itemstack.getTagCompound().hasKey("enhanced")) {
+							entityPNsubmarine.setEnhanced(itemstack.getTagCompound().getBoolean("enhanced"));
 						}
 					}
 

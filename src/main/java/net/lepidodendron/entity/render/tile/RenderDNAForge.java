@@ -42,7 +42,7 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
     @Override
     public void render(BlockDNARecombinerForge.TileEntityDNARecombinerForge entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockDNARecombinerForge.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING);
         }
 

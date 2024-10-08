@@ -64,5 +64,8 @@ public class RecipeOresAndBlocks  {
 
 		GameRegistry.addSmelting(new ItemStack(BlockBalticAmberOre.block, (int) (1)), new ItemStack(ItemBalticAmberChunk.block, (int) (1)), 1F);
 		GameRegistry.addSmelting(new ItemStack(BlockDominicanAmberOre.block, (int) (1)), new ItemStack(ItemDominicanAmberChunk.block, (int) (1)), 1F);
+
+		GameRegistry.addSmelting(new ItemStack(BlockLithiumOre.block, (int) (1)), new ItemStack(ItemLithiumIngot.block, (int) (1)), 1.0F);
+
 	}
 }

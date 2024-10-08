@@ -25,7 +25,7 @@ public class RenderNautiloidShellCenoceras extends TileEntitySpecialRenderer<Blo
     public void render(BlockNautiloidShellCenoceras.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.UP;
         int currentRotation = 0;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockNautiloidShellCenoceras.block) {
             currentRotation = entity.getTileData().getInteger("rotation");
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
         }

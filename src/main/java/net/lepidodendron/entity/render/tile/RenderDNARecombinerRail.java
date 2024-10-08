@@ -34,7 +34,7 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
     @Override
     public void render(BlockDNARecombinerRail.TileEntityDNARecombinerRail entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockDNARecombinerRail.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockDNARecombinerRail.BlockCustom.FACING);
         }
 

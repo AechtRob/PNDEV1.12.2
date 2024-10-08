@@ -152,6 +152,7 @@ public class RenderDisplays {
     public static final ModelChilesaurus modelChilesaurus = new ModelChilesaurus();
     public static final ModelChinlea modelChinlea = new ModelChinlea();
     public static final ModelChippewaella modelChippewaella = new ModelChippewaella();
+    public static final ModelChondrenchelys modelChondrenchelys = new ModelChondrenchelys();
     public static final ModelChotecops modelChotecops = new ModelChotecops();
     public static final ModelChunerpeton modelChunerpeton = new ModelChunerpeton();
     public static final ModelCidaroida modelCidaroida = new ModelCidaroida();
@@ -183,6 +184,7 @@ public class RenderDisplays {
     public static final ModelCowielepis modelCowielepis = new ModelCowielepis();
     public static final ModelCowralepis modelCowralepis = new ModelCowralepis();
     public static final ModelCrassigyrinus modelCrassigyrinus = new ModelCrassigyrinus();
+    public static final ModelCricosaurus modelCricosaurus = new ModelCricosaurus();
     public static final ModelCriocephalosaurus modelCriocephalosaurus = new ModelCriocephalosaurus();
     public static final ModelCrotalocephalus modelCrotalocephalus = new ModelCrotalocephalus();
     public static final ModelCryolophosaurus modelCryolophosaurus = new ModelCryolophosaurus();
@@ -461,6 +463,7 @@ public class RenderDisplays {
     public static final ModelLyrarapax modelLyrarapax = new ModelLyrarapax();
     public static final ModelLystrosaurus modelLystrosaurus = new ModelLystrosaurus();
     public static final ModelLusotitan modelLusotitan = new ModelLusotitan();
+    public static final ModelLusovenator modelLusovenator= new ModelLusovenator();
     public static final ModelMaclurina modelMaclurina = new ModelMaclurina();
     public static final ModelMacromesodon modelMacromesodon = new ModelMacromesodon();
     public static final ModelMacrosemius modelMacrosemius = new ModelMacrosemius();
@@ -672,6 +675,7 @@ public class RenderDisplays {
     public static final ModelRayonnoceras modelRayonnoceras = new ModelRayonnoceras();
     public static final ModelRebellatrix modelRebellatrix = new ModelRebellatrix();
     public static final ModelRedfieldius modelRedfieldius = new ModelRedfieldius();
+
     public static final ModelRemigiomontanus modelRemigiomontanus = new ModelRemigiomontanus();
     public static final ModelRetifacies modelRetifacies = new ModelRetifacies();
     public static final ModelRhadinacanthus modelRhadinacanthus = new ModelRhadinacanthus();
@@ -685,6 +689,7 @@ public class RenderDisplays {
     public static final ModelRoachoid modelRoachoid = new ModelRoachoid();
     public static final ModelRobertia modelRobertia = new ModelRobertia();
     public static final ModelRolfosteus modelRolfosteus = new ModelRolfosteus();
+    public static final ModelRomerodus modelRomerodus = new ModelRomerodus();
     public static final ModelRotaciurca modelRotaciurca = new ModelRotaciurca();
     public static final ModelRubidgea modelRubidgea = new ModelRubidgea();
     public static final ModelRutgersella modelRutgersella = new ModelRutgersella();
@@ -748,6 +753,7 @@ public class RenderDisplays {
     public static final ModelStanocephalosaurus modelStanocephalosaurus = new ModelStanocephalosaurus();
     public static final ModelStegosaurus modelStegosaurus = new ModelStegosaurus();
     public static final ModelStensioella modelStensioella = new ModelStensioella();
+    public static final ModelStenokranio modelStenokranio = new ModelStenokranio();
     public static final ModelStethacanthus modelStethacanthus = new ModelStethacanthus();
     public static final ModelSteurbautichthys modelSteurbautichthys = new ModelSteurbautichthys();
     public static final ModelStoermeropterus modelStoermeropterus = new ModelStoermeropterus();

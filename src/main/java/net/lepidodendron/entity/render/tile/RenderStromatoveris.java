@@ -27,7 +27,7 @@ public class RenderStromatoveris extends TileEntitySpecialRenderer<BlockStromato
     public void render(BlockStromatoveris.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
         try { //to support book rendering:
-            if (entity != null && entity.hasWorld()) {
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockStromatoveris.block) {
                 facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
             }
         }

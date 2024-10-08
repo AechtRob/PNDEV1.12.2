@@ -11009,8 +11009,6 @@
       }
     ]
   },
-
-
   "lusovenator_idle": {
     "sounds": [
       {
@@ -11027,6 +11025,70 @@
     "sounds": [
       {
         "name": "lepidodendron:lusovenator_roar01",
+        "stream": false
+      }
+    ]
+  },
+  "archaeothyris_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeothyris_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_living05",
+        "stream": false
+      }
+    ]
+  },
+  "archaeothyris_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeothyris_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "archaeothyris_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeothyris_death",
+        "stream": false
+      }
+    ]
+  },
+  "archaeothyris_call": {
+    "sounds": [
+      {
+        "name": "lepidodendron:archaeothyris_broadcastcall01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_broadcastcall02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:archaeothyris_broadcastcall03",
         "stream": false
       }
     ]

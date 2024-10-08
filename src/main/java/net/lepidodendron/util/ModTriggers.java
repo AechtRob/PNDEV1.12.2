@@ -304,6 +304,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PAGIOPHYLLUM = new CustomTrigger("pf_book_pagiophyllum");
     public static final CustomTrigger CLICK_HIRMERIELLA = new CustomTrigger("pf_book_hirmeriella");
     public static final CustomTrigger CLICK_JUNGLE = new CustomTrigger("pf_book_jungle");
+    public static final CustomTrigger CLICK_FERN = new CustomTrigger("pf_book_fern");
     public static final CustomTrigger CLICK_KOMLOPTERIS = new CustomTrigger("pf_book_komlopteris");
     public static final CustomTrigger CLICK_THINNFELDIA = new CustomTrigger("pf_book_thinnfeldia");
     public static final CustomTrigger CLICK_LADINIA = new CustomTrigger("pf_book_ladinia");
@@ -1510,7 +1511,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIPLODOSELACHE = new CustomTrigger("pf_book_diplodoselache");
     public static final CustomTrigger CLICK_STENOKRANIO = new CustomTrigger("pf_book_stenokranio");
     public static final CustomTrigger CLICK_IDMONARACHNE = new CustomTrigger("pf_book_idmonarachne");
-    public static final CustomTrigger CLICK_GONDWANARACHNE = new CustomTrigger("pf_book_gondwanarachne");
+    public static final CustomTrigger CLICK_TRIGONOTARBID_GONDWANARACHNE = new CustomTrigger("pf_book_trigonotarbid_gondwanarachne");
     public static final CustomTrigger CLICK_CRICOSAURUS = new CustomTrigger("pf_book_cricosaurus");
     public static final CustomTrigger CLICK_SCHOENESMAHL = new CustomTrigger("pf_book_schoenesmahl");
     public static final CustomTrigger CLICK_WESTRICHUS = new CustomTrigger("pf_book_westrichus");
@@ -1826,6 +1827,7 @@ public class ModTriggers
             CLICK_POTAMOGETON,
             CLICK_IRANIA,
             CLICK_JUNGLE,
+            CLICK_FERN,
             CLICK_KOMLOPTERIS,
             CLICK_THINNFELDIA,
             CLICK_LADINIA,
@@ -3021,7 +3023,7 @@ public class ModTriggers
             CLICK_DIPLODOSELACHE,
             CLICK_STENOKRANIO,
             CLICK_IDMONARACHNE,
-            CLICK_GONDWANARACHNE,
+            CLICK_TRIGONOTARBID_GONDWANARACHNE,
             CLICK_CRICOSAURUS,
             CLICK_SCHOENESMAHL,
             CLICK_WESTRICHUS,

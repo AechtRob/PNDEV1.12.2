@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGangtoucunia;
 import net.lepidodendron.entity.model.tile.ModelGangtoucunia;
 import net.lepidodendron.tileentity.TileEntityGangtoucunia;
 import net.minecraft.block.BlockDirectional;
@@ -33,7 +34,7 @@ public class RenderGangtoucunia extends TileEntitySpecialRenderer<TileEntityGang
         int hidden = 361;
         float offset1 = 1;
         float offset2 = 1;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockGangtoucunia.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
             cluster = entity.getCluster();
             hidden = entity.getHidden();

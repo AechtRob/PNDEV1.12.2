@@ -219,10 +219,12 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemFossil", ItemFossilPleistocene.block);
 		OreDictionary.registerOre("itemFossil", ItemFossilPleistocene.block);
 
-		//Coal:
+		//Coal/Anthracite:
 		OreDictionary.registerOre("blockCoal", BlockAnthracite.block);
 		OreDictionary.registerOre("itemCoal", ItemAnthracite.block);
 		OreDictionary.registerOre("itemCoal", Items.COAL);
+		OreDictionary.registerOre("blockAnthracite", BlockAnthracite.block);
+		OreDictionary.registerOre("itemAnthracite", ItemAnthracite.block);
 
 		//Wood:
 		OreDictionary.registerOre("plankWood", BlockStickBundle.block);
@@ -240,7 +242,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 
 		//Vanilla ferns - for the fern organic ground block recipe:
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.TALLGRASS, 1, 2));
+		OreDictionary.registerOre("plantdnaPNminecraft:small_fern", new ItemStack(Blocks.TALLGRASS, 1, 2));
 		OreDictionary.registerOre("plantFern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+		OreDictionary.registerOre("plantdnaPNminecraft:large_fern", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 
 		//Moss:
 		OreDictionary.registerOre("itemMossForStone", new ItemStack(Blocks.VINE, 1, 0));
@@ -285,6 +289,10 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemSulfur", ItemSulphur.block);
 		OreDictionary.registerOre("dustSulphur", ItemSulphur.block);
 		OreDictionary.registerOre("dustSulfur", ItemSulphur.block);
+
+		OreDictionary.registerOre("blockLithium", BlockLithium.block);
+		OreDictionary.registerOre("ingotLithium", ItemLithiumIngot.block);
+		OreDictionary.registerOre("nuggetLithium", ItemLithiumNugget.block);
 
 		OreDictionary.registerOre("stone", BlockFossilPrecambrian.block);
 		OreDictionary.registerOre("stone", BlockFossilCambrian.block);

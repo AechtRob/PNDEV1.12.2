@@ -242,11 +242,69 @@ public class ModelCricosaurus extends ModelBasePalaeopedia {
     }
 
     public void renderStaticWall(float f) {
-
+        this.setRotateAngle(UpperLegL, 0.8632F, 0.5536F, -0.7383F);
+        this.setRotateAngle(UpperLegR, 0.8632F, -0.5536F, 0.7383F);
+        this.setRotateAngle(UpperArmR, -0.2182F, -0.5672F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.2182F, 0.5672F, 0.0F);
+        this.setRotateAngle(Tail4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegL, 0.6305F, -0.2442F, 0.082F);
+        this.setRotateAngle(LowerLegR, 0.6305F, 0.2442F, -0.082F);
+        this.setRotateAngle(HandR, 0.5236F, 0.3927F, 0.3054F);
+        this.setRotateAngle(HandL, 0.5236F, -0.3927F, -0.3054F);
+        this.setRotateAngle(FootL, 0.2223F, -0.1395F, 0.3335F);
+        this.setRotateAngle(FootR, 0.2223F, 0.1395F, -0.3335F);
+        this.setRotateAngle(cube_r9, -0.6589F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.044F, 0.1264F, -0.0055F);
+        this.setRotateAngle(cube_r3, -0.044F, -0.1264F, 0.0055F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.Body.rotateAngleZ = (float) Math.toRadians(90);
+        this.Body.rotateAngleX = (float) Math.toRadians(90);
+        this.Body.offsetY = -0.21F;
+        this.Body.offsetX = -0.028F;
+        this.Body.offsetZ = -0.059F;
+        this.Body.render(0.01F);
         this.resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(UpperLegR, 0.5902F, -0.5813F, 0.2957F);
+        this.setRotateAngle(UpperLegL, 0.5902F, 0.5813F, -0.2957F);
+        this.setRotateAngle(UpperArmR, -0.2182F, -0.5672F, 0.0F);
+        this.setRotateAngle(UpperArmL, -0.2182F, 0.5672F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Tail3, 0.176F, 0.1289F, 0.0229F);
+        this.setRotateAngle(Tail2, 0.088F, 0.1304F, 0.0115F);
+        this.setRotateAngle(Tail, 0.0873F, 0.1745F, 0.0F);
+        this.setRotateAngle(Neck, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(LowerLegR, 0.6305F, 0.2442F, -0.082F);
+        this.setRotateAngle(LowerLegL, 0.6305F, -0.2442F, 0.082F);
+        this.setRotateAngle(Jaw, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.1298F, -0.017F, -0.1298F);
+        this.setRotateAngle(HandR, 0.5236F, 0.3927F, 0.3054F);
+        this.setRotateAngle(HandL, 0.5236F, -0.3927F, -0.3054F);
+        this.setRotateAngle(FootR, 0.2223F, 0.1395F, -0.3335F);
+        this.setRotateAngle(FootL, 0.2223F, -0.1395F, 0.3335F);
+        this.setRotateAngle(cube_r9, -0.6589F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.829F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.044F, 0.1264F, -0.0055F);
+        this.setRotateAngle(cube_r3, -0.044F, -0.1264F, 0.0055F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.0436F, -0.0873F);
+        this.setRotateAngle(Body3, -0.0876F, 0.0869F, -0.0076F);
+        this.setRotateAngle(Body2, 0.0F, 0.0F, -0.0436F);
+        this.setRotateAngle(Body, 0.1745F, 0.0F, 0.1309F);
+        this.Body.offsetY = -0.3F;
+        this.Body.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -257,7 +315,7 @@ public class ModelCricosaurus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Body.offsetY = -0.4F;
-        this.Body.offsetX = 1.25F;
+        this.Body.offsetX = 0.31F;
         this.Body.rotateAngleY = (float)Math.toRadians(200);
         this.Body.rotateAngleX = (float)Math.toRadians(8);
         this.Body.rotateAngleZ = (float)Math.toRadians(-8);

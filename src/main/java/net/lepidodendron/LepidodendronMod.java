@@ -1,9 +1,6 @@
 package net.lepidodendron;
 
-import net.lepidodendron.block.BlockBatHead;
-import net.lepidodendron.block.BlockFirePF;
-import net.lepidodendron.block.BlockFlowerpotPN;
-import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
+import net.lepidodendron.block.*;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.gui.*;
@@ -56,10 +53,12 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-@Mod(modid = LepidodendronMod.MODID, name = LepidodendronMod.NAME, version = LepidodendronMod.VERSION, dependencies = "required-after:llibrary,patchouli")
+@Mod(modid = LepidodendronMod.MODID, name = LepidodendronMod.NAME, version = LepidodendronMod.VERSION, dependencies = "required-after:llibrary,patchouli;after:biomesoplenty,quark")
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
@@ -2554,15 +2553,34 @@ public class LepidodendronMod {
 		if (LepidodendronConfig.modFire) {
 			BlockFirePF newFire = (BlockFirePF) (new BlockFirePF()).setHardness(0.0F).setLightLevel(1.0F).setTranslationKey("fire").setRegistryName(Objects.requireNonNull(Blocks.FIRE.getRegistryName()));
 			event.getRegistry().register(newFire);
+			try {
+				setFinalField(Blocks.class.getField("FIRE"), newFire);
+			}
+			catch (Exception e) {
+				//Do nothing
+			}
 		}
 
 		if (LepidodendronConfig.modFlowerpot) {
 			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
 				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
 				event.getRegistry().register(newPot);
+				try {
+					setFinalField(Blocks.class.getField("FLOWER_POT"), newPot);
+				}
+				catch (Exception e) {
+					//Do nothing
+				}
 			}
 		}
+	}
 
+	static void setFinalField(Field field, Object newValue) throws Exception {
+		field.setAccessible(true);
+		Field modifiersField = Field.class.getDeclaredField("modifiers");
+		modifiersField.setAccessible(true);
+		modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+		field.set(null, newValue);
 	}
 
 	@SubscribeEvent

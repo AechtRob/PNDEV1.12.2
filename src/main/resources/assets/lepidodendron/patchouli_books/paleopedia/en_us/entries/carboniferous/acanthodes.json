@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous - Permian $(br2)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/acanthodes.png"],
-			"title": "Acanthodes sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Acanthodes sp.",
+			"entity": "lepidodendron:prehistoric_flora_acanthodes",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthodes",

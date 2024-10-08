@@ -24,7 +24,7 @@ public class RenderEggsHarvestman extends TileEntitySpecialRenderer<BlockInsectE
     @Override
     public void render(BlockInsectEggsHarvestman.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockInsectEggsHarvestman.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
             GlStateManager.pushMatrix();

@@ -23,7 +23,7 @@ public class RenderFurcasterItem extends TileEntitySpecialRenderer<BlockFurcaste
     @Override
     public void render(BlockFurcaster.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         int currentRotation = 0;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockFurcaster.block) {
             currentRotation = entity.getTileData().getInteger("rotation");
         }
         this.bindTexture(TEXTURE);

@@ -15,7 +15,7 @@ public class RenderAcadoaradoxides extends RenderLivingBaseWithBook<EntityPrehis
         super(mgr, new ModelAcadoaradoxides(), 0.2f);
     }
 
-    public static float getScaler() {return 0.55F; }
+    public static float getScaler() {return 0.45F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcadoaradoxides entity) {

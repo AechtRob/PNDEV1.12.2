@@ -24,7 +24,7 @@ public class RenderEggsTrigonotarbidPerm extends TileEntitySpecialRenderer<Block
     @Override
     public void render(BlockInsectEggsTrigonotarbidPerm.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockInsectEggsTrigonotarbidPerm.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
             GlStateManager.pushMatrix();

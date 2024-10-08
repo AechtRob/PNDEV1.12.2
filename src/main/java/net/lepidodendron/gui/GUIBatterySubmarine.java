@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockSubmarineBatterypack;
+import net.lepidodendron.block.BlockSubmarineBatterypackEnhanced;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -253,6 +254,11 @@ public class GUIBatterySubmarine extends ElementsLepidodendronMod.ModElement {
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockSubmarineBatterypack.TileEntitySubmarineBatterypack) {
                     BlockSubmarineBatterypack.TileEntitySubmarineBatterypack te = (BlockSubmarineBatterypack.TileEntitySubmarineBatterypack) tileEntity;
+                    double fraction = te.getEnergyFraction();
+                    return (int) Math.round(fraction * 124D);
+                }
+                if (tileEntity instanceof BlockSubmarineBatterypackEnhanced.TileEntitySubmarineBatterypackEnhanced) {
+                    BlockSubmarineBatterypackEnhanced.TileEntitySubmarineBatterypackEnhanced te = (BlockSubmarineBatterypackEnhanced.TileEntitySubmarineBatterypackEnhanced) tileEntity;
                     double fraction = te.getEnergyFraction();
                     return (int) Math.round(fraction * 124D);
                 }
