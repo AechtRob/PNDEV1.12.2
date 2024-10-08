@@ -39,6 +39,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.UUID;
 
 public class PrehistoricFloraSubmarine extends EntityBoat
 {
@@ -73,6 +74,39 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     private PrehistoricFloraSubmarine.Status previousStatus;
     private double lastYd;
 
+    private UUID passengerNightVisionUUID;
+    private int passengerNightVisionDuration;
+    private int passengerNightVisionAmplifier;
+    private boolean passengerNightVisionAmbient;
+    private boolean passengerNightVisionParticles;
+    private UUID passengerNightVisionUUIDPassenger;
+    private int passengerNightVisionDurationPassenger;
+    private int passengerNightVisionAmplifierPassenger;
+    private boolean passengerNightVisionAmbientPassenger;
+    private boolean passengerNightVisionParticlesPassenger;
+
+    private UUID passengerInvisibilityUUID;
+    private int passengerInvisibilityDuration;
+    private int passengerInvisibilityAmplifier;
+    private boolean passengerInvisibilityAmbient;
+    private boolean passengerInvisibilityParticles;
+    private UUID passengerInvisibilityUUIDPassenger;
+    private int passengerInvisibilityDurationPassenger;
+    private int passengerInvisibilityAmplifierPassenger;
+    private boolean passengerInvisibilityAmbientPassenger;
+    private boolean passengerInvisibilityParticlesPassenger;
+
+    private UUID passengerWaterBreathingUUID;
+    private int passengerWaterBreathingDuration;
+    private int passengerWaterBreathingAmplifier;
+    private boolean passengerWaterBreathingAmbient;
+    private boolean passengerWaterBreathingParticles;
+    private UUID passengerWaterBreathingUUIDPassenger;
+    private int passengerWaterBreathingDurationPassenger;
+    private int passengerWaterBreathingAmplifierPassenger;
+    private boolean passengerWaterBreathingAmbientPassenger;
+    private boolean passengerWaterBreathingParticlesPassenger;
+
     public PrehistoricFloraSubmarine(World worldIn)
     {
         super(worldIn);
@@ -91,6 +125,90 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         this.prevPosX = x;
         this.prevPosY = y;
         this.prevPosZ = z;
+    }
+    
+    public void saveNightVisionPassenger(int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
+        if (this.passengerNightVisionUUID != player) {
+            this.passengerNightVisionDuration = duration;
+            this.passengerNightVisionAmplifier = amplifier;
+            this.passengerNightVisionAmbient = ambient;
+            this.passengerNightVisionParticles = particles;
+            this.passengerNightVisionUUID = player;
+        }
+        else if (this.passengerNightVisionUUIDPassenger != player) {
+            this.passengerNightVisionDurationPassenger = duration;
+            this.passengerNightVisionAmplifierPassenger = amplifier;
+            this.passengerNightVisionAmbientPassenger = ambient;
+            this.passengerNightVisionParticlesPassenger = particles;
+            this.passengerNightVisionUUIDPassenger = player;
+        }
+    }
+
+    public void saveInvisibilityPassenger(int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
+        if (this.passengerInvisibilityUUID != player) {
+            this.passengerInvisibilityDuration = duration;
+            this.passengerInvisibilityAmplifier = amplifier;
+            this.passengerInvisibilityAmbient = ambient;
+            this.passengerInvisibilityParticles = particles;
+            this.passengerInvisibilityUUID = player;
+        }
+        else if (this.passengerInvisibilityUUIDPassenger != player) {
+            this.passengerInvisibilityDurationPassenger = duration;
+            this.passengerInvisibilityAmplifierPassenger = amplifier;
+            this.passengerInvisibilityAmbientPassenger = ambient;
+            this.passengerInvisibilityParticlesPassenger = particles;
+            this.passengerInvisibilityUUIDPassenger = player;
+        }
+    }
+
+    public void saveWaterBreathingPassenger(int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
+        if (this.passengerWaterBreathingUUID != player) {
+            this.passengerWaterBreathingDuration = duration;
+            this.passengerWaterBreathingAmplifier = amplifier;
+            this.passengerWaterBreathingAmbient = ambient;
+            this.passengerWaterBreathingParticles = particles;
+            this.passengerWaterBreathingUUID = player;
+        }
+        else if (this.passengerWaterBreathingUUIDPassenger != player) {
+            this.passengerWaterBreathingDurationPassenger = duration;
+            this.passengerWaterBreathingAmplifierPassenger = amplifier;
+            this.passengerWaterBreathingAmbientPassenger = ambient;
+            this.passengerWaterBreathingParticlesPassenger = particles;
+            this.passengerWaterBreathingUUIDPassenger = player;
+        }
+    }
+    
+    public void grantNightVisionPassenger(EntityPlayer player) {
+        if (passengerNightVisionUUID == player.getUniqueID()) {
+            player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, this.passengerNightVisionDuration, this.passengerNightVisionAmplifier, this.passengerNightVisionAmbient, this.passengerNightVisionParticles));
+            this.passengerNightVisionUUID = null;
+        }
+        else if (passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+            player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, this.passengerNightVisionDurationPassenger, this.passengerNightVisionAmplifierPassenger, this.passengerNightVisionAmbientPassenger, this.passengerNightVisionParticlesPassenger));
+            this.passengerNightVisionUUIDPassenger = null;
+        }
+    }
+
+    public void grantInvisibilityPassenger(EntityPlayer player) {
+        if (passengerInvisibilityUUID == player.getUniqueID()) {
+            player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, this.passengerInvisibilityDuration, this.passengerInvisibilityAmplifier, this.passengerInvisibilityAmbient, this.passengerInvisibilityParticles));
+            this.passengerInvisibilityUUID = null;
+        }
+        else if (passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
+            player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, this.passengerInvisibilityDurationPassenger, this.passengerInvisibilityAmplifierPassenger, this.passengerInvisibilityAmbientPassenger, this.passengerInvisibilityParticlesPassenger));
+            this.passengerInvisibilityUUIDPassenger = null;
+        }
+    }
+
+    public void grantWaterBreathingPassenger(EntityPlayer player) {
+        if (passengerWaterBreathingUUID == player.getUniqueID()) {
+            player.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, this.passengerWaterBreathingDuration, this.passengerWaterBreathingAmplifier, this.passengerWaterBreathingAmbient, this.passengerWaterBreathingParticles));
+            this.passengerWaterBreathingUUID = null;
+        }
+        else if (passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
+            player.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, this.passengerWaterBreathingDurationPassenger, this.passengerWaterBreathingAmplifierPassenger, this.passengerWaterBreathingAmbientPassenger, this.passengerWaterBreathingParticlesPassenger));
+            this.passengerWaterBreathingUUIDPassenger = null;
+        }
     }
 
     public double getEnergyFraction() {
@@ -125,6 +243,73 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     {
         compound.setInteger("RF", this.getRF());
         compound.setBoolean("enhanced", this.getEnhanced());
+        
+        if (this.passengerNightVisionUUID == null) {
+            compound.setString("passengerNightVisionUUID", "");
+        }
+        else {
+            compound.setString("passengerNightVisionUUID", this.passengerNightVisionUUID.toString());
+        }
+        compound.setInteger("passengerNightVisionDuration", this.passengerNightVisionDuration);
+        compound.setInteger("passengerNightVisionAmplifier", this.passengerNightVisionAmplifier);
+        compound.setBoolean("passengerNightVisionAmbient", this.passengerNightVisionAmbient);
+        compound.setBoolean("passengerNightVisionParticles", this.passengerNightVisionParticles);
+        
+        if (this.passengerNightVisionUUIDPassenger == null) {
+            compound.setString("passengerNightVisionUUIDPassenger", "");
+        }
+        else {
+            compound.setString("passengerNightVisionUUIDPassenger", this.passengerNightVisionUUIDPassenger.toString());
+        }
+        compound.setInteger("passengerNightVisionDurationPassenger", this.passengerNightVisionDurationPassenger);
+        compound.setInteger("passengerNightVisionAmplifierPassenger", this.passengerNightVisionAmplifierPassenger);
+        compound.setBoolean("passengerNightVisionAmbientPassenger", this.passengerNightVisionAmbientPassenger);
+        compound.setBoolean("passengerNightVisionParticlesPassenger", this.passengerNightVisionParticlesPassenger);
+        
+        if (this.passengerInvisibilityUUID == null) {
+            compound.setString("passengerInvisibilityUUID", "");
+        }
+        else {
+            compound.setString("passengerInvisibilityUUID", this.passengerInvisibilityUUID.toString());
+        }
+        compound.setInteger("passengerInvisibilityDuration", this.passengerInvisibilityDuration);
+        compound.setInteger("passengerInvisibilityAmplifier", this.passengerInvisibilityAmplifier);
+        compound.setBoolean("passengerInvisibilityAmbient", this.passengerInvisibilityAmbient);
+        compound.setBoolean("passengerInvisibilityParticles", this.passengerInvisibilityParticles);
+
+        if (this.passengerInvisibilityUUIDPassenger == null) {
+            compound.setString("passengerInvisibilityUUIDPassenger", "");
+        }
+        else {
+            compound.setString("passengerInvisibilityUUIDPassenger", this.passengerInvisibilityUUIDPassenger.toString());
+        }
+        compound.setInteger("passengerInvisibilityDurationPassenger", this.passengerInvisibilityDurationPassenger);
+        compound.setInteger("passengerInvisibilityAmplifierPassenger", this.passengerInvisibilityAmplifierPassenger);
+        compound.setBoolean("passengerInvisibilityAmbientPassenger", this.passengerInvisibilityAmbientPassenger);
+        compound.setBoolean("passengerInvisibilityParticlesPassenger", this.passengerInvisibilityParticlesPassenger);
+        
+        if (this.passengerWaterBreathingUUID == null) {
+            compound.setString("passengerWaterBreathingUUID", "");
+        }
+        else {
+            compound.setString("passengerWaterBreathingUUID", this.passengerWaterBreathingUUID.toString());
+        }
+        compound.setInteger("passengerWaterBreathingDuration", this.passengerWaterBreathingDuration);
+        compound.setInteger("passengerWaterBreathingAmplifier", this.passengerWaterBreathingAmplifier);
+        compound.setBoolean("passengerWaterBreathingAmbient", this.passengerWaterBreathingAmbient);
+        compound.setBoolean("passengerWaterBreathingParticles", this.passengerWaterBreathingParticles);
+
+        if (this.passengerWaterBreathingUUIDPassenger == null) {
+            compound.setString("passengerWaterBreathingUUIDPassenger", "");
+        }
+        else {
+            compound.setString("passengerWaterBreathingUUIDPassenger", this.passengerWaterBreathingUUIDPassenger.toString());
+        }
+        compound.setInteger("passengerWaterBreathingDurationPassenger", this.passengerWaterBreathingDurationPassenger);
+        compound.setInteger("passengerWaterBreathingAmplifierPassenger", this.passengerWaterBreathingAmplifierPassenger);
+        compound.setBoolean("passengerWaterBreathingAmbientPassenger", this.passengerWaterBreathingAmbientPassenger);
+        compound.setBoolean("passengerWaterBreathingParticlesPassenger", this.passengerWaterBreathingParticlesPassenger);
+
     }
 
     @Override
@@ -132,6 +317,55 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     {
         this.setRF(compound.getInteger("RF"));
         this.setEnhanced(compound.getBoolean("enhanced"));
+
+        if (!(compound.getString("passengerNightVisionUUID").equalsIgnoreCase(""))) {
+            this.passengerNightVisionUUID = UUID.fromString(compound.getString("passengerNightVisionUUID"));
+            this.passengerNightVisionDuration = compound.getInteger("passengerNightVisionDuration");
+            this.passengerNightVisionAmplifier = compound.getInteger("passengerNightVisionAmplifier");
+            this.passengerNightVisionAmbient = compound.getBoolean("passengerNightVisionAmbient");
+            this.passengerNightVisionParticles = compound.getBoolean("passengerNightVisionParticles");
+        }
+
+        if (!(compound.getString("passengerNightVisionUUIDPassenger").equalsIgnoreCase(""))) {
+            this.passengerNightVisionUUIDPassenger = UUID.fromString(compound.getString("passengerNightVisionUUIDPassenger"));
+            this.passengerNightVisionDurationPassenger = compound.getInteger("passengerNightVisionDurationPassenger");
+            this.passengerNightVisionAmplifierPassenger = compound.getInteger("passengerNightVisionAmplifierPassenger");
+            this.passengerNightVisionAmbientPassenger = compound.getBoolean("passengerNightVisionAmbientPassenger");
+            this.passengerNightVisionParticlesPassenger = compound.getBoolean("passengerNightVisionParticlesPassenger");
+        }
+
+        if (!(compound.getString("passengerInvisibilityUUID").equalsIgnoreCase(""))) {
+            this.passengerInvisibilityUUID = UUID.fromString(compound.getString("passengerInvisibilityUUID"));
+            this.passengerInvisibilityDuration = compound.getInteger("passengerInvisibilityDuration");
+            this.passengerInvisibilityAmplifier = compound.getInteger("passengerInvisibilityAmplifier");
+            this.passengerInvisibilityAmbient = compound.getBoolean("passengerInvisibilityAmbient");
+            this.passengerInvisibilityParticles = compound.getBoolean("passengerInvisibilityParticles");
+        }
+
+        if (!(compound.getString("passengerInvisibilityUUIDPassenger").equalsIgnoreCase(""))) {
+            this.passengerInvisibilityUUIDPassenger = UUID.fromString(compound.getString("passengerInvisibilityUUIDPassenger"));
+            this.passengerInvisibilityDurationPassenger = compound.getInteger("passengerInvisibilityDurationPassenger");
+            this.passengerInvisibilityAmplifierPassenger = compound.getInteger("passengerInvisibilityAmplifierPassenger");
+            this.passengerInvisibilityAmbientPassenger = compound.getBoolean("passengerInvisibilityAmbientPassenger");
+            this.passengerInvisibilityParticlesPassenger = compound.getBoolean("passengerInvisibilityParticlesPassenger");
+        }
+
+        if (!(compound.getString("passengerWaterBreathingUUID").equalsIgnoreCase(""))) {
+            this.passengerWaterBreathingUUID = UUID.fromString(compound.getString("passengerWaterBreathingUUID"));
+            this.passengerWaterBreathingDuration = compound.getInteger("passengerWaterBreathingDuration");
+            this.passengerWaterBreathingAmplifier = compound.getInteger("passengerWaterBreathingAmplifier");
+            this.passengerWaterBreathingAmbient = compound.getBoolean("passengerWaterBreathingAmbient");
+            this.passengerWaterBreathingParticles = compound.getBoolean("passengerWaterBreathingParticles");
+        }
+
+        if (!(compound.getString("passengerWaterBreathingUUIDPassenger").equalsIgnoreCase(""))) {
+            this.passengerWaterBreathingUUIDPassenger = UUID.fromString(compound.getString("passengerWaterBreathingUUIDPassenger"));
+            this.passengerWaterBreathingDurationPassenger = compound.getInteger("passengerWaterBreathingDurationPassenger");
+            this.passengerWaterBreathingAmplifierPassenger = compound.getInteger("passengerWaterBreathingAmplifierPassenger");
+            this.passengerWaterBreathingAmbientPassenger = compound.getBoolean("passengerWaterBreathingAmbientPassenger");
+            this.passengerWaterBreathingParticlesPassenger = compound.getBoolean("passengerWaterBreathingParticlesPassenger");
+        }
+
     }
 
     @Override
@@ -941,20 +1175,32 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                 }
                 else {
                     if (LepidodendronConfig.submarineNightvision) {
-                        player.removePotionEffect(MobEffects.NIGHT_VISION);
+                        if (this.passengerNightVisionUUID == player.getUniqueID()
+                            || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+                            player.removePotionEffect(MobEffects.NIGHT_VISION);
+                        }
                     }
                 }
                 if (((!player.isPotionActive(MobEffects.NIGHT_VISION))|| player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
-                    player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                    if (this.passengerNightVisionUUID == player.getUniqueID()
+                            || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+                        player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                    }
                 }
                 if (((!player.isPotionActive(MobEffects.INVISIBILITY))|| player.getActivePotionEffect(MobEffects.INVISIBILITY).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineInvisibility) {
-                    player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 201, 0, false, false));
+                    if (this.passengerInvisibilityUUID == player.getUniqueID()
+                            || this.passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
+                        player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 201, 0, false, false));
+                    }
                 }
             }
         }
     }
 
-
+    @Override
+    public void dismountRidingEntity() {
+        super.dismountRidingEntity();
+    }
 
     @Override
     protected void applyYawToEntity(Entity entityToUpdate)

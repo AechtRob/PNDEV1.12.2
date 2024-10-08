@@ -429,8 +429,8 @@ public class GUITimeResearcherFinder extends ElementsLepidodendronMod.ModElement
         private int getProgressBarLength() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher) {
-                    BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) {
+                    BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom te = (BlockTimeResearcherFinderBottom.TileEntityTimeResearcherFinderBottom) tileEntity;
                     return (int)Math.round(te.progressFraction() * 46D);
                 }
             }
