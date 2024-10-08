@@ -59,11 +59,6 @@ public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimb
 	}
 
 	@Override
-	public float getEyeHeight() {
-		return 0.09F;
-	}
-
-	@Override
 	public int getTalkInterval() {
 		return 90;
 	}

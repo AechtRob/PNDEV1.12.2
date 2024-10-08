@@ -199,7 +199,7 @@ public class EntityPrehistoricFloraLusotitan extends EntityPrehistoricFloraLandW
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.445F;
+		float speedBase = 0.515F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
