@@ -4,10 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.base.IPottable;
 import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -17,12 +14,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.tileentity.TileEntityFlowerPot;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.I18n;
@@ -36,18 +34,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockFlowerpotPN extends Block {
+public class BlockFlowerpotPN extends BlockFlowerPot {
 
 	public BlockFlowerpotPN()
 	{
-		super(Material.CIRCUITS);
+		super();
 		this.setDefaultState(this.blockState.getBaseState().withProperty(CONTENTS, BlockFlowerPot.EnumFlowerType.EMPTY).withProperty(LEGACY_DATA, Integer.valueOf(0)));
 		setSoundType(SoundType.STONE);
 	}
 
-	public static final PropertyInteger LEGACY_DATA = PropertyInteger.create("legacy_data", 0, 15);
-	public static final PropertyEnum<BlockFlowerPot.EnumFlowerType> CONTENTS = PropertyEnum.<BlockFlowerPot.EnumFlowerType>create("contents", BlockFlowerPot.EnumFlowerType.class);
-	protected static final AxisAlignedBB FLOWER_POT_AABB = new AxisAlignedBB(0.3125D, 0.0D, 0.3125D, 0.6875D, 0.375D, 0.6875D);
 
 	@Override
 	public String getLocalizedName()
@@ -456,7 +451,17 @@ public class BlockFlowerpotPN extends Block {
 	/*============================FORGE START=====================================*/
 	@Override
 	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		super.getDrops(drops, world, pos, state, fortune);
+		Random rand = world instanceof World ? ((World)world).rand : RANDOM;
+
+		int count = quantityDropped(state, fortune, rand);
+		for (int i = 0; i < count; i++)
+		{
+			Item item = this.getItemDropped(state, rand, fortune);
+			if (item != Items.AIR)
+			{
+				drops.add(new ItemStack(item, 1, this.damageDropped(state)));
+			}
+		}
 		TileEntityFlowerPotPN te = world.getTileEntity(pos) instanceof TileEntityFlowerPotPN ? (TileEntityFlowerPotPN) world.getTileEntity(pos) : null;
 		if (te != null && te.getFlowerPotItem() != null)
 			drops.add(new ItemStack(te.getFlowerPotItem(), 1, te.getFlowerPotData()));
@@ -481,73 +486,7 @@ public class BlockFlowerpotPN extends Block {
 //		return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
 //	}
 
-	public static class TileEntityFlowerPotPN extends TileEntity {
-
-		protected Item flowerPotItem;
-		protected int flowerPotData;
-
-		@Override
-		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-			super.writeToNBT(compound);
-			ResourceLocation resourcelocation = Item.REGISTRY.getNameForObject(this.flowerPotItem);
-			compound.setString("Item", resourcelocation == null ? "" : resourcelocation.toString());
-			compound.setInteger("Data", this.flowerPotData);
-			return compound;
-		}
-
-		@Override
-		public void readFromNBT(NBTTagCompound compound) {
-			super.readFromNBT(compound);
-			if (compound.hasKey("Item", 8)) {
-				this.flowerPotItem = Item.getByNameOrId(compound.getString("Item"));
-			} else {
-				this.flowerPotItem = Item.getItemById(compound.getInteger("Item"));
-			}
-			this.flowerPotData = compound.getInteger("Data");
-		}
-
-		public NBTTagCompound getUpdateTag() {
-			return this.writeToNBT(new NBTTagCompound());
-		}
-
-		public void setItemStack(ItemStack stack) {
-			this.flowerPotItem = stack.getItem();
-			this.flowerPotData = stack.getMetadata();
-		}
-
-		public ItemStack getFlowerItemStack() {
-			return this.flowerPotItem == null ? ItemStack.EMPTY : new ItemStack(this.flowerPotItem, 1, this.flowerPotData);
-		}
-
-		@Nullable
-		public Item getFlowerPotItem() {
-			return this.flowerPotItem;
-		}
-
-		public int getFlowerPotData() {
-			return this.flowerPotData;
-		}
-
-		@Override
-		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
-		{
-			return (oldState.getBlock() != newSate.getBlock());
-		}
-
-		@Override
-		public SPacketUpdateTileEntity getUpdatePacket() {
-			return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
-		}
-
-		@Override
-		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
-			this.readFromNBT(pkt.getNbtCompound());
-		}
-
-		@Override
-		public void handleUpdateTag(NBTTagCompound tag) {
-			this.readFromNBT(tag);
-		}
+	public static class TileEntityFlowerPotPN extends TileEntityFlowerPot {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {

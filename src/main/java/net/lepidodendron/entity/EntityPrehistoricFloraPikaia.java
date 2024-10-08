@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderPikaia;
-import net.lepidodendron.entity.render.entity.RenderWestrichus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.client.model.ModelBase;

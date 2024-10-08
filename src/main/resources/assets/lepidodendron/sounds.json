@@ -619,7 +619,8 @@
         "stream": false
       }
     ]
-  },"cotylorhynchus_idle": {
+  },
+  "cotylorhynchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:cotylorhynchus_living01",
@@ -10830,6 +10831,202 @@
     "sounds": [
       {
         "name": "lepidodendron:schoenesmahl_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "eustreptospondylus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "eustreptospondylus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eustreptospondylus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_death",
+        "stream": false
+      }
+    ]
+  },
+  "eustreptospondylus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eustreptospondylus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eustreptospondylus_threat03",
+        "stream": false
+      }
+    ]
+  },
+
+  "lusotitan_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living07",
+        "stream": false
+      }
+    ]
+  },
+  "lusotitan_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "lusotitan_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_death",
+        "stream": false
+      }
+    ]
+  },
+  "lusotitan_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusotitan_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusotitan_living08",
+        "stream": false
+      }
+    ]
+  },
+  "cricosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cricosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cricosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cricosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cricosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cricosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "cricosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cricosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cricosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cricosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "cricosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cricosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+
+  "lusovenator_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusovenator_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lusovenator_living02",
+        "stream": false
+      }
+    ]
+  },
+  "lusovenator_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lusovenator_roar01",
         "stream": false
       }
     ]

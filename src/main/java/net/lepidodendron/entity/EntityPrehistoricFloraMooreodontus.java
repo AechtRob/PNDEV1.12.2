@@ -11,7 +11,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderMooreodontus;
-import net.lepidodendron.entity.render.entity.RenderXenacanthus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;

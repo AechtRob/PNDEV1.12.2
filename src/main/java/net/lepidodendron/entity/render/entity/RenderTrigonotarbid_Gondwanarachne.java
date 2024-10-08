@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraTrigonotarbid_Gondwanarachne;
 import net.lepidodendron.entity.model.entity.ModelGondwanarachne;
-import net.lepidodendron.entity.model.entity.ModelTrigonotarbid;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;

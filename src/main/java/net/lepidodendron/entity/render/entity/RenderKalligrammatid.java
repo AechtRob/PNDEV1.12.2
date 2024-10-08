@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderKalligrammatid extends RenderLivingBaseWithBook<EntityPrehistoricFloraKalligrammatid> {
     public static final ResourceLocation TEXTURE_KALLIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_kalligramma.png");
     public static final ResourceLocation TEXTURE_APOCHRYSOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_apochrysogramma.png");
-    private static final ResourceLocation TEXTURE_HUIYINGOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_huiyingogramma.png");
+    public static final ResourceLocation TEXTURE_HUIYINGOGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_huiyingogramma.png");
     public static final ResourceLocation TEXTURE_LIASSOPSYCHOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_liassopsychops.png");
     public static final ResourceLocation TEXTURE_MEIONEURITES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_meioneurites.png");
     public static final ResourceLocation TEXTURE_ABRIGRAMMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalligrammatid_abrigramma.png");

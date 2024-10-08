@@ -3,6 +3,8 @@ package net.lepidodendron.util;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.block.base.BlockLogPF;
@@ -30,6 +32,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class Functions {
@@ -164,13 +167,14 @@ public class Functions {
      * @return
      * @param <T>
      */
-    public static <T extends Entity> List<T> getEntitiesWithinAABBPN(World worldIn, Class <? extends T > clazz, AxisAlignedBB aabb, @Nullable Predicate<? super T > filter)
+    public static <T extends Entity> ObjectList<T> getEntitiesWithinAABBPN(World worldIn, Class <? extends T > clazz, AxisAlignedBB aabb, @Nullable Predicate<? super T > filter)
     {
         int j2 = MathHelper.floor((aabb.minX - World.MAX_ENTITY_RADIUS) / 16.0D);
         int k2 = MathHelper.ceil((aabb.maxX + World.MAX_ENTITY_RADIUS) / 16.0D);
         int l2 = MathHelper.floor((aabb.minZ - World.MAX_ENTITY_RADIUS) / 16.0D);
         int i3 = MathHelper.ceil((aabb.maxZ + World.MAX_ENTITY_RADIUS) / 16.0D);
-        List<T> list = Lists.<T>newArrayList();
+        ObjectList<T> list = new ObjectArrayList<>();
+
 
         for (int j3 = j2; j3 < k2; ++j3)
         {
@@ -186,7 +190,7 @@ public class Functions {
         return list;
     }
 
-    public static <T extends Entity> void getEntitiesOfTypeWithinAABBPN(Chunk chunk, Class <? extends T > entityClass, AxisAlignedBB aabb, List<T> listToFill, Predicate <? super T > filter)
+    public static <T extends Entity> void getEntitiesOfTypeWithinAABBPN(Chunk chunk, Class <? extends T > entityClass, AxisAlignedBB aabb, ObjectList<T> listToFill, Predicate <? super T > filter)
     {
         int i = MathHelper.floor((aabb.minY - World.MAX_ENTITY_RADIUS) / 16.0D);
         int j = MathHelper.floor((aabb.maxY + World.MAX_ENTITY_RADIUS) / 16.0D);
@@ -228,7 +232,7 @@ public class Functions {
         }
 
         if (state.causesSuffocation() && state.getMaterial() != Material.WOOD) { //If we are about to place a block that could kill an entity here (but which isn't a tree):
-            List<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
+            ObjectList<Entity> getEntities = getEntitiesWithinAABBPN(worldIn, Entity.class, new AxisAlignedBB(pos), EntitySelectors.NOT_SPECTATING);
             if (!getEntities.isEmpty()) {
                 int ascendor = 0;
                 boolean isMoved = false;
@@ -341,6 +345,18 @@ public class Functions {
                 worldIn.setBlockState(position.down(4), state, 16);
             }
         }
+    }
+
+    @Nullable
+    public static Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
+        Method methodToFind = null;
+
+        try {
+            methodToFind = clazz.getMethod(methodname, params);
+        } catch (SecurityException | NoSuchMethodException var5) {
+        }
+
+        return methodToFind;
     }
 
 }

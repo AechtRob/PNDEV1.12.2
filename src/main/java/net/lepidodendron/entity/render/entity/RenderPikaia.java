@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.render.entity;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPikaia;
 import net.lepidodendron.entity.model.entity.ModelPikaia;

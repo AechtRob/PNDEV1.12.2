@@ -1,7 +1,6 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
@@ -133,7 +132,7 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
                                     params[2] = IBlockState.class;
                                     params[3] = Random.class;
 
-                                    Method method = RenderDisplayWallMount.testAndGetMethod(classGenerator, "getIBlockstateForWater", params);
+                                    Method method = Functions.testAndGetMethod(classGenerator, "getIBlockstateForWater", params);
                                     if (method != null) {
                                         try {
                                             iBlockState = (IBlockState) method.invoke(null, worldIn.getBiome(position), position.getY(), iBlockState, rand);

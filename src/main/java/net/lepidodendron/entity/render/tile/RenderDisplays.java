@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.entity.model.entity.*;
-import net.minecraft.client.model.ModelBase;
 
 public class RenderDisplays {
 

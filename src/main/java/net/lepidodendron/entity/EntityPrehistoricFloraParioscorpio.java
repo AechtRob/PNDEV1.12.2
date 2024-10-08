@@ -46,11 +46,11 @@ public class EntityPrehistoricFloraParioscorpio extends EntityPrehistoricFloraAg
 		maxHeight = 0.25F;
 		maxHealthAgeable = 3.0D;
 	}
-//
-//	@Override
-//	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-//		return new EntityPrehistoricFloraParioscorpio(this.world);
-//	}
+
+	@Override
+	public EnumCreatureAttribute getCreatureAttribute() {
+		return EnumCreatureAttribute.ARTHROPOD;
+	}
 
 	@Override
 	public int getAdultAge() {
@@ -125,11 +125,6 @@ public class EntityPrehistoricFloraParioscorpio extends EntityPrehistoricFloraAg
 	@Override
 	public String getTexture() {
 		return this.getTexture();
-	}
-
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
 	}
 
 	@Override

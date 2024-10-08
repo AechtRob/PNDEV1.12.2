@@ -178,6 +178,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 			) {
 				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockAdoketophyton.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
+				entityToSpawn.setVelocity(0,0,0);
 				worldIn.spawnEntity(entityToSpawn);
 			}
 			else {
@@ -310,6 +311,11 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 	    	{
 	    		return false;
 	    	}
+
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
 
 	    	double getLight = worldIn.getLight(pos);
 	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))

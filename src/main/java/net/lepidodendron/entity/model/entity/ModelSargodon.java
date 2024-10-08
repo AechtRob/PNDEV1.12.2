@@ -322,8 +322,8 @@ public class ModelSargodon extends ModelBasePalaeopedia {
             speed = 0.8F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed*0.8F, 0.27F, 0, f2, 1);
-            this.walk(jaw, (float) (speed * 0.75), 0.3F, true, 0, 0, f2, 1);
+            this.chainSwing(fishTail, speed * 0.8F, 0.27F, 0, f2, 1);
+            this.walk(jaw, (float) (speed * 0.35), -0.2F, true, -0.3F, 0, f2, 1);
 
             this.walk(frontLeftFin, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);
             this.swing(frontLeftFin, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);

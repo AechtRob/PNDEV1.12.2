@@ -307,8 +307,8 @@ public class ModelMacrosemius extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Macrosemius.offsetX = -0.5F;
-        this.Macrosemius.offsetY = -0.5F;
+        //this.Macrosemius.offsetX = -0.5F;
+        this.Macrosemius.offsetY = -0.12F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5};

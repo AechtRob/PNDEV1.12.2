@@ -15,7 +15,6 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
 public class RenderFlowerPotPN extends TileEntitySpecialRenderer<BlockFlowerpotPN.TileEntityFlowerPotPN> {
@@ -89,7 +88,7 @@ public class RenderFlowerPotPN extends TileEntitySpecialRenderer<BlockFlowerpotP
         }
         Minecraft.getMinecraft().renderEngine.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
         BlockRendererDispatcher renderer = Minecraft.getMinecraft().getBlockRendererDispatcher();
-        renderer.renderBlockBrightness(state, te.getWorld().getCombinedLight(new BlockPos(x, y, z), 0));
+        renderer.renderBlockBrightness(state, te.getWorld().getCombinedLight(te.getPos(), 0));
 
         GlStateManager.disableRescaleNormal();
         GlStateManager.disableBlend();

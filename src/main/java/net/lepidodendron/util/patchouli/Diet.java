@@ -1,7 +1,7 @@
 package net.lepidodendron.util.patchouli;
 
 import net.lepidodendron.LepidodendronBookSubscribers;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.util.Functions;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
@@ -31,7 +31,7 @@ public class Diet implements IComponentProcessor {
         }
         EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobString));
         Class clazz = ee.getEntityClass();
-        Method method = RenderDisplayWallMount.testAndGetMethod(clazz, "getFoodOreDicts", null);
+        Method method = Functions.testAndGetMethod(clazz, "getFoodOreDicts", null);
         String[] string = new String[]{};
         String result = "";
         String nestString = "N/A";

@@ -10,7 +10,6 @@ import net.lepidodendron.block.BlockEggsMegactenopetalus;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderAcanthodes;
 import net.lepidodendron.entity.render.entity.RenderMegactenopetalus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;

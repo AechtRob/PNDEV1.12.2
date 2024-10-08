@@ -96,7 +96,7 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                     return false;
                 }
                 this.closestLivingEntity = list.get(0);
-                if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && this.closestLivingEntity  instanceof EntityPlayer) {
+                if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && this.closestLivingEntity instanceof EntityPlayer) {
                     return false;
                 }
                 if (this.closestLivingEntity instanceof EntityLivingBase) {

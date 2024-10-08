@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraAcadoaradoxides;
-import net.lepidodendron.entity.EntityPrehistoricFloraAcanthodes;
 import net.lepidodendron.entity.model.entity.ModelAcadoaradoxides;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;

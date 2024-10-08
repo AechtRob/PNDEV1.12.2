@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraSchoenesmahl;
 import net.lepidodendron.entity.EntityPrehistoricFloraSelenopeltis;
 import net.lepidodendron.entity.model.entity.ModelSelenopeltis;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;

@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraGansuselache extends EntityPrehistoricFloraAg
 
 	@Override
 	public byte breedPNVariantsMatch() {
-		return -1;
+		return 0;
 	}
 
 	@Override
@@ -199,14 +199,7 @@ public class EntityPrehistoricFloraGansuselache extends EntityPrehistoricFloraAg
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		switch (this.getPNType()) {
-			case MALE:
-			default:
-				return LepidodendronMod.GANSUSELACHE_LOOT;
-
-			case FEMALE:
-				return LepidodendronMod.GANSUSELACHE_LOOT_F;
-		}
+		return LepidodendronMod.GANSUSELACHE_LOOT;
 	}
 
 	@Override

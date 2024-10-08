@@ -11,12 +11,9 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderThalattosuchus;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -212,19 +209,19 @@ public class EntityPrehistoricFloraCricosaurus extends EntityPrehistoricFloraSwi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:thalattosuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:cricosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:thalattosuchus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:cricosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:thalattosuchus_death"));
+				.getObject(new ResourceLocation("lepidodendron:cricosaurus_death"));
 	}
 
 	@Override

@@ -10,7 +10,6 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
-import net.lepidodendron.entity.render.entity.RenderBrachiosaurus;
 import net.lepidodendron.entity.render.entity.RenderLusotitan;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
@@ -370,68 +369,8 @@ public class EntityPrehistoricFloraLusotitan extends EntityPrehistoricFloraLandW
 	@Override
 	public boolean isGrazing()
 	{
-		if (!this.isPFAdult()) {
-			return false;
-		}
-		
-		BlockPos entityPos = Functions.getEntityBlockPos(this);
+		return false;
 
-		boolean test2 = false;
-		boolean test = (this.getPFGrazing() <= 0
-				&& !world.isRemote
-				&& !this.getIsFast()
-				//&& !this.getIsMoving()
-				&& this.GRAZE_ANIMATION.getDuration() > 0
-				&& this.getAnimation() == NO_ANIMATION
-				&& !this.isReallyInWater()
-				&&
-				(
-					(isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(12)))
-						&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
-
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(12)))
-						&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
-
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(12)))
-						&& isGrazable(this.world, entityPos, EnumFacing.EAST))
-
-						|| (isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(12)))
-						&& isGrazable(this.world, entityPos, EnumFacing.WEST))
-				)
-		);
-		if (test) {
-			//Which one is grazable?
-			EnumFacing facing = null;
-			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north(5).up(12)))) {
-				facing = EnumFacing.NORTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south(5).up(12)))) {
-				facing = EnumFacing.SOUTH;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east(5).up(12)))) {
-				facing = EnumFacing.EAST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
-					test2 = true;
-				}
-			}
-			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west(5).up(12)))) {
-				facing = EnumFacing.WEST;
-				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
-					test2 = true;
-				}
-			}
-			if (facing != null && test && test2) {
-				this.setGrazingFrom(entityPos.up(12).offset(facing, 5));
-				this.faceBlock(this.getGrazingFrom(), 10F, 10F);
-			}
-		}
-		return test && test2;
 	}
 
 	@Override

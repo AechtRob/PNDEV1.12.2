@@ -71,7 +71,7 @@ public class TrilobiteWanderSwim extends AnimationAINoAnimation<EntityPrehistori
 //                    double Xoffset = this.PrehistoricFloraTrilobiteSwimBase.posX - this.PrehistoricFloraTrilobiteSwimBase.getPosition().getX();
 //                    double Zoffset = this.PrehistoricFloraTrilobiteSwimBase.posZ - this.PrehistoricFloraTrilobiteSwimBase.getPosition().getZ();
 
-                    this.PrehistoricFloraTrilobiteSwimBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y, vec3.z, 1.0);
+                    this.PrehistoricFloraTrilobiteSwimBase.getNavigator().tryMoveToXYZ(vec3.x, vec3.y - 1, vec3.z, 1.0);
 
                     return true;
                 }

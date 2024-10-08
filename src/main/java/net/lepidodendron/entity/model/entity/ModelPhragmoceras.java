@@ -334,15 +334,13 @@ public class ModelPhragmoceras extends ModelBasePalaeopedia {
         this.chainSwing(tentacle2, speed, 0.1F, -1.5, f2, 1F);
 
         if (e.isInWater()) {
-            this.body.rotateAngleX = -(float) Math.toRadians(17.5);
+            this.body.rotateAngleX = (float) Math.toRadians(35);
             this.bob(body, speed, 0.25F, false, f2, 2);
-            this.walk(body, speed, 0.25F, false, 1F, 0F, f2, 1F);
-            this.flap(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
-            this.walk(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
-            this.body.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1) + 1.4F - 0.20F;
+            this.walk(body, speed, 0.15F, false, 1F, 0F, f2, 1F);
+            this.flap(body, speed * 0.5F, 0.06F, false, 0, 0, f2, 2);
+            this.walk(body, speed * 0.5F, 0.06F, false, 0, 0, f2, 2);
+            this.body.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1);
             this.body.offsetZ = this.moveBoxExtended(speed, -0.03F, false, 0, f2, 1);
-            this.body.offsetY = -0.5F;
-
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);

@@ -225,15 +225,16 @@ public class ModelGosfordia extends ModelBasePalaeopedia {
         this.main.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -2.0F;
-        this.main.offsetX = -0.6F;
-        this.main.rotateAngleY = (float)Math.toRadians(120);
+        this.main.offsetY = -1.1F;
+        this.main.offsetX = 0.3F;
+        this.main.rotateAngleY = (float)Math.toRadians(100);
         this.main.rotateAngleX = (float)Math.toRadians(3);
         this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 2.5F;
+        float scaler = 1.9F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(Tail3, 0.0F, 0.0873F, 0.0F);

@@ -265,6 +265,11 @@ public class BlockPsilophytonSpore extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 
+			if (!(worldIn.getBlockState(pos.down()).getBlock().isFullCube(worldIn.getBlockState(pos.down()))))
+			{
+				return false;
+			}
+
 	    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
 	    	{
 	    		return false;

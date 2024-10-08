@@ -16,13 +16,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandWadingBase;
 import net.lepidodendron.entity.render.entity.RenderEustreptospondylus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
-import net.lepidodendron.entity.util.PathNavigateGroundNoDeepWater;
 import net.lepidodendron.util.CustomTrigger;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.EnumPushReaction;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -140,12 +137,12 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 
 	@Override
 	public int getDrinkLength() {
-		return 760;
+		return 0;
 	}
 
 	@Override
 	public int getDrinkCooldown() {
-		return 3200;
+		return 10000;
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
@@ -175,57 +172,7 @@ public class EntityPrehistoricFloraEustreptospondylus extends EntityPrehistoricF
 	@Override
 	public boolean isDrinking()
 	{
-		if (!this.isPFAdult()) {
-			return false;
-		}
-
-		BlockPos entityPos = Functions.getEntityBlockPos(this).up();
-
-		boolean test = (this.getPFDrinking() <= 0
-				&& !world.isRemote
-				&& !this.getIsFast()
-				//&& !this.getIsMoving()
-				&& this.DRINK_ANIMATION.getDuration() > 0
-				&& this.getAnimation() == NO_ANIMATION
-				&& this.onGround
-				&& this.isReallyInWater()
-				&& !PathNavigateGroundNoDeepWater.isTooDeep(this.world, entityPos)
-				&&
-				(
-						(this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER
-								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
-
-								|| (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER
-								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
-
-								|| (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER
-								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
-
-								|| (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER
-								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
-				)
-		);
-		if (test) {
-			//Which one is water?
-			EnumFacing facing = null;
-			if (this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.NORTH;
-			}
-			else if (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.SOUTH;
-			}
-			else if (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.EAST;
-			}
-			else if (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER) {
-				facing = EnumFacing.WEST;
-			}
-			if (facing != null) {
-				this.setDrinkingFrom(entityPos.offset(facing, 2));
-				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
-			}
-		}
-		return test;
+		return false;
 	}
 
 	@Override

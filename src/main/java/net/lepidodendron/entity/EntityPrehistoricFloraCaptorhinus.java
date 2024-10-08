@@ -135,8 +135,6 @@ public class EntityPrehistoricFloraCaptorhinus extends EntityPrehistoricFloraLan
 		return DietString.BUG;
 	}
 
-	
-
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
