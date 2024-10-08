@@ -1174,6 +1174,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
                     player.removePotionEffect(MobEffects.WATER_BREATHING);
                 }
+                if (this.passengerInvisibilityUUID == player.getUniqueID()
+                        || this.passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
+                    player.removePotionEffect(MobEffects.INVISIBILITY);
+                }
                 if (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) {
                     player.setAir(300);
                 }
@@ -1191,7 +1195,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
                     }
                 }
-                if (((!player.isPotionActive(MobEffects.INVISIBILITY))|| player.getActivePotionEffect(MobEffects.INVISIBILITY).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineInvisibility) {
+                if (((!player.isPotionActive(MobEffects.INVISIBILITY)) || player.getActivePotionEffect(MobEffects.INVISIBILITY).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineInvisibility) {
                     if (this.passengerInvisibilityUUID == player.getUniqueID()
                             || this.passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
                         player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 201, 0, false, false));
