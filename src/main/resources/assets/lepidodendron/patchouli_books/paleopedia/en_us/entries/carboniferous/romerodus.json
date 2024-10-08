@@ -1,47 +1,47 @@
 {
-	"name": "",
+	"name": "Romerodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/items/replace_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_replace",
+	"icon": "paleopedia:textures/items/romerodus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_romerodus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_replace",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_romerodus",
+			"title": "Romerodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)>"
+			"text": "$(l)Temporal Range: Carboniferous$() $(br2)>"
 		},
         	{
             "type": "entity",
-            "name": "",
-            "entity": "lepidodendron:prehistoric_flora_replace",
+            "name": "R. orodontus",
+            "entity": "lepidodendron:prehistoric_flora_romerodus",
             "rotate": false,
             "default_rotation": 0
        	},
 		{
-			"advancement": "lepidodendron:pf_adv_book_replace",
+			"advancement": "lepidodendron:pf_adv_book_romerodus",
 			"type": "text",
 			"text": "Romerodus is a Carboniferous eugeneodontid cartilaginous fish from Nebraska.  It is known from an incredibly well preserved fossil slab that preserves the body, tail, and soft tissue impressions. Eugeneodontids post cranial details are known only from the family Caseodontidae, and thus differences in the body morphology of other Eugeneodontid families are not known."
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_replace"
+			"mob": "lepidodendron:prehistoric_flora_romerodus"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_replace"
+			"mob": "lepidodendron:prehistoric_flora_romerodus"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_replace"
+			"mob": "lepidodendron:prehistoric_flora_romerodus"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_replace"
+			"mob": "lepidodendron:prehistoric_flora_romerodus"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_replace"
+			"mob": "lepidodendron:prehistoric_flora_romerodus"
 		}
 	]
 }

@@ -283,7 +283,7 @@ public class ModelRomerodus extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
 
         //Rotations, positions and sizing:
-        this.root.offsetY = 0.0F;
+        this.root.offsetY = -1.2F;
         this.root.offsetX = 0.1F;
         this.root.rotateAngleY = (float)Math.toRadians(-68);
         this.root.rotateAngleX = (float)Math.toRadians(15);
