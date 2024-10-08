@@ -9,11 +9,11 @@
 			"trigger": "lepidodendron:pf_adv_book_replace",
 			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)>Holocephali$(br)>Eugeneodontida$(br)>Caseodontidae"
 		},
         	{
             "type": "entity",
-            "name": "",
+            "name": "R. orodontus",
             "entity": "lepidodendron:prehistoric_flora_replace",
             "rotate": false,
             "default_rotation": 0
