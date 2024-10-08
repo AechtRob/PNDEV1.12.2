@@ -319,7 +319,7 @@ public class BlockFirePF extends BlockFire {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
+		if ((!dimFireTickBlacklist(worldIn.provider.getDimension())) && worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
 			if (worldIn.getGameRules().getBoolean("doFireTick"))
 			{
 				if (!worldIn.isAreaLoaded(pos, 2)) return; // Forge: prevent loading unloaded chunks when spreading fire
@@ -427,7 +427,7 @@ public class BlockFirePF extends BlockFire {
 				}
 			}
 		}
-		else if (worldIn.getGameRules().getBoolean("doFireTick"))
+		else if ((!dimFireTickBlacklist(worldIn.provider.getDimension())) && worldIn.getGameRules().getBoolean("doFireTick"))
 		{
 			if (!worldIn.isAreaLoaded(pos, 2)) return; // Forge: prevent loading unloaded chunks when spreading fire
 			if (!this.canPlaceBlockAt(worldIn, pos))
@@ -822,6 +822,18 @@ public class BlockFirePF extends BlockFire {
 	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
 	{
 		return BlockFaceShape.UNDEFINED;
+	}
+
+	public boolean dimFireTickBlacklist(int dimID) {
+		int[] var2 = LepidodendronConfig.dimFiretickBlacklist;
+		int var3 = var2.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == dimID) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
