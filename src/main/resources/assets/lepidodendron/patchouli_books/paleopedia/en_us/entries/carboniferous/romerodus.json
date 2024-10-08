@@ -1,5 +1,5 @@
 {
-	"name": "",
+	"name": "Romerodus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/romerodus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
@@ -41,7 +41,7 @@
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_replace"
+			"mob": "lepidodendron:prehistoric_flora_romerodus"
 		}
 	]
 }
