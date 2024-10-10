@@ -13,11 +13,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemLithiumNugget extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:lithium_nugget")
+public class ItemSodiumNugget extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:sodium_nugget")
 	public static final Item block = null;
-	public ItemLithiumNugget(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.lithium_nugget);
+	public ItemSodiumNugget(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.sodium_nugget);
 	}
 
 	@Override
@@ -28,15 +28,15 @@ public class ItemLithiumNugget extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:lithium_nugget", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:sodium_nugget", "inventory"));
 	}
 	
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
 			maxStackSize = 64;
-			setTranslationKey("pf_lithium_nugget");
-			setRegistryName("lithium_nugget");
+			setTranslationKey("pf_sodium_nugget");
+			setRegistryName("sodium_nugget");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 	}

@@ -290,9 +290,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("dustSulphur", ItemSulphur.block);
 		OreDictionary.registerOre("dustSulfur", ItemSulphur.block);
 
-		OreDictionary.registerOre("blockLithium", BlockLithium.block);
-		OreDictionary.registerOre("ingotLithium", ItemLithiumIngot.block);
-		OreDictionary.registerOre("nuggetLithium", ItemLithiumNugget.block);
+		OreDictionary.registerOre("blockSodium", BlockSodium.block);
+		OreDictionary.registerOre("ingotSodium", ItemSodiumIngot.block);
+		OreDictionary.registerOre("nuggetSodium", ItemSodiumNugget.block);
 
 		OreDictionary.registerOre("stone", BlockFossilPrecambrian.block);
 		OreDictionary.registerOre("stone", BlockFossilCambrian.block);

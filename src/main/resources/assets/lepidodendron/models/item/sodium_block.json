@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/lithium_ore",
+  "parent": "lepidodendron:block/sodium_block",
   "display": {
     "thirdperson": {
       "rotation": [

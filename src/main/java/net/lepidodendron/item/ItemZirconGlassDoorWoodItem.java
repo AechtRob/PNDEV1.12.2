@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockZirconGlassDoor;
+import net.lepidodendron.block.BlockZirconGlassDoorWood;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
@@ -28,17 +28,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemZirconGlassDoorItem extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:zircon_glass_door_item")
+public class ItemZirconGlassDoorWoodItem extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:zircon_glass_door_wood_item")
 	public static final Item block = null;
-	public ItemZirconGlassDoorItem(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.zircon_glass_door);
+	public ItemZirconGlassDoorWoodItem(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.zircon_glass_door_wood);
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("doorGlass", ItemZirconGlassDoorItem.block);
+		OreDictionary.registerOre("doorGlass", ItemZirconGlassDoorWoodItem.block);
 	}
 
 	@Override
@@ -49,12 +49,12 @@ public class ItemZirconGlassDoorItem extends ElementsLepidodendronMod.ModElement
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:zircon_glass_door_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:zircon_glass_door_wood_item", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setTranslationKey("pf_zircon_glass_door_item");
-			setRegistryName("zircon_glass_door_item");
+			setTranslationKey("pf_zircon_glass_door_wood_item");
+			setRegistryName("zircon_glass_door_wood_item");
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
@@ -76,13 +76,13 @@ public class ItemZirconGlassDoorItem extends ElementsLepidodendronMod.ModElement
 	
 	            ItemStack itemstack = player.getHeldItem(hand);
 	
-	            if (player.canPlayerEdit(pos, facing, itemstack) && BlockZirconGlassDoor.block.canPlaceBlockAt(worldIn, pos))
+	            if (player.canPlayerEdit(pos, facing, itemstack) && BlockZirconGlassDoorWood.block.canPlaceBlockAt(worldIn, pos))
 	            {
 	                EnumFacing enumfacing = EnumFacing.fromAngle((double)player.rotationYaw);
 	                int i = enumfacing.getXOffset();
 	                int j = enumfacing.getZOffset();
 	                boolean flag = i < 0 && hitZ < 0.5F || i > 0 && hitZ > 0.5F || j < 0 && hitX > 0.5F || j > 0 && hitX < 0.5F;
-	                placeDoor(worldIn, pos, enumfacing, BlockZirconGlassDoor.block, flag);
+	                placeDoor(worldIn, pos, enumfacing, BlockZirconGlassDoorWood.block, flag);
 	                SoundType soundtype = worldIn.getBlockState(pos).getBlock().getSoundType(worldIn.getBlockState(pos), worldIn, pos, player);
 	                worldIn.playSound(player, pos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
 	                itemstack.shrink(1);

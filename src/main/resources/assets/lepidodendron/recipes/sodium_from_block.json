@@ -3,11 +3,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:lithium_ingot"
+      "item": "lepidodendron:sodium_block"
     }
   ],
   "result": {
-    "item": "lepidodendron:lithium_nugget",
+    "item": "lepidodendron:sodium_ingot",
     "count": 9
   }
 }

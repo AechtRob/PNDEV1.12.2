@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "lepidodendron:blocks/zircon_glass_door_wood_bottom",
+        "top": "lepidodendron:blocks/zircon_glass_door_wood_top"
+    }
+}

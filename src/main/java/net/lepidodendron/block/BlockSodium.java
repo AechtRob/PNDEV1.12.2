@@ -29,16 +29,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockLithium extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:lithium_block")
+public class BlockSodium extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:sodium_block")
 	public static final Block block = null;
-	public BlockLithium(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.lithium_block);
+	public BlockSodium(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.sodium_block);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("lithium_block"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("sodium_block"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -46,13 +46,13 @@ public class BlockLithium extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:lithium_block", "inventory"));
+				new ModelResourceLocation("lepidodendron:sodium_block", "inventory"));
 	}
 
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.IRON);
-			setTranslationKey("pf_lithium_block");
+			setTranslationKey("pf_sodium_block");
 			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 1);
 			setHardness(5F);

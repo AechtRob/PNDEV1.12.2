@@ -1,8 +1,0 @@
-{
-  "parent": "lepidodendron:block/ore_layer",
-  "textures": {
-    "stone": "blocks/stone",
-    "particle": "blocks/stone",
-    "layer": "lepidodendron:blocks/lithium_ore"
-  }
-}
