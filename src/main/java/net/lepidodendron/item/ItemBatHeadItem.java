@@ -95,6 +95,7 @@ public class ItemBatHeadItem extends ElementsLepidodendronMod.ModElement {
 				{
 					if (worldIn.isRemote)
 					{
+						itemstack.shrink(1);
 						return EnumActionResult.SUCCESS;
 					}
 					else
