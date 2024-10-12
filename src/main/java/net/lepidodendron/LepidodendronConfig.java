@@ -48,7 +48,7 @@ public class LepidodendronConfig {
     public static boolean submarineNightvision = true;
     public static boolean submarineInvisibility = true;
     public static boolean doGrazeGrief = true;
-    public static int[] dimFiretickBlacklist = new int[0];
+    public static int[] dimFireSpreadBlacklist = new int[0];
 
     public static boolean genFossil = true;
     public static boolean genStone = true;
@@ -747,9 +747,9 @@ public class LepidodendronConfig {
         prop.setComment("One in this many chunks will try to generate a digsite, or set to zero to disable (note, most attempts will fail due to unsuitable terrain) [default: 50]");
         digsiteRarity = prop.getInt();
         propOrder.add(prop.getName());
-        prop = cfg.get("Global World-Gen", "dimFiretickBlacklist", dimFiretickBlacklist);
-        prop.setComment("A list of dimensions IDs where you want the fireTick gamerule switched OFF. [default: empty]");
-        dimFiretickBlacklist = prop.getIntList();
+        prop = cfg.get("Global World-Gen", "dimFireSpreadBlacklist", dimFireSpreadBlacklist);
+        prop.setComment("A list of dimensions IDs where you want to stop fire from being able to spread. [default: empty]");
+        dimFireSpreadBlacklist = prop.getIntList();
         propOrder.add(prop.getName());
 
 

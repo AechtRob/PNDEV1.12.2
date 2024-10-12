@@ -319,7 +319,7 @@ public class BlockFirePF extends BlockFire {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		if ((!dimFireTickBlacklist(worldIn.provider.getDimension())) && worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
+		if (worldIn.provider.getDimension() == LepidodendronConfig.dimCarboniferous) {
 			if (worldIn.getGameRules().getBoolean("doFireTick"))
 			{
 				if (!worldIn.isAreaLoaded(pos, 2)) return; // Forge: prevent loading unloaded chunks when spreading fire
@@ -366,7 +366,11 @@ public class BlockFirePF extends BlockFire {
 						}
 					}
 
-					boolean flag1 = worldIn.isBlockinHighHumidity(pos);
+                    if (dimFireTickBlacklist(worldIn.provider.getDimension())) {
+						return;
+                    }
+
+                    boolean flag1 = worldIn.isBlockinHighHumidity(pos);
 					int j = 0;
 
 					if (flag1)
@@ -427,7 +431,7 @@ public class BlockFirePF extends BlockFire {
 				}
 			}
 		}
-		else if ((!dimFireTickBlacklist(worldIn.provider.getDimension())) && worldIn.getGameRules().getBoolean("doFireTick"))
+		else if (worldIn.getGameRules().getBoolean("doFireTick"))
 		{
 			if (!worldIn.isAreaLoaded(pos, 2)) return; // Forge: prevent loading unloaded chunks when spreading fire
 			if (!this.canPlaceBlockAt(worldIn, pos))
@@ -471,6 +475,10 @@ public class BlockFirePF extends BlockFire {
 						worldIn.setBlockToAir(pos);
 						return;
 					}
+				}
+
+				if (dimFireTickBlacklist(worldIn.provider.getDimension())) {
+					return;
 				}
 
 				boolean flag1 = worldIn.isBlockinHighHumidity(pos);
@@ -825,7 +833,7 @@ public class BlockFirePF extends BlockFire {
 	}
 
 	public boolean dimFireTickBlacklist(int dimID) {
-		int[] var2 = LepidodendronConfig.dimFiretickBlacklist;
+		int[] var2 = LepidodendronConfig.dimFireSpreadBlacklist;
 		int var3 = var2.length;
 		for (int var4 = 0; var4 < var3; ++var4) {
 			int dim = var2[var4];
