@@ -625,6 +625,15 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
             }
         }
 
+        if (ee.getAttachmentPos() == null) { //set wing membranes to their proper scale for flight
+            this.wingmembranemiddle.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembraneend.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembranemiddle2.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembraneend2.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembranebeg.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembranebeg2.setScale((float) 1, (float) 1, (float) 1);
+        }
+
         if (ee.getAttachmentPos() == null && ee.getAnimation() != ee.FLY_ANIMATION) {
             if (ee.getIsMoving()) {
                 if (ee.getIsFast()) { //Flying fast
@@ -3077,12 +3086,27 @@ public class ModelHarpactognathus extends ModelBasePalaeopedia {
         this.wingmembranebeg9.rotationPointY = this.wingmembranebeg9.rotationPointY - (float)(4);
         this.wingmembranebeg9.rotationPointZ = this.wingmembranebeg9.rotationPointZ + (float)(0);
 
-
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraLandClimbingFlyingWalkingBase e = (EntityPrehistoricFloraLandClimbingFlyingWalkingBase) entity;
         animator.update(entity);
+
+        animator.setAnimation(e.FLY_ANIMATION);
+        animator.startKeyframe(e.flyTransitionLength()); //move to this keyframe over the right length
+
+        animator.endKeyframe();
+        animator.setStaticKeyframe(0);
+        animator.resetKeyframe(0);
+
+        animator.setAnimation(e.UNFLY_ANIMATION);
+        animator.startKeyframe(e.unflyTransitionLength()); //move to this keyframe over the right length
+
+        animator.endKeyframe();
+        animator.setStaticKeyframe(0);
+        animator.resetKeyframe(0);
+
+
 
         animator.setAnimation(e.ATTACK_ANIMATION);
         animator.startKeyframe(5);

@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraThalassiodracon extends EntityPrehistoricFlor
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic";}
+	public static String getPeriod() {return "[Triassic -] Jurassic";}
 
 	@Override
 	public int airTime() {

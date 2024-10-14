@@ -1924,6 +1924,21 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         double yy = 0;
         double zz = 0;
 
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 20.19137 + (((tickAnim - 0) / 10) * (74.3986+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*-100-(20.19137)));
+            yy = -21.33289 + (((tickAnim - 0) / 10) * (-53.9049-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*120-(-21.33289)));
+            zz = -12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30 + (((tickAnim - 0) / 10) * (-47.6722+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*10-(-12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 74.3986+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*-100 + (((tickAnim - 10) / 10) * (20.19137-(74.3986+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*-100)));
+            yy = -53.9049-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*120 + (((tickAnim - 10) / 10) * (-21.33289-(-53.9049-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*120)));
+            zz = -47.6722+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*10 + (((tickAnim - 10) / 10) * (-38.2112+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30-(-47.6722+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
         this.setRotateAngle(armright, armright.rotateAngleX + (float) Math.toRadians(xx), armright.rotateAngleY + (float) Math.toRadians(yy), armright.rotateAngleZ + (float) Math.toRadians(zz));
 
 
@@ -1976,6 +1991,24 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(handright, handright.rotateAngleX + (float) Math.toRadians(xx), handright.rotateAngleY + (float) Math.toRadians(yy), handright.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 20.1914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*10 + (((tickAnim - 0) / 10) * (-59.3692+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*100-(20.1914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*10)));
+            yy = 21.3329 + (((tickAnim - 0) / 10) * (30.2408-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*115-(21.3329)));
+            zz = 12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-30 + (((tickAnim - 0) / 10) * (32.4279+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-10-(12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-30)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = -59.3692+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*100 + (((tickAnim - 10) / 10) * (3.1046+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*10-(-59.3692+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*100)));
+            yy = 30.2408-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*115 + (((tickAnim - 10) / 10) * (21.00024-(30.2408-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*115)));
+            zz = 32.4279+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-10 + (((tickAnim - 10) / 10) * (-13.3984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30-(32.4279+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
         this.setRotateAngle(armleft, armleft.rotateAngleX + (float) Math.toRadians(xx), armleft.rotateAngleY + (float) Math.toRadians(yy), armleft.rotateAngleZ + (float) Math.toRadians(zz));
 
 
@@ -2098,6 +2131,24 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(footleft, footleft.rotateAngleX + (float) Math.toRadians(xx), footleft.rotateAngleY + (float) Math.toRadians(yy), footleft.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+
+        if (tickAnim >= 0 && tickAnim < 11) {
+            xx = -26.78762 + (((tickAnim - 0) / 11) * (-18.649+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120+100))*30-(-26.78762)));
+            yy = 33.96915 + (((tickAnim - 0) / 11) * (208.4981+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-380-(33.96915)));
+            zz = 5.60991 + (((tickAnim - 0) / 11) * (-3.6094-Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*-60-(5.60991)));
+        }
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = -18.649+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120+100))*30 + (((tickAnim - 11) / 9) * (-26.78762-(-18.649+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120+100))*30)));
+            yy = 208.4981+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-380 + (((tickAnim - 11) / 9) * (33.96915-(208.4981+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-380)));
+            zz = -3.6094-Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*-60 + (((tickAnim - 11) / 9) * (5.60991-(-3.6094-Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*-60)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
         this.setRotateAngle(legright, legright.rotateAngleX + (float) Math.toRadians(xx), legright.rotateAngleY + (float) Math.toRadians(yy), legright.rotateAngleZ + (float) Math.toRadians(zz));
 
 
@@ -2186,8 +2237,6 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         this.eyeleft.rotationPointX = this.eyeleft.rotationPointX + (float)(0);
         this.eyeleft.rotationPointY = this.eyeleft.rotationPointY - (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*508/0.705))*0.03);
         this.eyeleft.rotationPointZ = this.eyeleft.rotationPointZ + (float)(0);
-
-
 
     }
 
