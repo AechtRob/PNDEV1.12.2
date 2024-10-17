@@ -16,8 +16,10 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -28,6 +30,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -40,8 +43,7 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 	public int screamAlarmCooldown;
 	public int standCooldown;
 
-	private static final DataParameter<Integer> GERMANODACTYLUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraWukongopterus.class, DataSerializers.VARINT);
-
+	private static final DataParameter<Integer> GERMANODACTYLUS_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraGermanodactylus.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraGermanodactylus(World world) {
 		super(world);
@@ -144,6 +146,13 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(GERMANODACTYLUS_TYPE, 0);
+	}
+	
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraGermanodactylus.Type.byId(rand.nextInt(EntityPrehistoricFloraGermanodactylus.Type.values().length) + 1));
+		return livingdata;
 	}
 
 	public void setPNType(EntityPrehistoricFloraGermanodactylus.Type type)
@@ -401,6 +410,52 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 		{
 			this.setPNType(EntityPrehistoricFloraGermanodactylus.Type.getTypeFromString(compound.getString("PNType")));
 		}
+	}
+
+
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return -1;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraGermanodactylus)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraGermanodactylus)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
 	}
 
 	public enum Type
