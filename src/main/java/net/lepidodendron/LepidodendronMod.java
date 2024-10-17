@@ -2400,6 +2400,15 @@ public class LepidodendronMod {
 	public static final ResourceLocation DEARC_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dearc"));
 	public static final ResourceLocation DEARC_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dearc_young"));
 
+	public static final int ENTITY_PRISCOMYZON = 969;
+	public static final ResourceLocation PRISCOMYZON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/priscomyzon"));
+
+	public static final int ENTITY_WARDICHTHYS = 970;
+	public static final ResourceLocation WARDICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wardichthys"));
+	public static final int ENTITY_EOCURSOR = 971;
+	public static final ResourceLocation EOCURSOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eocursor"));
+	public static final int ENTITY_PAMBDELURION = 972;
+	public static final ResourceLocation PAMBDELURION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pambdelurion"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

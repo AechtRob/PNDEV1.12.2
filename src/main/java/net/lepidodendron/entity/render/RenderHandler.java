@@ -5830,6 +5830,30 @@ public class RenderHandler {
                 return new RenderDearc(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPriscomyzon.class, new IRenderFactory<EntityPrehistoricFloraPriscomyzon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPriscomyzon> createRenderFor(RenderManager manager) {
+                return new RenderPriscomyzon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPambdelurion.class, new IRenderFactory<EntityPrehistoricFloraPambdelurion>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPambdelurion> createRenderFor(RenderManager manager) {
+                return new RenderPambdelurion(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWardichthys.class, new IRenderFactory<EntityPrehistoricFloraWardichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWardichthys> createRenderFor(RenderManager manager) {
+                return new RenderWardichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEocursor.class, new IRenderFactory<EntityPrehistoricFloraEocursor>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEocursor> createRenderFor(RenderManager manager) {
+                return new RenderEocursor(manager);
+            }
+        });
 
 
 
