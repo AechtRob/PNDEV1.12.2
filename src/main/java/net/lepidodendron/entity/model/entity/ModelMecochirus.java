@@ -380,7 +380,7 @@ public class ModelMecochirus extends ModelBasePalaeopedia {
         this.setRotateAngle(armR2, 0.4F, 0.0F, 0.0F);
         this.setRotateAngle(armR3, 0.4F, 0.0F, 0.0F);
         this.setRotateAngle(armR4, 0.2F, 0.0F, 0.0F);
-        this.body.offsetY = 0.12F;
+        this.body.offsetY = 0.1F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }

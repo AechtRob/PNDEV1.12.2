@@ -206,5 +206,6 @@ public class EntityPrehistoricFloraMecochirus extends EntityPrehistoricFloraTril
 	public static float getScaler(@Nullable String variant) {
 		return RenderMecochirus.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.02F;}
 
 }
