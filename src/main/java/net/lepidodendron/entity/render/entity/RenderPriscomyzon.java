@@ -26,7 +26,7 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
     @Override
     protected void applyRotations(EntityPrehistoricFloraPriscomyzon entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
-        float getOffset = 0.249F;
+        float getOffset = 0.2F;
 
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:

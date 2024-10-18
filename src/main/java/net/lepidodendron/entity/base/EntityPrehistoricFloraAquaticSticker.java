@@ -172,7 +172,7 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
     @Override
     public boolean attackEntityFrom(DamageSource ds, float f) {
         this.sitTickCt = 0;
-        sitCooldown = 1500 + rand.nextInt(1200);
+        sitCooldown = 800 + rand.nextInt(600);
         this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
         this.setAttachmentPos(null);
         return super.attackEntityFrom(ds, f);
@@ -184,6 +184,9 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
 
     @Override
     public void onLivingUpdate() {
+        if (this.getAttachmentFacing() == EnumFacing.DOWN) {
+            isAttached = false;
+        }
         super.onLivingUpdate();
         this.renderYawOffset = this.rotationYaw;
 
@@ -210,6 +213,7 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
             sitCooldown--;
         }
 
+
         //TODO this bit is unsure, I want to check if the mod is adjacent to a wall, and if adjacent AND sitCooldown is = 0, then attach, and mob will be rotated in render
         if (this.getAttachmentPos() == null) {
             sitTickCt = 0;
@@ -222,12 +226,15 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
                 if (rayTrace != null && rayTrace.hitVec != null) {
                     BlockPos sidePos = rayTrace.getBlockPos();
                     try {
-                        if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
+                        //If collided, check which side, set sit_face to correct side, which will be used in render to rotate model
+                        if (world.isSideSolid(sidePos.north(), rayTrace.sideHit) || world.isSideSolid(sidePos.east(), rayTrace.sideHit)
+                                || world.isSideSolid(sidePos.west(), rayTrace.sideHit) || world.isSideSolid(sidePos.south(), rayTrace.sideHit)) {
                             this.setAttachmentPos(sidePos);
-                            this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
+                            this.dataManager.set(SIT_FACE, rayTrace.sideHit);
                             this.motionX = 0.0D;
                             this.motionY = 0.0D;
                             this.motionZ = 0.0D;
+                            this.isAttached = true;
                         }
                     }
                     catch (Error e) {}
@@ -236,7 +243,8 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
         } else {
             BlockPos pos = this.getAttachmentPos();
 
-            if (world.isSideSolid(pos, this.getAttachmentFacing())) {
+            if (world.isSideSolid(pos.north(), this.getAttachmentFacing()) || world.isSideSolid(pos.south(), this.getAttachmentFacing())
+                    || world.isSideSolid(pos.west(), this.getAttachmentFacing()) || world.isSideSolid(pos.east(), this.getAttachmentFacing())) {
                 sitTickCt++;
                 sitCooldown = 150;
                 this.renderYawOffset = 180.0F;
@@ -265,10 +273,11 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
                 this.sitTickCt = 0;
                 this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
                 this.setAttachmentPos(null);
+
             }
 
         }
-        if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0 || this.getAttachmentPos() != null) {
+        if (sitTickCt > this.sitTickCtMax() && rand.nextInt(123) == 0) {
             this.sitTickCt = 0;
             sitCooldown = this.sitCooldownSetter();
             this.dataManager.set(SIT_FACE, EnumFacing.DOWN);
@@ -284,20 +293,7 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
     }
 
     public int sitCooldownSetter() {
-        return 1000 + rand.nextInt(1500);
-    }
-
-    //TODO not sure how this works
-    public static BlockPos getPositionRelativetoWater(Entity entity, World world, double x, double z, Random rand) {
-        BlockPos pos = new BlockPos(x, entity.posY, z);
-
-        // Search for the first water block or solid ground below the entity
-        while (world.getBlockState(pos.down()).getMaterial() == Material.WATER && pos.getY() > 0) {
-            pos = pos.down();
-        }
-
-
-        return pos;
+        return 500 + rand.nextInt(1500);
     }
 
     public class AIWanderAquaticSticker extends EntityAIBase {

@@ -1,6 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraMegalosaurus;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAquaticSticker;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -105,11 +107,17 @@ public class ModelPriscomyzon extends ModelBasePalaeopedia {
         if (!e.isInWater()) {
             speed = 0.8F;
         }
+        EntityPrehistoricFloraAquaticSticker EntitySticker = (EntityPrehistoricFloraAquaticSticker) e;
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed*0.8F, 0.27F, 0, f2, 1);
+            if (EntitySticker.getAttachmentPos() != null) {
+                this.chainSwing(fishTail, speed*0.3F, 0.07F, 0, f2, 1);
+                this.swing(body, speed*0.3F, 0.1F, true, 0, 0, f2, 1);
+            } else {
+                this.chainSwing(fishTail, speed * 0.8F, 0.27F, 0, f2, 1);
+                this.swing(body, speed*0.8F, 0.2F, true, 0, 0, f2, 1);
+            }
 
 
-            this.swing(body, speed*0.8F, 0.2F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
                 this.body.offsetY = -0.1F;

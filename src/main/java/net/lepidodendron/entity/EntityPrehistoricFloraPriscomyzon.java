@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraPriscomyzon extends EntityPrehistoricFloraAqu
 
 	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
