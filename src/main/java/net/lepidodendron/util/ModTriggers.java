@@ -1521,6 +1521,11 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DEARC = new CustomTrigger("pf_book_dearc");
     public static final CustomTrigger CLICK_GERMANODACTYLUS = new CustomTrigger("pf_book_germanodactylus");
     public static final CustomTrigger CLICK_HARPACTOGNATHUS = new CustomTrigger("pf_book_harpactognathus");
+    public static final CustomTrigger CLICK_PRISCOMYZON = new CustomTrigger("pf_book_priscomyzon");
+
+    public static final CustomTrigger CLICK_EOCURSOR = new CustomTrigger("pf_book_eocursor");
+    public static final CustomTrigger CLICK_WARDICHTHYS = new CustomTrigger("pf_book_wardichthys");
+    public static final CustomTrigger CLICK_PAMBDELURION = new CustomTrigger("pf_book_pambdelurion");
 
 
 
@@ -3032,7 +3037,11 @@ public class ModTriggers
             CLICK_PHANERORHYNCHUS,
             CLICK_DEARC,
             CLICK_GERMANODACTYLUS,
-            CLICK_HARPACTOGNATHUS
+            CLICK_HARPACTOGNATHUS,
+            CLICK_EOCURSOR,
+            CLICK_WARDICHTHYS,
+            CLICK_PAMBDELURION,
+            CLICK_PRISCOMYZON
 
 
 
