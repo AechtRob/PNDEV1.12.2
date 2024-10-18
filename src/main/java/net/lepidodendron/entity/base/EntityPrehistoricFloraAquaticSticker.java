@@ -215,6 +215,8 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
 
 
         //TODO this bit is unsure, I want to check if the mod is adjacent to a wall, and if adjacent AND sitCooldown is = 0, then attach, and mob will be rotated in render
+        //isAttached is supposed to be usable as a checker elsewehre such as in Model class, however, its being set back to false somewhere even after being set to true, this is a bug
+        //the attachment code here also does not account for glass, which these should be allowed to attach to, and does not seem to set the correct attachment facing every time, it sets correctly only some of the times.
         if (this.getAttachmentPos() == null) {
             sitTickCt = 0;
             if (collided && sitCooldown == 0 && !onGround){
