@@ -61,6 +61,7 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    implementation ("net.minecraftforge:mergetool:0.2.3.3") { force = true }
 
     //compile files('libs/pncambrian-1.12.2-1.0.jar')
     //compile files('libs/pnsilurian-1.12.2-1.0.jar')
