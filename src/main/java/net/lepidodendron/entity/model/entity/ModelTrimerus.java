@@ -546,18 +546,16 @@ public class ModelTrimerus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Trimerus.offsetY = -2.0F;
-        this.Trimerus.offsetX = -1.338F;
-        this.Trimerus.rotateAngleY = (float)Math.toRadians(200);
-        this.Trimerus.rotateAngleX = (float)Math.toRadians(8);
-        this.Trimerus.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Trimerus.offsetY = -0.35F;
+        this.Trimerus.offsetX = 0.07F;
+        this.Trimerus.rotateAngleX = (float)Math.toRadians(45);
+        this.Trimerus.rotateAngleY = (float)Math.toRadians(220);
+        this.Trimerus.rotateAngleZ = (float)Math.toRadians(-20);
         this.Trimerus.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.6F;
         this.Trimerus.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Trimerus, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.Trimerus.render(f);
         //Reset rotations, positions and sizing:

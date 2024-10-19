@@ -555,21 +555,16 @@ public class ModelAcadoaradoxides extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.head.offsetY = -2.0F;
-        this.head.offsetX = -1.338F;
-        this.head.rotateAngleY = (float)Math.toRadians(200);
-        this.head.rotateAngleX = (float)Math.toRadians(8);
-        this.head.rotateAngleZ = (float)Math.toRadians(-8);
+        this.head.offsetY = 0.4F;
+        this.head.offsetX = 0.1F;
+        this.head.rotateAngleX = (float)Math.toRadians(45);
+        this.head.rotateAngleY = (float)Math.toRadians(220);
+        this.head.rotateAngleZ = (float)Math.toRadians(-20);
         this.head.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 1.23F;
         this.head.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.head.render(f);
         //Reset rotations, positions and sizing:
