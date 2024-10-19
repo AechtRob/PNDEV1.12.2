@@ -38,7 +38,7 @@ public class ItemZirconGlassDoorItem extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("doorWood", ItemZirconGlassDoorItem.block);
+		OreDictionary.registerOre("doorGlass", ItemZirconGlassDoorItem.block);
 	}
 
 	@Override

@@ -24,7 +24,7 @@ public class RenderEggsPycnophlebia extends TileEntitySpecialRenderer<BlockInsec
     @Override
     public void render(BlockInsectEggsPycnophlebia.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockInsectEggsPycnophlebia.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
             GlStateManager.pushMatrix();

@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockFacivermis;
 import net.lepidodendron.entity.model.tile.ModelFacivermis;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
 import net.minecraft.block.BlockDirectional;
@@ -30,7 +31,7 @@ public class RenderFacivermis extends TileEntitySpecialRenderer<TileEntityFacive
     public void render(TileEntityFacivermis entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
         try { //to support book rendering:
-            if (entity != null && entity.hasWorld()) {
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockFacivermis.block) {
                 facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
             }
         }

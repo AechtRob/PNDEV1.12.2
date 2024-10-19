@@ -269,19 +269,20 @@ public class ModelSchoenesmahl extends ModelBasePalaeopedia {
     public void renderStaticFloor(float f) {
         this.resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -1.4F;
+        this.base.offsetY = -2.5F;
         this.base.offsetX = -0.3F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
-        this.base.rotateAngleX = (float)Math.toRadians(8);
+        this.base.rotateAngleX = (float)Math.toRadians(20);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
         float scaler = 3.2F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, -0.3F, 2.0F, 0.1F);
+
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

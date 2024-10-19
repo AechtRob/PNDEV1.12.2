@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "1": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "2": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "3": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "4": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "5": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "6": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "7": {
+      "item": "lepidodendron:sodium_nugget"
+    },
+    "8": {
+      "item": "lepidodendron:sodium_nugget"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sodium_ingot",
+    "count": 1
+  }
+}

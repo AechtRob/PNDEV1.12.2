@@ -199,6 +199,22 @@ public class ModelGansuselache extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.base.render(f5);
     }
+
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(base, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.05F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(base, 0.0F, (float)Math.toRadians(90), 0.0F);
+        this.base.offsetZ = 0.00F;
+        this.base.offsetY = -0.20F;
+        this.base.offsetX = -0.10F;
+        this.base.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(base, 0.0F, 0.0F, -0.2F);
         this.setRotateAngle(body, 0.0F, 0.1F, 0.0F);

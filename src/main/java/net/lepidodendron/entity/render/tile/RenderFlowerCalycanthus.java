@@ -32,7 +32,7 @@ public class RenderFlowerCalycanthus extends TileEntitySpecialRenderer<BlockCaly
     public void render(BlockCalycanthusFlower.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.UP;
         try { //to support book rendering:
-            if (entity != null && entity.hasWorld()) {
+            if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockCalycanthusFlower.block) {
                 facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
             }
         }

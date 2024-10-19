@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnAmphibamus;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
@@ -15,6 +16,8 @@ import net.lepidodendron.entity.render.entity.RenderAmphibamus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
@@ -38,7 +41,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -305,4 +308,10 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 	public static ModelBase modelDisplay(@Nullable String variant) {return RenderDisplays.modelAmphibamus;}
 	public static float getScaler(@Nullable String variant) {return RenderAmphibamus.getScaler();}
 	public static float widthSupport(@Nullable String variant) {return 0.04F;}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_AMPHIBAMUS;
+	}
 }

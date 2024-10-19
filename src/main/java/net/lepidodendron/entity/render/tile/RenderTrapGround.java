@@ -30,7 +30,7 @@ public class RenderTrapGround extends TileEntitySpecialRenderer<BlockTrapGround.
     @Override
     public void render(BlockTrapGround.TileEntityTrapGround entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockTrapGround.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockTrapGround.BlockCustom.FACING);
         }
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {

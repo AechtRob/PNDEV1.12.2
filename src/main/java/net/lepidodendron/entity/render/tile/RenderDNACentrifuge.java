@@ -39,7 +39,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
     @Override
     public void render(BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockDNARecombinerCentrifuge.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING);
         }
 

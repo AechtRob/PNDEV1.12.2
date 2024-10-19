@@ -401,7 +401,7 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
      */
     @Override
     public float getEyeHeight() {
-        return 0.15F;
+        return 0.15F * this.getAgeScale();
     }
 
     public EnumFacing getAttachmentFacing() {

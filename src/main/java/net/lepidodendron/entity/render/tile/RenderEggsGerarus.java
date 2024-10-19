@@ -24,7 +24,7 @@ public class RenderEggsGerarus extends TileEntitySpecialRenderer<BlockInsectEggs
     @Override
     public void render(BlockInsectEggsGerarus.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockInsectEggsGerarus.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
 
             GlStateManager.pushMatrix();

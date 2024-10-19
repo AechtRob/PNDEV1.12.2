@@ -421,19 +421,122 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         this.hip.render(f5);
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(tail3, 0.0886F, -0.1739F, -0.0154F);
+        this.setRotateAngle(tail2, 0.0886F, -0.1739F, -0.0154F);
+        this.setRotateAngle(tail, -0.2628F, -0.0843F, 0.0226F);
+        this.setRotateAngle(neck3_r1, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2_r1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.0436F, -0.2182F, 0.0F);
+        this.setRotateAngle(legright2, 0.1034F, -0.5648F, 0.0754F);
+        this.setRotateAngle(legright, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(legleft, 0.0F, 0.5672F, 0.0F);
+        this.setRotateAngle(jawslope, -0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(hip, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(head, -0.2618F, -0.0436F, 0.0019F);
+        this.setRotateAngle(handright, 0.2616F, 0.0113F, -0.1294F);
+        this.setRotateAngle(footright, -0.1704F, 0.8522F, -0.2414F);
+        this.setRotateAngle(footleft, 0.0F, -1.309F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.2443F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.0087F, 0.3927F);
+        this.setRotateAngle(cube_r5, 0.2094F, 0.3491F, 0.3491F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.2443F, 0.0F);
+        this.setRotateAngle(cube_r28, 0.0873F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r27, 0.0873F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r26, 0.0349F, -0.2443F, 0.0F);
+        this.setRotateAngle(cube_r25, 0.1396F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r24, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.0349F, 0.2443F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.1396F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0349F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.0F, -0.2443F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, -0.0349F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, 0.0349F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.2443F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, -0.0349F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, 0.0087F, -0.3927F);
+        this.setRotateAngle(cube_r10, 0.2094F, -0.3491F, -0.3491F);
+        this.setRotateAngle(cube_r1, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body3_r1, -0.0742F, 0.0F, 0.0F);
+        this.setRotateAngle(body2_r1, 0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(armright2, -0.2182F, 0.0F, 0.1309F);
+        this.setRotateAngle(armright, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, -0.6109F, 0.0F);
+        this.hip.offsetY = -0.1F;
+        this.hip.render(0.01F);
         resetToDefaultPose();
+    }
+
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(tail3, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3_r1, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2_r1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(legright, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(legleft, 0.0F, 0.5672F, 0.0F);
+        this.setRotateAngle(jawslope, -0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(footright, 0.0F, 1.309F, 0.0F);
+        this.setRotateAngle(footleft, 0.0F, -1.309F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.2443F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.0087F, 0.3927F);
+        this.setRotateAngle(cube_r5, 0.2094F, 0.3491F, 0.3491F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.2443F, 0.0F);
+        this.setRotateAngle(cube_r28, 0.0873F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r27, 0.0873F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r26, 0.0349F, -0.2443F, 0.0F);
+        this.setRotateAngle(cube_r25, 0.1396F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r24, 0.0F, -0.6109F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.0349F, 0.2443F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.1396F, 0.0436F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0349F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.0F, -0.2443F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, -0.0349F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, 0.0349F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.2443F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.0F, -0.0349F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0F, 0.0087F, -0.3927F);
+        this.setRotateAngle(cube_r10, 0.2094F, -0.3491F, -0.3491F);
+        this.setRotateAngle(cube_r1, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body3_r1, -0.0742F, 0.0F, 0.0F);
+        this.setRotateAngle(body2_r1, 0.0611F, 0.0F, 0.0F);
+        this.setRotateAngle(armright, 0.0F, 0.6109F, 0.0F);
+        this.setRotateAngle(armleft, 0.0F, -0.6109F, 0.0F);
+        this.neck.rotateAngleY = (float) Math.toRadians(0);
+        this.neck.offsetY = -0.02F;
+        this.neck.offsetZ = 0.03F;
+        this.neck.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.hip.offsetY = -0.4F;
-        this.hip.offsetX = 0.35F;
+        this.hip.offsetX = -0.0F;
         this.hip.rotateAngleY = (float)Math.toRadians(-250);
         this.hip.rotateAngleX = (float)Math.toRadians(3);
-        this.hip.rotateAngleZ = (float)Math.toRadians(12);
+        this.hip.rotateAngleZ = (float)Math.toRadians(-1);
         this.hip.scaleChildren = true;
-        float scaler = 1.2F;
+        float scaler = 0.8F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -1821,6 +1924,21 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         double yy = 0;
         double zz = 0;
 
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 20.19137 + (((tickAnim - 0) / 10) * (74.3986+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*-100-(20.19137)));
+            yy = -21.33289 + (((tickAnim - 0) / 10) * (-53.9049-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*120-(-21.33289)));
+            zz = -12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30 + (((tickAnim - 0) / 10) * (-47.6722+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*10-(-12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 74.3986+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*-100 + (((tickAnim - 10) / 10) * (20.19137-(74.3986+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*-100)));
+            yy = -53.9049-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*120 + (((tickAnim - 10) / 10) * (-21.33289-(-53.9049-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*120)));
+            zz = -47.6722+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*10 + (((tickAnim - 10) / 10) * (-38.2112+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30-(-47.6722+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
         this.setRotateAngle(armright, armright.rotateAngleX + (float) Math.toRadians(xx), armright.rotateAngleY + (float) Math.toRadians(yy), armright.rotateAngleZ + (float) Math.toRadians(zz));
 
 
@@ -1873,6 +1991,24 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(handright, handright.rotateAngleX + (float) Math.toRadians(xx), handright.rotateAngleY + (float) Math.toRadians(yy), handright.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 20.1914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*10 + (((tickAnim - 0) / 10) * (-59.3692+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*100-(20.1914+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*10)));
+            yy = 21.3329 + (((tickAnim - 0) / 10) * (30.2408-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*115-(21.3329)));
+            zz = 12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-30 + (((tickAnim - 0) / 10) * (32.4279+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-10-(12.4612+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*-30)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = -59.3692+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*100 + (((tickAnim - 10) / 10) * (3.1046+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*10-(-59.3692+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-20))*100)));
+            yy = 30.2408-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*115 + (((tickAnim - 10) / 10) * (21.00024-(30.2408-Math.sin((Math.PI/180)*(((double)tickAnim/20)*180-100))*115)));
+            zz = 32.4279+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-10 + (((tickAnim - 10) / 10) * (-13.3984+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120))*30-(32.4279+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-10)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
         this.setRotateAngle(armleft, armleft.rotateAngleX + (float) Math.toRadians(xx), armleft.rotateAngleY + (float) Math.toRadians(yy), armleft.rotateAngleZ + (float) Math.toRadians(zz));
 
 
@@ -1995,6 +2131,24 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(footleft, footleft.rotateAngleX + (float) Math.toRadians(xx), footleft.rotateAngleY + (float) Math.toRadians(yy), footleft.rotateAngleZ + (float) Math.toRadians(zz));
 
+
+
+
+        if (tickAnim >= 0 && tickAnim < 11) {
+            xx = -26.78762 + (((tickAnim - 0) / 11) * (-18.649+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120+100))*30-(-26.78762)));
+            yy = 33.96915 + (((tickAnim - 0) / 11) * (208.4981+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-380-(33.96915)));
+            zz = 5.60991 + (((tickAnim - 0) / 11) * (-3.6094-Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*-60-(5.60991)));
+        }
+        else if (tickAnim >= 11 && tickAnim < 20) {
+            xx = -18.649+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120+100))*30 + (((tickAnim - 11) / 9) * (-26.78762-(-18.649+Math.sin((Math.PI/180)*(((double)tickAnim/20)*120+100))*30)));
+            yy = 208.4981+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-380 + (((tickAnim - 11) / 9) * (33.96915-(208.4981+Math.sin((Math.PI/180)*(((double)tickAnim/20)*50))*-380)));
+            zz = -3.6094-Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*-60 + (((tickAnim - 11) / 9) * (5.60991-(-3.6094-Math.sin((Math.PI/180)*(((double)tickAnim/20)*120-50))*-60)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
         this.setRotateAngle(legright, legright.rotateAngleX + (float) Math.toRadians(xx), legright.rotateAngleY + (float) Math.toRadians(yy), legright.rotateAngleZ + (float) Math.toRadians(zz));
 
 
@@ -2083,8 +2237,6 @@ public class ModelStenokranio extends ModelBasePalaeopedia {
         this.eyeleft.rotationPointX = this.eyeleft.rotationPointX + (float)(0);
         this.eyeleft.rotationPointY = this.eyeleft.rotationPointY - (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*508/0.705))*0.03);
         this.eyeleft.rotationPointZ = this.eyeleft.rotationPointZ + (float)(0);
-
-
 
     }
 

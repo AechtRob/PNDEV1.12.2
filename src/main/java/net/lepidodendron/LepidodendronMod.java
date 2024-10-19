@@ -53,6 +53,8 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Objects;
 import java.util.function.Supplier;
 
@@ -60,7 +62,7 @@ import java.util.function.Supplier;
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
-	public static final String VERSION = "61.0";
+	public static final String VERSION = "61.01";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
     @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
@@ -2551,20 +2553,34 @@ public class LepidodendronMod {
 		if (LepidodendronConfig.modFire) {
 			BlockFirePF newFire = (BlockFirePF) (new BlockFirePF()).setHardness(0.0F).setLightLevel(1.0F).setTranslationKey("fire").setRegistryName(Objects.requireNonNull(Blocks.FIRE.getRegistryName()));
 			event.getRegistry().register(newFire);
+			try {
+				setFinalField(Blocks.class.getField("FIRE"), newFire);
+			}
+			catch (Exception e) {
+				//Do nothing
+			}
 		}
 
 		if (LepidodendronConfig.modFlowerpot) {
 			if (!(Loader.isModLoaded("quark") && !LepidodendronConfig.genFlowerpotWithQuark)) {
 				BlockFlowerpotPN newPot = (BlockFlowerpotPN) (new BlockFlowerpotPN()).setHardness(0.0F).setTranslationKey("flowerPot").setRegistryName(Objects.requireNonNull(Blocks.FLOWER_POT.getRegistryName()));
 				event.getRegistry().register(newPot);
+				try {
+					setFinalField(Blocks.class.getField("FLOWER_POT"), newPot);
+				}
+				catch (Exception e) {
+					//Do nothing
+				}
 			}
 		}
+	}
 
-		if (Loader.isModLoaded("biomesoplenty")) {
-			BlockBOPMudPF newMud = (BlockBOPMudPF) (new BlockBOPMudPF()).setTranslationKey("mud.mud").setRegistryName("biomesoplenty:mud");
-			event.getRegistry().register(newMud);
-		}
-
+	static void setFinalField(Field field, Object newValue) throws Exception {
+		field.setAccessible(true);
+		Field modifiersField = Field.class.getDeclaredField("modifiers");
+		modifiersField.setAccessible(true);
+		modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+		field.set(null, newValue);
 	}
 
 	@SubscribeEvent

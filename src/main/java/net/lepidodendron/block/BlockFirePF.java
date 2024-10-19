@@ -366,7 +366,11 @@ public class BlockFirePF extends BlockFire {
 						}
 					}
 
-					boolean flag1 = worldIn.isBlockinHighHumidity(pos);
+                    if (dimFireTickBlacklist(worldIn.provider.getDimension())) {
+						return;
+                    }
+
+                    boolean flag1 = worldIn.isBlockinHighHumidity(pos);
 					int j = 0;
 
 					if (flag1)
@@ -471,6 +475,10 @@ public class BlockFirePF extends BlockFire {
 						worldIn.setBlockToAir(pos);
 						return;
 					}
+				}
+
+				if (dimFireTickBlacklist(worldIn.provider.getDimension())) {
+					return;
 				}
 
 				boolean flag1 = worldIn.isBlockinHighHumidity(pos);
@@ -822,6 +830,18 @@ public class BlockFirePF extends BlockFire {
 	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
 	{
 		return BlockFaceShape.UNDEFINED;
+	}
+
+	public boolean dimFireTickBlacklist(int dimID) {
+		int[] var2 = LepidodendronConfig.dimFireSpreadBlacklist;
+		int var3 = var2.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == dimID) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

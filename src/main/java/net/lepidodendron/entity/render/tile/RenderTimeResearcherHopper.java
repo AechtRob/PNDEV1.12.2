@@ -20,7 +20,7 @@ public class RenderTimeResearcherHopper extends TileEntitySpecialRenderer<BlockT
     @Override
     public void render(BlockTimeResearcherHopper.TileEntityTimeResearcherHopper entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         EnumFacing facing = EnumFacing.NORTH;
-        if (entity != null && entity.hasWorld()) {
+        if (entity != null && entity.hasWorld() && entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockTimeResearcherHopper.block) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockTimeResearcherHopper.BlockCustom.FACING);
         }
         

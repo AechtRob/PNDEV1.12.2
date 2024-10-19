@@ -6,10 +6,13 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockRottenLog;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -33,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPrehistoricFloraLandClimbingBase implements ITrappableAir {
+public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPrehistoricFloraLandClimbingBase implements ITrappableAir, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -256,4 +259,9 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPr
 
 	}
 
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_TRIGONOTARBID_PALAEOCHARINUS;
+	}
 }

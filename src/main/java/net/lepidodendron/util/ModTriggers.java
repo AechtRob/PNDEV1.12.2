@@ -1511,7 +1511,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIPLODOSELACHE = new CustomTrigger("pf_book_diplodoselache");
     public static final CustomTrigger CLICK_STENOKRANIO = new CustomTrigger("pf_book_stenokranio");
     public static final CustomTrigger CLICK_IDMONARACHNE = new CustomTrigger("pf_book_idmonarachne");
-    public static final CustomTrigger CLICK_GONDWANARACHNE = new CustomTrigger("pf_book_gondwanarachne");
+    public static final CustomTrigger CLICK_TRIGONOTARBID_GONDWANARACHNE = new CustomTrigger("pf_book_trigonotarbid_gondwanarachne");
     public static final CustomTrigger CLICK_CRICOSAURUS = new CustomTrigger("pf_book_cricosaurus");
     public static final CustomTrigger CLICK_SCHOENESMAHL = new CustomTrigger("pf_book_schoenesmahl");
     public static final CustomTrigger CLICK_WESTRICHUS = new CustomTrigger("pf_book_westrichus");
@@ -3023,7 +3023,7 @@ public class ModTriggers
             CLICK_DIPLODOSELACHE,
             CLICK_STENOKRANIO,
             CLICK_IDMONARACHNE,
-            CLICK_GONDWANARACHNE,
+            CLICK_TRIGONOTARBID_GONDWANARACHNE,
             CLICK_CRICOSAURUS,
             CLICK_SCHOENESMAHL,
             CLICK_WESTRICHUS,

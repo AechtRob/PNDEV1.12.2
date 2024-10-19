@@ -276,6 +276,13 @@ public class BlockTimeResearcherFinderBottom extends ElementsLepidodendronMod.Mo
 			this.selectedLife = string;
 		}
 
+		public double progressFraction() {
+			if (this.isProcessing) {
+				return (double)this.processTick / (double)this.processTickTime;
+			}
+			return 0;
+		}
+
 		@Nullable
 		public BlockPos getResearcherPos() {
 			EnumFacing facing = world.getBlockState(this.getPos()).getValue(BlockTimeResearcherFinderBottom.BlockCustom.FACING);

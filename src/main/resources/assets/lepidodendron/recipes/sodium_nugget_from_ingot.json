@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:sodium_ingot"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:sodium_nugget",
+    "count": 9
+  }
+}
