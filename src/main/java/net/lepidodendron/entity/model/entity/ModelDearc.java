@@ -623,8 +623,7 @@ public class ModelDearc extends ModelBasePalaeopedia {
         this.setRotateAngle(rightwing3, 0.0F, 0.0F, -0.02F);
         this.setRotateAngle(rightwing4, 1.0F, 0.0F, 0.0F);
         this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
-        this.root.offsetY = -0.025F;
-        this.root.rotateAngleX = -0.2F;
+        this.root.offsetY = -0.01F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
