@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraStagonolepis extends EntityPrehistoricFloraLa
 		minWidth = 0.12F;
 		maxWidth = 1.0F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 34.0D;
+		maxHealthAgeable = 25.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

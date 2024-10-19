@@ -5855,6 +5855,26 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArcheria.class, new IRenderFactory<EntityPrehistoricFloraArcheria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArcheria> createRenderFor(RenderManager manager) {
+                return new RenderArcheria(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMieridduryn.class, new IRenderFactory<EntityPrehistoricFloraMieridduryn>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMieridduryn> createRenderFor(RenderManager manager) {
+                return new RenderMieridduryn(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVenustulus.class, new IRenderFactory<EntityPrehistoricFloraVenustulus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraVenustulus> createRenderFor(RenderManager manager) {
+                return new RenderVenustulus(manager);
+            }
+        });
+
+
 
 
 
