@@ -4981,5 +4981,12 @@ public class LepidodendronSorter {
     public static final int eocursor_raw = 4976;
     public static final int wardichthys_raw = 4977;
     public static final int eggs_eocursor = 4978;
+    public static final int amphibian_spawn_archeria = 4979;
+    public static final int amphibian_spawn_archeria_worldgen = 4980;
+    public static final int archeria_raw = 4981;
+    public static final int mieridduryn_raw = 4982;
+    public static final int venustulus_raw = 4983;
+    public static final int eggs_teraterpeton = 4984;
+
 
 }
