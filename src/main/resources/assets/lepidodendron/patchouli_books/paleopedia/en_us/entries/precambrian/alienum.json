@@ -1,0 +1,52 @@
+{
+	"name": "Alienum",
+	"read_by_default": true,
+	"icon": "lepidodendron:alienum_raw",
+	"category": "lepidodendron:precambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_alienum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_alienum",
+			"title": "Alienum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis"
+		},
+        	{
+            "type": "entity",
+            "name": "A. velamenus",
+            "entity": "lepidodendron:prehistoric_flora_alienum",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_alienum",
+			"type": "text",
+			"text": "Alienum velamenus hails from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a small, sail-shaped lifeform, growing up to 2 cm in length. It is a unique lifeform, unlike anything seen in the Ediacaran thus far, with morphological similarites to the Cambrian clade of the Vetulicolians."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_alienum",
+			"type": "text",
+			"text": "Although this put into doubt due to Alienums far simpler and smaller appearance, although this may be due to it being a earlier evolutionary form of the Vetulicolians, with this being supported by the molecular clocks Deuterostomes going back to 571 Ma. The generic name derives from the Latin word 'aliēnus', to mean 'exotic/foreign'. The specific name derives from the Latin word 'velamen', to mean 'veil/sail-like'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_alienum"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_alienum"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_alienum"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_alienum"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_alienum"
+		}
+	]
+}
