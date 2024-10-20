@@ -2426,6 +2426,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation TYRANNOTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tyrannotitan"));
 	public static final ResourceLocation TYRANNOTITAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tyrannotitan_young"));
 
+	public static final int ENTITY_ALIENUM = 978;
+	public static final ResourceLocation ALIENUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/alienum"));
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

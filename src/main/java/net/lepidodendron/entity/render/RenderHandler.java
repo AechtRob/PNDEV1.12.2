@@ -5873,6 +5873,25 @@ public class RenderHandler {
                 return new RenderVenustulus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAlienum.class, new IRenderFactory<EntityPrehistoricFloraAlienum>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAlienum> createRenderFor(RenderManager manager) {
+                return new RenderAlienum(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNigerpeton.class, new IRenderFactory<EntityPrehistoricFloraNigerpeton>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNigerpeton> createRenderFor(RenderManager manager) {
+                return new RenderNigerpeton(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTyrannotitan.class, new IRenderFactory<EntityPrehistoricFloraTyrannotitan>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTyrannotitan> createRenderFor(RenderManager manager) {
+                return new RenderTyrannotitan(manager);
+            }
+        });
+
 
 
 

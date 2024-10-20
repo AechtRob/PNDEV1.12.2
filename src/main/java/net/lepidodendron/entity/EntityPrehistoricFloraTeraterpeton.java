@@ -202,7 +202,7 @@ public class EntityPrehistoricFloraTeraterpeton extends EntityPrehistoricFloraLa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
 	}
 	@Override
 	public SoundEvent getAmbientSound() {
@@ -283,8 +283,6 @@ public class EntityPrehistoricFloraTeraterpeton extends EntityPrehistoricFloraLa
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
-
-
 
 	}
 

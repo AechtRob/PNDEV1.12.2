@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemTeyujaguaRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:teyujagua_raw")
+public class ItemTyrannotitanRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:tyrannotitan_raw")
 	public static final Item block = null;
-	public ItemTeyujaguaRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.teyujagua_raw);
+	public ItemTyrannotitanRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.tyrannotitan_raw);
 	}
 
 	@Override
@@ -30,23 +30,23 @@ public class ItemTeyujaguaRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/teyujagua_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/tyrannotitan_raw", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_teyujagua", ItemTeyujaguaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemTeyujaguaRaw.block);
-		OreDictionary.registerOre("pnfurnaceMeat", ItemTeyujaguaRaw.block);
-		OreDictionary.registerOre("pndietMeat", ItemTeyujaguaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tyrannotitan", ItemTyrannotitanRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemTyrannotitanRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemTyrannotitanRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemTyrannotitanRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
-			super(3, 0.3f, false);
-			setTranslationKey("pf_teyujagua_raw");
-			setRegistryName("teyujagua_raw");
+			super(8, 0.8f, false);
+			setTranslationKey("pf_tyrannotitan_raw");
+			setRegistryName("tyrannotitan_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

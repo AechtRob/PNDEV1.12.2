@@ -9080,3 +9080,7 @@ tile.pf_amphibian_spawn_anthracosaurus_worldgen.name=Anthracosaurus Spawn
 tile.pf_amphibian_spawn_sclerocephalus_worldgen.name=Sclerocephalus Spawn
 tile.pf_amphibian_spawn_archeria_worldgen.name=Archeria Spawn
 tile.pf_amphibian_spawn_nigerpeton_worldgen.name=Nigerpeton Spawn
+advancements.pf_adv_book_ikechaoamia.description=Unlock the entry for Ikechaoamia in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_ikechaoamia.title=Ikechaoamia
+item.pf_ikechaoamia_raw.name=Raw Ikechaoamia
+entity.prehistoric_flora_ikechaoamia.name=Ikechaoamia

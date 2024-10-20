@@ -4987,6 +4987,13 @@ public class LepidodendronSorter {
     public static final int mieridduryn_raw = 4982;
     public static final int venustulus_raw = 4983;
     public static final int eggs_teraterpeton = 4984;
+    public static final int alienum_raw = 4985;
+    public static final int tyrannotitan_raw = 4986;
+    public static final int eggs_tyrannotitan = 4987;
+    public static final int amphibian_spawn_nigerpeton = 4988;
+    public static final int amphibian_spawn_nigerpeton_worldgen = 4989;
+    public static final int eggs_teyujagua = 4990;
+    public static final int nigerpeton_raw = 4991;
 
 
 }
