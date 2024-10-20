@@ -574,6 +574,7 @@ public class ModelDearc extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.setRotateAngle(chest, 0.1F, 0.0F, 0.0F);
         this.setRotateAngle(head2, 0.6F, -0.0F, -0.2F);
@@ -622,7 +623,7 @@ public class ModelDearc extends ModelBasePalaeopedia {
         this.setRotateAngle(rightwing3, 0.0F, 0.0F, -0.02F);
         this.setRotateAngle(rightwing4, 1.0F, 0.0F, 0.0F);
         this.setRotateAngle(righthand, 0.0F, 0.0F, 0.0F);
-        this.root.offsetY = -0.05F;
+        this.root.offsetY = -0.01F;
         this.root.render(0.01F);
         resetToDefaultPose();
     }
@@ -745,6 +746,16 @@ public class ModelDearc extends ModelBasePalaeopedia {
                 //Climb pose
                 //Rhampho does not climb
             }
+        }
+
+        if (ee.getAttachmentPos() == null) { //set wing membranes to their proper scale for flight
+            this.wingmembranebeg.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembranemiddle.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembraneend.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembranebeg2.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembranemiddle2.setScale((float) 1, (float) 1, (float) 1);
+            this.wingmembraneend2.setScale((float) 1, (float) 1, (float) 1);
+            this.throat.setScale((float) 1, (float) 1, (float) 1);
         }
 
         if (ee.getAttachmentPos() == null && ee.getAnimation() != ee.FLY_ANIMATION) {

@@ -704,19 +704,15 @@ public class ModelSelenopeltis extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.Selenopeltis.offsetY = -2.0F;
-        this.Selenopeltis.offsetX = -1.338F;
-        this.Selenopeltis.rotateAngleY = (float)Math.toRadians(200);
-        this.Selenopeltis.rotateAngleX = (float)Math.toRadians(8);
-        this.Selenopeltis.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Selenopeltis.offsetX = 0.3F;
+        this.Selenopeltis.rotateAngleX = (float)Math.toRadians(45);
+        this.Selenopeltis.rotateAngleY = (float)Math.toRadians(220);
+        this.Selenopeltis.rotateAngleZ = (float)Math.toRadians(-20);
         this.Selenopeltis.scaleChildren = true;
         float scaler = 1.63F;
         this.Selenopeltis.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(Selenopeltis, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.Selenopeltis.render(f);
         //Reset rotations, positions and sizing:

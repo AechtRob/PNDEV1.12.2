@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Carboniferous-Permian(br2)>Chondrichthyes$(br)>Selachimorpha$(br)>Xenacanthida$(br)>Xenacanthidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/xenacanthus.png"],
-			"title": "Xenacanthus sp.",
-			"text": ""
+			"type": "entity",
+			"name": "Xenacanthus sp.",
+			"entity": "lepidodendron:prehistoric_flora_xenacanthus",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_xenacanthus",

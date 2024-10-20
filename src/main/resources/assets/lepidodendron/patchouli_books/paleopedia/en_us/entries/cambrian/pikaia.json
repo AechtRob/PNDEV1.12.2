@@ -12,10 +12,11 @@
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)>Chordata$(br)>Pikaiidae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/pikaia.png"],
-			"title": "P. gracilens",
-			"text": ""
+			"type": "entity",
+			"name": "P. gracilens",
+			"entity": "lepidodendron:prehistoric_flora_pikaia",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pikaia",

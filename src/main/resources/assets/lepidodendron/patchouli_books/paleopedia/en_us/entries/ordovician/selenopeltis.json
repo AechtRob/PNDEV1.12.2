@@ -12,15 +12,16 @@
 			"text": "$(l)Temporal Range:$() Ordovician$(br2)>Trilobita$(br)>Odontopleurida$(br)>Odontopleuridae"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/selenopeltis.png"],
-			"title": "S. buchi",
-			"text": ""
+			"type": "entity",
+			"name": "S. buchi",
+			"entity": "lepidodendron:prehistoric_flora_selenopeltis",
+			"rotate": false,
+			"default_rotation": 0
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_selenopeltis",
 			"type": "text",
-			"text": "Selenopeltis is a trilobite with many long curved spins on the sides of its body. It  was quite small, reaching up to 16 cm and it was probably a detritivore."
+			"text": "Selenopeltis is a trilobite with many long curved spines on the sides of its body. It  was quite small, reaching up to 16 cm and it was probably a detritivore."
 		},
 		{
 			"type": "lepidodendron:diet",

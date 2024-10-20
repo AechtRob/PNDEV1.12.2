@@ -216,21 +216,17 @@ public class ModelXenacanthus extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -2.0F;
-        this.base.offsetX = -1.338F;
-        this.base.rotateAngleY = (float)Math.toRadians(200);
-        this.base.rotateAngleX = (float)Math.toRadians(8);
-        this.base.rotateAngleZ = (float)Math.toRadians(-8);
+        //Rotations, positions and sizing:
+        this.base.offsetY = -0.65F;
+        this.base.offsetX = 0.5F;
+        this.base.rotateAngleX = (float)Math.toRadians(25);
+        this.base.rotateAngleY = (float)Math.toRadians(240);
+        this.base.rotateAngleZ = (float)Math.toRadians(-20);
         this.base.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 0.9F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.base.render(f);
         //Reset rotations, positions and sizing:

@@ -296,20 +296,15 @@ public class ModelPikaia extends ModelBasePalaeopedia {
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
         this.body.offsetY = -2.0F;
-        this.body.offsetX = -1.338F;
-        this.body.rotateAngleY = (float)Math.toRadians(200);
-        this.body.rotateAngleX = (float)Math.toRadians(8);
-        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.offsetX = 2.638F;
+        this.body.rotateAngleX = (float)Math.toRadians(25);
+        this.body.rotateAngleY = (float)Math.toRadians(240);
+        this.body.rotateAngleZ = (float)Math.toRadians(-20);
         this.body.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 3.63F;
         this.body.setScale(scaler, scaler, scaler);
         //Start of pose:
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+
         //End of pose, now render the model:
         this.body.render(f);
         //Reset rotations, positions and sizing:
