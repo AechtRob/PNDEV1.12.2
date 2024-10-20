@@ -1,0 +1,7 @@
+{
+    "name": "中新世固着",
+    "description": "中新世的固着动物",
+    "icon": "paleopedia:textures/category_icon/icon_miocene.png",
+    "parent": "lepidodendron:miocene",
+    "sortnum": 2
+}

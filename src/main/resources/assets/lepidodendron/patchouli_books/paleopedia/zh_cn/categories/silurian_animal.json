@@ -1,0 +1,7 @@
+{
+    "name": "志留纪动物",
+    "description": "志留纪的动物",
+    "icon": "paleopedia:textures/items/acutiramus_icon.png",
+    "parent": "lepidodendron:silurian",
+    "sortnum": 1
+}

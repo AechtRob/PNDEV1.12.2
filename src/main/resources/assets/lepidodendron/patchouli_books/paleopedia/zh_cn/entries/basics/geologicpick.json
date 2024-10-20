@@ -1,0 +1,27 @@
+{
+	"name": "地质镐",
+	"icon": "lepidodendron:fossil_hammer",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "地质镐",
+			"text": "地质镐用于破坏含化石石头，使用时有几率从化石中掉落一个特定时期的未处理化石。如果不成功，含化石石头只会掉落沙砾。时运附魔对地质镐有效。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:fossil_hammer_recipe",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images":["paleopedia:textures/break_fossil.png"],
+			"title": "化石方块",
+			"text": ""
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

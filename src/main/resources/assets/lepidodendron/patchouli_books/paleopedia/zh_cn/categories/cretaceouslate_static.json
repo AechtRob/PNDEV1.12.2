@@ -1,0 +1,7 @@
+{
+    "name": "晚白垩纪固着",
+    "description": "晚白垩纪的固着动物",
+    "icon": "lepidodendron:bivalve_inoceramus_gigantocapulus",
+    "parent": "lepidodendron:cretaceouslate",
+    "sortnum": 2
+}

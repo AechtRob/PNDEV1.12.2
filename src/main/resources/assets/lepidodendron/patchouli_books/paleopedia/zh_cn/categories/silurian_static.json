@@ -1,0 +1,7 @@
+{
+    "name": "志留纪固着",
+    "description": "志留纪的固着动物",
+    "icon": "lepidodendron:crinoid_petalocrinus",
+    "parent": "lepidodendron:silurian",
+    "sortnum": 2
+}

@@ -1,0 +1,26 @@
+{
+	"name": "笼子",
+	"read_by_default": true,
+	"icon": "lepidodendron:cage_small_item",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "笼子是玩家捕捉和运输陆地生物所需的工具。笼子可以容纳长和高不超过一格的动物，任何大于或高于一格的动物都无法装入笼子。小型动物可能会从栏杆间溜走，但是如果玩家的速度够快，就有可能抓获这些动物。"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/caged_animal.png"],
+			"title": "被关住的生物",
+			"text": ""
+		},
+		{
+			"type": "text",
+			"text": "要使用笼子，只需手持空笼子右击动物即可。当动物在笼子中时，空手右击就能拾起笼子并放入玩家的物品栏中。要将动物从笼子中放出来，可以左击已放置的笼子，或在生存模式中将其打破。不能在空中或水中使用。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:cage_small_recipe"
+		}
+	]
+}

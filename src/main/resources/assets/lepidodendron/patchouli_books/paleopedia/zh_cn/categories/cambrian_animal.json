@@ -1,0 +1,7 @@
+{
+    "name": "寒武纪动物",
+    "description": "寒武纪的动物",
+    "icon": "lepidodendron:anomalocaris_raw",
+    "parent": "lepidodendron:cambrian",
+    "sortnum": 1
+}

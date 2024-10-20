@@ -1,0 +1,6 @@
+{
+    "name": "寒武纪",
+    "description": "$(l)古生代的第一个纪$()$(br)寒武纪出现了地球上大多数现代生物谱系中的第一批动物。不过节肢动物在这一时期占主导地位。$(br2)$(l)传送门方块：海绵",
+    "icon": "paleopedia:textures/category_icon/icon_cambrian.png",
+    "sortnum": 1
+}

@@ -1,0 +1,7 @@
+{
+    "name": "早白垩纪固着",
+    "description": "早白垩纪的固着动物",
+    "icon": "lepidodendron:bivalve_inoceramus",
+    "parent": "lepidodendron:cretaceousearly",
+    "sortnum": 2
+}

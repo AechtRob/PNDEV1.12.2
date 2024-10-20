@@ -1,0 +1,18 @@
+{
+	"name": "固着生物",
+	"read_by_default": true,
+	"icon": "lepidodendron:rugosa_1",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "固着生物",
+			"text": "固着生物是一种类似方块的生物，它们是动物而不是植物、真菌或藻类。大多数固着生物生活在水下。通常可以使用剪刀来收集。如果它们类似石头（如叠层石、凝块石或礁石方块等，则需要用精准采集来代替）。"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/shearing_statics.png"],
+			"title": "剪采"
+		}
+	]
+}

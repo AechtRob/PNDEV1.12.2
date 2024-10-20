@@ -1,0 +1,37 @@
+{
+	"name": "Furniture and Similar",
+	"icon": "lepidodendron:lepidodendron_bench",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "模组目前包含一些特殊的家具：长椅、桥、垃圾桶、绳索护栏。$(br2)所有这些方块都可以使用以下物品进行编辑。用这些物品右击对应方块，即可将该物品作为装饰特征应用："
+		},
+		{
+			"type": "text",
+			"text": "铁粒$(br)金粒$(br)锆石$(br)绿宝石$(br)钻石$(br)波罗的琥珀厚块$(br)多米尼加琥珀厚块$(br)石英$(br)青金石$(br)煤炭$(br)石化南洋杉型木原木$(br)红石火把$(br)无烟煤$(br)盐$(br)硫磺"
+		},
+		{
+			"type": "text",
+			"text": "破坏方块会返回最后使用的物品（不过在第一个物品上应用第二个物品会导致第一个物品丢失）。$(br)$(br)桥上可以放置铁轨，并会改变形状以连接旁边的桥。如果使用红石火把修饰了桥，它将表现为一个被红石充能的方块，并为放置在其上的方块充能（如动力铁轨等）。"
+		},
+		{
+			"type": "text",
+			"text": "除此之外，绳索护栏物还有一些额外的功能：$(br2)要添加绳索，护栏必须与另一个护栏相邻。手持绳索对护栏的目标面右击即可连接。还可以使用任何标准的 Minecraft 染料对绳索进行染色：要应用染料，需要先将绳索连接到护栏上，然后手持染料右击绳索所连接的护栏面上。"
+		},
+		{
+			"type": "text",
+			"text": "染料会被消耗掉，不会返还给玩家。要从护栏上取下绳索，只需空手右击绳索连接的面。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:lepidodendron_bench_recipe",
+			"recipe2": "lepidodendron:lepidodendron_bridge_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:lepidodendron_litterbin_recipe",
+			"recipe2": "lepidodendron:rope_barrier"
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"name": "时代研究仪",
+	"icon": "lepidodendron:time_researcher_item",
+	"category": "lepidodendron:revival",
+	"sortnum": 11,
+	"pages": [
+		{
+			"type": "text",
+			"text": "时代研究仪是一种复杂的机器，用于获取有关过去的专业知识。当你获得各个不同时期的知识后，你就可以使用它的激光分析仪更准确地从化石中获取特定的生命形式。"
+		},
+		{
+			"type": "text",
+			"text": "将含化石石头或未处理化石送入机器左上方的粉碎机漏斗，下方方块中的 GUI 将显示你的研究进度。随着研究的深入，你从化石中准确获取特定化石的能力也会提高："
+		},
+		{
+			"type": "text",
+			"text": "要尝试获取特定化石，请打开机器右侧激光室下方方块的 GUI，从顶部列表中选择要寻找的生命形式。然后在 GUI 中添加正确的化石，激光器就会开始工作，尝试提取化石。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_crusher_recipe",
+			"recipe2": "lepidodendron:time_researcher_hopper_recipe",
+			"title": "粉碎机配方"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_laser_recipe",
+			"recipe2": "lepidodendron:time_researcher_finder_top_recipe",
+			"title": "激光室配方"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_finder_main_recipe",
+			"recipe2": "lepidodendron:time_researcher_finder_bottom_recipe",
+			"title": "其他部件"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:time_researcher_dispenser_recipe",
+			"recipe2": "lepidodendron:time_researcher_recipe",
+			"title": "最终部件"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"name": "Creature Traps",
+	"icon": "lepidodendron:trap_air",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Creature Traps",
+			"text": "可以使用陷阱来帮助捕捉模组中的一些生物。陷阱有三种：陆生无脊椎动物（如昆虫）陷阱、陆生动物陷阱和水生动物陷阱。如果在合适的生物群系中放置一个陷阱，并在陷阱中放置诱饵，它就能捕捉到食谱与诱饵相匹配的生物。如果没有可用的生物，陷阱就会告诉您：尝试使用不同的诱饵，或者换一个生物群系。"
+		},
+		{
+			"type": "text",
+			"text": "陷阱捕捉到生物后，可以通过向陷阱施加红石信号（例如按钮或拉杆等）自动释放，也可以根据情况用罐子、笼子或桶点击陷阱捕捉生物。陷阱装满后还会使比较器产生输出。"
+		},
+		{
+			"type": "text",
+			"text": "如果您需要标记水下陷阱的位置，可以使用浮标放置在水面上。"
+		},
+		{
+			"type": "crafting",
+			"text": "",
+			"recipe": "lepidodendron:trap_air_recipe",
+			"recipe2": "lepidodendron:trap_ground_recipe"
+		},
+		{
+			"type": "crafting",
+			"text": "",
+			"recipe": "lepidodendron:trap_water_recipe",
+			"recipe2": "lepidodendron:buoy_recipe"
+		}
+	]
+}

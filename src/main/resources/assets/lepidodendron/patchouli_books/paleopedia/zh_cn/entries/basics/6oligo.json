@@ -1,0 +1,17 @@
+{
+	"name": "寡核苷酸池",
+	"icon": "lepidodendron:oligo_pool",
+	"category": "lepidodendron:revival",
+	"sortnum": 6,
+	"pages": [
+		{
+			"type": "text",
+			"text": "寡核苷酸是一种 DNA 碱基的合成混合物，DNA 复合机可以利用这种混合物有选择性地从基因图谱中重建 DNA。寡核苷酸生产机通过将苯并溶剂插入其中来产生寡核苷酸。有一个配置选项用以设置机器是否需要使用 RF 能源。可以使用漏斗（以及模组等效物）从机器中输入和输出。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:oligopool_machine_recipe",
+			"title": "寡核苷酸池生产机"
+		}
+	]
+}

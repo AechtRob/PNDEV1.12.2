@@ -1,0 +1,16 @@
+{
+	"name": "显微镜",
+	"icon": "lepidodendron:microscope",
+	"category": "lepidodendron:revival",
+	"sortnum": 8,
+	"pages": [
+		{
+			"type": "text",
+			"text": "显微镜可以分析任何未处理化石物品，并确定其中是否含有植物、生物或固着生物的化石。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:microscope_recipe"
+		}
+	]
+}

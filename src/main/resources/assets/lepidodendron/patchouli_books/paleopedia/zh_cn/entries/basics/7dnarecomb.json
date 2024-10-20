@@ -1,0 +1,37 @@
+{
+	"name": "DNA 复合机",
+	"icon": "lepidodendron:dna_recombiner_item",
+	"category": "lepidodendron:revival",
+	"sortnum": 7,
+	"pages": [
+		{
+			"type": "text",
+			"text": "DNA 复合机由配方中所示的四个独立组件组成。DNA 管应放入机器的离心机部分。在盖子关闭且离心机平衡后，机器就会开始处理。离心机最多可容纳四管 DNA，但必要时也可以放入空管形瓶来平衡。"
+		},
+		{
+			"type": "text",
+			"text": "可以使用漏斗（及模组等效物）将管形瓶放入离心机。正在离心的样品瓶无法取出，机器将保持锁定状态，直到所有离心样品瓶都经过下一阶段的处理。机器会将离心后的 DNA 管转移到机器的主要 DNA 合炉部分。这部分需要有一个$(l:basics/6oligo)寡核苷酸池$(/l)来处理样品。"
+		},
+		{
+			"type": "text",
+			"text": "你可以使用漏斗（及模组等效物）将$(l:basics/6oligo)寡核苷酸池$(/l)放入 DNA 合炉，并从中提取合成完毕的 DNA。一旦完成，DNA 合炉将产生一个可放置的 DNA 培养物品来创造生物。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_centrifuge_recipe",
+			"recipe2": "lepidodendron:dna_claw_recipe",
+			"title": "组件"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_forge_recipe",
+			"recipe2": "lepidodendron:dna_rail_recipe",
+			"title": "组件"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_recombiner_recipe",
+			"title": "最终机器组装"
+		}
+	]
+}

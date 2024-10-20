@@ -1,0 +1,7 @@
+{
+    "name": "二叠纪动物",
+    "description": "二叠纪的动物",
+    "icon": "paleopedia:textures/items/dimetrodon_icon.png",
+    "parent": "lepidodendron:permian",
+    "sortnum": 1
+}

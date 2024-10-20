@@ -1,0 +1,6 @@
+{
+    "name": "石炭纪",
+    "description": "$(l)大树与巨虫$()$(br)这个时期以巨大的节肢动物和大片森林而闻名！$(br)这一时期的氧气水平相当高。$(br2)$(l)传送门方块：芦木木板",
+    "icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+    "sortnum": 5
+}

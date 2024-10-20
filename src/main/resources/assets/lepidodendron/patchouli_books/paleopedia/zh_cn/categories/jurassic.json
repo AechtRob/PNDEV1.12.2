@@ -1,0 +1,6 @@
+{
+    "name": "侏罗纪",
+    "description": "$(l)欢迎……来到侏罗纪公园$()$(br)这一时期因恐龙种类的激增而闻名，也是现代鸟类的祖先首次出现的时期。$(br2)$(l)传送门方块：银杏木板",
+    "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
+    "sortnum": 8
+}

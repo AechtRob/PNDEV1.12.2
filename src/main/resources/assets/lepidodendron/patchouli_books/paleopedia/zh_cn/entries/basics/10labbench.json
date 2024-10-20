@@ -1,0 +1,18 @@
+{
+	"name": "试验台",
+	"icon": "lepidodendron:lab_bench",
+	"category": "lepidodendron:revival",
+	"sortnum": 10,
+	"pages": [
+		{
+			"type": "text",
+			"text": "实验室工作台是一个装饰性方块，也可作为 $(l:basics/5phials)DNA 合成$(/l)自动化的一部分。它还有一个漏斗变体，没有制作功能，只有类似漏斗的功能。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:lab_bench",
+			"recipe2": "lepidodendron:lab_bench_hopper",
+			"title": "试验台"
+		}
+	]
+}

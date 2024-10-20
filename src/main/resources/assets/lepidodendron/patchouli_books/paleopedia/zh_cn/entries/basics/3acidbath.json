@@ -1,0 +1,28 @@
+{
+	"name": "酸洗池",
+	"icon": "lepidodendron:acid_bath_item",
+	"category": "lepidodendron:revival",
+	"sortnum": 3,
+	"pages": [
+		{
+			"type": "text",
+			"text": "酸洗池用于清洁未处理化石。装入最多两桶硫酸后，酸洗池将会溶解未处理化石周围的沉积物。酸洗池每次可处理多达 4 块化石，但也可处理较少的化石。只有部分清洁尝试会产生清洁的化石，其他的则会输出各种类型的垃圾。"
+		},
+		{
+			"type": "text",
+			"text": "化石物品可以通过连接在控制面板的漏斗放入酸洗池中，清洁的化石可以通过放置在酸洗池头部下方的漏斗提取出来。酸液可以通过模组管道泵入酸液槽，还有一个配置选项以设置机器是否需要使用 RF 能源。控制面板被红石信号激活时将暂停酸洗。最后，酸洗池本身会根据酸液的填充程度输出红石比较器信号。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_acid_bath_recipe",
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur",
+			"title": "Recipes"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:sulphuric_acid_bottle_recipe",
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe",
+			"title": "Recipes"
+		}
+	]
+}
