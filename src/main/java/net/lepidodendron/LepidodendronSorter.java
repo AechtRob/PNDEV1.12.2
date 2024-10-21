@@ -4994,6 +4994,16 @@ public class LepidodendronSorter {
     public static final int amphibian_spawn_nigerpeton_worldgen = 4989;
     public static final int eggs_teyujagua = 4990;
     public static final int nigerpeton_raw = 4991;
+    public static final int vidalamia_raw = 4992;
+    public static final int hispanamia_raw = 4993;
+    public static final int ikechaoamia_raw = 4994;
+    public static final int solnhofenamia_raw = 4995;
+    public static final int tomognathus_raw = 4996;
+    public static final int cratoamia_raw = 4997;
+    public static final int khoratamia_raw = 4998;
+    public static final int pachyamia_raw = 4999;
+    public static final int sinamia_raw = 5000;
+    public static final int haplolepis_raw = 5001;
 
 
 }

@@ -1560,6 +1560,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HISPANAMIA = new CustomTrigger("pf_book_hispanamia");
     public static final CustomTrigger CLICK_CRATOAMIA = new CustomTrigger("pf_book_cratoamia");
     public static final CustomTrigger CLICK_TOMOGNATHUS = new CustomTrigger("pf_book_tomognathus");
+    public static final CustomTrigger CLICK_IKECHAOAMIA = new CustomTrigger("pf_book_ikechaoamia");
+    public static final CustomTrigger CLICK_SOLNHOFENAMIA = new CustomTrigger("pf_book_solnhofenamia");
+    public static final CustomTrigger CLICK_CALAMOPLEURUS = new CustomTrigger("pf_book_calamopleurus");
 
 
 
@@ -3110,6 +3113,9 @@ public class ModTriggers
             CLICK_HISPANAMIA,
             CLICK_CRATOAMIA,
             CLICK_TOMOGNATHUS,
+            CLICK_IKECHAOAMIA,
+            CLICK_SOLNHOFENAMIA,
+            CLICK_CALAMOPLEURUS,
 
 
 

@@ -247,8 +247,8 @@ public class ModelNigerpeton extends ModelBasePalaeopedia {
         this.head.addChild(bone9);
         this.setRotateAngle(bone9, -0.0873F, 0.0F, 0.0F);
         this.bone9.cubeList.add(new ModelBox(bone9, 25, 65, -1.0F, -1.0F, -4.0F, 2, 1, 4, 0.01F, false));
-        this.bone9.cubeList.add(new ModelBox(bone9, 0, 5, 0.1F, -1.01F, -3.6F, 1, 0, 1, 0.0F, false));
-        this.bone9.cubeList.add(new ModelBox(bone9, 0, 5, -1.1F, -1.01F, -3.6F, 1, 0, 1, 0.0F, true));
+        this.bone9.cubeList.add(new ModelBox(bone9, 0, 5, 0.1F, -1.035F, -3.6F, 1, 0, 1, 0.0F, false));
+        this.bone9.cubeList.add(new ModelBox(bone9, 0, 5, -1.1F, -1.035F, -3.6F, 1, 0, 1, 0.0F, true));
         this.bone9.cubeList.add(new ModelBox(bone9, 0, 17, -1.0F, -0.25F, -3.7F, 2, 1, 0, 0.0F, false));
 
         this.cube_r5 = new AdvancedModelRenderer(this);

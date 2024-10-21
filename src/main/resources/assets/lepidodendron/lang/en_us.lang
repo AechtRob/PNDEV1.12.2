@@ -9089,4 +9089,8 @@ advancements.pf_adv_book_ikechaoamia.description=Unlock the entry for Ikechaoami
 advancements.pf_adv_book_ikechaoamia.title=Ikechaoamia
 item.pf_ikechaoamia_raw.name=Raw Ikechaoamia
 entity.prehistoric_flora_ikechaoamia.name=Ikechaoamia
+advancements.pf_adv_book_solnhofenamia.description=Unlock the entry for Solnhofenamia in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_solnhofenamia.title=Solnhofenamia
+item.pf_solnhofenamia_raw.name=Raw Solnhofenamia
+entity.prehistoric_flora_solnhofenamia.name=Solnhofenamia
 

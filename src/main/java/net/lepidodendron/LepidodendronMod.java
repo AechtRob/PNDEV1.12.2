@@ -2428,6 +2428,24 @@ public class LepidodendronMod {
 
 	public static final int ENTITY_ALIENUM = 978;
 	public static final ResourceLocation ALIENUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/alienum"));
+	public static final int ENTITY_VIDALAMIA = 979;
+	public static final ResourceLocation VIDALAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vidalamia"));
+	public static final int ENTITY_HISPANAMIA = 980;
+	public static final ResourceLocation HISPANAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hispanamia"));
+	public static final int ENTITY_IKECHAOAMIA = 981;
+	public static final ResourceLocation IKECHAOAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ikechaoamia"));
+	public static final int ENTITY_TOMOGNATHUS = 982;
+	public static final ResourceLocation TOMOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tomognathus"));
+	public static final int ENTITY_SOLNHOFENAMIA = 983;
+	public static final ResourceLocation SOLNHOFENAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/solnhofenamia"));
+	public static final int ENTITY_CRATOAMIA = 984;
+	public static final ResourceLocation CRATOAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cratoamia"));
+	public static final int ENTITY_KHORATAMIA = 985;
+	public static final ResourceLocation KHORATAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/khoratamia"));
+	public static final int ENTITY_PACHYAMIA = 986;
+	public static final ResourceLocation PACHYAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pachyamia"));
+	public static final int ENTITY_SINAMIA = 987;
+	public static final ResourceLocation SINAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinamia"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

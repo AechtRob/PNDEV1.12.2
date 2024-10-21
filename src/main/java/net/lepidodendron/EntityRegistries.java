@@ -965,6 +965,16 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_haplolepis", EntityPrehistoricFloraHaplolepis.class, LepidodendronMod.ENTITY_HAPLOLEPIS, 48,-6396326,-8999591);
 //        registerEntity("prehistoric_flora_tesnusocaris", EntityPrehistoricFloraTesnusocaris.class, LepidodendronMod.ENTITY_TESNUSOCARIS, 48,-6396326,-8999591);
 //        registerEntity("prehistoric_flora_onychoselache", EntityPrehistoricFloraOnychoselache.class, LepidodendronMod.ENTITY_ONYCHOSELACHE, 48,-6396326,-8999591);
+        registerEntity("prehistoric_flora_vidalamia", EntityPrehistoricFloraVidalamia.class, LepidodendronMod.ENTITY_VIDALAMIA, 48,-11316148,-7833523);
+        registerEntity("prehistoric_flora_hispanamia", EntityPrehistoricFloraHispanamia.class, LepidodendronMod.ENTITY_HISPANAMIA, 48,-11777475,-1184796);
+        registerEntity("prehistoric_flora_ikechaoamia", EntityPrehistoricFloraIkechaoamia.class, LepidodendronMod.ENTITY_IKECHAOAMIA, 48,-14343389,-3109348);
+        registerEntity("prehistoric_flora_solnhofenamia", EntityPrehistoricFloraSolnhofenamia.class, LepidodendronMod.ENTITY_SOLNHOFENAMIA, 48,-7041004,-1463739);
+        registerEntity("prehistoric_flora_tomognathus", EntityPrehistoricFloraTomognathus.class, LepidodendronMod.ENTITY_TOMOGNATHUS, 64,-8109536,-13099502);
+        registerEntity("prehistoric_flora_cratoamia", EntityPrehistoricFloraCratoamia.class, LepidodendronMod.ENTITY_CRATOAMIA, 48,-12699595,-7900353);
+        registerEntity("prehistoric_flora_khoratamia", EntityPrehistoricFloraKhoratamia.class, LepidodendronMod.ENTITY_KHORATAMIA, 48,-9421269,-4150191);
+        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+        registerEntity("prehistoric_flora_sinamia", EntityPrehistoricFloraSinamia.class, LepidodendronMod.ENTITY_SINAMIA, 48,-7835033,-13948892);
+
 
 
         registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
