@@ -4976,4 +4976,34 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 4972;
     public static final int advancement_placeholder = 4973;
 
+    public static final int priscomyzon_raw = 4974;
+    public static final int pambdelurion_raw = 4975;
+    public static final int eocursor_raw = 4976;
+    public static final int wardichthys_raw = 4977;
+    public static final int eggs_eocursor = 4978;
+    public static final int amphibian_spawn_archeria = 4979;
+    public static final int amphibian_spawn_archeria_worldgen = 4980;
+    public static final int archeria_raw = 4981;
+    public static final int mieridduryn_raw = 4982;
+    public static final int venustulus_raw = 4983;
+    public static final int eggs_teraterpeton = 4984;
+    public static final int alienum_raw = 4985;
+    public static final int tyrannotitan_raw = 4986;
+    public static final int eggs_tyrannotitan = 4987;
+    public static final int amphibian_spawn_nigerpeton = 4988;
+    public static final int amphibian_spawn_nigerpeton_worldgen = 4989;
+    public static final int eggs_teyujagua = 4990;
+    public static final int nigerpeton_raw = 4991;
+    public static final int vidalamia_raw = 4992;
+    public static final int hispanamia_raw = 4993;
+    public static final int ikechaoamia_raw = 4994;
+    public static final int solnhofenamia_raw = 4995;
+    public static final int tomognathus_raw = 4996;
+    public static final int cratoamia_raw = 4997;
+    public static final int khoratamia_raw = 4998;
+    public static final int pachyamia_raw = 4999;
+    public static final int sinamia_raw = 5000;
+    public static final int haplolepis_raw = 5001;
+
+
 }

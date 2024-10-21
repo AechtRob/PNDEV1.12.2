@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:ikechaoamia_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_ikechaoamia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_ikechaoamia.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_ikechaoamia"
+		}
+	}
+}
