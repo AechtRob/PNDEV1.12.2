@@ -18,6 +18,9 @@ public class RenderCidaroida extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelCidaroida(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.22F;
+    }
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCidaroida entity) {
         if (entity.getVariant() == 0) {
@@ -39,7 +42,7 @@ public class RenderCidaroida extends RenderLivingBaseWithBook<EntityPrehistoricF
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCidaroida entity, float f) {
-        float scale =  0.22F;
+        float scale = this.getScaler();
         GlStateManager.scale(scale, scale, scale);
     }
 

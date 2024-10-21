@@ -15,6 +15,10 @@ public class RenderArchaeocidaris extends RenderLivingBaseWithBook<EntityPrehist
         super(mgr, new ModelArchaeocidaris(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.22F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraArchaeocidaris entity) {
         return RenderArchaeocidaris.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderArchaeocidaris extends RenderLivingBaseWithBook<EntityPrehist
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraArchaeocidaris entity, float f) {
-        float scale =  0.22F;
+        float scale = this.getScaler();
         GlStateManager.scale(scale, scale, scale);
     }
 }

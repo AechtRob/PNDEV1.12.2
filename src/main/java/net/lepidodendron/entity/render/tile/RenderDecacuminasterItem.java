@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDecacuminaster;
 import net.lepidodendron.entity.model.tile.ModelDecacuminasterItem;
+import net.lepidodendron.entity.render.entity.RenderDecacuminaster;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -28,13 +29,17 @@ public class RenderDecacuminasterItem extends TileEntitySpecialRenderer<BlockDec
         }
         this.bindTexture(TEXTURE);
         ModelDecacuminasterItem modelDecacuminasterItem = this.modelDecacuminasterItem;
-        double scale = 0.04D;
+        double scale = RenderDecacuminaster.getScaler() * 0.0625F;
         GlStateManager.pushMatrix();
-        GlStateManager.translate(x + 0.5, y - 0.05, z + 0.5);
+        GlStateManager.enableAlpha();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.translate(x + 0.5, y - 0.00, z + 0.5);
         GlStateManager.scale(scale,scale,scale);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         modelDecacuminasterItem.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableAlpha();
+        GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
     }
 }

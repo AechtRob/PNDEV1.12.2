@@ -14,6 +14,7 @@ public class RenderLepidaster extends RenderLivingBaseWithBook<EntityPrehistoric
     public static float getScaler() {
         return 0.7F * 0.18F;
     }
+
     public RenderLepidaster(RenderManager mgr) {
         super(mgr, new ModelLepidaster(), 0.0f);
     }
@@ -30,9 +31,6 @@ public class RenderLepidaster extends RenderLivingBaseWithBook<EntityPrehistoric
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLepidaster entity, float f) {
         float scale = this.getScaler();
-        if (scale < 0.1f) {
-            scale = 0.1f;
-        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

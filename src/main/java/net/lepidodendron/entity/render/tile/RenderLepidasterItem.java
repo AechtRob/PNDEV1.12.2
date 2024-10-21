@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockLepidaster;
 import net.lepidodendron.entity.model.tile.ModelLepidasterItem;
+import net.lepidodendron.entity.render.entity.RenderLepidaster;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -28,13 +29,17 @@ public class RenderLepidasterItem extends TileEntitySpecialRenderer<BlockLepidas
         }
         this.bindTexture(TEXTURE);
         ModelLepidasterItem modelLepidasterItem = this.modelLepidasterItem;
-        double scale = 0.04D;
+        double scale = RenderLepidaster.getScaler() * 0.0625F;;
         GlStateManager.pushMatrix();
-        GlStateManager.translate(x + 0.5, y - 0.05, z + 0.5);
+        GlStateManager.enableAlpha();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.translate(x + 0.5, y - 0.00, z + 0.5);
         GlStateManager.scale(scale,scale,scale);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         modelLepidasterItem.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableAlpha();
+        GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
     }
 }

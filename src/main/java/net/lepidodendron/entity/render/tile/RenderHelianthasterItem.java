@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockHelianthaster;
 import net.lepidodendron.entity.model.tile.ModelHelianthasterItem;
+import net.lepidodendron.entity.render.entity.RenderHelianthaster;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -28,13 +29,17 @@ public class RenderHelianthasterItem extends TileEntitySpecialRenderer<BlockHeli
         }
         this.bindTexture(TEXTURE);
         ModelHelianthasterItem modelHelianthasterItem = this.modelHelianthasterItem;
-        double scale = 0.04D;
+        double scale = RenderHelianthaster.getScaler() * 0.0625F;
         GlStateManager.pushMatrix();
-        GlStateManager.translate(x + 0.5, y - 0.05, z + 0.5);
+        GlStateManager.enableAlpha();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.translate(x + 0.5, y + 0.125, z + 0.5);
         GlStateManager.scale(scale,scale,scale);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         modelHelianthasterItem.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableAlpha();
+        GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
     }
 }

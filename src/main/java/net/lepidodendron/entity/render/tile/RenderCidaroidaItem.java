@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCidaroida;
 import net.lepidodendron.entity.model.entity.ModelCidaroida;
+import net.lepidodendron.entity.render.entity.RenderCidaroida;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -43,13 +44,17 @@ public class RenderCidaroidaItem extends TileEntitySpecialRenderer<BlockCidaroid
         }
         this.bindTexture(TEXTURE);
         ModelCidaroida ModelCidaroida = this.modelCidaroida;
-        double scale = 0.04D;
+        double scale = RenderCidaroida.getScaler() * 0.0625F;
         GlStateManager.pushMatrix();
-        GlStateManager.translate(x + 0.5, y - 0.05, z + 0.5);
+        GlStateManager.enableAlpha();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.translate(x + 0.5, y + 0.3250, z + 0.5);
         GlStateManager.scale(scale,scale,scale);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         ModelCidaroida.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableAlpha();
+        GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
     }
 }

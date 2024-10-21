@@ -173,8 +173,7 @@ public class ModelFurcasterItem extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.core.offsetY = -1.5F;
-        this.core.render(0.1f);
+        this.core.render(1f);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

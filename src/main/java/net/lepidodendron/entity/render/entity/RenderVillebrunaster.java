@@ -30,9 +30,6 @@ public class RenderVillebrunaster extends RenderLivingBaseWithBook<EntityPrehist
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraVillebrunaster entity, float f) {
         float scale = this.getScaler();
-        if (scale < 0.1f) {
-            scale = 0.1f;
-        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

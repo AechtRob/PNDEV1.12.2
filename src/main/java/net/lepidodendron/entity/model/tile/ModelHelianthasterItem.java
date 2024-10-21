@@ -618,8 +618,7 @@ public class ModelHelianthasterItem extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.core.offsetY = -1.5F;
-        this.core.render(0.1f);
+        this.root.render(1F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
