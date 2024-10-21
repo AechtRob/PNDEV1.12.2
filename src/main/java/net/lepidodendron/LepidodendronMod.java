@@ -1,6 +1,9 @@
 package net.lepidodendron;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockBatHead;
+import net.lepidodendron.block.BlockFirePF;
+import net.lepidodendron.block.BlockFlowerpotPN;
+import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.gui.*;
@@ -21,6 +24,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.potion.Potion;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntitySkull;
@@ -2590,6 +2594,11 @@ public class LepidodendronMod {
 	@SubscribeEvent
 	public void registerEnchantments(RegistryEvent.Register<Enchantment> event) {
 		event.getRegistry().registerAll(Enchantments.TIME_REVERSAL);
+	}
+
+	@SubscribeEvent
+	public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+		LepidodendronRecipeFossils.registerFossilRecipes(event);
 	}
 
 	@SubscribeEvent
