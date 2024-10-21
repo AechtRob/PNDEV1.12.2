@@ -1,0 +1,26 @@
+{
+	"name": "冰冻虫子",
+	"icon": "paleopedia:textures/items/gerarus_icon.png",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "昆虫和其他陆生节肢动物需要经过特殊处理才能制作标本。模组中的其他动物用任何工具杀死都能获得标本制作所需的物品，而这些较小的无脊椎动物则不同，玩家需要把它们困在罐子里。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:glass_jar_recipe",
+			"title": "罐子"
+		},
+		{
+			"type": "text",
+			"text": "然后，将装有动物的罐子用冰或浮冰包围（顶部不用放冰），使其死亡并掉落的可用于陈列在家中的相应物品。这个过程可能需要一段时间，所以一定要有耐心，虫子可能不会在被冰包围的那一刻就掉落。"
+		},
+		{
+			"type": "image",
+ 			"images":["paleopedia:textures/frozen_bug.png"],
+			"title": "摆放方法",
+			"text": ""
+		}
+	]
+}

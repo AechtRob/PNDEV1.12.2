@@ -84,6 +84,7 @@ public class LepidodendronConfig {
     public static int attackHealth = 90;
     public static int adultAge = 75;
     public static int breedCooldown = 6000;
+    public static int nestSearch = 32;
     public static double spawnerDensity = 1.0;
     public static boolean attackPlayerAlways = false;
     public static boolean doLowRes = false;
@@ -590,7 +591,10 @@ public class LepidodendronConfig {
         breedCooldown = prop.getInt();
         propOrder.add(prop.getName());
 
-
+        prop = cfg.get("Global Mobs", "nestSearch", nestSearch);
+        prop.setComment("For creatures which have nests, this is the radius of search they make to locate a new nest. If you get lag, try reducing this [default: 32 (8 to 64 limits)]");
+        nestSearch = prop.getInt();
+        propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "spawnerDensity", spawnerDensity);
         prop.setComment("This number multiplies the default rate of spawning used by the mod's spawner (0-100). Recommended you do not change this. Increasing it will spawn more mobs, but as they do not despawn your PC may struggle. Use at your own risk. [default: 1.0]");

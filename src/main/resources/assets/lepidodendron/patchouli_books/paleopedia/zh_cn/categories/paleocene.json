@@ -1,0 +1,7 @@
+{
+    "name": "古新世",
+    "description": "$(l)(N)生命的复兴$()$(br)目前这一类别的动物只能在创造模式或使用史前自然复活系统获得。",
+    "icon": "paleopedia:textures/category_icon/icon_paleocene.png",
+    "parent": "lepidodendron:paleogene",
+    "sortnum": 1
+}

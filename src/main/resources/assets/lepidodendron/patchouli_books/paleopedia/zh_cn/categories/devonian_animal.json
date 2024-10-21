@@ -1,0 +1,7 @@
+{
+    "name": "泥盆纪动物",
+    "description": "泥盆纪的动物",
+    "icon": "paleopedia:textures/items/dunkleosteus_icon.png",
+    "parent": "lepidodendron:devonian",
+    "sortnum": 1
+}

@@ -1,0 +1,7 @@
+{
+    "name": "渐新世固着",
+    "description": "渐新世的固着动物",
+    "icon": "paleopedia:textures/category_icon/icon_oligocene.png",
+    "parent": "lepidodendron:oligocene",
+    "sortnum": 2
+}

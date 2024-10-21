@@ -1,0 +1,7 @@
+{
+    "name": "奥陶纪动物",
+    "description": "奥陶纪的动物",
+    "icon": "lepidodendron:hungioides_raw",
+    "parent": "lepidodendron:ordovician",
+    "sortnum": 1
+}

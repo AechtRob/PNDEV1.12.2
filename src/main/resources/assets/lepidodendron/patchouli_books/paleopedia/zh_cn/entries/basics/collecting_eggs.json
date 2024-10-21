@@ -1,0 +1,17 @@
+{
+	"name": "Egg Collection",
+	"read_by_default": true,
+	"icon": "lepidodendron:phial_empty",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "卵可以在以下几个地方找到：$(li)巢穴中：空手右击巢或破坏巢穴。$(li)腐朽原木和苔藓中：较小的卵需要用管形瓶收集，较大的卵可以通过破坏方块收集。$(li)各种水下卵：需要用管形瓶收集。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:phial_recipe",
+			"text": "除非玩家将卵收集起来并再次放置，否则生物产下的卵将不会孵化。"
+		}
+	]
+}

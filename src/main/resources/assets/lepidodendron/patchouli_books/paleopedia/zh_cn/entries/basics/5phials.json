@@ -1,0 +1,28 @@
+{
+	"name": "DNA 管",
+	"icon": "lepidodendron:phial_dna",
+	"category": "lepidodendron:revival",
+	"sortnum": 5,
+	"pages": [
+		{
+			"type": "text",
+			"text": "DNA 管是通过将有机物使用苯并溶剂在管型瓶中溶解制成的。可以溶解酸洗池产生的清洁的化石，以及生物掉落的生肉、固着生物和植物（仅限原木和树叶）。下面的几页将展示一些示例配方。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:phial_dna_acanthodes",
+			"recipe2": "lepidodendron:phial_dna_charnia",
+			"title": ""
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:phial_dna_apple_sapling_oredict",
+			"recipe2": "lepidodendron:phial_dna_coelophysis_oredict",
+			"title": ""
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

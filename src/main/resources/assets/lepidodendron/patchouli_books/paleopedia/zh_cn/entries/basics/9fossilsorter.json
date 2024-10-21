@@ -1,0 +1,24 @@
+{
+	"name": "化石分选器",
+	"icon": "lepidodendron:fossil_sorter",
+	"category": "lepidodendron:revival",
+	"sortnum": 9,
+	"pages": [
+		{
+			"type": "text",
+			"text": "化石分选器的外观和行为非常像漏斗，不过它有四个输出侧和底部。如果里面有任何已知属于植物、生物或静态生物的化石或 DNA 物品，分选器就会将这些物品分类，按如下方式输出到标有彩点的侧面：$(li)绿色 = 植物$(li)白色 = 无脊椎类 $(li)红色 = 其他（有脊椎类）生物$(li)棕色 = 固着生物"
+		},
+		{
+			"type": "text",
+			"text": "任何无法分拣的物品都将从分拣机底部输出。可分类的物品包括清洁的化石、DNA 瓶、DNA 培养结囊以及使用 $(l:basics/8microscope)显微镜$(/l)预先识别过的未处理化石。只有当有一个拥有内部储存的方块（如箱子或其他漏斗等）准备好接受输出时才会输出。真菌和藻类包括在植物类中以便于分拣。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:fossil_sorter_recipe"
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

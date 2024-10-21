@@ -1,0 +1,7 @@
+{
+    "name": "复活系统",
+    "description": "$(l)本节将带你了解模组的复活系统！",
+    "icon": "lepidodendron:acid_bath_item",
+    "parent": "lepidodendron:basics",
+    "sortnum": 1
+}

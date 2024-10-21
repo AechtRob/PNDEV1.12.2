@@ -1,0 +1,40 @@
+{
+	"name": "鸟粪傀儡",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/guano_golem_icon.png",
+	"category": "lepidodendron:fantasy_golem",
+	"turnin": "lepidodendron:pf_adv_book_guano_golem",
+	"pages": [
+		{
+			"type": "text",
+			"text": "鸟粪傀儡（Robotogolem wanuensis）是 Minecraft 主游戏中雪傀儡（Robotogolem nivalis）的近亲。它以类似的方式产生，身后会留下一串鸟粪，并会用鸟粪球砸向周围的敌对生物。"
+		},
+		{
+			"type": "entity",
+			"name": "R. wanuensis",
+			"entity": "lepidodendron:prehistoric_flora_guano_golem",
+			"rotate": false,
+			"default_rotation": -30
+		},
+		{
+			"type": "multiblock",
+			"name": "鸟粪傀儡",
+			"enable_visualize": false,
+			"text": "要创建鸟粪傀儡，请将蝙蝠头放在两格鸟粪块上",
+			"multiblock": {
+				"pattern": [
+					[ "H" ],
+					[ "B" ],
+					[ "0" ],
+					[ "A" ]
+				],
+				"mapping": {
+					"H": "lepidodendron:bat_head",
+					"0": "lepidodendron:guano_block",
+					"B": "lepidodendron:guano_block",
+					"A": "minecraft:air"
+				}
+			}
+		}
+	]
+}

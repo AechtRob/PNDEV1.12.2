@@ -1,0 +1,6 @@
+{
+    "name": "古近纪",
+    "description": "$(l)新世界秩序$()$(br)目前这一类别的动物只能在创造模式或使用史前自然复活系统获得。",
+    "icon": "paleopedia:textures/category_icon/icon_paleogene.png",
+    "sortnum": 10
+}

@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.pathfinding.Path;
@@ -117,7 +118,14 @@ public class NightFindNestAquaticAI extends AnimationAINoAnimation<EntityPrehist
         if (this.EntityPrehistoricFloraSwimmingAmphibianBase.getNestLocation() != null) {
             return this.EntityPrehistoricFloraSwimmingAmphibianBase.getNestLocation();
         }
-        return this.EntityPrehistoricFloraSwimmingAmphibianBase.findNest(this.EntityPrehistoricFloraSwimmingAmphibianBase, dist, false);
+        int searchRadius = LepidodendronConfig.nestSearch;
+        if (searchRadius < 8) {
+            searchRadius = 8;
+        }
+        if (searchRadius > 32) {
+            searchRadius = 32;
+        }
+        return this.EntityPrehistoricFloraSwimmingAmphibianBase.findNest(this.EntityPrehistoricFloraSwimmingAmphibianBase, searchRadius, false);
     }
 
     public BlockPos findRandomBlockTarget(int dist) {

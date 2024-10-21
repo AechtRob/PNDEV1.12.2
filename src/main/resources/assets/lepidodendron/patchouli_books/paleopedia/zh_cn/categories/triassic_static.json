@@ -1,0 +1,7 @@
+{
+    "name": "三叠纪固着",
+    "description": "三叠纪的固着动物",
+    "icon": "lepidodendron:crinoid_holocrinus",
+    "parent": "lepidodendron:triassic",
+    "sortnum": 2
+}

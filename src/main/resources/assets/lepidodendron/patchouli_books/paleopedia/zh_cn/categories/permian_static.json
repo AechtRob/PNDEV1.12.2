@@ -1,0 +1,7 @@
+{
+    "name": "二叠纪固着",
+    "description": "二叠纪的固着动物",
+    "icon": "lepidodendron:crinoid_jimbacrinus",
+    "parent": "lepidodendron:permian",
+    "sortnum": 2
+}

@@ -1,0 +1,7 @@
+{
+    "name": "傀儡",
+    "description": "傀儡是一种人造生物，可以通过将方块按照一定的模式组合起来而获得生命。",
+    "icon": "minecraft:pumpkin",
+    "parent": "lepidodendron:fantasy",
+    "sortnum": 1
+}

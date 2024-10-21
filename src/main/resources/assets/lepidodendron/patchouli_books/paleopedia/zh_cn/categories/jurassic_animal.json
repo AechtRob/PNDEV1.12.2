@@ -1,0 +1,7 @@
+{
+    "name": "侏罗纪动物",
+    "description": "侏罗纪的动物",
+    "icon": "paleopedia:textures/items/allosaurus_icon.png",
+    "parent": "lepidodendron:jurassic",
+    "sortnum": 1
+}

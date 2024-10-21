@@ -1,0 +1,6 @@
+{
+    "name": "Minecraft 生命",
+    "description": "$(l)为 Minecraft 幻想世界创造的生物$() $(br)这里包括已存在的和我们加入到 Minecraft 世界中的新增虚构事物，后者来自我们在加入真实史前生命时的一些灵感。",
+    "icon": "paleopedia:textures/category_icon/icon_minecraft.png",
+    "sortnum": 13
+}

@@ -1,0 +1,7 @@
+{
+    "name": "中新世动物",
+    "description": "中新世的动物",
+    "icon": "paleopedia:textures/category_icon/icon_miocene.png",
+    "parent": "lepidodendron:miocene",
+    "sortnum": 1
+}

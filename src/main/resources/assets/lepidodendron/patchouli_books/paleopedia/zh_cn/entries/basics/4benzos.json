@@ -1,0 +1,24 @@
+{
+	"name": "苯并溶剂",
+	"icon": "lepidodendron:bottle_of_dna_solvent",
+	"category": "lepidodendron:revival",
+	"sortnum": 4,
+	"pages": [
+		{
+			"type": "text",
+			"text": "苯并溶剂是由煤焦油处理器中原木和煤的受控燃烧产生的有机溶剂。有一个配置选项用以设置机器是否需要使用 RF 能源。"
+		},
+		{
+		"type": "text",
+		"text": "苯并溶剂用于溶解清洁的化石、生肉或植物材料，从中提取 DNA。它也用于生产寡核苷酸池。可以使用漏斗（以及模组等效物）从机器中输入和输出。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:coal_tar_processor_recipe"
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

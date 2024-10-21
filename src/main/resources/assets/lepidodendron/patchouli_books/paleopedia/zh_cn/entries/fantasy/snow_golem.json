@@ -1,0 +1,40 @@
+{
+	"name": "雪傀儡",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/snow_golem_icon.png",
+	"category": "lepidodendron:fantasy_golem",
+	"turnin": "lepidodendron:pf_adv_book_snow_golem",
+	"pages": [
+		{
+			"type": "text",
+			"text": "雪傀儡（Robotogolem nivalis）是一种 Minecraft 本土生物：通过将一个雕刻的南瓜放在两格雪块来创造。它会留下一条雪迹，并向周围的任何敌对生物投掷雪球。在炎热的生物群落中或在雨中时，它们可能会受到伤害并死亡。你可以通过对其使用剪刀来取回你的南瓜。"
+		},
+		{
+			"type": "entity",
+			"name": "R. nivalis",
+			"entity": "minecraft:snowman",
+			"rotate": false,
+			"default_rotation": -30
+		},
+		{
+			"type": "multiblock",
+			"name": "雪傀儡",
+			"enable_visualize": false,
+			"text": "要创建一个雪傀儡，将一个雕刻的南瓜放在两格雪块上。",
+			"multiblock": {
+				"pattern": [
+					[ "H" ],
+					[ "B" ],
+					[ "0" ],
+					[ "A" ]
+				],
+				"mapping": {
+					"H": "minecraft:pumpkin",
+					"0": "minecraft:snow",
+					"B": "minecraft:snow",
+					"A": "minecraft:air"
+				}
+			}
+		}
+	]
+}

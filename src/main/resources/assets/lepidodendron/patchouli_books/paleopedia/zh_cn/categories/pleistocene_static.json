@@ -1,0 +1,7 @@
+{
+    "name": "更新世固着",
+    "description": "更新世的固着动物",
+    "icon": "paleopedia:textures/category_icon/icon_pleistocene.png",
+    "parent": "lepidodendron:pleistocene",
+    "sortnum": 2
+}
