@@ -1,0 +1,51 @@
+{
+	"name": "Taxidermies",
+	"icon": "lepidodendron:display_case",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "标本制作系统让玩家无需建造大型围场就能展示他们在史前维度的时光。该系统既可以作为装饰方块，也可以作为在非持续移动的情况下欣赏模型的一种方式，能够展示模组中绝大多数的非固着动物。"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/taxidermy_cases.png"],
+			"title": "Different Displays"
+		},
+		{
+			"type": "text",
+			"text": "要使用该功能，玩家需要准备好想要展示的动物生肉，以及合适的展示基座。有几种展示基座广泛用于某些动物群。物品展示盒用于展示最大一格尺寸的无脊椎动物和寒武纪早期的小型鱼类（如海口鱼）。基座适用于小型陆生动物和大型极龙类。"
+		},
+		{
+			"type": "text",
+			"text": "壁装适合鱼类和中大型动物，可制作成身体或肩挂式；大型节肢动物（如薄刃虾和巨笔石鲎）也可在此展示。只需手持相应物品右击正确的基座，就会显示动物的模型。如果基座不对，物品将以类似于普通物品展示框的方式显示。"
+		},
+		{
+			"type": "text",
+			"text": "要制作一套用于展示的标本，您需要制作一个标本制作台。这张桌子需要一些填充材料，如羊毛或小麦等，外加一把标本解剖刀。当做好准备后，就可以用对应生物的生肉合成可放置标本包，然后将其放入上述的各种展示选项中。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:taxidermy_table",
+			"recipe2": "lepidodendron:taxidermy_scalpel"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:display_case_recipe",
+			"recipe2": "lepidodendron:podium_mount_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:display_case_magnifying_recipe",
+			"title": "放大展示盒"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:wall_mount_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:zircon_lens_recipe"
+		}
+	]
+}

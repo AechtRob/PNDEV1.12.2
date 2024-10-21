@@ -1,0 +1,6 @@
+{
+    "name": "前寒武纪",
+    "description": "$(l)古生代之前的古怪生命。本节包含所有前寒武纪的生命形式。$(br2)$(l)传送门方块：叠层石",
+    "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+    "sortnum": 0
+}

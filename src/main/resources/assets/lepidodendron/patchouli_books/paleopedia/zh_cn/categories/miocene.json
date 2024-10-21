@@ -1,0 +1,7 @@
+{
+    "name": "中新世",
+    "description": "$(l)(N)现代化的趋势$()$(br)目前这一类别的动物只能在创造模式或使用史前自然复活系统获得。",
+    "icon": "paleopedia:textures/category_icon/icon_miocene.png",
+    "parent": "lepidodendron:neogene",
+    "sortnum": 1
+}

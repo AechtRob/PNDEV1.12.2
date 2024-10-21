@@ -1,0 +1,7 @@
+{
+    "name": "侏罗纪固着",
+    "description": "侏罗纪的固着动物",
+    "icon": "lepidodendron:bivalve_inoceramus",
+    "parent": "lepidodendron:jurassic",
+    "sortnum": 2
+}

@@ -1,0 +1,17 @@
+{
+	"name": "红石元件",
+	"icon": "lepidodendron:redstone_component",
+	"category": "lepidodendron:revival",
+	"sortnum": 2,
+	"pages": [
+		{
+			"type": "text",
+			"text": "红石元件用于多种机器的制造"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:redstone_component_recipe",
+			"title": ""
+		}
+	]
+}

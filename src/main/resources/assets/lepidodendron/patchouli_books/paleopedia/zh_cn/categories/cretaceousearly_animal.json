@@ -1,0 +1,7 @@
+{
+    "name": "早白垩纪动物",
+    "description": "早白垩纪的动物",
+    "icon": "lepidodendron:kalligrammatid_makarkinia_raw",
+    "parent": "lepidodendron:cretaceousearly",
+    "sortnum": 1
+}

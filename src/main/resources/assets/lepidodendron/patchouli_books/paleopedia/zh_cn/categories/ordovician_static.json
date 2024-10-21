@@ -1,0 +1,7 @@
+{
+    "name": "奥陶纪固着",
+    "description": "奥陶纪的固着动物",
+    "icon": "lepidodendron:aulacera",
+    "parent": "lepidodendron:ordovician",
+    "sortnum": 2
+}

@@ -1,0 +1,40 @@
+{
+	"name": "凋灵",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/wither_icon.png",
+	"category": "lepidodendron:fantasy_golem",
+	"turnin": "lepidodendron:pf_adv_book_wither",
+	"pages": [
+		{
+			"type": "text",
+			"text": "凋灵（Robotogolem marcesecfer）是一种 Minecraft 本土生物：通过将三个凋零骷髅头放在一个灵魂沙身体上来创造。它是极其危险和敌对的，能够对玩家、其他实体和整个景观造成巨大伤害。"
+		},
+		{
+			"type": "entity",
+			"name": "R. marcescefer",
+			"entity": "minecraft:wither",
+			"rotate": false,
+			"default_rotation": -30
+		},
+		{
+			"type": "multiblock",
+			"name": "凋灵",
+			"enable_visualize": false,
+			"text": "要创建一个凋灵，将三个凋零骷髅头放在一个灵魂沙身体上。",
+			"multiblock": {
+				"pattern": [
+					[ "HHH" ],
+					[ "BBB" ],
+					[ " 0 " ],
+					[ " A " ]
+				],
+				"mapping": {
+					"H": "minecraft:skull[SkullType=1]",
+					"0": "minecraft:soul_sand",
+					"B": "minecraft:soul_sand",
+					"A": "minecraft:air"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "寒武纪固着",
+    "description": "寒武纪的固着动物",
+    "icon": "lepidodendron:stromatoveris",
+    "parent": "lepidodendron:cambrian",
+    "sortnum": 2
+}

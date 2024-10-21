@@ -1,0 +1,28 @@
+{
+	"name": "Resin and Latex",
+	"icon": "lepidodendron:bottle_of_resin",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "树脂是一种黏性液体，在本模组中用于制作骨杖等物品，并能将受重力影响的方块固定在原位避免掉落（如沙子、珊瑚和叠层石）。胶乳是一种胶状液体，可以制作成橡胶类物品，比如能避免你被泥巴方块卡住的特殊靴子。要获得这些液体，需要使用液体提取器从特定的树上提取。"
+		},
+		{
+			"type": "text",
+			"text": "提取器应该靠着一棵大小和种类合适的树放置（各种针叶树用于提取树脂，榕树用于提取胶乳）。一段时间后，提取器会慢慢开始充满液体。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:resin_extractor_recipe"
+		},
+		{
+			"type": "text",
+			"text": "红石比较器的输出可用来测试流体的提取量：满信号代表提取器已满。一个提取器最多可容纳 2000 毫桶液体（一桶 = 1000 毫桶；一瓶 = 333 毫桶）。要从提取器中取出液体，请用空桶或空瓶右击提取器。无人看管的提取器可能会溢出。（译注：会在提取器正上方生成一格流体源方块形式的对应液体）"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/resin_collection.png"],
+			"title": "树脂与胶乳收集"
+		}
+	]
+}

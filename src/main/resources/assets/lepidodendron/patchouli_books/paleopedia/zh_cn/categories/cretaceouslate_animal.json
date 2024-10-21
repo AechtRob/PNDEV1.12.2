@@ -1,0 +1,7 @@
+{
+    "name": "晚白垩纪动物",
+    "description": "晚白垩纪的动物",
+    "icon": "lepidodendron:shell_parapuzosia",
+    "parent": "lepidodendron:cretaceouslate",
+    "sortnum": 1
+}

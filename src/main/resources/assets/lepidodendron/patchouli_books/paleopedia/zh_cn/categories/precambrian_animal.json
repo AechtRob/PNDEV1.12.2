@@ -1,0 +1,7 @@
+{
+    "name": "前寒武纪动物",
+    "description": "前寒武纪的动物",
+    "icon": "paleopedia:textures/items/dickinsonia_icon.png",
+    "parent": "lepidodendron:precambrian",
+    "sortnum": 1
+}

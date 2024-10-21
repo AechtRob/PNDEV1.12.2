@@ -1,0 +1,7 @@
+{
+    "name": "泥盆纪固着",
+    "description": "泥盆纪的固着动物",
+    "icon": "lepidodendron:crinoid_ancyrocrinus",
+    "parent": "lepidodendron:devonian",
+    "sortnum": 2
+}

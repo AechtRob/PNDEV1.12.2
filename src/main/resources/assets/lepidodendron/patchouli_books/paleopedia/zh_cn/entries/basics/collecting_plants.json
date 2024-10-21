@@ -1,0 +1,34 @@
+{
+	"name": "植物收集",
+	"read_by_default": true,
+	"icon": "lepidodendron:sapling",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "除非你修改了模组配置，否则植物需要人工繁殖。有以下几种方法：$(li)产孢子植物：在植物产生孢子的部位持纸封套右击收集孢子。$(li)无树叶方块的结种子植物：在植物结种子的部位持纸封套右击收集种子。"
+		},
+		{
+			"type": "text",
+			"text": "$(li)有树叶方块的结种子植物：破坏树叶会掉落种子或果实。果实可以合成种子。如果能在方块本身上看到浆果或种子，也可以右击直接收获。$(li)苏铁：苏铁以自然循环的方式结出果锥。右击可收获一个果锥。然后将果锥合成为种子。"
+		},
+		{
+			"type": "text",
+			"text": "$(li)其他结球果的植物：破坏针叶会掉落球果。破坏球果或合成为种子。$(li)真正的开花植物：使用剪刀收集一朵花。手持该花朵右击仍在母株上的花朵，即可为其授粉并获得种子。"
+		},
+		{
+			"type": "text",
+			"text": "装满孢子或种子的纸封套可以在合成配方中用来创造活的植物。也可以直接手持纸封套右击，将里面的内容物直接播种到合适的土地上，这样也有机会从每个纸封套中获得更多植物。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:spore_envelope_recipe",
+			"recipe2": "lepidodendron:alliopteris_recipe",
+			"title": "纸封套"
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

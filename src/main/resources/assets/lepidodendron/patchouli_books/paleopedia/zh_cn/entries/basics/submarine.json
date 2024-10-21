@@ -1,0 +1,28 @@
+{
+	"name": "潜水艇",
+	"icon": "lepidodendron:submarine_boat_item",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "潜水艇",
+			"text": "潜水艇可用于水下探索。进入潜水艇时会提示移动潜水艇所需的按键。按键绑定可以在 GUI 中更改。$(br2)潜水艇需要电池才能工作。要放入电池，在外部时可以用电池直接对潜水艇右击，在内部时可以在右上方的控制面板中添加或移除电池。"
+		},
+		{
+			"type": "text",
+			"text": "左上方的控制面板会显示当前电池的剩余电量。默认情况下，电池不会耗尽。$(br2)如果你在模组配置中开启了机器对 RF 能源的需求，那么电池首先需要充电，并会随着使用慢慢耗尽。在这种情况下，当电池电量耗尽时，潜艇将停止工作！"
+		},
+		{
+			"type": "crafting",
+			"title": "潜水艇与电池",
+			"recipe": "lepidodendron:submarine_recipe",
+			"recipe2": "lepidodendron:submarine_battery"
+		},
+		{
+			"type": "image",
+			"images":["paleopedia:textures/submarine.png"],
+			"title": "潜水艇",
+			"text": ""
+		}
+	]
+}

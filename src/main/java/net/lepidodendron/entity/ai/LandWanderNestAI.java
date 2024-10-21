@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.Entity;
@@ -154,7 +155,14 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
                 this.PrehistoricFloraAgeableBase.setNestLocation(null);
             }
         }
-        return this.PrehistoricFloraAgeableBase.findNest(this.PrehistoricFloraAgeableBase, dist, true);
+        int searchRadius = LepidodendronConfig.nestSearch;
+        if (searchRadius < 8) {
+            searchRadius = 8;
+        }
+        if (searchRadius > 32) {
+            searchRadius = 32;
+        }
+        return this.PrehistoricFloraAgeableBase.findNest(this.PrehistoricFloraAgeableBase, searchRadius, true);
     }
 
     @Override

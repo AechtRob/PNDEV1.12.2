@@ -1,0 +1,7 @@
+{
+    "name": "石炭纪固着",
+    "description": "石炭纪的固着动物",
+    "icon": "lepidodendron:escumasia",
+    "parent": "lepidodendron:carboniferous",
+    "sortnum": 3
+}
