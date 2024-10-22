@@ -1,13 +1,12 @@
 {
-	"name": "Cambrian Gravels",
+	"name": "Gravels",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Cambrian Gravels",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Cambrian Gravels$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
