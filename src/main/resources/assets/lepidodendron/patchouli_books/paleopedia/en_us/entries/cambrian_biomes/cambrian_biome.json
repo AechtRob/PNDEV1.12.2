@@ -5,7 +5,8 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "Cambrian Wastes",
+			"type": "text",
+			"title": "Cambrian Wastes",
 			"text": ""
 		},
 		{

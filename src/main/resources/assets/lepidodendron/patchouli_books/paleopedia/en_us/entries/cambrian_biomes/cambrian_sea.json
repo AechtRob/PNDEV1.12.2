@@ -5,7 +5,8 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "Cambrian Ocean",
+			"type": "text",
+			"title": "Cambrian Ocean",
 			"text": ""
 		},
 		{

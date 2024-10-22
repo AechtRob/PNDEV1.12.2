@@ -5,7 +5,8 @@
 	"category": "lepidodendron:permian_biome",
 	"pages": [
 		{
-			"type": "Permian Ocean Escarpment",
+			"type": "text",
+			"title": "Permian Ocean Escarpment",
 			"text": ""
 		},
 		{

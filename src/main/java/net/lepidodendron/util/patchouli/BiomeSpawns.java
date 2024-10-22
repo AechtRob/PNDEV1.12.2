@@ -88,13 +88,15 @@ public class BiomeSpawns {
     @Nullable
     public static String[] getMobName(String mobStr, String nbtStr) {
         String[] mobName = new String[]{};
+        if (nbtStr.contains("PNType:\"male\"") || nbtStr.contains("PNType:\"female\"")) {
+            nbtStr = "";
+        }
         EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobStr));
         if (ee != null) {
             EntityLiving entity = (EntityLiving) ee.newInstance(null);
             if (entity != null) {
                 //Do we have variants?
                 if (!nbtStr.equalsIgnoreCase("")) {
-                    nbtStr = nbtStr.substring(1, nbtStr.length() - 1);
                     String[] arrSplit = new String[]{nbtStr};
                     if (nbtStr.indexOf("PNType") > 0) {
                         ArrayList<String> mobArray = new ArrayList<String>();
@@ -104,24 +106,30 @@ public class BiomeSpawns {
                         for (String mobNBT : arrSplit) {
                             NBTTagCompound nbttagcompound = new NBTTagCompound();
                             try {
-                                nbttagcompound = JsonToNBT.getTagFromJson("{" + mobNBT + "}");
-                            } catch (
-                                    NBTException nbtexception) {
+                                nbttagcompound = JsonToNBT.getTagFromJson(mobNBT);
+                            } catch (NBTException nbtexception) {
                                 //do nothing
                             }
+                            String type = "";
                             if (nbttagcompound.hasKey("PNType")) {
                                 entity.readEntityFromNBT(nbttagcompound);
+                                type = nbttagcompound.getString("PNType");
                             }
-                            mobArray.add(entity.getName());
+                            if (!type.equalsIgnoreCase("")) {
+                                mobArray.add("$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "") + "_" + type + ")" + entity.getName() + "$(/l)");
+                            }
+                            else {
+                                mobArray.add("$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "") + ")" + entity.getName() + "$(/l)");
+                            }
                         }
-                        mobName = (String[]) mobArray.toArray();
+                        mobName = mobArray.toArray(mobName);
                     }
                     else {
-                        mobName = new String[]{entity.getName()};
+                        mobName = new String[]{"$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "")  + ")" + entity.getName() + "$(/l)"};
                     }
                 }
                 else {
-                    mobName = new String[]{entity.getName()};
+                    mobName = new String[]{"$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "")  + ")" + entity.getName() + "$(/l)"};
                 }
                 entity.setDead();
                 return mobName;

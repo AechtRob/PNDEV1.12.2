@@ -5,7 +5,8 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "Cambrian Moist Wastes",
+			"type": "text",
+			"title": "Cambrian Moist Wastes",
 			"text": ""
 		},
 		{

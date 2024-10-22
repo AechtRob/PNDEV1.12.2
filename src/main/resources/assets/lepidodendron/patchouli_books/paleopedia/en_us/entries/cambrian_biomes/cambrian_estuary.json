@@ -5,7 +5,8 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "Cambrian Estuary Lagoons",
+			"type": "text",
+			"title": "Cambrian Estuary Lagoons",
 			"text": ""
 		},
 		{

@@ -5,7 +5,8 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "Cambrian Craggy Wastes",
+			"type": "text",
+			"title": "Cambrian Craggy Wastes",
 			"text": ""
 		},
 		{
