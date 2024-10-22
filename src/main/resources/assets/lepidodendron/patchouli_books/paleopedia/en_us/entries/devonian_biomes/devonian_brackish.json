@@ -1,0 +1,33 @@
+{
+	"name": "Devonian Brackish Waters",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
+	"category": "lepidodendron:devonian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Devonian Brackish Waters",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:devonian_brackish"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:devonian_brackish"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:devonian_brackish"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:devonian_brackish"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:devonian_brackish"
+		}
+	]
+}

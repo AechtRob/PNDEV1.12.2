@@ -1,0 +1,33 @@
+{
+	"name": "Ordovician Sponge Forest",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
+	"category": "lepidodendron:ordovician_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Ordovician Sponge Forest",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:ordovician_sponge_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:ordovician_sponge_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:ordovician_sponge_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:ordovician_sponge_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:ordovician_sponge_forest"
+		}
+	]
+}

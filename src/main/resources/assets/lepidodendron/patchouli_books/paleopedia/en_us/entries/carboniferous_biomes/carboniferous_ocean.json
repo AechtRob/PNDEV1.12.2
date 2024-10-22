@@ -1,0 +1,33 @@
+{
+	"name": "Carboniferous Deep Ocean",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+	"category": "lepidodendron:carboniferous_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Carboniferous Deep Ocean",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:carboniferous_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:carboniferous_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:carboniferous_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:carboniferous_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:carboniferous_ocean"
+		}
+	]
+}

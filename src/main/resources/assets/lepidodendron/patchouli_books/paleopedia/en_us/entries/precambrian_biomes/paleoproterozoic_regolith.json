@@ -1,0 +1,33 @@
+{
+	"name": "Paleoproterozoic Regolith",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Paleoproterozoic Regolith",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:paleoproterozoic_regolith"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:paleoproterozoic_regolith"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:paleoproterozoic_regolith"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:paleoproterozoic_regolith"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:paleoproterozoic_regolith"
+		}
+	]
+}

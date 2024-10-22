@@ -1,0 +1,33 @@
+{
+	"name": "Silurian Silty Swamp",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
+	"category": "lepidodendron:silurian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Silurian Silty Swamp",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:silurian_silty_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:silurian_silty_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:silurian_silty_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:silurian_silty_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:silurian_silty_swamp"
+		}
+	]
+}

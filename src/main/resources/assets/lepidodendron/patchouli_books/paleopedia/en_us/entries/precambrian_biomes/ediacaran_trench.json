@@ -1,0 +1,33 @@
+{
+	"name": "Ediacaran Deep Trench",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Ediacaran Deep Trench",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:ediacaran_trench"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:ediacaran_trench"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:ediacaran_trench"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:ediacaran_trench"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:ediacaran_trench"
+		}
+	]
+}

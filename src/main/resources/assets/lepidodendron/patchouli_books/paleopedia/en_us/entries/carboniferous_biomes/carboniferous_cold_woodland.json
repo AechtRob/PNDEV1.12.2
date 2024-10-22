@@ -1,0 +1,33 @@
+{
+	"name": "Carboniferous Cool Cordaites Woodland",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+	"category": "lepidodendron:carboniferous_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Carboniferous Cool Cordaites Woodland",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:carboniferous_cold_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:carboniferous_cold_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:carboniferous_cold_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:carboniferous_cold_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:carboniferous_cold_woodland"
+		}
+	]
+}

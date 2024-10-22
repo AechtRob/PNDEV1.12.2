@@ -1,0 +1,33 @@
+{
+	"name": "Cryogenian Ice Ocean",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Cryogenian Ice Ocean",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:cryogenian_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:cryogenian_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:cryogenian_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:cryogenian_ocean"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:cryogenian_ocean"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"name": "Devonian Vale",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
+	"category": "lepidodendron:devonian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Devonian Vale",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:devonian_vale"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:devonian_vale"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:devonian_vale"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:devonian_vale"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:devonian_vale"
+		}
+	]
+}

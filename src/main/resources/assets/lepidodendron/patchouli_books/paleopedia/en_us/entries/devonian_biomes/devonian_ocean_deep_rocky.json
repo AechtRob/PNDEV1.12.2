@@ -1,0 +1,33 @@
+{
+	"name": "Devonian Rocky Ocean",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
+	"category": "lepidodendron:devonian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Devonian Rocky Ocean",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+		}
+	]
+}

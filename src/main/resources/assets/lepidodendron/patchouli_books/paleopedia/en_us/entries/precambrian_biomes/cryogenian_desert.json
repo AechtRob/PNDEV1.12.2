@@ -1,0 +1,33 @@
+{
+	"name": "Cryogenian Ice Desert",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Cryogenian Ice Desert",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:cryogenian_desert"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:cryogenian_desert"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:cryogenian_desert"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:cryogenian_desert"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:cryogenian_desert"
+		}
+	]
+}

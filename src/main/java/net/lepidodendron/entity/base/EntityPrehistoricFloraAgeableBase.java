@@ -1024,7 +1024,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     //@Override
     public void readEntityFromNBT(NBTTagCompound compound) {
-        super.readEntityFromNBT(compound);
+        if (this.world != null) {
+            super.readEntityFromNBT(compound);
+        }
         this.setAgeTicks(compound.getInteger("AgeTicks"));
         this.setTicks(compound.getInteger("Ticks"));
         this.setTickOffset(compound.getInteger("TickOffset"));

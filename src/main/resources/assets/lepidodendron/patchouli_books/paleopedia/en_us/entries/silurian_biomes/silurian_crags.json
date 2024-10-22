@@ -1,0 +1,33 @@
+{
+	"name": "Silurian Hilly Wastes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
+	"category": "lepidodendron:silurian_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Silurian Hilly Wastes",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:silurian_crags"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:silurian_crags"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:silurian_crags"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:silurian_crags"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:silurian_crags"
+		}
+	]
+}

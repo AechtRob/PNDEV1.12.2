@@ -1,0 +1,33 @@
+{
+	"name": "Carboniferous Coal Swamp",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+	"category": "lepidodendron:carboniferous_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Carboniferous Coal Swamp",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:carboniferous_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:carboniferous_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:carboniferous_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:carboniferous_swamp"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:carboniferous_swamp"
+		}
+	]
+}

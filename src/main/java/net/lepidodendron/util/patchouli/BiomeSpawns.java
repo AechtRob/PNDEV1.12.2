@@ -38,7 +38,7 @@ public class BiomeSpawns {
                 String strNBT = "";
                 if (entry.indexOf("{") >= 0) {
                     entryName = entry.substring(0, entry.indexOf("{"));
-                    strNBT = entry.substring(entry.indexOf("{"), entry.indexOf("}") + 1);
+                    strNBT = entry.substring(entry.indexOf("{"), entry.indexOf("}:") + 1);
                 }
                 if (entryName.indexOf(":", entryName.indexOf(":") + 1) >= 0) {
                     entryName = entryName.substring(0, entryName.indexOf(":", entryName.indexOf(":") + 1));
@@ -116,26 +116,51 @@ public class BiomeSpawns {
                                 type = nbttagcompound.getString("PNType");
                             }
                             if (!type.equalsIgnoreCase("")) {
-                                mobArray.add("$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "") + "_" + type + ")" + entity.getName() + "$(/l)");
+                                if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entity.getName() + "$(/l)")) {
+                                    mobArray.add("$(l:mobs/" + getHyperlink(mobStr + "_" + type) + ")" + entity.getName() + "$(/l)");
+                                }
                             }
                             else {
-                                mobArray.add("$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "") + ")" + entity.getName() + "$(/l)");
+                                if (!mobArray.contains("$(l:mobs/" + getHyperlink(mobStr) + ")" + entity.getName() + "$(/l)")) {
+                                    mobArray.add("$(l:mobs/" + getHyperlink(mobStr) + ")" + entity.getName() + "$(/l)");
+                                }
                             }
                         }
                         mobName = mobArray.toArray(mobName);
                     }
                     else {
-                        mobName = new String[]{"$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "")  + ")" + entity.getName() + "$(/l)"};
+                        mobName = new String[]{"$(l:mobs/" + getHyperlink(mobStr)  + ")" + entity.getName() + "$(/l)"};
                     }
                 }
                 else {
-                    mobName = new String[]{"$(l:mobs/" + mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "")  + ")" + entity.getName() + "$(/l)"};
+                    mobName = new String[]{"$(l:mobs/" + getHyperlink(mobStr)  + ")" + entity.getName() + "$(/l)"};
                 }
                 entity.setDead();
                 return mobName;
             }
         }
         return null;
+    }
+
+    public static String getHyperlink(String mobStr) {
+        if (mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_jellyfish_precambrian")
+                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeojelly1")
+                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeojelly2")
+                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeojelly3")) {
+            return "ancientjelly";
+        }
+        if (mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops1")
+                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops2")
+                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops3")) {
+            return "triops";
+        }
+        if (mobStr.length() >= "lepidodendron:prehistoric_flora_dragonfly".length() && mobStr.substring("lepidodendron:prehistoric_flora_dragonfly".length()).equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
+            return "dragonfly";
+        }
+        if (mobStr.length() >= "lepidodendron:prehistoric_flora_roachoid".length() && mobStr.substring("lepidodendron:prehistoric_flora_roachoid".length()).equalsIgnoreCase("lepidodendron:prehistoric_flora_roachoid")) {
+            return "roach";
+        }
+        return mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "");
     }
 
 }

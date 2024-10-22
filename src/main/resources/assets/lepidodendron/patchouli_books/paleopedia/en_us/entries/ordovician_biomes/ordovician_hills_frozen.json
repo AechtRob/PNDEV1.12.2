@@ -1,0 +1,33 @@
+{
+	"name": "Ordovician Frozen Jagged Wastes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
+	"category": "lepidodendron:ordovician_biome",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Ordovician Frozen Jagged Wastes",
+			"text": ""
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:ordovician_hills_frozen"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:ordovician_hills_frozen"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:ordovician_hills_frozen"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:ordovician_hills_frozen"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:ordovician_hills_frozen"
+		}
+	]
+}
