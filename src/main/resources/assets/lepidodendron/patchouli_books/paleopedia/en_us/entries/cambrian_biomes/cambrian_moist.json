@@ -1,0 +1,28 @@
+{
+	"name": "Cambrian Moist Wastes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
+	"category": "lepidodendron:cambrian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:cambrian_moist"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:cambrian_moist"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:cambrian_moist"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:cambrian_moist"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:cambrian_moist"
+		}
+	]
+}

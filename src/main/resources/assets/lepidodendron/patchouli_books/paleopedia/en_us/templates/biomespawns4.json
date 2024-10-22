@@ -1,0 +1,13 @@
+{
+  "processor": "net.lepidodendron.util.patchouli.BiomeSpawns4",
+  "components": [
+    {
+      "type": "text",
+      "text": "#biome",
+      "scale": 0.1,
+
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

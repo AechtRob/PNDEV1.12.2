@@ -1,0 +1,7 @@
+{
+    "name": "Carboniferous Biomes",
+    "description": "Biomes of the carboniferous",
+    "icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+    "parent": "lepidodendron:carboniferous",
+    "sortnum": 4
+}

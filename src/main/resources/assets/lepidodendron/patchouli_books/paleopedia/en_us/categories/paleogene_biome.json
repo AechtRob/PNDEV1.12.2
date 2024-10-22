@@ -1,0 +1,7 @@
+{
+    "name": "Paleogene Biomes",
+    "description": "Biomes of the Paleogene",
+    "icon": "paleopedia:textures/category_icon/icon_paleogene.png",
+    "parent": "lepidodendron:paleogene",
+    "sortnum": 4
+}

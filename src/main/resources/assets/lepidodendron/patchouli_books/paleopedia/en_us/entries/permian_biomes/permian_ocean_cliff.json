@@ -1,0 +1,28 @@
+{
+	"name": "Permian Ocean Escarpment",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_permian.png",
+	"category": "lepidodendron:permian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:permian_ocean_cliff"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:permian_ocean_cliff"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:permian_ocean_cliff"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:permian_ocean_cliff"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:permian_ocean_cliff"
+		}
+	]
+}
