@@ -3328,14 +3328,14 @@ public class RenderHandler {
                 return new RenderCometicercus(manager);
             }
         });
-        /*
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPentecopterus.class, new IRenderFactory<EntityPrehistoricFloraPentecopterus>() {
             @Override
             public Render<? super EntityPrehistoricFloraPentecopterus> createRenderFor(RenderManager manager) {
                 return new RenderPentecopterus(manager);
             }
         });
-        */
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOxyosteus.class, new IRenderFactory<EntityPrehistoricFloraOxyosteus>() {
             @Override
             public Render<? super EntityPrehistoricFloraOxyosteus> createRenderFor(RenderManager manager) {

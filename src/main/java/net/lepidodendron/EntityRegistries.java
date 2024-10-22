@@ -914,7 +914,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_dracopelta", EntityPrehistoricFloraDracopelta.class, LepidodendronMod.ENTITY_DRACOPELTA, 84,-6325447,-13225686);
 
 
-//        registerEntity("prehistoric_flora_pentecopterus", EntityPrehistoricFloraPentecopterus.class, LepidodendronMod.ENTITY_PENTECOPTERUS, 84,-5347787,-12178662);
+        registerEntity("prehistoric_flora_pentecopterus", EntityPrehistoricFloraPentecopterus.class, LepidodendronMod.ENTITY_PENTECOPTERUS, 84,-5347787,-12178662);
         registerEntity("prehistoric_flora_leedsichthys", EntityPrehistoricFloraLeedsichthys.class, LepidodendronMod.ENTITY_LEEDSICHTHYS, 164,-12368053,-4671057);
         registerEntity("prehistoric_flora_pliosaurus", EntityPrehistoricFloraPliosaurus.class, LepidodendronMod.ENTITY_PLIOSAURUS, 164,-13421773,-4671057);
         registerEntity("prehistoric_flora_attenborites", EntityPrehistoricFloraAttenborites.class, LepidodendronMod.ENTITY_ATTENBORITES, 48,-9590956,-15756152);
@@ -974,6 +974,19 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_khoratamia", EntityPrehistoricFloraKhoratamia.class, LepidodendronMod.ENTITY_KHORATAMIA, 48,-9421269,-4150191);
         registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
         registerEntity("prehistoric_flora_sinamia", EntityPrehistoricFloraSinamia.class, LepidodendronMod.ENTITY_SINAMIA, 48,-7835033,-13948892);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+//        registerEntity("prehistoric_flora_pachyamia", EntityPrehistoricFloraPachyamia.class, LepidodendronMod.ENTITY_PACHYAMIA, 64,-12965591,-4739438);
+
 
 
 
