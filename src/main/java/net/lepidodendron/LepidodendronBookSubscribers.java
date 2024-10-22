@@ -5755,24 +5755,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-//			else if (event.getTarget() instanceof EntityPrehistoricFloraPentecopterus) {
-//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-//					ModTriggers.CLICK_PENTECOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-//				}
-//				event.getEntityPlayer().swingArm(event.getHand());
-//				deliverStatsEntity(event);
-//				event.setCanceled(true);
-//				return;
-//			}
-//			else if (event.getTarget() instanceof EntityPrehistoricFloraOrcanopterus) {
-//				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-//					ModTriggers.CLICK_ORCANOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
-//				}
-//				event.getEntityPlayer().swingArm(event.getHand());
-//				deliverStatsEntity(event);
-//				event.setCanceled(true);
-//				return;
-//			}
+
 			else if (event.getTarget() instanceof EntityPrehistoricFloraOnychopterella) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_ONYCHOPTERELLA.trigger((EntityPlayerMP) event.getEntityPlayer());

@@ -5004,6 +5004,9 @@ public class LepidodendronSorter {
     public static final int pachyamia_raw = 4999;
     public static final int sinamia_raw = 5000;
     public static final int haplolepis_raw = 5001;
+    public static final int calamopleurus_raw = 5002;
+    public static final int tesnusocaris_raw = 5003;
+    public static final int onychoselache_raw = 5004;
 
 
 }

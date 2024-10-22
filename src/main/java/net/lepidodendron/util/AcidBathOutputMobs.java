@@ -260,7 +260,7 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPanderodus.class)).getRegistryName().toString(),
                // (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPromissum.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraSacabambaspis.class)).getRegistryName().toString(),
-                //(net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPentecopterus.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPentecopterus.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraPlatypeltoides.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraChasmataspis.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAngelina.class)).getRegistryName().toString(),
