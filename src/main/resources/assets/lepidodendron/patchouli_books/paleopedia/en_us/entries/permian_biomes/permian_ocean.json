@@ -5,6 +5,10 @@
 	"category": "lepidodendron:permian_biome",
 	"pages": [
 		{
+			"type": "Permian Deep Ocean",
+			"text": ""
+		},
+		{
 			"type": "lepidodendron:biomespawns1",
 			"biome": "lepidodendron:permian_ocean"
 		},

@@ -5,6 +5,10 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
+			"type": "Cambrian Ocean Shore",
+			"text": ""
+		},
+		{
 			"type": "lepidodendron:biomespawns1",
 			"biome": "lepidodendron:cambrian_sea_shore"
 		},

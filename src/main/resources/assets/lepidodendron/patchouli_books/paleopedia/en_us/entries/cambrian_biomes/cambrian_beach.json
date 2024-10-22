@@ -5,6 +5,10 @@
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
+			"type": "Cambrian Gravels",
+			"text": ""
+		},
+		{
 			"type": "lepidodendron:biomespawns1",
 			"biome": "lepidodendron:cambrian_beach"
 		},
