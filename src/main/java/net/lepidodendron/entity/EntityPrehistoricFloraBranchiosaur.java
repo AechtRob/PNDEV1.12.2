@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 		return true;
 	}
 
-	public static String getPeriod() {return "late Carboniferous - early Permian";}
+	public static String getPeriod() {return "early Permian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

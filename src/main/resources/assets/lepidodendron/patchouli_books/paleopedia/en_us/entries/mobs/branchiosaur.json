@@ -1,5 +1,5 @@
 {
-	"name": "Branchiosaurs",
+	"name": "Melanerpeton",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/branchiosaur_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
@@ -7,14 +7,14 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_branchiosaur",
-			"title": "Branchiosaurs",
+			"title": "Melanerpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Amphibamiformes$(br)>Branchiosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)>Amphibia$(br)>Temnospondyli$(br)>Amphibamiformes$(br)>Branchiosauridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/branchiosaur.png"],
-			"title": "Branchiosauridae",
+			"title": "M. tenerum",
 			"text": ""
 		},
 		{
