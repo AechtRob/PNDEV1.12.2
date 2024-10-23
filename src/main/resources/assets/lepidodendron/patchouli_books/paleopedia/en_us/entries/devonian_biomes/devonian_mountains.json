@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Mountains",
+	"name": "Mountains",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Mountains",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Mountains$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

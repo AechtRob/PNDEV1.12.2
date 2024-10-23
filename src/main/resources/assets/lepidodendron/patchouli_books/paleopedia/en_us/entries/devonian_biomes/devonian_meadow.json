@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Wet Meadow",
+	"name": "Wet Meadow",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Wet Meadow",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Wet Meadow$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

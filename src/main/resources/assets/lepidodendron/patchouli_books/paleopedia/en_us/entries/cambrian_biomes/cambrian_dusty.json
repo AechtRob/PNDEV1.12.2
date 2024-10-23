@@ -1,13 +1,12 @@
 {
-	"name": "Cambrian Dusty Wastes",
+	"name": "Dusty Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Cambrian Dusty Wastes",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Cambrian Dusty Wastes$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

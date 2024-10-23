@@ -1,6 +1,6 @@
 {
     "name": "Jurassic Biomes",
-    "description": "Biomes of the Jurassic",
+    "description": "Biomes of the Jurassic$(br2)201.4 - 145.0 mya",
     "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
     "parent": "lepidodendron:jurassic",
     "sortnum": 4

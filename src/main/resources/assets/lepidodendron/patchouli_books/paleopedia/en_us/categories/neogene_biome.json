@@ -1,6 +1,6 @@
 {
     "name": "Neogene Biomes",
-    "description": "Biomes of the Neogene",
+    "description": "Biomes of the Neogene$(br2)23.03 - 2.588 mya",
     "icon": "paleopedia:textures/category_icon/icon_neogene.png",
     "parent": "lepidodendron:neogene",
     "sortnum": 4

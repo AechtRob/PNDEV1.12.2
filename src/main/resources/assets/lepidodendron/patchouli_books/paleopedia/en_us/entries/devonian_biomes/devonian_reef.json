@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Barrier Reef",
+	"name": "Barrier Reef",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Barrier Reef",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Barrier Reef$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

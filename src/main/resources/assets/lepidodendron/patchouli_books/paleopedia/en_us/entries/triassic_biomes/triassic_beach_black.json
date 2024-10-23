@@ -1,0 +1,32 @@
+{
+	"name": "Pumice Beach",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
+	"category": "lepidodendron:triassic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Triassic Pumice Beach$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:triassic_Pumice Beach_black"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:triassic_Pumice Beach_black"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:triassic_Pumice Beach_black"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:triassic_Pumice Beach_black"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:triassic_Pumice Beach_black"
+		}
+	]
+}

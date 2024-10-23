@@ -1,13 +1,12 @@
 {
-	"name": "Carboniferous Volcanic Tarns",
+	"name": "Volcanic Tarns",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
 	"category": "lepidodendron:carboniferous_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Carboniferous Volcanic Tarns",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Carboniferous Volcanic Tarns$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

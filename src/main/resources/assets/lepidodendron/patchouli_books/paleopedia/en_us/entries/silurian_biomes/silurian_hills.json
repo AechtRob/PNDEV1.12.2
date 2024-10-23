@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Undulating Wastes",
+	"name": "Undulating Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Undulating Wastes",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Undulating Wastes$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

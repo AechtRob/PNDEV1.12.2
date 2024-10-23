@@ -365,6 +365,9 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		{
 			return this.getCustomNameTag();
 		}
+		else if (this.dataManager.get(INSECT_TYPE) < 1) {
+			return I18n.translateToLocal("entity.prehistoric_flora_dragonfly.name");
+		}
 		else
 		{
 			return I18n.translateToLocal("entity.prehistoric_flora_dragonfly_" + this.getPNType().getName() + ".name");

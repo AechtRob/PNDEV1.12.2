@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Vale",
+	"name": "Vale",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Vale",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Vale$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

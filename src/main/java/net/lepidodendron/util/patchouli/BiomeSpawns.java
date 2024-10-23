@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class BiomeSpawns {
@@ -31,6 +32,19 @@ public class BiomeSpawns {
             return "";
         }
         String[] mobList = EntityLists.mobString(biome);
+        if (biomeID.equalsIgnoreCase("lepidodendron:jurassic_island_large_field")) {
+            //Need to combine several biomes together for this one!
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            biome = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:jurassic_island_large_scrub"));
+            String[] mobList1 = EntityLists.mobString(biome);
+            ObjectArrayList<String> spawnListJoiner1 = new ObjectArrayList<String>(Arrays.asList(mobList1));
+            biome = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:jurassic_island_large_wet"));
+            String[] mobList2 = EntityLists.mobString(biome);
+            ObjectArrayList<String> spawnListJoiner2 = new ObjectArrayList<String>(Arrays.asList(mobList2));
+            spawnListJoiner.addAll(spawnListJoiner1);
+            spawnListJoiner.addAll(spawnListJoiner2);
+            mobList = spawnListJoiner.toArray(mobList);
+        }
         ObjectArrayList<String> spawnListInterim = new ObjectArrayList<String>();
         if (mobList.length >= 1) {
             for (String entry : mobList) {
@@ -52,14 +66,15 @@ public class BiomeSpawns {
                     }
                     if (entry.contains("lepidodendron:prehistoric_flora_turboscinetes")) {
                         //They school with this
-                        EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation("lepidodendron:prehistoric_flora_piranhamesodon"));
-                        EntityLiving entity = (EntityLiving) ee.newInstance(null);
-                        if (entity != null) {
-                            spawnListInterim.add(entity.getName());
-                            entity.setDead();
+                        String mobNameT[] = getMobName("lepidodendron:prehistoric_flora_piranhamesodon", "");
+                        if (mobNameT != null) {
+                            for (String name : mobNameT) {
+                                if (!spawnListInterim.contains(name)) {
+                                    spawnListInterim.add(name);
+                                }
+                            }
                         }
                     }
-
                 }
             }
             Collections.sort(spawnListInterim);
@@ -154,10 +169,10 @@ public class BiomeSpawns {
                 || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops3")) {
             return "triops";
         }
-        if (mobStr.length() >= "lepidodendron:prehistoric_flora_dragonfly".length() && mobStr.substring("lepidodendron:prehistoric_flora_dragonfly".length()).equalsIgnoreCase("lepidodendron:prehistoric_flora_dragonfly")) {
+        if (mobStr.contains("_dragonfly_")) {
             return "dragonfly";
         }
-        if (mobStr.length() >= "lepidodendron:prehistoric_flora_roachoid".length() && mobStr.substring("lepidodendron:prehistoric_flora_roachoid".length()).equalsIgnoreCase("lepidodendron:prehistoric_flora_roachoid")) {
+        if (mobStr.contains("_roachoid_")) {
             return "roach";
         }
         return mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "");

@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Hot Springs",
+	"name": "Hot Springs",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Hot Springs",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Hot Springs$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

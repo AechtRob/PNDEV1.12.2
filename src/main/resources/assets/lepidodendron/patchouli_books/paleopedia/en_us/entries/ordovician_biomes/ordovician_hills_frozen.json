@@ -1,13 +1,12 @@
 {
-	"name": "Ordovician Frozen Jagged Wastes",
+	"name": "Frozen Jagged Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
 	"category": "lepidodendron:ordovician_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Ordovician Frozen Jagged Wastes",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Ordovician Frozen Jagged Wastes$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

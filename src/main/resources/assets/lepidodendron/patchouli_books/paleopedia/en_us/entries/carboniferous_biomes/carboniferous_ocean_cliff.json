@@ -1,13 +1,12 @@
 {
-	"name": "Carboniferous Ocean Escarpment",
+	"name": "Ocean Escarpment",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
 	"category": "lepidodendron:carboniferous_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Carboniferous Ocean Escarpment",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Carboniferous Ocean Escarpment$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

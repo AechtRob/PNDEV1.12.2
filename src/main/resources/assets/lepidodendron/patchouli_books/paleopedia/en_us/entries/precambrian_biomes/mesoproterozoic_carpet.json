@@ -2,12 +2,11 @@
 	"name": "Mesoproterozoic Carpet",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
-	"category": "lepidodendron:precambrian_biome",
+	"category": "lepidodendron:precambrian_proterozoic_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Mesoproterozoic Carpet",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Mesoproterozoic Carpet$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Stromatoporoidea Reef",
+	"name": "Stromatoporoidea Reef",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Stromatoporoidea Reef",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Stromatoporoidea Reef$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

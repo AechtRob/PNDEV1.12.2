@@ -1,13 +1,12 @@
 {
-	"name": "Cambrian Estuary Lagoons",
+	"name": "Estuary Lagoons",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
 	"category": "lepidodendron:cambrian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Cambrian Estuary Lagoons",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Cambrian Estuary Lagoons$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

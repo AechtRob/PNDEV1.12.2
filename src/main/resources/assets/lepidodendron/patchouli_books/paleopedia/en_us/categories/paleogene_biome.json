@@ -1,6 +1,6 @@
 {
     "name": "Paleogene Biomes",
-    "description": "Biomes of the Paleogene",
+    "description": "Biomes of the Paleogene$(br2)100.5 - 23.03 mya",
     "icon": "paleopedia:textures/category_icon/icon_paleogene.png",
     "parent": "lepidodendron:paleogene",
     "sortnum": 4

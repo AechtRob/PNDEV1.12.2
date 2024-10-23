@@ -1,0 +1,32 @@
+{
+	"name": "Cool Temperate Forest Clearing",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
+	"category": "lepidodendron:triassic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Triassic Cool Temperate Forest Clearing$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
+		}
+	]
+}

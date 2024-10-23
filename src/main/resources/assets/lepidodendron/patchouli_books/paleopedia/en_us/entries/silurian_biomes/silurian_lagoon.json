@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Lagoons",
+	"name": "Lagoons",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Lagoons",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Lagoons$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

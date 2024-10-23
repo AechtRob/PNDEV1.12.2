@@ -1,6 +1,6 @@
 {
     "name": "Cambrian Biomes",
-    "description": "Biomes of the Cambrian",
+    "description": "Biomes of the Cambrian$(br2)538.8 - 485.4 mya",
     "icon": "paleopedia:textures/category_icon/icon_cambrian.png",
     "parent": "lepidodendron:cambrian",
     "sortnum": 4

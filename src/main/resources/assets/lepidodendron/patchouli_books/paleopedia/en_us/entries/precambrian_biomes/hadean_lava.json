@@ -1,13 +1,12 @@
 {
-	"name": "Hadean Magma Fields",
+	"name": "Magma Fields",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
-	"category": "lepidodendron:precambrian_biome",
+	"category": "lepidodendron:precambrian_hadean_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Hadean Magma Fields",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Hadean Magma Fields$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

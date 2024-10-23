@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Sandy Ocean",
+	"name": "Sandy Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Sandy Ocean",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Sandy Ocean$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

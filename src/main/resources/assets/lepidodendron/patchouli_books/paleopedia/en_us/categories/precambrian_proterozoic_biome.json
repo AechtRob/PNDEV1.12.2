@@ -1,0 +1,7 @@
+{
+    "name": "Proterozoic Biomes",
+    "description": "Biomes of the Proterozoic$(br2)2,500 - 538.8 mya",
+    "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+    "parent": "lepidodendron:precambrian_biome",
+    "sortnum": 3
+}

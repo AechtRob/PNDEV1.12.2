@@ -1,0 +1,32 @@
+{
+	"name": "Woodland",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
+	"category": "lepidodendron:triassic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Triassic Woodland$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:triassic_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:triassic_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:triassic_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:triassic_woodland"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:triassic_woodland"
+		}
+	]
+}

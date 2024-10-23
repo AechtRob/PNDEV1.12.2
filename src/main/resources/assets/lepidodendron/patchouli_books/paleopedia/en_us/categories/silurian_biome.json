@@ -1,6 +1,6 @@
 {
     "name": "Silurian Biomes",
-    "description": "Biomes of the Silurian",
+    "description": "Biomes of the Silurian$(br2)443.8 - 419.2 mya",
     "icon": "paleopedia:textures/category_icon/icon_silurian.png",
     "parent": "lepidodendron:silurian",
     "sortnum": 4

@@ -1,0 +1,32 @@
+{
+	"name": "Desert Islands",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
+	"category": "lepidodendron:jurassic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Jurassic Desert Islands$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:jurassic_desert_island"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:jurassic_desert_island"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:jurassic_desert_island"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:jurassic_desert_island"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:jurassic_desert_island"
+		}
+	]
+}

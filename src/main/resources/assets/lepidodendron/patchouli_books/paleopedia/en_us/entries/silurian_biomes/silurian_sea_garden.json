@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Crinoid Garden",
+	"name": "Crinoid Garden",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Crinoid Garden",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Crinoid Garden$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

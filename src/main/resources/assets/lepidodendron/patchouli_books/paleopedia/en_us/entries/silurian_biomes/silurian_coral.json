@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Coral Cleft",
+	"name": "Coral Cleft",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Coral Cleft",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Coral Cleft$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

@@ -1,0 +1,7 @@
+{
+    "name": "Hadean Biomes",
+    "description": "Biomes of the Hadean$(br2)before 4,031 mya",
+    "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+    "parent": "lepidodendron:precambrian_biome",
+    "sortnum": 1
+}

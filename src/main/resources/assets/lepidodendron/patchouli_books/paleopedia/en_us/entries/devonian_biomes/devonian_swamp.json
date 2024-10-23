@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Swamp",
+	"name": "Swamp",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Swamp",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Swamp$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

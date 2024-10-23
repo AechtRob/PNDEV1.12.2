@@ -1,6 +1,6 @@
 {
     "name": "Carboniferous Biomes",
-    "description": "Biomes of the carboniferous",
+    "description": "Biomes of the carboniferous$(br2)358.9 - 298.9 mya",
     "icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
     "parent": "lepidodendron:carboniferous",
     "sortnum": 4

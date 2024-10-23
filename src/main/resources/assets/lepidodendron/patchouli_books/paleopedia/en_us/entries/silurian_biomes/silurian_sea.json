@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Rocky Ocean",
+	"name": "Rocky Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Rocky Ocean",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Rocky Ocean$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

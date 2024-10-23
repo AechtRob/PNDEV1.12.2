@@ -1,13 +1,12 @@
 {
-	"name": "Ordovician Lagoons",
+	"name": "Lagoons",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
 	"category": "lepidodendron:ordovician_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Ordovician Lagoons",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Ordovician Lagoons$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

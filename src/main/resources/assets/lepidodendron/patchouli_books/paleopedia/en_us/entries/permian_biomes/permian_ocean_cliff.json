@@ -1,13 +1,12 @@
 {
-	"name": "Permian Ocean Escarpment",
+	"name": "Ocean Escarpment",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
 	"category": "lepidodendron:permian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Permian Ocean Escarpment",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Permian Ocean Escarpment$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

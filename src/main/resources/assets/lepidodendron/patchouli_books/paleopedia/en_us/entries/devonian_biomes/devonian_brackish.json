@@ -1,13 +1,12 @@
 {
-	"name": "Devonian Brackish Waters",
+	"name": "Brackish Waters",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
 	"category": "lepidodendron:devonian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Devonian Brackish Waters",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Brackish Waters$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",

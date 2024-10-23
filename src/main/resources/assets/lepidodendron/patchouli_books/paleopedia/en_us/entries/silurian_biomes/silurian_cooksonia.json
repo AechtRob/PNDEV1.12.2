@@ -1,13 +1,12 @@
 {
-	"name": "Silurian Cooksonia Fields",
+	"name": "Cooksonia Fields",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
 	"category": "lepidodendron:silurian_biome",
 	"pages": [
 		{
-			"type": "text",
-			"title": "Silurian Cooksonia Fields",
-			"text": ""
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Cooksonia Fields$(br2)$()Text here..."
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
