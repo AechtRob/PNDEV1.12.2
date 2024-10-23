@@ -83,7 +83,7 @@ public class BiomeSpawns {
             }
             if (from + 1 <= spawnListInterim.size()) {
                 for (int i = from; i <= to; i++) {
-                    spawnListFinal = spawnListFinal + "$(li)" + spawnListInterim.get(i) + "$(br)";
+                    spawnListFinal = spawnListFinal + spawnListInterim.get(i) + "$(br)";
                 }
             }
             if (spawnListFinal.length() >= 1) {
