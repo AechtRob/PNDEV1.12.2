@@ -10,23 +10,23 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_deset_rocky"
+			"biome": "lepidodendron:triassic_desert_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_deset_rocky"
+			"biome": "lepidodendron:triassic_desert_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_deset_rocky"
+			"biome": "lepidodendron:triassic_desert_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_deset_rocky"
+			"biome": "lepidodendron:triassic_desert_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_deset_rocky"
+			"biome": "lepidodendron:triassic_desert_rocky"
 		}
 	]
 }

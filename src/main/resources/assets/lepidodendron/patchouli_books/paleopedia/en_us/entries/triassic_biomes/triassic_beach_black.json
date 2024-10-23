@@ -10,23 +10,23 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_Pumice Beach_black"
+			"biome": "lepidodendron:triassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_Pumice Beach_black"
+			"biome": "lepidodendron:triassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_Pumice Beach_black"
+			"biome": "lepidodendron:triassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_Pumice Beach_black"
+			"biome": "lepidodendron:triassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_Pumice Beach_black"
+			"biome": "lepidodendron:triassic_beach_black"
 		}
 	]
 }
