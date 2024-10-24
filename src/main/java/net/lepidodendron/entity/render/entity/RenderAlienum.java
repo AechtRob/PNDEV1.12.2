@@ -15,7 +15,7 @@ public class RenderAlienum extends RenderLivingBaseWithBook<EntityPrehistoricFlo
         super(mgr, new ModelAlienum(), 0.0f);
     }
 
-    public static float getScaler() {return 0.4F; }
+    public static float getScaler() {return 0.3F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAlienum entity) {

@@ -5007,6 +5007,51 @@ public class LepidodendronSorter {
     public static final int calamopleurus_raw = 5002;
     public static final int tesnusocaris_raw = 5003;
     public static final int onychoselache_raw = 5004;
+    public static final int ningxiaplatysomus_raw = 5005;
+    public static final int australichthys_raw = 5006;
+    public static final int anderella_raw = 5007;
+    public static final int aetheretmon_raw = 5008;
+    public static final int rolfeia_raw = 5009;
+    public static final int acherontiscus_raw = 5010;
+    public static final int amphibian_spawn_acherontiscus = 5011;
+    public static final int amphibian_spawn_acherontiscus_worldgen = 5012;
+    public static final int nematoptychius_raw = 5013;
+    public static final int amphicentrum_raw = 5014;
+    public static final int carbotubulus_raw = 5015;
+    public static final int anthracosaurus_raw = 5016;
+    public static final int sclerocephalus_raw = 5017;
+    public static final int amphibian_spawn_anthracosaurus = 5018;
+    public static final int amphibian_spawn_anthracosaurus_worldgen = 5020;
+    public static final int amphibian_spawn_sclerocephalus = 5021;
+    public static final int amphibian_spawn_sclerocephalus_worldgen = 5022;
+    public static final int screbinodus_raw = 5023;
+    public static final int geragnostus_raw = 5024;
+    public static final int urasterella_item = 5025;
+    public static final int camanchia_raw = 5026;
+    public static final int pseudonaraoia_raw = 5027;
+    public static final int naraoia_spinosa_raw = 5028;
+    public static final int naraoia_bertiensis_raw = 5029;
+    public static final int tetrameroceras_raw = 5030;
+    public static final int shell_tetrameroceras = 5031;
+    public static final int dracoraptor_raw = 5032;
+    public static final int eggs_dracoraptor = 5033;
+    public static final int prestosuchus_raw = 5034;
+    public static final int eggs_prestosuchus = 5035;
+    public static final int kannemeyeria_raw = 5036;
+    public static final int trilophosaurus_raw = 5037;
+    public static final int lesothosaurus_raw = 5038;
+    public static final int eggs_kannemeyeria = 5039;
+    public static final int eggs_trilophosaurus = 5040;
+    public static final int eggs_lesothosaurus = 5041;
+    public static final int qianosuchus_raw = 5042;
+    public static final int knoetschkesuchus_raw = 5043;
+    public static final int eggs_qianosuchus = 5044;
+    public static final int eggs_knoetschkesuchus = 5045;
+    public static final int eggs_litargosuchus = 5046;
+    public static final int eggs_tropidosuchus = 5047;
+    public static final int litargosuchus_raw = 5048;
+    public static final int tropidosuchus_raw = 5049;
+
 
 
 }

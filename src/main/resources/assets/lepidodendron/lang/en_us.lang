@@ -9094,3 +9094,65 @@ advancements.pf_adv_book_solnhofenamia.title=Solnhofenamia
 item.pf_solnhofenamia_raw.name=Raw Solnhofenamia
 entity.prehistoric_flora_solnhofenamia.name=Solnhofenamia
 
+
+advancements.pf_adv_book_calamopleurus.description=Unlock the entry for Calamopleurus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_tetrameroceras.description=Unlock the entry for Tetrameroceras in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_dracoraptor.description=Unlock the entry for Dracoraptor in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_prestosuchus.description=Unlock the entry for Prestosuchus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_kannemeyeria.description=Unlock the entry for Kannemeyeria in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_lesothosaurus.description=Unlock the entry for Lesothosaurus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_qianosuchus.description=Unlock the entry for Qianosuchus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_knoetschkesuchus.description=Unlock the entry for Knoetschkesuchus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_litargosuchus.description=Unlock the entry for Litargosuchus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_tropidosuchus.description=Unlock the entry for Tropidosuchus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_calamopleurus.title=Calamopleurus
+advancements.pf_adv_book_tetrameroceras.title=Tetrameroceras
+advancements.pf_adv_book_dracoraptor.title=Dracoraptor
+advancements.pf_adv_book_prestosuchus.title=Prestosuchus
+advancements.pf_adv_book_kannemeyeria.title=Kannemeyeria
+advancements.pf_adv_book_lesothosaurus.title=Lesothosaurus
+advancements.pf_adv_book_qianosuchus.title=Qianosuchus
+advancements.pf_adv_book_knoetschkesuchus.title=Knoetschkesuchus
+advancements.pf_adv_book_litargosuchus.title=Litargosuchus
+advancements.pf_adv_book_tropidosuchus.title=Tropidosuchus
+item.pf_calamopleurus_raw.name=Raw Calamopleurus
+item.pf_tetrameroceras_raw.name=Raw Tetrameroceras
+item.pf_dracoraptor_raw.name=Raw Dracoraptor
+item.pf_prestosuchus_raw.name=Raw Prestosuchus
+item.pf_kannemeyeria_raw.name=Raw Kannemeyeria
+item.pf_lesothosaurus_raw.name=Raw Lesothosaurus
+item.pf_qianosuchus_raw.name=Raw Qianosuchus
+item.pf_knoetschkesuchus_raw.name=Raw Knoetschkesuchus
+item.pf_litargosuchus_raw.name=Raw Litargosuchus
+item.pf_tropidosuchus_raw.name=Raw Tropidosuchus
+item.pf_wardichthys_raw.name=Raw Wardichthys
+item.pf_pambdelurion_raw.name=Raw Pambdelurion
+advancements.pf_adv_book_wardichthys.description=Unlock the entry for Wardichthys in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_pambdelurion.description=Unlock the entry for Pambdelurion in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_wardichthys.title=Wardichthys
+advancements.pf_adv_book_pambdelurion.title=Pambdelurion
+entity.prehistoric_flora_wardichthys.name=Wardichthys
+entity.prehistoric_flora_pambdelurion.name=Pambdelurion
+entity.prehistoric_flora_calamopleurus.name=Calamopleurus
+entity.prehistoric_flora_tetrameroceras.name=Tetrameroceras
+entity.prehistoric_flora_dracoraptor.name=Dracoraptor
+entity.prehistoric_flora_prestosuchus.name=Prestosuchus
+entity.prehistoric_flora_kannemeyeria.name=Kannemeyeria
+entity.prehistoric_flora_lesothosaurus.name=Lesothosaurus
+entity.prehistoric_flora_qianosuchus.name=Qianosuchus
+entity.prehistoric_flora_knoetschkesuchus.name=Knoetschkesuchus
+entity.prehistoric_flora_litargosuchus.name=Litargosuchus
+entity.prehistoric_flora_tropidosuchus.name=Tropidosuchus
+item.pf_eggs_dracoraptor.name=Dracoraptor Eggs
+item.pf_eggs_prestosuchus.name=Prestosuchus Eggs
+item.pf_eggs_kannemeyeria.name=Kannemeyeria Eggs
+item.pf_eggs_trilophosaurus.name=Trilophosaurus Eggs
+item.pf_eggs_lesothosaurus.name=Lesothosaurus Eggs
+item.pf_eggs_qianosuchus.name=Qianosuchus Eggs
+item.pf_eggs_knoetschkesuchus.name=Knoetschkesuchus Eggs
+item.pf_eggs_litargosuchus.name=Litargosuchus Eggs
+item.pf_eggs_tropidosuchus.name=Tropidosuchus Eggs
+
+
+
+

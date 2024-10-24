@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:nematoptychius_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_nematoptychius.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_nematoptychius.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_nematoptychius"
+		}
+	}
+}

@@ -15,7 +15,7 @@ public class RenderPachyamia extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelPachyamia(), 0.0f);
     }
 
-    public static float getScaler() {return 0.7F; }
+    public static float getScaler() {return 0.5F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPachyamia entity) {

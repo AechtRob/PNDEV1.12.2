@@ -79,6 +79,11 @@ public class EntityPrehistoricFloraPachyamia extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
+	@Override
+	public int getAttackLength() {
+		return 10;
+	}
+
 	public static String getPeriod() {return "early Cretaceous - late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
