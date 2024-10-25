@@ -371,7 +371,7 @@ public class ModelCalamopleurus extends ModelBasePalaeopedia {
         //this.head.offsetY = 0.8F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5};
-        ((EntityPrehistoricFloraSinamia)e).tailBuffer.applyChainSwingBuffer(fishTail);
+        ((EntityPrehistoricFloraCalamopleurus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.186F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

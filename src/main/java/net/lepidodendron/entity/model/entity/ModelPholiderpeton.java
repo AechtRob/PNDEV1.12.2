@@ -3,6 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraCalamopleurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPholiderpeton;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
@@ -510,6 +511,7 @@ public class ModelPholiderpeton extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
 
         EntityPrehistoricFloraPholiderpeton entitySilesaurus = (EntityPrehistoricFloraPholiderpeton) e;
+        ((EntityPrehistoricFloraPholiderpeton)e).tailBuffer.applyChainSwingBuffer(Tail);
 
         if (entitySilesaurus.getAnimation() == entitySilesaurus.LAY_ANIMATION) {
 
@@ -643,6 +645,11 @@ public class ModelPholiderpeton extends ModelBasePalaeopedia {
             yy = 35.55633 + (((tickAnim - 31) / 8) * (27.17789-(35.55633)));
             zz = 42.02361 + (((tickAnim - 31) / 8) * (-0.3754-(42.02361)));
         }
+        else if (tickAnim >= 39 && tickAnim < 43) {
+            xx = -11.83284 + (((tickAnim - 39) / 4) * (-11.83284-(-11.83284)));
+            yy = 27.17789 + (((tickAnim - 39) / 4) * (27.17789-(27.17789)));
+            zz = -0.3754 + (((tickAnim - 39) / 4) * (-0.3754-(-0.3754)));
+        }
         else {
             xx = 0;
             yy = 0;
@@ -695,6 +702,11 @@ public class ModelPholiderpeton extends ModelBasePalaeopedia {
             xx = -0.225 + (((tickAnim - 8) / 12) * (0-(-0.225)));
             yy = 0.1 + (((tickAnim - 8) / 12) * (0-(0.1)));
             zz = 0 + (((tickAnim - 8) / 12) * (0-(0)));
+        }
+        else if (tickAnim >= 20 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 20) / 23) * (0-(0)));
+            yy = 0 + (((tickAnim - 20) / 23) * (0-(0)));
+            zz = 0 + (((tickAnim - 20) / 23) * (0-(0)));
         }
         else {
             xx = 0;
@@ -821,7 +833,10 @@ public class ModelPholiderpeton extends ModelBasePalaeopedia {
         this.Hipslope.rotationPointX = this.Hipslope.rotationPointX + (float)(0);
         this.Hipslope.rotationPointY = this.Hipslope.rotationPointY - (float)(0);
         this.Hipslope.rotationPointZ = this.Hipslope.rotationPointZ + (float)(0);
+
         this.setRotateAngle(Neck, Neck.rotateAngleX + (float) Math.toRadians(-0.25), Neck.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/2.125+30))*5), Neck.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/2.125-15))*-1));
+
+
         this.Lowerjawslopeback.setScale((float)1,(float)(0.9375-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*170/0.5))*-0.02),(float)1);
 
 
@@ -1037,9 +1052,6 @@ public class ModelPholiderpeton extends ModelBasePalaeopedia {
         this.Righthindfoot.rotationPointX = this.Righthindfoot.rotationPointX + (float)(xx);
         this.Righthindfoot.rotationPointY = this.Righthindfoot.rotationPointY - (float)(yy);
         this.Righthindfoot.rotationPointZ = this.Righthindfoot.rotationPointZ + (float)(zz);
-
-        
-
     }
     public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraPholiderpeton entity = (EntityPrehistoricFloraPholiderpeton) entitylivingbaseIn;

@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnthracosaurus;
+import net.lepidodendron.entity.EntityPrehistoricFloraPholiderpeton;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -535,6 +536,7 @@ public class ModelAnthracosaurus extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
 
         EntityPrehistoricFloraAnthracosaurus entitySilesaurus = (EntityPrehistoricFloraAnthracosaurus) e;
+        ((EntityPrehistoricFloraAnthracosaurus)e).tailBuffer.applyChainSwingBuffer(Tail);
 
         if (entitySilesaurus.getAnimation() == entitySilesaurus.LAY_ANIMATION) {
 
@@ -667,6 +669,11 @@ public class ModelAnthracosaurus extends ModelBasePalaeopedia {
             xx = 2.06168 + (((tickAnim - 31) / 8) * (-11.83284-(2.06168)));
             yy = 35.55633 + (((tickAnim - 31) / 8) * (27.17789-(35.55633)));
             zz = 42.02361 + (((tickAnim - 31) / 8) * (-0.3754-(42.02361)));
+        }
+        else if (tickAnim >= 39 && tickAnim < 43) {
+            xx = -11.83284 + (((tickAnim - 39) / 4) * (-11.83284-(-11.83284)));
+            yy = 27.17789 + (((tickAnim - 39) / 4) * (27.17789-(27.17789)));
+            zz = -0.3754 + (((tickAnim - 39) / 4) * (-0.3754-(-0.3754)));
         }
         else {
             xx = 0;
@@ -1054,7 +1061,6 @@ public class ModelAnthracosaurus extends ModelBasePalaeopedia {
 
 
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*170-115))*0.5), jaw.rotateAngleY + (float) Math.toRadians(0), jaw.rotateAngleZ + (float) Math.toRadians(0));
-
     }
     public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAnthracosaurus entity = (EntityPrehistoricFloraAnthracosaurus) entitylivingbaseIn;

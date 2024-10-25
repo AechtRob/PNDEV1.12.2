@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		minWidth = 0.125F;
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;
-		maxHealthAgeable = 32.0D;
+		maxHealthAgeable = 25.0D;
 		LOOK_ANIMATION = Animation.create(220);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -96,9 +96,12 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.09F;
+		float calcSpeed = 0.15F;
+		if (this.getAnimation() == LOOK_ANIMATION) {
+			return 0.0F;
+		}
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.19f;
+			calcSpeed = 0.25f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -106,7 +109,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		if (this.getIsFast()) {
 			calcSpeed = calcSpeed * 1.8F;
 		}
-		return Math.min(2F, (this.getAgeScale() * 2F)) * calcSpeed;
+		return Math.min(2F, (this.getAgeScale())) * calcSpeed;
 	}
 
 	@Override

@@ -48,9 +48,9 @@ public class EntityPrehistoricFloraAcherontiscus extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraAcherontiscus(World world) {
 		super(world);
-		setSize(0.25F, 0.1F);
+		setSize(0.3F, 0.1F);
 		minWidth = 0.1F;
-		maxWidth = 0.25F;
+		maxWidth = 0.3F;
 		maxHeight = 0.1F;
 		maxHealthAgeable = 5.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {

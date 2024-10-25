@@ -51,11 +51,11 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 
 	public EntityPrehistoricFloraSclerocephalus(World world) {
 		super(world);
-		setSize(0.799F, 0.71F);
+		setSize(0.6F, 0.4F);
 		minWidth = 0.125F;
-		maxWidth = 0.799F;
-		maxHeight = 0.71F;
-		maxHealthAgeable = 32.0D;
+		maxWidth = 0.6F;
+		maxHeight = 0.4F;
+		maxHealthAgeable = 20.0D;
 		LOOK_ANIMATION = Animation.create(100);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -90,9 +90,12 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.09F;
+		float calcSpeed = 0.07F;
+		if (this.getAnimation() == LOOK_ANIMATION) {
+			return 0.0F;
+		}
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.19f;
+			calcSpeed = 0.13f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

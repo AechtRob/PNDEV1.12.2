@@ -180,6 +180,7 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         //this.resetToDefaultPose();
+        this.Root.offsetZ = -0.6F;
 
         EntityPrehistoricFloraAcherontiscus Acherontiscus = (EntityPrehistoricFloraAcherontiscus) e;
 
@@ -196,17 +197,21 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
         EntityPrehistoricFloraAcherontiscus ee = (EntityPrehistoricFloraAcherontiscus) entitylivingbaseIn;
 
         //the only animation for this is managed directly by the animation ticker:
-        animMove(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        if (ee.getIsMoving()) {
+            animMove(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
+        } else {
+            animMove(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+        }
 
     }
 
-    public void animMove(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animMove(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraAcherontiscus entity = (EntityPrehistoricFloraAcherontiscus) entitylivingbaseIn;
-        if (entity.animSpeedAdder() <= 0) {
-            partialTickTime = 0; //If it's static don't increment partial ticks either
-        }
         int animCycle = 30;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double tickAnim = 0;
+        if (!isStatic) {
+            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        }
         double xx = 0;
         double yy = 0;
         double zz = 0;

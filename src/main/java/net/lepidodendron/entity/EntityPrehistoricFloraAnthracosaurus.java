@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraAnthracosaurus extends EntityPrehistoricFlora
 		minWidth = 0.125F;
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;
-		maxHealthAgeable = 32.0D;
+		maxHealthAgeable = 24.0D;
 		LOOK_ANIMATION = Animation.create(220);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -101,6 +101,9 @@ public class EntityPrehistoricFloraAnthracosaurus extends EntityPrehistoricFlora
 
 	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.09F;
+		if (this.getAnimation() == LOOK_ANIMATION) {
+			return 0.0F;
+		}
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.19f;
 		}
