@@ -68,10 +68,10 @@ public class EntityPrehistoricFloraRoachoidAridInsect extends EntityPrehistoricF
 
 	//public static String getHabitat() {return "Terrestrial";}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_roachoid_arid";
-	}
+//	@Override
+//	public String tagEgg () {
+//		return "insect_eggs_roachoid_arid";
+//	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}

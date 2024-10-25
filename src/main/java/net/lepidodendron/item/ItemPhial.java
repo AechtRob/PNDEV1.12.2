@@ -123,7 +123,7 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 								IBlockState state = worldIn.getBlockState(target);
 								TileEntity te = worldIn.getTileEntity(target);
 								if (te != null) {
-									te.getTileData().removeTag("egg");
+									te.getTileData().removeTag("creature");
 								}
 								worldIn.notifyBlockUpdate(target, state, state, 3);
 							}
@@ -137,8 +137,8 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					String eggRenderType = "";
 					TileEntity tileEntity = worldIn.getTileEntity(target);
 					if (tileEntity != null) {
-						if (tileEntity.getTileData().hasKey("egg")) {
-							eggRenderType = tileEntity.getTileData().getString("egg");
+						if (tileEntity.getTileData().hasKey("creature")) {
+							eggRenderType = tileEntity.getTileData().getString("creature");
 						}
 					}
 
@@ -153,7 +153,7 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 								IBlockState state = worldIn.getBlockState(target);
 								TileEntity te = worldIn.getTileEntity(target);
 								if (te != null) {
-									te.getTileData().removeTag("egg");
+									te.getTileData().removeTag("creature");
 								}
 								worldIn.notifyBlockUpdate(target, state, state, 3);
 							}

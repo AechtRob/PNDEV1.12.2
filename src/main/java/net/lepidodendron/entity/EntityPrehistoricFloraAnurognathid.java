@@ -194,6 +194,12 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
@@ -707,30 +713,30 @@ public class EntityPrehistoricFloraAnurognathid extends EntityPrehistoricFloraLa
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		switch (((EntityPrehistoricFloraAnurognathid) entity).getPNType()) {
-			case ANUROGNTHUS:
-			default:
-				return "lepidodendron:prehistoric_flora_anurognathid_anurognathus";
-
-			case BATRACHOGNATHUS:
-				return "lepidodendron:prehistoric_flora_anurognathid_batrachognathius";
-
-			case CASCOCAUDA:
-				return "lepidodendron:prehistoric_flora_anurognathid_cascocauda";
-
-			case DENDRORHYNCHOIDES:
-				return "lepidodendron:prehistoric_flora_anurognathid_dendrorhynchoides";
-
-			case JEHOLOPTERUS:
-				return "lepidodendron:prehistoric_flora_anurognathid_jeholopterus";
-
-			case SINOMACROPS:
-				return "lepidodendron:prehistoric_flora_anurognathid_sinomacrops";
-
-		}
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		switch (((EntityPrehistoricFloraAnurognathid) entity).getPNType()) {
+//			case ANUROGNTHUS:
+//			default:
+//				return "lepidodendron:prehistoric_flora_anurognathid_anurognathus";
+//
+//			case BATRACHOGNATHUS:
+//				return "lepidodendron:prehistoric_flora_anurognathid_batrachognathius";
+//
+//			case CASCOCAUDA:
+//				return "lepidodendron:prehistoric_flora_anurognathid_cascocauda";
+//
+//			case DENDRORHYNCHOIDES:
+//				return "lepidodendron:prehistoric_flora_anurognathid_dendrorhynchoides";
+//
+//			case JEHOLOPTERUS:
+//				return "lepidodendron:prehistoric_flora_anurognathid_jeholopterus";
+//
+//			case SINOMACROPS:
+//				return "lepidodendron:prehistoric_flora_anurognathid_sinomacrops";
+//
+//		}
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

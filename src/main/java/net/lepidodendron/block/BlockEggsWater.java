@@ -87,18 +87,132 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			for (String mob : waterLayingMobs) {
-				String variant = null;
-				//
 				if (SpawnLocations.spawnsHere(mob, biome.getRegistryName().toString())) {
-					(new MobSpawnGenerator(mob)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, variant);
+					String pnVariant = null;
+					int v = mob.indexOf("@");
+					if (v > 0) {
+						pnVariant = mob.substring(v + 1);
+						mob = mob.substring(0, v);
+					}
+					(new MobSpawnGenerator(mob)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, pnVariant);
 				}
 			}
 		}
 	}
 
 	public static final String[] waterLayingMobs = new String[]{
+			"lepidodendron:prehistoric_flora_acanthostega",
+			"lepidodendron:prehistoric_flora_acanthostomatops",
+			"lepidodendron:prehistoric_flora_acherontiscus",
+			"lepidodendron:prehistoric_flora_acutiramus",
+			"lepidodendron:prehistoric_flora_adelophthalmus",
+			"lepidodendron:prehistoric_flora_amphibamus",
+			"lepidodendron:prehistoric_flora_anthracosaurus",
+			"lepidodendron:prehistoric_flora_asteracanthus",
+			"lepidodendron:prehistoric_flora_balanerpeton",
+			"lepidodendron:prehistoric_flora_banksiops",
+			"lepidodendron:prehistoric_flora_barameda",
+			"lepidodendron:prehistoric_flora_barbclabornia",
+			"lepidodendron:prehistoric_flora_branchiosaur",
+			"lepidodendron:prehistoric_flora_cacops",
+			"lepidodendron:prehistoric_flora_carcinosoma",
+			"lepidodendron:prehistoric_flora_chunerpeton",
+			"lepidodendron:prehistoric_flora_ciurcopterus",
+			"lepidodendron:prehistoric_flora_cladoselache",
+			"lepidodendron:prehistoric_flora_cobelodus",
+			"lepidodendron:prehistoric_flora_crassigyrinus",
+			"lepidodendron:prehistoric_flora_dasyceps",
+			"lepidodendron:prehistoric_flora_diplocaulus",
+			"lepidodendron:prehistoric_flora_diploceraspis",
+			"lepidodendron:prehistoric_flora_diplodoselache",
+			"lepidodendron:prehistoric_flora_dracopristis",
+			"lepidodendron:prehistoric_flora_dragonfly",
+			"lepidodendron:prehistoric_flora_dvinosaurus",
+			"lepidodendron:prehistoric_flora_edestus",
+			"lepidodendron:prehistoric_flora_erasipteroides",
 			"lepidodendron:prehistoric_flora_eryops",
-			"lepidodendron:prehistoric_flora_saivodus"
+			"lepidodendron:prehistoric_flora_eurypterus",
+			"lepidodendron:prehistoric_flora_fadenia_carboniferous",
+			"lepidodendron:prehistoric_flora_fadenia_permotriassic",
+			"lepidodendron:prehistoric_flora_gephyrostegus",
+			"lepidodendron:prehistoric_flora_gerrothorax",
+			"lepidodendron:prehistoric_flora_greererpeton",
+			"lepidodendron:prehistoric_flora_helicoprion",
+			"lepidodendron:prehistoric_flora_hibbertopterus",
+			"lepidodendron:prehistoric_flora_highmilleria",
+			"lepidodendron:prehistoric_flora_hybodus",
+			"lepidodendron:prehistoric_flora_hyneria",
+			"lepidodendron:prehistoric_flora_ichthyostega",
+			"lepidodendron:prehistoric_flora_italophlebia",
+			"lepidodendron:prehistoric_flora_jaekelopterus",
+			"lepidodendron:prehistoric_flora_jeholotriton",
+			"lepidodendron:prehistoric_flora_kaibabvenator",
+			"lepidodendron:prehistoric_flora_kokomopterus",
+			"lepidodendron:prehistoric_flora_laidleria",
+			"lepidodendron:prehistoric_flora_lebachacanthus",
+			"lepidodendron:prehistoric_flora_limnoscelis",
+			"lepidodendron:prehistoric_flora_listracanthus",
+			"lepidodendron:prehistoric_flora_marmorerpeton",
+			"lepidodendron:prehistoric_flora_mastodonsaurus",
+			"lepidodendron:prehistoric_flora_megactenopetalus",
+			"lepidodendron:prehistoric_flora_megalocephalus",
+			"lepidodendron:prehistoric_flora_megalograptus",
+			"lepidodendron:prehistoric_flora_meganeura",
+			"lepidodendron:prehistoric_flora_meganeurites",
+			"lepidodendron:prehistoric_flora_meganeuropsis",
+			"lepidodendron:prehistoric_flora_megarachne",
+			"lepidodendron:prehistoric_flora_megasecoptera@sylvohymen",
+			"lepidodendron:prehistoric_flora_melosaurus",
+			"lepidodendron:prehistoric_flora_metoposaurus",
+			"lepidodendron:prehistoric_flora_mixopterus",
+			"lepidodendron:prehistoric_flora_mooreodontus",
+			"lepidodendron:prehistoric_flora_namurotypus",
+			"lepidodendron:prehistoric_flora_nigerpeton",
+			"lepidodendron:prehistoric_flora_notidanoides",
+			"lepidodendron:prehistoric_flora_onychodus",
+			"lepidodendron:prehistoric_flora_onychopterella",
+			"lepidodendron:prehistoric_flora_orcanopterus",
+			"lepidodendron:prehistoric_flora_orodus",
+			"lepidodendron:prehistoric_flora_pagea",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@delitzschala",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@dunbaria",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@homaloneura",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@maizothairos",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya",
+			"lepidodendron:prehistoric_flora_pantylus",
+			"lepidodendron:prehistoric_flora_parhybodus",
+			"lepidodendron:prehistoric_flora_parmastega",
+			"lepidodendron:prehistoric_flora_pederpes",
+			"lepidodendron:prehistoric_flora_pentecopterus",
+			"lepidodendron:prehistoric_flora_phlegethontia",
+			"lepidodendron:prehistoric_flora_pholiderpeton",
+			"lepidodendron:prehistoric_flora_platyhystrix",
+			"lepidodendron:prehistoric_flora_prionosuchus",
+			"lepidodendron:prehistoric_flora_proterogyrinus",
+			"lepidodendron:prehistoric_flora_protozygoptera",
+			"lepidodendron:prehistoric_flora_pterygotus",
+			"lepidodendron:prehistoric_flora_rhizodus",
+			"lepidodendron:prehistoric_flora_saivodus",
+			"lepidodendron:prehistoric_flora_sarcoprion",
+			"lepidodendron:prehistoric_flora_sclerocephalus",
+			"lepidodendron:prehistoric_flora_siderops",
+			"lepidodendron:prehistoric_flora_slimonia",
+			"lepidodendron:prehistoric_flora_spathicephalus",
+			"lepidodendron:prehistoric_flora_stanocephalosaurus",
+			"lepidodendron:prehistoric_flora_stenokranio",
+			"lepidodendron:prehistoric_flora_stoermeropterus",
+			"lepidodendron:prehistoric_flora_strobilopterus",
+			"lepidodendron:prehistoric_flora_tiktaalik",
+			"lepidodendron:prehistoric_flora_uranocentrodon",
+			"lepidodendron:prehistoric_flora_urocordylus",
+			"lepidodendron:prehistoric_flora_whatcheeria",
+			"lepidodendron:prehistoric_flora_wodnika",
+			"lepidodendron:prehistoric_flora_xenacanthus"
 	};
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -449,10 +563,11 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 		private int incubation;
 		private boolean hatchable;
 		private String creature;
+		private String variant;
 
 		@Override
 		public void update() {
-			if (hatchable && this.incubation <= BlockEggsWater.BlockCustom.getIncubation(world, pos)) {
+			if (this.hatchable && this.incubation <= BlockEggsWater.BlockCustom.getIncubation(world, pos)) {
 				++this.incubation; //increment the hidden tag up to 361 and stop there
 			}
 		}
@@ -463,10 +578,6 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 
 		public void setIncubation(int incubation) {
 			this.incubation = incubation;
-		}
-
-		public boolean getHatchable() {
-			return this.hatchable;
 		}
 
 		public void setHatchable(boolean hatchable) {
@@ -507,6 +618,9 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			if (compound.hasKey("hatchable")) {
 				this.creature = compound.getString("hatchable");
 			}
+			if (compound.hasKey("PNType")) {
+				this.variant = compound.getString("PNType");
+			}
 		}
 
 		@Override
@@ -518,12 +632,21 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			{
 				compound.setString("creature", this.creature);
 			}
+			if (this.hasVariant())
+			{
+				compound.setString("PNType", this.variant);
+			}
 			return compound;
 		}
 
 		public boolean hasCreature()
 		{
 			return this.creature != null && !this.creature.equals("");
+		}
+
+		public boolean hasVariant()
+		{
+			return this.variant != null && !this.variant.equals("");
 		}
 
 	}

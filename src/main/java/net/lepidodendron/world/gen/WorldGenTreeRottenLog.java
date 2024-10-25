@@ -1,8 +1,6 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockRottenLog;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.patchouli.SpawnLocations;
 import net.minecraft.block.Block;
@@ -10,16 +8,12 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -173,17 +167,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 			ArrayList<String> mobStringValid = new ArrayList<String>();
 			for (String mob : mobString) {
 				if (SpawnLocations.spawnsHere(mob, biome.getRegistryName().toString())) {
-					if (mob.contains("@")) {
-						mob = mob.substring(0, mob.indexOf("@"));
-					}
-					EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mob));
-					Entity e = ee.newInstance(worldIn);
-					if (e instanceof EntityPrehistoricFloraAgeableBase) {
-						mobStringValid.add(((EntityPrehistoricFloraAgeableBase) ee.newInstance(worldIn)).getEggNBT());
-					}
-					if (e instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
-						mobStringValid.add("lepidodendron:" + ((EntityPrehistoricFloraCrawlingFlyingInsectBase) ee.newInstance(worldIn)).tagEgg());
-					}
+					mobStringValid.add(mob);
 				}
 			}
 
@@ -196,7 +180,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 
 			TileEntity te = worldIn.getTileEntity(pos);
 			if (te != null && !stringEgg.equalsIgnoreCase("")) {
-				te.getTileData().setString("egg", stringEgg);
+				te.getTileData().setString("creature", stringEgg);
 			}
 			IBlockState state = worldIn.getBlockState(pos);
 			worldIn.notifyBlockUpdate(pos, state, state, 3);

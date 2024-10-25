@@ -584,7 +584,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = world.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						world.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -607,7 +607,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = world.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						world.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -630,7 +630,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = world.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						world.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -653,7 +653,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = world.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						world.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -677,7 +677,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = world.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						world.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -700,7 +700,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = world.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						world.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -731,7 +731,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -754,7 +754,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -777,7 +777,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -800,7 +800,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -824,7 +824,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -847,7 +847,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -1441,7 +1441,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 						return tileEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(new BlockPos(pos), "egg");
+			}.getValue(new BlockPos(pos), "creature");
 
 			EntityItem entityToSpawn = null;
 			if (!eggRenderType.equals("")) {
@@ -1502,8 +1502,8 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 		public void readFromNBT(NBTTagCompound compound)
 		{
 			super.readFromNBT(compound);
-			if (compound.hasKey("egg")) {
-				this.egg = compound.getString("egg");
+			if (compound.hasKey("creature")) {
+				this.egg = compound.getString("creature");
 			}
 		}
 
@@ -1513,7 +1513,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			if (this.hasEgg())
 			{
-				compound.setString("egg", this.egg);
+				compound.setString("creature", this.egg);
 			}
 			return compound;
 		}

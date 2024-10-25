@@ -59,11 +59,6 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPr
 	}
 
 	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_dev";
-	}
-
-	@Override
 	public float getAISpeedLand() {
 		return 0.5F;
 	}

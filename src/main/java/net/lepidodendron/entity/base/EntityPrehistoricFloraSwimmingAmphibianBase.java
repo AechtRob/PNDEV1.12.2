@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
@@ -387,6 +388,51 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
     public void onEntityUpdate()
     {
         super.onEntityUpdate();
+
+        //Lay eggs perhaps:
+        if ((!this.dropsEggs()) && (!this.laysEggs()) && (createPFChild(this) == null)) {
+            if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
+                    && (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())
+                    || BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down()))
+            ) {
+                //if (Math.random() > 0.5) {
+                this.setTicks(-50); //Flag this as stationary for egg-laying
+                //}
+            }
+
+            if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+                //Is stationary for egg-laying:
+                //System.err.println("Test2");
+                IBlockState eggs = BlockEggsWater.block.getDefaultState();
+                if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())) {
+                    if (!(world.isRemote)) {
+                        world.setBlockState(this.getPosition(), eggs);
+                        world.setTileEntity(this.getPosition(), new BlockEggsWater.TileEntityCustom());
+                        TileEntity te = world.getTileEntity(this.getPosition());
+                        te.getTileData().setString("creature", getEntityId(this));
+                        if (this.hasPNVariants() && this.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", this.getPNTypeName());
+                        }
+                    }
+                    this.setLaying(false);
+                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                }
+                if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down())) {
+                    if (!(world.isRemote)) {
+                        world.setBlockState(this.getPosition().down(), eggs);
+                        world.setTileEntity(this.getPosition().down(), new BlockEggsWater.TileEntityCustom());
+                        TileEntity te = world.getTileEntity(this.getPosition().down());
+                        te.getTileData().setString("creature", getEntityId(this));
+                        if (this.hasPNVariants() && this.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", this.getPNTypeName());
+                        }
+                    }
+                    this.setLaying(false);
+                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                }
+                this.setTicks(0);
+            }
+        }
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

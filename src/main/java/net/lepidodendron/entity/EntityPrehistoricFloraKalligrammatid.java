@@ -150,6 +150,12 @@ public class EntityPrehistoricFloraKalligrammatid extends EntityPrehistoricFlora
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		KALLIGRAMMA(1, "kalligramma"),

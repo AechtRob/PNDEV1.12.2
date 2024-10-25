@@ -557,10 +557,10 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_wukongopterus";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_wukongopterus";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

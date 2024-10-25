@@ -333,10 +333,10 @@ public class EntityPrehistoricFloraPterodactylus extends EntityPrehistoricFloraL
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_pterodactylus";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_pterodactylus";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

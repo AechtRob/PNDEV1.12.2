@@ -325,10 +325,10 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraL
 		return false;
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_eudimorphodon";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_eudimorphodon";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

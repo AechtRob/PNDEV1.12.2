@@ -47,6 +47,11 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 40; //normal spawn
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}

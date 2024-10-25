@@ -133,6 +133,12 @@ public class EntityPrehistoricFloraNotostracan extends EntityPrehistoricFloraFis
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		STRUDOPS(1, "strudops"),

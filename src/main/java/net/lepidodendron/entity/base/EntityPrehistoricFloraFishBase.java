@@ -77,6 +77,12 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         return false;
     }
 
+    @Nullable
+    public String getPNTypeName()
+    {
+        return null;
+    }
+
     /**
      * If there are variants, do they need to match, not match, or not care about matches in order to breed?
      * -1 = the variants must be different to breed

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -192,7 +193,7 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 				//Clear nbt:
 				TileEntity te = worldIn.getTileEntity(pos);
 				if (te != null) {
-					te.getTileData().removeTag("egg");
+					te.getTileData().removeTag("creature");
 				}
 				worldIn.notifyBlockUpdate(pos, state, state, 3);
 			}
@@ -226,6 +227,15 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 				}
 				if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
 					EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
+					if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+						eggType = entityBase.getEggType(creatureType);
+					}
+					else {
+						eggType = entityBase.getEggType(null);
+					}
+				}
+				if (entityEggs instanceof EntityPrehistoricFloraInsectFlyingBase) {
+					EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityEggs;
 					if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
 						eggType = entityBase.getEggType(creatureType);
 					}
@@ -428,8 +438,8 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 		public void readFromNBT(NBTTagCompound compound)
 		{
 			super.readFromNBT(compound);
-			if (compound.hasKey("egg")) {
-				this.egg = compound.getString("egg");
+			if (compound.hasKey("creature")) {
+				this.egg = compound.getString("creature");
 			}
 		}
 
@@ -439,7 +449,7 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			if (this.hasEgg())
 			{
-				compound.setString("egg", this.egg);
+				compound.setString("creature", this.egg);
 			}
 			return compound;
 		}

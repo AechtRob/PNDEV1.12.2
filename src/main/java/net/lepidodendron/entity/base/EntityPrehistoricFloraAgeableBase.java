@@ -43,7 +43,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.storage.AnvilChunkLoader;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -112,6 +111,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
         getMaxTurnDistancePerTick = 20.0F;
+    }
+
+    @Nullable
+    public String getPNTypeName()
+    {
+        return null;
     }
 
     @Nullable
@@ -300,10 +305,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
-    public String getEggNBT() {
-        return getEntityId(this);
-    }
-
     @Nullable
     public BlockPos findNest(Entity entity, int dist, boolean empty) {
         int xx;
@@ -399,7 +400,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     nestType = te.getTileData().getString("creature");
                 }
 
-                if (nestType.equalsIgnoreCase(EntityRegistry.getEntry(this.getClass()).getRegistryName().toString())) {
+                if (nestType.equalsIgnoreCase(this.getEntityId(this))) {
                     return true;
                 }
             }
@@ -1754,8 +1755,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }
-                String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-                itemstack.getTagCompound().setString("creature", stringEgg);
+                itemstack.getTagCompound().setString("creature", getEntityId(this));
                 EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
                 entityToSpawn.setPickupDelay(10);
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
@@ -1798,7 +1798,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                             ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                         }
                         else { //It must be moss or wood:
-                            te.getTileData().setString("egg", this.getEggNBT());
+                            te.getTileData().setString("creature", getEntityId(this));
                         }
                     }
                     IBlockState state = world.getBlockState(nestPos);
@@ -1824,7 +1824,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     TileEntity te = world.getTileEntity(nestPos);
                     if (te != null) {
-                        te.getTileData().setString("egg", this.getEggNBT());
+                        te.getTileData().setString("creature", getEntityId(this));
                     }
                     IBlockState state = world.getBlockState(nestPos);
                     world.notifyBlockUpdate(nestPos, state, state, 3);
@@ -1841,6 +1841,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
         if (entry != null) {
             mobid = entry.getRegistryName().toString();
+        }
+        if (this.hasPNVariants() && this.getPNTypeName() != null) {
+            mobid = mobid + "@" + this.getPNTypeName();
         }
         return mobid;
     }

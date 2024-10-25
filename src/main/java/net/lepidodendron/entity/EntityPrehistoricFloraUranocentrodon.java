@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnUranocentrodon;
+import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -26,8 +26,8 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraUranocentrodon extends EntityPrehistoricFlora
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 40; //normal spawn
 	}
 
 	@Override
@@ -232,32 +237,42 @@ public class EntityPrehistoricFloraUranocentrodon extends EntityPrehistoricFlora
 		super.onEntityUpdate();
 
 		//Lay eggs perhaps:
-		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
-				&& (BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockAt(world, this.getPosition().down()))
-		){
-			//if (Math.random() > 0.5) {
+		if ((!this.dropsEggs()) && (!this.laysEggs()) && (createPFChild(this) == null)) {
+			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
+					&& (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())
+					|| BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down()))
+			) {
+				//if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
-		}
+				//}
+			}
 
-		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockAmphibianSpawnUranocentrodon.block.getDefaultState();
-			if (BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+				//Is stationary for egg-laying:
+				//System.err.println("Test2");
+				IBlockState eggs = BlockEggsWater.block.getDefaultState();
+				if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())) {
+					if (!(world.isRemote)) {
+						world.setBlockState(this.getPosition(), eggs);
+						world.setTileEntity(this.getPosition(), new BlockEggsWater.TileEntityCustom());
+						TileEntity te = world.getTileEntity(this.getPosition());
+						te.getTileData().setString("creature", getEntityId(this));
+					}
+					this.setLaying(false);
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				}
+				if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down())) {
+					if (!(world.isRemote)) {
+						world.setBlockState(this.getPosition().down(), eggs);
+						world.setTileEntity(this.getPosition().down(), new BlockEggsWater.TileEntityCustom());
+						TileEntity te = world.getTileEntity(this.getPosition().down());
+						te.getTileData().setString("creature", getEntityId(this));
+					}
+					this.setLaying(false);
+					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+				}
+				this.setTicks(0);
 			}
-			if (BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnUranocentrodon.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
 		}
 	}
 

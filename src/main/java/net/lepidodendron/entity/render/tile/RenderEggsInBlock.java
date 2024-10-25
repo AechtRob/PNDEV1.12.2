@@ -2,6 +2,7 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.model.tile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -40,8 +41,8 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
         String eggRenderType = "";
         TileEntity tileEntity = entity.getWorld().getTileEntity(entity.getPos());
         if (tileEntity != null) {
-            if (tileEntity.getTileData().hasKey("egg")) {
-                eggRenderType = tileEntity.getTileData().getString("egg");
+            if (tileEntity.getTileData().hasKey("creature")) {
+                eggRenderType = tileEntity.getTileData().getString("creature");
             }
         }
 
@@ -68,6 +69,17 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
                     }
                     if (entityBase.isNestMound()) {
                         eggType = -1;
+                    }
+                }
+                if (entityEggs instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                    EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityEggs;
+                    if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                        TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                        eggType = entityBase.getEggType(creatureType);
+                    }
+                    else {
+                        TEXTURE_EGG = entityBase.getEggTexture(null);
+                        eggType = entityBase.getEggType(null);
                     }
                 }
                 entityEggs.setDead();

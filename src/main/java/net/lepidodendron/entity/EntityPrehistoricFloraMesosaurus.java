@@ -262,8 +262,6 @@ public class EntityPrehistoricFloraMesosaurus extends EntityPrehistoricFloraSwim
 		return LepidodendronMod.MESOSAURUS_LOOT;
 	}
 
-	
-
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraMesosaurus(this.world);

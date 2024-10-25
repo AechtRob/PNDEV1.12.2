@@ -4,9 +4,8 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEurypteridEggsHughmilleria;
+import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingBottomWalkingWaterBase;
@@ -24,8 +23,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -65,6 +64,11 @@ public class EntityPrehistoricFloraHughmilleria extends EntityPrehistoricFloraSw
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 46; //eurypterid type
 	}
 
 	//an array of all the animations
@@ -141,13 +145,11 @@ public class EntityPrehistoricFloraHughmilleria extends EntityPrehistoricFloraSw
 			}
 
 			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
-//Lay eggs perhaps:
+			//Lay eggs perhaps:
 			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
-					&& (BlockEurypteridEggsHughmilleria.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-					|| BlockEurypteridEggsHughmilleria.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-					&& (BlockEurypteridEggsHughmilleria.block.canPlaceBlockAt(world, this.getPosition())
-					|| BlockEurypteridEggsHughmilleria.block.canPlaceBlockAt(world, this.getPosition().down()))
-			) {
+					&& (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())
+					|| BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down()))
+			){
 				//if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
 				//}
@@ -156,14 +158,30 @@ public class EntityPrehistoricFloraHughmilleria extends EntityPrehistoricFloraSw
 			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 				//Is stationary for egg-laying:
 				//System.err.println("Test2");
-				IBlockState eggs = BlockEurypteridEggsHughmilleria.block.getDefaultState();
-				if (BlockEurypteridEggsHughmilleria.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsHughmilleria.block.canPlaceBlockAt(world, this.getPosition())) {
-					world.setBlockState(this.getPosition(), eggs);
+				IBlockState eggs = BlockEggsWater.block.getDefaultState();
+				if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())) {
+					if (!(world.isRemote)) {
+						world.setBlockState(this.getPosition(), eggs);
+						world.setTileEntity(this.getPosition(), new BlockEggsWater.TileEntityCustom());
+						TileEntity te = world.getTileEntity(this.getPosition());
+						te.getTileData().setString("creature", getEntityId(this));
+						if (this.hasPNVariants() && this.getPNTypeName() != null) {
+							te.getTileData().setString("PNType", this.getPNTypeName());
+						}
+					}
 					this.setLaying(false);
 					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 				}
-				if (BlockEurypteridEggsHughmilleria.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEurypteridEggsHughmilleria.block.canPlaceBlockAt(world, this.getPosition().down())) {
-					world.setBlockState(this.getPosition().down(), eggs);
+				if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down())) {
+					if (!(world.isRemote)) {
+						world.setBlockState(this.getPosition().down(), eggs);
+						world.setTileEntity(this.getPosition().down(), new BlockEggsWater.TileEntityCustom());
+						TileEntity te = world.getTileEntity(this.getPosition().down());
+						te.getTileData().setString("creature", getEntityId(this));
+						if (this.hasPNVariants() && this.getPNTypeName() != null) {
+							te.getTileData().setString("PNType", this.getPNTypeName());
+						}
+					}
 					this.setLaying(false);
 					this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 				}

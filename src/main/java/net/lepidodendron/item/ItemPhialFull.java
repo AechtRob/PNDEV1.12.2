@@ -169,7 +169,6 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			//new ModelResourceLocation("lepidodendron:entities/phial_eggs_stonefly", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_sarcoprion", "inventory")
 
-
 		);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
@@ -178,8 +177,14 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 					return new ModelResourceLocation("lepidodendron:entities/phial", "inventory");
 				} else {
 					String resourcelocation = stack.getTagCompound().getString("id_eggs");
+					String variant = ItemCustom.getTypeFromStack(stack);
 					String mobname = ItemPhialFull.ItemCustom.getEggStr(resourcelocation);
-					return new ModelResourceLocation(LepidodendronMod.MODID +":entities/phial_eggs_" + mobname, "inventory");
+					if (variant.equalsIgnoreCase("")) {
+						return new ModelResourceLocation(LepidodendronMod.MODID + ":entities/phial_eggs_" + mobname, "inventory");
+					}
+					else {
+						return new ModelResourceLocation(LepidodendronMod.MODID + ":entities/phial_eggs_" + mobname + "_" + variant, "inventory");
+					}
 				}
 			}
 			else return new ModelResourceLocation("lepidodendron:entities/phial", "inventory");
@@ -204,7 +209,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				if (!variant.equalsIgnoreCase("")) {
 					return I18n.translateToLocal("item.pf_phial_eggs_full.name").trim()
 							+ ": "
-							+ I18n.translateToLocal("entity.prehistoric_flora_" + getEggStr(resourcelocation) + "_" + variant + ".name").trim();
+							+ I18n.translateToLocal("tile." + getEggStrForName(resourcelocation) + "_" + variant + ".name").trim();
 
 				}
 				else {
@@ -258,6 +263,10 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 					return EnumActionResult.FAIL; //The phial is empty!
 				}
 				String resourcelocation = itemstack.getTagCompound().getString("id_eggs");
+				String PNVariant = "";
+				if (itemstack.getTagCompound().hasKey("PNType")) {
+					PNVariant = itemstack.getTagCompound().getString("PNType");
+				}
 				if (itemstack.getTagCompound().getBoolean("water")) {
 					if (BlockEggsWater.block.canPlaceBlockAt(worldIn, pos.offset(facing))) {
 						if (!(worldIn.isRemote)) {
@@ -265,7 +274,10 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 							worldIn.setTileEntity(pos.offset(facing), new BlockEggsWater.TileEntityCustom());
 							TileEntity te = worldIn.getTileEntity(pos.offset(facing));
 							te.getTileData().setString("creature", resourcelocation);
-							te.getTileData().setBoolean("hatchable", true);
+							if (!PNVariant.equalsIgnoreCase("")) {
+								te.getTileData().setString("PNType", PNVariant);
+							}
+							((BlockEggsWater.TileEntityCustom)te).setHatchable(true);
 						}
 						if (!player.capabilities.isCreativeMode) {
 							itemstack.shrink(1);
@@ -284,6 +296,9 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 							worldIn.setTileEntity(pos.offset(facing), new BlockEggs.TileEntityCustom());
 							TileEntity te = worldIn.getTileEntity(pos.offset(facing));
 							te.getTileData().setString("creature", resourcelocation);
+							if (!PNVariant.equalsIgnoreCase("")) {
+								te.getTileData().setString("PNType", PNVariant);
+							}
 						}
 						if (!player.capabilities.isCreativeMode) {
 							itemstack.shrink(1);
@@ -321,7 +336,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			return string;
 		}
 
-		public String getTypeFromStack(ItemStack stack) {
+		public static String getTypeFromStack(ItemStack stack) {
 			if (stack.hasTagCompound()) {
 				if (stack.getTagCompound().hasKey("PNType")) {
 					return stack.getTagCompound().getString("PNType");

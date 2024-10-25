@@ -375,6 +375,7 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 
 		private int incubation;
 		private String creature;
+		private String variant;
 
 		@Override
 		public void update() {
@@ -422,6 +423,9 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 			if (compound.hasKey("creature")) {
 				this.creature = compound.getString("creature");
 			}
+			if (compound.hasKey("PNType")) {
+				this.variant = compound.getString("PNType");
+			}
 		}
 
 		@Override
@@ -432,12 +436,21 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 			{
 				compound.setString("creature", this.creature);
 			}
+			if (this.hasVariant())
+			{
+				compound.setString("PNType", this.variant);
+			}
 			return compound;
 		}
 
 		public boolean hasCreature()
 		{
 			return this.creature != null && !this.creature.equals("");
+		}
+
+		public boolean hasVariant()
+		{
+			return this.variant != null && !this.variant.equals("");
 		}
 
 	}

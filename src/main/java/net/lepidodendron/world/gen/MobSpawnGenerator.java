@@ -7,7 +7,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -77,20 +76,17 @@ public class MobSpawnGenerator extends WorldGenerator
 
 				//figure out a position and facing to place this at!
 				//Only upright:
-				EnumFacing enumfacing = EnumFacing.UP;
 				BlockPos pos = new BlockPos(j, k - 1, l);
 				if (waterDepthCheckMin & waterDepthCheckMax) {
-					if (this.state.getBlock().canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
+					if (this.state.getBlock().canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 					&& ((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
-						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
-						if (variant != null) {
-							applyVariant(this.mobspawn, worldIn, new BlockPos(j, k, l), variant);
-						}
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state, 2);
+ 						applyVariant(this.mobspawn, worldIn, new BlockPos(j, k, l), variant);
 						return true;
 					}
 				}
@@ -103,7 +99,9 @@ public class MobSpawnGenerator extends WorldGenerator
 		TileEntity tileentity = world.getTileEntity(pos);
 		if (tileentity != null) {
 			tileentity.getTileData().setString("creature", mobIn);
-			tileentity.getTileData().setString("PNType", variant);
+			if (variant != null) {
+				tileentity.getTileData().setString("PNType", variant);
+			}
 		}
 	}
 }

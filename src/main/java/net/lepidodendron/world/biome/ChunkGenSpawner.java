@@ -1170,11 +1170,25 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         world.setBlockState(pos1, BlockNest.block.getDefaultState(), 16);
                                                                         TileEntity te = world.getTileEntity(pos1);
                                                                         if (te != null) {
-                                                                            if (te instanceof BlockNest.TileEntityNest) {
-                                                                                te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
-                                                                                te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
-                                                                                ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                            if (te instanceof BlockNest.TileEntityNest) {
+                                                                                String mobName = EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString();
+                                                                                if ((!(nbtStr.equalsIgnoreCase(""))) && entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                    NBTTagCompound nbttagcompound = new NBTTagCompound();
+                                                                                    try {
+                                                                                        nbttagcompound = JsonToNBT.getTagFromJson(nbtStr);
+                                                                                    } catch (
+                                                                                            NBTException nbtexception) {
+                                                                                        //do nothing
+                                                                                    }
+                                                                                    if (nbttagcompound.hasKey("PNType")) {
+                                                                                        mobName = mobName + "_" + nbttagcompound.getString("PNType");
+                                                                                    }
+                                                                                }
+
+                                                                                te.getTileData().setString("creature", mobName);
+
+                                                                                ItemStack stack = BlockNest.BlockCustom.getEggItemStack(mobName);
                                                                                 if (stack == null) {
                                                                                     System.err.println("Error with eggs: " + EntityLandBase);
                                                                                 }
@@ -1221,10 +1235,23 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         TileEntity te = world.getTileEntity(pos1);
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityNest) {
-                                                                                te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
-                                                                                te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+                                                                                String mobName = EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString();
+                                                                                if ((!(nbtStr.equalsIgnoreCase(""))) && entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                    NBTTagCompound nbttagcompound = new NBTTagCompound();
+                                                                                    try {
+                                                                                        nbttagcompound = JsonToNBT.getTagFromJson(nbtStr);
+                                                                                    } catch (
+                                                                                            NBTException nbtexception) {
+                                                                                        //do nothing
+                                                                                    }
+                                                                                    if (nbttagcompound.hasKey("PNType")) {
+                                                                                        mobName = mobName + "_" + nbttagcompound.getString("PNType");
+                                                                                    }
+                                                                                }
 
-                                                                                ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                te.getTileData().setString("creature", mobName);
+
+                                                                                ItemStack stack = BlockNest.BlockCustom.getEggItemStack(mobName);
                                                                                 if (stack == null) {
                                                                                     System.err.println("Error with eggs: " + EntityLandBase);
                                                                                 }
@@ -1304,12 +1331,23 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 TileEntity te = world.getTileEntity(spawnPos);
                                                                                 if (te != null) {
                                                                                     if (te instanceof BlockNest.TileEntityNest) {
-                                                                                        te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                                        String mobName = EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString();
+                                                                                        if ((!(nbtStr.equalsIgnoreCase(""))) && entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                            NBTTagCompound nbttagcompound = new NBTTagCompound();
+                                                                                            try {
+                                                                                                nbttagcompound = JsonToNBT.getTagFromJson(nbtStr);
+                                                                                            } catch (
+                                                                                                    NBTException nbtexception) {
+                                                                                                //do nothing
+                                                                                            }
+                                                                                            if (nbttagcompound.hasKey("PNType")) {
+                                                                                                mobName = mobName + "_" + nbttagcompound.getString("PNType");
+                                                                                            }
+                                                                                        }
+                                                                                        te.getTileData().setString("creature", mobName);
                                                                                         te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
-                                                                                        // Mounds always contain eggs:
-                                                                                        te.getTileData().setString("egg", EntityLandBase.getEggNBT());
 
-                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(EntityLandBase.getEntityId(EntityLandBase));
+                                                                                        ItemStack stack = BlockNest.BlockCustom.getEggItemStack(mobName);
                                                                                         if (stack == null) {
                                                                                             System.err.println("Error with eggs: " + EntityLandBase);
                                                                                         }

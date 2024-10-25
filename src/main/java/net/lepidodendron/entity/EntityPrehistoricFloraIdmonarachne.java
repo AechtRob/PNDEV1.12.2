@@ -64,11 +64,6 @@ public class EntityPrehistoricFloraIdmonarachne extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_idmonarachne";
-	}
-
-	@Override
 	public float getAISpeedLand() {
 		return 0.5F;
 	}

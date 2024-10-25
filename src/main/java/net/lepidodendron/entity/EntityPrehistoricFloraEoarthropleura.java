@@ -71,11 +71,6 @@ public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFlora
 		}
 	}
 
-	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";
-	}
-
 	public static String getPeriod() {return "Silurian - Devonian";}
 
 	//public static String getHabitat() {return "Terrestrial";}

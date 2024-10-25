@@ -145,8 +145,6 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		return ArrayUtils.addAll(DietString.MOSS);
 	}
 
-	
-
 	@Override
 	public boolean isAIDisabled() {
 		return false;

@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.block.BlockEggs;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.model.tile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -83,6 +84,17 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                     }
                     else if (entityEggs instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
                         EntityPrehistoricFloraCrawlingFlyingInsectBase entityBase = (EntityPrehistoricFloraCrawlingFlyingInsectBase) entityEggs;
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
+                        }
+                        else {
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
+                        }
+                    }
+                    else if (entityEggs instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                        EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityEggs;
                         if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
                             TEXTURE_EGG = entityBase.getEggTexture(creatureType);
                             eggType = entityBase.getEggType(creatureType);

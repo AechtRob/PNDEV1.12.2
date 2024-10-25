@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.model.tile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -27,6 +28,7 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
     private final ModelMobSpawnPiles piles;
     private final ModelMobSpawnTube tube;
     private final ModelMobSpawnEurypterid eurypterid;
+    private final ModelInsectEggs insect_eggs;
 
     public RenderEggsWater() {
         this.spawn_egg = new ModelMobSpawn();
@@ -36,6 +38,7 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
         this.piles = new ModelMobSpawnPiles();
         this.tube = new ModelMobSpawnTube();
         this.eurypterid = new ModelMobSpawnEurypterid();
+        this.insect_eggs = new ModelInsectEggs();
     }
 
     public void setRendererDispatcher(TileEntityRendererDispatcher rendererDispatcherIn)
@@ -59,11 +62,9 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
             if (tileEntity != null) {
                 if (tileEntity.getTileData().hasKey("creature")) {
                     eggRenderType = tileEntity.getTileData().getString("creature");
-                    int i = eggRenderType.indexOf("@");
-                    if (i >= 1) {
-                        creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
-                        eggRenderType = eggRenderType.substring(0, eggRenderType.indexOf("@"));
-                    }
+                }
+                if (tileEntity.getTileData().hasKey("PNType")) {
+                    creatureType = tileEntity.getTileData().getString("PNType");
                 }
             }
             if (!eggRenderType.equals("")) {
@@ -83,6 +84,17 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
                     }
                     else if (entityEggs instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
                         EntityPrehistoricFloraCrawlingFlyingInsectBase entityBase = (EntityPrehistoricFloraCrawlingFlyingInsectBase) entityEggs;
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
+                        }
+                        else {
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
+                        }
+                    }
+                    else if (entityEggs instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                        EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityEggs;
                         if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
                             TEXTURE_EGG = entityBase.getEggTexture(creatureType);
                             eggType = entityBase.getEggType(creatureType);
@@ -118,11 +130,11 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
             }
-//            else if (eggType == 20) {
-//                GlStateManager.translate(x + 0.5F, y + 1.080F, z + 0.5F);
-//                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
-//                GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//            }
+            else if (eggType == 20) {
+                GlStateManager.translate(x + 0.5F, y + 1.080F, z + 0.5F);
+                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+            }
 //            else {
 //                GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
 //                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
@@ -183,6 +195,10 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
                     GlStateManager.disableBlend();
                     GlStateManager.disableNormalize();
                     GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                    break;
+
+                case 20:
+                    this.insect_eggs.renderAll(0.9f);
                     break;
 
 
