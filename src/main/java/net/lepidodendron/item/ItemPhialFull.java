@@ -4,25 +4,26 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.lepidodendron.block.BlockEggs;
+import net.lepidodendron.block.BlockEggsWater;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -257,51 +258,43 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 					return EnumActionResult.FAIL; //The phial is empty!
 				}
 				String resourcelocation = itemstack.getTagCompound().getString("id_eggs");
-				Block placeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation (resourcelocation));
-				if (placeBlock == null || placeBlock == Blocks.AIR) {
-					//This is a placeable item instead:
-					Item placeItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation (resourcelocation));
-
-					ActionResult<ItemStack> result = placeItem.onItemRightClick(worldIn, player, hand);
-
-					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
-					worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-					ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
-					if (!player.isCreative()) {
-						phial.setCount(1);
-						itemstack.shrink(1);
-						ItemHandlerHelper.giveItemToPlayer(player, phial);
-					}
-					return EnumActionResult.SUCCESS;
-
-				}
-				else {
-					if (placeBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)) {
-						worldIn.setBlockState(pos.offset(facing), placeBlock.getStateForPlacement(worldIn, pos.offset(facing), facing, hitX, hitY, hitZ, 0, (EntityLivingBase) player));
-
-						TileEntity tileentity = worldIn.getTileEntity(pos.offset(facing));
-						if (tileentity != null) {
-							String variant = getTypeFromStack(itemstack);
-							if (!variant.equalsIgnoreCase("")) {
-								tileentity.getTileData().setString("PNType", variant);
-							}
+				if (itemstack.getTagCompound().getBoolean("water")) {
+					if (BlockEggsWater.block.canPlaceBlockAt(worldIn, pos.offset(facing))) {
+						if (!(worldIn.isRemote)) {
+							worldIn.setBlockState(pos.offset(facing), BlockEggsWater.block.getDefaultState());
+							worldIn.setTileEntity(pos.offset(facing), new BlockEggsWater.TileEntityCustom());
+							TileEntity te = worldIn.getTileEntity(pos.offset(facing));
+							te.getTileData().setString("creature", resourcelocation);
+							te.getTileData().setBoolean("hatchable", true);
 						}
-
-						SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
-						if (worldIn.getBlockState(pos.offset(facing)).getMaterial() != Material.WATER) {
-							soundevent = SoundEvents.BLOCK_SLIME_PLACE;
-						}
-						worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-						ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
-						if (!player.isCreative()) {
-							phial.setCount(1);
+						if (!player.capabilities.isCreativeMode) {
 							itemstack.shrink(1);
+							ItemStack phial = new ItemStack(ItemPhial.block, 1);
 							ItemHandlerHelper.giveItemToPlayer(player, phial);
 						}
+						player.addStat(StatList.getObjectUseStats(this));
+						worldIn.playSound(player, pos.offset(facing), SoundEvents.BLOCK_SLIME_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 						return EnumActionResult.SUCCESS;
 					}
 				}
-
+				else {
+					if (BlockEggs.block.canPlaceBlockAt(worldIn, pos.offset(facing))) {
+						if (!(worldIn.isRemote)) {
+							worldIn.setBlockState(pos.offset(facing), BlockEggs.block.getDefaultState());
+							worldIn.setTileEntity(pos.offset(facing), new BlockEggs.TileEntityCustom());
+							TileEntity te = worldIn.getTileEntity(pos.offset(facing));
+							te.getTileData().setString("creature", resourcelocation);
+						}
+						if (!player.capabilities.isCreativeMode) {
+							itemstack.shrink(1);
+							ItemStack phial = new ItemStack(ItemPhial.block, 1);
+							ItemHandlerHelper.giveItemToPlayer(player, phial);
+						}
+						player.addStat(StatList.getObjectUseStats(this));
+						worldIn.playSound(player, pos.offset(facing), SoundEvents.BLOCK_SLIME_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						return EnumActionResult.SUCCESS;
+					}
+				}
 			}
 			return EnumActionResult.PASS;
 		}
@@ -318,12 +311,13 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			string = string.replace("lepidodendron:amphibian_spawn_", "");
 			string = string.replace("lepidodendron:eurypterid_eggs_", "");
 			string = string.replace("lepidodendron:insect_eggs_", "");
+			string = string.replace("lepidodendron:prehistoric_flora_", "");
 			string = string.replace("_item", "");
 			return string;
 		}
 
 		public static String getEggStrForName(String string) {
-			string = string.replace("lepidodendron:", "pf_");
+			string = string.replace("lepidodendron:prehistoric_flora_", "pf_eggs_");
 			return string;
 		}
 

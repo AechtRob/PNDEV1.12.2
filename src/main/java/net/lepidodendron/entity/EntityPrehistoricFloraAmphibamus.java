@@ -233,7 +233,7 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 		isBlinking ++;
 
 		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
 				&& (BlockAmphibianSpawnAmphibamus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 				|| BlockAmphibianSpawnAmphibamus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 				&& (BlockAmphibianSpawnAmphibamus.block.canPlaceBlockAt(world, this.getPosition())
@@ -244,7 +244,7 @@ public class EntityPrehistoricFloraAmphibamus extends EntityPrehistoricFloraSwim
 			//}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnAmphibamus.block.getDefaultState();

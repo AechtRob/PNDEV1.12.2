@@ -49,6 +49,11 @@ public class EntityPrehistoricFloraCasineria extends EntityPrehistoricFloraLandB
 		maxHealthAgeable = 6.0D;
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 10; //rotten wood
+	}
+
 	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Terrestrial";}

@@ -73,9 +73,15 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_pneumodesmus";
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
 	}
+
+
+//	@Override
+//	public String getEggNBT() {
+//		return LepidodendronMod.MODID + ":insect_eggs_pneumodesmus";
+//	}
 
 	public static String getPeriod() {return "Silurian - Devonian";}
 

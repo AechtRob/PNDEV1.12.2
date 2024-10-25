@@ -15,7 +15,6 @@ import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
-import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -42,7 +41,6 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -78,6 +76,26 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.chainBuffer = new ChainBuffer();
         }
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public ResourceLocation getEggTexture(@Nullable String variantIn) {
+        String entityString = this.getEntityString();
+        ResourceLocation resourceLocation;
+        entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+        if (variantIn == null) {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        }
+        else {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
+        }
+        if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
+            return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
+        }
+        return resourceLocation;
+    }
+
+    public int getEggType(@Nullable String variantIn) { //0-3
+        return 20; //Default to insect eggs
     }
 
     @Override
@@ -490,37 +508,8 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.setTicks(ii);
         }
 
-        //Drop an egg perhaps:
-        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
-            if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
-                if (!itemstack.hasTagCompound()) {
-                    itemstack.setTagCompound(new NBTTagCompound());
-                }
-                String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-                itemstack.getTagCompound().setString("creature", stringEgg);
-                if (this.hasPNVariants()) {
-                    if (this instanceof EntityPrehistoricFloraTitanoptera) {
-                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraTitanoptera) this).getPNType().getName());
-                    }
-                    //Add more variants:
-
-                }
-                EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-                entityToSpawn.setPickupDelay(10);
-                this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                world.spawnEntity(entityToSpawn);
-            }
-            this.setTicks(0);
-        }
-
-        //if (!world.isRemote) {
-        //    System.err.println("getTicks " + this.getTicks());
-        //    System.err.println("testLay " + this.testLay(world, this.getPosition()));
-        //}
-
         //Lay eggs perhaps:
-        if (!world.isRemote && this.laysEggs() && ((this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) || this.getLaying())
+        if (!world.isRemote && this.laysEggs() && this.getLaying()
         ) {
             //System.err.println("Passed first stage of laying");
             if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0

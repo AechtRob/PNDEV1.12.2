@@ -229,7 +229,7 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 		super.onEntityUpdate();
 
 		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
 				&& (BlockAmphibianSpawnBranchiosaur.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 				|| BlockAmphibianSpawnBranchiosaur.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 				&& (BlockAmphibianSpawnBranchiosaur.block.canPlaceBlockAt(world, this.getPosition())
@@ -240,7 +240,7 @@ public class EntityPrehistoricFloraBranchiosaur extends EntityPrehistoricFloraSw
 			//}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnBranchiosaur.block.getDefaultState();

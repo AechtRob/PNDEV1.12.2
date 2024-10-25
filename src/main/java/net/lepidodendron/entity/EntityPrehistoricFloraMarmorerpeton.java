@@ -317,7 +317,7 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 		super.onEntityUpdate();
 
 		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
 				&& (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 				|| BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 				&& (BlockAmphibianSpawnMarmorerpeton.block.canPlaceBlockAt(world, this.getPosition())
@@ -328,7 +328,7 @@ public class EntityPrehistoricFloraMarmorerpeton extends EntityPrehistoricFloraS
 			//}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnMarmorerpeton.block.getDefaultState();

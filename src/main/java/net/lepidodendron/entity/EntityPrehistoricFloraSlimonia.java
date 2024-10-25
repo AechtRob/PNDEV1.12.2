@@ -150,7 +150,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 
 			//System.err.println("IsSwimming: " + this.isReallySwimming() + " walkTick " + this.getWalkTick() + " swimTick " + this.getSwimTick());
 //Lay eggs perhaps:
-			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
 					&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 					|| BlockEurypteridEggsSlimonia.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 					&& (BlockEurypteridEggsSlimonia.block.canPlaceBlockAt(world, this.getPosition())
@@ -161,7 +161,7 @@ public class EntityPrehistoricFloraSlimonia extends EntityPrehistoricFloraSwimmi
 				//}
 			}
 
-			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 				//Is stationary for egg-laying:
 				//System.err.println("Test2");
 				IBlockState eggs = BlockEurypteridEggsSlimonia.block.getDefaultState();

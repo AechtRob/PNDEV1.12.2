@@ -220,7 +220,7 @@ public class EntityPrehistoricFloraMegarachne extends EntityPrehistoricFloraEury
 		super.onEntityUpdate();
 
 		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
 				&& (BlockEurypteridEggsMegarachne.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 				|| BlockEurypteridEggsMegarachne.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 				&& (BlockEurypteridEggsMegarachne.block.canPlaceBlockAt(world, this.getPosition())
@@ -231,7 +231,7 @@ public class EntityPrehistoricFloraMegarachne extends EntityPrehistoricFloraEury
 			//}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
 			//System.err.println("Test2");
 			IBlockState eggs = BlockEurypteridEggsMegarachne.block.getDefaultState();

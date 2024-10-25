@@ -1748,7 +1748,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         //Drop an egg perhaps:
-        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && this.getLaying()) {
             //if (Math.random() > 0.5) {
                 ItemStack itemstack = getPropagule();
                 if (!itemstack.hasTagCompound()) {
@@ -1766,7 +1766,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         //Lay eggs perhaps:
-        if (!world.isRemote && this.laysEggs() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())
+        if (!world.isRemote && this.laysEggs() && this.getCanBreed() && this.getLaying()
         ) {
             if (this.testLay(world, this.getPosition()) && this.getTicks() > 0
             ) {
@@ -1847,30 +1847,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public boolean testLay(World world, BlockPos pos) {
         return false;
-    }
-
-    public boolean spaceCheckEggs() {
-        int xct;
-        int yct;
-        int zct;
-        yct = -4;
-        while (yct <= 4) {
-            xct = -4;
-            while (xct <= 4) {
-                zct = -4;
-                while (zct <= 4) {
-                    if (world.isBlockLoaded(this.getPosition().add(xct, yct, zct))) {
-                        if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
-                            return false;
-                        }
-                    }
-                    zct += 1;
-                }
-                xct += 1;
-            }
-            yct += 1;
-        }
-        return true;
     }
 
     public void eatItem(ItemStack stack) {

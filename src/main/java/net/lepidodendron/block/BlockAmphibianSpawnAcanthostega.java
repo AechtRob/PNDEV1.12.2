@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.patchouli.SpawnLocations;
-import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
@@ -69,7 +68,7 @@ public class BlockAmphibianSpawnAcanthostega extends ElementsLepidodendronMod.Mo
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_acanthostega", biome.getRegistryName().toString())) {
-				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+				//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.pathfinding.Path;
@@ -47,19 +46,6 @@ public class AmphibianWanderNestInBlockAI extends AnimationAINoAnimation<EntityP
 
     @Override
     public boolean shouldExecute() {
-
-        if (!(this.PehistoricFloraSwimmingAmphibianBase.laysEggs() && this.PehistoricFloraSwimmingAmphibianBase.getCanBreed() && LepidodendronConfig.doMultiplyMobs)) {
-            return false;
-        }
-
-        //if (this.PehistoricFloraSwimmingAmphibianBase.isReallyInWater()) {
-        //    return false;
-       // }
-
-        //if (PehistoricFloraSwimmingAmphibianBase.getAnimation() == PehistoricFloraSwimmingAmphibianBase.DRINK_ANIMATION) {
-       //     return false;
-        //}
-        //System.err.println("Ticks: " + this.PehistoricFloraSwimmingAmphibianBase.getTicks());
 
         int xx;
         int yy;

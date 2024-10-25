@@ -6126,6 +6126,7 @@ public class RenderHandler {
         //Nests and land eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNest.TileEntityNest.class, new RenderNest());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEggs.TileEntityCustom.class, new RenderEggsLand());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockEggsWater.TileEntityCustom.class, new RenderEggsWater());
 
         //Display cases:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDisplayCase.TileEntityDisplayCase.class, new RenderDisplayCase());

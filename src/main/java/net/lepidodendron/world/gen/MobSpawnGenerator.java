@@ -1,7 +1,7 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.util.Functions;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -18,18 +18,18 @@ import java.util.Random;
 public class MobSpawnGenerator extends WorldGenerator
 {
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
-	private Block mobspawn;
+	private String mobspawn;
     private IBlockState state;
 
-    public MobSpawnGenerator(Block mobspawnIn)
+    public MobSpawnGenerator(String mobspawnIn)
     {
         this.setGeneratedBlock(mobspawnIn);
     }
 
-    public void setGeneratedBlock(Block mobspawnIn)
+    public void setGeneratedBlock(String mobspawnIn)
     {
         this.mobspawn = mobspawnIn;
-        this.state = mobspawnIn.getDefaultState();
+        this.state = BlockEggsWater.block.getDefaultState();
     }
 
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
@@ -48,8 +48,8 @@ public class MobSpawnGenerator extends WorldGenerator
 			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
 			int l = position.getZ() + rand.nextInt(4) - rand.nextInt(4);
 
-			if (this.mobspawn.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
-			&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() == Material.WATER)){
+			if (this.state.getBlock().canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
+				&& (worldIn.getBlockState(new BlockPos(j, k, l)).getMaterial() == Material.WATER)){
 
 				boolean waterDepthCheckMax = false;
 				boolean waterDepthCheckMin = true;
@@ -76,11 +76,11 @@ public class MobSpawnGenerator extends WorldGenerator
 				}
 
 				//figure out a position and facing to place this at!
-				//First try regular uprights and then the rotations:
+				//Only upright:
 				EnumFacing enumfacing = EnumFacing.UP;
 				BlockPos pos = new BlockPos(j, k - 1, l);
 				if (waterDepthCheckMin & waterDepthCheckMax) {
-					if (this.mobspawn.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
+					if (this.state.getBlock().canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing)
 					&& ((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
@@ -89,39 +89,9 @@ public class MobSpawnGenerator extends WorldGenerator
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
 						Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing), 2);
 						if (variant != null) {
-							applyVariant(worldIn, new BlockPos(j, k, l), variant);
+							applyVariant(this.mobspawn, worldIn, new BlockPos(j, k, l), variant);
 						}
 						return true;
-					} else {
-						for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
-							pos = new BlockPos(j, k, l);
-							if (enumfacing1 == EnumFacing.NORTH) {
-								pos = new BlockPos(j, k, l + 1);
-							}
-							if (enumfacing1 == EnumFacing.SOUTH) {
-								pos = new BlockPos(j, k, l - 1);
-							}
-							if (enumfacing1 == EnumFacing.EAST) {
-								pos = new BlockPos(j - 1, k, l);
-							}
-							if (enumfacing1 == EnumFacing.WEST) {
-								pos = new BlockPos(j + 1, k, l);
-							}
-							if (this.mobspawn.canPlaceBlockOnSide(worldIn, new BlockPos(j, k, l), enumfacing1)
-								&& ((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-									|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
-									|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
-									|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
-									|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
-									|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
-									|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))) {
-								Functions.setBlockStateAndCheckForDoublePlant(worldIn,new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
-								if (variant != null) {
-									applyVariant(worldIn, new BlockPos(j, k, l), variant);
-								}
-								return true;
-							}
-						}
 					}
 				}
 			}
@@ -129,9 +99,10 @@ public class MobSpawnGenerator extends WorldGenerator
 		return true;
 	}
 
-	public static void applyVariant(World world, BlockPos pos, String variant) {
+	public static void applyVariant(String mobIn, World world, BlockPos pos, String variant) {
 		TileEntity tileentity = world.getTileEntity(pos);
 		if (tileentity != null) {
+			tileentity.getTileData().setString("creature", mobIn);
 			tileentity.getTileData().setString("PNType", variant);
 		}
 	}

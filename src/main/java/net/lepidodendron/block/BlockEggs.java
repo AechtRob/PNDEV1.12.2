@@ -262,79 +262,70 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 		{
 			super.updateTick(worldIn, pos, state, rand);
 
-			if (!canPlaceBlockAt(worldIn, pos)) {
-				EntityItem entityToSpawn = null;
-				ItemStack stack = getEggItemStack(worldIn, pos);
-				if (stack != null) {
-					entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(stack.getItem(), (int) (1)));
-					if (!worldIn.isRemote && entityToSpawn != null) {
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
-					}
-				}
-				worldIn.setBlockToAir(pos);
-				return;
-			}
-
-			int incubation = 0;
-			TileEntity te = worldIn.getTileEntity(pos);
-			if (te != null) {
-				if (te instanceof BlockEggs.TileEntityCustom) {
-					BlockEggs.TileEntityCustom Egg = (BlockEggs.TileEntityCustom) te;
-					incubation = Egg.getIncubation();
-				}
-			}
-
-			//System.err.println("actual timer: " + incubation + " limit: " + this.getIncubation(worldIn, pos));
-
-			if (incubation >= this.getIncubation(worldIn, pos)) {
-
-				String nbtStr = "{AgeTicks:0}";
-
-				String creatureType = new Object() {
-					public String getValue(BlockPos pos1, String tag) {
-						TileEntity tileEntity = worldIn.getTileEntity(pos1);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getString(tag);
-						return "";
-					}
-				}.getValue(pos, "PNType");
-
-				String creatureTypeVariant = getEggOwnerVariant(worldIn, pos);
-				if (creatureTypeVariant != null) {
-					if (creatureTypeVariant.equalsIgnoreCase("gendered")) {
-						creatureTypeVariant = "male";
-						if (worldIn.rand.nextInt(2) == 0) {
-							creatureTypeVariant = "female";
+			if (!(worldIn.isRemote)) {
+				if (!canPlaceBlockAt(worldIn, pos)) {
+					EntityItem entityToSpawn = null;
+					ItemStack stack = getEggItemStack(worldIn, pos);
+					if (stack != null) {
+						entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(stack.getItem(), (int) (1)));
+						if (entityToSpawn != null) {
+							entityToSpawn.setPickupDelay(10);
+							worldIn.spawnEntity(entityToSpawn);
 						}
 					}
-					nbtStr = "{PNType:\"" + creatureTypeVariant + "\",AgeTicks:0}";
+					worldIn.setBlockToAir(pos);
+					return;
 				}
 
-				if (!(worldIn.isRemote)) {
-					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggOwner(worldIn, pos)).toString(), nbtStr, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
-				}
-				worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
-
+				int incubation = 0;
+				TileEntity te = worldIn.getTileEntity(pos);
 				if (te != null) {
-					te.getTileData().setString("creature", "");
+					if (te instanceof BlockEggs.TileEntityCustom) {
+						BlockEggs.TileEntityCustom Egg = (BlockEggs.TileEntityCustom) te;
+						incubation = Egg.getIncubation();
+					}
 				}
 
-				worldIn.setBlockToAir(pos);
+				//System.err.println("actual timer: " + incubation + " limit: " + this.getIncubation(worldIn, pos));
+
+				if (incubation >= this.getIncubation(worldIn, pos)) {
+
+					String nbtStr = "{AgeTicks:0}";
+
+					String creatureTypeVariant = getEggOwnerVariant(worldIn, pos);
+					if (creatureTypeVariant != null) {
+						if (creatureTypeVariant.equalsIgnoreCase("gendered")) {
+							creatureTypeVariant = "male";
+							if (worldIn.rand.nextInt(2) == 0) {
+								creatureTypeVariant = "female";
+							}
+						}
+						nbtStr = "{PNType:\"" + creatureTypeVariant + "\",AgeTicks:0}";
+					}
+
+					EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggOwner(worldIn, pos)).toString(), nbtStr, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
+					worldIn.playSound(null, pos, SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+					if (te != null) {
+						te.getTileData().setString("creature", "");
+					}
+
+					worldIn.setBlockToAir(pos);
+				}
 			}
 		}
 
 		@Nullable
 		public static Class getEggOwner(World world, BlockPos pos) {
 			//Get the matching entity for the nbt applied:
-			String creatureType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+
+			String creatureType = "";
+			TileEntity tileEntity = world.getTileEntity(pos);
+			if (tileEntity != null) {
+				if (tileEntity.getTileData().hasKey("creature")) {
+					creatureType = tileEntity.getTileData().getString("creature");
 				}
-			}.getValue(pos, "creature");
+			}
 
 			if (!creatureType.equals("")) {
 				int i = creatureType.indexOf("@");
@@ -353,14 +344,13 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		public static String getEggOwnerVariant(World world, BlockPos pos) {
 			//Get the matching entity for the nbt applied:
-			String creatureType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+			String creatureType = "";
+			TileEntity tileEntity = world.getTileEntity(pos);
+			if (tileEntity != null) {
+				if (tileEntity.getTileData().hasKey("creature")) {
+					creatureType = tileEntity.getTileData().getString("creature");
 				}
-			}.getValue(pos, "creature");
+			}
 
 			if (!creatureType.equals("")) {
 				int i = creatureType.indexOf("@");

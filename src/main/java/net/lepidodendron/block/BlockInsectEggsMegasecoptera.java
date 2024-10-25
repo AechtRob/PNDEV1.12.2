@@ -88,7 +88,7 @@ public class BlockInsectEggsMegasecoptera extends ElementsLepidodendronMod.ModEl
 			}
 			if (!variantString.isEmpty()) {
 				String variant = variantString.get(random.nextInt(variantString.size()));
-				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, variant);
+				//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax, variant);
 			}
 		}
 	}

@@ -2,10 +2,10 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.entities.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -35,6 +35,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -214,31 +215,30 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 
 		@Nullable
 		public static EntityItem hasBigEggs(String eggRenderType, World world, BlockPos pos) {
-			if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCasineria.block, (int) (1)));
+			int eggType = 0;
+			EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
+			if (ee != null) {
+				Entity entityEggs = ee.newInstance(null);
+				String creatureType = "";
+				int i = eggRenderType.indexOf("@");
+				if (i >= 1) {
+					creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
+				}
+				if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
+					EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
+					if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+						eggType = entityBase.getEggType(creatureType);
+					}
+					else {
+						eggType = entityBase.getEggType(null);
+					}
+				}
+				entityEggs.setDead();
 			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHylonomus.block, (int) (1)));
+			if (eggType == 20 || eggType >= 40) {
+				return null;
 			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsLabidosaurus.block, (int) (1)));
-			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsWeigeltisaurus.block, (int) (1)));
-			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsCeltedens.block, (int) (1)));
-			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_longisquama")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsLongisquama.block, (int) (1)));
-			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hypuronector")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsHypuronector.block, (int) (1)));
-			}
-			else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_archaeothyris")) {
-				return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemEggsArchaeothyris.block, (int) (1)));
-			}
-			return null;
+			return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockEggs.BlockCustom.getEggItem(eggRenderType), 1));
 		}
 
 		public void SpawnEggs(World world, BlockPos pos) {

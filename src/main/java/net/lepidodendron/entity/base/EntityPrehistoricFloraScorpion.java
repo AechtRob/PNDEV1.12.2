@@ -194,7 +194,7 @@ abstract public class EntityPrehistoricFloraScorpion extends EntityPrehistoricFl
 		}
 
 		//Bear eggs perhaps:
-		if (!world.isRemote && this.getCanBreed() && (!this.getBabies()) && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+		if (!world.isRemote && this.getCanBreed() && (!this.getBabies()) && this.getLaying()) {
 			this.setBabies(true);
 			this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			this.setLaying(false);

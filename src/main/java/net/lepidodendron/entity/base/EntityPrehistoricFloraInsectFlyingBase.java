@@ -485,7 +485,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
 
         //Drop an egg perhaps:
-        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && this.getLaying()) {
             if (Math.random() > 0.5) {
                 ItemStack itemstack = getDroppedEggItemStack();
                 if (!itemstack.hasTagCompound()) {
@@ -522,7 +522,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         //Lay eggs perhaps:
         if (!this.laysInBlock()) { //lays into water or something like that:
-            if (!world.isRemote && this.laysEggs() && ((this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) || this.getLaying())
+            if (!world.isRemote && this.laysEggs() && this.getLaying()
             ) {
                 if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition())) {
                     //Is stationary for egg-laying:
@@ -556,7 +556,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             }
         }
         else { //Lays with nbt into moss etc.
-            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())
+            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && this.getLaying()
             ) {
                 if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
                 ) {

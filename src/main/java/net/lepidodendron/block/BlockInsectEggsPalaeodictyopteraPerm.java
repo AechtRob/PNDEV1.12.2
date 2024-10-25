@@ -68,7 +68,7 @@
 //				BiomePermian biomeP = (BiomePermian) biome;
 //				if (biomeP.getBiomeType() == EnumBiomeTypePermian.Wetlands
 //					|| biomeP.getBiomeType() == EnumBiomeTypePermian.Lowlands) {
-//					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+//					//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 //				}
 //			}
 //		}

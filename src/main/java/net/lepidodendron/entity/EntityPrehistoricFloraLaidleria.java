@@ -416,7 +416,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 			super.onEntityUpdate();
 
 			//Lay eggs perhaps:
-			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
+			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
 					&& (BlockAmphibianSpawnLaidleria.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 					|| BlockAmphibianSpawnLaidleria.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 					&& (BlockAmphibianSpawnLaidleria.block.canPlaceBlockAt(world, this.getPosition())
@@ -427,7 +427,7 @@ public class EntityPrehistoricFloraLaidleria extends EntityPrehistoricFloraSwimm
 				//}
 			}
 
-			if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+			if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 				//Is stationary for egg-laying:
 				//System.err.println("Test2");
 				IBlockState eggs = BlockAmphibianSpawnLaidleria.block.getDefaultState();

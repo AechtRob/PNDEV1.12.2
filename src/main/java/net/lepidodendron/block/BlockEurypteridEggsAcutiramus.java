@@ -69,14 +69,14 @@ public class BlockEurypteridEggsAcutiramus extends ElementsLepidodendronMod.ModE
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeD = (BiomeDevonian) biome;
 				if (biomeD.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+					//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
 			else if (biome instanceof BiomeSilurian) {
 				BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
 				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
 						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+					//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
 		}
