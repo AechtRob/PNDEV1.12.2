@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderAcherontiscus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAcherontiscus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acherontiscus.png");
 
-    public static float getScaler() {return 0.632f;}
+    public static float getScaler() {return 0.4f;}
 
     public RenderAcherontiscus(RenderManager mgr) {
         super(mgr, new ModelAcherontiscus(), 0.5f);

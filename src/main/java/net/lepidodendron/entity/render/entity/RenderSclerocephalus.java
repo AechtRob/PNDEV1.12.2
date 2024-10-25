@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSclerocephalus extends RenderLivingBaseWithBook<EntityPrehistoricFloraSclerocephalus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sclerocephalus.png");
 
-    public static float getScaler() {return 0.632f;}
+    public static float getScaler() {return 0.452f;}
 
     public RenderSclerocephalus(RenderManager mgr) {
         super(mgr, new ModelSclerocephalus(), 0.5f);

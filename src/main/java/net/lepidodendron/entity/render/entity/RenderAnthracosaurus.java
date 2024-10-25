@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderAnthracosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraAnthracosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anthracosaurus.png");
 
-    public static float getScaler() {return 0.632f;}
+    public static float getScaler() {return 0.615f;}
 
     public RenderAnthracosaurus(RenderManager mgr) {
         super(mgr, new ModelAnthracosaurus(), 0.5f);

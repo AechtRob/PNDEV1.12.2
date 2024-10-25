@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -46,6 +47,8 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	public Animation LOOK_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraPholiderpeton(World world) {
 		super(world);
@@ -54,6 +57,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;
 		maxHealthAgeable = 32.0D;
+		LOOK_ANIMATION = Animation.create(220);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -65,6 +69,11 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, LOOK_ANIMATION};
 	}
 
 	@Override
@@ -117,6 +126,11 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(0.5F + size, 0.5F + size, 0.5F + size);
 	}
+	@Override
+	public int getAttackLength() {
+		return 12;
+	}
+
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
@@ -226,6 +240,14 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -247,6 +269,17 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(LOOK_ANIMATION);
+			this.standCooldown = 1000;
+
+			if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION && this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 1000;
+				this.setAnimation(NO_ANIMATION);
+			}
+		}
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 				&& (BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)

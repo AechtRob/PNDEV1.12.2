@@ -41,10 +41,10 @@ public class EntityPrehistoricFloraPachyamia extends EntityPrehistoricFloraAgeab
 
 	public EntityPrehistoricFloraPachyamia(World world) {
 		super(world);
-		setSize(0.8F, 0.4F);
+		setSize(0.5F, 0.3F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.4F;
+		maxWidth = 0.5F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 16.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

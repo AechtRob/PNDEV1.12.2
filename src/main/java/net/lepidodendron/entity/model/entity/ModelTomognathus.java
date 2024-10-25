@@ -367,7 +367,7 @@ public class ModelTomognathus extends ModelBasePalaeopedia {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+//        this.resetToDefaultPose();
 
         //this.head.offsetY = 0.8F;
 
@@ -414,7 +414,7 @@ public class ModelTomognathus extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-//            this.body.offsetY = -0.1F;
+            this.body.offsetY = 0.34F;
             this.bob(body, -speed * 1.9F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.15F, -0.55, f2, 0.4F * still);
@@ -700,8 +700,8 @@ public class ModelTomognathus extends ModelBasePalaeopedia {
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
         animator.update(entity);
-        this.resetToDefaultPose();
-        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+//        this.resetToDefaultPose();
+//        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
 
 //        animator.setAnimation(e.ATTACK_ANIMATION);
 //        animator.startKeyframe(8);

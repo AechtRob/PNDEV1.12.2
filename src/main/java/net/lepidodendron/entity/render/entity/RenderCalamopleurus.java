@@ -15,7 +15,7 @@ public class RenderCalamopleurus extends RenderLivingBaseWithBook<EntityPrehisto
         super(mgr, new ModelCalamopleurus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.6F; }
+    public static float getScaler() {return 0.51F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCalamopleurus entity) {

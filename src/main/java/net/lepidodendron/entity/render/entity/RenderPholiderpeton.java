@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPholiderpeton extends RenderLivingBaseWithBook<EntityPrehistoricFloraPholiderpeton> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pholiderpeton.png");
 
-    public static float getScaler() {return 0.632f;}
+    public static float getScaler() {return 0.628f;}
 
     public RenderPholiderpeton(RenderManager mgr) {
         super(mgr, new ModelPholiderpeton(), 0.5f);

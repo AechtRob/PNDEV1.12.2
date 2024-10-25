@@ -157,11 +157,11 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.root.render(f5);
+        this.Root.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.root.offsetY = 0.32F;
-        this.root.render(0.01F);
+        this.Root.offsetY = 0.32F;
+        this.Root.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -202,10 +202,39 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
 
     public void animMove(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAcherontiscus entity = (EntityPrehistoricFloraAcherontiscus) entitylivingbaseIn;
-
         if (entity.animSpeedAdder() <= 0) {
             partialTickTime = 0; //If it's static don't increment partial ticks either
         }
+        int animCycle = 30;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        this.setRotateAngle(Root, Root.rotateAngleX + (float) Math.toRadians(0), Root.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-90))*-10), Root.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*1));
+        this.Root.rotationPointX = this.Root.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*1);
+        this.Root.rotationPointY = this.Root.rotationPointY - (float)(0);
+        this.Root.rotationPointZ = this.Root.rotationPointZ + (float)(0);
+
+
+        this.setRotateAngle(Body1, Body1.rotateAngleX + (float) Math.toRadians(0.75), Body1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-160))*25), Body1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*2));
+        this.Body1.rotationPointX = this.Body1.rotationPointX + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*-1);
+        this.Body1.rotationPointY = this.Body1.rotationPointY - (float)(0);
+        this.Body1.rotationPointZ = this.Body1.rotationPointZ + (float)(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*0.5);
+
+
+        this.setRotateAngle(Head, Head.rotateAngleX + (float) Math.toRadians(0), Head.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-120))*10), Head.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-60))*-4));
+
+
+        this.setRotateAngle(Body2, Body2.rotateAngleX + (float) Math.toRadians(0), Body2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-290))*30), Body2.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*1));
+
+
+        this.setRotateAngle(Body3, Body3.rotateAngleX + (float) Math.toRadians(0), Body3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-340))*30), Body3.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*1));
+
+
+        this.setRotateAngle(Body4, Body4.rotateAngleX + (float) Math.toRadians(0), Body4.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-390))*30), Body4.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375))*1));
+
+
+        this.setRotateAngle(Body5, Body5.rotateAngleX + (float) Math.toRadians(0), Body5.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.375-420))*30), Body5.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*90/0.3755))*1));
 
        
 

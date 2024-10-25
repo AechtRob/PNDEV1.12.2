@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -45,6 +46,8 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	public Animation LOOK_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraSclerocephalus(World world) {
 		super(world);
@@ -53,6 +56,7 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;
 		maxHealthAgeable = 32.0D;
+		LOOK_ANIMATION = Animation.create(100);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -110,6 +114,14 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
+	}
+	@Override
+	public int getAttackLength() {
+		return 15;
+	}
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, LOOK_ANIMATION};
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -225,6 +237,12 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -246,6 +264,16 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(LOOK_ANIMATION);
+			this.standCooldown = 1000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION && this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 1000;
+			this.setAnimation(NO_ANIMATION);
+		}
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 				&& (BlockAmphibianSpawnSclerocephalus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)

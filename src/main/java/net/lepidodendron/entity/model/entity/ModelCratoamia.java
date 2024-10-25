@@ -338,7 +338,7 @@ public class ModelCratoamia extends ModelBasePalaeopedia {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+//        this.resetToDefaultPose();
 
         //this.head.offsetY = 0.8F;
 
@@ -737,8 +737,8 @@ public class ModelCratoamia extends ModelBasePalaeopedia {
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
         animator.update(entity);
-        this.resetToDefaultPose();
-        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+        //this.resetToDefaultPose();
+//        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
 
 //        animator.setAnimation(e.ATTACK_ANIMATION);
 //        animator.startKeyframe(8);
