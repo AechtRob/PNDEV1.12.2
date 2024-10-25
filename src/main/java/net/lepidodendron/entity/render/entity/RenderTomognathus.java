@@ -15,7 +15,7 @@ public class RenderTomognathus extends RenderLivingBaseWithBook<EntityPrehistori
         super(mgr, new ModelTomognathus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.6F; }
+    public static float getScaler() {return 0.45F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTomognathus entity) {

@@ -15,7 +15,7 @@ public class RenderSinamia extends RenderLivingBaseWithBook<EntityPrehistoricFlo
         super(mgr, new ModelSinamia(), 0.0f);
     }
 
-    public static float getScaler() {return 0.388F; }
+    public static float getScaler() {return 0.38F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSinamia entity) {

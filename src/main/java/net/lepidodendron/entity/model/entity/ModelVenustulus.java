@@ -341,7 +341,7 @@ public class ModelVenustulus extends ModelBasePalaeopedia {
 
         AdvancedModelRenderer[] Tail = {this.tail};
 
-        if (isAtBottom || !e.isInWater()) {
+
             //Left
             this.flap(legleft, 0.3F, -0.5F, false, 0, -0.5F, f2, 0.3F);
             this.flap(legleft2, 0.3F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
@@ -363,19 +363,7 @@ public class ModelVenustulus extends ModelBasePalaeopedia {
 
 
 
-        } else if (f3 > 0) {
-            this.body.rotateAngleZ = (float) Math.toRadians(180);
-            this.body.rotateAngleX = (float) Math.toRadians(20);
-            this.chainSwing(Tail, 0.1F, 0.2F, -2, f2, 1.0F);
-            this.chainWave(Tail, 0.1F, 0.05f, -2, f2, 0F);
-            this.bob(body, 0.0F, 0.0F, false, f2, 1);
-        } else {
-            this.body.rotateAngleZ = (float) Math.toRadians(180);
-            this.body.rotateAngleX = (float) Math.toRadians(20);
-            this.chainSwing(Tail, 0.2F, 0.08F, -2, f2, 0.5F);
-            this.chainWave(Tail, 0.2F, 0.05f, -2, f2, 0.8F);
-            this.bob(body, 0.2F, 0.1F, false, f2, 0.5F);
-        }
+
 
     }
 }

@@ -2450,6 +2450,16 @@ public class LepidodendronMod {
 	public static final ResourceLocation PACHYAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pachyamia"));
 	public static final int ENTITY_SINAMIA = 987;
 	public static final ResourceLocation SINAMIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sinamia"));
+	public static final int ENTITY_CALAMOPLEURUS = 988;
+	public static final ResourceLocation CALAMOPLEURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/calamopleurus"));
+	public static final int ENTITY_ANTHRACOSAURUS = 989;
+	public static final ResourceLocation ANTHRACOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anthracosaurus"));
+	public static final ResourceLocation ANTHRACOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anthracosaurus_young"));
+	public static final int ENTITY_ACHERONTISCUS = 990;
+	public static final ResourceLocation ACHERONTISCUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acherontiscus"));
+	public static final int ENTITY_SCLEROCEPHALUS = 991;
+	public static final ResourceLocation SCLEROCEPHALUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sclerocephalus"));
+	public static final ResourceLocation SCLEROCEPHALUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sclerocephalus_young"));
 
 
 

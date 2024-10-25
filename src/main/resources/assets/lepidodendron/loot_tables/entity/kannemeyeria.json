@@ -1,0 +1,44 @@
+{
+  "pools": [
+    {
+      "name": "kannemeyeria",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "lepidodendron:kannemeyeria_raw",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kannemeyeria",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:bone",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

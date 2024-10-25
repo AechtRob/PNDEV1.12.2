@@ -1565,6 +1565,18 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CALAMOPLEURUS = new CustomTrigger("pf_book_calamopleurus");
 
 
+    public static final CustomTrigger CLICK_TETRAMEROCERAS = new CustomTrigger("pf_book_tetrameroceras");
+    public static final CustomTrigger CLICK_DRACORAPTOR = new CustomTrigger("pf_book_dracoraptor");
+    public static final CustomTrigger CLICK_PRESTOSUCHUS = new CustomTrigger("pf_book_prestosuchus");
+    public static final CustomTrigger CLICK_KANNEMEYERIA = new CustomTrigger("pf_book_kannemeyeria");
+    public static final CustomTrigger CLICK_TRILOPHOSAURUS = new CustomTrigger("pf_book_trilophosaurus");
+    public static final CustomTrigger CLICK_LESOTHOSAURUS = new CustomTrigger("pf_book_lesothosaurus");
+    public static final CustomTrigger CLICK_QIANOSUCHUS = new CustomTrigger("pf_book_qianosuchus");
+    public static final CustomTrigger CLICK_KNOETSCHKESUCHUS = new CustomTrigger("pf_book_knoetschkesuchus");
+    public static final CustomTrigger CLICK_LITARGOSUCHUS = new CustomTrigger("pf_book_litargosuchus");
+    public static final CustomTrigger CLICK_TROPIDOSUCHUS = new CustomTrigger("pf_book_tropidosuchus");
+
+
 
 
 
@@ -3116,6 +3128,16 @@ public class ModTriggers
             CLICK_IKECHAOAMIA,
             CLICK_SOLNHOFENAMIA,
             CLICK_CALAMOPLEURUS,
+            CLICK_TETRAMEROCERAS,
+            CLICK_DRACORAPTOR,
+            CLICK_PRESTOSUCHUS,
+            CLICK_KANNEMEYERIA,
+            CLICK_TRILOPHOSAURUS,
+            CLICK_LESOTHOSAURUS,
+            CLICK_QIANOSUCHUS,
+            CLICK_KNOETSCHKESUCHUS,
+            CLICK_LITARGOSUCHUS,
+            CLICK_TROPIDOSUCHUS,
 
 
 

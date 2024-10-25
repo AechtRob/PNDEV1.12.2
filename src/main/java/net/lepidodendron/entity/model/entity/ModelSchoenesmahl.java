@@ -2651,6 +2651,7 @@ public class ModelSchoenesmahl extends ModelBasePalaeopedia {
             partialTickTime = 0; //If it's static don't increment partial ticks either
         }
         double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+
         double xx = 0;
         double yy = 0;
         double zz = 0;
