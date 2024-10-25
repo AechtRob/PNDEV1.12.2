@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraAnthracosaurus extends EntityPrehistoricFlora
 			return 0.0F;
 		}
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.19f;
+			calcSpeed = 0.14f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

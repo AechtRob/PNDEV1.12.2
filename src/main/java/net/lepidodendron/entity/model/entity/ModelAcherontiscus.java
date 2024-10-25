@@ -208,10 +208,11 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
     public void animMove(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraAcherontiscus entity = (EntityPrehistoricFloraAcherontiscus) entitylivingbaseIn;
         int animCycle = 30;
-        double tickAnim = 0;
-        if (!isStatic) {
-            tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        if (entity.animSpeedAdder() <= 0) {
+            partialTickTime = 0; //If it's static don't increment partial ticks either
         }
+        double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+
         double xx = 0;
         double yy = 0;
         double zz = 0;

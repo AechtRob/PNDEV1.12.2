@@ -60,12 +60,9 @@ public class EntityPrehistoricFloraAcherontiscus extends EntityPrehistoricFloraS
 
 	@Override
 	public void onUpdate() {
-		if (!this.updateBlocked) {
-			this.ticksExistedAnimated = this.ticksExistedAnimated + this.animSpeedAdder();
-		}
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
 		}
 	}
 
