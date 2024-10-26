@@ -81,8 +81,21 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ikechaoamia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_solnhofenamia_clean", "inventory"),
 
-				 */
 
+
+				new ModelResourceLocation("lepidodendron:fossils/fossil_calamopleurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tetrameroceras_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_dracoraptor_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_prestosuchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_kannemeyeria_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_trilophosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_lesothosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_qianosuchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_knoetschkesuchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_litargosuchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tropidosuchus_clean", "inventory"),
+
+				 */
 
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lusovenator_clean", "inventory"),

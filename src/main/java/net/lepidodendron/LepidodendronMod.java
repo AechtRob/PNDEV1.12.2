@@ -2461,6 +2461,19 @@ public class LepidodendronMod {
 	public static final ResourceLocation SCLEROCEPHALUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sclerocephalus"));
 	public static final ResourceLocation SCLEROCEPHALUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sclerocephalus_young"));
 
+	public static final int ENTITY_HAPLOLEPIS = 992;
+	public static final ResourceLocation HAPLOLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/haplolepis"));
+	public static final int ENTITY_TESNUSOCARIS = 993;
+	public static final ResourceLocation TESNUSOCARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tesnusocaris"));
+	public static final int ENTITY_ONYCHOSELACHE = 994;
+	public static final ResourceLocation ONYCHOSELACHE_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/onychoselache"));
+	public static final int ENTITY_NINGXIAPLATYSOMUS = 995;
+	public static final ResourceLocation NINGXIAPLATYSOMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ningxiaplatysomus"));
+	public static final int ENTITY_AUSTRALICHTHYS = 996;
+	public static final ResourceLocation AUSTRALICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/australichthys"));
+	public static final int ENTITY_ROLFEIA = 997;
+	public static final ResourceLocation ROLFEIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rolfeia"));
+
 
 
 	@Mod.EventHandler
