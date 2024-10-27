@@ -2473,6 +2473,18 @@ public class LepidodendronMod {
 	public static final ResourceLocation AUSTRALICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/australichthys"));
 	public static final int ENTITY_ROLFEIA = 997;
 	public static final ResourceLocation ROLFEIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rolfeia"));
+	public static final int ENTITY_ANDERELLA = 998;
+	public static final ResourceLocation ANDERELLA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/anderella"));
+	public static final int ENTITY_AETHERETMON = 999;
+	public static final ResourceLocation AETHERETMON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aetheretmon"));
+	public static final int ENTITY_CARBOTUBULUS = 1000;
+	public static final ResourceLocation CARBOTUBULUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/carbotubulus"));
+	public static final int ENTITY_NEMATOPTYCHIUS = 1001;
+	public static final ResourceLocation NEMATOPTYCHIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/nematoptychius"));
+	public static final int ENTITY_AMPHICENTRUM = 1002;
+	public static final ResourceLocation AMPHICENTRUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/amphicentrum"));
+	public static final int ENTITY_URASTERELLA = 1003;
+	public static final ResourceLocation URASTERELLA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urasterella"));
 
 
 

@@ -6020,6 +6020,30 @@ public class RenderHandler {
                 return new RenderAetheretmon(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAmphicentrum.class, new IRenderFactory<EntityPrehistoricFloraAmphicentrum>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAmphicentrum> createRenderFor(RenderManager manager) {
+                return new RenderAmphicentrum(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNematoptychius.class, new IRenderFactory<EntityPrehistoricFloraNematoptychius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNematoptychius> createRenderFor(RenderManager manager) {
+                return new RenderNematoptychius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCarbotubulus.class, new IRenderFactory<EntityPrehistoricFloraCarbotubulus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCarbotubulus> createRenderFor(RenderManager manager) {
+                return new RenderCarbotubulus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraUrasterella.class, new IRenderFactory<EntityPrehistoricFloraUrasterella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraUrasterella> createRenderFor(RenderManager manager) {
+                return new RenderUrasterella(manager);
+            }
+        });
 
 
 
@@ -6108,6 +6132,7 @@ public class RenderHandler {
         //Tile Entities Nautiloid shells etc:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockFurcaster.TileEntityCustom.class, new RenderFurcasterItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockVillebrunaster.TileEntityCustom.class, new RenderVillebrunasterItem());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockUrasterella.TileEntityCustom.class, new RenderUrasterellaItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDecacuminaster.TileEntityCustom.class, new RenderDecacuminasterItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockLepidaster.TileEntityCustom.class, new RenderLepidasterItem() );
         ClientRegistry.bindTileEntitySpecialRenderer(BlockHelianthaster.TileEntityCustom.class, new RenderHelianthasterItem());

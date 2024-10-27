@@ -292,8 +292,10 @@ public class ModelRolfeia extends ModelBasePalaeopedia {
         }
 
         AdvancedModelRenderer[] Tail = {this.body2, this.tail};
+        AdvancedModelRenderer[] Gills = {this.bookgill1, this.bookgill2, this.bookgill3, this.bookgill4, this.bookgill5, this.bookgill6};
 
         if (isAtBottom || !e.isInWater()) {
+            this.chainWave(Gills, 0.5F, 0.05f, -2, f2, 0F);
             //Left
             this.swing(legleft, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
             this.swing(legleft2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
