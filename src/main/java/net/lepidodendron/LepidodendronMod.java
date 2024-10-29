@@ -2485,8 +2485,30 @@ public class LepidodendronMod {
 	public static final ResourceLocation AMPHICENTRUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/amphicentrum"));
 	public static final int ENTITY_URASTERELLA = 1003;
 	public static final ResourceLocation URASTERELLA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urasterella"));
-
-
+	public static final int ENTITY_SCREBINODUS = 1004;
+	public static final ResourceLocation SCREBINODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/screbinodus"));
+	public static final int ENTITY_GERAGNOSTUS = 1005;
+	public static final ResourceLocation GERAGNOSTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/geragnostus"));
+	public static final int ENTITY_PSEUDONARAOIA = 1006;
+	public static final ResourceLocation PSEUDONARAOIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pseudonaraoia"));
+	public static final int ENTITY_NARAOIA_SPINOSA = 1007;
+	public static final ResourceLocation NARAOIA_SPINOSA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/naraoia_spinosa"));
+	public static final int ENTITY_NARAOIA_BERTIENSIS = 1008;
+	public static final ResourceLocation NARAOIA_BERTIENSIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/naraoia_bertiensis"));
+	public static final int ENTITY_CAMANCHIA = 1009;
+	public static final ResourceLocation CAMANCHIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/camanchia"));
+	public static final int ENTITY_TETRAMEROCERAS = 1010;
+	public static final ResourceLocation TETRAMEROCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tetrameroceras"));
+	public static final ResourceLocation TETRAMEROCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tetrameroceras_young"));
+	public static final int ENTITY_QIANOSUCHUS = 1011;
+	public static final ResourceLocation QIANOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/qianosuchus"));
+	public static final ResourceLocation QIANOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/qianosuchus_young"));
+	public static final int ENTITY_LITARGOSUCHUS = 1012;
+	public static final ResourceLocation LITARGOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/litargosuchus"));
+	public static final int ENTITY_KNOETSCHKESUCHUS = 1013;
+	public static final ResourceLocation KNOETSCHKESUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/knoetschkesuchus"));
+	public static final int ENTITY_TROPIDOSUCHUS = 1014;
+	public static final ResourceLocation TROPIDOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tropidosuchus"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
