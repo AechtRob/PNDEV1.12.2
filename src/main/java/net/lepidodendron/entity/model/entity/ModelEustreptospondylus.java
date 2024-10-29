@@ -337,14 +337,14 @@ public class ModelEustreptospondylus extends ModelBasePalaeopedia {
     }
     public void renderStaticWall(float f) {
         this.neck1.rotateAngleY = (float) Math.toRadians(00);
-        this.setRotateAngle(neck1, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(neck2, 0.5F, 0.0F, 0.0F);
-        this.setRotateAngle(neck3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, 0.4F, 0.0F, 0.0F);
         this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.neck1.offsetY = -0.22F;
+        this.setRotateAngle(jaw, 0.2F, 0.0F, 0.0F);
+        this.neck1.offsetY = -0.0F;
         this.neck1.offsetX = 0.0F;
-        this.neck1.offsetZ = -0.2F;
+        this.neck1.offsetZ = 0.1F;
         this.neck1.render(0.01F);
         resetToDefaultPose();
     }
