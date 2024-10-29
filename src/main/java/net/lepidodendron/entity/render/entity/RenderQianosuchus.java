@@ -30,7 +30,7 @@ public class RenderQianosuchus extends RenderLivingBaseWithBook<EntityPrehistori
     protected void preRenderCallback(EntityPrehistoricFloraQianosuchus entity, float f) {
         float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.5F;
+        this.shadowSize = 0;
     }
 
 }
