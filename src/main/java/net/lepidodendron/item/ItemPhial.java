@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockEggs;
 import net.lepidodendron.block.BlockEggsWater;
+import net.lepidodendron.block.BlockEggsWaterSurface;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.entity.util.ILayableMoss;
@@ -95,15 +96,16 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 			IBlockState iblockstate = worldIn.getBlockState(target);
 			Block blockTarget = iblockstate.getBlock();
 			boolean isWater = false;
+			boolean isSurface = false;
 
 			if (!worldIn.isRemote) {
 				boolean collected = false;
 				boolean removed = false;
 				String strPhial = "";
 				ItemStack phial = new ItemStack(ItemPhialFull.block, 1);
+				String eggRenderType = "";
 
 				if (blockTarget == BlockEggsWater.block) {
-					String eggRenderType = "";
 					TileEntity tileEntity = worldIn.getTileEntity(target);
 					if (tileEntity != null) {
 						if (tileEntity.getTileData().hasKey("creature")) {
@@ -113,10 +115,35 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 
 					if (!eggRenderType.equalsIgnoreCase("")) {
 						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, worldIn, new BlockPos(target)) == null) {
-							strPhial = eggRenderType;
 							collected = true;
 							isWater = true;
 							if (blockTarget == BlockEggsWater.block) {
+								removed = true;
+							}
+							else {
+								IBlockState state = worldIn.getBlockState(target);
+								TileEntity te = worldIn.getTileEntity(target);
+								if (te != null) {
+									te.getTileData().removeTag("creature");
+								}
+								worldIn.notifyBlockUpdate(target, state, state, 3);
+							}
+						}
+					}
+				}
+				if (blockTarget == BlockEggsWaterSurface.block) {
+					TileEntity tileEntity = worldIn.getTileEntity(target);
+					if (tileEntity != null) {
+						if (tileEntity.getTileData().hasKey("creature")) {
+							eggRenderType = tileEntity.getTileData().getString("creature");
+						}
+					}
+
+					if (!eggRenderType.equalsIgnoreCase("")) {
+						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, worldIn, new BlockPos(target)) == null) {
+							collected = true;
+							isSurface = true;
+							if (blockTarget == BlockEggsWaterSurface.block) {
 								removed = true;
 							}
 							else {
@@ -134,7 +161,6 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 						|| blockTarget instanceof ILayableMoss
 						|| blockTarget == BlockEggs.block
 				) {
-					String eggRenderType = "";
 					TileEntity tileEntity = worldIn.getTileEntity(target);
 					if (tileEntity != null) {
 						if (tileEntity.getTileData().hasKey("creature")) {
@@ -144,7 +170,6 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 
 					if (!eggRenderType.equalsIgnoreCase("")) {
 						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, worldIn, new BlockPos(target)) == null) {
-							strPhial = eggRenderType;
 							collected = true;
 							if (blockTarget == BlockEggs.block) {
 								removed = true;
@@ -169,18 +194,16 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					phial.setCount(1);
 					NBTTagCompound stackNBT = new NBTTagCompound();
 					phial.setTagCompound(stackNBT);
-					phial.getTagCompound().setString("id_eggs", strPhial);
-
-					phial.getTagCompound().setBoolean("water", isWater);
-
-					TileEntity tileentity = worldIn.getTileEntity(target);
-					if (tileentity != null) {
-						if (tileentity.getTileData() != null) {
-							if (tileentity.getTileData().hasKey("PNType")) {
-								phial.getTagCompound().setString("PNType", tileentity.getTileData().getString("PNType"));
-							}
-						}
+					int i = eggRenderType.indexOf("@");
+					if (i >= 1) {
+						phial.getTagCompound().setString("PNType", eggRenderType.substring(eggRenderType.indexOf("@") + 1));
+						phial.getTagCompound().setString("id_eggs", eggRenderType.substring(0, eggRenderType.indexOf("@")));
 					}
+					else {
+						phial.getTagCompound().setString("id_eggs", eggRenderType);
+					}
+					phial.getTagCompound().setBoolean("water", isWater);
+					phial.getTagCompound().setBoolean("surface", isSurface);
 
 					ItemHandlerHelper.giveItemToPlayer(player, phial);
 					if (removed) {

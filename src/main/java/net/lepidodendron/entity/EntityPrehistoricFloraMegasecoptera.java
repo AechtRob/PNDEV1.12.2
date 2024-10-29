@@ -4,12 +4,11 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsMegasecoptera;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMegasecopteraSylvohymen;
-import net.minecraft.block.state.IBlockState;
+import net.lepidodendron.util.EggLayingConditions;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -49,6 +48,11 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
 	}
 
 	@Override
@@ -299,11 +303,6 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	}
 
 	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsMegasecoptera.block.getDefaultState();
-	}
-
-	@Override
 	public int getAnimationTick() {
 		return animationTick;
 	}
@@ -380,6 +379,11 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	}
 
 	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_megasecoptera.png");
+	}
+
+	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
 	}
@@ -389,4 +393,10 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		return ArrayUtils.addAll(DietString.PLANTS);
 	}
 
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		EggLayingConditions.layWaterBottomEggsNoPause(this);
+	}
 }

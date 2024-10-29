@@ -16,6 +16,7 @@ import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -30,6 +31,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -85,17 +87,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     private boolean passengerNightVisionAmbientPassenger;
     private boolean passengerNightVisionParticlesPassenger;
 
-    private UUID passengerInvisibilityUUID;
-    private int passengerInvisibilityDuration;
-    private int passengerInvisibilityAmplifier;
-    private boolean passengerInvisibilityAmbient;
-    private boolean passengerInvisibilityParticles;
-    private UUID passengerInvisibilityUUIDPassenger;
-    private int passengerInvisibilityDurationPassenger;
-    private int passengerInvisibilityAmplifierPassenger;
-    private boolean passengerInvisibilityAmbientPassenger;
-    private boolean passengerInvisibilityParticlesPassenger;
-
     private UUID passengerWaterBreathingUUID;
     private int passengerWaterBreathingDuration;
     private int passengerWaterBreathingAmplifier;
@@ -144,23 +135,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         }
     }
 
-    public void saveInvisibilityPassenger(int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
-        if (this.passengerInvisibilityUUID != player) {
-            this.passengerInvisibilityDuration = duration;
-            this.passengerInvisibilityAmplifier = amplifier;
-            this.passengerInvisibilityAmbient = ambient;
-            this.passengerInvisibilityParticles = particles;
-            this.passengerInvisibilityUUID = player;
-        }
-        else if (this.passengerInvisibilityUUIDPassenger != player) {
-            this.passengerInvisibilityDurationPassenger = duration;
-            this.passengerInvisibilityAmplifierPassenger = amplifier;
-            this.passengerInvisibilityAmbientPassenger = ambient;
-            this.passengerInvisibilityParticlesPassenger = particles;
-            this.passengerInvisibilityUUIDPassenger = player;
-        }
-    }
-
     public void saveWaterBreathingPassenger(int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
         if (this.passengerWaterBreathingUUID != player) {
             this.passengerWaterBreathingDuration = duration;
@@ -189,14 +163,15 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         }
     }
 
-    public void grantInvisibilityPassenger(EntityPlayer player) {
-        if (passengerInvisibilityUUID == player.getUniqueID()) {
-            player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, this.passengerInvisibilityDuration, this.passengerInvisibilityAmplifier, this.passengerInvisibilityAmbient, this.passengerInvisibilityParticles));
-            this.passengerInvisibilityUUID = null;
-        }
-        else if (passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
-            player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, this.passengerInvisibilityDurationPassenger, this.passengerInvisibilityAmplifierPassenger, this.passengerInvisibilityAmbientPassenger, this.passengerInvisibilityParticlesPassenger));
-            this.passengerInvisibilityUUIDPassenger = null;
+    public void grantDamageCapabilityPassenger(EntityPlayer player) {
+        if (player instanceof EntityPlayerMP) {
+            if (((EntityPlayerMP)player).interactionManager.getGameType() == GameType.CREATIVE
+                || ((EntityPlayerMP)player).interactionManager.getGameType() == GameType.SPECTATOR) {
+               player.capabilities.disableDamage = true;
+            }
+            else  {
+                player.capabilities.disableDamage = false;
+            }
         }
     }
 
@@ -265,29 +240,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         compound.setInteger("passengerNightVisionAmplifierPassenger", this.passengerNightVisionAmplifierPassenger);
         compound.setBoolean("passengerNightVisionAmbientPassenger", this.passengerNightVisionAmbientPassenger);
         compound.setBoolean("passengerNightVisionParticlesPassenger", this.passengerNightVisionParticlesPassenger);
-        
-        if (this.passengerInvisibilityUUID == null) {
-            compound.setString("passengerInvisibilityUUID", "");
-        }
-        else {
-            compound.setString("passengerInvisibilityUUID", this.passengerInvisibilityUUID.toString());
-        }
-        compound.setInteger("passengerInvisibilityDuration", this.passengerInvisibilityDuration);
-        compound.setInteger("passengerInvisibilityAmplifier", this.passengerInvisibilityAmplifier);
-        compound.setBoolean("passengerInvisibilityAmbient", this.passengerInvisibilityAmbient);
-        compound.setBoolean("passengerInvisibilityParticles", this.passengerInvisibilityParticles);
 
-        if (this.passengerInvisibilityUUIDPassenger == null) {
-            compound.setString("passengerInvisibilityUUIDPassenger", "");
-        }
-        else {
-            compound.setString("passengerInvisibilityUUIDPassenger", this.passengerInvisibilityUUIDPassenger.toString());
-        }
-        compound.setInteger("passengerInvisibilityDurationPassenger", this.passengerInvisibilityDurationPassenger);
-        compound.setInteger("passengerInvisibilityAmplifierPassenger", this.passengerInvisibilityAmplifierPassenger);
-        compound.setBoolean("passengerInvisibilityAmbientPassenger", this.passengerInvisibilityAmbientPassenger);
-        compound.setBoolean("passengerInvisibilityParticlesPassenger", this.passengerInvisibilityParticlesPassenger);
-        
         if (this.passengerWaterBreathingUUID == null) {
             compound.setString("passengerWaterBreathingUUID", "");
         }
@@ -332,22 +285,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             this.passengerNightVisionAmplifierPassenger = compound.getInteger("passengerNightVisionAmplifierPassenger");
             this.passengerNightVisionAmbientPassenger = compound.getBoolean("passengerNightVisionAmbientPassenger");
             this.passengerNightVisionParticlesPassenger = compound.getBoolean("passengerNightVisionParticlesPassenger");
-        }
-
-        if (!(compound.getString("passengerInvisibilityUUID").equalsIgnoreCase(""))) {
-            this.passengerInvisibilityUUID = UUID.fromString(compound.getString("passengerInvisibilityUUID"));
-            this.passengerInvisibilityDuration = compound.getInteger("passengerInvisibilityDuration");
-            this.passengerInvisibilityAmplifier = compound.getInteger("passengerInvisibilityAmplifier");
-            this.passengerInvisibilityAmbient = compound.getBoolean("passengerInvisibilityAmbient");
-            this.passengerInvisibilityParticles = compound.getBoolean("passengerInvisibilityParticles");
-        }
-
-        if (!(compound.getString("passengerInvisibilityUUIDPassenger").equalsIgnoreCase(""))) {
-            this.passengerInvisibilityUUIDPassenger = UUID.fromString(compound.getString("passengerInvisibilityUUIDPassenger"));
-            this.passengerInvisibilityDurationPassenger = compound.getInteger("passengerInvisibilityDurationPassenger");
-            this.passengerInvisibilityAmplifierPassenger = compound.getInteger("passengerInvisibilityAmplifierPassenger");
-            this.passengerInvisibilityAmbientPassenger = compound.getBoolean("passengerInvisibilityAmbientPassenger");
-            this.passengerInvisibilityParticlesPassenger = compound.getBoolean("passengerInvisibilityParticlesPassenger");
         }
 
         if (!(compound.getString("passengerWaterBreathingUUID").equalsIgnoreCase(""))) {
@@ -1174,10 +1111,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
                     player.removePotionEffect(MobEffects.WATER_BREATHING);
                 }
-                if (this.passengerInvisibilityUUID == player.getUniqueID()
-                        || this.passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
-                    player.removePotionEffect(MobEffects.INVISIBILITY);
-                }
                 if (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) {
                     player.setAir(300);
                 }
@@ -1195,12 +1128,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                         player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
                     }
                 }
-                if (((!player.isPotionActive(MobEffects.INVISIBILITY)) || player.getActivePotionEffect(MobEffects.INVISIBILITY).getDuration() < 201) && LepidodendronConfig.submarineInvisibility) {
-                    if (this.passengerInvisibilityUUID == player.getUniqueID()
-                            || this.passengerInvisibilityUUIDPassenger == player.getUniqueID()) {
-                        player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 201, 0, false, false));
-                    }
-                }
+                player.capabilities.disableDamage = true;
             }
         }
     }

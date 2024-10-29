@@ -20,7 +20,7 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
     private final ModelEggLarge large_egg;
     private final ModelEggHuge huge_egg;
     private final ModelEggVast vast_egg;
-    private final ModelRottenLogEggs rotten_wood_eggs;
+    private final ModelEggRottenWood rotten_wood_eggs;
     private final ModelInsectEggs insect_eggs;
 
     public RenderEggsInBlock() {
@@ -29,7 +29,7 @@ public class RenderEggsInBlock extends TileEntitySpecialRenderer<BlockAncientMos
         this.large_egg = new ModelEggLarge();
         this.huge_egg = new ModelEggHuge();
         this.vast_egg = new ModelEggVast();
-        this.rotten_wood_eggs = new ModelRottenLogEggs();
+        this.rotten_wood_eggs = new ModelEggRottenWood();
         this.insect_eggs = new ModelInsectEggs();
     }
 

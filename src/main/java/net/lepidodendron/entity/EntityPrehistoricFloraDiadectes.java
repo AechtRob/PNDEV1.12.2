@@ -12,6 +12,7 @@ import net.lepidodendron.entity.render.entity.RenderDiadectes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -20,7 +21,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //medium
+		return 47; //surface spawn
 	}
 
 	public static String getPeriod() {return "early Permian";}
@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 
 	@Override
 	public boolean hasNest() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 
 	@Override
 	public boolean laysEggs() {
-		return true;
+		return false;
 	}
 
 	public float getAISpeedLand() {
@@ -132,7 +132,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderLayInWater(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 60));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
@@ -150,8 +150,6 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 	public boolean panics() {
 		return true;
 	}
-
-	
 	
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -215,28 +213,6 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
-	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
-	}
-
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
@@ -244,6 +220,15 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+
+	public void onEntityUpdate()
+	{
+		super.onEntityUpdate();
+
+		//Lay eggs perhaps:
+		EggLayingConditions.layWaterSurfaceEggs(this);
+
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

@@ -106,11 +106,6 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 	}
 
 	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsItalophlebia.block.getDefaultState();
-	}
-
-	@Override
 	public int getAnimationTick() {
 		return animationTick;
 	}

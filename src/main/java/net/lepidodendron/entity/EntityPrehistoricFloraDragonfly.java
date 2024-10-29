@@ -4,14 +4,13 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsDragonfly;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.render.entity.RenderDragonfly;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggDragonfly;
-import net.minecraft.block.state.IBlockState;
+import net.lepidodendron.util.EggLayingConditions;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -65,6 +64,16 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_dragonfly.png");
 	}
 
 	@Override
@@ -348,6 +357,8 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 				this.motionZ = 0;
 			}
 		}
+
+		EggLayingConditions.layWaterBottomEggsNoPause(this);
 	}
 
 	@Override
@@ -399,6 +410,12 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		return Type.byId(((Integer)this.dataManager.get(INSECT_TYPE)).intValue());
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	//*****************************************************
 
 	@Override
@@ -418,11 +435,6 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	@Override
 	public boolean laysEggs() {
 		return true;
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsDragonfly.block.getDefaultState();
 	}
 
 	@Override

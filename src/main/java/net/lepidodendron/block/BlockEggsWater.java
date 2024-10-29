@@ -1,7 +1,10 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.*;
+import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronFogSubscribers;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.patchouli.SpawnLocations;
@@ -126,7 +129,16 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_diploceraspis",
 			"lepidodendron:prehistoric_flora_diplodoselache",
 			"lepidodendron:prehistoric_flora_dracopristis",
-			"lepidodendron:prehistoric_flora_dragonfly",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly1",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly2",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly3",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly4",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly5",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly6",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly7",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly8",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly9",
+			"lepidodendron:prehistoric_flora_dragonfly@dragonfly10",
 			"lepidodendron:prehistoric_flora_dvinosaurus",
 			"lepidodendron:prehistoric_flora_edestus",
 			"lepidodendron:prehistoric_flora_erasipteroides",

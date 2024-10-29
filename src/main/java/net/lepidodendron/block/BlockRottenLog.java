@@ -217,14 +217,16 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		public static EntityItem hasBigEggs(String eggRenderType, World world, BlockPos pos) {
 			int eggType = 0;
-			EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
+			int i = eggRenderType.indexOf("@");
+			String cretureIn = eggRenderType;
+			String creatureType = "";
+			if (i >= 1) {
+				creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
+				cretureIn = eggRenderType.substring(0, eggRenderType.indexOf("@"));
+			}
+			EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(cretureIn));
 			if (ee != null) {
 				Entity entityEggs = ee.newInstance(null);
-				String creatureType = "";
-				int i = eggRenderType.indexOf("@");
-				if (i >= 1) {
-					creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
-				}
 				if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
 					EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
 					if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
@@ -245,7 +247,7 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 				}
 				entityEggs.setDead();
 			}
-			if (eggType == 20 || eggType >= 40) {
+			if (eggType == 20 || eggType == 21 || eggType >= 40) {
 				return null;
 			}
 			return new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockEggs.BlockCustom.getEggItem(eggRenderType), 1));

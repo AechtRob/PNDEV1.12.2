@@ -74,11 +74,6 @@ public class EntityPrehistoricFloraErasipteroides extends EntityPrehistoricFlora
 		return "Carboniferous";
 	}
 
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsErasipteroides.block.getDefaultState();
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		//return null;

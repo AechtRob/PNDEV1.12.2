@@ -21,24 +21,26 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
 
     public static RenderEggsWater instance;
 
-    private final ModelMobSpawn spawn_egg;
-    private final ModelMobSpawnCylinder cylinder;
-    private final ModelMobSpawnDumbbell dumbbell;
-    private final ModelMobSpawnMermaidPurse mermaid_purse;
-    private final ModelMobSpawnPiles piles;
-    private final ModelMobSpawnTube tube;
-    private final ModelMobSpawnEurypterid eurypterid;
+    private final ModelEggAmphibianSpawn spawn_egg;
+    private final ModelEggFishCylinder cylinder;
+    private final ModelEggFishDumbbell dumbbell;
+    private final ModelEggFishMermaidPurse mermaid_purse;
+    private final ModelEggFishPiles piles;
+    private final ModelEggFishTube tube;
+    private final ModelEggEurypterid eurypterid;
     private final ModelInsectEggs insect_eggs;
+    private final ModelEggCrossModel plant_egg;
 
     public RenderEggsWater() {
-        this.spawn_egg = new ModelMobSpawn();
-        this.cylinder = new ModelMobSpawnCylinder();
-        this.dumbbell = new ModelMobSpawnDumbbell();
-        this.mermaid_purse = new ModelMobSpawnMermaidPurse();
-        this.piles = new ModelMobSpawnPiles();
-        this.tube = new ModelMobSpawnTube();
-        this.eurypterid = new ModelMobSpawnEurypterid();
+        this.spawn_egg = new ModelEggAmphibianSpawn();
+        this.cylinder = new ModelEggFishCylinder();
+        this.dumbbell = new ModelEggFishDumbbell();
+        this.mermaid_purse = new ModelEggFishMermaidPurse();
+        this.piles = new ModelEggFishPiles();
+        this.tube = new ModelEggFishTube();
+        this.eurypterid = new ModelEggEurypterid();
         this.insect_eggs = new ModelInsectEggs();
+        this.plant_egg = new ModelEggCrossModel();
     }
 
     public void setRendererDispatcher(TileEntityRendererDispatcher rendererDispatcherIn)
@@ -63,8 +65,10 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
                 if (tileEntity.getTileData().hasKey("creature")) {
                     eggRenderType = tileEntity.getTileData().getString("creature");
                 }
-                if (tileEntity.getTileData().hasKey("PNType")) {
-                    creatureType = tileEntity.getTileData().getString("PNType");
+                int i = eggRenderType.indexOf("@");
+                if (i >= 1) {
+                    creatureType = eggRenderType.substring(eggRenderType.indexOf("@") + 1);
+                    eggRenderType = eggRenderType.substring(0, eggRenderType.indexOf("@"));
                 }
             }
             if (!eggRenderType.equals("")) {
@@ -135,6 +139,11 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
             }
+            else if (eggType == 21) { //underwater cross model
+                GlStateManager.translate(x + 0.5F, y + 1.50F, z + 0.5F);
+                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+            }
 //            else {
 //                GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
 //                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
@@ -151,6 +160,7 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
 
             GlStateManager.enableAlpha();
             switch (eggType) {
+
                 case 40: default: //Spawn-jelly
                     GlStateManager.color(1.0F, 1.0F, 1.0F, 0.3F);
                     GlStateManager.enableNormalize();
@@ -201,6 +211,9 @@ public class RenderEggsWater extends TileEntitySpecialRenderer<BlockEggsWater.Ti
                     this.insect_eggs.renderAll(0.9f);
                     break;
 
+                case 21: //underwater cross model
+                    this.plant_egg.renderAll(1.25f);
+                    break;
 
             }
 

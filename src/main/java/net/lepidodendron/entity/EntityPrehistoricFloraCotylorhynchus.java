@@ -18,7 +18,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -71,7 +70,7 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 
 	@Override
 	public boolean hasNest() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -91,6 +90,16 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 
 	@Override
 	public boolean laysEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
 		return true;
 	}
 
@@ -135,7 +144,7 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderNestInBlockAI(this));
 		tasks.addTask(6, new LandWanderFollowParent(this, 1.05D));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 60));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
@@ -216,25 +225,9 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 	}
 
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
+		return (
+				nestBlockMatch(world, pos)
+		);
 	}
 
 	@Override

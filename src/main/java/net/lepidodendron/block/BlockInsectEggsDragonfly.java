@@ -8,7 +8,6 @@ import net.lepidodendron.item.ItemDragonflyEggsItem;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;

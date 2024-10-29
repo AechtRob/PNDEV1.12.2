@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "lepidodendron:items/entities/eggs_hylonomus",
-    "particle": "lepidodendron:items/entities/eggs_hylonomus"
-  }
-}

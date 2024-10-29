@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockPrimocandelabrum1;
 import net.lepidodendron.block.BlockPrimocandelabrum2;
 import net.lepidodendron.entity.model.tile.ModelPrimocandelabrum;
 import net.minecraft.block.BlockDirectional;

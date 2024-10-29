@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchocyrtus;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBaseAI;
@@ -17,8 +16,6 @@ import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -33,7 +30,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
@@ -215,8 +211,6 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
     public abstract boolean dropsEggs();
 
-    public abstract IBlockState getEggBlockState();
-
     public int getMateable() {
         return this.dataManager.get(MATEABLE);
     }
@@ -307,8 +301,6 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
         return this.getTicks() > breedCooldown; //If the mob has done not bred for a MC day
     }
-
-    public String tagEgg () {return "";}
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
@@ -459,28 +451,6 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         this.navigator = new PathNavigateFlyingNoWater(this, world);
     }
 
-    public boolean spaceCheckEggs() {
-        int xct;
-        int yct;
-        int zct;
-        yct = -4;
-        while (yct <= 4) {
-            xct = -4;
-            while (xct <= 4) {
-                zct = -4;
-                while (zct <= 4) {
-                    if (world.getBlockState(this.getPosition().add(xct, yct, zct)).getBlock() instanceof BlockMobSpawn) {
-                        return false;
-                    }
-                    zct += 1;
-                }
-                xct += 1;
-            }
-            yct += 1;
-        }
-        return true;
-    }
-
     protected void setSizer(float width, float height)
     {
         if (width != this.width || height != this.height)
@@ -539,82 +509,85 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
 
         //Lay eggs perhaps:
-        if (!this.laysInBlock()) { //lays into water or something like that:
-            if (!world.isRemote && this.laysEggs() && this.getLaying()
-            ) {
-                if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition())) {
-                    //Is stationary for egg-laying:
-                    IBlockState eggs = getEggBlockState();
-                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                    world.setBlockState(this.getPosition(), eggs);
-                    TileEntity te = world.getTileEntity(this.getPosition());
-                    te.getTileData().setString("creature", getEntityId(this));
-                    this.setLaying(false);
-                    this.setTicks(0);
-                } else {
-                    if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition().down())) {
-                        //Is stationary for egg-laying:
-                        IBlockState eggs = getEggBlockState();
-                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                        world.setBlockState(this.getPosition().down(), eggs);
-                        TileEntity te = world.getTileEntity(this.getPosition().down());
-                        te.getTileData().setString("creature", getEntityId(this));
-                        this.setLaying(false);
-                        this.setTicks(0);
-                    } else {
-                        if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition().down(2))) {
-                            //Is stationary for egg-laying:
-                            IBlockState eggs = getEggBlockState();
-                            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                            world.setBlockState(this.getPosition().down(2), eggs);
-                            TileEntity te = world.getTileEntity(this.getPosition().down(2));
-                            te.getTileData().setString("creature", getEntityId(this));
-                            this.setLaying(false);
-                            this.setTicks(0);
-                        }
-                    }
-                }
-            }
-        }
-        else { //Lays with nbt into moss etc.
-            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && this.getLaying()
-            ) {
-                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
-                ) {
-                    //if (Math.random() > 0.5) {
-                        this.setTicks(-50); //Flag this as stationary for egg-laying
-                        this.setAnimation(LAY_ANIMATION);
-                    //}
-                }
-                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() >= -50 && this.getTicks() < 0) {
-                    //Is stationary for egg-laying:
-                    //System.err.println("Laying an egg in it");
+//        if (!this.laysInBlock()) { //lays into water or something like that:
+//            if (!world.isRemote && this.laysEggs() && this.getLaying()
+//            ) {
+//                if (canPlaceSpawn(world, this.getPosition())) {
+//                    //Is stationary for egg-laying:
+//                    IBlockState eggs = getEggBlockState();
+//                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+//                    world.setBlockState(this.getPosition(), eggs);
+//                    TileEntity te = world.getTileEntity(this.getPosition());
+//                    te.getTileData().setString("creature", getEntityId(this));
+//                    this.setLaying(false);
+//                    this.setTicks(0);
+//                } else {
+//                    if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition().down())) {
+//                        //Is stationary for egg-laying:
+//                        IBlockState eggs = getEggBlockState();
+//                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+//                        world.setBlockState(this.getPosition().down(), eggs);
+//                        TileEntity te = world.getTileEntity(this.getPosition().down());
+//                        te.getTileData().setString("creature", getEntityId(this));
+//                        this.setLaying(false);
+//                        this.setTicks(0);
+//                    } else {
+//                        if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition().down(2))) {
+//                            //Is stationary for egg-laying:
+//                            IBlockState eggs = getEggBlockState();
+//                            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+//                            world.setBlockState(this.getPosition().down(2), eggs);
+//                            TileEntity te = world.getTileEntity(this.getPosition().down(2));
+//                            te.getTileData().setString("creature", getEntityId(this));
+//                            this.setLaying(false);
+//                            this.setTicks(0);
+//                        }
+//                    }
+//                }
+//            }
+//        }
 
-                    String stringEgg = LepidodendronMod.MODID + ":" + this.tagEgg();
-                    //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                    if (this.testLay(world, this.getPosition())) {
-                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                        TileEntity te = world.getTileEntity(this.getPosition());
-                        if (te != null) {
-                            te.getTileData().setString("creature", getEntityId(this));
-                        }
-                        IBlockState state = world.getBlockState(this.getPosition());
-                        this.setLaying(false);
-                        world.notifyBlockUpdate(this.getPosition(), state, state, 3);
-                    } else if (this.testLay(world, this.getPosition().down())) {
-                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                        TileEntity te = world.getTileEntity(this.getPosition().down());
-                        if (te != null) {
-                            te.getTileData().setString("creature", getEntityId(this));
-                        }
-                        IBlockState state = world.getBlockState(this.getPosition().down());
-                        this.setLaying(false);
-                        world.notifyBlockUpdate(this.getPosition().down(), state, state, 3);
-                    }
-                    this.setTicks(0);
-                }
-            }
-        }
+
+
+//        else { //Lays with nbt into moss etc.
+//            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && this.getLaying()
+//            ) {
+//                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
+//                ) {
+//                    //if (Math.random() > 0.5) {
+//                        this.setTicks(-50); //Flag this as stationary for egg-laying
+//                        this.setAnimation(LAY_ANIMATION);
+//                    //}
+//                }
+//                if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() >= -50 && this.getTicks() < 0) {
+//                    //Is stationary for egg-laying:
+//                    //System.err.println("Laying an egg in it");
+//
+//                    String stringEgg = LepidodendronMod.MODID + ":" + this.tagEgg();
+//                    //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+//                    if (this.testLay(world, this.getPosition())) {
+//                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+//                        TileEntity te = world.getTileEntity(this.getPosition());
+//                        if (te != null) {
+//                            te.getTileData().setString("creature", getEntityId(this));
+//                        }
+//                        IBlockState state = world.getBlockState(this.getPosition());
+//                        this.setLaying(false);
+//                        world.notifyBlockUpdate(this.getPosition(), state, state, 3);
+//                    } else if (this.testLay(world, this.getPosition().down())) {
+//                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+//                        TileEntity te = world.getTileEntity(this.getPosition().down());
+//                        if (te != null) {
+//                            te.getTileData().setString("creature", getEntityId(this));
+//                        }
+//                        IBlockState state = world.getBlockState(this.getPosition().down());
+//                        this.setLaying(false);
+//                        world.notifyBlockUpdate(this.getPosition().down(), state, state, 3);
+//                    }
+//                    this.setTicks(0);
+//                }
+//            }
+//        }
 
         if (this.getHealth() <= 0) {
             this.motionX = 0;
@@ -625,12 +598,6 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
     public boolean testLay(World world, BlockPos pos) {
         return false;
-    }
-
-    public boolean canPlaceSpawn(World worldIn, BlockPos pos) {
-        return (isWaterBlock(worldIn, pos) && isWaterBlock(worldIn, pos.up())
-            && worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-            && worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos));
     }
 
     public boolean isWaterBlock(World world, BlockPos pos) {

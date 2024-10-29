@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsArchocyrtus;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
@@ -16,7 +15,6 @@ import net.lepidodendron.entity.util.ITrappableLand;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -57,11 +55,6 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 	@Override
 	public boolean laysInBlock() {
 		return true;
-	}
-
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_archocyrtus";
 	}
 
 	@Override
@@ -127,11 +120,6 @@ public class EntityPrehistoricFloraArchocyrtus extends EntityPrehistoricFloraIns
 	@Override
 	public boolean laysEggs() {
 		return true;
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsArchocyrtus.block.getDefaultState();
 	}
 
 	@Override

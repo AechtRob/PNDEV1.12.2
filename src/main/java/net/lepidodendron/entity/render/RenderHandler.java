@@ -6147,10 +6147,11 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSelaginella.TileEntityCustom.class, new RenderSelaginella());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSlimyAlgaeLand.TileEntityCustom.class, new RenderSlimyAlgaeLand());
 
-        //Nests and land eggs:
+        //Nests and eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNest.TileEntityNest.class, new RenderNest());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEggs.TileEntityCustom.class, new RenderEggsLand());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEggsWater.TileEntityCustom.class, new RenderEggsWater());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockEggsWaterSurface.TileEntityCustom.class, new RenderEggsWaterSurface());
 
         //Display cases:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDisplayCase.TileEntityDisplayCase.class, new RenderDisplayCase());

@@ -101,11 +101,6 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsProtozygoptera.block.getDefaultState();
-	}
-
-	@Override
 	public int getAnimationTick() {
 		return animationTick;
 	}

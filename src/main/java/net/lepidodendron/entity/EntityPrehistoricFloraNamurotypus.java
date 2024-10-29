@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsNamurotypus;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.LayerNamurotypusWing;
 import net.lepidodendron.entity.render.entity.RenderNamurotypus;
@@ -13,7 +12,6 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -72,11 +70,6 @@ public class EntityPrehistoricFloraNamurotypus extends EntityPrehistoricFloraMeg
 
 	public static String getPeriod() {
 		return "Carboniferous";
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsNamurotypus.block.getDefaultState();
 	}
 
 	@Nullable

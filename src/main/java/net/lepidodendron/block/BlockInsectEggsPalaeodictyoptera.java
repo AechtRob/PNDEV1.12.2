@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera;
 import net.lepidodendron.item.ItemPalaeodictyopteraEggsItem;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.patchouli.SpawnLocations;
-import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;

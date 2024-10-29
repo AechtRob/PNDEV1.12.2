@@ -8,7 +8,6 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsMeganeuropsis;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
@@ -19,7 +18,6 @@ import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -147,11 +145,6 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION};
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsMeganeuropsis.block.getDefaultState();
 	}
 
 	@Override

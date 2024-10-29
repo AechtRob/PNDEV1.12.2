@@ -4,7 +4,6 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsPalaeodictyoptera;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
@@ -14,8 +13,8 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.spawneggs.*;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -80,7 +79,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 20; //insect
+		return 21; //cross model
 	}
 
 	@Override
@@ -121,36 +120,6 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 
 		return this.isInLove() && otherAnimal.isInLove();
 	}
-
-//	@Override
-//	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-//		if (player.getHeldItem(hand).getItem() instanceof ItemMonsterPlacer) {
-//			//Cycle the variants:
-//			ResourceLocation resourceLocation = ItemMonsterPlacer.getNamedIdFrom(player.getHeldItem(hand));
-//			if (resourceLocation.toString().equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeodictyoptera")) {
-//				if (!player.capabilities.isCreativeMode)
-//				{
-//					player.getHeldItem(hand).shrink(1);
-//				}
-//				int type = this.getPNType().ordinal();
-//				type = type + 1;
-//				if (type > Type.values().length) {
-//					type = 0;
-//				}
-//				this.setPNType(Type.byId(type));
-//
-//				float f = this.width;
-//				this.width = getHitBoxSize()[0];
-//				this.height = getHitBoxSize()[1];
-//				if (this.width != f) {
-//					double d0 = (double) width / 2.0D;
-//					this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
-//				}
-//			}
-//		}
-//
-//		return super.processInteract(player, hand);
-//	}
 
 	@Override
 	public boolean hasPNVariants() {
@@ -559,11 +528,6 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsPalaeodictyoptera.block.getDefaultState();
-	}
-
-	@Override
 	public int getAnimationTick() {
 		return animationTick;
 	}
@@ -618,6 +582,11 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(Math.floor(this.getHitBoxSize()[0] * 15F));
 		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_palaeodictyoptera.png");
 	}
 
 	@Override
@@ -865,6 +834,13 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.PLANTS);
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+		EggLayingConditions.layWaterBottomEggsNoPause(this);
 	}
 
 }

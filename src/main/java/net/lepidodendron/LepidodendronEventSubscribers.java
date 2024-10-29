@@ -269,7 +269,9 @@ public class LepidodendronEventSubscribers {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
 				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
-				//Capture the night vision and invisibility effects if needed:
+			}
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine) {
+				//Capture the effects if needed:
 				if (player.isPotionActive(MobEffects.WATER_BREATHING)) {
 					PotionEffect effectWaterBreathing = player.getActivePotionEffect(MobEffects.WATER_BREATHING);
 					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveWaterBreathingPassenger(effectWaterBreathing.getDuration(), effectWaterBreathing.getAmplifier(), effectWaterBreathing.getIsAmbient(), effectWaterBreathing.doesShowParticles(), player.getUniqueID());
@@ -278,23 +280,17 @@ public class LepidodendronEventSubscribers {
 					PotionEffect effectNightVision = player.getActivePotionEffect(MobEffects.NIGHT_VISION);
 					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveNightVisionPassenger(effectNightVision.getDuration(), effectNightVision.getAmplifier(), effectNightVision.getIsAmbient(), effectNightVision.doesShowParticles(), player.getUniqueID());
 				}
-				if (player.isPotionActive(MobEffects.INVISIBILITY) && LepidodendronConfig.submarineInvisibility) {
-					PotionEffect effectInvisibility = player.getActivePotionEffect(MobEffects.INVISIBILITY);
-					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveInvisibilityPassenger(effectInvisibility.getDuration(), effectInvisibility.getAmplifier(), effectInvisibility.getIsAmbient(), effectInvisibility.doesShowParticles(), player.getUniqueID());
-				}
 			}
 		}
 		if (entity instanceof EntityPlayer && (!event.isMounting()) && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
-			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
-				//Capture the night vision and invisibility effects if needed:
+			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine) {
+				//Give the night vision effect while inside:
 				((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantWaterBreathingPassenger(player);
 				if (LepidodendronConfig.submarineNightvision) {
 					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantNightVisionPassenger(player);
 				}
-				if (LepidodendronConfig.submarineInvisibility) {
-					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantInvisibilityPassenger(player);
-				}
+				((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantDamageCapabilityPassenger(player);
 			}
 		}
 	}

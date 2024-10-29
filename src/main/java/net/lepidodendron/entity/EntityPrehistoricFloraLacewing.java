@@ -501,11 +501,6 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	}
 
 	@Override
-	public IBlockState getEggBlockState() {
-		return null;
-	}
-
-	@Override
 	public ItemStack getDroppedEggItemStack() {
 		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
 		NBTTagCompound variantNBT = new NBTTagCompound();

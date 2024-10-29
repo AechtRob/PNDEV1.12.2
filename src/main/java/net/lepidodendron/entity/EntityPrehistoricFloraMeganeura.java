@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsMeganeura;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.LayerMeganeuraWing;
 import net.lepidodendron.entity.render.entity.RenderMeganeura;
@@ -13,7 +12,6 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -65,11 +63,6 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 
 	public static String getPeriod() {
 		return "Carboniferous";
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsMeganeura.block.getDefaultState();
 	}
 
 	@Nullable

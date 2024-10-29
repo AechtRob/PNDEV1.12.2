@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockEggs;
 import net.lepidodendron.block.BlockEggsWater;
+import net.lepidodendron.block.BlockEggsWaterSurface;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -67,15 +68,25 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_carcinosoma", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_chunerpeton", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_ciurcopterus", "inventory"),
-			new ModelResourceLocation("lepidodendron:entities/phial_eggs_cladoselache", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_cladoselache", "inventory"), new ModelResourceLocation("lepidodendron:entities/phial_eggs_cotylorhynchusn", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_cobelodus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_crassigyrinus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_daohugoucossus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dasyceps", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_diadectes", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_diplocaulus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_diploceraspis", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dracopristis", "inventory"),
-			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly1", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly2", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly3", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly4", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly5", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly6", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly7", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly8", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly9", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dragonfly_dragonfly10", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_dvinosaurus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_edestus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_eoarthropleura", "inventory"),
@@ -112,7 +123,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_meganeurites", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_meganeuropsis", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_megarachne", "inventory"),
-			new ModelResourceLocation("lepidodendron:entities/phial_eggs_megasecoptera", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_megasecoptera_sylvohymen", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_melosaurus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_metoposaurus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_mixopterus", "inventory"),
@@ -123,7 +134,15 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_orcanopterus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_orodus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_pagea", "inventory"),
-			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_delitzschala", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_dunbaria", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_homaloneura", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_lithomantis", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_lycocercus", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_mazothairos", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_psychroptilus", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_sinodunbaria", "inventory"),
+			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeodictyoptera_stenodictya", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeontinid", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_pantylus", "inventory"),
 			new ModelResourceLocation("lepidodendron:entities/phial_eggs_parhybodus", "inventory"),
@@ -278,6 +297,28 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 								te.getTileData().setString("PNType", PNVariant);
 							}
 							((BlockEggsWater.TileEntityCustom)te).setHatchable(true);
+						}
+						if (!player.capabilities.isCreativeMode) {
+							itemstack.shrink(1);
+							ItemStack phial = new ItemStack(ItemPhial.block, 1);
+							ItemHandlerHelper.giveItemToPlayer(player, phial);
+						}
+						player.addStat(StatList.getObjectUseStats(this));
+						worldIn.playSound(player, pos.offset(facing), SoundEvents.BLOCK_SLIME_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						return EnumActionResult.SUCCESS;
+					}
+				}
+				if (itemstack.getTagCompound().getBoolean("surface")) {
+					if (BlockEggsWaterSurface.block.canPlaceBlockAt(worldIn, pos.up(2))) {
+						if (!(worldIn.isRemote)) {
+							worldIn.setBlockState(pos.up(2), BlockEggsWaterSurface.block.getDefaultState());
+							worldIn.setTileEntity(pos.up(2), new BlockEggsWaterSurface.TileEntityCustom());
+							TileEntity te = worldIn.getTileEntity(pos.up(2));
+							te.getTileData().setString("creature", resourcelocation);
+							if (!PNVariant.equalsIgnoreCase("")) {
+								te.getTileData().setString("PNType", PNVariant);
+							}
+							((BlockEggsWaterSurface.TileEntityCustom)te).setHatchable(true);
 						}
 						if (!player.capabilities.isCreativeMode) {
 							itemstack.shrink(1);
