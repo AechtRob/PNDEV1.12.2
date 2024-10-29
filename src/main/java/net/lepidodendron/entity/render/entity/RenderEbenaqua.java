@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEbenaqua extends RenderLivingBaseWithBook<EntityPrehistoricFloraEbenaqua> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ebenaqua.png");
 
-    public static float getScaler() {return 0.065F; }
+    public static float getScaler() {return 0.22F; }
 
     public RenderEbenaqua(RenderManager mgr) {
         super(mgr, new ModelEbenaqua(), 0.0f);
@@ -32,7 +32,7 @@ public class RenderEbenaqua extends RenderLivingBaseWithBook<EntityPrehistoricFl
         float scale = this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.0F;
+        this.shadowSize = 0;
     }
 
 }

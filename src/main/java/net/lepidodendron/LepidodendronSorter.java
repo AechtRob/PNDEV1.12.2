@@ -5051,6 +5051,7 @@ public class LepidodendronSorter {
     public static final int eggs_tropidosuchus = 5047;
     public static final int litargosuchus_raw = 5048;
     public static final int tropidosuchus_raw = 5049;
+    public static final int eggs_tetrameroceras = 5050;
 
 
 

@@ -9152,6 +9152,10 @@ item.pf_eggs_qianosuchus.name=Qianosuchus Eggs
 item.pf_eggs_knoetschkesuchus.name=Knoetschkesuchus Eggs
 item.pf_eggs_litargosuchus.name=Litargosuchus Eggs
 item.pf_eggs_tropidosuchus.name=Tropidosuchus Eggs
+tile.pf_shell_tetrameroceras.name=Tetrameroceras Shell
+item.pf_eggs_tetrameroceras.name=Tetrameroceras Eggs
+
+
 
 
 

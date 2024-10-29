@@ -15,7 +15,7 @@ public class RenderDorypterus extends RenderLivingBaseWithBook<EntityPrehistoric
         super(mgr, new ModelDorypterus(), 0.0f);
     }
 
-    public static float getScaler() {return 0.076F;}
+    public static float getScaler() {return 0.2F;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDorypterus entity) {
