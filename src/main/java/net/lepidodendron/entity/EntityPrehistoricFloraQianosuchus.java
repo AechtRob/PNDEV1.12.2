@@ -73,6 +73,11 @@ public class EntityPrehistoricFloraQianosuchus extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public int getRoarLength() {
+		return 20;
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, STAND_ANIMATION};
 	}
@@ -178,7 +183,7 @@ public class EntityPrehistoricFloraQianosuchus extends EntityPrehistoricFloraSwi
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 1F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.85, 90));
+		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.7, 90));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
