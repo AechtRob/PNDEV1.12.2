@@ -125,6 +125,11 @@ public class EntityPrehistoricFloraCratoamia extends EntityPrehistoricFloraAgeab
 		return super.attackEntityFrom(source, amount);
 	}
 
+	@Override
+	public int getAttackLength() {
+		return 10;
+	}
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));

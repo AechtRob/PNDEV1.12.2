@@ -1,0 +1,32 @@
+{
+	"name": "Volcanic Wastes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_hadean_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Hadean Volcanic Wastes$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:precambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:precambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:precambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:precambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:precambrian_biome"
+		}
+	]
+}

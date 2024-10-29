@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:sclerocephalus_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_sclerocephalus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_sclerocephalus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_sclerocephalus"
+		}
+	}
+}

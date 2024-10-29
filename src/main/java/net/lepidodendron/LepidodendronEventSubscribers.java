@@ -725,9 +725,20 @@ public class LepidodendronEventSubscribers {
 			if (event.getPlayer() != null) {
 				//Let eggs drop their right items:
 				if (!event.getPlayer().isCreative() && event.getState().getBlock() == BlockEggs.block) {
-					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), BlockEggs.BlockCustom.getEggItemStack(event.getWorld(), event.getPos()));
-					entityToSpawn.setPickupDelay(10);
-					event.getWorld().spawnEntity(entityToSpawn);
+					String eggRenderType = "";
+					TileEntity tileEntity = event.getWorld().getTileEntity(event.getPos());
+					if (tileEntity != null) {
+						if (tileEntity.getTileData().hasKey("creature")) {
+							eggRenderType = tileEntity.getTileData().getString("creature");
+						}
+					}
+					if (!eggRenderType.equalsIgnoreCase("")) {
+						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, event.getWorld(), event.getPos()) != null) {
+							EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), BlockEggs.BlockCustom.getEggItemStack(event.getWorld(), event.getPos()));
+							entityToSpawn.setPickupDelay(10);
+							event.getWorld().spawnEntity(entityToSpawn);
+						}
+					}
 				}
 				//Let small angiosperm seeds drop sometimes:
 				if (!event.getPlayer().isCreative()

@@ -325,10 +325,10 @@ public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFlora
 		return false;
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_caelestiventus";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_caelestiventus";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

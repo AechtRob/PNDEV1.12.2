@@ -58,11 +58,6 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_attercopus";
-	}
-
-	@Override
 	public float getAISpeedLand() {
 		return 0.5F;
 	}

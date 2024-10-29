@@ -69,7 +69,7 @@ public class BlockAmphibianSpawnStenokranio extends ElementsLepidodendronMod.Mod
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_stenokranio", biome.getRegistryName().toString())) {
-				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+				//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}

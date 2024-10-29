@@ -1,0 +1,32 @@
+{
+	"name": "Lowland Floodplain",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_permian.png",
+	"category": "lepidodendron:permian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Permian Lowland Floodplain$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:permian_lowlands_floodplain"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:permian_lowlands_floodplain"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:permian_lowlands_floodplain"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:permian_lowlands_floodplain"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:permian_lowlands_floodplain"
+		}
+	]
+}

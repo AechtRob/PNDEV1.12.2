@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.base.IBennettites;
-import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraArchocyrtus;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBaseAI;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
@@ -41,7 +41,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -88,6 +87,45 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    @Nullable
+    public String getPNTypeName()
+    {
+        return null;
+    }
+
+    public int getEggType(@Nullable String variantIn) { //0-3
+        return 20; //Default to insect eggs
+    }
+
+    public ResourceLocation getEggTexture(@Nullable String variantIn) {
+        String entityString = this.getEntityString();
+        ResourceLocation resourceLocation;
+        entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+        if (variantIn == null) {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        }
+        else {
+            resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + "_" + variantIn + ".png");
+        }
+        if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
+            return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
+        }
+        return resourceLocation;
+    }
+
+    public String getEntityId(Entity entity) {
+        String mobid = "";
+        net.minecraftforge.fml.common.registry.EntityEntry entry =
+                net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
+        if (entry != null) {
+            mobid = entry.getRegistryName().toString();
+        }
+        if (this.hasPNVariants() && this.getPNTypeName() != null) {
+            mobid = mobid + "@" + this.getPNTypeName();
+        }
+        return mobid;
     }
 
     @Override
@@ -485,33 +523,13 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
 
         //Drop an egg perhaps:
-        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && this.getLaying()) {
             if (Math.random() > 0.5) {
                 ItemStack itemstack = getDroppedEggItemStack();
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }
-                String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-                itemstack.getTagCompound().setString("creature", stringEgg);
-                if (this.hasPNVariants()) {
-                    if (this instanceof EntityPrehistoricFloraPalaeodictyoptera) {
-                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraPalaeodictyoptera) this).getPNType().getName());
-                    }
-                    if (this instanceof EntityPrehistoricFloraDragonfly) {
-                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraDragonfly) this).getPNType().getName());
-                    }
-                    if (this instanceof EntityPrehistoricFloraMegasecoptera) {
-                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraMegasecoptera) this).getPNType().getName());
-                    }
-                    if (this instanceof EntityPrehistoricFloraKalligrammatid) {
-                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraKalligrammatid) this).getPNType().getName());
-                    }
-                    if (this instanceof EntityPrehistoricFloraLacewing) {
-                        itemstack.getTagCompound().setString("PNType", ((EntityPrehistoricFloraLacewing) this).getPNType().getName());
-                    }
-                    //Add more variants:
-
-                }
+                itemstack.getTagCompound().setString("creature", getEntityId(this));
                 EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
                 entityToSpawn.setPickupDelay(10);
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
@@ -522,14 +540,15 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         //Lay eggs perhaps:
         if (!this.laysInBlock()) { //lays into water or something like that:
-            if (!world.isRemote && this.laysEggs() && ((this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) || this.getLaying())
+            if (!world.isRemote && this.laysEggs() && this.getLaying()
             ) {
                 if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition())) {
                     //Is stationary for egg-laying:
                     IBlockState eggs = getEggBlockState();
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     world.setBlockState(this.getPosition(), eggs);
-                    applyVariantToBlockEgg(world, this.getPosition());
+                    TileEntity te = world.getTileEntity(this.getPosition());
+                    te.getTileData().setString("creature", getEntityId(this));
                     this.setLaying(false);
                     this.setTicks(0);
                 } else {
@@ -538,7 +557,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         IBlockState eggs = getEggBlockState();
                         this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                         world.setBlockState(this.getPosition().down(), eggs);
-                        applyVariantToBlockEgg(world, this.getPosition().down());
+                        TileEntity te = world.getTileEntity(this.getPosition().down());
+                        te.getTileData().setString("creature", getEntityId(this));
                         this.setLaying(false);
                         this.setTicks(0);
                     } else {
@@ -547,7 +567,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                             IBlockState eggs = getEggBlockState();
                             this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                             world.setBlockState(this.getPosition().down(2), eggs);
-                            applyVariantToBlockEgg(world, this.getPosition().down(2));
+                            TileEntity te = world.getTileEntity(this.getPosition().down(2));
+                            te.getTileData().setString("creature", getEntityId(this));
                             this.setLaying(false);
                             this.setTicks(0);
                         }
@@ -556,7 +577,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             }
         }
         else { //Lays with nbt into moss etc.
-            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())
+            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && this.getLaying()
             ) {
                 if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
                 ) {
@@ -575,9 +596,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                         TileEntity te = world.getTileEntity(this.getPosition());
                         if (te != null) {
-                            te.getTileData().setString("egg", stringEgg);
+                            te.getTileData().setString("creature", getEntityId(this));
                         }
-                        applyVariantToBlockEgg(world, this.getPosition());
                         IBlockState state = world.getBlockState(this.getPosition());
                         this.setLaying(false);
                         world.notifyBlockUpdate(this.getPosition(), state, state, 3);
@@ -585,9 +605,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                         TileEntity te = world.getTileEntity(this.getPosition().down());
                         if (te != null) {
-                            te.getTileData().setString("egg", stringEgg);
+                            te.getTileData().setString("creature", getEntityId(this));
                         }
-                        applyVariantToBlockEgg(world, this.getPosition().down());
                         IBlockState state = world.getBlockState(this.getPosition().down());
                         this.setLaying(false);
                         world.notifyBlockUpdate(this.getPosition().down(), state, state, 3);
@@ -601,48 +620,6 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             this.motionX = 0;
             this.motionY = 0;
             this.motionZ = 0;
-        }
-    }
-
-    public void applyVariantToBlockEgg(World world, BlockPos pos) {
-        if (this.hasPNVariants()) {
-            if (this instanceof EntityPrehistoricFloraPalaeodictyoptera) {
-                EntityPrehistoricFloraPalaeodictyoptera palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyoptera) this;
-                TileEntity tileentity = world.getTileEntity(pos);
-                if (tileentity != null) {
-                    tileentity.getTileData().setString("PNType", palaeodictyoptera.getPNType().getName());
-                }
-            }
-            else if (this instanceof EntityPrehistoricFloraLacewing) {
-                EntityPrehistoricFloraLacewing lacewing = (EntityPrehistoricFloraLacewing) this;
-                TileEntity tileentity = world.getTileEntity(pos);
-                if (tileentity != null) {
-                    tileentity.getTileData().setString("PNType", lacewing.getPNType().getName());
-                }
-            }
-            else if (this instanceof EntityPrehistoricFloraKalligrammatid) {
-                EntityPrehistoricFloraKalligrammatid kalligrammatid = (EntityPrehistoricFloraKalligrammatid) this;
-                TileEntity tileentity = world.getTileEntity(pos);
-                if (tileentity != null) {
-                    tileentity.getTileData().setString("PNType", kalligrammatid.getPNType().getName());
-                }
-            }
-            else if (this instanceof EntityPrehistoricFloraMegasecoptera) {
-                EntityPrehistoricFloraMegasecoptera megasecoptera = (EntityPrehistoricFloraMegasecoptera) this;
-                TileEntity tileentity = world.getTileEntity(pos);
-                if (tileentity != null) {
-                    tileentity.getTileData().setString("PNType", megasecoptera.getPNType().getName());
-                }
-            }
-            else if (this instanceof EntityPrehistoricFloraDragonfly) {
-                EntityPrehistoricFloraDragonfly dragonfly = (EntityPrehistoricFloraDragonfly) this;
-                TileEntity tileentity = world.getTileEntity(pos);
-                if (tileentity != null) {
-                    tileentity.getTileData().setString("PNType", dragonfly.getPNType().getName());
-                }
-            }
-
-            //More variants here:
         }
     }
 

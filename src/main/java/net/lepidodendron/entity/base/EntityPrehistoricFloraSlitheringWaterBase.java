@@ -14,11 +14,9 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityBoat;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -39,7 +37,6 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -553,24 +550,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 			this.setTicks(ii);
 		}
 
-		//Drop an egg perhaps:
-		if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
-			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
-				if (!itemstack.hasTagCompound()) {
-					itemstack.setTagCompound(new NBTTagCompound());
-				}
-				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
-				itemstack.getTagCompound().setString("creature", stringEgg);
-				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
-				entityToSpawn.setPickupDelay(10);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-				world.spawnEntity(entityToSpawn);
-			}
-			this.setTicks(0);
-		}
 	}
-
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);

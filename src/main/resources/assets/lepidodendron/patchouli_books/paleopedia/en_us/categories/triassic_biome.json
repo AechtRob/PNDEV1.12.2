@@ -1,0 +1,7 @@
+{
+    "name": "Triassic Biomes",
+    "description": "Biomes of the Triassic$(br2)251.9 - 201.4 mya",
+    "icon": "paleopedia:textures/category_icon/icon_triassic.png",
+    "parent": "lepidodendron:triassic",
+    "sortnum": 4
+}

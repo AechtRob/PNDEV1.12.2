@@ -1,8 +1,9 @@
 package net.lepidodendron.entity.render.tile;
 
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockEggs;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.model.tile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -26,15 +27,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
     private final ModelEggHuge huge_egg;
     private final ModelEggVast vast_egg;
     private final ModelRottenLogEggs rotten_wood_eggs;
-
-    public static final ResourceLocation TEXTURE_HYLONOMUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus_eggs.png");
-    public static final ResourceLocation TEXTURE_CASINERIA_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
-    public static final ResourceLocation TEXTURE_LABIDOSAURUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
-    public static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
-    public static final ResourceLocation TEXTURE_CELTEDENS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/celtedens_eggs.png");
-    public static final ResourceLocation TEXTURE_LONGISQUAMA_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/longisquama_eggs.png");
-    public static final ResourceLocation TEXTURE_HYPURONECTOR_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hypuronector_eggs.png");
-    public static final ResourceLocation TEXTURE_ARCHAEOTHYRIS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archaeothyris_eggs.png");
+    private final ModelInsectEggs insect_eggs;
 
     public RenderEggsLand() {
         this.small_egg = new ModelEggSmall();
@@ -43,6 +36,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
         this.huge_egg = new ModelEggHuge();
         this.vast_egg = new ModelEggVast();
         this.rotten_wood_eggs = new ModelRottenLogEggs();
+        this.insect_eggs = new ModelInsectEggs();
     }
 
     public void setRendererDispatcher(TileEntityRendererDispatcher rendererDispatcherIn)
@@ -74,65 +68,54 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                 }
             }
             if (!eggRenderType.equals("")) {
-                if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
-                    TEXTURE_EGG = TEXTURE_HYLONOMUS_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
-                    TEXTURE_EGG = TEXTURE_LABIDOSAURUS_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
-                    TEXTURE_EGG = TEXTURE_CASINERIA_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
-                    TEXTURE_EGG = TEXTURE_WEIGELTISAURUS_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_celtedens")) {
-                    TEXTURE_EGG = TEXTURE_CELTEDENS_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_longisquama")) {
-                    TEXTURE_EGG = TEXTURE_LONGISQUAMA_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hypuronector")) {
-                    TEXTURE_EGG = TEXTURE_HYPURONECTOR_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else if (eggRenderType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_archaeothyris")) {
-                    TEXTURE_EGG = TEXTURE_ARCHAEOTHYRIS_EGG;
-                    eggType = 10; //rotten wood
-                }
-                else {
-                    EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
-                    if (ee != null) {
-                        Entity entityEggs = ee.newInstance(world);
-                        if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
-                            EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
-                            if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
-                                TEXTURE_EGG = entityBase.getEggTexture(creatureType);
-                                eggType = entityBase.getEggType(creatureType);
-                            }
-                            else {
-                                TEXTURE_EGG = entityBase.getEggTexture(null);
-                                eggType = entityBase.getEggType(null);
-                            }
+                EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));
+                if (ee != null) {
+                    Entity entityEggs = ee.newInstance(world);
+                    if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
+                        EntityPrehistoricFloraAgeableBase entityBase = (EntityPrehistoricFloraAgeableBase) entityEggs;
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
                         }
                         else {
-                            //Something has gone wrong!
-                            entityEggs.setDead();
-                            return;
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
                         }
-                        entityEggs.setDead();
+                    }
+                    else if (entityEggs instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+                        EntityPrehistoricFloraCrawlingFlyingInsectBase entityBase = (EntityPrehistoricFloraCrawlingFlyingInsectBase) entityEggs;
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
+                        }
+                        else {
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
+                        }
+                    }
+                    else if (entityEggs instanceof EntityPrehistoricFloraInsectFlyingBase) {
+                        EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityEggs;
+                        if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+                            TEXTURE_EGG = entityBase.getEggTexture(creatureType);
+                            eggType = entityBase.getEggType(creatureType);
+                        }
+                        else {
+                            TEXTURE_EGG = entityBase.getEggTexture(null);
+                            eggType = entityBase.getEggType(null);
+                        }
                     }
                     else {
                         //Something has gone wrong!
+                        entityEggs.setDead();
                         return;
                     }
+                    entityEggs.setDead();
                 }
+                else {
+                    //Something has gone wrong!
+                    return;
+                }
+
             }
             else {
                 //Something has gone wrong!
@@ -146,6 +129,11 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                 GlStateManager.translate(x + 0.5F, y + 0.9F, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.50F, 0.50F, 0.50F);
+            }
+            else if (eggType == 20) {
+                GlStateManager.translate(x + 0.5F, y + 1.080F, z + 0.5F);
+                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
             }
             else {
                 GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
@@ -185,6 +173,10 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
 
                 case 10:
                     this.rotten_wood_eggs.renderAll(0.075F);
+                    break;
+
+                case 20:
+                    this.insect_eggs.renderAll(0.9f);
                     break;
             }
 

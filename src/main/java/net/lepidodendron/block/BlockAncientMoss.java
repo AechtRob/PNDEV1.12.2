@@ -686,7 +686,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -709,7 +709,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -732,7 +732,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -755,7 +755,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -778,7 +778,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -801,7 +801,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 						//Clear nbt:
 						TileEntity te = worldIn.getTileEntity(pos);
 						if (te != null) {
-							te.getTileData().removeTag("egg");
+							te.getTileData().removeTag("creature");
 						}
 						worldIn.notifyBlockUpdate(pos, state, state, 3);
 					}
@@ -927,8 +927,8 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		public void readFromNBT(NBTTagCompound compound)
 		{
 			super.readFromNBT(compound);
-			if (compound.hasKey("egg")) {
-				this.egg = compound.getString("egg");
+			if (compound.hasKey("creature")) {
+				this.egg = compound.getString("creature");
 			}
 		}
 
@@ -938,7 +938,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			if (this.hasEgg())
 			{
-				compound.setString("egg", this.egg);
+				compound.setString("creature", this.egg);
 			}
 			return compound;
 		}

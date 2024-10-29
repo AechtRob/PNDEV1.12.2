@@ -1,0 +1,32 @@
+{
+	"name": "Shallow Sea",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_archean_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Archean Shallow Sea$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:archean_shallow_sea"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:archean_shallow_sea"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:archean_shallow_sea"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:archean_shallow_sea"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:archean_shallow_sea"
+		}
+	]
+}

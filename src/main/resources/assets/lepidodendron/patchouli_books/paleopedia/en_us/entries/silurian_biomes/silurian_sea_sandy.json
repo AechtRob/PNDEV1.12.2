@@ -1,0 +1,32 @@
+{
+	"name": "Sandy Ocean",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
+	"category": "lepidodendron:silurian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Sandy Ocean$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:silurian_sea_sandy"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:silurian_sea_sandy"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:silurian_sea_sandy"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:silurian_sea_sandy"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:silurian_sea_sandy"
+		}
+	]
+}

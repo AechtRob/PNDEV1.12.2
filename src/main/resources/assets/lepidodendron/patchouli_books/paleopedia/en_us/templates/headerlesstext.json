@@ -1,0 +1,13 @@
+{
+  "processor": "net.lepidodendron.util.patchouli.Headerlesstext",
+  "components": [
+    {
+      "type": "text",
+      "text": "#text",
+      "scale": 0.1,
+
+      "x": 0,
+      "y": -1
+    }
+  ]
+}

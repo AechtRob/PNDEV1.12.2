@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnNigerpeton;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -16,15 +15,12 @@ import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -50,6 +46,11 @@ public class EntityPrehistoricFloraNigerpeton extends EntityPrehistoricFloraSwim
 		maxWidth = 0.9F;
 		maxHeight = 0.40F;
 		maxHealthAgeable = 16.0D;
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 40; //normal spawn
 	}
 
 	@Override
@@ -222,34 +223,6 @@ public class EntityPrehistoricFloraNigerpeton extends EntityPrehistoricFloraSwim
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
-		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockAmphibianSpawnNigerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockAmphibianSpawnNigerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockAmphibianSpawnNigerpeton.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockAmphibianSpawnNigerpeton.block.canPlaceBlockAt(world, this.getPosition().down()))
-		){
-			//if (Math.random() > 0.5) {
-				this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
-		}
-
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockAmphibianSpawnNigerpeton.block.getDefaultState();
-			if (BlockAmphibianSpawnNigerpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnNigerpeton.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			if (BlockAmphibianSpawnNigerpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnNigerpeton.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
-		}
 	}
 
 	@Override

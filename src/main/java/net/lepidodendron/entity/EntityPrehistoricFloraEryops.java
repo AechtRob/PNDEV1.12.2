@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnEryops;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
@@ -15,16 +15,15 @@ import net.lepidodendron.entity.render.entity.RenderEryops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.minecraft.block.state.IBlockState;
+import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -38,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -56,6 +55,11 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 40; //normal spawn
 	}
 
 	@Override
@@ -255,34 +259,6 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 		if ((!(isBlinking > 0)) || isBlinking > 200) {isBlinking = 0;}
 		isBlinking ++;
 
-		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockAmphibianSpawnEryops.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockAmphibianSpawnEryops.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockAmphibianSpawnEryops.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockAmphibianSpawnEryops.block.canPlaceBlockAt(world, this.getPosition().down()))
-		){
-			//if (Math.random() > 0.5) {
-				this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
-		}
-
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockAmphibianSpawnEryops.block.getDefaultState();
-			if (BlockAmphibianSpawnEryops.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnEryops.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			if (BlockAmphibianSpawnEryops.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnEryops.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
-		}
 	}
 
 	public boolean getBlinking() {
@@ -346,5 +322,11 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 	}
 	public static float getScaler(@Nullable String variant) {
 		return RenderEryops.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_ERYOPS;
 	}
 }

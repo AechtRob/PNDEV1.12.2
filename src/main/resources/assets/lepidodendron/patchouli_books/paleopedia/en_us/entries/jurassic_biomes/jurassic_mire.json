@@ -1,0 +1,32 @@
+{
+	"name": "Horsetail Mire",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
+	"category": "lepidodendron:jurassic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Jurassic Horsetail Mire$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:jurassic_mire"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:jurassic_mire"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:jurassic_mire"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:jurassic_mire"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:jurassic_mire"
+		}
+	]
+}

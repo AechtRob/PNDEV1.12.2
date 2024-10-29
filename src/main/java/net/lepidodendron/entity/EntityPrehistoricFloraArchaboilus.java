@@ -5,14 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsArchaboilus;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderArchaboilus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -211,7 +209,9 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(EntityPrehistoricFloraArchaboilus.Type.getTypeFromString(compound.getString("PNType")));
@@ -241,14 +241,7 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		return 0.18F;
 	}
 
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsArchaboilus.block.getDefaultState();
-	}
-
 	public static String getPeriod() {return "Jurassic";}
-
-	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
@@ -260,10 +253,10 @@ public class EntityPrehistoricFloraArchaboilus extends EntityPrehistoricFloraArc
 		return super.attackEntityFrom(source, amount);
 	}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_archaboilus";
-	}
+//	@Override
+//	public String tagEgg () {
+//		return "insect_eggs_archaboilus";
+//	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}

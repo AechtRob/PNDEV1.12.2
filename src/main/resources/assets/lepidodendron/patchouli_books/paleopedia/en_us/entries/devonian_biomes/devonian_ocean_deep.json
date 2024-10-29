@@ -1,0 +1,32 @@
+{
+	"name": "Ocean",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
+	"category": "lepidodendron:devonian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Ocean$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:devonian_ocean_deep"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:devonian_ocean_deep"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:devonian_ocean_deep"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:devonian_ocean_deep"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:devonian_ocean_deep"
+		}
+	]
+}

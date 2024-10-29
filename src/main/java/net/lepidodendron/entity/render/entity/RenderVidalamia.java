@@ -15,7 +15,7 @@ public class RenderVidalamia extends RenderLivingBaseWithBook<EntityPrehistoricF
         super(mgr, new ModelVidalamia(), 0.0f);
     }
 
-    public static float getScaler() {return 0.4F; }
+    public static float getScaler() {return 0.33F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraVidalamia entity) {

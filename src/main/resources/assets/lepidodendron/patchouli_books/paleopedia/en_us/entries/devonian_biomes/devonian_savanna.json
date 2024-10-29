@@ -1,0 +1,32 @@
+{
+	"name": "Savanna",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
+	"category": "lepidodendron:devonian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Devonian Savanna$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:devonian_savanna"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:devonian_savanna"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:devonian_savanna"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:devonian_savanna"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:devonian_savanna"
+		}
+	]
+}

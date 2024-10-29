@@ -4,21 +4,20 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEurypteridEggsJaekelopterus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -41,6 +40,11 @@ public class EntityPrehistoricFloraJaekelopterus extends EntityPrehistoricFloraE
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;
 		maxHealthAgeable = 18D;
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 46; //eurypterid type
 	}
 
 	@Override
@@ -224,34 +228,6 @@ public class EntityPrehistoricFloraJaekelopterus extends EntityPrehistoricFloraE
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
-		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockEurypteridEggsJaekelopterus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockEurypteridEggsJaekelopterus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockEurypteridEggsJaekelopterus.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockEurypteridEggsJaekelopterus.block.canPlaceBlockAt(world, this.getPosition().down()))
-		){
-			//if (Math.random() > 0.5) {
-				this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
-		}
-
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockEurypteridEggsJaekelopterus.block.getDefaultState();
-			if (BlockEurypteridEggsJaekelopterus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsJaekelopterus.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			if (BlockEurypteridEggsJaekelopterus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEurypteridEggsJaekelopterus.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
-		}
 	}
 
 	@Override

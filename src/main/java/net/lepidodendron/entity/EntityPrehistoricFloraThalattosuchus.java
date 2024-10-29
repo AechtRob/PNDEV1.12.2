@@ -272,6 +272,7 @@ public class EntityPrehistoricFloraThalattosuchus extends EntityPrehistoricFlora
 		}
 		return LepidodendronMod.THALATTOSUCHUS_LOOT;
 	}
+
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraThalattosuchus(this.world);

@@ -1,0 +1,32 @@
+{
+	"name": "Ediacaran Frondose Forest",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_proterozoic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Ediacaran Frondose Forest$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:ediacaran_frondose_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:ediacaran_frondose_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:ediacaran_frondose_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:ediacaran_frondose_forest"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:ediacaran_frondose_forest"
+		}
+	]
+}

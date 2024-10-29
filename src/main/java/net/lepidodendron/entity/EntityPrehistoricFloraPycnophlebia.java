@@ -5,14 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsPycnophlebia;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.render.entity.RenderPycnophlebia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -191,7 +189,9 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(EntityPrehistoricFloraPycnophlebia.Type.getTypeFromString(compound.getString("PNType")));
@@ -223,16 +223,6 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 	}
 
 	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsPycnophlebia.block.getDefaultState();
-	}
-
-
-	//public static String getHabitat() {return "Terrestrial";}
-
-
-
-	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source.getImmediateSource() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) source.getImmediateSource();
@@ -242,10 +232,10 @@ public class EntityPrehistoricFloraPycnophlebia extends EntityPrehistoricFloraAr
 		return super.attackEntityFrom(source, amount);
 	}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_pycnophlebia";
-	}
+//	@Override
+//	public String tagEgg () {
+//		return "insect_eggs_pycnophlebia";
+//	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}

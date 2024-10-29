@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEggsFadeniaPermotriassic;
+import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
@@ -23,8 +23,8 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraFadeniaPermotriassic extends EntityPrehistori
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 45; //cylinder type
 	}
 
 	@Override
@@ -211,28 +216,36 @@ public class EntityPrehistoricFloraFadeniaPermotriassic extends EntityPrehistori
 		super.onEntityUpdate();
 
 		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockEggsFadeniaPermotriassic.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockEggsFadeniaPermotriassic.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockEggsFadeniaPermotriassic.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockEggsFadeniaPermotriassic.block.canPlaceBlockAt(world, this.getPosition().down()))
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
+				&& (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())
+				|| BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down()))
 		){
 			//if (Math.random() > 0.5) {
-				this.setTicks(-50); //Flag this as stationary for egg-laying
+			this.setTicks(-50); //Flag this as stationary for egg-laying
 			//}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+		if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			////System.err.println("Test2");
-			IBlockState eggs = BlockEggsFadeniaPermotriassic.block.getDefaultState();
-			if (BlockEggsFadeniaPermotriassic.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsFadeniaPermotriassic.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
+			//System.err.println("Test2");
+			IBlockState eggs = BlockEggsWater.block.getDefaultState();
+			if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())) {
+				if (!(world.isRemote)) {
+					world.setBlockState(this.getPosition(), eggs);
+					world.setTileEntity(this.getPosition(), new BlockEggsWater.TileEntityCustom());
+					TileEntity te = world.getTileEntity(this.getPosition());
+					te.getTileData().setString("creature", getEntityId(this));
+				}
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			}
-			if (BlockEggsFadeniaPermotriassic.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockEggsFadeniaPermotriassic.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
+			if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down())) {
+				if (!(world.isRemote)) {
+					world.setBlockState(this.getPosition().down(), eggs);
+					world.setTileEntity(this.getPosition().down(), new BlockEggsWater.TileEntityCustom());
+					TileEntity te = world.getTileEntity(this.getPosition().down());
+					te.getTileData().setString("creature", getEntityId(this));
+				}
 				this.setLaying(false);
 				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
 			}

@@ -203,7 +203,9 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(EntityPrehistoricFloraWukongopterus.Type.getTypeFromString(compound.getString("PNType")));
@@ -555,10 +557,10 @@ public class EntityPrehistoricFloraWukongopterus extends EntityPrehistoricFloraL
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_wukongopterus";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_wukongopterus";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

@@ -1,7 +1,9 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockEggsWater;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
@@ -11,6 +13,7 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -192,6 +195,51 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
         else
         {
             this.setAir(300);
+        }
+
+        //Lay eggs perhaps:
+        if ((!this.dropsEggs()) && (!this.laysEggs()) && (createPFChild(this) == null)) {
+            if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getCanBreed() && this.getLaying() && this.getTicks() > 0
+                    && (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())
+                    || BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down()))
+            ) {
+                //if (Math.random() > 0.5) {
+                this.setTicks(-50); //Flag this as stationary for egg-laying
+                //}
+            }
+
+            if (!world.isRemote && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
+                //Is stationary for egg-laying:
+                //System.err.println("Test2");
+                IBlockState eggs = BlockEggsWater.block.getDefaultState();
+                if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition())) {
+                    if (!(world.isRemote)) {
+                        world.setBlockState(this.getPosition(), eggs);
+                        world.setTileEntity(this.getPosition(), new BlockEggsWater.TileEntityCustom());
+                        TileEntity te = world.getTileEntity(this.getPosition());
+                        te.getTileData().setString("creature", getEntityId(this));
+                        if (this.hasPNVariants() && this.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", this.getPNTypeName());
+                        }
+                    }
+                    this.setLaying(false);
+                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                }
+                if (BlockEggsWater.block.canPlaceBlockAt(world, this.getPosition().down())) {
+                    if (!(world.isRemote)) {
+                        world.setBlockState(this.getPosition().down(), eggs);
+                        world.setTileEntity(this.getPosition().down(), new BlockEggsWater.TileEntityCustom());
+                        TileEntity te = world.getTileEntity(this.getPosition().down());
+                        te.getTileData().setString("creature", getEntityId(this));
+                        if (this.hasPNVariants() && this.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", this.getPNTypeName());
+                        }
+                    }
+                    this.setLaying(false);
+                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                }
+                this.setTicks(0);
+            }
         }
     }
 

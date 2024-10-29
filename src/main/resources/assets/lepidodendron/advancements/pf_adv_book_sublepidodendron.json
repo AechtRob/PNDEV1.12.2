@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:sublepidodendron_sapling"
+			"item": "lepidodendron:sublepidodendron"
 		 },
 		"title": {
 			"translate": "advancements.pf_adv_book_sublepidodendron.title"

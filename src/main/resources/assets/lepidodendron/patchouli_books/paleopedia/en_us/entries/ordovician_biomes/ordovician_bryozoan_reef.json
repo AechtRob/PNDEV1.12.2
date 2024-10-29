@@ -1,0 +1,32 @@
+{
+	"name": "Bryozoan Reef",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
+	"category": "lepidodendron:ordovician_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Ordovician Bryozoan Reef$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:ordovician_bryozoan_reef"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:ordovician_bryozoan_reef"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:ordovician_bryozoan_reef"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:ordovician_bryozoan_reef"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:ordovician_bryozoan_reef"
+		}
+	]
+}

@@ -325,10 +325,10 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 		return false;
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_austriadactylus";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_austriadactylus";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

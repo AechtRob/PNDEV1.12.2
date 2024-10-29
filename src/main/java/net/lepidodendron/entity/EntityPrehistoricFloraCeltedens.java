@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraCeltedens extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 10; //rotten wood
+	}
+
+	@Override
 	public int animSpeedAdder() {
 		if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
 				&& this.getTicks() >= 0

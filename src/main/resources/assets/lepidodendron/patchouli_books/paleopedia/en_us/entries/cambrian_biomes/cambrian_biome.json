@@ -1,0 +1,32 @@
+{
+	"name": "Wastes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
+	"category": "lepidodendron:cambrian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Cambrian Wastes$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:cambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:cambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:cambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:cambrian_biome"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:cambrian_biome"
+		}
+	]
+}

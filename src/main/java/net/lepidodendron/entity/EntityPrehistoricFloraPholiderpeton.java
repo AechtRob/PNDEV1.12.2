@@ -3,10 +3,10 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnPholiderpeton;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -18,16 +18,13 @@ import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -46,6 +43,8 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
+	public Animation LOOK_ANIMATION;
+	private int standCooldown;
 
 	public EntityPrehistoricFloraPholiderpeton(World world) {
 		super(world);
@@ -53,10 +52,16 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		minWidth = 0.125F;
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;
-		maxHealthAgeable = 32.0D;
+		maxHealthAgeable = 25.0D;
+		LOOK_ANIMATION = Animation.create(220);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 40; //normal spawn
 	}
 
 	@Override
@@ -65,6 +70,11 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		if (world.isRemote && !this.isAIDisabled()) {
 			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, LOOK_ANIMATION};
 	}
 
 	@Override
@@ -87,9 +97,12 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.09F;
+		float calcSpeed = 0.15F;
+		if (this.getAnimation() == LOOK_ANIMATION) {
+			return 0.0F;
+		}
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.19f;
+			calcSpeed = 0.25f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -97,7 +110,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		if (this.getIsFast()) {
 			calcSpeed = calcSpeed * 1.8F;
 		}
-		return Math.min(2F, (this.getAgeScale() * 2F)) * calcSpeed;
+		return Math.min(2F, (this.getAgeScale())) * calcSpeed;
 	}
 
 	@Override
@@ -117,6 +130,11 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(0.5F + size, 0.5F + size, 0.5F + size);
 	}
+	@Override
+	public int getAttackLength() {
+		return 12;
+	}
+
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
@@ -226,6 +244,14 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 			launchAttack();
 		}
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
+		AnimationHandler.INSTANCE.updateAnimations(this);
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -247,35 +273,20 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-		//Lay eggs perhaps:
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
-				&& (BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
-				|| BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
-				&& (BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockAt(world, this.getPosition())
-				|| BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockAt(world, this.getPosition().down()))
-		){
-			//if (Math.random() > 0.5) {
-				this.setTicks(-50); //Flag this as stationary for egg-laying
-			//}
+
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(LOOK_ANIMATION);
+			this.standCooldown = 1000;
+
+			if ((!this.world.isRemote) && this.getAnimation() == LOOK_ANIMATION && this.getAnimationTick() == LOOK_ANIMATION.getDuration() - 1) {
+				this.standCooldown = 1000;
+				this.setAnimation(NO_ANIMATION);
+			}
 		}
 
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -47 && this.getTicks() < 0) {
-			//Is stationary for egg-laying:
-			//System.err.println("Test2");
-			IBlockState eggs = BlockAmphibianSpawnPholiderpeton.block.getDefaultState();
-			if (BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockAt(world, this.getPosition())) {
-				world.setBlockState(this.getPosition(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			if (BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP) && BlockAmphibianSpawnPholiderpeton.block.canPlaceBlockAt(world, this.getPosition().down())) {
-				world.setBlockState(this.getPosition().down(), eggs);
-				this.setLaying(false);
-				this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-			}
-			this.setTicks(0);
-		}
 	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

@@ -291,8 +291,8 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 		public void readFromNBT(NBTTagCompound compound)
 		{
 			super.readFromNBT(compound);
-			if (compound.hasKey("egg")) {
-				this.egg = compound.getString("egg");
+			if (compound.hasKey("creature")) {
+				this.egg = compound.getString("creature");
 			}
 		}
 
@@ -302,7 +302,7 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			if (this.hasEgg())
 			{
-				compound.setString("egg", this.egg);
+				compound.setString("creature", this.egg);
 			}
 			return compound;
 		}

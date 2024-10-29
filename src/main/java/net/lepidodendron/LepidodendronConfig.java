@@ -113,8 +113,6 @@ public class LepidodendronConfig {
     public static boolean oneWayPortals = true;
     public static boolean oneWayPortalsNether = false;
 
-    public static boolean doMultiplyMobs = false;
-
     public static String[] mobSpawnBespoke = new String[0];
 
     public static String[] jarMobs = new String[0];
@@ -582,10 +580,6 @@ public class LepidodendronConfig {
         prop.setComment("Ageable mobs will behave as adults once they are at least this percentage of full age (hunting, dropping eggs, etc.). This does not affect models/textures. [default: 75]");
         adultAge = prop.getInt();
         propOrder.add(prop.getName());
-//        prop = cfg.get("Global Mobs", "doMultiplyMobs", doMultiplyMobs);
-//        prop.setComment("Mobs will try to multiply every 1-2 days even without breeding them [default: false]");
-//        doMultiplyMobs = prop.getBoolean();
-//        propOrder.add(prop.getName());
         prop = cfg.get("Global Mobs", "breedCooldown", breedCooldown);
         prop.setComment("Number of game ticks after breeding that it takes to be able to breed the same creature again (20 ticks = 1 real-world second). [default: 6000]");
         breedCooldown = prop.getInt();

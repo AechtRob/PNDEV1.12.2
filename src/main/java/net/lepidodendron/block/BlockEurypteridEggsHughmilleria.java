@@ -64,7 +64,7 @@ public class BlockEurypteridEggsHughmilleria extends ElementsLepidodendronMod.Mo
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_hughmilleria", biome.getRegistryName().toString())) {
-				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+				//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}

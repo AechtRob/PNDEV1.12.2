@@ -57,7 +57,6 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	private static final float[] SINODUNBARIA_SIZE = new float[]{0.16F, 0.32F};
 	private static final float[] STENODICTYA_SIZE = new float[]{0.20F, 0.40F};
 	private static final float[] MAZOTHAIROS_SIZE = new float[]{0.30F, 0.60F};
-
 	private static final float[] PSYCHROPTILUS_SIZE = new float[]{0.15F, 0.30F};
 
 	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPalaeodictyoptera.class, DataSerializers.VARINT);
@@ -77,6 +76,11 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 			return new ResourceLocation("lepidodendron:dragonfly_flight");
 		}
 		return new ResourceLocation("lepidodendron:palaeodictyoptera_flight");
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
 	}
 
 	@Override
@@ -507,7 +511,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(Type.getTypeFromString(compound.getString("PNType")));
@@ -519,9 +525,16 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		this.dataManager.set(INSECT_TYPE, Integer.valueOf(type.ordinal()));
 	}
 
+	@Nullable
 	public Type getPNType()
 	{
 		return Type.byId(((Integer)this.dataManager.get(INSECT_TYPE)).intValue());
+	}
+
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
 	}
 
 	//*****************************************************

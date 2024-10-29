@@ -134,6 +134,12 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		AETHEOGRAMMA(1, "aetheogramma"),
@@ -459,7 +465,9 @@ public class EntityPrehistoricFloraLacewing extends EntityPrehistoricFloraInsect
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(Type.getTypeFromString(compound.getString("PNType")));

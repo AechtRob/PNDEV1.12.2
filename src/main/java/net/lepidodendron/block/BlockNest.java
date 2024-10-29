@@ -17,7 +17,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -239,6 +238,10 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			}.getValue(pos, "creature");
 
 			if (!nestType.equals("")) {
+				int i = nestType.indexOf("@");
+				if (i >= 1) {
+					nestType = nestType.substring(0, nestType.indexOf("@"));
+				}
 				//Get the mob:
 				Class<? extends Entity> clazz = findEntity(nestType);
 				if (clazz != null) {
@@ -256,35 +259,23 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			return entityClass;
 		}
 
-		public static <T extends EntityPrehistoricFloraAgeableBase> void AggroMob(World world, BlockPos pos, @Nullable Class <? extends T > classEntity, @Nullable EntityPlayer player, boolean onlySight) {
+		public static <T extends EntityPrehistoricFloraAgeableBase> void AggroMob(World world, BlockPos pos, @Nullable Class <? extends T > classEntity, @Nullable EntityPlayer player, boolean onlySight, @Nullable String PNType) {
 
 			if (classEntity != null) {
 				if (player != null) { //Aggro on the player
 					if (world.getDifficulty() != EnumDifficulty.PEACEFUL && !player.capabilities.isCreativeMode) {
 						List<EntityPrehistoricFloraAgeableBase> Entities = Functions.getEntitiesWithinAABBPN(world, classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)), EntitySelectors.NOT_SPECTATING);
 						for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
-							if (currentEntity.isPFAdult() && !player.isInvisible()) {
-								currentEntity.setAttackTarget(player);
-								currentEntity.setOneHit(true);
+							if (currentEntity.hasPNVariants() && currentEntity.getPNTypeName() != null) {
+								if (currentEntity.getPNTypeName().equalsIgnoreCase(PNType)) {
+									if (currentEntity.isPFAdult() && !player.isInvisible()) {
+										currentEntity.setAttackTarget(player);
+										currentEntity.setOneHit(true);
+									}
+								}
 							}
-						}
-					}
-				} else { //Aggro on the nearest living Entity
-					EntityLivingBase entityLivingBase = null;
-					List<EntityLivingBase> Entity = world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos.add(-6, -4, -6), pos.add(6, 4, 6)));
-					for (EntityLivingBase currentEntity : Entity) {
-						if (!(currentEntity.getClass().equals(classEntity))) {
-							entityLivingBase = currentEntity;
-							break;
-						}
-					}
-					if (entityLivingBase != null) {
-						List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)));
-						for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
-							if (currentEntity.isPFAdult()
-								&& entityLivingBase.canEntityBeSeen(currentEntity)
-							) {
-								currentEntity.setAttackTarget(entityLivingBase);
+							else if (currentEntity.isPFAdult() && !player.isInvisible()) {
+								currentEntity.setAttackTarget(player);
 								currentEntity.setOneHit(true);
 							}
 						}
@@ -362,8 +353,16 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 				TileEntity te = world.getTileEntity(pos);
 				if (te instanceof TileEntityNest) {
 					TileEntityNest nest = (TileEntityNest) te;
+					String PNVariant = null;
+					if (nest.getTileData().hasKey("creature")) {
+						String mobstring = nest.getTileData().getString("creature");
+						int i = mobstring.indexOf("@");
+						if (i >= 1) {
+							PNVariant = mobstring.substring(mobstring.indexOf("@") + 1);
+						}
+					}
 					if (!nest.getStackInSlot(0).isEmpty()) {
-						AggroMob(world, pos, getNestOwner(world, pos), player, false);
+						AggroMob(world, pos, getNestOwner(world, pos), player, false, PNVariant);
 					}
 				}
 			//}
@@ -390,7 +389,15 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 							IBlockState bstate = world.getBlockState(pos);
 							world.notifyBlockUpdate(pos, bstate, bstate, 3);
 							if (!player.capabilities.isCreativeMode) {
-								AggroMob(world, pos, getNestOwner(world, pos), player, false);
+								String PNVariant = null;
+								if (nest.getTileData().hasKey("creature")) {
+									String mobstring = nest.getTileData().getString("creature");
+									int i = mobstring.indexOf("@");
+									if (i >= 1) {
+										PNVariant = mobstring.substring(mobstring.indexOf("@") + 1);
+									}
+								}
+								AggroMob(world, pos, getNestOwner(world, pos), player, false, PNVariant);
 							}
 						}
 						return true;

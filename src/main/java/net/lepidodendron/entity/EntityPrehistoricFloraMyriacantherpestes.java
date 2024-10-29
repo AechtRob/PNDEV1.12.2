@@ -72,11 +72,6 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 		return true;
 	}
 
-	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_myriacantherpestes";
-	}
-
 	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Terrestrial";}
@@ -263,8 +258,8 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 			String eggRenderType = "";
 			TileEntity te = world.getTileEntity(pos);
 			if (te != null) {
-				if (te.getTileData().hasKey("egg")) {
-					eggRenderType = te.getTileData().getString("egg");
+				if (te.getTileData().hasKey("creature")) {
+					eggRenderType = te.getTileData().getString("creature");
 				}
 			}
 			if (eggRenderType.equals("")) {

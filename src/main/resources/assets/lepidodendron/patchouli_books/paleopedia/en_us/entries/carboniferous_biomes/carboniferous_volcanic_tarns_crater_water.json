@@ -1,0 +1,32 @@
+{
+	"name": "Volcanic Tarns",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+	"category": "lepidodendron:carboniferous_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Carboniferous Volcanic Tarns$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+		}
+	]
+}

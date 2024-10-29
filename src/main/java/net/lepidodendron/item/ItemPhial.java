@@ -3,8 +3,8 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockInsectEggs;
-import net.lepidodendron.block.BlockMobSpawn;
+import net.lepidodendron.block.BlockEggs;
+import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.entity.util.ILayableMoss;
@@ -12,7 +12,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,7 +19,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -96,6 +94,7 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 
 			IBlockState iblockstate = worldIn.getBlockState(target);
 			Block blockTarget = iblockstate.getBlock();
+			boolean isWater = false;
 
 			if (!worldIn.isRemote) {
 				boolean collected = false;
@@ -103,43 +102,61 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				String strPhial = "";
 				ItemStack phial = new ItemStack(ItemPhialFull.block, 1);
 
-				if (blockTarget instanceof BlockMobSpawn
-					|| blockTarget instanceof BlockInsectEggs) {
-					RayTraceResult raytraceresult = this.rayTrace(worldIn, player, true);
-					Item itemTarget = blockTarget.getPickBlock(iblockstate, raytraceresult, worldIn, target, player).getItem();
-					blockTarget = Block.getBlockFromItem(blockTarget.getPickBlock(iblockstate, raytraceresult, worldIn, target, player).getItem());
-					if (blockTarget != Blocks.AIR) {
-						strPhial = blockTarget.getRegistryName().toString();
-					}
-					else {
-						strPhial = itemTarget.getRegistryName().toString();
-					}
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockRottenLog.block
-					|| blockTarget instanceof ILayableMoss
-				) {
-					String eggRenderType = new Object() {
-						public String getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = worldIn.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getString(tag);
-						return "";
+				if (blockTarget == BlockEggsWater.block) {
+					String eggRenderType = "";
+					TileEntity tileEntity = worldIn.getTileEntity(target);
+					if (tileEntity != null) {
+						if (tileEntity.getTileData().hasKey("creature")) {
+							eggRenderType = tileEntity.getTileData().getString("creature");
 						}
-					}.getValue(new BlockPos(target), "egg");
+					}
 
 					if (!eggRenderType.equalsIgnoreCase("")) {
 						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, worldIn, new BlockPos(target)) == null) {
 							strPhial = eggRenderType;
 							collected = true;
-							IBlockState state = worldIn.getBlockState(target);
-							TileEntity te = worldIn.getTileEntity(target);
-							if (te != null) {
-								te.getTileData().removeTag("egg");
+							isWater = true;
+							if (blockTarget == BlockEggsWater.block) {
+								removed = true;
 							}
-							worldIn.notifyBlockUpdate(target, state, state, 3);
+							else {
+								IBlockState state = worldIn.getBlockState(target);
+								TileEntity te = worldIn.getTileEntity(target);
+								if (te != null) {
+									te.getTileData().removeTag("creature");
+								}
+								worldIn.notifyBlockUpdate(target, state, state, 3);
+							}
+						}
+					}
+				}
+				else if (blockTarget == BlockRottenLog.block
+						|| blockTarget instanceof ILayableMoss
+						|| blockTarget == BlockEggs.block
+				) {
+					String eggRenderType = "";
+					TileEntity tileEntity = worldIn.getTileEntity(target);
+					if (tileEntity != null) {
+						if (tileEntity.getTileData().hasKey("creature")) {
+							eggRenderType = tileEntity.getTileData().getString("creature");
+						}
+					}
+
+					if (!eggRenderType.equalsIgnoreCase("")) {
+						if (BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, worldIn, new BlockPos(target)) == null) {
+							strPhial = eggRenderType;
+							collected = true;
+							if (blockTarget == BlockEggs.block) {
+								removed = true;
+							}
+							else {
+								IBlockState state = worldIn.getBlockState(target);
+								TileEntity te = worldIn.getTileEntity(target);
+								if (te != null) {
+									te.getTileData().removeTag("creature");
+								}
+								worldIn.notifyBlockUpdate(target, state, state, 3);
+							}
 						}
 					}
 				}
@@ -153,6 +170,8 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound stackNBT = new NBTTagCompound();
 					phial.setTagCompound(stackNBT);
 					phial.getTagCompound().setString("id_eggs", strPhial);
+
+					phial.getTagCompound().setBoolean("water", isWater);
 
 					TileEntity tileentity = worldIn.getTileEntity(target);
 					if (tileentity != null) {

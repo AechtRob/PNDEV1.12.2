@@ -1,0 +1,32 @@
+{
+	"name": "Crater Fields",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+	"category": "lepidodendron:precambrian_hadean_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Hadean Crater Fields$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:hadean_craters"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:hadean_craters"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:hadean_craters"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:hadean_craters"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:hadean_craters"
+		}
+	]
+}

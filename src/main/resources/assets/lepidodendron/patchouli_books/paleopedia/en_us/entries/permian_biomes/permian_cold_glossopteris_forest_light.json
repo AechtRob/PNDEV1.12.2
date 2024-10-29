@@ -1,0 +1,32 @@
+{
+	"name": "Temperate Glossopteris Forest",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_permian.png",
+	"category": "lepidodendron:permian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Permian Temperate Glossopteris Forest$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_light"
+		}
+	]
+}

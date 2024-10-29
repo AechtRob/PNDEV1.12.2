@@ -65,7 +65,7 @@ public class BlockEurypteridEggsOrcanopterus extends ElementsLepidodendronMod.Mo
 
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (SpawnLocations.spawnsHere("lepidodendron:prehistoric_flora_orcanopterus", biome.getRegistryName().toString())) {
-				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+				//(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 			}
 		}
 	}

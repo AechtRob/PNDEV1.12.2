@@ -1,0 +1,7 @@
+{
+    "name": "Early Late Biomes",
+    "description": "Biomes of the Late Cretaceous$(br2)100.5 - 66.0 mya",
+    "icon": "paleopedia:textures/category_icon/icon_cretaceouslate.png",
+    "parent": "lepidodendron:cretaceouslate",
+    "sortnum": 4
+}

@@ -344,7 +344,7 @@ public class ModelSinamia extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] dorsal = {this.dorsalfinpt1, this.dorsalfinpt2, this.dorsalfinpt3, this.dorsalfinpt4, this.dorsalfinpt5, this.dorsalfinpt6, this.dorsalfinpt7};
         ((EntityPrehistoricFloraSinamia)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
-        float speed = 0.186F;
+        float speed = 0.25F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
         if (ee.getIsFast()) {
             speed = speed * 2.6F;

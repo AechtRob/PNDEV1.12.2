@@ -114,6 +114,12 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		CLATROTITAN(1, "clatrotitan"),
@@ -283,7 +289,9 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(Type.getTypeFromString(compound.getString("PNType")));
@@ -386,10 +394,10 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 
 	//public static String getHabitat() {return "Terrestrial";}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_titanoptera";
-	}
+//	@Override
+//	public String tagEgg () {
+//		return "insect_eggs_titanoptera";
+//	}
 
 
 }

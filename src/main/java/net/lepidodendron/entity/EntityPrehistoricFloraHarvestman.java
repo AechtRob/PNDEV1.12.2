@@ -57,11 +57,6 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 	}
 
 	@Override
-	public String getEggNBT() {
-		return LepidodendronMod.MODID + ":insect_eggs_harvestman";
-	}
-
-	@Override
 	public float getAISpeedLand() {
 		return 0.5F;
 	}

@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockInsectEggsArchoblattina;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
@@ -17,7 +16,6 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -89,15 +87,10 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 		return true;
 	}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_archoblattina";
-	}
-
-	@Override
-	public IBlockState getEggBlockState() {
-		return BlockInsectEggsArchoblattina.block.getDefaultState();
-	}
+//	@Override
+//	public String tagEgg () {
+//		return "insect_eggs_archoblattina";
+//	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 

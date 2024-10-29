@@ -60,6 +60,11 @@ public class EntityPrehistoricFloraHypuronector extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 10; //rotten wood
+	}
+
+	@Override
 	public boolean noMossEggs() {
 		return true;
 	}

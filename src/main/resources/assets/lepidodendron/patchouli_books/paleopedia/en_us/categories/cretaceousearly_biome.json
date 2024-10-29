@@ -1,0 +1,7 @@
+{
+    "name": "Early Cretaceous Biomes",
+    "description": "Biomes of the Early Cretaceous$(br2)145.0 - 100.5 mya",
+    "icon": "paleopedia:textures/category_icon/icon_cretaceousearly.png",
+    "parent": "lepidodendron:cretaceousearly",
+    "sortnum": 4
+}

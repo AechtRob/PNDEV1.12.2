@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:urasterella_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_urasterella.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_urasterella.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_urasterella"
+		}
+	}
+}

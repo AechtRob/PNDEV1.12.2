@@ -1,0 +1,7 @@
+{
+    "name": "Permian Biomes",
+    "description": "Biomes of the Permian$(br2)298.9 - 251.9 mya",
+    "icon": "paleopedia:textures/category_icon/icon_permian.png",
+    "parent": "lepidodendron:permian",
+    "sortnum": 4
+}

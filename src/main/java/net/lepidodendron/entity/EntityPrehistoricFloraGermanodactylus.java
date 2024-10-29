@@ -405,7 +405,9 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(EntityPrehistoricFloraGermanodactylus.Type.getTypeFromString(compound.getString("PNType")));
@@ -513,10 +515,10 @@ public class EntityPrehistoricFloraGermanodactylus extends EntityPrehistoricFlor
 
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_germanodactylus";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_germanodactylus";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

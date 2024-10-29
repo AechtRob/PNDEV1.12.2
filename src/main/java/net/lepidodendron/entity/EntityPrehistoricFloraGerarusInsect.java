@@ -105,10 +105,10 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 		return super.attackEntityFrom(source, amount);
 	}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_gerarus";
-	}
+//	@Override
+//	public String tagEgg () {
+//		return "insect_eggs_gerarus";
+//	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}

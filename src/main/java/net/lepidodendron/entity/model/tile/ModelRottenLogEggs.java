@@ -18,8 +18,8 @@ public class ModelRottenLogEggs extends ModelBase {
     public ModelRenderer Eggfront3;
 
     public ModelRottenLogEggs() {
-        this.textureWidth = 32;
-        this.textureHeight = 32;
+        this.textureWidth = 16;
+        this.textureHeight = 16;
         this.Eggside2 = new ModelRenderer(this, 0, 0);
         this.Eggside2.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.Eggside2.addBox(-1.5F, -0.5F, -0.5F, 3, 1, 1, 0.0F);

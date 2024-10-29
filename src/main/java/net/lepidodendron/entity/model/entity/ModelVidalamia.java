@@ -321,7 +321,7 @@ public class ModelVidalamia extends ModelBasePalaeopedia {
         AdvancedModelRenderer[] dorsal = {this.dorsalfin1, this.dorsalfin2, this.dorsalfin3, this.dorsalfin4, this.dorsalfin5};
         ((EntityPrehistoricFloraVidalamia)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
-        float speed = 0.186F;
+        float speed = 0.223F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
         if (ee.getIsFast()) {
             speed = speed * 2.6F;

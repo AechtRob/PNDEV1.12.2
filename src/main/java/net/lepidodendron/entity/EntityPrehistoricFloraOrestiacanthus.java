@@ -190,7 +190,9 @@ public class EntityPrehistoricFloraOrestiacanthus extends EntityPrehistoricFlora
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(EntityPrehistoricFloraOrestiacanthus.Type.getTypeFromString(compound.getString("PNType")));

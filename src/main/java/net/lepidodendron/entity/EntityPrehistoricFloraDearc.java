@@ -400,10 +400,10 @@ public class EntityPrehistoricFloraDearc extends EntityPrehistoricFloraLandClimb
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public String getEntityId(Entity entity) {
-		return "lepidodendron:prehistoric_flora_dearc";
-	}
+//	@Override
+//	public String getEntityId(Entity entity) {
+//		return "lepidodendron:prehistoric_flora_dearc";
+//	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) { //0-3

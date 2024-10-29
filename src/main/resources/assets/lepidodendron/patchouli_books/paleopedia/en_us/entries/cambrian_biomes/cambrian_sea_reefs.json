@@ -1,0 +1,32 @@
+{
+	"name": "Ocean Reefs",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
+	"category": "lepidodendron:cambrian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Cambrian Ocean Reefs$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:cambrian_sea_reefs"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:cambrian_sea_reefs"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:cambrian_sea_reefs"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:cambrian_sea_reefs"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:cambrian_sea_reefs"
+		}
+	]
+}

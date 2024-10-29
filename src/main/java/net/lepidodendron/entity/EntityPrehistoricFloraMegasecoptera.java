@@ -95,6 +95,12 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 		return true;
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	public enum Type
 	{
 		SYLVOHYMEN(1, "sylvohymen")
@@ -237,7 +243,9 @@ public class EntityPrehistoricFloraMegasecoptera extends EntityPrehistoricFloraI
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(Type.getTypeFromString(compound.getString("PNType")));

@@ -1,0 +1,32 @@
+{
+	"name": "Cooksonia Fields",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
+	"category": "lepidodendron:silurian_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Silurian Cooksonia Fields$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:silurian_cooksonia"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:silurian_cooksonia"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:silurian_cooksonia"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:silurian_cooksonia"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:silurian_cooksonia"
+		}
+	]
+}

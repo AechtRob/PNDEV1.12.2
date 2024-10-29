@@ -365,6 +365,9 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 		{
 			return this.getCustomNameTag();
 		}
+		else if (this.dataManager.get(INSECT_TYPE) < 1) {
+			return I18n.translateToLocal("entity.prehistoric_flora_dragonfly.name");
+		}
 		else
 		{
 			return I18n.translateToLocal("entity.prehistoric_flora_dragonfly_" + this.getPNType().getName() + ".name");
@@ -377,7 +380,9 @@ public class EntityPrehistoricFloraDragonfly extends EntityPrehistoricFloraInsec
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
 		if (compound.hasKey("PNType", 8))
 		{
 			this.setPNType(Type.getTypeFromString(compound.getString("PNType")));

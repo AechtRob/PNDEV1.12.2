@@ -1,0 +1,32 @@
+{
+	"name": "Temperate Moss Meadows",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
+	"category": "lepidodendron:triassic_biome",
+	"pages": [
+		{
+			"type": "lepidodendron:headerlesstext",
+			"text": "$(l)Triassic Temperate Moss Meadows$(br2)$()Text here..."
+		},
+		{
+			"type": "lepidodendron:biomespawns1",
+			"biome": "lepidodendron:triassic_gondwanan_plain"
+		},
+		{
+			"type": "lepidodendron:biomespawns2",
+			"biome": "lepidodendron:triassic_gondwanan_plain"
+		},
+		{
+			"type": "lepidodendron:biomespawns3",
+			"biome": "lepidodendron:triassic_gondwanan_plain"
+		},
+		{
+			"type": "lepidodendron:biomespawns4",
+			"biome": "lepidodendron:triassic_gondwanan_plain"
+		},
+		{
+			"type": "lepidodendron:biomespawns5",
+			"biome": "lepidodendron:triassic_gondwanan_plain"
+		}
+	]
+}
