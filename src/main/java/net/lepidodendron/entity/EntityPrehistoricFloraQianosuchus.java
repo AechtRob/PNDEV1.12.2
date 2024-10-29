@@ -52,13 +52,13 @@ public class EntityPrehistoricFloraQianosuchus extends EntityPrehistoricFloraSwi
 
 	public EntityPrehistoricFloraQianosuchus(World world) {
 		super(world);
-		setSize(0.5F, 0.85F);
+		setSize(0.8F, 0.85F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.8F;
 		maxHeight = 0.85F;
 		maxHealthAgeable = 36.0D;
 		EAT_ANIMATION = Animation.create(20);
-		STAND_ANIMATION = Animation.create(56);
+		STAND_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
