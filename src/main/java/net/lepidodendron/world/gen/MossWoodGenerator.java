@@ -44,6 +44,7 @@ public class MossWoodGenerator extends WorldGenerator
 			|| (dimID == LepidodendronConfig.dimPermian)
 			|| (dimID == LepidodendronConfig.dimTriassic)
 			|| (dimID == LepidodendronConfig.dimJurassic)
+			|| (dimID == LepidodendronConfig.dimCretaceousEarly)
 			)
 			{
 				dimensionCriteria = true;

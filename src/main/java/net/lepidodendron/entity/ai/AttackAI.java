@@ -36,12 +36,19 @@ public class AttackAI extends EntityAIBase {
     public boolean shouldExecute() {
         EntityLivingBase target = this.entity.getAttackTarget();
         if (target == null || !target.isEntityAlive()) {
-
             return false;
         } else if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && target instanceof EntityPlayer) {
-
             return false;
         }
+        else if (target instanceof EntityPlayer) {
+            if (((EntityPlayer)target).capabilities.disableDamage) {
+                return false;
+            }
+        }
+        else if (target.isInvisible()) {
+            return false;
+        }
+
         this.currentPath = this.entity.getNavigator().getPathToEntityLiving(target);
 
         if (this.currentPath != null) {

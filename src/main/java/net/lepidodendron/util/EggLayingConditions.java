@@ -4,6 +4,7 @@ import net.lepidodendron.block.BlockEggsWater;
 import net.lepidodendron.block.BlockEggsWaterSurface;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.minecraft.block.BlockDirectional;
@@ -28,6 +29,7 @@ public class EggLayingConditions {
             ) {
                 //if (Math.random() > 0.5) {
                 entityIn.setTicks(-50); //Flag entityIn as stationary for egg-laying
+                entityIn.setAnimation(entityIn.LAY_ANIMATION);
                 //}
             }
 
@@ -206,8 +208,215 @@ public class EggLayingConditions {
             }
         }
     }
+    
+    public static void layMossandWood(EntityPrehistoricFloraAgeableBase entityIn) {
+        if (!entityIn.world.isRemote && entityIn.laysEggs() && entityIn.getCanBreed() && entityIn.getLaying()
+        ) {
+            if (entityIn.testLay(entityIn.world, entityIn.getPosition()) && entityIn.getTicks() > 0
+            ) {
+                //if (Math.random() > 0.5) {
+                entityIn.setTicks(-50); //Flag entityIn as stationary for egg-laying
+                entityIn.setAnimation(entityIn.LAY_ANIMATION);
+                //}
+            }
+            else if (entityIn.testLay(entityIn.world, entityIn.getPosition()) && entityIn.getTicks() > -47 && entityIn.getTicks() < 0) {
+                //Is stationary for egg-laying:
+                //System.err.println("Laying an egg in it");
+
+                //entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.rand.nextFloat() - entityIn.rand.nextFloat()) * 0.2F + 1.0F);
+                if (entityIn.testLay(entityIn.world, entityIn.getPosition())) {
+                    BlockPos nestPos = entityIn.getPosition();
+
+                    entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.world.rand.nextFloat() - entityIn.world.rand.nextFloat()) * 0.2F + 1.0F);
+                    TileEntity te = entityIn.world.getTileEntity(nestPos);
+                    if (te != null) {
+                        te.getTileData().setString("creature", entityIn.getEntityId(entityIn));
+                        if (entityIn.hasPNVariants() && entityIn.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", entityIn.getPNTypeName());
+                        }
+                    }
+                    IBlockState state = entityIn.world.getBlockState(nestPos);
+                    entityIn.world.notifyBlockUpdate(nestPos, state, state, 3);
+                    entityIn.setLaying(false);
+                }
+                entityIn.setTicks(0);
+            }
+            else if (entityIn.testLay(entityIn.world, entityIn.getPosition().down()) && entityIn.getTicks() > 0
+            ) {
+                //if (Math.random() > 0.5) {
+                entityIn.setTicks(-50); //Flag entityIn as stationary for egg-laying
+                entityIn.setAnimation(entityIn.LAY_ANIMATION);
+                //}
+            }
+            else if (entityIn.testLay(entityIn.world, entityIn.getPosition().down()) && entityIn.getTicks() > -47 && entityIn.getTicks() < 0) {
+                //Is stationary for egg-laying and entityIn is a rotten-log / etc lay
+                //System.err.println("Laying an egg in it");
+
+                //entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.rand.nextFloat() - entityIn.rand.nextFloat()) * 0.2F + 1.0F);
+                if (entityIn.testLay(entityIn.world, entityIn.getPosition().down()) && entityIn.world.getBlockState(entityIn.getPosition().down()).getBlock() == BlockRottenLog.block) {
+                    BlockPos nestPos = entityIn.getPosition().down();
+                    entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.world.rand.nextFloat() - entityIn.world.rand.nextFloat()) * 0.2F + 1.0F);
+                    TileEntity te = entityIn.world.getTileEntity(nestPos);
+                    if (te != null) {
+                        te.getTileData().setString("creature", entityIn.getEntityId(entityIn));
+                        if (entityIn.hasPNVariants() && entityIn.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", entityIn.getPNTypeName());
+                        }
+                    }
+                    IBlockState state = entityIn.world.getBlockState(nestPos);
+                    entityIn.world.notifyBlockUpdate(nestPos, state, state, 3);
+                    entityIn.setLaying(false);
+                }
+                entityIn.setTicks(0);
+            }
+        }
+    }
+
+    public static void layMossandWoodNoPause(EntityPrehistoricFloraCrawlingFlyingInsectBase entityIn) {
+        if (!entityIn.world.isRemote && entityIn.laysEggs() && entityIn.getCanBreed() && entityIn.getLaying()
+        ) {
+            if (entityIn.testLay(entityIn.world, entityIn.getPosition())) {
+                BlockPos nestPos = entityIn.getPosition();
+
+                entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.world.rand.nextFloat() - entityIn.world.rand.nextFloat()) * 0.2F + 1.0F);
+                TileEntity te = entityIn.world.getTileEntity(nestPos);
+                if (te != null) {
+                    te.getTileData().setString("creature", entityIn.getEntityId(entityIn));
+                    if (entityIn.hasPNVariants() && entityIn.getPNTypeName() != null) {
+                        te.getTileData().setString("PNType", entityIn.getPNTypeName());
+                    }
+                }
+                IBlockState state = entityIn.world.getBlockState(nestPos);
+                entityIn.world.notifyBlockUpdate(nestPos, state, state, 3);
+                entityIn.setLaying(false);
+                entityIn.setTicks(0);
+            }
+
+            else if (entityIn.testLay(entityIn.world, entityIn.getPosition().down()) && entityIn.world.getBlockState(entityIn.getPosition().down()).getBlock() == BlockRottenLog.block) {
+                BlockPos nestPos = entityIn.getPosition().down();
+                entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.world.rand.nextFloat() - entityIn.world.rand.nextFloat()) * 0.2F + 1.0F);
+                TileEntity te = entityIn.world.getTileEntity(nestPos);
+                if (te != null) {
+                    te.getTileData().setString("creature", entityIn.getEntityId(entityIn));
+                    if (entityIn.hasPNVariants() && entityIn.getPNTypeName() != null) {
+                        te.getTileData().setString("PNType", entityIn.getPNTypeName());
+                    }
+                }
+                IBlockState state = entityIn.world.getBlockState(nestPos);
+                entityIn.world.notifyBlockUpdate(nestPos, state, state, 3);
+                entityIn.setLaying(false);
+                entityIn.setTicks(0);
+            }
+        }
+    }
 
     public static boolean testLayMossAndWood(EntityPrehistoricFloraAgeableBase entityIn, World world, BlockPos pos) {
+
+        if (
+                world.getBlockState(pos).getBlock() == BlockRottenLog.block
+                        || (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
+        ) {
+            if (entityIn.noMossEggs() && (world.getBlockState(pos).getBlock() instanceof ILayableMoss)) {
+                return false;
+            }
+            String eggRenderType = new Object() {
+                public String getValue(BlockPos pos, String tag) {
+                    TileEntity tileEntity = world.getTileEntity(pos);
+                    if (tileEntity != null)
+                        return tileEntity.getTileData().getString(tag);
+                    return "";
+                }
+            }.getValue(new BlockPos(pos), "egg");
+            if (eggRenderType.equals("")) {
+                //There is a space, is the orientation correct?
+                if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
+                    EnumFacing facing = EnumFacing.UP;
+                    try {
+                        facing = world.getBlockState(pos).getValue(FACING);
+                    }
+                    catch (Exception e) {
+                        //Do nothing
+                    }
+                    BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
+                    if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
+                            && faceshape != BlockFaceShape.SOLID)) {
+                        //This is solid for laying:
+                        return true;
+                    }
+                }
+                else {
+                    //Is it upward-facing?
+                    EnumFacing facing = EnumFacing.UP;
+                    try {
+                        facing = world.getBlockState(pos).getValue(FACING);
+                    }
+                    catch (Exception e) {
+                        //Do nothing
+                    }
+                    if (facing == EnumFacing.UP) {
+                        //This is OK for laying mosses
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean testLayMossAndWoodCrawlingFlyingInsect(EntityPrehistoricFloraCrawlingFlyingInsectBase entityIn, World world, BlockPos pos) {
+
+        if (
+                world.getBlockState(pos).getBlock() == BlockRottenLog.block
+                        || (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
+        ) {
+            if (entityIn.noMossEggs() && (world.getBlockState(pos).getBlock() instanceof ILayableMoss)) {
+                return false;
+            }
+            String eggRenderType = new Object() {
+                public String getValue(BlockPos pos, String tag) {
+                    TileEntity tileEntity = world.getTileEntity(pos);
+                    if (tileEntity != null)
+                        return tileEntity.getTileData().getString(tag);
+                    return "";
+                }
+            }.getValue(new BlockPos(pos), "egg");
+            if (eggRenderType.equals("")) {
+                //There is a space, is the orientation correct?
+                if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
+                    EnumFacing facing = EnumFacing.UP;
+                    try {
+                        facing = world.getBlockState(pos).getValue(FACING);
+                    }
+                    catch (Exception e) {
+                        //Do nothing
+                    }
+                    BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
+                    if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
+                            && faceshape != BlockFaceShape.SOLID)) {
+                        //This is solid for laying:
+                        return true;
+                    }
+                }
+                else {
+                    //Is it upward-facing?
+                    EnumFacing facing = EnumFacing.UP;
+                    try {
+                        facing = world.getBlockState(pos).getValue(FACING);
+                    }
+                    catch (Exception e) {
+                        //Do nothing
+                    }
+                    if (facing == EnumFacing.UP) {
+                        //This is OK for laying mosses
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean testLayMossAndWoodInsectFlying(EntityPrehistoricFloraInsectFlyingBase entityIn, World world, BlockPos pos) {
 
         if (
                 world.getBlockState(pos).getBlock() == BlockRottenLog.block

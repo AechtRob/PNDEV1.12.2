@@ -343,6 +343,11 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	}
 
 	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_titanoptera.png");
+	}
+
+	@Override
 	public void playLivingSound()
 	{
 		SoundEvent soundevent = this.getAmbientSound();
@@ -366,9 +371,6 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.PLANTS);
 	}
-
-
-
 
 	@Override
 	public int getTalkInterval() {

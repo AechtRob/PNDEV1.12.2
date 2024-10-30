@@ -88,6 +88,14 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
+                    if (entityChooser instanceof EntityPlayer) {
+                        if (((EntityPlayer)entityChooser).capabilities.disableDamage) {
+                            targetOK = false;
+                        }
+                    }
+                    if (entityChooser.isInvisible()) {
+                        targetOK = false;
+                    }
                 }
 
                 if ((entityChooser instanceof EntityPlayer && entityChooser.world.getDifficulty() != EnumDifficulty.PEACEFUL)

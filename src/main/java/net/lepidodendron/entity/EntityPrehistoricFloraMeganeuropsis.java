@@ -182,6 +182,13 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 				if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL || player.isCreative()) {
 					this.setAttackTarget(null);
 				}
+				if (player.capabilities.disableDamage) {
+					this.setAttackTarget(null);
+				}
+				if (player.isInvisible()) {
+					this.setAttackTarget(null);
+				}
+
 			}
 		}
 
@@ -389,10 +396,15 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		@Override
 		public boolean shouldExecute() {
 			EntityLivingBase target = EntityPrehistoricFloraMeganeuropsis.this.getAttackTarget();
-			if (target == null || !target.isEntityAlive()) {
+			if (target == null || (!target.isEntityAlive()) || target.isInvisible()) {
 				return false;
 			} else if (EntityPrehistoricFloraMeganeuropsis.this.world.getDifficulty() == EnumDifficulty.PEACEFUL && target instanceof EntityPlayer) {
 				return false;
+			}
+			else if (target instanceof EntityPlayer) {
+				if (((EntityPlayer)target).capabilities.disableDamage) {
+					return false;
+				}
 			}
 			this.currentPath = EntityPrehistoricFloraMeganeuropsis.this.getNavigator().getPathToEntityLiving(target);
 			return this.currentPath != null;

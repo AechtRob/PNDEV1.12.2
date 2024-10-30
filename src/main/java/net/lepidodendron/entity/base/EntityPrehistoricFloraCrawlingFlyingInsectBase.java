@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraCrawlingFlyingInsectBaseAI;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
@@ -15,8 +14,9 @@ import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
+import net.lepidodendron.util.EggLayingConditions;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -34,7 +34,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
@@ -78,8 +77,16 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    public ItemStack getDroppedEggItemStack() {
+        return new ItemStack(ItemUnknownEggLand.block, (int) (1));
+    }
+
     public String getEggNBT() {
         return getEntityId(this);
+    }
+
+    public boolean noMossEggs() {
+        return false;
     }
 
     @Nullable
@@ -527,61 +534,25 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.setTicks(ii);
         }
 
-        //Lay eggs perhaps:
-        if (!world.isRemote && this.laysEggs() && this.getCanBreed() && this.getLaying()
-        ) {
-            if (this.testLay(world, this.getPosition()) && this.getTicks() > 0
-            ) {
-                //if (Math.random() > 0.5) {
-                this.setTicks(-50); //Flag this as stationary for egg-laying
-                this.setAnimation(LAY_ANIMATION);
-                //}
-            }
-            else if (this.testLay(world, this.getPosition()) && this.getTicks() > -47 && this.getTicks() < 0) {
-                //Is stationary for egg-laying:
-                //System.err.println("Laying an egg in it");
-
-                //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                if (this.testLay(world, this.getPosition())) {
-                    BlockPos nestPos = this.getPosition();
-
-                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                    TileEntity te = world.getTileEntity(nestPos);
-                    if (te != null) {
-                        te.getTileData().setString("creature", getEntityId(this));
-                    }
-                    IBlockState state = world.getBlockState(nestPos);
-                    world.notifyBlockUpdate(nestPos, state, state, 3);
-                    this.setLaying(false);
+        //Drop an egg perhaps:
+        if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && this.getLaying()) {
+            if (Math.random() > 0.5) {
+                ItemStack itemstack = getDroppedEggItemStack();
+                if (!itemstack.hasTagCompound()) {
+                    itemstack.setTagCompound(new NBTTagCompound());
                 }
-                this.setTicks(0);
+                itemstack.getTagCompound().setString("creature", getEntityId(this));
+                EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
+                entityToSpawn.setPickupDelay(10);
+                this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                world.spawnEntity(entityToSpawn);
             }
-            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > 0
-            ) {
-                //if (Math.random() > 0.5) {
-                this.setTicks(-50); //Flag this as stationary for egg-laying
-                this.setAnimation(LAY_ANIMATION);
-                //}
-            }
-            else if (this.testLay(world, this.getPosition().down()) && this.getTicks() > -47 && this.getTicks() < 0) {
-                //Is stationary for egg-laying and this is a rotten-log / etc lay
-                //System.err.println("Laying an egg in it");
-
-                //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                if (this.testLay(world, this.getPosition().down()) && world.getBlockState(this.getPosition().down()).getBlock() == BlockRottenLog.block) {
-                    BlockPos nestPos = this.getPosition().down();
-                    this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                    TileEntity te = world.getTileEntity(nestPos);
-                    if (te != null) {
-                        te.getTileData().setString("creature", getEntityId(this));
-                    }
-                    IBlockState state = world.getBlockState(nestPos);
-                    world.notifyBlockUpdate(nestPos, state, state, 3);
-                    this.setLaying(false);
-                }
-                this.setTicks(0);
-            }
+            this.setTicks(0);
         }
+
+        //Lay eggs perhaps:
+        EggLayingConditions.layMossandWoodNoPause(this);
+
     }
 
     public boolean testLay(World world, BlockPos pos) {

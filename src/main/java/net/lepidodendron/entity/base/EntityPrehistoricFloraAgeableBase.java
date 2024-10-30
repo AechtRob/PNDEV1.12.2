@@ -1444,6 +1444,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL || player.isCreative()) {
                     this.setAttackTarget(null);
                 }
+                if (player.capabilities.disableDamage) {
+                    this.setAttackTarget(null);
+                }
+                if (player.isInvisible()) {
+                    this.setAttackTarget(null);
+                }
             }
         }
 

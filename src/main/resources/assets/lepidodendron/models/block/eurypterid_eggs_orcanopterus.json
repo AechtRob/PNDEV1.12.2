@@ -1,6 +1,0 @@
-{
-	"parent": "lepidodendron:block/eurypterid_eggs",
-	"textures": {
-		"texture": "lepidodendron:blocks/mobspawn_orcanopterus"
-	}
-}

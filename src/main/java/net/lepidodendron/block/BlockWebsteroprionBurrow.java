@@ -309,6 +309,11 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 					if (world.getDifficulty() == EnumDifficulty.PEACEFUL && entity instanceof EntityPlayer) {
 						return;
 					}
+					else if (entity instanceof EntityPlayer) {
+						if (((EntityPlayer)entity).capabilities.disableDamage) {
+							return;
+						}
+					}
 					EntityLiving entitySpawn = new EntityPrehistoricFloraWebsteroprionHole(world);
 					entitySpawn.setLocationAndAngles((double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, MathHelper.wrapDegrees(world.rand.nextFloat() * 360.0F), 0.0F);
 					world.spawnEntity(entitySpawn);

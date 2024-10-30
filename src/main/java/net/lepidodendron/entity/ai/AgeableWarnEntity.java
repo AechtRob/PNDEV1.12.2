@@ -99,6 +99,14 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                 if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && this.closestLivingEntity instanceof EntityPlayer) {
                     return false;
                 }
+                if (this.closestLivingEntity instanceof EntityPlayer) {
+                    if (((EntityPlayer)this.closestLivingEntity).capabilities.disableDamage) {
+                        return false;
+                    }
+                }
+                if (this.closestLivingEntity.isInvisible()) {
+                    return false;
+                }
                 if (this.closestLivingEntity instanceof EntityLivingBase) {
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());

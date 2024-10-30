@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.item.ItemStack;
@@ -36,6 +37,25 @@ public class EntityPrehistoricFloraRoachoidForestInsect extends EntityPrehistori
 	public EntityPrehistoricFloraRoachoidForestInsect(World world) {
 		super(world);
 		setSize(0.18F, 0.145F);
+	}
+
+	@Override
+	public boolean dropsEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public ItemStack getDroppedEggItemStack() {
+		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
+		NBTTagCompound variantNBT = new NBTTagCompound();
+		variantNBT.setString("creature", "lepidodendron:prehistoric_flora_roachoid_forest");
+		stack.setTagCompound(variantNBT);
+		return stack;
 	}
 
 	@Nullable

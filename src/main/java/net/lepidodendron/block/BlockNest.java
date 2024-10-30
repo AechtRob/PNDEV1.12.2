@@ -263,7 +263,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 			if (classEntity != null) {
 				if (player != null) { //Aggro on the player
-					if (world.getDifficulty() != EnumDifficulty.PEACEFUL && !player.capabilities.isCreativeMode) {
+					if (world.getDifficulty() != EnumDifficulty.PEACEFUL && (!player.capabilities.isCreativeMode) && (!player.capabilities.disableDamage) && (!player.isInvisible())) {
 						List<EntityPrehistoricFloraAgeableBase> Entities = Functions.getEntitiesWithinAABBPN(world, classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)), EntitySelectors.NOT_SPECTATING);
 						for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
 							if (currentEntity.hasPNVariants() && currentEntity.getPNTypeName() != null) {

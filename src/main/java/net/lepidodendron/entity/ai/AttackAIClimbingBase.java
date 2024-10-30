@@ -30,6 +30,14 @@ public class AttackAIClimbingBase extends EntityAIBase {
         } else if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && target instanceof EntityPlayer) {
             return false;
         }
+        else if (target instanceof EntityPlayer) {
+            if (((EntityPlayer)target).capabilities.disableDamage) {
+                return false;
+            }
+        }
+        else if (target.isInvisible()) {
+            return false;
+        }
         this.currentPath = this.entity.getNavigator().getPathToEntityLiving(target);
         return this.currentPath != null;
     }

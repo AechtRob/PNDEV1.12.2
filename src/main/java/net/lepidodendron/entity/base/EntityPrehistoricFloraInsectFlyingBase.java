@@ -8,13 +8,14 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IBennettites;
 import net.lepidodendron.entity.EntityPrehistoricFloraArchocyrtus;
+import net.lepidodendron.entity.EntityPrehistoricFloraKalligrammatid;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraInsectFlyingBaseAI;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
-import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
@@ -83,6 +84,10 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public boolean noMossEggs() {
+        return false;
     }
 
     @Nullable
@@ -174,7 +179,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
     }
 
     public ItemStack getDroppedEggItemStack() {
-        return new ItemStack(ItemUnknownEgg.block, (int) (1));
+        return new ItemStack(ItemUnknownEggLand.block, (int) (1));
     }
 
     @Override
@@ -477,6 +482,12 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             if (this.getAttackTarget() instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer) this.getAttackTarget();
                 if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL || player.isCreative()) {
+                    this.setAttackTarget(null);
+                }
+                if (player.capabilities.disableDamage) {
+                    this.setAttackTarget(null);
+                }
+                if (player.isInvisible()) {
                     this.setAttackTarget(null);
                 }
             }
@@ -966,7 +977,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 }
             }
 
-            if (EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraArchocyrtus) {
+            if (EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraArchocyrtus
+            || EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraKalligrammatid) {
                 target = getBennetiteTarget(false);
             }
             else {
@@ -1019,7 +1031,8 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         public void updateTask() {
             if (!EntityPrehistoricFloraInsectFlyingBase.this.isDirectPathBetweenPoints(new Vec3d(target))) {
-                if (EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraArchocyrtus) {
+                if (EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraArchocyrtus
+                    || EntityPrehistoricFloraInsectFlyingBase.this instanceof EntityPrehistoricFloraKalligrammatid) {
                     target = getBennetiteTarget(true);
                 }
                 else {

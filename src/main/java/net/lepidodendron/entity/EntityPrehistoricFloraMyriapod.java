@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
-import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
@@ -14,17 +13,15 @@ import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EggLayingConditions;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -205,52 +202,7 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 	public boolean testLay(World world, BlockPos pos) {
-		if (
-				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-						|| (world.getBlockState(pos).getBlock() instanceof ILayableMoss)
-		) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(pos), "egg");
-			if (eggRenderType.equals("")) {
-				//There is a space, is the orientation correct?
-				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = EnumFacing.UP;
-					try {
-						facing = world.getBlockState(pos).getValue(FACING);
-					}
-					catch (Exception e) {
-						//Do nothing
-					}
-					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
-					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
-							&& faceshape != BlockFaceShape.SOLID)) {
-						//This is solid for laying:
-						return true;
-					}
-				}
-				else {
-					//Is it upward-facing?
-					EnumFacing facing = EnumFacing.UP;
-					try {
-						facing = world.getBlockState(pos).getValue(FACING);
-					}
-					catch (Exception e) {
-						//Do nothing
-					}
-					if (facing == EnumFacing.UP) {
-						//This is OK for laying mosses
-						return true;
-					}
-				}
-			}
-		}
-		return false;
+		return EggLayingConditions.testLayMossAndWood(this, world, pos);
 	}
 
 	@Override

@@ -356,7 +356,8 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		if (this.getAttackTarget() != null) {
 			if (this.getAttackTarget() instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) this.getAttackTarget();
-				if (player.capabilities.isCreativeMode || world.getDifficulty() == EnumDifficulty.PEACEFUL) {
+				if (player.capabilities.isCreativeMode || world.getDifficulty() == EnumDifficulty.PEACEFUL
+					|| player.capabilities.disableDamage || player.isInvisible()) {
 					this.setAttackTarget(null);
 				}
 			}

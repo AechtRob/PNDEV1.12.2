@@ -114,6 +114,14 @@ public class HuntForDietEntityPrehistoricFloraAgeableBaseAI<T extends EntityLivi
                         //this.entity.setIsFast(false);
                         targetOK = false;
                     }
+                    if (entityChooser instanceof EntityPlayer) {
+                        if (((EntityPlayer)entityChooser).capabilities.disableDamage) {
+                            targetOK = false;
+                        }
+                    }
+                    if (entityChooser.isInvisible()) {
+                        targetOK = false;
+                    }
                 }
 
 
