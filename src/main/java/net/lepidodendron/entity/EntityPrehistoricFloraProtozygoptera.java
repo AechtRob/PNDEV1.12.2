@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.util.EggLayingConditions;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -43,6 +44,11 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 		setSize(0.3F, 0.2F);
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
 	public void onEntityUpdate() {
 		if (!world.isRemote) {
 			if (this.hoverTick > 0) {
@@ -69,6 +75,8 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 				this.motionZ = 0;
 			}
 		}
+
+		EggLayingConditions.layWaterBottomEggsNoPause(this);
 	}
 
 	@Override

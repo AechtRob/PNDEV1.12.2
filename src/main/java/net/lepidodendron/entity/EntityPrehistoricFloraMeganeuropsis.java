@@ -16,6 +16,7 @@ import net.lepidodendron.entity.render.entity.RenderMeganeuropsis;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
@@ -70,6 +71,11 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		super(world);
 		setSize(0.55F, 0.42F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
 	}
 
 	@Nullable
@@ -211,6 +217,8 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		else {
 			this.setWillHunt(HealthRatio <= (float) aHealth);
 		}
+
+		EggLayingConditions.layWaterBottomEggsNoPause(this);
 	}
 
 	public void launchAttack() {
