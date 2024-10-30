@@ -27,12 +27,6 @@ public class RenderHandler {
                 return new RenderWalliserops(manager);
             }
         });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPneumodesmus.class, new IRenderFactory<EntityPrehistoricFloraPneumodesmus>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraPneumodesmus> createRenderFor(RenderManager manager) {
-                return new RenderPneumodesmus(manager);
-            }
-        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCheirurus.class, new IRenderFactory<EntityPrehistoricFloraCheirurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraCheirurus> createRenderFor(RenderManager manager) {
@@ -157,12 +151,6 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraHibernaspis> createRenderFor(RenderManager manager) {
                 return new RenderHibernaspis(manager);
-            }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEoarthropleura.class, new IRenderFactory<EntityPrehistoricFloraEoarthropleura>() {
-            @Override
-            public Render<? super EntityPrehistoricFloraEoarthropleura> createRenderFor(RenderManager manager) {
-                return new RenderEoarthropleura(manager);
             }
         });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAmmonite_Manticoceras.class, new IRenderFactory<EntityPrehistoricFloraAmmonite_Manticoceras>() {
@@ -301,6 +289,12 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraPalaeodictyoptera> createRenderFor(RenderManager manager) {
                 return new RenderPalaeodictyoptera(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMyriapod.class, new IRenderFactory<EntityPrehistoricFloraMyriapod>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMyriapod> createRenderFor(RenderManager manager) {
+                return new RenderMyriapod(manager);
             }
         });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTitanoptera.class, new IRenderFactory<EntityPrehistoricFloraTitanoptera>() {

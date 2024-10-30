@@ -24,23 +24,23 @@
 		},
 		{
 			"type": "lepidodendron:diet",
-			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@eoarthropleura"
 		},
 		{
 			"type": "lepidodendron:biomelocations1",
-			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@eoarthropleura"
 		},
 		{
 			"type": "lepidodendron:biomelocations2",
-			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@eoarthropleura"
 		},
 		{
 			"type": "lepidodendron:biomelocations3",
-			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@eoarthropleura"
 		},
 		{
 			"type": "lepidodendron:biomelocations4",
-			"mob": "lepidodendron:prehistoric_flora_eoarthropleura"
+			"mob": "lepidodendron:prehistoric_flora_myriapod@eoarthropleura"
 		}
 	]
 }

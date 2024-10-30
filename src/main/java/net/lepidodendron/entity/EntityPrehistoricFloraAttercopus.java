@@ -49,6 +49,11 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}

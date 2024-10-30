@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraEoarthropleura;
+import net.lepidodendron.entity.EntityPrehistoricFloraMyriapod;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -263,6 +263,7 @@ public class ModelEoarthropleura extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 * 0.4F);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -288,7 +289,7 @@ public class ModelEoarthropleura extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         //super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.91F;
+        this.body.offsetY = 0.911F;
 
         AdvancedModelRenderer[] legsL = {this.legL_r1, this.legL_r2, this.legL_r3, this.legL_r4, this.legL_r5, this.legL_r6, this.legL_r7, this.legL_r8, this.legL_r9, this.legL_r10};
         AdvancedModelRenderer[] legsR = {this.legR_r1, this.legR_r2, this.legR_r3, this.legR_r4, this.legR_r5, this.legR_r6, this.legR_r7, this.legR_r8, this.legR_r9, this.legR_r10};
@@ -308,7 +309,7 @@ public class ModelEoarthropleura extends ModelBasePalaeopedia {
 
         AdvancedModelRenderer[] BodyHead = {this.body1, this.body};
 
-        EntityPrehistoricFloraEoarthropleura Eoarthropleura = (EntityPrehistoricFloraEoarthropleura) e;
+        EntityPrehistoricFloraMyriapod Eoarthropleura = (EntityPrehistoricFloraMyriapod) e;
         if (f3 == 0.0F || !Eoarthropleura.getIsMoving()) { //Not moving
             this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
@@ -317,13 +318,13 @@ public class ModelEoarthropleura extends ModelBasePalaeopedia {
 
         AdvancedModelRenderer[] bodySegments = new AdvancedModelRenderer[]{
                 body1, body2, body3, body4, body5, body6, body7, body8, body9, body10, bodyend };
-        Eoarthropleura.eoarthropleuraBuffer.applyChainSwingBuffer(false, bodySegments);
+        Eoarthropleura.myriapodBuffer.applyChainSwingBuffer(false, bodySegments);
 
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
-            if (((EntityPrehistoricFloraEoarthropleura) e).getIsMoving()) {
+            if (((EntityPrehistoricFloraMyriapod) e).getIsMoving()) {
                 this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
                 this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
                 //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);

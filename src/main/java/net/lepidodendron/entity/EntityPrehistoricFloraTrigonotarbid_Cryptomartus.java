@@ -50,6 +50,16 @@ public class EntityPrehistoricFloraTrigonotarbid_Cryptomartus extends EntityPreh
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_trigonotarbid.png");
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}

@@ -43,7 +43,6 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -879,13 +878,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 
 			EntityItem entityToSpawn = null;
 			if (!eggRenderType.equals("")) {
-				Block blockSpawn = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(eggRenderType)).getDefaultState().getBlock();
-				//System.err.println("Block " + blockSpawn);
-				if (blockSpawn != null) {
-					if (!(blockSpawn instanceof BlockInsectEggs)) { //Do not spawn insect eggs - these need collecting
-						entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(blockSpawn, (int) (1)));
-					}
-				}
+				entityToSpawn = BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, world, pos);
 			}
 			//Spawn the eggs:
 			if (!world.isRemote && entityToSpawn != null) {

@@ -10,20 +10,33 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
+import net.lepidodendron.entity.render.entity.RenderMyriapod;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMyriapodEoarthropleura;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggMyriapodPneumodesmus;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
@@ -46,10 +59,15 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	private Animation animation = NO_ANIMATION;
 	public MillipedeBuffer myriapodBuffer;
 
+	private static final float[] PNEUMODESMUS_SIZE = new float[]{0.30F, 0.30F};
+	private static final float[] EOARTHROPLEURA_SIZE = new float[]{0.30F, 0.30F};
+
+	private static final DataParameter<Integer> INSECT_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraMyriapod.class, DataSerializers.VARINT);
+
 	public EntityPrehistoricFloraMyriapod(World world) {
 		super(world);
 		setSize(0.3F, 0.3F);
-		minWidth = 0.1F;
+		minWidth = 0.3F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
@@ -69,6 +87,11 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		if (world.isRemote && !this.isAIDisabled()) {
 			myriapodBuffer.calculateChainSwingBuffer(120, 16, 12.5F, this);
 		}
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
 	}
 
 	public static String getPeriod() {return "Silurian - Devonian";}
@@ -97,7 +120,10 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 
 	@Override
 	public float getAISpeedLand() {
-		return 0.35f;
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
+		return getCrawlSpeed();
 	}
 
 	@Override
@@ -111,14 +137,23 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 	}
 
 	@Override
-	public void setAnimation(Animation animation) {
+	public void setAnimation(Animation animation)
+	{
+		if (animation == NO_ANIMATION){
+			onAnimationFinish(this.animation);
+			setAnimationTick(0);
+		}
 		this.animation = animation;
 	}
 
 	@Override
-	public Animation[] getAnimations() {
+	public Animation[] getAnimations()
+	{
 		return null;
 	}
+
+	protected void onAnimationFinish(Animation animation)
+	{}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
@@ -188,6 +223,8 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
+		this.setSizer(this.getHitBoxSize()[0], this.getHitBoxSize()[1]);
+		
 		//Eat moss!
 		BlockPos pos = this.getPosition();
 		if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote)
@@ -210,23 +247,179 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		return (testLay(world, pos.down()) || testLay(world, pos)) ;
 	}
 
+
+	@Override
+	public byte breedPNVariantsMatch() {
+		return 1;
+	}
+
+	@Override
+	public boolean canMateWith(EntityAnimal otherAnimal)
+	{
+		if (otherAnimal == this)
+		{
+			return false;
+		}
+		else if (otherAnimal.getClass() != this.getClass())
+		{
+			return false;
+		}
+		else {
+			switch (this.breedPNVariantsMatch()) {
+				case 0: default:
+					break;
+
+				case -1:
+					if (((EntityPrehistoricFloraMyriapod)otherAnimal).getPNType() == this.getPNType()) {
+						return false;
+					}
+					break;
+
+				case 1:
+					if (((EntityPrehistoricFloraMyriapod)otherAnimal).getPNType() != this.getPNType()) {
+						return false;
+					}
+					break;
+
+			}
+		}
+
+		return this.isInLove() && otherAnimal.isInLove();
+	}
+
+	@Override
+	public boolean hasPNVariants() {
+		return true;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		switch (this.getPNType()) {
+			case PNEUMODESMUS: default:
+				return ModTriggers.CLICK_PNEUMODESMUS;
+
+			case EOARTHROPLEURA:
+				return ModTriggers.CLICK_EOARTHROPLEURA;
+				
+		}
+	}
+
+	public enum Type
+	{
+		PNEUMODESMUS(1, "pneumodesmus"),
+		EOARTHROPLEURA(2, "eoarthropleura"),
+		;
+
+		private final String name;
+		private final int metadata;
+
+		Type(int metadataIn, String nameIn)
+		{
+			this.name = nameIn;
+			this.metadata = metadataIn;
+		}
+
+		public String getName()
+		{
+			return this.name;
+		}
+
+		public int getMetadata()
+		{
+			return this.metadata;
+		}
+
+		public String toString()
+		{
+			return this.name;
+		}
+
+		public static EntityPrehistoricFloraMyriapod.Type byId(int id)
+		{
+			if (id < 0 || id >= values().length)
+			{
+				id = 0;
+			}
+
+			return values()[id];
+		}
+
+		public static EntityPrehistoricFloraMyriapod.Type getTypeFromString(String nameIn)
+		{
+			for (int i = 0; i < values().length; ++i)
+			{
+				if (values()[i].getName().equals(nameIn))
+				{
+					return values()[i];
+				}
+			}
+
+			return values()[0];
+		}
+
+	}
+
+	public ResourceLocation getFreezeLoot() {
+		switch (this.getPNType()) {
+			case PNEUMODESMUS: default:
+				return LepidodendronMod.PNEUMODESMUS_LOOT_JAR;
+
+			case EOARTHROPLEURA:
+				return LepidodendronMod.EOARTHROPLEURA_LOOT_JAR;
+
+		}
+	}
+
+	public ResourceLocation getStandardLoot() {
+		switch (this.getPNType()) {
+			case PNEUMODESMUS: default:
+				return LepidodendronMod.BUG_LOOT;
+
+			case EOARTHROPLEURA:
+				return LepidodendronMod.BUG_LOOT;
+				
+		}
+	}
+
+	public float getCrawlSpeed() {
+		switch (this.getPNType()) {
+			case PNEUMODESMUS: default:
+				return 0.35f;
+
+			case EOARTHROPLEURA:
+				return 0.35f;
+				
+		}
+	}
+
+	public float[] getHitBoxSize() {
+		switch (this.getPNType()) {
+			case PNEUMODESMUS: default:
+				return PNEUMODESMUS_SIZE;
+
+			case EOARTHROPLEURA:
+				return EOARTHROPLEURA_SIZE;
+				
+		}
+	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BUG_LOOT;
+		return getStandardLoot();
 	}
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
 	{
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
-			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.PNEUMODESMUS_JAR_LOOT;
+			ResourceLocation resourcelocation = getFreezeLoot();
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
 			{
 				NBTTagCompound variantNBT = new NBTTagCompound();
-				variantNBT.setString("PNType", "");
+				variantNBT.setString("PNType", this.getPNType().getName());
 				String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
 				variantNBT.setString("PNDisplaycase", stringEgg);
 				itemstack.setTagCompound(variantNBT);
@@ -236,12 +429,97 @@ public class EntityPrehistoricFloraMyriapod extends EntityPrehistoricFloraLandBa
 		else {
 			super.dropLoot(wasRecentlyHit, lootingModifier, source);
 		}
+	}
 
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(INSECT_TYPE, 0);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setPNType(EntityPrehistoricFloraMyriapod.Type.byId(rand.nextInt(EntityPrehistoricFloraMyriapod.Type.values().length) + 1));
+		return livingdata;
+	}
+
+	protected void setSizer(float width, float height)
+	{
+		if (width != this.width || height != this.height)
+		{
+			float f = this.width;
+			this.width = width;
+			this.height = height;
+			if (this.width != f) {
+				double d0 = (double) width / 2.0D;
+				this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+			}
+		}
+	}
+
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraMyriapod) {
+			EntityPrehistoricFloraMyriapod palaeodictyoptera = (EntityPrehistoricFloraMyriapod) target.entityHit;
+			switch (palaeodictyoptera.getPNType()) {
+				case PNEUMODESMUS: default:
+					return new ItemStack(ItemSpawnEggMyriapodPneumodesmus.block, 1);
+
+				case EOARTHROPLEURA:
+					return new ItemStack(ItemSpawnEggMyriapodEoarthropleura.block, 1);
+					
+			}
+		}
+		return ItemStack.EMPTY;
+	}
+
+	@Override
+	public String getName() {
+		if (this.hasCustomName())
+		{
+			return this.getCustomNameTag();
+		}
+		else
+		{
+			return I18n.translateToLocal("entity.prehistoric_flora_myriapod_" + this.getPNType().getName() + ".name");
+		}
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound) {
+		super.writeEntityToNBT(compound);
+		compound.setString("PNType", this.getPNType().getName());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		if (this.world != null) {
+			super.readEntityFromNBT(compound);
+		}
+		if (compound.hasKey("PNType", 8))
+		{
+			this.setPNType(EntityPrehistoricFloraMyriapod.Type.getTypeFromString(compound.getString("PNType")));
+		}
+	}
+
+	public void setPNType(EntityPrehistoricFloraMyriapod.Type type)
+	{
+		this.dataManager.set(INSECT_TYPE, Integer.valueOf(type.ordinal()));
 	}
 
 	@Nullable
+	public EntityPrehistoricFloraMyriapod.Type getPNType()
+	{
+		return EntityPrehistoricFloraMyriapod.Type.byId(((Integer)this.dataManager.get(INSECT_TYPE)).intValue());
+	}
+
 	@Override
-	public CustomTrigger getModTrigger() {
-		return null;
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
+	public static float getScaler(@Nullable String variant) {
+		return RenderMyriapod.getScaler(EntityPrehistoricFloraMyriapod.Type.getTypeFromString(variant));
 	}
 }

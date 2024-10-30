@@ -265,15 +265,7 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 
 			EntityItem entityToSpawn = null;
 			if (!eggRenderType.equals("")) {
-				entityToSpawn = hasBigEggs(eggRenderType, world, pos);
-				if (entityToSpawn == null) {
-					Block blockSpawn = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(eggRenderType)).getDefaultState().getBlock();
-					if (blockSpawn != null) {
-						if (!(blockSpawn instanceof BlockInsectEggs)) { //Do not spawn insect eggs - these need collecting
-							entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(blockSpawn, (int) (1)));
-						}
-					}
-				}
+				entityToSpawn = BlockRottenLog.BlockCustom.hasBigEggs(eggRenderType, world, pos);
 			}
 			//Spawn the eggs:
 			if (!world.isRemote && entityToSpawn != null) {

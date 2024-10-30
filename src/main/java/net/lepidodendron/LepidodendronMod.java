@@ -82,7 +82,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_WALLISEROPS = 1;
 	public static final ResourceLocation WALLISEROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/walliserops"));
 	public static final int ENTITY_PNEUMODESMUS = 2;
-	public static final ResourceLocation PNEUMODESMUS_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pneumodesmus_jar"));
+	public static final ResourceLocation PNEUMODESMUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/pneumodesmus_jar"));
 	public static final int ENTITY_CHEIRURUS = 3;
 	public static final ResourceLocation CHEIRURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cheirurus"));
 	public static final int ENTITY_ISOTELUS = 4;
@@ -2509,6 +2509,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation KNOETSCHKESUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/knoetschkesuchus"));
 	public static final int ENTITY_TROPIDOSUCHUS = 1014;
 	public static final ResourceLocation TROPIDOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tropidosuchus"));
+	public static final int ENTITY_MYRIAPOD = 1015;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -2583,12 +2584,13 @@ public class LepidodendronMod {
 
 		ModTriggers.registerTriggers();
 
-		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 59);
+		ModFixs modfixes = FMLCommonHandler.instance().getDataFixer().init("lepidodendron", 61);
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyoptera.FixerPalaeodictyoptera);
 		modfixes.registerFix(FixTypes.ENTITY, FixerPalaeodictyopteraNymph.FixerPalaeodictyopteraNymph);
 		modfixes.registerFix(FixTypes.ENTITY, FixerTitanoptera.FixerTitanoptera);
 		modfixes.registerFix(FixTypes.ENTITY, FixerTitanopteraNymph.FixerTitanopteraNymph);
 		modfixes.registerFix(FixTypes.ENTITY, FixerConodont.FixerConodont);
+		modfixes.registerFix(FixTypes.ENTITY, FixerMyriapods.FixerMyriapods);
 
 		RecipeOresAndBlocks.registerSmelting();
 		RecipeCookedMeatsandSeeds.registerSmelting();

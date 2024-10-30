@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraIdmonarachne extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}

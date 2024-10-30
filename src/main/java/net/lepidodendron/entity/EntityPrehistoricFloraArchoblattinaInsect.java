@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 		setSize(0.20F, 0.145F);
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

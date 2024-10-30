@@ -41,6 +41,11 @@ public class EntityPrehistoricFloraDaohugoucossus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
+	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.PLANTS);
 	}

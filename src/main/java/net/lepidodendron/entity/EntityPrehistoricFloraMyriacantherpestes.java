@@ -65,6 +65,11 @@ public class EntityPrehistoricFloraMyriacantherpestes extends EntityPrehistoricF
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
+	@Override
 	public boolean canJar() {
 		return true;
 	}
