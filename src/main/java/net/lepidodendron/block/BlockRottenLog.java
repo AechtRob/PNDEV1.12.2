@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.Block;
@@ -238,6 +239,15 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 				}
 				if (entityEggs instanceof EntityPrehistoricFloraInsectFlyingBase) {
 					EntityPrehistoricFloraInsectFlyingBase entityBase = (EntityPrehistoricFloraInsectFlyingBase) entityEggs;
+					if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
+						eggType = entityBase.getEggType(creatureType);
+					}
+					else {
+						eggType = entityBase.getEggType(null);
+					}
+				}
+				if (entityEggs instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase) {
+					EntityPrehistoricFloraCrawlingFlyingInsectBase entityBase = (EntityPrehistoricFloraCrawlingFlyingInsectBase) entityEggs;
 					if (entityBase.hasPNVariants() && !creatureType.equalsIgnoreCase("")) {
 						eggType = entityBase.getEggType(creatureType);
 					}
