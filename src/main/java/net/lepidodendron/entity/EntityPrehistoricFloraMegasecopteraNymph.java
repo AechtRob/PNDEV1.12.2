@@ -48,6 +48,15 @@ public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricF
 		maxHealthAgeable = 5.0D;
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_megasecoptera.png");
+	}
 	
 
 	//*****************************************************
@@ -247,6 +256,11 @@ public class EntityPrehistoricFloraMegasecopteraNymph extends EntityPrehistoricF
 	
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
 		return false;
 	}
 

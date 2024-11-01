@@ -291,8 +291,19 @@ public class BlockEggs extends ElementsLepidodendronMod.ModElement {
 				if (incubation >= this.getIncubation(worldIn, pos)) {
 
 					String nbtStr = "{AgeTicks:0}";
+					String creatureType = new Object() {
+						public String getValue(BlockPos pos1, String tag) {
+							TileEntity tileEntity = worldIn.getTileEntity(pos1);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getString(tag);
+							return "";
+						}
+					}.getValue(pos, "PNType");
 
 					String creatureTypeVariant = getEggOwnerVariant(worldIn, pos);
+					if (creatureTypeVariant == null && !creatureType.equalsIgnoreCase("")) {
+						creatureTypeVariant = creatureType;
+					}
 					if (creatureTypeVariant != null) {
 						if (creatureTypeVariant.equalsIgnoreCase("gendered")) {
 							creatureTypeVariant = "male";

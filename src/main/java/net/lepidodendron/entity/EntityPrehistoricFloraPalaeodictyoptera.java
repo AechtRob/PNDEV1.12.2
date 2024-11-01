@@ -16,6 +16,7 @@ import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -67,6 +68,20 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public String getEntityId(Entity entity) {
+		String mobid = "";
+		net.minecraftforge.fml.common.registry.EntityEntry entry =
+				net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
+		if (entry != null) {
+			mobid = entry.getRegistryName().toString() + "_nymph";
+		}
+		if (this.hasPNVariants() && this.getPNTypeName() != null) {
+			mobid = mobid + "@" + this.getPNTypeName();
+		}
+		return mobid;
 	}
 
 	@Override
@@ -582,11 +597,6 @@ public class EntityPrehistoricFloraPalaeodictyoptera extends EntityPrehistoricFl
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(Math.floor(this.getHitBoxSize()[0] * 15F));
 		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-	}
-
-	@Override
-	public ResourceLocation getEggTexture(@Nullable String variantIn) {
-		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_palaeodictyoptera.png");
 	}
 
 	@Override

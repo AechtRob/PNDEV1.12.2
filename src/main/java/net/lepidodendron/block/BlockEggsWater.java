@@ -3,7 +3,6 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronFogSubscribers;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.Functions;
@@ -20,8 +19,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -33,7 +30,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -129,19 +125,19 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_diploceraspis",
 			"lepidodendron:prehistoric_flora_diplodoselache",
 			"lepidodendron:prehistoric_flora_dracopristis",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly1",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly2",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly3",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly4",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly5",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly6",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly7",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly8",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly9",
-			"lepidodendron:prehistoric_flora_dragonfly@dragonfly10",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly1",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly2",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly3",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly4",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly5",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly6",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly7",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly8",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly9",
+			"lepidodendron:prehistoric_flora_dragonfly_nymph@dragonfly10",
 			"lepidodendron:prehistoric_flora_dvinosaurus",
 			"lepidodendron:prehistoric_flora_edestus",
-			"lepidodendron:prehistoric_flora_erasipteroides",
+			"lepidodendron:prehistoric_flora_erasipteroides_nymph",
 			"lepidodendron:prehistoric_flora_eryops",
 			"lepidodendron:prehistoric_flora_eurypterus",
 			"lepidodendron:prehistoric_flora_fadenia_carboniferous",
@@ -155,7 +151,7 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_hybodus",
 			"lepidodendron:prehistoric_flora_hyneria",
 			"lepidodendron:prehistoric_flora_ichthyostega",
-			"lepidodendron:prehistoric_flora_italophlebia",
+			"lepidodendron:prehistoric_flora_italophlebia_nymph",
 			"lepidodendron:prehistoric_flora_jaekelopterus",
 			"lepidodendron:prehistoric_flora_jeholotriton",
 			"lepidodendron:prehistoric_flora_kaibabvenator",
@@ -169,16 +165,16 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_megactenopetalus",
 			"lepidodendron:prehistoric_flora_megalocephalus",
 			"lepidodendron:prehistoric_flora_megalograptus",
-			"lepidodendron:prehistoric_flora_meganeura",
-			"lepidodendron:prehistoric_flora_meganeurites",
-			"lepidodendron:prehistoric_flora_meganeuropsis",
+			"lepidodendron:prehistoric_flora_meganeura_nymph",
+			"lepidodendron:prehistoric_flora_meganeurites_nymph",
+			"lepidodendron:prehistoric_flora_meganeuropsis_nymph",
 			"lepidodendron:prehistoric_flora_megarachne",
-			"lepidodendron:prehistoric_flora_megasecoptera@sylvohymen",
+			"lepidodendron:prehistoric_flora_megasecoptera_nymph@sylvohymen",
 			"lepidodendron:prehistoric_flora_melosaurus",
 			"lepidodendron:prehistoric_flora_metoposaurus",
 			"lepidodendron:prehistoric_flora_mixopterus",
 			"lepidodendron:prehistoric_flora_mooreodontus",
-			"lepidodendron:prehistoric_flora_namurotypus",
+			"lepidodendron:prehistoric_flora_namurotypus_nymph",
 			"lepidodendron:prehistoric_flora_nigerpeton",
 			"lepidodendron:prehistoric_flora_notidanoides",
 			"lepidodendron:prehistoric_flora_onychodus",
@@ -186,16 +182,16 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_orcanopterus",
 			"lepidodendron:prehistoric_flora_orodus",
 			"lepidodendron:prehistoric_flora_pagea",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@delitzschala",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@dunbaria",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@homaloneura",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@homoioptera",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@lithomantis",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@lycocercus",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@maizothairos",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@psychroptilus",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@sinodunbaria",
-			"lepidodendron:prehistoric_flora_palaeodictyoptera@stenodictya",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@delitzschala",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@dunbaria",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@homaloneura",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@homoioptera",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@lithomantis",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@lycocercus",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@maizothairos",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@psychroptilus",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@sinodunbaria",
+			"lepidodendron:prehistoric_flora_palaeodictyoptera_nymph@stenodictya",
 			"lepidodendron:prehistoric_flora_pantylus",
 			"lepidodendron:prehistoric_flora_parhybodus",
 			"lepidodendron:prehistoric_flora_parmastega",
@@ -206,7 +202,7 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_platyhystrix",
 			"lepidodendron:prehistoric_flora_prionosuchus",
 			"lepidodendron:prehistoric_flora_proterogyrinus",
-			"lepidodendron:prehistoric_flora_protozygoptera",
+			"lepidodendron:prehistoric_flora_protozygoptera_nymph",
 			"lepidodendron:prehistoric_flora_pterygotus",
 			"lepidodendron:prehistoric_flora_rhizodus",
 			"lepidodendron:prehistoric_flora_saivodus",
@@ -260,42 +256,6 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 			return NULL_AABB;
-		}
-
-		@Nullable
-		public static ItemStack getEggItemStack(World world, BlockPos pos) {
-			//Get the matching nest item for the nbt applied:
-			String creatureType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(pos, "creature");
-
-			if (!creatureType.equals("")) {
-				//Get the item itself:
-				return new ItemStack(getEggItem(creatureType), 1);
-			}
-			return null;
-		}
-
-		@Nullable
-		public static Item getEggItem(String eggs) {
-			eggs = LepidodendronMod.MODID + ":eggs_" + eggs.substring(32);
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(eggs));
-			//System.err.println("Eggitem: " + item);
-			return item;
-		}
-
-		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			ItemStack stack = getEggItemStack(world, pos);
-			if (stack != null) {
-				return stack;
-			}
-			return super.getPickBlock(state, target, world, pos, player);
 		}
 
 		@Override
@@ -458,16 +418,7 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 
 			if (!((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
 						&& worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)) {
-				EntityItem entityToSpawn = null;
-				ItemStack stack = getEggItemStack(worldIn, pos);
-				if (stack != null) {
-					entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(stack.getItem(), (int) (1)));
-					if (!worldIn.isRemote && entityToSpawn != null) {
-						entityToSpawn.setPickupDelay(10);
-						worldIn.spawnEntity(entityToSpawn);
-					}
-				}
-				worldIn.setBlockToAir(pos);
+				worldIn.destroyBlock(pos, false);
 				return;
 			}
 
@@ -496,6 +447,9 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 				}.getValue(pos, "PNType");
 
 				String creatureTypeVariant = getEggOwnerVariant(worldIn, pos);
+				if (creatureTypeVariant == null && !creatureType.equalsIgnoreCase("")) {
+					creatureTypeVariant = creatureType;
+				}
 				if (creatureTypeVariant != null) {
 					if (creatureTypeVariant.equalsIgnoreCase("gendered")) {
 						creatureTypeVariant = "male";

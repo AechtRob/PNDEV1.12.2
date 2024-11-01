@@ -81,12 +81,17 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean laysEggs() {
-		return true;
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
+		return false;
 	}
 
 	@Override //Spawn as baby so it grows:

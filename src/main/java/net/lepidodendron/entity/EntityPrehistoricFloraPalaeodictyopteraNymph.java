@@ -1,22 +1,26 @@
 
 package net.lepidodendron.entity;
 
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.item.entities.spawneggs.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -48,7 +52,15 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		maxHealthAgeable = 5.0D;
 	}
 
-	
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_palaeodictyoptera.png");
+	}
 
 	//*****************************************************
 	//Insect variant managers:
@@ -237,6 +249,12 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		return EntityPrehistoricFloraPalaeodictyopteraNymph.Type.byId(((Integer)this.dataManager.get(INSECT_TYPE)).intValue());
 	}
 
+	@Override
+	public String getPNTypeName()
+	{
+		return this.getPNType().getName();
+	}
+
 	//*****************************************************
 
 	@Override
@@ -258,6 +276,11 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		return false;
 	}
 
+	@Override
+	public boolean getLaying() {
+		return false;
+	}
+
 	@Override //Spawn as baby so it grows:
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
@@ -266,6 +289,46 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymph extends EntityPrehisto
 		this.setNoAI(false);
 		this.setPNType(EntityPrehistoricFloraPalaeodictyopteraNymph.Type.byId(rand.nextInt(EntityPrehistoricFloraPalaeodictyopteraNymph.Type.values().length) + 1));
 		return livingdata;
+	}
+
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target)
+	{
+		if (target.entityHit instanceof EntityPrehistoricFloraPalaeodictyopteraNymph) {
+			EntityPrehistoricFloraPalaeodictyopteraNymph palaeodictyoptera = (EntityPrehistoricFloraPalaeodictyopteraNymph) target.entityHit;
+			switch (palaeodictyoptera.getPNType()) {
+				case DELITZSCHALA: default:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraDelitzschala.block, 1);
+
+				case DUNBARIA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraDunbaria.block, 1);
+
+				case HOMALONEURA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomaloneura.block, 1);
+
+				case HOMOIOPTERA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraHomoioptera.block, 1);
+
+				case LITHOMANTIS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraLithomantis.block, 1);
+
+				case LYCOCERCUS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraLycocercus.block, 1);
+
+				case MAZOTHAIROS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraMazothairos.block, 1);
+
+				case SINODUNBARIA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraSinodunbaria.block, 1);
+
+				case STENODICTYA:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraStenodictya.block, 1);
+
+				case PSYCHROPTILUS:
+					return new ItemStack(ItemSpawnEggPalaeodictyopteraPsychroptilus.block, 1);
+			}
+		}
+		return ItemStack.EMPTY;
 	}
 
 	@Override

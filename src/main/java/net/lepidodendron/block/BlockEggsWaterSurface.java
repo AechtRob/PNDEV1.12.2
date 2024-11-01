@@ -3,7 +3,6 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronFogSubscribers;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.patchouli.SpawnLocations;
@@ -18,7 +17,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -30,7 +28,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -163,42 +160,6 @@ public class BlockEggsWaterSurface extends ElementsLepidodendronMod.ModElement {
 					world.scheduleUpdate(pos, this, 1);
 				}
 			}
-		}
-
-		@Nullable
-		public static ItemStack getEggItemStack(World world, BlockPos pos) {
-			//Get the matching nest item for the nbt applied:
-			String creatureType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(pos, "creature");
-
-			if (!creatureType.equals("")) {
-				//Get the item itself:
-				return new ItemStack(getEggItem(creatureType), 1);
-			}
-			return null;
-		}
-
-		@Nullable
-		public static Item getEggItem(String eggs) {
-			eggs = LepidodendronMod.MODID + ":eggs_" + eggs.substring(32);
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(eggs));
-			//System.err.println("Eggitem: " + item);
-			return item;
-		}
-
-		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			ItemStack stack = getEggItemStack(world, pos);
-			if (stack != null) {
-				return stack;
-			}
-			return super.getPickBlock(state, target, world, pos, player);
 		}
 
 		@Override
@@ -385,6 +346,9 @@ public class BlockEggsWaterSurface extends ElementsLepidodendronMod.ModElement {
 				}.getValue(pos, "PNType");
 
 				String creatureTypeVariant = getEggOwnerVariant(worldIn, pos);
+				if (creatureTypeVariant == null && !creatureType.equalsIgnoreCase("")) {
+					creatureTypeVariant = creatureType;
+				}
 				if (creatureTypeVariant != null) {
 					if (creatureTypeVariant.equalsIgnoreCase("gendered")) {
 						creatureTypeVariant = "male";

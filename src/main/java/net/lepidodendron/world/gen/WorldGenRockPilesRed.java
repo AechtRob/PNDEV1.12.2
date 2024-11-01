@@ -1,8 +1,8 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.util.Functions;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -72,17 +72,17 @@ public class WorldGenRockPilesRed extends WorldGenerator
                     {
                         if (blockpos.distanceSq(position) <= (double)(f * f))
                         {
-                        	Block blockIn = Blocks.STONE;
+                        	IBlockState blockIn = Blocks.STONE.getDefaultState();
                         	if (Math.random() > 0.65) {
-                        		blockIn = Blocks.COBBLESTONE;
+                        		blockIn = Blocks.COBBLESTONE.getDefaultState();
                         	}
                         	if (Math.random() > 0.85) {
-                        		blockIn = Blocks.GRAVEL;
+                        		blockIn = Blocks.GRAVEL.getDefaultState();
                         	}
                         	if (Math.random() > 0.85) {
-                        		blockIn = Blocks.SAND.getStateFromMeta(1).getBlock();
+                        		blockIn = Blocks.SAND.getStateFromMeta(1);
                         	}
-                            Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, blockIn.getDefaultState(), 4);
+                            Functions.setBlockStateAndCheckForDoublePlant(worldIn, blockpos, blockIn, 4);
                         }
                     }
 

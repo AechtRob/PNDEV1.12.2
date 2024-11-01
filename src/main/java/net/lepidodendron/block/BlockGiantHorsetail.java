@@ -302,7 +302,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_banded_desert")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_banded_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_dry_bayou")) {
 			GenChance = 192;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_woodland")

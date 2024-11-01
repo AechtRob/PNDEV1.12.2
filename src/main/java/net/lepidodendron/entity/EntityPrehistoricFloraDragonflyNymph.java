@@ -1,6 +1,7 @@
 
 package net.lepidodendron.entity;
 
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
 import net.lepidodendron.entity.ai.EurypteridWander;
@@ -51,6 +52,16 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 		maxWidth = getHitBoxSize()[0];
 		maxHeight = getHitBoxSize()[1];
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_dragonfly.png");
 	}
 
 	//*****************************************************
@@ -259,6 +270,11 @@ public class EntityPrehistoricFloraDragonflyNymph extends EntityPrehistoricFlora
 	
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
 		return false;
 	}
 

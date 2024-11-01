@@ -44,6 +44,16 @@ public class EntityPrehistoricFloraMeganeuraNymph extends EntityPrehistoricFlora
 		maxHealthAgeable = 2.0D;
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_meganeura.png");
+	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
@@ -79,6 +89,11 @@ public class EntityPrehistoricFloraMeganeuraNymph extends EntityPrehistoricFlora
 	
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
 		return false;
 	}
 

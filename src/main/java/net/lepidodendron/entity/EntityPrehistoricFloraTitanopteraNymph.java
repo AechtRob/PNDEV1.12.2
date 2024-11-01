@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.ai.EntityLookIdleAI;
@@ -60,7 +61,15 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 		maxHealthAgeable = 2.0D;
 	}
 
-	
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 20; //insect
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_titanoptera.png");
+	}
 
 	//*****************************************************
 	//Insect variant managers:
@@ -272,6 +281,11 @@ public class EntityPrehistoricFloraTitanopteraNymph extends EntityPrehistoricFlo
 	@Override
 	public boolean laysEggs() {
 		return true;
+	}
+
+	@Override
+	public boolean getLaying() {
+		return false;
 	}
 
 	@Override //Spawn as baby so it grows:

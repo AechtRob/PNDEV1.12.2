@@ -74,6 +74,11 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 	}
 
 	@Override
+	public String getEntityId(Entity entity) {
+		return "lepidodendron:prehistoric_flora_meganeuropsis_nymph";
+	}
+
+	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 21; //cross model
 	}

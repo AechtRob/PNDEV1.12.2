@@ -44,6 +44,16 @@ public class EntityPrehistoricFloraErasipteroidesNymph extends EntityPrehistoric
 		maxHealthAgeable = 2.0D;
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_erasipteroides.png");
+	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
@@ -63,8 +73,6 @@ public class EntityPrehistoricFloraErasipteroidesNymph extends EntityPrehistoric
 		return ItemStack.EMPTY;
 	}
 
-	
-
 	@Override
 	public boolean isSmall() {
 		return true;
@@ -81,6 +89,11 @@ public class EntityPrehistoricFloraErasipteroidesNymph extends EntityPrehistoric
 	
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
 		return false;
 	}
 
@@ -189,8 +202,6 @@ public class EntityPrehistoricFloraErasipteroidesNymph extends EntityPrehistoric
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
-
-
 
 	@Override
 	protected int getExperiencePoints(EntityPlayer player) {

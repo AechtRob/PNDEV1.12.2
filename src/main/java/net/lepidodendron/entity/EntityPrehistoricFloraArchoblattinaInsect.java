@@ -9,6 +9,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.entity.util.ITrappableAir;
+import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
 import net.lepidodendron.util.ModTriggers;
@@ -79,12 +80,27 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 	}
 
 	@Override
+	public ItemStack getDroppedEggItemStack() {
+		ItemStack stack = new ItemStack(ItemUnknownEggLand.block, (int) (1));
+		NBTTagCompound variantNBT = new NBTTagCompound();
+		variantNBT.setString("creature", "lepidodendron:prehistoric_flora_archoblattina_nymph");
+		stack.setTagCompound(variantNBT);
+		return stack;
+	}
+
+	@Override
 	public boolean dropsEggs() {
+		if (this.getClass() == EntityPrehistoricFloraArchoblattinaInsect.class) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public boolean laysEggs() {
+		if (this.getClass() == EntityPrehistoricFloraArchoblattinaInsect.class) {
+			return false;
+		}
 		return true;
 	}
 

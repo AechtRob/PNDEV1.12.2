@@ -13,6 +13,7 @@ import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -44,6 +45,11 @@ public class EntityPrehistoricFloraMeganeurites extends EntityPrehistoricFloraMe
 		super(world);
 		setSize(0.15F, 0.30F);
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+	}
+
+	@Override
+	public String getEntityId(Entity entity) {
+		return "lepidodendron:prehistoric_flora_meganeurites_nymph";
 	}
 
 	@Nullable

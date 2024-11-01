@@ -44,6 +44,16 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		maxHealthAgeable = 2.0D;
 	}
 
+	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_meganeurites.png");
+	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
@@ -63,8 +73,6 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		return ItemStack.EMPTY;
 	}
 
-	
-
 	@Override
 	public boolean isSmall() {
 		return true;
@@ -81,6 +89,11 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 	
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
 		return false;
 	}
 

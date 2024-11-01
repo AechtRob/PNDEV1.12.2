@@ -12,6 +12,7 @@ import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraGigatita
 import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggTitanopteraMesotitan;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -55,6 +56,20 @@ public class EntityPrehistoricFloraTitanoptera extends EntityPrehistoricFloraArc
 	//Insect variant managers:
 
 		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+	}
+
+	@Override
+	public String getEntityId(Entity entity) {
+		String mobid = "";
+		net.minecraftforge.fml.common.registry.EntityEntry entry =
+				net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
+		if (entry != null) {
+			mobid = entry.getRegistryName().toString() + "_nymph";
+		}
+		if (this.hasPNVariants() && this.getPNTypeName() != null) {
+			mobid = mobid + "@" + this.getPNTypeName();
+		}
+		return mobid;
 	}
 
 	@Nullable

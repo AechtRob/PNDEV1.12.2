@@ -1,11 +1,16 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
+//        maven {
+//            name = 'sponge'
+//            url = 'http://repo.spongepowered.org/maven'
+//        }
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+//        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
@@ -13,12 +18,21 @@ apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+//apply plugin: 'org.spongepowered.mixin'
 
 version = '1.12.2-62.0-ALPHA'
 group = 'com.github.aechtrob.prehistoricflora' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'lepidodendron'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+
+//mixin {
+//    add sourceSets.main, "lepidodendron.refmap.json"
+//    config "lepidodendron.mixins.json"
+//
+//    debug.verbose = true
+//    debug.export = true
+//}
 
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -29,9 +43,7 @@ minecraft {
     //mappings channel: 'snapshot', version: '20171003-1.12'
     mappings channel: 'snapshot', version: '20180814-1.12'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
     runs {
@@ -62,6 +74,7 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
     implementation ("net.minecraftforge:mergetool:0.2.3.3") { force = true }
+    //compile('org.spongepowered:mixin:0.7-SNAPSHOT')
 
     //compile files('libs/pncambrian-1.12.2-1.0.jar')
     //compile files('libs/pnsilurian-1.12.2-1.0.jar')
@@ -72,23 +85,6 @@ dependencies {
     //compile files('libs/pncambrian-1.12.2-1.0.jar')
     //compile files('libs/pncambrian-1.12.2-1.0.jar')
     //compile files('libs/pncambrian-1.12.2-1.0.jar')
-
-    // You may put jars on which you depend on in ./libs or you may define them like so..
-    // compile "some.group:artifact:version:classifier"
-    // compile "some.group:artifact:version"
-
-    // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // These dependencies get remapped to your current MCP mappings
-    // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    //compile "net.ilexiconn:llibrary:1.7.19-1.12.2"
-
     compile files('libs/llibrary-1.7.20-1.12.2.jar')
     compile files('libs/prehistoricnaturedeco-1.12.2-1.0.jar')
     compileOnly files('libs/BiomesOPlenty-1.12.2-7.0.1.2445-universal.jar')
@@ -171,10 +167,10 @@ sourceSets {
 }
 
 repositories {
-    //maven {
-    //    name = "ilexiconn"
-    //    url = "https://maven.mcmoddev.com"
-    //}
     maven { url 'https://maven.blamejared.com' }
+//    maven {
+//        name = 'sponge'
+//        url = 'http://repo.spongepowered.org/maven'
+//    }
 }
 

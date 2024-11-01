@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.DietString;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.util.EggLayingConditions;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -42,6 +43,20 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPrehistoricFloraIn
 	public EntityPrehistoricFloraItalophlebia(World world) {
 		super(world);
 		setSize(0.3F, 0.2F);
+	}
+
+	@Override
+	public String getEntityId(Entity entity) {
+		String mobid = "";
+		net.minecraftforge.fml.common.registry.EntityEntry entry =
+				net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(entity.getClass());
+		if (entry != null) {
+			mobid = entry.getRegistryName().toString() + "_nymph";
+		}
+		if (this.hasPNVariants() && this.getPNTypeName() != null) {
+			mobid = mobid + "@" + this.getPNTypeName();
+		}
+		return mobid;
 	}
 
 	@Override

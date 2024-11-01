@@ -41,6 +41,16 @@ public class EntityPrehistoricFloraProtozygopteraNymph extends EntityPrehistoric
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //cross model
+	}
+
+	@Override
+	public ResourceLocation getEggTexture(@Nullable String variantIn) {
+		return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_protozygoptera.png");
+	}
+
+	@Override
 	public ItemStack getPickedResult(RayTraceResult target)
 	{
 		ResourceLocation name = EntityList.getKey(EntityPrehistoricFloraProtozygoptera.class);
@@ -52,8 +62,6 @@ public class EntityPrehistoricFloraProtozygopteraNymph extends EntityPrehistoric
 		}
 		return ItemStack.EMPTY;
 	}
-
-	
 
 	@Override
 	public boolean isSmall() {
@@ -71,6 +79,11 @@ public class EntityPrehistoricFloraProtozygopteraNymph extends EntityPrehistoric
 	
 	@Override
 	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public boolean getLaying() {
 		return false;
 	}
 

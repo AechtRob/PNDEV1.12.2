@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.lepidodendron.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "lepidodendron.refmap.json",
+  "target": "@env(DEFAULT)",
+  "mixins": [
+  ],
+  "client": [
+    "MixinBlockDespatcher"
+  ],
+  "minVersion": "0.8"
+}

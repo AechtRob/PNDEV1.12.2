@@ -985,6 +985,16 @@ public class EntityLists {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsCoolForestReborn);
                 }
+        } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_dry_bayou")) {
+            if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsBayouPF);
+            }
+            if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsBayouFA);
+            }
+            if (LepidodendronConfig.doSpawnsReborn) {
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsBayouReborn);
+            }
             } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_clearing")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, SpawnerConfigsTriassic.dimTriassicMobsCoolForestClearingPF);

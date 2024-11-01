@@ -12,93 +12,43 @@ import java.util.Random;
 public class WorldGenGranite extends WorldGenerator
 {
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
-    {
-        boolean flag = false;
+	public boolean generate(World worldIn, Random rand, BlockPos position)
+	{
+		boolean flag = false;
 
-        for (int i = 0; i < 64; ++i)
-        {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+		for (int i = 0; i < 64; ++i)
+		{
+			BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.isAirBlock(blockpos)
-            	&& (
-            		((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
-            		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
-            		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.SAND)
-					|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.CLAY)
-            	)
-            )
-            {
-                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(1), 2);
-				worldIn.setBlockToAir(blockpos);
+			if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.isAirBlock(blockpos)
+					&& (
+					((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
+							|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
+							|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.SAND)
+							|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.CLAY)
+			)
+			)
+			{
+				Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(1), 2);
+				if (rand.nextInt(10) == 0) {
+					Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos, Blocks.STONE.getStateFromMeta(1), 2);
+					if (rand.nextInt(4) == 0) {
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().north(), Blocks.STONE.getStateFromMeta(1), 2);
+					}
+					if (rand.nextInt(4) == 0) {
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().south(), Blocks.STONE.getStateFromMeta(1), 2);
+					}
+					if (rand.nextInt(4) == 0) {
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().east(), Blocks.STONE.getStateFromMeta(1), 2);
+					}
+					if (rand.nextInt(4) == 0) {
+						Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down().west(), Blocks.STONE.getStateFromMeta(1), 2);
+					}
+				}
 				flag = true;
-            }
-            
-            if (Math.random() > 0.75) {
+			}
+		}
 
-				BlockPos blockpos1 = blockpos.north();
-				if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.isAirBlock(blockpos1)
-            	&& (
-            		((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GROUND)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GRASS)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.SAND)
-					|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.CLAY)
-            	)
-	            )
-	            {
-	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(1), 2);
-					worldIn.setBlockToAir(blockpos);
-					flag = true;
-	            }
-
-	            blockpos1 = blockpos.south();
-				if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.isAirBlock(blockpos1)
-            	&& (
-            		((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GROUND)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GRASS)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.SAND)
-					|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.CLAY)
-            	)
-	            )
-	            {
-	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(1), 2);
-					worldIn.setBlockToAir(blockpos);
-					flag = true;
-	            }
-
-	            blockpos1 = blockpos.east();
-				if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.isAirBlock(blockpos1)
-            	&& (
-            		((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GROUND)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GRASS)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.SAND)
-					|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.CLAY)
-            	)
-	            )
-	            {
-	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(1), 2);
-					worldIn.setBlockToAir(blockpos);
-					flag = true;
-	            }
-
-	            blockpos1 = blockpos.west();
-				if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && worldIn.isAirBlock(blockpos1)
-            	&& (
-            		((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GROUND)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.GRASS)
-            		|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.SAND)
-					|| ((worldIn.getBlockState(blockpos1.down())).getMaterial() == Material.CLAY)
-            	)
-	            )
-	            {
-	                Functions.setBlockStateAndCheckForDoublePlant(worldIn,blockpos.down(), Blocks.STONE.getStateFromMeta(1), 2);
-					worldIn.setBlockToAir(blockpos);
-	                flag = true;
-	            }
-
-            }
-        }
-
-        return flag;
-    }
+		return flag;
+	}
 }
