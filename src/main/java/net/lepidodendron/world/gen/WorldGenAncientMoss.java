@@ -183,7 +183,14 @@ public class WorldGenAncientMoss extends WorldGenerator
 
 			ArrayList<String> mobStringValid = new ArrayList<String>();
 			for (String mob : mobString) {
-				if (SpawnLocations.spawnsHere(mob, biome.getRegistryName().toString())) {
+				String spawnMob = mob;
+				if (spawnMob.indexOf("_nymph") >= 1) {
+					spawnMob = spawnMob.replace("_nymph", "");
+				}
+				if (mob.contains("lepidodendron:prehistoric_flora_dragonfly")) {
+					spawnMob = "lepidodendron:prehistoric_flora_dragonfly";
+				}
+				if (SpawnLocations.spawnsHere(spawnMob, biome.getRegistryName().toString())) {
 					mobStringValid.add(mob);
 				}
 			}

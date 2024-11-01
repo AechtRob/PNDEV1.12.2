@@ -86,7 +86,14 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			for (String mob : waterLayingMobs) {
-				if (SpawnLocations.spawnsHere(mob, biome.getRegistryName().toString())) {
+				String spawnMob = mob;
+				if (spawnMob.indexOf("_nymph") >= 1) {
+					spawnMob = spawnMob.replace("_nymph", "");
+				}
+				if (mob.contains("lepidodendron:prehistoric_flora_dragonfly")) {
+					spawnMob = "lepidodendron:prehistoric_flora_dragonfly";
+				}
+				if (SpawnLocations.spawnsHere(spawnMob, biome.getRegistryName().toString())) {
 					String pnVariant = null;
 					int v = mob.indexOf("@");
 					if (v > 0) {

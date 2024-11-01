@@ -288,6 +288,9 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				if (itemstack.getTagCompound().hasKey("PNType")) {
 					PNVariant = itemstack.getTagCompound().getString("PNType");
 				}
+				if (!PNVariant.equals("")) {
+					resourcelocation = resourcelocation + "@" + PNVariant;
+				}
 				if (itemstack.getTagCompound().getBoolean("water")) {
 					if (BlockEggsWater.block.canPlaceBlockAt(worldIn, pos.offset(facing))) {
 						if (!(worldIn.isRemote)) {
