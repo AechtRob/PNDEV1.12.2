@@ -137,7 +137,6 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 				"lepidodendron:prehistoric_flora_weigeltisaurus",
 				"lepidodendron:prehistoric_flora_archaboilus",
 				"lepidodendron:prehistoric_flora_archaeothyris",
-				"lepidodendron:prehistoric_flora_archoblattina",
 				"lepidodendron:prehistoric_flora_archocyrtus",
 				"lepidodendron:prehistoric_flora_arthropleura",
 				"lepidodendron:prehistoric_flora_attercopus",

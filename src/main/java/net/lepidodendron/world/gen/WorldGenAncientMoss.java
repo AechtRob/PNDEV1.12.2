@@ -157,7 +157,6 @@ public class WorldGenAncientMoss extends WorldGenerator
 
 			String[] mobString = new String[]{
 					"lepidodendron:prehistoric_flora_archaboilus",
-					"lepidodendron:prehistoric_flora_archoblattina",
 					"lepidodendron:prehistoric_flora_archocyrtus",
 					"lepidodendron:prehistoric_flora_arthropleura",
 					"lepidodendron:prehistoric_flora_attercopus",
