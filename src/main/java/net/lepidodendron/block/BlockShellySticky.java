@@ -45,7 +45,7 @@ public class BlockShellySticky extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:shelly_sticky")
 	public static final Block block = null;
 	public BlockShellySticky(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.shelly_sticky);
+		super(instance, LepidodendronSorter.shelly_reef_sticky);
 	}
 
 	@Override

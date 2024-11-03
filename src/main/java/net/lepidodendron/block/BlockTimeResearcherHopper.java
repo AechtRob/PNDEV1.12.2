@@ -51,7 +51,7 @@ public class BlockTimeResearcherHopper extends ElementsLepidodendronMod.ModEleme
 	public static final Block block = null;
 
 	public BlockTimeResearcherHopper(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.time_researcher);
+		super(instance, LepidodendronSorter.time_researcher_hopper);
 	}
 
 	@Override

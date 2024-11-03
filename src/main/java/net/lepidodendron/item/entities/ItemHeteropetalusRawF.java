@@ -21,7 +21,7 @@ public class ItemHeteropetalusRawF extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:heteropetalus_raw_f")
 	public static final Item block = null;
 	public ItemHeteropetalusRawF(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.heteropetalus_raw);
+		super(instance, LepidodendronSorter.heteropetalus_f_raw);
 	}
 
 	@Override

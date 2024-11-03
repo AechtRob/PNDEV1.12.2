@@ -22,7 +22,7 @@ public class ItemGondwanarachneRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:gondwanarachne_raw")
 	public static final Item block = null;
 	public ItemGondwanarachneRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.trigonotarbid_gondwanarachne_raw);
+		super(instance, LepidodendronSorter.gondwanarachne_raw);
 	}
 
 	@Override
