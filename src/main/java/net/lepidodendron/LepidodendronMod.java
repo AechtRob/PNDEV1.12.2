@@ -2510,6 +2510,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_TROPIDOSUCHUS = 1014;
 	public static final ResourceLocation TROPIDOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tropidosuchus"));
 	public static final int ENTITY_MYRIAPOD = 1015;
+	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

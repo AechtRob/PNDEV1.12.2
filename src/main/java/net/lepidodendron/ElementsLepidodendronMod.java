@@ -1521,6 +1521,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUITimeResearcherFinder.GUIID) {
 				return new GUITimeResearcherFinder.GUILepidodendronTimeResearcherFinder(world, x, y, z, player);
 			}
+			if (id == GUIArchiveSorterTop.GUIID) {
+				return new GUIArchiveSorterTop.GUILepidodendronArchiveSorterTop(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -1570,6 +1573,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUITimeResearcherFinder.GUIID) {
 				return new GUITimeResearcherFinder.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUIArchiveSorterTop.GUIID) {
+				return new GUIArchiveSorterTop.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

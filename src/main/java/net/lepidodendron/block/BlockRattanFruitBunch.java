@@ -48,7 +48,7 @@ public class BlockRattanFruitBunch extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:rattan_fruit_bunch")
 	public static final Block block = null;
 	public BlockRattanFruitBunch(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.rattan_fruit_bunch);
+		super(instance, LepidodendronSorter.rattan_fruit);
 	}
 
 	@Override
