@@ -430,13 +430,9 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			}
 			else {
 				for (EntityItem entityitem : getCaptureItems(this.getWorld(), pos.getX(), pos.getY(), pos.getZ())) {
-//					for (int n = 0; n <= 12; n++) {
-//						if (this.isItemValidForSlot(n, entityitem.getItem())) {
-							if (putDropInInventoryAllSlots((IInventory) null, this, entityitem)) {
-								return true;
-							}
-//						}
-//					}
+					if (putDropInInventoryAllSlots((IInventory) null, this, entityitem)) {
+						return true;
+					}
 				}
 			}
 			return false;
