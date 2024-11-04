@@ -2554,6 +2554,7 @@ public class LepidodendronMod {
 		elements.addNetworkMessage(GUITimeResearcher.GUISlotChangedMessageHandler.class, GUITimeResearcher.GUISlotChangedMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUITrapWater.GUIButtonPressedMessageHandler.class, GUITrapWater.GUIButtonPressedMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUITrapWater.GUISlotChangedMessageHandler.class, GUITrapWater.GUISlotChangedMessage.class, Side.SERVER);
+		elements.addNetworkMessage(GUIArchiveSorterTop.GUIArchiveSorterTopMessageHandler.class, GUIArchiveSorterTop.GUIArchiveSorterTopMessage.class, Side.SERVER);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));
 		EntityRegistries.registerEntities();

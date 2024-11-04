@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIArchiveSorterTop;
+import net.lepidodendron.item.ItemFossilClean;
+import net.lepidodendron.item.ItemPlaceableLiving;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.SoundType;
@@ -15,12 +17,10 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -28,20 +28,23 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityHopper;
 import net.minecraft.tileentity.TileEntityLockableLoot;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -165,7 +168,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntityArchiveSorterTop extends TileEntityLockableLoot implements ISidedInventory {
+	public static class TileEntityArchiveSorterTop extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(13, ItemStack.EMPTY);
 		public boolean stackPrecambrian;
@@ -181,6 +184,285 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 		public boolean stackPaleogene;
 		public boolean stackNeogene;
 		public boolean stackPleistocene;
+
+		private boolean isFull()
+		{
+			for (ItemStack itemstack : this.stacks)
+			{
+				if (itemstack.isEmpty() || itemstack.getCount() != itemstack.getMaxStackSize())
+				{
+					return false;
+				}
+			}
+
+			return true;
+		}
+
+		public static List<EntityItem> getCaptureItems(World worldIn, double p_184292_1_, double p_184292_3_, double p_184292_5_)
+		{
+			return worldIn.<EntityItem>getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(p_184292_1_ - 0.5D, p_184292_3_, p_184292_5_ - 0.5D, p_184292_1_ + 0.5D, p_184292_3_ + 1.5D, p_184292_5_ + 0.5D), EntitySelectors.IS_ALIVE);
+		}
+
+		public static boolean putDropInInventoryAllSlots(IInventory source, IInventory destination, EntityItem entity)
+		{
+			boolean flag = false;
+
+			if (entity == null)
+			{
+				return false;
+			}
+			else
+			{
+				ItemStack itemstack = entity.getItem().copy();
+				ItemStack itemstack1 = putStackInInventoryAllSlots(source, destination, itemstack, (EnumFacing)null);
+
+				if (itemstack1.isEmpty())
+				{
+					flag = true;
+					entity.setDead();
+				}
+				else
+				{
+					entity.setItem(itemstack1);
+				}
+
+				return flag;
+			}
+		}
+
+		public static ItemStack putStackInInventoryAllSlots(IInventory source, IInventory destination, ItemStack stack, @Nullable EnumFacing direction)
+		{
+
+			int i = destination.getSizeInventory();
+
+			for (int j = 0; j < i && !stack.isEmpty(); ++j)
+			{
+				stack = insertStack(source, destination, stack, j, direction);
+			}
+
+			return stack;
+		}
+
+		private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
+		{
+			if (!inventoryIn.isItemValidForSlot(index, stack))
+			{
+				return false;
+			}
+			else
+			{
+				return !(inventoryIn instanceof ISidedInventory) || ((ISidedInventory)inventoryIn).canInsertItem(index, stack, side);
+			}
+		}
+
+		private static boolean canCombine(ItemStack stack1, ItemStack stack2)
+		{
+			if (stack1.getItem() != stack2.getItem())
+			{
+				return false;
+			}
+			else if (stack1.getMetadata() != stack2.getMetadata())
+			{
+				return false;
+			}
+			else if (stack1.getCount() > stack1.getMaxStackSize())
+			{
+				return false;
+			}
+			else
+			{
+				return ItemStack.areItemStackTagsEqual(stack1, stack2);
+			}
+		}
+
+		private static ItemStack insertStack(IInventory source, IInventory destination, ItemStack stack, int index, EnumFacing direction)
+		{
+			ItemStack itemstack = destination.getStackInSlot(index);
+
+			if (canInsertItemInSlot(destination, stack, index, direction))
+			{
+				boolean flag = false;
+				boolean flag1 = destination.isEmpty();
+
+				if (itemstack.isEmpty())
+				{
+					destination.setInventorySlotContents(index, stack);
+					stack = ItemStack.EMPTY;
+					flag = true;
+				}
+				else if (canCombine(itemstack, stack))
+				{
+					int i = stack.getMaxStackSize() - itemstack.getCount();
+					int j = Math.min(stack.getCount(), i);
+					stack.shrink(j);
+					itemstack.grow(j);
+					flag = j > 0;
+				}
+
+				if (flag)
+				{
+					destination.markDirty();
+				}
+			}
+
+			return stack;
+		}
+
+		private static boolean isInventoryEmpty(IInventory inventoryIn, EnumFacing side)
+		{
+			if (inventoryIn instanceof ISidedInventory)
+			{
+				ISidedInventory isidedinventory = (ISidedInventory)inventoryIn;
+				int[] aint = isidedinventory.getSlotsForFace(side);
+
+				for (int i : aint)
+				{
+					if (!isidedinventory.getStackInSlot(i).isEmpty())
+					{
+						return false;
+					}
+				}
+			}
+			else
+			{
+				int j = inventoryIn.getSizeInventory();
+
+				for (int k = 0; k < j; ++k)
+				{
+					if (!inventoryIn.getStackInSlot(k).isEmpty())
+					{
+						return false;
+					}
+				}
+			}
+
+			return true;
+		}
+
+		private static boolean canExtractItemFromSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
+		{
+			return !(inventoryIn instanceof ISidedInventory) || ((ISidedInventory)inventoryIn).canExtractItem(index, stack, side);
+		}
+
+		public ItemStack putStackInInventoryAllSlots(IInventory source, ItemStack stack, @Nullable EnumFacing direction)
+		{
+			if (direction != null)
+			{
+				int[] aint = this.getSlotsForFace(direction);
+
+				for (int k = 0; k < aint.length && !stack.isEmpty(); ++k)
+				{
+					stack = insertStack(source, this, stack, aint[k], direction);
+				}
+			}
+			else
+			{
+				int i = this.getSizeInventory();
+
+				for (int j = 0; j < i && !stack.isEmpty(); ++j)
+				{
+					stack = insertStack(source, this, stack, j, direction);
+				}
+			}
+
+			return stack;
+		}
+
+		private boolean pullItemFromSlot(IInventory inventoryIn, int index, EnumFacing direction)
+		{
+			ItemStack itemstack = inventoryIn.getStackInSlot(index);
+
+			if (!itemstack.isEmpty() && canExtractItemFromSlot(inventoryIn, itemstack, index, direction))
+			{
+				ItemStack itemstack1 = itemstack.copy();
+				ItemStack itemstack2 = putStackInInventoryAllSlots(inventoryIn, inventoryIn.decrStackSize(index, 1), (EnumFacing)null);
+
+				if (itemstack2.isEmpty())
+				{
+					inventoryIn.markDirty();
+					return true;
+				}
+
+				inventoryIn.setInventorySlotContents(index, itemstack1);
+			}
+
+			return false;
+		}
+
+		public boolean pullItems() {
+
+			IInventory iinventory = TileEntityHopper.getInventoryAtPosition(this.getWorld(), pos.getX(), pos.getY() + 1.0D, pos.getZ());
+
+			if (iinventory != null)
+			{
+				EnumFacing enumfacing = EnumFacing.DOWN;
+
+				if (this.isInventoryEmpty(iinventory, enumfacing))
+				{
+					return false;
+				}
+
+				if (iinventory instanceof ISidedInventory)
+				{
+					ISidedInventory isidedinventory = (ISidedInventory)iinventory;
+					int[] aint = isidedinventory.getSlotsForFace(enumfacing);
+
+					for (int i : aint)
+					{
+						if (pullItemFromSlot(iinventory, i, enumfacing))
+						{
+							return true;
+						}
+					}
+				}
+				else
+				{
+					int j = iinventory.getSizeInventory();
+
+					for (int k = 0; k < j; ++k)
+					{
+						if (pullItemFromSlot(iinventory, k, enumfacing))
+						{
+							return true;
+						}
+					}
+				}
+			}
+			else {
+				for (EntityItem entityitem : getCaptureItems(this.getWorld(), pos.getX(), pos.getY(), pos.getZ())) {
+//					for (int n = 0; n <= 12; n++) {
+//						if (this.isItemValidForSlot(n, entityitem.getItem())) {
+							if (putDropInInventoryAllSlots((IInventory) null, this, entityitem)) {
+								return true;
+							}
+//						}
+//					}
+				}
+			}
+			return false;
+		}
+
+		@Override
+		public void update() {
+
+			if (this.getWorld().isRemote) {
+				return;
+			}
+
+			//Are there items to pull in?
+			boolean flag = false;
+
+			if (!this.isFull())
+			{
+				flag = pullItems() || flag;
+			}
+
+			if (flag)
+			{
+				this.markDirty();
+			}
+
+		}
 
 		@Override
 		public int getInventoryStackLimit() {
@@ -211,31 +493,35 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
-			if (index == 1 && stackPrecambrian)
+			if (stack.getItem() != ItemFossilClean.block
+				&& stack.getItem() != ItemPlaceableLiving.block) {
+				return false;
+			}
+			if (index == 0 && stackPrecambrian)
 				return periodTag(stack) == 1;
-			if (index == 2 && stackCambrian)
+			if (index == 1 && stackCambrian)
 				return periodTag(stack) == 2;
-			if (index == 3 && stackOrdovician)
+			if (index == 2 && stackOrdovician)
 				return periodTag(stack) == 3;
-			if (index == 4 && stackSilurian)
+			if (index == 3 && stackSilurian)
 				return periodTag(stack) == 4;
-			if (index == 5 && stackDevonian)
+			if (index == 4 && stackDevonian)
 				return periodTag(stack) == 5;
-			if (index == 6 && stackCarboniferous)
+			if (index == 5 && stackCarboniferous)
 				return periodTag(stack) == 6;
-			if (index == 7 && stackPermian)
+			if (index == 6 && stackPermian)
 				return periodTag(stack) == 7;
-			if (index == 8 && stackTriassic)
+			if (index == 7 && stackTriassic)
 				return periodTag(stack) == 8;
-			if (index == 9 && stackJurassic)
+			if (index == 8 && stackJurassic)
 				return periodTag(stack) == 9;
-			if (index == 10 && stackCretaceous)
+			if (index == 9 && stackCretaceous)
 				return periodTag(stack) == 10;
-			if (index == 11 && stackPaleogene)
+			if (index == 10 && stackPaleogene)
 				return periodTag(stack) == 11;
-			if (index == 12 && stackNeogene)
+			if (index == 11 && stackNeogene)
 				return periodTag(stack) == 12;
-			if (index == 13 && stackPleistocene)
+			if (index == 12 && stackPleistocene)
 				return periodTag(stack) == 13;
 			return false;
 		}
@@ -370,12 +656,46 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
-			return true;
+			return this.isItemValidForSlot(index, itemStackIn);
 		}
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-			return true;
+			return false;
+		}
+
+		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);
+		net.minecraftforge.items.IItemHandler handlerDown = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.DOWN);
+		net.minecraftforge.items.IItemHandler handlerNorth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.NORTH);
+		net.minecraftforge.items.IItemHandler handlerSouth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.SOUTH);
+		net.minecraftforge.items.IItemHandler handlerEast = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.EAST);
+		net.minecraftforge.items.IItemHandler handlerWest = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.WEST);
+
+		@Nullable
+		@Override
+		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
+			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+				if (facing == EnumFacing.UP) {
+					return (T) handlerUp;
+				}
+				if (facing == EnumFacing.DOWN) {
+					return (T) handlerDown;
+				}
+				if (facing == EnumFacing.NORTH) {
+					return (T) handlerNorth;
+				}
+				if (facing == EnumFacing.SOUTH) {
+					return (T) handlerSouth;
+				}
+				if (facing == EnumFacing.EAST) {
+					return (T) handlerEast;
+				}
+				if (facing == EnumFacing.WEST) {
+					return (T) handlerWest;
+				}
+
+			}
+			return super.getCapability(capability, facing);
 		}
 	}
 }

@@ -3,10 +3,12 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockArchiveSorterTop;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
@@ -47,86 +49,86 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 9);
+            this.internal = new InventoryBasic("", true, 13);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 29, 0) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPrecambrian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 1;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPrecambrian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(0, stack);
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 29, 31) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackCambrian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 2;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackCambrian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(1, stack);
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 29, 62) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackOrdovician && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 3;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackOrdovician && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(2, stack);
                 }
             }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 29, 93) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackSilurian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 4;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackSilurian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(3, stack);
                 }
             }));
-            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 109, 0) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackDevonian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 5;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackDevonian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(4, stack);
                 }
             }));
-            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 109, 31) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackCarboniferous && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 6;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackCarboniferous && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(5, stack);
                 }
             }));
-            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 109, 62) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPermian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 7;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPermian && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(6, stack);
                 }
             }));
-            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 7, 109, 93) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackTriassic && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 8;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackTriassic && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(7, stack);
                 }
             }));
-            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 8, 189, 0) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackJurassic && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 9;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackJurassic && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(8, stack);
                 }
             }));
-            this.customSlots.put(9, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(9, this.addSlotToContainer(new Slot(internal, 9, 189, 31) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackCretaceous && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 10;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackCretaceous && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(9, stack);
                 }
             }));
-            this.customSlots.put(10, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(10, this.addSlotToContainer(new Slot(internal, 10, 189, 62) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPaleogene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 11;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPaleogene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(10, stack);
                 }
             }));
-            this.customSlots.put(11, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(11, this.addSlotToContainer(new Slot(internal, 11, 189, 93) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackNeogene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 12;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackNeogene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(11, stack);
                 }
             }));
-            this.customSlots.put(12, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
+            this.customSlots.put(12, this.addSlotToContainer(new Slot(internal, 12, 189, 124) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPleistocene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).periodTag(stack) == 13;
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPleistocene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(12, stack);
                 }
             }));
 
@@ -135,9 +137,9 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 123 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 - 25 + sj * 18, 0 + 120 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 181));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 - 25 + si * 18, 0 + 178));
 
         }
 
@@ -298,8 +300,8 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             this.y = y;
             this.z = z;
             this.entity = entity;
-            this.xSize = 216;
-            this.ySize = 244;
+            this.xSize = 256;
+            this.ySize = 239;
         }
         private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/archive_input_gui.png");
         @Override
@@ -322,7 +324,58 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             if (te != null) {
                 if (te instanceof BlockArchiveSorterTop.TileEntityArchiveSorterTop){
                     if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackPrecambrian) {
-                        this.drawTexturedModalRect(k + 20, l + 76, 0,196, 18, 26);
+                        this.drawTexturedModalRect(k + 68, l + 28, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69, l + 37, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackCambrian) {
+                        this.drawTexturedModalRect(k + 68, l + 59, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69, l + 68, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackOrdovician) {
+                        this.drawTexturedModalRect(k + 68, l + 90, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69, l + 99, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackSilurian) {
+                        this.drawTexturedModalRect(k + 68, l + 121, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69, l + 130, 21,239, 16, 16);
+                    }
+
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackDevonian) {
+                        this.drawTexturedModalRect(k + 68 + 80, l + 28, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 80, l + 37, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackCarboniferous) {
+                        this.drawTexturedModalRect(k + 68 + 80, l + 59, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 80, l + 68, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackPermian) {
+                        this.drawTexturedModalRect(k + 68 + 80, l + 90, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 80, l + 99, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackTriassic) {
+                        this.drawTexturedModalRect(k + 68 + 80, l + 121, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 80, l + 130, 21,239, 16, 16);
+                    }
+
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackJurassic) {
+                        this.drawTexturedModalRect(k + 68 + 160, l + 28, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 160, l + 37, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackCretaceous) {
+                        this.drawTexturedModalRect(k + 68 + 160, l + 59, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 160, l + 68, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackPaleogene) {
+                        this.drawTexturedModalRect(k + 68 + 160, l + 90, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 160, l + 99, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackNeogene) {
+                        this.drawTexturedModalRect(k + 68 + 160, l + 121, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 160, l + 130, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackPleistocene) {
+                        this.drawTexturedModalRect(k + 68 + 160, l + 152, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 160, l + 161, 21,239, 16, 16);
                     }
                 }
             }
@@ -343,10 +396,72 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
 
             if (mouseButton == 0 || mouseButton == 1) {
-                if (mouseX >= k + 61 && mouseX <= k + 78
-                        && mouseY >= l + 32 && mouseY <= l + 35)
+                if (mouseX >= k + 69 && mouseX <= k + 87
+                        && mouseY >= l + 28 && mouseY <= l + 36)
                 {
                     swapStackState(1);
+                }
+                else if (mouseX >= k + 69 && mouseX <= k + 87
+                        && mouseY >= l + 59 && mouseY <= l + 67)
+                {
+                    swapStackState(2);
+                }
+                else if (mouseX >= k + 69 && mouseX <= k + 87
+                        && mouseY >= l + 90 && mouseY <= l + 98)
+                {
+                    swapStackState(3);
+                }
+                else if (mouseX >= k + 69 && mouseX <= k + 87
+                        && mouseY >= l + 121 && mouseY <= l + 129)
+                {
+                    swapStackState(4);
+                }
+
+                else if (mouseX >= k + 69 + 80 && mouseX <= k + 87 + 80
+                        && mouseY >= l + 28 && mouseY <= l + 36)
+                {
+                    swapStackState(5);
+                }
+                else if (mouseX >= k + 69 + 80 && mouseX <= k + 87 + 80
+                        && mouseY >= l + 59 && mouseY <= l + 67)
+                {
+                    swapStackState(6);
+                }
+                else if (mouseX >= k + 69 + 80 && mouseX <= k + 87 + 80
+                        && mouseY >= l + 90 && mouseY <= l + 98)
+                {
+                    swapStackState(7);
+                }
+                else if (mouseX >= k + 69 + 80 && mouseX <= k + 87 + 80
+                        && mouseY >= l + 121 && mouseY <= l + 129)
+                {
+                    swapStackState(8);
+                }
+
+                else if (mouseX >= k + 69 + 160 && mouseX <= k + 87 + 160
+                        && mouseY >= l + 28 && mouseY <= l + 36)
+                {
+                    swapStackState(9);
+                }
+                else if (mouseX >= k + 69 + 160 && mouseX <= k + 87 + 160
+                        && mouseY >= l + 59 && mouseY <= l + 67)
+                {
+                    swapStackState(10);
+                }
+                else if (mouseX >= k + 69 + 160 && mouseX <= k + 87 + 160
+                        && mouseY >= l + 90 && mouseY <= l + 98)
+                {
+                    swapStackState(11);
+                }
+                else if (mouseX >= k + 69 + 160 && mouseX <= k + 87 + 160
+                        && mouseY >= l + 121 && mouseY <= l + 129)
+                {
+                    swapStackState(12);
+                }
+                else if (mouseX >= k + 69 + 160 && mouseX <= k + 87 + 160
+                        && mouseY >= l + 152 && mouseY <= l + 160)
+                {
+                    swapStackState(13);
                 }
             }
 
@@ -360,6 +475,9 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             if (!(te instanceof BlockArchiveSorterTop.TileEntityArchiveSorterTop)) {
                 return;
             }
+
+            this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+
             BlockArchiveSorterTop.TileEntityArchiveSorterTop tileEntity = (BlockArchiveSorterTop.TileEntityArchiveSorterTop) te;
             switch (period) {
                 case 0: default:
@@ -376,6 +494,150 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
                         LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(1, true, x, y, z));
                         return;
                     }
+
+                case 2:
+                    if (tileEntity.stackCambrian) {
+                        tileEntity.stackCambrian = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(2, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackCambrian) {
+                        tileEntity.stackCambrian = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(2, true, x, y, z));
+                        return;
+                    }
+
+                case 3:
+                    if (tileEntity.stackOrdovician) {
+                        tileEntity.stackOrdovician = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(3, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackOrdovician) {
+                        tileEntity.stackOrdovician = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(3, true, x, y, z));
+                        return;
+                    }
+
+                case 4:
+                    if (tileEntity.stackSilurian) {
+                        tileEntity.stackSilurian = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(4, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackSilurian) {
+                        tileEntity.stackSilurian = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(4, true, x, y, z));
+                        return;
+                    }
+
+                case 5:
+                    if (tileEntity.stackDevonian) {
+                        tileEntity.stackDevonian = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(5, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackDevonian) {
+                        tileEntity.stackDevonian = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(5, true, x, y, z));
+                        return;
+                    }
+
+                case 6:
+                    if (tileEntity.stackCarboniferous) {
+                        tileEntity.stackCarboniferous = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(6, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackCarboniferous) {
+                        tileEntity.stackCarboniferous = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(6, true, x, y, z));
+                        return;
+                    }
+
+                case 7:
+                    if (tileEntity.stackPermian) {
+                        tileEntity.stackPermian = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(7, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackPermian) {
+                        tileEntity.stackPermian = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(7, true, x, y, z));
+                        return;
+                    }
+
+                case 8:
+                    if (tileEntity.stackTriassic) {
+                        tileEntity.stackTriassic = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(8, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackTriassic) {
+                        tileEntity.stackTriassic = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(8, true, x, y, z));
+                        return;
+                    }
+
+                case 9:
+                    if (tileEntity.stackJurassic) {
+                        tileEntity.stackJurassic = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(9, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackJurassic) {
+                        tileEntity.stackJurassic = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(9, true, x, y, z));
+                        return;
+                    }
+
+                case 10:
+                    if (tileEntity.stackCretaceous) {
+                        tileEntity.stackCretaceous = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(10, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackCretaceous) {
+                        tileEntity.stackCretaceous = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(10, true, x, y, z));
+                        return;
+                    }
+
+                case 11:
+                    if (tileEntity.stackPaleogene) {
+                        tileEntity.stackPaleogene = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(11, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackPaleogene) {
+                        tileEntity.stackPaleogene = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(11, true, x, y, z));
+                        return;
+                    }
+
+                case 12:
+                    if (tileEntity.stackNeogene) {
+                        tileEntity.stackNeogene = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(12, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackNeogene) {
+                        tileEntity.stackNeogene = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(12, true, x, y, z));
+                        return;
+                    }
+
+                case 13:
+                    if (tileEntity.stackPleistocene) {
+                        tileEntity.stackPleistocene = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(13, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackPleistocene) {
+                        tileEntity.stackPleistocene = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(13, true, x, y, z));
+                        return;
+                    }
                     
             }
         }
@@ -387,23 +649,31 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Archive Sortation Chamber", 25, -30, 4210752);
-            this.fontRenderer.drawString("Inventory", 8, 112, 4210752);
+            this.fontRenderer.drawString("Archive Sorting Chamber", 35, -26, 4210752);
+            this.fontRenderer.drawString("Inventory", -26, 110, 4210752);
+            this.fontRenderer.drawString("Slots can", 145, 156, 4210752);
+            this.fontRenderer.drawString("be locked", 145, 164, 4210752);
+            this.fontRenderer.drawString("or unlocked", 145, 172, 4210752);
+            this.fontRenderer.drawString("for use", 145, 180, 4210752);
 
-            this.fontRenderer.drawString("Precambrian", -12, -16, 4210752);
-            this.fontRenderer.drawString("Cambrian", -12, 2, 4210752);
-            this.fontRenderer.drawString("Ordovician", -12, 20, 4210752);
-            this.fontRenderer.drawString("Silurian", -12, 38, 4210752);
-            this.fontRenderer.drawString("Devonian", -12, 56, 4210752);
-            this.fontRenderer.drawString("Carboniferous", -12, 74, 4210752);
-            this.fontRenderer.drawString("Permian", -12, 92, 4210752);
+            this.fontRenderer.drawString("Pre-", 2, 0, 4210752);
+            this.fontRenderer.drawString("cambrian", -18, 8, 4210752);
+            this.fontRenderer.drawString("Cambrian", -18, 34, 4210752);
+            this.fontRenderer.drawString("Ordovician", -26, 65, 4210752);
+            this.fontRenderer.drawString("Silurian", -11, 96, 4210752);
 
-            this.fontRenderer.drawString("Triassic", -12 + 120, -16, 4210752);
-            this.fontRenderer.drawString("Jurassic", -12 + 120, 2, 4210752);
-            this.fontRenderer.drawString("Cretaceous", -12 + 120, 20, 4210752);
-            this.fontRenderer.drawString("Paleogene", -12 + 120, 38, 4210752);
-            this.fontRenderer.drawString("Neogene", -12 + 120, 56, 4210752);
-            this.fontRenderer.drawString("Pleistocene", -12 + 120, 74, 4210752);
+            this.fontRenderer.drawString("Devonian", 62, 3, 4210752);
+            this.fontRenderer.drawString("Carbon-", 64, 30, 4210752);
+            this.fontRenderer.drawString("iferous", 68, 38, 4210752);
+            this.fontRenderer.drawString("Permian", 67, 65, 4210752);
+            this.fontRenderer.drawString("Triassic", 66, 96, 4210752);
+
+            this.fontRenderer.drawString("Jurassic", 142, 3, 4210752);
+            this.fontRenderer.drawString("Cretaceous", 128, 34, 4210752);
+            this.fontRenderer.drawString("Paleogene", 136, 65, 4210752);
+            this.fontRenderer.drawString("Neogene", 143, 96, 4210752);
+            this.fontRenderer.drawString("Pleisto-", 147, 123, 4210752);
+            this.fontRenderer.drawString("cene", 161, 131, 4210752);
         }
 
         @Override
@@ -557,6 +827,78 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
                         case 1:
                             ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackPrecambrian = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 2:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackCambrian = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 3:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackOrdovician = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 4:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackSilurian = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 5:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackDevonian = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 6:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackCarboniferous = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 7:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackPermian = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 8:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackTriassic = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 9:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackJurassic = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 10:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackCretaceous = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 11:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackPaleogene = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 12:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackNeogene = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 13:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackPleistocene = message.value;
                             te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
                             te.markDirty();
                             break;
