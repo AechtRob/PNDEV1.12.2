@@ -14,21 +14,21 @@ public class ModelGeragnostus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cephalon;
     private final AdvancedModelRenderer anntennae1;
     private final AdvancedModelRenderer anntennae2;
-    private final AdvancedModelRenderer leg1;
-    private final AdvancedModelRenderer leg2;
-    private final AdvancedModelRenderer leg3;
-    private final AdvancedModelRenderer leg4;
+    private final AdvancedModelRenderer leftleg1;
+    private final AdvancedModelRenderer rightleg1;
+    private final AdvancedModelRenderer leftleg2;
+    private final AdvancedModelRenderer rightleg2;
     private final AdvancedModelRenderer thorax1;
     private final AdvancedModelRenderer thorax2;
     private final AdvancedModelRenderer pygidium;
-    private final AdvancedModelRenderer leg5;
-    private final AdvancedModelRenderer leg6;
-    private final AdvancedModelRenderer leg7;
-    private final AdvancedModelRenderer leg8;
+    private final AdvancedModelRenderer leftleg3;
+    private final AdvancedModelRenderer rightleg3;
+    private final AdvancedModelRenderer leftleg4;
+    private final AdvancedModelRenderer rightleg4;
 
     public ModelGeragnostus() {
         this.textureWidth = 20;
-        this.textureHeight = 20;
+        this.textureHeight = 15;
 
         this.geragnostus = new AdvancedModelRenderer(this);
         this.geragnostus.setRotationPoint(0.0F, 23.35F, 0.0F);
@@ -37,86 +37,92 @@ public class ModelGeragnostus extends ModelBasePalaeopedia {
         this.cephalon = new AdvancedModelRenderer(this);
         this.cephalon.setRotationPoint(0.0F, -0.15F, -1.0F);
         this.geragnostus.addChild(cephalon);
-        this.cephalon.cubeList.add(new ModelBox(cephalon, -4, 4, -2.5F, -0.025F, -4.0F, 5, 0, 4, 0.0F, false));
-        this.cephalon.cubeList.add(new ModelBox(cephalon, 9, 13, -1.0F, -0.5F, -2.0F, 2, 1, 2, 0.0F, false));
+        this.cephalon.cubeList.add(new ModelBox(cephalon, -4, 5, -2.5F, -0.025F, -4.0F, 5, 0, 3, 0.0F, false));
+        this.cephalon.cubeList.add(new ModelBox(cephalon, 12, 9, -1.0F, -0.5F, -2.0F, 2, 1, 2, 0.0F, false));
+        this.cephalon.cubeList.add(new ModelBox(cephalon, 10, 0, -2.0F, -0.025F, -1.0F, 4, 0, 1, 0.0F, false));
 
         this.anntennae1 = new AdvancedModelRenderer(this);
         this.anntennae1.setRotationPoint(0.75F, 0.1638F, -1.9994F);
         this.cephalon.addChild(anntennae1);
         this.setRotateAngle(anntennae1, -0.0873F, 0.0F, 0.0F);
-        this.anntennae1.cubeList.add(new ModelBox(anntennae1, -3, 8, -0.5F, 0.0F, -2.975F, 1, 0, 3, 0.0F, false));
+        this.anntennae1.cubeList.add(new ModelBox(anntennae1, -3, 9, -0.5F, 0.0F, -2.975F, 1, 0, 3, 0.0F, false));
 
         this.anntennae2 = new AdvancedModelRenderer(this);
         this.anntennae2.setRotationPoint(-0.75F, 0.1638F, -1.9994F);
         this.cephalon.addChild(anntennae2);
         this.setRotateAngle(anntennae2, -0.0873F, 0.0F, 0.0F);
-        this.anntennae2.cubeList.add(new ModelBox(anntennae2, -3, 8, -0.5F, 0.0F, -2.975F, 1, 0, 3, 0.0F, false));
+        this.anntennae2.cubeList.add(new ModelBox(anntennae2, -3, 9, -0.5F, 0.0F, -2.975F, 1, 0, 3, 0.0F, false));
 
-        this.leg1 = new AdvancedModelRenderer(this);
-        this.leg1.setRotationPoint(1.197F, 0.3553F, -1.4196F);
-        this.cephalon.addChild(leg1);
-        this.setRotateAngle(leg1, 0.0873F, -0.3927F, 0.0F);
-        this.leg1.cubeList.add(new ModelBox(leg1, 2, 8, -0.5706F, 0.0069F, -3.9992F, 2, 0, 4, 0.0F, false));
+        this.leftleg1 = new AdvancedModelRenderer(this);
+        this.leftleg1.setRotationPoint(0.947F, 0.3553F, -1.4196F);
+        this.cephalon.addChild(leftleg1);
+        this.setRotateAngle(leftleg1, 0.0873F, -0.3927F, 0.0F);
+        this.leftleg1.cubeList.add(new ModelBox(leftleg1, -2, 10, -0.5706F, 0.0069F, -1.9992F, 1, 0, 2, 0.0F, false));
 
-        this.leg2 = new AdvancedModelRenderer(this);
-        this.leg2.setRotationPoint(1.1162F, 0.3909F, 0.0368F);
-        this.cephalon.addChild(leg2);
-        this.setRotateAngle(leg2, 0.0873F, -0.3927F, 0.0F);
-        this.leg2.cubeList.add(new ModelBox(leg2, 2, 8, -0.4793F, -0.0028F, -3.989F, 2, 0, 4, 0.0F, false));
+        this.rightleg1 = new AdvancedModelRenderer(this);
+        this.rightleg1.setRotationPoint(-0.947F, 0.3553F, -1.4196F);
+        this.cephalon.addChild(rightleg1);
+        this.setRotateAngle(rightleg1, 0.0873F, 0.3927F, 0.0F);
+        this.rightleg1.cubeList.add(new ModelBox(rightleg1, -2, 10, -0.4294F, 0.0069F, -1.9992F, 1, 0, 2, 0.0F, true));
 
-        this.leg3 = new AdvancedModelRenderer(this);
-        this.leg3.setRotationPoint(-1.197F, 0.3553F, -1.4196F);
-        this.cephalon.addChild(leg3);
-        this.setRotateAngle(leg3, 0.0873F, 0.3927F, 0.0F);
-        this.leg3.cubeList.add(new ModelBox(leg3, -2, 8, -1.4294F, 0.0069F, -3.9992F, 2, 0, 4, 0.0F, false));
+        this.leftleg2 = new AdvancedModelRenderer(this);
+        this.leftleg2.setRotationPoint(0.8662F, 0.3909F, -0.2132F);
+        this.cephalon.addChild(leftleg2);
+        this.setRotateAngle(leftleg2, 0.0873F, -0.3927F, 0.0F);
+        this.leftleg2.cubeList.add(new ModelBox(leftleg2, -2, 9, -0.4793F, -0.0028F, -1.989F, 1, 0, 2, 0.0F, false));
 
-        this.leg4 = new AdvancedModelRenderer(this);
-        this.leg4.setRotationPoint(-1.1162F, 0.3909F, 0.0368F);
-        this.cephalon.addChild(leg4);
-        this.setRotateAngle(leg4, 0.0873F, 0.3927F, 0.0F);
-        this.leg4.cubeList.add(new ModelBox(leg4, -2, 8, -1.5207F, -0.0028F, -3.989F, 2, 0, 4, 0.0F, false));
+        this.rightleg2 = new AdvancedModelRenderer(this);
+        this.rightleg2.setRotationPoint(-0.8662F, 0.3909F, -0.2132F);
+        this.cephalon.addChild(rightleg2);
+        this.setRotateAngle(rightleg2, 0.0873F, 0.3927F, 0.0F);
+        this.rightleg2.cubeList.add(new ModelBox(rightleg2, -2, 9, -0.5207F, -0.0028F, -1.989F, 1, 0, 2, 0.0F, true));
 
         this.thorax1 = new AdvancedModelRenderer(this);
         this.thorax1.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.cephalon.addChild(thorax1);
-        this.thorax1.cubeList.add(new ModelBox(thorax1, 9, 0, -2.5F, 0.0F, 0.0F, 5, 0, 1, 0.0F, false));
-        this.thorax1.cubeList.add(new ModelBox(thorax1, 10, 2, -1.5F, -0.5F, 0.0F, 3, 1, 1, 0.002F, false));
+        this.thorax1.cubeList.add(new ModelBox(thorax1, 13, 0, 0.3F, 0.0F, 0.0F, 1, 0, 1, 0.0F, false));
+        this.thorax1.cubeList.add(new ModelBox(thorax1, 13, 0, -1.3F, 0.0F, 0.0F, 1, 0, 1, 0.0F, false));
+        this.thorax1.cubeList.add(new ModelBox(thorax1, 11, 2, -1.0F, -0.4F, 0.0F, 2, 1, 1, 0.002F, false));
 
         this.thorax2 = new AdvancedModelRenderer(this);
         this.thorax2.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.thorax1.addChild(thorax2);
-        this.thorax2.cubeList.add(new ModelBox(thorax2, 9, 0, -2.5F, 0.025F, 0.0F, 5, 0, 1, 0.0F, false));
-        this.thorax2.cubeList.add(new ModelBox(thorax2, 10, 5, -1.5F, -0.5F, 0.0F, 3, 1, 1, 0.001F, false));
+        this.setRotateAngle(thorax2, 0.0F, 0.0F, 0.0F);
+        this.thorax2.cubeList.add(new ModelBox(thorax2, 13, 0, 0.3F, 0.025F, 0.0F, 1, 0, 1, 0.0F, false));
+        this.thorax2.cubeList.add(new ModelBox(thorax2, 13, 0, -1.3F, 0.025F, 0.0F, 1, 0, 1, 0.0F, false));
+        this.thorax2.cubeList.add(new ModelBox(thorax2, 11, 5, -1.0F, -0.4F, 0.0F, 2, 1, 1, 0.001F, false));
 
         this.pygidium = new AdvancedModelRenderer(this);
         this.pygidium.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.thorax2.addChild(pygidium);
-        this.pygidium.cubeList.add(new ModelBox(pygidium, 0, 13, -1.0F, -0.5F, 0.0F, 2, 1, 2, 0.0F, false));
-        this.pygidium.cubeList.add(new ModelBox(pygidium, -4, 0, -2.5F, 0.0F, 0.0F, 5, 0, 4, 0.0F, false));
+        this.setRotateAngle(pygidium, 0.0F, 0.0F, 0.0F);
+        this.pygidium.cubeList.add(new ModelBox(pygidium, 3, 9, -1.0F, -0.5F, 0.0F, 2, 1, 2, 0.0F, false));
+        this.pygidium.cubeList.add(new ModelBox(pygidium, -3, 0, -2.5F, 0.0F, 1.0F, 5, 0, 3, 0.0F, false));
+        this.pygidium.cubeList.add(new ModelBox(pygidium, 10, 0, -2.0F, 0.0F, 0.0F, 4, 0, 1, 0.0F, false));
 
-        this.leg5 = new AdvancedModelRenderer(this);
-        this.leg5.setRotationPoint(-1.0F, 0.25F, 1.0F);
-        this.pygidium.addChild(leg5);
-        this.setRotateAngle(leg5, -2.9671F, 0.0F, 3.1416F);
-        this.leg5.cubeList.add(new ModelBox(leg5, -3, 8, -0.5F, 0.0F, -3.0F, 1, 0, 3, 0.0F, false));
+        this.leftleg3 = new AdvancedModelRenderer(this);
+        this.leftleg3.setRotationPoint(0.9351F, 0.2576F, 0.5238F);
+        this.pygidium.addChild(leftleg3);
+        this.setRotateAngle(leftleg3, -0.1745F, 0.3927F, 0.0F);
+        this.leftleg3.cubeList.add(new ModelBox(leftleg3, -2, 10, -0.431F, 0.0166F, 0.0058F, 1, 0, 2, 0.0F, false));
 
-        this.leg6 = new AdvancedModelRenderer(this);
-        this.leg6.setRotationPoint(-1.2313F, 0.2576F, 0.0047F);
-        this.pygidium.addChild(leg6);
-        this.setRotateAngle(leg6, -2.9671F, 0.3927F, 3.1416F);
-        this.leg6.cubeList.add(new ModelBox(leg6, -3, 8, -0.481F, 0.0166F, -3.0058F, 1, 0, 3, 0.0F, false));
+        this.rightleg3 = new AdvancedModelRenderer(this);
+        this.rightleg3.setRotationPoint(-0.9351F, 0.2576F, 0.5238F);
+        this.pygidium.addChild(rightleg3);
+        this.setRotateAngle(rightleg3, -0.1745F, -0.3927F, 0.0F);
+        this.rightleg3.cubeList.add(new ModelBox(rightleg3, -2, 10, -0.569F, 0.0166F, 0.0058F, 1, 0, 2, 0.0F, true));
 
-        this.leg7 = new AdvancedModelRenderer(this);
-        this.leg7.setRotationPoint(1.0F, 0.25F, 1.0F);
-        this.pygidium.addChild(leg7);
-        this.setRotateAngle(leg7, -0.1745F, 0.0F, 0.0F);
-        this.leg7.cubeList.add(new ModelBox(leg7, -3, 8, -0.5F, 0.0F, 0.0F, 1, 0, 3, 0.0F, false));
+        this.leftleg4 = new AdvancedModelRenderer(this);
+        this.leftleg4.setRotationPoint(1.0F, 0.25F, 1.5F);
+        this.pygidium.addChild(leftleg4);
+        this.setRotateAngle(leftleg4, -0.1745F, 0.0F, 0.0F);
+        this.leftleg4.cubeList.add(new ModelBox(leftleg4, -2, 9, -0.5F, 0.0F, 0.0F, 1, 0, 2, 0.0F, false));
 
-        this.leg8 = new AdvancedModelRenderer(this);
-        this.leg8.setRotationPoint(1.1851F, 0.2576F, 0.0238F);
-        this.pygidium.addChild(leg8);
-        this.setRotateAngle(leg8, -0.1745F, 0.3927F, 0.0F);
-        this.leg8.cubeList.add(new ModelBox(leg8, -3, 8, -0.431F, 0.0166F, 0.0058F, 1, 0, 3, 0.0F, false));
+        this.rightleg4 = new AdvancedModelRenderer(this);
+        this.rightleg4.setRotationPoint(-1.0F, 0.25F, 1.5F);
+        this.pygidium.addChild(rightleg4);
+        this.setRotateAngle(rightleg4, -0.1745F, 0.0F, 0.0F);
+        this.rightleg4.cubeList.add(new ModelBox(rightleg4, -2, 9, -0.5F, 0.0F, 0.0F, 1, 0, 2, 0.0F, true));
 
         updateDefaultPose();
     }
@@ -180,35 +186,35 @@ public class ModelGeragnostus extends ModelBasePalaeopedia {
                     && ((double)e.getPosition().getY() + 0.334D) > e.posY);
         }
 
-        AdvancedModelRenderer[] legsL = {this.leg1, this.leg2, this.leg8, this.leg7};
-        AdvancedModelRenderer[] legsR = {this.leg3, this.leg4, this.leg6, this.leg5};
+        AdvancedModelRenderer[] legsL = {this.leftleg1, this.leftleg2, this.leftleg3, this.leftleg4};
+        AdvancedModelRenderer[] legsR = {this.rightleg1, this.rightleg2, this.rightleg3, this.rightleg4};
 
         if (isAtBottom) {
             if (((EntityPrehistoricFloraGeragnostus) e).getIsMoving()) {
                 this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
                 this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-                this.swing(leg1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-                this.swing(leg3, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-                this.swing(leg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-                this.swing(leg4, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-                this.swing(leg8, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-                this.swing(leg6, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-                this.swing(leg7, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-                this.swing(leg5, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+                this.swing(leftleg1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+                this.swing(rightleg1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+                this.swing(leftleg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+                this.swing(rightleg2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+                this.swing(leftleg3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+                this.swing(rightleg3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+                this.swing(leftleg4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+                this.swing(rightleg4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
 
             }
         }
         else {
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.25F, 0.2F, -3, f2, 1);
-            this.swing(leg1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.swing(leg3, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.swing(leg2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.swing(leg4, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.swing(leg8, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.swing(leg6, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.swing(leg7, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.swing(leg5, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.swing(leftleg1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
+            this.swing(rightleg1, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.swing(leftleg2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
+            this.swing(rightleg2, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
+            this.swing(leftleg3, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
+            this.swing(rightleg3, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
+            this.swing(leftleg4, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
+            this.swing(rightleg4, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
            }
 
         this.swing(anntennae1, 0.36F, -0.21F, false, 0, -0.11F, f2, 0.8F);
