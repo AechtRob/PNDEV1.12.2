@@ -1,13 +1,8 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraAcanthodes;
-import net.lepidodendron.entity.EntityPrehistoricFloraProteroctopus;
-import net.lepidodendron.entity.EntityPrehistoricFloraTetraceratops;
 import net.lepidodendron.entity.EntityPrehistoricFloraTetrameroceras;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
-import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -358,7 +353,57 @@ public class ModelTetrameroceras extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.root.render(f5);
     }
-
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(tentacle9c, 0.3806F, 0.0992F, -0.2427F);
+        this.setRotateAngle(tentacle9b, 0.4323F, -0.1313F, 0.3244F);
+        this.setRotateAngle(tentacle9a, -0.829F, 1.0036F, 0.0F);
+        this.setRotateAngle(tentacle8c, 0.2182F, 0.0F, -0.4363F);
+        this.setRotateAngle(tentacle8b, -0.3339F, -0.0886F, -0.3381F);
+        this.setRotateAngle(tentacle8a, 0.2194F, 0.2143F, 0.8091F);
+        this.setRotateAngle(tentacle7c, -0.413F, 0.1451F, 0.3186F);
+        this.setRotateAngle(tentacle7b, -0.3655F, -0.147F, -0.3655F);
+        this.setRotateAngle(tentacle7a, 0.8293F, -1.0316F, -0.0131F);
+        this.setRotateAngle(tentacle6c, -0.6504F, -0.0124F, -0.1388F);
+        this.setRotateAngle(tentacle6b, -0.3054F, 0.0F, 0.2182F);
+        this.setRotateAngle(tentacle6a, 1.0031F, -0.0322F, 0.0295F);
+        this.setRotateAngle(tentacle5c, 0.413F, 0.1451F, -0.3186F);
+        this.setRotateAngle(tentacle5b, 0.3734F, -0.2175F, 0.2234F);
+        this.setRotateAngle(tentacle5a, -0.9275F, -0.9182F, 0.1084F);
+        this.setRotateAngle(tentacle4c, 0.3806F, -0.0992F, 0.2427F);
+        this.setRotateAngle(tentacle4b, 0.4323F, 0.1313F, -0.3244F);
+        this.setRotateAngle(tentacle4a, -0.829F, -1.0036F, 0.0F);
+        this.setRotateAngle(tentacle3c, 0.2182F, 0.0F, 0.4363F);
+        this.setRotateAngle(tentacle3b, -0.3339F, 0.0886F, 0.3381F);
+        this.setRotateAngle(tentacle3a, 0.2194F, -0.2143F, -0.8091F);
+        this.setRotateAngle(tentacle2c, -0.413F, -0.1451F, -0.3186F);
+        this.setRotateAngle(tentacle2b, -0.3655F, 0.147F, 0.3655F);
+        this.setRotateAngle(tentacle2a, 0.8293F, 1.0316F, 0.0131F);
+        this.setRotateAngle(tentacle1c, -0.6504F, 0.0124F, 0.1388F);
+        this.setRotateAngle(tentacle1b, -0.3054F, 0.0F, -0.2182F);
+        this.setRotateAngle(tentacle1a, 1.0031F, 0.0322F, -0.0295F);
+        this.setRotateAngle(tentacle10c, 0.413F, -0.1451F, 0.3186F);
+        this.setRotateAngle(tentacle10b, 0.3734F, 0.2175F, -0.2234F);
+        this.setRotateAngle(tentacle10a, -0.9275F, 0.9182F, -0.1084F);
+        this.setRotateAngle(shell, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(eyeRight, 0.0F, -0.7418F, 0.0F);
+        this.setRotateAngle(eyeLeft, 0.0F, 0.7418F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -1.1781F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -1.3963F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -2.2253F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -1.6144F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -2.0508F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -1.1868F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -1.3177F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.9599F, 0.0F, 0.0F);
+        this.root.offsetY = 0.16F;
+        this.root.render(0.01f);
+        resetToDefaultPose();
+    }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
