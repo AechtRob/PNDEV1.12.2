@@ -4,10 +4,15 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.IArchiveInvertebrate;
+import net.lepidodendron.block.base.IArchivePlant;
+import net.lepidodendron.block.base.IArchiveStatic;
+import net.lepidodendron.block.base.IArchiveVertebrate;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIMicroscope;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.AcidBathOutputPlants;
+import net.lepidodendron.util.IDimensionRestricted;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -215,6 +220,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime = 20;
+		protected int periodLock;
 
 		public boolean canStartProcess() {
 
@@ -259,103 +265,225 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
-			boolean updated = false;
+			if (this.inputType(this.getStackInSlot(0)) == 1) {
+				//Analysing raw fossils to get the mob type from them:
+				boolean updated = false;
+				setPeriodLock(0);
 
-			if (this.canStartProcess()) {
-				this.processTick = 0;
-				this.isProcessing = true;
-				updated = true;
-			}
+				if (this.canStartProcess()) {
+					this.processTick = 0;
+					this.isProcessing = true;
+					updated = true;
+				}
 
-			if (this.isProcessing) {
-				this.processTick ++;
-				updated = true;
-			}
+				if (this.isProcessing) {
+					this.processTick++;
+					updated = true;
+				}
 
-			if (this.isProcessing && this.processTick > this.processTickTime) {
-				//System.err.println("Ending process");
-				this.processTick = 0;
-				this.isProcessing = false;
-				//move to output:
-				String type = "";
-				if (isItemValidForSlot(0, this.getStackInSlot(0))
-					&& getStackInSlot(1).isEmpty()) {
-					ItemStack stackProcessing = this.getStackInSlot(0);
-					ItemStack outputStack = stackProcessing.copy();
-					outputStack.setCount(1);
-					stackProcessing.shrink(1);
+				if (this.isProcessing && this.processTick > this.processTickTime) {
+					//System.err.println("Ending process");
+					this.processTick = 0;
+					this.isProcessing = false;
+					this.periodLock = 0;
+					//move to output:
+					String type = "";
+					if (isItemValidForSlot(0, this.getStackInSlot(0))
+							&& getStackInSlot(1).isEmpty()) {
+						ItemStack stackProcessing = this.getStackInSlot(0);
+						ItemStack outputStack = stackProcessing.copy();
+						outputStack.setCount(1);
+						stackProcessing.shrink(1);
 
-					//Has this already been tagged somehow?
-					if (outputStack.hasTagCompound()) {
-						if (outputStack.getTagCompound().hasKey("PFPlant")) {
-							NBTTagCompound plantNBT = new NBTTagCompound();
-							plantNBT.setString("id", "");
-							NBTTagCompound stackNBT = new NBTTagCompound();
-							stackNBT.setTag("PFPlant", plantNBT);
-							outputStack.setTagCompound(stackNBT);
-							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
-							this.setInventorySlotContents(1, outputStack);
-							markDirty();
-							updated = true;
-							return;
+						//Has this already been tagged somehow?
+						if (outputStack.hasTagCompound()) {
+							if (outputStack.getTagCompound().hasKey("PFPlant")) {
+								NBTTagCompound plantNBT = new NBTTagCompound();
+								plantNBT.setString("id", "");
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFPlant", plantNBT);
+								outputStack.setTagCompound(stackNBT);
+								world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
+								this.setInventorySlotContents(1, outputStack);
+								markDirty();
+								updated = true;
+								return;
+							}
+							if (outputStack.getTagCompound().hasKey("PFMob")) {
+								NBTTagCompound plantNBT = new NBTTagCompound();
+								plantNBT.setString("id", "");
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFMob", plantNBT);
+								outputStack.setTagCompound(stackNBT);
+								world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
+								this.setInventorySlotContents(1, outputStack);
+								markDirty();
+								updated = true;
+								return;
+							}
+							if (outputStack.getTagCompound().hasKey("PFStatic")) {
+								NBTTagCompound plantNBT = new NBTTagCompound();
+								plantNBT.setString("id", "");
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFStatic", plantNBT);
+								outputStack.setTagCompound(stackNBT);
+								world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
+								this.setInventorySlotContents(1, outputStack);
+								markDirty();
+								updated = true;
+								return;
+							}
 						}
-						if (outputStack.getTagCompound().hasKey("PFMob")) {
-							NBTTagCompound plantNBT = new NBTTagCompound();
-							plantNBT.setString("id", "");
-							NBTTagCompound stackNBT = new NBTTagCompound();
-							stackNBT.setTag("PFMob", plantNBT);
-							outputStack.setTagCompound(stackNBT);
-							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
-							this.setInventorySlotContents(1, outputStack);
-							markDirty();
-							updated = true;
-							return;
-						}
-						if (outputStack.getTagCompound().hasKey("PFStatic")) {
-							NBTTagCompound plantNBT = new NBTTagCompound();
-							plantNBT.setString("id", "");
-							NBTTagCompound stackNBT = new NBTTagCompound();
-							stackNBT.setTag("PFStatic", plantNBT);
-							outputStack.setTagCompound(stackNBT);
-							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
-							this.setInventorySlotContents(1, outputStack);
-							markDirty();
-							updated = true;
-							return;
-						}
-					}
 
-					//Copied logic from AcidBathUp:
-					if (Math.random() > 0.55) { //Plants:
-						if ((outputStack.getItem() == ItemFossilPrecambrian.block && (!(AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants().length >= 1)))
-								|| (outputStack.getItem() == ItemFossilCambrian.block && (!(AcidBathOutputPlants.getCambrianCleanedFossilsPlants().length >= 1)))
-						) {
+						//Copied logic from AcidBathUp:
+						if (Math.random() > 0.55) { //Plants:
+							if ((outputStack.getItem() == ItemFossilPrecambrian.block && (!(AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants().length >= 1)))
+									|| (outputStack.getItem() == ItemFossilCambrian.block && (!(AcidBathOutputPlants.getCambrianCleanedFossilsPlants().length >= 1)))
+							) {
+								type = "PFStatic";
+							} else {
+								type = "PFPlant";
+							}
+						} else if (Math.random() > 0.4) { //Mobs:
+							type = "PFMob";
+						} else { //Static creatures
 							type = "PFStatic";
 						}
-						else {
-							type = "PFPlant";
-						}
-					} else if (Math.random() > 0.4) { //Mobs:
-						type = "PFMob";
-					} else { //Static creatures
-						type = "PFStatic";
+						NBTTagCompound plantNBT = new NBTTagCompound();
+						plantNBT.setString("id", "");
+						NBTTagCompound stackNBT = new NBTTagCompound();
+						stackNBT.setTag(type, plantNBT);
+						outputStack.setTagCompound(stackNBT);
+						world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
+						this.setInventorySlotContents(1, outputStack);
 					}
-					NBTTagCompound plantNBT = new NBTTagCompound();
-					plantNBT.setString("id", "");
-					NBTTagCompound stackNBT = new NBTTagCompound();
-					stackNBT.setTag(type, plantNBT);
-					outputStack.setTagCompound(stackNBT);
-					world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
-					this.setInventorySlotContents(1, outputStack);
+					updated = true;
 				}
-				updated = true;
+
+				if (updated) {
+					this.notifyBlockUpdate();
+				}
+				markDirty();
 			}
 
-			if (updated) {
-				this.notifyBlockUpdate();
-			}
-			markDirty();
+			else if (this.inputType(this.getStackInSlot(0)) == 2) {
+				//Tagging with a period:
+				boolean updated = false;
 
+				if (this.canStartProcess() && this.periodLock != 0) {
+					this.processTick = 0;
+					this.isProcessing = true;
+					updated = true;
+				}
+
+				if (this.isProcessing) {
+					this.processTick++;
+					updated = true;
+				}
+
+				if (this.isProcessing && this.processTick > this.processTickTime) {
+					//System.err.println("Ending process");
+					this.processTick = 0;
+					this.isProcessing = false;
+					//move to output:
+					if (isItemValidForSlot(0, this.getStackInSlot(0))
+							&& getStackInSlot(1).isEmpty()) {
+						ItemStack stackProcessing = this.getStackInSlot(0);
+						ItemStack outputStack = stackProcessing.copy();
+						outputStack.setCount(1);
+						stackProcessing.shrink(1);
+						if (outputStack.hasTagCompound()) {
+							if ((!outputStack.getTagCompound().hasKey("period")) && this.periodLock != 0) {
+								outputStack.getTagCompound().setInteger("period", this.periodLock);
+							}
+							if ((!outputStack.getTagCompound().hasKey("PFMob"))
+									&& (!outputStack.getTagCompound().hasKey("PFStatic"))
+									&& (!outputStack.getTagCompound().hasKey("PFPlant"))) {
+								if (outputStack.getItem() instanceof IArchiveVertebrate
+									|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchiveVertebrate) {
+									NBTTagCompound entityNBT = new NBTTagCompound();
+									entityNBT.setString("id", "");
+									outputStack.getTagCompound().setTag("PFMob", entityNBT);
+									outputStack.getTagCompound().setString("mobtype", "vertebrate");
+								}
+								if (outputStack.getItem() instanceof IArchiveInvertebrate
+										|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchiveInvertebrate) {
+									NBTTagCompound entityNBT = new NBTTagCompound();
+									entityNBT.setString("id", "");
+									outputStack.getTagCompound().setTag("PFMob", entityNBT);
+									outputStack.getTagCompound().setString("mobtype", "invertebrate");
+								}
+								if (outputStack.getItem() instanceof IArchiveStatic
+										|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchiveStatic) {
+									NBTTagCompound entityNBT = new NBTTagCompound();
+									entityNBT.setString("id", "");
+									outputStack.getTagCompound().setTag("PFStatic", entityNBT);
+								}
+								if (outputStack.getItem() instanceof IArchivePlant
+										|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchivePlant) {
+									NBTTagCompound entityNBT = new NBTTagCompound();
+									entityNBT.setString("id", "");
+									outputStack.getTagCompound().setTag("PFPlant", entityNBT);
+								}
+							}
+						}
+						else {
+							NBTTagCompound compound = new NBTTagCompound();
+							compound.setInteger("period", this.periodLock);
+							outputStack.setTagCompound(compound);
+							if (outputStack.getItem() instanceof IArchiveVertebrate
+									|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchiveVertebrate) {
+								NBTTagCompound entityNBT = new NBTTagCompound();
+								entityNBT.setString("id", "");
+								outputStack.getTagCompound().setTag("PFMob", entityNBT);
+								outputStack.getTagCompound().setString("mobtype", "vertebrate");
+							}
+							if (outputStack.getItem() instanceof IArchiveInvertebrate
+									|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchiveInvertebrate) {
+								NBTTagCompound entityNBT = new NBTTagCompound();
+								entityNBT.setString("id", "");
+								outputStack.getTagCompound().setTag("PFMob", entityNBT);
+								outputStack.getTagCompound().setString("mobtype", "invertebrate");
+							}
+							if (outputStack.getItem() instanceof IArchiveStatic
+									|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchiveStatic) {
+								NBTTagCompound entityNBT = new NBTTagCompound();
+								entityNBT.setString("id", "");
+								outputStack.getTagCompound().setTag("PFStatic", entityNBT);
+							}
+							if (outputStack.getItem() instanceof IArchivePlant
+									|| Block.getBlockFromItem(outputStack.getItem()) instanceof IArchivePlant) {
+								NBTTagCompound entityNBT = new NBTTagCompound();
+								entityNBT.setString("id", "");
+								outputStack.getTagCompound().setTag("PFPlant", entityNBT);
+							}
+						}
+						world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
+						this.setInventorySlotContents(1, outputStack);
+						markDirty();
+						updated = true;
+						this.periodLock = 0;
+					}
+				}
+
+				if (updated) {
+					this.notifyBlockUpdate();
+				}
+				markDirty();
+			}
+			else {
+				setPeriodLock(0);
+			}
+		}
+
+		public void setPeriodLock(int period) {
+			periodLock = period;
+			this.processTick = 0;
+			this.isProcessing = false;
+		}
+
+		public int getPeriodLock() {
+			return this.periodLock;
 		}
 
 		public boolean getProcessing() {
@@ -391,6 +519,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			this.periodLock = compound.getInteger("periodLock");
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
@@ -408,6 +537,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
+			compound.setInteger("periodLock", this.periodLock);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.forgeContents);
 			}
@@ -490,28 +620,48 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 0) {
-				Item item = stack.getItem();
-				if (item == ItemFossilPrecambrian.block
-						|| item == ItemFossilCambrian.block
-						|| item == ItemFossilOrdovician.block
-						|| item == ItemFossilSilurian.block
-						|| item == ItemFossilDevonian.block
-						|| item == ItemFossilCarboniferous.block
-						|| item == ItemFossilPermian.block
-						|| item == ItemFossilTriassic.block
-						|| item == ItemFossilJurassic.block
-						|| item == ItemFossilCretaceous.block
-						|| item == ItemFossilPaleogene.block
-						|| item == ItemFossilNeogene.block
-						|| item == ItemFossilPleistocene.block) {
-					return true;
-				}
-				return false;
+				return (inputType(stack) > 0);
 			}
 			if (index == 1)
 				return false;
 
 			return false;
+		}
+
+		public static int inputType(ItemStack stack) {
+			Item item = stack.getItem();
+			if (item == ItemFossilPrecambrian.block
+					|| item == ItemFossilCambrian.block
+					|| item == ItemFossilOrdovician.block
+					|| item == ItemFossilSilurian.block
+					|| item == ItemFossilDevonian.block
+					|| item == ItemFossilCarboniferous.block
+					|| item == ItemFossilPermian.block
+					|| item == ItemFossilTriassic.block
+					|| item == ItemFossilJurassic.block
+					|| item == ItemFossilCretaceous.block
+					|| item == ItemFossilPaleogene.block
+					|| item == ItemFossilNeogene.block
+					|| item == ItemFossilPleistocene.block) {
+				return 1;
+			}
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("period")) {
+					return 0;
+				}
+				if (stack.getTagCompound().hasKey("PFMob")
+						|| stack.getTagCompound().hasKey("PFStatic")
+						|| stack.getTagCompound().hasKey("PFPlant")) {
+					return 2;
+				}
+			}
+			if (stack.getItem() instanceof IDimensionRestricted) {
+				return 2;
+			}
+			if (Block.getBlockFromItem(stack.getItem()) instanceof IDimensionRestricted) {
+				return 2;
+			}
+			return 0;
 		}
 
 		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);

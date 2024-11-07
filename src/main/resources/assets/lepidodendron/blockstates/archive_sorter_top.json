@@ -1,0 +1,24 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_hopper" }
+      ]
+    },
+    {   "when": { "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_hopper", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_hopper", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_hopper", "y": 270}
+      ]
+    }
+  ]
+}

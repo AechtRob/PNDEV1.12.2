@@ -50,7 +50,7 @@ public class ItemDNARecombiner extends ElementsLepidodendronMod.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
-			maxStackSize = 1;
+			maxStackSize = 64;
 			setTranslationKey("pf_dna_recombiner_item");
 			setRegistryName("dna_recombiner_item");
 			setCreativeTab(TabLepidodendronMisc.tab);

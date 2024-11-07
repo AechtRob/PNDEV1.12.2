@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.LepidodendronRecipeFossils;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
@@ -337,12 +338,28 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 					ItemStack stackProcessing3 = this.getStackInSlot(3);
 					ResourceLocation resourcelocation = null;
 					String blockname;
+					String mobtype = "";
+					int period = BlockArchiveSorterTop.TileEntityArchiveSorterTop.periodTag(stackProcessing1);
 					if (ItemFossilClean.ItemCustom.isEntityFromItemStack(stackProcessing1)) {
 						NBTTagCompound entityNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFMob");
 						try {
 							resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 							//id_dna = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
 							id_dna = resourcelocation.toString();
+							if (stackProcessing1.getTagCompound().hasKey("mobtype")) {
+								mobtype = stackProcessing1.getTagCompound().getString("mobtype");
+							}
+							else {
+								if (id_dna.indexOf("@") > 0) {
+									id_dna = id_dna.substring(0, id_dna.indexOf("@"));
+								}
+								boolean isArthropod = LepidodendronRecipeFossils.isArthropod(world, id_dna);
+								if (isArthropod) {
+									mobtype = "invertebrate";
+								} else {
+									mobtype = "vertebrate";
+								}
+							}
 						}
 						catch (RuntimeException e) {
 						}
@@ -406,6 +423,12 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound stackNBT = new NBTTagCompound();
 					stackNBT.setTag(tag, plantNBT);
 					outputStack.setTagCompound(stackNBT);
+					if (!mobtype.equalsIgnoreCase("")) {
+						outputStack.getTagCompound().setString("mobtype", mobtype);
+					}
+					if (period != 0) {
+						outputStack.getTagCompound().setInteger("period", period);
+					}
 
 					this.setInventorySlotContents(1, outputStack);
 				}

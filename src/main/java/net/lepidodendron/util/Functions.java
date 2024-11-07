@@ -32,6 +32,8 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Functions {
@@ -356,6 +358,182 @@ public class Functions {
         }
 
         return methodToFind;
+    }
+
+    public static ArrayList<Integer> dimAllowed(String creatureID) {
+        //Determine these from the fossil drops configs:
+        ArrayList<Integer> tmpArray = new ArrayList<Integer>();
+
+        if (Arrays.stream(AcidBathOutputMobs.getPrecambrianCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(1);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getPrecambrianCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(1);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(1);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getCambrianCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(2);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getCambrianCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(2);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getCambrianCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(2);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getOrdovicianCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(3);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getOrdovicianCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(3);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getOrdovicianCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(3);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getSilurianCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(4);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getSilurianCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(4);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getSilurianCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(4);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getDevonianCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(5);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getDevonianCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(5);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getDevonianCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(5);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getCarboniferousCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(6);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getCarboniferousCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(6);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getCarboniferousCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(6);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getPermianCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(7);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getPermianCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(7);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getPermianCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(7);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getTriassicCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(8);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getTriassicCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(8);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getTriassicCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(8);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getJurassicCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(9);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getJurassicCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(9);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getJurassicCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(9);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getCretaceousCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(10);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getCretaceousCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(10);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getCretaceousCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(10);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getPaleogeneCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(11);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getPaleogeneCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(11);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getPaleogeneCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(11);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getNeogeneCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(12);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getNeogeneCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(12);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getNeogeneCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(12);
+        }
+
+        if (Arrays.stream(AcidBathOutputMobs.getPleistoceneCleanedFossilsMobs()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(13);
+        }
+        else if (Arrays.stream(AcidBathOutputStatics.getPleistoceneCleanedFossilsStatics()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(13);
+        }
+        else if (Arrays.stream(AcidBathOutputPlants.getPleistoceneCleanedFossilsPlants()).anyMatch(n
+                -> n.equalsIgnoreCase(creatureID))) {
+            tmpArray.add(13);
+        }
+
+        return tmpArray;
     }
 
 }

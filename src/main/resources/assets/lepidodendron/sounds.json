@@ -62,6 +62,24 @@
     ]
   },
 
+  "open_drawer": {
+    "sounds": [
+      {
+        "name": "lepidodendron:drawer_open",
+        "stream": false
+      }
+    ]
+  },
+
+  "close_drawer": {
+    "sounds": [
+      {
+        "name": "lepidodendron:drawer_close",
+        "stream": false
+      }
+    ]
+  },
+
   "time_researcher_crusher": {
     "sounds": [
       {

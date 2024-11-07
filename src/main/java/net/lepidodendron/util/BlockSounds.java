@@ -22,6 +22,12 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("time_researcher_laser")
     public static final SoundEvent TIME_RESEARCHER_LASER = createSoundEvent("time_researcher_laser");
 
+    @GameRegistry.ObjectHolder("open_drawer")
+    public static final SoundEvent OPEN_DRAWER = createSoundEvent("open_drawer");
+
+    @GameRegistry.ObjectHolder("close_drawer")
+    public static final SoundEvent CLOSE_DRAWER = createSoundEvent("close_drawer");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);

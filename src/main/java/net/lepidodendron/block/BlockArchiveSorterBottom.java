@@ -3,22 +3,23 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.LepidodendronRecipeFossils;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.gui.GUIArchiveSorterTop;
+import net.lepidodendron.gui.GUIArchiveSorterBottom;
 import net.lepidodendron.item.ItemArchiveSorter;
+import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -42,41 +44,44 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:archive_sorter_top")
+public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:archive_sorter_bottom")
 	public static final Block block = null;
 
-	public BlockArchiveSorterTop(ElementsLepidodendronMod instance) {
+	public BlockArchiveSorterBottom(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.archive_sorter_top);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("archive_sorter_top"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("archive_sorter_bottom"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityArchiveSorterTop.class, "lepidodendron:tileentityarchive_sorter_top");
+		GameRegistry.registerTileEntity(TileEntityArchiveBottom.class, "lepidodendron:tileentityarchive_sorter_bottom");
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 //		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-//				new ModelResourceLocation("lepidodendron:archive_sorter_top", "inventory"));
+//				new ModelResourceLocation("lepidodendron:archive_sorter_bottom", "inventory"));
 	}
 
 	public static class BlockCustom extends BlockHopper {
+		public static final PropertyBool OPEN = PropertyBool.create("open");
 
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_archive_sorter_top");
+			setTranslationKey("pf_archive_sorter_bottom");
 			setSoundType(SoundType.WOOD);
 			setHardness(5F);
 			setResistance(12F);
@@ -98,6 +103,18 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			TileEntity te = worldIn.getTileEntity(pos);
+			if (te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
+				if (((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).getLocked()) {
+					state = state.withProperty(OPEN, true);
+				}
+				else {
+					state = state.withProperty(OPEN, false);
+				}
+			}
+			else {
+				state = state.withProperty(OPEN, false);
+			}
 			if (state.getValue(FACING) == EnumFacing.DOWN || state.getValue(FACING) == EnumFacing.UP) {
 				return state.withProperty(FACING, EnumFacing.NORTH);
 			}
@@ -106,7 +123,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public TileEntity createNewTileEntity(World worldIn, int meta) {
-			return new TileEntityArchiveSorterTop();
+			return new TileEntityArchiveBottom();
 		}
 
 		@Override
@@ -116,45 +133,33 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return (new ItemStack(ItemArchiveSorter.block, 1).getItem());
+			return (new ItemStack(Items.AIR, 1).getItem());
 		}
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, ENABLED});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, ENABLED, OPEN});
 		}
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
-			if (face == EnumFacing.UP) {
-				return BlockFaceShape.BOWL;
-			}
 			return BlockFaceShape.SOLID;
-		}
-
-		@Override
-		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing()).withProperty(ENABLED, Boolean.valueOf(true));
-		}
-
-		@Override
-		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-			super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
-
-			if (stack.hasDisplayName()) {
-				TileEntity tileentity = worldIn.getTileEntity(pos);
-
-				if (tileentity instanceof TileEntityArchiveSorterTop) {
-					((TileEntityArchiveSorterTop) tileentity).setCustomName(stack.getDisplayName());
-				}
-			}
 		}
 
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
 			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
-			if (entity instanceof EntityPlayer) {
-				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIArchiveSorterTop.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
+			TileEntity te = world.getTileEntity(pos);
+			if (te != null) {
+				if (te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
+					if (((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).getLocked() && world.isRemote) {
+						//Send chat message to inform who is using it:
+						entity.sendMessage(new TextComponentString("Sorry, someone else is currently using the inventory here!"));
+					}
+					else if (entity instanceof EntityPlayer) {
+						((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIArchiveSorterBottom.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
+					}
+				}
 			}
 			return true;
 		}
@@ -163,8 +168,8 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 		public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
-			if (tileentity instanceof TileEntityArchiveSorterTop) {
-				InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityArchiveSorterTop) tileentity);
+			if (tileentity instanceof TileEntityArchiveBottom) {
+				InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityArchiveBottom) tileentity);
 				worldIn.updateComparatorOutputLevel(pos, this);
 			}
 
@@ -175,25 +180,25 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
 			if (!worldIn.isRemote) {
-				TileEntity te = worldIn.getTileEntity(pos.down(2));
+				TileEntity te = worldIn.getTileEntity(pos);
 				if (te == null) {
 					worldIn.destroyBlock(pos, true);
 					super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 					return;
 				}
-				if (!(te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom)) {
+				if (!(te instanceof TileEntityArchiveBottom)) {
 					worldIn.destroyBlock(pos, true);
 					super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 					return;
 				}
 				boolean flag = false;
-				if (worldIn.getBlockState(pos.down()).getBlock() != BlockArchiveSorterBottomFiller.block) {
+				if (worldIn.getBlockState(pos.up()).getBlock() != BlockArchiveSorterBottomFiller.block) {
 					flag = true;
 				}
-				switch (((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).filingCategory) {
+				switch (((TileEntityArchiveBottom) te).filingCategory) {
 					case 0:
 					default:
-						if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY())).getBlock() != BlockArchiveSorterTopFiller.block) {
+						if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY())).getBlock() != this) {
 							flag = true;
 						}
 						break;
@@ -201,8 +206,18 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 					case 1:
 					case 2:
 					case 3:
+						if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY())).getBlock() != this) {
+							flag = true;
+						}
+						if (worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite().rotateY())).getBlock() != this) {
+							flag = true;
+						}
+						break;
+
 					case 4:
-						flag = true;
+						if (worldIn.getBlockState(pos.offset(state.getValue(FACING).getOpposite().rotateY())).getBlock() != this) {
+							flag = true;
+						}
 						break;
 
 				}
@@ -216,25 +231,101 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntityArchiveSorterTop extends TileEntityLockableLoot implements ITickable, ISidedInventory {
+	public static class TileEntityArchiveBottom extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
-		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(14, ItemStack.EMPTY);
-		public boolean stackPrecambrian;
-		public boolean stackCambrian;
-		public boolean stackOrdovician;
-		public boolean stackSilurian;
-		public boolean stackDevonian;
-		public boolean stackCarboniferous;
-		public boolean stackPermian;
-		public boolean stackTriassic;
-		public boolean stackJurassic;
-		public boolean stackCretaceous;
-		public boolean stackPaleogene;
-		public boolean stackNeogene;
-		public boolean stackPleistocene;
-		public boolean stackOther;
+		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(256, ItemStack.EMPTY);
+		protected int filingCategory;
+		protected boolean locked;
 
 		private int transferCooldown = -1;
+
+		public void searchResults(String str) {
+			resetStacks();
+			if (str.trim().equalsIgnoreCase("")) {
+				return;
+			}
+			else {
+				//Move slots 1-9 to the spare holding slots at the end (indices 247-255):
+				for (int n = 0; n < 9; n++) {
+					this.setInventorySlotContents(247 + n, this.getStackInSlot(n));
+					this.setInventorySlotContents(n, ItemStack.EMPTY);
+ 				}
+				//Get the matches for the search:
+				int i = 0;
+				int n = 0;
+				for (ItemStack itemstack : this.stacks) {
+					if (n >= 9) {
+						break;
+					}
+					if (!itemstack.isEmpty() && n < 9) {
+						if (str.contains(" ")) {
+							//wildcard has been used:
+							String[] searchList = str.split(" ");
+							boolean notfound = false;
+							for (String strMember : searchList) {
+								if (!strMember.trim().equalsIgnoreCase("")) {
+									if (!itemstack.getDisplayName().toUpperCase().contains(strMember.trim().toUpperCase())) {
+										notfound = true;
+										break;
+									}
+								}
+							}
+							if (!notfound) {
+								this.setInventorySlotContents(n, itemstack);
+								this.stacks.set(i, ItemStack.EMPTY);
+								n++;
+							}
+						}
+						else if (itemstack.getDisplayName().toUpperCase().contains(str.trim().toUpperCase())) {
+							this.setInventorySlotContents(n, itemstack);
+							this.stacks.set(i, ItemStack.EMPTY);
+							n++;
+						}
+					}
+					i++;
+				}
+			}
+		}
+
+		public String stackName(ItemStack stack) {
+			if (stack.isEmpty()) {
+				return "zzzzzzzzzzzz";
+			}
+			return stack.getDisplayName().toUpperCase();
+		}
+
+		public void resetStacks() {
+			//Sort all stacks from slots 0 to 246 and alphabetically
+			Collections.sort(this.stacks, new Comparator<ItemStack>() {
+				@Override
+				public int compare(ItemStack o1, ItemStack o2) {
+					return stackName(o1).compareTo(stackName(o2));
+				}
+			});
+		}
+
+		public void setLocked(boolean val) {
+			this.locked = val;
+			resetStacks();
+			if (val) {
+				world.playSound(null, pos, BlockSounds.OPEN_DRAWER, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else {
+				world.playSound(null, pos, BlockSounds.CLOSE_DRAWER, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+		}
+
+		public boolean getLocked() {
+			return this.locked;
+		}
+
+		public void setCategory(int type) {
+			this.filingCategory = type;
+		}
+
+		public int getCategory() {
+			return this.filingCategory;
+		}
 
 		private boolean isFull()
 		{
@@ -254,7 +345,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			return worldIn.<EntityItem>getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(p_184292_1_ - 0.5D, p_184292_3_, p_184292_5_ - 0.5D, p_184292_1_ + 0.5D, p_184292_3_ + 1.5D, p_184292_5_ + 0.5D), EntitySelectors.IS_ALIVE);
 		}
 
-		public static boolean putDropInInventoryAllSlots(World worldIn, IInventory source, IInventory destination, EntityItem entity)
+		public static boolean putDropInInventoryAllSlots(IInventory source, IInventory destination, EntityItem entity)
 		{
 			boolean flag = false;
 
@@ -265,7 +356,6 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			else
 			{
 				ItemStack itemstack = entity.getItem().copy();
-				tagFossilFully(worldIn, itemstack);
 				ItemStack itemstack1 = putStackInInventoryAllSlots(source, destination, itemstack, (EnumFacing)null);
 
 				if (itemstack1.isEmpty())
@@ -297,6 +387,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
 		{
+
 			if (!inventoryIn.isItemValidForSlot(index, stack))
 			{
 				return false;
@@ -427,8 +518,6 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			if (!itemstack.isEmpty() && canExtractItemFromSlot(inventoryIn, itemstack, index, direction))
 			{
 				ItemStack itemstack1 = itemstack.copy();
-				tagFossilFully(world, itemstack1);
-
 				ItemStack itemstack2 = putStackInInventoryAllSlots(inventoryIn, inventoryIn.decrStackSize(index, 1), (EnumFacing)null);
 
 				if (itemstack2.isEmpty())
@@ -443,31 +532,11 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
-		public static void tagFossilFully(World worldIn, ItemStack stack) {
-			if (stack.hasTagCompound()) {
-				if (stack.getTagCompound().hasKey("mobtype")) {
-					return;
-				}
-				if (stack.getTagCompound().hasKey("PFMob")) {
-					NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
-					ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
-					String id_dna = resourcelocation.toString();
-					if (id_dna.indexOf("@") > 0) {
-						id_dna = id_dna.substring(0, id_dna.indexOf("@"));
-					}
-					boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, id_dna);
-					if (isArthropod) {
-						stack.getTagCompound().setString("mobtype", "invertebrate");
-					} else {
-						stack.getTagCompound().setString("mobtype", "vertebrate");
-					}
-				}
-			}
-		}
-
 		public boolean pullItems() {
 
-			IInventory iinventory = TileEntityHopper.getInventoryAtPosition(this.getWorld(), pos.getX(), pos.getY() + 1.0D, pos.getZ());
+			//Get the main tile entity with the inventory:
+			EnumFacing facing = world.getBlockState(pos).getValue(BlockArchiveSorterBottom.BlockCustom.FACING).rotateY().getOpposite();
+			IInventory iinventory = TileEntityHopper.getInventoryAtPosition(this.getWorld(), pos.offset(facing, this.getCategory()).getX(), pos.offset(facing, this.getCategory()).getY() + 2.0D, pos.offset(facing, this.getCategory()).getZ());
 
 			if (iinventory != null)
 			{
@@ -504,13 +573,6 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 					}
 				}
 			}
-			else {
-				for (EntityItem entityitem : getCaptureItems(this.getWorld(), pos.getX(), pos.getY(), pos.getZ())) {
-					if (putDropInInventoryAllSlots(world, (IInventory) null, this, entityitem)) {
-						return true;
-					}
-				}
-			}
 			return false;
 		}
 
@@ -538,6 +600,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 		}
 
 		protected void updateHopper() {
+
 			if (this.getWorld().isRemote) {
 				return;
 			}
@@ -565,7 +628,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getSizeInventory() {
-			return 14;
+			return 256;
 		}
 
 		@Override
@@ -576,47 +639,44 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			return true;
 		}
 
-		public static int periodTag(ItemStack stack) {
-			if (stack.getTagCompound() != null) {
-				if (stack.getTagCompound().hasKey("period")) {
-					return stack.getTagCompound().getInteger("period");
+		public int countSlots() {
+			int fullSlots = 0;
+			for (ItemStack itemstack : this.stacks) {
+					if (!itemstack.isEmpty()) {
+					fullSlots ++;
 				}
 			}
-			return 0;
+			return fullSlots;
 		}
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
-			if (index == 0 && stackPrecambrian)
-				return periodTag(stack) == 1;
-			if (index == 1 && stackCambrian)
-				return periodTag(stack) == 2;
-			if (index == 2 && stackOrdovician)
-				return periodTag(stack) == 3;
-			if (index == 3 && stackSilurian)
-				return periodTag(stack) == 4;
-			if (index == 4 && stackDevonian)
-				return periodTag(stack) == 5;
-			if (index == 5 && stackCarboniferous)
-				return periodTag(stack) == 6;
-			if (index == 6 && stackPermian)
-				return periodTag(stack) == 7;
-			if (index == 7 && stackTriassic)
-				return periodTag(stack) == 8;
-			if (index == 8 && stackJurassic)
-				return periodTag(stack) == 9;
-			if (index == 9 && stackCretaceous)
-				return periodTag(stack) == 10;
-			if (index == 10 && stackPaleogene)
-				return periodTag(stack) == 11;
-			if (index == 11 && stackNeogene)
-				return periodTag(stack) == 12;
-			if (index == 12 && stackPleistocene)
-				return periodTag(stack) == 13;
-			if (index == 13 && stackOther)
-				return periodTag(stack) == 0;
+			if (this.getLocked()) {
+				return false;
+			}
+			if (index >= 247) {
+				return false; //these last 9 slots are for holding stuff for GUI purposes only
+			}
 
-			return false;
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PFMob")) {
+					if (stack.getTagCompound().hasKey("mobtype")) {
+						if (stack.getTagCompound().getString("mobtype").equalsIgnoreCase("vertebrate")) {
+							return this.getCategory() == 0;
+						}
+						else if (stack.getTagCompound().getString("mobtype").equalsIgnoreCase("invertebrate")) {
+							return this.getCategory() == 1;
+						}
+					}
+				}
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					return this.getCategory() == 2;
+				}
+				else if (stack.getTagCompound().hasKey("PFPlant")) {
+					return this.getCategory() == 3;
+				}
+			}
+			return this.getCategory() == 4;
 		}
 
 		@Override
@@ -626,17 +686,17 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public String getName() {
-			return "container.archive_sorter_top";
+			return "container.archive_sorter_bottom";
 		}
 
 		@Override
 		public String getGuiID() {
-			return "lepidodendron:gui_archive_sorter_top";
+			return "lepidodendron:gui_archive_sorter_bottom";
 		}
 
 		@Override
 		public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-			return new GUIArchiveSorterTop.GUILepidodendronArchiveSorterTop(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
+			return new GUIArchiveSorterBottom.GUILepidodendronArchiveSorterBottom(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
 		}
 
 		@Override
@@ -652,47 +712,8 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 				ItemStackHelper.loadAllItems(compound, this.stacks);
 			}
 			this.transferCooldown = compound.getInteger("TransferCooldown");
-			if (compound.hasKey("stackPrecambrian")) {
-				this.stackPrecambrian = compound.getBoolean("stackPrecambrian");
-			}
-			if (compound.hasKey("stackCambrian")) {
-				this.stackCambrian = compound.getBoolean("stackCambrian");
-			}
-			if (compound.hasKey("stackOrdovician")) {
-				this.stackOrdovician = compound.getBoolean("stackOrdovician");
-			}
-			if (compound.hasKey("stackSilurian")) {
-				this.stackSilurian = compound.getBoolean("stackSilurian");
-			}
-			if (compound.hasKey("stackDevonian")) {
-				this.stackDevonian = compound.getBoolean("stackDevonian");
-			}
-			if (compound.hasKey("stackCarboniferous")) {
-				this.stackCarboniferous = compound.getBoolean("stackCarboniferous");
-			}
-			if (compound.hasKey("stackPermian")) {
-				this.stackPermian = compound.getBoolean("stackPermian");
-			}
-			if (compound.hasKey("stackTriassic")) {
-				this.stackTriassic = compound.getBoolean("stackTriassic");
-			}
-			if (compound.hasKey("stackJurassic")) {
-				this.stackJurassic = compound.getBoolean("stackJurassic");
-			}
-			if (compound.hasKey("stackCretaceous")) {
-				this.stackCretaceous = compound.getBoolean("stackCretaceous");
-			}
-			if (compound.hasKey("stackPaleogene")) {
-				this.stackPaleogene = compound.getBoolean("stackPaleogene");
-			}
-			if (compound.hasKey("stackNeogene")) {
-				this.stackNeogene = compound.getBoolean("stackNeogene");
-			}
-			if (compound.hasKey("stackPleistocene")) {
-				this.stackPleistocene = compound.getBoolean("stackPleistocene");
-			}
-			if (compound.hasKey("stackOther")) {
-				this.stackOther = compound.getBoolean("stackOther");
+			if (compound.hasKey("filingCategory")) {
+				this.filingCategory = compound.getInteger("filingCategory");
 			}
 		}
 
@@ -703,20 +724,7 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 				ItemStackHelper.saveAllItems(compound, this.stacks);
 			}
 			compound.setInteger("TransferCooldown", this.transferCooldown);
-			compound.setBoolean("stackPrecambrian", this.stackPrecambrian);
-			compound.setBoolean("stackCambrian", this.stackCambrian);
-			compound.setBoolean("stackOrdovician", this.stackOrdovician);
-			compound.setBoolean("stackSilurian", this.stackSilurian);
-			compound.setBoolean("stackDevonian", this.stackDevonian);
-			compound.setBoolean("stackCarboniferous", this.stackCarboniferous);
-			compound.setBoolean("stackPermian", this.stackPermian);
-			compound.setBoolean("stackTriassic", this.stackTriassic);
-			compound.setBoolean("stackJurassic", this.stackJurassic);
-			compound.setBoolean("stackCretaceous", this.stackCretaceous);
-			compound.setBoolean("stackPaleogene", this.stackPaleogene);
-			compound.setBoolean("stackNeogene", this.stackNeogene);
-			compound.setBoolean("stackPleistocene", this.stackPleistocene);
-			compound.setBoolean("stackOther", this.stackOther);
+			compound.setInteger("filingCategory", this.filingCategory);
 			return compound;
 		}
 
@@ -749,21 +757,39 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public int[] getSlotsForFace(EnumFacing side) {
 			return new int[] {
-					0,1,2,3,4,5,6,7,8,9,10,11,12,13
+					0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
+					16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
+					32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,
+					48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,
+					64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,
+					80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,
+					96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,
+					112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,
+					128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,
+					144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,
+					160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,
+					176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,
+					192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,
+					208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
+					224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
+					240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255
 			};
-			}
+		}
 
 		@Override
 		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+			if (this.getLocked()) {
+				return false;
+			}
 			return this.isItemValidForSlot(index, itemStackIn);
 		}
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-			if (direction == EnumFacing.DOWN) {
-				return true;
+			if (this.getLocked()) {
+				return false;
 			}
-			return false;
+			return true;
 		}
 
 		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);

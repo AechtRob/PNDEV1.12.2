@@ -240,7 +240,7 @@ public class BlockSynchysidendronStrobilus extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public Block planted() {
-			return BlockSapling.block;
+			return BlockSynchysidendronSapling.block;
 		}
 
 		@Override

@@ -2524,6 +2524,7 @@ public class LepidodendronMod {
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
+	public static final int GUI_ARCHIVE_SORTER_BOTTOM_ID = 1017;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -2568,6 +2569,9 @@ public class LepidodendronMod {
 		elements.addNetworkMessage(GUITrapWater.GUIButtonPressedMessageHandler.class, GUITrapWater.GUIButtonPressedMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUITrapWater.GUISlotChangedMessageHandler.class, GUITrapWater.GUISlotChangedMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUIArchiveSorterTop.GUIArchiveSorterTopMessageHandler.class, GUIArchiveSorterTop.GUIArchiveSorterTopMessage.class, Side.SERVER);
+		elements.addNetworkMessage(GUIArchiveSorterBottom.GUIArchiveSorterLockMessageHandler.class, GUIArchiveSorterBottom.GUIArchiveSorterLockMessage.class, Side.SERVER);
+		elements.addNetworkMessage(GUIArchiveSorterBottom.GUIArchiveSorterSearchMessageHandler.class, GUIArchiveSorterBottom.GUIArchiveSorterSearchMessage.class, Side.SERVER);
+		elements.addNetworkMessage(GUIMicroscope.GUIMicroscopeTagSelectMessageHandler.class, GUIMicroscope.GUIMicroscopeTagSelectMessage.class, Side.SERVER);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));
 		EntityRegistries.registerEntities();

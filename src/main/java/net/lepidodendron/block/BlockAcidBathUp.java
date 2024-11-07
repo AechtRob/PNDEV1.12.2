@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.gui.GUIAcidBath;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.AcidBathOutputJunk;
@@ -854,7 +851,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		private static ItemStack getMobStack(ItemStack stack) {
+		private static ItemStack getMobStack(World worldIn, ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
 			if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
@@ -872,6 +869,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 1);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(2);
@@ -888,6 +894,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 2);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(3);
@@ -904,6 +919,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 3);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(4);
@@ -920,6 +944,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 4);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(5);
@@ -936,6 +969,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 5);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(6);
@@ -952,6 +994,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 6);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(7);
@@ -968,6 +1019,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 7);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(8);
@@ -984,6 +1044,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 8);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(9);
@@ -1000,6 +1069,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 9);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(10);
@@ -1016,6 +1094,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 10);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(11);
@@ -1032,6 +1119,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 11);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(12);
@@ -1048,6 +1144,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 12);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
 				resLoc = AcidBathOutputMobs.resLocMobs(13);
@@ -1064,6 +1169,15 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				stackNBT.setTag("PFMob", entityNBT);
 				finalItem.setTagCompound(stackNBT);
 				finalItem.getTagCompound().setInteger("period", 13);
+				if (resLoc.indexOf("@") > 0) {
+					resLoc = resLoc.substring(0, resLoc.indexOf("@"));
+				}
+				boolean isArthropod = LepidodendronRecipeFossils.isArthropod(worldIn, resLoc);
+				if (isArthropod) {
+					finalItem.getTagCompound().setString("mobtype", "invertebrate");
+				} else {
+					finalItem.getTagCompound().setString("mobtype", "vertebrate");
+				}
 				return finalItem;
 			}
 			return null;
@@ -1305,7 +1419,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				if (stack.getTagCompound().hasKey("PFPlant")) {
 					return getPlantStack(stack);
 				} else if (stack.getTagCompound().hasKey("PFMob")) {
-					return getMobStack(stack);
+					return getMobStack(world, stack);
 				} else if (stack.getTagCompound().hasKey("PFStatic")) {
 					return getStaticsStack(stack);
 				}
@@ -1321,7 +1435,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					if (finalItem != null && !finalItem.isEmpty()) {
 						return finalItem;
 					} else {
-						finalItem = getMobStack(stack);
+						finalItem = getMobStack(world, stack);
 						if (finalItem != null && !finalItem.isEmpty()) {
 							return finalItem;
 						} else {
@@ -1330,7 +1444,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					}
 				}
 			} else if (Math.random() > 0.4) { //Mobs:
-				finalItem = getMobStack(stack);
+				finalItem = getMobStack(world, stack);
 				if (finalItem != null && !finalItem.isEmpty()) {
 					return finalItem;
 				} else {

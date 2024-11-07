@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNAForge;
 import net.lepidodendron.item.ItemDNARecombiner;
@@ -439,7 +436,12 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				if (stack.getItem() == ItemPhialDNA.block) {
 					String resourcelocation = null;
 					int type = 0;
+					String mobtype = "";
+					int period = BlockArchiveSorterTop.TileEntityArchiveSorterTop.periodTag(stack);
 					if (stack.hasTagCompound()) {
+						if (stack.getTagCompound().hasKey("mobtype")) {
+							mobtype = stack.getTagCompound().getString("mobtype");
+						}
 						if (stack.getTagCompound().hasKey("PFPlant")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 							resourcelocation = (blockNBT.getString("id"));
@@ -469,6 +471,21 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 								NBTTagCompound stackNBT = new NBTTagCompound();
 								stackNBT.setTag("PFMob", mobNBT);
 								stackOutput.setTagCompound(stackNBT);
+								if (mobtype.equalsIgnoreCase("vertebrate")
+									|| mobtype.equalsIgnoreCase("invertebrate")) {
+									stackOutput.getTagCompound().setString("mobtype", mobtype);
+								}
+								else {
+									if (resourcelocation.indexOf("@") > 0) {
+										resourcelocation = resourcelocation.substring(0, resourcelocation.indexOf("@"));
+									}
+									boolean isArthropod = LepidodendronRecipeFossils.isArthropod(world, resourcelocation);
+									if (isArthropod) {
+										stackOutput.getTagCompound().setString("mobtype", "invertebrate");
+									} else {
+										stackOutput.getTagCompound().setString("mobtype", "vertebrate");
+									}
+								}
 							}
 							if (type == 2) {
 								NBTTagCompound staticNBT = new NBTTagCompound();
@@ -476,6 +493,9 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 								NBTTagCompound stackNBT = new NBTTagCompound();
 								stackNBT.setTag("PFStatic", staticNBT);
 								stackOutput.setTagCompound(stackNBT);
+							}
+							if (period != 0) {
+								stackOutput.getTagCompound().setInteger("period", period);
 							}
 							if (this.getStackInSlot(3).isEmpty()) {
 								this.setInventorySlotContents(3, stackOutput);

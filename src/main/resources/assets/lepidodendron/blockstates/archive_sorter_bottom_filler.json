@@ -1,0 +1,44 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north", "open": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_closed_top" }
+      ]
+    },
+    {   "when": { "facing": "south", "open": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_closed_top", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east", "open": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_closed_top", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west", "open": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_closed_top", "y": 270}
+      ]
+    },
+    {   "when": { "facing": "north", "open": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_open_top" }
+      ]
+    },
+    {   "when": { "facing": "south", "open": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_open_top", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east", "open": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_open_top", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west", "open": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_drawers_open_top", "y": 270}
+      ]
+    }
+  ]
+}

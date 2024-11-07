@@ -49,7 +49,7 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 13);
+            this.internal = new InventoryBasic("", true, 14);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
@@ -131,15 +131,21 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
                     return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackPleistocene && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(12, stack);
                 }
             }));
+            this.customSlots.put(13, this.addSlotToContainer(new Slot(internal, 13, 189, 156) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
+                    return ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).stackOther && ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) ent).isItemValidForSlot(13, stack);
+                }
+            }));
 
 
             int si;
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 - 25 + sj * 18, 0 + 120 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 - 25 + sj * 18, 1 + 120 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 - 25 + si * 18, 0 + 178));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 - 25 + si * 18, 1 + 178));
 
         }
 
@@ -300,7 +306,7 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             this.y = y;
             this.z = z;
             this.entity = entity;
-            this.xSize = 256;
+            this.xSize = 255;
             this.ySize = 239;
         }
         private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/archive_input_gui.png");
@@ -376,6 +382,10 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
                     if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackPleistocene) {
                         this.drawTexturedModalRect(k + 68 + 160, l + 152, 0,240, 18, 8);
                         this.drawTexturedModalRect(k + 69 + 160, l + 161, 21,239, 16, 16);
+                    }
+                    if (((BlockArchiveSorterTop.TileEntityArchiveSorterTop)te).stackOther) {
+                        this.drawTexturedModalRect(k + 68 + 160, l + 183, 0,240, 18, 8);
+                        this.drawTexturedModalRect(k + 69 + 160, l + 192, 21,239, 16, 16);
                     }
                 }
             }
@@ -462,6 +472,11 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
                         && mouseY >= l + 152 && mouseY <= l + 160)
                 {
                     swapStackState(13);
+                }
+                else if (mouseX >= k + 69 + 160 && mouseX <= k + 87 + 160
+                        && mouseY >= l + 183 && mouseY <= l + 191)
+                {
+                    swapStackState(14);
                 }
             }
 
@@ -638,6 +653,18 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
                         LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(13, true, x, y, z));
                         return;
                     }
+
+                case 14:
+                    if (tileEntity.stackOther) {
+                        tileEntity.stackOther = false;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(14, false, x, y, z));
+                        return;
+                    }
+                    if (!tileEntity.stackOther) {
+                        tileEntity.stackOther = true;
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterTop.GUIArchiveSorterTopMessage(14, true, x, y, z));
+                        return;
+                    }
                     
             }
         }
@@ -651,10 +678,10 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
             this.fontRenderer.drawString("Archive Sorting Chamber", 35, -26, 4210752);
             this.fontRenderer.drawString("Inventory", -26, 110, 4210752);
-            this.fontRenderer.drawString("Slots can", 145, 156, 4210752);
-            this.fontRenderer.drawString("be locked", 145, 164, 4210752);
-            this.fontRenderer.drawString("or unlocked", 145, 172, 4210752);
-            this.fontRenderer.drawString("for use", 145, 180, 4210752);
+//            this.fontRenderer.drawString("Slots can", 145, 156, 4210752);
+//            this.fontRenderer.drawString("be locked", 145, 164, 4210752);
+//            this.fontRenderer.drawString("or unlocked", 145, 172, 4210752);
+//            this.fontRenderer.drawString("for use", 145, 180, 4210752);
 
             this.fontRenderer.drawString("Pre-", 2, 0, 4210752);
             this.fontRenderer.drawString("cambrian", -18, 8, 4210752);
@@ -674,6 +701,7 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
             this.fontRenderer.drawString("Neogene", 143, 96, 4210752);
             this.fontRenderer.drawString("Pleisto-", 147, 123, 4210752);
             this.fontRenderer.drawString("cene", 161, 131, 4210752);
+            this.fontRenderer.drawString("OTHER", 143, 158, 4210752);
         }
 
         @Override
@@ -899,6 +927,12 @@ public class GUIArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 
                         case 13:
                             ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackPleistocene = message.value;
+                            te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                            te.markDirty();
+                            break;
+
+                        case 14:
+                            ((BlockArchiveSorterTop.TileEntityArchiveSorterTop) te).stackOther = message.value;
                             te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
                             te.markDirty();
                             break;

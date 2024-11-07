@@ -1,0 +1,44 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north", "end": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top" }
+      ]
+    },
+    {   "when": { "facing": "south", "end": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east", "end": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west", "end": "false" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top", "y": 270}
+      ]
+    },
+    {   "when": { "facing": "north", "end": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_end" }
+      ]
+    },
+    {   "when": { "facing": "south", "end": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_end", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east", "end": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_end", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west", "end": "true" },
+      "apply": [
+        {"model": "lepidodendron:archive_sorter_top_end", "y": 270}
+      ]
+    }
+  ]
+}

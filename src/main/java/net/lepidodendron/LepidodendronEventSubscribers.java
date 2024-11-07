@@ -739,7 +739,6 @@ public class LepidodendronEventSubscribers {
 				//Let small angiosperm seeds drop sometimes:
 				if (!event.getPlayer().isCreative()
 						&& (event.getState().getMaterial() == Material.GROUND ||  event.getState().getMaterial() == Material.GRASS)
-						&& event.getWorld().rand.nextInt(50) == 0
 						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousEarly
 							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCretaceousLate
 							|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPaleogene
@@ -748,9 +747,25 @@ public class LepidodendronEventSubscribers {
 							|| event.getWorld().provider.getDimension() == 0
 						)
 				) {
-					EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(ItemSmallAngiospermSeeds.block, 1));
-					entityToSpawn.setPickupDelay(10);
-					event.getWorld().spawnEntity(entityToSpawn);
+					int r = LepidodendronConfig.dropSeeds;
+					if (r < 0) {
+						r = 0;
+					}
+					if (r > 10000) {
+						r = 10000;
+					}
+					if (r > 0) {
+						if (r == 1) {
+							EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(ItemSmallAngiospermSeeds.block, 1));
+							entityToSpawn.setPickupDelay(10);
+							event.getWorld().spawnEntity(entityToSpawn);
+						}
+						else if (event.getWorld().rand.nextInt(r) == 0) {
+							EntityItem entityToSpawn = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(ItemSmallAngiospermSeeds.block, 1));
+							entityToSpawn.setPickupDelay(10);
+							event.getWorld().spawnEntity(entityToSpawn);
+						}
+					}
 				}
 			}
 		}
@@ -1320,11 +1335,15 @@ public class LepidodendronEventSubscribers {
 			tt.add("Time Research x2");
 			tt.add(TextFormatting.GRAY + "Pleistocene");
 		}
-		if (event.getItemStack().getItem() == ItemFossilClean.block) {
+		if (event.getItemStack().getItem() == ItemFossilClean.block
+				|| event.getItemStack().getItem() == ItemPhialDNA.block
+				|| event.getItemStack().getItem() == ItemPlaceableLiving.block) {
 			if (event.getItemStack().hasTagCompound()) {
 				if (event.getItemStack().getTagCompound().hasKey("period")) {
 					List<String> tt = event.getToolTip();
-					tt.add("Time Research x5");
+					if (event.getItemStack().getItem() == ItemFossilClean.block) {
+						tt.add("Time Research x5");
+					}
 					int period = event.getItemStack().getTagCompound().getInteger("period");
 					switch (period) {
 						case 1: default:

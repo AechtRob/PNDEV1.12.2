@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFMob":{"id":"minecraft:pig"}}
+ "nbt": {"PFMob":{"id":"minecraft:pig"}, "mobtype":"vertebrate"}
  }
 }
