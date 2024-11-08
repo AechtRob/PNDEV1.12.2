@@ -65,8 +65,8 @@ public class BlockArchiveSorterBottomFiller extends ElementsLepidodendronMod.Mod
 			super(Material.WOOD);
 			setTranslationKey("pf_archive_sorter_bottom_filler");
 			setSoundType(SoundType.WOOD);
-			setHardness(5F);
-			setResistance(12F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(255);
 			setCreativeTab(null);
@@ -139,6 +139,8 @@ public class BlockArchiveSorterBottomFiller extends ElementsLepidodendronMod.Mod
 						entity.sendMessage(new TextComponentString("Sorry, someone else is currently using the inventory here!"));
 					}
 					else if (entity instanceof EntityPlayer) {
+						((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).strSearchTile = "";
+						((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).resetStacks();
 						((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIArchiveSorterBottom.GUIID, world, pos.getX(), pos.getY() - 1, pos.getZ());
 					}
 				}

@@ -1,6 +1,7 @@
 
 package net.lepidodendron.block;
 
+import com.google.common.collect.Lists;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
@@ -83,8 +84,8 @@ public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElemen
 			super();
 			setTranslationKey("pf_archive_sorter_bottom");
 			setSoundType(SoundType.WOOD);
-			setHardness(5F);
-			setResistance(12F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(255);
 			setCreativeTab(null);
@@ -157,6 +158,8 @@ public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElemen
 						entity.sendMessage(new TextComponentString("Sorry, someone else is currently using the inventory here!"));
 					}
 					else if (entity instanceof EntityPlayer) {
+						((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).strSearchTile = "";
+						((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).resetStacks();
 						((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIArchiveSorterBottom.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
 					}
 				}
@@ -236,8 +239,18 @@ public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElemen
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(256, ItemStack.EMPTY);
 		protected int filingCategory;
 		protected boolean locked;
+		protected boolean inGUI;
+		public String strSearchTile = "";
 
 		private int transferCooldown = -1;
+
+		public boolean isInGui() {
+			return this.inGUI;
+		}
+
+		public void setInGui(boolean val) {
+			this.inGUI = val;
+		}
 
 		public void searchResults(String str) {
 			resetStacks();
@@ -338,6 +351,22 @@ public class BlockArchiveSorterBottom extends ElementsLepidodendronMod.ModElemen
 			}
 
 			return true;
+		}
+
+		public List<String> getInventoryAll()
+		{
+			List<String> inventoryAll = Lists.<String>newArrayList();
+			for (ItemStack itemstack : this.stacks)
+			{
+				if (!itemstack.isEmpty())
+				{
+					if (!inventoryAll.contains(itemstack.getDisplayName())) {
+						inventoryAll.add(itemstack.getDisplayName());
+					}
+				}
+			}
+
+			return inventoryAll;
 		}
 
 		public static List<EntityItem> getCaptureItems(World worldIn, double p_184292_1_, double p_184292_3_, double p_184292_5_)

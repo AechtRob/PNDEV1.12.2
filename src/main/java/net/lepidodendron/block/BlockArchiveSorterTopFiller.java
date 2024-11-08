@@ -64,8 +64,8 @@ public class BlockArchiveSorterTopFiller extends ElementsLepidodendronMod.ModEle
 			super(Material.WOOD);
 			setTranslationKey("pf_archive_sorter_top_filler");
 			setSoundType(SoundType.WOOD);
-			setHardness(5F);
-			setResistance(12F);
+			setHardness(10F);
+			setResistance(1200F);
 			setLightLevel(0F);
 			setLightOpacity(255);
 			setCreativeTab(null);

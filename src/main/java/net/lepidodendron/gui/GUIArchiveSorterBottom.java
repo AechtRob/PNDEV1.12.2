@@ -3,6 +3,7 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockArchiveSorterBottom;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -40,9 +41,9 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
 
     public static class GUILepidodendronArchiveSorterBottom extends Container implements Supplier<Map<Integer, Slot>> {
         private IInventory internal;
-        private World world;
+        public static World world;
         private EntityPlayer entity;
-        private int x, y, z;
+        public static int x, y, z;
         private Map<Integer, Slot> customSlots = new HashMap<>();
         public GUILepidodendronArchiveSorterBottom(World world, int x, int y, int z, EntityPlayer player) {
             this.world = world;
@@ -341,7 +342,7 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
         private World world;
         private int x, y, z;
         private EntityPlayer entity;
-        private GuiTextField searchField;
+        public static GuiTextField searchField;
         public GuiWindow(World world, int x, int y, int z, EntityPlayer entity) {
             super(new GUILepidodendronArchiveSorterBottom(world, x, y, z, entity));
             this.world = world;
@@ -387,11 +388,16 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
 
         @Override
         protected void keyTyped(char typedChar, int keyCode) throws IOException {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
+                ((BlockArchiveSorterBottom.TileEntityArchiveBottom)tileEntity).setInGui(false);
+                LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterInGUIMessage(false, x, y, z));
+            }
             //Code here to do the search and re-sortation appropriately
             if (this.searchField.textboxKeyTyped(typedChar, keyCode))
             {
                 //Re-sort into slots 0-8 for the search results:
-                TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+                tileEntity = world.getTileEntity(new BlockPos(x, y, z));
                 if (tileEntity instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
                     ((BlockArchiveSorterBottom.TileEntityArchiveBottom)tileEntity).searchResults(this.searchField.getText());
                 }
@@ -451,9 +457,12 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
                 return;
             }
             if ((te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom)) {
-                ((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).setLocked(false);
+                if (!((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).isInGui()) {
+                    ((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).setLocked(false);
+                    LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterLockMessage(false, x, y, z));
+                }
             }
-            LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterLockMessage(false, x, y, z));
+
         }
 
         @Override
@@ -469,24 +478,47 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
             this.searchField.setDisabledTextColour(-1);
             this.searchField.setEnableBackgroundDrawing(false);
             this.searchField.setMaxStringLength(26);
-            this.searchField.setText("");
             this.searchField.setFocused(true);
             Keyboard.enableRepeatEvents(true);
             this.buttonList.clear();
+            this.buttonList.add(new GUIArchiveSorterBottom.GuiButtonSearch(0, this.width / 2 + 63, this.guiTop + 31));
             TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
             if (te == null) {
                 return;
             }
             if ((te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom)) {
-                ((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).setLocked(true);
+                if (!((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).isInGui()) {
+                    this.searchField.setText("");
+                    ((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).setLocked(true);
+                    LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterLockMessage(true, x, y, z));
+                    if (((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile != null && !((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile.equalsIgnoreCase("")) {
+                        this.searchField.setText(((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile);
+                        ((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).searchResults(this.searchField.getText());
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterSearchMessage(this.searchField.getText(), x, y, z));
+                    }
+                }
+                else if (((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile != null && !((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile.equalsIgnoreCase("")) {
+                    this.searchField.setText(((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile);
+                    ((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).searchResults(this.searchField.getText());
+                    LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterSearchMessage(this.searchField.getText(), x, y, z));
+                }
             }
-            LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterLockMessage(true, x, y, z));
-
         }
 
         @Override
         protected void actionPerformed(GuiButton button) {
             LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIButtonPressedMessage(button.id, x, y, z));
+            if (button.id == 0)
+            {
+                TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+                if (tileEntity != null) {
+                    if (tileEntity instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
+                        ((BlockArchiveSorterBottom.TileEntityArchiveBottom) tileEntity).setInGui(true);
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterInGUIMessage(true, x, y, z));
+                        this.mc.displayGuiScreen(new GUIArchiveSorterBottomSelector(this,  (BlockArchiveSorterBottom.TileEntityArchiveBottom) tileEntity));
+                    }
+                }
+            }
             handleButtonAction(entity, button.id, x, y, z);
         }
 
@@ -606,6 +638,53 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
             return;
     }
 
+    public static class ArchiveSorterInGUIMessageHandler implements IMessageHandler<GUIArchiveSorterBottom.GUIArchiveSorterInGUIMessage, IMessage> {
+        @Override
+        public IMessage onMessage(GUIArchiveSorterBottom.GUIArchiveSorterInGUIMessage message, MessageContext context) {
+
+            EntityPlayerMP entity = context.getServerHandler().player;
+            TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
+            if (te != null) {
+                if (te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
+                    ((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).setInGui(message.value);
+                    te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                    te.markDirty();
+                }
+            }
+            return null;
+        }
+    }
+
+    public static class GUIArchiveSorterInGUIMessage implements IMessage {
+        boolean value;
+        int x, y, z;
+        public GUIArchiveSorterInGUIMessage() {
+        }
+
+        public GUIArchiveSorterInGUIMessage(boolean value, int x, int y, int z) {
+            this.value = value;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        @Override
+        public void toBytes(io.netty.buffer.ByteBuf buf) {
+            buf.writeBoolean(value);
+            buf.writeInt(x);
+            buf.writeInt(y);
+            buf.writeInt(z);
+        }
+
+        @Override
+        public void fromBytes(io.netty.buffer.ByteBuf buf) {
+            value = buf.readBoolean();
+            x = buf.readInt();
+            y = buf.readInt();
+            z = buf.readInt();
+        }
+    }
+
     public static class GUIArchiveSorterLockMessageHandler implements IMessageHandler<GUIArchiveSorterBottom.GUIArchiveSorterLockMessage, IMessage> {
         @Override
         public IMessage onMessage(GUIArchiveSorterBottom.GUIArchiveSorterLockMessage message, MessageContext context) {
@@ -697,6 +776,69 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
             x = buf.readInt();
             y = buf.readInt();
             z = buf.readInt();
+        }
+
+    }
+
+    public static class GUIArchiveSorterSearchStringMessageHandler implements IMessageHandler<GUIArchiveSorterBottom.GUIArchiveSorterSearchStringMessage, IMessage> {
+        @Override
+        public IMessage onMessage(GUIArchiveSorterBottom.GUIArchiveSorterSearchStringMessage message, MessageContext context) {
+
+            EntityPlayerMP entity = context.getServerHandler().player;
+            TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
+            if (te != null) {
+                if (te instanceof BlockArchiveSorterBottom.TileEntityArchiveBottom) {
+                    ((BlockArchiveSorterBottom.TileEntityArchiveBottom) te).strSearchTile = message.str;
+                    te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
+                    te.markDirty();
+                }
+            }
+            return null;
+        }
+    }
+
+    public static class GUIArchiveSorterSearchStringMessage implements IMessage {
+        String str;
+        int x, y, z;
+        public GUIArchiveSorterSearchStringMessage() {
+        }
+
+        public GUIArchiveSorterSearchStringMessage(String str, int x, int y, int z) {
+            this.str = str;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+
+        @Override
+        public void toBytes(io.netty.buffer.ByteBuf buf) {
+            ByteBufUtils.writeUTF8String(buf, str);
+            buf.writeInt(x);
+            buf.writeInt(y);
+            buf.writeInt(z);
+        }
+
+        @Override
+        public void fromBytes(io.netty.buffer.ByteBuf buf) {
+            str = ByteBufUtils.readUTF8String(buf);
+            x = buf.readInt();
+            y = buf.readInt();
+            z = buf.readInt();
+        }
+
+    }
+
+    public static class GuiButtonSearch extends GuiButton {
+        public GuiButtonSearch(int buttonID, int xPos, int yPos) {
+            super(buttonID, xPos, yPos, 16, 16, "");
+        }
+
+        public void drawButton(Minecraft mc, int mouseX, int mouseY, float partialTicks) {
+            if (this.visible) {
+                mc.getTextureManager().bindTexture(GUIArchiveSorterBottom.GuiWindow.texture);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                this.drawTexturedModalRect(this.x, this.y, 177,6, this.width, this.height);
+            }
         }
     }
 
