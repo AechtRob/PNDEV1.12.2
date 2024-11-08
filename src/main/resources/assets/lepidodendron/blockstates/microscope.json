@@ -19,6 +19,27 @@
       "apply": [
         {"model": "lepidodendron:microscope", "y": 270}
       ]
+    },
+
+    {   "when": { "facing": "north", "rf": "true" },
+      "apply": [
+        {"model": "lepidodendron:microscope_rf" }
+      ]
+    },
+    {   "when": { "facing": "south", "rf": "true" },
+      "apply": [
+        {"model": "lepidodendron:microscope_rf", "y": 180  }
+      ]
+    },
+    {   "when": { "facing": "east", "rf": "true" },
+      "apply": [
+        {"model": "lepidodendron:microscope_rf", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west", "rf": "true" },
+      "apply": [
+        {"model": "lepidodendron:microscope_rf", "y": 270}
+      ]
     }
   ]
 }

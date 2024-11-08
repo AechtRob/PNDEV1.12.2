@@ -1,0 +1,34 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:fossil_sorter"
+    },
+    {
+      "type": "minecraft:item_nbt",
+      "item": "patchouli:guide_book",
+      "count": 1,
+      "nbt": {"patchouli:book":"lepidodendron:paleopedia"}
+    },
+    {
+      "item": "lepidodendron:archive_cabinet"
+    },
+    {
+      "item": "lepidodendron:archive_cabinet"
+    },
+    {
+      "item": "lepidodendron:archive_cabinet"
+    },
+    {
+      "item": "lepidodendron:archive_cabinet"
+    },
+    {
+      "item": "lepidodendron:archive_cabinet"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:archive_sorter",
+    "count": 1
+  }
+}

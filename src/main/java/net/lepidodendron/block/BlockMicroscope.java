@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IArchiveInvertebrate;
@@ -19,6 +20,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -46,6 +48,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -83,6 +87,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
 			super(Material.IRON);
@@ -94,6 +99,11 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(RF, LepidodendronConfig.machinesRF);
 		}
 
 		@Override
@@ -162,7 +172,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, RF});
 		}
 
 		@Override
@@ -214,16 +224,23 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityMicroscope extends TileEntityLockableLoot implements ITickable, ISidedInventory {
+	public static class TileEntityMicroscope extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime = 20;
 		protected int periodLock;
+		private int minEnergyNeeded = 600;
 
 		public boolean canStartProcess() {
 
+			if (LepidodendronConfig.machinesRF) {
+				if (!this.hasEnergy(minEnergyNeeded)) {
+					return false;
+				}
+			}
+			
 			if (this.isProcessing) {
 				return false;
 			}
@@ -265,6 +282,31 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
+					BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockMicroscope.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+
 			if (this.inputType(this.getStackInSlot(0)) == 1) {
 				//Analysing raw fossils to get the mob type from them:
 				boolean updated = false;
@@ -276,8 +318,9 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 					updated = true;
 				}
 
-				if (this.isProcessing) {
+				if (this.isProcessing && this.hasEnergy(minEnergyNeeded)) {
 					this.processTick++;
+					this.drainEnergy(80);
 					updated = true;
 				}
 
@@ -519,6 +562,9 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
 			this.periodLock = compound.getInteger("periodLock");
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
@@ -535,6 +581,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			compound.setInteger("periodLock", this.periodLock);
@@ -696,6 +743,114 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 
 			}
 			return super.getCapability(capability, facing);
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
+					BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
+					BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
+		}
+
+		//Energy addin:
+		//-------------
+		protected int energy;
+		protected int capacity = 10000;
+		protected int maxReceive = 1000;
+		protected int maxExtract = 500;
+
+		@Override
+		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockMicroscope.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockMicroscope.BlockCustom.FACING).getOpposite();
+					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
+			}
+			return super.hasCapability(capability, facing);
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate)
+		{
+			if (!canReceive())
+				return 0;
+
+			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
+			if (!simulate) {
+				energy += energyReceived;
+				if (energyReceived > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyReceived;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate)
+		{
+			if (!canExtract())
+				return 0;
+
+			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
+			if (!simulate) {
+				energy -= energyExtracted;
+				if (energyExtracted > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyExtracted;
+		}
+
+		@Override
+		public int getEnergyStored()
+		{
+			return energy;
+		}
+
+		@Override
+		public int getMaxEnergyStored()
+		{
+			return capacity;
+		}
+
+		@Override
+		public boolean canExtract()
+		{
+			return this.maxExtract > 0;
+		}
+
+		@Override
+		public boolean canReceive()
+		{
+			return this.maxReceive > 0;
+		}
+
+		public double getEnergyFraction() {
+			if (this.capacity > 0) {
+				return ((double) this.energy) / ((double) this.capacity);
+			}
+			return 0;
 		}
 
 	}

@@ -1,6 +1,7 @@
 package net.lepidodendron.gui;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockMicroscope;
 import net.lepidodendron.util.Functions;
@@ -29,6 +30,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,7 +64,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
 
             this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 56, -17) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 56, -16) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     if (ent instanceof BlockMicroscope.TileEntityMicroscope) {
@@ -93,7 +95,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 115, -17) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 115, -16) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -109,9 +111,9 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 128 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 129 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 186));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 187));
 
         }
 
@@ -290,6 +292,57 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             this.drawDefaultBackground();
             super.drawScreen(mouseX, mouseY, partialTicks);
             this.renderHoveredToolTip(mouseX, mouseY);
+            if (LepidodendronConfig.machinesRF) {
+                this.renderRF(mouseX, mouseY);
+            }
+        }
+
+        protected void renderRF(int mouseX, int mouseY)
+        {
+            int k = (this.width - this.xSize) / 2;
+            int l = (this.height - this.ySize) / 2;
+
+            if (mouseX >= k + 20 && mouseX <= k + 20 + 18
+                    && mouseY >= l + 51 - 28 && mouseY <= l + 51 - 28 + 26)
+            {
+                DecimalFormat df = new DecimalFormat("###,###,###");
+                this.drawHoveringText(df.format(this.getCurrentRF()) + " / " + df.format(this.getMaxRF()) + " RF", mouseX, mouseY);
+            }
+        }
+
+        private int getCurrentRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
+                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                    return te.getEnergyStored();
+                }
+            }
+            return 0;
+        }
+
+        private int getMaxRF() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
+                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                    return te.getMaxEnergyStored();
+                }
+            }
+            return 0;
+        }
+
+        private int getRFHeight() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
+                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                    //return (int)Math.round(te.progressFraction() * 70D);
+                    double fraction = te.getEnergyFraction();
+                    return (int) Math.round(fraction * 24D);
+                }
+            }
+            return 0;
         }
 
         @Override
@@ -300,6 +353,10 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
+            if (LepidodendronConfig.machinesRF) {
+                this.drawTexturedModalRect(k + 20, l + 51 - 28, 176, 32, 18, 26);
+                this.drawTexturedModalRect(k + 21, l + 52 + (24 - this.getRFHeight()) - 28, 176, 58, 16, this.getRFHeight());
+            }
             //Arrow:
             this.drawTexturedModalRect(k + 79, l + 28 , 176, 14, getProgressBarLength(), 16);
             //Tagging options:

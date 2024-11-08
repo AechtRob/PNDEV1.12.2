@@ -1,0 +1,36 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:archive_drawer"
+    },
+    "1": {
+      "item": "lepidodendron:archive_drawer"
+    },
+    "2": {
+      "item": "lepidodendron:archive_drawer"
+    },
+    "3": {
+      "item": "lepidodendron:archive_drawer"
+    },
+    "4": {
+      "item": "lepidodendron:archive_drawer"
+    },
+    "5": {
+      "item": "lepidodendron:archive_drawer"
+    },
+    "7": {
+      "item": "lepidodendron:lab_bench_hopper"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:archive_cabinet",
+    "count": 1
+  }
+}
