@@ -6,7 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronRecipeFossils;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.gui.GUIArchiveSorterTop;
-import net.lepidodendron.item.ItemArchiveSorter;
+import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.SoundType;
@@ -424,6 +424,33 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 		{
 			ItemStack itemstack = inventoryIn.getStackInSlot(index);
 
+			boolean isAnySlotValid = false;
+			for (int s = 0; s <= this.getSizeInventory() - 1; s++) {
+				if (this.isItemValidForSlot(s, itemstack)) {
+					if (!this.getStackInSlot(s).isEmpty()) {
+						if (this.getStackInSlot(s).getCount() >=
+								this.getStackInSlot(s).getMaxStackSize()) {
+							return false;
+						}
+						ItemStack is1 = this.getStackInSlot(s).copy();
+						is1.setCount(1);
+						ItemStack is2 = itemstack.copy();
+						is2.setCount(1);
+						if (!ItemStack.areItemStacksEqual(is1, is2) ) {
+							return false;
+						}
+						isAnySlotValid = true;
+					}
+					else {
+						isAnySlotValid = true;
+					}
+				}
+			}
+
+			if (!isAnySlotValid) {
+				return false;
+			}
+
 			if (!itemstack.isEmpty() && canExtractItemFromSlot(inventoryIn, itemstack, index, direction))
 			{
 				ItemStack itemstack1 = itemstack.copy();
@@ -581,6 +608,58 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 				if (stack.getTagCompound().hasKey("period")) {
 					return stack.getTagCompound().getInteger("period");
 				}
+			}
+			if (stack.getItem() == ItemFossilPrecambrian.block
+				|| stack.getItem() == Item.getItemFromBlock(BlockFossilPrecambrian.block)) {
+				return 1;
+			}
+			if (stack.getItem() == ItemFossilCambrian.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilCambrian.block)) {
+				return 2;
+			}
+			if (stack.getItem() == ItemFossilOrdovician.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilOrdovician.block)) {
+				return 3;
+			}
+			if (stack.getItem() == ItemFossilSilurian.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilSilurian.block)) {
+				return 4;
+			}
+			if (stack.getItem() == ItemFossilDevonian.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilDevonian.block)) {
+				return 5;
+			}
+			if (stack.getItem() == ItemFossilCarboniferous.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilCarboniferous.block)) {
+				return 6;
+			}
+			if (stack.getItem() == ItemFossilPermian.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilPermian.block)) {
+				return 7;
+			}
+			if (stack.getItem() == ItemFossilTriassic.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilTriassic.block)) {
+				return 8;
+			}
+			if (stack.getItem() == ItemFossilJurassic.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilJurassic.block)) {
+				return 9;
+			}
+			if (stack.getItem() == ItemFossilCretaceous.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilCretaceous.block)) {
+				return 10;
+			}
+			if (stack.getItem() == ItemFossilPaleogene.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilPaleogene.block)) {
+				return 11;
+			}
+			if (stack.getItem() == ItemFossilNeogene.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilNeogene.block)) {
+				return 12;
+			}
+			if (stack.getItem() == ItemFossilPleistocene.block
+					|| stack.getItem() == Item.getItemFromBlock(BlockFossilPleistocene.block)) {
+				return 13;
 			}
 			return 0;
 		}

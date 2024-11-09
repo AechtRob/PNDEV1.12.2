@@ -310,7 +310,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 			if (this.inputType(this.getStackInSlot(0)) == 1) {
 				//Analysing raw fossils to get the mob type from them:
 				boolean updated = false;
-				setPeriodLock(0);
+				setPeriodLock(0, false);
 
 				if (this.canStartProcess()) {
 					this.processTick = 0;
@@ -501,6 +501,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 								outputStack.getTagCompound().setTag("PFPlant", entityNBT);
 							}
 						}
+						BlockArchiveSorterTop.TileEntityArchiveSorterTop.tagFossilFully(world, outputStack);
 						world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 						this.setInventorySlotContents(1, outputStack);
 						markDirty();
@@ -515,14 +516,16 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 				markDirty();
 			}
 			else {
-				setPeriodLock(0);
+				setPeriodLock(0, true);
 			}
 		}
 
-		public void setPeriodLock(int period) {
+		public void setPeriodLock(int period, boolean resetTicks) {
 			periodLock = period;
-			this.processTick = 0;
-			this.isProcessing = false;
+			if (resetTicks) {
+				this.processTick = 0;
+				this.isProcessing = false;
+			}
 		}
 
 		public int getPeriodLock() {

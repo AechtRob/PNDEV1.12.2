@@ -497,7 +497,7 @@ public class GUIArchiveSorterBottom extends ElementsLepidodendronMod.ModElement 
                         LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterSearchMessage(this.searchField.getText(), x, y, z));
                     }
                 }
-                else if (((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile != null && !((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile.equalsIgnoreCase("")) {
+                else if (((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile != null) {
                     this.searchField.setText(((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).strSearchTile);
                     ((BlockArchiveSorterBottom.TileEntityArchiveBottom)te).searchResults(this.searchField.getText());
                     LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIArchiveSorterBottom.GUIArchiveSorterSearchMessage(this.searchField.getText(), x, y, z));

@@ -77,7 +77,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                 @Override
                 public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
                     if (ent instanceof BlockMicroscope.TileEntityMicroscope) {
-                        ((BlockMicroscope.TileEntityMicroscope)ent).setPeriodLock(0);
+                        ((BlockMicroscope.TileEntityMicroscope)ent).setPeriodLock(0, true);
                     }
                     return super.onTake(thePlayer, stack);
                 }
@@ -85,7 +85,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                 @Override
                 public void onSlotChanged() {
                     if (ent instanceof BlockMicroscope.TileEntityMicroscope) {
-                        ((BlockMicroscope.TileEntityMicroscope)ent).setPeriodLock(0);
+                        ((BlockMicroscope.TileEntityMicroscope)ent).setPeriodLock(0, true);
                     }
                     super.onSlotChanged();
                 }
@@ -646,7 +646,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             switch (period) {
                 case 0:
                 default:
-                    ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(0);
+                    ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(0, true);
                     LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIMicroscopeTagSelectMessage(0, x, y, z));
                     this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     break;
@@ -665,11 +665,11 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                 case 12:
                 case 13:
                     if (((BlockMicroscope.TileEntityMicroscope) tileEntity).getPeriodLock() == period) {
-                        ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(0);
+                        ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(0, true);
                         LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIMicroscopeTagSelectMessage(0, x, y, z));
                         this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     } else if (((BlockMicroscope.TileEntityMicroscope) tileEntity).getPeriodLock() != period && canSelect) {
-                        ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(period);
+                        ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(period, true);
                         LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIMicroscopeTagSelectMessage(period, x, y, z));
                         this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     }
@@ -864,7 +864,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
             if (te != null) {
                 if (te instanceof BlockMicroscope.TileEntityMicroscope) {
-                    ((BlockMicroscope.TileEntityMicroscope) te).setPeriodLock(message.value);
+                    ((BlockMicroscope.TileEntityMicroscope) te).setPeriodLock(message.value, true);
                     te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
                     te.markDirty();
                 }
