@@ -129,7 +129,20 @@ public class BlockArchiveSorterTop extends ElementsLepidodendronMod.ModElement {
 			if (face == EnumFacing.UP) {
 				return BlockFaceShape.BOWL;
 			}
+			if (face == state.getValue(FACING).getOpposite()) {
+				return BlockFaceShape.UNDEFINED;
+			}
 			return BlockFaceShape.SOLID;
+		}
+
+		@Override
+		public boolean isFullBlock(IBlockState state) {
+			return false;
+		}
+
+		@Override
+		public boolean isFullCube(IBlockState state) {
+			return false;
 		}
 
 		@Override

@@ -124,7 +124,20 @@ public class BlockArchiveSorterTopFiller extends ElementsLepidodendronMod.ModEle
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
+			if (face == state.getValue(FACING).getOpposite()) {
+				return BlockFaceShape.UNDEFINED;
+			}
 			return BlockFaceShape.SOLID;
+		}
+
+		@Override
+		public boolean isFullBlock(IBlockState state) {
+			return false;
+		}
+
+		@Override
+		public boolean isFullCube(IBlockState state) {
+			return false;
 		}
 
 		@Override

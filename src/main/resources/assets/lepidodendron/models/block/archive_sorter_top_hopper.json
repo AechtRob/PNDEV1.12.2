@@ -12,7 +12,6 @@
 		{
 			"from": [0, 0, 0],
 			"to": [16, 16, 15],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "north"},
 				"east": {"uv": [0, 0, 15, 16], "texture": "#0", "cullface": "east"},
