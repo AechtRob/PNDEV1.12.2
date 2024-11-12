@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:lab_cabinet_flipped"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:lab_cabinet",
+    "count": 1
+  }
+}

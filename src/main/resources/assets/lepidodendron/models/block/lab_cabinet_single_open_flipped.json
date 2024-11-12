@@ -1,0 +1,68 @@
+{
+	"parent": "block/cube_all",
+	"ambientocclusion": false,
+	"textures": {
+		"2": "lepidodendron:blocks/lab_cabinet_interior_standalone",
+		"3": "lepidodendron:blocks/lab_cabinet_front_standalone",
+		"side": "lepidodendron:blocks/lab_bench_side",
+		"particle": "lepidodendron:blocks/lab_cabinet_interior_standalone"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [17, 0, -1]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#side"},
+				"east": {"uv": [15, 0, 0, 16], "texture": "#side"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#2"},
+				"west": {"uv": [15, 0, 0, 16], "texture": "#side"},
+				"up": {"uv": [16, 0, 0, 15], "texture": "#side"},
+				"down": {"uv": [16, 0, 0, 15], "texture": "#side"}
+			}
+		},
+		{
+			"from": [14, 0, 16],
+			"to": [15, 16, 28],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [14.5, 8, 15.5]},
+			"faces": {
+				"north": {"uv": [15, 0, 14, 16], "texture": "#3"},
+				"east": {"uv": [14, 0, 2, 16], "texture": "#3"},
+				"south": {"uv": [2, 0, 1, 16], "texture": "#3"},
+				"west": {"uv": [14, 0, 2, 16], "texture": "#side"},
+				"up": {"uv": [14, 0, 2, 1], "rotation": 270, "texture": "#3"},
+				"down": {"uv": [14, 15, 2, 16], "rotation": 90, "texture": "#3"}
+			}
+		},
+		{
+			"from": [14, 3, 15],
+			"to": [15, 4, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 3, 15]},
+			"faces": {
+				"east": {"uv": [4, 12, 3, 13], "texture": "#3"},
+				"south": {"uv": [4, 12, 3, 13], "texture": "#3"},
+				"west": {"uv": [4, 12, 3, 13], "texture": "#3"},
+				"up": {"uv": [4, 12, 3, 13], "texture": "#3"},
+				"down": {"uv": [4, 12, 3, 13], "texture": "#3"}
+			}
+		},
+		{
+			"from": [14, 12, 15],
+			"to": [15, 13, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 12, 15]},
+			"faces": {
+				"east": {"uv": [4, 3, 3, 4], "texture": "#3"},
+				"south": {"uv": [4, 3, 3, 4], "texture": "#3"},
+				"west": {"uv": [4, 3, 3, 4], "texture": "#3"},
+				"up": {"uv": [4, 3, 3, 4], "texture": "#3"},
+				"down": {"uv": [4, 3, 3, 4], "texture": "#3"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, 325, 0],
+			"scale": [0.625, 0.625, 0.625]
+		}
+	}
+}

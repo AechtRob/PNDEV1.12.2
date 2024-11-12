@@ -1,0 +1,34 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "4": {
+      "item": "minecraft:chest"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lab_cabinet",
+    "count": 1
+  }
+}

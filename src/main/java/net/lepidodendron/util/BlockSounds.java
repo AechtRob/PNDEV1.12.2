@@ -28,6 +28,12 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("close_drawer")
     public static final SoundEvent CLOSE_DRAWER = createSoundEvent("close_drawer");
 
+    @GameRegistry.ObjectHolder("open_cabinet")
+    public static final SoundEvent OPEN_CABINET = createSoundEvent("open_cabinet");
+
+    @GameRegistry.ObjectHolder("close_cabinet")
+    public static final SoundEvent CLOSE_CABINET = createSoundEvent("close_cabinet");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);

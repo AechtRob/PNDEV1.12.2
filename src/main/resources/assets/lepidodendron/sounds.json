@@ -80,6 +80,24 @@
     ]
   },
 
+  "open_cabinet": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cabinet_open",
+        "stream": false
+      }
+    ]
+  },
+
+  "close_cabinet": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cabinet_close",
+        "stream": false
+      }
+    ]
+  },
+
   "time_researcher_crusher": {
     "sounds": [
       {
