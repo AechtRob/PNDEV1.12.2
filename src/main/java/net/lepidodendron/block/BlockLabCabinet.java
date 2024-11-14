@@ -314,7 +314,7 @@ public class BlockLabCabinet extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class TileEntityLabCabinet extends TileEntityLockableLoot {
-		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(27, ItemStack.EMPTY);
+		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(54, ItemStack.EMPTY);
 		public int numPlayersUsing;
 
 
@@ -381,7 +381,7 @@ public class BlockLabCabinet extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getSizeInventory() {
-			return 27;
+			return 54;
 		}
 
 		@Override

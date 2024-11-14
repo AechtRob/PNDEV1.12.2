@@ -57,16 +57,16 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
             int si;
             int sj;
 
-            for (si = 0; si < 3; ++si)
+            for (si = 0; si < 6; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.customSlots.put(sj + (si * 9), this.addSlotToContainer(new Slot(internal, sj + (si * 9), 8 + sj * 18, 18 + si * 18) {}));
+                    this.customSlots.put(sj + (si * 9), this.addSlotToContainer(new Slot(internal, sj + (si * 9), 8 + sj * 18, -10 + si * 18) {}));
 
 
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 8 + sj * 18, 112 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 142));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 170));
 
         }
 
@@ -241,9 +241,9 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
             this.z = z;
             this.entity = entity;
             this.xSize = 176;
-            this.ySize = 166;
+            this.ySize = 222;
         }
-        private static final ResourceLocation texture = new ResourceLocation("minecraft:textures/gui/container/shulker_box.png");
+        private static final ResourceLocation texture = new ResourceLocation("minecraft:textures/gui/container/generic_54.png");
         @Override
         public void drawScreen(int mouseX, int mouseY, float partialTicks) {
             this.drawDefaultBackground();
@@ -278,8 +278,8 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Laboratory Cabinet", 43, 7, 4210752);
-            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
+            this.fontRenderer.drawString("Laboratory Cabinet", 43, -22, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 102, 4210752);
         }
 
         @Override
