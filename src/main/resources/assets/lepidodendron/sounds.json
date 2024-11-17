@@ -62,6 +62,24 @@
     ]
   },
 
+  "portal_block_initialise": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_initialise",
+        "stream": false
+      }
+    ]
+  },
+
+  "portal_block_close": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_close",
+        "stream": false
+      }
+    ]
+  },
+
   "open_drawer": {
     "sounds": [
       {

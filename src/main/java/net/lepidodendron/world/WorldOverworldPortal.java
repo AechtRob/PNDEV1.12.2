@@ -4,6 +4,7 @@ package net.lepidodendron.world;
 import com.google.common.cache.LoadingCache;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.block.BlockPortalBlock;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.util.ParticlePNPortal;
@@ -339,6 +340,9 @@ public class WorldOverworldPortal extends ElementsLepidodendronMod.ModElement {
 									flag
 											? portalBlockstate
 											: Blocks.AIR.getDefaultState());
+							if (flag) {
+								BlockPortalBlock.setPortalAsActive(world, new BlockPos(k9, k10+1, k11), true, 90);
+							}
 						}
 					}
 				}
@@ -353,6 +357,9 @@ public class WorldOverworldPortal extends ElementsLepidodendronMod.ModElement {
 						boolean flag1 = l8 == 0 || l8 == 3 || l9 == -1 || l9 == 3;
 						this.world.setBlockState(new BlockPos(l10, l11+1, k12),
 								flag1 ? portalBlockstate : iblockstate, 2);
+						if (flag1) {
+							BlockPortalBlock.setPortalAsActive(world, new BlockPos(l10, l11+1, k12), true, 90);
+						}
 					}
 				}
 				for (int i9 = 0; i9 < 4; ++i9) {

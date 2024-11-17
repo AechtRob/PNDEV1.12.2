@@ -83,7 +83,7 @@ public class Functions {
             portalBlockState = BlockArchaeopterisPlanks.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimCarboniferous) {
-            portalBlockState = BlockCalamitesPlanks.block.getDefaultState();
+            portalBlockState = BlockPortalBlockCarboniferous.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimPermian) {
             portalBlockState = BlockGlossopterisPlanks.block.getDefaultState();
