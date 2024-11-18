@@ -274,11 +274,17 @@ public class LepidodendronEventSubscribers {
 				//Capture the effects if needed:
 				if (player.isPotionActive(MobEffects.WATER_BREATHING)) {
 					PotionEffect effectWaterBreathing = player.getActivePotionEffect(MobEffects.WATER_BREATHING);
-					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveWaterBreathingPassenger(effectWaterBreathing.getDuration(), effectWaterBreathing.getAmplifier(), effectWaterBreathing.getIsAmbient(), effectWaterBreathing.doesShowParticles(), player.getUniqueID());
+					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveWaterBreathingPassenger(true, effectWaterBreathing.getDuration(), effectWaterBreathing.getAmplifier(), effectWaterBreathing.getIsAmbient(), effectWaterBreathing.doesShowParticles(), player.getUniqueID());
+				}
+				else {
+					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveWaterBreathingPassenger(false, 0, 0, false, false, player.getUniqueID());
 				}
 				if (player.isPotionActive(MobEffects.NIGHT_VISION) && LepidodendronConfig.submarineNightvision) {
 					PotionEffect effectNightVision = player.getActivePotionEffect(MobEffects.NIGHT_VISION);
-					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveNightVisionPassenger(effectNightVision.getDuration(), effectNightVision.getAmplifier(), effectNightVision.getIsAmbient(), effectNightVision.doesShowParticles(), player.getUniqueID());
+					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveNightVisionPassenger(true, effectNightVision.getDuration(), effectNightVision.getAmplifier(), effectNightVision.getIsAmbient(), effectNightVision.doesShowParticles(), player.getUniqueID());
+				}
+				else {
+					((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).saveNightVisionPassenger(false, 0, 0, false, false, player.getUniqueID());
 				}
 			}
 		}

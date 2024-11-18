@@ -10,6 +10,7 @@ import net.lepidodendron.entity.render.tile.*;
 import net.lepidodendron.item.ItemGuanoBall;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
 import net.lepidodendron.tileentity.TileEntityGangtoucunia;
+import net.lepidodendron.tileentity.TileEntityPortalBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -6339,6 +6340,10 @@ public class RenderHandler {
         if (LepidodendronConfig.modFlowerpot) {
             ClientRegistry.bindTileEntitySpecialRenderer(BlockFlowerpotPN.TileEntityFlowerPotPN.class, new RenderFlowerPotPN());
         }
+
+        //Portal Blocks:
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPortalBlock.class, new RenderPortalBlock());
+
 
     }
 }
