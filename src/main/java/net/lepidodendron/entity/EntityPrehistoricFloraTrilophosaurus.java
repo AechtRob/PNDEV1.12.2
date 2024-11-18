@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
@@ -32,6 +33,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
@@ -47,13 +49,29 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 	private boolean screaming;
 	private int alarmCooldown;
 
+	public ChainBuffer tailBuffer;
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
+
 	public EntityPrehistoricFloraTrilophosaurus(World world) {
 		super(world);
-		setSize(0.30F, 0.25F);
+		setSize(0.7F, 0.4F);
 		minWidth = 0.10F;
-		maxWidth = 0.30F;
-		maxHeight = 0.25F;
-		maxHealthAgeable = 4.0D;
+		maxWidth = 0.7F;
+		maxHeight = 0.4F;
+		maxHealthAgeable = 16.0D;
+		STAND_ANIMATION = Animation.create(125);
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	@Override
@@ -68,7 +86,7 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 
 	@Override
 	public float getClimbSpeed() {
-		return 0.5F;
+		return 0.55F;
 	}
 
 	@Override
@@ -132,6 +150,10 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 	public int getAttackLength() {
 		return 20;
 	}
+	@Override
+	public int getEatLength() {
+		return 17;
+	}
 
 	@Override
 	public String getTexture() {
@@ -149,7 +171,7 @@ public class EntityPrehistoricFloraTrilophosaurus extends EntityPrehistoricFlora
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.24F;
+		float speedBase = 0.28F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

@@ -13,9 +13,12 @@ import net.lepidodendron.entity.render.entity.RenderStahleckeria;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -24,6 +27,7 @@ import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -57,7 +61,7 @@ public class EntityPrehistoricFloraKannemeyeria extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getRoarLength() {
-		return 20;
+		return 31;
 	}
 
 	@Override
@@ -82,6 +86,15 @@ public class EntityPrehistoricFloraKannemeyeria extends EntityPrehistoricFloraLa
 	@Override
 	public int getAttackLength() {
 		return 20;
+	}
+	@Override
+	public int getGrazeLength() {
+		return 230;
+	}
+
+	@Override
+	public int getGrazeCooldown() {
+		return 2400;
 	}
 
 	@Override
@@ -231,6 +244,84 @@ public class EntityPrehistoricFloraKannemeyeria extends EntityPrehistoricFloraLa
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	private boolean isBlockGrazable(IBlockState state) {
+		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.SAND);
+	}
+
+	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
+		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean isGrazing()
+	{
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test2 = false;
+		boolean test = (this.getPFGrazing() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.GRAZE_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+						(isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(2)))
+								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
+
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.south(3).up(2)))
+								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
+
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(2)))
+								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
+
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(2)))
+								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+				)
+		);
+		if (test) {
+			//Which one is Grazable?
+			EnumFacing facing = null;
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.north().down()))) {
+				facing = EnumFacing.NORTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.south().down()))) {
+				facing = EnumFacing.SOUTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.east().down()))) {
+				facing = EnumFacing.EAST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.west().down()))) {
+				facing = EnumFacing.WEST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+					test2 = true;
+				}
+			}
+			if (facing != null && test && test2) {
+				this.setDrinkingFrom(entityPos.offset(facing).down());
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test && test2;
 	}
 
 	@Override

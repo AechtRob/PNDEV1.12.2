@@ -12,13 +12,16 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -40,9 +43,6 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public Animation STAND_ANIMATION;
-	private int standCooldown;
-
 	public EntityPrehistoricFloraTropidosuchus(World world) {
 		super(world);
 		setSize(0.6F, 0.32F);
@@ -50,7 +50,6 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 		maxWidth = 0.6F;
 		maxHeight = 0.32F;
 		maxHealthAgeable = 10.0D;
-		STAND_ANIMATION = Animation.create(395);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -82,7 +81,7 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAttackLength() {
-		return 15;
+		return 7;
 	}
 
 	@Override
@@ -109,16 +108,24 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	public boolean isNestMound() {
 		return true;
 	}
+	@Override
+	public int getDrinkCooldown() {
+		return 600;
+	}
+	@Override
+	public int getDrinkLength() {
+		return 592;
+	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.365F;
+		float speedBase = 0.32F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.77F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;
@@ -141,7 +148,7 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, DRINK_ANIMATION};
 	}
 
 	protected void initEntityAI() {
@@ -209,6 +216,7 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	            .getObject(new ResourceLocation("lepidodendron:archosaurus_death"));
 	}
 
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -222,19 +230,72 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.standCooldown = rand.nextInt(2000);
 		return livingdata;
 	}
 
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("standCooldown", this.standCooldown);
+	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
+		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
+			return false;
+		}
+		if (world.getBlockState(pos.offset(facing).offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing).offset(facing)))) {
+			return false;
+		}
+
+		return true;
 	}
 
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.standCooldown = compound.getInteger("standCooldown");
+	@Override
+	public boolean isDrinking()
+	{
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+						(this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
+
+								|| (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
+
+								|| (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
+
+								|| (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER
+								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
+				)
+		);
+		if (test) {
+			//Which one is water?
+			EnumFacing facing = null;
+			if (this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.NORTH;
+			}
+			else if (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.SOUTH;
+			}
+			else if (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.EAST;
+			}
+			else if (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.WEST;
+			}
+			if (facing != null) {
+				this.setDrinkingFrom(entityPos.offset(facing).offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test;
 	}
 
 	@Override
@@ -246,12 +307,6 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 			launchAttack();
 		}
 
-		if (this.standCooldown > 0) {
-			this.standCooldown -= rand.nextInt(3) + 1;
-		}
-		if (this.standCooldown < 0) {
-			this.standCooldown = 0;
-		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
@@ -261,19 +316,6 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

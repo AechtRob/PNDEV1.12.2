@@ -6134,6 +6134,12 @@ public class RenderHandler {
                 return new RenderKannemeyeria(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLesothosaurus.class, new IRenderFactory<EntityPrehistoricFloraLesothosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLesothosaurus> createRenderFor(RenderManager manager) {
+                return new RenderLesothosaurus(manager);
+            }
+        });
 
 
 
