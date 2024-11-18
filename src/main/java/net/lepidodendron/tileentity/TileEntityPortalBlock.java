@@ -3,6 +3,7 @@ package net.lepidodendron.tileentity;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockPortalBlock;
+import net.lepidodendron.block.BlockPortalBlockCarboniferous;
 import net.lepidodendron.util.BlockSounds;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
@@ -27,91 +28,102 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 	private int animationTick;
 	private boolean isActive;
 
+	public static boolean isPartOfValidPortal(World world, BlockPos pos, IBlockState portalState) {
+		boolean xChecked = false;
+		if (world.getBlockState(pos.east()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.east()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
+				xChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.east().up()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.east().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
+				xChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.east().down()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.east().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
+				xChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.west()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.west()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
+				xChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.west().up()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.west().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
+				xChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.west().down()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.west().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
+				xChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.up()).getBlock() == portalState.getBlock()) {
+			xChecked = true;
+		}
+		else if (world.getBlockState(pos.down()).getBlock() == portalState.getBlock()) {
+			xChecked = true;
+		}
+
+		boolean zChecked = false;
+		if (world.getBlockState(pos.north()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.north()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
+				zChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.north().up()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.north().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
+				zChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.north().down()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.north().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
+				zChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.south()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.south()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
+				zChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.south().up()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.south().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
+				zChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.south().down()).getBlock() == portalState.getBlock()) {
+			if (world.getBlockState(pos.south().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
+				zChecked = true;
+			}
+		}
+		else if (world.getBlockState(pos.up()).getBlock() == portalState.getBlock()) {
+			zChecked = true;
+		}
+		else if (world.getBlockState(pos.down()).getBlock() == portalState.getBlock()) {
+			zChecked = true;
+		}
+		if ((!xChecked) & (!zChecked)) {
+			return false;
+		}
+		return true;
+	}
+	
 	@Override
 	public void update()
 	{
-
 		if (this.isActive) {
 			//Are we part of a valid portal?
-			IBlockState portalCarboniferous = Functions.getPortalState(LepidodendronConfig.dimCarboniferous);
-			if (portalCarboniferous != null) {
-				boolean xChecked = false;
-				if (this.world.getBlockState(this.getPos().east()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().east()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
-						xChecked = true;
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
+				IBlockState portalCarboniferous = Functions.getPortalState(LepidodendronConfig.dimCarboniferous);
+				if (portalCarboniferous != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalCarboniferous)) {
+						this.setIsActive(false);
 					}
 				}
-				else if (this.world.getBlockState(this.getPos().east().up()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().east().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
-						xChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().east().down()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().east().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
-						xChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().west()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().west()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
-						xChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().west().up()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().west().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
-						xChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().west().down()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().west().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.X) {
-						xChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().up()).getBlock() == portalCarboniferous.getBlock()) {
-					xChecked = true;
-				}
-				else if (this.world.getBlockState(this.getPos().down()).getBlock() == portalCarboniferous.getBlock()) {
-					xChecked = true;
-				}
-
-				boolean zChecked = false;
-				if (this.world.getBlockState(this.getPos().north()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().north()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
-						zChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().north().up()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().north().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
-						zChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().north().down()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().north().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
-						zChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().south()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().south()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
-						zChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().south().up()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().south().up()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
-						zChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().south().down()).getBlock() == portalCarboniferous.getBlock()) {
-					if (this.world.getBlockState(this.getPos().south().down()).getValue(BlockPortal.AXIS) == EnumFacing.Axis.Z) {
-						zChecked = true;
-					}
-				}
-				else if (this.world.getBlockState(this.getPos().up()).getBlock() == portalCarboniferous.getBlock()) {
-					zChecked = true;
-				}
-				else if (this.world.getBlockState(this.getPos().down()).getBlock() == portalCarboniferous.getBlock()) {
-					zChecked = true;
-				}
-				if ((!xChecked) & (!zChecked)) {
-					this.setIsActive(false);
+				if (this.getIsActive() && this.getAnimationTick() == 6) {
+					world.playSound(null, pos, BlockSounds.PORTAL_CARBONIFEROUS, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
 
@@ -155,6 +167,9 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 			}
 			if (this.animationTick < 0) {
 				this.animationTick = 0;
+			}
+			if (this.getAnimationTick() == 75) { //3.5 seconds (ticks 15 to 85)
+				world.playSound(null, pos, BlockSounds.PORTAL_CARBONIFEROUS, SoundCategory.BLOCKS, 0.5F, 1.0F);
 			}
 		}
 	}

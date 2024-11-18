@@ -627,8 +627,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             }
 
             if (this.getIsFlying() && this.ticksExisted % 20 == 0 && !world.isRemote) {
-                this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-                        .getObject(this.FlightSound()), this.getSoundVolume(), 1);
+                this.playSound(this.getFlightSound(), this.getSoundVolume(), 1);
             }
 
             //if (this instanceof EntityPrehistoricFloraGerarus) {
@@ -640,8 +639,8 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     }
 
-    public ResourceLocation FlightSound() {
-        return new ResourceLocation("lepidodendron:bug_flight");
+    public SoundEvent getFlightSound() {
+        return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("lepidodendron:bug_flight"));
     }
 
     @Override

@@ -837,6 +837,10 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         return new ResourceLocation("lepidodendron:palaeodictyoptera_flight");
     }
 
+    public SoundEvent getFlightSound() {
+        return (SoundEvent) SoundEvent.REGISTRY.getObject(this.FlightSound());
+    }
+
     public boolean isFlying() {
         return !this.onGround && ! this.isSitting();
     }

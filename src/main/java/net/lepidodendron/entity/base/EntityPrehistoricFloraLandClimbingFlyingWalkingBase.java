@@ -28,6 +28,7 @@ import net.minecraft.pathfinding.PathPoint;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.*;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -846,6 +847,10 @@ public abstract class EntityPrehistoricFloraLandClimbingFlyingWalkingBase extend
 
     public ResourceLocation FlightSound() {
         return null;
+    }
+
+    public SoundEvent getFlightSound() {
+        return (SoundEvent) SoundEvent.REGISTRY.getObject(this.FlightSound());
     }
 
     public boolean isFlying() {

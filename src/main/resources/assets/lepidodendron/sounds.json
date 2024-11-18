@@ -80,6 +80,15 @@
     ]
   },
 
+  "portal_block_carboniferous": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_carboniferous",
+        "stream": false
+      }
+    ]
+  },
+
   "open_drawer": {
     "sounds": [
       {

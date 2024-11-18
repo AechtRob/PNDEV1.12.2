@@ -4,7 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 
-public class ModelPortalBlock extends AdvancedModelBase {
+public class ModelPortalBlockCarboniferous extends AdvancedModelBase {
     private final AdvancedModelRenderer root;
     private final AdvancedModelRenderer base;
     private final AdvancedModelRenderer bone;
@@ -29,7 +29,7 @@ public class ModelPortalBlock extends AdvancedModelBase {
     private final AdvancedModelRenderer cube_r7;
     private final AdvancedModelRenderer bone8;
 
-    public ModelPortalBlock() {
+    public ModelPortalBlockCarboniferous() {
         textureWidth = 64;
         textureHeight = 64;
 

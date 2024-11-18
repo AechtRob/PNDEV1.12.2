@@ -40,6 +40,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("portal_block_close")
     public static final SoundEvent PORTAL_CLOSE = createSoundEvent("portal_block_close");
 
+    @GameRegistry.ObjectHolder("portal_block_carboniferous")
+    public static final SoundEvent PORTAL_CARBONIFEROUS = createSoundEvent("portal_block_carboniferous");
+
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);
         return new SoundEvent(soundID).setRegistryName(soundID);
