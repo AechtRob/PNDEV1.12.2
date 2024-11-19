@@ -80,6 +80,14 @@
     ]
   },
 
+  "portal_block_precambrian": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_precambrian",
+        "stream": false
+      }
+    ]
+  },
   "portal_block_carboniferous": {
     "sounds": [
       {

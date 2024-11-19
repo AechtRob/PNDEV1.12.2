@@ -40,6 +40,12 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("portal_block_close")
     public static final SoundEvent PORTAL_CLOSE = createSoundEvent("portal_block_close");
 
+    @GameRegistry.ObjectHolder("portal_block_precambrian")
+    public static final SoundEvent PORTAL_PRECAMBRIAN = createSoundEvent("portal_block_precambrian");
+
+    @GameRegistry.ObjectHolder("portal_block_ordovician")
+    public static final SoundEvent PORTAL_ORDOVICIAN = createSoundEvent("portal_block_ordovician");
+
     @GameRegistry.ObjectHolder("portal_block_carboniferous")
     public static final SoundEvent PORTAL_CARBONIFEROUS = createSoundEvent("portal_block_carboniferous");
 
