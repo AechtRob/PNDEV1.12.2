@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockPortalBlockSilurian;
 import net.lepidodendron.entity.model.tile.ModelPortalBlockCarboniferous;
 import net.lepidodendron.entity.model.tile.ModelPortalBlockOrdovician;
 import net.lepidodendron.entity.model.tile.ModelPortalBlockPrecambrian;
+import net.lepidodendron.entity.model.tile.ModelPortalBlockSilurian;
 import net.lepidodendron.tileentity.TileEntityPortalBlock;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -26,13 +27,27 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
     private static final ResourceLocation TEXTURE_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_carboniferous.png");
     private final ModelPortalBlockPrecambrian modelPortalBlockPrecambrian;
     private final ModelPortalBlockOrdovician modelPortalBlockOrdovician;
+    private final ModelPortalBlockSilurian modelPortalBlockSilurian;
     private final ModelPortalBlockCarboniferous modelPortalBlockCarboniferous;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderPortalBlock() {
         this.modelPortalBlockPrecambrian = new ModelPortalBlockPrecambrian();
         this.modelPortalBlockOrdovician = new ModelPortalBlockOrdovician();
+        this.modelPortalBlockSilurian = new ModelPortalBlockSilurian();
         this.modelPortalBlockCarboniferous = new ModelPortalBlockCarboniferous();
+    }
+
+    public boolean isVar(TileEntityPortalBlock entity) {
+        return (double) (entity.getPos().getX() + entity.getPos().getY() + entity.getPos().getZ())/3 == (int) (entity.getPos().getX() + entity.getPos().getY() + entity.getPos().getZ())/3;
+    }
+
+    public boolean isVar2(TileEntityPortalBlock entity) {
+        return (double) (entity.getPos().getX() + entity.getPos().getY() + entity.getPos().getZ() + 4)/3 == (int) (entity.getPos().getX() + entity.getPos().getY() + entity.getPos().getZ() + 4)/3;
+    }
+
+    public boolean isRotated(TileEntityPortalBlock entity) {
+        return (double) (entity.getPos().getX() + entity.getPos().getY() + entity.getPos().getZ())/4 == (int) (entity.getPos().getX() + entity.getPos().getY() + entity.getPos().getZ())/4;
     }
 
     @Override
@@ -93,7 +108,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     transparency = 1F;
                 }
                 else {
-                    transparency = Math.min((float) (entity.getAnimationTick() - 30 + partialTicks) / 60F, 1F);
+                    transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
                 }
 
                 ModelPortalBlockOrdovician modelPortalBlockOrdovician = this.modelPortalBlockOrdovician;
@@ -123,180 +138,323 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 GlStateManager.popMatrix();
 
                 if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x + 0.475, y + 1.55, z + 0.525);
-                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                    GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_ORDOVICIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                        } else {
+                            GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                        }
+                        GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_ORDOVICIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                            } else {
+                                GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                            }
+                            GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
 
                     GlStateManager.pushMatrix();
                     this.bindTexture(TEXTURE_ORDOVICIAN);
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.disableCull();
-                    GlStateManager.translate(x + 0.525, y + 1.55, z + 0.475);
+                    GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
                     GlStateManager.rotate(180, 0F, 0F, 1F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    if (isRotated(entity)) {
+                        GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                    }
+                    else {
+                        GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    }
+                    GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacleVar(entity.getAnimationTick() - 5, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 0.15F);
+                    if (isVar(entity)) {
+                        modelPortalBlockOrdovician.renderSponge1(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    else {
+                        modelPortalBlockOrdovician.renderSponge2(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
                 }
 
                 if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH)) {
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x + 1.00, y + 0.55, z + 1.55);
-                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_ORDOVICIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 0.50, z + 1.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(270, 1F, 0F, 0F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(90, 0F, 1F, 0F);
+                        }
+                        else {
+                            GlStateManager.rotate(270, 0F, 1F, 0F);
+                        }
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_ORDOVICIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 0.50, z + 1.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(90, 0F, 1F, 0F);
+                            }
+                            else {
+                                GlStateManager.rotate(270, 0F, 1F, 0F);
+                            }
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
 
                     GlStateManager.pushMatrix();
                     this.bindTexture(TEXTURE_ORDOVICIAN);
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.disableCull();
-                    GlStateManager.translate(x + 0.0, y + 0.52, z + 1.52);
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 1.00, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
-                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                    if (isVar(entity)) {
+                        modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    } else {
+                        modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
                 }
 
                 if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH)) {
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x + 1.00, y + 0.54, z - 0.52);
-                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(270, 0.0F, 0.0F, 1.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, -13, ((float) getWorld().getTotalWorldTime() + partialTicks), -13F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_ORDOVICIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 0.50, z - 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(90, 1F, 0F, 0F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(270, 0F, 1F, 0F);
+                        }
+                        else {
+                            GlStateManager.rotate(90, 0F, 1F, 0F);
+                        }
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        GlStateManager.rotate(180, 0F, 1F, 0F);
+                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_ORDOVICIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 0.50, z - 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(270, 0F, 1F, 0F);
+                            }
+                            else {
+                                GlStateManager.rotate(90, 0F, 1F, 0F);
+                            }
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            GlStateManager.rotate(180, 0F, 1F, 0F);
+                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
 
                     GlStateManager.pushMatrix();
                     this.bindTexture(TEXTURE_ORDOVICIAN);
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.disableCull();
-                    GlStateManager.translate(x + 0.0, y + 0.45, z - 0.51);
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.00, y + 1.50, z + 0.50);
+                    }
                     GlStateManager.rotate(180, 0F, 0F, 1F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
-                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, -20, ((float) getWorld().getTotalWorldTime() + partialTicks), -20F);
+                    GlStateManager.rotate(180, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
                 }
 
                 if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST)) {
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x - 0.525, y + 0.95, z + 0.525);
-                    GlStateManager.rotate(180, 1F, 0F, 0F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
-                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 16, ((float) getWorld().getTotalWorldTime() + partialTicks), 16F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_ORDOVICIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x - 0.50, y + 0.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(90, 1F, 0F, 0F);
+                        GlStateManager.rotate(90, 0F, 0F, 1F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(180, 0F, 1F, 0F);
+                        }
+                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_ORDOVICIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x - 0.50, y + 0.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(180, 0F, 1F, 0F);
+                            }
+                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
 
                     GlStateManager.pushMatrix();
                     this.bindTexture(TEXTURE_ORDOVICIAN);
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.disableCull();
-                    GlStateManager.translate(x - 0.53, y + 0.0, z + 0.475);
-                    GlStateManager.rotate(180, 1F, 0F, 0F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(270, 1.0F, 0.0F, 0.0F);
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.75);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.75);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 28, ((float) getWorld().getTotalWorldTime() + partialTicks), 28F);
+                    GlStateManager.rotate(90, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
                 }
 
                 if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST)) {
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x + 1.5, y + 1.05, z + 0.525);
-                    GlStateManager.rotate(180, 1F, 0F, 0F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(0, 0.0F, 1.0F, 0.0F);
-                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 33, ((float) getWorld().getTotalWorldTime() + partialTicks), 33F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_ORDOVICIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 1.50, y + 0.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(90, 1F, 0F, 0F);
+                        GlStateManager.rotate(270, 0F, 0F, 1F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(180, 0F, 1F, 0F);
+                        }
+                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_ORDOVICIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 1.50, y + 0.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(180, 0F, 1F, 0F);
+                            }
+                            modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
 
                     GlStateManager.pushMatrix();
                     this.bindTexture(TEXTURE_ORDOVICIAN);
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.disableCull();
-                    GlStateManager.translate(x + 1.52, y + 0.0, z + 0.50);
-                    GlStateManager.rotate(0, 1F, 0F, 0F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.25);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.25);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 13, ((float) getWorld().getTotalWorldTime() + partialTicks), 13F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
-                }
-
-                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.DOWN)) {
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x + 0.52, y - 0.52, z + 0.50);
-                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 4, ((float) getWorld().getTotalWorldTime() + partialTicks), 4F);
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.enableCull();
-                    GlStateManager.popMatrix();
-
-                    GlStateManager.pushMatrix();
-                    this.bindTexture(TEXTURE_ORDOVICIAN);
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.disableCull();
-                    GlStateManager.translate(x + 0.5, y - 0.5, z + 0.50);
                     GlStateManager.rotate(270, 0F, 1F, 0F);
-                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockOrdovician.renderTentacleVar(entity.getAnimationTick() - 7, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                    if (isVar(entity)) {
+                        modelPortalBlockOrdovician.renderSpongeSide2(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockOrdovician.renderSpongeSide1(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -316,215 +474,215 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     transparency = Math.min((float) (entity.getAnimationTick() - 30 + partialTicks) / 60F, 1F);
                 }
 
-//                ModelPortalBlockSilurian modelPortalBlockSilurian = this.modelPortalBlockSilurian;
+                ModelPortalBlockSilurian modelPortalBlockSilurian = this.modelPortalBlockSilurian;
 
-//                GlStateManager.pushMatrix();
-//                this.bindTexture(TEXTURE_SILURIAN);
-//                GlStateManager.enableRescaleNormal();
-//                GlStateManager.disableCull();
-//
-//                GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
-//                GlStateManager.enableNormalize();
-//                GlStateManager.enableBlend();
-//                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-//
-//                GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
-//                GlStateManager.rotate(180, 0F, 0F, 1F);
-//                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-//                GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                modelPortalBlockSilurian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
-//                GlStateManager.disableRescaleNormal();
-//
-//                GlStateManager.disableBlend();
-//                GlStateManager.disableNormalize();
-//                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-//
-//                GlStateManager.enableCull();
-//                GlStateManager.popMatrix();
-//
-//                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 0.475, y + 1.55, z + 0.525);
-//                    GlStateManager.rotate(180, 0F, 0F, 1F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 0.525, y + 1.55, z + 0.475);
-//                    GlStateManager.rotate(180, 0F, 0F, 1F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 5, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 0.15F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//                }
-//
-//                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH)) {
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 1.00, y + 0.55, z + 1.55);
-//                    GlStateManager.rotate(180, 0F, 0F, 1F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 0.0, y + 0.52, z + 1.52);
-//                    GlStateManager.rotate(180, 0F, 0F, 1F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
-//                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//                }
-//
-//                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH)) {
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 1.00, y + 0.54, z - 0.52);
-//                    GlStateManager.rotate(180, 0F, 0F, 1F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(270, 0.0F, 0.0F, 1.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, -13, ((float) getWorld().getTotalWorldTime() + partialTicks), -13F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 0.0, y + 0.45, z - 0.51);
-//                    GlStateManager.rotate(180, 0F, 0F, 1F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
-//                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, -20, ((float) getWorld().getTotalWorldTime() + partialTicks), -20F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//                }
-//
-//                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST)) {
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x - 0.525, y + 0.95, z + 0.525);
-//                    GlStateManager.rotate(180, 1F, 0F, 0F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
-//                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 16, ((float) getWorld().getTotalWorldTime() + partialTicks), 16F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x - 0.53, y + 0.0, z + 0.475);
-//                    GlStateManager.rotate(180, 1F, 0F, 0F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(270, 1.0F, 0.0F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 28, ((float) getWorld().getTotalWorldTime() + partialTicks), 28F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//                }
-//
-//                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST)) {
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 1.5, y + 1.05, z + 0.525);
-//                    GlStateManager.rotate(180, 1F, 0F, 0F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(0, 0.0F, 1.0F, 0.0F);
-//                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 33, ((float) getWorld().getTotalWorldTime() + partialTicks), 33F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 1.52, y + 0.0, z + 0.50);
-//                    GlStateManager.rotate(0, 1F, 0F, 0F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 13, ((float) getWorld().getTotalWorldTime() + partialTicks), 13F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//                }
-//
-//                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.DOWN)) {
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 0.52, y - 0.52, z + 0.50);
-//                    GlStateManager.rotate(90, 0F, 1F, 0F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 4, ((float) getWorld().getTotalWorldTime() + partialTicks), 4F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//
-//                    GlStateManager.pushMatrix();
-//                    this.bindTexture(TEXTURE_SILURIAN);
-//                    GlStateManager.enableRescaleNormal();
-//                    GlStateManager.disableCull();
-//                    GlStateManager.translate(x + 0.5, y - 0.5, z + 0.50);
-//                    GlStateManager.rotate(270, 0F, 1F, 0F);
-//                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
-//                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
-//                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 7, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
-//                    GlStateManager.disableRescaleNormal();
-//                    GlStateManager.enableCull();
-//                    GlStateManager.popMatrix();
-//                }
+                GlStateManager.pushMatrix();
+                this.bindTexture(TEXTURE_SILURIAN);
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.disableCull();
 
-                colRed = (byte) 26;
-                colGreen = (byte) 83;
-                colBlue = (byte) 75;
+                GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                GlStateManager.enableNormalize();
+                GlStateManager.enableBlend();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+                GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                modelPortalBlockSilurian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                GlStateManager.disableRescaleNormal();
+
+                GlStateManager.disableBlend();
+                GlStateManager.disableNormalize();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
+                GlStateManager.enableCull();
+                GlStateManager.popMatrix();
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.475, y + 1.55, z + 0.525);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.525, y + 1.55, z + 0.475);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 5, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 0.15F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH)) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 1.00, y + 0.55, z + 1.55);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.0, y + 0.52, z + 1.52);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH)) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 1.00, y + 0.54, z - 0.52);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(270, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, -13, ((float) getWorld().getTotalWorldTime() + partialTicks), -13F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.0, y + 0.45, z - 0.51);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
+                    GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, -20, ((float) getWorld().getTotalWorldTime() + partialTicks), -20F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST)) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x - 0.525, y + 0.95, z + 0.525);
+                    GlStateManager.rotate(180, 1F, 0F, 0F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
+                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 16, ((float) getWorld().getTotalWorldTime() + partialTicks), 16F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x - 0.53, y + 0.0, z + 0.475);
+                    GlStateManager.rotate(180, 1F, 0F, 0F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(270, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 28, ((float) getWorld().getTotalWorldTime() + partialTicks), 28F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST)) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 1.5, y + 1.05, z + 0.525);
+                    GlStateManager.rotate(180, 1F, 0F, 0F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(0, 0.0F, 1.0F, 0.0F);
+                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 33, ((float) getWorld().getTotalWorldTime() + partialTicks), 33F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 1.52, y + 0.0, z + 0.50);
+                    GlStateManager.rotate(0, 1F, 0F, 0F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 13, ((float) getWorld().getTotalWorldTime() + partialTicks), 13F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.DOWN)) {
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.52, y - 0.52, z + 0.50);
+                    GlStateManager.rotate(90, 0F, 1F, 0F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 4, ((float) getWorld().getTotalWorldTime() + partialTicks), 4F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_SILURIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.5, y - 0.5, z + 0.50);
+                    GlStateManager.rotate(270, 0F, 1F, 0F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 7, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                colRed = (byte) 69;
+                colGreen = (byte) 115;
+                colBlue = (byte) 108;
             }
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
 
