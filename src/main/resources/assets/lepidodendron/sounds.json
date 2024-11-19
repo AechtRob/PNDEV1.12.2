@@ -104,6 +104,14 @@
       }
     ]
   },
+  "portal_block_water_drain": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_water_drain",
+        "stream": false
+      }
+    ]
+  },
   "portal_block_carboniferous": {
     "sounds": [
       {

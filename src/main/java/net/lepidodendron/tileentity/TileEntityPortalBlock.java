@@ -129,8 +129,8 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 						this.setIsActive(false);
 					}
 				}
-				if (this.getIsActive() && this.getAnimationTick() == 8) {
-					world.playSound(null, pos, BlockSounds.PORTAL_SILURIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				if (this.getIsActive() && this.getAnimationTick() == 30) {
+					world.playSound(null, pos, BlockSounds.PORTAL_ORDOVICIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
 			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
@@ -140,7 +140,7 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 						this.setIsActive(false);
 					}
 				}
-				if (this.getIsActive() && this.getAnimationTick() == 8) {
+				if (this.getIsActive() && this.getAnimationTick() == 40) {
 					world.playSound(null, pos, BlockSounds.PORTAL_SILURIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
@@ -222,7 +222,7 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 				}
 				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
 					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
-					world.playSound(null, pos, BlockSounds.PORTAL_ORDOVICIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
+					world.playSound(null, pos, BlockSounds.PORTAL_WATER_DRAIN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
 					world.playSound(null, pos, BlockSounds.PORTAL_CARBONIFEROUS, SoundCategory.BLOCKS, 0.5F, 1.0F);
