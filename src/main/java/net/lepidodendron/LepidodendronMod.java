@@ -2523,6 +2523,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation TRILOPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trilophosaurus"));
 	public static final ResourceLocation TRILOPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/trilophosaurus_young"));
 
+	public static final int ENTITY_LESOTHOSAURUS = 1019;
+	public static final ResourceLocation LESOTHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lesothosaurus"));
+	public static final ResourceLocation LESOTHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lesothosaurus_young"));
+
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
 	public static final int GUI_ARCHIVE_SORTER_BOTTOM_ID = 1017;

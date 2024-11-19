@@ -14,7 +14,7 @@ public class RenderPrestosuchus extends RenderLivingBaseWithBook<EntityPrehistor
     public RenderPrestosuchus(RenderManager mgr) {
         super(mgr, new ModelPrestosuchus(), 0.5f);
     }
-    public static float getScaler() {return 0.65f; }
+    public static float getScaler() {return 1f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPrestosuchus entity) {

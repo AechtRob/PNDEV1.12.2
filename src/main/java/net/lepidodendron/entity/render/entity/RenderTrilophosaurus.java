@@ -12,7 +12,7 @@ public class RenderTrilophosaurus extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trilophosaurus.png");
 
     public static float getScaler() {
-        return 0.15f;
+        return 0.55f;
     }
 
     public RenderTrilophosaurus(RenderManager mgr) {
@@ -29,18 +29,17 @@ public class RenderTrilophosaurus extends RenderLivingBaseWithBook<EntityPrehist
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
 
         switch (entityLiving.getClimbFacing()) {
-            case DOWN:
             default:
                 break;
 
-            case EAST: case WEST: case NORTH: case SOUTH:
-                GlStateManager.translate(0.0F, 0.05F, -0.205F);
-                GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+            case EAST: case WEST: case NORTH: case SOUTH: case DOWN:
+                GlStateManager.translate(0.0F, -0.6F, -0.06);
+                GlStateManager.rotate(0, 1.0F, 0.0F, 0.0F);
                 break;
 
             case UP:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
-                GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+                GlStateManager.translate(0.0F, -20.5F, 0.0F);
+                GlStateManager.rotate(0, 1.0F, 0.0F, 0.0F);
         }
 
     }

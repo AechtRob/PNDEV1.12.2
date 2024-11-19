@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraPrestosuchus extends EntityPrehistoricFloraLa
 		maxWidth = 0.85F;
 		maxHeight = 1.82F;
 		maxHealthAgeable = 68.0D;
-		NOISE_ANIMATION = Animation.create(25);
+		NOISE_ANIMATION = Animation.create(8);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -97,7 +97,7 @@ public class EntityPrehistoricFloraPrestosuchus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 18;
 	}
 
 	@Override
@@ -116,7 +116,7 @@ public class EntityPrehistoricFloraPrestosuchus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 12;
 	}
 
 	@Override
@@ -135,7 +135,7 @@ public class EntityPrehistoricFloraPrestosuchus extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.590F;
+		float speedBase = 0.35F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -143,7 +143,7 @@ public class EntityPrehistoricFloraPrestosuchus extends EntityPrehistoricFloraLa
 			return 0.0F; //Is drinking
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+			speedBase = speedBase * 2.8F;
 		}
 		return speedBase;
 	}
