@@ -68,7 +68,7 @@ public class Functions {
     public static IBlockState getPortalBlockState(int lastDimension) {
         IBlockState portalBlockState = null;
         if (lastDimension != 1) {
-            portalBlockState = Blocks.STONE.getStateFromMeta(0);
+            portalBlockState = BlockPortalBlockOverworld.block.getDefaultState();
         }
         if (lastDimension == -1) {
             portalBlockState = Blocks.OBSIDIAN.getDefaultState();
@@ -86,7 +86,7 @@ public class Functions {
             portalBlockState = BlockPortalBlockSilurian.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimDevonian) {
-            portalBlockState = BlockArchaeopterisPlanks.block.getDefaultState();
+            portalBlockState = BlockPortalBlockDevonian.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimCarboniferous) {
             portalBlockState = BlockPortalBlockCarboniferous.block.getDefaultState();

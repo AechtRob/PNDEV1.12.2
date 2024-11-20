@@ -65,14 +65,18 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_initialise")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_close"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_close")));
+		sounds.put(new ResourceLocation("lepidodendron", "portal_block_ambient"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_ambient")));
+		sounds.put(new ResourceLocation("lepidodendron", "portal_block_water_drain"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_water_drain")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_precambrian"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_precambrian")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_ordovician"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_ordovician")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_silurian"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_silurian")));
-		sounds.put(new ResourceLocation("lepidodendron", "portal_block_water_drain"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_water_drain")));
+		sounds.put(new ResourceLocation("lepidodendron", "portal_block_devonian"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_devonian")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_carboniferous"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_carboniferous")));
 		sounds.put(new ResourceLocation("lepidodendron", "time_researcher_crusher"),
