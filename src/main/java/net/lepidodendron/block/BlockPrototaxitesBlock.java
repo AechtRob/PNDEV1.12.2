@@ -137,18 +137,5 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 			return this.getDefaultState().withProperty(FACING, facing);
 		}
 
-		@SideOnly(Side.CLIENT)
-		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				if (!Loader.isModLoaded("pnsilurian")) {
-					tooltip.add("NOTE: Used to build the portal to the Silurian dimension but you do not have that dimension mod installed");
-				}
-				else {
-					tooltip.add("NOTE: Used to build the portal to the Silurian dimension");
-				}
-				super.addInformation(stack, player, tooltip, advanced);
-			}
-		}
 	}
 }

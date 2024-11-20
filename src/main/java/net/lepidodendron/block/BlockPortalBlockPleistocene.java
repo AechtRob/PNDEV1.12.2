@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -21,16 +22,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockPortalBlockOverworld extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:portal_block_overworld")
+public class BlockPortalBlockPleistocene extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:portal_block_pleistocene")
 	public static final Block block = null;
-	public BlockPortalBlockOverworld(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.portal_block_overworld);
+	public BlockPortalBlockPleistocene(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.portal_block_pleistocene);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("portal_block_overworld"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("portal_block_pleistocene"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -38,13 +39,13 @@ public class BlockPortalBlockOverworld extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:portal_block_overworld", "inventory"));
+				new ModelResourceLocation("lepidodendron:portal_block_pleistocene", "inventory"));
 	}
 
 	public static class BlockCustom extends BlockPortalBlock {
 		public BlockCustom() {
 			super();
-			setTranslationKey("pf_portal_block_overworld");
+			setTranslationKey("pf_portal_block_pleistocene");
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
@@ -52,7 +53,12 @@ public class BlockPortalBlockOverworld extends ElementsLepidodendronMod.ModEleme
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("NOTE: Used to build the portal back to the Overworld dimension");
+				if (!Loader.isModLoaded("pnpleistocene")) {
+					tooltip.add("NOTE: Used to build the portal to the Pleistocene dimension but you do not have that dimension mod installed");
+				}
+				else {
+					tooltip.add("NOTE: Used to build the portal to the Pleistocene dimension");
+				}
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}
