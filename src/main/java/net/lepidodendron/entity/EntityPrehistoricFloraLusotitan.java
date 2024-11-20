@@ -626,4 +626,5 @@ public class EntityPrehistoricFloraLusotitan extends EntityPrehistoricFloraLandW
 	public static float getScaler(@Nullable String variant) {
 		return RenderLusotitan.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.10F;}
 }

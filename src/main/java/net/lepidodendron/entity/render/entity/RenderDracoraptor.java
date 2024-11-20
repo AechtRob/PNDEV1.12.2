@@ -14,7 +14,7 @@ public class RenderDracoraptor extends RenderLivingBaseWithBook<EntityPrehistori
     public RenderDracoraptor(RenderManager mgr) {
         super(mgr, new ModelDracoraptor(), 0.5f);
     }
-    public static float getScaler() {return 0.64f; }
+    public static float getScaler() {return 0.45f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDracoraptor entity) {
