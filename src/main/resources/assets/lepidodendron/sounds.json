@@ -88,6 +88,30 @@
       }
     ]
   },
+  "portal_block_ordovician": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_ordovician",
+        "stream": false
+      }
+    ]
+  },
+  "portal_block_silurian": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_silurian",
+        "stream": false
+      }
+    ]
+  },
+  "portal_block_water_drain": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_water_drain",
+        "stream": false
+      }
+    ]
+  },
   "portal_block_carboniferous": {
     "sounds": [
       {
