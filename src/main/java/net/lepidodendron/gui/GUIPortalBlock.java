@@ -3,9 +3,7 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockMicroscope;
-import net.lepidodendron.util.Functions;
-import net.lepidodendron.util.IDimensionRestricted;
+import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiButton;
@@ -18,7 +16,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -37,21 +34,21 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
-    public static int GUIID = LepidodendronMod.GUI_MICROSCOPE_ID;
+public class GUIPortalBlock extends ElementsLepidodendronMod.ModElement {
+    public static int GUIID = LepidodendronMod.GUI_PORTAL_BLOCK_ID;
     public static HashMap guistate = new HashMap();
-    public GUIMicroscope(ElementsLepidodendronMod instance) {
+    public GUIPortalBlock(ElementsLepidodendronMod instance) {
         super(instance, 1);
     }
 
-    public static class GUILepidodendronMicroscope extends Container implements Supplier<Map<Integer, Slot>> {
+    public static class GUILepidodendronPortalBlock extends Container implements Supplier<Map<Integer, Slot>> {
         private IInventory internal;
         private World world;
         private EntityPlayer entity;
         private int x, y, z;
         private Map<Integer, Slot> customSlots = new HashMap<>();
 
-        public GUILepidodendronMicroscope(World world, int x, int y, int z, EntityPlayer player) {
+        public GUILepidodendronPortalBlock(World world, int x, int y, int z, EntityPlayer player) {
             this.world = world;
             this.entity = player;
             this.x = x;
@@ -64,11 +61,11 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
 
             this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 56, -16) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 56, -22) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    if (ent instanceof BlockMicroscope.TileEntityMicroscope) {
-                        BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) ent;
+                    if (ent instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                        BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) ent;
                         return te.isItemValidForSlot(0, stack);
                     }
                     return false;
@@ -76,16 +73,16 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
 
                 @Override
                 public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
-                    if (ent instanceof BlockMicroscope.TileEntityMicroscope) {
-                        ((BlockMicroscope.TileEntityMicroscope)ent).setPeriodLock(0, true);
+                    if (ent instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                        ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser)ent).setPeriodLock(0, true);
                     }
                     return super.onTake(thePlayer, stack);
                 }
 
                 @Override
                 public void onSlotChanged() {
-                    if (ent instanceof BlockMicroscope.TileEntityMicroscope) {
-                        ((BlockMicroscope.TileEntityMicroscope)ent).setPeriodLock(0, true);
+                    if (ent instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                        ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser)ent).setPeriodLock(-1, true);
                     }
                     super.onSlotChanged();
                 }
@@ -95,7 +92,7 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 115, -16) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 115, -22) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -111,9 +108,9 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 127 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 128 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 185));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 186));
 
         }
 
@@ -277,16 +274,16 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         private int x, y, z;
         private EntityPlayer entity;
         public GuiWindow(World world, int x, int y, int z, EntityPlayer entity) {
-            super(new GUILepidodendronMicroscope(world, x, y, z, entity));
+            super(new GUILepidodendronPortalBlock(world, x, y, z, entity));
             this.world = world;
             this.x = x;
             this.y = y;
             this.z = z;
             this.entity = entity;
             this.xSize = 176;
-            this.ySize = 255;
+            this.ySize = 253;
         }
-        private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/microscope_gui.png");
+        private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/portal_block_gui.png");
         @Override
         public void drawScreen(int mouseX, int mouseY, float partialTicks) {
             this.drawDefaultBackground();
@@ -313,8 +310,8 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         private int getCurrentRF() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
-                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
                     return te.getEnergyStored();
                 }
             }
@@ -324,8 +321,8 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         private int getMaxRF() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
-                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
                     return te.getMaxEnergyStored();
                 }
             }
@@ -335,8 +332,8 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         private int getRFHeight() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
-                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
                     //return (int)Math.round(te.progressFraction() * 70D);
                     double fraction = te.getEnergyFraction();
                     return (int) Math.round(fraction * 24D);
@@ -358,144 +355,173 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                 this.drawTexturedModalRect(k + 21, l + 52 + (24 - this.getRFHeight()) - 28, 176, 58, 16, this.getRFHeight());
             }
             //Arrow:
-            this.drawTexturedModalRect(k + 79, l + 28 , 176, 14, getProgressBarLength(), 16);
+            this.drawTexturedModalRect(k + 79, l + 21, 176, 14, getProgressBarLength(), 16);
             //Tagging options:
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
-                    ItemStack stack = ((BlockMicroscope.TileEntityMicroscope)tileEntity).getStackInSlot(0);
-                    if (stack.hasTagCompound()) {
-                        if (!stack.getTagCompound().hasKey("period")) {
-                            String resourcelocation = "";
-                            if (stack.getTagCompound().hasKey("PFMob")) {
-                                NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
-                                resourcelocation = (blockNBT.getString("id"));
-                            }
-                            if (stack.getTagCompound().hasKey("PFStatic")) {
-                                NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
-                                resourcelocation = (blockNBT.getString("id"));
-                            }
-                            if (stack.getTagCompound().hasKey("PFPlant")) {
-                                NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
-                                resourcelocation = (blockNBT.getString("id"));
-                            }
-                            if (!resourcelocation.equalsIgnoreCase("")) {
-                                ArrayList<Integer> list = Functions.dimAllowed(resourcelocation);
-                                showTags(list, k, l);
-                            }
-                            if (stack.getItem() instanceof IDimensionRestricted) {
-                                ArrayList<Integer> list = ((IDimensionRestricted)stack.getItem()).dimAllowed();
-                                showTags(list, k, l);
-                            }
-                            if (Block.getBlockFromItem(stack.getItem()) instanceof IDimensionRestricted) {
-                                ArrayList<Integer> list = ((IDimensionRestricted)Block.getBlockFromItem(stack.getItem())).dimAllowed();
-                                showTags(list, k, l);
-                            }
-                            //Lock the slots if we're busy processing this:
-                            if (((BlockMicroscope.TileEntityMicroscope)tileEntity).getPeriodLock() != 0) {
-                                lockTags(((BlockMicroscope.TileEntityMicroscope)tileEntity).getPeriodLock(), k, l);
-                            }
-                        }
+                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                    ItemStack stack = ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).getStackInSlot(0);
+                    ArrayList<Integer> list = new ArrayList<Integer>();
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockOverworld.block) {
+                        list.add(0);
                     }
-                    else {
-                        if (stack.getItem() instanceof IDimensionRestricted) {
-                            ArrayList<Integer> list = ((IDimensionRestricted)stack.getItem()).dimAllowed();
-                            showTags(list, k, l);
-                        }
-                        if (Block.getBlockFromItem(stack.getItem()) instanceof IDimensionRestricted) {
-                            ArrayList<Integer> list = ((IDimensionRestricted)Block.getBlockFromItem(stack.getItem())).dimAllowed();
-                            showTags(list, k, l);
-                        }
-                        //Lock the slots if we're busy processing this:
-                        if (((BlockMicroscope.TileEntityMicroscope)tileEntity).getPeriodLock() != 0) {
-                            lockTags(((BlockMicroscope.TileEntityMicroscope)tileEntity).getPeriodLock(), k, l);
-                        }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockPrecambrian.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(1)) {
+                        list.add(1);
                     }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockCambrian.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(2)) {
+                        list.add(2);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockOrdovician.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(3)) {
+                        list.add(3);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockSilurian.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(4)) {
+                        list.add(4);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockDevonian.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(5)) {
+                        list.add(5);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockCarboniferous.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(6)) {
+                        list.add(6);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockPermian.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(7)) {
+                        list.add(7);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockTriassic.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(8)) {
+                        list.add(8);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockJurassic.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(9)) {
+                        list.add(9);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockCretaceousEarly.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(10)) {
+                        list.add(10);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockCretaceousLate.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(11)) {
+                        list.add(11);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockPaleogene.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(12)) {
+                        list.add(12);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockNeogene.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(13)) {
+                        list.add(13);
+                    }
+                    if (Block.getBlockFromItem(stack.getItem()) != BlockPortalBlockPleistocene.block
+                            && ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(14)) {
+                        list.add(14);
+                    }
+                    showTags(list, k, l);
+                }
+                if (((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser)tileEntity).getPeriodLock() != -1) {
+                    lockTags(((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser)tileEntity).getPeriodLock(), k, l);
                 }
             }
         }
 
         void lockTags(int openTag, int k, int l) {
+            if (openTag != 0) {
+                this.drawTexturedModalRect(k + 152, l + 161 , 176, 90, 16, 6);
+            }
             if (openTag != 1) {
-                this.drawTexturedModalRect(k + 152, l + 59 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 49 , 176, 90, 16, 6);
             }
             if (openTag != 2) {
-                this.drawTexturedModalRect(k + 152, l + 67 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 57 , 176, 90, 16, 6);
             }
             if (openTag != 3) {
-                this.drawTexturedModalRect(k + 152, l + 75 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 65 , 176, 90, 16, 6);
             }
             if (openTag != 4) {
-                this.drawTexturedModalRect(k + 152, l + 83 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 73 , 176, 90, 16, 6);
             }
             if (openTag != 5) {
-                this.drawTexturedModalRect(k + 152, l + 91 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 81 , 176, 90, 16, 6);
             }
             if (openTag != 6) {
-                this.drawTexturedModalRect(k + 152, l + 99 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 89 , 176, 90, 16, 6);
             }
             if (openTag != 7) {
-                this.drawTexturedModalRect(k + 152, l + 107 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 97 , 176, 90, 16, 6);
             }
             if (openTag != 8) {
-                this.drawTexturedModalRect(k + 152, l + 115 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 105 , 176, 90, 16, 6);
             }
             if (openTag != 9) {
-                this.drawTexturedModalRect(k + 152, l + 123 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 113 , 176, 90, 16, 6);
             }
             if (openTag != 10) {
-                this.drawTexturedModalRect(k + 152, l + 131 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 121 , 176, 90, 16, 6);
             }
             if (openTag != 11) {
-                this.drawTexturedModalRect(k + 152, l + 139 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 129 , 176, 90, 16, 6);
             }
             if (openTag != 12) {
-                this.drawTexturedModalRect(k + 152, l + 147 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 137 , 176, 90, 16, 6);
             }
             if (openTag != 13) {
-                this.drawTexturedModalRect(k + 152, l + 155 , 176, 90, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 145 , 176, 90, 16, 6);
+            }
+            if (openTag != 14) {
+                this.drawTexturedModalRect(k + 152, l + 153 , 176, 90, 16, 6);
             }
         }
 
         void showTags(ArrayList<Integer> list, int k, int l) {
+            if (list.contains(0)) {
+                this.drawTexturedModalRect(k + 152, l + 161 , 176, 83, 16, 6);
+            }
             if (list.contains(1)) {
-                this.drawTexturedModalRect(k + 152, l + 59 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 49 , 176, 83, 16, 6);
             }
             if (list.contains(2)) {
-                this.drawTexturedModalRect(k + 152, l + 67 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 57 , 176, 83, 16, 6);
             }
             if (list.contains(3)) {
-                this.drawTexturedModalRect(k + 152, l + 75 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 65 , 176, 83, 16, 6);
             }
             if (list.contains(4)) {
-                this.drawTexturedModalRect(k + 152, l + 83 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 73 , 176, 83, 16, 6);
             }
             if (list.contains(5)) {
-                this.drawTexturedModalRect(k + 152, l + 91 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 81 , 176, 83, 16, 6);
             }
             if (list.contains(6)) {
-                this.drawTexturedModalRect(k + 152, l + 99 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 89 , 176, 83, 16, 6);
             }
             if (list.contains(7)) {
-                this.drawTexturedModalRect(k + 152, l + 107 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 97 , 176, 83, 16, 6);
             }
             if (list.contains(8)) {
-                this.drawTexturedModalRect(k + 152, l + 115 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 105 , 176, 83, 16, 6);
             }
             if (list.contains(9)) {
-                this.drawTexturedModalRect(k + 152, l + 123 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 113 , 176, 83, 16, 6);
             }
             if (list.contains(10)) {
-                this.drawTexturedModalRect(k + 152, l + 131 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 121 , 176, 83, 16, 6);
             }
             if (list.contains(11)) {
-                this.drawTexturedModalRect(k + 152, l + 139 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 129 , 176, 83, 16, 6);
             }
             if (list.contains(12)) {
-                this.drawTexturedModalRect(k + 152, l + 147 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 137 , 176, 83, 16, 6);
             }
             if (list.contains(13)) {
-                this.drawTexturedModalRect(k + 152, l + 155 , 176, 83, 16, 6);
+                this.drawTexturedModalRect(k + 152, l + 145 , 176, 83, 16, 6);
+            }
+            if (list.contains(14)) {
+                this.drawTexturedModalRect(k + 152, l + 153 , 176, 83, 16, 6);
             }
         }
 
@@ -508,86 +534,98 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
-                    if (((BlockMicroscope.TileEntityMicroscope)tileEntity).inputType(((BlockMicroscope.TileEntityMicroscope)tileEntity).getStackInSlot(0)) != 2) {
-                        return;
-                    }
+                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+//                    if (((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser)tileEntity).inputType(((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser)tileEntity).getStackInSlot(0)) != 2) {
+//                        return;
+//                    }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 59 && mouseY <= l + 66) {
+                                && mouseY >= l + 49 && mouseY <= l + 56) {
                             clickPeriod(tileEntity, 1);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 67 && mouseY <= l + 74) {
+                                && mouseY >= l + 57 && mouseY <= l + 64) {
                             clickPeriod(tileEntity, 2);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 75 && mouseY <= l + 82) {
+                                && mouseY >= l + 65 && mouseY <= l + 72) {
                             clickPeriod(tileEntity, 3);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 83 && mouseY <= l + 90) {
+                                && mouseY >= l + 73 && mouseY <= l + 80) {
                             clickPeriod(tileEntity, 4);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 91 && mouseY <= l + 98) {
+                                && mouseY >= l + 81 && mouseY <= l + 88) {
                             clickPeriod(tileEntity, 5);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 99 && mouseY <= l + 106) {
+                                && mouseY >= l + 89 && mouseY <= l + 96) {
                             clickPeriod(tileEntity, 6);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 107 && mouseY <= l + 114) {
+                                && mouseY >= l + 97 && mouseY <= l + 104) {
                             clickPeriod(tileEntity, 7);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 115 && mouseY <= l + 122) {
+                                && mouseY >= l + 105 && mouseY <= l + 112) {
                             clickPeriod(tileEntity, 8);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 123 && mouseY <= l + 130) {
+                                && mouseY >= l + 113 && mouseY <= l + 120) {
                             clickPeriod(tileEntity, 9);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 131 && mouseY <= l + 138) {
+                                && mouseY >= l + 121 && mouseY <= l + 128) {
                             clickPeriod(tileEntity, 10);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 139 && mouseY <= l + 146) {
+                                && mouseY >= l + 129 && mouseY <= l + 136) {
                             clickPeriod(tileEntity, 11);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 147 && mouseY <= l + 154) {
+                                && mouseY >= l + 137 && mouseY <= l + 144) {
                             clickPeriod(tileEntity, 12);
                         }
                     }
                     if (mouseButton == 0 || mouseButton == 1) {
                         if (mouseX >= k + 151 && mouseX <= k + 167
-                                && mouseY >= l + 155 && mouseY <= l + 162) {
+                                && mouseY >= l + 145 && mouseY <= l + 152) {
                             clickPeriod(tileEntity, 13);
+                        }
+                    }
+                    if (mouseButton == 0 || mouseButton == 1) {
+                        if (mouseX >= k + 151 && mouseX <= k + 167
+                                && mouseY >= l + 153 && mouseY <= l + 160) {
+                            clickPeriod(tileEntity, 14);
+                        }
+                    }
+                    if (mouseButton == 0 || mouseButton == 1) {
+                        if (mouseX >= k + 151 && mouseX <= k + 167
+                                && mouseY >= l + 161 && mouseY <= l + 168) {
+                            clickPeriod(tileEntity, 0);
                         }
                     }
                 }
@@ -596,61 +634,13 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         }
 
         private void clickPeriod(TileEntity tileEntity, int period) {
-            ItemStack stack = ((BlockMicroscope.TileEntityMicroscope)tileEntity).getStackInSlot(0);
             boolean canSelect = false;
-            if (stack.hasTagCompound()) {
-                if (!stack.getTagCompound().hasKey("period")) {
-                    String resourcelocation = "";
-                    if (stack.getTagCompound().hasKey("PFMob")) {
-                        NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
-                        resourcelocation = (blockNBT.getString("id"));
-                    }
-                    if (stack.getTagCompound().hasKey("PFStatic")) {
-                        NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
-                        resourcelocation = (blockNBT.getString("id"));
-                    }
-                    if (stack.getTagCompound().hasKey("PFPlant")) {
-                        NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
-                        resourcelocation = (blockNBT.getString("id"));
-                    }
-                    if (!resourcelocation.equalsIgnoreCase("")) {
-                        if (Functions.dimAllowed(resourcelocation).contains(period)) {
-                            canSelect = true;
-                        }
-                    }
-                    if (stack.getItem() instanceof IDimensionRestricted) {
-                        if (((IDimensionRestricted)stack.getItem()).dimAllowed().contains(period)) {
-                            canSelect = true;
-                        }
-                    }
-                    if (Block.getBlockFromItem(stack.getItem()) instanceof IDimensionRestricted) {
-                        if (((IDimensionRestricted)Block.getBlockFromItem(stack.getItem())).dimAllowed().contains(period)) {
-                            canSelect = true;
-                        }
-                    }
-                }
-            }
-            else {
-                if (stack.getItem() instanceof IDimensionRestricted) {
-                    if (((IDimensionRestricted)stack.getItem()).dimAllowed().contains(period)) {
-                        canSelect = true;
-                    }
-                }
-                if (Block.getBlockFromItem(stack.getItem()) instanceof IDimensionRestricted) {
-                    if (((IDimensionRestricted)Block.getBlockFromItem(stack.getItem())).dimAllowed().contains(period)) {
-                        canSelect = true;
-                    }
-                }
+            if (((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).canSelectDimension(period)) {
+                canSelect = true;
             }
 
             switch (period) {
                 case 0:
-                default:
-                    ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(0, true);
-                    LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIMicroscopeTagSelectMessage(0, x, y, z));
-                    this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    break;
-
                 case 1:
                 case 2:
                 case 3:
@@ -664,13 +654,10 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
                 case 11:
                 case 12:
                 case 13:
-                    if (((BlockMicroscope.TileEntityMicroscope) tileEntity).getPeriodLock() == period) {
-                        ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(0, true);
-                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIMicroscopeTagSelectMessage(0, x, y, z));
-                        this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    } else if (((BlockMicroscope.TileEntityMicroscope) tileEntity).getPeriodLock() != period && canSelect) {
-                        ((BlockMicroscope.TileEntityMicroscope) tileEntity).setPeriodLock(period, true);
-                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIMicroscopeTagSelectMessage(period, x, y, z));
+                case 14:
+                    if (((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).getPeriodLock() != period && canSelect) {
+                        ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity).setPeriodLock(period, true);
+                        LepidodendronMod.PACKET_HANDLER.sendToServer(new GUIPortalBlockTagSelectMessage(period, x, y, z));
                         this.mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     }
                     break;
@@ -680,8 +667,8 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         private int getProgressBarLength() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
-                if (tileEntity instanceof BlockMicroscope.TileEntityMicroscope) {
-                    BlockMicroscope.TileEntityMicroscope te = (BlockMicroscope.TileEntityMicroscope) tileEntity;
+                if (tileEntity instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                    BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser te = (BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) tileEntity;
                     return (int)Math.round(te.progressFraction() * 22D);
                 }
             }
@@ -700,21 +687,22 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Microscope analysis", 41, -38, 4210752);
-            this.fontRenderer.drawString("Tag as...", 8, 53, 4210752);
-            this.fontRenderer.drawString("Precambrian", 88, 13, 4210752);
-            this.fontRenderer.drawString("Cambrian", 106, 21, 4210752);
-            this.fontRenderer.drawString("Ordovician", 98, 29, 4210752);
-            this.fontRenderer.drawString("Silurian", 113, 37, 4210752);
-            this.fontRenderer.drawString("Devonian", 106, 45, 4210752);
-            this.fontRenderer.drawString("Carboniferous", 77, 53, 4210752);
-            this.fontRenderer.drawString("Permian", 112, 61, 4210752);
-            this.fontRenderer.drawString("Triassic", 110, 69, 4210752);
-            this.fontRenderer.drawString("Jurassic", 106, 77, 4210752);
-            this.fontRenderer.drawString("Cretaceous", 92, 85, 4210752);
-            this.fontRenderer.drawString("Paleogene", 99, 93, 4210752);
-            this.fontRenderer.drawString("Neogene", 108, 101, 4210752);
-            this.fontRenderer.drawString("Pleistocene", 93, 109, 4210752);
+            this.fontRenderer.drawString("Portal Block Configuration", 26, -38, 4210752);
+            this.fontRenderer.drawString("Precambrian", 88, 4, 4210752);
+            this.fontRenderer.drawString("Cambrian", 106, 12, 4210752);
+            this.fontRenderer.drawString("Ordovician", 98, 20, 4210752);
+            this.fontRenderer.drawString("Silurian", 113, 28, 4210752);
+            this.fontRenderer.drawString("Devonian", 106, 36, 4210752);
+            this.fontRenderer.drawString("Carboniferous", 77, 44, 4210752);
+            this.fontRenderer.drawString("Permian", 112, 52, 4210752);
+            this.fontRenderer.drawString("Triassic", 110, 60, 4210752);
+            this.fontRenderer.drawString("Jurassic", 106, 68, 4210752);
+            this.fontRenderer.drawString("Early Cretaceous", 61, 76, 4210752);
+            this.fontRenderer.drawString("Late Cretaceous", 66, 84, 4210752);
+            this.fontRenderer.drawString("Paleogene", 99, 92, 4210752);
+            this.fontRenderer.drawString("Neogene", 108, 100, 4210752);
+            this.fontRenderer.drawString("Pleistocene", 93, 108, 4210752);
+            this.fontRenderer.drawString("Overworld", 98, 116, 4210752);
 
             this.fontRenderer.drawString("Inventory", 8, 116, 4210752);
         }
@@ -856,15 +844,15 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             return;
     }
 
-    public static class GUIMicroscopeTagSelectMessageHandler implements IMessageHandler<GUIMicroscope.GUIMicroscopeTagSelectMessage, IMessage> {
+    public static class GUIPortalBlockTagSelectMessageHandler implements IMessageHandler<GUIPortalBlock.GUIPortalBlockTagSelectMessage, IMessage> {
         @Override
-        public IMessage onMessage(GUIMicroscope.GUIMicroscopeTagSelectMessage message, MessageContext context) {
+        public IMessage onMessage(GUIPortalBlock.GUIPortalBlockTagSelectMessage message, MessageContext context) {
 
             EntityPlayerMP entity = context.getServerHandler().player;
             TileEntity te = entity.getServerWorld().getTileEntity(new BlockPos(message.x,message.y, message.z));
             if (te != null) {
-                if (te instanceof BlockMicroscope.TileEntityMicroscope) {
-                    ((BlockMicroscope.TileEntityMicroscope) te).setPeriodLock(message.value, true);
+                if (te instanceof BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) {
+                    ((BlockTimeResearcherDispenser.TileEntityTimeResearcherDispenser) te).setPeriodLock(message.value, true);
                     te.getWorld().notifyBlockUpdate(te.getPos(), te.getWorld().getBlockState(te.getPos()), te.getWorld().getBlockState(te.getPos()), 3);
                     te.markDirty();
                 }
@@ -873,13 +861,13 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
         }
     }
 
-    public static class GUIMicroscopeTagSelectMessage implements IMessage {
+    public static class GUIPortalBlockTagSelectMessage implements IMessage {
         int value;
         int x, y, z;
-        public GUIMicroscopeTagSelectMessage() {
+        public GUIPortalBlockTagSelectMessage() {
         }
 
-        public GUIMicroscopeTagSelectMessage(int value, int x, int y, int z) {
+        public GUIPortalBlockTagSelectMessage(int value, int x, int y, int z) {
             this.value = value;
             this.x = x;
             this.y = y;

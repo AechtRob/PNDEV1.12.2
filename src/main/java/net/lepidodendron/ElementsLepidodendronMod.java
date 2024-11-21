@@ -1556,6 +1556,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUILabCabinet.GUIID) {
 				return new GUILabCabinet.GUILepidodendronLabCabinet(world, x, y, z, player);
 			}
+			if (id == GUIPortalBlock.GUIID) {
+				return new GUIPortalBlock.GUILepidodendronPortalBlock(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -1614,6 +1617,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUILabCabinet.GUIID) {
 				return new GUILabCabinet.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUIPortalBlock.GUIID) {
+				return new GUIPortalBlock.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

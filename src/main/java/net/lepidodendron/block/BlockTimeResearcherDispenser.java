@@ -3,8 +3,10 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.gui.GUIPortalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -222,64 +224,104 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			return BlockFaceShape.UNDEFINED;
 		}
 
+		@Override
+		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
+			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
+			if (entity instanceof EntityPlayer) {
+				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIPortalBlock.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
+			}
+			return true;
+		}
+
 	}
 
 	public static class TileEntityTimeResearcherDispenser extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
-		private int dimensionSelected;
+		private int dimensionSelected = -1;
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime = 200; //10 seconds
 		private int minEnergyNeeded = 200;
 
 		public boolean canSelectDimension(int dimID) {
+			TileEntity tileEntity = world.getTileEntity(pos.up());
+			if (!(tileEntity instanceof BlockTimeResearcher.TileEntityTimeResearcher)) {
+				return false;
+			}
+			BlockTimeResearcher.TileEntityTimeResearcher te = (BlockTimeResearcher.TileEntityTimeResearcher) tileEntity;
 			switch (dimID) {
 				case 0: default:
 					return true;
 
 				case 1:
-					return Loader.isModLoaded("pnprecambrian");
+					return Loader.isModLoaded("pnprecambrian")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 2:
-					return Loader.isModLoaded("pncambrian");
+					return Loader.isModLoaded("pncambrian")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 3:
-					return Loader.isModLoaded("pnordovician");
+					return Loader.isModLoaded("pnordovician")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 4:
-					return Loader.isModLoaded("pnsilurian");
+					return Loader.isModLoaded("pnsilurian")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 5:
-					return Loader.isModLoaded("pndevonian");
+					return Loader.isModLoaded("pndevonian")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 6:
-					return Loader.isModLoaded("pncarboniferous");
+					return Loader.isModLoaded("pncarboniferous")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 7:
-					return Loader.isModLoaded("pnpermian");
+					return Loader.isModLoaded("pnpermian")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 8:
-					return Loader.isModLoaded("pntriassic");
+					return Loader.isModLoaded("pntriassic")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 9:
-					return Loader.isModLoaded("pnjurassic");
+					return Loader.isModLoaded("pnjurassic")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 10:
-					return Loader.isModLoaded("pncretaceousearly");
+					return Loader.isModLoaded("pncretaceousearly")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 11:
-					return Loader.isModLoaded("pncretaceouslate");
+					return Loader.isModLoaded("pncretaceouslate")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 12:
-					return Loader.isModLoaded("pnpaleogene");
+					return Loader.isModLoaded("pnpaleogene")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 13:
-					return Loader.isModLoaded("pnneogene");
+					return Loader.isModLoaded("pnneogene")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 
 				case 14:
-					return Loader.isModLoaded("pnpleistocene");
+					return Loader.isModLoaded("pnpleistocene")
+							&& te.getResearchPercent(dimID) > te.portalResearch;
 			}
+		}
+
+		public void setPeriodLock(int period, boolean resetTicks) {
+			dimensionSelected = period;
+			if (resetTicks) {
+				this.processTick = 0;
+				this.isProcessing = false;
+			}
+		}
+
+		public int getPeriodLock() {
+			return this.dimensionSelected;
 		}
 
 		public boolean canStartProcess() {
@@ -387,6 +429,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 			if (!this.isRoomForOutputStack() || this.dimensionSelected < 0 || (!canSelectDimension(this.dimensionSelected))) {
 				this.processTick = 0;
 				this.isProcessing = false;
+				this.dimensionSelected = -1;
 			}
 
 			if (this.isProcessing && ((this.isRoomForOutputStack() && this.processTick > this.processTickTime) || !(isValidItemForProcess(this.getStackInSlot(0)) > 0))) {
@@ -459,6 +502,7 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 							break;
 
 					}
+					this.dimensionSelected = -1;
 				}
 				updated = true;
 			}
@@ -471,6 +515,9 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		}
 
 		public boolean isRoomForOutputStack() {
+			if (this.getStackInSlot(1).isEmpty()) {
+				return true;
+			}
 			if ((!this.getStackInSlot(1).isEmpty()) && !(Block.getBlockFromItem(this.getStackInSlot(1).getItem()) instanceof BlockPortalBlock)) {
 				return false;
 			}
@@ -563,6 +610,15 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
+			if (compound.hasKey("processTick")) {
+				this.processTick = compound.getInteger("processTick");
+			}
+			if (compound.hasKey("isProcessing")) {
+				this.isProcessing = compound.getBoolean("isProcessing");
+			}
 			this.forgeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
 				ItemStackHelper.loadAllItems(compound, this.forgeContents);
@@ -573,6 +629,9 @@ public class BlockTimeResearcherDispenser extends ElementsLepidodendronMod.ModEl
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
+			compound.setBoolean("isProcessing", this.isProcessing);
+			compound.setInteger("processTick", this.processTick);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.forgeContents);
 			}
