@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:crumillospongia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:crumillospongia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:crumillospongia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:crumillospongia", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:crumillospongia", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:crumillospongia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:crumillospongia", "x": 180}
+    ]
+  }
+}

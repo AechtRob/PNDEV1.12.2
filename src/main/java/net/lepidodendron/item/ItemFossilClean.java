@@ -41,7 +41,54 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
+
 				/*
+				new ModelResourceLocation("lepidodendron:fossils/fossil_eucritta_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_pholidogaster_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_eoherpeton_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tealliocaris_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_caerorhachis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_eldeceeon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_silvanerpeton_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_westlothiana_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tristychius_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_eurynotus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coeruleodraco_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_eocaecilia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_sericipterus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_sordes_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_terrestrisuchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_triadobatrachus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rhadinosteus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_spinophorosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tariccoia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_soomaspis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_triopus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tremaglaspis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_drepanosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_anthracoceras_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_arcestes_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_goldringia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_segisaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_tuzoia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_acheronauta_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_thylacares_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_apateon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_lepidasterella_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_kalops_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_illinichthys_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_microbrachis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_daidal_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_commentrya_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_rhynchonkos_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_diademodon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_carduispongia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_crumillospongia_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_hexanchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_giraffatitan_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_nicrosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_platysuchus_clean", "inventory"),
+*/
 				new ModelResourceLocation("lepidodendron:fossils/fossil_alienum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_mieridduryn_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_venustulus_clean", "inventory"),
@@ -80,9 +127,6 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tomognathus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ikechaoamia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_solnhofenamia_clean", "inventory"),
-
-
-
 				new ModelResourceLocation("lepidodendron:fossils/fossil_calamopleurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tetrameroceras_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_dracoraptor_clean", "inventory"),
@@ -95,7 +139,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_litargosuchus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tropidosuchus_clean", "inventory"),
 
-				 */
+
 
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_lusovenator_clean", "inventory"),

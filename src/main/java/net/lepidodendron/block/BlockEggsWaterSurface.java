@@ -105,7 +105,8 @@ public class BlockEggsWaterSurface extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static final String[] waterLayingMobs = new String[]{
-			"lepidodendron:prehistoric_flora_diadectes"
+			"lepidodendron:prehistoric_flora_diadectes",
+			"lepidodendron:prehistoric_flora_eucritta"
 	};
 
 	public static class BlockCustom extends BlockLilyPad {

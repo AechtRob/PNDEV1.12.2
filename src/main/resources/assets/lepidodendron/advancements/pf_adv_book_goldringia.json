@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:goldringia_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_goldringia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_goldringia.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_goldringia"
+		}
+	}
+}

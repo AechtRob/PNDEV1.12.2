@@ -44,7 +44,6 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 
 
 	public Animation STAND_ANIMATION;
-	public Animation ALERT_ANIMATION;
 	private int standCooldown;
 
 
@@ -55,8 +54,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 		maxWidth = 0.425F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 10.0D;
-		STAND_ANIMATION = Animation.create(40);
-		ALERT_ANIMATION = Animation.create(40);
+		STAND_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -87,7 +85,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 15;
 	}
 
 	public static String getPeriod() {return "Jurassic";}
@@ -96,7 +94,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, ALERT_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
 	}
 
 	@Override
@@ -125,11 +123,11 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.4215F;
+		float speedBase = 0.38F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == STAND_ANIMATION || this.getAnimation() == ALERT_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == STAND_ANIMATION ) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -259,21 +257,12 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			int next = rand.nextInt(10);
-			if(next > 5) {
-				this.setAnimation(STAND_ANIMATION);
-			} else {
-				this.setAnimation(ALERT_ANIMATION);
-			}
+			this.setAnimation(STAND_ANIMATION);
 
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}
