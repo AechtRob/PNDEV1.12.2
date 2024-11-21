@@ -24,7 +24,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -45,13 +44,11 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 
@@ -386,20 +383,6 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return 0;
 	    }
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				if (!Loader.isModLoaded("pnprecambrian")) {
-					tooltip.add("NOTE: Used to build the portal to the Precambrian dimension but you do not have that dimension mod installed");
-				}
-				else {
-					tooltip.add("NOTE: Used to build the portal to the Precambrian dimension");
-				}
-				super.addInformation(stack, player, tooltip, advanced);
-			}
-		}
 
 	}
 

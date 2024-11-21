@@ -4979,6 +4979,10 @@ public class LepidodendronSorter {
 
     public static final int archive_sorter_top = 8000;
     public static final int lab_cabinet = 8001;
+    public static final int portal_block_overworld = 8002;
+    public static final int portal_block_paleogene = 8003;
+    public static final int portal_block_neogene = 8004;
+    public static final int portal_block_pleistocene = 8005;
 
 
     public static final int priscomyzon_raw = 4974;
