@@ -35,19 +35,19 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraCaerorhachis extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraEoherpeton(World world) {
+	public EntityPrehistoricFloraCaerorhachis(World world) {
 		super(world);
-		setSize(0.9F, 0.4F);
+		setSize(0.4F, 0.15F);
 		minWidth = 0.12F;
-		maxWidth = 0.9F;
-		maxHeight = 0.4F;
-		maxHealthAgeable = 18.0D;
+		maxWidth = 0.4F;
+		maxHeight = 0.15F;
+		maxHealthAgeable = 8.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -91,9 +91,9 @@ public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwim
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.155F;
+		float calcSpeed = 0.11F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.165f;
+			calcSpeed= 0.23f;
 			if(this.getIsFast()){
 				calcSpeed *= 1.5f;
 			}
@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwim
 	}
 	@Override
 	public int getAttackLength() {
-		return 10;
+		return 20;
 	}
 
 	protected void initEntityAI() {
@@ -183,19 +183,19 @@ public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwim
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:greererpeton_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:gephyrostegus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:greererpeton_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:gephyrostegus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:greererpeton_death"));
+	            .getObject(new ResourceLocation("lepidodendron:gephyrostegus_death"));
 	}
 
 	@Override
@@ -258,16 +258,12 @@ public class EntityPrehistoricFloraEoherpeton extends EntityPrehistoricFloraSwim
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.EOHERPETON_LOOT_YOUNG;
-		}
-		return LepidodendronMod.EOHERPETON_LOOT;
+		return LepidodendronMod.CAERORHACHIS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_EOHERPETON;
+		return ModTriggers.CLICK_CAERORHACHIS;
 	}
-
 }

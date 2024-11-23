@@ -9254,6 +9254,13 @@ tile.pf_eggs_rhadinosteus.name=Rhadinosteus Spawn
 tile.pf_eggs_apateon.name=Apateon Spawn
 tile.pf_eggs_microbrachis.name=Microbrachis Spawn
 tile.pf_eggs_rhynchonkos.name=Rhynchonkos Spawn
+item.pf_spawn_egg_pygocephalomorpha_tealliocaris.name=Spawn Tealliocaris
+item.pf_spawn_egg_pygocephalomorpha_mamayocaris.name=Spawn Mamayocaris
+item.pf_spawn_egg_pygocephalomorpha_tylocaris.name=Spawn Tylocaris
+item.pf_spawn_egg_pygocephalomorpha_fujianocaris.name=Spawn Fujianocaris
+item.pf_spawn_egg_pygocephalomorpha_laevitealliocaris.name=Spawn Laevitealliocaris
+item.pf_spawn_egg_pygocephalomorpha_iraticaris.name=Spawn Iraticaris
+item.pf_spawn_egg_pygocephalomorpha_notocaris.name=Spawn Notocaris
 
 
 
