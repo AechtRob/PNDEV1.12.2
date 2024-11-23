@@ -32,40 +32,40 @@ public class RenderPygocephalomorpha extends RenderLivingBaseVariantModels<Entit
             case TEALLIOCARIS: default:
                 return TEXTURE_TEALLIOCARIS;
 
-            case MAMAYOCARIS:
-                return TEXTURE_MAMAYOCARIS;
-
-            case TYLOCARIS:
-                return TEXTURE_TYLOCARIS;
-
-            case FUJIANOCARIS:
-                return TEXTURE_FUJIANOCARIS;
-
-            case LAEVITEALLIOCARIS:
-                return TEXTURE_LAEVITEALLIOCARIS;
-
-            case IRATICARIS:
-                return TEXTURE_IRATICARIS;
-
-            case NOTOCARIS:
-                return TEXTURE_NOTOCARIS;
+//            case MAMAYOCARIS:
+//                return TEXTURE_MAMAYOCARIS;
+//
+//            case TYLOCARIS:
+//                return TEXTURE_TYLOCARIS;
+//
+//            case FUJIANOCARIS:
+//                return TEXTURE_FUJIANOCARIS;
+//
+//            case LAEVITEALLIOCARIS:
+//                return TEXTURE_LAEVITEALLIOCARIS;
+//
+//            case IRATICARIS:
+//                return TEXTURE_IRATICARIS;
+//
+//            case NOTOCARIS:
+//                return TEXTURE_NOTOCARIS;
         }
     }
 
     public ModelBase getModelFromArray(EntityPrehistoricFloraPygocephalomorpha entity) {
         switch (entity.getPNType()) {
             default:
-            case NOTOCARIS:
-
-            case LAEVITEALLIOCARIS:
-
-            case IRATICARIS:
-
-            case FUJIANOCARIS:
-
-            case TYLOCARIS:
-
-            case MAMAYOCARIS:
+//            case NOTOCARIS:
+//
+//            case LAEVITEALLIOCARIS:
+//
+//            case IRATICARIS:
+//
+//            case FUJIANOCARIS:
+//
+//            case TYLOCARIS:
+//
+//            case MAMAYOCARIS:
 
             case TEALLIOCARIS:
                 return this.mainModelArray[0];
@@ -84,23 +84,23 @@ public class RenderPygocephalomorpha extends RenderLivingBaseVariantModels<Entit
             default:
                 return 0.18F;
 
-            case MAMAYOCARIS:
-                return 0.17F;
-
-            case TYLOCARIS:
-                return 0.12F;
-
-            case FUJIANOCARIS:
-                return 0.16F;
-
-            case LAEVITEALLIOCARIS:
-                return 0.24F;
-
-            case IRATICARIS:
-                return 0.14F;
-
-            case NOTOCARIS:
-                return 0.13F;
+//            case MAMAYOCARIS:
+//                return 0.17F;
+//
+//            case TYLOCARIS:
+//                return 0.12F;
+//
+//            case FUJIANOCARIS:
+//                return 0.16F;
+//
+//            case LAEVITEALLIOCARIS:
+//                return 0.24F;
+//
+//            case IRATICARIS:
+//                return 0.14F;
+//
+//            case NOTOCARIS:
+//                return 0.13F;
         }
     }
 

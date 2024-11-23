@@ -6189,6 +6189,30 @@ public class RenderHandler {
                 return new RenderPygocephalomorpha(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEocaecilia.class, new IRenderFactory<EntityPrehistoricFloraEocaecilia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEocaecilia> createRenderFor(RenderManager manager) {
+                return new RenderEocaecilia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTerrestrisuchus.class, new IRenderFactory<EntityPrehistoricFloraTerrestrisuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTerrestrisuchus> createRenderFor(RenderManager manager) {
+                return new RenderTerrestrisuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCoeruleodraco.class, new IRenderFactory<EntityPrehistoricFloraCoeruleodraco>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCoeruleodraco> createRenderFor(RenderManager manager) {
+                return new RenderCoeruleodraco(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSpinophorosaurus.class, new IRenderFactory<EntityPrehistoricFloraSpinophorosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSpinophorosaurus> createRenderFor(RenderManager manager) {
+                return new RenderSpinophorosaurus(manager);
+            }
+        });
 
 
 

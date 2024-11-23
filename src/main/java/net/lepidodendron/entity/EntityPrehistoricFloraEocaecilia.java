@@ -22,7 +22,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -35,19 +34,19 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraTriadobatrachus(World world) {
+	public EntityPrehistoricFloraEocaecilia(World world) {
 		super(world);
-		setSize(0.5F, 0.20F);
-		minWidth = 0.12F;
-		maxWidth = 0.5F;
-		maxHeight = 0.20F;
-		maxHealthAgeable = 6.0D;
+		setSize(0.3F, 0.1F);
+		minWidth = 0.1F;
+		maxWidth = 0.3F;
+		maxHeight = 0.1F;
+		maxHealthAgeable = 5.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -55,20 +54,15 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 47; //Surface spawn
+		return 40; //normal spawn
 	}
 
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
 		}
-	}
-
-	@Override
-	public int getAttackLength() {
-		return 7;
 	}
 
 	@Override
@@ -76,29 +70,60 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Amphibious";}
+
+	@Override
+	public boolean hasNest() {
+		return true;
+	}
+
+	@Override
+	public boolean breathesAir() {
+		return true;
+	}
 
 	@Override
 	public boolean dropsEggs() {
 		return false;
 	}
-	@Override
-	public boolean hasNest() {
-		return false;
-	}
-	
+
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
+	@Override
+	public int animSpeedAdder() {
+		if ((this.getIsMoving() || (!this.onGround) || this.isJumping)
+			&& this.getTicks() >= 0
+		) {
+			//Swims faster in water so triple the animation speed:
+			if (this.getIsFast() || this.isReallyInWater()) {
+				return 3;
+			}
+			else {
+				return 1;
+			}
+		}
+		return 0;
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		//return 0;
-		float calcSpeed = 0.155F;
+		float calcSpeed = 0.08F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.185f;
+			calcSpeed= 0.22f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -108,47 +133,48 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 72000;
 	}
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterPederpes;
-		if (i > 16) {i = 16;}
-		if (i < 1) {i = 1;}
-		return i;
+		return 0;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	@Override
+	public int getAttackLength() {
+		return 15;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.025, 20));
+		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
+		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.8, 90));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(5, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 10F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
 		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		//this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		//this.targetTasks.addTask(2, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		//this.targetTasks.addTask(2, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-//		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraPalaeodictyopteraNymph.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
+//		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAmphibianBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.15));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH);
+		return ArrayUtils.addAll(DietString.MEAT);
 	}
+
 
 	@Override
 	public boolean isAIDisabled() {
@@ -179,21 +205,21 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_idle"));
+	public net.minecraft.util.SoundEvent getAmbientSound() {
+	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:phlegethontia_idle"));
 	}
 
 	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_hurt"));
+	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
+	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:phlegethontia_hurt"));
 	}
 
 	@Override
-	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_death"));
+	public net.minecraft.util.SoundEvent getDeathSound() {
+	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:phlegethontia_death"));
 	}
 
 	@Override
@@ -235,12 +261,6 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-
-	}
-
-	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
 			this.setAnimation(ATTACK_ANIMATION);
@@ -254,14 +274,26 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+
+	}
+
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.TRIADOBATRACHUS_LOOT;
+		return LepidodendronMod.EOCAECILIA_LOOT;
 	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_TRIADOBATRACHUS;
+		return ModTriggers.CLICK_EOCAECILIA;
 	}
+
+	//Rendering taxidermy:
+	//--------------------
+
+
 
 }

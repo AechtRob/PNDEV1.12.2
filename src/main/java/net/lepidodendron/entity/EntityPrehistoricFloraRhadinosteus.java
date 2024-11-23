@@ -35,13 +35,13 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraTriadobatrachus(World world) {
+	public EntityPrehistoricFloraRhadinosteus(World world) {
 		super(world);
 		setSize(0.5F, 0.20F);
 		minWidth = 0.12F;
@@ -76,7 +76,7 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
@@ -181,19 +181,19 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:rhadinosteus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:rhadinosteus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:rhadinosteus_death"));
 	}
 
 	@Override
@@ -256,12 +256,12 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.TRIADOBATRACHUS_LOOT;
+		return LepidodendronMod.RHADINOSTEUS_LOOT;
 	}
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_TRIADOBATRACHUS;
+		return ModTriggers.CLICK_RHADINOSTEUS;
 	}
 
 }

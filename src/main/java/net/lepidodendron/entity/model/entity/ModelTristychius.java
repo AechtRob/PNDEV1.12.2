@@ -472,6 +472,20 @@ public class ModelTristychius extends ModelBasePalaeopedia {
     }
     public void animSwim(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraTristychius entity = (EntityPrehistoricFloraTristychius) entitylivingbaseIn;
+        int animCycle = 22;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        this.setRotateAngle(base, base.rotateAngleX + (float) Math.toRadians(0), base.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-50))*5), base.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320))*2));
+        this.setRotateAngle(pectoralfinright, pectoralfinright.rotateAngleX + (float) Math.toRadians(0), pectoralfinright.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-100))*2), pectoralfinright.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320))*2));
+        this.setRotateAngle(pectoralfinleft, pectoralfinleft.rotateAngleX + (float) Math.toRadians(0), pectoralfinleft.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-100))*2), pectoralfinleft.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320))*2));
+        this.setRotateAngle(gills, gills.rotateAngleX + (float) Math.toRadians(0), gills.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-150))*-2), gills.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(bodylower, bodylower.rotateAngleX + (float) Math.toRadians(0), bodylower.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-150))*6), bodylower.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(bodylower2, bodylower2.rotateAngleX + (float) Math.toRadians(0), bodylower2.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-200))*10), bodylower2.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(bodylower3, bodylower3.rotateAngleX + (float) Math.toRadians(0), bodylower3.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-250))*15), bodylower3.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(pelvicfinright, pelvicfinright.rotateAngleX + (float) Math.toRadians(0), pelvicfinright.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-100))*2), pelvicfinright.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320))*2));
+        this.setRotateAngle(pelvicfinleft, pelvicfinleft.rotateAngleX + (float) Math.toRadians(0), pelvicfinleft.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320-100))*2), pelvicfinleft.rotateAngleZ + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*320))*2));
 
 
     }

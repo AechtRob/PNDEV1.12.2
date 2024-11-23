@@ -37,7 +37,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLitargosuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraTerrestrisuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,12 +46,12 @@ public class EntityPrehistoricFloraLitargosuchus extends EntityPrehistoricFloraL
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraLitargosuchus(World world) {
+	public EntityPrehistoricFloraTerrestrisuchus(World world) {
 		super(world);
-		setSize(0.4F, 0.32F);
+		setSize(0.3F, 0.25F);
 		minWidth = 0.18F;
-		maxWidth = 0.4F;
-		maxHeight = 0.32F;
+		maxWidth = 0.3F;
+		maxHeight = 0.25F;
 		maxHealthAgeable = 10.0D;
 		STAND_ANIMATION = Animation.create(135);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraLitargosuchus extends EntityPrehistoricFloraL
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Archosauriform";}
 
@@ -307,67 +307,17 @@ public class EntityPrehistoricFloraLitargosuchus extends EntityPrehistoricFloraL
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.LITARGOSUCHUS_LOOT;
+		return LepidodendronMod.TERRESTRISUCHUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_LITARGOSUCHUS;
+		return ModTriggers.CLICK_TERRESTRISUCHUS;
 	}
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return -0.225;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 0.2;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.0;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0.0;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderLitargosuchus.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelLitargosuchus;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderLitargosuchus.getScaler();
-	}
 
 }
 

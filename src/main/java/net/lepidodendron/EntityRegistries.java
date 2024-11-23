@@ -992,14 +992,14 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_westlothiana", EntityPrehistoricFloraWestlothiana.class, LepidodendronMod.ENTITY_WESTLOTHIANA, 48,-9739189,-6263472);
         registerEntity("prehistoric_flora_tristychius", EntityPrehistoricFloraTristychius.class, LepidodendronMod.ENTITY_TRISTYCHIUS, 48,-7837373,-13751773);
         registerEntity("prehistoric_flora_eurynotus", EntityPrehistoricFloraEurynotus.class, LepidodendronMod.ENTITY_EURYNOTUS, 48,-14540513,-2562011);
-//        registerEntity("prehistoric_flora_coeruleodraco", EntityPrehistoricFloraCoeruleodraco.class, LepidodendronMod.ENTITY_COERULEODRACO, 64,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_eocaecilia", EntityPrehistoricFloraEocaecilia.class, LepidodendronMod.ENTITY_EOCAECILIA, 48,-12965591,-4739438);
+        registerEntity("prehistoric_flora_coeruleodraco", EntityPrehistoricFloraCoeruleodraco.class, LepidodendronMod.ENTITY_COERULEODRACO, 64,-13951211,-5759217);
+        registerEntity("prehistoric_flora_eocaecilia", EntityPrehistoricFloraEocaecilia.class, LepidodendronMod.ENTITY_EOCAECILIA, 48,-10079437,-3108041);
 //        registerEntity("prehistoric_flora_sericipterus", EntityPrehistoricFloraSericipterus.class, LepidodendronMod.ENTITY_SERICIPTERUS, 84,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_sordes", EntityPrehistoricFloraSordes.class, LepidodendronMod.ENTITY_SORDES, 64,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_terrestrisuchus", EntityPrehistoricFloraTerrestrisuchus.class, LepidodendronMod.ENTITY_TERRESTRISUCHUS, 48,-12965591,-4739438);
+        registerEntity("prehistoric_flora_terrestrisuchus", EntityPrehistoricFloraTerrestrisuchus.class, LepidodendronMod.ENTITY_TERRESTRISUCHUS, 48,-8229830,-858142);
 //        registerEntity("prehistoric_flora_triadobatrachus", EntityPrehistoricFloraTriadobatrachus.class, LepidodendronMod.ENTITY_TRIADOBATRACHUS, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_rhadinosteus", EntityPrehistoricFloraRhadinosteus.class, LepidodendronMod.ENTITY_RHADINOSTEUS, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_spinophorosaurus", EntityPrehistoricFloraSpinophorosaurus.class, LepidodendronMod.ENTITY_SPINOPHOROSAURUS, 164,-12965591,-4739438);
+        registerEntity("prehistoric_flora_spinophorosaurus", EntityPrehistoricFloraSpinophorosaurus.class, LepidodendronMod.ENTITY_SPINOPHOROSAURUS, 164,-5272736,-6921402);
 //        registerEntity("prehistoric_flora_tariccoia", EntityPrehistoricFloraTariccoia.class, LepidodendronMod.ENTITY_TARICCOIA, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_soomaspis", EntityPrehistoricFloraSoomaspis.class, LepidodendronMod.ENTITY_SOOMASPIS, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_triopus", EntityPrehistoricFloraTriopus.class, LepidodendronMod.ENTITY_TRIOPUS, 48,-12965591,-4739438);

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEucritta extends RenderLivingBaseWithBook<EntityPrehistoricFloraEucritta> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eucritta.png");
 
-    public static float getScaler() {return 0.34f;}
+    public static float getScaler() {return 0.27f;}
 
     public RenderEucritta(RenderManager mgr) {
         super(mgr, new ModelEucritta(), 0.5f);

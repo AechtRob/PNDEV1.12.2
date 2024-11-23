@@ -385,18 +385,16 @@ public class ModelTealliocaris extends ModelBasePalaeopedia {
         //Swimming pose:
 
         if (ee.isReallyInWater()) {
-            if (ee.getIsMoving()) {
                 //Walk pose:
                 animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
-            }
-            else { //in water but not moving:
+//            else { //in water but not moving:
 //                if (ee.getAnimation() != ee.UNSWIM_ANIMATION && ee.getAnimation() != ee.SWIM_ANIMATION) {
 //                    //Walk static pose:
 //                    animIdle(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
 //                }
             }
         }
-    }
+
     
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {

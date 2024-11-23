@@ -43,9 +43,9 @@ public class EntityPrehistoricFloraEucritta extends EntityPrehistoricFloraSwimmi
 
 	public EntityPrehistoricFloraEucritta(World world) {
 		super(world);
-		setSize(0.5F, 0.20F);
+		setSize(0.3F, 0.20F);
 		minWidth = 0.12F;
-		maxWidth = 0.5F;
+		maxWidth = 0.3F;
 		maxHeight = 0.20F;
 		maxHealthAgeable = 6.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {

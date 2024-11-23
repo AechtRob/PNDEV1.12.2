@@ -53,20 +53,23 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 	private static final DataParameter<Boolean> SWIMMINGPN = EntityDataManager.createKey(EntityPrehistoricFloraPygocephalomorpha.class, DataSerializers.BOOLEAN);
 	//Needs to be here because it is not loaded in time to be accessed by the client if it's on the parent class!
 
-	private static final float[] TEALLIOCARIS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] MAMAYOCARIS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] LAEVITEALLIOCARIS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] NOTOCARIS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] IRATICARIS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] TYLOCARIS_SIZE = new float[]{0.2F, 0.2F};
-	private static final float[] FUJIANOCARIS_SIZE = new float[]{0.2F, 0.2F};
+	private static final float[] TEALLIOCARIS_SIZE = new float[]{0.2F, 0.1F};
+	private static final float[] MAMAYOCARIS_SIZE = new float[]{0.2F, 0.1F};
+	private static final float[] LAEVITEALLIOCARIS_SIZE = new float[]{0.2F, 0.1F};
+	private static final float[] NOTOCARIS_SIZE = new float[]{0.2F, 0.1F};
+	private static final float[] IRATICARIS_SIZE = new float[]{0.2F, 0.1F};
+	private static final float[] TYLOCARIS_SIZE = new float[]{0.2F, 0.1F};
+	private static final float[] FUJIANOCARIS_SIZE = new float[]{0.2F, 0.1F};
 
 
 	private static final DataParameter<Integer> VAR_TYPE = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraPygocephalomorpha.class, DataSerializers.VARINT);
 
 	public EntityPrehistoricFloraPygocephalomorpha(World world) {
 		super(world);
-		setSize(getHitBoxSize()[0], getHitBoxSize()[1]);
+		setSize(0.1f, 0.1f);
+		minWidth = 0.1F;
+		maxWidth = getHitBoxSize()[0];
+		maxHeight = getHitBoxSize()[1];
 		maxHealthAgeable = 3.0D;
 		SWIM_ANIMATION = Animation.create(this.swimTransitionLength());
 		UNSWIM_ANIMATION = Animation.create(this.unswimTransitionLength());
@@ -132,23 +135,23 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 			case TEALLIOCARIS: default:
 				return LepidodendronMod.TEALLIOCARIS_LOOT;
 
-			case MAMAYOCARIS:
-				return LepidodendronMod.MAMAYOCARIS_LOOT;
-
-			case TYLOCARIS:
-				return LepidodendronMod.TYLOCARIS_LOOT;
-
-			case FUJIANOCARIS:
-				return LepidodendronMod.FUJIANOCARIS_LOOT;
-
-			case LAEVITEALLIOCARIS:
-				return LepidodendronMod.LAEVITEALLIOCARIS_LOOT;
-
-			case IRATICARIS:
-				return LepidodendronMod.IRATICARIS_LOOT;
-
-			case NOTOCARIS:
-				return LepidodendronMod.NOTOCARAIS_LOOT;
+//			case MAMAYOCARIS:
+//				return LepidodendronMod.MAMAYOCARIS_LOOT;
+//
+//			case TYLOCARIS:
+//				return LepidodendronMod.TYLOCARIS_LOOT;
+//
+//			case FUJIANOCARIS:
+//				return LepidodendronMod.FUJIANOCARIS_LOOT;
+//
+//			case LAEVITEALLIOCARIS:
+//				return LepidodendronMod.LAEVITEALLIOCARIS_LOOT;
+//
+//			case IRATICARIS:
+//				return LepidodendronMod.IRATICARIS_LOOT;
+//
+//			case NOTOCARIS:
+//				return LepidodendronMod.NOTOCARAIS_LOOT;
 
 		}
 	}
@@ -194,12 +197,12 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 	public enum Type
 	{
 		TEALLIOCARIS(1, "tealliocaris"),
-		MAMAYOCARIS(2, "mamayocaris"),
-		TYLOCARIS(3, "tylocaris"),
-		FUJIANOCARIS(4, "fujianocaris"),
-		LAEVITEALLIOCARIS(5, "laevitealliocaris"),
-		IRATICARIS(6, "iraticaris"),
-		NOTOCARIS(7, "notocaris"),
+//		MAMAYOCARIS(2, "mamayocaris"),
+//		TYLOCARIS(3, "tylocaris"),
+//		FUJIANOCARIS(4, "fujianocaris"),
+//		LAEVITEALLIOCARIS(5, "laevitealliocaris"),
+//		IRATICARIS(6, "iraticaris"),
+//		NOTOCARIS(7, "notocaris"),
 		;
 
 		private final String name;
@@ -256,23 +259,23 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 			case TEALLIOCARIS: default:
 				return TEALLIOCARIS_SIZE;
 
-			case MAMAYOCARIS:
-				return MAMAYOCARIS_SIZE;
-
-			case TYLOCARIS:
-				return TYLOCARIS_SIZE;
-
-			case FUJIANOCARIS:
-				return FUJIANOCARIS_SIZE;
-
-			case LAEVITEALLIOCARIS:
-				return LAEVITEALLIOCARIS_SIZE;
-
-			case IRATICARIS:
-				return IRATICARIS_SIZE;
-
-			case NOTOCARIS:
-				return NOTOCARIS_SIZE;
+//			case MAMAYOCARIS:
+//				return MAMAYOCARIS_SIZE;
+//
+//			case TYLOCARIS:
+//				return TYLOCARIS_SIZE;
+//
+//			case FUJIANOCARIS:
+//				return FUJIANOCARIS_SIZE;
+//
+//			case LAEVITEALLIOCARIS:
+//				return LAEVITEALLIOCARIS_SIZE;
+//
+//			case IRATICARIS:
+//				return IRATICARIS_SIZE;
+//
+//			case NOTOCARIS:
+//				return NOTOCARIS_SIZE;
 		}
 	}
 	
@@ -281,25 +284,25 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 	protected double getAISpeedSwim() {
 		switch (this.getPNType()) {
 			case TEALLIOCARIS: default:
-				return 0.2f;
+				return 0.1f;
 
-			case MAMAYOCARIS:
-				return 0.2f;
-
-			case TYLOCARIS:
-				return 0.2f;
-
-			case FUJIANOCARIS:
-				return 0.2f;
-
-			case LAEVITEALLIOCARIS:
-				return 0.2f;
-
-			case IRATICARIS:
-				return 0.2f;
-
-			case NOTOCARIS:
-				return 0.2f;
+//			case MAMAYOCARIS:
+//				return 0.1f;
+//
+//			case TYLOCARIS:
+//				return 0.1f;
+//
+//			case FUJIANOCARIS:
+//				return 0.1f;
+//
+//			case LAEVITEALLIOCARIS:
+//				return 0.1f;
+//
+//			case IRATICARIS:
+//				return 0.1f;
+//
+//			case NOTOCARIS:
+//				return 0.1f;
 		}
 	}
 
@@ -380,6 +383,7 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(SWIMMINGPN, false);
+		this.dataManager.register(VAR_TYPE, 0);
 		this.setScaleForAge(false);
 	}
 
@@ -412,15 +416,6 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
-			}
-		}
-
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -478,13 +473,12 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 		return 48000;
 	}
 
-	
+
 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.5D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -506,7 +500,7 @@ public class EntityPrehistoricFloraPygocephalomorpha extends EntityPrehistoricFl
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
+		return ArrayUtils.addAll(DietString.FISHFOOD);
 	}
 
 
