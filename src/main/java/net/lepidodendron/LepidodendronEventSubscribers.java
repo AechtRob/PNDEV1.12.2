@@ -1417,23 +1417,6 @@ public class LepidodendronEventSubscribers {
 			}
 		}
 
-		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.STONE)) {
-			if (event.getItemStack().getMetadata() == 0) {
-				List<String> tt = event.getToolTip();
-				tt.add("NOTE: Used to build a portal back to the Overworld");
-			}
-		}
-
-		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
-			List<String> tt = event.getToolTip();
-			if (!Loader.isModLoaded("pncambrian")) {
-				tt.add("NOTE: Used to build the portal to the Cambrian dimension but you do not have that dimension mod installed");
-			}
-			else {
-				tt.add("NOTE: Used to build the portal to the Cambrian dimension");
-			}
-		}
-
 		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.SAPLING)) {
 			List<String> tt = event.getToolTip();
 			if (LepidodendronConfig.showTooltips) {

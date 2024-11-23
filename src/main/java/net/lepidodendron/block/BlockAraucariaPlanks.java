@@ -48,18 +48,6 @@ public class BlockAraucariaPlanks extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_monkey_puzzle_planks");
 		}
 
-//		@SideOnly(Side.CLIENT)
-//		@Override
-//		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-//			if (LepidodendronConfig.showTooltips) {
-//				if (!Loader.isModLoaded("pncretaceousearly")) {
-//					tooltip.add("NOTE: Used to build the portal to the Early Cretaceous dimension but you do not have that dimension mod installed");
-//				} else {
-//					tooltip.add("NOTE: Used to build the portal to the Early Cretaceous dimension");
-//				}
-//				super.addInformation(stack, player, tooltip, advanced);
-//			}
-//		}
 	}
 
 }

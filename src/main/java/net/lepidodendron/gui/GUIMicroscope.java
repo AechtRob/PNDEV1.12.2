@@ -111,9 +111,9 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 129 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 127 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 187));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 185));
 
         }
 
@@ -700,23 +700,23 @@ public class GUIMicroscope extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Microscope fossil analysis", 20, -38, 4210752);
-            this.fontRenderer.drawString("Tag as...", 8, 52, 4210752);
-            this.fontRenderer.drawString("Precambrian", 88, 12, 4210752);
-            this.fontRenderer.drawString("Cambrian", 106, 20, 4210752);
-            this.fontRenderer.drawString("Ordovician", 98, 28, 4210752);
-            this.fontRenderer.drawString("Silurian", 113, 36, 4210752);
-            this.fontRenderer.drawString("Devonian", 106, 44, 4210752);
-            this.fontRenderer.drawString("Carboniferous", 77, 52, 4210752);
-            this.fontRenderer.drawString("Permian", 112, 60, 4210752);
-            this.fontRenderer.drawString("Triassic", 110, 68, 4210752);
-            this.fontRenderer.drawString("Jurassic", 106, 76, 4210752);
-            this.fontRenderer.drawString("Cretaceous", 92, 84, 4210752);
-            this.fontRenderer.drawString("Paleogene", 99, 92, 4210752);
-            this.fontRenderer.drawString("Neogene", 108, 100, 4210752);
-            this.fontRenderer.drawString("Pleistocene", 93, 108, 4210752);
+            this.fontRenderer.drawString("Microscope analysis", 41, -38, 4210752);
+            this.fontRenderer.drawString("Tag as...", 8, 53, 4210752);
+            this.fontRenderer.drawString("Precambrian", 88, 13, 4210752);
+            this.fontRenderer.drawString("Cambrian", 106, 21, 4210752);
+            this.fontRenderer.drawString("Ordovician", 98, 29, 4210752);
+            this.fontRenderer.drawString("Silurian", 113, 37, 4210752);
+            this.fontRenderer.drawString("Devonian", 106, 45, 4210752);
+            this.fontRenderer.drawString("Carboniferous", 77, 53, 4210752);
+            this.fontRenderer.drawString("Permian", 112, 61, 4210752);
+            this.fontRenderer.drawString("Triassic", 110, 69, 4210752);
+            this.fontRenderer.drawString("Jurassic", 106, 77, 4210752);
+            this.fontRenderer.drawString("Cretaceous", 92, 85, 4210752);
+            this.fontRenderer.drawString("Paleogene", 99, 93, 4210752);
+            this.fontRenderer.drawString("Neogene", 108, 101, 4210752);
+            this.fontRenderer.drawString("Pleistocene", 93, 109, 4210752);
 
-            this.fontRenderer.drawString("Inventory", 8, 117, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 116, 4210752);
         }
 
         @Override

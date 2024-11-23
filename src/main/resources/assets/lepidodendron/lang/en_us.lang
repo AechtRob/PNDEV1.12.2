@@ -8113,6 +8113,7 @@ tile.pf_portal_block_permian.name=Permian Period Portal Block
 tile.pf_portal_block_precambrian.name=Precambrian Period Portal Block
 tile.pf_portal_block_silurian.name=Silurian Period Portal Block
 tile.pf_portal_block_triassic.name=Triassic Period Portal Block
+tile.pf_portal_block_overworld.name=Overworld Portal Block
 tile.pf_precambrian_portal.name=Precambrian Period Portal
 tile.pf_prehistoric_ground_cover_plants.name=Ground Cover Plants
 tile.pf_prehistoric_ground_cover_plants_early_angiosperm.name=Small Angiosperm Ground Cover Plants

@@ -301,7 +301,10 @@ public class BlockTimeResearcher extends ElementsLepidodendronMod.ModElement {
 				return 1F;
 			}
 			switch (dimIn) {
-				case 1: default:
+				case 0: default:
+					return 1F;
+
+				case 1:
 					return ((float)dimPrecambrian) / ((float)maxResearch);
 
 				case 2:

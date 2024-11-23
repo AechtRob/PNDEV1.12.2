@@ -1,14 +1,8 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockPortalBlockCarboniferous;
-import net.lepidodendron.block.BlockPortalBlockOrdovician;
-import net.lepidodendron.block.BlockPortalBlockPrecambrian;
-import net.lepidodendron.block.BlockPortalBlockSilurian;
-import net.lepidodendron.entity.model.tile.ModelPortalBlockCarboniferous;
-import net.lepidodendron.entity.model.tile.ModelPortalBlockOrdovician;
-import net.lepidodendron.entity.model.tile.ModelPortalBlockPrecambrian;
-import net.lepidodendron.entity.model.tile.ModelPortalBlockSilurian;
+import net.lepidodendron.block.*;
+import net.lepidodendron.entity.model.tile.*;
 import net.lepidodendron.tileentity.TileEntityPortalBlock;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -19,22 +13,36 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
+import java.awt.*;
+
 public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPortalBlock> {
 
+    private static final ResourceLocation TEXTURE_OVERWORLD = new ResourceLocation("minecraft:textures/blocks/grass_top.png");
+    private static final ResourceLocation TEXTURE_OVERWORLD_ALLIUM = new ResourceLocation("minecraft:textures/blocks/flower_allium.png");
+    private static final ResourceLocation TEXTURE_OVERWORLD_DANDELION = new ResourceLocation("minecraft:textures/blocks/flower_dandelion.png");
+    private static final ResourceLocation TEXTURE_OVERWORLD_POPPY = new ResourceLocation("minecraft:textures/blocks/flower_rose.png");
+    private static final ResourceLocation TEXTURE_OVERWORLD_GRASS = new ResourceLocation("minecraft:textures/blocks/tallgrass.png");
     private static final ResourceLocation TEXTURE_PRECAMBRIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_precambrian.png");
     private static final ResourceLocation TEXTURE_ORDOVICIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_ordovician.png");
     private static final ResourceLocation TEXTURE_SILURIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_silurian.png");
+    private static final ResourceLocation TEXTURE_DEVONIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_devonian.png");
     private static final ResourceLocation TEXTURE_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/portal_block_carboniferous.png");
+    private final ModelPortalBlockOverworld modelPortalBlockOverworld;
+    private final ModelPortalBlockOverworldDecoration modelPortalBlockOverworldDecoration;
     private final ModelPortalBlockPrecambrian modelPortalBlockPrecambrian;
     private final ModelPortalBlockOrdovician modelPortalBlockOrdovician;
     private final ModelPortalBlockSilurian modelPortalBlockSilurian;
+    private final ModelPortalBlockDevonian modelPortalBlockDevonian;
     private final ModelPortalBlockCarboniferous modelPortalBlockCarboniferous;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderPortalBlock() {
+        this.modelPortalBlockOverworld = new ModelPortalBlockOverworld();
+        this.modelPortalBlockOverworldDecoration = new ModelPortalBlockOverworldDecoration();
         this.modelPortalBlockPrecambrian = new ModelPortalBlockPrecambrian();
         this.modelPortalBlockOrdovician = new ModelPortalBlockOrdovician();
         this.modelPortalBlockSilurian = new ModelPortalBlockSilurian();
+        this.modelPortalBlockDevonian = new ModelPortalBlockDevonian();
         this.modelPortalBlockCarboniferous = new ModelPortalBlockCarboniferous();
     }
 
@@ -56,6 +64,11 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
         if (!entity.getIsActive()) {
             partialTicks = -partialTicks;
         }
+        int animTick = entity.getAnimationTick();
+        if (animTick == 90 && entity.getIsActive()) {
+            animTick = entity.getAnimationTickAmbient();
+        }
+
         Byte colRed = 0;
         Byte colGreen = 0;
         Byte colBlue = 0;
@@ -63,7 +76,89 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
         float transparency = 1.0F;
 
         if (entity.hasWorld()) {
-            if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
+            if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockOverworld.block) {
+
+                if (entity.getIsActive()) {
+                    transparency = Math.min((float) (entity.getAnimationTick() + 5 + partialTicks) / 60F, 1F);
+                }
+                else {
+                    transparency = Math.min((float) (entity.getAnimationTick() - 30 + partialTicks) / 60F, 1F);
+                }
+
+                ModelPortalBlockOverworld modelPortalBlockOverworld = this.modelPortalBlockOverworld;
+
+                GlStateManager.pushMatrix();
+                this.bindTexture(TEXTURE_OVERWORLD);
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.enableCull();
+                Color colorGrass = new Color(getWorld().getBiome(entity.getPos()).getGrassColorAtPos(entity.getPos()));
+                GlStateManager.color(colorGrass.getRed()/255F, colorGrass.getGreen()/255F, colorGrass.getBlue()/255F, transparency);
+                GlStateManager.enableNormalize();
+                GlStateManager.enableBlend();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+                GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                modelPortalBlockOverworld.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                GlStateManager.disableRescaleNormal();
+
+                GlStateManager.disableBlend();
+                GlStateManager.disableNormalize();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
+                GlStateManager.enableCull();
+                GlStateManager.popMatrix();
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
+                    GlStateManager.pushMatrix();
+                    int ofsetter = 0;
+                    if (isVar(entity)) {
+                        this.bindTexture(TEXTURE_OVERWORLD_GRASS);
+                        GlStateManager.color(colorGrass.getRed()/255F, colorGrass.getGreen()/255F, colorGrass.getBlue()/255F, 1.0F);
+                        GlStateManager.enableNormalize();
+                        GlStateManager.enableBlend();
+                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                    }
+                    else {
+                        if (isVar2(entity)) {
+                            if (isRotated(entity)) {
+                                this.bindTexture(TEXTURE_OVERWORLD_ALLIUM);
+                                ofsetter = -10;
+                            }
+                            else {
+                                this.bindTexture(TEXTURE_OVERWORLD_POPPY);
+                                ofsetter = -15;
+                            }
+                        }
+                        else {
+                            this.bindTexture(TEXTURE_OVERWORLD_DANDELION);
+                            ofsetter = -25;
+                        }
+                    }
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.translate(x + 0.50, y + 2.50, z + 0.50);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    modelPortalBlockOverworldDecoration.renderBase(entity.getAnimationTick(), 1.25f, partialTicks, ofsetter);
+                    GlStateManager.disableRescaleNormal();
+                    if (!isVar(entity)) {
+                        GlStateManager.disableBlend();
+                        GlStateManager.disableNormalize();
+                        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                    }
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                colRed = (byte) 255;
+                colGreen = (byte) 255;
+                colBlue = (byte) 255;
+            }
+            else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 
                 if (entity.getIsActive()) {
                     transparency = Math.min((float) (entity.getAnimationTick() + 5 + partialTicks) / 60F, 1F);
@@ -152,7 +247,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -171,7 +266,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -219,7 +314,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             GlStateManager.rotate(270, 0F, 1F, 0F);
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                        modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -239,7 +334,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                                 GlStateManager.rotate(270, 0F, 1F, 0F);
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                            modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -285,7 +380,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         }
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
                         GlStateManager.rotate(180, 0F, 1F, 0F);
-                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
+                        modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -306,7 +401,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             }
                             GlStateManager.scale(0.05F, 0.05F, 0.05F);
                             GlStateManager.rotate(180, 0F, 1F, 0F);
-                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                            modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -350,7 +445,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
+                        modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 10, ((float) getWorld().getTotalWorldTime() + partialTicks), 10F);
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -368,7 +463,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            modelPortalBlockOrdovician.renderTrilobite2(entity.getAnimationTick(), 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
+                            modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 3, ((float) getWorld().getTotalWorldTime() + partialTicks), 3F);
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -412,7 +507,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                         if (isRotated(entity)) {
                             GlStateManager.rotate(180, 0F, 1F, 0F);
                         }
-                        modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
+                        modelPortalBlockOrdovician.renderTrilobite1(animTick, 1.25f, partialTicks, 19, ((float) getWorld().getTotalWorldTime() + partialTicks), 19F);
                         GlStateManager.disableRescaleNormal();
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
@@ -430,7 +525,7 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                             if (isRotated(entity)) {
                                 GlStateManager.rotate(180, 0F, 1F, 0F);
                             }
-                            modelPortalBlockOrdovician.renderTrilobite1(entity.getAnimationTick(), 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                            modelPortalBlockOrdovician.renderTrilobite2(animTick, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
                             GlStateManager.disableRescaleNormal();
                             GlStateManager.enableCull();
                             GlStateManager.popMatrix();
@@ -509,7 +604,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                    if (!isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -522,7 +624,15 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0F, 0F, 1F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 5, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 0.15F);
+                    //modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 5, 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 0.15F);
+                    if (isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -538,7 +648,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                    if (!isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -553,7 +670,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, 9, ((float) getWorld().getTotalWorldTime() + partialTicks), 9F);
+                    if (isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -569,7 +693,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(270, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, -13, ((float) getWorld().getTotalWorldTime() + partialTicks), -13F);
+                    if (!isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -584,7 +715,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 0.0F, 0.0F, 1.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 8, 1.25f, partialTicks, -20, ((float) getWorld().getTotalWorldTime() + partialTicks), -20F);
+                    if (isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -601,7 +739,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(180, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 16, ((float) getWorld().getTotalWorldTime() + partialTicks), 16F);
+                    if (!isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -615,7 +760,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(270, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 28, ((float) getWorld().getTotalWorldTime() + partialTicks), 28F);
+                    if (isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -632,7 +784,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(0, 0.0F, 1.0F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 1, 1.25f, partialTicks, 33, ((float) getWorld().getTotalWorldTime() + partialTicks), 33F);
+                    if (!isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -646,7 +805,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.rotate(90, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 13, ((float) getWorld().getTotalWorldTime() + partialTicks), 13F);
+                    if (isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -661,7 +827,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(90, 0F, 1F, 0F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick() - 1, 1.25f, partialTicks, 4, ((float) getWorld().getTotalWorldTime() + partialTicks), 4F);
+                    if (!isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -674,7 +847,14 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                     GlStateManager.rotate(270, 0F, 1F, 0F);
                     GlStateManager.rotate(facing.getHorizontalAngle() + 90, 0.0F, 1.5F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick() - 7, 1.25f, partialTicks, 1, ((float) getWorld().getTotalWorldTime() + partialTicks), 1F);
+                    if (isVar2(entity)) {
+                        if (isVar(entity)) {
+                            modelPortalBlockSilurian.renderTentacleVar(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockSilurian.renderTentacle(entity.getAnimationTick(), 1.25f, partialTicks, 2, ((float) getWorld().getTotalWorldTime() + partialTicks), 2F);
+                        }
+                    }
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.enableCull();
                     GlStateManager.popMatrix();
@@ -683,6 +863,220 @@ public class RenderPortalBlock extends TileEntitySpecialRenderer<TileEntityPorta
                 colRed = (byte) 69;
                 colGreen = (byte) 115;
                 colBlue = (byte) 108;
+            }
+            else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockDevonian.block) {
+
+                if (entity.getIsActive()) {
+                    transparency = 1F;
+                }
+                else {
+                    transparency = Math.min((float) (entity.getAnimationTick() + partialTicks) / 90F, 1F);
+                }
+
+                ModelPortalBlockDevonian modelPortalBlockDevonian = this.modelPortalBlockDevonian;
+
+                GlStateManager.pushMatrix();
+                this.bindTexture(TEXTURE_DEVONIAN);
+                GlStateManager.enableRescaleNormal();
+                GlStateManager.disableCull();
+
+                GlStateManager.color(1.0F, 1.0F, 1.0F, transparency);
+                GlStateManager.enableNormalize();
+                GlStateManager.enableBlend();
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+                GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                modelPortalBlockDevonian.renderBase(entity.getAnimationTick(), 1.25f, partialTicks);
+                GlStateManager.disableRescaleNormal();
+
+                GlStateManager.disableBlend();
+                GlStateManager.disableNormalize();
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
+                GlStateManager.enableCull();
+                GlStateManager.popMatrix();
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.UP)) {
+                    if (entity.getIsActive()) {
+                        GlStateManager.pushMatrix();
+                        this.bindTexture(TEXTURE_DEVONIAN);
+                        GlStateManager.enableRescaleNormal();
+                        GlStateManager.disableCull();
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        if (isRotated(entity)) {
+                            GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                        } else {
+                            GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                        }
+                        GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                        if (isVar(entity)) {
+                            modelPortalBlockDevonian.renderCooksonia1(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        else {
+                            modelPortalBlockDevonian.renderCooksonia2(entity.getAnimationTick(), 1.25f, partialTicks, 5, ((float) getWorld().getTotalWorldTime() + partialTicks), 5F);
+                        }
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+
+                        if (isVar2(entity)) {
+                            GlStateManager.pushMatrix();
+                            this.bindTexture(TEXTURE_DEVONIAN);
+                            GlStateManager.enableRescaleNormal();
+                            GlStateManager.disableCull();
+                            GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            if (isRotated(entity)) {
+                                GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                            } else {
+                                GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                            }
+                            GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                            GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                            if (isVar(entity)) {
+                                modelPortalBlockDevonian.renderCooksonia2(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            else {
+                                modelPortalBlockDevonian.renderCooksonia1(entity.getAnimationTick(), 1.25f, partialTicks, 15, ((float) getWorld().getTotalWorldTime() + partialTicks), 15F);
+                            }
+                            GlStateManager.disableRescaleNormal();
+                            GlStateManager.enableCull();
+                            GlStateManager.popMatrix();
+                        }
+                    }
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_DEVONIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    if (isRotated(entity)) {
+                        GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.5F, 0.0F);
+                    }
+                    else {
+                        GlStateManager.rotate(facing.getHorizontalAngle() + 180, 0.0F, 1.5F, 0.0F);
+                    }
+                    GlStateManager.rotate(180, 0.0F, 1F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (isVar(entity)) {
+                        modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    else {
+                        modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 8, ((float) getWorld().getTotalWorldTime() + partialTicks), 8F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.SOUTH)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_DEVONIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 1.00, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (isVar(entity)) {
+                        modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    } else {
+                        modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 11, ((float) getWorld().getTotalWorldTime() + partialTicks), 11F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.NORTH)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_DEVONIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.50, z + 0.50);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.00, y + 1.50, z + 0.50);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(180, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.WEST)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_DEVONIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.75);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.75);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(90, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                if (entity.isFaceActive(getWorld(), entity.getPos(), EnumFacing.EAST)) {
+
+                    GlStateManager.pushMatrix();
+                    this.bindTexture(TEXTURE_DEVONIAN);
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.disableCull();
+                    if (isRotated(entity)) {
+                        GlStateManager.translate(x + 0.50, y + 1.75, z + 0.25);
+                    }
+                    else {
+                        GlStateManager.translate(x + 0.50, y + 1.25, z + 0.25);
+                    }
+                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    GlStateManager.rotate(270, 0F, 1F, 0F);
+                    if (isVar(entity)) {
+                        modelPortalBlockDevonian.renderPsilophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    } else {
+                        modelPortalBlockDevonian.renderAdoketophyton(entity.getAnimationTick(), 1.25f, partialTicks, 6, ((float) getWorld().getTotalWorldTime() + partialTicks), 6F);
+                    }
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
+                    GlStateManager.popMatrix();
+                }
+
+                colRed = (byte) 166;
+                colGreen = (byte) 92;
+                colBlue = (byte) 26;
             }
             else if (entity.getWorld().getBlockState(entity.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
 

@@ -70,11 +70,26 @@
       }
     ]
   },
-
   "portal_block_close": {
     "sounds": [
       {
         "name": "lepidodendron:portal_block_close",
+        "stream": false
+      }
+    ]
+  },
+  "portal_block_water_drain": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_water_drain",
+        "stream": false
+      }
+    ]
+  },
+  "portal_block_ambient": {
+    "sounds": [
+      {
+        "name": "lepidodendron:portal_block_ambient",
         "stream": false
       }
     ]
@@ -104,10 +119,10 @@
       }
     ]
   },
-  "portal_block_water_drain": {
+  "portal_block_devonian": {
     "sounds": [
       {
-        "name": "lepidodendron:portal_block_water_drain",
+        "name": "lepidodendron:portal_block_devonian",
         "stream": false
       }
     ]

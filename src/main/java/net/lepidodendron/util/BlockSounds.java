@@ -40,8 +40,17 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("portal_block_close")
     public static final SoundEvent PORTAL_CLOSE = createSoundEvent("portal_block_close");
 
+    @GameRegistry.ObjectHolder("portal_block_water_drain")
+    public static final SoundEvent PORTAL_WATER_DRAIN = createSoundEvent("portal_block_water_drain");
+
+    @GameRegistry.ObjectHolder("portal_block_ambient")
+    public static final SoundEvent PORTAL_AMBIENT = createSoundEvent("portal_block_ambient");
+
     @GameRegistry.ObjectHolder("portal_block_precambrian")
     public static final SoundEvent PORTAL_PRECAMBRIAN = createSoundEvent("portal_block_precambrian");
+
+    @GameRegistry.ObjectHolder("portal_block_cambrian")
+    public static final SoundEvent PORTAL_CAMBRIAN = createSoundEvent("portal_block_cambrian");
 
     @GameRegistry.ObjectHolder("portal_block_ordovician")
     public static final SoundEvent PORTAL_ORDOVICIAN = createSoundEvent("portal_block_ordovician");
@@ -49,11 +58,20 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("portal_block_silurian")
     public static final SoundEvent PORTAL_SILURIAN = createSoundEvent("portal_block_silurian");
 
-    @GameRegistry.ObjectHolder("portal_block_water_drain")
-    public static final SoundEvent PORTAL_WATER_DRAIN = createSoundEvent("portal_block_water_drain");
+    @GameRegistry.ObjectHolder("portal_block_devonian")
+    public static final SoundEvent PORTAL_DEVONIAN = createSoundEvent("portal_block_devonian");
 
     @GameRegistry.ObjectHolder("portal_block_carboniferous")
     public static final SoundEvent PORTAL_CARBONIFEROUS = createSoundEvent("portal_block_carboniferous");
+
+    @GameRegistry.ObjectHolder("portal_block_permian")
+    public static final SoundEvent PORTAL_PERMIANS = createSoundEvent("portal_block_permian");
+
+    @GameRegistry.ObjectHolder("portal_block_triassic")
+    public static final SoundEvent PORTAL_TRIASSIC = createSoundEvent("portal_block_triassic");
+
+    @GameRegistry.ObjectHolder("portal_block_jurassic")
+    public static final SoundEvent PORTAL_JURASSIC = createSoundEvent("portal_block_jurassic");
 
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(LepidodendronMod.MODID, soundName);

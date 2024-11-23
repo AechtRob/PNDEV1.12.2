@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/portal_block_jurassic",
+  "parent": "lepidodendron:block/portal_block",
   "display": {
     "thirdperson": {
       "rotation": [
