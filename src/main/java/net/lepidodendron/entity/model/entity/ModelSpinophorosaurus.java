@@ -885,12 +885,12 @@ public class ModelSpinophorosaurus extends ModelBasePalaeopedia {
             zz = 0 + (((tickAnim - 90) / 50) * (0-(0)));
         }
         else if (tickAnim >= 140 && tickAnim < 181) {
-            xx = -5 + (((tickAnim - 140) / 41) * (-2.7711+Math.sin((Math.PI/180)*(((double)tickAnim/20)_time*150-50))*2-(-5)));
+            xx = -5 + (((tickAnim - 140) / 41) * (-2.7711+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*2-(-5)));
             yy = 0 + (((tickAnim - 140) / 41) * (-3.127+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-5-(0)));
             zz = 0 + (((tickAnim - 140) / 41) * (0.1868-(0)));
         }
         else if (tickAnim >= 181 && tickAnim < 235) {
-            xx = -2.7711+Math.sin((Math.PI/180)*(((double)tickAnim/20)_time*150-50))*2 + (((tickAnim - 181) / 54) * (0-(-2.7711+Math.sin((Math.PI/180)*(((double)tickAnim/20)_time*150-50))*2)));
+            xx = -2.7711+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*2 + (((tickAnim - 181) / 54) * (0-(-2.7711+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150-50))*2)));
             yy = -3.127+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-5 + (((tickAnim - 181) / 54) * (0-(-3.127+Math.sin((Math.PI/180)*(((double)tickAnim/20)*150))*-5)));
             zz = 0.1868 + (((tickAnim - 181) / 54) * (0-(0.1868)));
         }
