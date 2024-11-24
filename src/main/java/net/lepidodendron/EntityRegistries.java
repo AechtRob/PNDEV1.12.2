@@ -1000,10 +1000,10 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_triadobatrachus", EntityPrehistoricFloraTriadobatrachus.class, LepidodendronMod.ENTITY_TRIADOBATRACHUS, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_rhadinosteus", EntityPrehistoricFloraRhadinosteus.class, LepidodendronMod.ENTITY_RHADINOSTEUS, 48,-12965591,-4739438);
         registerEntity("prehistoric_flora_spinophorosaurus", EntityPrehistoricFloraSpinophorosaurus.class, LepidodendronMod.ENTITY_SPINOPHOROSAURUS, 164,-5272736,-6921402);
-//        registerEntity("prehistoric_flora_tariccoia", EntityPrehistoricFloraTariccoia.class, LepidodendronMod.ENTITY_TARICCOIA, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_soomaspis", EntityPrehistoricFloraSoomaspis.class, LepidodendronMod.ENTITY_SOOMASPIS, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_triopus", EntityPrehistoricFloraTriopus.class, LepidodendronMod.ENTITY_TRIOPUS, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_tremaglaspis", EntityPrehistoricFloraTremaglaspis.class, LepidodendronMod.ENTITY_TREMAGLASPIS, 48,-12965591,-4739438);
+        registerEntity("prehistoric_flora_tariccoia", EntityPrehistoricFloraTariccoia.class, LepidodendronMod.ENTITY_TARICCOIA, 48,-12691435,-8511427);
+        registerEntity("prehistoric_flora_soomaspis", EntityPrehistoricFloraSoomaspis.class, LepidodendronMod.ENTITY_SOOMASPIS, 48,-2216936,-12691435);
+        registerEntity("prehistoric_flora_triopus", EntityPrehistoricFloraTriopus.class, LepidodendronMod.ENTITY_TRIOPUS, 48,-12566446,-2572443);
+        registerEntity("prehistoric_flora_tremaglaspis", EntityPrehistoricFloraTremaglaspis.class, LepidodendronMod.ENTITY_TREMAGLASPIS, 48,-15920114,-4740488);
 //        registerEntity("prehistoric_flora_drepanosaurus", EntityPrehistoricFloraDrepanosaurus.class, LepidodendronMod.ENTITY_DREPANOSAURUS, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_anthracoceras", EntityPrehistoricFloraAnthracoceras.class, LepidodendronMod.ENTITY_ANTHRACOCERAS, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_arcestes", EntityPrehistoricFloraArcestes.class, LepidodendronMod.ENTITY_ARCESTES, 48,-12965591,-4739438);
