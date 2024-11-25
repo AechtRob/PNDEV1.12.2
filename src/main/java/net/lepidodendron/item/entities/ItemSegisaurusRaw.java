@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemDracoraptorRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:dracoraptor_raw")
+public class ItemSegisaurusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:segisaurus_raw")
 	public static final Item block = null;
-	public ItemDracoraptorRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dracoraptor_raw);
+	public ItemSegisaurusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.segisaurus_raw);
 	}
 
 	@Override
@@ -30,20 +30,20 @@ public class ItemDracoraptorRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/dracoraptor_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/segisaurus_raw", "inventory"));
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dracoraptor", ItemDracoraptorRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDracoraptorRaw.block);
-		OreDictionary.registerOre("pnfurnaceMeat", ItemDracoraptorRaw.block);
-		OreDictionary.registerOre("pndietMeat", ItemDracoraptorRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_segisaurus", ItemSegisaurusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemSegisaurusRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemSegisaurusRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemSegisaurusRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(3, 0.3f, false);
-			setTranslationKey("pf_dracoraptor_raw");
-			setRegistryName("dracoraptor_raw");
+			setTranslationKey("pf_segisaurus_raw");
+			setRegistryName("segisaurus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
