@@ -151,7 +151,7 @@ public class EntityPrehistoricFloraAnderella extends EntityPrehistoricFloraTrilo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.ROLFEIA_LOOT;
+		return LepidodendronMod.ANDERELLA_LOOT;
 	}
 
 	//Rendering taxidermy:
