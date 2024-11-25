@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:carduispongia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:carduispongia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:carduispongia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:carduispongia", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:carduispongia", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:carduispongia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:carduispongia", "x": 180}
+    ]
+  }
+}

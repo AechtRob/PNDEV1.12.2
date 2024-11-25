@@ -170,7 +170,7 @@ public class EntityPrehistoricFloraAetheretmon extends EntityPrehistoricFloraFis
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.WARDICHTHYS_LOOT;
+		return LepidodendronMod.AETHERETMON_LOOT;
 	}
 
 	@Nullable
