@@ -15,7 +15,7 @@ public class RenderSegisaurus extends RenderLivingBaseWithBook<EntityPrehistoric
         super(mgr, new ModelSegisaurus(), 0.5f);
     }
 
-    public static float getScaler() {return 0.495f; }
+    public static float getScaler() {return 0.385f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSegisaurus entity) {

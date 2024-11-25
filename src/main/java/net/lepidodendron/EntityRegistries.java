@@ -1009,9 +1009,9 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_arcestes", EntityPrehistoricFloraArcestes.class, LepidodendronMod.ENTITY_ARCESTES, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_goldringia", EntityPrehistoricFloraGoldringia.class, LepidodendronMod.ENTITY_GOLDRINGIA, 48,-12965591,-4739438);
         registerEntity("prehistoric_flora_segisaurus", EntityPrehistoricFloraSegisaurus.class, LepidodendronMod.ENTITY_SEGISAURUS, 64,-5005168,-397082);
-//        registerEntity("prehistoric_flora_tuzoia", EntityPrehistoricFloraTuzoia.class, LepidodendronMod.ENTITY_TUZOIA, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_acheronauta", EntityPrehistoricFloraAcheronauta.class, LepidodendronMod.ENTITY_ACHERONAUTA, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_thylacares", EntityPrehistoricFloraThylacares.class, LepidodendronMod.ENTITY_THYLACARES, 48,-12965591,-4739438);
+        registerEntity("prehistoric_flora_tuzoia", EntityPrehistoricFloraTuzoia.class, LepidodendronMod.ENTITY_TUZOIA, 48,-12898756,-274312);
+        registerEntity("prehistoric_flora_acheronauta", EntityPrehistoricFloraAcheronauta.class, LepidodendronMod.ENTITY_ACHERONAUTA, 48,-9610638,-3641272);
+        registerEntity("prehistoric_flora_thylacares", EntityPrehistoricFloraThylacares.class, LepidodendronMod.ENTITY_THYLACARES, 48,-15240419,-11557448);
 //        registerEntity("prehistoric_flora_apateon", EntityPrehistoricFloraApateon.class, LepidodendronMod.ENTITY_APATEON, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_lepidasterella", EntityPrehistoricFloraLepidasterella.class, LepidodendronMod.ENTITY_LEPIDASTERELLA, 48,-12965591,-4739438);
 //        registerEntity("prehistoric_flora_kalops", EntityPrehistoricFloraKalops.class, LepidodendronMod.ENTITY_KALOPS, 48,-12965591,-4739438);

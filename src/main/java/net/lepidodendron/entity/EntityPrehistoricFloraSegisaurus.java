@@ -47,11 +47,11 @@ public class EntityPrehistoricFloraSegisaurus extends EntityPrehistoricFloraLand
 
 	public EntityPrehistoricFloraSegisaurus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(0.5F, 0.4F);
 		minWidth = 0.20F;
-		maxWidth = 0.9F;
-		maxHeight = 0.9F;
-		maxHealthAgeable = 16;
+		maxWidth = 0.5F;
+		maxHeight = 0.4F;
+		maxHealthAgeable = 10;
 		STAND_ANIMATION = Animation.create(120);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -109,7 +109,7 @@ public class EntityPrehistoricFloraSegisaurus extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.37F;
+		float speedBase = 0.32F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
