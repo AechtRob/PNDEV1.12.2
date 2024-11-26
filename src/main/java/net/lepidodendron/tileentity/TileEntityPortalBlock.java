@@ -145,6 +145,17 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 					world.playSound(null, pos, BlockSounds.PORTAL_PRECAMBRIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block) {
+				IBlockState portalCambrian = Functions.getPortalState(LepidodendronConfig.dimCambrian);
+				if (portalCambrian != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalCambrian)) {
+						this.setIsActive(false);
+					}
+				}
+				if (this.getIsActive() && this.getAnimationTick() == 30) {
+					world.playSound(null, pos, BlockSounds.PORTAL_CAMBRIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
 			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block) {
 				IBlockState portalOrdovician = Functions.getPortalState(LepidodendronConfig.dimOrdovician);
 				if (portalOrdovician != null) {
@@ -197,8 +208,9 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 				}
 				if (this.animationTick == 8
 					|| (((int)(this.animationTick / 3) == world.rand.nextInt(30))
-					&& (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
-					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block)))
+					&& (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block)))
 				{
 					EnumParticleTypes particleType = EnumParticleTypes.BLOCK_DUST;
 					SoundEvent soundEvent = SoundEvents.ENTITY_PAINTING_PLACE;
@@ -210,8 +222,9 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 						particleType = EnumParticleTypes.FLAME;
 						particler = 4;
 					}
-					if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
-						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
+					if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
+							|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block
+							|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
 						particleType = EnumParticleTypes.WATER_SPLASH;
 						particler = 4;
 					}
@@ -258,8 +271,9 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 					//No sound for closing this one
 				}
-				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
-					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
 					world.playSound(null, pos, BlockSounds.PORTAL_WATER_DRAIN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockDevonian.block) {
