@@ -54,18 +54,5 @@ public class BlockGinkgoPlanks extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_ginkgo_planks");
 		}
 
-		@SideOnly(Side.CLIENT)
-		@Override
-		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-			if (LepidodendronConfig.showTooltips) {
-				if (!Loader.isModLoaded("pnjurassic")) {
-					tooltip.add("NOTE: Used to build the portal to the Jurassic dimension but you do not have that dimension mod installed");
-				}
-				else {
-					tooltip.add("NOTE: Used to build the portal to the Jurassic dimension");
-				}
-				super.addInformation(stack, player, tooltip, advanced);
-			}
-		}
 	}
 }

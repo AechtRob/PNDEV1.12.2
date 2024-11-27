@@ -48,9 +48,9 @@ public class EntityPrehistoricFloraLitargosuchus extends EntityPrehistoricFloraL
 
 	public EntityPrehistoricFloraLitargosuchus(World world) {
 		super(world);
-		setSize(0.6F, 0.32F);
+		setSize(0.4F, 0.32F);
 		minWidth = 0.18F;
-		maxWidth = 0.6F;
+		maxWidth = 0.4F;
 		maxHeight = 0.32F;
 		maxHealthAgeable = 10.0D;
 		STAND_ANIMATION = Animation.create(135);

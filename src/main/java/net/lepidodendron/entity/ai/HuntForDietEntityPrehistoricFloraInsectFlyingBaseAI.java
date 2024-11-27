@@ -11,6 +11,7 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
@@ -175,7 +176,7 @@ public class HuntForDietEntityPrehistoricFloraInsectFlyingBaseAI<T extends Entit
                     }
                     if (resourcelocation != null) {
                         LootTable loottable = this.entity.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
-                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE);
+                        LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.entity.world)).withLootedEntity(entityChooser).withLuck(Float.MAX_VALUE).withDamageSource(DamageSource.GENERIC).withPlayer(null);;
 
                         for (ItemStack itemstack : loottable.generateLootForPools(this.entity.world.rand, lootcontext$builder.build())) {
                             //Loop over the itemstack to see what it is:

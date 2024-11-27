@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraMooreoceras extends EntityPrehistoricFloraNau
 		return this.getAgeScale() < 0.4;
 	}
 
-	public static String getPeriod() {return "Carboniferous  - Permian";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

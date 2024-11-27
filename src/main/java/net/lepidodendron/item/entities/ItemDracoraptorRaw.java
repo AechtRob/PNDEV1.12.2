@@ -26,18 +26,18 @@ public class ItemDracoraptorRaw extends ElementsLepidodendronMod.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemFoodCustom());
 	}
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dracoraptor", ItemDracoraptorRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemDracoraptorRaw.block);
-		OreDictionary.registerOre("pnfurnaceAmphibian", ItemDracoraptorRaw.block);
-		OreDictionary.registerOre("pndietMeat", ItemDracoraptorRaw.block);
-	}
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/dracoraptor_raw", "inventory"));
+	}
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dracoraptor", ItemDracoraptorRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemDracoraptorRaw.block);
+		OreDictionary.registerOre("pnfurnaceMeat", ItemDracoraptorRaw.block);
+		OreDictionary.registerOre("pndietMeat", ItemDracoraptorRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {

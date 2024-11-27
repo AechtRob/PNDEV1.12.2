@@ -1,7 +1,7 @@
 {
   "variants": {
     "normal": {
-      "model": "lepidodendron:portal_block_devonian"
+      "model": "lepidodendron:portal_block"
     }
   }
 }

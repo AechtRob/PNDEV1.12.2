@@ -1,8 +1,10 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.block.BlockEggsWaterSurface;
 import net.lepidodendron.entity.EntityPrehistoricFloraGephyrostegus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.util.IWaterSurfaceEggsAmphibian;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.RandomPositionGenerator;
@@ -101,27 +103,36 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                     if (this.PrehistoricFloraAmphibianBase.getLaying() && this.PrehistoricFloraAmphibianBase instanceof EntityPrehistoricFloraGephyrostegus) {
                         chooser = 1;
                     }
-                    if (Math.random() > chooser) { //Equal chance of land or water, but sometimes stay still if it's not doing the water thing
-                        if (!this.mustUpdate && (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) && this.executionChance > 0)
-                        {
-                            if (this.PrehistoricFloraAmphibianBase.getIdleTime() >= 100)
-                            {
-                                return false;
-                            }
 
-                            if (this.PrehistoricFloraAmphibianBase.getRNG().nextInt(this.executionChance) != 0)
-                            {
-                                return false;
-                            }
-                        }
-                        vec3 = this.findLandTarget();
-                    }
-                    else {
+                    if (this.PrehistoricFloraAmphibianBase.getLaying() &&
+                        this.PrehistoricFloraAmphibianBase instanceof IWaterSurfaceEggsAmphibian) {
+                        //Find water, and if in water go to the top layer:
                         if (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
-                            vec3 = this.findWaterTargetIgnoreBase(16);
+                            vec3 = this.findWaterTarget(16, false);
                         }
                         else {
-                            vec3 = this.findWaterTarget(16);
+                            vec3 = this.findWaterTarget(16, true);
+                        }
+                    }
+
+                    else {
+                        if (Math.random() > chooser) { //Equal chance of land or water, but sometimes stay still if it's not doing the water thing
+                            if (!this.mustUpdate && (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) && this.executionChance > 0) {
+                                if (this.PrehistoricFloraAmphibianBase.getIdleTime() >= 100) {
+                                    return false;
+                                }
+
+                                if (this.PrehistoricFloraAmphibianBase.getRNG().nextInt(this.executionChance) != 0) {
+                                    return false;
+                                }
+                            }
+                            vec3 = this.findLandTarget();
+                        } else {
+                            if (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
+                                vec3 = this.findWaterTargetIgnoreBase(16);
+                            } else {
+                                vec3 = this.findWaterTarget(16, false);
+                            }
                         }
                     }
                 }
@@ -159,34 +170,61 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
     }
 
 
-    public Vec3d findWaterTarget(int dist) {
+    public Vec3d findWaterTarget(int dist, boolean forSurfaceEggs) {
         Random rand = this.PrehistoricFloraAmphibianBase.getRNG();
         if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
             if (this.PrehistoricFloraAmphibianBase.isBase()) {
                 for (int i = 0; i < 10; i++) {
                     Vec3d randPos = this.PrehistoricFloraAmphibianBase.getPositionVector().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                     if (this.PrehistoricFloraAmphibianBase.world.isBlockLoaded(new BlockPos(randPos))) {
-                        //Prefer targets which are at the bottom:
-
-                        if (!(randPos.y < 1 || randPos.y >= 254)) {
-                            randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
-                        }
-                        Vec3d randPosVar = randPos;
-                        if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.85) {
-                            int ii = 0;
-                            while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
-                                randPosVar = randPos.add(0, -ii, 0);
-                                ii = ii + 1;
+                        if (!forSurfaceEggs) {
+                            //Prefer targets which are at the bottom:
+                            if (!(randPos.y < 1 || randPos.y >= 254)) {
+                                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
                             }
-                            //About half the time float over the bottom:
-                            randPos = randPosVar;
-                            if (Math.random() > 0.5) {
-                                randPos = randPosVar.add(0, 1, 0);
+                            Vec3d randPosVar = randPos;
+                            if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !isAtBottom(new BlockPos(randPos)) && Math.random() < 0.85) {
+                                int ii = 0;
+                                while ((new BlockPos(randPos).down(ii).getY() > 1) && this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos).down(ii)).getMaterial() == Material.WATER) {
+                                    randPosVar = randPos.add(0, -ii, 0);
+                                    ii = ii + 1;
+                                }
+                                //About half the time float over the bottom:
+                                randPos = randPosVar;
+                                if (Math.random() > 0.5) {
+                                    randPos = randPosVar.add(0, 1, 0);
+                                }
+                            }
+
+                            if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
+                                continue; //This pos is not suitable
                             }
                         }
+                        else {
+                            //The target must suit laying shallow eggs
+                            //If it doesn't, then just go upwards instead:
+                            if (!(randPos.y < 1 || randPos.y >= 254)) {
+                                randPos = new Vec3d(randPos.x, Math.floor(randPos.y), randPos.z);
+                            }
+                            Vec3d randPosVar = randPos;
 
-                        if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
-                            continue; //This pos is not suitable
+                            boolean canEggAt = (BlockEggsWaterSurface.block.canPlaceBlockAt(this.PrehistoricFloraAmphibianBase.world, new BlockPos(randPos).up()));
+                            if (this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos)).getMaterial() == Material.WATER && !canEggAt) {
+                                int ii = 0;
+                                while ((new BlockPos(randPos).up(ii).getY() < 255) && this.PrehistoricFloraAmphibianBase.world.getBlockState(new BlockPos(randPos).up(ii)).getMaterial() == Material.WATER) {
+                                    randPosVar = randPos.add(0, ii, 0);
+                                    ii = ii + 1;
+                                }
+                                //Vary this somewhat:
+                                randPos = randPosVar;
+                                if (Math.random() > 0.5) {
+                                    randPos = randPosVar.add(0, -1, 0);
+                                }
+                            }
+
+                            if (this.maxDepth > 0 && isTooDeep(new BlockPos(randPos))) {
+                                continue; //This pos is not suitable
+                            }
                         }
 
                         //System.err.println("Target " + randPos.getX() + " " + randPos.getY() + " " + randPos.getZ());

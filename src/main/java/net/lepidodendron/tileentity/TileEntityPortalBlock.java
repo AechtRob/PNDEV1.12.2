@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 public class TileEntityPortalBlock extends TileEntity implements ITickable {
 
 	private int animationTick;
+	private int animationTickAmbient;
 	private boolean isActive;
 
 	public static boolean isPartOfValidPortal(World world, BlockPos pos, IBlockState portalState) {
@@ -110,7 +111,29 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 	public void update()
 	{
 		if (this.isActive) {
+			//deal with ambient ticking
+			if (this.animationTickAmbient == 90 && this.animationTick == 90 && this.world.rand.nextInt(425) == 0) { //restart the ambient ticker
+				animationTickAmbient = 0;
+			}
+			if (this.animationTickAmbient <= 90) { //4++ seconds
+				this.animationTickAmbient ++;
+			}
+			if (this.animationTickAmbient > 90) {
+				this.animationTickAmbient = 90;
+			}
+			if (this.animationTick < 90) {
+				this.animationTickAmbient = 90;
+			}
+
 			//Are we part of a valid portal?
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOverworld.block) {
+				IBlockState portalOverworld = Functions.getPortalState(0);
+				if (portalOverworld != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalOverworld)) {
+						this.setIsActive(false);
+					}
+				}
+			}
 			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 				IBlockState portalPrecambrian = Functions.getPortalState(LepidodendronConfig.dimPrecambrian);
 				if (portalPrecambrian != null) {
@@ -120,6 +143,17 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 				}
 				if (this.getIsActive() && this.getAnimationTick() == 6) {
 					world.playSound(null, pos, BlockSounds.PORTAL_PRECAMBRIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block) {
+				IBlockState portalCambrian = Functions.getPortalState(LepidodendronConfig.dimCambrian);
+				if (portalCambrian != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalCambrian)) {
+						this.setIsActive(false);
+					}
+				}
+				if (this.getIsActive() && this.getAnimationTick() == 30) {
+					world.playSound(null, pos, BlockSounds.PORTAL_CAMBRIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
 			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block) {
@@ -144,6 +178,17 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 					world.playSound(null, pos, BlockSounds.PORTAL_SILURIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 			}
+			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockDevonian.block) {
+				IBlockState portalDevonian = Functions.getPortalState(LepidodendronConfig.dimDevonian);
+				if (portalDevonian != null) {
+					if (!isPartOfValidPortal(this.world, this.pos, portalDevonian)) {
+						this.setIsActive(false);
+					}
+				}
+				if (this.getIsActive() && this.getAnimationTick() == 6) {
+					world.playSound(null, pos, BlockSounds.PORTAL_DEVONIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+			}
 			if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
 				IBlockState portalCarboniferous = Functions.getPortalState(LepidodendronConfig.dimCarboniferous);
 				if (portalCarboniferous != null) {
@@ -163,22 +208,27 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 				}
 				if (this.animationTick == 8
 					|| (((int)(this.animationTick / 3) == world.rand.nextInt(30))
-					&& (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
-					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block)))
+					&& (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block)))
 				{
 					EnumParticleTypes particleType = EnumParticleTypes.BLOCK_DUST;
 					SoundEvent soundEvent = SoundEvents.ENTITY_PAINTING_PLACE;
 					int particler = 5;
+					if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOverworld.block) {
+						particler = 0;
+					}
 					if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 						particleType = EnumParticleTypes.FLAME;
 						particler = 4;
 					}
-					if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
-						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
+					if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
+							|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block
+							|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
 						particleType = EnumParticleTypes.WATER_SPLASH;
 						particler = 4;
 					}
-					if (this.animationTick == 8) {
+					if (this.animationTick == 8 && world.getBlockState(this.getPos()).getBlock() != BlockPortalBlockOverworld.block) {
 						world.playSound(null, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, soundEvent, SoundCategory.BLOCKS, 0.65F, (1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.2F) * 0.7F);
 					}
 
@@ -217,12 +267,17 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 				this.animationTick = 0;
 			}
 			if (this.getAnimationTick() == 75) { //3.5 seconds (ticks 15 to 85)
-				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
+				if (world.getBlockState(this.getPos()).getBlock() != BlockPortalBlockOverworld.block
+					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockPrecambrian.block) {
 					//No sound for closing this one
 				}
-				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockOrdovician.block
-					|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCambrian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block
+						|| world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockSilurian.block) {
 					world.playSound(null, pos, BlockSounds.PORTAL_WATER_DRAIN, SoundCategory.BLOCKS, 0.5F, 1.0F);
+				}
+				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockDevonian.block) {
+					world.playSound(null, pos, BlockSounds.PORTAL_DEVONIAN, SoundCategory.BLOCKS, 0.5F, 1.0F);
 				}
 				if (world.getBlockState(this.getPos()).getBlock() == BlockPortalBlockCarboniferous.block) {
 					world.playSound(null, pos, BlockSounds.PORTAL_CARBONIFEROUS, SoundCategory.BLOCKS, 0.5F, 1.0F);
@@ -240,6 +295,10 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 	public AxisAlignedBB getRenderBoundingBox() {
 		//return new AxisAlignedBB(pos, pos.add(2, 2, 2));
 		return INFINITE_EXTENT_AABB;
+	}
+
+	public int getAnimationTickAmbient() {
+		return this.animationTickAmbient;
 	}
 
 	public int getAnimationTick() {
@@ -287,6 +346,9 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 		if (compound.hasKey("animationTick")) {
 			this.animationTick = compound.getInteger("animationTick");
 		}
+		if (compound.hasKey("animationTickAmbient")) {
+			this.animationTickAmbient = compound.getInteger("animationTickAmbient");
+		}
 		if (compound.hasKey("isActive")) {
 			this.isActive = compound.getBoolean("isActive");
 		}
@@ -297,6 +359,7 @@ public class TileEntityPortalBlock extends TileEntity implements ITickable {
 	{
 		super.writeToNBT(compound);
 		compound.setInteger("animationTick", this.animationTick);
+		compound.setInteger("animationTickAmbient", this.animationTickAmbient);
 		compound.setBoolean("isActive", this.isActive);
 		return compound;
 	}
