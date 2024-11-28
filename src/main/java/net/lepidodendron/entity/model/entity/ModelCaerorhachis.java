@@ -500,11 +500,8 @@ public class ModelCaerorhachis extends ModelBasePalaeopedia {
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
-                if (ee.getIsFast()) { //Running
-                    animRun(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                } else {
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-                }
+                animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+
             }
         }
         else {
@@ -1383,12 +1380,6 @@ public class ModelCaerorhachis extends ModelBasePalaeopedia {
 
 
     }
-    public void animRun(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraCaerorhachis entity = (EntityPrehistoricFloraCaerorhachis) entitylivingbaseIn;
-
-
-    }
-
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraCaerorhachis entity = (EntityPrehistoricFloraCaerorhachis) entitylivingbaseIn;
         int animCycle = 20;

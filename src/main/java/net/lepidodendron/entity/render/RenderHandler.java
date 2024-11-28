@@ -6297,6 +6297,18 @@ public class RenderHandler {
                 return new RenderArcestes(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSilvanerpeton.class, new IRenderFactory<EntityPrehistoricFloraSilvanerpeton>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSilvanerpeton> createRenderFor(RenderManager manager) {
+                return new RenderSilvanerpeton(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEldeceeon.class, new IRenderFactory<EntityPrehistoricFloraEldeceeon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEldeceeon> createRenderFor(RenderManager manager) {
+                return new RenderEldeceeon(manager);
+            }
+        });
 
 
 
