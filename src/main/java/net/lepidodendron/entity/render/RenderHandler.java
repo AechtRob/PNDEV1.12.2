@@ -6279,6 +6279,24 @@ public class RenderHandler {
                 return new RenderTuzoia(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGoldringia.class, new IRenderFactory<EntityPrehistoricFloraGoldringia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGoldringia> createRenderFor(RenderManager manager) {
+                return new RenderGoldringia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAnthracoceras.class, new IRenderFactory<EntityPrehistoricFloraAnthracoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAnthracoceras> createRenderFor(RenderManager manager) {
+                return new RenderAnthracoceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArcestes.class, new IRenderFactory<EntityPrehistoricFloraArcestes>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArcestes> createRenderFor(RenderManager manager) {
+                return new RenderArcestes(manager);
+            }
+        });
 
 
 
@@ -6411,6 +6429,10 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellSpiroceras.TileEntityCustom.class, new RenderNautiloidShellSpiroceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellCenoceras.TileEntityCustom.class, new RenderNautiloidShellCenoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellPhylloceras.TileEntityCustom.class, new RenderNautiloidShellPhylloceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellArcestes.TileEntityCustom.class, new RenderNautiloidShellArcestes());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellGoldringia.TileEntityCustom.class, new RenderNautiloidShellGoldringia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAnthracoceras.TileEntityCustom.class, new RenderNautiloidShellAnthracoceras());
+
 
 
 

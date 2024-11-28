@@ -1005,9 +1005,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_triopus", EntityPrehistoricFloraTriopus.class, LepidodendronMod.ENTITY_TRIOPUS, 48,-12566446,-2572443);
         registerEntity("prehistoric_flora_tremaglaspis", EntityPrehistoricFloraTremaglaspis.class, LepidodendronMod.ENTITY_TREMAGLASPIS, 48,-15920114,-4740488);
         registerEntity("prehistoric_flora_drepanosaurus", EntityPrehistoricFloraDrepanosaurus.class, LepidodendronMod.ENTITY_DREPANOSAURUS, 48,-14666721,-9809890);
-//        registerEntity("prehistoric_flora_anthracoceras", EntityPrehistoricFloraAnthracoceras.class, LepidodendronMod.ENTITY_ANTHRACOCERAS, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_arcestes", EntityPrehistoricFloraArcestes.class, LepidodendronMod.ENTITY_ARCESTES, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_goldringia", EntityPrehistoricFloraGoldringia.class, LepidodendronMod.ENTITY_GOLDRINGIA, 48,-12965591,-4739438);
+        registerEntity("prehistoric_flora_anthracoceras", EntityPrehistoricFloraAnthracoceras.class, LepidodendronMod.ENTITY_ANTHRACOCERAS, 48,-13098726,-6777741);
+        registerEntity("prehistoric_flora_arcestes", EntityPrehistoricFloraArcestes.class, LepidodendronMod.ENTITY_ARCESTES, 48,-2730184,-2575445);
+//        registerEntity("prehistoric_flora_goldringia", EntityPrehistoricFloraGoldringia.class, LepidodendronMod.ENTITY_GOLDRINGIA, 48,-2307295,-1204946);
         registerEntity("prehistoric_flora_segisaurus", EntityPrehistoricFloraSegisaurus.class, LepidodendronMod.ENTITY_SEGISAURUS, 64,-5005168,-397082);
         registerEntity("prehistoric_flora_tuzoia", EntityPrehistoricFloraTuzoia.class, LepidodendronMod.ENTITY_TUZOIA, 48,-12898756,-274312);
         registerEntity("prehistoric_flora_acheronauta", EntityPrehistoricFloraAcheronauta.class, LepidodendronMod.ENTITY_ACHERONAUTA, 48,-9610638,-3641272);

@@ -9274,6 +9274,9 @@ entity.prehistoric_flora_pygocephalomorpha_fujianocaris.name=Fujianocaris
 entity.prehistoric_flora_pygocephalomorpha_laevitealliocaris.name=Laevitealliocaris
 entity.prehistoric_flora_pygocephalomorpha_iraticaris.name=Iraticaris
 entity.prehistoric_flora_pygocephalomorpha_notocaris.name=Notocaris
+item.pf_eggs_arcestes.name=Arcestes Eggs
+tile.pf_shell_arcestes.name=Arcestes Shell
+tile.pf_shell_anthracoceras.name=Anthracoceras Shell
 
 
 
