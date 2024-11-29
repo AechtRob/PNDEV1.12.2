@@ -6309,6 +6309,12 @@ public class RenderHandler {
                 return new RenderEldeceeon(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLethiscus.class, new IRenderFactory<EntityPrehistoricFloraLethiscus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLethiscus> createRenderFor(RenderManager manager) {
+                return new RenderLethiscus(manager);
+            }
+        });
 
 
 

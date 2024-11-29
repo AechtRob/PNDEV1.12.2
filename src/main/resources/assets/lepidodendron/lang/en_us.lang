@@ -9277,6 +9277,10 @@ entity.prehistoric_flora_pygocephalomorpha_notocaris.name=Notocaris
 item.pf_eggs_arcestes.name=Arcestes Eggs
 tile.pf_shell_arcestes.name=Arcestes Shell
 tile.pf_shell_anthracoceras.name=Anthracoceras Shell
+advancements.pf_adv_book_lethiscus.description=Unlock the entry for Lethiscus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_lethiscus.title=Lethiscus
+item.pf_lethiscus_raw.name=Raw Lethiscus
+entity.prehistoric_flora_lethiscus.name=Lethiscus
 
 
 

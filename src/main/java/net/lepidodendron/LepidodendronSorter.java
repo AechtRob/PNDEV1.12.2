@@ -5133,6 +5133,8 @@ public class LepidodendronSorter {
     public static final int shell_anthracoceras = 5120;
     public static final int shell_arcestes = 5121;
     public static final int shell_goldringia = 5122;
+    public static final int lethiscus_raw = 5123;
+    public static final int eggs_lethiscus = 5124;
 
 
 
