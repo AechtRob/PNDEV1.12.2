@@ -71,6 +71,10 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 	public int getEggType(@Nullable String variantIn) {
 		return 47; //Surface spawn
 	}
+	@Override
+	public int getRoarLength() {
+		return 20;
+	}
 
 	@Override
 	public int getAttackLength() {
@@ -103,15 +107,12 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.155F;
+		float calcSpeed = 0.125F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.185f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
-		}
-		if (this.getAnimation() == STAND_ANIMATION) {
-			return 0.0F;
 		}
 		if(this.getIsFast()){
 			calcSpeed *=1.4F;
@@ -274,10 +275,10 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				int next = rand.nextInt(10);
 				this.setAnimation(STAND_ANIMATION);
-				this.standCooldown = 2000;
+				this.standCooldown = 100;
 			}
 			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-				this.standCooldown = 2000;
+				this.standCooldown = 100;
 				this.setAnimation(NO_ANIMATION);
 			}
 		}

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderRhadinosteus extends RenderLivingBaseWithBook<EntityPrehistoricFloraRhadinosteus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rhadinosteus.png");
 
-    public static float getScaler() {return 0.27f;}
+    public static float getScaler() {return 0.14f;}
 
     public RenderRhadinosteus(RenderManager mgr) {
         super(mgr, new ModelRhadinosteus(), 0.5f);
