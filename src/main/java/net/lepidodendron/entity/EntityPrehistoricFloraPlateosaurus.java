@@ -540,17 +540,9 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 				int next = rand.nextInt(10);
-				//if (next < 5) {
-					//this.setAnimation(STAND_ANIMATION);
-				//} else {
-					this.setAnimation(ALERT_ANIMATION);
-				//}
+				this.setAnimation(ALERT_ANIMATION);
 				this.standCooldown = 2000;
 			}
-//			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-//				this.standCooldown = 2000;
-//				this.setAnimation(NO_ANIMATION);
-//			}
 			if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
 				this.standCooldown = 2000;
 				this.setAnimation(NO_ANIMATION);

@@ -998,8 +998,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_sericipterus", EntityPrehistoricFloraSericipterus.class, LepidodendronMod.ENTITY_SERICIPTERUS, 84,-11587026,-5014964);
         registerEntity("prehistoric_flora_sordes", EntityPrehistoricFloraSordes.class, LepidodendronMod.ENTITY_SORDES, 64,-6602443,-2901605);
         registerEntity("prehistoric_flora_terrestrisuchus", EntityPrehistoricFloraTerrestrisuchus.class, LepidodendronMod.ENTITY_TERRESTRISUCHUS, 48,-8229830,-858142);
-//        registerEntity("prehistoric_flora_triadobatrachus", EntityPrehistoricFloraTriadobatrachus.class, LepidodendronMod.ENTITY_TRIADOBATRACHUS, 48,-12965591,-4739438);
-//        registerEntity("prehistoric_flora_rhadinosteus", EntityPrehistoricFloraRhadinosteus.class, LepidodendronMod.ENTITY_RHADINOSTEUS, 48,-12965591,-4739438);
+        registerEntity("prehistoric_flora_triadobatrachus", EntityPrehistoricFloraTriadobatrachus.class, LepidodendronMod.ENTITY_TRIADOBATRACHUS, 48,-10145771,-11588066);
+        registerEntity("prehistoric_flora_rhadinosteus", EntityPrehistoricFloraRhadinosteus.class, LepidodendronMod.ENTITY_RHADINOSTEUS, 48,-14739435,-3625939);
         registerEntity("prehistoric_flora_spinophorosaurus", EntityPrehistoricFloraSpinophorosaurus.class, LepidodendronMod.ENTITY_SPINOPHOROSAURUS, 164,-5272736,-6921402);
         registerEntity("prehistoric_flora_tariccoia", EntityPrehistoricFloraTariccoia.class, LepidodendronMod.ENTITY_TARICCOIA, 48,-12691435,-8511427);
         registerEntity("prehistoric_flora_soomaspis", EntityPrehistoricFloraSoomaspis.class, LepidodendronMod.ENTITY_SOOMASPIS, 48,-2216936,-12691435);

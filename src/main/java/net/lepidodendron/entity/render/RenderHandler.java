@@ -6315,6 +6315,12 @@ public class RenderHandler {
                 return new RenderLethiscus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhadinosteus.class, new IRenderFactory<EntityPrehistoricFloraRhadinosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhadinosteus> createRenderFor(RenderManager manager) {
+                return new RenderRhadinosteus(manager);
+            }
+        });
 
 
 
