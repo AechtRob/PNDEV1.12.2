@@ -6321,6 +6321,54 @@ public class RenderHandler {
                 return new RenderRhadinosteus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraApateon.class, new IRenderFactory<EntityPrehistoricFloraApateon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraApateon> createRenderFor(RenderManager manager) {
+                return new RenderApateon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMicrobrachis.class, new IRenderFactory<EntityPrehistoricFloraMicrobrachis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMicrobrachis> createRenderFor(RenderManager manager) {
+                return new RenderMicrobrachis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhynchonkos.class, new IRenderFactory<EntityPrehistoricFloraRhynchonkos>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhynchonkos> createRenderFor(RenderManager manager) {
+                return new RenderRhynchonkos(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLepidasterella.class, new IRenderFactory<EntityPrehistoricFloraLepidasterella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLepidasterella> createRenderFor(RenderManager manager) {
+                return new RenderLepidasterella(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHexanchus.class, new IRenderFactory<EntityPrehistoricFloraHexanchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHexanchus> createRenderFor(RenderManager manager) {
+                return new RenderHexanchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNicrosaurus.class, new IRenderFactory<EntityPrehistoricFloraNicrosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNicrosaurus> createRenderFor(RenderManager manager) {
+                return new RenderNicrosaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGiraffatitan.class, new IRenderFactory<EntityPrehistoricFloraGiraffatitan>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGiraffatitan> createRenderFor(RenderManager manager) {
+                return new RenderGiraffatitan(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiademodon.class, new IRenderFactory<EntityPrehistoricFloraDiademodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDiademodon> createRenderFor(RenderManager manager) {
+                return new RenderDiademodon(manager);
+            }
+        });
 
 
 
@@ -6414,6 +6462,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDecacuminaster.TileEntityCustom.class, new RenderDecacuminasterItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockLepidaster.TileEntityCustom.class, new RenderLepidasterItem() );
         ClientRegistry.bindTileEntitySpecialRenderer(BlockHelianthaster.TileEntityCustom.class, new RenderHelianthasterItem());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockLepidasterella.TileEntityCustom.class, new RenderLepidasterellaItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockArchaeocidaris.TileEntityCustom.class, new RenderArchaeocidarisItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockCidaroida.TileEntityCustom.class, new RenderCidaroidaItem());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAmmonite_Asteroceras.TileEntityCustom.class, new RenderNautiloidShellAmmonite_Asteroceras());

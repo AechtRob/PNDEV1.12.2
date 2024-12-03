@@ -6924,6 +6924,7 @@ tile.pf_crinoid_traumatocrinus.name=Traumatocrinus
 tile.pf_crinoid_vadarocrinus.name=Vadarocrinus
 tile.pf_crinoid_vostocovacrinus.name=Vostocovacrinus
 tile.pf_crumillospongia.name=Crumillospongia
+tile.pf_carduispongia.name=Carduispongia
 tile.pf_ctenis_log.name=Ctenis Log
 tile.pf_ctenis_pallisade.name=Ctenis Palisade
 tile.pf_ctenis_sapling.name=Ctenis Sapling
@@ -9235,8 +9236,6 @@ entity.prehistoric_flora_diademodon.name=Diademodon
 entity.prehistoric_flora_hexanchus.name=Hexanchus
 entity.prehistoric_flora_giraffatitan.name=Giraffatitan
 entity.prehistoric_flora_nicrosaurus.name=Nicrosaurus
-entity.prehistoric_flora_carduispongia.name=Carduispongia
-entity.prehistoric_flora_crumillospongia.name=Crumillospongia
 item.pf_eggs_coeruleodraco.name=Coeruleodraco Eggs
 item.pf_eggs_sericipterus.name=Sericipterus Eggs
 item.pf_eggs_sordes.name=Sordes Eggs
@@ -9281,6 +9280,9 @@ advancements.pf_adv_book_lethiscus.description=Unlock the entry for Lethiscus in
 advancements.pf_adv_book_lethiscus.title=Lethiscus
 item.pf_lethiscus_raw.name=Raw Lethiscus
 entity.prehistoric_flora_lethiscus.name=Lethiscus
+tile.pf_lepidasterella_item.name=Dried Lepidasterella
+item.pf_eggs_eocaecilia.name=Eocaecilia Eggs
+item.pf_eggs_rhynchonkos.name=Rhynchonkos Eggs
 
 
 

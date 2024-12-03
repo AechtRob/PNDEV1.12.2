@@ -2617,6 +2617,22 @@ public class LepidodendronMod {
 	public static final ResourceLocation RHYNCHONKOS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rhynchonkos"));
 	public static final int ENTITY_LETHISCUS = 1060;
 	public static final ResourceLocation LETHISCUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lethiscus"));
+	public static final int ENTITY_DIADEMODON = 1061;
+	public static final ResourceLocation DIADEMODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diademodon"));
+	public static final ResourceLocation DIADEMODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/diademodon_young"));
+	public static final int ENTITY_HEXANCHUS = 1062;
+	public static final ResourceLocation HEXANCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hexanchus"));
+	public static final ResourceLocation HEXANCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hexanchus_young"));
+	public static final int ENTITY_GIRAFFATITAN = 1063;
+	public static final ResourceLocation GIRAFFATITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/giraffatitan"));
+	public static final ResourceLocation GIRAFFATITAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/giraffatitan_young"));
+	public static final int ENTITY_NICROSAURUS = 1064;
+	public static final ResourceLocation NICROSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/nicrosaurus"));
+	public static final ResourceLocation NICROSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/nicrosaurus_young"));
+	public static final int ENTITY_ACROCANTHOSAURUS = 1065;
+	public static final ResourceLocation ACROCANTHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus"));
+	public static final ResourceLocation ACROCANTHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus_young"));
+
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;

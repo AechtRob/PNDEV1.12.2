@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -14,12 +13,13 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.entity.util.IWaterSurfaceEggsAmphibian;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -27,54 +27,47 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, IWaterSurfaceEggsAmphibian {
+public class EntityPrehistoricFloraMicrobrachis extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public Animation STAND_ANIMATION;//blink animation
-	private int standCooldown;
-	public int ambientSoundTime;
+	public ChainBuffer chainBuffer;
+	private int isBlinking;
 
-	public EntityPrehistoricFloraTriadobatrachus(World world) {
+	public EntityPrehistoricFloraMicrobrachis(World world) {
 		super(world);
 		setSize(0.15F, 0.20F);
-		minWidth = 0.12F;
+		minWidth = 0.1F;
 		maxWidth = 0.15F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 6.0D;
-		STAND_ANIMATION = Animation.create(15);
-	}
-
-	//TODO OTHER ANIMS: STAND_ANIMATION = Relax, IDLE1 = Scratch, A_GRAZE = Arboreal Graze, GRAZE = Graze, DRINK = Drink, NOISE = Call, NOISE2 = Call1Variant, ROAR = Call2
-	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, STAND_ANIMATION};
-	}
-
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.standCooldown = rand.nextInt(2000);
-		return livingdata;
+		maxHealthAgeable = 5.0D;
 	}
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 47; //Surface spawn
+		return 40; //normal spawn
 	}
 
 	@Override
-	public int getAttackLength() {
-		return 20;
+	public int animSpeedAdder() {
+		if ((this.getIsMoving() || (!this.onGround) || this.isJumping || this.isReallyInWater())
+				&& this.getTicks() >= 0
+		) {
+			return 1;
+		}
+		return 0;
+	}
+
+	@Override
+	public int getAttackLength(){
+		return 10;
 	}
 
 	@Override
@@ -82,17 +75,12 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Carboniferous";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean hasNest() {
 		return false;
 	}
 	
@@ -103,59 +91,56 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.125F;
+		float calcSpeed = 0.03F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.185f;
+			calcSpeed= 0.3f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if(this.getIsFast()){
-			calcSpeed *=1.4F;
+		if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 3F;
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
 
 	@Override
 	public int getAdultAge() {
-		return 20000;
+		return 32000;
 	}
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterBalanerpeton;
+		int i = (int) LepidodendronConfig.waterCrassigyrinus;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
 	}
 
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("standCooldown", this.standCooldown);
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.standCooldown = compound.getInteger("standCooldown");
-	}
-
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.025, 20));
-		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(5, new EntityLookIdleAI(this));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 1, 20));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F, true));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F, true));
+		tasks.addTask(4, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F, true));
+		tasks.addTask(5, new EntityLookIdleAI(this, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
-		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, this.getEntityBoundingBox().getAverageEdgeLength() * 10F, this.getEntityBoundingBox().getAverageEdgeLength() * 1.2F, false));
+		this.targetTasks.addTask(1, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		//this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+		//this.targetTasks.addTask(2, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		//this.targetTasks.addTask(2, new HuntAI(this, EntityVillager.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraPalaeodictyopteraNymph.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+//		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
@@ -194,19 +179,19 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:balanerpeton_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:balanerpeton_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:triadobatrachus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:balanerpeton_death"));
 	}
 
 	@Override
@@ -239,46 +224,24 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 		super.onLivingUpdate();
 		//this.renderYawOffset = this.rotationYaw;
 
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
-
-		if (this.standCooldown > 0) {
-			this.standCooldown -= rand.nextInt(3) + 1;
-		}
-		if (this.standCooldown < 0) {
-			this.standCooldown = 0;
-		}
-
-		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
 
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
 	@Override
 	public void onEntityUpdate() {
-
 		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			//random idle animations
-			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-				int next = rand.nextInt(10);
-				this.setAnimation(STAND_ANIMATION);
-				this.standCooldown = 100;
-			}
-			if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-				this.standCooldown = 100;
-				this.setAnimation(NO_ANIMATION);
-			}
-		}
+		if ((!(isBlinking > 0)) || isBlinking > 200) {isBlinking = 0;}
+		isBlinking ++;
 
+	}
+
+	public boolean getBlinking() {
+		return this.isBlinking > 175;
 	}
 
 	@Override
@@ -297,12 +260,12 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.TRIADOBATRACHUS_LOOT;
+		return LepidodendronMod.MICROBRACHIS_LOOT;
 	}
+
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_TRIADOBATRACHUS;
+		return ModTriggers.CLICK_MICROBRACHIS;
 	}
-
 }

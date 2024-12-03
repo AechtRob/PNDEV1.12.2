@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraSwim
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 40; //normal spawn
+		return 1; //medium
 	}
 
 	@Override

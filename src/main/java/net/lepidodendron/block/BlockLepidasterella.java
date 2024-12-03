@@ -81,8 +81,8 @@ public class BlockLepidasterella extends ElementsLepidodendronMod.ModElement {
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
 			if (!(
-					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
+					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")
 			)
 			) {
 				break;

@@ -45,10 +45,10 @@ public class EntityPrehistoricFloraRhadinosteus extends EntityPrehistoricFloraSw
 
 	public EntityPrehistoricFloraRhadinosteus(World world) {
 		super(world);
-		setSize(0.3F, 0.20F);
+		setSize(0.15F, 0.10F);
 		minWidth = 0.12F;
-		maxWidth = 0.3F;
-		maxHeight = 0.20F;
+		maxWidth = 0.15F;
+		maxHeight = 0.10F;
 		maxHealthAgeable = 3.0D;
 		STAND_ANIMATION = Animation.create(15);
 		THREAT_ANIMATION = Animation.create(100);

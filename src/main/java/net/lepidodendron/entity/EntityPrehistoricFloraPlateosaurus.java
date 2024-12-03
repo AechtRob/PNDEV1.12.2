@@ -539,7 +539,6 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 			//random idle animations
 			if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 					&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-				int next = rand.nextInt(10);
 				this.setAnimation(ALERT_ANIMATION);
 				this.standCooldown = 2000;
 			}
