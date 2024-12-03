@@ -2,9 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPygocephalomorpha;
-import net.lepidodendron.entity.model.entity.ModelClydagnathus;
-import net.lepidodendron.entity.model.entity.ModelProconodontus;
-import net.lepidodendron.entity.model.entity.ModelPromissum;
 import net.lepidodendron.entity.model.entity.ModelTealliocaris;
 import net.lepidodendron.entity.render.RenderLivingBaseVariantModels;
 import net.minecraft.client.model.ModelBase;

@@ -735,7 +735,7 @@ public class LepidodendronConfig {
         digsiteBedColour = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "digsiteCarpetColour", digsiteCarpetColour);
-        prop.setComment("Change to a different metadata number to use a different colour of bed, or use -1 for a random single colour or -2 for completely random patchwork. [default: 8]");
+        prop.setComment("Change to a different metadata number to use a different colour of carpet, or use -1 for a random single colour or -2 for completely random patchwork. [default: 8]");
         digsiteCarpetColour = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "digsiteBiomeBlacklist", digsiteBiomeBlacklist);
