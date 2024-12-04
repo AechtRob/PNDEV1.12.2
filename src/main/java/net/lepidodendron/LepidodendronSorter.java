@@ -5114,7 +5114,7 @@ public class LepidodendronSorter {
     public static final int acheronauta_raw = 5100;
     public static final int thylacares_raw = 5101;
     public static final int apateon_raw = 5102;
-    public static final int lepidasterella_itam = 5103;
+    public static final int lepidasterella_item = 5103;
     public static final int kalops_raw = 5105;
     public static final int illinichthys_raw = 5106;
     public static final int microbrachis_raw = 5107;
@@ -5133,6 +5133,8 @@ public class LepidodendronSorter {
     public static final int shell_anthracoceras = 5120;
     public static final int shell_arcestes = 5121;
     public static final int shell_goldringia = 5122;
+    public static final int lethiscus_raw = 5123;
+    public static final int eggs_lethiscus = 5124;
 
 
 

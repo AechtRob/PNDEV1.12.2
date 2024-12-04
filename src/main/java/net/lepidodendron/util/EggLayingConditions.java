@@ -119,9 +119,10 @@ public class EggLayingConditions {
     
     public static void layWaterSurfaceEggs(EntityPrehistoricFloraAgeableBase entityIn) {
         if ((!entityIn.dropsEggs()) && (!entityIn.laysEggs()) && (entityIn.createPFChild(entityIn) == null)) {
-            if (!entityIn.world.isRemote && entityIn.isInWater() && entityIn.isPFAdult() && entityIn.getCanBreed() && entityIn.getLaying() && entityIn.getTicks() > 0
+            if (!entityIn.world.isRemote && entityIn.isPFAdult() && entityIn.getCanBreed() && entityIn.getLaying() && entityIn.getTicks() > 0
                     && (BlockEggsWaterSurface.block.canPlaceBlockAt(entityIn.world, entityIn.getPosition())
-                    || BlockEggsWaterSurface.block.canPlaceBlockAt(entityIn.world, entityIn.getPosition().up()))
+                    || BlockEggsWaterSurface.block.canPlaceBlockAt(entityIn.world, entityIn.getPosition().up())
+                    || BlockEggsWaterSurface.block.canPlaceBlockAt(entityIn.world, entityIn.getPosition().down()))
             ) {
                 //if (Math.random() > 0.5) {
                 entityIn.setTicks(-50); //Flag this as stationary for egg-laying
@@ -129,7 +130,7 @@ public class EggLayingConditions {
                 //}
             }
 
-            if (!entityIn.world.isRemote && entityIn.isInWater() && entityIn.isPFAdult() && entityIn.getTicks() > -47 && entityIn.getTicks() < 0) {
+            if (!entityIn.world.isRemote && entityIn.isPFAdult() && entityIn.getTicks() > -47 && entityIn.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Test2");
                 IBlockState eggs = BlockEggsWaterSurface.block.getDefaultState();
@@ -151,6 +152,20 @@ public class EggLayingConditions {
                         entityIn.world.setBlockState(entityIn.getPosition().up(), eggs);
                         entityIn.world.setTileEntity(entityIn.getPosition().up(), new BlockEggsWaterSurface.TileEntityCustom());
                         TileEntity te = entityIn.world.getTileEntity(entityIn.getPosition().up());
+                        te.getTileData().setString("creature", entityIn.getEntityId(entityIn));
+                        if (entityIn.hasPNVariants() && entityIn.getPNTypeName() != null) {
+                            te.getTileData().setString("PNType", entityIn.getPNTypeName());
+                        }
+                    }
+                    entityIn.setLaying(false);
+                    entityIn.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (entityIn.world.rand.nextFloat() - entityIn.world.rand.nextFloat()) * 0.2F + 1.0F);
+                }
+
+                if (BlockEggsWaterSurface.block.canPlaceBlockAt(entityIn.world, entityIn.getPosition().down())) {
+                    if (!(entityIn.world.isRemote)) {
+                        entityIn.world.setBlockState(entityIn.getPosition().down(), eggs);
+                        entityIn.world.setTileEntity(entityIn.getPosition().down(), new BlockEggsWaterSurface.TileEntityCustom());
+                        TileEntity te = entityIn.world.getTileEntity(entityIn.getPosition().down());
                         te.getTileData().setString("creature", entityIn.getEntityId(entityIn));
                         if (entityIn.hasPNVariants() && entityIn.getPNTypeName() != null) {
                             te.getTileData().setString("PNType", entityIn.getPNTypeName());

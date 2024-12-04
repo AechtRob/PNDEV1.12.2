@@ -11,7 +11,6 @@ import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableAir;
 import net.lepidodendron.item.entities.ItemUnknownEggLand;
 import net.lepidodendron.item.entities.spawneggs.*;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;

@@ -1616,6 +1616,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HEXANCHUS = new CustomTrigger("pf_book_hexanchus");
     public static final CustomTrigger CLICK_GIRAFFATITAN = new CustomTrigger("pf_book_giraffatitan");
     public static final CustomTrigger CLICK_NICROSAURUS = new CustomTrigger("pf_book_nicrosaurus");
+    public static final CustomTrigger CLICK_LETHISCUS = new CustomTrigger("pf_book_lethiscus");
+
 
 
 
@@ -3219,6 +3221,7 @@ public class ModTriggers
             CLICK_HEXANCHUS,
             CLICK_GIRAFFATITAN,
             CLICK_NICROSAURUS,
+            CLICK_LETHISCUS,
 
 
 

@@ -3,6 +3,7 @@ package net.lepidodendron.entity.base;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraHaldanodon;
+import net.lepidodendron.entity.util.IWaterSurfaceEggsAmphibian;
 import net.lepidodendron.entity.util.PathNavigateAmphibian;
 import net.lepidodendron.entity.util.PathNavigateAmphibianFindWater;
 import net.lepidodendron.util.EggLayingConditions;
@@ -390,7 +391,12 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
         super.onEntityUpdate();
 
         //Lay eggs perhaps:
-		EggLayingConditions.layWaterBottomEggs(this);
+        if (this instanceof IWaterSurfaceEggsAmphibian) {
+            EggLayingConditions.layWaterSurfaceEggs(this);
+        }
+        else {
+            EggLayingConditions.layWaterBottomEggs(this);
+        }
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

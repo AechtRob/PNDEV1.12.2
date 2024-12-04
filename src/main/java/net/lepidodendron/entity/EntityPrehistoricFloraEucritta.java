@@ -13,6 +13,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.entity.util.IWaterSurfaceEggsAmphibian;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.Entity;
@@ -35,7 +36,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEucritta extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraEucritta extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, IWaterSurfaceEggsAmphibian {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -84,6 +85,7 @@ public class EntityPrehistoricFloraEucritta extends EntityPrehistoricFloraSwimmi
 	public boolean dropsEggs() {
 		return false;
 	}
+
 	@Override
 	public boolean hasNest() {
 		return false;
@@ -113,7 +115,7 @@ public class EntityPrehistoricFloraEucritta extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterPederpes;
+		int i = (int) LepidodendronConfig.waterBalanerpeton;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;

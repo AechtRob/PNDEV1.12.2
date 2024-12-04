@@ -77,7 +77,7 @@ public class Functions {
             portalBlockState = BlockPortalBlockPrecambrian.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimCambrian) {
-            portalBlockState = Blocks.SPONGE.getDefaultState();
+            portalBlockState = BlockPortalBlockCambrian.block.getDefaultState();
         }
         if (lastDimension == LepidodendronConfig.dimOrdovician) {
             portalBlockState = BlockPortalBlockOrdovician.block.getDefaultState();

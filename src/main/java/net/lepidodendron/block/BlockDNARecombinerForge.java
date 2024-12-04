@@ -525,6 +525,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 			if (updated) {
 				this.notifyBlockUpdate();
+
 			}
 			markDirty();
 

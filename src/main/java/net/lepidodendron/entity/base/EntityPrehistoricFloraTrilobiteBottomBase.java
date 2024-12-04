@@ -120,6 +120,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         return super.isRiding();
     }
 
+
     public boolean canShoal() {
         return false;
     }

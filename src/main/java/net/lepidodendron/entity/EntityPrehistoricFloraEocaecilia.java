@@ -4,7 +4,6 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -54,7 +53,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraSwim
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 40; //normal spawn
+		return 1; //medium
 	}
 
 	@Override
