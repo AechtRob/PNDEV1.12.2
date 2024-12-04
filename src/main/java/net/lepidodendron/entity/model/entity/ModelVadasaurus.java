@@ -43,8 +43,8 @@ public class ModelVadasaurus extends ModelBasePalaeopedia {
     private ModelAnimator animator;
 
     public ModelVadasaurus() {
-        this.textureWidth = 48;
-        this.textureHeight = 40;
+        this.textureWidth = 64;
+        this.textureHeight = 64;
 
         this.Hips = new AdvancedModelRenderer(this);
         this.Hips.setRotationPoint(0.0F, 21.25F, 8.0F);

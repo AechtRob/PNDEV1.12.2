@@ -14,12 +14,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+import javax.annotation.Nullable;
+
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemPlatysuchusRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:platysuchus_raw")
+public class ItemCommentryaRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:commentrya_raw")
 	public static final Item block = null;
-	public ItemPlatysuchusRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.platysuchus_raw);
+	public ItemCommentryaRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.commentrya_raw);
 	}
 
 	@Override
@@ -30,25 +32,27 @@ public class ItemPlatysuchusRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/platysuchus_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/commentrya_raw", "inventory"));
 	}
-
-	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_platysuchus", ItemPlatysuchusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemPlatysuchusRaw.block);
-		OreDictionary.registerOre("pnfurnaceAmphibian", ItemPlatysuchusRaw.block);
-		OreDictionary.registerOre("pndietMeat", ItemPlatysuchusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_commentrya@gendered", ItemCommentryaRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemCommentryaRaw.block);
+		OreDictionary.registerOre("pnfurnaceFish", ItemCommentryaRaw.block);
+		OreDictionary.registerOre("pndietFish", ItemCommentryaRaw.block);
 	}
-
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_platysuchus_raw");
-			setRegistryName("platysuchus_raw");
+			setTranslationKey("pf_commentrya_raw");
+			setRegistryName("commentrya_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
+		}
+
+		@Nullable
+		public String getVariantStr() {
+			return "gendered";
 		}
 	}
 }

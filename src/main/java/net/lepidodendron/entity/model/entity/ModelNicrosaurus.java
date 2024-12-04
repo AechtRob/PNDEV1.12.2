@@ -459,9 +459,6 @@ public class ModelNicrosaurus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
             animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.ROAR_ANIMATION) {
-            animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
-        }
 
     }
 
@@ -3127,7 +3124,7 @@ public class ModelNicrosaurus extends ModelBasePalaeopedia {
 
         
 
-        animator.setAnimation(e.NOISE_ANIMATION);
+        animator.setAnimation(e.ROAR_ANIMATION);
         animator.startKeyframe(8);
         animator.rotate(neck, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(neck2, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
