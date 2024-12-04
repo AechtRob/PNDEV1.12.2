@@ -2,14 +2,11 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnthracoceras;
-import net.lepidodendron.entity.EntityPrehistoricFloraArcestes;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.math.BlockPos;
 
 public class ModelAnthracoceras extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer Root;

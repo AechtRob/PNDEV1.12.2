@@ -13,7 +13,7 @@ import net.lepidodendron.entity.render.entity.RenderEryma;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
-import net.lepidodendron.item.entities.spawneggs.*;
+import net.lepidodendron.item.entities.spawneggs.ItemSpawnEggPygocephalomorphaTealliocaris;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
