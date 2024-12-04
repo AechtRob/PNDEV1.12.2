@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_phialaspis",
 			"type": "text",
-			"text": ", perhaps for added stability while swimming.$(br)$(br)$(br)$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": ", perhaps for added stability while swimming."
 		},
 		{
 			"type": "lepidodendron:diet",
