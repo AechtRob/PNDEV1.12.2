@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:machimosaurus_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_machimosaurus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_machimosaurus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_machimosaurus"
+		}
+	}
+}
