@@ -463,9 +463,9 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 					}
 					spores.getTagCompound().setString("plant", nbtBlock);
 					spores.getTagCompound().setInteger("offsetY", nbtOffsetY);
-					if (!player.isCreative()) {
+					//if (!player.isCreative()) {
 						ItemHandlerHelper.giveItemToPlayer(player, spores);
-					}
+					//}
 
 					return true;
 				}
