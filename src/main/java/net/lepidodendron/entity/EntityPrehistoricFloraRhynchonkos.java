@@ -9,7 +9,8 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.util.INeedsWater;
 import net.lepidodendron.entity.util.ITrappableLand;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -33,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraLandBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, INeedsWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -52,6 +53,11 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public String getTexture() {
+		return this.getTexture();
+	}
+
+	@Override
 	public int getEggType(@Nullable String variantIn) {
 		return 1; //normal spawn
 	}
@@ -64,22 +70,12 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwi
 		}
 	}
 
-	@Override
-	public boolean isSmall() {
-		return true;
-	}
-
 	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean hasNest() {
-		return true;
-	}
-
-	@Override
-	public boolean breathesAir() {
 		return true;
 	}
 
@@ -119,10 +115,15 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwi
 		return 0;
 	}
 
-	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.15F;
+	@Override
+	public boolean canJar() {
+		return false;
+	}
+
+	public float getAISpeedLand() {
+		float calcSpeed = 0.31F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.22f;
+			calcSpeed= 0.39f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -132,12 +133,7 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwi
 
 	@Override
 	public int getAdultAge() {
-		return 72000;
-	}
-
-	@Override
-	public int WaterDist() {
-		return 0;
+		return 48000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -152,14 +148,15 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwi
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(4, new AmphibianWanderNotBound(this, NO_ANIMATION, 0.8, 90));
-		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(6, new EntityLookIdleAI(this));
+		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 1));
+		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
+		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(4, new LandWanderNestInBlockAI(this));
+		tasks.addTask(5, new LandWanderAvoidWaterButStayNearWaterAI(this, this, 1.0D));
+		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityLookIdleAI(this));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -288,6 +285,16 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraSwi
 	@Override
 	public CustomTrigger getModTrigger() {
 		return ModTriggers.CLICK_RHYNCHONKOS;
+	}
+
+	@Override
+	public boolean takesDamageAwayFromWater() {
+		return true;
+	}
+
+	@Override
+	public int safeDistanceToWater() {
+		return 6;
 	}
 
 	//Rendering taxidermy:
