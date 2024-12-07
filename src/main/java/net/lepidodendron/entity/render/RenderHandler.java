@@ -6399,6 +6399,12 @@ public class RenderHandler {
                 return new RenderKalops(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMachimosaurus.class, new IRenderFactory<EntityPrehistoricFloraMachimosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMachimosaurus> createRenderFor(RenderManager manager) {
+                return new RenderMachimosaurus(manager);
+            }
+        });
 
 
 

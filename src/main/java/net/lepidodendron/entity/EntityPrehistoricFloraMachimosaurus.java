@@ -1,10 +1,12 @@
 
+
 package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
@@ -38,24 +40,22 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
+public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraSwimmingAmphibianBase implements IAdvancementGranter, ITrappableWater, ITrappableLand {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 	public Animation EAT_ANIMATION;
-	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
-	public EntityPrehistoricFloraPlatysuchus(World world) {
+	public EntityPrehistoricFloraMachimosaurus(World world) {
 		super(world);
-		setSize(0.8F, 0.3F);
+		setSize(1F, 0.8F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 20.0D;
-		EAT_ANIMATION = Animation.create(20);
-		STAND_ANIMATION = Animation.create(60);
+		maxWidth = 1F;
+		maxHeight = 0.8F;
+		maxHealthAgeable = 55.0D;
+		EAT_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -72,17 +72,17 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
 	}
 
 	@Override
 	public boolean isSmall() {
-		return getAgeScale() < 0.50;
+		return getAgeScale() < 0.5;
 	}
 
 
 	public static String getPeriod() {
-		return "Jurassic";
+		return "Jurassic - Early Cretaceous";
 	}
 
 	//public static String getHabitat() {
@@ -120,14 +120,14 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.15F;
+		float calcSpeed = 0.25F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.275f;
+			calcSpeed = 0.4f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
 		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
@@ -158,7 +158,10 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 
 	@Override
 	public int WaterDist() {
-		return 0;
+		int i = (int) LepidodendronConfig.waterCrassigyrinus;
+		if (i > 16) {i = 16;}
+		if (i < 1) {i = 1;}
+		return i;
 	}
 
 	@Override
@@ -170,17 +173,20 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
+
 	@Override
 	public int getAttackLength() {
 		return 24;
 	}
+
+
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 1F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.95F, 20));
+		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 1, 20));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -218,7 +224,7 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -230,21 +236,30 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:platysuchus_idle"));
+				.getObject(new ResourceLocation("lepidodendron:machimosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:platysuchus_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:machimosaurus_hurt"));
 	}
+
+	//@Override
+	//public SoundEvent getHurtSound(DamageSource ds) {
+	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	//}
 
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:platysuchus_death"));
+				.getObject(new ResourceLocation("lepidodendron:machimosaurus_death"));
 	}
 
+	//@Override
+	//public SoundEvent getDeathSound() {
+	//	return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	//}
 
 	@Override
 	protected float getSoundVolume() {
@@ -298,19 +313,6 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-
 	}
 
 	@Override
@@ -351,14 +353,14 @@ public class EntityPrehistoricFloraPlatysuchus extends EntityPrehistoricFloraSwi
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_PLATYSUCHUS;
+		return ModTriggers.CLICK_MACHIMOSAURUS;
 	}
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.PLATYSUCHUS_LOOT_YOUNG;
+			return LepidodendronMod.MACHIMOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.PLATYSUCHUS_LOOT;
+		return LepidodendronMod.MACHIMOSAURUS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------

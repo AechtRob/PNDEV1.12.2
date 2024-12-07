@@ -1035,7 +1035,7 @@ public class EntityRegistries {
 //        registerEntity("prehistoric_flora_psittacosaurus_sibiricus", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SIBIRICUS, 64,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_psittacosaurus_sinensis", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SINENSIS, 64,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_psittacosaurus", EntityPrehistoricFloraPsittacosaurus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_machimosaurus", EntityPrehistoricFloraMachimosaurus.class, LepidodendronMod.ENTITY_MACHIMOSAURUS, 64,-12835809,-2640792);
+        registerEntity("prehistoric_flora_machimosaurus", EntityPrehistoricFloraMachimosaurus.class, LepidodendronMod.ENTITY_MACHIMOSAURUS, 64,-15132395,-6184819);
 //        registerEntity("prehistoric_flora_cladocyclus", EntityPrehistoricFloraCladocyclus.class, LepidodendronMod.ENTITY_CLADOCYCLUS, 64,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_dugaldia", EntityPrehistoricFloraDugaldia.class, LepidodendronMod.ENTITY_DUGALDIA, 48,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_enchodus", EntityPrehistoricFloraEnchodus.class, LepidodendronMod.ENTITY_ENCHODUS, 48,-12835809,-2640792);

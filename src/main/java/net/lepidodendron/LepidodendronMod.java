@@ -2632,6 +2632,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_ACROCANTHOSAURUS = 1065;
 	public static final ResourceLocation ACROCANTHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus"));
 	public static final ResourceLocation ACROCANTHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus_young"));
+	public static final int ENTITY_MACHIMOSAURUS = 1066;
+	public static final ResourceLocation MACHIMOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus"));
+	public static final ResourceLocation MACHIMOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus_young"));
 
 
 	public static final int ENTITY_MYRIAPOD = 1015;
