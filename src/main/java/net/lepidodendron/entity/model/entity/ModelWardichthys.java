@@ -208,6 +208,7 @@ public class ModelWardichthys extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.base.render(f5);
     }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
