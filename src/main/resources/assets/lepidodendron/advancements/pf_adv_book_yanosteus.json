@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:yanosteus_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_yanosteus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_yanosteus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_yanosteus"
+		}
+	}
+}

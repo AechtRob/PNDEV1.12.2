@@ -12,7 +12,7 @@ public class RenderScrebinodus extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/screbinodus.png");
 
     public static float getScaler() {
-        return 0.7F * 0.45F;
+        return 0.6F;
     }
     public RenderScrebinodus(RenderManager mgr) {
         super(mgr, new ModelScrebinodus(), 0.0f);

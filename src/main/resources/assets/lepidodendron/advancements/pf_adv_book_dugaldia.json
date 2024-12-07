@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:dugaldia_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_dugaldia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_dugaldia.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_dugaldia"
+		}
+	}
+}

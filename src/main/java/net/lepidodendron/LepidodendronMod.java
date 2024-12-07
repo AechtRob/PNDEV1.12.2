@@ -1986,8 +1986,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation TANYCOLAGREUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanycolagreus"));
 	public static final ResourceLocation TANYCOLAGREUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanycolagreus_young"));
 	public static final int ENTITY_PLATYSUCHUS = 792;
-	//public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
-	//public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
+	public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
+	public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
 	public static final int ENTITY_SUBMARINE = 793;
 	public static final int ENTITY_CRIOCEPHALOSAURUS = 794;
 	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus"));
@@ -2632,6 +2632,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_ACROCANTHOSAURUS = 1065;
 	public static final ResourceLocation ACROCANTHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus"));
 	public static final ResourceLocation ACROCANTHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus_young"));
+	public static final int ENTITY_MACHIMOSAURUS = 1066;
+	public static final ResourceLocation MACHIMOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus"));
+	public static final ResourceLocation MACHIMOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus_young"));
 
 
 	public static final int ENTITY_MYRIAPOD = 1015;

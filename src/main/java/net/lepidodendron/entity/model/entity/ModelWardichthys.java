@@ -211,13 +211,13 @@ public class ModelWardichthys extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.base.offsetY = -0.9F;
-        this.base.offsetX = 0.2F;
+        this.base.offsetY = -2.0F;
+        this.base.offsetX = -1.338F;
         this.base.rotateAngleY = (float)Math.toRadians(200);
         this.base.rotateAngleX = (float)Math.toRadians(8);
         this.base.rotateAngleZ = (float)Math.toRadians(-8);
         this.base.scaleChildren = true;
-        float scaler = 2.0F;
+        float scaler = 1.63F;
         this.base.setScale(scaler, scaler, scaler);
         //Start of pose:
         this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
