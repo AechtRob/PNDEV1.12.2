@@ -6,9 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraFishBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAquaticSticker;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -16,6 +13,7 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -70,7 +68,7 @@ public class EntityPrehistoricFloraPriscomyzon extends EntityPrehistoricFloraAqu
 
 	@Override
 	protected float getAISpeedFish() {
-		if(this.isAttached) {
+		if (this.getAttachmentFacing() != EnumFacing.DOWN && this.getAttachmentFacing() != EnumFacing.UP) {
 			return 0;
 		}
 		return 0.232f;
@@ -104,13 +102,6 @@ public class EntityPrehistoricFloraPriscomyzon extends EntityPrehistoricFloraAqu
 	@Override
 	public Animation[] getAnimations() {
 		return null;
-	}
-
-	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(2, new AIWanderAquaticSticker(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
 	}
 
 	@Override
