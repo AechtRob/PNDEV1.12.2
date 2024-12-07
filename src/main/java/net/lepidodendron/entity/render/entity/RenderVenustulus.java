@@ -12,7 +12,7 @@ public class RenderVenustulus extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/venustulus.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.28F;
     }
     public RenderVenustulus(RenderManager mgr) {
         super(mgr, new ModelVenustulus(), 0.0f);

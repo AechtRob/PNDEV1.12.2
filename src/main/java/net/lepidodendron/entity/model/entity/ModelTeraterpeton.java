@@ -264,10 +264,41 @@ public class ModelTeraterpeton extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
+
     public void renderStaticWall(float f) {
+        this.neck.offsetZ = -0.07F;
+        this.neck.offsetY = -0.0F;
+        this.neck.offsetX = -0.0F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(hip, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(neck2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(frontleftleg3, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(frontleftleg7, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(frontrightleg4, 0.8F, 0.8F, 0.3F);
+        this.setRotateAngle(frontrightleg5, 0.0F, 0.0F, 0.8F);
+        this.setRotateAngle(frontrightleg6, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(backleftleg, 0.0F, -0.5F, 0.05F);
+        this.setRotateAngle(backleftleg2, 1.7F, 0.3F, 0.0F);
+        this.setRotateAngle(backleftleg3, -1.0F, -0.3F, 0.6F);
+        this.setRotateAngle(backrightleg4, 0.0F, -0.3F, -0.05F);
+        this.setRotateAngle(backrightleg5, 1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg6, -1.0F, 0.3F, -0.6F);
+        this.hip.offsetY = -0.083F;
+        this.hip.render(0.01F);
         resetToDefaultPose();
     }
 
@@ -283,7 +314,30 @@ public class ModelTeraterpeton extends ModelBasePalaeopedia {
         float scaler = 2.0F;
         this.hip.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(hip, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.3F, 0.2F, 0.0F);
+        this.setRotateAngle(neck2, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(head, 0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerbody, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(frontleftleg3, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(frontleftleg7, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(frontrightleg4, 0.8F, 0.8F, 0.3F);
+        this.setRotateAngle(frontrightleg5, 0.0F, 0.0F, 0.8F);
+        this.setRotateAngle(frontrightleg6, 0.0F, 0.0F, -0.5F);
+        this.setRotateAngle(backleftleg, 0.0F, -0.5F, 0.05F);
+        this.setRotateAngle(backleftleg2, 1.7F, 0.3F, 0.0F);
+        this.setRotateAngle(backleftleg3, -1.0F, -0.3F, 0.6F);
+        this.setRotateAngle(backrightleg4, 0.0F, -0.3F, -0.05F);
+        this.setRotateAngle(backrightleg5, 1.2F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg6, -1.0F, 0.3F, -0.6F);
         //End of pose, now render the model:
         this.hip.render(f);
         //Reset rotations, positions and sizing:

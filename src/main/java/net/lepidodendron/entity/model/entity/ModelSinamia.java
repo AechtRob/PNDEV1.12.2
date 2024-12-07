@@ -308,19 +308,55 @@ public class ModelSinamia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.root.offsetY = -0.30F;
+        this.root.offsetX = 1.2F;
+        this.root.rotateAngleY = (float)Math.toRadians(130);
+        this.root.rotateAngleX = (float)Math.toRadians(0);
+        this.root.rotateAngleZ = (float)Math.toRadians(0);
+        this.root.scaleChildren = true;
+        float scaler = 2.0F;
+        this.root.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodymiddlefront, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodymiddleend, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyend, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tailbase, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tailend, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.root.render(f);
+        //Reset rotations, positions and sizing:
+        this.root.setScale(1.0F, 1.0F, 1.0F);
+        this.root.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
         this.root.rotateAngleY = (float) Math.toRadians(90);
-        this.root.offsetX = -0.14F;
-        this.root.offsetY = -0.19F;
-        this.root.offsetZ = 0.06F;
+        this.root.offsetX = -0.03F;
+        this.root.offsetY = -0.22F;
+        this.root.offsetZ = -0.22F;
         this.root.render(0.01F);
         this.resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(root, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyfront, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bodymiddlefront, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(bodymiddleend, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(bodyend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tailbase, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(tailend, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(dorsalfinpt1, 0.0F, 0.0F, 0.34F);
+        this.setRotateAngle(dorsalfinpt2, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(dorsalfinpt3, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(dorsalfinpt4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(dorsalfinpt5, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(dorsalfinpt6, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(dorsalfinpt7, 0.0F, 0.0F, -0.4F);
         this.root.offsetY = -0.18F;
         this.root.render(0.01F);
         this.resetToDefaultPose();
