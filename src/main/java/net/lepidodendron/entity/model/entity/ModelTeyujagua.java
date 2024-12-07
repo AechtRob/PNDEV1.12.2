@@ -293,16 +293,51 @@ public class ModelTeyujagua extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
 
+    public void renderStaticWall(float f) {
+        this.Neck.offsetZ = -0.15F;
+        this.Neck.offsetY = -0.0F;
+        this.Neck.offsetX = -0.0F;
+        this.Neck.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Base, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Chest, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Neck2, -0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(LeftArm, 0.0F, 0.0F, -0.9F);
+        this.setRotateAngle(LeftArm2, -1.4F, 0.0F, 0.5F);
+        this.setRotateAngle(LeftArmHand, 1.3F, -0.3F, 0.0F);
+        this.setRotateAngle(RightArm, 0.0F, 0.0F, 0.9F);
+        this.setRotateAngle(RightArm2, -1.4F, 0.0F, -0.5F);
+        this.setRotateAngle(RightArmHand, 1.3F, 0.3F, 0.0F);
+        this.setRotateAngle(LeftLeg, -1.4F, -0.5F, 0.0F);
+        this.setRotateAngle(LeftLeg2, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(LeftLegFoot, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(RightLeg, -1.4F, 0.5F, 0.0F);
+        this.setRotateAngle(RightLeg2, 1.5F, 0.0F, 0.0F);
+        this.setRotateAngle(RightLegFoot, -0.1F, 0.0F, 0.0F);
+        this.Root.offsetY = 0.07F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.Root.offsetY = -2.0F;
-        this.Root.offsetX = -1.338F;
-        this.Root.rotateAngleY = (float)Math.toRadians(200);
-        this.Root.rotateAngleX = (float)Math.toRadians(8);
-        this.Root.rotateAngleZ = (float)Math.toRadians(-8);
+        this.Root.offsetY = -0.30F;
+        this.Root.offsetX = 1.2F;
+        this.Root.rotateAngleY = (float)Math.toRadians(130);
+        this.Root.rotateAngleX = (float)Math.toRadians(0);
+        this.Root.rotateAngleZ = (float)Math.toRadians(0);
         this.Root.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.0F;
         this.Root.setScale(scaler, scaler, scaler);
         //Start of pose:
 
@@ -311,16 +346,6 @@ public class ModelTeyujagua extends ModelBasePalaeopedia {
         //Reset rotations, positions and sizing:
         this.Root.setScale(1.0F, 1.0F, 1.0F);
         this.Root.scaleChildren = false;
-        resetToDefaultPose();
-
-    }
-
-    public void renderStaticFloor(float f) {
-
-        resetToDefaultPose();
-    }
-    public void renderStaticWall(float f) {
-
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

@@ -68,10 +68,10 @@ public class ModelAlienum extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(main, 0.2F, 0.0F, 0.3F);
-        this.setRotateAngle(tail, 0.0F, 0.2F, 0.0F);
-        this.setRotateAngle(tail2, 0.0F, 0.2F, 0.0F);
-        this.main.offsetZ = 0.03F;
+        this.setRotateAngle(main, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.4F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.8F, 0.0F);
+        this.main.offsetZ = 0.02F;
         this.main.offsetY = -0.2F;
         this.main.render(0.01F);
         resetToDefaultPose();

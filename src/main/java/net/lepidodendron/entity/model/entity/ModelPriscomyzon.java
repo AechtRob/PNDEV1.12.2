@@ -69,22 +69,47 @@ public class ModelPriscomyzon extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.9F;
+        this.body.offsetX = 0.2F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 2.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetZ = -0.32F;
-        this.body.offsetY = -0.18F;
+        this.body.rotateAngleY = (float) Math.toRadians(180);
+        this.body.rotateAngleX = (float) Math.toRadians(-90);
+        this.body.offsetZ = -0.19F;
+        this.body.offsetY = -0.3F;
         this.body.offsetX = -0.0F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.body.offsetY = -0.14F;
+        this.setRotateAngle(body, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.2F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.3F, 0.4F, 0.0F);
+        this.setRotateAngle(body5, 0.4F, 0.6F, 0.0F);
+        this.body.offsetY = -0.17F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
