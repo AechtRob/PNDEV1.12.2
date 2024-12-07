@@ -5135,6 +5135,8 @@ public class LepidodendronSorter {
     public static final int shell_goldringia = 5122;
     public static final int lethiscus_raw = 5123;
     public static final int eggs_lethiscus = 5124;
+    public static final int eggs_machimosaurus = 5125;
+    public static final int machimosaurus_raw = 5126;
 
 
 
