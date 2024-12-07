@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.util.IPrehistoricDiet;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityMoveHelper;
@@ -222,7 +223,7 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
                     BlockPos sidePos = rayTrace.getBlockPos();
                     try {
                         //If collided, check which side, set sit_face to correct side, which will be used in render to rotate model
-                        if (world.isSideSolid(sidePos, rayTrace.sideHit)) {
+                        if (world.getBlockState(sidePos).getBlockFaceShape(world, sidePos, rayTrace.sideHit) == BlockFaceShape.SOLID) {
                             this.setAttachmentPos(sidePos);
                             this.dataManager.set(SIT_FACE, rayTrace.sideHit.getOpposite());
                             this.motionX = 0.0D;
@@ -236,7 +237,7 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
         } else {
             BlockPos pos = this.getAttachmentPos();
 
-            if (world.isSideSolid(pos, this.getAttachmentFacing())) {
+            if (world.getBlockState(pos).getBlockFaceShape(world, pos, this.getAttachmentFacing().getOpposite()) == BlockFaceShape.SOLID) {
                 sitTickCt++;
                 sitCooldown = 150;
                 this.renderYawOffset = 180.0F;
@@ -333,7 +334,7 @@ public abstract class EntityPrehistoricFloraAquaticSticker extends EntityPrehist
                         RayTraceResult rayTrace = world.rayTraceBlocks(EntityPrehistoricFloraAquaticSticker.this.getPositionVector().add(0, 0.25, 0), new Vec3d(randomPos).add(0.5, 0.5, 0.5), false);
                         if (rayTrace != null && rayTrace.hitVec != null) {
                             try {
-                                if ((!world.isSideSolid(rayTrace.getBlockPos(), rayTrace.sideHit)) && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
+                                if (world.getBlockState(rayTrace.getBlockPos()).getBlockFaceShape(world, rayTrace.getBlockPos(), rayTrace.sideHit) != BlockFaceShape.SOLID && (world.getBlockState(rayTrace.getBlockPos()).getMaterial() != Material.WATER)) {
                                     target = rayTrace.getBlockPos();
                                     isGoingToAttach = true;
                                 }
