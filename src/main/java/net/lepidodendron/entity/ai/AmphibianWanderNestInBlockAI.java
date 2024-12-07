@@ -47,6 +47,14 @@ public class AmphibianWanderNestInBlockAI extends AnimationAINoAnimation<EntityP
     @Override
     public boolean shouldExecute() {
 
+        if (!(this.PehistoricFloraSwimmingAmphibianBase.laysEggs() && this.PehistoricFloraSwimmingAmphibianBase.getLaying())) {
+            return false;
+        }
+
+        if (!(this.PehistoricFloraSwimmingAmphibianBase.getAIMoveSpeed() > 0)) {
+            return false;
+        }
+
         int xx;
         int yy;
         int zz;

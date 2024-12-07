@@ -8,6 +8,7 @@ import net.lepidodendron.item.ItemSubmarineBatterypackEnhanced;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.BlockShulkerBox;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -50,6 +51,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     private static final DataParameter<Float> DAMAGE_TAKEN = EntityDataManager.<Float>createKey(PrehistoricFloraSubmarine.class, DataSerializers.FLOAT);
     private static final DataParameter<Integer> RF_SUPPLY = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> ENHANCED = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> SHULKER = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
     private final float[] paddlePositions;
     private float momentum;
@@ -229,11 +231,22 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         return (this.dataManager.get(ENHANCED));
     }
 
+    public void setShulker(boolean enhanced)
+    {
+        this.dataManager.set(SHULKER, enhanced);
+    }
+
+    public boolean getShulker()
+    {
+        return (this.dataManager.get(SHULKER));
+    }
+
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound)
     {
         compound.setInteger("RF", this.getRF());
         compound.setBoolean("enhanced", this.getEnhanced());
+        compound.setBoolean("shulker", this.getShulker());
         
         if (this.passengerNightVisionUUID == null) {
             compound.setString("passengerNightVisionUUID", "");
@@ -290,6 +303,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     {
         this.setRF(compound.getInteger("RF"));
         this.setEnhanced(compound.getBoolean("enhanced"));
+        this.setShulker(compound.getBoolean("shulker"));
 
         if (!(compound.getString("passengerNightVisionUUID").equalsIgnoreCase(""))) {
             this.passengerNightVisionUUID = UUID.fromString(compound.getString("passengerNightVisionUUID"));
@@ -349,6 +363,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         this.dataManager.register(DAMAGE_TAKEN, Float.valueOf(0.0F));
         this.dataManager.register(RF_SUPPLY, Integer.valueOf(-1));
         this.dataManager.register(ENHANCED, Boolean.valueOf(false));
+        this.dataManager.register(SHULKER, Boolean.valueOf(false));
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -415,6 +430,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                             NBTTagCompound stackNBT = new NBTTagCompound();
                             stackNBT.setInteger("rf", this.getRF());
                             stackNBT.setBoolean("enhanced", this.getEnhanced());
+                            stackNBT.setBoolean("shulker", this.getShulker());
+                            if (this.getShulker()) {
+
+                            }
                             stack.setTagCompound(stackNBT);
                         }
                         Block.spawnAsEntity(world, this.getPosition(), stack);
@@ -1357,6 +1376,15 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                 world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
             }
             this.setEnhanced(true);
+            return true;
+        }
+        else if (Block.getBlockFromItem(player.getHeldItem(hand).getItem()) instanceof BlockShulkerBox && !this.getShulker()) {
+            if (!player.world.isRemote) {
+                ItemStack stack = player.getHeldItem(hand);
+                stack.shrink(1);
+                world.playSound(null, player.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.5F, 1.0F + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8F);
+            }
+            this.setShulker(true);
             return true;
         }
         else
