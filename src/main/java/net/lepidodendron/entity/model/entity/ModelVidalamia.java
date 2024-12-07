@@ -285,19 +285,44 @@ public class ModelVidalamia extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.head.offsetY = -0.30F;
+        this.head.offsetX = 1.2F;
+        this.head.rotateAngleY = (float)Math.toRadians(130);
+        this.head.rotateAngleX = (float)Math.toRadians(0);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 2.0F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
         this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetX = -0.14F;
-        this.head.offsetY = -0.19F;
-        this.head.offsetZ = 0.06F;
+        this.head.offsetX = -0.08F;
+        this.head.offsetY = -0.22F;
+        this.head.offsetZ = -0.215F;
         this.head.render(0.01F);
         this.resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.3F, 0.1F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.2F, 0.0F);
         this.head.offsetY = -0.18F;
         this.head.render(0.01F);
         this.resetToDefaultPose();

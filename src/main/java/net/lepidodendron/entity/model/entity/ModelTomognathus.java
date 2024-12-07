@@ -342,15 +342,57 @@ public class ModelTomognathus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.30F;
+        this.body.offsetX = 1.2F;
+        this.body.rotateAngleY = (float)Math.toRadians(130);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 2.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(upperjaw, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.body.offsetX = -0.12F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetZ = -0.128F;
+        this.body.render(0.01F);
         this.resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body4, 0.2F, -0.3F, 0.0F);
+        this.setRotateAngle(body5, 0.2F, -0.4F, 0.0F);
+        this.setRotateAngle(upperjaw, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(dorsalfin1, 0.0F, -0.0F, -0.25F);
+        this.setRotateAngle(dorsalfin2, 0.0F, 0.1F, -0.2F);
+        this.setRotateAngle(dorsalfin3, 0.0F, 0.1F, -0.15F);
+        this.setRotateAngle(dorsalfin4, 0.0F, 0.2F, -0.05F);
+        this.setRotateAngle(dorsalfin5, 0.0F, 0.0F, 0.1F);
+        this.setRotateAngle(dorsalfin6, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(dorsalfin7, 0.0F, -0.0F, 0.25F);
         this.body.offsetY = -0.18F;
         this.body.render(0.01F);
         this.resetToDefaultPose();

@@ -283,24 +283,40 @@ public class ModelMieridduryn extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.33F);
+        this.body.render(f5);
     }
-
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.05F;
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.2F, 0.0F, 0.2F);
+        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, -0.3F, 0.0F, 0.0F);
+        this.body.offsetZ = -0.0F;
+        this.body.offsetY = -0.15F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
-
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.7F;
+        this.body.offsetX = 0.8F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 3.5F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.2F, 3.5F, 0.3F);
+        this.setRotateAngle(body2, 0.0F, 0.7F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.5F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -313,7 +329,7 @@ public class ModelMieridduryn extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.0F;
+        this.body.offsetY = 0.0F;
 
         AdvancedModelRenderer[] Tail = {this.body2, this.body3, this.body4, this.body5};
 

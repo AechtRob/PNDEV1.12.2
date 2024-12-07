@@ -208,19 +208,46 @@ public class ModelWardichthys extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.base.render(f5);
     }
-
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.base.offsetY = -0.9F;
+        this.base.offsetX = 0.2F;
+        this.base.rotateAngleY = (float)Math.toRadians(200);
+        this.base.rotateAngleX = (float)Math.toRadians(8);
+        this.base.rotateAngleZ = (float)Math.toRadians(-8);
+        this.base.scaleChildren = true;
+        float scaler = 2.0F;
+        this.base.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(base, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.base.render(f);
+        //Reset rotations, positions and sizing:
+        this.base.setScale(1.0F, 1.0F, 1.0F);
+        this.base.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
+        this.base.rotateAngleY = (float) Math.toRadians(90);
+        this.base.offsetZ = -0.34F;
+        this.base.offsetY = -0.18F;
+        this.base.offsetX = -0.0F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(base, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.6F, 0.0F);
         this.base.offsetY = -0.14F;
+        this.base.offsetZ = 0.015F;
         this.base.render(0.01F);
         resetToDefaultPose();
     }
