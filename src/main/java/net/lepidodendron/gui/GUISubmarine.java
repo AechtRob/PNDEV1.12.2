@@ -211,14 +211,14 @@ public class GUISubmarine extends ElementsLepidodendronMod.ModElement {
 //            if ((internal instanceof InventoryBasic) && (playerIn instanceof EntityPlayerMP)) {
 //                this.clearContainer(playerIn, playerIn.world, internal);
 //            }
-//
-//            Entity e = world.getEntityByID(x);
-//            if (e instanceof PrehistoricFloraSubmarine) {
-//                PrehistoricFloraSubmarine submarine = (PrehistoricFloraSubmarine) e;
-//                if (submarine.getShulker()) {
-//                    this.internal = (IInventory) submarine.submarineChest;
-//                }
-//            }
+
+            Entity e = world.getEntityByID(x);
+            if (e instanceof PrehistoricFloraSubmarine) {
+                PrehistoricFloraSubmarine submarine = (PrehistoricFloraSubmarine) e;
+                if (submarine.getShulker()) {
+                    this.internal = (IInventory) submarine.submarineChest;
+                }
+            }
 
 //            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
 //            if (ent instanceof IInventory)
