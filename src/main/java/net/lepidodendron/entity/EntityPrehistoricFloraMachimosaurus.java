@@ -50,10 +50,10 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 
 	public EntityPrehistoricFloraMachimosaurus(World world) {
 		super(world);
-		setSize(1F, 0.8F);
+		setSize(1F, 1F);
 		minWidth = 0.1F;
 		maxWidth = 1F;
-		maxHeight = 0.8F;
+		maxHeight = 1F;
 		maxHealthAgeable = 55.0D;
 		EAT_ANIMATION = Animation.create(40);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -158,10 +158,7 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterCrassigyrinus;
-		if (i > 16) {i = 16;}
-		if (i < 1) {i = 1;}
-		return i;
+		return 0;
 	}
 
 	@Override
@@ -186,7 +183,7 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 1F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
-		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 1, 20));
+		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.95, 20));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -224,7 +221,7 @@ public class EntityPrehistoricFloraMachimosaurus extends EntityPrehistoricFloraS
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(7.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

@@ -280,8 +280,8 @@ public class EntityPrehistoricFloraSpinophorosaurus extends EntityPrehistoricFlo
 	}
 
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 8;
-		int y = 8;
+		int x = 4;
+		int y = 4;
 		for (int xx = 0; xx < x; xx++) {
 			for (int yy = 0; yy < y; yy++) {
 				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
