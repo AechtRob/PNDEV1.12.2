@@ -2641,7 +2641,8 @@ public class LepidodendronMod {
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
 	public static final int GUI_ARCHIVE_SORTER_BOTTOM_ID = 1017;
 	public static final int GUI_LAB_CABINET_ID = 1018;
-	public static final int GUI_PORTAL_BLOCK_ID = 1019;
+	public static final int GUI_PORTAL_BLOCK_ID = 1070;
+	public static final int GUI_SUBMARINE_ID = 1071;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

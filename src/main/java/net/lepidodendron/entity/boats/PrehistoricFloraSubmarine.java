@@ -3,6 +3,8 @@ package net.lepidodendron.entity.boats;
 import com.google.common.collect.Lists;
 import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.gui.GUISubmarine;
 import net.lepidodendron.item.ItemSubmarineBatterypack;
 import net.lepidodendron.item.ItemSubmarineBatterypackEnhanced;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
@@ -20,9 +22,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.IInventoryChangedListener;
+import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -30,6 +36,7 @@ import net.minecraft.network.play.client.CPacketSteerBoat;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.GameType;
@@ -44,7 +51,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-public class PrehistoricFloraSubmarine extends EntityBoat
+public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryChangedListener
 {
     private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
@@ -103,6 +110,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     private boolean passengerWaterBreathingAmbientPassenger;
     private boolean passengerWaterBreathingParticlesPassenger;
     private boolean passengerWaterBreathingPassenger;
+
+    public final ContainerSubmarineChest submarineChest = new ContainerSubmarineChest("SubmarineChest", 54);;
+    private net.minecraftforge.items.IItemHandler itemHandler = new net.minecraftforge.items.wrapper.InvWrapper(this.submarineChest);
 
     public PrehistoricFloraSubmarine(World worldIn)
     {
@@ -231,9 +241,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         return (this.dataManager.get(ENHANCED));
     }
 
-    public void setShulker(boolean enhanced)
+    public void setShulker(boolean shulker)
     {
-        this.dataManager.set(SHULKER, enhanced);
+        this.dataManager.set(SHULKER, shulker);
     }
 
     public boolean getShulker()
@@ -296,6 +306,25 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         compound.setBoolean("passengerWaterBreathingParticlesPassenger", this.passengerWaterBreathingParticlesPassenger);
         compound.setBoolean("passengerWaterBreathingPassenger", this.passengerWaterBreathingPassenger);
 
+        if (this.getShulker())
+        {
+            NBTTagList nbttaglist = new NBTTagList();
+
+            for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i)
+            {
+                ItemStack itemstack = this.submarineChest.getStackInSlot(i);
+
+                if (!itemstack.isEmpty())
+                {
+                    NBTTagCompound nbttagcompound = new NBTTagCompound();
+                    nbttagcompound.setByte("Slot", (byte)i);
+                    itemstack.writeToNBT(nbttagcompound);
+                    nbttaglist.appendTag(nbttagcompound);
+                }
+            }
+
+            compound.setTag("Items", nbttaglist);
+        }
     }
 
     @Override
@@ -304,6 +333,22 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         this.setRF(compound.getInteger("RF"));
         this.setEnhanced(compound.getBoolean("enhanced"));
         this.setShulker(compound.getBoolean("shulker"));
+
+        if (this.getShulker())
+        {
+            NBTTagList nbttaglist = compound.getTagList("Items", 10);
+
+            for (int i = 0; i < nbttaglist.tagCount(); ++i)
+            {
+                NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(i);
+                int j = nbttagcompound.getByte("Slot") & 255;
+
+                if (j >= 0 && j < this.submarineChest.getSizeInventory())
+                {
+                    this.submarineChest.setInventorySlotContents(j, new ItemStack(nbttagcompound));
+                }
+            }
+        }
 
         if (!(compound.getString("passengerNightVisionUUID").equalsIgnoreCase(""))) {
             this.passengerNightVisionUUID = UUID.fromString(compound.getString("passengerNightVisionUUID"));
@@ -341,6 +386,20 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             this.passengerWaterBreathingPassenger = compound.getBoolean("passengerWaterBreathingPassenger");
         }
 
+    }
+
+    @Override
+    @Nullable
+    public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @Nullable net.minecraft.util.EnumFacing facing)
+    {
+        if (capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return (T) itemHandler;
+        return super.getCapability(capability, facing);
+    }
+
+    @Override
+    public boolean hasCapability(net.minecraftforge.common.capabilities.Capability<?> capability, @Nullable net.minecraft.util.EnumFacing facing)
+    {
+        return capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
     }
 
     @Override
@@ -426,16 +485,33 @@ public class PrehistoricFloraSubmarine extends EntityBoat
                     if (!flag && this.world.getGameRules().getBoolean("doEntityDrops"))
                     {
                         ItemStack stack = new ItemStack(ItemSubmarineBoatItem.block, 1);
+                        NBTTagCompound stackNBT = new NBTTagCompound();
                         if (this.getRF() >= 0) {
-                            NBTTagCompound stackNBT = new NBTTagCompound();
                             stackNBT.setInteger("rf", this.getRF());
-                            stackNBT.setBoolean("enhanced", this.getEnhanced());
-                            stackNBT.setBoolean("shulker", this.getShulker());
-                            if (this.getShulker()) {
-
-                            }
-                            stack.setTagCompound(stackNBT);
                         }
+                        stackNBT.setBoolean("enhanced", this.getEnhanced());
+                        stackNBT.setBoolean("shulker", this.getShulker());
+                        if (this.getShulker())
+                        {
+                            NBTTagList nbttaglist = new NBTTagList();
+
+                            for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i)
+                            {
+                                ItemStack itemstack = this.submarineChest.getStackInSlot(i);
+
+                                if (!itemstack.isEmpty())
+                                {
+                                    NBTTagCompound nbttagcompound = new NBTTagCompound();
+                                    nbttagcompound.setByte("Slot", (byte)i);
+                                    itemstack.writeToNBT(nbttagcompound);
+                                    nbttaglist.appendTag(nbttagcompound);
+                                }
+                            }
+
+                            stackNBT.setTag("Items", nbttaglist);
+                        }
+                        stack.setTagCompound(stackNBT);
+
                         Block.spawnAsEntity(world, this.getPosition(), stack);
                     }
 
@@ -478,12 +554,14 @@ public class PrehistoricFloraSubmarine extends EntityBoat
     public ItemStack getPickedResult(RayTraceResult target)
     {
         ItemStack stack = new ItemStack(ItemSubmarineBoatItem.block, 1);
+        NBTTagCompound stackNBT = new NBTTagCompound();
         if (this.getRF() >= 0) {
-            NBTTagCompound stackNBT = new NBTTagCompound();
             stackNBT.setInteger("rf", this.getRF());
-            stackNBT.setBoolean("enhanced", this.getEnhanced());
-            stack.setTagCompound(stackNBT);
         }
+        stackNBT.setBoolean("enhanced", this.getEnhanced());
+        stackNBT.setBoolean("shulker", this.getShulker());
+        //NB do not bring in inventory as well in the pick result!
+        stack.setTagCompound(stackNBT);
         return stack;
     }
 
@@ -1224,10 +1302,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat
         }
         if (riding) {
             //What am I clicking on?
-            //Central panel (interact with entities)
+            //Central panel (inventory contents)
             if (player.rotationYaw - this.rotationYaw > -22 && player.rotationYaw - this.rotationYaw < 22 && player.rotationPitch - this.rotationPitch > -60 && player.rotationPitch - this.rotationPitch < -30) {
-
-
+                player.openGui(LepidodendronMod.instance, GUISubmarine.GUIID, world, this.getEntityId(), 0, 0);
             }
             //Left panel (read battery)
             if (player.rotationYaw - this.rotationYaw > -65 && player.rotationYaw - this.rotationYaw < -38 && player.rotationPitch - this.rotationPitch > -55 && player.rotationPitch - this.rotationPitch < -30) {
@@ -1423,17 +1500,37 @@ public class PrehistoricFloraSubmarine extends EntityBoat
 
                         if (this.world.getGameRules().getBoolean("doEntityDrops"))
                         {
-                            for (int i = 0; i < 3; ++i)
-                            {
+//                            for (int i = 0; i < 3; ++i)
+//                            {
                                 ItemStack stack = new ItemStack(ItemSubmarineBoatItem.block, 1);
+                                NBTTagCompound stackNBT = new NBTTagCompound();
                                 if (this.getRF() >= 0) {
-                                    NBTTagCompound stackNBT = new NBTTagCompound();
                                     stackNBT.setInteger("rf", this.getRF());
-                                    stackNBT.setBoolean("enhanced", this.getEnhanced());
-                                    stack.setTagCompound(stackNBT);
                                 }
+                                stackNBT.setBoolean("enhanced", this.getEnhanced());
+                                stackNBT.setBoolean("shulker", this.getShulker());
+                                if (this.getShulker())
+                                {
+                                    NBTTagList nbttaglist = new NBTTagList();
+
+                                    for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i)
+                                    {
+                                        ItemStack itemstack = this.submarineChest.getStackInSlot(i);
+
+                                        if (!itemstack.isEmpty())
+                                        {
+                                            NBTTagCompound nbttagcompound = new NBTTagCompound();
+                                            nbttagcompound.setByte("Slot", (byte)i);
+                                            itemstack.writeToNBT(nbttagcompound);
+                                            nbttaglist.appendTag(nbttagcompound);
+                                        }
+                                    }
+
+                                    stackNBT.setTag("Items", nbttaglist);
+                                }
+                                stack.setTagCompound(stackNBT);
                                 Block.spawnAsEntity(world, this.getPosition(), stack);
-                            }
+//                            }
                         }
                     }
                 }
@@ -1549,6 +1646,11 @@ public class PrehistoricFloraSubmarine extends EntityBoat
 
     }
 
+    @Override
+    public void onInventoryChanged(IInventory invBasic) {
+        int p = 1;
+    }
+
     public static enum Status
     {
         IN_WATER,
@@ -1571,6 +1673,20 @@ public class PrehistoricFloraSubmarine extends EntityBoat
             this.posZ = this.lerpZ;
             this.rotationYaw = (float)this.lerpYaw;
             //this.rotationPitch = (float)this.lerpPitch;
+        }
+    }
+
+    public class ContainerSubmarineChest extends InventoryBasic
+    {
+        public ContainerSubmarineChest(String inventoryTitle, int slotCount)
+        {
+            super(inventoryTitle, false, slotCount);
+        }
+
+        @SideOnly(Side.CLIENT)
+        public ContainerSubmarineChest(ITextComponent inventoryTitle, int slotCount)
+        {
+            super(inventoryTitle, slotCount);
         }
     }
 }

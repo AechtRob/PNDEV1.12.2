@@ -1559,6 +1559,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUIPortalBlock.GUIID) {
 				return new GUIPortalBlock.GUILepidodendronPortalBlock(world, x, y, z, player);
 			}
+			if (id == GUISubmarine.GUIID) {
+				return new GUISubmarine.GUILepidodendronSubmarine(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -1620,6 +1623,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUIPortalBlock.GUIID) {
 				return new GUIPortalBlock.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUISubmarine.GUIID) {
+				return new GUISubmarine.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

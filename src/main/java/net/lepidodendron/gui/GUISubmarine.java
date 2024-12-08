@@ -2,8 +2,10 @@ package net.lepidodendron.gui;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.Container;
@@ -11,7 +13,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -27,30 +28,38 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
-    public static int GUIID = LepidodendronMod.GUI_LAB_CABINET_ID;
+public class GUISubmarine extends ElementsLepidodendronMod.ModElement {
+    public static int GUIID = LepidodendronMod.GUI_SUBMARINE_ID;
     public static HashMap guistate = new HashMap();
-    public GUILabCabinet(ElementsLepidodendronMod instance) {
+    public GUISubmarine(ElementsLepidodendronMod instance) {
         super(instance, 1);
     }
 
-    public static class GUILepidodendronLabCabinet extends Container implements Supplier<Map<Integer, Slot>> {
+    public static class GUILepidodendronSubmarine extends Container implements Supplier<Map<Integer, Slot>> {
         private IInventory internal;
         private World world;
         private EntityPlayer entity;
         private int x, y, z;
         private Map<Integer, Slot> customSlots = new HashMap<>();
 
-        public GUILepidodendronLabCabinet(World world, int x, int y, int z, EntityPlayer player) {
+        public GUILepidodendronSubmarine(World world, int x, int y, int z, EntityPlayer player) {
             this.world = world;
             this.entity = player;
             this.x = x;
             this.y = y;
             this.z = z;
             this.internal = new InventoryBasic("", true, 54);
-            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
-            if (ent instanceof IInventory)
-                this.internal = (IInventory) ent;
+            Entity e = world.getEntityByID(x);
+            if (e instanceof PrehistoricFloraSubmarine) {
+                PrehistoricFloraSubmarine submarine = (PrehistoricFloraSubmarine) e;
+                if (submarine.getShulker()) {
+                    this.internal = (IInventory) submarine.submarineChest;
+                }
+            }
+
+//            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+//            if (ent instanceof IInventory)
+//                this.internal = (IInventory) ent;
 
             this.internal.openInventory(player);
 
@@ -199,12 +208,21 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
         @Override
         public void onContainerClosed(EntityPlayer playerIn) {
             super.onContainerClosed(playerIn);
-            if ((internal instanceof InventoryBasic) && (playerIn instanceof EntityPlayerMP)) {
-                this.clearContainer(playerIn, playerIn.world, internal);
-            }
-            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
-            if (ent instanceof IInventory)
-                this.internal = (IInventory) ent;
+//            if ((internal instanceof InventoryBasic) && (playerIn instanceof EntityPlayerMP)) {
+//                this.clearContainer(playerIn, playerIn.world, internal);
+//            }
+//
+//            Entity e = world.getEntityByID(x);
+//            if (e instanceof PrehistoricFloraSubmarine) {
+//                PrehistoricFloraSubmarine submarine = (PrehistoricFloraSubmarine) e;
+//                if (submarine.getShulker()) {
+//                    this.internal = (IInventory) submarine.submarineChest;
+//                }
+//            }
+
+//            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+//            if (ent instanceof IInventory)
+//                this.internal = (IInventory) ent;
 
             this.internal.closeInventory(playerIn);
 
@@ -226,7 +244,7 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
         private int x, y, z;
         private EntityPlayer entity;
         public GuiWindow(World world, int x, int y, int z, EntityPlayer entity) {
-            super(new GUILepidodendronLabCabinet(world, x, y, z, entity));
+            super(new GUILepidodendronSubmarine(world, x, y, z, entity));
             this.world = world;
             this.x = x;
             this.y = y;
@@ -270,7 +288,7 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Laboratory Cabinet", 43, -22, 4210752);
+            this.fontRenderer.drawString("Submarine", 63, -22, 4210752);
             this.fontRenderer.drawString("Inventory", 8, 102, 4210752);
         }
 

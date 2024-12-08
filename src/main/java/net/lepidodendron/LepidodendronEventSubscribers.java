@@ -268,7 +268,29 @@ public class LepidodendronEventSubscribers {
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
-				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+				if (((PrehistoricFloraSubmarine)event.getEntityBeingMounted()).getShulker()) {
+					LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(),
+							"Submarine controls:\nup = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName()
+									+ "\ndown = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName()
+									+ "\nstrafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName()
+									+ "\nstrafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()
+									+ "\nuse buckets = " + ClientProxyLepidodendronMod.keyBoatUseBucket.getDisplayName()
+									+ "\nuse claw = " + ClientProxyLepidodendronMod.keyBoatUseClaw.getDisplayName()
+									+ "\nleft control panel = view power level"
+									+ "\ncentre control panel = open Submarine inventory"
+									+ "\nright control panel = add or remove battery"));
+				}
+				else {
+					LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(),
+							"Submarine controls:\nup = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName()
+									+ "\ndown = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName()
+									+ "\nstrafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName()
+									+ "\nstrafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()
+									+ "\nuse buckets = " + ClientProxyLepidodendronMod.keyBoatUseBucket.getDisplayName()
+									+ "\nuse claw = " + ClientProxyLepidodendronMod.keyBoatUseClaw.getDisplayName()
+									+ "\nleft control panel = view power level"
+									+ "\nright control panel = add or remove battery"));
+				}
 			}
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine) {
 				//Capture the effects if needed:
