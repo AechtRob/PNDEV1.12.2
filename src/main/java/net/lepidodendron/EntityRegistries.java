@@ -1028,10 +1028,10 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_platysuchus", EntityPrehistoricFloraPlatysuchus.class, LepidodendronMod.ENTITY_PLATYSUCHUS, 64,-8820423,-12766695);
         registerEntityNoEgg("prehistoric_flora_myriapod", EntityPrehistoricFloraMyriapod.class, LepidodendronMod.ENTITY_MYRIAPOD, 48);
 
-//        registerEntity("prehistoric_flora_acrocanthosaurus", EntityPrehistoricFloraAcrocanthosaurus.class, LepidodendronMod.ENTITY_ACROCANTHOSAURUS, 164,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_liaoceratops", EntityPrehistoricFloraLiaoceratops.class, LepidodendronMod.ENTITY_LIAOCERATOPS, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_aquilops", EntityPrehistoricFloraAquilops.class, LepidodendronMod.ENTITY_AQUILOPS, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_albalophosaurus", EntityPrehistoricFloraAlbalophosaurus.class, LepidodendronMod.ENTITY_ALBALOPHOSAURUS, 64,-12835809,-2640792);
+        registerEntity("prehistoric_flora_acrocanthosaurus", EntityPrehistoricFloraAcrocanthosaurus.class, LepidodendronMod.ENTITY_ACROCANTHOSAURUS, 164,-13819360,-3647203);
+        registerEntity("prehistoric_flora_liaoceratops", EntityPrehistoricFloraLiaoceratops.class, LepidodendronMod.ENTITY_LIAOCERATOPS, 64,-5669544,-8556442);
+        registerEntity("prehistoric_flora_aquilops", EntityPrehistoricFloraAquilops.class, LepidodendronMod.ENTITY_AQUILOPS, 64,-11483804,-6078932);
+        registerEntity("prehistoric_flora_albalophosaurus", EntityPrehistoricFloraAlbalophosaurus.class, LepidodendronMod.ENTITY_ALBALOPHOSAURUS, 64,-10796239,-3029571);
 //        registerEntity("prehistoric_flora_psittacosaurus_sibiricus", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SIBIRICUS, 64,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_psittacosaurus_sinensis", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SINENSIS, 64,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_psittacosaurus", EntityPrehistoricFloraPsittacosaurus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS, 64,-12835809,-2640792);

@@ -5137,6 +5137,29 @@ public class LepidodendronSorter {
     public static final int eggs_lethiscus = 5124;
     public static final int eggs_machimosaurus = 5125;
     public static final int machimosaurus_raw = 5126;
+    public static final int acrocanthosaurus_raw = 5127;
+    public static final int albalophosaurus_raw = 5128;
+    public static final int aquilops_raw = 5129;
+    public static final int liaoceratops_raw = 5130;
+    public static final int onchopristis_raw = 5131;
+    public static final int dugaldia_raw = 5132;
+    public static final int psilichthys_raw = 5133;
+    public static final int mawsonia_raw = 5134;
+    public static final int enchodus_raw = 5135;
+    public static final int neoceratodus_raw = 5136;
+    public static final int cladocyclus_raw = 5137;
+    public static final int eggs_acrocanthosaurus = 5138;
+    public static final int eggs_albalophosaurus = 5139;
+    public static final int eggs_aquilops = 5140;
+    public static final int eggs_liaoceratops = 5141;
+    public static final int eggs_psittacosaurus = 5142;
+    public static final int eggs_psittacosaurus_sinensis = 5143;
+    public static final int eggs_psittacosaurus_sibiricus = 5144;
+    public static final int psittacosaurus_raw = 5145;
+    public static final int psittacosaurus_sibiricus_raw = 5146;
+    public static final int psittacosaurus_sinensis_raw = 5147;
+
+
 
 
 
