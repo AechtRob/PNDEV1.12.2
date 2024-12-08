@@ -435,7 +435,7 @@ public class ModelEnchodus extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.head.rotateAngleZ = (float) Math.toRadians(90);
-            this.head.offsetY = -0.1F;
+            this.head.offsetY = 0.2F;
             this.bob(head, -speed * 1.9F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.15F, -0.55, f2, 0.4F * still);

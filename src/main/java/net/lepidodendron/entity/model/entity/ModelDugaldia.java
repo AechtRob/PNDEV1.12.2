@@ -1226,7 +1226,7 @@ public class ModelDugaldia extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.head.rotateAngleZ = (float) Math.toRadians(90);
-            this.head.offsetY = -0.2F;
+            this.head.offsetY = 0.35F;
             this.bob(head, 0.5f, 2.5F, false, f2, 1);
             this.chainWave(fishTail, 0.26f * 1.7F, 0.028F, -0.2, f2, 0.8F);
             this.chainSwing(fishTail, 0.26f * 1.7F, 0.28F, -0.55, f2, 0.4F);

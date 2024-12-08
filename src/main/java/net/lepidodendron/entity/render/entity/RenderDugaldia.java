@@ -15,7 +15,7 @@ public class RenderDugaldia extends RenderLivingBaseWithBook<EntityPrehistoricFl
         super(mgr, new ModelDugaldia(), 0.0f);
     }
 
-    public static float getScaler() {return 0.35F;}
+    public static float getScaler() {return 0.2F;}
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDugaldia entity) {

@@ -47,8 +47,8 @@ public class EntityPrehistoricFloraDugaldia extends EntityPrehistoricFloraAgeabl
 		super(world);
 		setSize(.4F, .3F);
 		minWidth = 0.1F;
-		maxWidth = 0.4F;
-		maxHeight = 0.3F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 5.0D;
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraDugaldia extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public int getShoalSize() {
-		return 10;
+		return 20;
 	}
 
 	@Override

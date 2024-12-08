@@ -251,7 +251,7 @@ public class ModelPsilichthys extends ModelBasePalaeopedia {
             this.swing(head, speed*0.8F, 0.2F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.head.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = -0.1F;
+                this.head.offsetY = 0.3F;
                 this.bob(head, -speed, 5F, false, f2, 1);
             }
         }

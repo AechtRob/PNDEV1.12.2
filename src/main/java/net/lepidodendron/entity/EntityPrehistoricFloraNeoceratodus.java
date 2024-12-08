@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return 10000;
 	}
 
 	@Override
@@ -199,64 +199,15 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CERATODUS_LOOT;
+		return LepidodendronMod.NEOCERATODUS_LOOT;
 	}
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return 0.01;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 0.8;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return -0.04;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return 0.25F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.35F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderCeratodus.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelCeratodus;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderCeratodus.getScaler();
-	}
+
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_CERATODUS;
+		return ModTriggers.CLICK_NEOCERATODUS;
 	}
 }

@@ -356,7 +356,7 @@ public class ModelNeoceratodus extends ModelBasePalaeopedia {
         if (!((EntityPrehistoricFloraNeoceratodus) e).isReallyInWater()) {
             outOfWater = 1.45f;
             this.root.bob(speed, 0.35F, false, f2, 1F);
-            this.root.offsetY = 1.1F;
+            //this.root.offsetY = 1.1F;
         }
 
         boolean isAtBottom = false;
