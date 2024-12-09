@@ -1,6 +1,10 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
+import io.netty.buffer.ByteBuf;
+import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
@@ -8,12 +12,16 @@ import net.lepidodendron.gui.GUISubmarine;
 import net.lepidodendron.item.ItemSubmarineBatterypack;
 import net.lepidodendron.item.ItemSubmarineBatterypackEnhanced;
 import net.lepidodendron.item.ItemSubmarineBoatItem;
+import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.Functions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.BlockShulkerBox;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
@@ -41,6 +49,9 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -51,7 +62,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryChangedListener
+public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEntity, IInventoryChangedListener
 {
     private static final DataParameter<Integer> TIME_SINCE_HIT = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> FORWARD_DIRECTION = EntityDataManager.<Integer>createKey(PrehistoricFloraSubmarine.class, DataSerializers.VARINT);
@@ -60,6 +71,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
     private static final DataParameter<Boolean> ENHANCED = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> SHULKER = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
+    private static final DataParameter<ItemStack> CLAW_CONTENTS = EntityDataManager.<ItemStack>createKey(PrehistoricFloraSubmarine.class, DataSerializers.ITEM_STACK);
     private final float[] paddlePositions;
     private float momentum;
     private float outOfControlTicks;
@@ -79,6 +91,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
     private boolean upInputDown;
     private boolean leftStrafeInputDown;
     private boolean rightStrafeInputDown;
+    private boolean useBucketDown;
+    private boolean useClawDown;
+    private int bucketTicks = 0;
+    private int clawTicks = 0;
     private double waterLevel;
     private float boatGlide;
     private PrehistoricFloraSubmarine.Status status;
@@ -114,12 +130,17 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
     public final ContainerSubmarineChest submarineChest = new ContainerSubmarineChest("SubmarineChest", 54);;
     private net.minecraftforge.items.IItemHandler itemHandler = new net.minecraftforge.items.wrapper.InvWrapper(this.submarineChest);
 
+    public static Animation CLAW_ANIMATION;
+    private Animation currentAnimation;
+    private int animationTick;
+
     public PrehistoricFloraSubmarine(World worldIn)
     {
         super(worldIn);
         this.paddlePositions = new float[2];
         this.preventEntitySpawning = true;
         this.setSize(3.0F, 3.0F);
+        CLAW_ANIMATION = Animation.create(80);
     }
 
     public PrehistoricFloraSubmarine(World worldIn, double x, double y, double z)
@@ -251,12 +272,50 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
         return (this.dataManager.get(SHULKER));
     }
 
+    public void setBucket(int bucket)
+    {
+        this.bucketTicks = bucket;
+    }
+
+    public int getBucket()
+    {
+        return this.bucketTicks;
+    }
+
+    public void setClaw(int claw)
+    {
+        this.clawTicks = claw;
+    }
+
+    public int getClaw()
+    {
+        return this.clawTicks;
+    }
+
+    public void setClawItemStack(ItemStack stack)
+    {
+        this.dataManager.set(CLAW_CONTENTS, stack);
+    }
+
+    public ItemStack getClawItemStack()
+    {
+        return this.dataManager.get(CLAW_CONTENTS).isEmpty() ? ItemStack.EMPTY : this.dataManager.get(CLAW_CONTENTS);
+    }
+
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound)
     {
         compound.setInteger("RF", this.getRF());
         compound.setBoolean("enhanced", this.getEnhanced());
         compound.setBoolean("shulker", this.getShulker());
+
+        ItemStack clawStack = this.getClawItemStack();
+        if (!clawStack.isEmpty())
+        {
+            NBTTagCompound nbttagcompound = new NBTTagCompound();
+            clawStack.writeToNBT(nbttagcompound);
+            compound.setTag("clawStack", nbttagcompound);
+        }
         
         if (this.passengerNightVisionUUID == null) {
             compound.setString("passengerNightVisionUUID", "");
@@ -333,6 +392,11 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
         this.setRF(compound.getInteger("RF"));
         this.setEnhanced(compound.getBoolean("enhanced"));
         this.setShulker(compound.getBoolean("shulker"));
+
+        if (compound.hasKey("clawStack"))
+        {
+            this.setClawItemStack(new ItemStack(compound.getCompoundTag("clawStack")));
+        }
 
         if (this.getShulker())
         {
@@ -423,6 +487,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
         this.dataManager.register(RF_SUPPLY, Integer.valueOf(-1));
         this.dataManager.register(ENHANCED, Boolean.valueOf(false));
         this.dataManager.register(SHULKER, Boolean.valueOf(false));
+        this.dataManager.register(CLAW_CONTENTS, ItemStack.EMPTY);
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -648,9 +713,26 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
         if (!this.world.isRemote)
         {
             this.setFlag(6, this.isGlowing());
+
+            if (this.getBucket() > 0) {
+                this.setBucket(this.getBucket() - 1);
+                if (this.getBucket() >= 10) {
+                    LepidodendronMod.PACKET_HANDLER.sendToAll(new PrehistoricFloraSubmarine.ParticlePacket(Functions.getEntityCentre(this).x, Functions.getEntityCentre(this).y, Functions.getEntityCentre(this).z, this.rotationYaw));
+                }
+                if (this.getBucket() == 39) {
+                    world.playSound(null, this.getPosition(), BlockSounds.SUBMARINE_BUBBLE_JET, SoundCategory.BLOCKS, 1.0F, 1.0F + (rand.nextFloat() * 0.5F));
+                }
+                if (this.getBucket() == 29) {
+                    world.playSound(null, this.getPosition(), BlockSounds.SUBMARINE_BUBBLE_JET, SoundCategory.BLOCKS, 1.0F, 1.0F + (rand.nextFloat() * 0.5F));
+                }
+            }
+            if (this.getClaw() > 0) {
+                this.setClaw(this.getClaw() - 1);
+            }
+            AnimationHandler.INSTANCE.updateAnimations(this);
+
         }
         super.onEntityUpdate();
-
 
         this.tickLerp();
 
@@ -670,6 +752,15 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
             }
 
             this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
+            if (this.world.isRemote && this.useBucketDown)
+            {
+                LepidodendronMod.PACKET_HANDLER.sendToServer(new PrehistoricFloraSubmarine.BucketMessage(this.getEntityId()));
+            }
+
+            if (this.world.isRemote && this.useClawDown) {
+                LepidodendronMod.PACKET_HANDLER.sendToServer(new PrehistoricFloraSubmarine.ClawMessage(this.getEntityId()));
+            }
         }
         else
         {
@@ -1644,11 +1735,42 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
             this.rightStrafeInputDown = false;
         }
 
+        this.useBucketDown = ClientProxyLepidodendronMod.keyBoatUseBucket.isKeyDown();
+        this.useClawDown = ClientProxyLepidodendronMod.keyBoatUseClaw.isKeyDown();
+
     }
 
     @Override
     public void onInventoryChanged(IInventory invBasic) {
-        int p = 1;
+
+    }
+
+    @Override
+    public int getAnimationTick() {
+        return animationTick;
+    }
+
+    @Override
+    public void setAnimationTick(int i) {
+        animationTick = i;
+    }
+
+    @Override
+    public Animation getAnimation() {
+        return currentAnimation == null ? NO_ANIMATION : currentAnimation;
+    }
+
+    @Override
+    public void setAnimation(Animation animation) {
+        if (this.getAnimation() != animation) {
+            this.currentAnimation = animation;
+            setAnimationTick(0);
+        }
+    }
+
+    @Override
+    public Animation[] getAnimations() {
+        return new Animation[]{CLAW_ANIMATION};
     }
 
     public static enum Status
@@ -1688,5 +1810,171 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IInventoryC
         {
             super(inventoryTitle, slotCount);
         }
+    }
+
+    public static class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
+        @Override
+        public IMessage onMessage(PrehistoricFloraSubmarine.BucketMessage message, MessageContext context) {
+
+            EntityPlayerMP entity = context.getServerHandler().player;
+            Entity e = entity.getServerWorld().getEntityByID(message.value);
+            if (e != null && e instanceof PrehistoricFloraSubmarine) {
+                if (((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_WATER
+                        || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_FLOWING_WATER
+                        || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.IN_WATER) {
+                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0) {
+                        ((PrehistoricFloraSubmarine) e).setBucket(40);
+                    }
+                }
+            }
+            return null;
+        }
+    }
+
+    public static class BucketMessage implements IMessage {
+        int value;
+        public BucketMessage() {
+        }
+
+        public BucketMessage(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public void toBytes(io.netty.buffer.ByteBuf buf) {
+            buf.writeInt(value);
+        }
+
+        @Override
+        public void fromBytes(io.netty.buffer.ByteBuf buf) {
+            value = buf.readInt();
+        }
+    }
+
+
+
+    public static class ClawMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.ClawMessage, IMessage> {
+        @Override
+        public IMessage onMessage(PrehistoricFloraSubmarine.ClawMessage message, MessageContext context) {
+
+            EntityPlayerMP entity = context.getServerHandler().player;
+            Entity e = entity.getServerWorld().getEntityByID(message.value);
+            if (e != null && e instanceof PrehistoricFloraSubmarine) {
+                if (((PrehistoricFloraSubmarine)e).getClaw() <= 0) {
+                    ((PrehistoricFloraSubmarine) e).setClaw(80);
+                    ((PrehistoricFloraSubmarine) e).setAnimation(CLAW_ANIMATION);
+                }
+            }
+            return null;
+        }
+    }
+
+    public static class ClawMessage implements IMessage {
+        int value;
+        public ClawMessage() {
+        }
+
+        public ClawMessage(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public void toBytes(io.netty.buffer.ByteBuf buf) {
+            buf.writeInt(value);
+        }
+
+        @Override
+        public void fromBytes(io.netty.buffer.ByteBuf buf) {
+            value = buf.readInt();
+        }
+    }
+
+    public static class ParticlePacket implements IMessage {
+
+        private double x, y, z, rotation;
+
+        public ParticlePacket()
+        {
+        }
+
+        public ParticlePacket(double x, double y, double z, double rotation)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.rotation = rotation;
+        }
+
+        @Override
+        public void fromBytes(ByteBuf buf)
+        {
+            try
+            {
+                this.x = buf.readDouble();
+                this.y = buf.readDouble();
+                this.z = buf.readDouble();
+                this.rotation = buf.readDouble();
+            }
+            catch(IndexOutOfBoundsException ioe)
+            {
+                return;
+            }
+        }
+
+        @Override
+        public void toBytes(ByteBuf buf)
+        {
+            buf.writeDouble(x);
+            buf.writeDouble(y);
+            buf.writeDouble(z);
+            buf.writeDouble(rotation);
+        }
+
+        public static class Handler implements IMessageHandler<PrehistoricFloraSubmarine.ParticlePacket, IMessage>
+        {
+
+            @Override
+            public IMessage onMessage(PrehistoricFloraSubmarine.ParticlePacket message, MessageContext ctx)
+            {
+
+                Minecraft minecraft = Minecraft.getMinecraft();
+                final WorldClient worldClient = minecraft.world;
+
+                minecraft.addScheduledTask(() -> processMessage(message, worldClient));
+
+                return null;
+            }
+
+            void processMessage(PrehistoricFloraSubmarine.ParticlePacket message, WorldClient worldClient)
+            {
+                float rotation = (float)message.rotation;
+                for (int l = 0; l < 15; ++l) {
+
+                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-rotation)) * 6.15F) + (worldClient.rand.nextFloat() * (double)(MathHelper.cos((float)Math.toRadians(rotation)) * 10.0F) * ((float)worldClient.rand.nextInt(3) - 1D));
+                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(rotation)) * 6.15F) + (worldClient.rand.nextFloat() * (double)(MathHelper.sin((float)Math.toRadians(-rotation)) * 10.0F) * ((float)worldClient.rand.nextInt(3) - 1D));
+
+                    double xSpeed = 0;
+                    xSpeed = -Math.pow(xOffset,2) * 0.080d;
+                    if (xOffset < 0) {
+                        xSpeed = -xSpeed;
+                    }
+
+                    double zSpeed = 0;
+                    zSpeed = -Math.pow(zOffset,2) * 0.080d;
+                    if (zOffset < 0) {
+                        zSpeed = -zSpeed;
+                    }
+
+                    double xOffsetPos = (double)(MathHelper.cos((float)Math.toRadians(rotation)) * 0.7F);
+                    double zOffsetPos = -(double)(MathHelper.sin((float)Math.toRadians(-rotation)) * 0.7F);
+
+                    double ySpeed = worldClient.rand.nextDouble() * 0.05F * (double)((double)worldClient.rand.nextInt(3) - 1.00);
+
+                    worldClient.spawnParticle(EnumParticleTypes.WATER_BUBBLE, message.x + xOffset + xOffsetPos, message.y, message.z + zOffset + zOffsetPos, xSpeed, ySpeed, zSpeed);
+                }
+            }
+
+        }
+
     }
 }

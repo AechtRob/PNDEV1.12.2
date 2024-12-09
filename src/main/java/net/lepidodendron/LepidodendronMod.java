@@ -5,6 +5,7 @@ import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
 import net.lepidodendron.enchantments.Enchantments;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.gui.*;
 import net.lepidodendron.item.ItemBatHeadItem;
@@ -2693,6 +2694,9 @@ public class LepidodendronMod {
 		elements.addNetworkMessage(GUIArchiveSorterBottom.ArchiveSorterInGUIMessageHandler.class, GUIArchiveSorterBottom.GUIArchiveSorterInGUIMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUIMicroscope.GUIMicroscopeTagSelectMessageHandler.class, GUIMicroscope.GUIMicroscopeTagSelectMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUIPortalBlock.GUIPortalBlockTagSelectMessageHandler.class, GUIPortalBlock.GUIPortalBlockTagSelectMessage.class, Side.SERVER);
+		elements.addNetworkMessage(PrehistoricFloraSubmarine.BucketMessageHandler.class, PrehistoricFloraSubmarine.BucketMessage.class, Side.SERVER);
+		elements.addNetworkMessage(PrehistoricFloraSubmarine.ClawMessageHandler.class, PrehistoricFloraSubmarine.ClawMessage.class, Side.SERVER);
+		elements.addNetworkMessage(PrehistoricFloraSubmarine.ParticlePacket.Handler.class, PrehistoricFloraSubmarine.ParticlePacket.class, Side.CLIENT);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));
 		EntityRegistries.registerEntities();
