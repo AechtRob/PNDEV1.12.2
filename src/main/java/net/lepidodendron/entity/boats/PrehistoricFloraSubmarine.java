@@ -719,7 +719,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
             if (this.getBucket() > 0) {
                 this.setBucket(this.getBucket() - 1);
-                int bucketSlot = hasBucketSlot(this.getControllingPassenger());
+                int bucketSlot = hasBucketSlot(null);
                 if (this.getBucket() >= 10 && bucketSlot >= 0) {
                     LepidodendronMod.PACKET_HANDLER.sendToAll(new PrehistoricFloraSubmarine.ParticlePacket(Functions.getEntityCentre(this).x, Functions.getEntityCentre(this).y, Functions.getEntityCentre(this).z, this.rotationYaw));
                 }
@@ -916,7 +916,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         return stack;
     }
 
-    public int hasBucketSlot(Entity player) {
+    public int hasBucketSlot(@Nullable Entity player) {
         if (this.getShulker()) {
             for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
                 if (this.submarineChest.getStackInSlot(i).getItem() == Items.WATER_BUCKET) {
@@ -924,7 +924,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 }
             }
         }
-        if (player instanceof EntityPlayer) {
+        if (player != null && player instanceof EntityPlayer) {
             ((EntityPlayer) player).sendMessage(new TextComponentString("No water buckets in the submarine inventory!"));
         }
         return -1;
@@ -1993,7 +1993,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         }
     }
 
-    public static class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
+    public class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
         @Override
         public IMessage onMessage(PrehistoricFloraSubmarine.BucketMessage message, MessageContext context) {
 
@@ -2006,7 +2006,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                     if (((PrehistoricFloraSubmarine) e).getBucket() <= 0
                             && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
                     ) {
-                        ((PrehistoricFloraSubmarine) e).setBucket(40);
+                        if (hasBucketSlot(((PrehistoricFloraSubmarine) e).getControllingPassenger()) > -1) {
+                            ((PrehistoricFloraSubmarine) e).setBucket(40);
+                        }
                     }
                 }
             }
