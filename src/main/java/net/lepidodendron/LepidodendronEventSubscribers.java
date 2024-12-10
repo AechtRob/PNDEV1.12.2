@@ -69,10 +69,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.entity.player.BonemealEvent;
-import net.minecraftforge.event.entity.player.ItemFishedEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.event.village.MerchantTradeOffersEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -263,6 +260,17 @@ public class LepidodendronEventSubscribers {
 	}
 
 	@SubscribeEvent //Some instructions for use of rideables
+	public void playerPickupItem(EntityItemPickupEvent event) {
+		if (event.getEntityPlayer() != null) {
+			if (event.getEntityPlayer().isRiding()) {
+				if (event.getEntityPlayer().getRidingEntity() instanceof PrehistoricFloraSubmarine) {
+					event.setCanceled(true);
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent //Some instructions for use of rideables
 	public void playerMounted(EntityMountEvent event) {
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
@@ -312,6 +320,7 @@ public class LepidodendronEventSubscribers {
 		}
 		if (entity instanceof EntityPlayer && (!event.isMounting()) && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
+			//Dismounting the submarine:
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine) {
 				//Give the night vision effect while inside:
 				((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantWaterBreathingPassenger(player);

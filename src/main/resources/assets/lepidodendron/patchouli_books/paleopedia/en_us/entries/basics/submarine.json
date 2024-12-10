@@ -17,6 +17,18 @@
 			"text": "There is a standard battery and also an enhanced battery. The enhanced battery holds more RF and makes the submarine travel much faster."
 		},
 		{
+			"type": "text",
+			"text": "You can equip the submarine with inventory capability by clicking a shulker box onto the submarine. An inventory-equipped submarine has 54 inventory slots which can be accessed by clicking on the central control panel once you are inside it. The submarine will pick up any dropped items it encounters and place them in here."
+		},
+		{
+			"type": "text",
+			"text": "An inventory-euipped submarine also has two extra pieces of functionality:$(br2)1. Catching mobs in buckets: if there are filled water buckets in the inventory, you can attempt to suck up bucketable mobs into the submarine. These need to be within range."
+		},
+		{
+			"type": "text",
+			"text": "2. Harvesting blocks: You can use the claw on the submarine to interact with blocks. If these blocks are easily breakable (the kind you would normally use shears for), the claw will harvest them and add them to the inventory. Aim the claw at the block intended."
+		},
+		{
 			"type": "crafting",
 			"title": "Submarine",
 			"recipe": "lepidodendron:submarine_recipe"

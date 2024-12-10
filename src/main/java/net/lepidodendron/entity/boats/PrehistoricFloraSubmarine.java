@@ -27,6 +27,7 @@ import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -52,6 +53,7 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -74,8 +76,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     private static final DataParameter<Boolean> ENHANCED = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> SHULKER = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
-    private static final DataParameter<ItemStack> CLAW_CONTENTS = EntityDataManager.<ItemStack>createKey(PrehistoricFloraSubmarine.class, DataSerializers.ITEM_STACK);
-    private final float[] paddlePositions;
+     private final float[] paddlePositions;
     private float momentum;
     private float outOfControlTicks;
     private float deltaRotation;
@@ -136,6 +137,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     public static Animation CLAW_ANIMATION;
     private Animation currentAnimation;
     private int animationTick;
+    private Entity targetedEntity;
 
     public PrehistoricFloraSubmarine(World worldIn)
     {
@@ -156,6 +158,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         this.prevPosX = x;
         this.prevPosY = y;
         this.prevPosZ = z;
+        CLAW_ANIMATION = Animation.create(80);
     }
     
     public void saveNightVisionPassenger(boolean hasNightVision, int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
@@ -295,30 +298,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         return this.clawTicks;
     }
 
-    public void setClawItemStack(ItemStack stack)
-    {
-        this.dataManager.set(CLAW_CONTENTS, stack);
-    }
-
-    public ItemStack getClawItemStack()
-    {
-        return this.dataManager.get(CLAW_CONTENTS).isEmpty() ? ItemStack.EMPTY : this.dataManager.get(CLAW_CONTENTS);
-    }
-
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound)
     {
         compound.setInteger("RF", this.getRF());
         compound.setBoolean("enhanced", this.getEnhanced());
         compound.setBoolean("shulker", this.getShulker());
-
-        ItemStack clawStack = this.getClawItemStack();
-        if (!clawStack.isEmpty())
-        {
-            NBTTagCompound nbttagcompound = new NBTTagCompound();
-            clawStack.writeToNBT(nbttagcompound);
-            compound.setTag("clawStack", nbttagcompound);
-        }
         
         if (this.passengerNightVisionUUID == null) {
             compound.setString("passengerNightVisionUUID", "");
@@ -395,11 +380,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         this.setRF(compound.getInteger("RF"));
         this.setEnhanced(compound.getBoolean("enhanced"));
         this.setShulker(compound.getBoolean("shulker"));
-
-        if (compound.hasKey("clawStack"))
-        {
-            this.setClawItemStack(new ItemStack(compound.getCompoundTag("clawStack")));
-        }
 
         if (this.getShulker())
         {
@@ -490,7 +470,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         this.dataManager.register(RF_SUPPLY, Integer.valueOf(-1));
         this.dataManager.register(ENHANCED, Boolean.valueOf(false));
         this.dataManager.register(SHULKER, Boolean.valueOf(false));
-        this.dataManager.register(CLAW_CONTENTS, ItemStack.EMPTY);
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -670,6 +649,20 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     public void onUpdate()
     {
 
+        //Can I pick up any items?
+        if (this.getShulker() && !this.world.isRemote) {
+            for (EntityItem entityitem : this.world.getEntitiesWithinAABB(EntityItem.class, this.getEntityBoundingBox().grow(3.0D, 2.0D, 3.0D)))
+            {
+                if (!entityitem.isDead && !entityitem.getItem().isEmpty() && !entityitem.cannotPickup())
+                {
+                    if (this.addToInventory(entityitem)) {
+                        world.playSound(null, this.getPosition(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 0.5F, 1.0F);
+                        break;
+                    }
+                }
+            }
+        }
+
         if (LepidodendronConfig.machinesRF && this.getRF() >= 1) {
             if ((this.status == Status.IN_WATER
                 || this.status == Status.UNDER_FLOWING_WATER
@@ -719,6 +712,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
             if (this.getBucket() > 0) {
                 this.setBucket(this.getBucket() - 1);
+
                 int bucketSlot = hasBucketSlot(this, null);
                 if (this.getBucket() >= 10 && bucketSlot >= 0) {
                     LepidodendronMod.PACKET_HANDLER.sendToAll(new PrehistoricFloraSubmarine.ParticlePacket(Functions.getEntityCentre(this).x, Functions.getEntityCentre(this).y, Functions.getEntityCentre(this).z, this.rotationYaw));
@@ -729,31 +723,79 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 if (this.getBucket() == 29 && bucketSlot >= 0) {
                     world.playSound(null, this.getPosition(), BlockSounds.SUBMARINE_BUBBLE_JET, SoundCategory.BLOCKS, 1.0F, 1.0F + (rand.nextFloat() * 0.5F));
                 }
-                if (this.getBucket() == 25 && bucketSlot >= 0) {
-                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 6.15F) + (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 10.0F);
-                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 6.15F) + (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 10.0F);
-                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(Functions.getEntityCentre(this).add(-xOffset, -2, -zOffset), Functions.getEntityCentre(this).add(xOffset, 2, zOffset)), EntitySelectors.NOT_SPECTATING);
-                    Entity target = null;
+                if (this.getBucket() == 35 && bucketSlot >= 0) {
+                    double xOffset = (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 4.5F) + (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 8.0F);
+                    double zOffset = (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 4.5F) + (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 8.0F);
+
+                    double xOffsetRoot = (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 1.25F);
+                    double zOffsetRoot = (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 1.25F);
+
+                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(-xOffset, -2, -zOffset), Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(xOffset, 2, zOffset)), EntitySelectors.NOT_SPECTATING);
                     double d0 = Double.MAX_VALUE;
-                    for (Entity ee : Entities)
-                    {
-                        if (canBucket(ee) && this.getDistanceSq(ee) < d0 && isDirectPathBetweenPoints(this.getPositionVector(), ee.getPositionVector()))
-                        {
-                            target = ee;
+                    for (Entity ee : Entities) {
+                        Entity bucketTest = canBucket(ee);
+                        if (bucketTest != null && this.getDistanceSq(ee) < d0 && isDirectPathBetweenPoints(this.getPositionVector(), ee.getPositionVector())) {
                             d0 = this.getDistanceSq(ee);
+                            this.targetedEntity = bucketTest;
                         }
                     }
-                    if (target != null) {
-                        this.submarineChest.setInventorySlotContents(bucketSlot, bucketMob(target, this.submarineChest.getStackInSlot(bucketSlot)));
+                }
+
+                if (this.targetedEntity != null && !this.targetedEntity.isDead && this.getBucket() >= 10 && this.getBucket() <= 25) {
+                    //Where do we want to move this mob TO?
+                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 1.75F);
+                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 1.75F);
+                    xOffset = xOffset + (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 0.85F);
+                    zOffset = zOffset - (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 0.85F);
+                    //The mob will be a target for 15 ticks between selection and bucketing, so move it incrementally:
+                    double moveTick = ((double)this.getBucket() - 10D)/11.00D;
+                    double xMove = (Functions.getEntityCentre(this).x + xOffset) - ((Functions.getEntityCentre(this).x + xOffset - this.targetedEntity.posX) * moveTick);
+                    double yMove = (Functions.getEntityCentre(this).y) - ((Functions.getEntityCentre(this).y - this.targetedEntity.posY) * moveTick);
+                    double zMove = (Functions.getEntityCentre(this).z + zOffset) - ((Functions.getEntityCentre(this).z + zOffset - this.targetedEntity.posZ) * moveTick);
+
+                    this.targetedEntity.setPositionAndUpdate(xMove, yMove, zMove);
+
+                }
+
+                if (this.getBucket() == 10 && bucketSlot >= 0) {
+                    if (this.targetedEntity != null && !this.targetedEntity.isDead) {
+                        this.submarineChest.setInventorySlotContents(bucketSlot, bucketMob(this.targetedEntity, this.submarineChest.getStackInSlot(bucketSlot)));
                         world.playSound(null, this.getPosition(), SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                        target.setDead();
+                        this.targetedEntity.setDead();
+                        this.targetedEntity = null;
                     }
                 }
             }
             if (this.getClaw() > 0) {
                 this.setClaw(this.getClaw() - 1);
+                if (this.getClaw() == 80 - 44) {
+                    //Try to harvest a block:
+                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 3.10F);
+                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 3.10F);
+                    xOffset = xOffset - (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 1.10F);
+                    zOffset = zOffset + (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 1.10F);
+                    double xPos = (Functions.getEntityCentre(this).x + xOffset);
+                    double zPos = (Functions.getEntityCentre(this).z + zOffset);
+                    double yPos = this.posY - 1.26D;
+                    if (isDirectPathBetweenPoints(this.getPositionVector(), new Vec3d(xPos, yPos, zPos))) {
+                        IBlockState stateTarget = world.getBlockState(new BlockPos(xPos, yPos, zPos));
+                        if (stateTarget.getBlock() instanceof IShearable) {
+                            if (((IShearable) stateTarget.getBlock()).isShearable(new ItemStack(Items.SHEARS, 1), world, new BlockPos(xPos, yPos, zPos))) {
+                                List<ItemStack> drops = ((IShearable) stateTarget.getBlock()).onSheared(new ItemStack(Items.SHEARS, 1), world, new BlockPos(xPos, yPos, zPos), 0);
+                                for (ItemStack stack : drops) {
+                                    stack = this.addToInventoryAndGetRemainder(stack);
+                                    if (!stack.isEmpty()) {
+                                        EntityItem entityToSpawn = new EntityItem(world, xPos, yPos, zPos, stack);
+                                        entityToSpawn.setPickupDelay(10);
+                                        world.spawnEntity(entityToSpawn);
+                                    }
+                                }
+                                world.destroyBlock(new BlockPos(xPos, yPos, zPos), false);
+                            }
+                        }
+                    }
+                }
             }
-            AnimationHandler.INSTANCE.updateAnimations(this);
 
         }
         super.onEntityUpdate();
@@ -835,6 +877,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 }
             }
         }
+        AnimationHandler.INSTANCE.updateAnimations(this);
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
@@ -930,68 +973,151 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         return -1;
     }
 
-    public static boolean canBucket(Entity entityIn) {
+    public boolean addToInventory(EntityItem item) {
+        boolean stackProcessed = false;
+        //First, do we have this item already?
+        int slot = -1;
+        int freeSlot = -1;
+        for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
+            if (!this.submarineChest.getStackInSlot(i).isEmpty()) {
+                ItemStack stackA = this.submarineChest.getStackInSlot(i).copy();
+                stackA.setCount(1);
+                ItemStack stackB = item.getItem().copy();
+                stackB.setCount(1);
+                if (ItemStack.areItemStacksEqual(stackA, stackB)) {
+                    if (this.submarineChest.getStackInSlot(i).getCount() <= this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
+                        slot = i;
+                        break;
+                    }
+                }
+            }
+            else if (freeSlot == -1) {
+                freeSlot = i;
+            }
+        }
+        if (slot >= 0) {
+            ItemStack newStack = this.submarineChest.getStackInSlot(slot);
+            newStack.setCount(this.submarineChest.getStackInSlot(slot).getCount() + 1);
+            this.submarineChest.setInventorySlotContents(slot, newStack);
+            item.getItem().shrink(1);
+            stackProcessed = true;
+        }
+        else if (freeSlot >= 0){ //We have no match, but we do have space:
+            ItemStack newStack = item.getItem().copy();
+            newStack.setCount(1);
+            this.submarineChest.setInventorySlotContents(freeSlot, newStack);
+            item.getItem().shrink(1);
+            stackProcessed = true;
+        }
+        if (!item.getItem().isEmpty()) { //Iterate to complete the whole stack:
+            boolean resultIgnore = addToInventory(item);
+        }
+        return stackProcessed;
+    }
+
+    public ItemStack addToInventoryAndGetRemainder(ItemStack itemstack) {
+        boolean stackProcessed = false;
+        //First, do we have this item already?
+        int slot = -1;
+        int freeSlot = -1;
+        for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
+            if (!this.submarineChest.getStackInSlot(i).isEmpty()) {
+                ItemStack stackA = this.submarineChest.getStackInSlot(i).copy();
+                stackA.setCount(1);
+                ItemStack stackB = itemstack.copy();
+                stackB.setCount(1);
+                if (ItemStack.areItemStacksEqual(stackA, stackB)) {
+                    if (this.submarineChest.getStackInSlot(i).getCount() <= this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
+                        slot = i;
+                        break;
+                    }
+                }
+            }
+            else if (freeSlot == -1) {
+                freeSlot = i;
+            }
+        }
+        if (slot >= 0) {
+            ItemStack newStack = this.submarineChest.getStackInSlot(slot);
+            newStack.setCount(this.submarineChest.getStackInSlot(slot).getCount() + 1);
+            this.submarineChest.setInventorySlotContents(slot, newStack);
+            itemstack.shrink(1);
+        }
+        else if (freeSlot >= 0){ //We have no match, but we do have space:
+            ItemStack newStack = itemstack.copy();
+            newStack.setCount(1);
+            this.submarineChest.setInventorySlotContents(freeSlot, newStack);
+            itemstack.shrink(1);
+        }
+        if (!itemstack.isEmpty() && (freeSlot >= 0 || slot >= 0)) { //Iterate to complete the whole stack:
+            itemstack = addToInventoryAndGetRemainder(itemstack);
+        }
+        return itemstack;
+    }
+
+    @Nullable
+    public static Entity canBucket(Entity entityIn) {
         if (entityIn instanceof EntityPrehistoricFloraAgeableFishBase) {
             EntityPrehistoricFloraAgeableFishBase ee = (EntityPrehistoricFloraAgeableFishBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
             EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
             EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraEurypteridBase) {
             EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
             EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
             EntityPrehistoricFloraJellyfishBase ee = (EntityPrehistoricFloraJellyfishBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraNautiloidBase) {
             EntityPrehistoricFloraNautiloidBase ee = (EntityPrehistoricFloraNautiloidBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
             EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
             EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
             EntityPrehistoricFloraTrilobiteSwimBase ee = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
-        return false;
+        return null;
     }
 
     @Nullable
@@ -1951,7 +2077,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{CLAW_ANIMATION};
+        return new Animation[]{NO_ANIMATION, CLAW_ANIMATION};
     }
 
     public static enum Status
@@ -2008,6 +2134,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                     ) {
                         if (hasBucketSlot((PrehistoricFloraSubmarine) e, ((PrehistoricFloraSubmarine) e).getControllingPassenger()) >= 0) {
                             ((PrehistoricFloraSubmarine) e).setBucket(40);
+                            if (LepidodendronConfig.machinesRF) {
+                                ((PrehistoricFloraSubmarine) e).setRF(((PrehistoricFloraSubmarine) e).getRF() - 10);
+                            }
                         }
                     }
                 }
@@ -2048,6 +2177,8 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 if (((PrehistoricFloraSubmarine)e).getClaw() <= 0) {
                     ((PrehistoricFloraSubmarine) e).setClaw(80);
                     ((PrehistoricFloraSubmarine) e).setAnimation(CLAW_ANIMATION);
+                    AnimationHandler.INSTANCE.updateAnimations((PrehistoricFloraSubmarine) e);
+                    ((PrehistoricFloraSubmarine) e).world.playSound(null, ((PrehistoricFloraSubmarine) e).getPosition(), BlockSounds.SUBMARINE_CLAW, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
             }
             return null;
