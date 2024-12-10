@@ -966,9 +966,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                     return i;
                 }
             }
-        }
-        if (player != null && player instanceof EntityPlayer) {
-            ((EntityPlayer) player).sendMessage(new TextComponentString("No water buckets in the submarine inventory!"));
+            if (player != null && player instanceof EntityPlayer) {
+                ((EntityPlayer) player).sendMessage(new TextComponentString("No water buckets in the submarine inventory!"));
+            }
         }
         return -1;
     }
@@ -2129,7 +2129,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 if (((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_WATER
                         || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_FLOWING_WATER
                         || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.IN_WATER) {
-                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0
+                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0 && ((PrehistoricFloraSubmarine) e).getShulker()
                             && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
                     ) {
                         if (hasBucketSlot((PrehistoricFloraSubmarine) e, ((PrehistoricFloraSubmarine) e).getControllingPassenger()) >= 0) {
@@ -2165,8 +2165,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         }
     }
 
-
-
     public static class ClawMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.ClawMessage, IMessage> {
         @Override
         public IMessage onMessage(PrehistoricFloraSubmarine.ClawMessage message, MessageContext context) {
@@ -2174,11 +2172,22 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             EntityPlayerMP entity = context.getServerHandler().player;
             Entity e = entity.getServerWorld().getEntityByID(message.value);
             if (e != null && e instanceof PrehistoricFloraSubmarine) {
-                if (((PrehistoricFloraSubmarine)e).getClaw() <= 0) {
-                    ((PrehistoricFloraSubmarine) e).setClaw(80);
-                    ((PrehistoricFloraSubmarine) e).setAnimation(CLAW_ANIMATION);
-                    AnimationHandler.INSTANCE.updateAnimations((PrehistoricFloraSubmarine) e);
-                    ((PrehistoricFloraSubmarine) e).world.playSound(null, ((PrehistoricFloraSubmarine) e).getPosition(), BlockSounds.SUBMARINE_CLAW, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                if (((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_WATER
+                        || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_FLOWING_WATER
+                        || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.IN_WATER) {
+                    if (((PrehistoricFloraSubmarine) e).getShulker()
+                            && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
+                    ) {
+                        if (((PrehistoricFloraSubmarine) e).getClaw() <= 0) {
+                            ((PrehistoricFloraSubmarine) e).setClaw(80);
+                            ((PrehistoricFloraSubmarine) e).setAnimation(CLAW_ANIMATION);
+                            AnimationHandler.INSTANCE.updateAnimations((PrehistoricFloraSubmarine) e);
+                            ((PrehistoricFloraSubmarine) e).world.playSound(null, ((PrehistoricFloraSubmarine) e).getPosition(), BlockSounds.SUBMARINE_CLAW, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                            if (LepidodendronConfig.machinesRF) {
+                                ((PrehistoricFloraSubmarine) e).setRF(((PrehistoricFloraSubmarine) e).getRF() - 10);
+                            }
+                        }
+                    }
                 }
             }
             return null;
