@@ -735,7 +735,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                     double xOffsetRoot = (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 1.25F);
                     double zOffsetRoot = (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 1.25F);
 
-                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(-xOffset, -2, -zOffset), Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(xOffset, 2, zOffset)), EntitySelectors.NOT_SPECTATING);
+                    Vec3d min = Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(-xOffset, -2, -zOffset);
+                    Vec3d max = Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(xOffset, 2, zOffset);
+
+                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(min.x, min.y, min.z, max.x, max.y, max.z), EntitySelectors.NOT_SPECTATING);
                     double d0 = Double.MAX_VALUE;
                     for (Entity ee : Entities) {
                         Entity bucketTest = canBucket(ee);
