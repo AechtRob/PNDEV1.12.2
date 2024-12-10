@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraSwimm
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return -1;
 	}
 
 	@Override
