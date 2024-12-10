@@ -719,7 +719,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
             if (this.getBucket() > 0) {
                 this.setBucket(this.getBucket() - 1);
-                int bucketSlot = hasBucketSlot(null);
+                int bucketSlot = hasBucketSlot(this, null);
                 if (this.getBucket() >= 10 && bucketSlot >= 0) {
                     LepidodendronMod.PACKET_HANDLER.sendToAll(new PrehistoricFloraSubmarine.ParticlePacket(Functions.getEntityCentre(this).x, Functions.getEntityCentre(this).y, Functions.getEntityCentre(this).z, this.rotationYaw));
                 }
@@ -916,10 +916,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         return stack;
     }
 
-    public int hasBucketSlot(@Nullable Entity player) {
-        if (this.getShulker()) {
-            for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
-                if (this.submarineChest.getStackInSlot(i).getItem() == Items.WATER_BUCKET) {
+    public static int hasBucketSlot(PrehistoricFloraSubmarine submarine, @Nullable Entity player) {
+        if (submarine.getShulker()) {
+            for (int i = 0; i < submarine.submarineChest.getSizeInventory(); ++i) {
+                if (submarine.submarineChest.getStackInSlot(i).getItem() == Items.WATER_BUCKET) {
                     return i;
                 }
             }
@@ -1993,7 +1993,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         }
     }
 
-    public class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
+    public static class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
         @Override
         public IMessage onMessage(PrehistoricFloraSubmarine.BucketMessage message, MessageContext context) {
 
@@ -2006,7 +2006,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                     if (((PrehistoricFloraSubmarine) e).getBucket() <= 0
                             && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
                     ) {
-                        if (hasBucketSlot(((PrehistoricFloraSubmarine) e).getControllingPassenger()) > -1) {
+                        if (hasBucketSlot((PrehistoricFloraSubmarine) e, ((PrehistoricFloraSubmarine) e).getControllingPassenger()) >= 0) {
                             ((PrehistoricFloraSubmarine) e).setBucket(40);
                         }
                     }
