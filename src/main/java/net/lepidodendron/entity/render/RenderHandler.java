@@ -6465,6 +6465,42 @@ public class RenderHandler {
                 return new RenderCladocyclus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSqualicorax.class, new IRenderFactory<EntityPrehistoricFloraSqualicorax>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSqualicorax> createRenderFor(RenderManager manager) {
+                return new RenderSqualicorax(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCretoxyrhina.class, new IRenderFactory<EntityPrehistoricFloraCretoxyrhina>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCretoxyrhina> createRenderFor(RenderManager manager) {
+                return new RenderCretoxyrhina(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTribodus.class, new IRenderFactory<EntityPrehistoricFloraTribodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTribodus> createRenderFor(RenderManager manager) {
+                return new RenderTribodus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPtychodus.class, new IRenderFactory<EntityPrehistoricFloraPtychodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPtychodus> createRenderFor(RenderManager manager) {
+                return new RenderPtychodus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOnchopristis.class, new IRenderFactory<EntityPrehistoricFloraOnchopristis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOnchopristis> createRenderFor(RenderManager manager) {
+                return new RenderOnchopristis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKoolasuchus.class, new IRenderFactory<EntityPrehistoricFloraKoolasuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKoolasuchus> createRenderFor(RenderManager manager) {
+                return new RenderKoolasuchus(manager);
+            }
+        });
 
 
 

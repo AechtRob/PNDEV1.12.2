@@ -1,6 +1,7 @@
 
 package net.lepidodendron.entity;
 
+import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
@@ -11,10 +12,7 @@ import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.MoverType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
@@ -32,7 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraOnchopristis extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 
 	public BlockPos currentTarget;
@@ -42,17 +40,17 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	int bottomCooldown;
 	boolean bottomFlag;
 
-	public EntityPrehistoricFloraHexanchus(World world) {
+	public EntityPrehistoricFloraOnchopristis(World world) {
 		super(world);
 		if (world != null) {
-			this.moveHelper = new EntityPrehistoricFloraHexanchus.SwimmingMoveHelperBase();
+			this.moveHelper = new EntityPrehistoricFloraOnchopristis.SwimmingMoveHelperBase();
 			this.navigator = new PathNavigateSwimmer(this, world);
 		}
-		setSize(1.5F, 0.9F);
+		setSize(0.9F, 0.4F);
 		minWidth = 0.2F;
-		maxWidth = 1.5F;
-		maxHeight = 0.9F;
-		maxHealthAgeable = 50.0D;
+		maxWidth = 0.9F;
+		maxHeight = 0.4F;
+		maxHealthAgeable = 25.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -70,7 +68,7 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
-	public static String getPeriod() {return "Late Cretaceous - Paleogene - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -79,13 +77,18 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
+	public int getEggType(@Nullable String variantIn) {
+		return 21; //dumbbell type
+	}
+
+	@Override
 	public int getAttackLength() {
-		return 9;
+		return 27;
 	}
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -94,8 +97,13 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	}
 
 	@Override
+	public boolean divesToLay() {
+		return true;
+	}
+
+	@Override
 	public int getAdultAge() {
-		return 92000;
+		return 126000;
 	}
 
 	@Override
@@ -126,6 +134,8 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
+
 	}
 
 	@Override
@@ -226,9 +236,9 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if(!this.isPFAdult()){
-			return LepidodendronMod.HEXANCHUS_LOOT_YOUNG;
+			return LepidodendronMod.ONCHOPRISTIS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.HEXANCHUS_LOOT;
+		return LepidodendronMod.ONCHOPRISTIS_LOOT;
 	}
 
 	@Override
@@ -280,14 +290,14 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_HEXANCHUS;
+		return ModTriggers.CLICK_ONCHOPRISTIS;
 	}
 
 	class SwimmingMoveHelperBase extends EntityMoveHelper {
-		private final EntityPrehistoricFloraHexanchus EntityBase = EntityPrehistoricFloraHexanchus.this;
+		private final EntityPrehistoricFloraOnchopristis EntityBase = EntityPrehistoricFloraOnchopristis.this;
 
 		public SwimmingMoveHelperBase() {
-			super(EntityPrehistoricFloraHexanchus.this);
+			super(EntityPrehistoricFloraOnchopristis.this);
 		}
 
 		@Override
