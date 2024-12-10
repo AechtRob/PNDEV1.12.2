@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMachimosaurus extends RenderLivingBaseWithBook<EntityPrehistoricFloraMachimosaurus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/machimosaurus.png");
 
-    public static float getScaler() {return 1f;}
+    public static float getScaler() {return 1.43f;}
     public RenderMachimosaurus(RenderManager mgr) {
         super(mgr, new ModelMachimosaurus(), 0.3f);
     }

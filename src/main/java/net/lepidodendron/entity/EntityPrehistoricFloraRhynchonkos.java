@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraRhynchonkos extends EntityPrehistoricFloraLan
 		}
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Permian";}
 
 	//public static String getHabitat() {return "Amphibious";}
 

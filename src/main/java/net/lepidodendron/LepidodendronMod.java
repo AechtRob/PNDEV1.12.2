@@ -2636,6 +2636,31 @@ public class LepidodendronMod {
 	public static final int ENTITY_MACHIMOSAURUS = 1066;
 	public static final ResourceLocation MACHIMOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus"));
 	public static final ResourceLocation MACHIMOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus_young"));
+	public static final int ENTITY_ALBALOPHOSAURUS = 1067;
+	public static final ResourceLocation ALBALOPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/albalophosaurus"));
+	public static final ResourceLocation ALBALOPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/albalophosaurus_young"));
+	public static final int ENTITY_AQUILOPS = 1068;
+	public static final ResourceLocation AQUILOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aquilops"));
+	public static final ResourceLocation AQUILOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aquilops_young"));
+	public static final int ENTITY_LIAOCERATOPS = 1069;
+	public static final ResourceLocation LIAOCERATOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/liaoceratops"));
+	public static final ResourceLocation LIAOCERATOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/liaoceratops_young"));
+	public static final int ENTITY_CLADOCYCLUS = 1077;
+	public static final ResourceLocation CLADOCYCLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cladocyclus"));
+	public static final int ENTITY_DUGALDIA = 1078;
+	public static final ResourceLocation DUGALDIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dugaldia"));
+	public static final int ENTITY_ENCHODUS = 1072;
+	public static final ResourceLocation ENCHODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/enchodus"));
+	public static final int ENTITY_MAWSONIA = 1073;
+	public static final ResourceLocation MAWSONIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mawsonia"));
+	public static final ResourceLocation MAWSONIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mawsonia_young"));
+	public static final int ENTITY_NEOCERATODUS = 1074;
+	public static final ResourceLocation NEOCERATODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/neoceratodus"));
+	public static final int ENTITY_ONCHOPRISTIS = 1075;
+	public static final ResourceLocation ONCHOPRISTIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/onchopristis"));
+	public static final ResourceLocation ONCHOPRISTIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/onchopristis_young"));
+	public static final int ENTITY_PSILICHTHYS = 1076;
+	public static final ResourceLocation PSILICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psilichthys"));
 
 
 	public static final int ENTITY_MYRIAPOD = 1015;
