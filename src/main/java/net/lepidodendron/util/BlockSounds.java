@@ -34,6 +34,9 @@ public final class BlockSounds {
     @GameRegistry.ObjectHolder("close_cabinet")
     public static final SoundEvent CLOSE_CABINET = createSoundEvent("close_cabinet");
 
+    @GameRegistry.ObjectHolder("submarine_bubble_jet")
+    public static final SoundEvent SUBMARINE_BUBBLE_JET = createSoundEvent("submarine_bubble_jet");
+
     @GameRegistry.ObjectHolder("portal_block_initialise")
     public static final SoundEvent PORTAL_INITIALISE = createSoundEvent("portal_block_initialise");
 
