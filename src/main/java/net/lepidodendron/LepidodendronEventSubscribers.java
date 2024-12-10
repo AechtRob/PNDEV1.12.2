@@ -112,9 +112,9 @@ public class LepidodendronEventSubscribers {
 		if (player.isRiding()) {
 			if (player.getRidingEntity() instanceof PrehistoricFloraSubmarine) {
 				PrehistoricFloraSubmarine sub = (PrehistoricFloraSubmarine) player.getRidingEntity();
-				//if (sub.getEnergyFraction() < ((double)LepidodendronConfig.submarineWarning/100D) && LepidodendronConfig.machinesRF) {
+				if (sub.getEnergyFraction() < ((double)LepidodendronConfig.submarineWarning/100D) && LepidodendronConfig.machinesRF) {
 					PrehistoricFloraSubmarine.seeRed(mc, scaled, event.getPartialTicks());
-				//}
+				}
 			}
 		}
 	}
