@@ -6,8 +6,10 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.ClientProxyLepidodendronMod;
+import net.lepidodendron.LepidodendronBucketHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.base.*;
 import net.lepidodendron.gui.GUISubmarine;
 import net.lepidodendron.item.ItemSubmarineBatterypack;
 import net.lepidodendron.item.ItemSubmarineBatterypackEnhanced;
@@ -28,6 +30,7 @@ import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
@@ -716,14 +719,35 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
             if (this.getBucket() > 0) {
                 this.setBucket(this.getBucket() - 1);
-                if (this.getBucket() >= 10) {
+                int bucketSlot = hasBucketSlot(this.getControllingPassenger());
+                if (this.getBucket() >= 10 && bucketSlot >= 0) {
                     LepidodendronMod.PACKET_HANDLER.sendToAll(new PrehistoricFloraSubmarine.ParticlePacket(Functions.getEntityCentre(this).x, Functions.getEntityCentre(this).y, Functions.getEntityCentre(this).z, this.rotationYaw));
                 }
-                if (this.getBucket() == 39) {
+                if (this.getBucket() == 39 && bucketSlot >= 0) {
                     world.playSound(null, this.getPosition(), BlockSounds.SUBMARINE_BUBBLE_JET, SoundCategory.BLOCKS, 1.0F, 1.0F + (rand.nextFloat() * 0.5F));
                 }
-                if (this.getBucket() == 29) {
+                if (this.getBucket() == 29 && bucketSlot >= 0) {
                     world.playSound(null, this.getPosition(), BlockSounds.SUBMARINE_BUBBLE_JET, SoundCategory.BLOCKS, 1.0F, 1.0F + (rand.nextFloat() * 0.5F));
+                }
+                if (this.getBucket() == 25 && bucketSlot >= 0) {
+                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 6.15F) + (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 10.0F);
+                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 6.15F) + (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 10.0F);
+                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(Functions.getEntityCentre(this).add(-xOffset, -2, -zOffset), Functions.getEntityCentre(this).add(xOffset, 2, zOffset)), EntitySelectors.NOT_SPECTATING);
+                    Entity target = null;
+                    double d0 = Double.MAX_VALUE;
+                    for (Entity ee : Entities)
+                    {
+                        if (canBucket(ee) && this.getDistanceSq(ee) < d0 && isDirectPathBetweenPoints(this.getPositionVector(), ee.getPositionVector()))
+                        {
+                            target = ee;
+                            d0 = this.getDistanceSq(ee);
+                        }
+                    }
+                    if (target != null) {
+                        this.submarineChest.setInventorySlotContents(bucketSlot, bucketMob(target, this.submarineChest.getStackInSlot(bucketSlot)));
+                        world.playSound(null, this.getPosition(), SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        target.setDead();
+                    }
                 }
             }
             if (this.getClaw() > 0) {
@@ -811,6 +835,163 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 }
             }
         }
+    }
+
+    public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+        RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+        return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
+    }
+
+    public static ItemStack bucketMob(Entity entityIn, ItemStack stack) {
+        if (entityIn instanceof EntityPrehistoricFloraAgeableFishBase) {
+            EntityPrehistoricFloraAgeableFishBase ee = (EntityPrehistoricFloraAgeableFishBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+            EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
+            EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraEurypteridBase) {
+            EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
+            EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
+            EntityPrehistoricFloraJellyfishBase ee = (EntityPrehistoricFloraJellyfishBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraNautiloidBase) {
+            EntityPrehistoricFloraNautiloidBase ee = (EntityPrehistoricFloraNautiloidBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+            EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+            EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+            EntityPrehistoricFloraTrilobiteSwimBase ee = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
+            if (!ee.isSmall()) {
+                return stack;
+            }
+            return LepidodendronBucketHandler.createBucketWithEntity(entityIn);
+        }
+        return stack;
+    }
+
+    public int hasBucketSlot(Entity player) {
+        if (this.getShulker()) {
+            for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
+                if (this.submarineChest.getStackInSlot(i).getItem() == Items.WATER_BUCKET) {
+                    return i;
+                }
+            }
+        }
+        if (player instanceof EntityPlayer) {
+            ((EntityPlayer) player).sendMessage(new TextComponentString("No water buckets in the submarine inventory!"));
+        }
+        return -1;
+    }
+
+    public static boolean canBucket(Entity entityIn) {
+        if (entityIn instanceof EntityPrehistoricFloraAgeableFishBase) {
+            EntityPrehistoricFloraAgeableFishBase ee = (EntityPrehistoricFloraAgeableFishBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
+            EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
+            EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraEurypteridBase) {
+            EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
+            EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
+            EntityPrehistoricFloraJellyfishBase ee = (EntityPrehistoricFloraJellyfishBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraNautiloidBase) {
+            EntityPrehistoricFloraNautiloidBase ee = (EntityPrehistoricFloraNautiloidBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
+            EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
+            EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
+            EntityPrehistoricFloraTrilobiteSwimBase ee = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
+            if (ee.isSmall()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Nullable
@@ -1822,7 +2003,9 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 if (((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_WATER
                         || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_FLOWING_WATER
                         || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.IN_WATER) {
-                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0) {
+                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0
+                            && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
+                    ) {
                         ((PrehistoricFloraSubmarine) e).setBucket(40);
                     }
                 }
