@@ -19,6 +19,7 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -62,6 +63,7 @@ import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
@@ -101,6 +103,21 @@ public class LepidodendronEventSubscribers {
 	public static ArrayList<Meteor> fragments = new ArrayList();
 	public static ArrayList<Meteor> smoke = new ArrayList();
 
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent //Red overlay when submarine battery is low
+	public void onRenderGUI(RenderGameOverlayEvent.Post event) {
+		Minecraft mc = Minecraft.getMinecraft();
+		ScaledResolution scaled = new ScaledResolution(mc);
+		EntityPlayer player = mc.player;
+		if (player.isRiding()) {
+			if (player.getRidingEntity() instanceof PrehistoricFloraSubmarine) {
+				PrehistoricFloraSubmarine sub = (PrehistoricFloraSubmarine) player.getRidingEntity();
+				//if (sub.getEnergyFraction() < ((double)LepidodendronConfig.submarineWarning/100D) && LepidodendronConfig.machinesRF) {
+					PrehistoricFloraSubmarine.seeRed(mc, scaled, event.getPartialTicks());
+				//}
+			}
+		}
+	}
 
 	@SubscribeEvent //Stop ageing things in the cages:
 	public void onTickEntity(LivingEvent.LivingUpdateEvent event) {

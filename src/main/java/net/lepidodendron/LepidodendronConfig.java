@@ -75,6 +75,7 @@ public class LepidodendronConfig {
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
     public static double doShoalingFlockingFactor = 1.0;
+    public static double submarineWarning = 5.0;
     
     public static boolean doShrinkBiomes = true;
 
@@ -774,6 +775,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "submarineNightvision", submarineNightvision);
         prop.setComment("Players have night-vision when in a submarine. [default: true]");
         submarineNightvision = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "submarineWarning", submarineWarning);
+        prop.setComment("If you are using RF for machines and the submarine is under this % of full, the GUI will show a red warning colour [default: 5.0]");
+        submarineWarning = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "sulphuricAcidGrief", sulphuricAcidGrief);
