@@ -653,7 +653,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     @Override
     public void onUpdate()
     {
-
         //Some code just to tidy up in case something has gone wrong:
         boolean isPlayerPassenger = false;
         for (Entity passengerIn : this.getPassengers()) {
