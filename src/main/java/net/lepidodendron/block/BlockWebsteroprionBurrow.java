@@ -373,7 +373,9 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 				if (MobSpawn != null) {
 					EntityPrehistoricFloraWebsteroprion websteroprion = (EntityPrehistoricFloraWebsteroprion) MobSpawn;
 					websteroprion.setAgeTicks(1);
-					if (!player.capabilities.isCreativeMode) {
+					if (worldIn.getDifficulty() != EnumDifficulty.PEACEFUL
+						&& (!player.capabilities.disableDamage)
+						&& (!player.capabilities.isCreativeMode)) {
 						websteroprion.setAttackTarget(player);
 					}
 					((WorldServer) worldIn).spawnParticle(EnumParticleTypes.SMOKE_NORMAL, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), 0.0D, 0.0D, 0.0D);

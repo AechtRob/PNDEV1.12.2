@@ -1706,6 +1706,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ANHANGUERA = new CustomTrigger("pf_book_anhanguera");
     public static final CustomTrigger CLICK_EOCARCHARIA = new CustomTrigger("pf_book_eocarcharia");
     public static final CustomTrigger CLICK_DEINONYCHUS = new CustomTrigger("pf_book_deinonychus");
+    public static final CustomTrigger CLICK_PORONGODENDRON = new CustomTrigger("pf_book_porongodendron");
 
 
 
@@ -3402,6 +3403,7 @@ public class ModTriggers
             CLICK_ANHANGUERA,
             CLICK_EOCARCHARIA,
             CLICK_DEINONYCHUS,
+            CLICK_PORONGODENDRON
 
 
 

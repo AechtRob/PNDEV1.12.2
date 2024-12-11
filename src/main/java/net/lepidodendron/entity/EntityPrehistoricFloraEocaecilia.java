@@ -138,7 +138,7 @@ public class EntityPrehistoricFloraEocaecilia extends EntityPrehistoricFloraLand
 
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.5F + size, 0.5F + size);
 	}
 
 	@Override
