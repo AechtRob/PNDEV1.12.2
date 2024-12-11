@@ -167,7 +167,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     }
     
     public void saveNightVisionPassenger(boolean hasNightVision, int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
-        if (this.passengerNightVisionUUID != player) {
+        if (this.passengerNightVisionUUID == null) {
             this.passengerNightVisionDuration = duration;
             this.passengerNightVisionAmplifier = amplifier;
             this.passengerNightVisionAmbient = ambient;
@@ -175,7 +175,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             this.passengerNightVisionUUID = player;
             this.passengerNightVision = hasNightVision;
         }
-        else if (this.passengerNightVisionUUIDPassenger != player) {
+        else if (this.passengerNightVisionUUIDPassenger == null) {
             this.passengerNightVisionDurationPassenger = duration;
             this.passengerNightVisionAmplifierPassenger = amplifier;
             this.passengerNightVisionAmbientPassenger = ambient;
@@ -186,7 +186,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     }
 
     public void saveWaterBreathingPassenger(boolean hasWaterBreathing, int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
-        if (this.passengerWaterBreathingUUID != player) {
+        if (this.passengerWaterBreathingUUID == null) {
             this.passengerWaterBreathingDuration = duration;
             this.passengerWaterBreathingAmplifier = amplifier;
             this.passengerWaterBreathingAmbient = ambient;
@@ -194,7 +194,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             this.passengerWaterBreathingUUID = player;
             this.passengerWaterBreathing = hasWaterBreathing;
         }
-        else if (this.passengerWaterBreathingUUIDPassenger != player) {
+        else if (this.passengerWaterBreathingUUIDPassenger == null) {
             this.passengerWaterBreathingDurationPassenger = duration;
             this.passengerWaterBreathingAmplifierPassenger = amplifier;
             this.passengerWaterBreathingAmbientPassenger = ambient;
@@ -654,6 +654,21 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     public void onUpdate()
     {
 
+        //Some code just to tidy up in case something has gone wrong:
+        boolean isPlayerPassenger = false;
+        for (Entity passengerIn : this.getPassengers()) {
+            if (passengerIn instanceof EntityPlayer) {
+                isPlayerPassenger = true;
+                break;
+            }
+        }
+        if (!isPlayerPassenger) {
+            this.passengerNightVisionUUID = null;
+            this.passengerNightVisionUUIDPassenger = null;
+            this.passengerWaterBreathingUUID = null;
+            this.passengerWaterBreathingUUIDPassenger = null;
+        }
+
         //Can I pick up any items?
         if (this.getShulker() && !this.world.isRemote) {
             for (EntityItem entityitem : this.world.getEntitiesWithinAABB(EntityItem.class, this.getEntityBoundingBox().grow(3.0D, 2.0D, 3.0D)))
@@ -769,6 +784,10 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                     if (this.targetedEntity != null && !this.targetedEntity.isDead) {
                         this.submarineChest.setInventorySlotContents(bucketSlot, bucketMob(this.targetedEntity, this.submarineChest.getStackInSlot(bucketSlot)));
                         world.playSound(null, this.getPosition(), SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        Entity e = this.getControllingPassenger();
+                        if (e instanceof EntityPlayer) {
+                            ((EntityPlayer) e).sendMessage(new TextComponentString("Bucketed: " + this.targetedEntity.getName()));
+                        }
                         this.targetedEntity.setDead();
                         this.targetedEntity = null;
                     }
@@ -790,13 +809,30 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                         if (stateTarget.getBlock() instanceof IShearable) {
                             if (((IShearable) stateTarget.getBlock()).isShearable(new ItemStack(Items.SHEARS, 1), world, new BlockPos(xPos, yPos, zPos))) {
                                 List<ItemStack> drops = ((IShearable) stateTarget.getBlock()).onSheared(new ItemStack(Items.SHEARS, 1), world, new BlockPos(xPos, yPos, zPos), 0);
+                                String dropslist = "";
+                                boolean noroom = false;
                                 for (ItemStack stack : drops) {
+                                    dropslist = dropslist + " + " + stack.getDisplayName();
                                     stack = this.addToInventoryAndGetRemainder(stack);
                                     if (!stack.isEmpty()) {
                                         EntityItem entityToSpawn = new EntityItem(world, xPos, yPos, zPos, stack);
                                         entityToSpawn.setPickupDelay(10);
                                         world.spawnEntity(entityToSpawn);
+                                        noroom = true;
                                     }
+                                }
+                                if (dropslist.equalsIgnoreCase("")) {
+                                    dropslist = "nothing";
+                                }
+                                else {
+                                    dropslist = dropslist.substring(3);
+                                    if (noroom) {
+                                        dropslist = dropslist + ", but ran out of room in the Submarine inventory!";
+                                    }
+                                }
+                                Entity e = this.getControllingPassenger();
+                                if (e instanceof EntityPlayer) {
+                                    ((EntityPlayer) e).sendMessage(new TextComponentString("Collected: " + dropslist));
                                 }
                                 world.destroyBlock(new BlockPos(xPos, yPos, zPos), false);
                             }
@@ -1017,7 +1053,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             item.getItem().shrink(1);
             stackProcessed = true;
         }
-        if (!item.getItem().isEmpty()) { //Iterate to complete the whole stack:
+        if (!item.getItem().isEmpty() && (freeSlot >= 0 || slot >= 0)) { //Iterate to complete the whole stack:
             boolean resultIgnore = addToInventory(item);
         }
         return stackProcessed;
@@ -1544,7 +1580,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 || this.status == Status.UNDER_WATER
                 || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f1 += 0.0666F;
+                if (this.getEnhanced()) {
+                    f1 += 0.20F;
+                }
+                else {
+                    f1 += 0.0666F;
+                }
             }
 
             if (this.downInputDown && (!this.onGround) &&
@@ -1552,7 +1593,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 || this.status == Status.UNDER_WATER
                 || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f1 -= 0.1F;
+                if (this.getEnhanced()) {
+                    f1 -= 0.35F;
+                }
+                else {
+                    f1 -= 0.1F;
+                }
             }
 
             if (this.rightStrafeInputDown && f == 0.0 &&
@@ -1631,31 +1677,33 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 passenger.setRotationYawHead(passenger.getRotationYawHead() + (float)j);
             }
 
-            if (passenger instanceof EntityPlayer) {
-                EntityPlayer player = (EntityPlayer) passenger;
-                IBlockState state = world.getBlockState(new BlockPos(passenger.posX, passenger.getPosition().getY() + passenger.getEyeHeight(), passenger.posZ));
-                if (this.passengerWaterBreathingUUID == player.getUniqueID()
-                        || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
-                    player.removePotionEffect(MobEffects.WATER_BREATHING);
-                }
-                if (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) {
-                    player.setAir(300);
-                }
-                else {
-                    if (LepidodendronConfig.submarineNightvision) {
-                        if (this.passengerNightVisionUUID == player.getUniqueID()
-                            || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
-                            player.removePotionEffect(MobEffects.NIGHT_VISION);
+            for (Entity passengerIn : this.getPassengers()) {
+                if (passengerIn instanceof EntityPlayer) {
+                    EntityPlayer player = (EntityPlayer) passengerIn;
+                    IBlockState state = world.getBlockState(new BlockPos(passengerIn.posX, passengerIn.getPosition().getY() + passengerIn.getEyeHeight(), passengerIn.posZ));
+                    if (this.passengerWaterBreathingUUID == player.getUniqueID()
+                            || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
+                        player.removePotionEffect(MobEffects.WATER_BREATHING);
+                    }
+                    if (state.getMaterial() == Material.WATER || passengerIn.isInsideOfMaterial(Material.WATER)) {
+                        player.setAir(300);
+                    } else {
+                        if (LepidodendronConfig.submarineNightvision) {
+                            if (this.passengerNightVisionUUID == player.getUniqueID()
+                                    || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+                                player.removePotionEffect(MobEffects.NIGHT_VISION);
+                            }
                         }
                     }
-                }
-                if ((!player.isPotionActive(MobEffects.NIGHT_VISION) || player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
-                    if (this.passengerNightVisionUUID == player.getUniqueID()
-                            || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
-                        player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                    if ((!player.isPotionActive(MobEffects.NIGHT_VISION) || player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passengerIn.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
+                        if (this.passengerNightVisionUUID == player.getUniqueID()
+                                || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+                            player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                        }
                     }
+                    player.capabilities.disableDamage = true;
                 }
-                player.capabilities.disableDamage = true;
+
             }
         }
     }

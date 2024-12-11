@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockVitis;
+import net.lepidodendron.block.BlockHops;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -41,7 +41,7 @@ public class ItemHopsSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockVitis.block.getDefaultState(),1);
+			super(BlockHops.block.getDefaultState(),1);
 			setTranslationKey("pf_hops_seeds");
 			setRegistryName("hops_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);
