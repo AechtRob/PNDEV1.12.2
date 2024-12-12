@@ -4984,6 +4984,10 @@ public class LepidodendronSorter {
     public static final int portal_block_neogene = 8004;
     public static final int portal_block_pleistocene = 8005;
     public static final int porongodendron = 8006;
+    public static final int doyleales_leaves = 8007;
+    public static final int doyleales_fruit = 8008;
+    public static final int doyleales_sapling = 8009;
+    public static final int doyleales_log = 8010;
 
 
     public static final int priscomyzon_raw = 4974;

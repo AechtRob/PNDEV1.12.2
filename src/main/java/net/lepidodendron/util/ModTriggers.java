@@ -440,6 +440,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CHIROPTERIS = new CustomTrigger("pf_book_chiropteris");
     public static final CustomTrigger CLICK_SPACIINODUM = new CustomTrigger("pf_book_spaciinodum");
     public static final CustomTrigger CLICK_SPHENOBAIERA = new CustomTrigger("pf_book_sphenobaiera");
+    public static final CustomTrigger CLICK_DOYLEALES = new CustomTrigger("pf_book_doyleales");
     public static final CustomTrigger CLICK_SPHENOPTERIS = new CustomTrigger("pf_book_sphenopteris");
     public static final CustomTrigger CLICK_SPHENOPTERIS_FERN = new CustomTrigger("pf_book_sphenopteris_fern");
     public static final CustomTrigger CLICK_SPHENOPTERIS_SEED = new CustomTrigger("pf_book_sphenopteris_seed");
@@ -2148,6 +2149,7 @@ public class ModTriggers
             CLICK_CHIROPTERIS,
             CLICK_SPACIINODUM,
             CLICK_SPHENOBAIERA,
+            CLICK_DOYLEALES,
             CLICK_SPHENOPTERIS,
             CLICK_SPHENOPTERIS_FERN,
             CLICK_SPHENOPTERIS_SEED,
