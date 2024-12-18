@@ -23,10 +23,16 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -52,6 +58,7 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -74,8 +81,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     private static final DataParameter<Boolean> ENHANCED = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> SHULKER = EntityDataManager.<Boolean>createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean>[] DATA_ID_PADDLE = new DataParameter[] {EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN), EntityDataManager.createKey(PrehistoricFloraSubmarine.class, DataSerializers.BOOLEAN)};
-    private static final DataParameter<ItemStack> CLAW_CONTENTS = EntityDataManager.<ItemStack>createKey(PrehistoricFloraSubmarine.class, DataSerializers.ITEM_STACK);
-    private final float[] paddlePositions;
+     private final float[] paddlePositions;
     private float momentum;
     private float outOfControlTicks;
     private float deltaRotation;
@@ -136,6 +142,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     public static Animation CLAW_ANIMATION;
     private Animation currentAnimation;
     private int animationTick;
+    private Entity targetedEntity;
 
     public PrehistoricFloraSubmarine(World worldIn)
     {
@@ -156,10 +163,11 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         this.prevPosX = x;
         this.prevPosY = y;
         this.prevPosZ = z;
+        CLAW_ANIMATION = Animation.create(80);
     }
     
     public void saveNightVisionPassenger(boolean hasNightVision, int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
-        if (this.passengerNightVisionUUID != player) {
+        if (this.passengerNightVisionUUID == null) {
             this.passengerNightVisionDuration = duration;
             this.passengerNightVisionAmplifier = amplifier;
             this.passengerNightVisionAmbient = ambient;
@@ -167,7 +175,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             this.passengerNightVisionUUID = player;
             this.passengerNightVision = hasNightVision;
         }
-        else if (this.passengerNightVisionUUIDPassenger != player) {
+        else if (this.passengerNightVisionUUIDPassenger == null) {
             this.passengerNightVisionDurationPassenger = duration;
             this.passengerNightVisionAmplifierPassenger = amplifier;
             this.passengerNightVisionAmbientPassenger = ambient;
@@ -178,7 +186,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     }
 
     public void saveWaterBreathingPassenger(boolean hasWaterBreathing, int duration, int amplifier, boolean ambient, boolean particles, UUID player) {
-        if (this.passengerWaterBreathingUUID != player) {
+        if (this.passengerWaterBreathingUUID == null) {
             this.passengerWaterBreathingDuration = duration;
             this.passengerWaterBreathingAmplifier = amplifier;
             this.passengerWaterBreathingAmbient = ambient;
@@ -186,7 +194,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             this.passengerWaterBreathingUUID = player;
             this.passengerWaterBreathing = hasWaterBreathing;
         }
-        else if (this.passengerWaterBreathingUUIDPassenger != player) {
+        else if (this.passengerWaterBreathingUUIDPassenger == null) {
             this.passengerWaterBreathingDurationPassenger = duration;
             this.passengerWaterBreathingAmplifierPassenger = amplifier;
             this.passengerWaterBreathingAmbientPassenger = ambient;
@@ -295,30 +303,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         return this.clawTicks;
     }
 
-    public void setClawItemStack(ItemStack stack)
-    {
-        this.dataManager.set(CLAW_CONTENTS, stack);
-    }
-
-    public ItemStack getClawItemStack()
-    {
-        return this.dataManager.get(CLAW_CONTENTS).isEmpty() ? ItemStack.EMPTY : this.dataManager.get(CLAW_CONTENTS);
-    }
-
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound)
     {
         compound.setInteger("RF", this.getRF());
         compound.setBoolean("enhanced", this.getEnhanced());
         compound.setBoolean("shulker", this.getShulker());
-
-        ItemStack clawStack = this.getClawItemStack();
-        if (!clawStack.isEmpty())
-        {
-            NBTTagCompound nbttagcompound = new NBTTagCompound();
-            clawStack.writeToNBT(nbttagcompound);
-            compound.setTag("clawStack", nbttagcompound);
-        }
         
         if (this.passengerNightVisionUUID == null) {
             compound.setString("passengerNightVisionUUID", "");
@@ -395,11 +385,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         this.setRF(compound.getInteger("RF"));
         this.setEnhanced(compound.getBoolean("enhanced"));
         this.setShulker(compound.getBoolean("shulker"));
-
-        if (compound.hasKey("clawStack"))
-        {
-            this.setClawItemStack(new ItemStack(compound.getCompoundTag("clawStack")));
-        }
 
         if (this.getShulker())
         {
@@ -490,7 +475,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         this.dataManager.register(RF_SUPPLY, Integer.valueOf(-1));
         this.dataManager.register(ENHANCED, Boolean.valueOf(false));
         this.dataManager.register(SHULKER, Boolean.valueOf(false));
-        this.dataManager.register(CLAW_CONTENTS, ItemStack.EMPTY);
 
         for (DataParameter<Boolean> dataparameter : DATA_ID_PADDLE)
         {
@@ -669,6 +653,34 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
     @Override
     public void onUpdate()
     {
+        //Some code just to tidy up in case something has gone wrong:
+        boolean isPlayerPassenger = false;
+        for (Entity passengerIn : this.getPassengers()) {
+            if (passengerIn instanceof EntityPlayer) {
+                isPlayerPassenger = true;
+                break;
+            }
+        }
+        if (!isPlayerPassenger) {
+            this.passengerNightVisionUUID = null;
+            this.passengerNightVisionUUIDPassenger = null;
+            this.passengerWaterBreathingUUID = null;
+            this.passengerWaterBreathingUUIDPassenger = null;
+        }
+
+        //Can I pick up any items?
+        if (this.getShulker() && !this.world.isRemote) {
+            for (EntityItem entityitem : this.world.getEntitiesWithinAABB(EntityItem.class, this.getEntityBoundingBox().grow(3.0D, 2.0D, 3.0D)))
+            {
+                if (!entityitem.isDead && !entityitem.getItem().isEmpty() && !entityitem.cannotPickup())
+                {
+                    if (this.addToInventory(entityitem)) {
+                        world.playSound(null, this.getPosition(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 0.5F, 1.0F);
+                        break;
+                    }
+                }
+            }
+        }
 
         if (LepidodendronConfig.machinesRF && this.getRF() >= 1) {
             if ((this.status == Status.IN_WATER
@@ -719,7 +731,8 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
             if (this.getBucket() > 0) {
                 this.setBucket(this.getBucket() - 1);
-                int bucketSlot = hasBucketSlot(null);
+
+                int bucketSlot = hasBucketSlot(this, null);
                 if (this.getBucket() >= 10 && bucketSlot >= 0) {
                     LepidodendronMod.PACKET_HANDLER.sendToAll(new PrehistoricFloraSubmarine.ParticlePacket(Functions.getEntityCentre(this).x, Functions.getEntityCentre(this).y, Functions.getEntityCentre(this).z, this.rotationYaw));
                 }
@@ -729,31 +742,103 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 if (this.getBucket() == 29 && bucketSlot >= 0) {
                     world.playSound(null, this.getPosition(), BlockSounds.SUBMARINE_BUBBLE_JET, SoundCategory.BLOCKS, 1.0F, 1.0F + (rand.nextFloat() * 0.5F));
                 }
-                if (this.getBucket() == 25 && bucketSlot >= 0) {
-                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 6.15F) + (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 10.0F);
-                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 6.15F) + (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 10.0F);
-                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(Functions.getEntityCentre(this).add(-xOffset, -2, -zOffset), Functions.getEntityCentre(this).add(xOffset, 2, zOffset)), EntitySelectors.NOT_SPECTATING);
-                    Entity target = null;
+                if (this.getBucket() == 35 && bucketSlot >= 0) {
+                    double xOffset = (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 4.5F) + (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 8.0F);
+                    double zOffset = (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 4.5F) + (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 8.0F);
+
+                    double xOffsetRoot = (double) (MathHelper.sin((float) Math.toRadians(-this.rotationYaw)) * 1.25F);
+                    double zOffsetRoot = (double) (MathHelper.cos((float) Math.toRadians(this.rotationYaw)) * 1.25F);
+
+                    Vec3d min = Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(-xOffset, -2, -zOffset);
+                    Vec3d max = Functions.getEntityCentre(this).add(xOffsetRoot, 0, zOffsetRoot).add(xOffset, 2, zOffset);
+
+                    List<Entity> Entities = Functions.getEntitiesWithinAABBPN(world, Entity.class, new AxisAlignedBB(min.x, min.y, min.z, max.x, max.y, max.z), EntitySelectors.NOT_SPECTATING);
                     double d0 = Double.MAX_VALUE;
-                    for (Entity ee : Entities)
-                    {
-                        if (canBucket(ee) && this.getDistanceSq(ee) < d0 && isDirectPathBetweenPoints(this.getPositionVector(), ee.getPositionVector()))
-                        {
-                            target = ee;
+                    for (Entity ee : Entities) {
+                        Entity bucketTest = canBucket(ee);
+                        if (bucketTest != null && this.getDistanceSq(ee) < d0 && isDirectPathBetweenPoints(this.getPositionVector(), ee.getPositionVector())) {
                             d0 = this.getDistanceSq(ee);
+                            this.targetedEntity = bucketTest;
                         }
                     }
-                    if (target != null) {
-                        this.submarineChest.setInventorySlotContents(bucketSlot, bucketMob(target, this.submarineChest.getStackInSlot(bucketSlot)));
+                }
+
+                if (this.targetedEntity != null && !this.targetedEntity.isDead && this.getBucket() >= 10 && this.getBucket() <= 25) {
+                    //Where do we want to move this mob TO?
+                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 1.75F);
+                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 1.75F);
+                    xOffset = xOffset + (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 0.85F);
+                    zOffset = zOffset - (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 0.85F);
+                    //The mob will be a target for 15 ticks between selection and bucketing, so move it incrementally:
+                    double moveTick = ((double)this.getBucket() - 10D)/11.00D;
+                    double xMove = (Functions.getEntityCentre(this).x + xOffset) - ((Functions.getEntityCentre(this).x + xOffset - this.targetedEntity.posX) * moveTick);
+                    double yMove = (Functions.getEntityCentre(this).y) - ((Functions.getEntityCentre(this).y - this.targetedEntity.posY) * moveTick);
+                    double zMove = (Functions.getEntityCentre(this).z + zOffset) - ((Functions.getEntityCentre(this).z + zOffset - this.targetedEntity.posZ) * moveTick);
+
+                    this.targetedEntity.setPositionAndUpdate(xMove, yMove, zMove);
+
+                }
+
+                if (this.getBucket() == 10 && bucketSlot >= 0) {
+                    if (this.targetedEntity != null && !this.targetedEntity.isDead) {
+                        this.submarineChest.setInventorySlotContents(bucketSlot, bucketMob(this.targetedEntity, this.submarineChest.getStackInSlot(bucketSlot)));
                         world.playSound(null, this.getPosition(), SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                        target.setDead();
+                        Entity e = this.getControllingPassenger();
+                        if (e instanceof EntityPlayer) {
+                            ((EntityPlayer) e).sendMessage(new TextComponentString("Bucketed: " + this.targetedEntity.getName()));
+                        }
+                        this.targetedEntity.setDead();
+                        this.targetedEntity = null;
                     }
                 }
             }
             if (this.getClaw() > 0) {
                 this.setClaw(this.getClaw() - 1);
+                if (this.getClaw() == 80 - 44) {
+                    //Try to harvest a block:
+                    double xOffset = (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 3.10F);
+                    double zOffset = (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 3.10F);
+                    xOffset = xOffset - (double)(MathHelper.cos((float)Math.toRadians(this.rotationYaw)) * 1.10F);
+                    zOffset = zOffset + (double)(MathHelper.sin((float)Math.toRadians(-this.rotationYaw)) * 1.10F);
+                    double xPos = (Functions.getEntityCentre(this).x + xOffset);
+                    double zPos = (Functions.getEntityCentre(this).z + zOffset);
+                    double yPos = this.posY - 1.26D;
+                    if (isDirectPathBetweenPoints(this.getPositionVector(), new Vec3d(xPos, yPos, zPos))) {
+                        IBlockState stateTarget = world.getBlockState(new BlockPos(xPos, yPos, zPos));
+                        if (stateTarget.getBlock() instanceof IShearable) {
+                            if (((IShearable) stateTarget.getBlock()).isShearable(new ItemStack(Items.SHEARS, 1), world, new BlockPos(xPos, yPos, zPos))) {
+                                List<ItemStack> drops = ((IShearable) stateTarget.getBlock()).onSheared(new ItemStack(Items.SHEARS, 1), world, new BlockPos(xPos, yPos, zPos), 0);
+                                String dropslist = "";
+                                boolean noroom = false;
+                                for (ItemStack stack : drops) {
+                                    dropslist = dropslist + " + " + stack.getDisplayName();
+                                    stack = this.addToInventoryAndGetRemainder(stack);
+                                    if (!stack.isEmpty()) {
+                                        EntityItem entityToSpawn = new EntityItem(world, xPos, yPos, zPos, stack);
+                                        entityToSpawn.setPickupDelay(10);
+                                        world.spawnEntity(entityToSpawn);
+                                        noroom = true;
+                                    }
+                                }
+                                if (dropslist.equalsIgnoreCase("")) {
+                                    dropslist = "nothing";
+                                }
+                                else {
+                                    dropslist = dropslist.substring(3);
+                                    if (noroom) {
+                                        dropslist = dropslist + ", but ran out of room in the Submarine inventory!";
+                                    }
+                                }
+                                Entity e = this.getControllingPassenger();
+                                if (e instanceof EntityPlayer) {
+                                    ((EntityPlayer) e).sendMessage(new TextComponentString("Collected: " + dropslist));
+                                }
+                                world.destroyBlock(new BlockPos(xPos, yPos, zPos), false);
+                            }
+                        }
+                    }
+                }
             }
-            AnimationHandler.INSTANCE.updateAnimations(this);
 
         }
         super.onEntityUpdate();
@@ -835,6 +920,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 }
             }
         }
+        AnimationHandler.INSTANCE.updateAnimations(this);
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
@@ -916,82 +1002,165 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         return stack;
     }
 
-    public int hasBucketSlot(@Nullable Entity player) {
-        if (this.getShulker()) {
-            for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
-                if (this.submarineChest.getStackInSlot(i).getItem() == Items.WATER_BUCKET) {
+    public static int hasBucketSlot(PrehistoricFloraSubmarine submarine, @Nullable Entity player) {
+        if (submarine.getShulker()) {
+            for (int i = 0; i < submarine.submarineChest.getSizeInventory(); ++i) {
+                if (submarine.submarineChest.getStackInSlot(i).getItem() == Items.WATER_BUCKET) {
                     return i;
                 }
             }
-        }
-        if (player != null && player instanceof EntityPlayer) {
-            ((EntityPlayer) player).sendMessage(new TextComponentString("No water buckets in the submarine inventory!"));
+            if (player != null && player instanceof EntityPlayer) {
+                ((EntityPlayer) player).sendMessage(new TextComponentString("No water buckets in the submarine inventory!"));
+            }
         }
         return -1;
     }
 
-    public static boolean canBucket(Entity entityIn) {
+    public boolean addToInventory(EntityItem item) {
+        boolean stackProcessed = false;
+        //First, do we have this item already?
+        int slot = -1;
+        int freeSlot = -1;
+        for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
+            if (!this.submarineChest.getStackInSlot(i).isEmpty()) {
+                ItemStack stackA = this.submarineChest.getStackInSlot(i).copy();
+                stackA.setCount(1);
+                ItemStack stackB = item.getItem().copy();
+                stackB.setCount(1);
+                if (ItemStack.areItemStacksEqual(stackA, stackB)) {
+                    if (this.submarineChest.getStackInSlot(i).getCount() <= this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
+                        slot = i;
+                        break;
+                    }
+                }
+            }
+            else if (freeSlot == -1) {
+                freeSlot = i;
+            }
+        }
+        if (slot >= 0) {
+            ItemStack newStack = this.submarineChest.getStackInSlot(slot);
+            newStack.setCount(this.submarineChest.getStackInSlot(slot).getCount() + 1);
+            this.submarineChest.setInventorySlotContents(slot, newStack);
+            item.getItem().shrink(1);
+            stackProcessed = true;
+        }
+        else if (freeSlot >= 0){ //We have no match, but we do have space:
+            ItemStack newStack = item.getItem().copy();
+            newStack.setCount(1);
+            this.submarineChest.setInventorySlotContents(freeSlot, newStack);
+            item.getItem().shrink(1);
+            stackProcessed = true;
+        }
+        if (!item.getItem().isEmpty() && (freeSlot >= 0 || slot >= 0)) { //Iterate to complete the whole stack:
+            boolean resultIgnore = addToInventory(item);
+        }
+        return stackProcessed;
+    }
+
+    public ItemStack addToInventoryAndGetRemainder(ItemStack itemstack) {
+        boolean stackProcessed = false;
+        //First, do we have this item already?
+        int slot = -1;
+        int freeSlot = -1;
+        for (int i = 0; i < this.submarineChest.getSizeInventory(); ++i) {
+            if (!this.submarineChest.getStackInSlot(i).isEmpty()) {
+                ItemStack stackA = this.submarineChest.getStackInSlot(i).copy();
+                stackA.setCount(1);
+                ItemStack stackB = itemstack.copy();
+                stackB.setCount(1);
+                if (ItemStack.areItemStacksEqual(stackA, stackB)) {
+                    if (this.submarineChest.getStackInSlot(i).getCount() <= this.submarineChest.getStackInSlot(i).getItem().getItemStackLimit()) {
+                        slot = i;
+                        break;
+                    }
+                }
+            }
+            else if (freeSlot == -1) {
+                freeSlot = i;
+            }
+        }
+        if (slot >= 0) {
+            ItemStack newStack = this.submarineChest.getStackInSlot(slot);
+            newStack.setCount(this.submarineChest.getStackInSlot(slot).getCount() + 1);
+            this.submarineChest.setInventorySlotContents(slot, newStack);
+            itemstack.shrink(1);
+        }
+        else if (freeSlot >= 0){ //We have no match, but we do have space:
+            ItemStack newStack = itemstack.copy();
+            newStack.setCount(1);
+            this.submarineChest.setInventorySlotContents(freeSlot, newStack);
+            itemstack.shrink(1);
+        }
+        if (!itemstack.isEmpty() && (freeSlot >= 0 || slot >= 0)) { //Iterate to complete the whole stack:
+            itemstack = addToInventoryAndGetRemainder(itemstack);
+        }
+        return itemstack;
+    }
+
+    @Nullable
+    public static Entity canBucket(Entity entityIn) {
         if (entityIn instanceof EntityPrehistoricFloraAgeableFishBase) {
             EntityPrehistoricFloraAgeableFishBase ee = (EntityPrehistoricFloraAgeableFishBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) {
             EntityPrehistoricFloraSwimmingBottomWalkingWaterBase ee = (EntityPrehistoricFloraSwimmingBottomWalkingWaterBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraAmphibianBase) {
             EntityPrehistoricFloraAmphibianBase ee = (EntityPrehistoricFloraAmphibianBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraEurypteridBase) {
             EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraFishBase) {
             EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraJellyfishBase) {
             EntityPrehistoricFloraJellyfishBase ee = (EntityPrehistoricFloraJellyfishBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraNautiloidBase) {
             EntityPrehistoricFloraNautiloidBase ee = (EntityPrehistoricFloraNautiloidBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraSlitheringWaterBase) {
             EntityPrehistoricFloraSlitheringWaterBase ee = (EntityPrehistoricFloraSlitheringWaterBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
             EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
         else if (entityIn instanceof EntityPrehistoricFloraTrilobiteSwimBase) {
             EntityPrehistoricFloraTrilobiteSwimBase ee = (EntityPrehistoricFloraTrilobiteSwimBase) entityIn;
             if (ee.isSmall()) {
-                return true;
+                return entityIn;
             }
         }
-        return false;
+        return null;
     }
 
     @Nullable
@@ -1410,7 +1579,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 || this.status == Status.UNDER_WATER
                 || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f1 += 0.0666F;
+                if (this.getEnhanced()) {
+                    f1 += 0.20F;
+                }
+                else {
+                    f1 += 0.0666F;
+                }
             }
 
             if (this.downInputDown && (!this.onGround) &&
@@ -1418,7 +1592,12 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 || this.status == Status.UNDER_WATER
                 || this.status == Status.UNDER_FLOWING_WATER)
             ) {
-                f1 -= 0.1F;
+                if (this.getEnhanced()) {
+                    f1 -= 0.35F;
+                }
+                else {
+                    f1 -= 0.1F;
+                }
             }
 
             if (this.rightStrafeInputDown && f == 0.0 &&
@@ -1497,33 +1676,59 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 passenger.setRotationYawHead(passenger.getRotationYawHead() + (float)j);
             }
 
-            if (passenger instanceof EntityPlayer) {
-                EntityPlayer player = (EntityPlayer) passenger;
-                IBlockState state = world.getBlockState(new BlockPos(passenger.posX, passenger.getPosition().getY() + passenger.getEyeHeight(), passenger.posZ));
-                if (this.passengerWaterBreathingUUID == player.getUniqueID()
-                        || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
-                    player.removePotionEffect(MobEffects.WATER_BREATHING);
-                }
-                if (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) {
-                    player.setAir(300);
-                }
-                else {
-                    if (LepidodendronConfig.submarineNightvision) {
-                        if (this.passengerNightVisionUUID == player.getUniqueID()
-                            || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
-                            player.removePotionEffect(MobEffects.NIGHT_VISION);
+            for (Entity passengerIn : this.getPassengers()) {
+                if (passengerIn instanceof EntityPlayer) {
+                    EntityPlayer player = (EntityPlayer) passengerIn;
+                    IBlockState state = world.getBlockState(new BlockPos(passengerIn.posX, passengerIn.getPosition().getY() + passengerIn.getEyeHeight(), passengerIn.posZ));
+                    if (this.passengerWaterBreathingUUID == player.getUniqueID()
+                            || this.passengerWaterBreathingUUIDPassenger == player.getUniqueID()) {
+                        player.removePotionEffect(MobEffects.WATER_BREATHING);
+                    }
+                    if (state.getMaterial() == Material.WATER || passengerIn.isInsideOfMaterial(Material.WATER)) {
+                        player.setAir(300);
+                    } else {
+                        if (LepidodendronConfig.submarineNightvision) {
+                            if (this.passengerNightVisionUUID == player.getUniqueID()
+                                    || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+                                player.removePotionEffect(MobEffects.NIGHT_VISION);
+                            }
                         }
                     }
-                }
-                if ((!player.isPotionActive(MobEffects.NIGHT_VISION) || player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passenger.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
-                    if (this.passengerNightVisionUUID == player.getUniqueID()
-                            || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
-                        player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                    if ((!player.isPotionActive(MobEffects.NIGHT_VISION) || player.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() < 201) && (state.getMaterial() == Material.WATER || passengerIn.isInsideOfMaterial(Material.WATER)) && LepidodendronConfig.submarineNightvision) {
+                        if (this.passengerNightVisionUUID == player.getUniqueID()
+                                || this.passengerNightVisionUUIDPassenger == player.getUniqueID()) {
+                            player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, false, false));
+                        }
                     }
+                    player.capabilities.disableDamage = true;
                 }
-                player.capabilities.disableDamage = true;
+
             }
         }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static void seeRed(Minecraft mc, ScaledResolution scaledresolution, double partialTicks) {
+        double ticks = Math.sin((float)Math.toRadians(mc.world.getTotalWorldTime() + partialTicks));
+        GlStateManager.disableDepth();
+        GlStateManager.enableBlend();
+        GlStateManager.depthMask(false);
+        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, (float)(0.035F * ticks));
+        GlStateManager.disableAlpha();
+        mc.getTextureManager().bindTexture(new ResourceLocation("lepidodendron:textures/misc/submarine_power_low.png"));
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferbuilder = tessellator.getBuffer();
+        bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX);
+        bufferbuilder.pos(0.0D, (double)scaledresolution.getScaledHeight(), -90.0D).tex(0.0D, 1.0D).endVertex();
+        bufferbuilder.pos((double)scaledresolution.getScaledWidth(), (double)scaledresolution.getScaledHeight(), -90.0D).tex(1.0D, 1.0D).endVertex();
+        bufferbuilder.pos((double)scaledresolution.getScaledWidth(), 0.0D, -90.0D).tex(1.0D, 0.0D).endVertex();
+        bufferbuilder.pos(0.0D, 0.0D, -90.0D).tex(0.0D, 0.0D).endVertex();
+        tessellator.draw();
+        GlStateManager.depthMask(true);
+        GlStateManager.enableDepth();
+        GlStateManager.enableAlpha();
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     @Override
@@ -1575,7 +1780,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         if (riding) {
             //What am I clicking on?
             //Central panel (inventory contents)
-            if (player.rotationYaw - this.rotationYaw > -22 && player.rotationYaw - this.rotationYaw < 22 && player.rotationPitch - this.rotationPitch > -60 && player.rotationPitch - this.rotationPitch < -30) {
+            if (player.rotationYaw - this.rotationYaw > -22 && player.rotationYaw - this.rotationYaw < 22 && player.rotationPitch - this.rotationPitch > -60 && player.rotationPitch - this.rotationPitch < -30 && this.getShulker()) {
                 player.openGui(LepidodendronMod.instance, GUISubmarine.GUIID, world, this.getEntityId(), 0, 0);
             }
             //Left panel (read battery)
@@ -1951,7 +2156,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
 
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{CLAW_ANIMATION};
+        return new Animation[]{NO_ANIMATION, CLAW_ANIMATION};
     }
 
     public static enum Status
@@ -1993,7 +2198,7 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         }
     }
 
-    public class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
+    public static class BucketMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.BucketMessage, IMessage> {
         @Override
         public IMessage onMessage(PrehistoricFloraSubmarine.BucketMessage message, MessageContext context) {
 
@@ -2003,11 +2208,14 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
                 if (((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_WATER
                         || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_FLOWING_WATER
                         || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.IN_WATER) {
-                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0
+                    if (((PrehistoricFloraSubmarine) e).getBucket() <= 0 && ((PrehistoricFloraSubmarine) e).getShulker()
                             && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
                     ) {
-                        if (hasBucketSlot(((PrehistoricFloraSubmarine) e).getControllingPassenger()) > -1) {
+                        if (hasBucketSlot((PrehistoricFloraSubmarine) e, ((PrehistoricFloraSubmarine) e).getControllingPassenger()) >= 0) {
                             ((PrehistoricFloraSubmarine) e).setBucket(40);
+                            if (LepidodendronConfig.machinesRF) {
+                                ((PrehistoricFloraSubmarine) e).setRF(((PrehistoricFloraSubmarine) e).getRF() - 10);
+                            }
                         }
                     }
                 }
@@ -2036,8 +2244,6 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
         }
     }
 
-
-
     public static class ClawMessageHandler implements IMessageHandler<PrehistoricFloraSubmarine.ClawMessage, IMessage> {
         @Override
         public IMessage onMessage(PrehistoricFloraSubmarine.ClawMessage message, MessageContext context) {
@@ -2045,9 +2251,22 @@ public class PrehistoricFloraSubmarine extends EntityBoat implements IAnimatedEn
             EntityPlayerMP entity = context.getServerHandler().player;
             Entity e = entity.getServerWorld().getEntityByID(message.value);
             if (e != null && e instanceof PrehistoricFloraSubmarine) {
-                if (((PrehistoricFloraSubmarine)e).getClaw() <= 0) {
-                    ((PrehistoricFloraSubmarine) e).setClaw(80);
-                    ((PrehistoricFloraSubmarine) e).setAnimation(CLAW_ANIMATION);
+                if (((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_WATER
+                        || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.UNDER_FLOWING_WATER
+                        || ((PrehistoricFloraSubmarine) e).getBoatStatus() == Status.IN_WATER) {
+                    if (((PrehistoricFloraSubmarine) e).getShulker()
+                            && (((PrehistoricFloraSubmarine) e).getRF() > 0 || !LepidodendronConfig.machinesRF)
+                    ) {
+                        if (((PrehistoricFloraSubmarine) e).getClaw() <= 0) {
+                            ((PrehistoricFloraSubmarine) e).setClaw(80);
+                            ((PrehistoricFloraSubmarine) e).setAnimation(CLAW_ANIMATION);
+                            AnimationHandler.INSTANCE.updateAnimations((PrehistoricFloraSubmarine) e);
+                            ((PrehistoricFloraSubmarine) e).world.playSound(null, ((PrehistoricFloraSubmarine) e).getPosition(), BlockSounds.SUBMARINE_CLAW, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                            if (LepidodendronConfig.machinesRF) {
+                                ((PrehistoricFloraSubmarine) e).setRF(((PrehistoricFloraSubmarine) e).getRF() - 10);
+                            }
+                        }
+                    }
                 }
             }
             return null;

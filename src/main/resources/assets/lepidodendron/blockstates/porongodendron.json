@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:porongodendron_01"},
+      {"model": "lepidodendron:porongodendron_02"},
+      {"model": "lepidodendron:porongodendron_03"},
+      {"model": "lepidodendron:porongodendron_04"},
+      {"model": "lepidodendron:porongodendron_01_rot"},
+      {"model": "lepidodendron:porongodendron_02_rot"},
+      {"model": "lepidodendron:porongodendron_03_rot"},
+      {"model": "lepidodendron:porongodendron_04_rot"}
+    ]
+  }
+}

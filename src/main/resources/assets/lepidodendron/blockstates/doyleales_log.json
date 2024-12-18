@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:doyleales_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:doyleales_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:doyleales_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:doyleales_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:doyleales_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:doyleales_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:doyleales_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

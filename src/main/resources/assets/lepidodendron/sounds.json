@@ -9,6 +9,14 @@
     ]
   },
 
+  "submarine_claw": {
+    "sounds": [
+      {
+        "name": "lepidodendron:submarine_claw",
+        "stream": false
+      }
+    ]
+  },
   "submarine_bubble_jet": {
     "sounds": [
       {

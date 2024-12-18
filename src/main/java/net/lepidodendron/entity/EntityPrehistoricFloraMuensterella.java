@@ -7,6 +7,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderMuensterella;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMuensterella;
 import net.minecraft.client.model.ModelBase;
@@ -35,6 +36,11 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public EnumCreatureAttributePN getPNCreatureAttribute() {
+		return EnumCreatureAttributePN.INVERTEBRATE;
 	}
 
 	@Override
