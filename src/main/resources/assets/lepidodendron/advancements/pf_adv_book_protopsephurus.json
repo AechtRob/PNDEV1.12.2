@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:protopsephurus_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_protopsephurus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_protopsephurus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_protopsephurus"
+		}
+	}
+}

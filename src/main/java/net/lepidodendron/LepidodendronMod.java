@@ -5,6 +5,7 @@ import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.block.BlockFlowerpotPN;
 import net.lepidodendron.block.BlockTimeResearcherFinderBottom;
 import net.lepidodendron.enchantments.Enchantments;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.datafixers.*;
 import net.lepidodendron.gui.*;
 import net.lepidodendron.item.ItemBatHeadItem;
@@ -1986,8 +1987,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation TANYCOLAGREUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanycolagreus"));
 	public static final ResourceLocation TANYCOLAGREUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanycolagreus_young"));
 	public static final int ENTITY_PLATYSUCHUS = 792;
-	//public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
-	//public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
+	public static final ResourceLocation PLATYSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus"));
+	public static final ResourceLocation PLATYSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/platysuchus_young"));
 	public static final int ENTITY_SUBMARINE = 793;
 	public static final int ENTITY_CRIOCEPHALOSAURUS = 794;
 	public static final ResourceLocation CRIOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/criocephalosaurus"));
@@ -2632,13 +2633,42 @@ public class LepidodendronMod {
 	public static final int ENTITY_ACROCANTHOSAURUS = 1065;
 	public static final ResourceLocation ACROCANTHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus"));
 	public static final ResourceLocation ACROCANTHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/acrocanthosaurus_young"));
+	public static final int ENTITY_MACHIMOSAURUS = 1066;
+	public static final ResourceLocation MACHIMOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus"));
+	public static final ResourceLocation MACHIMOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/machimosaurus_young"));
+	public static final int ENTITY_ALBALOPHOSAURUS = 1067;
+	public static final ResourceLocation ALBALOPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/albalophosaurus"));
+	public static final ResourceLocation ALBALOPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/albalophosaurus_young"));
+	public static final int ENTITY_AQUILOPS = 1068;
+	public static final ResourceLocation AQUILOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aquilops"));
+	public static final ResourceLocation AQUILOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aquilops_young"));
+	public static final int ENTITY_LIAOCERATOPS = 1069;
+	public static final ResourceLocation LIAOCERATOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/liaoceratops"));
+	public static final ResourceLocation LIAOCERATOPS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/liaoceratops_young"));
+	public static final int ENTITY_CLADOCYCLUS = 1077;
+	public static final ResourceLocation CLADOCYCLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cladocyclus"));
+	public static final int ENTITY_DUGALDIA = 1078;
+	public static final ResourceLocation DUGALDIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dugaldia"));
+	public static final int ENTITY_ENCHODUS = 1072;
+	public static final ResourceLocation ENCHODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/enchodus"));
+	public static final int ENTITY_MAWSONIA = 1073;
+	public static final ResourceLocation MAWSONIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mawsonia"));
+	public static final ResourceLocation MAWSONIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/mawsonia_young"));
+	public static final int ENTITY_NEOCERATODUS = 1074;
+	public static final ResourceLocation NEOCERATODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/neoceratodus"));
+	public static final int ENTITY_ONCHOPRISTIS = 1075;
+	public static final ResourceLocation ONCHOPRISTIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/onchopristis"));
+	public static final ResourceLocation ONCHOPRISTIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/onchopristis_young"));
+	public static final int ENTITY_PSILICHTHYS = 1076;
+	public static final ResourceLocation PSILICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psilichthys"));
 
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
 	public static final int GUI_ARCHIVE_SORTER_BOTTOM_ID = 1017;
 	public static final int GUI_LAB_CABINET_ID = 1018;
-	public static final int GUI_PORTAL_BLOCK_ID = 1019;
+	public static final int GUI_PORTAL_BLOCK_ID = 1070;
+	public static final int GUI_SUBMARINE_ID = 1071;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -2689,6 +2719,9 @@ public class LepidodendronMod {
 		elements.addNetworkMessage(GUIArchiveSorterBottom.ArchiveSorterInGUIMessageHandler.class, GUIArchiveSorterBottom.GUIArchiveSorterInGUIMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUIMicroscope.GUIMicroscopeTagSelectMessageHandler.class, GUIMicroscope.GUIMicroscopeTagSelectMessage.class, Side.SERVER);
 		elements.addNetworkMessage(GUIPortalBlock.GUIPortalBlockTagSelectMessageHandler.class, GUIPortalBlock.GUIPortalBlockTagSelectMessage.class, Side.SERVER);
+		elements.addNetworkMessage(PrehistoricFloraSubmarine.BucketMessageHandler.class, PrehistoricFloraSubmarine.BucketMessage.class, Side.SERVER);
+		elements.addNetworkMessage(PrehistoricFloraSubmarine.ClawMessageHandler.class, PrehistoricFloraSubmarine.ClawMessage.class, Side.SERVER);
+		elements.addNetworkMessage(PrehistoricFloraSubmarine.ParticlePacket.Handler.class, PrehistoricFloraSubmarine.ParticlePacket.class, Side.CLIENT);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));
 		EntityRegistries.registerEntities();

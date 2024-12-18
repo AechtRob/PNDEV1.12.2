@@ -215,7 +215,6 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	            .getObject(new ResourceLocation("lepidodendron:archosaurus_death"));
 	}
 
-
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;

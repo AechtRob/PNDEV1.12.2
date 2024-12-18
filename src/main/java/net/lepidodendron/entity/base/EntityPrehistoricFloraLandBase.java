@@ -54,6 +54,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     private static final DataParameter<Integer> PFGRAZING = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.VARINT);
     private static final DataParameter<Optional<BlockPos>> GRAZINGFROM = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
+    private static final DataParameter<Integer> PFANIMATIONCOUNDOWN = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.VARINT);
+
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -111,6 +113,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.dataManager.register(DRINKINGFROM, Optional.absent());
         this.dataManager.register(PFGRAZING, 0);
         this.dataManager.register(GRAZINGFROM, Optional.absent());
+        this.dataManager.register(PFANIMATIONCOUNDOWN, -1);
         this.setScaleForAge(false);
     }
 
@@ -149,12 +152,14 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         super.writeEntityToNBT(compound);
         compound.setInteger("drinking", this.getPFDrinking());
         compound.setInteger("grazing", this.getPFGrazing());
+        compound.setInteger("animationcountdown", this.getAnimationCountdown());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
         this.setIsDrinking(compound.getInteger("drinking"));
         this.setIsGrazing(compound.getInteger("grazing"));
+        this.setAnimationCountdown(compound.getInteger("animationcountdown"));
     }
 
     public boolean drinksWater() {
@@ -304,6 +309,15 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return this.dataManager.get(PFGRAZING);
     }
 
+    public void setAnimationCountdown(int val)
+    {
+        this.dataManager.set(PFANIMATIONCOUNDOWN, val);
+    }
+
+    public int getAnimationCountdown() {
+        return this.dataManager.get(PFANIMATIONCOUNDOWN);
+    }
+
     @Override
     public void selectNavigator () {
         if (this.isSwimmingInWater() && this.canSwim()) {
@@ -342,6 +356,9 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
+        if (this.getAnimationCountdown() >= 0) {
+            this.setAnimationCountdown(-1);
+        }
         if (this.getAnimation() == DRINK_ANIMATION) {
             this.setAnimation(NO_ANIMATION);
             this.setIsDrinking(rand.nextInt(1000));
@@ -482,8 +499,11 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             if (this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
                 this.faceEntity(this.getGrappleTarget(), 10F, 10F);
             }
-        }
 
+            if (this.getAnimationCountdown() >= 0) {
+                this.setAnimationCountdown(this.getAnimationCountdown() - 1);
+            }
+        }
     }
 
     public int getDrinkCooldown() {

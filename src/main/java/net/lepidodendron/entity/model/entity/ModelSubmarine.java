@@ -2,7 +2,9 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.boats.PrehistoricFloraSubmarine;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -328,9 +330,140 @@ public class ModelSubmarine extends ModelBasePalaeopedia {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //GlStateManager.rotate(90.0F, 0.0F, 1.0F, 0.0F);
         this.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        this.resetToDefaultPose();
         this.submarine.offsetZ = -0.40F;
         this.submarine.offsetY = -0.8F;
+
+        PrehistoricFloraSubmarine ee = (PrehistoricFloraSubmarine) entity;
+        if (ee.getAnimation() == ee.CLAW_ANIMATION) {
+            animClaw(entity, f, f1, Minecraft.getMinecraft().getRenderPartialTicks(), ee.getAnimationTick());
+        }
         this.submarine.render(f5);
+    }
+
+    public void animClaw(Entity entityIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        int animCycle = 80;
+        double tickAnim = animTick + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        if (tickAnim >= 0 && tickAnim < 40) {
+            xx = 0 + (((tickAnim - 0) / 40) * (100-(0)));
+            yy = 0 + (((tickAnim - 0) / 40) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 40) * (0-(0)));
+        }
+        else if (tickAnim >= 40 && tickAnim < 45) {
+            xx = 100 + (((tickAnim - 40) / 5) * (100-(100)));
+            yy = 0 + (((tickAnim - 40) / 5) * (0-(0)));
+            zz = 0 + (((tickAnim - 40) / 5) * (0-(0)));
+        }
+        else if (tickAnim >= 45 && tickAnim < 80) {
+            xx = 100 + (((tickAnim - 45) / 35) * (0-(100)));
+            yy = 0 + (((tickAnim - 45) / 35) * (0-(0)));
+            zz = 0 + (((tickAnim - 45) / 35) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(Arm2, Arm2.rotateAngleX + (float) Math.toRadians(xx), Arm2.rotateAngleY + (float) Math.toRadians(yy), Arm2.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 41) {
+            xx = 0 + (((tickAnim - 0) / 41) * (-120-(0)));
+            yy = 0 + (((tickAnim - 0) / 41) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 41) * (0-(0)));
+        }
+        else if (tickAnim >= 41 && tickAnim < 52) {
+            xx = -120 + (((tickAnim - 41) / 11) * (-120-(-120)));
+            yy = 0 + (((tickAnim - 41) / 11) * (0-(0)));
+            zz = 0 + (((tickAnim - 41) / 11) * (0-(0)));
+        }
+        else if (tickAnim >= 52 && tickAnim < 80) {
+            xx = -120 + (((tickAnim - 52) / 28) * (0-(-120)));
+            yy = 0 + (((tickAnim - 52) / 28) * (0-(0)));
+            zz = 0 + (((tickAnim - 52) / 28) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(Arm3, Arm3.rotateAngleX + (float) Math.toRadians(xx), Arm3.rotateAngleY + (float) Math.toRadians(yy), Arm3.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 33) {
+            xx = 0 + (((tickAnim - 0) / 33) * (-20-(0)));
+            yy = 0 + (((tickAnim - 0) / 33) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 33) * (0-(0)));
+        }
+        else if (tickAnim >= 33 && tickAnim < 40) {
+            xx = -20 + (((tickAnim - 33) / 7) * (10-(-20)));
+            yy = 0 + (((tickAnim - 33) / 7) * (0-(0)));
+            zz = 0 + (((tickAnim - 33) / 7) * (0-(0)));
+        }
+        else if (tickAnim >= 40 && tickAnim < 55) {
+            xx = 10 + (((tickAnim - 40) / 15) * (15-(10)));
+            yy = 0 + (((tickAnim - 40) / 15) * (0-(0)));
+            zz = 0 + (((tickAnim - 40) / 15) * (0-(0)));
+        }
+        else if (tickAnim >= 55 && tickAnim < 80) {
+            xx = 15 + (((tickAnim - 55) / 25) * (0-(15)));
+            yy = 0 + (((tickAnim - 55) / 25) * (0-(0)));
+            zz = 0 + (((tickAnim - 55) / 25) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(Arm4, Arm4.rotateAngleX + (float) Math.toRadians(xx), Arm4.rotateAngleY + (float) Math.toRadians(yy), Arm4.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 37) {
+            xx = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+        }
+        else if (tickAnim >= 37 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 37) / 6) * (-30-(0)));
+            yy = 0 + (((tickAnim - 37) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 37) / 6) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(Handanimated, Handanimated.rotateAngleX + (float) Math.toRadians(xx), Handanimated.rotateAngleY + (float) Math.toRadians(yy), Handanimated.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 37) {
+            xx = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+            yy = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+            zz = 0 + (((tickAnim - 0) / 37) * (0-(0)));
+        }
+        else if (tickAnim >= 37 && tickAnim < 43) {
+            xx = 0 + (((tickAnim - 37) / 6) * (30-(0)));
+            yy = 0 + (((tickAnim - 37) / 6) * (0-(0)));
+            zz = 0 + (((tickAnim - 37) / 6) * (0-(0)));
+        }
+        else {
+            xx = 0;
+            yy = 0;
+            zz = 0;
+        }
+        this.setRotateAngle(Handanimated2, Handanimated2.rotateAngleX + (float) Math.toRadians(xx), Handanimated2.rotateAngleY + (float) Math.toRadians(yy), Handanimated2.rotateAngleZ + (float) Math.toRadians(zz));
+
     }
 
     @Override

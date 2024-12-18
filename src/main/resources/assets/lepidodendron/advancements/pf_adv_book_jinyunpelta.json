@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:jinyunpelta_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_jinyunpelta.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_jinyunpelta.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_jinyunpelta"
+		}
+	}
+}

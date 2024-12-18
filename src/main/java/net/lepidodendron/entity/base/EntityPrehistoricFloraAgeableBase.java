@@ -69,6 +69,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
     private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> AIR_SPECIAL = EntityDataManager.<Integer>createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
 
     private EntityLivingBase alarmTarget;
     private int alarmTimer;
@@ -582,7 +583,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
         this.dataManager.register(BABIES, false);
         this.dataManager.register(ISBABY, false);
-        //this.setScaleForAge(false); //REMOVED!
+        this.dataManager.register(AIR_SPECIAL, Integer.valueOf(300));
     }
 
     @Override
@@ -1016,6 +1017,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setBoolean("juvenile", this.getJuvenile());
         compound.setInteger("mateable", this.getMateable());
         compound.setInteger("AlarmByTimestamp", this.alarmTimer);
+        compound.setShort("Air_Special", (short)this.getAirSpecial());
         if (this.getNestLocation() != null) {
             compound.setInteger("PosX", this.getNestLocation().getX());
             compound.setInteger("PosY", this.getNestLocation().getY());
@@ -1041,6 +1043,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setJuvenile(compound.getBoolean("juvenile"));
         this.setMateable(compound.getInteger("mateable"));
         this.alarmTimer = compound.getInteger("AlarmByTimestamp");
+        this.setAirSpecial(compound.getShort("Air_Special"));
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");
             int j = compound.getInteger("PosY");
@@ -1426,9 +1429,78 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F) + 1.0F + pitchAdder;
     }
 
+    public boolean isNearWater(INeedsWater entityIn, BlockPos pos) {
+        if (!this.world.isBlockLoaded(this.getPosition())) {
+            return true;
+        }
+        if (entityIn.safeDistanceToWater() == 0) {
+            return true;
+        }
+        int distH = (int) entityIn.safeDistanceToWater();
+        if (distH < 1) distH = 1;
+        if (distH > 32) distH = 32;
+        int distV = 4;
+        boolean waterCriteria = false;
+        int xct = -distH;
+        int yct;
+        int zct;
+        while ((xct <= distH) && (!waterCriteria)) {
+            yct = -distV;
+            while ((yct <= distV) && (!waterCriteria)) {
+                zct = -distH;
+                while ((zct <= distH) && (!waterCriteria)) {
+                    if (!this.world.isBlockLoaded(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))) {
+                        waterCriteria = true;
+                    }
+                    else if ((Math.pow((int) Math.abs(xct),2) + Math.pow((int) Math.abs(zct),2) <= Math.pow((int) distH,2)) && ((this.world.getBlockState(new BlockPos(pos.getX() + xct, pos.getY() + yct, pos.getZ() + zct))).getMaterial() == Material.WATER)) {
+                        waterCriteria = true;
+                    }
+                    zct = zct + 1;
+                }
+                yct = yct + 1;
+            }
+            xct = xct + 1;
+        }
+
+        if (waterCriteria || (entityIn.safeDistanceToWater() == 0)) return true;
+
+        return this.isInWater() || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
+    }
+
+    public int getAirSpecial()
+    {
+        return ((Integer)this.dataManager.get(AIR_SPECIAL)).intValue();
+    }
+
+    public void setAirSpecial(int airSpecial)
+    {
+        this.dataManager.set(AIR_SPECIAL, Integer.valueOf(airSpecial));
+    }
+
     public void onEntityUpdate()
     {
         super.onEntityUpdate();
+
+        if (this instanceof INeedsWater && !this.world.isRemote) {
+            int i = this.getAirSpecial();
+            if ((this.isEntityAlive() && !isInWater())
+                    && (!isNearWater(((INeedsWater)this), this.getPosition()) && ((INeedsWater)this).takesDamageAwayFromWater()) //Is not NEAR water
+            )
+            {
+                --i;
+                this.setAirSpecial(i);
+
+                if (this.getAirSpecial() == -20)
+                {
+                    this.setAirSpecial(200);
+                    this.attackEntityFrom(DamageSource.DROWN, 0.5F);
+                }
+            }
+            else
+            {
+                this.setAirSpecial(1000);
+            }
+        }
 
         if (this.alarmTarget != null)
         {

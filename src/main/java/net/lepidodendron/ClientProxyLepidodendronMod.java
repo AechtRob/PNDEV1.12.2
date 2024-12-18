@@ -37,6 +37,8 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 	public static KeyBinding keyBoatUp = new KeyBinding("key.lepidodendron.boatup", Keyboard.KEY_UP, "key.categories.misc");
 	public static KeyBinding keyBoatStrafeLeft = new KeyBinding("key.lepidodendron.boatleft", Keyboard.KEY_LEFT, "key.categories.misc");
 	public static KeyBinding keyBoatStrafeRight = new KeyBinding("key.lepidodendron.boatright", Keyboard.KEY_RIGHT, "key.categories.misc");
+	public static KeyBinding keyBoatUseBucket = new KeyBinding("key.lepidodendron.boatbucket", Keyboard.KEY_NUMPAD0, "key.categories.misc");
+	public static KeyBinding keyBoatUseClaw = new KeyBinding("key.lepidodendron.boatarm", Keyboard.KEY_NUMPAD1, "key.categories.misc");
 
 	@Override
 	public void init(FMLInitializationEvent event) {
@@ -46,6 +48,8 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 		ClientRegistry.registerKeyBinding(keyBoatUp);
 		ClientRegistry.registerKeyBinding(keyBoatStrafeLeft);
 		ClientRegistry.registerKeyBinding(keyBoatStrafeRight);
+		ClientRegistry.registerKeyBinding(keyBoatUseBucket);
+		ClientRegistry.registerKeyBinding(keyBoatUseClaw);
 
 		//Bind the biome water colour to the glass block so its water-repair thing picks up the right colour:
 		BlockColors blockColors = Minecraft.getMinecraft().getBlockColors();

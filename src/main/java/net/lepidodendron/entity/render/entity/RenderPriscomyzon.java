@@ -56,6 +56,7 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
+
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPriscomyzon entity, float f) {
         float scale = this.getScaler();

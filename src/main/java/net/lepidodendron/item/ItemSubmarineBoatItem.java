@@ -13,6 +13,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -67,28 +69,56 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 
 			DecimalFormat df = new DecimalFormat("###.#");
 			if (stack.hasTagCompound()) {
-				if (stack.getTagCompound().hasKey("rf")) {
-					if (stack.getTagCompound().hasKey("enhanced")) {
-						if (stack.getTagCompound().getBoolean("enhanced")) {
-							if (LepidodendronConfig.machinesRF) {
-								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 5000000D) + "%";
+				if (stack.getTagCompound().hasKey("shulker") && stack.getTagCompound().getBoolean("shulker")) {
+					if (stack.getTagCompound().hasKey("rf")) {
+						if (stack.getTagCompound().hasKey("enhanced")) {
+							if (stack.getTagCompound().getBoolean("enhanced")) {
+								if (LepidodendronConfig.machinesRF) {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced_shulker.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 5000000D) + "%";
+								} else {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced_shulker.name");
+								}
 							} else {
-								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced.name");
+								if (LepidodendronConfig.machinesRF) {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_shulker.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+								} else {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_shulker.name");
+								}
+							}
+						} else {
+							if (LepidodendronConfig.machinesRF) {
+								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_shulker.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+							} else {
+								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_shulker.name");
 							}
 						}
-						else {
+					}
+					else {
+						return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_shulker.name");
+					}
+				}
+				else {
+					if (stack.getTagCompound().hasKey("rf")) {
+						if (stack.getTagCompound().hasKey("enhanced")) {
+							if (stack.getTagCompound().getBoolean("enhanced")) {
+								if (LepidodendronConfig.machinesRF) {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 5000000D) + "%";
+								} else {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery_enhanced.name");
+								}
+							} else {
+								if (LepidodendronConfig.machinesRF) {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
+								} else {
+									return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
+								}
+							}
+						} else {
 							if (LepidodendronConfig.machinesRF) {
 								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
 							} else {
 								return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
 							}
-						}
-					}
-					else {
-						if (LepidodendronConfig.machinesRF) {
-							return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name") + " " + df.format((double) stack.getTagCompound().getInteger("rf") * 100 / 1000000D) + "%";
-						} else {
-							return super.getItemStackDisplayName(stack) + ": " + I18n.translateToLocal("item.pf_submarine_boat_item_battery.name");
 						}
 					}
 				}
@@ -162,6 +192,24 @@ public class ItemSubmarineBoatItem extends ElementsLepidodendronMod.ModElement {
 						}
 						if (itemstack.getTagCompound().hasKey("enhanced")) {
 							entityPNsubmarine.setEnhanced(itemstack.getTagCompound().getBoolean("enhanced"));
+						}
+						if (itemstack.getTagCompound().hasKey("shulker")) {
+							entityPNsubmarine.setShulker(itemstack.getTagCompound().getBoolean("shulker"));
+						}
+						if (entityPNsubmarine.getShulker())
+						{
+							NBTTagList nbttaglist = itemstack.getTagCompound().getTagList("Items", 10);
+
+							for (int i = 0; i < nbttaglist.tagCount(); ++i)
+							{
+								NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(i);
+								int j = nbttagcompound.getByte("Slot") & 255;
+
+								if (j >= 0 && j < entityPNsubmarine.submarineChest.getSizeInventory())
+								{
+									entityPNsubmarine.submarineChest.setInventorySlotContents(j, new ItemStack(nbttagcompound));
+								}
+							}
 						}
 					}
 

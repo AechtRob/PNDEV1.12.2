@@ -61,6 +61,10 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "close_cabinet")));
 		sounds.put(new ResourceLocation("lepidodendron", "respawner"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "respawner")));
+		sounds.put(new ResourceLocation("lepidodendron", "submarine_bubble_jet"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "submarine_bubble_jet")));
+		sounds.put(new ResourceLocation("lepidodendron", "submarine_claw"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "submarine_claw")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_initialise"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("lepidodendron", "portal_block_initialise")));
 		sounds.put(new ResourceLocation("lepidodendron", "portal_block_close"),
@@ -1559,6 +1563,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUIPortalBlock.GUIID) {
 				return new GUIPortalBlock.GUILepidodendronPortalBlock(world, x, y, z, player);
 			}
+			if (id == GUISubmarine.GUIID) {
+				return new GUISubmarine.GUILepidodendronSubmarine(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -1620,6 +1627,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUIPortalBlock.GUIID) {
 				return new GUIPortalBlock.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUISubmarine.GUIID) {
+				return new GUISubmarine.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

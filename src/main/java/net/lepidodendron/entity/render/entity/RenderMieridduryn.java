@@ -12,7 +12,7 @@ public class RenderMieridduryn extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mieridduryn.png");
 
     public static float getScaler() {
-        return 0.85F;
+        return 0.35F;
     }
     public RenderMieridduryn(RenderManager mgr) {
         super(mgr, new ModelMieridduryn(), 0.0f);
@@ -30,8 +30,8 @@ public class RenderMieridduryn extends RenderLivingBaseWithBook<EntityPrehistori
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMieridduryn entity, float f) {
         float scale = this.getScaler();
-        if (scale < 0.1f) {
-            scale = 0.1f;
+        if (scale < 0.01f) {
+            scale = 0.01f;
         }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;

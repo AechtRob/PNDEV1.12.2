@@ -6,6 +6,7 @@ import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.entity.util.ILayableMoss;
 import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -100,7 +101,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genMossWoodOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfigPlants.genFernEpiphyte && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMossWood && !LepidodendronConfig.genAllPlants)
 			biomeCriteria = false;
 		if (
 				(dimID == LepidodendronConfig.dimCarboniferous)
@@ -137,6 +138,16 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
 					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Coniferous) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_namerica_forest")) {
 				biomeCriteria = true;
 			}
 			else {

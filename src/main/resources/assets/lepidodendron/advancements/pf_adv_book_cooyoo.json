@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:cooyoo_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_cooyoo.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_cooyoo.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_cooyoo"
+		}
+	}
+}

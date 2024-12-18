@@ -45,6 +45,21 @@ public class BiomeSpawns {
             spawnListJoiner.addAll(spawnListJoiner2);
             mobList = spawnListJoiner.toArray(mobList);
         }
+        //Websteroprioin spawns as a block, so this needs an overrride here:
+        if (biomeID.equalsIgnoreCase("lepidodendron:devonian_creek_coastal")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_forest")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_reef_transition")
+                || biomeID.equalsIgnoreCase("lepidodendron:devonian_beach"))
+        {
+            ObjectArrayList<String> spawnListJoiner = new ObjectArrayList<String>(Arrays.asList(mobList));
+            spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
+            mobList = spawnListJoiner.toArray(mobList);
+        }
         ObjectArrayList<String> spawnListInterim = new ObjectArrayList<String>();
         if (mobList.length >= 1) {
             for (String entry : mobList) {

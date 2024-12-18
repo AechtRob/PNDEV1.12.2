@@ -47,7 +47,7 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 27);
+            this.internal = new InventoryBasic("", true, 54);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
@@ -91,22 +91,14 @@ public class GUILabCabinet extends ElementsLepidodendronMod.ModElement {
             if (slot != null && slot.getHasStack()) {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
-                if (index < 4) {
-                    if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
+                if (index < 54) {
+                    if (!this.mergeItemStack(itemstack1, 0, this.inventorySlots.size(), true)) {
                         return ItemStack.EMPTY;
                     }
-                    slot.onSlotChange(itemstack1, itemstack);
-                } else if (!this.mergeItemStack(itemstack1, 0, 4, false)) {
-                    if (index < 4 + 27) {
-                        if (!this.mergeItemStack(itemstack1, 4 + 27, this.inventorySlots.size(), true)) {
-                            return ItemStack.EMPTY;
-                        }
-                    } else {
-                        if (!this.mergeItemStack(itemstack1, 4, 4 + 27, false)) {
-                            return ItemStack.EMPTY;
-                        }
+                } else {
+                    if (!this.mergeItemStack(itemstack1, 0, 54, false)) {
+                        return ItemStack.EMPTY;
                     }
-                    return ItemStack.EMPTY;
                 }
                 if (itemstack1.getCount() == 0) {
                     slot.putStack(ItemStack.EMPTY);

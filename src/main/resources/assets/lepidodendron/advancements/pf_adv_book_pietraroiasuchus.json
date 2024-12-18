@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:pietraroiasuchus_raw"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_pietraroiasuchus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_pietraroiasuchus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_pietraroiasuchus"
+		}
+	}
+}

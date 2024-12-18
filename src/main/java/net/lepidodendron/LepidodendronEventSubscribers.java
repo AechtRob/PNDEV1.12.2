@@ -19,6 +19,7 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -62,6 +63,7 @@ import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
@@ -69,10 +71,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.entity.player.BonemealEvent;
-import net.minecraftforge.event.entity.player.ItemFishedEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.event.village.MerchantTradeOffersEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -104,6 +103,21 @@ public class LepidodendronEventSubscribers {
 	public static ArrayList<Meteor> fragments = new ArrayList();
 	public static ArrayList<Meteor> smoke = new ArrayList();
 
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent //Red overlay when submarine battery is low
+	public void onRenderGUI(RenderGameOverlayEvent.Post event) {
+		Minecraft mc = Minecraft.getMinecraft();
+		ScaledResolution scaled = new ScaledResolution(mc);
+		EntityPlayer player = mc.player;
+		if (player.isRiding()) {
+			if (player.getRidingEntity() instanceof PrehistoricFloraSubmarine) {
+				PrehistoricFloraSubmarine sub = (PrehistoricFloraSubmarine) player.getRidingEntity();
+				if (sub.getEnergyFraction() < ((double)LepidodendronConfig.submarineWarning/100D) && LepidodendronConfig.machinesRF) {
+					PrehistoricFloraSubmarine.seeRed(mc, scaled, event.getPartialTicks());
+				}
+			}
+		}
+	}
 
 	@SubscribeEvent //Stop ageing things in the cages:
 	public void onTickEntity(LivingEvent.LivingUpdateEvent event) {
@@ -263,12 +277,45 @@ public class LepidodendronEventSubscribers {
 	}
 
 	@SubscribeEvent //Some instructions for use of rideables
+	public void playerPickupItem(EntityItemPickupEvent event) {
+		if (event.getEntityPlayer() != null) {
+			if (event.getEntityPlayer().isRiding()) {
+				if (event.getEntityPlayer().getRidingEntity() instanceof PrehistoricFloraSubmarine) {
+					event.setCanceled(true);
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent //Some instructions for use of rideables
 	public void playerMounted(EntityMountEvent event) {
 		Entity entity = event.getEntityMounting();
 		if (entity instanceof EntityPlayer && event.isMounting() && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine && event.getEntityMounting().getEntityWorld().isRemote) {
-				LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(), "Additional Submarine controls: up = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName() + "; down = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName() + "; strafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName() + "; strafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()));
+				if (((PrehistoricFloraSubmarine)event.getEntityBeingMounted()).getShulker()) {
+					LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(),
+							"Submarine controls:\nup = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName()
+									+ "\ndown = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName()
+									+ "\nstrafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName()
+									+ "\nstrafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()
+									+ "\nuse buckets = " + ClientProxyLepidodendronMod.keyBoatUseBucket.getDisplayName()
+									+ "\nuse claw = " + ClientProxyLepidodendronMod.keyBoatUseClaw.getDisplayName()
+									+ "\nleft control panel = view power level"
+									+ "\ncentre control panel = open Submarine inventory"
+									+ "\nright control panel = add or remove battery"));
+				}
+				else {
+					LepidodendronMod.PACKET_HANDLER.sendToServer(new SubmarineMountMessage(player.getUniqueID().toString(),
+							"Submarine controls:\nup = " + ClientProxyLepidodendronMod.keyBoatUp.getDisplayName()
+									+ "\ndown = " + ClientProxyLepidodendronMod.keyBoatDown.getDisplayName()
+									+ "\nstrafe left = " + ClientProxyLepidodendronMod.keyBoatStrafeLeft.getDisplayName()
+									+ "\nstrafe right = " + ClientProxyLepidodendronMod.keyBoatStrafeRight.getDisplayName()
+									+ "\nuse buckets = " + ClientProxyLepidodendronMod.keyBoatUseBucket.getDisplayName()
+									+ "\nuse claw = " + ClientProxyLepidodendronMod.keyBoatUseClaw.getDisplayName()
+									+ "\nleft control panel = view power level"
+									+ "\nright control panel = add or remove battery"));
+				}
 			}
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine) {
 				//Capture the effects if needed:
@@ -290,6 +337,7 @@ public class LepidodendronEventSubscribers {
 		}
 		if (entity instanceof EntityPlayer && (!event.isMounting()) && event.getEntityBeingMounted() != null) {
 			EntityPlayer player = (EntityPlayer) entity;
+			//Dismounting the submarine:
 			if (event.getEntityBeingMounted() instanceof PrehistoricFloraSubmarine) {
 				//Give the night vision effect while inside:
 				((PrehistoricFloraSubmarine) event.getEntityBeingMounted()).grantWaterBreathingPassenger(player);
