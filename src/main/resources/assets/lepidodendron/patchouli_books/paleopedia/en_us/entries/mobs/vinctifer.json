@@ -1,0 +1,47 @@
+{
+	"name": "Vinctifer",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/vinctifer_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_vinctifer",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vinctifer",
+			"title": "Vinctifer",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Jurassic-Cretaceous$(br2)$(l)Habitat:$() Freshwater$(br2)>Chordata$(br)>Actinopterygii$(br)>Aspidorhynchiformes$(br)>Aspidorhynchidae"
+		},
+        	{
+            "type": "entity",
+            "name": "V. comptoni",
+            "entity": "lepidodendron:prehistoric_flora_vinctifer",
+            "rotate": false,
+            "default_rotation": 0
+       	},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vinctifer",
+			"type": "text",
+			"text": "Vinctifer hails from the Late Jurassic into the Early Cretaceous, with fossils found in the Marizal, Romualdo and Missão Velha Formations, Brazil; Tlayua Formation, Mexico; Apón Formation, Venezuela and Nordenskjöld Formation, Antarctica. It is a small Aspidorhynchiforme, growing up to 90 cm in length. Vinctifer is most well known for its long, spindly premaxilla."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_vinctifer"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_vinctifer"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_vinctifer"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_vinctifer"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_vinctifer"
+		}
+	]
+}
