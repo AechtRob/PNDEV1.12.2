@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "aeger",
+      "name": "yanosteus",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:aeger_raw",
+          "name": "lepidodendron:yanosteus_raw",
           "weight": 1,
           "functions": [
             {

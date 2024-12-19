@@ -12,7 +12,7 @@ public class RenderGoldringia extends RenderLivingBaseWithBook<EntityPrehistoric
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/goldringia.png");
 
     public static float getScaler() {
-        return 0.7F * 0.4F;
+        return 0.7F * 0.2F;
     }
     public RenderGoldringia(RenderManager mgr) {
         super(mgr, new ModelGoldringia(), 0.0f);

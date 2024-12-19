@@ -31,10 +31,10 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 
 	public EntityPrehistoricFloraGoldringia(World world) {
 		super(world);
-		setSize(0.324F, 0.375F);
+		setSize(0.325F, 0.375F);
 		minWidth = 0.07F;
-		maxWidth = 0.325F;
-		maxHeight = 0.375F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
 	}
 
@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return 64000;
 	}
 
 	@Override
