@@ -2,16 +2,19 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.ai.EntityLookIdleAI;
+import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
+import net.lepidodendron.entity.ai.SlitheringWanderBottom;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.entity.util.EnumCreatureAttributePN;
 import net.lepidodendron.entity.util.ITrappableWater;
-import net.lepidodendron.item.entities.ItemNautiloidEggsCenoceras;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -23,19 +26,17 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNautiloidBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraHemiaster extends EntityPrehistoricFloraSlitheringWaterBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
+	private int animationTick;
+	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraGoldringia(World world) {
-		super(world);
-		setSize(0.325F, 0.375F);
-		minWidth = 0.07F;
-		maxWidth = 0.2F;
-		maxHeight = 0.2F;
-		maxHealthAgeable = 4.0D;
+	public EntityPrehistoricFloraHemiaster(World world) {
+		super(world, 60);
+		setSize(0.1F, 0.1F);
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -56,45 +57,27 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 	public boolean dropsEggs() {
 		return true;
 	}
-	
-	@Override
-	public boolean laysEggs() {
-		return false;
-	}
 
-	@Override
-	public int getAdultAge() {
-		return 64000;
-	}
-
-	@Override
-	protected float getAISpeedNautiloid() {
-		//return 0;
-		return 0.0698f;
+	protected float getAISpeedSlithering() {
+		return 0.042f;
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
+		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
+		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 	}
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return ArrayUtils.addAll(DietString.FISHFOOD);
-	}
-
-	
-
-	@Override
-	public boolean isAIDisabled() {
-		return false;
+		return ArrayUtils.addAll(DietString.FISHFOOD, DietString.CORAL);
 	}
 
 	@Override
-	public String getTexture() {
-		return this.getTexture();
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
 	@Override
@@ -107,15 +90,6 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-	}
-
-	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemNautiloidEggsCenoceras.block, (int) (1));
-	}
-
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
@@ -123,18 +97,12 @@ public class EntityPrehistoricFloraGoldringia extends EntityPrehistoricFloraNaut
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.GOLDRINGIA_LOOT_YOUNG;
-		}
-		return LepidodendronMod.GOLDRINGIA_LOOT;
+		return LepidodendronMod.HEMIASTER_LOOT;
 	}
-
-	//Rendering taxidermy:
-	//--------------------
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_GOLDRINGIA;
+		return ModTriggers.CLICK_HEMIASTER;
 	}
 }
