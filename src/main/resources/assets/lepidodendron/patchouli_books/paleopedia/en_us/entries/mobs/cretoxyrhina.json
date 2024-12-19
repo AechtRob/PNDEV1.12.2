@@ -2,7 +2,7 @@
 	"name": "Cretoxyrhina",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/cretoxyrhina_icon.png",
-	"category": "lepidodendron:cretaceousearly_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_cretoxyrhina",
 	"pages": [
 		{
@@ -13,7 +13,7 @@
 		},
         	{
             "type": "entity",
-            "name": "Cretoxyrhina mantelli",
+            "name": "C. mantelli",
             "entity": "lepidodendron:prehistoric_flora_cretoxyrhina",
             "rotate": false,
             "default_rotation": 0

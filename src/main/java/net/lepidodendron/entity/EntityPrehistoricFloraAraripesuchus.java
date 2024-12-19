@@ -40,6 +40,7 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
+	//scratch animation
 	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
@@ -74,7 +75,7 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Archosauriform";}
 
