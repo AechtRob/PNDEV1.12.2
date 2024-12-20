@@ -22,6 +22,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
@@ -50,6 +51,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -897,6 +899,17 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 				world.spawnEntity(entityToSpawn);
 				//System.err.println("Spawned " + entityToSpawn);
 			}
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Moss");
+				tooltip.add("Periods: Silurian (?) - Devonian (?) - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene [- present]");
+				tooltip.add("Note: spreads to surrounding blocks.");
+				tooltip.add("Propagation: spores");}
+			super.addInformation(stack, player, tooltip, advanced);
 		}
 
 	}

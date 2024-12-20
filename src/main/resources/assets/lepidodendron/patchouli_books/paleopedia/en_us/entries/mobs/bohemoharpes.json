@@ -2,7 +2,7 @@
 	"name": "Bohemoharpes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/bohemoharpes_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_bohemoharpes",
 	"pages": [
 		{

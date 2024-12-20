@@ -2,7 +2,7 @@
 	"name": "Estuary Lagoons",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_estuary"
+			"biome": "lepidodendron:cambrian_estuary",
+			"imageid0": "lepidodendron:cambrian_estuary",
+			"imageid1": "lepidodendron:cambrian_estuary",
+			"imageid2": "lepidodendron:cambrian_estuary",
+			"imageid3": "lepidodendron:cambrian_estuary",
+			"imageid4": "lepidodendron:cambrian_estuary",
+			"imageid5": "lepidodendron:cambrian_estuary",
+			"imageid6": "lepidodendron:cambrian_estuary",
+			"imageid7": "lepidodendron:cambrian_estuary",
+			"imageid8": "lepidodendron:cambrian_estuary",
+			"imageid9": "lepidodendron:cambrian_estuary",
+			"imageid10": "lepidodendron:cambrian_estuary",
+			"imageid11": "lepidodendron:cambrian_estuary",
+			"imageid12": "lepidodendron:cambrian_estuary",
+			"imageid13": "lepidodendron:cambrian_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_estuary"
+			"biome": "lepidodendron:cambrian_estuary",
+			"imageid0": "lepidodendron:cambrian_estuary",
+			"imageid1": "lepidodendron:cambrian_estuary",
+			"imageid2": "lepidodendron:cambrian_estuary",
+			"imageid3": "lepidodendron:cambrian_estuary",
+			"imageid4": "lepidodendron:cambrian_estuary",
+			"imageid5": "lepidodendron:cambrian_estuary",
+			"imageid6": "lepidodendron:cambrian_estuary",
+			"imageid7": "lepidodendron:cambrian_estuary",
+			"imageid8": "lepidodendron:cambrian_estuary",
+			"imageid9": "lepidodendron:cambrian_estuary",
+			"imageid10": "lepidodendron:cambrian_estuary",
+			"imageid11": "lepidodendron:cambrian_estuary",
+			"imageid12": "lepidodendron:cambrian_estuary",
+			"imageid13": "lepidodendron:cambrian_estuary",
+			"imageid14": "lepidodendron:cambrian_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_estuary"
+			"biome": "lepidodendron:cambrian_estuary",
+			"imageid0": "lepidodendron:cambrian_estuary",
+			"imageid1": "lepidodendron:cambrian_estuary",
+			"imageid2": "lepidodendron:cambrian_estuary",
+			"imageid3": "lepidodendron:cambrian_estuary",
+			"imageid4": "lepidodendron:cambrian_estuary",
+			"imageid5": "lepidodendron:cambrian_estuary",
+			"imageid6": "lepidodendron:cambrian_estuary",
+			"imageid7": "lepidodendron:cambrian_estuary",
+			"imageid8": "lepidodendron:cambrian_estuary",
+			"imageid9": "lepidodendron:cambrian_estuary",
+			"imageid10": "lepidodendron:cambrian_estuary",
+			"imageid11": "lepidodendron:cambrian_estuary",
+			"imageid12": "lepidodendron:cambrian_estuary",
+			"imageid13": "lepidodendron:cambrian_estuary",
+			"imageid14": "lepidodendron:cambrian_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_estuary"
+			"biome": "lepidodendron:cambrian_estuary",
+			"imageid0": "lepidodendron:cambrian_estuary",
+			"imageid1": "lepidodendron:cambrian_estuary",
+			"imageid2": "lepidodendron:cambrian_estuary",
+			"imageid3": "lepidodendron:cambrian_estuary",
+			"imageid4": "lepidodendron:cambrian_estuary",
+			"imageid5": "lepidodendron:cambrian_estuary",
+			"imageid6": "lepidodendron:cambrian_estuary",
+			"imageid7": "lepidodendron:cambrian_estuary",
+			"imageid8": "lepidodendron:cambrian_estuary",
+			"imageid9": "lepidodendron:cambrian_estuary",
+			"imageid10": "lepidodendron:cambrian_estuary",
+			"imageid11": "lepidodendron:cambrian_estuary",
+			"imageid12": "lepidodendron:cambrian_estuary",
+			"imageid13": "lepidodendron:cambrian_estuary",
+			"imageid14": "lepidodendron:cambrian_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_estuary"
+			"biome": "lepidodendron:cambrian_estuary",
+			"imageid0": "lepidodendron:cambrian_estuary",
+			"imageid1": "lepidodendron:cambrian_estuary",
+			"imageid2": "lepidodendron:cambrian_estuary",
+			"imageid3": "lepidodendron:cambrian_estuary",
+			"imageid4": "lepidodendron:cambrian_estuary",
+			"imageid5": "lepidodendron:cambrian_estuary",
+			"imageid6": "lepidodendron:cambrian_estuary",
+			"imageid7": "lepidodendron:cambrian_estuary",
+			"imageid8": "lepidodendron:cambrian_estuary",
+			"imageid9": "lepidodendron:cambrian_estuary",
+			"imageid10": "lepidodendron:cambrian_estuary",
+			"imageid11": "lepidodendron:cambrian_estuary",
+			"imageid12": "lepidodendron:cambrian_estuary",
+			"imageid13": "lepidodendron:cambrian_estuary",
+			"imageid14": "lepidodendron:cambrian_estuary"
 		}
 	]
 }

@@ -1,7 +1,0 @@
-{
-    "name": "Permian Statics",
-    "description": "Static Animals of the Permian",
-    "icon": "lepidodendron:crinoid_jimbacrinus",
-    "parent": "lepidodendron:permian",
-    "sortnum": 2
-}

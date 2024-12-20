@@ -2,7 +2,7 @@
 	"name": "Proterosuchus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/proterosuchus_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_proterosuchus",
 	"pages": [
 		{

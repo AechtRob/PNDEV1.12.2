@@ -2,7 +2,7 @@
 	"name": "Alacaris",
 	"read_by_default": true,
 	"icon": "lepidodendron:alacaris_raw",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_alacaris",
 	"pages": [
 		{

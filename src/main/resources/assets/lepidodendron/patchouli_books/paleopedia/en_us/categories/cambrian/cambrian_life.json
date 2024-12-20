@@ -1,0 +1,7 @@
+{
+    "name": "Cambrian Life",
+    "description": "Life of the Cambrian",
+    "icon": "paleopedia:textures/category_icon/icon_cambrian.png",
+    "parent": "lepidodendron:cambrian",
+    "sortnum": 1
+}

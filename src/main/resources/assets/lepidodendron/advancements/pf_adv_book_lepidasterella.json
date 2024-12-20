@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:lepidasterella_raw"
+			"item": "lepidodendron:lepidasterella_item"
 		},
 		"title": {
 			"translate": "advancements.pf_adv_book_lepidasterella.title"

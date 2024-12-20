@@ -2,7 +2,7 @@
 	"name": "Long Nosed Belonostomus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/belonostomus_cretaceous_icon.png",
-	"category": "lepidodendron:cretaceousearly_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_belonostomus_cretaceous",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Gyrosteus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/gyrosteus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_gyrosteus",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Cooperoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_cooperoceras",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_cooperoceras",
 	"pages": [
 		{

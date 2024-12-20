@@ -2,7 +2,7 @@
 	"name": "Iowagnathus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/iowagnathus_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_iowagnathus",
 	"pages": [
 		{

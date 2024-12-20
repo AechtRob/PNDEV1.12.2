@@ -2,7 +2,7 @@
 	"name": "Glass Sponge Reef",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef"
+			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid0": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid1": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid2": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid3": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid4": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid5": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid6": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid7": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid8": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid9": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid10": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid11": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid12": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid13": "lepidodendron:jurassic_ocean_glass_sponge_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef"
+			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid0": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid1": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid2": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid3": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid4": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid5": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid6": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid7": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid8": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid9": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid10": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid11": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid12": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid13": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid14": "lepidodendron:jurassic_ocean_glass_sponge_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef"
+			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid0": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid1": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid2": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid3": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid4": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid5": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid6": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid7": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid8": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid9": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid10": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid11": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid12": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid13": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid14": "lepidodendron:jurassic_ocean_glass_sponge_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef"
+			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid0": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid1": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid2": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid3": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid4": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid5": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid6": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid7": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid8": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid9": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid10": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid11": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid12": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid13": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid14": "lepidodendron:jurassic_ocean_glass_sponge_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef"
+			"biome": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid0": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid1": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid2": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid3": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid4": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid5": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid6": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid7": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid8": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid9": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid10": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid11": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid12": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid13": "lepidodendron:jurassic_ocean_glass_sponge_reef",
+			"imageid14": "lepidodendron:jurassic_ocean_glass_sponge_reef"
 		}
 	]
 }

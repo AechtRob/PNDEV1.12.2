@@ -2,7 +2,7 @@
 	"name": "Cowielepis",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/cowielepis_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_cowielepis",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Pachydiscus",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_pachydiscus",
-	"category": "lepidodendron:cretaceouslate_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_pachydiscus",
 	"pages": [
 		{

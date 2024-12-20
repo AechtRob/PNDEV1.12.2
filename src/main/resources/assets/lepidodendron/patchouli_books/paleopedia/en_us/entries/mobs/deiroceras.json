@@ -2,7 +2,7 @@
 	"name": "Deiroceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_deiroceras",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_deiroceras",
 	"pages": [
 		{

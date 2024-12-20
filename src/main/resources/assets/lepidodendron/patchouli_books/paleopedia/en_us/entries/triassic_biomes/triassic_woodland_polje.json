@@ -2,7 +2,7 @@
 	"name": "Polje",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_woodland_polje"
+			"biome": "lepidodendron:triassic_woodland_polje",
+			"imageid0": "lepidodendron:triassic_woodland_polje",
+			"imageid1": "lepidodendron:triassic_woodland_polje",
+			"imageid2": "lepidodendron:triassic_woodland_polje",
+			"imageid3": "lepidodendron:triassic_woodland_polje",
+			"imageid4": "lepidodendron:triassic_woodland_polje",
+			"imageid5": "lepidodendron:triassic_woodland_polje",
+			"imageid6": "lepidodendron:triassic_woodland_polje",
+			"imageid7": "lepidodendron:triassic_woodland_polje",
+			"imageid8": "lepidodendron:triassic_woodland_polje",
+			"imageid9": "lepidodendron:triassic_woodland_polje",
+			"imageid10": "lepidodendron:triassic_woodland_polje",
+			"imageid11": "lepidodendron:triassic_woodland_polje",
+			"imageid12": "lepidodendron:triassic_woodland_polje",
+			"imageid13": "lepidodendron:triassic_woodland_polje"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_woodland_polje"
+			"biome": "lepidodendron:triassic_woodland_polje",
+			"imageid0": "lepidodendron:triassic_woodland_polje",
+			"imageid1": "lepidodendron:triassic_woodland_polje",
+			"imageid2": "lepidodendron:triassic_woodland_polje",
+			"imageid3": "lepidodendron:triassic_woodland_polje",
+			"imageid4": "lepidodendron:triassic_woodland_polje",
+			"imageid5": "lepidodendron:triassic_woodland_polje",
+			"imageid6": "lepidodendron:triassic_woodland_polje",
+			"imageid7": "lepidodendron:triassic_woodland_polje",
+			"imageid8": "lepidodendron:triassic_woodland_polje",
+			"imageid9": "lepidodendron:triassic_woodland_polje",
+			"imageid10": "lepidodendron:triassic_woodland_polje",
+			"imageid11": "lepidodendron:triassic_woodland_polje",
+			"imageid12": "lepidodendron:triassic_woodland_polje",
+			"imageid13": "lepidodendron:triassic_woodland_polje",
+			"imageid14": "lepidodendron:triassic_woodland_polje"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_woodland_polje"
+			"biome": "lepidodendron:triassic_woodland_polje",
+			"imageid0": "lepidodendron:triassic_woodland_polje",
+			"imageid1": "lepidodendron:triassic_woodland_polje",
+			"imageid2": "lepidodendron:triassic_woodland_polje",
+			"imageid3": "lepidodendron:triassic_woodland_polje",
+			"imageid4": "lepidodendron:triassic_woodland_polje",
+			"imageid5": "lepidodendron:triassic_woodland_polje",
+			"imageid6": "lepidodendron:triassic_woodland_polje",
+			"imageid7": "lepidodendron:triassic_woodland_polje",
+			"imageid8": "lepidodendron:triassic_woodland_polje",
+			"imageid9": "lepidodendron:triassic_woodland_polje",
+			"imageid10": "lepidodendron:triassic_woodland_polje",
+			"imageid11": "lepidodendron:triassic_woodland_polje",
+			"imageid12": "lepidodendron:triassic_woodland_polje",
+			"imageid13": "lepidodendron:triassic_woodland_polje",
+			"imageid14": "lepidodendron:triassic_woodland_polje"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_woodland_polje"
+			"biome": "lepidodendron:triassic_woodland_polje",
+			"imageid0": "lepidodendron:triassic_woodland_polje",
+			"imageid1": "lepidodendron:triassic_woodland_polje",
+			"imageid2": "lepidodendron:triassic_woodland_polje",
+			"imageid3": "lepidodendron:triassic_woodland_polje",
+			"imageid4": "lepidodendron:triassic_woodland_polje",
+			"imageid5": "lepidodendron:triassic_woodland_polje",
+			"imageid6": "lepidodendron:triassic_woodland_polje",
+			"imageid7": "lepidodendron:triassic_woodland_polje",
+			"imageid8": "lepidodendron:triassic_woodland_polje",
+			"imageid9": "lepidodendron:triassic_woodland_polje",
+			"imageid10": "lepidodendron:triassic_woodland_polje",
+			"imageid11": "lepidodendron:triassic_woodland_polje",
+			"imageid12": "lepidodendron:triassic_woodland_polje",
+			"imageid13": "lepidodendron:triassic_woodland_polje",
+			"imageid14": "lepidodendron:triassic_woodland_polje"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_woodland_polje"
+			"biome": "lepidodendron:triassic_woodland_polje",
+			"imageid0": "lepidodendron:triassic_woodland_polje",
+			"imageid1": "lepidodendron:triassic_woodland_polje",
+			"imageid2": "lepidodendron:triassic_woodland_polje",
+			"imageid3": "lepidodendron:triassic_woodland_polje",
+			"imageid4": "lepidodendron:triassic_woodland_polje",
+			"imageid5": "lepidodendron:triassic_woodland_polje",
+			"imageid6": "lepidodendron:triassic_woodland_polje",
+			"imageid7": "lepidodendron:triassic_woodland_polje",
+			"imageid8": "lepidodendron:triassic_woodland_polje",
+			"imageid9": "lepidodendron:triassic_woodland_polje",
+			"imageid10": "lepidodendron:triassic_woodland_polje",
+			"imageid11": "lepidodendron:triassic_woodland_polje",
+			"imageid12": "lepidodendron:triassic_woodland_polje",
+			"imageid13": "lepidodendron:triassic_woodland_polje",
+			"imageid14": "lepidodendron:triassic_woodland_polje"
 		}
 	]
 }

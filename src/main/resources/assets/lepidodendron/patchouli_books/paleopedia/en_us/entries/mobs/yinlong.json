@@ -2,7 +2,7 @@
 	"name": "Yinlong",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/yinlong_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_yinlong",
 	"pages": [
 		{

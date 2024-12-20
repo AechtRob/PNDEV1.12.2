@@ -2,7 +2,7 @@
 	"name": "Hilly Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_hills"
+			"biome": "lepidodendron:cambrian_hills",
+			"imageid0": "lepidodendron:cambrian_hills",
+			"imageid1": "lepidodendron:cambrian_hills",
+			"imageid2": "lepidodendron:cambrian_hills",
+			"imageid3": "lepidodendron:cambrian_hills",
+			"imageid4": "lepidodendron:cambrian_hills",
+			"imageid5": "lepidodendron:cambrian_hills",
+			"imageid6": "lepidodendron:cambrian_hills",
+			"imageid7": "lepidodendron:cambrian_hills",
+			"imageid8": "lepidodendron:cambrian_hills",
+			"imageid9": "lepidodendron:cambrian_hills",
+			"imageid10": "lepidodendron:cambrian_hills",
+			"imageid11": "lepidodendron:cambrian_hills",
+			"imageid12": "lepidodendron:cambrian_hills",
+			"imageid13": "lepidodendron:cambrian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_hills"
+			"biome": "lepidodendron:cambrian_hills",
+			"imageid0": "lepidodendron:cambrian_hills",
+			"imageid1": "lepidodendron:cambrian_hills",
+			"imageid2": "lepidodendron:cambrian_hills",
+			"imageid3": "lepidodendron:cambrian_hills",
+			"imageid4": "lepidodendron:cambrian_hills",
+			"imageid5": "lepidodendron:cambrian_hills",
+			"imageid6": "lepidodendron:cambrian_hills",
+			"imageid7": "lepidodendron:cambrian_hills",
+			"imageid8": "lepidodendron:cambrian_hills",
+			"imageid9": "lepidodendron:cambrian_hills",
+			"imageid10": "lepidodendron:cambrian_hills",
+			"imageid11": "lepidodendron:cambrian_hills",
+			"imageid12": "lepidodendron:cambrian_hills",
+			"imageid13": "lepidodendron:cambrian_hills",
+			"imageid14": "lepidodendron:cambrian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_hills"
+			"biome": "lepidodendron:cambrian_hills",
+			"imageid0": "lepidodendron:cambrian_hills",
+			"imageid1": "lepidodendron:cambrian_hills",
+			"imageid2": "lepidodendron:cambrian_hills",
+			"imageid3": "lepidodendron:cambrian_hills",
+			"imageid4": "lepidodendron:cambrian_hills",
+			"imageid5": "lepidodendron:cambrian_hills",
+			"imageid6": "lepidodendron:cambrian_hills",
+			"imageid7": "lepidodendron:cambrian_hills",
+			"imageid8": "lepidodendron:cambrian_hills",
+			"imageid9": "lepidodendron:cambrian_hills",
+			"imageid10": "lepidodendron:cambrian_hills",
+			"imageid11": "lepidodendron:cambrian_hills",
+			"imageid12": "lepidodendron:cambrian_hills",
+			"imageid13": "lepidodendron:cambrian_hills",
+			"imageid14": "lepidodendron:cambrian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_hills"
+			"biome": "lepidodendron:cambrian_hills",
+			"imageid0": "lepidodendron:cambrian_hills",
+			"imageid1": "lepidodendron:cambrian_hills",
+			"imageid2": "lepidodendron:cambrian_hills",
+			"imageid3": "lepidodendron:cambrian_hills",
+			"imageid4": "lepidodendron:cambrian_hills",
+			"imageid5": "lepidodendron:cambrian_hills",
+			"imageid6": "lepidodendron:cambrian_hills",
+			"imageid7": "lepidodendron:cambrian_hills",
+			"imageid8": "lepidodendron:cambrian_hills",
+			"imageid9": "lepidodendron:cambrian_hills",
+			"imageid10": "lepidodendron:cambrian_hills",
+			"imageid11": "lepidodendron:cambrian_hills",
+			"imageid12": "lepidodendron:cambrian_hills",
+			"imageid13": "lepidodendron:cambrian_hills",
+			"imageid14": "lepidodendron:cambrian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_hills"
+			"biome": "lepidodendron:cambrian_hills",
+			"imageid0": "lepidodendron:cambrian_hills",
+			"imageid1": "lepidodendron:cambrian_hills",
+			"imageid2": "lepidodendron:cambrian_hills",
+			"imageid3": "lepidodendron:cambrian_hills",
+			"imageid4": "lepidodendron:cambrian_hills",
+			"imageid5": "lepidodendron:cambrian_hills",
+			"imageid6": "lepidodendron:cambrian_hills",
+			"imageid7": "lepidodendron:cambrian_hills",
+			"imageid8": "lepidodendron:cambrian_hills",
+			"imageid9": "lepidodendron:cambrian_hills",
+			"imageid10": "lepidodendron:cambrian_hills",
+			"imageid11": "lepidodendron:cambrian_hills",
+			"imageid12": "lepidodendron:cambrian_hills",
+			"imageid13": "lepidodendron:cambrian_hills",
+			"imageid14": "lepidodendron:cambrian_hills"
 		}
 	]
 }

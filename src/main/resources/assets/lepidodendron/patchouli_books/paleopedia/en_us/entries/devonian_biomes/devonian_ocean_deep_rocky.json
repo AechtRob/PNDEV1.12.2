@@ -2,7 +2,7 @@
 	"name": "Rocky Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+			"biome": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid0": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid1": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid2": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid3": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid4": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid5": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid6": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid7": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid8": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid9": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid10": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid11": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid12": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid13": "lepidodendron:devonian_ocean_deep_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+			"biome": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid0": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid1": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid2": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid3": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid4": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid5": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid6": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid7": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid8": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid9": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid10": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid11": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid12": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid13": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid14": "lepidodendron:devonian_ocean_deep_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+			"biome": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid0": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid1": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid2": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid3": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid4": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid5": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid6": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid7": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid8": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid9": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid10": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid11": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid12": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid13": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid14": "lepidodendron:devonian_ocean_deep_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+			"biome": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid0": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid1": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid2": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid3": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid4": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid5": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid6": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid7": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid8": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid9": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid10": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid11": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid12": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid13": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid14": "lepidodendron:devonian_ocean_deep_rocky"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_ocean_deep_rocky"
+			"biome": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid0": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid1": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid2": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid3": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid4": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid5": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid6": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid7": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid8": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid9": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid10": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid11": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid12": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid13": "lepidodendron:devonian_ocean_deep_rocky",
+			"imageid14": "lepidodendron:devonian_ocean_deep_rocky"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Songaichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/songaichthys_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_songaichthys",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Sanctacaris",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/sanctacaris_icon.png",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_sanctacaris",
 	"pages": [
 		{

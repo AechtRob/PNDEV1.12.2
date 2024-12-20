@@ -109,8 +109,14 @@ public class WorldGenOrdovicianBogLakes extends WorldGenerator
                                     if (rand.nextInt(3) == 0) {
                                         Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3).down(), BlockSandBlackWavy.block.getDefaultState());
                                     }
-                                    else {
+                                    else if (rand.nextInt(3) == 0) {
                                         Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3).down(), BlockPeat.block.getDefaultState());
+                                    }
+                                    else if (rand.nextInt(9) == 0) {
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3).down(), Blocks.SLIME_BLOCK.getDefaultState());
+                                    }
+                                    else {
+                                        Functions.setBlockStateAndCheckForDoublePlant(worldIn,position.add(l1, i4, i3).down(), Blocks.GRAVEL.getDefaultState());
                                     }
                                 }
                             }

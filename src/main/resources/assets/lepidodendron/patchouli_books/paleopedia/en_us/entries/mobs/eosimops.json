@@ -2,7 +2,7 @@
 	"name": "Eosimops",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/eosimops_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_eosimops",
 	"pages": [
 		{

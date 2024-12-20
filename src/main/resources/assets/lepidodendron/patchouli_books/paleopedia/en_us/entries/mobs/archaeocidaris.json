@@ -2,7 +2,7 @@
 	"name": "Archaeocidaris",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/archaeocidaris_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_archaeocidaris",
 	"pages": [
 		{

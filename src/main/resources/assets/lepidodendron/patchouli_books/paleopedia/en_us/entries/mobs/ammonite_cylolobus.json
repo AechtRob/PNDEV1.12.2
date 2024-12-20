@@ -2,7 +2,7 @@
 	"name": "Cyclolobus",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_cylolobus",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_cylolobus",
 	"pages": [
 		{

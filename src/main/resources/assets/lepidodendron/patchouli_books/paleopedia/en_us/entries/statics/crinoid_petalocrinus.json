@@ -1,0 +1,31 @@
+{
+	"name": "Petalocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_petalocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_petalocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_petalocrinus",
+			"title": "Petalocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cyathocrinida$(br)>Petalocrinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Petalocrinus.png"],
+			"title": "Petalocrinus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_petalocrinus",
+			"type": "text",
+			"text": "Petalocrinus is a crinoid from the Silurian with a flat shape and 5 petal shaped extensions from the top of its body, giving it a 'flower' look. It was likely a suspension feeder and lived attached to the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_petalocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

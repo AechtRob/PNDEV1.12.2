@@ -2,7 +2,7 @@
 	"name": "Boulders",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_boulders"
+			"biome": "lepidodendron:jurassic_boulders",
+			"imageid0": "lepidodendron:jurassic_boulders",
+			"imageid1": "lepidodendron:jurassic_boulders",
+			"imageid2": "lepidodendron:jurassic_boulders",
+			"imageid3": "lepidodendron:jurassic_boulders",
+			"imageid4": "lepidodendron:jurassic_boulders",
+			"imageid5": "lepidodendron:jurassic_boulders",
+			"imageid6": "lepidodendron:jurassic_boulders",
+			"imageid7": "lepidodendron:jurassic_boulders",
+			"imageid8": "lepidodendron:jurassic_boulders",
+			"imageid9": "lepidodendron:jurassic_boulders",
+			"imageid10": "lepidodendron:jurassic_boulders",
+			"imageid11": "lepidodendron:jurassic_boulders",
+			"imageid12": "lepidodendron:jurassic_boulders",
+			"imageid13": "lepidodendron:jurassic_boulders"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_boulders"
+			"biome": "lepidodendron:jurassic_boulders",
+			"imageid0": "lepidodendron:jurassic_boulders",
+			"imageid1": "lepidodendron:jurassic_boulders",
+			"imageid2": "lepidodendron:jurassic_boulders",
+			"imageid3": "lepidodendron:jurassic_boulders",
+			"imageid4": "lepidodendron:jurassic_boulders",
+			"imageid5": "lepidodendron:jurassic_boulders",
+			"imageid6": "lepidodendron:jurassic_boulders",
+			"imageid7": "lepidodendron:jurassic_boulders",
+			"imageid8": "lepidodendron:jurassic_boulders",
+			"imageid9": "lepidodendron:jurassic_boulders",
+			"imageid10": "lepidodendron:jurassic_boulders",
+			"imageid11": "lepidodendron:jurassic_boulders",
+			"imageid12": "lepidodendron:jurassic_boulders",
+			"imageid13": "lepidodendron:jurassic_boulders",
+			"imageid14": "lepidodendron:jurassic_boulders"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_boulders"
+			"biome": "lepidodendron:jurassic_boulders",
+			"imageid0": "lepidodendron:jurassic_boulders",
+			"imageid1": "lepidodendron:jurassic_boulders",
+			"imageid2": "lepidodendron:jurassic_boulders",
+			"imageid3": "lepidodendron:jurassic_boulders",
+			"imageid4": "lepidodendron:jurassic_boulders",
+			"imageid5": "lepidodendron:jurassic_boulders",
+			"imageid6": "lepidodendron:jurassic_boulders",
+			"imageid7": "lepidodendron:jurassic_boulders",
+			"imageid8": "lepidodendron:jurassic_boulders",
+			"imageid9": "lepidodendron:jurassic_boulders",
+			"imageid10": "lepidodendron:jurassic_boulders",
+			"imageid11": "lepidodendron:jurassic_boulders",
+			"imageid12": "lepidodendron:jurassic_boulders",
+			"imageid13": "lepidodendron:jurassic_boulders",
+			"imageid14": "lepidodendron:jurassic_boulders"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_boulders"
+			"biome": "lepidodendron:jurassic_boulders",
+			"imageid0": "lepidodendron:jurassic_boulders",
+			"imageid1": "lepidodendron:jurassic_boulders",
+			"imageid2": "lepidodendron:jurassic_boulders",
+			"imageid3": "lepidodendron:jurassic_boulders",
+			"imageid4": "lepidodendron:jurassic_boulders",
+			"imageid5": "lepidodendron:jurassic_boulders",
+			"imageid6": "lepidodendron:jurassic_boulders",
+			"imageid7": "lepidodendron:jurassic_boulders",
+			"imageid8": "lepidodendron:jurassic_boulders",
+			"imageid9": "lepidodendron:jurassic_boulders",
+			"imageid10": "lepidodendron:jurassic_boulders",
+			"imageid11": "lepidodendron:jurassic_boulders",
+			"imageid12": "lepidodendron:jurassic_boulders",
+			"imageid13": "lepidodendron:jurassic_boulders",
+			"imageid14": "lepidodendron:jurassic_boulders"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_boulders"
+			"biome": "lepidodendron:jurassic_boulders",
+			"imageid0": "lepidodendron:jurassic_boulders",
+			"imageid1": "lepidodendron:jurassic_boulders",
+			"imageid2": "lepidodendron:jurassic_boulders",
+			"imageid3": "lepidodendron:jurassic_boulders",
+			"imageid4": "lepidodendron:jurassic_boulders",
+			"imageid5": "lepidodendron:jurassic_boulders",
+			"imageid6": "lepidodendron:jurassic_boulders",
+			"imageid7": "lepidodendron:jurassic_boulders",
+			"imageid8": "lepidodendron:jurassic_boulders",
+			"imageid9": "lepidodendron:jurassic_boulders",
+			"imageid10": "lepidodendron:jurassic_boulders",
+			"imageid11": "lepidodendron:jurassic_boulders",
+			"imageid12": "lepidodendron:jurassic_boulders",
+			"imageid13": "lepidodendron:jurassic_boulders",
+			"imageid14": "lepidodendron:jurassic_boulders"
 		}
 	]
 }

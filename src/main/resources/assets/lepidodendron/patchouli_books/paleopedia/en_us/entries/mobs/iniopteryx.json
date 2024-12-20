@@ -2,7 +2,7 @@
 	"name": "Iniopteryx",
 	"read_by_default": true,
 	"icon": "lepidodendron:iniopteryx_raw",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_iniopteryx",
 	"pages": [
 		{

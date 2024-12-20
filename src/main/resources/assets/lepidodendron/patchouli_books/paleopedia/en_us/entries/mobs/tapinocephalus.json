@@ -2,7 +2,7 @@
 	"name": "Tapinocephalus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/tapinocephalus_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_tapinocephalus",
 	"pages": [
 		{

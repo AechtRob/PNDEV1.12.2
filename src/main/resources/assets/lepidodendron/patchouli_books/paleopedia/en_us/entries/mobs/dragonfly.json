@@ -2,7 +2,7 @@
 	"name": "Dragonfly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/dragonfly1_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_dragonfly",
 	"pages": [
 		{

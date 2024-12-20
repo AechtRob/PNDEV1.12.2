@@ -1,0 +1,31 @@
+{
+	"name": "Corumbella",
+	"read_by_default": true,
+	"icon": "lepidodendron:corumbella",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_corumbella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_corumbella",
+			"title": "Corumbella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Staurozoa$(br)>Corumbellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/corumbella.png"],
+			"title": "C. werneri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_corumbella",
+			"type": "text",
+			"text": "Corumbella is an Ediacaran cnidarian that looked like a long tube with a carapace made of polygonal rings. It was probably a sessile predator."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_corumbella",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,70 @@
+{
+	"name": "Blastoids",
+	"read_by_default": true,
+	"icon": "lepidodendron:blastoid_1",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_blastoids",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_blastoids",
+			"title": "Blastoids",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Blastozoa$(br)>Blastoidea"
+		},
+		{
+			"type": "multiblock",
+			"name": "Blastoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blastoid_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Blastoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blastoid_2",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "Blastoidea",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:blastoid_3",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_blastoids",
+			"type": "text",
+			"text": "Blastoids are a type of stemmed echinoderm that went extinct during the Permian period. They had what looked like a bud at the end of their stalks and coincided with crinoids, although the crinoids were more diverse. Blastoids were high level suspension feeders, eating plankton. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_blastoids",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

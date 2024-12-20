@@ -2,7 +2,7 @@
 	"name": "Stethacanthus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/stethacanthus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_stethacanthus",
 	"pages": [
 		{

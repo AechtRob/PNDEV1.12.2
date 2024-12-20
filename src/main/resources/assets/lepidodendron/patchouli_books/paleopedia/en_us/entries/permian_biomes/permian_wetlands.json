@@ -2,7 +2,7 @@
 	"name": "Wooded Wetlands",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_wetlands"
+			"biome": "lepidodendron:permian_wetlands",
+			"imageid0": "lepidodendron:permian_wetlands",
+			"imageid1": "lepidodendron:permian_wetlands",
+			"imageid2": "lepidodendron:permian_wetlands",
+			"imageid3": "lepidodendron:permian_wetlands",
+			"imageid4": "lepidodendron:permian_wetlands",
+			"imageid5": "lepidodendron:permian_wetlands",
+			"imageid6": "lepidodendron:permian_wetlands",
+			"imageid7": "lepidodendron:permian_wetlands",
+			"imageid8": "lepidodendron:permian_wetlands",
+			"imageid9": "lepidodendron:permian_wetlands",
+			"imageid10": "lepidodendron:permian_wetlands",
+			"imageid11": "lepidodendron:permian_wetlands",
+			"imageid12": "lepidodendron:permian_wetlands",
+			"imageid13": "lepidodendron:permian_wetlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_wetlands"
+			"biome": "lepidodendron:permian_wetlands",
+			"imageid0": "lepidodendron:permian_wetlands",
+			"imageid1": "lepidodendron:permian_wetlands",
+			"imageid2": "lepidodendron:permian_wetlands",
+			"imageid3": "lepidodendron:permian_wetlands",
+			"imageid4": "lepidodendron:permian_wetlands",
+			"imageid5": "lepidodendron:permian_wetlands",
+			"imageid6": "lepidodendron:permian_wetlands",
+			"imageid7": "lepidodendron:permian_wetlands",
+			"imageid8": "lepidodendron:permian_wetlands",
+			"imageid9": "lepidodendron:permian_wetlands",
+			"imageid10": "lepidodendron:permian_wetlands",
+			"imageid11": "lepidodendron:permian_wetlands",
+			"imageid12": "lepidodendron:permian_wetlands",
+			"imageid13": "lepidodendron:permian_wetlands",
+			"imageid14": "lepidodendron:permian_wetlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_wetlands"
+			"biome": "lepidodendron:permian_wetlands",
+			"imageid0": "lepidodendron:permian_wetlands",
+			"imageid1": "lepidodendron:permian_wetlands",
+			"imageid2": "lepidodendron:permian_wetlands",
+			"imageid3": "lepidodendron:permian_wetlands",
+			"imageid4": "lepidodendron:permian_wetlands",
+			"imageid5": "lepidodendron:permian_wetlands",
+			"imageid6": "lepidodendron:permian_wetlands",
+			"imageid7": "lepidodendron:permian_wetlands",
+			"imageid8": "lepidodendron:permian_wetlands",
+			"imageid9": "lepidodendron:permian_wetlands",
+			"imageid10": "lepidodendron:permian_wetlands",
+			"imageid11": "lepidodendron:permian_wetlands",
+			"imageid12": "lepidodendron:permian_wetlands",
+			"imageid13": "lepidodendron:permian_wetlands",
+			"imageid14": "lepidodendron:permian_wetlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_wetlands"
+			"biome": "lepidodendron:permian_wetlands",
+			"imageid0": "lepidodendron:permian_wetlands",
+			"imageid1": "lepidodendron:permian_wetlands",
+			"imageid2": "lepidodendron:permian_wetlands",
+			"imageid3": "lepidodendron:permian_wetlands",
+			"imageid4": "lepidodendron:permian_wetlands",
+			"imageid5": "lepidodendron:permian_wetlands",
+			"imageid6": "lepidodendron:permian_wetlands",
+			"imageid7": "lepidodendron:permian_wetlands",
+			"imageid8": "lepidodendron:permian_wetlands",
+			"imageid9": "lepidodendron:permian_wetlands",
+			"imageid10": "lepidodendron:permian_wetlands",
+			"imageid11": "lepidodendron:permian_wetlands",
+			"imageid12": "lepidodendron:permian_wetlands",
+			"imageid13": "lepidodendron:permian_wetlands",
+			"imageid14": "lepidodendron:permian_wetlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_wetlands"
+			"biome": "lepidodendron:permian_wetlands",
+			"imageid0": "lepidodendron:permian_wetlands",
+			"imageid1": "lepidodendron:permian_wetlands",
+			"imageid2": "lepidodendron:permian_wetlands",
+			"imageid3": "lepidodendron:permian_wetlands",
+			"imageid4": "lepidodendron:permian_wetlands",
+			"imageid5": "lepidodendron:permian_wetlands",
+			"imageid6": "lepidodendron:permian_wetlands",
+			"imageid7": "lepidodendron:permian_wetlands",
+			"imageid8": "lepidodendron:permian_wetlands",
+			"imageid9": "lepidodendron:permian_wetlands",
+			"imageid10": "lepidodendron:permian_wetlands",
+			"imageid11": "lepidodendron:permian_wetlands",
+			"imageid12": "lepidodendron:permian_wetlands",
+			"imageid13": "lepidodendron:permian_wetlands",
+			"imageid14": "lepidodendron:permian_wetlands"
 		}
 	]
 }

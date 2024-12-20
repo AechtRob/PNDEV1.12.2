@@ -2,7 +2,7 @@
 	"name": "Shallow Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_ocean_shore"
+			"biome": "lepidodendron:triassic_ocean_shore",
+			"imageid0": "lepidodendron:triassic_ocean_shore",
+			"imageid1": "lepidodendron:triassic_ocean_shore",
+			"imageid2": "lepidodendron:triassic_ocean_shore",
+			"imageid3": "lepidodendron:triassic_ocean_shore",
+			"imageid4": "lepidodendron:triassic_ocean_shore",
+			"imageid5": "lepidodendron:triassic_ocean_shore",
+			"imageid6": "lepidodendron:triassic_ocean_shore",
+			"imageid7": "lepidodendron:triassic_ocean_shore",
+			"imageid8": "lepidodendron:triassic_ocean_shore",
+			"imageid9": "lepidodendron:triassic_ocean_shore",
+			"imageid10": "lepidodendron:triassic_ocean_shore",
+			"imageid11": "lepidodendron:triassic_ocean_shore",
+			"imageid12": "lepidodendron:triassic_ocean_shore",
+			"imageid13": "lepidodendron:triassic_ocean_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_ocean_shore"
+			"biome": "lepidodendron:triassic_ocean_shore",
+			"imageid0": "lepidodendron:triassic_ocean_shore",
+			"imageid1": "lepidodendron:triassic_ocean_shore",
+			"imageid2": "lepidodendron:triassic_ocean_shore",
+			"imageid3": "lepidodendron:triassic_ocean_shore",
+			"imageid4": "lepidodendron:triassic_ocean_shore",
+			"imageid5": "lepidodendron:triassic_ocean_shore",
+			"imageid6": "lepidodendron:triassic_ocean_shore",
+			"imageid7": "lepidodendron:triassic_ocean_shore",
+			"imageid8": "lepidodendron:triassic_ocean_shore",
+			"imageid9": "lepidodendron:triassic_ocean_shore",
+			"imageid10": "lepidodendron:triassic_ocean_shore",
+			"imageid11": "lepidodendron:triassic_ocean_shore",
+			"imageid12": "lepidodendron:triassic_ocean_shore",
+			"imageid13": "lepidodendron:triassic_ocean_shore",
+			"imageid14": "lepidodendron:triassic_ocean_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_ocean_shore"
+			"biome": "lepidodendron:triassic_ocean_shore",
+			"imageid0": "lepidodendron:triassic_ocean_shore",
+			"imageid1": "lepidodendron:triassic_ocean_shore",
+			"imageid2": "lepidodendron:triassic_ocean_shore",
+			"imageid3": "lepidodendron:triassic_ocean_shore",
+			"imageid4": "lepidodendron:triassic_ocean_shore",
+			"imageid5": "lepidodendron:triassic_ocean_shore",
+			"imageid6": "lepidodendron:triassic_ocean_shore",
+			"imageid7": "lepidodendron:triassic_ocean_shore",
+			"imageid8": "lepidodendron:triassic_ocean_shore",
+			"imageid9": "lepidodendron:triassic_ocean_shore",
+			"imageid10": "lepidodendron:triassic_ocean_shore",
+			"imageid11": "lepidodendron:triassic_ocean_shore",
+			"imageid12": "lepidodendron:triassic_ocean_shore",
+			"imageid13": "lepidodendron:triassic_ocean_shore",
+			"imageid14": "lepidodendron:triassic_ocean_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_ocean_shore"
+			"biome": "lepidodendron:triassic_ocean_shore",
+			"imageid0": "lepidodendron:triassic_ocean_shore",
+			"imageid1": "lepidodendron:triassic_ocean_shore",
+			"imageid2": "lepidodendron:triassic_ocean_shore",
+			"imageid3": "lepidodendron:triassic_ocean_shore",
+			"imageid4": "lepidodendron:triassic_ocean_shore",
+			"imageid5": "lepidodendron:triassic_ocean_shore",
+			"imageid6": "lepidodendron:triassic_ocean_shore",
+			"imageid7": "lepidodendron:triassic_ocean_shore",
+			"imageid8": "lepidodendron:triassic_ocean_shore",
+			"imageid9": "lepidodendron:triassic_ocean_shore",
+			"imageid10": "lepidodendron:triassic_ocean_shore",
+			"imageid11": "lepidodendron:triassic_ocean_shore",
+			"imageid12": "lepidodendron:triassic_ocean_shore",
+			"imageid13": "lepidodendron:triassic_ocean_shore",
+			"imageid14": "lepidodendron:triassic_ocean_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_ocean_shore"
+			"biome": "lepidodendron:triassic_ocean_shore",
+			"imageid0": "lepidodendron:triassic_ocean_shore",
+			"imageid1": "lepidodendron:triassic_ocean_shore",
+			"imageid2": "lepidodendron:triassic_ocean_shore",
+			"imageid3": "lepidodendron:triassic_ocean_shore",
+			"imageid4": "lepidodendron:triassic_ocean_shore",
+			"imageid5": "lepidodendron:triassic_ocean_shore",
+			"imageid6": "lepidodendron:triassic_ocean_shore",
+			"imageid7": "lepidodendron:triassic_ocean_shore",
+			"imageid8": "lepidodendron:triassic_ocean_shore",
+			"imageid9": "lepidodendron:triassic_ocean_shore",
+			"imageid10": "lepidodendron:triassic_ocean_shore",
+			"imageid11": "lepidodendron:triassic_ocean_shore",
+			"imageid12": "lepidodendron:triassic_ocean_shore",
+			"imageid13": "lepidodendron:triassic_ocean_shore",
+			"imageid14": "lepidodendron:triassic_ocean_shore"
 		}
 	]
 }

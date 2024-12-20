@@ -2,7 +2,7 @@
 	"name": "Chunerpeton",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/chunerpeton_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_chunerpeton",
 	"pages": [
 		{

@@ -1,6 +1,6 @@
 {
     "name": "Pliocene",
-    "description": "$(l)An (N)Cooling Trend$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
+    "description": "5.33 - 2.58 mya$(br2)$(l)An (N)Cooling Trend$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Revival System.",
     "icon": "paleopedia:textures/category_icon/icon_pliocene.png",
     "parent": "lepidodendron:neogene",
     "sortnum": 2

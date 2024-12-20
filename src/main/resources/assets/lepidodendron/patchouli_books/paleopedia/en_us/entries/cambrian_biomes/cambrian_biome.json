@@ -2,7 +2,7 @@
 	"name": "Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_biome"
+			"biome": "lepidodendron:cambrian_biome",
+			"imageid0": "lepidodendron:cambrian_biome",
+			"imageid1": "lepidodendron:cambrian_biome",
+			"imageid2": "lepidodendron:cambrian_biome",
+			"imageid3": "lepidodendron:cambrian_biome",
+			"imageid4": "lepidodendron:cambrian_biome",
+			"imageid5": "lepidodendron:cambrian_biome",
+			"imageid6": "lepidodendron:cambrian_biome",
+			"imageid7": "lepidodendron:cambrian_biome",
+			"imageid8": "lepidodendron:cambrian_biome",
+			"imageid9": "lepidodendron:cambrian_biome",
+			"imageid10": "lepidodendron:cambrian_biome",
+			"imageid11": "lepidodendron:cambrian_biome",
+			"imageid12": "lepidodendron:cambrian_biome",
+			"imageid13": "lepidodendron:cambrian_biome"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_biome"
+			"biome": "lepidodendron:cambrian_biome",
+			"imageid0": "lepidodendron:cambrian_biome",
+			"imageid1": "lepidodendron:cambrian_biome",
+			"imageid2": "lepidodendron:cambrian_biome",
+			"imageid3": "lepidodendron:cambrian_biome",
+			"imageid4": "lepidodendron:cambrian_biome",
+			"imageid5": "lepidodendron:cambrian_biome",
+			"imageid6": "lepidodendron:cambrian_biome",
+			"imageid7": "lepidodendron:cambrian_biome",
+			"imageid8": "lepidodendron:cambrian_biome",
+			"imageid9": "lepidodendron:cambrian_biome",
+			"imageid10": "lepidodendron:cambrian_biome",
+			"imageid11": "lepidodendron:cambrian_biome",
+			"imageid12": "lepidodendron:cambrian_biome",
+			"imageid13": "lepidodendron:cambrian_biome",
+			"imageid14": "lepidodendron:cambrian_biome"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_biome"
+			"biome": "lepidodendron:cambrian_biome",
+			"imageid0": "lepidodendron:cambrian_biome",
+			"imageid1": "lepidodendron:cambrian_biome",
+			"imageid2": "lepidodendron:cambrian_biome",
+			"imageid3": "lepidodendron:cambrian_biome",
+			"imageid4": "lepidodendron:cambrian_biome",
+			"imageid5": "lepidodendron:cambrian_biome",
+			"imageid6": "lepidodendron:cambrian_biome",
+			"imageid7": "lepidodendron:cambrian_biome",
+			"imageid8": "lepidodendron:cambrian_biome",
+			"imageid9": "lepidodendron:cambrian_biome",
+			"imageid10": "lepidodendron:cambrian_biome",
+			"imageid11": "lepidodendron:cambrian_biome",
+			"imageid12": "lepidodendron:cambrian_biome",
+			"imageid13": "lepidodendron:cambrian_biome",
+			"imageid14": "lepidodendron:cambrian_biome"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_biome"
+			"biome": "lepidodendron:cambrian_biome",
+			"imageid0": "lepidodendron:cambrian_biome",
+			"imageid1": "lepidodendron:cambrian_biome",
+			"imageid2": "lepidodendron:cambrian_biome",
+			"imageid3": "lepidodendron:cambrian_biome",
+			"imageid4": "lepidodendron:cambrian_biome",
+			"imageid5": "lepidodendron:cambrian_biome",
+			"imageid6": "lepidodendron:cambrian_biome",
+			"imageid7": "lepidodendron:cambrian_biome",
+			"imageid8": "lepidodendron:cambrian_biome",
+			"imageid9": "lepidodendron:cambrian_biome",
+			"imageid10": "lepidodendron:cambrian_biome",
+			"imageid11": "lepidodendron:cambrian_biome",
+			"imageid12": "lepidodendron:cambrian_biome",
+			"imageid13": "lepidodendron:cambrian_biome",
+			"imageid14": "lepidodendron:cambrian_biome"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_biome"
+			"biome": "lepidodendron:cambrian_biome",
+			"imageid0": "lepidodendron:cambrian_biome",
+			"imageid1": "lepidodendron:cambrian_biome",
+			"imageid2": "lepidodendron:cambrian_biome",
+			"imageid3": "lepidodendron:cambrian_biome",
+			"imageid4": "lepidodendron:cambrian_biome",
+			"imageid5": "lepidodendron:cambrian_biome",
+			"imageid6": "lepidodendron:cambrian_biome",
+			"imageid7": "lepidodendron:cambrian_biome",
+			"imageid8": "lepidodendron:cambrian_biome",
+			"imageid9": "lepidodendron:cambrian_biome",
+			"imageid10": "lepidodendron:cambrian_biome",
+			"imageid11": "lepidodendron:cambrian_biome",
+			"imageid12": "lepidodendron:cambrian_biome",
+			"imageid13": "lepidodendron:cambrian_biome",
+			"imageid14": "lepidodendron:cambrian_biome"
 		}
 	]
 }

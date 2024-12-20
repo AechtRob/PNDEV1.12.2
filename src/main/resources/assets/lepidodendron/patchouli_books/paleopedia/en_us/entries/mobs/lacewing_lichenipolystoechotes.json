@@ -2,7 +2,7 @@
 	"name": "Lichenipolystoechotes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/lacewing_lichenipolystoechotes_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_lacewing_lichenipolystoechotes",
 	"pages": [
 		{

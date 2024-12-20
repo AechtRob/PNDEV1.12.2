@@ -2,7 +2,7 @@
 	"name": "Lion's Mane Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/lions_icon.png",
-	"category": "lepidodendron:pleistocene_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish6",
 	"pages": [
 		{

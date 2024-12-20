@@ -1,0 +1,63 @@
+{
+	"name": "Zamites",
+	"read_by_default": true,
+	"icon": "lepidodendron:zamites_shoot",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_zamites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_zamites",
+			"title": "Zamites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Eocene$(br2)$(l)Propagation:$() Use a collection envelope on the flowering leaves (not the main shoots) to harvest seeds.$(br2)$(l)Growth:$() Grows from a sapling which can be planted on all dirt-like blocks."
+		},
+		{
+			"type": "multiblock",
+			"name": "Zamites sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "   "," B ", "   " ],
+					[ " G ","CHB", " B " ],
+					[ "   "," DE", " F " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," A ", "   " ],
+					[ "   "," 0 ", "   " ]
+				],
+				"mapping": {
+					"H": "lepidodendron:zamites_log[down=true,up=true,west=true]",
+					"G": "lepidodendron:zamites_leaves[facing=west]",
+					"F": "lepidodendron:zamites_log[up=true,south=true]",
+					"E": "lepidodendron:zamites_log[up=true,west=true]",
+					"D": "lepidodendron:zamites_log[down=true,east=true,north=true,up=true]",
+					"C": "lepidodendron:zamites_leaves[facing=north]",
+					"B": "lepidodendron:zamites_shoot",
+					"A": "lepidodendron:zamites_log[down=true,up=true]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_zamites",
+			"type": "text",
+			"text": "Zamites is the name given to fossils of a particular form of leaf which belonged to some Bennetitalean plants. They are found in rocks from the  Triassic onwards, and are found all over the world. They are always once-pinnate (have single-level leaflets), and present a similar shape to many other Bennetitalean leaf fossils. Zamites leaves have simple smooth-edged leaflets, quite a lot longer than wide, arranged alternately, tapering to a tip, and their main characteristic is that"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_zamites",
+			"type": "text",
+			"text": "their bases are constricted into waist-like shapes where they join the midrib. Bennettites leaves are usually somewhat thickly-textured, not delicate, and so we assume the plants were somewhat tough and resilient, able to grow in many different types of habitat, and their dominance of Mesozoic floras backs this up.$(br2)We do not know what plants the various leaves come from, however Bennettites plants are normally woody plants,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_zamites",
+			"type": "text",
+			"text": "displaying a divaricate branching habit (Y-shaped branching), very like modern Banksia. Zamites leaves can be reasonably large leaves amongst the Bennettites, and are often interpreted in shoot arrangements reminiscent of branched cycad-like shapes. Bennettites were not Angiosperms, but are known to have usually produced sometimes dramatic flower-like or cone-like structures for pollination and seed production, and so we have added"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_zamites",
+			"type": "text",
+			"text": "the suggestion of floral structures to our plant.$(br2)Zamites leaves have the distinction of being known as fossils from after the end of the Cretaceous, and have been found in deposits dating from the Eocene."
+		}
+	]
+}

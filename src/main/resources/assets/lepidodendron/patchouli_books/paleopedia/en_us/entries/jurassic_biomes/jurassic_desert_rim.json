@@ -2,7 +2,7 @@
 	"name": "Desert Edge",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_desert_rim"
+			"biome": "lepidodendron:jurassic_desert_rim",
+			"imageid0": "lepidodendron:jurassic_desert_rim",
+			"imageid1": "lepidodendron:jurassic_desert_rim",
+			"imageid2": "lepidodendron:jurassic_desert_rim",
+			"imageid3": "lepidodendron:jurassic_desert_rim",
+			"imageid4": "lepidodendron:jurassic_desert_rim",
+			"imageid5": "lepidodendron:jurassic_desert_rim",
+			"imageid6": "lepidodendron:jurassic_desert_rim",
+			"imageid7": "lepidodendron:jurassic_desert_rim",
+			"imageid8": "lepidodendron:jurassic_desert_rim",
+			"imageid9": "lepidodendron:jurassic_desert_rim",
+			"imageid10": "lepidodendron:jurassic_desert_rim",
+			"imageid11": "lepidodendron:jurassic_desert_rim",
+			"imageid12": "lepidodendron:jurassic_desert_rim",
+			"imageid13": "lepidodendron:jurassic_desert_rim"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_desert_rim"
+			"biome": "lepidodendron:jurassic_desert_rim",
+			"imageid0": "lepidodendron:jurassic_desert_rim",
+			"imageid1": "lepidodendron:jurassic_desert_rim",
+			"imageid2": "lepidodendron:jurassic_desert_rim",
+			"imageid3": "lepidodendron:jurassic_desert_rim",
+			"imageid4": "lepidodendron:jurassic_desert_rim",
+			"imageid5": "lepidodendron:jurassic_desert_rim",
+			"imageid6": "lepidodendron:jurassic_desert_rim",
+			"imageid7": "lepidodendron:jurassic_desert_rim",
+			"imageid8": "lepidodendron:jurassic_desert_rim",
+			"imageid9": "lepidodendron:jurassic_desert_rim",
+			"imageid10": "lepidodendron:jurassic_desert_rim",
+			"imageid11": "lepidodendron:jurassic_desert_rim",
+			"imageid12": "lepidodendron:jurassic_desert_rim",
+			"imageid13": "lepidodendron:jurassic_desert_rim",
+			"imageid14": "lepidodendron:jurassic_desert_rim"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_desert_rim"
+			"biome": "lepidodendron:jurassic_desert_rim",
+			"imageid0": "lepidodendron:jurassic_desert_rim",
+			"imageid1": "lepidodendron:jurassic_desert_rim",
+			"imageid2": "lepidodendron:jurassic_desert_rim",
+			"imageid3": "lepidodendron:jurassic_desert_rim",
+			"imageid4": "lepidodendron:jurassic_desert_rim",
+			"imageid5": "lepidodendron:jurassic_desert_rim",
+			"imageid6": "lepidodendron:jurassic_desert_rim",
+			"imageid7": "lepidodendron:jurassic_desert_rim",
+			"imageid8": "lepidodendron:jurassic_desert_rim",
+			"imageid9": "lepidodendron:jurassic_desert_rim",
+			"imageid10": "lepidodendron:jurassic_desert_rim",
+			"imageid11": "lepidodendron:jurassic_desert_rim",
+			"imageid12": "lepidodendron:jurassic_desert_rim",
+			"imageid13": "lepidodendron:jurassic_desert_rim",
+			"imageid14": "lepidodendron:jurassic_desert_rim"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_desert_rim"
+			"biome": "lepidodendron:jurassic_desert_rim",
+			"imageid0": "lepidodendron:jurassic_desert_rim",
+			"imageid1": "lepidodendron:jurassic_desert_rim",
+			"imageid2": "lepidodendron:jurassic_desert_rim",
+			"imageid3": "lepidodendron:jurassic_desert_rim",
+			"imageid4": "lepidodendron:jurassic_desert_rim",
+			"imageid5": "lepidodendron:jurassic_desert_rim",
+			"imageid6": "lepidodendron:jurassic_desert_rim",
+			"imageid7": "lepidodendron:jurassic_desert_rim",
+			"imageid8": "lepidodendron:jurassic_desert_rim",
+			"imageid9": "lepidodendron:jurassic_desert_rim",
+			"imageid10": "lepidodendron:jurassic_desert_rim",
+			"imageid11": "lepidodendron:jurassic_desert_rim",
+			"imageid12": "lepidodendron:jurassic_desert_rim",
+			"imageid13": "lepidodendron:jurassic_desert_rim",
+			"imageid14": "lepidodendron:jurassic_desert_rim"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_desert_rim"
+			"biome": "lepidodendron:jurassic_desert_rim",
+			"imageid0": "lepidodendron:jurassic_desert_rim",
+			"imageid1": "lepidodendron:jurassic_desert_rim",
+			"imageid2": "lepidodendron:jurassic_desert_rim",
+			"imageid3": "lepidodendron:jurassic_desert_rim",
+			"imageid4": "lepidodendron:jurassic_desert_rim",
+			"imageid5": "lepidodendron:jurassic_desert_rim",
+			"imageid6": "lepidodendron:jurassic_desert_rim",
+			"imageid7": "lepidodendron:jurassic_desert_rim",
+			"imageid8": "lepidodendron:jurassic_desert_rim",
+			"imageid9": "lepidodendron:jurassic_desert_rim",
+			"imageid10": "lepidodendron:jurassic_desert_rim",
+			"imageid11": "lepidodendron:jurassic_desert_rim",
+			"imageid12": "lepidodendron:jurassic_desert_rim",
+			"imageid13": "lepidodendron:jurassic_desert_rim",
+			"imageid14": "lepidodendron:jurassic_desert_rim"
 		}
 	]
 }

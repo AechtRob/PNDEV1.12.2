@@ -2,7 +2,7 @@
 	"name": "Beishanichthys",
 	"read_by_default": true,
 	"icon": "lepidodendron:beishanichthys_raw",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_beishanichthys",
 	"pages": [
 		{

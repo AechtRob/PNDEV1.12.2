@@ -2,7 +2,7 @@
 	"name": "Compass Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/compass_icon.png",
-	"category": "lepidodendron:oligocene_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish2",
 	"pages": [
 		{

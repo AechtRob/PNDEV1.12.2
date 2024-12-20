@@ -1,0 +1,7 @@
+{
+    "name": "Carboniferous Life",
+    "description": "Life of the Carboniferous",
+    "icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
+    "parent": "lepidodendron:carboniferous",
+    "sortnum": 1
+}

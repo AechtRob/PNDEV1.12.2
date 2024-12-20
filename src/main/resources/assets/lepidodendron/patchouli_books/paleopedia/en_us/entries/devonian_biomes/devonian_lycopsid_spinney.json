@@ -2,7 +2,7 @@
 	"name": "Lycopsid Spinney",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_lycopsid_spinney"
+			"biome": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid0": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid1": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid2": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid3": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid4": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid5": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid6": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid7": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid8": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid9": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid10": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid11": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid12": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid13": "lepidodendron:devonian_lycopsid_spinney"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_lycopsid_spinney"
+			"biome": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid0": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid1": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid2": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid3": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid4": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid5": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid6": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid7": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid8": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid9": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid10": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid11": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid12": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid13": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid14": "lepidodendron:devonian_lycopsid_spinney"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_lycopsid_spinney"
+			"biome": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid0": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid1": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid2": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid3": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid4": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid5": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid6": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid7": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid8": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid9": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid10": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid11": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid12": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid13": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid14": "lepidodendron:devonian_lycopsid_spinney"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_lycopsid_spinney"
+			"biome": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid0": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid1": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid2": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid3": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid4": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid5": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid6": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid7": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid8": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid9": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid10": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid11": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid12": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid13": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid14": "lepidodendron:devonian_lycopsid_spinney"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_lycopsid_spinney"
+			"biome": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid0": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid1": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid2": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid3": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid4": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid5": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid6": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid7": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid8": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid9": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid10": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid11": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid12": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid13": "lepidodendron:devonian_lycopsid_spinney",
+			"imageid14": "lepidodendron:devonian_lycopsid_spinney"
 		}
 	]
 }

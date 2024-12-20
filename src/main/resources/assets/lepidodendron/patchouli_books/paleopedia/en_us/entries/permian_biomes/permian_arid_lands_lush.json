@@ -2,7 +2,7 @@
 	"name": "Lush Arid Lands",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_arid_lands_lush"
+			"biome": "lepidodendron:permian_arid_lands_lush",
+			"imageid0": "lepidodendron:permian_arid_lands_lush",
+			"imageid1": "lepidodendron:permian_arid_lands_lush",
+			"imageid2": "lepidodendron:permian_arid_lands_lush",
+			"imageid3": "lepidodendron:permian_arid_lands_lush",
+			"imageid4": "lepidodendron:permian_arid_lands_lush",
+			"imageid5": "lepidodendron:permian_arid_lands_lush",
+			"imageid6": "lepidodendron:permian_arid_lands_lush",
+			"imageid7": "lepidodendron:permian_arid_lands_lush",
+			"imageid8": "lepidodendron:permian_arid_lands_lush",
+			"imageid9": "lepidodendron:permian_arid_lands_lush",
+			"imageid10": "lepidodendron:permian_arid_lands_lush",
+			"imageid11": "lepidodendron:permian_arid_lands_lush",
+			"imageid12": "lepidodendron:permian_arid_lands_lush",
+			"imageid13": "lepidodendron:permian_arid_lands_lush"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_arid_lands_lush"
+			"biome": "lepidodendron:permian_arid_lands_lush",
+			"imageid0": "lepidodendron:permian_arid_lands_lush",
+			"imageid1": "lepidodendron:permian_arid_lands_lush",
+			"imageid2": "lepidodendron:permian_arid_lands_lush",
+			"imageid3": "lepidodendron:permian_arid_lands_lush",
+			"imageid4": "lepidodendron:permian_arid_lands_lush",
+			"imageid5": "lepidodendron:permian_arid_lands_lush",
+			"imageid6": "lepidodendron:permian_arid_lands_lush",
+			"imageid7": "lepidodendron:permian_arid_lands_lush",
+			"imageid8": "lepidodendron:permian_arid_lands_lush",
+			"imageid9": "lepidodendron:permian_arid_lands_lush",
+			"imageid10": "lepidodendron:permian_arid_lands_lush",
+			"imageid11": "lepidodendron:permian_arid_lands_lush",
+			"imageid12": "lepidodendron:permian_arid_lands_lush",
+			"imageid13": "lepidodendron:permian_arid_lands_lush",
+			"imageid14": "lepidodendron:permian_arid_lands_lush"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_arid_lands_lush"
+			"biome": "lepidodendron:permian_arid_lands_lush",
+			"imageid0": "lepidodendron:permian_arid_lands_lush",
+			"imageid1": "lepidodendron:permian_arid_lands_lush",
+			"imageid2": "lepidodendron:permian_arid_lands_lush",
+			"imageid3": "lepidodendron:permian_arid_lands_lush",
+			"imageid4": "lepidodendron:permian_arid_lands_lush",
+			"imageid5": "lepidodendron:permian_arid_lands_lush",
+			"imageid6": "lepidodendron:permian_arid_lands_lush",
+			"imageid7": "lepidodendron:permian_arid_lands_lush",
+			"imageid8": "lepidodendron:permian_arid_lands_lush",
+			"imageid9": "lepidodendron:permian_arid_lands_lush",
+			"imageid10": "lepidodendron:permian_arid_lands_lush",
+			"imageid11": "lepidodendron:permian_arid_lands_lush",
+			"imageid12": "lepidodendron:permian_arid_lands_lush",
+			"imageid13": "lepidodendron:permian_arid_lands_lush",
+			"imageid14": "lepidodendron:permian_arid_lands_lush"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_arid_lands_lush"
+			"biome": "lepidodendron:permian_arid_lands_lush",
+			"imageid0": "lepidodendron:permian_arid_lands_lush",
+			"imageid1": "lepidodendron:permian_arid_lands_lush",
+			"imageid2": "lepidodendron:permian_arid_lands_lush",
+			"imageid3": "lepidodendron:permian_arid_lands_lush",
+			"imageid4": "lepidodendron:permian_arid_lands_lush",
+			"imageid5": "lepidodendron:permian_arid_lands_lush",
+			"imageid6": "lepidodendron:permian_arid_lands_lush",
+			"imageid7": "lepidodendron:permian_arid_lands_lush",
+			"imageid8": "lepidodendron:permian_arid_lands_lush",
+			"imageid9": "lepidodendron:permian_arid_lands_lush",
+			"imageid10": "lepidodendron:permian_arid_lands_lush",
+			"imageid11": "lepidodendron:permian_arid_lands_lush",
+			"imageid12": "lepidodendron:permian_arid_lands_lush",
+			"imageid13": "lepidodendron:permian_arid_lands_lush",
+			"imageid14": "lepidodendron:permian_arid_lands_lush"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_arid_lands_lush"
+			"biome": "lepidodendron:permian_arid_lands_lush",
+			"imageid0": "lepidodendron:permian_arid_lands_lush",
+			"imageid1": "lepidodendron:permian_arid_lands_lush",
+			"imageid2": "lepidodendron:permian_arid_lands_lush",
+			"imageid3": "lepidodendron:permian_arid_lands_lush",
+			"imageid4": "lepidodendron:permian_arid_lands_lush",
+			"imageid5": "lepidodendron:permian_arid_lands_lush",
+			"imageid6": "lepidodendron:permian_arid_lands_lush",
+			"imageid7": "lepidodendron:permian_arid_lands_lush",
+			"imageid8": "lepidodendron:permian_arid_lands_lush",
+			"imageid9": "lepidodendron:permian_arid_lands_lush",
+			"imageid10": "lepidodendron:permian_arid_lands_lush",
+			"imageid11": "lepidodendron:permian_arid_lands_lush",
+			"imageid12": "lepidodendron:permian_arid_lands_lush",
+			"imageid13": "lepidodendron:permian_arid_lands_lush",
+			"imageid14": "lepidodendron:permian_arid_lands_lush"
 		}
 	]
 }

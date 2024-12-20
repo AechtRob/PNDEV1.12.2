@@ -1,7 +1,0 @@
-{
-    "name": "Silurian Animals",
-    "description": "Animals of the Silurian",
-    "icon": "paleopedia:textures/items/acutiramus_icon.png",
-    "parent": "lepidodendron:silurian",
-    "sortnum": 1
-}
