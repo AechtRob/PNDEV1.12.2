@@ -2,7 +2,7 @@
 	"name": "Pools",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
+			"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_forest_ocean",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 		}
 	]
 }

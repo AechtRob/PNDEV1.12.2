@@ -88,7 +88,7 @@ public class BlockGlossopterisSapling extends ElementsLepidodendronMod.ModElemen
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.2F);
         	setResistance(1F);
-			setTranslationKey("pf_glossopterissapling");
+			setTranslationKey("pf_glossopteris_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 

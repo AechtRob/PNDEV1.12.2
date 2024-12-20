@@ -2,7 +2,7 @@
 	"name": "Seymouria",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/seymouria_icon.png",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:_",
 	"turnin": "lepidodendron:pf_adv_book_seymouria",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Elginia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/elginia_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_elginia",
 	"pages": [
 		{

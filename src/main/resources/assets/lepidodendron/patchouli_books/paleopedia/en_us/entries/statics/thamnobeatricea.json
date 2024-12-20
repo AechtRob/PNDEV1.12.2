@@ -1,0 +1,31 @@
+{
+	"name": "Thamnobeatricea",
+	"read_by_default": true,
+	"icon": "lepidodendron:thamnobeatricea",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_thamnobeatricea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thamnobeatricea",
+			"title": "Thamnobeatricea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Stromatoporoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/thamnobeatricea.png"],
+			"title": "Thamnobeatricea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thamnobeatricea",
+			"type": "text",
+			"text": "Thamnobeatricea is a genus of stromatoporoid sponges that may have formed sponge forests in the Ordovician and Silurian periods. They were large branching sponges."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thamnobeatricea",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

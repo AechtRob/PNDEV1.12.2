@@ -2,6 +2,6 @@
     "name": "Archean Biomes",
     "description": "Biomes of the Archean$(br2)4,031 - 2,500 mya",
     "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
-    "parent": "lepidodendron:precambrian_biome",
+    "parent": "lepidodendron:precambrian/precambrian_biome",
     "sortnum": 2
 }

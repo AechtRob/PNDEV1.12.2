@@ -2,7 +2,7 @@
 	"name": "Riverbanks",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_riverbank"
+			"biome": "lepidodendron:jurassic_riverbank",
+			"imageid0": "lepidodendron:jurassic_riverbank",
+			"imageid1": "lepidodendron:jurassic_riverbank",
+			"imageid2": "lepidodendron:jurassic_riverbank",
+			"imageid3": "lepidodendron:jurassic_riverbank",
+			"imageid4": "lepidodendron:jurassic_riverbank",
+			"imageid5": "lepidodendron:jurassic_riverbank",
+			"imageid6": "lepidodendron:jurassic_riverbank",
+			"imageid7": "lepidodendron:jurassic_riverbank",
+			"imageid8": "lepidodendron:jurassic_riverbank",
+			"imageid9": "lepidodendron:jurassic_riverbank",
+			"imageid10": "lepidodendron:jurassic_riverbank",
+			"imageid11": "lepidodendron:jurassic_riverbank",
+			"imageid12": "lepidodendron:jurassic_riverbank",
+			"imageid13": "lepidodendron:jurassic_riverbank"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_riverbank"
+			"biome": "lepidodendron:jurassic_riverbank",
+			"imageid0": "lepidodendron:jurassic_riverbank",
+			"imageid1": "lepidodendron:jurassic_riverbank",
+			"imageid2": "lepidodendron:jurassic_riverbank",
+			"imageid3": "lepidodendron:jurassic_riverbank",
+			"imageid4": "lepidodendron:jurassic_riverbank",
+			"imageid5": "lepidodendron:jurassic_riverbank",
+			"imageid6": "lepidodendron:jurassic_riverbank",
+			"imageid7": "lepidodendron:jurassic_riverbank",
+			"imageid8": "lepidodendron:jurassic_riverbank",
+			"imageid9": "lepidodendron:jurassic_riverbank",
+			"imageid10": "lepidodendron:jurassic_riverbank",
+			"imageid11": "lepidodendron:jurassic_riverbank",
+			"imageid12": "lepidodendron:jurassic_riverbank",
+			"imageid13": "lepidodendron:jurassic_riverbank",
+			"imageid14": "lepidodendron:jurassic_riverbank"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_riverbank"
+			"biome": "lepidodendron:jurassic_riverbank",
+			"imageid0": "lepidodendron:jurassic_riverbank",
+			"imageid1": "lepidodendron:jurassic_riverbank",
+			"imageid2": "lepidodendron:jurassic_riverbank",
+			"imageid3": "lepidodendron:jurassic_riverbank",
+			"imageid4": "lepidodendron:jurassic_riverbank",
+			"imageid5": "lepidodendron:jurassic_riverbank",
+			"imageid6": "lepidodendron:jurassic_riverbank",
+			"imageid7": "lepidodendron:jurassic_riverbank",
+			"imageid8": "lepidodendron:jurassic_riverbank",
+			"imageid9": "lepidodendron:jurassic_riverbank",
+			"imageid10": "lepidodendron:jurassic_riverbank",
+			"imageid11": "lepidodendron:jurassic_riverbank",
+			"imageid12": "lepidodendron:jurassic_riverbank",
+			"imageid13": "lepidodendron:jurassic_riverbank",
+			"imageid14": "lepidodendron:jurassic_riverbank"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_riverbank"
+			"biome": "lepidodendron:jurassic_riverbank",
+			"imageid0": "lepidodendron:jurassic_riverbank",
+			"imageid1": "lepidodendron:jurassic_riverbank",
+			"imageid2": "lepidodendron:jurassic_riverbank",
+			"imageid3": "lepidodendron:jurassic_riverbank",
+			"imageid4": "lepidodendron:jurassic_riverbank",
+			"imageid5": "lepidodendron:jurassic_riverbank",
+			"imageid6": "lepidodendron:jurassic_riverbank",
+			"imageid7": "lepidodendron:jurassic_riverbank",
+			"imageid8": "lepidodendron:jurassic_riverbank",
+			"imageid9": "lepidodendron:jurassic_riverbank",
+			"imageid10": "lepidodendron:jurassic_riverbank",
+			"imageid11": "lepidodendron:jurassic_riverbank",
+			"imageid12": "lepidodendron:jurassic_riverbank",
+			"imageid13": "lepidodendron:jurassic_riverbank",
+			"imageid14": "lepidodendron:jurassic_riverbank"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_riverbank"
+			"biome": "lepidodendron:jurassic_riverbank",
+			"imageid0": "lepidodendron:jurassic_riverbank",
+			"imageid1": "lepidodendron:jurassic_riverbank",
+			"imageid2": "lepidodendron:jurassic_riverbank",
+			"imageid3": "lepidodendron:jurassic_riverbank",
+			"imageid4": "lepidodendron:jurassic_riverbank",
+			"imageid5": "lepidodendron:jurassic_riverbank",
+			"imageid6": "lepidodendron:jurassic_riverbank",
+			"imageid7": "lepidodendron:jurassic_riverbank",
+			"imageid8": "lepidodendron:jurassic_riverbank",
+			"imageid9": "lepidodendron:jurassic_riverbank",
+			"imageid10": "lepidodendron:jurassic_riverbank",
+			"imageid11": "lepidodendron:jurassic_riverbank",
+			"imageid12": "lepidodendron:jurassic_riverbank",
+			"imageid13": "lepidodendron:jurassic_riverbank",
+			"imageid14": "lepidodendron:jurassic_riverbank"
 		}
 	]
 }

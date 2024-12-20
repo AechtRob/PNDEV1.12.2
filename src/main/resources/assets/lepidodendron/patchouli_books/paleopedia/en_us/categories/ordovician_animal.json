@@ -1,7 +1,0 @@
-{
-    "name": "Ordovician Animals",
-    "description": "Animals of the Ordovician",
-    "icon": "lepidodendron:hungioides_raw",
-    "parent": "lepidodendron:ordovician",
-    "sortnum": 1
-}

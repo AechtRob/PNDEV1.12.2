@@ -2,7 +2,7 @@
 	"name": "Lowlands",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_lowlands"
+			"biome": "lepidodendron:permian_lowlands",
+			"imageid0": "lepidodendron:permian_lowlands",
+			"imageid1": "lepidodendron:permian_lowlands",
+			"imageid2": "lepidodendron:permian_lowlands",
+			"imageid3": "lepidodendron:permian_lowlands",
+			"imageid4": "lepidodendron:permian_lowlands",
+			"imageid5": "lepidodendron:permian_lowlands",
+			"imageid6": "lepidodendron:permian_lowlands",
+			"imageid7": "lepidodendron:permian_lowlands",
+			"imageid8": "lepidodendron:permian_lowlands",
+			"imageid9": "lepidodendron:permian_lowlands",
+			"imageid10": "lepidodendron:permian_lowlands",
+			"imageid11": "lepidodendron:permian_lowlands",
+			"imageid12": "lepidodendron:permian_lowlands",
+			"imageid13": "lepidodendron:permian_lowlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_lowlands"
+			"biome": "lepidodendron:permian_lowlands",
+			"imageid0": "lepidodendron:permian_lowlands",
+			"imageid1": "lepidodendron:permian_lowlands",
+			"imageid2": "lepidodendron:permian_lowlands",
+			"imageid3": "lepidodendron:permian_lowlands",
+			"imageid4": "lepidodendron:permian_lowlands",
+			"imageid5": "lepidodendron:permian_lowlands",
+			"imageid6": "lepidodendron:permian_lowlands",
+			"imageid7": "lepidodendron:permian_lowlands",
+			"imageid8": "lepidodendron:permian_lowlands",
+			"imageid9": "lepidodendron:permian_lowlands",
+			"imageid10": "lepidodendron:permian_lowlands",
+			"imageid11": "lepidodendron:permian_lowlands",
+			"imageid12": "lepidodendron:permian_lowlands",
+			"imageid13": "lepidodendron:permian_lowlands",
+			"imageid14": "lepidodendron:permian_lowlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_lowlands"
+			"biome": "lepidodendron:permian_lowlands",
+			"imageid0": "lepidodendron:permian_lowlands",
+			"imageid1": "lepidodendron:permian_lowlands",
+			"imageid2": "lepidodendron:permian_lowlands",
+			"imageid3": "lepidodendron:permian_lowlands",
+			"imageid4": "lepidodendron:permian_lowlands",
+			"imageid5": "lepidodendron:permian_lowlands",
+			"imageid6": "lepidodendron:permian_lowlands",
+			"imageid7": "lepidodendron:permian_lowlands",
+			"imageid8": "lepidodendron:permian_lowlands",
+			"imageid9": "lepidodendron:permian_lowlands",
+			"imageid10": "lepidodendron:permian_lowlands",
+			"imageid11": "lepidodendron:permian_lowlands",
+			"imageid12": "lepidodendron:permian_lowlands",
+			"imageid13": "lepidodendron:permian_lowlands",
+			"imageid14": "lepidodendron:permian_lowlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_lowlands"
+			"biome": "lepidodendron:permian_lowlands",
+			"imageid0": "lepidodendron:permian_lowlands",
+			"imageid1": "lepidodendron:permian_lowlands",
+			"imageid2": "lepidodendron:permian_lowlands",
+			"imageid3": "lepidodendron:permian_lowlands",
+			"imageid4": "lepidodendron:permian_lowlands",
+			"imageid5": "lepidodendron:permian_lowlands",
+			"imageid6": "lepidodendron:permian_lowlands",
+			"imageid7": "lepidodendron:permian_lowlands",
+			"imageid8": "lepidodendron:permian_lowlands",
+			"imageid9": "lepidodendron:permian_lowlands",
+			"imageid10": "lepidodendron:permian_lowlands",
+			"imageid11": "lepidodendron:permian_lowlands",
+			"imageid12": "lepidodendron:permian_lowlands",
+			"imageid13": "lepidodendron:permian_lowlands",
+			"imageid14": "lepidodendron:permian_lowlands"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_lowlands"
+			"biome": "lepidodendron:permian_lowlands",
+			"imageid0": "lepidodendron:permian_lowlands",
+			"imageid1": "lepidodendron:permian_lowlands",
+			"imageid2": "lepidodendron:permian_lowlands",
+			"imageid3": "lepidodendron:permian_lowlands",
+			"imageid4": "lepidodendron:permian_lowlands",
+			"imageid5": "lepidodendron:permian_lowlands",
+			"imageid6": "lepidodendron:permian_lowlands",
+			"imageid7": "lepidodendron:permian_lowlands",
+			"imageid8": "lepidodendron:permian_lowlands",
+			"imageid9": "lepidodendron:permian_lowlands",
+			"imageid10": "lepidodendron:permian_lowlands",
+			"imageid11": "lepidodendron:permian_lowlands",
+			"imageid12": "lepidodendron:permian_lowlands",
+			"imageid13": "lepidodendron:permian_lowlands",
+			"imageid14": "lepidodendron:permian_lowlands"
 		}
 	]
 }

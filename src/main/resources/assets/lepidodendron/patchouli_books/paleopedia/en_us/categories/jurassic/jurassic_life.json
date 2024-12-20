@@ -1,0 +1,7 @@
+{
+    "name": "Jurassic Life",
+    "description": "Life of the Jurassic",
+    "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
+    "parent": "lepidodendron:jurassic",
+    "sortnum": 1
+}

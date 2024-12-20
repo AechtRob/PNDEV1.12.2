@@ -2,7 +2,7 @@
 	"name": "Paranaichthys",
 	"read_by_default": true,
 	"icon": "lepidodendron:paranaichthys_raw",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_paranaichthys",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Craggy Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-	"category": "lepidodendron:ordovician_biome",
+	"category": "lepidodendron:ordovician/ordovician_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:ordovician_crags"
+			"biome": "lepidodendron:ordovician_crags",
+			"imageid0": "lepidodendron:ordovician_crags",
+			"imageid1": "lepidodendron:ordovician_crags",
+			"imageid2": "lepidodendron:ordovician_crags",
+			"imageid3": "lepidodendron:ordovician_crags",
+			"imageid4": "lepidodendron:ordovician_crags",
+			"imageid5": "lepidodendron:ordovician_crags",
+			"imageid6": "lepidodendron:ordovician_crags",
+			"imageid7": "lepidodendron:ordovician_crags",
+			"imageid8": "lepidodendron:ordovician_crags",
+			"imageid9": "lepidodendron:ordovician_crags",
+			"imageid10": "lepidodendron:ordovician_crags",
+			"imageid11": "lepidodendron:ordovician_crags",
+			"imageid12": "lepidodendron:ordovician_crags",
+			"imageid13": "lepidodendron:ordovician_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:ordovician_crags"
+			"biome": "lepidodendron:ordovician_crags",
+			"imageid0": "lepidodendron:ordovician_crags",
+			"imageid1": "lepidodendron:ordovician_crags",
+			"imageid2": "lepidodendron:ordovician_crags",
+			"imageid3": "lepidodendron:ordovician_crags",
+			"imageid4": "lepidodendron:ordovician_crags",
+			"imageid5": "lepidodendron:ordovician_crags",
+			"imageid6": "lepidodendron:ordovician_crags",
+			"imageid7": "lepidodendron:ordovician_crags",
+			"imageid8": "lepidodendron:ordovician_crags",
+			"imageid9": "lepidodendron:ordovician_crags",
+			"imageid10": "lepidodendron:ordovician_crags",
+			"imageid11": "lepidodendron:ordovician_crags",
+			"imageid12": "lepidodendron:ordovician_crags",
+			"imageid13": "lepidodendron:ordovician_crags",
+			"imageid14": "lepidodendron:ordovician_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:ordovician_crags"
+			"biome": "lepidodendron:ordovician_crags",
+			"imageid0": "lepidodendron:ordovician_crags",
+			"imageid1": "lepidodendron:ordovician_crags",
+			"imageid2": "lepidodendron:ordovician_crags",
+			"imageid3": "lepidodendron:ordovician_crags",
+			"imageid4": "lepidodendron:ordovician_crags",
+			"imageid5": "lepidodendron:ordovician_crags",
+			"imageid6": "lepidodendron:ordovician_crags",
+			"imageid7": "lepidodendron:ordovician_crags",
+			"imageid8": "lepidodendron:ordovician_crags",
+			"imageid9": "lepidodendron:ordovician_crags",
+			"imageid10": "lepidodendron:ordovician_crags",
+			"imageid11": "lepidodendron:ordovician_crags",
+			"imageid12": "lepidodendron:ordovician_crags",
+			"imageid13": "lepidodendron:ordovician_crags",
+			"imageid14": "lepidodendron:ordovician_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:ordovician_crags"
+			"biome": "lepidodendron:ordovician_crags",
+			"imageid0": "lepidodendron:ordovician_crags",
+			"imageid1": "lepidodendron:ordovician_crags",
+			"imageid2": "lepidodendron:ordovician_crags",
+			"imageid3": "lepidodendron:ordovician_crags",
+			"imageid4": "lepidodendron:ordovician_crags",
+			"imageid5": "lepidodendron:ordovician_crags",
+			"imageid6": "lepidodendron:ordovician_crags",
+			"imageid7": "lepidodendron:ordovician_crags",
+			"imageid8": "lepidodendron:ordovician_crags",
+			"imageid9": "lepidodendron:ordovician_crags",
+			"imageid10": "lepidodendron:ordovician_crags",
+			"imageid11": "lepidodendron:ordovician_crags",
+			"imageid12": "lepidodendron:ordovician_crags",
+			"imageid13": "lepidodendron:ordovician_crags",
+			"imageid14": "lepidodendron:ordovician_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:ordovician_crags"
+			"biome": "lepidodendron:ordovician_crags",
+			"imageid0": "lepidodendron:ordovician_crags",
+			"imageid1": "lepidodendron:ordovician_crags",
+			"imageid2": "lepidodendron:ordovician_crags",
+			"imageid3": "lepidodendron:ordovician_crags",
+			"imageid4": "lepidodendron:ordovician_crags",
+			"imageid5": "lepidodendron:ordovician_crags",
+			"imageid6": "lepidodendron:ordovician_crags",
+			"imageid7": "lepidodendron:ordovician_crags",
+			"imageid8": "lepidodendron:ordovician_crags",
+			"imageid9": "lepidodendron:ordovician_crags",
+			"imageid10": "lepidodendron:ordovician_crags",
+			"imageid11": "lepidodendron:ordovician_crags",
+			"imageid12": "lepidodendron:ordovician_crags",
+			"imageid13": "lepidodendron:ordovician_crags",
+			"imageid14": "lepidodendron:ordovician_crags"
 		}
 	]
 }

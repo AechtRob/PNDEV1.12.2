@@ -2,7 +2,7 @@
 	"name": "Volcanic Tarns",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid0": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid1": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid2": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid3": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid4": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid5": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid6": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid7": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid8": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid9": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid10": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid11": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid12": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid13": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid0": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid1": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid2": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid3": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid4": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid5": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid6": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid7": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid8": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid9": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid10": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid11": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid12": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid13": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid14": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid0": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid1": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid2": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid3": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid4": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid5": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid6": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid7": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid8": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid9": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid10": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid11": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid12": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid13": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid14": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid0": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid1": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid2": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid3": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid4": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid5": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid6": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid7": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid8": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid9": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid10": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid11": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid12": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid13": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid14": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
+			"biome": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid0": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid1": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid2": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid3": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid4": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid5": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid6": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid7": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid8": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid9": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid10": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid11": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid12": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid13": "lepidodendron:carboniferous_volcanic_tarns_crater_water",
+			"imageid14": "lepidodendron:carboniferous_volcanic_tarns_crater_water"
 		}
 	]
 }

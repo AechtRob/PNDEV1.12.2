@@ -1,0 +1,40 @@
+{
+	"name": "Allonnia",
+	"read_by_default": true,
+	"icon": "lepidodendron:allonnia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_allonnia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_allonnia",
+			"title": "Allonnia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis$(br)>Coeloscleritophora$(br)>Chancelloriida$(br)>Chancelloriidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Allonnia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:allonnia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_allonnia",
+			"type": "text",
+			"text": "Allonnia is a coeloscleritophoran from the Cambrian period. It was covered in spines and looked like a closed bag. It was a stationary organism, living attached to the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_allonnia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

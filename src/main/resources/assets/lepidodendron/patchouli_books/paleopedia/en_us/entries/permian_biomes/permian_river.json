@@ -2,7 +2,7 @@
 	"name": "River",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_river"
+			"biome": "lepidodendron:permian_river",
+			"imageid0": "lepidodendron:permian_river",
+			"imageid1": "lepidodendron:permian_river",
+			"imageid2": "lepidodendron:permian_river",
+			"imageid3": "lepidodendron:permian_river",
+			"imageid4": "lepidodendron:permian_river",
+			"imageid5": "lepidodendron:permian_river",
+			"imageid6": "lepidodendron:permian_river",
+			"imageid7": "lepidodendron:permian_river",
+			"imageid8": "lepidodendron:permian_river",
+			"imageid9": "lepidodendron:permian_river",
+			"imageid10": "lepidodendron:permian_river",
+			"imageid11": "lepidodendron:permian_river",
+			"imageid12": "lepidodendron:permian_river",
+			"imageid13": "lepidodendron:permian_river"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_river"
+			"biome": "lepidodendron:permian_river",
+			"imageid0": "lepidodendron:permian_river",
+			"imageid1": "lepidodendron:permian_river",
+			"imageid2": "lepidodendron:permian_river",
+			"imageid3": "lepidodendron:permian_river",
+			"imageid4": "lepidodendron:permian_river",
+			"imageid5": "lepidodendron:permian_river",
+			"imageid6": "lepidodendron:permian_river",
+			"imageid7": "lepidodendron:permian_river",
+			"imageid8": "lepidodendron:permian_river",
+			"imageid9": "lepidodendron:permian_river",
+			"imageid10": "lepidodendron:permian_river",
+			"imageid11": "lepidodendron:permian_river",
+			"imageid12": "lepidodendron:permian_river",
+			"imageid13": "lepidodendron:permian_river",
+			"imageid14": "lepidodendron:permian_river"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_river"
+			"biome": "lepidodendron:permian_river",
+			"imageid0": "lepidodendron:permian_river",
+			"imageid1": "lepidodendron:permian_river",
+			"imageid2": "lepidodendron:permian_river",
+			"imageid3": "lepidodendron:permian_river",
+			"imageid4": "lepidodendron:permian_river",
+			"imageid5": "lepidodendron:permian_river",
+			"imageid6": "lepidodendron:permian_river",
+			"imageid7": "lepidodendron:permian_river",
+			"imageid8": "lepidodendron:permian_river",
+			"imageid9": "lepidodendron:permian_river",
+			"imageid10": "lepidodendron:permian_river",
+			"imageid11": "lepidodendron:permian_river",
+			"imageid12": "lepidodendron:permian_river",
+			"imageid13": "lepidodendron:permian_river",
+			"imageid14": "lepidodendron:permian_river"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_river"
+			"biome": "lepidodendron:permian_river",
+			"imageid0": "lepidodendron:permian_river",
+			"imageid1": "lepidodendron:permian_river",
+			"imageid2": "lepidodendron:permian_river",
+			"imageid3": "lepidodendron:permian_river",
+			"imageid4": "lepidodendron:permian_river",
+			"imageid5": "lepidodendron:permian_river",
+			"imageid6": "lepidodendron:permian_river",
+			"imageid7": "lepidodendron:permian_river",
+			"imageid8": "lepidodendron:permian_river",
+			"imageid9": "lepidodendron:permian_river",
+			"imageid10": "lepidodendron:permian_river",
+			"imageid11": "lepidodendron:permian_river",
+			"imageid12": "lepidodendron:permian_river",
+			"imageid13": "lepidodendron:permian_river",
+			"imageid14": "lepidodendron:permian_river"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_river"
+			"biome": "lepidodendron:permian_river",
+			"imageid0": "lepidodendron:permian_river",
+			"imageid1": "lepidodendron:permian_river",
+			"imageid2": "lepidodendron:permian_river",
+			"imageid3": "lepidodendron:permian_river",
+			"imageid4": "lepidodendron:permian_river",
+			"imageid5": "lepidodendron:permian_river",
+			"imageid6": "lepidodendron:permian_river",
+			"imageid7": "lepidodendron:permian_river",
+			"imageid8": "lepidodendron:permian_river",
+			"imageid9": "lepidodendron:permian_river",
+			"imageid10": "lepidodendron:permian_river",
+			"imageid11": "lepidodendron:permian_river",
+			"imageid12": "lepidodendron:permian_river",
+			"imageid13": "lepidodendron:permian_river",
+			"imageid14": "lepidodendron:permian_river"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Piranhamesodon",
 	"read_by_default": true,
 	"icon": "lepidodendron:piranhamesodon_raw",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_piranhamesodon",
 	"pages": [
 		{

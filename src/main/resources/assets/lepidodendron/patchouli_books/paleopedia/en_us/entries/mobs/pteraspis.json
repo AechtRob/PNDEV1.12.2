@@ -2,7 +2,7 @@
 	"name": "Pteraspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:pteraspis_raw",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_pteraspis",
 	"pages": [
 		{

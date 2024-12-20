@@ -2,7 +2,7 @@
 	"name": "Cheirurus",
 	"read_by_default": true,
 	"icon": "lepidodendron:cheirurus_raw",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_cheirurus",
 	"pages": [
 		{

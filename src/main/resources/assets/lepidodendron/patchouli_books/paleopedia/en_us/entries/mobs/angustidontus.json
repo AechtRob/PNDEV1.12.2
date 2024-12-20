@@ -2,7 +2,7 @@
 	"name": "Angustidontus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/angustidontus_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_angustidontus",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Moist Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_moist"
+			"biome": "lepidodendron:cambrian_moist",
+			"imageid0": "lepidodendron:cambrian_moist",
+			"imageid1": "lepidodendron:cambrian_moist",
+			"imageid2": "lepidodendron:cambrian_moist",
+			"imageid3": "lepidodendron:cambrian_moist",
+			"imageid4": "lepidodendron:cambrian_moist",
+			"imageid5": "lepidodendron:cambrian_moist",
+			"imageid6": "lepidodendron:cambrian_moist",
+			"imageid7": "lepidodendron:cambrian_moist",
+			"imageid8": "lepidodendron:cambrian_moist",
+			"imageid9": "lepidodendron:cambrian_moist",
+			"imageid10": "lepidodendron:cambrian_moist",
+			"imageid11": "lepidodendron:cambrian_moist",
+			"imageid12": "lepidodendron:cambrian_moist",
+			"imageid13": "lepidodendron:cambrian_moist"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_moist"
+			"biome": "lepidodendron:cambrian_moist",
+			"imageid0": "lepidodendron:cambrian_moist",
+			"imageid1": "lepidodendron:cambrian_moist",
+			"imageid2": "lepidodendron:cambrian_moist",
+			"imageid3": "lepidodendron:cambrian_moist",
+			"imageid4": "lepidodendron:cambrian_moist",
+			"imageid5": "lepidodendron:cambrian_moist",
+			"imageid6": "lepidodendron:cambrian_moist",
+			"imageid7": "lepidodendron:cambrian_moist",
+			"imageid8": "lepidodendron:cambrian_moist",
+			"imageid9": "lepidodendron:cambrian_moist",
+			"imageid10": "lepidodendron:cambrian_moist",
+			"imageid11": "lepidodendron:cambrian_moist",
+			"imageid12": "lepidodendron:cambrian_moist",
+			"imageid13": "lepidodendron:cambrian_moist",
+			"imageid14": "lepidodendron:cambrian_moist"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_moist"
+			"biome": "lepidodendron:cambrian_moist",
+			"imageid0": "lepidodendron:cambrian_moist",
+			"imageid1": "lepidodendron:cambrian_moist",
+			"imageid2": "lepidodendron:cambrian_moist",
+			"imageid3": "lepidodendron:cambrian_moist",
+			"imageid4": "lepidodendron:cambrian_moist",
+			"imageid5": "lepidodendron:cambrian_moist",
+			"imageid6": "lepidodendron:cambrian_moist",
+			"imageid7": "lepidodendron:cambrian_moist",
+			"imageid8": "lepidodendron:cambrian_moist",
+			"imageid9": "lepidodendron:cambrian_moist",
+			"imageid10": "lepidodendron:cambrian_moist",
+			"imageid11": "lepidodendron:cambrian_moist",
+			"imageid12": "lepidodendron:cambrian_moist",
+			"imageid13": "lepidodendron:cambrian_moist",
+			"imageid14": "lepidodendron:cambrian_moist"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_moist"
+			"biome": "lepidodendron:cambrian_moist",
+			"imageid0": "lepidodendron:cambrian_moist",
+			"imageid1": "lepidodendron:cambrian_moist",
+			"imageid2": "lepidodendron:cambrian_moist",
+			"imageid3": "lepidodendron:cambrian_moist",
+			"imageid4": "lepidodendron:cambrian_moist",
+			"imageid5": "lepidodendron:cambrian_moist",
+			"imageid6": "lepidodendron:cambrian_moist",
+			"imageid7": "lepidodendron:cambrian_moist",
+			"imageid8": "lepidodendron:cambrian_moist",
+			"imageid9": "lepidodendron:cambrian_moist",
+			"imageid10": "lepidodendron:cambrian_moist",
+			"imageid11": "lepidodendron:cambrian_moist",
+			"imageid12": "lepidodendron:cambrian_moist",
+			"imageid13": "lepidodendron:cambrian_moist",
+			"imageid14": "lepidodendron:cambrian_moist"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_moist"
+			"biome": "lepidodendron:cambrian_moist",
+			"imageid0": "lepidodendron:cambrian_moist",
+			"imageid1": "lepidodendron:cambrian_moist",
+			"imageid2": "lepidodendron:cambrian_moist",
+			"imageid3": "lepidodendron:cambrian_moist",
+			"imageid4": "lepidodendron:cambrian_moist",
+			"imageid5": "lepidodendron:cambrian_moist",
+			"imageid6": "lepidodendron:cambrian_moist",
+			"imageid7": "lepidodendron:cambrian_moist",
+			"imageid8": "lepidodendron:cambrian_moist",
+			"imageid9": "lepidodendron:cambrian_moist",
+			"imageid10": "lepidodendron:cambrian_moist",
+			"imageid11": "lepidodendron:cambrian_moist",
+			"imageid12": "lepidodendron:cambrian_moist",
+			"imageid13": "lepidodendron:cambrian_moist",
+			"imageid14": "lepidodendron:cambrian_moist"
 		}
 	]
 }

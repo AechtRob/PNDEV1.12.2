@@ -2,7 +2,7 @@
 	"name": "Romerodus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/romerodus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_romerodus",
 	"pages": [
 	{

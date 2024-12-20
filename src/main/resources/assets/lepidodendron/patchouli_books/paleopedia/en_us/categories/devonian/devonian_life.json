@@ -1,0 +1,7 @@
+{
+    "name": "Devonian Life",
+    "description": "Life of the Devonian",
+    "icon": "paleopedia:textures/category_icon/icon_devonian.png",
+    "parent": "lepidodendron:devonian",
+    "sortnum": 1
+}

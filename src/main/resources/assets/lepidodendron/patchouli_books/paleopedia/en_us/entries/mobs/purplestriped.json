@@ -2,7 +2,7 @@
 	"name": "Purple Striped Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/purplestriped_icon.png",
-	"category": "lepidodendron:pleistocene_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish5",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Parexus",
 	"read_by_default": true,
 	"icon": "lepidodendron:parexus_raw",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_parexus",
 	"pages": [
 		{

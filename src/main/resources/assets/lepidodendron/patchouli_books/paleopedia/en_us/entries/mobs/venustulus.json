@@ -2,7 +2,7 @@
 	"name": "Venustulus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/venustulus_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_venustulus",
 	"pages": [
 		{

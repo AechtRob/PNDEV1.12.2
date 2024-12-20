@@ -2,7 +2,7 @@
 	"name": "Poleumita",
 	"read_by_default": true,
 	"icon": "lepidodendron:poleumita_item",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_poleumita",
 	"pages": [
 		{

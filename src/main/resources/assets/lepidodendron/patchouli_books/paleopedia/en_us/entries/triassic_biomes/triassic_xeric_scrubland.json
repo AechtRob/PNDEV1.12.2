@@ -2,7 +2,7 @@
 	"name": "Xeric Scrubland",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_xeric_scrubland"
+			"biome": "lepidodendron:triassic_xeric_scrubland",
+			"imageid0": "lepidodendron:triassic_xeric_scrubland",
+			"imageid1": "lepidodendron:triassic_xeric_scrubland",
+			"imageid2": "lepidodendron:triassic_xeric_scrubland",
+			"imageid3": "lepidodendron:triassic_xeric_scrubland",
+			"imageid4": "lepidodendron:triassic_xeric_scrubland",
+			"imageid5": "lepidodendron:triassic_xeric_scrubland",
+			"imageid6": "lepidodendron:triassic_xeric_scrubland",
+			"imageid7": "lepidodendron:triassic_xeric_scrubland",
+			"imageid8": "lepidodendron:triassic_xeric_scrubland",
+			"imageid9": "lepidodendron:triassic_xeric_scrubland",
+			"imageid10": "lepidodendron:triassic_xeric_scrubland",
+			"imageid11": "lepidodendron:triassic_xeric_scrubland",
+			"imageid12": "lepidodendron:triassic_xeric_scrubland",
+			"imageid13": "lepidodendron:triassic_xeric_scrubland"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_xeric_scrubland"
+			"biome": "lepidodendron:triassic_xeric_scrubland",
+			"imageid0": "lepidodendron:triassic_xeric_scrubland",
+			"imageid1": "lepidodendron:triassic_xeric_scrubland",
+			"imageid2": "lepidodendron:triassic_xeric_scrubland",
+			"imageid3": "lepidodendron:triassic_xeric_scrubland",
+			"imageid4": "lepidodendron:triassic_xeric_scrubland",
+			"imageid5": "lepidodendron:triassic_xeric_scrubland",
+			"imageid6": "lepidodendron:triassic_xeric_scrubland",
+			"imageid7": "lepidodendron:triassic_xeric_scrubland",
+			"imageid8": "lepidodendron:triassic_xeric_scrubland",
+			"imageid9": "lepidodendron:triassic_xeric_scrubland",
+			"imageid10": "lepidodendron:triassic_xeric_scrubland",
+			"imageid11": "lepidodendron:triassic_xeric_scrubland",
+			"imageid12": "lepidodendron:triassic_xeric_scrubland",
+			"imageid13": "lepidodendron:triassic_xeric_scrubland",
+			"imageid14": "lepidodendron:triassic_xeric_scrubland"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_xeric_scrubland"
+			"biome": "lepidodendron:triassic_xeric_scrubland",
+			"imageid0": "lepidodendron:triassic_xeric_scrubland",
+			"imageid1": "lepidodendron:triassic_xeric_scrubland",
+			"imageid2": "lepidodendron:triassic_xeric_scrubland",
+			"imageid3": "lepidodendron:triassic_xeric_scrubland",
+			"imageid4": "lepidodendron:triassic_xeric_scrubland",
+			"imageid5": "lepidodendron:triassic_xeric_scrubland",
+			"imageid6": "lepidodendron:triassic_xeric_scrubland",
+			"imageid7": "lepidodendron:triassic_xeric_scrubland",
+			"imageid8": "lepidodendron:triassic_xeric_scrubland",
+			"imageid9": "lepidodendron:triassic_xeric_scrubland",
+			"imageid10": "lepidodendron:triassic_xeric_scrubland",
+			"imageid11": "lepidodendron:triassic_xeric_scrubland",
+			"imageid12": "lepidodendron:triassic_xeric_scrubland",
+			"imageid13": "lepidodendron:triassic_xeric_scrubland",
+			"imageid14": "lepidodendron:triassic_xeric_scrubland"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_xeric_scrubland"
+			"biome": "lepidodendron:triassic_xeric_scrubland",
+			"imageid0": "lepidodendron:triassic_xeric_scrubland",
+			"imageid1": "lepidodendron:triassic_xeric_scrubland",
+			"imageid2": "lepidodendron:triassic_xeric_scrubland",
+			"imageid3": "lepidodendron:triassic_xeric_scrubland",
+			"imageid4": "lepidodendron:triassic_xeric_scrubland",
+			"imageid5": "lepidodendron:triassic_xeric_scrubland",
+			"imageid6": "lepidodendron:triassic_xeric_scrubland",
+			"imageid7": "lepidodendron:triassic_xeric_scrubland",
+			"imageid8": "lepidodendron:triassic_xeric_scrubland",
+			"imageid9": "lepidodendron:triassic_xeric_scrubland",
+			"imageid10": "lepidodendron:triassic_xeric_scrubland",
+			"imageid11": "lepidodendron:triassic_xeric_scrubland",
+			"imageid12": "lepidodendron:triassic_xeric_scrubland",
+			"imageid13": "lepidodendron:triassic_xeric_scrubland",
+			"imageid14": "lepidodendron:triassic_xeric_scrubland"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_xeric_scrubland"
+			"biome": "lepidodendron:triassic_xeric_scrubland",
+			"imageid0": "lepidodendron:triassic_xeric_scrubland",
+			"imageid1": "lepidodendron:triassic_xeric_scrubland",
+			"imageid2": "lepidodendron:triassic_xeric_scrubland",
+			"imageid3": "lepidodendron:triassic_xeric_scrubland",
+			"imageid4": "lepidodendron:triassic_xeric_scrubland",
+			"imageid5": "lepidodendron:triassic_xeric_scrubland",
+			"imageid6": "lepidodendron:triassic_xeric_scrubland",
+			"imageid7": "lepidodendron:triassic_xeric_scrubland",
+			"imageid8": "lepidodendron:triassic_xeric_scrubland",
+			"imageid9": "lepidodendron:triassic_xeric_scrubland",
+			"imageid10": "lepidodendron:triassic_xeric_scrubland",
+			"imageid11": "lepidodendron:triassic_xeric_scrubland",
+			"imageid12": "lepidodendron:triassic_xeric_scrubland",
+			"imageid13": "lepidodendron:triassic_xeric_scrubland",
+			"imageid14": "lepidodendron:triassic_xeric_scrubland"
 		}
 	]
 }

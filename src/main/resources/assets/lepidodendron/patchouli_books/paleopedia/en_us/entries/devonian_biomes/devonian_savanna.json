@@ -2,7 +2,7 @@
 	"name": "Savanna",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_savanna"
+			"biome": "lepidodendron:devonian_savanna",
+			"imageid0": "lepidodendron:devonian_savanna",
+			"imageid1": "lepidodendron:devonian_savanna",
+			"imageid2": "lepidodendron:devonian_savanna",
+			"imageid3": "lepidodendron:devonian_savanna",
+			"imageid4": "lepidodendron:devonian_savanna",
+			"imageid5": "lepidodendron:devonian_savanna",
+			"imageid6": "lepidodendron:devonian_savanna",
+			"imageid7": "lepidodendron:devonian_savanna",
+			"imageid8": "lepidodendron:devonian_savanna",
+			"imageid9": "lepidodendron:devonian_savanna",
+			"imageid10": "lepidodendron:devonian_savanna",
+			"imageid11": "lepidodendron:devonian_savanna",
+			"imageid12": "lepidodendron:devonian_savanna",
+			"imageid13": "lepidodendron:devonian_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_savanna"
+			"biome": "lepidodendron:devonian_savanna",
+			"imageid0": "lepidodendron:devonian_savanna",
+			"imageid1": "lepidodendron:devonian_savanna",
+			"imageid2": "lepidodendron:devonian_savanna",
+			"imageid3": "lepidodendron:devonian_savanna",
+			"imageid4": "lepidodendron:devonian_savanna",
+			"imageid5": "lepidodendron:devonian_savanna",
+			"imageid6": "lepidodendron:devonian_savanna",
+			"imageid7": "lepidodendron:devonian_savanna",
+			"imageid8": "lepidodendron:devonian_savanna",
+			"imageid9": "lepidodendron:devonian_savanna",
+			"imageid10": "lepidodendron:devonian_savanna",
+			"imageid11": "lepidodendron:devonian_savanna",
+			"imageid12": "lepidodendron:devonian_savanna",
+			"imageid13": "lepidodendron:devonian_savanna",
+			"imageid14": "lepidodendron:devonian_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_savanna"
+			"biome": "lepidodendron:devonian_savanna",
+			"imageid0": "lepidodendron:devonian_savanna",
+			"imageid1": "lepidodendron:devonian_savanna",
+			"imageid2": "lepidodendron:devonian_savanna",
+			"imageid3": "lepidodendron:devonian_savanna",
+			"imageid4": "lepidodendron:devonian_savanna",
+			"imageid5": "lepidodendron:devonian_savanna",
+			"imageid6": "lepidodendron:devonian_savanna",
+			"imageid7": "lepidodendron:devonian_savanna",
+			"imageid8": "lepidodendron:devonian_savanna",
+			"imageid9": "lepidodendron:devonian_savanna",
+			"imageid10": "lepidodendron:devonian_savanna",
+			"imageid11": "lepidodendron:devonian_savanna",
+			"imageid12": "lepidodendron:devonian_savanna",
+			"imageid13": "lepidodendron:devonian_savanna",
+			"imageid14": "lepidodendron:devonian_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_savanna"
+			"biome": "lepidodendron:devonian_savanna",
+			"imageid0": "lepidodendron:devonian_savanna",
+			"imageid1": "lepidodendron:devonian_savanna",
+			"imageid2": "lepidodendron:devonian_savanna",
+			"imageid3": "lepidodendron:devonian_savanna",
+			"imageid4": "lepidodendron:devonian_savanna",
+			"imageid5": "lepidodendron:devonian_savanna",
+			"imageid6": "lepidodendron:devonian_savanna",
+			"imageid7": "lepidodendron:devonian_savanna",
+			"imageid8": "lepidodendron:devonian_savanna",
+			"imageid9": "lepidodendron:devonian_savanna",
+			"imageid10": "lepidodendron:devonian_savanna",
+			"imageid11": "lepidodendron:devonian_savanna",
+			"imageid12": "lepidodendron:devonian_savanna",
+			"imageid13": "lepidodendron:devonian_savanna",
+			"imageid14": "lepidodendron:devonian_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_savanna"
+			"biome": "lepidodendron:devonian_savanna",
+			"imageid0": "lepidodendron:devonian_savanna",
+			"imageid1": "lepidodendron:devonian_savanna",
+			"imageid2": "lepidodendron:devonian_savanna",
+			"imageid3": "lepidodendron:devonian_savanna",
+			"imageid4": "lepidodendron:devonian_savanna",
+			"imageid5": "lepidodendron:devonian_savanna",
+			"imageid6": "lepidodendron:devonian_savanna",
+			"imageid7": "lepidodendron:devonian_savanna",
+			"imageid8": "lepidodendron:devonian_savanna",
+			"imageid9": "lepidodendron:devonian_savanna",
+			"imageid10": "lepidodendron:devonian_savanna",
+			"imageid11": "lepidodendron:devonian_savanna",
+			"imageid12": "lepidodendron:devonian_savanna",
+			"imageid13": "lepidodendron:devonian_savanna",
+			"imageid14": "lepidodendron:devonian_savanna"
 		}
 	]
 }

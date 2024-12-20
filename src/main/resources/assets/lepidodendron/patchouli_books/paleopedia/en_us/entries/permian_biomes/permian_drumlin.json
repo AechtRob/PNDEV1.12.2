@@ -2,7 +2,7 @@
 	"name": "Drumlin",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_drumlin"
+			"biome": "lepidodendron:permian_drumlin",
+			"imageid0": "lepidodendron:permian_drumlin",
+			"imageid1": "lepidodendron:permian_drumlin",
+			"imageid2": "lepidodendron:permian_drumlin",
+			"imageid3": "lepidodendron:permian_drumlin",
+			"imageid4": "lepidodendron:permian_drumlin",
+			"imageid5": "lepidodendron:permian_drumlin",
+			"imageid6": "lepidodendron:permian_drumlin",
+			"imageid7": "lepidodendron:permian_drumlin",
+			"imageid8": "lepidodendron:permian_drumlin",
+			"imageid9": "lepidodendron:permian_drumlin",
+			"imageid10": "lepidodendron:permian_drumlin",
+			"imageid11": "lepidodendron:permian_drumlin",
+			"imageid12": "lepidodendron:permian_drumlin",
+			"imageid13": "lepidodendron:permian_drumlin"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_drumlin"
+			"biome": "lepidodendron:permian_drumlin",
+			"imageid0": "lepidodendron:permian_drumlin",
+			"imageid1": "lepidodendron:permian_drumlin",
+			"imageid2": "lepidodendron:permian_drumlin",
+			"imageid3": "lepidodendron:permian_drumlin",
+			"imageid4": "lepidodendron:permian_drumlin",
+			"imageid5": "lepidodendron:permian_drumlin",
+			"imageid6": "lepidodendron:permian_drumlin",
+			"imageid7": "lepidodendron:permian_drumlin",
+			"imageid8": "lepidodendron:permian_drumlin",
+			"imageid9": "lepidodendron:permian_drumlin",
+			"imageid10": "lepidodendron:permian_drumlin",
+			"imageid11": "lepidodendron:permian_drumlin",
+			"imageid12": "lepidodendron:permian_drumlin",
+			"imageid13": "lepidodendron:permian_drumlin",
+			"imageid14": "lepidodendron:permian_drumlin"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_drumlin"
+			"biome": "lepidodendron:permian_drumlin",
+			"imageid0": "lepidodendron:permian_drumlin",
+			"imageid1": "lepidodendron:permian_drumlin",
+			"imageid2": "lepidodendron:permian_drumlin",
+			"imageid3": "lepidodendron:permian_drumlin",
+			"imageid4": "lepidodendron:permian_drumlin",
+			"imageid5": "lepidodendron:permian_drumlin",
+			"imageid6": "lepidodendron:permian_drumlin",
+			"imageid7": "lepidodendron:permian_drumlin",
+			"imageid8": "lepidodendron:permian_drumlin",
+			"imageid9": "lepidodendron:permian_drumlin",
+			"imageid10": "lepidodendron:permian_drumlin",
+			"imageid11": "lepidodendron:permian_drumlin",
+			"imageid12": "lepidodendron:permian_drumlin",
+			"imageid13": "lepidodendron:permian_drumlin",
+			"imageid14": "lepidodendron:permian_drumlin"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_drumlin"
+			"biome": "lepidodendron:permian_drumlin",
+			"imageid0": "lepidodendron:permian_drumlin",
+			"imageid1": "lepidodendron:permian_drumlin",
+			"imageid2": "lepidodendron:permian_drumlin",
+			"imageid3": "lepidodendron:permian_drumlin",
+			"imageid4": "lepidodendron:permian_drumlin",
+			"imageid5": "lepidodendron:permian_drumlin",
+			"imageid6": "lepidodendron:permian_drumlin",
+			"imageid7": "lepidodendron:permian_drumlin",
+			"imageid8": "lepidodendron:permian_drumlin",
+			"imageid9": "lepidodendron:permian_drumlin",
+			"imageid10": "lepidodendron:permian_drumlin",
+			"imageid11": "lepidodendron:permian_drumlin",
+			"imageid12": "lepidodendron:permian_drumlin",
+			"imageid13": "lepidodendron:permian_drumlin",
+			"imageid14": "lepidodendron:permian_drumlin"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_drumlin"
+			"biome": "lepidodendron:permian_drumlin",
+			"imageid0": "lepidodendron:permian_drumlin",
+			"imageid1": "lepidodendron:permian_drumlin",
+			"imageid2": "lepidodendron:permian_drumlin",
+			"imageid3": "lepidodendron:permian_drumlin",
+			"imageid4": "lepidodendron:permian_drumlin",
+			"imageid5": "lepidodendron:permian_drumlin",
+			"imageid6": "lepidodendron:permian_drumlin",
+			"imageid7": "lepidodendron:permian_drumlin",
+			"imageid8": "lepidodendron:permian_drumlin",
+			"imageid9": "lepidodendron:permian_drumlin",
+			"imageid10": "lepidodendron:permian_drumlin",
+			"imageid11": "lepidodendron:permian_drumlin",
+			"imageid12": "lepidodendron:permian_drumlin",
+			"imageid13": "lepidodendron:permian_drumlin",
+			"imageid14": "lepidodendron:permian_drumlin"
 		}
 	]
 }

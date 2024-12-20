@@ -1,0 +1,31 @@
+{
+	"name": "Pentacrinites",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_pentacrinites",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_pentacrinites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_pentacrinites",
+			"title": "Pentacrinites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Pentacrinitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pentacrinites.png"],
+			"title": "P. dichotomus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_pentacrinites",
+			"type": "text",
+			"text": "Pentacrinites is a genus of crinoid from the Jurassic. Their stems are pentagonal shaped and possess a small cup, with 5 branching arms. Its pinnae was covered in mucus and would sway in the water to catch plankton, which it would then transport to its mouth through a grove along the length of the arm. This animal attached itself to driftwood during its adult life which allowed it to exploit food sources not available to crinoids attached to the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_pentacrinites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

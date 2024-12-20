@@ -2,7 +2,7 @@
 	"name": "Wet Meadow",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_meadow"
+			"biome": "lepidodendron:devonian_meadow",
+			"imageid0": "lepidodendron:devonian_meadow",
+			"imageid1": "lepidodendron:devonian_meadow",
+			"imageid2": "lepidodendron:devonian_meadow",
+			"imageid3": "lepidodendron:devonian_meadow",
+			"imageid4": "lepidodendron:devonian_meadow",
+			"imageid5": "lepidodendron:devonian_meadow",
+			"imageid6": "lepidodendron:devonian_meadow",
+			"imageid7": "lepidodendron:devonian_meadow",
+			"imageid8": "lepidodendron:devonian_meadow",
+			"imageid9": "lepidodendron:devonian_meadow",
+			"imageid10": "lepidodendron:devonian_meadow",
+			"imageid11": "lepidodendron:devonian_meadow",
+			"imageid12": "lepidodendron:devonian_meadow",
+			"imageid13": "lepidodendron:devonian_meadow"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_meadow"
+			"biome": "lepidodendron:devonian_meadow",
+			"imageid0": "lepidodendron:devonian_meadow",
+			"imageid1": "lepidodendron:devonian_meadow",
+			"imageid2": "lepidodendron:devonian_meadow",
+			"imageid3": "lepidodendron:devonian_meadow",
+			"imageid4": "lepidodendron:devonian_meadow",
+			"imageid5": "lepidodendron:devonian_meadow",
+			"imageid6": "lepidodendron:devonian_meadow",
+			"imageid7": "lepidodendron:devonian_meadow",
+			"imageid8": "lepidodendron:devonian_meadow",
+			"imageid9": "lepidodendron:devonian_meadow",
+			"imageid10": "lepidodendron:devonian_meadow",
+			"imageid11": "lepidodendron:devonian_meadow",
+			"imageid12": "lepidodendron:devonian_meadow",
+			"imageid13": "lepidodendron:devonian_meadow",
+			"imageid14": "lepidodendron:devonian_meadow"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_meadow"
+			"biome": "lepidodendron:devonian_meadow",
+			"imageid0": "lepidodendron:devonian_meadow",
+			"imageid1": "lepidodendron:devonian_meadow",
+			"imageid2": "lepidodendron:devonian_meadow",
+			"imageid3": "lepidodendron:devonian_meadow",
+			"imageid4": "lepidodendron:devonian_meadow",
+			"imageid5": "lepidodendron:devonian_meadow",
+			"imageid6": "lepidodendron:devonian_meadow",
+			"imageid7": "lepidodendron:devonian_meadow",
+			"imageid8": "lepidodendron:devonian_meadow",
+			"imageid9": "lepidodendron:devonian_meadow",
+			"imageid10": "lepidodendron:devonian_meadow",
+			"imageid11": "lepidodendron:devonian_meadow",
+			"imageid12": "lepidodendron:devonian_meadow",
+			"imageid13": "lepidodendron:devonian_meadow",
+			"imageid14": "lepidodendron:devonian_meadow"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_meadow"
+			"biome": "lepidodendron:devonian_meadow",
+			"imageid0": "lepidodendron:devonian_meadow",
+			"imageid1": "lepidodendron:devonian_meadow",
+			"imageid2": "lepidodendron:devonian_meadow",
+			"imageid3": "lepidodendron:devonian_meadow",
+			"imageid4": "lepidodendron:devonian_meadow",
+			"imageid5": "lepidodendron:devonian_meadow",
+			"imageid6": "lepidodendron:devonian_meadow",
+			"imageid7": "lepidodendron:devonian_meadow",
+			"imageid8": "lepidodendron:devonian_meadow",
+			"imageid9": "lepidodendron:devonian_meadow",
+			"imageid10": "lepidodendron:devonian_meadow",
+			"imageid11": "lepidodendron:devonian_meadow",
+			"imageid12": "lepidodendron:devonian_meadow",
+			"imageid13": "lepidodendron:devonian_meadow",
+			"imageid14": "lepidodendron:devonian_meadow"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_meadow"
+			"biome": "lepidodendron:devonian_meadow",
+			"imageid0": "lepidodendron:devonian_meadow",
+			"imageid1": "lepidodendron:devonian_meadow",
+			"imageid2": "lepidodendron:devonian_meadow",
+			"imageid3": "lepidodendron:devonian_meadow",
+			"imageid4": "lepidodendron:devonian_meadow",
+			"imageid5": "lepidodendron:devonian_meadow",
+			"imageid6": "lepidodendron:devonian_meadow",
+			"imageid7": "lepidodendron:devonian_meadow",
+			"imageid8": "lepidodendron:devonian_meadow",
+			"imageid9": "lepidodendron:devonian_meadow",
+			"imageid10": "lepidodendron:devonian_meadow",
+			"imageid11": "lepidodendron:devonian_meadow",
+			"imageid12": "lepidodendron:devonian_meadow",
+			"imageid13": "lepidodendron:devonian_meadow",
+			"imageid14": "lepidodendron:devonian_meadow"
 		}
 	]
 }

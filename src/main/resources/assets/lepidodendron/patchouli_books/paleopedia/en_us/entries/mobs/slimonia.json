@@ -2,7 +2,7 @@
 	"name": "Slimonia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/slimonia_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_slimonia",
 	"pages": [
 		{

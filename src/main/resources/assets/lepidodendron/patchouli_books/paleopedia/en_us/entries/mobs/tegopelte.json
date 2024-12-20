@@ -2,7 +2,7 @@
 	"name": "Tegopelte",
 	"read_by_default": true,
 	"icon": "lepidodendron:tegopelte_raw",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_tegopelte",
 	"pages": [
 		{

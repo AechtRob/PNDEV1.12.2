@@ -2,7 +2,7 @@
 	"name": "Caldera Island Cliffs Roost",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_island_large_roost"
+			"biome": "lepidodendron:jurassic_island_large_roost",
+			"imageid0": "lepidodendron:jurassic_island_large_roost",
+			"imageid1": "lepidodendron:jurassic_island_large_roost",
+			"imageid2": "lepidodendron:jurassic_island_large_roost",
+			"imageid3": "lepidodendron:jurassic_island_large_roost",
+			"imageid4": "lepidodendron:jurassic_island_large_roost",
+			"imageid5": "lepidodendron:jurassic_island_large_roost",
+			"imageid6": "lepidodendron:jurassic_island_large_roost",
+			"imageid7": "lepidodendron:jurassic_island_large_roost",
+			"imageid8": "lepidodendron:jurassic_island_large_roost",
+			"imageid9": "lepidodendron:jurassic_island_large_roost",
+			"imageid10": "lepidodendron:jurassic_island_large_roost",
+			"imageid11": "lepidodendron:jurassic_island_large_roost",
+			"imageid12": "lepidodendron:jurassic_island_large_roost",
+			"imageid13": "lepidodendron:jurassic_island_large_roost"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_island_large_roost"
+			"biome": "lepidodendron:jurassic_island_large_roost",
+			"imageid0": "lepidodendron:jurassic_island_large_roost",
+			"imageid1": "lepidodendron:jurassic_island_large_roost",
+			"imageid2": "lepidodendron:jurassic_island_large_roost",
+			"imageid3": "lepidodendron:jurassic_island_large_roost",
+			"imageid4": "lepidodendron:jurassic_island_large_roost",
+			"imageid5": "lepidodendron:jurassic_island_large_roost",
+			"imageid6": "lepidodendron:jurassic_island_large_roost",
+			"imageid7": "lepidodendron:jurassic_island_large_roost",
+			"imageid8": "lepidodendron:jurassic_island_large_roost",
+			"imageid9": "lepidodendron:jurassic_island_large_roost",
+			"imageid10": "lepidodendron:jurassic_island_large_roost",
+			"imageid11": "lepidodendron:jurassic_island_large_roost",
+			"imageid12": "lepidodendron:jurassic_island_large_roost",
+			"imageid13": "lepidodendron:jurassic_island_large_roost",
+			"imageid14": "lepidodendron:jurassic_island_large_roost"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_island_large_roost"
+			"biome": "lepidodendron:jurassic_island_large_roost",
+			"imageid0": "lepidodendron:jurassic_island_large_roost",
+			"imageid1": "lepidodendron:jurassic_island_large_roost",
+			"imageid2": "lepidodendron:jurassic_island_large_roost",
+			"imageid3": "lepidodendron:jurassic_island_large_roost",
+			"imageid4": "lepidodendron:jurassic_island_large_roost",
+			"imageid5": "lepidodendron:jurassic_island_large_roost",
+			"imageid6": "lepidodendron:jurassic_island_large_roost",
+			"imageid7": "lepidodendron:jurassic_island_large_roost",
+			"imageid8": "lepidodendron:jurassic_island_large_roost",
+			"imageid9": "lepidodendron:jurassic_island_large_roost",
+			"imageid10": "lepidodendron:jurassic_island_large_roost",
+			"imageid11": "lepidodendron:jurassic_island_large_roost",
+			"imageid12": "lepidodendron:jurassic_island_large_roost",
+			"imageid13": "lepidodendron:jurassic_island_large_roost",
+			"imageid14": "lepidodendron:jurassic_island_large_roost"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_island_large_roost"
+			"biome": "lepidodendron:jurassic_island_large_roost",
+			"imageid0": "lepidodendron:jurassic_island_large_roost",
+			"imageid1": "lepidodendron:jurassic_island_large_roost",
+			"imageid2": "lepidodendron:jurassic_island_large_roost",
+			"imageid3": "lepidodendron:jurassic_island_large_roost",
+			"imageid4": "lepidodendron:jurassic_island_large_roost",
+			"imageid5": "lepidodendron:jurassic_island_large_roost",
+			"imageid6": "lepidodendron:jurassic_island_large_roost",
+			"imageid7": "lepidodendron:jurassic_island_large_roost",
+			"imageid8": "lepidodendron:jurassic_island_large_roost",
+			"imageid9": "lepidodendron:jurassic_island_large_roost",
+			"imageid10": "lepidodendron:jurassic_island_large_roost",
+			"imageid11": "lepidodendron:jurassic_island_large_roost",
+			"imageid12": "lepidodendron:jurassic_island_large_roost",
+			"imageid13": "lepidodendron:jurassic_island_large_roost",
+			"imageid14": "lepidodendron:jurassic_island_large_roost"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_island_large_roost"
+			"biome": "lepidodendron:jurassic_island_large_roost",
+			"imageid0": "lepidodendron:jurassic_island_large_roost",
+			"imageid1": "lepidodendron:jurassic_island_large_roost",
+			"imageid2": "lepidodendron:jurassic_island_large_roost",
+			"imageid3": "lepidodendron:jurassic_island_large_roost",
+			"imageid4": "lepidodendron:jurassic_island_large_roost",
+			"imageid5": "lepidodendron:jurassic_island_large_roost",
+			"imageid6": "lepidodendron:jurassic_island_large_roost",
+			"imageid7": "lepidodendron:jurassic_island_large_roost",
+			"imageid8": "lepidodendron:jurassic_island_large_roost",
+			"imageid9": "lepidodendron:jurassic_island_large_roost",
+			"imageid10": "lepidodendron:jurassic_island_large_roost",
+			"imageid11": "lepidodendron:jurassic_island_large_roost",
+			"imageid12": "lepidodendron:jurassic_island_large_roost",
+			"imageid13": "lepidodendron:jurassic_island_large_roost",
+			"imageid14": "lepidodendron:jurassic_island_large_roost"
 		}
 	]
 }

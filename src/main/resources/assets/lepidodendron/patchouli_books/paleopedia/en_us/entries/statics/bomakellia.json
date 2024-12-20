@@ -1,0 +1,31 @@
+{
+	"name": "Bomakellia",
+	"read_by_default": true,
+	"icon": "lepidodendron:bomakellia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bomakellia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bomakellia",
+			"title": "Bomakellia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Charniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bomakellia.png"],
+			"title": "B. kelleri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bomakellia",
+			"type": "text",
+			"text": "Bomakellia is an Ediacaran stationary organism. It was most likely a frondose organism, belonging to the family Charniidae."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bomakellia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

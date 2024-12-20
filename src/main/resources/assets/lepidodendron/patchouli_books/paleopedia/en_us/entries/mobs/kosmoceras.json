@@ -2,7 +2,7 @@
 	"name": "Kosmoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_kosmoceras",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kosmoceras",
 	"pages": [
 		{

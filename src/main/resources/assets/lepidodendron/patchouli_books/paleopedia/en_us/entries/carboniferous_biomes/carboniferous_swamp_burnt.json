@@ -2,7 +2,7 @@
 	"name": "Burnt-Out Coal Swamp",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_swamp_burnt"
+			"biome": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid0": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid1": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid2": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid3": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid4": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid5": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid6": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid7": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid8": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid9": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid10": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid11": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid12": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid13": "lepidodendron:carboniferous_swamp_burnt"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_swamp_burnt"
+			"biome": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid0": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid1": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid2": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid3": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid4": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid5": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid6": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid7": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid8": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid9": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid10": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid11": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid12": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid13": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid14": "lepidodendron:carboniferous_swamp_burnt"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_swamp_burnt"
+			"biome": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid0": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid1": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid2": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid3": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid4": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid5": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid6": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid7": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid8": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid9": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid10": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid11": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid12": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid13": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid14": "lepidodendron:carboniferous_swamp_burnt"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_swamp_burnt"
+			"biome": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid0": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid1": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid2": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid3": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid4": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid5": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid6": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid7": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid8": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid9": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid10": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid11": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid12": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid13": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid14": "lepidodendron:carboniferous_swamp_burnt"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_swamp_burnt"
+			"biome": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid0": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid1": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid2": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid3": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid4": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid5": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid6": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid7": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid8": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid9": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid10": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid11": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid12": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid13": "lepidodendron:carboniferous_swamp_burnt",
+			"imageid14": "lepidodendron:carboniferous_swamp_burnt"
 		}
 	]
 }

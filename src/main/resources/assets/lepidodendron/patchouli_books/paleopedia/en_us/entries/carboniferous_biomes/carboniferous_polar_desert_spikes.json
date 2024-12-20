@@ -2,7 +2,7 @@
 	"name": "Polar Desert Ice Spikes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_polar_desert_spikes"
+			"biome": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid0": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid1": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid2": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid3": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid4": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid5": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid6": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid7": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid8": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid9": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid10": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid11": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid12": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid13": "lepidodendron:carboniferous_polar_desert_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_polar_desert_spikes"
+			"biome": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid0": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid1": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid2": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid3": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid4": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid5": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid6": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid7": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid8": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid9": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid10": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid11": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid12": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid13": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid14": "lepidodendron:carboniferous_polar_desert_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_polar_desert_spikes"
+			"biome": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid0": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid1": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid2": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid3": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid4": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid5": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid6": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid7": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid8": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid9": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid10": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid11": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid12": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid13": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid14": "lepidodendron:carboniferous_polar_desert_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_polar_desert_spikes"
+			"biome": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid0": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid1": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid2": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid3": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid4": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid5": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid6": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid7": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid8": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid9": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid10": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid11": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid12": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid13": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid14": "lepidodendron:carboniferous_polar_desert_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_polar_desert_spikes"
+			"biome": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid0": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid1": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid2": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid3": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid4": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid5": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid6": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid7": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid8": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid9": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid10": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid11": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid12": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid13": "lepidodendron:carboniferous_polar_desert_spikes",
+			"imageid14": "lepidodendron:carboniferous_polar_desert_spikes"
 		}
 	]
 }

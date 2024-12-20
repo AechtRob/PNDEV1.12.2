@@ -2,7 +2,7 @@
 	"name": "Asaphus",
 	"read_by_default": true,
 	"icon": "lepidodendron:asaphus_raw",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_asaphus",
 	"pages": [
 		{

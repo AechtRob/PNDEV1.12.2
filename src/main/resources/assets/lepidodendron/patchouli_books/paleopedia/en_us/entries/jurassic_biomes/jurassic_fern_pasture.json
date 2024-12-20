@@ -2,7 +2,7 @@
 	"name": "Fern Pasture",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_fern_pasture"
+			"biome": "lepidodendron:jurassic_fern_pasture",
+			"imageid0": "lepidodendron:jurassic_fern_pasture",
+			"imageid1": "lepidodendron:jurassic_fern_pasture",
+			"imageid2": "lepidodendron:jurassic_fern_pasture",
+			"imageid3": "lepidodendron:jurassic_fern_pasture",
+			"imageid4": "lepidodendron:jurassic_fern_pasture",
+			"imageid5": "lepidodendron:jurassic_fern_pasture",
+			"imageid6": "lepidodendron:jurassic_fern_pasture",
+			"imageid7": "lepidodendron:jurassic_fern_pasture",
+			"imageid8": "lepidodendron:jurassic_fern_pasture",
+			"imageid9": "lepidodendron:jurassic_fern_pasture",
+			"imageid10": "lepidodendron:jurassic_fern_pasture",
+			"imageid11": "lepidodendron:jurassic_fern_pasture",
+			"imageid12": "lepidodendron:jurassic_fern_pasture",
+			"imageid13": "lepidodendron:jurassic_fern_pasture"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_fern_pasture"
+			"biome": "lepidodendron:jurassic_fern_pasture",
+			"imageid0": "lepidodendron:jurassic_fern_pasture",
+			"imageid1": "lepidodendron:jurassic_fern_pasture",
+			"imageid2": "lepidodendron:jurassic_fern_pasture",
+			"imageid3": "lepidodendron:jurassic_fern_pasture",
+			"imageid4": "lepidodendron:jurassic_fern_pasture",
+			"imageid5": "lepidodendron:jurassic_fern_pasture",
+			"imageid6": "lepidodendron:jurassic_fern_pasture",
+			"imageid7": "lepidodendron:jurassic_fern_pasture",
+			"imageid8": "lepidodendron:jurassic_fern_pasture",
+			"imageid9": "lepidodendron:jurassic_fern_pasture",
+			"imageid10": "lepidodendron:jurassic_fern_pasture",
+			"imageid11": "lepidodendron:jurassic_fern_pasture",
+			"imageid12": "lepidodendron:jurassic_fern_pasture",
+			"imageid13": "lepidodendron:jurassic_fern_pasture",
+			"imageid14": "lepidodendron:jurassic_fern_pasture"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_fern_pasture"
+			"biome": "lepidodendron:jurassic_fern_pasture",
+			"imageid0": "lepidodendron:jurassic_fern_pasture",
+			"imageid1": "lepidodendron:jurassic_fern_pasture",
+			"imageid2": "lepidodendron:jurassic_fern_pasture",
+			"imageid3": "lepidodendron:jurassic_fern_pasture",
+			"imageid4": "lepidodendron:jurassic_fern_pasture",
+			"imageid5": "lepidodendron:jurassic_fern_pasture",
+			"imageid6": "lepidodendron:jurassic_fern_pasture",
+			"imageid7": "lepidodendron:jurassic_fern_pasture",
+			"imageid8": "lepidodendron:jurassic_fern_pasture",
+			"imageid9": "lepidodendron:jurassic_fern_pasture",
+			"imageid10": "lepidodendron:jurassic_fern_pasture",
+			"imageid11": "lepidodendron:jurassic_fern_pasture",
+			"imageid12": "lepidodendron:jurassic_fern_pasture",
+			"imageid13": "lepidodendron:jurassic_fern_pasture",
+			"imageid14": "lepidodendron:jurassic_fern_pasture"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_fern_pasture"
+			"biome": "lepidodendron:jurassic_fern_pasture",
+			"imageid0": "lepidodendron:jurassic_fern_pasture",
+			"imageid1": "lepidodendron:jurassic_fern_pasture",
+			"imageid2": "lepidodendron:jurassic_fern_pasture",
+			"imageid3": "lepidodendron:jurassic_fern_pasture",
+			"imageid4": "lepidodendron:jurassic_fern_pasture",
+			"imageid5": "lepidodendron:jurassic_fern_pasture",
+			"imageid6": "lepidodendron:jurassic_fern_pasture",
+			"imageid7": "lepidodendron:jurassic_fern_pasture",
+			"imageid8": "lepidodendron:jurassic_fern_pasture",
+			"imageid9": "lepidodendron:jurassic_fern_pasture",
+			"imageid10": "lepidodendron:jurassic_fern_pasture",
+			"imageid11": "lepidodendron:jurassic_fern_pasture",
+			"imageid12": "lepidodendron:jurassic_fern_pasture",
+			"imageid13": "lepidodendron:jurassic_fern_pasture",
+			"imageid14": "lepidodendron:jurassic_fern_pasture"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_fern_pasture"
+			"biome": "lepidodendron:jurassic_fern_pasture",
+			"imageid0": "lepidodendron:jurassic_fern_pasture",
+			"imageid1": "lepidodendron:jurassic_fern_pasture",
+			"imageid2": "lepidodendron:jurassic_fern_pasture",
+			"imageid3": "lepidodendron:jurassic_fern_pasture",
+			"imageid4": "lepidodendron:jurassic_fern_pasture",
+			"imageid5": "lepidodendron:jurassic_fern_pasture",
+			"imageid6": "lepidodendron:jurassic_fern_pasture",
+			"imageid7": "lepidodendron:jurassic_fern_pasture",
+			"imageid8": "lepidodendron:jurassic_fern_pasture",
+			"imageid9": "lepidodendron:jurassic_fern_pasture",
+			"imageid10": "lepidodendron:jurassic_fern_pasture",
+			"imageid11": "lepidodendron:jurassic_fern_pasture",
+			"imageid12": "lepidodendron:jurassic_fern_pasture",
+			"imageid13": "lepidodendron:jurassic_fern_pasture",
+			"imageid14": "lepidodendron:jurassic_fern_pasture"
 		}
 	]
 }

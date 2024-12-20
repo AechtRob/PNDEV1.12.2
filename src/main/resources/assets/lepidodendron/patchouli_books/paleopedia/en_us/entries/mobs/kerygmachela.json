@@ -2,7 +2,7 @@
 	"name": "Kerygmachela",
 	"read_by_default": true,
 	"icon": "lepidodendron:kerygmachela_raw",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kerygmachela",
 	"pages": [
 		{

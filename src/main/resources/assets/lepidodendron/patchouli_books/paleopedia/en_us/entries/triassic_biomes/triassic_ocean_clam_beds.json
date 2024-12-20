@@ -2,7 +2,7 @@
 	"name": "Clam Beds",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_ocean_clam_beds"
+			"biome": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid0": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid1": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid2": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid3": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid4": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid5": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid6": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid7": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid8": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid9": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid10": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid11": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid12": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid13": "lepidodendron:triassic_ocean_clam_beds"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_ocean_clam_beds"
+			"biome": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid0": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid1": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid2": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid3": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid4": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid5": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid6": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid7": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid8": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid9": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid10": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid11": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid12": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid13": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid14": "lepidodendron:triassic_ocean_clam_beds"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_ocean_clam_beds"
+			"biome": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid0": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid1": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid2": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid3": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid4": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid5": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid6": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid7": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid8": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid9": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid10": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid11": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid12": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid13": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid14": "lepidodendron:triassic_ocean_clam_beds"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_ocean_clam_beds"
+			"biome": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid0": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid1": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid2": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid3": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid4": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid5": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid6": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid7": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid8": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid9": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid10": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid11": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid12": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid13": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid14": "lepidodendron:triassic_ocean_clam_beds"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_ocean_clam_beds"
+			"biome": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid0": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid1": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid2": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid3": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid4": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid5": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid6": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid7": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid8": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid9": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid10": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid11": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid12": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid13": "lepidodendron:triassic_ocean_clam_beds",
+			"imageid14": "lepidodendron:triassic_ocean_clam_beds"
 		}
 	]
 }

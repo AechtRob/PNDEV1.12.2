@@ -2,7 +2,7 @@
 	"name": "Kentrosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kentrosaurus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kentrosaurus",
 	"pages": [
 		{

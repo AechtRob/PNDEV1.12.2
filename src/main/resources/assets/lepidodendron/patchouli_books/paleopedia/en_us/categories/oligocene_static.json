@@ -1,7 +1,0 @@
-{
-    "name": "Oligocene Statics",
-    "description": "Statics of the Oligocene",
-    "icon": "paleopedia:textures/category_icon/icon_oligocene.png",
-    "parent": "lepidodendron:oligocene",
-    "sortnum": 2
-}

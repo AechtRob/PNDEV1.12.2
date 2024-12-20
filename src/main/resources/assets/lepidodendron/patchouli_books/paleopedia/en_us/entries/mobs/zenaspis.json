@@ -2,7 +2,7 @@
 	"name": "Zenaspis",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/zenaspis_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_zenaspis",
 	"pages": [
 		{

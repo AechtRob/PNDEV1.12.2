@@ -2,7 +2,7 @@
 	"name": "Alienum",
 	"read_by_default": true,
 	"icon": "lepidodendron:alienum_raw",
-	"category": "lepidodendron:precambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_alienum",
 	"pages": [
 		{

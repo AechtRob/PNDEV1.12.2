@@ -6,6 +6,7 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -106,7 +107,6 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimCambrian)
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimPermian)
-				|| (dimID == LepidodendronConfig.dimJurassic)
 		) {
 			biomeCriteria = false;
 		}
@@ -114,7 +114,8 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeOrdovician)
 		{
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
-			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae) {
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+				|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bog) {
 				biomeCriteria = true;
 			}
 			else {
@@ -126,6 +127,17 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
 			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeJurassic)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lakes")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -158,6 +170,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				multiplier = 12;
 			}
 		}
+		if ((dimID == LepidodendronConfig.dimJurassic)
+		) {
+			multiplier = 10;
+		}
 		if ((dimID == LepidodendronConfig.dimCretaceousEarly)
 		) {
 			multiplier = 92;
@@ -165,6 +181,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimOrdovician)
 		) {
 			multiplier = 18;
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bog) {
+				multiplier = 4;
+            }
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

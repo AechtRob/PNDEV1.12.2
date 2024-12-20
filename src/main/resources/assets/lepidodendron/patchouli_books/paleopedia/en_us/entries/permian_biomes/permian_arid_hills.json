@@ -2,7 +2,7 @@
 	"name": "Arid Hills",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_arid_hills"
+			"biome": "lepidodendron:permian_arid_hills",
+			"imageid0": "lepidodendron:permian_arid_hills",
+			"imageid1": "lepidodendron:permian_arid_hills",
+			"imageid2": "lepidodendron:permian_arid_hills",
+			"imageid3": "lepidodendron:permian_arid_hills",
+			"imageid4": "lepidodendron:permian_arid_hills",
+			"imageid5": "lepidodendron:permian_arid_hills",
+			"imageid6": "lepidodendron:permian_arid_hills",
+			"imageid7": "lepidodendron:permian_arid_hills",
+			"imageid8": "lepidodendron:permian_arid_hills",
+			"imageid9": "lepidodendron:permian_arid_hills",
+			"imageid10": "lepidodendron:permian_arid_hills",
+			"imageid11": "lepidodendron:permian_arid_hills",
+			"imageid12": "lepidodendron:permian_arid_hills",
+			"imageid13": "lepidodendron:permian_arid_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_arid_hills"
+			"biome": "lepidodendron:permian_arid_hills",
+			"imageid0": "lepidodendron:permian_arid_hills",
+			"imageid1": "lepidodendron:permian_arid_hills",
+			"imageid2": "lepidodendron:permian_arid_hills",
+			"imageid3": "lepidodendron:permian_arid_hills",
+			"imageid4": "lepidodendron:permian_arid_hills",
+			"imageid5": "lepidodendron:permian_arid_hills",
+			"imageid6": "lepidodendron:permian_arid_hills",
+			"imageid7": "lepidodendron:permian_arid_hills",
+			"imageid8": "lepidodendron:permian_arid_hills",
+			"imageid9": "lepidodendron:permian_arid_hills",
+			"imageid10": "lepidodendron:permian_arid_hills",
+			"imageid11": "lepidodendron:permian_arid_hills",
+			"imageid12": "lepidodendron:permian_arid_hills",
+			"imageid13": "lepidodendron:permian_arid_hills",
+			"imageid14": "lepidodendron:permian_arid_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_arid_hills"
+			"biome": "lepidodendron:permian_arid_hills",
+			"imageid0": "lepidodendron:permian_arid_hills",
+			"imageid1": "lepidodendron:permian_arid_hills",
+			"imageid2": "lepidodendron:permian_arid_hills",
+			"imageid3": "lepidodendron:permian_arid_hills",
+			"imageid4": "lepidodendron:permian_arid_hills",
+			"imageid5": "lepidodendron:permian_arid_hills",
+			"imageid6": "lepidodendron:permian_arid_hills",
+			"imageid7": "lepidodendron:permian_arid_hills",
+			"imageid8": "lepidodendron:permian_arid_hills",
+			"imageid9": "lepidodendron:permian_arid_hills",
+			"imageid10": "lepidodendron:permian_arid_hills",
+			"imageid11": "lepidodendron:permian_arid_hills",
+			"imageid12": "lepidodendron:permian_arid_hills",
+			"imageid13": "lepidodendron:permian_arid_hills",
+			"imageid14": "lepidodendron:permian_arid_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_arid_hills"
+			"biome": "lepidodendron:permian_arid_hills",
+			"imageid0": "lepidodendron:permian_arid_hills",
+			"imageid1": "lepidodendron:permian_arid_hills",
+			"imageid2": "lepidodendron:permian_arid_hills",
+			"imageid3": "lepidodendron:permian_arid_hills",
+			"imageid4": "lepidodendron:permian_arid_hills",
+			"imageid5": "lepidodendron:permian_arid_hills",
+			"imageid6": "lepidodendron:permian_arid_hills",
+			"imageid7": "lepidodendron:permian_arid_hills",
+			"imageid8": "lepidodendron:permian_arid_hills",
+			"imageid9": "lepidodendron:permian_arid_hills",
+			"imageid10": "lepidodendron:permian_arid_hills",
+			"imageid11": "lepidodendron:permian_arid_hills",
+			"imageid12": "lepidodendron:permian_arid_hills",
+			"imageid13": "lepidodendron:permian_arid_hills",
+			"imageid14": "lepidodendron:permian_arid_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_arid_hills"
+			"biome": "lepidodendron:permian_arid_hills",
+			"imageid0": "lepidodendron:permian_arid_hills",
+			"imageid1": "lepidodendron:permian_arid_hills",
+			"imageid2": "lepidodendron:permian_arid_hills",
+			"imageid3": "lepidodendron:permian_arid_hills",
+			"imageid4": "lepidodendron:permian_arid_hills",
+			"imageid5": "lepidodendron:permian_arid_hills",
+			"imageid6": "lepidodendron:permian_arid_hills",
+			"imageid7": "lepidodendron:permian_arid_hills",
+			"imageid8": "lepidodendron:permian_arid_hills",
+			"imageid9": "lepidodendron:permian_arid_hills",
+			"imageid10": "lepidodendron:permian_arid_hills",
+			"imageid11": "lepidodendron:permian_arid_hills",
+			"imageid12": "lepidodendron:permian_arid_hills",
+			"imageid13": "lepidodendron:permian_arid_hills",
+			"imageid14": "lepidodendron:permian_arid_hills"
 		}
 	]
 }

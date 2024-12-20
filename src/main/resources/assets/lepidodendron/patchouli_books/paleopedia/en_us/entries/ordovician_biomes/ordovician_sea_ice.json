@@ -2,7 +2,7 @@
 	"name": "Frozen Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-	"category": "lepidodendron:ordovician_biome",
+	"category": "lepidodendron:ordovician/ordovician_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:ordovician_sea_ice"
+			"biome": "lepidodendron:ordovician_sea_ice",
+			"imageid0": "lepidodendron:ordovician_sea_ice",
+			"imageid1": "lepidodendron:ordovician_sea_ice",
+			"imageid2": "lepidodendron:ordovician_sea_ice",
+			"imageid3": "lepidodendron:ordovician_sea_ice",
+			"imageid4": "lepidodendron:ordovician_sea_ice",
+			"imageid5": "lepidodendron:ordovician_sea_ice",
+			"imageid6": "lepidodendron:ordovician_sea_ice",
+			"imageid7": "lepidodendron:ordovician_sea_ice",
+			"imageid8": "lepidodendron:ordovician_sea_ice",
+			"imageid9": "lepidodendron:ordovician_sea_ice",
+			"imageid10": "lepidodendron:ordovician_sea_ice",
+			"imageid11": "lepidodendron:ordovician_sea_ice",
+			"imageid12": "lepidodendron:ordovician_sea_ice",
+			"imageid13": "lepidodendron:ordovician_sea_ice"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:ordovician_sea_ice"
+			"biome": "lepidodendron:ordovician_sea_ice",
+			"imageid0": "lepidodendron:ordovician_sea_ice",
+			"imageid1": "lepidodendron:ordovician_sea_ice",
+			"imageid2": "lepidodendron:ordovician_sea_ice",
+			"imageid3": "lepidodendron:ordovician_sea_ice",
+			"imageid4": "lepidodendron:ordovician_sea_ice",
+			"imageid5": "lepidodendron:ordovician_sea_ice",
+			"imageid6": "lepidodendron:ordovician_sea_ice",
+			"imageid7": "lepidodendron:ordovician_sea_ice",
+			"imageid8": "lepidodendron:ordovician_sea_ice",
+			"imageid9": "lepidodendron:ordovician_sea_ice",
+			"imageid10": "lepidodendron:ordovician_sea_ice",
+			"imageid11": "lepidodendron:ordovician_sea_ice",
+			"imageid12": "lepidodendron:ordovician_sea_ice",
+			"imageid13": "lepidodendron:ordovician_sea_ice",
+			"imageid14": "lepidodendron:ordovician_sea_ice"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:ordovician_sea_ice"
+			"biome": "lepidodendron:ordovician_sea_ice",
+			"imageid0": "lepidodendron:ordovician_sea_ice",
+			"imageid1": "lepidodendron:ordovician_sea_ice",
+			"imageid2": "lepidodendron:ordovician_sea_ice",
+			"imageid3": "lepidodendron:ordovician_sea_ice",
+			"imageid4": "lepidodendron:ordovician_sea_ice",
+			"imageid5": "lepidodendron:ordovician_sea_ice",
+			"imageid6": "lepidodendron:ordovician_sea_ice",
+			"imageid7": "lepidodendron:ordovician_sea_ice",
+			"imageid8": "lepidodendron:ordovician_sea_ice",
+			"imageid9": "lepidodendron:ordovician_sea_ice",
+			"imageid10": "lepidodendron:ordovician_sea_ice",
+			"imageid11": "lepidodendron:ordovician_sea_ice",
+			"imageid12": "lepidodendron:ordovician_sea_ice",
+			"imageid13": "lepidodendron:ordovician_sea_ice",
+			"imageid14": "lepidodendron:ordovician_sea_ice"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:ordovician_sea_ice"
+			"biome": "lepidodendron:ordovician_sea_ice",
+			"imageid0": "lepidodendron:ordovician_sea_ice",
+			"imageid1": "lepidodendron:ordovician_sea_ice",
+			"imageid2": "lepidodendron:ordovician_sea_ice",
+			"imageid3": "lepidodendron:ordovician_sea_ice",
+			"imageid4": "lepidodendron:ordovician_sea_ice",
+			"imageid5": "lepidodendron:ordovician_sea_ice",
+			"imageid6": "lepidodendron:ordovician_sea_ice",
+			"imageid7": "lepidodendron:ordovician_sea_ice",
+			"imageid8": "lepidodendron:ordovician_sea_ice",
+			"imageid9": "lepidodendron:ordovician_sea_ice",
+			"imageid10": "lepidodendron:ordovician_sea_ice",
+			"imageid11": "lepidodendron:ordovician_sea_ice",
+			"imageid12": "lepidodendron:ordovician_sea_ice",
+			"imageid13": "lepidodendron:ordovician_sea_ice",
+			"imageid14": "lepidodendron:ordovician_sea_ice"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:ordovician_sea_ice"
+			"biome": "lepidodendron:ordovician_sea_ice",
+			"imageid0": "lepidodendron:ordovician_sea_ice",
+			"imageid1": "lepidodendron:ordovician_sea_ice",
+			"imageid2": "lepidodendron:ordovician_sea_ice",
+			"imageid3": "lepidodendron:ordovician_sea_ice",
+			"imageid4": "lepidodendron:ordovician_sea_ice",
+			"imageid5": "lepidodendron:ordovician_sea_ice",
+			"imageid6": "lepidodendron:ordovician_sea_ice",
+			"imageid7": "lepidodendron:ordovician_sea_ice",
+			"imageid8": "lepidodendron:ordovician_sea_ice",
+			"imageid9": "lepidodendron:ordovician_sea_ice",
+			"imageid10": "lepidodendron:ordovician_sea_ice",
+			"imageid11": "lepidodendron:ordovician_sea_ice",
+			"imageid12": "lepidodendron:ordovician_sea_ice",
+			"imageid13": "lepidodendron:ordovician_sea_ice",
+			"imageid14": "lepidodendron:ordovician_sea_ice"
 		}
 	]
 }

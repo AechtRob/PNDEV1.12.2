@@ -1,0 +1,31 @@
+{
+	"name": "Funisia",
+	"read_by_default": true,
+	"icon": "lepidodendron:funisia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_funisia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_funisia",
+			"title": "Funisia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/funisia.png"],
+			"title": "F. dorothea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_funisia",
+			"type": "text",
+			"text": "Funisia is an animal of uncertain affinity that resembled many little stalks grouped together. It is one of the earliest animals for which sexual reproduction is believed to be evident in. Its name comes from the Latin 'rope.'"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_funisia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -2,7 +2,7 @@
 	"name": "Homoeosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/homoeosaurus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_homoeosaurus",
 	"pages": [
 		{

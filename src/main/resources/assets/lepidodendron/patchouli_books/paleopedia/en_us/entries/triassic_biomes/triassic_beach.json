@@ -2,7 +2,7 @@
 	"name": "Beach",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_beach"
+			"biome": "lepidodendron:triassic_beach",
+			"imageid0": "lepidodendron:triassic_beach",
+			"imageid1": "lepidodendron:triassic_beach",
+			"imageid2": "lepidodendron:triassic_beach",
+			"imageid3": "lepidodendron:triassic_beach",
+			"imageid4": "lepidodendron:triassic_beach",
+			"imageid5": "lepidodendron:triassic_beach",
+			"imageid6": "lepidodendron:triassic_beach",
+			"imageid7": "lepidodendron:triassic_beach",
+			"imageid8": "lepidodendron:triassic_beach",
+			"imageid9": "lepidodendron:triassic_beach",
+			"imageid10": "lepidodendron:triassic_beach",
+			"imageid11": "lepidodendron:triassic_beach",
+			"imageid12": "lepidodendron:triassic_beach",
+			"imageid13": "lepidodendron:triassic_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_beach"
+			"biome": "lepidodendron:triassic_beach",
+			"imageid0": "lepidodendron:triassic_beach",
+			"imageid1": "lepidodendron:triassic_beach",
+			"imageid2": "lepidodendron:triassic_beach",
+			"imageid3": "lepidodendron:triassic_beach",
+			"imageid4": "lepidodendron:triassic_beach",
+			"imageid5": "lepidodendron:triassic_beach",
+			"imageid6": "lepidodendron:triassic_beach",
+			"imageid7": "lepidodendron:triassic_beach",
+			"imageid8": "lepidodendron:triassic_beach",
+			"imageid9": "lepidodendron:triassic_beach",
+			"imageid10": "lepidodendron:triassic_beach",
+			"imageid11": "lepidodendron:triassic_beach",
+			"imageid12": "lepidodendron:triassic_beach",
+			"imageid13": "lepidodendron:triassic_beach",
+			"imageid14": "lepidodendron:triassic_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_beach"
+			"biome": "lepidodendron:triassic_beach",
+			"imageid0": "lepidodendron:triassic_beach",
+			"imageid1": "lepidodendron:triassic_beach",
+			"imageid2": "lepidodendron:triassic_beach",
+			"imageid3": "lepidodendron:triassic_beach",
+			"imageid4": "lepidodendron:triassic_beach",
+			"imageid5": "lepidodendron:triassic_beach",
+			"imageid6": "lepidodendron:triassic_beach",
+			"imageid7": "lepidodendron:triassic_beach",
+			"imageid8": "lepidodendron:triassic_beach",
+			"imageid9": "lepidodendron:triassic_beach",
+			"imageid10": "lepidodendron:triassic_beach",
+			"imageid11": "lepidodendron:triassic_beach",
+			"imageid12": "lepidodendron:triassic_beach",
+			"imageid13": "lepidodendron:triassic_beach",
+			"imageid14": "lepidodendron:triassic_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_beach"
+			"biome": "lepidodendron:triassic_beach",
+			"imageid0": "lepidodendron:triassic_beach",
+			"imageid1": "lepidodendron:triassic_beach",
+			"imageid2": "lepidodendron:triassic_beach",
+			"imageid3": "lepidodendron:triassic_beach",
+			"imageid4": "lepidodendron:triassic_beach",
+			"imageid5": "lepidodendron:triassic_beach",
+			"imageid6": "lepidodendron:triassic_beach",
+			"imageid7": "lepidodendron:triassic_beach",
+			"imageid8": "lepidodendron:triassic_beach",
+			"imageid9": "lepidodendron:triassic_beach",
+			"imageid10": "lepidodendron:triassic_beach",
+			"imageid11": "lepidodendron:triassic_beach",
+			"imageid12": "lepidodendron:triassic_beach",
+			"imageid13": "lepidodendron:triassic_beach",
+			"imageid14": "lepidodendron:triassic_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_beach"
+			"biome": "lepidodendron:triassic_beach",
+			"imageid0": "lepidodendron:triassic_beach",
+			"imageid1": "lepidodendron:triassic_beach",
+			"imageid2": "lepidodendron:triassic_beach",
+			"imageid3": "lepidodendron:triassic_beach",
+			"imageid4": "lepidodendron:triassic_beach",
+			"imageid5": "lepidodendron:triassic_beach",
+			"imageid6": "lepidodendron:triassic_beach",
+			"imageid7": "lepidodendron:triassic_beach",
+			"imageid8": "lepidodendron:triassic_beach",
+			"imageid9": "lepidodendron:triassic_beach",
+			"imageid10": "lepidodendron:triassic_beach",
+			"imageid11": "lepidodendron:triassic_beach",
+			"imageid12": "lepidodendron:triassic_beach",
+			"imageid13": "lepidodendron:triassic_beach",
+			"imageid14": "lepidodendron:triassic_beach"
 		}
 	]
 }

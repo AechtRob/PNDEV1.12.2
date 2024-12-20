@@ -2,7 +2,7 @@
 	"name": "Brackish Waters",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_brackish"
+			"biome": "lepidodendron:devonian_brackish",
+			"imageid0": "lepidodendron:devonian_brackish",
+			"imageid1": "lepidodendron:devonian_brackish",
+			"imageid2": "lepidodendron:devonian_brackish",
+			"imageid3": "lepidodendron:devonian_brackish",
+			"imageid4": "lepidodendron:devonian_brackish",
+			"imageid5": "lepidodendron:devonian_brackish",
+			"imageid6": "lepidodendron:devonian_brackish",
+			"imageid7": "lepidodendron:devonian_brackish",
+			"imageid8": "lepidodendron:devonian_brackish",
+			"imageid9": "lepidodendron:devonian_brackish",
+			"imageid10": "lepidodendron:devonian_brackish",
+			"imageid11": "lepidodendron:devonian_brackish",
+			"imageid12": "lepidodendron:devonian_brackish",
+			"imageid13": "lepidodendron:devonian_brackish"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_brackish"
+			"biome": "lepidodendron:devonian_brackish",
+			"imageid0": "lepidodendron:devonian_brackish",
+			"imageid1": "lepidodendron:devonian_brackish",
+			"imageid2": "lepidodendron:devonian_brackish",
+			"imageid3": "lepidodendron:devonian_brackish",
+			"imageid4": "lepidodendron:devonian_brackish",
+			"imageid5": "lepidodendron:devonian_brackish",
+			"imageid6": "lepidodendron:devonian_brackish",
+			"imageid7": "lepidodendron:devonian_brackish",
+			"imageid8": "lepidodendron:devonian_brackish",
+			"imageid9": "lepidodendron:devonian_brackish",
+			"imageid10": "lepidodendron:devonian_brackish",
+			"imageid11": "lepidodendron:devonian_brackish",
+			"imageid12": "lepidodendron:devonian_brackish",
+			"imageid13": "lepidodendron:devonian_brackish",
+			"imageid14": "lepidodendron:devonian_brackish"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_brackish"
+			"biome": "lepidodendron:devonian_brackish",
+			"imageid0": "lepidodendron:devonian_brackish",
+			"imageid1": "lepidodendron:devonian_brackish",
+			"imageid2": "lepidodendron:devonian_brackish",
+			"imageid3": "lepidodendron:devonian_brackish",
+			"imageid4": "lepidodendron:devonian_brackish",
+			"imageid5": "lepidodendron:devonian_brackish",
+			"imageid6": "lepidodendron:devonian_brackish",
+			"imageid7": "lepidodendron:devonian_brackish",
+			"imageid8": "lepidodendron:devonian_brackish",
+			"imageid9": "lepidodendron:devonian_brackish",
+			"imageid10": "lepidodendron:devonian_brackish",
+			"imageid11": "lepidodendron:devonian_brackish",
+			"imageid12": "lepidodendron:devonian_brackish",
+			"imageid13": "lepidodendron:devonian_brackish",
+			"imageid14": "lepidodendron:devonian_brackish"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_brackish"
+			"biome": "lepidodendron:devonian_brackish",
+			"imageid0": "lepidodendron:devonian_brackish",
+			"imageid1": "lepidodendron:devonian_brackish",
+			"imageid2": "lepidodendron:devonian_brackish",
+			"imageid3": "lepidodendron:devonian_brackish",
+			"imageid4": "lepidodendron:devonian_brackish",
+			"imageid5": "lepidodendron:devonian_brackish",
+			"imageid6": "lepidodendron:devonian_brackish",
+			"imageid7": "lepidodendron:devonian_brackish",
+			"imageid8": "lepidodendron:devonian_brackish",
+			"imageid9": "lepidodendron:devonian_brackish",
+			"imageid10": "lepidodendron:devonian_brackish",
+			"imageid11": "lepidodendron:devonian_brackish",
+			"imageid12": "lepidodendron:devonian_brackish",
+			"imageid13": "lepidodendron:devonian_brackish",
+			"imageid14": "lepidodendron:devonian_brackish"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_brackish"
+			"biome": "lepidodendron:devonian_brackish",
+			"imageid0": "lepidodendron:devonian_brackish",
+			"imageid1": "lepidodendron:devonian_brackish",
+			"imageid2": "lepidodendron:devonian_brackish",
+			"imageid3": "lepidodendron:devonian_brackish",
+			"imageid4": "lepidodendron:devonian_brackish",
+			"imageid5": "lepidodendron:devonian_brackish",
+			"imageid6": "lepidodendron:devonian_brackish",
+			"imageid7": "lepidodendron:devonian_brackish",
+			"imageid8": "lepidodendron:devonian_brackish",
+			"imageid9": "lepidodendron:devonian_brackish",
+			"imageid10": "lepidodendron:devonian_brackish",
+			"imageid11": "lepidodendron:devonian_brackish",
+			"imageid12": "lepidodendron:devonian_brackish",
+			"imageid13": "lepidodendron:devonian_brackish",
+			"imageid14": "lepidodendron:devonian_brackish"
 		}
 	]
 }

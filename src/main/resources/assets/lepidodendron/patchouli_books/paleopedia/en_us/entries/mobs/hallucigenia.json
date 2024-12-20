@@ -2,7 +2,7 @@
 	"name": "Hallucigenia",
 	"read_by_default": true,
 	"icon": "lepidodendron:hallucigenia_raw",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_hallucigenia",
 	"pages": [
 		{

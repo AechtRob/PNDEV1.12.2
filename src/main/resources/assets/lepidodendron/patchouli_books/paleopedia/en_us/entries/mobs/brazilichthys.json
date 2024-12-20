@@ -2,7 +2,7 @@
 	"name": "Brazilichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/brazilichthys_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_brazilichthys",
 	"pages": [
 		{

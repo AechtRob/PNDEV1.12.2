@@ -1,0 +1,31 @@
+{
+	"name": "Primocandelabrum",
+	"read_by_default": true,
+	"icon": "lepidodendron:primocandelabrum_1",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_primocandelabrum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_primocandelabrum",
+			"title": "Primocandelabrum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/primocandelabrum_blue.png", "paleopedia:textures/primocandelabrum_yellow.png"],
+			"title": "P. hiemaloranum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_primocandelabrum",
+			"type": "text",
+			"text": "Primocandelabrum is a rangeomorph from the Ediacaran. It had a frondose like body with many branching stems. It was named because it resembles a candelabra."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_primocandelabrum",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

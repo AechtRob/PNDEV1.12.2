@@ -2,7 +2,7 @@
 	"name": "Lagoons",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-	"category": "lepidodendron:ordovician_biome",
+	"category": "lepidodendron:ordovician/ordovician_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:ordovician_lagoon"
+			"biome": "lepidodendron:ordovician_lagoon",
+			"imageid0": "lepidodendron:ordovician_lagoon",
+			"imageid1": "lepidodendron:ordovician_lagoon",
+			"imageid2": "lepidodendron:ordovician_lagoon",
+			"imageid3": "lepidodendron:ordovician_lagoon",
+			"imageid4": "lepidodendron:ordovician_lagoon",
+			"imageid5": "lepidodendron:ordovician_lagoon",
+			"imageid6": "lepidodendron:ordovician_lagoon",
+			"imageid7": "lepidodendron:ordovician_lagoon",
+			"imageid8": "lepidodendron:ordovician_lagoon",
+			"imageid9": "lepidodendron:ordovician_lagoon",
+			"imageid10": "lepidodendron:ordovician_lagoon",
+			"imageid11": "lepidodendron:ordovician_lagoon",
+			"imageid12": "lepidodendron:ordovician_lagoon",
+			"imageid13": "lepidodendron:ordovician_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:ordovician_lagoon"
+			"biome": "lepidodendron:ordovician_lagoon",
+			"imageid0": "lepidodendron:ordovician_lagoon",
+			"imageid1": "lepidodendron:ordovician_lagoon",
+			"imageid2": "lepidodendron:ordovician_lagoon",
+			"imageid3": "lepidodendron:ordovician_lagoon",
+			"imageid4": "lepidodendron:ordovician_lagoon",
+			"imageid5": "lepidodendron:ordovician_lagoon",
+			"imageid6": "lepidodendron:ordovician_lagoon",
+			"imageid7": "lepidodendron:ordovician_lagoon",
+			"imageid8": "lepidodendron:ordovician_lagoon",
+			"imageid9": "lepidodendron:ordovician_lagoon",
+			"imageid10": "lepidodendron:ordovician_lagoon",
+			"imageid11": "lepidodendron:ordovician_lagoon",
+			"imageid12": "lepidodendron:ordovician_lagoon",
+			"imageid13": "lepidodendron:ordovician_lagoon",
+			"imageid14": "lepidodendron:ordovician_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:ordovician_lagoon"
+			"biome": "lepidodendron:ordovician_lagoon",
+			"imageid0": "lepidodendron:ordovician_lagoon",
+			"imageid1": "lepidodendron:ordovician_lagoon",
+			"imageid2": "lepidodendron:ordovician_lagoon",
+			"imageid3": "lepidodendron:ordovician_lagoon",
+			"imageid4": "lepidodendron:ordovician_lagoon",
+			"imageid5": "lepidodendron:ordovician_lagoon",
+			"imageid6": "lepidodendron:ordovician_lagoon",
+			"imageid7": "lepidodendron:ordovician_lagoon",
+			"imageid8": "lepidodendron:ordovician_lagoon",
+			"imageid9": "lepidodendron:ordovician_lagoon",
+			"imageid10": "lepidodendron:ordovician_lagoon",
+			"imageid11": "lepidodendron:ordovician_lagoon",
+			"imageid12": "lepidodendron:ordovician_lagoon",
+			"imageid13": "lepidodendron:ordovician_lagoon",
+			"imageid14": "lepidodendron:ordovician_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:ordovician_lagoon"
+			"biome": "lepidodendron:ordovician_lagoon",
+			"imageid0": "lepidodendron:ordovician_lagoon",
+			"imageid1": "lepidodendron:ordovician_lagoon",
+			"imageid2": "lepidodendron:ordovician_lagoon",
+			"imageid3": "lepidodendron:ordovician_lagoon",
+			"imageid4": "lepidodendron:ordovician_lagoon",
+			"imageid5": "lepidodendron:ordovician_lagoon",
+			"imageid6": "lepidodendron:ordovician_lagoon",
+			"imageid7": "lepidodendron:ordovician_lagoon",
+			"imageid8": "lepidodendron:ordovician_lagoon",
+			"imageid9": "lepidodendron:ordovician_lagoon",
+			"imageid10": "lepidodendron:ordovician_lagoon",
+			"imageid11": "lepidodendron:ordovician_lagoon",
+			"imageid12": "lepidodendron:ordovician_lagoon",
+			"imageid13": "lepidodendron:ordovician_lagoon",
+			"imageid14": "lepidodendron:ordovician_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:ordovician_lagoon"
+			"biome": "lepidodendron:ordovician_lagoon",
+			"imageid0": "lepidodendron:ordovician_lagoon",
+			"imageid1": "lepidodendron:ordovician_lagoon",
+			"imageid2": "lepidodendron:ordovician_lagoon",
+			"imageid3": "lepidodendron:ordovician_lagoon",
+			"imageid4": "lepidodendron:ordovician_lagoon",
+			"imageid5": "lepidodendron:ordovician_lagoon",
+			"imageid6": "lepidodendron:ordovician_lagoon",
+			"imageid7": "lepidodendron:ordovician_lagoon",
+			"imageid8": "lepidodendron:ordovician_lagoon",
+			"imageid9": "lepidodendron:ordovician_lagoon",
+			"imageid10": "lepidodendron:ordovician_lagoon",
+			"imageid11": "lepidodendron:ordovician_lagoon",
+			"imageid12": "lepidodendron:ordovician_lagoon",
+			"imageid13": "lepidodendron:ordovician_lagoon",
+			"imageid14": "lepidodendron:ordovician_lagoon"
 		}
 	]
 }

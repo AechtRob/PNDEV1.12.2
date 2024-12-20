@@ -1,0 +1,32 @@
+{
+	"name": "Diskagma",
+	"read_by_default": true,
+	"icon": "lepidodendron:diskagma",
+	"category": "lepidodendron:plants",
+	"turnin": "lepidodendron:pf_adv_book_diskagma",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diskagma",
+			"title": "Diskagma",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Rhyacian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Eukariota$(br)>Incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/diskagma.png"],
+			"title": "D. buttonii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diskagma",
+			"type": "text",
+			"text": "Diskagma is a poorly understood multcellular organism found in terrestrial soils from the Rhyacian period in what is now South Africa. While it has been tentatively classified as a fungus in the division glomeromycota, the extreme age of the fossils casts doubt on this, as they pre-date the commonly accepted origin of eukaryotic life by at least 400 million years, as well as the possibly eukaryotic Francevillian biota by 100 million years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diskagma",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

@@ -1,0 +1,7 @@
+{
+    "name": "Early Cretaceous Biomes",
+    "description": "Biomes of the Early Cretaceous",
+    "icon": "paleopedia:textures/category_icon/icon_early_cretaceous.png",
+    "parent": "lepidodendron:cretaceous_early",
+    "sortnum": 2
+}
