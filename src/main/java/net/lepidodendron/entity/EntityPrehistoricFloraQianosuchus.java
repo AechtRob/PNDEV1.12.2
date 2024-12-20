@@ -124,9 +124,13 @@ public class EntityPrehistoricFloraQianosuchus extends EntityPrehistoricFloraSwi
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.195F;
+		float calcSpeed = 0.205F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.275f;
+		}
+		//Lemon - here is the fast stuff, if we get animations:
+		if (this.getIsFast()) {
+			calcSpeed = calcSpeed * 1.7F;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

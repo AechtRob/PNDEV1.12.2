@@ -8,15 +8,22 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public abstract class BlockPortalBlock extends Block {
+
+	public static final PropertyBool ACTIVE = PropertyBool.create("active");
+
 	public BlockPortalBlock() {
 		super(Material.IRON, MapColor.TNT);
 		setSoundType(SoundType.METAL);
@@ -26,6 +33,34 @@ public abstract class BlockPortalBlock extends Block {
 		setLightLevel(0F);
 		setLightOpacity(0);
 		setCreativeTab(TabLepidodendronBuilding.tab);
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state)
+	{
+		return 0;
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState();
+	}
+
+	@Override
+	protected BlockStateContainer createBlockState()
+	{
+		return new BlockStateContainer(this, new IProperty[] {ACTIVE});
+	}
+
+	@Override
+	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+	{
+		TileEntity tileEntity = worldIn.getTileEntity(pos);
+		if (tileEntity != null)
+			if (tileEntity instanceof TileEntityPortalBlock) {
+				return state.withProperty(ACTIVE, ((TileEntityPortalBlock)tileEntity).getIsActive() && ((TileEntityPortalBlock)tileEntity).getAnimationTick() >= 90);
+			}
+		return state;
 	}
 
 	@Override

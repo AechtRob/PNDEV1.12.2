@@ -89,7 +89,8 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 		if (biome instanceof BiomeCretaceousEarly) {
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_crags")) {
 				biomeCriteria = true;
 			}
 		}
@@ -118,7 +119,8 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_stony_plains_spikes")) {
 			GenChance = 38;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_highland")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean_crags")) {
 			GenChance = 38;
 		}
 		//if (GenMultiplier < 0) {GenMultiplier = 0;}
