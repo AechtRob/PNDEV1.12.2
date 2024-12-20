@@ -39,18 +39,15 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
-
-	public Animation STAND_ANIMATION;
 	private int standCooldown;
 
 	public EntityPrehistoricFloraEdentosuchus(World world) {
 		super(world);
-		setSize(0.6F, 0.32F);
+		setSize(0.3F, 0.2F);
 		minWidth = 0.18F;
-		maxWidth = 0.6F;
-		maxHeight = 0.32F;
+		maxWidth = 0.3F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 10.0D;
-		STAND_ANIMATION = Animation.create(80);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -74,7 +71,7 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Archosauriform";}
 
@@ -115,14 +112,14 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.3F;
+		float speedBase = 0.22F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.77F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;
@@ -145,7 +142,7 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION};
 	}
 
 	protected void initEntityAI() {
@@ -249,13 +246,6 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			launchAttack();
 		}
-
-		if (this.standCooldown > 0) {
-			this.standCooldown -= rand.nextInt(3) + 1;
-		}
-		if (this.standCooldown < 0) {
-			this.standCooldown = 0;
-		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
@@ -265,19 +255,6 @@ public class EntityPrehistoricFloraEdentosuchus extends EntityPrehistoricFloraLa
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		//Sometimes stand up and look around:
-		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
-		}
-		//forces animation to return to base pose by grabbing the last tick and setting it to that.
-		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 2000;
-			this.setAnimation(NO_ANIMATION);
-		}
-
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

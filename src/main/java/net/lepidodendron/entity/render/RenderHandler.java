@@ -6612,6 +6612,30 @@ public class RenderHandler {
                 return new RenderAnkylosphenodon(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEdentosuchus.class, new IRenderFactory<EntityPrehistoricFloraEdentosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEdentosuchus> createRenderFor(RenderManager manager) {
+                return new RenderEdentosuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAraripesuchus.class, new IRenderFactory<EntityPrehistoricFloraAraripesuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAraripesuchus> createRenderFor(RenderManager manager) {
+                return new RenderAraripesuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHypsilophodon.class, new IRenderFactory<EntityPrehistoricFloraHypsilophodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHypsilophodon> createRenderFor(RenderManager manager) {
+                return new RenderHypsilophodon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBerthasaura.class, new IRenderFactory<EntityPrehistoricFloraBerthasaura>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBerthasaura> createRenderFor(RenderManager manager) {
+                return new RenderBerthasaura(manager);
+            }
+        });
 
 
 

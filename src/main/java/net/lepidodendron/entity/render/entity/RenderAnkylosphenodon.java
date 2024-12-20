@@ -12,7 +12,7 @@ public class RenderAnkylosphenodon extends RenderLivingBaseWithBook<EntityPrehis
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ankylosphenodon.png");
 
     public static float getScaler() {
-        return 0.7F * 0.18F;
+        return 0.7F * 0.33F;
     }
     public RenderAnkylosphenodon(RenderManager mgr) {
         super(mgr, new ModelAnkylosphenodon(), 0.0f);

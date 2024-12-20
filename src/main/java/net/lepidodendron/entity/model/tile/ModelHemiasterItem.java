@@ -317,6 +317,7 @@ public class ModelHemiasterItem extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
+        this.bone.offsetY = -25F;
         this.bone.render(1f);
     }
 

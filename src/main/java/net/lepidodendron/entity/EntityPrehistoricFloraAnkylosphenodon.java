@@ -126,7 +126,7 @@ public class EntityPrehistoricFloraAnkylosphenodon extends EntityPrehistoricFlor
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.12F;
+		float calcSpeed = 0.15F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.2f;
 		}

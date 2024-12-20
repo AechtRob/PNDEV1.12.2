@@ -40,18 +40,20 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	//scratch animation
+	//relax animation
 	public Animation STAND_ANIMATION;
+	public Animation ALERT_ANIMATION;
 	private int standCooldown;
 
 	public EntityPrehistoricFloraAraripesuchus(World world) {
 		super(world);
-		setSize(0.6F, 0.32F);
+		setSize(0.4F, 0.32F);
 		minWidth = 0.18F;
-		maxWidth = 0.6F;
+		maxWidth = 0.4F;
 		maxHeight = 0.32F;
 		maxHealthAgeable = 10.0D;
-		STAND_ANIMATION = Animation.create(80);
+		STAND_ANIMATION = Animation.create(26);
+		ALERT_ANIMATION = Animation.create(120);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -67,7 +69,7 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 15;
 	}
 
 	@Override
@@ -123,7 +125,7 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.77F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == STAND_ANIMATION || this.getAnimation() == ALERT_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;
@@ -146,7 +148,7 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION};
+		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, MAKE_NEST_ANIMATION, EAT_ANIMATION, STAND_ANIMATION, ALERT_ANIMATION};
 	}
 
 	protected void initEntityAI() {
@@ -270,11 +272,20 @@ public class EntityPrehistoricFloraAraripesuchus extends EntityPrehistoricFloraL
 		//Sometimes stand up and look around:
 		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
+			int next = this.rand.nextInt(11);
+			if(next < 5) {
+				this.setAnimation(STAND_ANIMATION);
+			} else {
+				this.setAnimation(ALERT_ANIMATION);
+			}
 			this.standCooldown = 2000;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+		if ((!this.world.isRemote) && this.getAnimation() == ALERT_ANIMATION && this.getAnimationTick() == ALERT_ANIMATION.getDuration() - 1) {
 			this.standCooldown = 2000;
 			this.setAnimation(NO_ANIMATION);
 		}

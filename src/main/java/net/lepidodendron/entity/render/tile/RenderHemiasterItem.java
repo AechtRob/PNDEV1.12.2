@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderHemiasterItem extends TileEntitySpecialRenderer<BlockHemiaster.TileEntityCustom> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hemiaster.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hemiaster_shell.png");
     private final ModelHemiasterItem modelHemiasterItem;
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 

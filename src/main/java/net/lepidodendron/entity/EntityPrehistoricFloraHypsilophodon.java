@@ -25,6 +25,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -34,6 +35,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -52,10 +54,14 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 	public ChainBuffer tailBuffer;
 	private boolean screaming;
 	private int alarmCooldown;
+	//chatter
 	public Animation CHATTER_ANIMATION;
+	//chatter2
 	public Animation LONG_CHATTER_ANIMATION;
-	public Animation ALARM_ANIMATION;
-	public Animation LOOK_ANIMATION;
+	//scratch
+	public Animation STAND_ANIMATION;
+	private int standCooldown;
+
 
 	public EntityPrehistoricFloraHypsilophodon(World world) {
 		super(world);
@@ -67,10 +73,9 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
-		CHATTER_ANIMATION = Animation.create(this.getChatterLength());
-		LONG_CHATTER_ANIMATION = Animation.create(this.getChatterLength());
-		ALARM_ANIMATION = Animation.create(this.getPanicLength());
-		LOOK_ANIMATION = Animation.create(this.getLookLength());
+		CHATTER_ANIMATION = Animation.create(45);
+		LONG_CHATTER_ANIMATION = Animation.create(60);
+		STAND_ANIMATION = Animation.create(55);
 	}
 
 	@Nullable
@@ -87,13 +92,27 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 		return 20;
 	}
 
-	public int getLookLength() {
-		return 80;
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, CHATTER_ANIMATION, LONG_CHATTER_ANIMATION, STAND_ANIMATION};
 	}
 
 	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{LOOK_ANIMATION, DRINK_ANIMATION, GRAZE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, CHATTER_ANIMATION, LONG_CHATTER_ANIMATION, ALARM_ANIMATION};
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.standCooldown = rand.nextInt(2000);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("standCooldown", this.standCooldown);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.standCooldown = compound.getInteger("standCooldown");
 	}
 
 	@Override
@@ -141,7 +160,7 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 		return null;
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
@@ -157,7 +176,7 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 
 	@Override
 	public int getRoarLength() {
-		return 15;
+		return 20;
 	}
 
 	@Override
@@ -183,7 +202,7 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 		if ((this.getAnimation() == CHATTER_ANIMATION || this.getAnimation() == LONG_CHATTER_ANIMATION) && (this.willGrapple) && this.getGrappleTarget() != null) {
 			return 0.0F; //Is talking to a colleague!
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION || this.getAnimation() == LOOK_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
@@ -304,7 +323,7 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 
 	@Override
 	public int getGrazeLength() {
-		return 90;
+		return 50;
 	}
 
 	@Override
@@ -397,7 +416,7 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 	}
 
 	private boolean isBlockGrazable(IBlockState state) {
-		return (state.getMaterial() == Material.LEAVES || state.getMaterial() == Material.PLANTS);
+		return (state.getMaterial() == Material.LEAVES || state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.GRASS);
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
@@ -524,18 +543,6 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 				.getObject(new ResourceLocation("lepidodendron:hypsilophodon_long_chatter"));
 	}
 
-	public void playAlarmSound()
-	{
-		SoundEvent soundevent = this.getAlarmSound();
-		//System.err.println("looking for alarm sound");
-		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
-		{
-			//System.err.println("playing alarm sound");
-			this.setAnimation(ALARM_ANIMATION);
-			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-			this.alarmCooldown = 20;
-		}
-	}
 	
 
 	@Override
@@ -552,10 +559,6 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-
-		if (this.getAnimation() == NO_ANIMATION && this.rand.nextInt(300) == 0) {
-			this.setAnimation(LOOK_ANIMATION);
-		}
 
 		if (this.getAnimation() == GRAZE_ANIMATION && !world.isRemote) {
 			if (LepidodendronConfig.doGrazeGrief && world.getGameRules().getBoolean("mobGriefing") && this.getWillHunt() && (!world.isRemote) && this.getAnimationTick() >= this.getAnimation().getDuration() * 0.75F) {
@@ -603,6 +606,12 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
 
+		if (this.standCooldown > 0) {
+			this.standCooldown -= rand.nextInt(3) + 1;
+		}
+		if (this.standCooldown < 0) {
+			this.standCooldown = 0;
+		}
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
@@ -651,12 +660,20 @@ public class EntityPrehistoricFloraHypsilophodon extends EntityPrehistoricFloraL
 		if (this.alarmCooldown > 0) {
 			this.alarmCooldown -= 1;
 		}
-		if (this.getScreaming() && alarmCooldown <= 0) {
-			this.playAlarmSound();
-		}
-
 		if ((this.getAnimation() == CHATTER_ANIMATION || this.getAnimation() == LONG_CHATTER_ANIMATION) && this.getGrappleTarget() != null) {
 			this.faceEntity(this.getGrappleTarget(), 10F, 10F);
+		}
+
+		//Sometimes stand up and look around:
+		if ((!this.world.isRemote) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null && this.getAlarmTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+			this.standCooldown = 2000;
+		}
+		//forces animation to return to base pose by grabbing the last tick and setting it to that.
+		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
 		}
 
 		super.onEntityUpdate();
