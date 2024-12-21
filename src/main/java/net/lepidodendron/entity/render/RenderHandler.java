@@ -6636,6 +6636,24 @@ public class RenderHandler {
                 return new RenderBerthasaura(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHamulina.class, new IRenderFactory<EntityPrehistoricFloraHamulina>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHamulina> createRenderFor(RenderManager manager) {
+                return new RenderHamulina(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHypophylloceras.class, new IRenderFactory<EntityPrehistoricFloraHypophylloceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHypophylloceras> createRenderFor(RenderManager manager) {
+                return new RenderHypophylloceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDimitobelus.class, new IRenderFactory<EntityPrehistoricFloraDimitobelus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDimitobelus> createRenderFor(RenderManager manager) {
+                return new RenderDimitobelus(manager);
+            }
+        });
 
 
 
@@ -6775,6 +6793,9 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellArcestes.TileEntityCustom.class, new RenderNautiloidShellArcestes());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellGoldringia.TileEntityCustom.class, new RenderNautiloidShellGoldringia());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAnthracoceras.TileEntityCustom.class, new RenderNautiloidShellAnthracoceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellHamulina.TileEntityCustom.class, new RenderNautiloidShellHamulina());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellHypophylloceras.TileEntityCustom.class, new RenderNautiloidShellHypophylloceras());
+
 
 
 
