@@ -238,9 +238,12 @@ public class AlgaeGenerator extends WorldGenerator
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_lake_shore")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_spikes")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica_desert_low")))
+							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_yixian_lakes_dead")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_creek_south_america_desert")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")))
+							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_bog")))
+							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_creek_bog")))
 							&& gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
 						waterDepthCheckMin = false;
 					}

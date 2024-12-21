@@ -2,7 +2,7 @@
 	"name": "Ainiktozoon",
 	"read_by_default": true,
 	"icon": "lepidodendron:ainiktozoon_raw",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ainiktozoon",
 	"pages": [
 		{

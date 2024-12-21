@@ -2,7 +2,7 @@
 	"name": "Panzhousaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/panzhousaurus_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_panzhousaurus",
 	"pages": [
 		{

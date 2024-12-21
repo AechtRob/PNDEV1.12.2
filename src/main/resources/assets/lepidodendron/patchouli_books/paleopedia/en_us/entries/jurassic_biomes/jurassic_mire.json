@@ -2,7 +2,7 @@
 	"name": "Horsetail Mire",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_mire"
+			"biome": "lepidodendron:jurassic_mire",
+			"imageid0": "lepidodendron:jurassic_mire",
+			"imageid1": "lepidodendron:jurassic_mire",
+			"imageid2": "lepidodendron:jurassic_mire",
+			"imageid3": "lepidodendron:jurassic_mire",
+			"imageid4": "lepidodendron:jurassic_mire",
+			"imageid5": "lepidodendron:jurassic_mire",
+			"imageid6": "lepidodendron:jurassic_mire",
+			"imageid7": "lepidodendron:jurassic_mire",
+			"imageid8": "lepidodendron:jurassic_mire",
+			"imageid9": "lepidodendron:jurassic_mire",
+			"imageid10": "lepidodendron:jurassic_mire",
+			"imageid11": "lepidodendron:jurassic_mire",
+			"imageid12": "lepidodendron:jurassic_mire",
+			"imageid13": "lepidodendron:jurassic_mire"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_mire"
+			"biome": "lepidodendron:jurassic_mire",
+			"imageid0": "lepidodendron:jurassic_mire",
+			"imageid1": "lepidodendron:jurassic_mire",
+			"imageid2": "lepidodendron:jurassic_mire",
+			"imageid3": "lepidodendron:jurassic_mire",
+			"imageid4": "lepidodendron:jurassic_mire",
+			"imageid5": "lepidodendron:jurassic_mire",
+			"imageid6": "lepidodendron:jurassic_mire",
+			"imageid7": "lepidodendron:jurassic_mire",
+			"imageid8": "lepidodendron:jurassic_mire",
+			"imageid9": "lepidodendron:jurassic_mire",
+			"imageid10": "lepidodendron:jurassic_mire",
+			"imageid11": "lepidodendron:jurassic_mire",
+			"imageid12": "lepidodendron:jurassic_mire",
+			"imageid13": "lepidodendron:jurassic_mire",
+			"imageid14": "lepidodendron:jurassic_mire"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_mire"
+			"biome": "lepidodendron:jurassic_mire",
+			"imageid0": "lepidodendron:jurassic_mire",
+			"imageid1": "lepidodendron:jurassic_mire",
+			"imageid2": "lepidodendron:jurassic_mire",
+			"imageid3": "lepidodendron:jurassic_mire",
+			"imageid4": "lepidodendron:jurassic_mire",
+			"imageid5": "lepidodendron:jurassic_mire",
+			"imageid6": "lepidodendron:jurassic_mire",
+			"imageid7": "lepidodendron:jurassic_mire",
+			"imageid8": "lepidodendron:jurassic_mire",
+			"imageid9": "lepidodendron:jurassic_mire",
+			"imageid10": "lepidodendron:jurassic_mire",
+			"imageid11": "lepidodendron:jurassic_mire",
+			"imageid12": "lepidodendron:jurassic_mire",
+			"imageid13": "lepidodendron:jurassic_mire",
+			"imageid14": "lepidodendron:jurassic_mire"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_mire"
+			"biome": "lepidodendron:jurassic_mire",
+			"imageid0": "lepidodendron:jurassic_mire",
+			"imageid1": "lepidodendron:jurassic_mire",
+			"imageid2": "lepidodendron:jurassic_mire",
+			"imageid3": "lepidodendron:jurassic_mire",
+			"imageid4": "lepidodendron:jurassic_mire",
+			"imageid5": "lepidodendron:jurassic_mire",
+			"imageid6": "lepidodendron:jurassic_mire",
+			"imageid7": "lepidodendron:jurassic_mire",
+			"imageid8": "lepidodendron:jurassic_mire",
+			"imageid9": "lepidodendron:jurassic_mire",
+			"imageid10": "lepidodendron:jurassic_mire",
+			"imageid11": "lepidodendron:jurassic_mire",
+			"imageid12": "lepidodendron:jurassic_mire",
+			"imageid13": "lepidodendron:jurassic_mire",
+			"imageid14": "lepidodendron:jurassic_mire"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_mire"
+			"biome": "lepidodendron:jurassic_mire",
+			"imageid0": "lepidodendron:jurassic_mire",
+			"imageid1": "lepidodendron:jurassic_mire",
+			"imageid2": "lepidodendron:jurassic_mire",
+			"imageid3": "lepidodendron:jurassic_mire",
+			"imageid4": "lepidodendron:jurassic_mire",
+			"imageid5": "lepidodendron:jurassic_mire",
+			"imageid6": "lepidodendron:jurassic_mire",
+			"imageid7": "lepidodendron:jurassic_mire",
+			"imageid8": "lepidodendron:jurassic_mire",
+			"imageid9": "lepidodendron:jurassic_mire",
+			"imageid10": "lepidodendron:jurassic_mire",
+			"imageid11": "lepidodendron:jurassic_mire",
+			"imageid12": "lepidodendron:jurassic_mire",
+			"imageid13": "lepidodendron:jurassic_mire",
+			"imageid14": "lepidodendron:jurassic_mire"
 		}
 	]
 }

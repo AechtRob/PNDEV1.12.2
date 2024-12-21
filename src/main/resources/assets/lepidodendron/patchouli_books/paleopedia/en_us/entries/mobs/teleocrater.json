@@ -2,7 +2,7 @@
 	"name": "Teleocrater",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/teleocrater_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_teleocrater",
 	"pages": [
 		{

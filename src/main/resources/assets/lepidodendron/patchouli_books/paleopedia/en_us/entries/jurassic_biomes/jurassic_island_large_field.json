@@ -2,7 +2,7 @@
 	"name": "Caldera Island Interior",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_island_large_field"
+			"biome": "lepidodendron:jurassic_island_large_field",
+			"imageid0": "lepidodendron:jurassic_island_large_field",
+			"imageid1": "lepidodendron:jurassic_island_large_field",
+			"imageid2": "lepidodendron:jurassic_island_large_field",
+			"imageid3": "lepidodendron:jurassic_island_large_field",
+			"imageid4": "lepidodendron:jurassic_island_large_field",
+			"imageid5": "lepidodendron:jurassic_island_large_field",
+			"imageid6": "lepidodendron:jurassic_island_large_field",
+			"imageid7": "lepidodendron:jurassic_island_large_field",
+			"imageid8": "lepidodendron:jurassic_island_large_field",
+			"imageid9": "lepidodendron:jurassic_island_large_field",
+			"imageid10": "lepidodendron:jurassic_island_large_field",
+			"imageid11": "lepidodendron:jurassic_island_large_field",
+			"imageid12": "lepidodendron:jurassic_island_large_field",
+			"imageid13": "lepidodendron:jurassic_island_large_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_island_large_field"
+			"biome": "lepidodendron:jurassic_island_large_field",
+			"imageid0": "lepidodendron:jurassic_island_large_field",
+			"imageid1": "lepidodendron:jurassic_island_large_field",
+			"imageid2": "lepidodendron:jurassic_island_large_field",
+			"imageid3": "lepidodendron:jurassic_island_large_field",
+			"imageid4": "lepidodendron:jurassic_island_large_field",
+			"imageid5": "lepidodendron:jurassic_island_large_field",
+			"imageid6": "lepidodendron:jurassic_island_large_field",
+			"imageid7": "lepidodendron:jurassic_island_large_field",
+			"imageid8": "lepidodendron:jurassic_island_large_field",
+			"imageid9": "lepidodendron:jurassic_island_large_field",
+			"imageid10": "lepidodendron:jurassic_island_large_field",
+			"imageid11": "lepidodendron:jurassic_island_large_field",
+			"imageid12": "lepidodendron:jurassic_island_large_field",
+			"imageid13": "lepidodendron:jurassic_island_large_field",
+			"imageid14": "lepidodendron:jurassic_island_large_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_island_large_field"
+			"biome": "lepidodendron:jurassic_island_large_field",
+			"imageid0": "lepidodendron:jurassic_island_large_field",
+			"imageid1": "lepidodendron:jurassic_island_large_field",
+			"imageid2": "lepidodendron:jurassic_island_large_field",
+			"imageid3": "lepidodendron:jurassic_island_large_field",
+			"imageid4": "lepidodendron:jurassic_island_large_field",
+			"imageid5": "lepidodendron:jurassic_island_large_field",
+			"imageid6": "lepidodendron:jurassic_island_large_field",
+			"imageid7": "lepidodendron:jurassic_island_large_field",
+			"imageid8": "lepidodendron:jurassic_island_large_field",
+			"imageid9": "lepidodendron:jurassic_island_large_field",
+			"imageid10": "lepidodendron:jurassic_island_large_field",
+			"imageid11": "lepidodendron:jurassic_island_large_field",
+			"imageid12": "lepidodendron:jurassic_island_large_field",
+			"imageid13": "lepidodendron:jurassic_island_large_field",
+			"imageid14": "lepidodendron:jurassic_island_large_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_island_large_field"
+			"biome": "lepidodendron:jurassic_island_large_field",
+			"imageid0": "lepidodendron:jurassic_island_large_field",
+			"imageid1": "lepidodendron:jurassic_island_large_field",
+			"imageid2": "lepidodendron:jurassic_island_large_field",
+			"imageid3": "lepidodendron:jurassic_island_large_field",
+			"imageid4": "lepidodendron:jurassic_island_large_field",
+			"imageid5": "lepidodendron:jurassic_island_large_field",
+			"imageid6": "lepidodendron:jurassic_island_large_field",
+			"imageid7": "lepidodendron:jurassic_island_large_field",
+			"imageid8": "lepidodendron:jurassic_island_large_field",
+			"imageid9": "lepidodendron:jurassic_island_large_field",
+			"imageid10": "lepidodendron:jurassic_island_large_field",
+			"imageid11": "lepidodendron:jurassic_island_large_field",
+			"imageid12": "lepidodendron:jurassic_island_large_field",
+			"imageid13": "lepidodendron:jurassic_island_large_field",
+			"imageid14": "lepidodendron:jurassic_island_large_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_island_large_field"
+			"biome": "lepidodendron:jurassic_island_large_field",
+			"imageid0": "lepidodendron:jurassic_island_large_field",
+			"imageid1": "lepidodendron:jurassic_island_large_field",
+			"imageid2": "lepidodendron:jurassic_island_large_field",
+			"imageid3": "lepidodendron:jurassic_island_large_field",
+			"imageid4": "lepidodendron:jurassic_island_large_field",
+			"imageid5": "lepidodendron:jurassic_island_large_field",
+			"imageid6": "lepidodendron:jurassic_island_large_field",
+			"imageid7": "lepidodendron:jurassic_island_large_field",
+			"imageid8": "lepidodendron:jurassic_island_large_field",
+			"imageid9": "lepidodendron:jurassic_island_large_field",
+			"imageid10": "lepidodendron:jurassic_island_large_field",
+			"imageid11": "lepidodendron:jurassic_island_large_field",
+			"imageid12": "lepidodendron:jurassic_island_large_field",
+			"imageid13": "lepidodendron:jurassic_island_large_field",
+			"imageid14": "lepidodendron:jurassic_island_large_field"
 		}
 	]
 }

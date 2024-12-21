@@ -2,7 +2,7 @@
 	"name": "Vale",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_vale"
+			"biome": "lepidodendron:devonian_vale",
+			"imageid0": "lepidodendron:devonian_vale",
+			"imageid1": "lepidodendron:devonian_vale",
+			"imageid2": "lepidodendron:devonian_vale",
+			"imageid3": "lepidodendron:devonian_vale",
+			"imageid4": "lepidodendron:devonian_vale",
+			"imageid5": "lepidodendron:devonian_vale",
+			"imageid6": "lepidodendron:devonian_vale",
+			"imageid7": "lepidodendron:devonian_vale",
+			"imageid8": "lepidodendron:devonian_vale",
+			"imageid9": "lepidodendron:devonian_vale",
+			"imageid10": "lepidodendron:devonian_vale",
+			"imageid11": "lepidodendron:devonian_vale",
+			"imageid12": "lepidodendron:devonian_vale",
+			"imageid13": "lepidodendron:devonian_vale"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_vale"
+			"biome": "lepidodendron:devonian_vale",
+			"imageid0": "lepidodendron:devonian_vale",
+			"imageid1": "lepidodendron:devonian_vale",
+			"imageid2": "lepidodendron:devonian_vale",
+			"imageid3": "lepidodendron:devonian_vale",
+			"imageid4": "lepidodendron:devonian_vale",
+			"imageid5": "lepidodendron:devonian_vale",
+			"imageid6": "lepidodendron:devonian_vale",
+			"imageid7": "lepidodendron:devonian_vale",
+			"imageid8": "lepidodendron:devonian_vale",
+			"imageid9": "lepidodendron:devonian_vale",
+			"imageid10": "lepidodendron:devonian_vale",
+			"imageid11": "lepidodendron:devonian_vale",
+			"imageid12": "lepidodendron:devonian_vale",
+			"imageid13": "lepidodendron:devonian_vale",
+			"imageid14": "lepidodendron:devonian_vale"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_vale"
+			"biome": "lepidodendron:devonian_vale",
+			"imageid0": "lepidodendron:devonian_vale",
+			"imageid1": "lepidodendron:devonian_vale",
+			"imageid2": "lepidodendron:devonian_vale",
+			"imageid3": "lepidodendron:devonian_vale",
+			"imageid4": "lepidodendron:devonian_vale",
+			"imageid5": "lepidodendron:devonian_vale",
+			"imageid6": "lepidodendron:devonian_vale",
+			"imageid7": "lepidodendron:devonian_vale",
+			"imageid8": "lepidodendron:devonian_vale",
+			"imageid9": "lepidodendron:devonian_vale",
+			"imageid10": "lepidodendron:devonian_vale",
+			"imageid11": "lepidodendron:devonian_vale",
+			"imageid12": "lepidodendron:devonian_vale",
+			"imageid13": "lepidodendron:devonian_vale",
+			"imageid14": "lepidodendron:devonian_vale"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_vale"
+			"biome": "lepidodendron:devonian_vale",
+			"imageid0": "lepidodendron:devonian_vale",
+			"imageid1": "lepidodendron:devonian_vale",
+			"imageid2": "lepidodendron:devonian_vale",
+			"imageid3": "lepidodendron:devonian_vale",
+			"imageid4": "lepidodendron:devonian_vale",
+			"imageid5": "lepidodendron:devonian_vale",
+			"imageid6": "lepidodendron:devonian_vale",
+			"imageid7": "lepidodendron:devonian_vale",
+			"imageid8": "lepidodendron:devonian_vale",
+			"imageid9": "lepidodendron:devonian_vale",
+			"imageid10": "lepidodendron:devonian_vale",
+			"imageid11": "lepidodendron:devonian_vale",
+			"imageid12": "lepidodendron:devonian_vale",
+			"imageid13": "lepidodendron:devonian_vale",
+			"imageid14": "lepidodendron:devonian_vale"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_vale"
+			"biome": "lepidodendron:devonian_vale",
+			"imageid0": "lepidodendron:devonian_vale",
+			"imageid1": "lepidodendron:devonian_vale",
+			"imageid2": "lepidodendron:devonian_vale",
+			"imageid3": "lepidodendron:devonian_vale",
+			"imageid4": "lepidodendron:devonian_vale",
+			"imageid5": "lepidodendron:devonian_vale",
+			"imageid6": "lepidodendron:devonian_vale",
+			"imageid7": "lepidodendron:devonian_vale",
+			"imageid8": "lepidodendron:devonian_vale",
+			"imageid9": "lepidodendron:devonian_vale",
+			"imageid10": "lepidodendron:devonian_vale",
+			"imageid11": "lepidodendron:devonian_vale",
+			"imageid12": "lepidodendron:devonian_vale",
+			"imageid13": "lepidodendron:devonian_vale",
+			"imageid14": "lepidodendron:devonian_vale"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Lakes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_lakes"
+			"biome": "lepidodendron:jurassic_lakes",
+			"imageid0": "lepidodendron:jurassic_lakes",
+			"imageid1": "lepidodendron:jurassic_lakes",
+			"imageid2": "lepidodendron:jurassic_lakes",
+			"imageid3": "lepidodendron:jurassic_lakes",
+			"imageid4": "lepidodendron:jurassic_lakes",
+			"imageid5": "lepidodendron:jurassic_lakes",
+			"imageid6": "lepidodendron:jurassic_lakes",
+			"imageid7": "lepidodendron:jurassic_lakes",
+			"imageid8": "lepidodendron:jurassic_lakes",
+			"imageid9": "lepidodendron:jurassic_lakes",
+			"imageid10": "lepidodendron:jurassic_lakes",
+			"imageid11": "lepidodendron:jurassic_lakes",
+			"imageid12": "lepidodendron:jurassic_lakes",
+			"imageid13": "lepidodendron:jurassic_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_lakes"
+			"biome": "lepidodendron:jurassic_lakes",
+			"imageid0": "lepidodendron:jurassic_lakes",
+			"imageid1": "lepidodendron:jurassic_lakes",
+			"imageid2": "lepidodendron:jurassic_lakes",
+			"imageid3": "lepidodendron:jurassic_lakes",
+			"imageid4": "lepidodendron:jurassic_lakes",
+			"imageid5": "lepidodendron:jurassic_lakes",
+			"imageid6": "lepidodendron:jurassic_lakes",
+			"imageid7": "lepidodendron:jurassic_lakes",
+			"imageid8": "lepidodendron:jurassic_lakes",
+			"imageid9": "lepidodendron:jurassic_lakes",
+			"imageid10": "lepidodendron:jurassic_lakes",
+			"imageid11": "lepidodendron:jurassic_lakes",
+			"imageid12": "lepidodendron:jurassic_lakes",
+			"imageid13": "lepidodendron:jurassic_lakes",
+			"imageid14": "lepidodendron:jurassic_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_lakes"
+			"biome": "lepidodendron:jurassic_lakes",
+			"imageid0": "lepidodendron:jurassic_lakes",
+			"imageid1": "lepidodendron:jurassic_lakes",
+			"imageid2": "lepidodendron:jurassic_lakes",
+			"imageid3": "lepidodendron:jurassic_lakes",
+			"imageid4": "lepidodendron:jurassic_lakes",
+			"imageid5": "lepidodendron:jurassic_lakes",
+			"imageid6": "lepidodendron:jurassic_lakes",
+			"imageid7": "lepidodendron:jurassic_lakes",
+			"imageid8": "lepidodendron:jurassic_lakes",
+			"imageid9": "lepidodendron:jurassic_lakes",
+			"imageid10": "lepidodendron:jurassic_lakes",
+			"imageid11": "lepidodendron:jurassic_lakes",
+			"imageid12": "lepidodendron:jurassic_lakes",
+			"imageid13": "lepidodendron:jurassic_lakes",
+			"imageid14": "lepidodendron:jurassic_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_lakes"
+			"biome": "lepidodendron:jurassic_lakes",
+			"imageid0": "lepidodendron:jurassic_lakes",
+			"imageid1": "lepidodendron:jurassic_lakes",
+			"imageid2": "lepidodendron:jurassic_lakes",
+			"imageid3": "lepidodendron:jurassic_lakes",
+			"imageid4": "lepidodendron:jurassic_lakes",
+			"imageid5": "lepidodendron:jurassic_lakes",
+			"imageid6": "lepidodendron:jurassic_lakes",
+			"imageid7": "lepidodendron:jurassic_lakes",
+			"imageid8": "lepidodendron:jurassic_lakes",
+			"imageid9": "lepidodendron:jurassic_lakes",
+			"imageid10": "lepidodendron:jurassic_lakes",
+			"imageid11": "lepidodendron:jurassic_lakes",
+			"imageid12": "lepidodendron:jurassic_lakes",
+			"imageid13": "lepidodendron:jurassic_lakes",
+			"imageid14": "lepidodendron:jurassic_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_lakes"
+			"biome": "lepidodendron:jurassic_lakes",
+			"imageid0": "lepidodendron:jurassic_lakes",
+			"imageid1": "lepidodendron:jurassic_lakes",
+			"imageid2": "lepidodendron:jurassic_lakes",
+			"imageid3": "lepidodendron:jurassic_lakes",
+			"imageid4": "lepidodendron:jurassic_lakes",
+			"imageid5": "lepidodendron:jurassic_lakes",
+			"imageid6": "lepidodendron:jurassic_lakes",
+			"imageid7": "lepidodendron:jurassic_lakes",
+			"imageid8": "lepidodendron:jurassic_lakes",
+			"imageid9": "lepidodendron:jurassic_lakes",
+			"imageid10": "lepidodendron:jurassic_lakes",
+			"imageid11": "lepidodendron:jurassic_lakes",
+			"imageid12": "lepidodendron:jurassic_lakes",
+			"imageid13": "lepidodendron:jurassic_lakes",
+			"imageid14": "lepidodendron:jurassic_lakes"
 		}
 	]
 }

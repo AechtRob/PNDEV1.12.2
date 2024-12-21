@@ -2,7 +2,7 @@
 	"name": "Cenoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_cenoceras",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_cenoceras",
 	"pages": [
 		{

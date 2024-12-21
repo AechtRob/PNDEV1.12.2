@@ -2,7 +2,7 @@
 	"name": "Retifacies",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/retifacies_icon.png",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_retifacies",
 	"pages": [
 		{

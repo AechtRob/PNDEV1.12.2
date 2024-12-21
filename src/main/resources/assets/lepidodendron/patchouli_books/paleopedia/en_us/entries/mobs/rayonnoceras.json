@@ -2,7 +2,7 @@
 	"name": "Rayonnoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_rayonnoceras",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_rayonnoceras",
 	"pages": [
 		{

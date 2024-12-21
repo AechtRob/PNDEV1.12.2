@@ -2,7 +2,7 @@
 	"name": "Apochrysogramma",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kalligrammatid_apochrysogramma_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_apochrysogramma",
 	"pages": [
 		{

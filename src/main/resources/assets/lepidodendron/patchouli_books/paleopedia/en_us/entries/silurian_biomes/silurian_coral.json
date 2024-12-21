@@ -2,7 +2,7 @@
 	"name": "Coral Cleft",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
-	"category": "lepidodendron:silurian_biome",
+	"category": "lepidodendron:silurian/silurian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:silurian_coral"
+			"biome": "lepidodendron:silurian_coral",
+			"imageid0": "lepidodendron:silurian_coral",
+			"imageid1": "lepidodendron:silurian_coral",
+			"imageid2": "lepidodendron:silurian_coral",
+			"imageid3": "lepidodendron:silurian_coral",
+			"imageid4": "lepidodendron:silurian_coral",
+			"imageid5": "lepidodendron:silurian_coral",
+			"imageid6": "lepidodendron:silurian_coral",
+			"imageid7": "lepidodendron:silurian_coral",
+			"imageid8": "lepidodendron:silurian_coral",
+			"imageid9": "lepidodendron:silurian_coral",
+			"imageid10": "lepidodendron:silurian_coral",
+			"imageid11": "lepidodendron:silurian_coral",
+			"imageid12": "lepidodendron:silurian_coral",
+			"imageid13": "lepidodendron:silurian_coral"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:silurian_coral"
+			"biome": "lepidodendron:silurian_coral",
+			"imageid0": "lepidodendron:silurian_coral",
+			"imageid1": "lepidodendron:silurian_coral",
+			"imageid2": "lepidodendron:silurian_coral",
+			"imageid3": "lepidodendron:silurian_coral",
+			"imageid4": "lepidodendron:silurian_coral",
+			"imageid5": "lepidodendron:silurian_coral",
+			"imageid6": "lepidodendron:silurian_coral",
+			"imageid7": "lepidodendron:silurian_coral",
+			"imageid8": "lepidodendron:silurian_coral",
+			"imageid9": "lepidodendron:silurian_coral",
+			"imageid10": "lepidodendron:silurian_coral",
+			"imageid11": "lepidodendron:silurian_coral",
+			"imageid12": "lepidodendron:silurian_coral",
+			"imageid13": "lepidodendron:silurian_coral",
+			"imageid14": "lepidodendron:silurian_coral"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:silurian_coral"
+			"biome": "lepidodendron:silurian_coral",
+			"imageid0": "lepidodendron:silurian_coral",
+			"imageid1": "lepidodendron:silurian_coral",
+			"imageid2": "lepidodendron:silurian_coral",
+			"imageid3": "lepidodendron:silurian_coral",
+			"imageid4": "lepidodendron:silurian_coral",
+			"imageid5": "lepidodendron:silurian_coral",
+			"imageid6": "lepidodendron:silurian_coral",
+			"imageid7": "lepidodendron:silurian_coral",
+			"imageid8": "lepidodendron:silurian_coral",
+			"imageid9": "lepidodendron:silurian_coral",
+			"imageid10": "lepidodendron:silurian_coral",
+			"imageid11": "lepidodendron:silurian_coral",
+			"imageid12": "lepidodendron:silurian_coral",
+			"imageid13": "lepidodendron:silurian_coral",
+			"imageid14": "lepidodendron:silurian_coral"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:silurian_coral"
+			"biome": "lepidodendron:silurian_coral",
+			"imageid0": "lepidodendron:silurian_coral",
+			"imageid1": "lepidodendron:silurian_coral",
+			"imageid2": "lepidodendron:silurian_coral",
+			"imageid3": "lepidodendron:silurian_coral",
+			"imageid4": "lepidodendron:silurian_coral",
+			"imageid5": "lepidodendron:silurian_coral",
+			"imageid6": "lepidodendron:silurian_coral",
+			"imageid7": "lepidodendron:silurian_coral",
+			"imageid8": "lepidodendron:silurian_coral",
+			"imageid9": "lepidodendron:silurian_coral",
+			"imageid10": "lepidodendron:silurian_coral",
+			"imageid11": "lepidodendron:silurian_coral",
+			"imageid12": "lepidodendron:silurian_coral",
+			"imageid13": "lepidodendron:silurian_coral",
+			"imageid14": "lepidodendron:silurian_coral"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:silurian_coral"
+			"biome": "lepidodendron:silurian_coral",
+			"imageid0": "lepidodendron:silurian_coral",
+			"imageid1": "lepidodendron:silurian_coral",
+			"imageid2": "lepidodendron:silurian_coral",
+			"imageid3": "lepidodendron:silurian_coral",
+			"imageid4": "lepidodendron:silurian_coral",
+			"imageid5": "lepidodendron:silurian_coral",
+			"imageid6": "lepidodendron:silurian_coral",
+			"imageid7": "lepidodendron:silurian_coral",
+			"imageid8": "lepidodendron:silurian_coral",
+			"imageid9": "lepidodendron:silurian_coral",
+			"imageid10": "lepidodendron:silurian_coral",
+			"imageid11": "lepidodendron:silurian_coral",
+			"imageid12": "lepidodendron:silurian_coral",
+			"imageid13": "lepidodendron:silurian_coral",
+			"imageid14": "lepidodendron:silurian_coral"
 		}
 	]
 }

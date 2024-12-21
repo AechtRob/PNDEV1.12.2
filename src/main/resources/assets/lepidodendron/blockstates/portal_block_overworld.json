@@ -2,6 +2,12 @@
   "variants": {
     "normal": {
       "model": "lepidodendron:portal_block"
+    },
+    "active=true": {
+      "model": "lepidodendron:blank_block"
+    },
+    "active=false": {
+      "model": "lepidodendron:portal_block"
     }
   }
 }

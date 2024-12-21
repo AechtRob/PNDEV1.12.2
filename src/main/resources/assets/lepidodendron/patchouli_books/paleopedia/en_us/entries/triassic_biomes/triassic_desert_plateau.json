@@ -2,7 +2,7 @@
 	"name": "Desert Plateau",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_desert_plateau"
+			"biome": "lepidodendron:triassic_desert_plateau",
+			"imageid0": "lepidodendron:triassic_desert_plateau",
+			"imageid1": "lepidodendron:triassic_desert_plateau",
+			"imageid2": "lepidodendron:triassic_desert_plateau",
+			"imageid3": "lepidodendron:triassic_desert_plateau",
+			"imageid4": "lepidodendron:triassic_desert_plateau",
+			"imageid5": "lepidodendron:triassic_desert_plateau",
+			"imageid6": "lepidodendron:triassic_desert_plateau",
+			"imageid7": "lepidodendron:triassic_desert_plateau",
+			"imageid8": "lepidodendron:triassic_desert_plateau",
+			"imageid9": "lepidodendron:triassic_desert_plateau",
+			"imageid10": "lepidodendron:triassic_desert_plateau",
+			"imageid11": "lepidodendron:triassic_desert_plateau",
+			"imageid12": "lepidodendron:triassic_desert_plateau",
+			"imageid13": "lepidodendron:triassic_desert_plateau"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_desert_plateau"
+			"biome": "lepidodendron:triassic_desert_plateau",
+			"imageid0": "lepidodendron:triassic_desert_plateau",
+			"imageid1": "lepidodendron:triassic_desert_plateau",
+			"imageid2": "lepidodendron:triassic_desert_plateau",
+			"imageid3": "lepidodendron:triassic_desert_plateau",
+			"imageid4": "lepidodendron:triassic_desert_plateau",
+			"imageid5": "lepidodendron:triassic_desert_plateau",
+			"imageid6": "lepidodendron:triassic_desert_plateau",
+			"imageid7": "lepidodendron:triassic_desert_plateau",
+			"imageid8": "lepidodendron:triassic_desert_plateau",
+			"imageid9": "lepidodendron:triassic_desert_plateau",
+			"imageid10": "lepidodendron:triassic_desert_plateau",
+			"imageid11": "lepidodendron:triassic_desert_plateau",
+			"imageid12": "lepidodendron:triassic_desert_plateau",
+			"imageid13": "lepidodendron:triassic_desert_plateau",
+			"imageid14": "lepidodendron:triassic_desert_plateau"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_desert_plateau"
+			"biome": "lepidodendron:triassic_desert_plateau",
+			"imageid0": "lepidodendron:triassic_desert_plateau",
+			"imageid1": "lepidodendron:triassic_desert_plateau",
+			"imageid2": "lepidodendron:triassic_desert_plateau",
+			"imageid3": "lepidodendron:triassic_desert_plateau",
+			"imageid4": "lepidodendron:triassic_desert_plateau",
+			"imageid5": "lepidodendron:triassic_desert_plateau",
+			"imageid6": "lepidodendron:triassic_desert_plateau",
+			"imageid7": "lepidodendron:triassic_desert_plateau",
+			"imageid8": "lepidodendron:triassic_desert_plateau",
+			"imageid9": "lepidodendron:triassic_desert_plateau",
+			"imageid10": "lepidodendron:triassic_desert_plateau",
+			"imageid11": "lepidodendron:triassic_desert_plateau",
+			"imageid12": "lepidodendron:triassic_desert_plateau",
+			"imageid13": "lepidodendron:triassic_desert_plateau",
+			"imageid14": "lepidodendron:triassic_desert_plateau"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_desert_plateau"
+			"biome": "lepidodendron:triassic_desert_plateau",
+			"imageid0": "lepidodendron:triassic_desert_plateau",
+			"imageid1": "lepidodendron:triassic_desert_plateau",
+			"imageid2": "lepidodendron:triassic_desert_plateau",
+			"imageid3": "lepidodendron:triassic_desert_plateau",
+			"imageid4": "lepidodendron:triassic_desert_plateau",
+			"imageid5": "lepidodendron:triassic_desert_plateau",
+			"imageid6": "lepidodendron:triassic_desert_plateau",
+			"imageid7": "lepidodendron:triassic_desert_plateau",
+			"imageid8": "lepidodendron:triassic_desert_plateau",
+			"imageid9": "lepidodendron:triassic_desert_plateau",
+			"imageid10": "lepidodendron:triassic_desert_plateau",
+			"imageid11": "lepidodendron:triassic_desert_plateau",
+			"imageid12": "lepidodendron:triassic_desert_plateau",
+			"imageid13": "lepidodendron:triassic_desert_plateau",
+			"imageid14": "lepidodendron:triassic_desert_plateau"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_desert_plateau"
+			"biome": "lepidodendron:triassic_desert_plateau",
+			"imageid0": "lepidodendron:triassic_desert_plateau",
+			"imageid1": "lepidodendron:triassic_desert_plateau",
+			"imageid2": "lepidodendron:triassic_desert_plateau",
+			"imageid3": "lepidodendron:triassic_desert_plateau",
+			"imageid4": "lepidodendron:triassic_desert_plateau",
+			"imageid5": "lepidodendron:triassic_desert_plateau",
+			"imageid6": "lepidodendron:triassic_desert_plateau",
+			"imageid7": "lepidodendron:triassic_desert_plateau",
+			"imageid8": "lepidodendron:triassic_desert_plateau",
+			"imageid9": "lepidodendron:triassic_desert_plateau",
+			"imageid10": "lepidodendron:triassic_desert_plateau",
+			"imageid11": "lepidodendron:triassic_desert_plateau",
+			"imageid12": "lepidodendron:triassic_desert_plateau",
+			"imageid13": "lepidodendron:triassic_desert_plateau",
+			"imageid14": "lepidodendron:triassic_desert_plateau"
 		}
 	]
 }

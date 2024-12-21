@@ -2,7 +2,7 @@
 	"name": "Sibyrhynchus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/sibyrhynchus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_sibyrhynchus",
 	"pages": [
 		{

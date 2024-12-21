@@ -2,7 +2,7 @@
 	"name": "Hemicyclaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:hemicyclaspis_raw",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_hemicyclaspis",
 	"pages": [
 		{

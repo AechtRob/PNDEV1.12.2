@@ -1,0 +1,31 @@
+{
+	"name": "Orthid Brachiopod",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/orthid_icon.png",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_brachiopod_orthid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachiopod_orthid",
+			"title": "Orthid Brachiopod",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Orthida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/orthid.png"],
+			"title": "Orthida",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiopod_orthid",
+			"type": "text",
+			"text": "Orthids are a group of brachiopods that first appeared in the Cambrian and went extinct in the Permian. They lived mostly in shallow oceans and their shells are often confused with that of other molluscs like small clams. These brachiopods came in punctate and impunctate forms, that both survived through the end Devonian extinction although with numbers heavily reduced. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiopod_orthid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

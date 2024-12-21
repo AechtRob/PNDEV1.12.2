@@ -2,7 +2,7 @@
 	"name": "Paropsonema",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/paropsonema_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_paropsonema",
 	"pages": [
 		{

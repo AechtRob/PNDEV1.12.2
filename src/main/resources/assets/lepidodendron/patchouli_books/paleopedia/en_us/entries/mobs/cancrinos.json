@@ -2,7 +2,7 @@
 	"name": "Cancrinos",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/cancrinos_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_cancrinos",
 	"pages": [
 		{

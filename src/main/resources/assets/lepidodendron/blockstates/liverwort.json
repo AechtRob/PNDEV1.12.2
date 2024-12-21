@@ -1,0 +1,181 @@
+{
+ "variants": {
+   "normal": [
+     {"model": "lepidodendron:liverwort"}
+   ],
+   "east=false,north=false,south=false,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort"},
+     {"model": "lepidodendron:liverwort", "y": 90 },
+     {"model": "lepidodendron:liverwort", "y": 180 },
+     {"model": "lepidodendron:liverwort", "y": 270 },
+     {"model": "lepidodendron:liverwort_var"},
+     {"model": "lepidodendron:liverwort_var", "y": 90 },
+     {"model": "lepidodendron:liverwort_var", "y": 180 },
+     {"model": "lepidodendron:liverwort_var", "y": 270 }
+   ],
+
+   "east=false,north=true,south=false,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_n"},
+     {"model": "lepidodendron:liverwort_n_var"}
+   ],
+   "east=false,north=false,south=true,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_n", "y": 180 },
+     {"model": "lepidodendron:liverwort_n_var", "y": 180 }
+   ],
+   "east=true,north=false,south=false,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_n", "y": 90 },
+     {"model": "lepidodendron:liverwort_n_var", "y": 90 }
+   ],
+   "east=false,north=false,south=false,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_n", "y": 270 },
+     {"model": "lepidodendron:liverwort_n_var", "y": 270 }
+   ],
+
+   "east=true,north=true,south=false,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_ne"},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 90 }
+   ],
+   "east=true,north=false,south=true,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_ne", "y": 90},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 180 }
+   ],
+   "east=false,north=false,south=true,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_ne", "y": 180},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 270 }
+   ],
+   "east=false,north=true,south=false,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_ne", "y": 270},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 0 }
+   ],
+
+   "east=true,north=true,south=false,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_new"},
+     {"model": "lepidodendron:liverwort_new_var" }
+   ],
+   "east=true,north=true,south=true,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_new", "y": 90 },
+     {"model": "lepidodendron:liverwort_new_var", "y": 90 }
+   ],
+   "east=true,north=false,south=true,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_new", "y": 180 },
+     {"model": "lepidodendron:liverwort_new_var", "y": 180 }
+   ],
+   "east=false,north=true,south=true,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_new", "y": 270 },
+     {"model": "lepidodendron:liverwort_new_var", "y": 270 }
+   ],
+
+   "east=false,north=true,south=true,spreadable=false,west=false": [
+     {"model": "lepidodendron:liverwort_ns" },
+     {"model": "lepidodendron:liverwort_ns_var" },
+     {"model": "lepidodendron:liverwort_ns", "y": 180 },
+     {"model": "lepidodendron:liverwort_ns_var", "y": 180 }
+   ],
+   "east=true,north=false,south=false,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_ns", "y": 90 },
+     {"model": "lepidodendron:liverwort_ns_var", "y": 90 },
+     {"model": "lepidodendron:liverwort_ns", "y": 270 },
+     {"model": "lepidodendron:liverwort_ns_var", "y": 270 }
+   ],
+
+   "east=true,north=true,south=true,spreadable=false,west=true": [
+     {"model": "lepidodendron:liverwort_nsew"},
+     {"model": "lepidodendron:liverwort_nsew", "y": 90 },
+     {"model": "lepidodendron:liverwort_nsew", "y": 180 },
+     {"model": "lepidodendron:liverwort_nsew", "y": 270 },
+     {"model": "lepidodendron:liverwort_nsew_var"},
+     {"model": "lepidodendron:liverwort_nsew_var", "y": 90 },
+     {"model": "lepidodendron:liverwort_nsew_var", "y": 180 },
+     {"model": "lepidodendron:liverwort_nsew_var", "y": 270 }
+   ],
+
+
+
+
+   "east=false,north=false,south=false,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort"},
+     {"model": "lepidodendron:liverwort", "y": 90 },
+     {"model": "lepidodendron:liverwort", "y": 180 },
+     {"model": "lepidodendron:liverwort", "y": 270 },
+     {"model": "lepidodendron:liverwort_var"},
+     {"model": "lepidodendron:liverwort_var", "y": 90 },
+     {"model": "lepidodendron:liverwort_var", "y": 180 },
+     {"model": "lepidodendron:liverwort_var", "y": 270 }
+   ],
+
+   "east=false,north=true,south=false,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_n"},
+     {"model": "lepidodendron:liverwort_n_var"}
+   ],
+   "east=false,north=false,south=true,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_n", "y": 180 },
+     {"model": "lepidodendron:liverwort_n_var", "y": 180 }
+   ],
+   "east=true,north=false,south=false,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_n", "y": 90 },
+     {"model": "lepidodendron:liverwort_n_var", "y": 90 }
+   ],
+   "east=false,north=false,south=false,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_n", "y": 270 },
+     {"model": "lepidodendron:liverwort_n_var", "y": 270 }
+   ],
+
+   "east=true,north=true,south=false,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_ne"},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 90 }
+   ],
+   "east=true,north=false,south=true,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_ne", "y": 90},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 180 }
+   ],
+   "east=false,north=false,south=true,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_ne", "y": 180},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 270 }
+   ],
+   "east=false,north=true,south=false,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_ne", "y": 270},
+     {"model": "lepidodendron:liverwort_ne_var", "y": 0 }
+   ],
+
+   "east=true,north=true,south=false,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_new"},
+     {"model": "lepidodendron:liverwort_new_var" }
+   ],
+   "east=true,north=true,south=true,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_new", "y": 90 },
+     {"model": "lepidodendron:liverwort_new_var", "y": 90 }
+   ],
+   "east=true,north=false,south=true,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_new", "y": 180 },
+     {"model": "lepidodendron:liverwort_new_var", "y": 180 }
+   ],
+   "east=false,north=true,south=true,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_new", "y": 270 },
+     {"model": "lepidodendron:liverwort_new_var", "y": 270 }
+   ],
+
+   "east=false,north=true,south=true,spreadable=true,west=false": [
+     {"model": "lepidodendron:liverwort_ns" },
+     {"model": "lepidodendron:liverwort_ns_var" },
+     {"model": "lepidodendron:liverwort_ns", "y": 180 },
+     {"model": "lepidodendron:liverwort_ns_var", "y": 180 }
+   ],
+   "east=true,north=false,south=false,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_ns", "y": 90 },
+     {"model": "lepidodendron:liverwort_ns_var", "y": 90 },
+     {"model": "lepidodendron:liverwort_ns", "y": 270 },
+     {"model": "lepidodendron:liverwort_ns_var", "y": 270 }
+   ],
+
+   "east=true,north=true,south=true,spreadable=true,west=true": [
+     {"model": "lepidodendron:liverwort_nsew"},
+     {"model": "lepidodendron:liverwort_nsew", "y": 90 },
+     {"model": "lepidodendron:liverwort_nsew", "y": 180 },
+     {"model": "lepidodendron:liverwort_nsew", "y": 270 },
+     {"model": "lepidodendron:liverwort_nsew_var"},
+     {"model": "lepidodendron:liverwort_nsew_var", "y": 90 },
+     {"model": "lepidodendron:liverwort_nsew_var", "y": 180 },
+     {"model": "lepidodendron:liverwort_nsew_var", "y": 270 }
+   ]
+ }
+}

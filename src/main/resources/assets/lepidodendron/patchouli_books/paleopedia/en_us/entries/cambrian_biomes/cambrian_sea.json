@@ -2,7 +2,7 @@
 	"name": "Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_sea"
+			"biome": "lepidodendron:cambrian_sea",
+			"imageid0": "lepidodendron:cambrian_sea",
+			"imageid1": "lepidodendron:cambrian_sea",
+			"imageid2": "lepidodendron:cambrian_sea",
+			"imageid3": "lepidodendron:cambrian_sea",
+			"imageid4": "lepidodendron:cambrian_sea",
+			"imageid5": "lepidodendron:cambrian_sea",
+			"imageid6": "lepidodendron:cambrian_sea",
+			"imageid7": "lepidodendron:cambrian_sea",
+			"imageid8": "lepidodendron:cambrian_sea",
+			"imageid9": "lepidodendron:cambrian_sea",
+			"imageid10": "lepidodendron:cambrian_sea",
+			"imageid11": "lepidodendron:cambrian_sea",
+			"imageid12": "lepidodendron:cambrian_sea",
+			"imageid13": "lepidodendron:cambrian_sea"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_sea"
+			"biome": "lepidodendron:cambrian_sea",
+			"imageid0": "lepidodendron:cambrian_sea",
+			"imageid1": "lepidodendron:cambrian_sea",
+			"imageid2": "lepidodendron:cambrian_sea",
+			"imageid3": "lepidodendron:cambrian_sea",
+			"imageid4": "lepidodendron:cambrian_sea",
+			"imageid5": "lepidodendron:cambrian_sea",
+			"imageid6": "lepidodendron:cambrian_sea",
+			"imageid7": "lepidodendron:cambrian_sea",
+			"imageid8": "lepidodendron:cambrian_sea",
+			"imageid9": "lepidodendron:cambrian_sea",
+			"imageid10": "lepidodendron:cambrian_sea",
+			"imageid11": "lepidodendron:cambrian_sea",
+			"imageid12": "lepidodendron:cambrian_sea",
+			"imageid13": "lepidodendron:cambrian_sea",
+			"imageid14": "lepidodendron:cambrian_sea"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_sea"
+			"biome": "lepidodendron:cambrian_sea",
+			"imageid0": "lepidodendron:cambrian_sea",
+			"imageid1": "lepidodendron:cambrian_sea",
+			"imageid2": "lepidodendron:cambrian_sea",
+			"imageid3": "lepidodendron:cambrian_sea",
+			"imageid4": "lepidodendron:cambrian_sea",
+			"imageid5": "lepidodendron:cambrian_sea",
+			"imageid6": "lepidodendron:cambrian_sea",
+			"imageid7": "lepidodendron:cambrian_sea",
+			"imageid8": "lepidodendron:cambrian_sea",
+			"imageid9": "lepidodendron:cambrian_sea",
+			"imageid10": "lepidodendron:cambrian_sea",
+			"imageid11": "lepidodendron:cambrian_sea",
+			"imageid12": "lepidodendron:cambrian_sea",
+			"imageid13": "lepidodendron:cambrian_sea",
+			"imageid14": "lepidodendron:cambrian_sea"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_sea"
+			"biome": "lepidodendron:cambrian_sea",
+			"imageid0": "lepidodendron:cambrian_sea",
+			"imageid1": "lepidodendron:cambrian_sea",
+			"imageid2": "lepidodendron:cambrian_sea",
+			"imageid3": "lepidodendron:cambrian_sea",
+			"imageid4": "lepidodendron:cambrian_sea",
+			"imageid5": "lepidodendron:cambrian_sea",
+			"imageid6": "lepidodendron:cambrian_sea",
+			"imageid7": "lepidodendron:cambrian_sea",
+			"imageid8": "lepidodendron:cambrian_sea",
+			"imageid9": "lepidodendron:cambrian_sea",
+			"imageid10": "lepidodendron:cambrian_sea",
+			"imageid11": "lepidodendron:cambrian_sea",
+			"imageid12": "lepidodendron:cambrian_sea",
+			"imageid13": "lepidodendron:cambrian_sea",
+			"imageid14": "lepidodendron:cambrian_sea"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_sea"
+			"biome": "lepidodendron:cambrian_sea",
+			"imageid0": "lepidodendron:cambrian_sea",
+			"imageid1": "lepidodendron:cambrian_sea",
+			"imageid2": "lepidodendron:cambrian_sea",
+			"imageid3": "lepidodendron:cambrian_sea",
+			"imageid4": "lepidodendron:cambrian_sea",
+			"imageid5": "lepidodendron:cambrian_sea",
+			"imageid6": "lepidodendron:cambrian_sea",
+			"imageid7": "lepidodendron:cambrian_sea",
+			"imageid8": "lepidodendron:cambrian_sea",
+			"imageid9": "lepidodendron:cambrian_sea",
+			"imageid10": "lepidodendron:cambrian_sea",
+			"imageid11": "lepidodendron:cambrian_sea",
+			"imageid12": "lepidodendron:cambrian_sea",
+			"imageid13": "lepidodendron:cambrian_sea",
+			"imageid14": "lepidodendron:cambrian_sea"
 		}
 	]
 }

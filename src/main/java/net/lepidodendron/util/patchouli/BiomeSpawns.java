@@ -15,6 +15,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class BiomeSpawns {
 
@@ -22,12 +23,31 @@ public class BiomeSpawns {
     public static final String biomeMissing = "$(br)This biome is not currently installed";
 
     @Nullable
-    public static String getSpawnList(String biomeID, int from, int to) {
+    public static String getSpawnList(String imageid, int index) {
+        return getSpawnList(imageid, index, index, 2);
+    }
+
+    @Nullable
+    public static String getSpawnList(String dimid, int from, int to) {
+        return getSpawnList(dimid, from, to, 1);
+    }
+
+    @Nullable
+    public static String getSpawnList(String biomeID, int from, int to, int type) {
+        //type 1: Names/hyperlink texts
+        //type 2: One single icon for this reference, but this is also drawn from the spawn list ordering
+        //type 3: One single advancement reference, but this is also drawn from the spawn list ordering
+
         String spawnListFinal = "$(br)";
         Biome biome = Biome.REGISTRY.getObject(new ResourceLocation(biomeID));
         if (biome == null) {
             if (from == 0) {
-                return spawnsEmpty;
+                if (type == 1) {
+                    return spawnsEmpty;
+                }
+                else {
+                    return "";
+                }
             }
             return "";
         }
@@ -60,7 +80,8 @@ public class BiomeSpawns {
             spawnListJoiner.add("lepidodendron:prehistoric_flora_websteroprion");
             mobList = spawnListJoiner.toArray(mobList);
         }
-        ObjectArrayList<String> spawnListInterim = new ObjectArrayList<String>();
+
+        ObjectArrayList<BiomeSpawns.PPEntry> spawnListInterim = new ObjectArrayList<PPEntry>();
         if (mobList.length >= 1) {
             for (String entry : mobList) {
                 String entryName = entry;
@@ -75,8 +96,9 @@ public class BiomeSpawns {
                 String mobName[] = getMobName(entryName, strNBT);
                 if (mobName != null) {
                     for (String name : mobName) {
-                        if (!spawnListInterim.contains(name)) {
-                            spawnListInterim.add(name);
+                        String nameSimple = name.substring(name.indexOf(")"));
+                        if (!alreadyInList(spawnListInterim, new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)))) {
+                            spawnListInterim.add(new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)));
                         }
                     }
                     if (entry.contains("lepidodendron:prehistoric_flora_turboscinetes")) {
@@ -84,21 +106,39 @@ public class BiomeSpawns {
                         String mobNameT[] = getMobName("lepidodendron:prehistoric_flora_piranhamesodon", "");
                         if (mobNameT != null) {
                             for (String name : mobNameT) {
-                                if (!spawnListInterim.contains(name)) {
-                                    spawnListInterim.add(name);
+                                String nameSimple = name.substring(name.indexOf(")"));
+                                if (!alreadyInList(spawnListInterim, new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)))) {
+                                    spawnListInterim.add(new BiomeSpawns.PPEntry(nameSimple, name, getIconPath(entry)));
                                 }
                             }
                         }
                     }
                 }
             }
-            Collections.sort(spawnListInterim);
+
+            Collections.sort(spawnListInterim, new Comparator<BiomeSpawns.PPEntry>() {
+                @Override
+                public int compare(BiomeSpawns.PPEntry s1, BiomeSpawns.PPEntry s2) {
+                    return s1.getSortKey().compareToIgnoreCase(s2.getSortKey());
+                }
+            });
+
+            if (type == 2) {
+                //icons:
+                if (from < spawnListInterim.size()) {
+                    return spawnListInterim.get(from).getIconPath();
+                }
+                else {
+                    return "";
+                }
+            }
+
             if (to + 1 > spawnListInterim.size()) {
                 to = spawnListInterim.size() - 1;
             }
             if (from + 1 <= spawnListInterim.size()) {
                 for (int i = from; i <= to; i++) {
-                    spawnListFinal = spawnListFinal + spawnListInterim.get(i) + "$(br)";
+                    spawnListFinal = spawnListFinal + spawnListInterim.get(i).getEntry() + "$(br)";
                 }
             }
             if (spawnListFinal.length() >= 1) {
@@ -113,6 +153,39 @@ public class BiomeSpawns {
             return spawnsEmpty;
         }
         return "";
+    }
+
+    public static class PPEntry {
+        private String sortkey;
+        private String entry;
+        private String iconpath;
+
+        public PPEntry(String sortkey, String entry, String iconpath){
+            this.sortkey = sortkey;
+            this.entry = entry;
+            this.iconpath = iconpath;
+        }
+
+        public String getSortKey() {
+            return this.sortkey;
+        }
+
+        public String getEntry() {
+            return this.entry;
+        }
+
+        public String getIconPath() {
+            return this.iconpath;
+        }
+    }
+
+    public static boolean alreadyInList(ObjectArrayList<BiomeSpawns.PPEntry> list, PPEntry entry) {
+        for (PPEntry listEntry : list) {
+            if (listEntry.getEntry().equalsIgnoreCase(entry.getEntry())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Nullable
@@ -173,24 +246,16 @@ public class BiomeSpawns {
     }
 
     public static String getHyperlink(String mobStr) {
-        if (mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_jellyfish_precambrian")
-                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeojelly1")
-                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeojelly2")
-                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_palaeojelly3")) {
-            return "ancientjelly";
+        return DimensionSpawns.getHyperlink(mobStr);
+    }
+
+    public static String getIconPath(String mobStr) {
+        mobStr = mobStr.substring(mobStr.indexOf(":") + 1);
+        if (mobStr.indexOf(":") > 0) {
+            mobStr = mobStr.substring(0, mobStr.indexOf(":"));
         }
-        if (mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops1")
-                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops2")
-                || mobStr.equalsIgnoreCase("lepidodendron:prehistoric_flora_notostracan_triops3")) {
-            return "triops";
-        }
-        if (mobStr.contains("_dragonfly_")) {
-            return "dragonfly";
-        }
-        if (mobStr.contains("_roachoid_")) {
-            return "roach";
-        }
-        return mobStr.substring(mobStr.indexOf(":") + 1, mobStr.length()).replace("prehistoric_flora_", "");
+        mobStr = mobStr.replace("prehistoric_flora_", "");
+        return "paleopedia:textures/items/" + mobStr + "_icon.png";
     }
 
 }

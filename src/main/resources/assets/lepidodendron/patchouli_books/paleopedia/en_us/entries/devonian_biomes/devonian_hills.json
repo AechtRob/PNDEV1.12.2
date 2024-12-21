@@ -2,7 +2,7 @@
 	"name": "Forest",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_hills"
+			"biome": "lepidodendron:devonian_hills",
+			"imageid0": "lepidodendron:devonian_hills",
+			"imageid1": "lepidodendron:devonian_hills",
+			"imageid2": "lepidodendron:devonian_hills",
+			"imageid3": "lepidodendron:devonian_hills",
+			"imageid4": "lepidodendron:devonian_hills",
+			"imageid5": "lepidodendron:devonian_hills",
+			"imageid6": "lepidodendron:devonian_hills",
+			"imageid7": "lepidodendron:devonian_hills",
+			"imageid8": "lepidodendron:devonian_hills",
+			"imageid9": "lepidodendron:devonian_hills",
+			"imageid10": "lepidodendron:devonian_hills",
+			"imageid11": "lepidodendron:devonian_hills",
+			"imageid12": "lepidodendron:devonian_hills",
+			"imageid13": "lepidodendron:devonian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_hills"
+			"biome": "lepidodendron:devonian_hills",
+			"imageid0": "lepidodendron:devonian_hills",
+			"imageid1": "lepidodendron:devonian_hills",
+			"imageid2": "lepidodendron:devonian_hills",
+			"imageid3": "lepidodendron:devonian_hills",
+			"imageid4": "lepidodendron:devonian_hills",
+			"imageid5": "lepidodendron:devonian_hills",
+			"imageid6": "lepidodendron:devonian_hills",
+			"imageid7": "lepidodendron:devonian_hills",
+			"imageid8": "lepidodendron:devonian_hills",
+			"imageid9": "lepidodendron:devonian_hills",
+			"imageid10": "lepidodendron:devonian_hills",
+			"imageid11": "lepidodendron:devonian_hills",
+			"imageid12": "lepidodendron:devonian_hills",
+			"imageid13": "lepidodendron:devonian_hills",
+			"imageid14": "lepidodendron:devonian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_hills"
+			"biome": "lepidodendron:devonian_hills",
+			"imageid0": "lepidodendron:devonian_hills",
+			"imageid1": "lepidodendron:devonian_hills",
+			"imageid2": "lepidodendron:devonian_hills",
+			"imageid3": "lepidodendron:devonian_hills",
+			"imageid4": "lepidodendron:devonian_hills",
+			"imageid5": "lepidodendron:devonian_hills",
+			"imageid6": "lepidodendron:devonian_hills",
+			"imageid7": "lepidodendron:devonian_hills",
+			"imageid8": "lepidodendron:devonian_hills",
+			"imageid9": "lepidodendron:devonian_hills",
+			"imageid10": "lepidodendron:devonian_hills",
+			"imageid11": "lepidodendron:devonian_hills",
+			"imageid12": "lepidodendron:devonian_hills",
+			"imageid13": "lepidodendron:devonian_hills",
+			"imageid14": "lepidodendron:devonian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_hills"
+			"biome": "lepidodendron:devonian_hills",
+			"imageid0": "lepidodendron:devonian_hills",
+			"imageid1": "lepidodendron:devonian_hills",
+			"imageid2": "lepidodendron:devonian_hills",
+			"imageid3": "lepidodendron:devonian_hills",
+			"imageid4": "lepidodendron:devonian_hills",
+			"imageid5": "lepidodendron:devonian_hills",
+			"imageid6": "lepidodendron:devonian_hills",
+			"imageid7": "lepidodendron:devonian_hills",
+			"imageid8": "lepidodendron:devonian_hills",
+			"imageid9": "lepidodendron:devonian_hills",
+			"imageid10": "lepidodendron:devonian_hills",
+			"imageid11": "lepidodendron:devonian_hills",
+			"imageid12": "lepidodendron:devonian_hills",
+			"imageid13": "lepidodendron:devonian_hills",
+			"imageid14": "lepidodendron:devonian_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_hills"
+			"biome": "lepidodendron:devonian_hills",
+			"imageid0": "lepidodendron:devonian_hills",
+			"imageid1": "lepidodendron:devonian_hills",
+			"imageid2": "lepidodendron:devonian_hills",
+			"imageid3": "lepidodendron:devonian_hills",
+			"imageid4": "lepidodendron:devonian_hills",
+			"imageid5": "lepidodendron:devonian_hills",
+			"imageid6": "lepidodendron:devonian_hills",
+			"imageid7": "lepidodendron:devonian_hills",
+			"imageid8": "lepidodendron:devonian_hills",
+			"imageid9": "lepidodendron:devonian_hills",
+			"imageid10": "lepidodendron:devonian_hills",
+			"imageid11": "lepidodendron:devonian_hills",
+			"imageid12": "lepidodendron:devonian_hills",
+			"imageid13": "lepidodendron:devonian_hills",
+			"imageid14": "lepidodendron:devonian_hills"
 		}
 	]
 }

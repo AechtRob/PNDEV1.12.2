@@ -2,7 +2,7 @@
 	"name": "Mountains",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_mountains"
+			"biome": "lepidodendron:permian_mountains",
+			"imageid0": "lepidodendron:permian_mountains",
+			"imageid1": "lepidodendron:permian_mountains",
+			"imageid2": "lepidodendron:permian_mountains",
+			"imageid3": "lepidodendron:permian_mountains",
+			"imageid4": "lepidodendron:permian_mountains",
+			"imageid5": "lepidodendron:permian_mountains",
+			"imageid6": "lepidodendron:permian_mountains",
+			"imageid7": "lepidodendron:permian_mountains",
+			"imageid8": "lepidodendron:permian_mountains",
+			"imageid9": "lepidodendron:permian_mountains",
+			"imageid10": "lepidodendron:permian_mountains",
+			"imageid11": "lepidodendron:permian_mountains",
+			"imageid12": "lepidodendron:permian_mountains",
+			"imageid13": "lepidodendron:permian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_mountains"
+			"biome": "lepidodendron:permian_mountains",
+			"imageid0": "lepidodendron:permian_mountains",
+			"imageid1": "lepidodendron:permian_mountains",
+			"imageid2": "lepidodendron:permian_mountains",
+			"imageid3": "lepidodendron:permian_mountains",
+			"imageid4": "lepidodendron:permian_mountains",
+			"imageid5": "lepidodendron:permian_mountains",
+			"imageid6": "lepidodendron:permian_mountains",
+			"imageid7": "lepidodendron:permian_mountains",
+			"imageid8": "lepidodendron:permian_mountains",
+			"imageid9": "lepidodendron:permian_mountains",
+			"imageid10": "lepidodendron:permian_mountains",
+			"imageid11": "lepidodendron:permian_mountains",
+			"imageid12": "lepidodendron:permian_mountains",
+			"imageid13": "lepidodendron:permian_mountains",
+			"imageid14": "lepidodendron:permian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_mountains"
+			"biome": "lepidodendron:permian_mountains",
+			"imageid0": "lepidodendron:permian_mountains",
+			"imageid1": "lepidodendron:permian_mountains",
+			"imageid2": "lepidodendron:permian_mountains",
+			"imageid3": "lepidodendron:permian_mountains",
+			"imageid4": "lepidodendron:permian_mountains",
+			"imageid5": "lepidodendron:permian_mountains",
+			"imageid6": "lepidodendron:permian_mountains",
+			"imageid7": "lepidodendron:permian_mountains",
+			"imageid8": "lepidodendron:permian_mountains",
+			"imageid9": "lepidodendron:permian_mountains",
+			"imageid10": "lepidodendron:permian_mountains",
+			"imageid11": "lepidodendron:permian_mountains",
+			"imageid12": "lepidodendron:permian_mountains",
+			"imageid13": "lepidodendron:permian_mountains",
+			"imageid14": "lepidodendron:permian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_mountains"
+			"biome": "lepidodendron:permian_mountains",
+			"imageid0": "lepidodendron:permian_mountains",
+			"imageid1": "lepidodendron:permian_mountains",
+			"imageid2": "lepidodendron:permian_mountains",
+			"imageid3": "lepidodendron:permian_mountains",
+			"imageid4": "lepidodendron:permian_mountains",
+			"imageid5": "lepidodendron:permian_mountains",
+			"imageid6": "lepidodendron:permian_mountains",
+			"imageid7": "lepidodendron:permian_mountains",
+			"imageid8": "lepidodendron:permian_mountains",
+			"imageid9": "lepidodendron:permian_mountains",
+			"imageid10": "lepidodendron:permian_mountains",
+			"imageid11": "lepidodendron:permian_mountains",
+			"imageid12": "lepidodendron:permian_mountains",
+			"imageid13": "lepidodendron:permian_mountains",
+			"imageid14": "lepidodendron:permian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_mountains"
+			"biome": "lepidodendron:permian_mountains",
+			"imageid0": "lepidodendron:permian_mountains",
+			"imageid1": "lepidodendron:permian_mountains",
+			"imageid2": "lepidodendron:permian_mountains",
+			"imageid3": "lepidodendron:permian_mountains",
+			"imageid4": "lepidodendron:permian_mountains",
+			"imageid5": "lepidodendron:permian_mountains",
+			"imageid6": "lepidodendron:permian_mountains",
+			"imageid7": "lepidodendron:permian_mountains",
+			"imageid8": "lepidodendron:permian_mountains",
+			"imageid9": "lepidodendron:permian_mountains",
+			"imageid10": "lepidodendron:permian_mountains",
+			"imageid11": "lepidodendron:permian_mountains",
+			"imageid12": "lepidodendron:permian_mountains",
+			"imageid13": "lepidodendron:permian_mountains",
+			"imageid14": "lepidodendron:permian_mountains"
 		}
 	]
 }

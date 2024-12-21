@@ -2,7 +2,7 @@
 	"name": "Beach",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
-	"category": "lepidodendron:silurian_biome",
+	"category": "lepidodendron:silurian/silurian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:silurian_beach"
+			"biome": "lepidodendron:silurian_beach",
+			"imageid0": "lepidodendron:silurian_beach",
+			"imageid1": "lepidodendron:silurian_beach",
+			"imageid2": "lepidodendron:silurian_beach",
+			"imageid3": "lepidodendron:silurian_beach",
+			"imageid4": "lepidodendron:silurian_beach",
+			"imageid5": "lepidodendron:silurian_beach",
+			"imageid6": "lepidodendron:silurian_beach",
+			"imageid7": "lepidodendron:silurian_beach",
+			"imageid8": "lepidodendron:silurian_beach",
+			"imageid9": "lepidodendron:silurian_beach",
+			"imageid10": "lepidodendron:silurian_beach",
+			"imageid11": "lepidodendron:silurian_beach",
+			"imageid12": "lepidodendron:silurian_beach",
+			"imageid13": "lepidodendron:silurian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:silurian_beach"
+			"biome": "lepidodendron:silurian_beach",
+			"imageid0": "lepidodendron:silurian_beach",
+			"imageid1": "lepidodendron:silurian_beach",
+			"imageid2": "lepidodendron:silurian_beach",
+			"imageid3": "lepidodendron:silurian_beach",
+			"imageid4": "lepidodendron:silurian_beach",
+			"imageid5": "lepidodendron:silurian_beach",
+			"imageid6": "lepidodendron:silurian_beach",
+			"imageid7": "lepidodendron:silurian_beach",
+			"imageid8": "lepidodendron:silurian_beach",
+			"imageid9": "lepidodendron:silurian_beach",
+			"imageid10": "lepidodendron:silurian_beach",
+			"imageid11": "lepidodendron:silurian_beach",
+			"imageid12": "lepidodendron:silurian_beach",
+			"imageid13": "lepidodendron:silurian_beach",
+			"imageid14": "lepidodendron:silurian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:silurian_beach"
+			"biome": "lepidodendron:silurian_beach",
+			"imageid0": "lepidodendron:silurian_beach",
+			"imageid1": "lepidodendron:silurian_beach",
+			"imageid2": "lepidodendron:silurian_beach",
+			"imageid3": "lepidodendron:silurian_beach",
+			"imageid4": "lepidodendron:silurian_beach",
+			"imageid5": "lepidodendron:silurian_beach",
+			"imageid6": "lepidodendron:silurian_beach",
+			"imageid7": "lepidodendron:silurian_beach",
+			"imageid8": "lepidodendron:silurian_beach",
+			"imageid9": "lepidodendron:silurian_beach",
+			"imageid10": "lepidodendron:silurian_beach",
+			"imageid11": "lepidodendron:silurian_beach",
+			"imageid12": "lepidodendron:silurian_beach",
+			"imageid13": "lepidodendron:silurian_beach",
+			"imageid14": "lepidodendron:silurian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:silurian_beach"
+			"biome": "lepidodendron:silurian_beach",
+			"imageid0": "lepidodendron:silurian_beach",
+			"imageid1": "lepidodendron:silurian_beach",
+			"imageid2": "lepidodendron:silurian_beach",
+			"imageid3": "lepidodendron:silurian_beach",
+			"imageid4": "lepidodendron:silurian_beach",
+			"imageid5": "lepidodendron:silurian_beach",
+			"imageid6": "lepidodendron:silurian_beach",
+			"imageid7": "lepidodendron:silurian_beach",
+			"imageid8": "lepidodendron:silurian_beach",
+			"imageid9": "lepidodendron:silurian_beach",
+			"imageid10": "lepidodendron:silurian_beach",
+			"imageid11": "lepidodendron:silurian_beach",
+			"imageid12": "lepidodendron:silurian_beach",
+			"imageid13": "lepidodendron:silurian_beach",
+			"imageid14": "lepidodendron:silurian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:silurian_beach"
+			"biome": "lepidodendron:silurian_beach",
+			"imageid0": "lepidodendron:silurian_beach",
+			"imageid1": "lepidodendron:silurian_beach",
+			"imageid2": "lepidodendron:silurian_beach",
+			"imageid3": "lepidodendron:silurian_beach",
+			"imageid4": "lepidodendron:silurian_beach",
+			"imageid5": "lepidodendron:silurian_beach",
+			"imageid6": "lepidodendron:silurian_beach",
+			"imageid7": "lepidodendron:silurian_beach",
+			"imageid8": "lepidodendron:silurian_beach",
+			"imageid9": "lepidodendron:silurian_beach",
+			"imageid10": "lepidodendron:silurian_beach",
+			"imageid11": "lepidodendron:silurian_beach",
+			"imageid12": "lepidodendron:silurian_beach",
+			"imageid13": "lepidodendron:silurian_beach",
+			"imageid14": "lepidodendron:silurian_beach"
 		}
 	]
 }

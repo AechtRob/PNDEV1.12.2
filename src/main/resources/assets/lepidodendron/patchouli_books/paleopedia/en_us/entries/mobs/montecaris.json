@@ -2,7 +2,7 @@
 	"name": "Montecaris",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/montecaris_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_montecaris",
 	"pages": [
 		{

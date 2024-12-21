@@ -2,7 +2,7 @@
 	"name": "Archaeocydippida",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/archaeocydippida_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_archaeocydippida",
 	"pages": [
 		{

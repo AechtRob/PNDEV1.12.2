@@ -1,7 +1,0 @@
-{
-    "name": "Triassic Statics",
-    "description": "Static Animals of the Triassic",
-    "icon": "lepidodendron:crinoid_holocrinus",
-    "parent": "lepidodendron:triassic",
-    "sortnum": 2
-}

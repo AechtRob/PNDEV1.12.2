@@ -1,0 +1,31 @@
+{
+	"name": "Seirocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_seirocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_seirocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_seirocrinus",
+			"title": "Seirocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Pentacrinitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/seirocrinus.png"],
+			"title": "S. subangularis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_seirocrinus",
+			"type": "text",
+			"text": "Seirocrinus is a genus of crinoid from the Jurassic period. It was a type of crinoid that likely attached itself to the undersides of driftwood in the Jurassic seas and it had a very feathery bulb, with these arms being used to catch small prey. Some species of this genus could grow to lengths taller than the average human. The longest stem of Seirocrinus reached 26 meters in length!"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_seirocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

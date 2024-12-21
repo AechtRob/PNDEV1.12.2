@@ -2,7 +2,7 @@
 	"name": "Wodnika",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/wodnika_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_wodnika",
 	"pages": [
 		{

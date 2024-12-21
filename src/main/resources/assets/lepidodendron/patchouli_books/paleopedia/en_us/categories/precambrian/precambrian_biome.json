@@ -1,0 +1,7 @@
+{
+    "name": "Precambrian Biomes",
+    "description": "Biomes of the Precambrian",
+    "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
+    "parent": "lepidodendron:precambrian",
+    "sortnum": 2
+}

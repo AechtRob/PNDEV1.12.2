@@ -1,7 +1,0 @@
-{
-    "name": "Jurassic Statics",
-    "description": "Static Animals of the Jurassic",
-    "icon": "lepidodendron:bivalve_inoceramus",
-    "parent": "lepidodendron:jurassic",
-    "sortnum": 2
-}

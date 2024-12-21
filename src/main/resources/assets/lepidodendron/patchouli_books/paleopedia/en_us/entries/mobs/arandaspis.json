@@ -2,7 +2,7 @@
 	"name": "Arandaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:arandaspis_raw",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_arandaspis",
 	"pages": [
 		{

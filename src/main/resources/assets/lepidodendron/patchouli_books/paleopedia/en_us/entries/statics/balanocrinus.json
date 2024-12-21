@@ -1,0 +1,42 @@
+{
+	"name": "Balanocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_balanocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_balanocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_balanocrinus",
+			"title": "Balanocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Isocrinida$(br)>Isocrinidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "B. subteres",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "2" ],
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"2": "lepidodendron:crinoid_balanocrinus[topshoot=true]",
+					"1": "lepidodendron:crinoid_balanocrinus[topshoot=false]",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_balanocrinus",
+			"type": "text",
+			"text": "Balanocrinus is a genus of crinoid from the Jurassic period of Europe. Specimens of this crinoid show that it had a many little 'arm' like protrusions on its stem, with longer protrusions closer to its holdfast and shorter ones closer to its crown. These crinoids would have lived attached to the substrate."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_balanocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

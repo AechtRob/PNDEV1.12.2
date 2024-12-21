@@ -1,7 +1,0 @@
-{
-    "name": "Carboniferous Animals",
-    "description": "Animals of the Carboniferous",
-    "icon": "paleopedia:textures/items/arthropleura_icon.png",
-    "parent": "lepidodendron:carboniferous",
-    "sortnum": 1
-}

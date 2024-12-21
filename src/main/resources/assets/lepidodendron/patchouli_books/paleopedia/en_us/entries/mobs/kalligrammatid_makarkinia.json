@@ -2,7 +2,7 @@
 	"name": "Makarkinia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kalligrammatid_makarkinia_icon.png",
-	"category": "lepidodendron:cretaceousearly_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_makarkinia",
 	"pages": [
 		{

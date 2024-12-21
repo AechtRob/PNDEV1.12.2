@@ -2,7 +2,7 @@
 	"name": "Barrel Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/barrel_icon.png",
-	"category": "lepidodendron:oligocene_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish4",
 	"pages": [
 		{

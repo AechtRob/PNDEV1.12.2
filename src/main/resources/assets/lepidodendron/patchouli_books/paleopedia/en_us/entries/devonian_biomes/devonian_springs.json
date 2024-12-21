@@ -2,7 +2,7 @@
 	"name": "Hot Springs",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_springs"
+			"biome": "lepidodendron:devonian_springs",
+			"imageid0": "lepidodendron:devonian_springs",
+			"imageid1": "lepidodendron:devonian_springs",
+			"imageid2": "lepidodendron:devonian_springs",
+			"imageid3": "lepidodendron:devonian_springs",
+			"imageid4": "lepidodendron:devonian_springs",
+			"imageid5": "lepidodendron:devonian_springs",
+			"imageid6": "lepidodendron:devonian_springs",
+			"imageid7": "lepidodendron:devonian_springs",
+			"imageid8": "lepidodendron:devonian_springs",
+			"imageid9": "lepidodendron:devonian_springs",
+			"imageid10": "lepidodendron:devonian_springs",
+			"imageid11": "lepidodendron:devonian_springs",
+			"imageid12": "lepidodendron:devonian_springs",
+			"imageid13": "lepidodendron:devonian_springs"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_springs"
+			"biome": "lepidodendron:devonian_springs",
+			"imageid0": "lepidodendron:devonian_springs",
+			"imageid1": "lepidodendron:devonian_springs",
+			"imageid2": "lepidodendron:devonian_springs",
+			"imageid3": "lepidodendron:devonian_springs",
+			"imageid4": "lepidodendron:devonian_springs",
+			"imageid5": "lepidodendron:devonian_springs",
+			"imageid6": "lepidodendron:devonian_springs",
+			"imageid7": "lepidodendron:devonian_springs",
+			"imageid8": "lepidodendron:devonian_springs",
+			"imageid9": "lepidodendron:devonian_springs",
+			"imageid10": "lepidodendron:devonian_springs",
+			"imageid11": "lepidodendron:devonian_springs",
+			"imageid12": "lepidodendron:devonian_springs",
+			"imageid13": "lepidodendron:devonian_springs",
+			"imageid14": "lepidodendron:devonian_springs"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_springs"
+			"biome": "lepidodendron:devonian_springs",
+			"imageid0": "lepidodendron:devonian_springs",
+			"imageid1": "lepidodendron:devonian_springs",
+			"imageid2": "lepidodendron:devonian_springs",
+			"imageid3": "lepidodendron:devonian_springs",
+			"imageid4": "lepidodendron:devonian_springs",
+			"imageid5": "lepidodendron:devonian_springs",
+			"imageid6": "lepidodendron:devonian_springs",
+			"imageid7": "lepidodendron:devonian_springs",
+			"imageid8": "lepidodendron:devonian_springs",
+			"imageid9": "lepidodendron:devonian_springs",
+			"imageid10": "lepidodendron:devonian_springs",
+			"imageid11": "lepidodendron:devonian_springs",
+			"imageid12": "lepidodendron:devonian_springs",
+			"imageid13": "lepidodendron:devonian_springs",
+			"imageid14": "lepidodendron:devonian_springs"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_springs"
+			"biome": "lepidodendron:devonian_springs",
+			"imageid0": "lepidodendron:devonian_springs",
+			"imageid1": "lepidodendron:devonian_springs",
+			"imageid2": "lepidodendron:devonian_springs",
+			"imageid3": "lepidodendron:devonian_springs",
+			"imageid4": "lepidodendron:devonian_springs",
+			"imageid5": "lepidodendron:devonian_springs",
+			"imageid6": "lepidodendron:devonian_springs",
+			"imageid7": "lepidodendron:devonian_springs",
+			"imageid8": "lepidodendron:devonian_springs",
+			"imageid9": "lepidodendron:devonian_springs",
+			"imageid10": "lepidodendron:devonian_springs",
+			"imageid11": "lepidodendron:devonian_springs",
+			"imageid12": "lepidodendron:devonian_springs",
+			"imageid13": "lepidodendron:devonian_springs",
+			"imageid14": "lepidodendron:devonian_springs"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_springs"
+			"biome": "lepidodendron:devonian_springs",
+			"imageid0": "lepidodendron:devonian_springs",
+			"imageid1": "lepidodendron:devonian_springs",
+			"imageid2": "lepidodendron:devonian_springs",
+			"imageid3": "lepidodendron:devonian_springs",
+			"imageid4": "lepidodendron:devonian_springs",
+			"imageid5": "lepidodendron:devonian_springs",
+			"imageid6": "lepidodendron:devonian_springs",
+			"imageid7": "lepidodendron:devonian_springs",
+			"imageid8": "lepidodendron:devonian_springs",
+			"imageid9": "lepidodendron:devonian_springs",
+			"imageid10": "lepidodendron:devonian_springs",
+			"imageid11": "lepidodendron:devonian_springs",
+			"imageid12": "lepidodendron:devonian_springs",
+			"imageid13": "lepidodendron:devonian_springs",
+			"imageid14": "lepidodendron:devonian_springs"
 		}
 	]
 }

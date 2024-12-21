@@ -2,7 +2,7 @@
 	"name": "Hilly Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-	"category": "lepidodendron:ordovician_biome",
+	"category": "lepidodendron:ordovician/ordovician_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:ordovician_hills"
+			"biome": "lepidodendron:ordovician_hills",
+			"imageid0": "lepidodendron:ordovician_hills",
+			"imageid1": "lepidodendron:ordovician_hills",
+			"imageid2": "lepidodendron:ordovician_hills",
+			"imageid3": "lepidodendron:ordovician_hills",
+			"imageid4": "lepidodendron:ordovician_hills",
+			"imageid5": "lepidodendron:ordovician_hills",
+			"imageid6": "lepidodendron:ordovician_hills",
+			"imageid7": "lepidodendron:ordovician_hills",
+			"imageid8": "lepidodendron:ordovician_hills",
+			"imageid9": "lepidodendron:ordovician_hills",
+			"imageid10": "lepidodendron:ordovician_hills",
+			"imageid11": "lepidodendron:ordovician_hills",
+			"imageid12": "lepidodendron:ordovician_hills",
+			"imageid13": "lepidodendron:ordovician_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:ordovician_hills"
+			"biome": "lepidodendron:ordovician_hills",
+			"imageid0": "lepidodendron:ordovician_hills",
+			"imageid1": "lepidodendron:ordovician_hills",
+			"imageid2": "lepidodendron:ordovician_hills",
+			"imageid3": "lepidodendron:ordovician_hills",
+			"imageid4": "lepidodendron:ordovician_hills",
+			"imageid5": "lepidodendron:ordovician_hills",
+			"imageid6": "lepidodendron:ordovician_hills",
+			"imageid7": "lepidodendron:ordovician_hills",
+			"imageid8": "lepidodendron:ordovician_hills",
+			"imageid9": "lepidodendron:ordovician_hills",
+			"imageid10": "lepidodendron:ordovician_hills",
+			"imageid11": "lepidodendron:ordovician_hills",
+			"imageid12": "lepidodendron:ordovician_hills",
+			"imageid13": "lepidodendron:ordovician_hills",
+			"imageid14": "lepidodendron:ordovician_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:ordovician_hills"
+			"biome": "lepidodendron:ordovician_hills",
+			"imageid0": "lepidodendron:ordovician_hills",
+			"imageid1": "lepidodendron:ordovician_hills",
+			"imageid2": "lepidodendron:ordovician_hills",
+			"imageid3": "lepidodendron:ordovician_hills",
+			"imageid4": "lepidodendron:ordovician_hills",
+			"imageid5": "lepidodendron:ordovician_hills",
+			"imageid6": "lepidodendron:ordovician_hills",
+			"imageid7": "lepidodendron:ordovician_hills",
+			"imageid8": "lepidodendron:ordovician_hills",
+			"imageid9": "lepidodendron:ordovician_hills",
+			"imageid10": "lepidodendron:ordovician_hills",
+			"imageid11": "lepidodendron:ordovician_hills",
+			"imageid12": "lepidodendron:ordovician_hills",
+			"imageid13": "lepidodendron:ordovician_hills",
+			"imageid14": "lepidodendron:ordovician_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:ordovician_hills"
+			"biome": "lepidodendron:ordovician_hills",
+			"imageid0": "lepidodendron:ordovician_hills",
+			"imageid1": "lepidodendron:ordovician_hills",
+			"imageid2": "lepidodendron:ordovician_hills",
+			"imageid3": "lepidodendron:ordovician_hills",
+			"imageid4": "lepidodendron:ordovician_hills",
+			"imageid5": "lepidodendron:ordovician_hills",
+			"imageid6": "lepidodendron:ordovician_hills",
+			"imageid7": "lepidodendron:ordovician_hills",
+			"imageid8": "lepidodendron:ordovician_hills",
+			"imageid9": "lepidodendron:ordovician_hills",
+			"imageid10": "lepidodendron:ordovician_hills",
+			"imageid11": "lepidodendron:ordovician_hills",
+			"imageid12": "lepidodendron:ordovician_hills",
+			"imageid13": "lepidodendron:ordovician_hills",
+			"imageid14": "lepidodendron:ordovician_hills"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:ordovician_hills"
+			"biome": "lepidodendron:ordovician_hills",
+			"imageid0": "lepidodendron:ordovician_hills",
+			"imageid1": "lepidodendron:ordovician_hills",
+			"imageid2": "lepidodendron:ordovician_hills",
+			"imageid3": "lepidodendron:ordovician_hills",
+			"imageid4": "lepidodendron:ordovician_hills",
+			"imageid5": "lepidodendron:ordovician_hills",
+			"imageid6": "lepidodendron:ordovician_hills",
+			"imageid7": "lepidodendron:ordovician_hills",
+			"imageid8": "lepidodendron:ordovician_hills",
+			"imageid9": "lepidodendron:ordovician_hills",
+			"imageid10": "lepidodendron:ordovician_hills",
+			"imageid11": "lepidodendron:ordovician_hills",
+			"imageid12": "lepidodendron:ordovician_hills",
+			"imageid13": "lepidodendron:ordovician_hills",
+			"imageid14": "lepidodendron:ordovician_hills"
 		}
 	]
 }

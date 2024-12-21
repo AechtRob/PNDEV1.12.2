@@ -1,7 +1,0 @@
-{
-    "name": "Ordovician Biomes",
-    "description": "Biomes of the Ordovician$(br2)485.4 - 443.8 mya",
-    "icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-    "parent": "lepidodendron:ordovician",
-    "sortnum": 4
-}

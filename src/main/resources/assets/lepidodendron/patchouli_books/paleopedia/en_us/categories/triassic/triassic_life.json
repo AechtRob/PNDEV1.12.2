@@ -1,0 +1,7 @@
+{
+    "name": "Triassic Life",
+    "description": "Life of the Triassic",
+    "icon": "paleopedia:textures/category_icon/icon_triassic.png",
+    "parent": "lepidodendron:triassic",
+    "sortnum": 1
+}

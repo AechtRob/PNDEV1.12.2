@@ -2,7 +2,7 @@
 	"name": "Land Snail",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/land_snail_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_snail_land",
 	"pages": [
 		{

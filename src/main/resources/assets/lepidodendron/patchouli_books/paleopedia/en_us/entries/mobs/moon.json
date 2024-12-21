@@ -2,7 +2,7 @@
 	"name": "Moon Jelly",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/moon_icon.png",
-	"category": "lepidodendron:cretaceousearly_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish1",
 	"pages": [
 		{

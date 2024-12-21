@@ -2,7 +2,7 @@
 	"name": "Kaibabvenator",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kaibabvenator_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kaibabvenator",
 	"pages": [
 		{

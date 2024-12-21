@@ -133,8 +133,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockThectardis.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTribrachidium.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockVentogyrus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockStromatolite.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockThrombolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNamapoikia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAusia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString()
@@ -184,8 +182,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockStromatoveris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThaumaptilon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockXianguangia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockStromatolite.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockThrombolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSphenoecium.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString()
@@ -648,6 +644,65 @@ public class AcidBathOutputStatics {
     }
 
     public static String[] getCretaceousCleanedFossilsStatics() {
+        String[] resLoc = ArrayUtils.addAll(getCretaceousCleanedFossilsStaticsEarly(), getCretaceousCleanedFossilsStaticsLate());
+        return resLoc;
+    }
+
+    public static String[] getCretaceousCleanedFossilsStaticsEarly() {
+        String[] resLoc = {
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone1.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone2.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone3.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone4.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone5.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone6.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone7.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone8.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAnemone9.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBlueSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBranchedSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBrownSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDarkOrangeSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDarkPinkSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockOrangeSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPinkSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockRedSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockWhiteSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockYellowSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockGlassSponge.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveCream.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveGrey.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveTall.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveMegalodon.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralRedTree.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBamboo.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralCarnation.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralSoftFan.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyBlooming.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyFractalBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyLumpy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString()
+        };
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
+        return resLoc;
+    }
+
+    public static String[] getCretaceousCleanedFossilsStaticsLate() {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockAnemone1.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAnemone2.block).toString(),

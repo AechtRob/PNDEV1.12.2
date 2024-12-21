@@ -2,7 +2,7 @@
 	"name": "Papilionichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/papilionichthys_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_papilionichthys",
 	"pages": [
 		{

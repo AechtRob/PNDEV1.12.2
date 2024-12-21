@@ -2,7 +2,7 @@
 	"name": "Chaoyangsaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/chaoyangsaurus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_chaoyangsaurus",
 	"pages": [
 		{

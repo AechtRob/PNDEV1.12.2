@@ -2,7 +2,7 @@
 	"name": "Crotalocephalus",
 	"read_by_default": true,
 	"icon": "lepidodendron:crotalocephalus_raw",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_crotalocephalus",
 	"pages": [
 		{

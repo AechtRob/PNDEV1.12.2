@@ -2,7 +2,7 @@
 	"name": "Thrissops",
 	"read_by_default": true,
 	"icon": "lepidodendron:thrissops_raw",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_thrissops",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Dead Reefs",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_ocean_dead_reef"
+			"biome": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid0": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid1": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid2": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid3": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid4": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid5": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid6": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid7": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid8": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid9": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid10": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid11": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid12": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid13": "lepidodendron:devonian_ocean_dead_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_ocean_dead_reef"
+			"biome": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid0": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid1": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid2": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid3": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid4": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid5": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid6": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid7": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid8": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid9": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid10": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid11": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid12": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid13": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid14": "lepidodendron:devonian_ocean_dead_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_ocean_dead_reef"
+			"biome": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid0": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid1": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid2": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid3": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid4": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid5": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid6": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid7": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid8": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid9": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid10": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid11": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid12": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid13": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid14": "lepidodendron:devonian_ocean_dead_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_ocean_dead_reef"
+			"biome": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid0": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid1": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid2": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid3": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid4": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid5": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid6": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid7": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid8": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid9": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid10": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid11": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid12": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid13": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid14": "lepidodendron:devonian_ocean_dead_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_ocean_dead_reef"
+			"biome": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid0": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid1": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid2": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid3": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid4": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid5": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid6": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid7": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid8": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid9": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid10": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid11": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid12": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid13": "lepidodendron:devonian_ocean_dead_reef",
+			"imageid14": "lepidodendron:devonian_ocean_dead_reef"
 		}
 	]
 }

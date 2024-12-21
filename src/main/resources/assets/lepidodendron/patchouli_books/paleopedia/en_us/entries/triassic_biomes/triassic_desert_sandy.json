@@ -2,7 +2,7 @@
 	"name": "Desert Dunes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_desert_sandy"
+			"biome": "lepidodendron:triassic_desert_sandy",
+			"imageid0": "lepidodendron:triassic_desert_sandy",
+			"imageid1": "lepidodendron:triassic_desert_sandy",
+			"imageid2": "lepidodendron:triassic_desert_sandy",
+			"imageid3": "lepidodendron:triassic_desert_sandy",
+			"imageid4": "lepidodendron:triassic_desert_sandy",
+			"imageid5": "lepidodendron:triassic_desert_sandy",
+			"imageid6": "lepidodendron:triassic_desert_sandy",
+			"imageid7": "lepidodendron:triassic_desert_sandy",
+			"imageid8": "lepidodendron:triassic_desert_sandy",
+			"imageid9": "lepidodendron:triassic_desert_sandy",
+			"imageid10": "lepidodendron:triassic_desert_sandy",
+			"imageid11": "lepidodendron:triassic_desert_sandy",
+			"imageid12": "lepidodendron:triassic_desert_sandy",
+			"imageid13": "lepidodendron:triassic_desert_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_desert_sandy"
+			"biome": "lepidodendron:triassic_desert_sandy",
+			"imageid0": "lepidodendron:triassic_desert_sandy",
+			"imageid1": "lepidodendron:triassic_desert_sandy",
+			"imageid2": "lepidodendron:triassic_desert_sandy",
+			"imageid3": "lepidodendron:triassic_desert_sandy",
+			"imageid4": "lepidodendron:triassic_desert_sandy",
+			"imageid5": "lepidodendron:triassic_desert_sandy",
+			"imageid6": "lepidodendron:triassic_desert_sandy",
+			"imageid7": "lepidodendron:triassic_desert_sandy",
+			"imageid8": "lepidodendron:triassic_desert_sandy",
+			"imageid9": "lepidodendron:triassic_desert_sandy",
+			"imageid10": "lepidodendron:triassic_desert_sandy",
+			"imageid11": "lepidodendron:triassic_desert_sandy",
+			"imageid12": "lepidodendron:triassic_desert_sandy",
+			"imageid13": "lepidodendron:triassic_desert_sandy",
+			"imageid14": "lepidodendron:triassic_desert_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_desert_sandy"
+			"biome": "lepidodendron:triassic_desert_sandy",
+			"imageid0": "lepidodendron:triassic_desert_sandy",
+			"imageid1": "lepidodendron:triassic_desert_sandy",
+			"imageid2": "lepidodendron:triassic_desert_sandy",
+			"imageid3": "lepidodendron:triassic_desert_sandy",
+			"imageid4": "lepidodendron:triassic_desert_sandy",
+			"imageid5": "lepidodendron:triassic_desert_sandy",
+			"imageid6": "lepidodendron:triassic_desert_sandy",
+			"imageid7": "lepidodendron:triassic_desert_sandy",
+			"imageid8": "lepidodendron:triassic_desert_sandy",
+			"imageid9": "lepidodendron:triassic_desert_sandy",
+			"imageid10": "lepidodendron:triassic_desert_sandy",
+			"imageid11": "lepidodendron:triassic_desert_sandy",
+			"imageid12": "lepidodendron:triassic_desert_sandy",
+			"imageid13": "lepidodendron:triassic_desert_sandy",
+			"imageid14": "lepidodendron:triassic_desert_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_desert_sandy"
+			"biome": "lepidodendron:triassic_desert_sandy",
+			"imageid0": "lepidodendron:triassic_desert_sandy",
+			"imageid1": "lepidodendron:triassic_desert_sandy",
+			"imageid2": "lepidodendron:triassic_desert_sandy",
+			"imageid3": "lepidodendron:triassic_desert_sandy",
+			"imageid4": "lepidodendron:triassic_desert_sandy",
+			"imageid5": "lepidodendron:triassic_desert_sandy",
+			"imageid6": "lepidodendron:triassic_desert_sandy",
+			"imageid7": "lepidodendron:triassic_desert_sandy",
+			"imageid8": "lepidodendron:triassic_desert_sandy",
+			"imageid9": "lepidodendron:triassic_desert_sandy",
+			"imageid10": "lepidodendron:triassic_desert_sandy",
+			"imageid11": "lepidodendron:triassic_desert_sandy",
+			"imageid12": "lepidodendron:triassic_desert_sandy",
+			"imageid13": "lepidodendron:triassic_desert_sandy",
+			"imageid14": "lepidodendron:triassic_desert_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_desert_sandy"
+			"biome": "lepidodendron:triassic_desert_sandy",
+			"imageid0": "lepidodendron:triassic_desert_sandy",
+			"imageid1": "lepidodendron:triassic_desert_sandy",
+			"imageid2": "lepidodendron:triassic_desert_sandy",
+			"imageid3": "lepidodendron:triassic_desert_sandy",
+			"imageid4": "lepidodendron:triassic_desert_sandy",
+			"imageid5": "lepidodendron:triassic_desert_sandy",
+			"imageid6": "lepidodendron:triassic_desert_sandy",
+			"imageid7": "lepidodendron:triassic_desert_sandy",
+			"imageid8": "lepidodendron:triassic_desert_sandy",
+			"imageid9": "lepidodendron:triassic_desert_sandy",
+			"imageid10": "lepidodendron:triassic_desert_sandy",
+			"imageid11": "lepidodendron:triassic_desert_sandy",
+			"imageid12": "lepidodendron:triassic_desert_sandy",
+			"imageid13": "lepidodendron:triassic_desert_sandy",
+			"imageid14": "lepidodendron:triassic_desert_sandy"
 		}
 	]
 }

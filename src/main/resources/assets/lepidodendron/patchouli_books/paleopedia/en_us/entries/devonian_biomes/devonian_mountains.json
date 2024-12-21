@@ -2,7 +2,7 @@
 	"name": "Mountains",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_mountains"
+			"biome": "lepidodendron:devonian_mountains",
+			"imageid0": "lepidodendron:devonian_mountains",
+			"imageid1": "lepidodendron:devonian_mountains",
+			"imageid2": "lepidodendron:devonian_mountains",
+			"imageid3": "lepidodendron:devonian_mountains",
+			"imageid4": "lepidodendron:devonian_mountains",
+			"imageid5": "lepidodendron:devonian_mountains",
+			"imageid6": "lepidodendron:devonian_mountains",
+			"imageid7": "lepidodendron:devonian_mountains",
+			"imageid8": "lepidodendron:devonian_mountains",
+			"imageid9": "lepidodendron:devonian_mountains",
+			"imageid10": "lepidodendron:devonian_mountains",
+			"imageid11": "lepidodendron:devonian_mountains",
+			"imageid12": "lepidodendron:devonian_mountains",
+			"imageid13": "lepidodendron:devonian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_mountains"
+			"biome": "lepidodendron:devonian_mountains",
+			"imageid0": "lepidodendron:devonian_mountains",
+			"imageid1": "lepidodendron:devonian_mountains",
+			"imageid2": "lepidodendron:devonian_mountains",
+			"imageid3": "lepidodendron:devonian_mountains",
+			"imageid4": "lepidodendron:devonian_mountains",
+			"imageid5": "lepidodendron:devonian_mountains",
+			"imageid6": "lepidodendron:devonian_mountains",
+			"imageid7": "lepidodendron:devonian_mountains",
+			"imageid8": "lepidodendron:devonian_mountains",
+			"imageid9": "lepidodendron:devonian_mountains",
+			"imageid10": "lepidodendron:devonian_mountains",
+			"imageid11": "lepidodendron:devonian_mountains",
+			"imageid12": "lepidodendron:devonian_mountains",
+			"imageid13": "lepidodendron:devonian_mountains",
+			"imageid14": "lepidodendron:devonian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_mountains"
+			"biome": "lepidodendron:devonian_mountains",
+			"imageid0": "lepidodendron:devonian_mountains",
+			"imageid1": "lepidodendron:devonian_mountains",
+			"imageid2": "lepidodendron:devonian_mountains",
+			"imageid3": "lepidodendron:devonian_mountains",
+			"imageid4": "lepidodendron:devonian_mountains",
+			"imageid5": "lepidodendron:devonian_mountains",
+			"imageid6": "lepidodendron:devonian_mountains",
+			"imageid7": "lepidodendron:devonian_mountains",
+			"imageid8": "lepidodendron:devonian_mountains",
+			"imageid9": "lepidodendron:devonian_mountains",
+			"imageid10": "lepidodendron:devonian_mountains",
+			"imageid11": "lepidodendron:devonian_mountains",
+			"imageid12": "lepidodendron:devonian_mountains",
+			"imageid13": "lepidodendron:devonian_mountains",
+			"imageid14": "lepidodendron:devonian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_mountains"
+			"biome": "lepidodendron:devonian_mountains",
+			"imageid0": "lepidodendron:devonian_mountains",
+			"imageid1": "lepidodendron:devonian_mountains",
+			"imageid2": "lepidodendron:devonian_mountains",
+			"imageid3": "lepidodendron:devonian_mountains",
+			"imageid4": "lepidodendron:devonian_mountains",
+			"imageid5": "lepidodendron:devonian_mountains",
+			"imageid6": "lepidodendron:devonian_mountains",
+			"imageid7": "lepidodendron:devonian_mountains",
+			"imageid8": "lepidodendron:devonian_mountains",
+			"imageid9": "lepidodendron:devonian_mountains",
+			"imageid10": "lepidodendron:devonian_mountains",
+			"imageid11": "lepidodendron:devonian_mountains",
+			"imageid12": "lepidodendron:devonian_mountains",
+			"imageid13": "lepidodendron:devonian_mountains",
+			"imageid14": "lepidodendron:devonian_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_mountains"
+			"biome": "lepidodendron:devonian_mountains",
+			"imageid0": "lepidodendron:devonian_mountains",
+			"imageid1": "lepidodendron:devonian_mountains",
+			"imageid2": "lepidodendron:devonian_mountains",
+			"imageid3": "lepidodendron:devonian_mountains",
+			"imageid4": "lepidodendron:devonian_mountains",
+			"imageid5": "lepidodendron:devonian_mountains",
+			"imageid6": "lepidodendron:devonian_mountains",
+			"imageid7": "lepidodendron:devonian_mountains",
+			"imageid8": "lepidodendron:devonian_mountains",
+			"imageid9": "lepidodendron:devonian_mountains",
+			"imageid10": "lepidodendron:devonian_mountains",
+			"imageid11": "lepidodendron:devonian_mountains",
+			"imageid12": "lepidodendron:devonian_mountains",
+			"imageid13": "lepidodendron:devonian_mountains",
+			"imageid14": "lepidodendron:devonian_mountains"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Estuary",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_estuary"
+			"biome": "lepidodendron:carboniferous_estuary",
+			"imageid0": "lepidodendron:carboniferous_estuary",
+			"imageid1": "lepidodendron:carboniferous_estuary",
+			"imageid2": "lepidodendron:carboniferous_estuary",
+			"imageid3": "lepidodendron:carboniferous_estuary",
+			"imageid4": "lepidodendron:carboniferous_estuary",
+			"imageid5": "lepidodendron:carboniferous_estuary",
+			"imageid6": "lepidodendron:carboniferous_estuary",
+			"imageid7": "lepidodendron:carboniferous_estuary",
+			"imageid8": "lepidodendron:carboniferous_estuary",
+			"imageid9": "lepidodendron:carboniferous_estuary",
+			"imageid10": "lepidodendron:carboniferous_estuary",
+			"imageid11": "lepidodendron:carboniferous_estuary",
+			"imageid12": "lepidodendron:carboniferous_estuary",
+			"imageid13": "lepidodendron:carboniferous_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_estuary"
+			"biome": "lepidodendron:carboniferous_estuary",
+			"imageid0": "lepidodendron:carboniferous_estuary",
+			"imageid1": "lepidodendron:carboniferous_estuary",
+			"imageid2": "lepidodendron:carboniferous_estuary",
+			"imageid3": "lepidodendron:carboniferous_estuary",
+			"imageid4": "lepidodendron:carboniferous_estuary",
+			"imageid5": "lepidodendron:carboniferous_estuary",
+			"imageid6": "lepidodendron:carboniferous_estuary",
+			"imageid7": "lepidodendron:carboniferous_estuary",
+			"imageid8": "lepidodendron:carboniferous_estuary",
+			"imageid9": "lepidodendron:carboniferous_estuary",
+			"imageid10": "lepidodendron:carboniferous_estuary",
+			"imageid11": "lepidodendron:carboniferous_estuary",
+			"imageid12": "lepidodendron:carboniferous_estuary",
+			"imageid13": "lepidodendron:carboniferous_estuary",
+			"imageid14": "lepidodendron:carboniferous_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_estuary"
+			"biome": "lepidodendron:carboniferous_estuary",
+			"imageid0": "lepidodendron:carboniferous_estuary",
+			"imageid1": "lepidodendron:carboniferous_estuary",
+			"imageid2": "lepidodendron:carboniferous_estuary",
+			"imageid3": "lepidodendron:carboniferous_estuary",
+			"imageid4": "lepidodendron:carboniferous_estuary",
+			"imageid5": "lepidodendron:carboniferous_estuary",
+			"imageid6": "lepidodendron:carboniferous_estuary",
+			"imageid7": "lepidodendron:carboniferous_estuary",
+			"imageid8": "lepidodendron:carboniferous_estuary",
+			"imageid9": "lepidodendron:carboniferous_estuary",
+			"imageid10": "lepidodendron:carboniferous_estuary",
+			"imageid11": "lepidodendron:carboniferous_estuary",
+			"imageid12": "lepidodendron:carboniferous_estuary",
+			"imageid13": "lepidodendron:carboniferous_estuary",
+			"imageid14": "lepidodendron:carboniferous_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_estuary"
+			"biome": "lepidodendron:carboniferous_estuary",
+			"imageid0": "lepidodendron:carboniferous_estuary",
+			"imageid1": "lepidodendron:carboniferous_estuary",
+			"imageid2": "lepidodendron:carboniferous_estuary",
+			"imageid3": "lepidodendron:carboniferous_estuary",
+			"imageid4": "lepidodendron:carboniferous_estuary",
+			"imageid5": "lepidodendron:carboniferous_estuary",
+			"imageid6": "lepidodendron:carboniferous_estuary",
+			"imageid7": "lepidodendron:carboniferous_estuary",
+			"imageid8": "lepidodendron:carboniferous_estuary",
+			"imageid9": "lepidodendron:carboniferous_estuary",
+			"imageid10": "lepidodendron:carboniferous_estuary",
+			"imageid11": "lepidodendron:carboniferous_estuary",
+			"imageid12": "lepidodendron:carboniferous_estuary",
+			"imageid13": "lepidodendron:carboniferous_estuary",
+			"imageid14": "lepidodendron:carboniferous_estuary"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_estuary"
+			"biome": "lepidodendron:carboniferous_estuary",
+			"imageid0": "lepidodendron:carboniferous_estuary",
+			"imageid1": "lepidodendron:carboniferous_estuary",
+			"imageid2": "lepidodendron:carboniferous_estuary",
+			"imageid3": "lepidodendron:carboniferous_estuary",
+			"imageid4": "lepidodendron:carboniferous_estuary",
+			"imageid5": "lepidodendron:carboniferous_estuary",
+			"imageid6": "lepidodendron:carboniferous_estuary",
+			"imageid7": "lepidodendron:carboniferous_estuary",
+			"imageid8": "lepidodendron:carboniferous_estuary",
+			"imageid9": "lepidodendron:carboniferous_estuary",
+			"imageid10": "lepidodendron:carboniferous_estuary",
+			"imageid11": "lepidodendron:carboniferous_estuary",
+			"imageid12": "lepidodendron:carboniferous_estuary",
+			"imageid13": "lepidodendron:carboniferous_estuary",
+			"imageid14": "lepidodendron:carboniferous_estuary"
 		}
 	]
 }

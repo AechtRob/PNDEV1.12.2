@@ -2,7 +2,7 @@
 	"name": "Mamulichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/mamulichthys_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_mamulichthys",
 	"pages": [
 		{

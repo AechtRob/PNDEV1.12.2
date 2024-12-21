@@ -2,7 +2,7 @@
 	"name": "Volcanic Islands",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_volcanic_islands"
+			"biome": "lepidodendron:triassic_volcanic_islands",
+			"imageid0": "lepidodendron:triassic_volcanic_islands",
+			"imageid1": "lepidodendron:triassic_volcanic_islands",
+			"imageid2": "lepidodendron:triassic_volcanic_islands",
+			"imageid3": "lepidodendron:triassic_volcanic_islands",
+			"imageid4": "lepidodendron:triassic_volcanic_islands",
+			"imageid5": "lepidodendron:triassic_volcanic_islands",
+			"imageid6": "lepidodendron:triassic_volcanic_islands",
+			"imageid7": "lepidodendron:triassic_volcanic_islands",
+			"imageid8": "lepidodendron:triassic_volcanic_islands",
+			"imageid9": "lepidodendron:triassic_volcanic_islands",
+			"imageid10": "lepidodendron:triassic_volcanic_islands",
+			"imageid11": "lepidodendron:triassic_volcanic_islands",
+			"imageid12": "lepidodendron:triassic_volcanic_islands",
+			"imageid13": "lepidodendron:triassic_volcanic_islands"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_volcanic_islands"
+			"biome": "lepidodendron:triassic_volcanic_islands",
+			"imageid0": "lepidodendron:triassic_volcanic_islands",
+			"imageid1": "lepidodendron:triassic_volcanic_islands",
+			"imageid2": "lepidodendron:triassic_volcanic_islands",
+			"imageid3": "lepidodendron:triassic_volcanic_islands",
+			"imageid4": "lepidodendron:triassic_volcanic_islands",
+			"imageid5": "lepidodendron:triassic_volcanic_islands",
+			"imageid6": "lepidodendron:triassic_volcanic_islands",
+			"imageid7": "lepidodendron:triassic_volcanic_islands",
+			"imageid8": "lepidodendron:triassic_volcanic_islands",
+			"imageid9": "lepidodendron:triassic_volcanic_islands",
+			"imageid10": "lepidodendron:triassic_volcanic_islands",
+			"imageid11": "lepidodendron:triassic_volcanic_islands",
+			"imageid12": "lepidodendron:triassic_volcanic_islands",
+			"imageid13": "lepidodendron:triassic_volcanic_islands",
+			"imageid14": "lepidodendron:triassic_volcanic_islands"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_volcanic_islands"
+			"biome": "lepidodendron:triassic_volcanic_islands",
+			"imageid0": "lepidodendron:triassic_volcanic_islands",
+			"imageid1": "lepidodendron:triassic_volcanic_islands",
+			"imageid2": "lepidodendron:triassic_volcanic_islands",
+			"imageid3": "lepidodendron:triassic_volcanic_islands",
+			"imageid4": "lepidodendron:triassic_volcanic_islands",
+			"imageid5": "lepidodendron:triassic_volcanic_islands",
+			"imageid6": "lepidodendron:triassic_volcanic_islands",
+			"imageid7": "lepidodendron:triassic_volcanic_islands",
+			"imageid8": "lepidodendron:triassic_volcanic_islands",
+			"imageid9": "lepidodendron:triassic_volcanic_islands",
+			"imageid10": "lepidodendron:triassic_volcanic_islands",
+			"imageid11": "lepidodendron:triassic_volcanic_islands",
+			"imageid12": "lepidodendron:triassic_volcanic_islands",
+			"imageid13": "lepidodendron:triassic_volcanic_islands",
+			"imageid14": "lepidodendron:triassic_volcanic_islands"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_volcanic_islands"
+			"biome": "lepidodendron:triassic_volcanic_islands",
+			"imageid0": "lepidodendron:triassic_volcanic_islands",
+			"imageid1": "lepidodendron:triassic_volcanic_islands",
+			"imageid2": "lepidodendron:triassic_volcanic_islands",
+			"imageid3": "lepidodendron:triassic_volcanic_islands",
+			"imageid4": "lepidodendron:triassic_volcanic_islands",
+			"imageid5": "lepidodendron:triassic_volcanic_islands",
+			"imageid6": "lepidodendron:triassic_volcanic_islands",
+			"imageid7": "lepidodendron:triassic_volcanic_islands",
+			"imageid8": "lepidodendron:triassic_volcanic_islands",
+			"imageid9": "lepidodendron:triassic_volcanic_islands",
+			"imageid10": "lepidodendron:triassic_volcanic_islands",
+			"imageid11": "lepidodendron:triassic_volcanic_islands",
+			"imageid12": "lepidodendron:triassic_volcanic_islands",
+			"imageid13": "lepidodendron:triassic_volcanic_islands",
+			"imageid14": "lepidodendron:triassic_volcanic_islands"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_volcanic_islands"
+			"biome": "lepidodendron:triassic_volcanic_islands",
+			"imageid0": "lepidodendron:triassic_volcanic_islands",
+			"imageid1": "lepidodendron:triassic_volcanic_islands",
+			"imageid2": "lepidodendron:triassic_volcanic_islands",
+			"imageid3": "lepidodendron:triassic_volcanic_islands",
+			"imageid4": "lepidodendron:triassic_volcanic_islands",
+			"imageid5": "lepidodendron:triassic_volcanic_islands",
+			"imageid6": "lepidodendron:triassic_volcanic_islands",
+			"imageid7": "lepidodendron:triassic_volcanic_islands",
+			"imageid8": "lepidodendron:triassic_volcanic_islands",
+			"imageid9": "lepidodendron:triassic_volcanic_islands",
+			"imageid10": "lepidodendron:triassic_volcanic_islands",
+			"imageid11": "lepidodendron:triassic_volcanic_islands",
+			"imageid12": "lepidodendron:triassic_volcanic_islands",
+			"imageid13": "lepidodendron:triassic_volcanic_islands",
+			"imageid14": "lepidodendron:triassic_volcanic_islands"
 		}
 	]
 }

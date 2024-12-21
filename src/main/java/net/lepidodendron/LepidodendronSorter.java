@@ -4988,7 +4988,16 @@ public class LepidodendronSorter {
     public static final int doyleales_fruit = 8008;
     public static final int doyleales_sapling = 8009;
     public static final int doyleales_log = 8010;
-
+    public static final int liverwort = 8011;
+    public static final int doyleales_boat_item = 8012;
+    public static final int doyleales_planks = 8013;
+    public static final int doyleales_fence = 8014;
+    public static final int doyleales_fence_gate = 8015;
+    public static final int doyleales_door = 8016;
+    public static final int doyleales_trapdoor = 8017;
+    public static final int doyleales_slab = 8018;
+    public static final int doyleales_stairs = 8019;
+    public static final int doyleales_door_item = 8020;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

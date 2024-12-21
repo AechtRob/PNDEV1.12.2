@@ -2,7 +2,7 @@
 	"name": "Warm Lakeland",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_warm_lakeland"
+			"biome": "lepidodendron:triassic_warm_lakeland",
+			"imageid0": "lepidodendron:triassic_warm_lakeland",
+			"imageid1": "lepidodendron:triassic_warm_lakeland",
+			"imageid2": "lepidodendron:triassic_warm_lakeland",
+			"imageid3": "lepidodendron:triassic_warm_lakeland",
+			"imageid4": "lepidodendron:triassic_warm_lakeland",
+			"imageid5": "lepidodendron:triassic_warm_lakeland",
+			"imageid6": "lepidodendron:triassic_warm_lakeland",
+			"imageid7": "lepidodendron:triassic_warm_lakeland",
+			"imageid8": "lepidodendron:triassic_warm_lakeland",
+			"imageid9": "lepidodendron:triassic_warm_lakeland",
+			"imageid10": "lepidodendron:triassic_warm_lakeland",
+			"imageid11": "lepidodendron:triassic_warm_lakeland",
+			"imageid12": "lepidodendron:triassic_warm_lakeland",
+			"imageid13": "lepidodendron:triassic_warm_lakeland"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_warm_lakeland"
+			"biome": "lepidodendron:triassic_warm_lakeland",
+			"imageid0": "lepidodendron:triassic_warm_lakeland",
+			"imageid1": "lepidodendron:triassic_warm_lakeland",
+			"imageid2": "lepidodendron:triassic_warm_lakeland",
+			"imageid3": "lepidodendron:triassic_warm_lakeland",
+			"imageid4": "lepidodendron:triassic_warm_lakeland",
+			"imageid5": "lepidodendron:triassic_warm_lakeland",
+			"imageid6": "lepidodendron:triassic_warm_lakeland",
+			"imageid7": "lepidodendron:triassic_warm_lakeland",
+			"imageid8": "lepidodendron:triassic_warm_lakeland",
+			"imageid9": "lepidodendron:triassic_warm_lakeland",
+			"imageid10": "lepidodendron:triassic_warm_lakeland",
+			"imageid11": "lepidodendron:triassic_warm_lakeland",
+			"imageid12": "lepidodendron:triassic_warm_lakeland",
+			"imageid13": "lepidodendron:triassic_warm_lakeland",
+			"imageid14": "lepidodendron:triassic_warm_lakeland"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_warm_lakeland"
+			"biome": "lepidodendron:triassic_warm_lakeland",
+			"imageid0": "lepidodendron:triassic_warm_lakeland",
+			"imageid1": "lepidodendron:triassic_warm_lakeland",
+			"imageid2": "lepidodendron:triassic_warm_lakeland",
+			"imageid3": "lepidodendron:triassic_warm_lakeland",
+			"imageid4": "lepidodendron:triassic_warm_lakeland",
+			"imageid5": "lepidodendron:triassic_warm_lakeland",
+			"imageid6": "lepidodendron:triassic_warm_lakeland",
+			"imageid7": "lepidodendron:triassic_warm_lakeland",
+			"imageid8": "lepidodendron:triassic_warm_lakeland",
+			"imageid9": "lepidodendron:triassic_warm_lakeland",
+			"imageid10": "lepidodendron:triassic_warm_lakeland",
+			"imageid11": "lepidodendron:triassic_warm_lakeland",
+			"imageid12": "lepidodendron:triassic_warm_lakeland",
+			"imageid13": "lepidodendron:triassic_warm_lakeland",
+			"imageid14": "lepidodendron:triassic_warm_lakeland"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_warm_lakeland"
+			"biome": "lepidodendron:triassic_warm_lakeland",
+			"imageid0": "lepidodendron:triassic_warm_lakeland",
+			"imageid1": "lepidodendron:triassic_warm_lakeland",
+			"imageid2": "lepidodendron:triassic_warm_lakeland",
+			"imageid3": "lepidodendron:triassic_warm_lakeland",
+			"imageid4": "lepidodendron:triassic_warm_lakeland",
+			"imageid5": "lepidodendron:triassic_warm_lakeland",
+			"imageid6": "lepidodendron:triassic_warm_lakeland",
+			"imageid7": "lepidodendron:triassic_warm_lakeland",
+			"imageid8": "lepidodendron:triassic_warm_lakeland",
+			"imageid9": "lepidodendron:triassic_warm_lakeland",
+			"imageid10": "lepidodendron:triassic_warm_lakeland",
+			"imageid11": "lepidodendron:triassic_warm_lakeland",
+			"imageid12": "lepidodendron:triassic_warm_lakeland",
+			"imageid13": "lepidodendron:triassic_warm_lakeland",
+			"imageid14": "lepidodendron:triassic_warm_lakeland"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_warm_lakeland"
+			"biome": "lepidodendron:triassic_warm_lakeland",
+			"imageid0": "lepidodendron:triassic_warm_lakeland",
+			"imageid1": "lepidodendron:triassic_warm_lakeland",
+			"imageid2": "lepidodendron:triassic_warm_lakeland",
+			"imageid3": "lepidodendron:triassic_warm_lakeland",
+			"imageid4": "lepidodendron:triassic_warm_lakeland",
+			"imageid5": "lepidodendron:triassic_warm_lakeland",
+			"imageid6": "lepidodendron:triassic_warm_lakeland",
+			"imageid7": "lepidodendron:triassic_warm_lakeland",
+			"imageid8": "lepidodendron:triassic_warm_lakeland",
+			"imageid9": "lepidodendron:triassic_warm_lakeland",
+			"imageid10": "lepidodendron:triassic_warm_lakeland",
+			"imageid11": "lepidodendron:triassic_warm_lakeland",
+			"imageid12": "lepidodendron:triassic_warm_lakeland",
+			"imageid13": "lepidodendron:triassic_warm_lakeland",
+			"imageid14": "lepidodendron:triassic_warm_lakeland"
 		}
 	]
 }

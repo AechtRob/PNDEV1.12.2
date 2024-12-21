@@ -2,7 +2,7 @@
 	"name": "Sphenopteris Heath",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_woodland_field"
+			"biome": "lepidodendron:triassic_woodland_field",
+			"imageid0": "lepidodendron:triassic_woodland_field",
+			"imageid1": "lepidodendron:triassic_woodland_field",
+			"imageid2": "lepidodendron:triassic_woodland_field",
+			"imageid3": "lepidodendron:triassic_woodland_field",
+			"imageid4": "lepidodendron:triassic_woodland_field",
+			"imageid5": "lepidodendron:triassic_woodland_field",
+			"imageid6": "lepidodendron:triassic_woodland_field",
+			"imageid7": "lepidodendron:triassic_woodland_field",
+			"imageid8": "lepidodendron:triassic_woodland_field",
+			"imageid9": "lepidodendron:triassic_woodland_field",
+			"imageid10": "lepidodendron:triassic_woodland_field",
+			"imageid11": "lepidodendron:triassic_woodland_field",
+			"imageid12": "lepidodendron:triassic_woodland_field",
+			"imageid13": "lepidodendron:triassic_woodland_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_woodland_field"
+			"biome": "lepidodendron:triassic_woodland_field",
+			"imageid0": "lepidodendron:triassic_woodland_field",
+			"imageid1": "lepidodendron:triassic_woodland_field",
+			"imageid2": "lepidodendron:triassic_woodland_field",
+			"imageid3": "lepidodendron:triassic_woodland_field",
+			"imageid4": "lepidodendron:triassic_woodland_field",
+			"imageid5": "lepidodendron:triassic_woodland_field",
+			"imageid6": "lepidodendron:triassic_woodland_field",
+			"imageid7": "lepidodendron:triassic_woodland_field",
+			"imageid8": "lepidodendron:triassic_woodland_field",
+			"imageid9": "lepidodendron:triassic_woodland_field",
+			"imageid10": "lepidodendron:triassic_woodland_field",
+			"imageid11": "lepidodendron:triassic_woodland_field",
+			"imageid12": "lepidodendron:triassic_woodland_field",
+			"imageid13": "lepidodendron:triassic_woodland_field",
+			"imageid14": "lepidodendron:triassic_woodland_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_woodland_field"
+			"biome": "lepidodendron:triassic_woodland_field",
+			"imageid0": "lepidodendron:triassic_woodland_field",
+			"imageid1": "lepidodendron:triassic_woodland_field",
+			"imageid2": "lepidodendron:triassic_woodland_field",
+			"imageid3": "lepidodendron:triassic_woodland_field",
+			"imageid4": "lepidodendron:triassic_woodland_field",
+			"imageid5": "lepidodendron:triassic_woodland_field",
+			"imageid6": "lepidodendron:triassic_woodland_field",
+			"imageid7": "lepidodendron:triassic_woodland_field",
+			"imageid8": "lepidodendron:triassic_woodland_field",
+			"imageid9": "lepidodendron:triassic_woodland_field",
+			"imageid10": "lepidodendron:triassic_woodland_field",
+			"imageid11": "lepidodendron:triassic_woodland_field",
+			"imageid12": "lepidodendron:triassic_woodland_field",
+			"imageid13": "lepidodendron:triassic_woodland_field",
+			"imageid14": "lepidodendron:triassic_woodland_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_woodland_field"
+			"biome": "lepidodendron:triassic_woodland_field",
+			"imageid0": "lepidodendron:triassic_woodland_field",
+			"imageid1": "lepidodendron:triassic_woodland_field",
+			"imageid2": "lepidodendron:triassic_woodland_field",
+			"imageid3": "lepidodendron:triassic_woodland_field",
+			"imageid4": "lepidodendron:triassic_woodland_field",
+			"imageid5": "lepidodendron:triassic_woodland_field",
+			"imageid6": "lepidodendron:triassic_woodland_field",
+			"imageid7": "lepidodendron:triassic_woodland_field",
+			"imageid8": "lepidodendron:triassic_woodland_field",
+			"imageid9": "lepidodendron:triassic_woodland_field",
+			"imageid10": "lepidodendron:triassic_woodland_field",
+			"imageid11": "lepidodendron:triassic_woodland_field",
+			"imageid12": "lepidodendron:triassic_woodland_field",
+			"imageid13": "lepidodendron:triassic_woodland_field",
+			"imageid14": "lepidodendron:triassic_woodland_field"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_woodland_field"
+			"biome": "lepidodendron:triassic_woodland_field",
+			"imageid0": "lepidodendron:triassic_woodland_field",
+			"imageid1": "lepidodendron:triassic_woodland_field",
+			"imageid2": "lepidodendron:triassic_woodland_field",
+			"imageid3": "lepidodendron:triassic_woodland_field",
+			"imageid4": "lepidodendron:triassic_woodland_field",
+			"imageid5": "lepidodendron:triassic_woodland_field",
+			"imageid6": "lepidodendron:triassic_woodland_field",
+			"imageid7": "lepidodendron:triassic_woodland_field",
+			"imageid8": "lepidodendron:triassic_woodland_field",
+			"imageid9": "lepidodendron:triassic_woodland_field",
+			"imageid10": "lepidodendron:triassic_woodland_field",
+			"imageid11": "lepidodendron:triassic_woodland_field",
+			"imageid12": "lepidodendron:triassic_woodland_field",
+			"imageid13": "lepidodendron:triassic_woodland_field",
+			"imageid14": "lepidodendron:triassic_woodland_field"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Ocean Escarpment",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_ocean_cliff"
+			"biome": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid0": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid1": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid2": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid3": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid4": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid5": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid6": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid7": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid8": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid9": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid10": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid11": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid12": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid13": "lepidodendron:carboniferous_ocean_cliff"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_ocean_cliff"
+			"biome": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid0": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid1": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid2": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid3": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid4": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid5": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid6": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid7": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid8": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid9": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid10": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid11": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid12": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid13": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid14": "lepidodendron:carboniferous_ocean_cliff"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_ocean_cliff"
+			"biome": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid0": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid1": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid2": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid3": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid4": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid5": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid6": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid7": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid8": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid9": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid10": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid11": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid12": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid13": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid14": "lepidodendron:carboniferous_ocean_cliff"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_ocean_cliff"
+			"biome": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid0": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid1": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid2": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid3": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid4": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid5": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid6": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid7": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid8": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid9": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid10": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid11": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid12": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid13": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid14": "lepidodendron:carboniferous_ocean_cliff"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_ocean_cliff"
+			"biome": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid0": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid1": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid2": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid3": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid4": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid5": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid6": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid7": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid8": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid9": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid10": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid11": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid12": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid13": "lepidodendron:carboniferous_ocean_cliff",
+			"imageid14": "lepidodendron:carboniferous_ocean_cliff"
 		}
 	]
 }

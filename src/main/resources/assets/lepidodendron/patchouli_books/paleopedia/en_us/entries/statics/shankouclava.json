@@ -1,0 +1,31 @@
+{
+	"name": "Shankouclava",
+	"read_by_default": true,
+	"icon": "lepidodendron:shankouclava",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_shankouclava",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_shankouclava",
+			"title": "Shankouclava",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Tunicata"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/shankouclava.png"],
+			"title": "S. anningense",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shankouclava",
+			"type": "text",
+			"text": "Shankouclava is a tunicate known from the Maotianshan Shales of China. It is the oldest accepted member of this group, dating to 518 million years ago. It had a soft sack-like body with inner organs also preserved.  They usually had body lengths of 2cm to 4cm in height. Some authors classify it as a stem-tunicate instead, due to morphological reasons."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_shankouclava",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

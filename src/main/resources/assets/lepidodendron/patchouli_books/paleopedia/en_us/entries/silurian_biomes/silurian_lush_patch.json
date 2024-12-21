@@ -2,7 +2,7 @@
 	"name": "Lush Patch",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
-	"category": "lepidodendron:silurian_biome",
+	"category": "lepidodendron:silurian/silurian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:silurian_lush_patch"
+			"biome": "lepidodendron:silurian_lush_patch",
+			"imageid0": "lepidodendron:silurian_lush_patch",
+			"imageid1": "lepidodendron:silurian_lush_patch",
+			"imageid2": "lepidodendron:silurian_lush_patch",
+			"imageid3": "lepidodendron:silurian_lush_patch",
+			"imageid4": "lepidodendron:silurian_lush_patch",
+			"imageid5": "lepidodendron:silurian_lush_patch",
+			"imageid6": "lepidodendron:silurian_lush_patch",
+			"imageid7": "lepidodendron:silurian_lush_patch",
+			"imageid8": "lepidodendron:silurian_lush_patch",
+			"imageid9": "lepidodendron:silurian_lush_patch",
+			"imageid10": "lepidodendron:silurian_lush_patch",
+			"imageid11": "lepidodendron:silurian_lush_patch",
+			"imageid12": "lepidodendron:silurian_lush_patch",
+			"imageid13": "lepidodendron:silurian_lush_patch"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:silurian_lush_patch"
+			"biome": "lepidodendron:silurian_lush_patch",
+			"imageid0": "lepidodendron:silurian_lush_patch",
+			"imageid1": "lepidodendron:silurian_lush_patch",
+			"imageid2": "lepidodendron:silurian_lush_patch",
+			"imageid3": "lepidodendron:silurian_lush_patch",
+			"imageid4": "lepidodendron:silurian_lush_patch",
+			"imageid5": "lepidodendron:silurian_lush_patch",
+			"imageid6": "lepidodendron:silurian_lush_patch",
+			"imageid7": "lepidodendron:silurian_lush_patch",
+			"imageid8": "lepidodendron:silurian_lush_patch",
+			"imageid9": "lepidodendron:silurian_lush_patch",
+			"imageid10": "lepidodendron:silurian_lush_patch",
+			"imageid11": "lepidodendron:silurian_lush_patch",
+			"imageid12": "lepidodendron:silurian_lush_patch",
+			"imageid13": "lepidodendron:silurian_lush_patch",
+			"imageid14": "lepidodendron:silurian_lush_patch"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:silurian_lush_patch"
+			"biome": "lepidodendron:silurian_lush_patch",
+			"imageid0": "lepidodendron:silurian_lush_patch",
+			"imageid1": "lepidodendron:silurian_lush_patch",
+			"imageid2": "lepidodendron:silurian_lush_patch",
+			"imageid3": "lepidodendron:silurian_lush_patch",
+			"imageid4": "lepidodendron:silurian_lush_patch",
+			"imageid5": "lepidodendron:silurian_lush_patch",
+			"imageid6": "lepidodendron:silurian_lush_patch",
+			"imageid7": "lepidodendron:silurian_lush_patch",
+			"imageid8": "lepidodendron:silurian_lush_patch",
+			"imageid9": "lepidodendron:silurian_lush_patch",
+			"imageid10": "lepidodendron:silurian_lush_patch",
+			"imageid11": "lepidodendron:silurian_lush_patch",
+			"imageid12": "lepidodendron:silurian_lush_patch",
+			"imageid13": "lepidodendron:silurian_lush_patch",
+			"imageid14": "lepidodendron:silurian_lush_patch"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:silurian_lush_patch"
+			"biome": "lepidodendron:silurian_lush_patch",
+			"imageid0": "lepidodendron:silurian_lush_patch",
+			"imageid1": "lepidodendron:silurian_lush_patch",
+			"imageid2": "lepidodendron:silurian_lush_patch",
+			"imageid3": "lepidodendron:silurian_lush_patch",
+			"imageid4": "lepidodendron:silurian_lush_patch",
+			"imageid5": "lepidodendron:silurian_lush_patch",
+			"imageid6": "lepidodendron:silurian_lush_patch",
+			"imageid7": "lepidodendron:silurian_lush_patch",
+			"imageid8": "lepidodendron:silurian_lush_patch",
+			"imageid9": "lepidodendron:silurian_lush_patch",
+			"imageid10": "lepidodendron:silurian_lush_patch",
+			"imageid11": "lepidodendron:silurian_lush_patch",
+			"imageid12": "lepidodendron:silurian_lush_patch",
+			"imageid13": "lepidodendron:silurian_lush_patch",
+			"imageid14": "lepidodendron:silurian_lush_patch"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:silurian_lush_patch"
+			"biome": "lepidodendron:silurian_lush_patch",
+			"imageid0": "lepidodendron:silurian_lush_patch",
+			"imageid1": "lepidodendron:silurian_lush_patch",
+			"imageid2": "lepidodendron:silurian_lush_patch",
+			"imageid3": "lepidodendron:silurian_lush_patch",
+			"imageid4": "lepidodendron:silurian_lush_patch",
+			"imageid5": "lepidodendron:silurian_lush_patch",
+			"imageid6": "lepidodendron:silurian_lush_patch",
+			"imageid7": "lepidodendron:silurian_lush_patch",
+			"imageid8": "lepidodendron:silurian_lush_patch",
+			"imageid9": "lepidodendron:silurian_lush_patch",
+			"imageid10": "lepidodendron:silurian_lush_patch",
+			"imageid11": "lepidodendron:silurian_lush_patch",
+			"imageid12": "lepidodendron:silurian_lush_patch",
+			"imageid13": "lepidodendron:silurian_lush_patch",
+			"imageid14": "lepidodendron:silurian_lush_patch"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Kodymirus",
 	"read_by_default": true,
 	"icon": "lepidodendron:kodymirus_raw",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kodymirus",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Pezopallichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pezopallichthys_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_pezopallichthys",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Pagea",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pagea_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_pagea",
 	"pages": [
 		{

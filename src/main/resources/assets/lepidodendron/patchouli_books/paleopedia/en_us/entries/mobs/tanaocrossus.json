@@ -2,7 +2,7 @@
 	"name": "Tanaocrossus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/tanaocrossus_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_tanaocrossus",
 	"pages": [
 		{

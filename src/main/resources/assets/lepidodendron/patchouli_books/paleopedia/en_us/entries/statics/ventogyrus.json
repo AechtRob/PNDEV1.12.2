@@ -1,0 +1,31 @@
+{
+	"name": "Ventogyrus",
+	"read_by_default": true,
+	"icon": "lepidodendron:ventogyrus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_ventogyrus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ventogyrus",
+			"title": "Ventogyrus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Vendobionta"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ventogyrus.png"],
+			"title": "V. chistyakovi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ventogyrus",
+			"type": "text",
+			"text": "Ventogyrus is an Ediacaran animal that lived a stationary life on the sea floor. On the tops of its stalks was a bulb and it is thought that the internal chambers of Ventogyrus were filled with gas or other bodily fluids, to help with buoyancy."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ventogyrus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -2,7 +2,7 @@
 	"name": "Euchambersia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/euchambersia_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_euchambersia",
 	"pages": [
 		{

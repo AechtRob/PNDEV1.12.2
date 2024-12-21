@@ -2,7 +2,7 @@
 	"name": "Temperoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_temperoceras",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_temperoceras",
 	"pages": [
 		{

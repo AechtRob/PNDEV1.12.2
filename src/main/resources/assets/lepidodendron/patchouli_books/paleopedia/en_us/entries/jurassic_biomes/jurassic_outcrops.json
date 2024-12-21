@@ -2,7 +2,7 @@
 	"name": "Outcrops",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_outcrops"
+			"biome": "lepidodendron:jurassic_outcrops",
+			"imageid0": "lepidodendron:jurassic_outcrops",
+			"imageid1": "lepidodendron:jurassic_outcrops",
+			"imageid2": "lepidodendron:jurassic_outcrops",
+			"imageid3": "lepidodendron:jurassic_outcrops",
+			"imageid4": "lepidodendron:jurassic_outcrops",
+			"imageid5": "lepidodendron:jurassic_outcrops",
+			"imageid6": "lepidodendron:jurassic_outcrops",
+			"imageid7": "lepidodendron:jurassic_outcrops",
+			"imageid8": "lepidodendron:jurassic_outcrops",
+			"imageid9": "lepidodendron:jurassic_outcrops",
+			"imageid10": "lepidodendron:jurassic_outcrops",
+			"imageid11": "lepidodendron:jurassic_outcrops",
+			"imageid12": "lepidodendron:jurassic_outcrops",
+			"imageid13": "lepidodendron:jurassic_outcrops"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_outcrops"
+			"biome": "lepidodendron:jurassic_outcrops",
+			"imageid0": "lepidodendron:jurassic_outcrops",
+			"imageid1": "lepidodendron:jurassic_outcrops",
+			"imageid2": "lepidodendron:jurassic_outcrops",
+			"imageid3": "lepidodendron:jurassic_outcrops",
+			"imageid4": "lepidodendron:jurassic_outcrops",
+			"imageid5": "lepidodendron:jurassic_outcrops",
+			"imageid6": "lepidodendron:jurassic_outcrops",
+			"imageid7": "lepidodendron:jurassic_outcrops",
+			"imageid8": "lepidodendron:jurassic_outcrops",
+			"imageid9": "lepidodendron:jurassic_outcrops",
+			"imageid10": "lepidodendron:jurassic_outcrops",
+			"imageid11": "lepidodendron:jurassic_outcrops",
+			"imageid12": "lepidodendron:jurassic_outcrops",
+			"imageid13": "lepidodendron:jurassic_outcrops",
+			"imageid14": "lepidodendron:jurassic_outcrops"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_outcrops"
+			"biome": "lepidodendron:jurassic_outcrops",
+			"imageid0": "lepidodendron:jurassic_outcrops",
+			"imageid1": "lepidodendron:jurassic_outcrops",
+			"imageid2": "lepidodendron:jurassic_outcrops",
+			"imageid3": "lepidodendron:jurassic_outcrops",
+			"imageid4": "lepidodendron:jurassic_outcrops",
+			"imageid5": "lepidodendron:jurassic_outcrops",
+			"imageid6": "lepidodendron:jurassic_outcrops",
+			"imageid7": "lepidodendron:jurassic_outcrops",
+			"imageid8": "lepidodendron:jurassic_outcrops",
+			"imageid9": "lepidodendron:jurassic_outcrops",
+			"imageid10": "lepidodendron:jurassic_outcrops",
+			"imageid11": "lepidodendron:jurassic_outcrops",
+			"imageid12": "lepidodendron:jurassic_outcrops",
+			"imageid13": "lepidodendron:jurassic_outcrops",
+			"imageid14": "lepidodendron:jurassic_outcrops"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_outcrops"
+			"biome": "lepidodendron:jurassic_outcrops",
+			"imageid0": "lepidodendron:jurassic_outcrops",
+			"imageid1": "lepidodendron:jurassic_outcrops",
+			"imageid2": "lepidodendron:jurassic_outcrops",
+			"imageid3": "lepidodendron:jurassic_outcrops",
+			"imageid4": "lepidodendron:jurassic_outcrops",
+			"imageid5": "lepidodendron:jurassic_outcrops",
+			"imageid6": "lepidodendron:jurassic_outcrops",
+			"imageid7": "lepidodendron:jurassic_outcrops",
+			"imageid8": "lepidodendron:jurassic_outcrops",
+			"imageid9": "lepidodendron:jurassic_outcrops",
+			"imageid10": "lepidodendron:jurassic_outcrops",
+			"imageid11": "lepidodendron:jurassic_outcrops",
+			"imageid12": "lepidodendron:jurassic_outcrops",
+			"imageid13": "lepidodendron:jurassic_outcrops",
+			"imageid14": "lepidodendron:jurassic_outcrops"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_outcrops"
+			"biome": "lepidodendron:jurassic_outcrops",
+			"imageid0": "lepidodendron:jurassic_outcrops",
+			"imageid1": "lepidodendron:jurassic_outcrops",
+			"imageid2": "lepidodendron:jurassic_outcrops",
+			"imageid3": "lepidodendron:jurassic_outcrops",
+			"imageid4": "lepidodendron:jurassic_outcrops",
+			"imageid5": "lepidodendron:jurassic_outcrops",
+			"imageid6": "lepidodendron:jurassic_outcrops",
+			"imageid7": "lepidodendron:jurassic_outcrops",
+			"imageid8": "lepidodendron:jurassic_outcrops",
+			"imageid9": "lepidodendron:jurassic_outcrops",
+			"imageid10": "lepidodendron:jurassic_outcrops",
+			"imageid11": "lepidodendron:jurassic_outcrops",
+			"imageid12": "lepidodendron:jurassic_outcrops",
+			"imageid13": "lepidodendron:jurassic_outcrops",
+			"imageid14": "lepidodendron:jurassic_outcrops"
 		}
 	]
 }

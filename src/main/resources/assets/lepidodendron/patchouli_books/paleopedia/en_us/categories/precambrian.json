@@ -1,6 +1,6 @@
 {
     "name": "Precambrian",
-    "description": "$(l)The wacky life before the Paleozoic Era. This section contains all Precambrian lifeforms.$(br2)$(l)Portal Block: Stromatolite",
+    "description": "4,567.3 - 538.8 mya$(br2)$(l)The wacky life before the Paleozoic Era. This section contains all Precambrian lifeforms.$(br2)$(l)Portal Block: Stromatolite",
     "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
     "sortnum": 0
 }

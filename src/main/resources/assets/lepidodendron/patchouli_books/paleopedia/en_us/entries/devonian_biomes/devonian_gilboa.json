@@ -2,7 +2,7 @@
 	"name": "Wattieza Forest",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_gilboa"
+			"biome": "lepidodendron:devonian_gilboa",
+			"imageid0": "lepidodendron:devonian_gilboa",
+			"imageid1": "lepidodendron:devonian_gilboa",
+			"imageid2": "lepidodendron:devonian_gilboa",
+			"imageid3": "lepidodendron:devonian_gilboa",
+			"imageid4": "lepidodendron:devonian_gilboa",
+			"imageid5": "lepidodendron:devonian_gilboa",
+			"imageid6": "lepidodendron:devonian_gilboa",
+			"imageid7": "lepidodendron:devonian_gilboa",
+			"imageid8": "lepidodendron:devonian_gilboa",
+			"imageid9": "lepidodendron:devonian_gilboa",
+			"imageid10": "lepidodendron:devonian_gilboa",
+			"imageid11": "lepidodendron:devonian_gilboa",
+			"imageid12": "lepidodendron:devonian_gilboa",
+			"imageid13": "lepidodendron:devonian_gilboa"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_gilboa"
+			"biome": "lepidodendron:devonian_gilboa",
+			"imageid0": "lepidodendron:devonian_gilboa",
+			"imageid1": "lepidodendron:devonian_gilboa",
+			"imageid2": "lepidodendron:devonian_gilboa",
+			"imageid3": "lepidodendron:devonian_gilboa",
+			"imageid4": "lepidodendron:devonian_gilboa",
+			"imageid5": "lepidodendron:devonian_gilboa",
+			"imageid6": "lepidodendron:devonian_gilboa",
+			"imageid7": "lepidodendron:devonian_gilboa",
+			"imageid8": "lepidodendron:devonian_gilboa",
+			"imageid9": "lepidodendron:devonian_gilboa",
+			"imageid10": "lepidodendron:devonian_gilboa",
+			"imageid11": "lepidodendron:devonian_gilboa",
+			"imageid12": "lepidodendron:devonian_gilboa",
+			"imageid13": "lepidodendron:devonian_gilboa",
+			"imageid14": "lepidodendron:devonian_gilboa"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_gilboa"
+			"biome": "lepidodendron:devonian_gilboa",
+			"imageid0": "lepidodendron:devonian_gilboa",
+			"imageid1": "lepidodendron:devonian_gilboa",
+			"imageid2": "lepidodendron:devonian_gilboa",
+			"imageid3": "lepidodendron:devonian_gilboa",
+			"imageid4": "lepidodendron:devonian_gilboa",
+			"imageid5": "lepidodendron:devonian_gilboa",
+			"imageid6": "lepidodendron:devonian_gilboa",
+			"imageid7": "lepidodendron:devonian_gilboa",
+			"imageid8": "lepidodendron:devonian_gilboa",
+			"imageid9": "lepidodendron:devonian_gilboa",
+			"imageid10": "lepidodendron:devonian_gilboa",
+			"imageid11": "lepidodendron:devonian_gilboa",
+			"imageid12": "lepidodendron:devonian_gilboa",
+			"imageid13": "lepidodendron:devonian_gilboa",
+			"imageid14": "lepidodendron:devonian_gilboa"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_gilboa"
+			"biome": "lepidodendron:devonian_gilboa",
+			"imageid0": "lepidodendron:devonian_gilboa",
+			"imageid1": "lepidodendron:devonian_gilboa",
+			"imageid2": "lepidodendron:devonian_gilboa",
+			"imageid3": "lepidodendron:devonian_gilboa",
+			"imageid4": "lepidodendron:devonian_gilboa",
+			"imageid5": "lepidodendron:devonian_gilboa",
+			"imageid6": "lepidodendron:devonian_gilboa",
+			"imageid7": "lepidodendron:devonian_gilboa",
+			"imageid8": "lepidodendron:devonian_gilboa",
+			"imageid9": "lepidodendron:devonian_gilboa",
+			"imageid10": "lepidodendron:devonian_gilboa",
+			"imageid11": "lepidodendron:devonian_gilboa",
+			"imageid12": "lepidodendron:devonian_gilboa",
+			"imageid13": "lepidodendron:devonian_gilboa",
+			"imageid14": "lepidodendron:devonian_gilboa"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_gilboa"
+			"biome": "lepidodendron:devonian_gilboa",
+			"imageid0": "lepidodendron:devonian_gilboa",
+			"imageid1": "lepidodendron:devonian_gilboa",
+			"imageid2": "lepidodendron:devonian_gilboa",
+			"imageid3": "lepidodendron:devonian_gilboa",
+			"imageid4": "lepidodendron:devonian_gilboa",
+			"imageid5": "lepidodendron:devonian_gilboa",
+			"imageid6": "lepidodendron:devonian_gilboa",
+			"imageid7": "lepidodendron:devonian_gilboa",
+			"imageid8": "lepidodendron:devonian_gilboa",
+			"imageid9": "lepidodendron:devonian_gilboa",
+			"imageid10": "lepidodendron:devonian_gilboa",
+			"imageid11": "lepidodendron:devonian_gilboa",
+			"imageid12": "lepidodendron:devonian_gilboa",
+			"imageid13": "lepidodendron:devonian_gilboa",
+			"imageid14": "lepidodendron:devonian_gilboa"
 		}
 	]
 }

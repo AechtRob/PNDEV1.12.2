@@ -2,7 +2,7 @@
 	"name": "Urosthenes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/urosthenes_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_urosthenes",
 	"pages": [
 		{

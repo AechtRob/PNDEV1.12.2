@@ -2,7 +2,7 @@
 	"name": "Wooded Wetland Hummocks",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_wetlands_hummocks"
+			"biome": "lepidodendron:permian_wetlands_hummocks",
+			"imageid0": "lepidodendron:permian_wetlands_hummocks",
+			"imageid1": "lepidodendron:permian_wetlands_hummocks",
+			"imageid2": "lepidodendron:permian_wetlands_hummocks",
+			"imageid3": "lepidodendron:permian_wetlands_hummocks",
+			"imageid4": "lepidodendron:permian_wetlands_hummocks",
+			"imageid5": "lepidodendron:permian_wetlands_hummocks",
+			"imageid6": "lepidodendron:permian_wetlands_hummocks",
+			"imageid7": "lepidodendron:permian_wetlands_hummocks",
+			"imageid8": "lepidodendron:permian_wetlands_hummocks",
+			"imageid9": "lepidodendron:permian_wetlands_hummocks",
+			"imageid10": "lepidodendron:permian_wetlands_hummocks",
+			"imageid11": "lepidodendron:permian_wetlands_hummocks",
+			"imageid12": "lepidodendron:permian_wetlands_hummocks",
+			"imageid13": "lepidodendron:permian_wetlands_hummocks"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_wetlands_hummocks"
+			"biome": "lepidodendron:permian_wetlands_hummocks",
+			"imageid0": "lepidodendron:permian_wetlands_hummocks",
+			"imageid1": "lepidodendron:permian_wetlands_hummocks",
+			"imageid2": "lepidodendron:permian_wetlands_hummocks",
+			"imageid3": "lepidodendron:permian_wetlands_hummocks",
+			"imageid4": "lepidodendron:permian_wetlands_hummocks",
+			"imageid5": "lepidodendron:permian_wetlands_hummocks",
+			"imageid6": "lepidodendron:permian_wetlands_hummocks",
+			"imageid7": "lepidodendron:permian_wetlands_hummocks",
+			"imageid8": "lepidodendron:permian_wetlands_hummocks",
+			"imageid9": "lepidodendron:permian_wetlands_hummocks",
+			"imageid10": "lepidodendron:permian_wetlands_hummocks",
+			"imageid11": "lepidodendron:permian_wetlands_hummocks",
+			"imageid12": "lepidodendron:permian_wetlands_hummocks",
+			"imageid13": "lepidodendron:permian_wetlands_hummocks",
+			"imageid14": "lepidodendron:permian_wetlands_hummocks"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_wetlands_hummocks"
+			"biome": "lepidodendron:permian_wetlands_hummocks",
+			"imageid0": "lepidodendron:permian_wetlands_hummocks",
+			"imageid1": "lepidodendron:permian_wetlands_hummocks",
+			"imageid2": "lepidodendron:permian_wetlands_hummocks",
+			"imageid3": "lepidodendron:permian_wetlands_hummocks",
+			"imageid4": "lepidodendron:permian_wetlands_hummocks",
+			"imageid5": "lepidodendron:permian_wetlands_hummocks",
+			"imageid6": "lepidodendron:permian_wetlands_hummocks",
+			"imageid7": "lepidodendron:permian_wetlands_hummocks",
+			"imageid8": "lepidodendron:permian_wetlands_hummocks",
+			"imageid9": "lepidodendron:permian_wetlands_hummocks",
+			"imageid10": "lepidodendron:permian_wetlands_hummocks",
+			"imageid11": "lepidodendron:permian_wetlands_hummocks",
+			"imageid12": "lepidodendron:permian_wetlands_hummocks",
+			"imageid13": "lepidodendron:permian_wetlands_hummocks",
+			"imageid14": "lepidodendron:permian_wetlands_hummocks"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_wetlands_hummocks"
+			"biome": "lepidodendron:permian_wetlands_hummocks",
+			"imageid0": "lepidodendron:permian_wetlands_hummocks",
+			"imageid1": "lepidodendron:permian_wetlands_hummocks",
+			"imageid2": "lepidodendron:permian_wetlands_hummocks",
+			"imageid3": "lepidodendron:permian_wetlands_hummocks",
+			"imageid4": "lepidodendron:permian_wetlands_hummocks",
+			"imageid5": "lepidodendron:permian_wetlands_hummocks",
+			"imageid6": "lepidodendron:permian_wetlands_hummocks",
+			"imageid7": "lepidodendron:permian_wetlands_hummocks",
+			"imageid8": "lepidodendron:permian_wetlands_hummocks",
+			"imageid9": "lepidodendron:permian_wetlands_hummocks",
+			"imageid10": "lepidodendron:permian_wetlands_hummocks",
+			"imageid11": "lepidodendron:permian_wetlands_hummocks",
+			"imageid12": "lepidodendron:permian_wetlands_hummocks",
+			"imageid13": "lepidodendron:permian_wetlands_hummocks",
+			"imageid14": "lepidodendron:permian_wetlands_hummocks"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_wetlands_hummocks"
+			"biome": "lepidodendron:permian_wetlands_hummocks",
+			"imageid0": "lepidodendron:permian_wetlands_hummocks",
+			"imageid1": "lepidodendron:permian_wetlands_hummocks",
+			"imageid2": "lepidodendron:permian_wetlands_hummocks",
+			"imageid3": "lepidodendron:permian_wetlands_hummocks",
+			"imageid4": "lepidodendron:permian_wetlands_hummocks",
+			"imageid5": "lepidodendron:permian_wetlands_hummocks",
+			"imageid6": "lepidodendron:permian_wetlands_hummocks",
+			"imageid7": "lepidodendron:permian_wetlands_hummocks",
+			"imageid8": "lepidodendron:permian_wetlands_hummocks",
+			"imageid9": "lepidodendron:permian_wetlands_hummocks",
+			"imageid10": "lepidodendron:permian_wetlands_hummocks",
+			"imageid11": "lepidodendron:permian_wetlands_hummocks",
+			"imageid12": "lepidodendron:permian_wetlands_hummocks",
+			"imageid13": "lepidodendron:permian_wetlands_hummocks",
+			"imageid14": "lepidodendron:permian_wetlands_hummocks"
 		}
 	]
 }

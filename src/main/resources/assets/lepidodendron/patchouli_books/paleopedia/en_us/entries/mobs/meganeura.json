@@ -2,7 +2,7 @@
 	"name": "Meganeura",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/meganeura_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_meganeura",
 	"pages": [
 		{

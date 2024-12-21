@@ -2,7 +2,7 @@
 	"name": "Cool Cordaites Woodland",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_cold_woodland"
+			"biome": "lepidodendron:carboniferous_cold_woodland",
+			"imageid0": "lepidodendron:carboniferous_cold_woodland",
+			"imageid1": "lepidodendron:carboniferous_cold_woodland",
+			"imageid2": "lepidodendron:carboniferous_cold_woodland",
+			"imageid3": "lepidodendron:carboniferous_cold_woodland",
+			"imageid4": "lepidodendron:carboniferous_cold_woodland",
+			"imageid5": "lepidodendron:carboniferous_cold_woodland",
+			"imageid6": "lepidodendron:carboniferous_cold_woodland",
+			"imageid7": "lepidodendron:carboniferous_cold_woodland",
+			"imageid8": "lepidodendron:carboniferous_cold_woodland",
+			"imageid9": "lepidodendron:carboniferous_cold_woodland",
+			"imageid10": "lepidodendron:carboniferous_cold_woodland",
+			"imageid11": "lepidodendron:carboniferous_cold_woodland",
+			"imageid12": "lepidodendron:carboniferous_cold_woodland",
+			"imageid13": "lepidodendron:carboniferous_cold_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_cold_woodland"
+			"biome": "lepidodendron:carboniferous_cold_woodland",
+			"imageid0": "lepidodendron:carboniferous_cold_woodland",
+			"imageid1": "lepidodendron:carboniferous_cold_woodland",
+			"imageid2": "lepidodendron:carboniferous_cold_woodland",
+			"imageid3": "lepidodendron:carboniferous_cold_woodland",
+			"imageid4": "lepidodendron:carboniferous_cold_woodland",
+			"imageid5": "lepidodendron:carboniferous_cold_woodland",
+			"imageid6": "lepidodendron:carboniferous_cold_woodland",
+			"imageid7": "lepidodendron:carboniferous_cold_woodland",
+			"imageid8": "lepidodendron:carboniferous_cold_woodland",
+			"imageid9": "lepidodendron:carboniferous_cold_woodland",
+			"imageid10": "lepidodendron:carboniferous_cold_woodland",
+			"imageid11": "lepidodendron:carboniferous_cold_woodland",
+			"imageid12": "lepidodendron:carboniferous_cold_woodland",
+			"imageid13": "lepidodendron:carboniferous_cold_woodland",
+			"imageid14": "lepidodendron:carboniferous_cold_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_cold_woodland"
+			"biome": "lepidodendron:carboniferous_cold_woodland",
+			"imageid0": "lepidodendron:carboniferous_cold_woodland",
+			"imageid1": "lepidodendron:carboniferous_cold_woodland",
+			"imageid2": "lepidodendron:carboniferous_cold_woodland",
+			"imageid3": "lepidodendron:carboniferous_cold_woodland",
+			"imageid4": "lepidodendron:carboniferous_cold_woodland",
+			"imageid5": "lepidodendron:carboniferous_cold_woodland",
+			"imageid6": "lepidodendron:carboniferous_cold_woodland",
+			"imageid7": "lepidodendron:carboniferous_cold_woodland",
+			"imageid8": "lepidodendron:carboniferous_cold_woodland",
+			"imageid9": "lepidodendron:carboniferous_cold_woodland",
+			"imageid10": "lepidodendron:carboniferous_cold_woodland",
+			"imageid11": "lepidodendron:carboniferous_cold_woodland",
+			"imageid12": "lepidodendron:carboniferous_cold_woodland",
+			"imageid13": "lepidodendron:carboniferous_cold_woodland",
+			"imageid14": "lepidodendron:carboniferous_cold_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_cold_woodland"
+			"biome": "lepidodendron:carboniferous_cold_woodland",
+			"imageid0": "lepidodendron:carboniferous_cold_woodland",
+			"imageid1": "lepidodendron:carboniferous_cold_woodland",
+			"imageid2": "lepidodendron:carboniferous_cold_woodland",
+			"imageid3": "lepidodendron:carboniferous_cold_woodland",
+			"imageid4": "lepidodendron:carboniferous_cold_woodland",
+			"imageid5": "lepidodendron:carboniferous_cold_woodland",
+			"imageid6": "lepidodendron:carboniferous_cold_woodland",
+			"imageid7": "lepidodendron:carboniferous_cold_woodland",
+			"imageid8": "lepidodendron:carboniferous_cold_woodland",
+			"imageid9": "lepidodendron:carboniferous_cold_woodland",
+			"imageid10": "lepidodendron:carboniferous_cold_woodland",
+			"imageid11": "lepidodendron:carboniferous_cold_woodland",
+			"imageid12": "lepidodendron:carboniferous_cold_woodland",
+			"imageid13": "lepidodendron:carboniferous_cold_woodland",
+			"imageid14": "lepidodendron:carboniferous_cold_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_cold_woodland"
+			"biome": "lepidodendron:carboniferous_cold_woodland",
+			"imageid0": "lepidodendron:carboniferous_cold_woodland",
+			"imageid1": "lepidodendron:carboniferous_cold_woodland",
+			"imageid2": "lepidodendron:carboniferous_cold_woodland",
+			"imageid3": "lepidodendron:carboniferous_cold_woodland",
+			"imageid4": "lepidodendron:carboniferous_cold_woodland",
+			"imageid5": "lepidodendron:carboniferous_cold_woodland",
+			"imageid6": "lepidodendron:carboniferous_cold_woodland",
+			"imageid7": "lepidodendron:carboniferous_cold_woodland",
+			"imageid8": "lepidodendron:carboniferous_cold_woodland",
+			"imageid9": "lepidodendron:carboniferous_cold_woodland",
+			"imageid10": "lepidodendron:carboniferous_cold_woodland",
+			"imageid11": "lepidodendron:carboniferous_cold_woodland",
+			"imageid12": "lepidodendron:carboniferous_cold_woodland",
+			"imageid13": "lepidodendron:carboniferous_cold_woodland",
+			"imageid14": "lepidodendron:carboniferous_cold_woodland"
 		}
 	]
 }

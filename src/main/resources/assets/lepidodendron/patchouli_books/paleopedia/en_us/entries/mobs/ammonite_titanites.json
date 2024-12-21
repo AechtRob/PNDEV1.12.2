@@ -2,7 +2,7 @@
 	"name": "Titanites",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_titanites",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_titanites",
 	"pages": [
 		{

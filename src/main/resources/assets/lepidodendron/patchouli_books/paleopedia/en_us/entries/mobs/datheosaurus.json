@@ -2,7 +2,7 @@
 	"name": "Datheosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/datheosaurus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_datheosaurus",
 	"pages": [
 		{

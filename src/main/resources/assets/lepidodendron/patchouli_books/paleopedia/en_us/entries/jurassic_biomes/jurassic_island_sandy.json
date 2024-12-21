@@ -2,7 +2,7 @@
 	"name": "Sandy Atolls",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_island_sandy"
+			"biome": "lepidodendron:jurassic_island_sandy",
+			"imageid0": "lepidodendron:jurassic_island_sandy",
+			"imageid1": "lepidodendron:jurassic_island_sandy",
+			"imageid2": "lepidodendron:jurassic_island_sandy",
+			"imageid3": "lepidodendron:jurassic_island_sandy",
+			"imageid4": "lepidodendron:jurassic_island_sandy",
+			"imageid5": "lepidodendron:jurassic_island_sandy",
+			"imageid6": "lepidodendron:jurassic_island_sandy",
+			"imageid7": "lepidodendron:jurassic_island_sandy",
+			"imageid8": "lepidodendron:jurassic_island_sandy",
+			"imageid9": "lepidodendron:jurassic_island_sandy",
+			"imageid10": "lepidodendron:jurassic_island_sandy",
+			"imageid11": "lepidodendron:jurassic_island_sandy",
+			"imageid12": "lepidodendron:jurassic_island_sandy",
+			"imageid13": "lepidodendron:jurassic_island_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_island_sandy"
+			"biome": "lepidodendron:jurassic_island_sandy",
+			"imageid0": "lepidodendron:jurassic_island_sandy",
+			"imageid1": "lepidodendron:jurassic_island_sandy",
+			"imageid2": "lepidodendron:jurassic_island_sandy",
+			"imageid3": "lepidodendron:jurassic_island_sandy",
+			"imageid4": "lepidodendron:jurassic_island_sandy",
+			"imageid5": "lepidodendron:jurassic_island_sandy",
+			"imageid6": "lepidodendron:jurassic_island_sandy",
+			"imageid7": "lepidodendron:jurassic_island_sandy",
+			"imageid8": "lepidodendron:jurassic_island_sandy",
+			"imageid9": "lepidodendron:jurassic_island_sandy",
+			"imageid10": "lepidodendron:jurassic_island_sandy",
+			"imageid11": "lepidodendron:jurassic_island_sandy",
+			"imageid12": "lepidodendron:jurassic_island_sandy",
+			"imageid13": "lepidodendron:jurassic_island_sandy",
+			"imageid14": "lepidodendron:jurassic_island_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_island_sandy"
+			"biome": "lepidodendron:jurassic_island_sandy",
+			"imageid0": "lepidodendron:jurassic_island_sandy",
+			"imageid1": "lepidodendron:jurassic_island_sandy",
+			"imageid2": "lepidodendron:jurassic_island_sandy",
+			"imageid3": "lepidodendron:jurassic_island_sandy",
+			"imageid4": "lepidodendron:jurassic_island_sandy",
+			"imageid5": "lepidodendron:jurassic_island_sandy",
+			"imageid6": "lepidodendron:jurassic_island_sandy",
+			"imageid7": "lepidodendron:jurassic_island_sandy",
+			"imageid8": "lepidodendron:jurassic_island_sandy",
+			"imageid9": "lepidodendron:jurassic_island_sandy",
+			"imageid10": "lepidodendron:jurassic_island_sandy",
+			"imageid11": "lepidodendron:jurassic_island_sandy",
+			"imageid12": "lepidodendron:jurassic_island_sandy",
+			"imageid13": "lepidodendron:jurassic_island_sandy",
+			"imageid14": "lepidodendron:jurassic_island_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_island_sandy"
+			"biome": "lepidodendron:jurassic_island_sandy",
+			"imageid0": "lepidodendron:jurassic_island_sandy",
+			"imageid1": "lepidodendron:jurassic_island_sandy",
+			"imageid2": "lepidodendron:jurassic_island_sandy",
+			"imageid3": "lepidodendron:jurassic_island_sandy",
+			"imageid4": "lepidodendron:jurassic_island_sandy",
+			"imageid5": "lepidodendron:jurassic_island_sandy",
+			"imageid6": "lepidodendron:jurassic_island_sandy",
+			"imageid7": "lepidodendron:jurassic_island_sandy",
+			"imageid8": "lepidodendron:jurassic_island_sandy",
+			"imageid9": "lepidodendron:jurassic_island_sandy",
+			"imageid10": "lepidodendron:jurassic_island_sandy",
+			"imageid11": "lepidodendron:jurassic_island_sandy",
+			"imageid12": "lepidodendron:jurassic_island_sandy",
+			"imageid13": "lepidodendron:jurassic_island_sandy",
+			"imageid14": "lepidodendron:jurassic_island_sandy"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_island_sandy"
+			"biome": "lepidodendron:jurassic_island_sandy",
+			"imageid0": "lepidodendron:jurassic_island_sandy",
+			"imageid1": "lepidodendron:jurassic_island_sandy",
+			"imageid2": "lepidodendron:jurassic_island_sandy",
+			"imageid3": "lepidodendron:jurassic_island_sandy",
+			"imageid4": "lepidodendron:jurassic_island_sandy",
+			"imageid5": "lepidodendron:jurassic_island_sandy",
+			"imageid6": "lepidodendron:jurassic_island_sandy",
+			"imageid7": "lepidodendron:jurassic_island_sandy",
+			"imageid8": "lepidodendron:jurassic_island_sandy",
+			"imageid9": "lepidodendron:jurassic_island_sandy",
+			"imageid10": "lepidodendron:jurassic_island_sandy",
+			"imageid11": "lepidodendron:jurassic_island_sandy",
+			"imageid12": "lepidodendron:jurassic_island_sandy",
+			"imageid13": "lepidodendron:jurassic_island_sandy",
+			"imageid14": "lepidodendron:jurassic_island_sandy"
 		}
 	]
 }

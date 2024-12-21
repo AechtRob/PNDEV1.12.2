@@ -1,0 +1,31 @@
+{
+	"name": "Pirania",
+	"read_by_default": true,
+	"icon": "lepidodendron:pirania",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_pirania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pirania",
+			"title": "Pirania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian-Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Demospongea$(br)>Protomonaxonida$(br)>Piraniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Pirania.png"],
+			"title": "Pirania sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pirania",
+			"type": "text",
+			"text": "Pirania is an extinct Cambrian to Ordovician sponge. It had several spiny extensions from its main body and lived attached to the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pirania",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
