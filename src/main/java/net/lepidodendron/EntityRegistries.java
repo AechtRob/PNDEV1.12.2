@@ -1069,9 +1069,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_berthasaura", EntityPrehistoricFloraBerthasaura.class, LepidodendronMod.ENTITY_BERTHASAURA, 64,-1923284,-5911988);
         registerEntity("prehistoric_flora_tessarolax", EntityPrehistoricFloraTessarolax.class, LepidodendronMod.ENTITY_TESSAROLAX, 48,-3900871,-8630207);
         registerEntity("prehistoric_flora_vinctifer", EntityPrehistoricFloraVinctifer.class, LepidodendronMod.ENTITY_VINCTIFER, 48,-6856391,-4742005);
-//        registerEntity("prehistoric_flora_dimitobelus", EntityPrehistoricFloraDimitobelus.class, LepidodendronMod.ENTITY_DIMITOBELUS, 48,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_hamulina", EntityPrehistoricFloraHamulina.class, LepidodendronMod.ENTITY_HAMULINA, 48,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_hypophylloceras", EntityPrehistoricFloraHypophylloceras.class, LepidodendronMod.ENTITY_HYPOPHYLLOCERAS, 48,-12835809,-2640792);
+        registerEntity("prehistoric_flora_dimitobelus", EntityPrehistoricFloraDimitobelus.class, LepidodendronMod.ENTITY_DIMITOBELUS, 48,-10531445,-9032124);
+        registerEntity("prehistoric_flora_hamulina", EntityPrehistoricFloraHamulina.class, LepidodendronMod.ENTITY_HAMULINA, 64,-11112613,-3564653);
+        registerEntity("prehistoric_flora_hypophylloceras", EntityPrehistoricFloraHypophylloceras.class, LepidodendronMod.ENTITY_HYPOPHYLLOCERAS, 48,-6737101,-15608855);
         registerEntity("prehistoric_flora_hemiaster", EntityPrehistoricFloraHemiaster.class, LepidodendronMod.ENTITY_HEMIASTER, 48,-13684945,-7839088);
 
 //        registerEntity("prehistoric_flora_hyphalosaurus", EntityPrehistoricFloraHyphalosaurus.class, LepidodendronMod.ENTITY_HYPHALOSAURUS, 48,-12835809,-2640792);
