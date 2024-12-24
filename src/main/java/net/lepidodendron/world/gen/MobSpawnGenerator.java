@@ -6,6 +6,7 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -80,7 +81,7 @@ public class MobSpawnGenerator extends WorldGenerator
 				if (waterDepthCheckMin & waterDepthCheckMax) {
 					if (this.state.getBlock().canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 					&& ((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-							|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
+							|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK && worldIn.getBlockState(pos).getBlock() != Blocks.MAGMA)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 							|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)

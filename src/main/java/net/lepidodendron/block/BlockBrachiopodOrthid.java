@@ -29,6 +29,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -300,7 +301,7 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 									}
 									if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
 											((world.getBlockState(pos1).getMaterial() == Material.SAND)
-													|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+													|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 													|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 													|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
 													|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)

@@ -263,7 +263,7 @@ public class BlockRugosa5 extends ElementsLepidodendronMod.ModElement {
 							BlockPos pos1 = blockpos1.down();
 							if (waterDepthCheckMin & waterDepthCheckMax) {
 								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
-										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
@@ -288,7 +288,7 @@ public class BlockRugosa5 extends ElementsLepidodendronMod.ModElement {
 										}
 										if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
 												((world.getBlockState(pos1).getMaterial() == Material.SAND)
-														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+														|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 														|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 														|| (world.getBlockState(pos1).getMaterial() == Material.CLAY)
 														|| (world.getBlockState(pos1).getMaterial() == Material.GLASS)

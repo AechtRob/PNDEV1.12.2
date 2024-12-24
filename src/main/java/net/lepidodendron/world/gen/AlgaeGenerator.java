@@ -13,6 +13,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -259,7 +260,7 @@ public class AlgaeGenerator extends WorldGenerator
 						EnumFacing enumfacing = EnumFacing.UP;
 						BlockPos pos = new BlockPos(j, k - 1, l);
 						if (((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-								|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
+								|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK && worldIn.getBlockState(pos).getBlock() != Blocks.MAGMA)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)

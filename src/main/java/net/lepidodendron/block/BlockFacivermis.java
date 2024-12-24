@@ -229,7 +229,7 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 							}
 							if (waterDepthCheckMin & waterDepthCheckMax) {
 								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
-										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
