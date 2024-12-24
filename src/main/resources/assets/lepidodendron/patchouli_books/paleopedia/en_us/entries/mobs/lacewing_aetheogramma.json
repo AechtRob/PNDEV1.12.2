@@ -2,7 +2,7 @@
 	"name": "Aetheogramma",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/lacewing_aetheogramma_icon.png",
-	"category": "lepidodendron:cretaceousearly_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_lacewing_aetheogramma",
 	"pages": [
 		{

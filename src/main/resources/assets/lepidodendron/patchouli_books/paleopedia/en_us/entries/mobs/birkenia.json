@@ -2,7 +2,7 @@
 	"name": "Birkenia",
 	"read_by_default": true,
 	"icon": "lepidodendron:birkenia_raw",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_birkenia",
 	"pages": [
 		{

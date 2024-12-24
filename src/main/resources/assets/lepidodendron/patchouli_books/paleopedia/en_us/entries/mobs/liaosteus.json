@@ -2,7 +2,7 @@
 	"name": "Liaosteus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/liaosteus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_liaosteus",
 	"pages": [
 		{

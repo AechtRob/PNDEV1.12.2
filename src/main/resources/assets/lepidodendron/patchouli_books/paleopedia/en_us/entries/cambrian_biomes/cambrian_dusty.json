@@ -2,7 +2,7 @@
 	"name": "Dusty Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_dusty"
+			"biome": "lepidodendron:cambrian_dusty",
+			"imageid0": "lepidodendron:cambrian_dusty",
+			"imageid1": "lepidodendron:cambrian_dusty",
+			"imageid2": "lepidodendron:cambrian_dusty",
+			"imageid3": "lepidodendron:cambrian_dusty",
+			"imageid4": "lepidodendron:cambrian_dusty",
+			"imageid5": "lepidodendron:cambrian_dusty",
+			"imageid6": "lepidodendron:cambrian_dusty",
+			"imageid7": "lepidodendron:cambrian_dusty",
+			"imageid8": "lepidodendron:cambrian_dusty",
+			"imageid9": "lepidodendron:cambrian_dusty",
+			"imageid10": "lepidodendron:cambrian_dusty",
+			"imageid11": "lepidodendron:cambrian_dusty",
+			"imageid12": "lepidodendron:cambrian_dusty",
+			"imageid13": "lepidodendron:cambrian_dusty"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_dusty"
+			"biome": "lepidodendron:cambrian_dusty",
+			"imageid0": "lepidodendron:cambrian_dusty",
+			"imageid1": "lepidodendron:cambrian_dusty",
+			"imageid2": "lepidodendron:cambrian_dusty",
+			"imageid3": "lepidodendron:cambrian_dusty",
+			"imageid4": "lepidodendron:cambrian_dusty",
+			"imageid5": "lepidodendron:cambrian_dusty",
+			"imageid6": "lepidodendron:cambrian_dusty",
+			"imageid7": "lepidodendron:cambrian_dusty",
+			"imageid8": "lepidodendron:cambrian_dusty",
+			"imageid9": "lepidodendron:cambrian_dusty",
+			"imageid10": "lepidodendron:cambrian_dusty",
+			"imageid11": "lepidodendron:cambrian_dusty",
+			"imageid12": "lepidodendron:cambrian_dusty",
+			"imageid13": "lepidodendron:cambrian_dusty",
+			"imageid14": "lepidodendron:cambrian_dusty"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_dusty"
+			"biome": "lepidodendron:cambrian_dusty",
+			"imageid0": "lepidodendron:cambrian_dusty",
+			"imageid1": "lepidodendron:cambrian_dusty",
+			"imageid2": "lepidodendron:cambrian_dusty",
+			"imageid3": "lepidodendron:cambrian_dusty",
+			"imageid4": "lepidodendron:cambrian_dusty",
+			"imageid5": "lepidodendron:cambrian_dusty",
+			"imageid6": "lepidodendron:cambrian_dusty",
+			"imageid7": "lepidodendron:cambrian_dusty",
+			"imageid8": "lepidodendron:cambrian_dusty",
+			"imageid9": "lepidodendron:cambrian_dusty",
+			"imageid10": "lepidodendron:cambrian_dusty",
+			"imageid11": "lepidodendron:cambrian_dusty",
+			"imageid12": "lepidodendron:cambrian_dusty",
+			"imageid13": "lepidodendron:cambrian_dusty",
+			"imageid14": "lepidodendron:cambrian_dusty"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_dusty"
+			"biome": "lepidodendron:cambrian_dusty",
+			"imageid0": "lepidodendron:cambrian_dusty",
+			"imageid1": "lepidodendron:cambrian_dusty",
+			"imageid2": "lepidodendron:cambrian_dusty",
+			"imageid3": "lepidodendron:cambrian_dusty",
+			"imageid4": "lepidodendron:cambrian_dusty",
+			"imageid5": "lepidodendron:cambrian_dusty",
+			"imageid6": "lepidodendron:cambrian_dusty",
+			"imageid7": "lepidodendron:cambrian_dusty",
+			"imageid8": "lepidodendron:cambrian_dusty",
+			"imageid9": "lepidodendron:cambrian_dusty",
+			"imageid10": "lepidodendron:cambrian_dusty",
+			"imageid11": "lepidodendron:cambrian_dusty",
+			"imageid12": "lepidodendron:cambrian_dusty",
+			"imageid13": "lepidodendron:cambrian_dusty",
+			"imageid14": "lepidodendron:cambrian_dusty"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_dusty"
+			"biome": "lepidodendron:cambrian_dusty",
+			"imageid0": "lepidodendron:cambrian_dusty",
+			"imageid1": "lepidodendron:cambrian_dusty",
+			"imageid2": "lepidodendron:cambrian_dusty",
+			"imageid3": "lepidodendron:cambrian_dusty",
+			"imageid4": "lepidodendron:cambrian_dusty",
+			"imageid5": "lepidodendron:cambrian_dusty",
+			"imageid6": "lepidodendron:cambrian_dusty",
+			"imageid7": "lepidodendron:cambrian_dusty",
+			"imageid8": "lepidodendron:cambrian_dusty",
+			"imageid9": "lepidodendron:cambrian_dusty",
+			"imageid10": "lepidodendron:cambrian_dusty",
+			"imageid11": "lepidodendron:cambrian_dusty",
+			"imageid12": "lepidodendron:cambrian_dusty",
+			"imageid13": "lepidodendron:cambrian_dusty",
+			"imageid14": "lepidodendron:cambrian_dusty"
 		}
 	]
 }

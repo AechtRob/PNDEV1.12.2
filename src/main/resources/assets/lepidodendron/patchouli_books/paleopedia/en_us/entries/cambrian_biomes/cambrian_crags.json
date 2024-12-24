@@ -2,7 +2,7 @@
 	"name": "Craggy Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian_crags",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_crags"
+			"biome": "lepidodendron:cambrian_crags",
+			"imageid0": "lepidodendron:cambrian_crags",
+			"imageid1": "lepidodendron:cambrian_crags",
+			"imageid2": "lepidodendron:cambrian_crags",
+			"imageid3": "lepidodendron:cambrian_crags",
+			"imageid4": "lepidodendron:cambrian_crags",
+			"imageid5": "lepidodendron:cambrian_crags",
+			"imageid6": "lepidodendron:cambrian_crags",
+			"imageid7": "lepidodendron:cambrian_crags",
+			"imageid8": "lepidodendron:cambrian_crags",
+			"imageid9": "lepidodendron:cambrian_crags",
+			"imageid10": "lepidodendron:cambrian_crags",
+			"imageid11": "lepidodendron:cambrian_crags",
+			"imageid12": "lepidodendron:cambrian_crags",
+			"imageid13": "lepidodendron:cambrian_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_crags"
+			"biome": "lepidodendron:cambrian_crags",
+			"imageid0": "lepidodendron:cambrian_crags",
+			"imageid1": "lepidodendron:cambrian_crags",
+			"imageid2": "lepidodendron:cambrian_crags",
+			"imageid3": "lepidodendron:cambrian_crags",
+			"imageid4": "lepidodendron:cambrian_crags",
+			"imageid5": "lepidodendron:cambrian_crags",
+			"imageid6": "lepidodendron:cambrian_crags",
+			"imageid7": "lepidodendron:cambrian_crags",
+			"imageid8": "lepidodendron:cambrian_crags",
+			"imageid9": "lepidodendron:cambrian_crags",
+			"imageid10": "lepidodendron:cambrian_crags",
+			"imageid11": "lepidodendron:cambrian_crags",
+			"imageid12": "lepidodendron:cambrian_crags",
+			"imageid13": "lepidodendron:cambrian_crags",
+			"imageid14": "lepidodendron:cambrian_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_crags"
+			"biome": "lepidodendron:cambrian_crags",
+			"imageid0": "lepidodendron:cambrian_crags",
+			"imageid1": "lepidodendron:cambrian_crags",
+			"imageid2": "lepidodendron:cambrian_crags",
+			"imageid3": "lepidodendron:cambrian_crags",
+			"imageid4": "lepidodendron:cambrian_crags",
+			"imageid5": "lepidodendron:cambrian_crags",
+			"imageid6": "lepidodendron:cambrian_crags",
+			"imageid7": "lepidodendron:cambrian_crags",
+			"imageid8": "lepidodendron:cambrian_crags",
+			"imageid9": "lepidodendron:cambrian_crags",
+			"imageid10": "lepidodendron:cambrian_crags",
+			"imageid11": "lepidodendron:cambrian_crags",
+			"imageid12": "lepidodendron:cambrian_crags",
+			"imageid13": "lepidodendron:cambrian_crags",
+			"imageid14": "lepidodendron:cambrian_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_crags"
+			"biome": "lepidodendron:cambrian_crags",
+			"imageid0": "lepidodendron:cambrian_crags",
+			"imageid1": "lepidodendron:cambrian_crags",
+			"imageid2": "lepidodendron:cambrian_crags",
+			"imageid3": "lepidodendron:cambrian_crags",
+			"imageid4": "lepidodendron:cambrian_crags",
+			"imageid5": "lepidodendron:cambrian_crags",
+			"imageid6": "lepidodendron:cambrian_crags",
+			"imageid7": "lepidodendron:cambrian_crags",
+			"imageid8": "lepidodendron:cambrian_crags",
+			"imageid9": "lepidodendron:cambrian_crags",
+			"imageid10": "lepidodendron:cambrian_crags",
+			"imageid11": "lepidodendron:cambrian_crags",
+			"imageid12": "lepidodendron:cambrian_crags",
+			"imageid13": "lepidodendron:cambrian_crags",
+			"imageid14": "lepidodendron:cambrian_crags"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_crags"
+			"biome": "lepidodendron:cambrian_crags",
+			"imageid0": "lepidodendron:cambrian_crags",
+			"imageid1": "lepidodendron:cambrian_crags",
+			"imageid2": "lepidodendron:cambrian_crags",
+			"imageid3": "lepidodendron:cambrian_crags",
+			"imageid4": "lepidodendron:cambrian_crags",
+			"imageid5": "lepidodendron:cambrian_crags",
+			"imageid6": "lepidodendron:cambrian_crags",
+			"imageid7": "lepidodendron:cambrian_crags",
+			"imageid8": "lepidodendron:cambrian_crags",
+			"imageid9": "lepidodendron:cambrian_crags",
+			"imageid10": "lepidodendron:cambrian_crags",
+			"imageid11": "lepidodendron:cambrian_crags",
+			"imageid12": "lepidodendron:cambrian_crags",
+			"imageid13": "lepidodendron:cambrian_crags",
+			"imageid14": "lepidodendron:cambrian_crags"
 		}
 	]
 }

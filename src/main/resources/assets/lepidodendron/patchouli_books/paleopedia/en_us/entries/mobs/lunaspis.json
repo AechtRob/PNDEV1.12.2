@@ -2,7 +2,7 @@
 	"name": "Lunaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:lunaspis_raw",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_lunaspis",
 	"pages": [
 		{

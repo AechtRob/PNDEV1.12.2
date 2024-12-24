@@ -1,0 +1,7 @@
+{
+    "name": "Permian Life",
+    "description": "Life of the Permian",
+    "icon": "paleopedia:textures/category_icon/icon_permian.png",
+    "parent": "lepidodendron:permian",
+    "sortnum": 1
+}

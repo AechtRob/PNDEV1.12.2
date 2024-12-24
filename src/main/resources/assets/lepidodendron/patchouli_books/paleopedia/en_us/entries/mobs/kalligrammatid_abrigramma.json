@@ -2,7 +2,7 @@
 	"name": "Abrigramma",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kalligrammatid_abrigramma_icon.png",
-	"category": "lepidodendron:cretaceousearly_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_abrigramma",
 	"pages": [
 		{

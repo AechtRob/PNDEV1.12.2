@@ -2,7 +2,7 @@
 	"name": "Platylomaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:platylomaspis_raw",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_platylomaspis",
 	"pages": [
 		{

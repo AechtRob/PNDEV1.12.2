@@ -2,7 +2,7 @@
 	"name": "Inostrancevia",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/inostrancevia_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_inostrancevia",
 	"pages": [
 		{

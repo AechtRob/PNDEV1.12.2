@@ -2,7 +2,7 @@
 	"name": "Lagoons",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
-	"category": "lepidodendron:silurian_biome",
+	"category": "lepidodendron:silurian/silurian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:silurian_lagoon"
+			"biome": "lepidodendron:silurian_lagoon",
+			"imageid0": "lepidodendron:silurian_lagoon",
+			"imageid1": "lepidodendron:silurian_lagoon",
+			"imageid2": "lepidodendron:silurian_lagoon",
+			"imageid3": "lepidodendron:silurian_lagoon",
+			"imageid4": "lepidodendron:silurian_lagoon",
+			"imageid5": "lepidodendron:silurian_lagoon",
+			"imageid6": "lepidodendron:silurian_lagoon",
+			"imageid7": "lepidodendron:silurian_lagoon",
+			"imageid8": "lepidodendron:silurian_lagoon",
+			"imageid9": "lepidodendron:silurian_lagoon",
+			"imageid10": "lepidodendron:silurian_lagoon",
+			"imageid11": "lepidodendron:silurian_lagoon",
+			"imageid12": "lepidodendron:silurian_lagoon",
+			"imageid13": "lepidodendron:silurian_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:silurian_lagoon"
+			"biome": "lepidodendron:silurian_lagoon",
+			"imageid0": "lepidodendron:silurian_lagoon",
+			"imageid1": "lepidodendron:silurian_lagoon",
+			"imageid2": "lepidodendron:silurian_lagoon",
+			"imageid3": "lepidodendron:silurian_lagoon",
+			"imageid4": "lepidodendron:silurian_lagoon",
+			"imageid5": "lepidodendron:silurian_lagoon",
+			"imageid6": "lepidodendron:silurian_lagoon",
+			"imageid7": "lepidodendron:silurian_lagoon",
+			"imageid8": "lepidodendron:silurian_lagoon",
+			"imageid9": "lepidodendron:silurian_lagoon",
+			"imageid10": "lepidodendron:silurian_lagoon",
+			"imageid11": "lepidodendron:silurian_lagoon",
+			"imageid12": "lepidodendron:silurian_lagoon",
+			"imageid13": "lepidodendron:silurian_lagoon",
+			"imageid14": "lepidodendron:silurian_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:silurian_lagoon"
+			"biome": "lepidodendron:silurian_lagoon",
+			"imageid0": "lepidodendron:silurian_lagoon",
+			"imageid1": "lepidodendron:silurian_lagoon",
+			"imageid2": "lepidodendron:silurian_lagoon",
+			"imageid3": "lepidodendron:silurian_lagoon",
+			"imageid4": "lepidodendron:silurian_lagoon",
+			"imageid5": "lepidodendron:silurian_lagoon",
+			"imageid6": "lepidodendron:silurian_lagoon",
+			"imageid7": "lepidodendron:silurian_lagoon",
+			"imageid8": "lepidodendron:silurian_lagoon",
+			"imageid9": "lepidodendron:silurian_lagoon",
+			"imageid10": "lepidodendron:silurian_lagoon",
+			"imageid11": "lepidodendron:silurian_lagoon",
+			"imageid12": "lepidodendron:silurian_lagoon",
+			"imageid13": "lepidodendron:silurian_lagoon",
+			"imageid14": "lepidodendron:silurian_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:silurian_lagoon"
+			"biome": "lepidodendron:silurian_lagoon",
+			"imageid0": "lepidodendron:silurian_lagoon",
+			"imageid1": "lepidodendron:silurian_lagoon",
+			"imageid2": "lepidodendron:silurian_lagoon",
+			"imageid3": "lepidodendron:silurian_lagoon",
+			"imageid4": "lepidodendron:silurian_lagoon",
+			"imageid5": "lepidodendron:silurian_lagoon",
+			"imageid6": "lepidodendron:silurian_lagoon",
+			"imageid7": "lepidodendron:silurian_lagoon",
+			"imageid8": "lepidodendron:silurian_lagoon",
+			"imageid9": "lepidodendron:silurian_lagoon",
+			"imageid10": "lepidodendron:silurian_lagoon",
+			"imageid11": "lepidodendron:silurian_lagoon",
+			"imageid12": "lepidodendron:silurian_lagoon",
+			"imageid13": "lepidodendron:silurian_lagoon",
+			"imageid14": "lepidodendron:silurian_lagoon"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:silurian_lagoon"
+			"biome": "lepidodendron:silurian_lagoon",
+			"imageid0": "lepidodendron:silurian_lagoon",
+			"imageid1": "lepidodendron:silurian_lagoon",
+			"imageid2": "lepidodendron:silurian_lagoon",
+			"imageid3": "lepidodendron:silurian_lagoon",
+			"imageid4": "lepidodendron:silurian_lagoon",
+			"imageid5": "lepidodendron:silurian_lagoon",
+			"imageid6": "lepidodendron:silurian_lagoon",
+			"imageid7": "lepidodendron:silurian_lagoon",
+			"imageid8": "lepidodendron:silurian_lagoon",
+			"imageid9": "lepidodendron:silurian_lagoon",
+			"imageid10": "lepidodendron:silurian_lagoon",
+			"imageid11": "lepidodendron:silurian_lagoon",
+			"imageid12": "lepidodendron:silurian_lagoon",
+			"imageid13": "lepidodendron:silurian_lagoon",
+			"imageid14": "lepidodendron:silurian_lagoon"
 		}
 	]
 }

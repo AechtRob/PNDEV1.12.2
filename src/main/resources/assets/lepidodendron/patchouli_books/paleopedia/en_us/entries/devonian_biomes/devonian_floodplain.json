@@ -2,7 +2,7 @@
 	"name": "Dunes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_floodplain"
+			"biome": "lepidodendron:devonian_floodplain",
+			"imageid0": "lepidodendron:devonian_floodplain",
+			"imageid1": "lepidodendron:devonian_floodplain",
+			"imageid2": "lepidodendron:devonian_floodplain",
+			"imageid3": "lepidodendron:devonian_floodplain",
+			"imageid4": "lepidodendron:devonian_floodplain",
+			"imageid5": "lepidodendron:devonian_floodplain",
+			"imageid6": "lepidodendron:devonian_floodplain",
+			"imageid7": "lepidodendron:devonian_floodplain",
+			"imageid8": "lepidodendron:devonian_floodplain",
+			"imageid9": "lepidodendron:devonian_floodplain",
+			"imageid10": "lepidodendron:devonian_floodplain",
+			"imageid11": "lepidodendron:devonian_floodplain",
+			"imageid12": "lepidodendron:devonian_floodplain",
+			"imageid13": "lepidodendron:devonian_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_floodplain"
+			"biome": "lepidodendron:devonian_floodplain",
+			"imageid0": "lepidodendron:devonian_floodplain",
+			"imageid1": "lepidodendron:devonian_floodplain",
+			"imageid2": "lepidodendron:devonian_floodplain",
+			"imageid3": "lepidodendron:devonian_floodplain",
+			"imageid4": "lepidodendron:devonian_floodplain",
+			"imageid5": "lepidodendron:devonian_floodplain",
+			"imageid6": "lepidodendron:devonian_floodplain",
+			"imageid7": "lepidodendron:devonian_floodplain",
+			"imageid8": "lepidodendron:devonian_floodplain",
+			"imageid9": "lepidodendron:devonian_floodplain",
+			"imageid10": "lepidodendron:devonian_floodplain",
+			"imageid11": "lepidodendron:devonian_floodplain",
+			"imageid12": "lepidodendron:devonian_floodplain",
+			"imageid13": "lepidodendron:devonian_floodplain",
+			"imageid14": "lepidodendron:devonian_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_floodplain"
+			"biome": "lepidodendron:devonian_floodplain",
+			"imageid0": "lepidodendron:devonian_floodplain",
+			"imageid1": "lepidodendron:devonian_floodplain",
+			"imageid2": "lepidodendron:devonian_floodplain",
+			"imageid3": "lepidodendron:devonian_floodplain",
+			"imageid4": "lepidodendron:devonian_floodplain",
+			"imageid5": "lepidodendron:devonian_floodplain",
+			"imageid6": "lepidodendron:devonian_floodplain",
+			"imageid7": "lepidodendron:devonian_floodplain",
+			"imageid8": "lepidodendron:devonian_floodplain",
+			"imageid9": "lepidodendron:devonian_floodplain",
+			"imageid10": "lepidodendron:devonian_floodplain",
+			"imageid11": "lepidodendron:devonian_floodplain",
+			"imageid12": "lepidodendron:devonian_floodplain",
+			"imageid13": "lepidodendron:devonian_floodplain",
+			"imageid14": "lepidodendron:devonian_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_floodplain"
+			"biome": "lepidodendron:devonian_floodplain",
+			"imageid0": "lepidodendron:devonian_floodplain",
+			"imageid1": "lepidodendron:devonian_floodplain",
+			"imageid2": "lepidodendron:devonian_floodplain",
+			"imageid3": "lepidodendron:devonian_floodplain",
+			"imageid4": "lepidodendron:devonian_floodplain",
+			"imageid5": "lepidodendron:devonian_floodplain",
+			"imageid6": "lepidodendron:devonian_floodplain",
+			"imageid7": "lepidodendron:devonian_floodplain",
+			"imageid8": "lepidodendron:devonian_floodplain",
+			"imageid9": "lepidodendron:devonian_floodplain",
+			"imageid10": "lepidodendron:devonian_floodplain",
+			"imageid11": "lepidodendron:devonian_floodplain",
+			"imageid12": "lepidodendron:devonian_floodplain",
+			"imageid13": "lepidodendron:devonian_floodplain",
+			"imageid14": "lepidodendron:devonian_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_floodplain"
+			"biome": "lepidodendron:devonian_floodplain",
+			"imageid0": "lepidodendron:devonian_floodplain",
+			"imageid1": "lepidodendron:devonian_floodplain",
+			"imageid2": "lepidodendron:devonian_floodplain",
+			"imageid3": "lepidodendron:devonian_floodplain",
+			"imageid4": "lepidodendron:devonian_floodplain",
+			"imageid5": "lepidodendron:devonian_floodplain",
+			"imageid6": "lepidodendron:devonian_floodplain",
+			"imageid7": "lepidodendron:devonian_floodplain",
+			"imageid8": "lepidodendron:devonian_floodplain",
+			"imageid9": "lepidodendron:devonian_floodplain",
+			"imageid10": "lepidodendron:devonian_floodplain",
+			"imageid11": "lepidodendron:devonian_floodplain",
+			"imageid12": "lepidodendron:devonian_floodplain",
+			"imageid13": "lepidodendron:devonian_floodplain",
+			"imageid14": "lepidodendron:devonian_floodplain"
 		}
 	]
 }

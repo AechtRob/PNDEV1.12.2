@@ -2,7 +2,7 @@
 	"name": "Swamp",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_swamp"
+			"biome": "lepidodendron:devonian_swamp",
+			"imageid0": "lepidodendron:devonian_swamp",
+			"imageid1": "lepidodendron:devonian_swamp",
+			"imageid2": "lepidodendron:devonian_swamp",
+			"imageid3": "lepidodendron:devonian_swamp",
+			"imageid4": "lepidodendron:devonian_swamp",
+			"imageid5": "lepidodendron:devonian_swamp",
+			"imageid6": "lepidodendron:devonian_swamp",
+			"imageid7": "lepidodendron:devonian_swamp",
+			"imageid8": "lepidodendron:devonian_swamp",
+			"imageid9": "lepidodendron:devonian_swamp",
+			"imageid10": "lepidodendron:devonian_swamp",
+			"imageid11": "lepidodendron:devonian_swamp",
+			"imageid12": "lepidodendron:devonian_swamp",
+			"imageid13": "lepidodendron:devonian_swamp"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_swamp"
+			"biome": "lepidodendron:devonian_swamp",
+			"imageid0": "lepidodendron:devonian_swamp",
+			"imageid1": "lepidodendron:devonian_swamp",
+			"imageid2": "lepidodendron:devonian_swamp",
+			"imageid3": "lepidodendron:devonian_swamp",
+			"imageid4": "lepidodendron:devonian_swamp",
+			"imageid5": "lepidodendron:devonian_swamp",
+			"imageid6": "lepidodendron:devonian_swamp",
+			"imageid7": "lepidodendron:devonian_swamp",
+			"imageid8": "lepidodendron:devonian_swamp",
+			"imageid9": "lepidodendron:devonian_swamp",
+			"imageid10": "lepidodendron:devonian_swamp",
+			"imageid11": "lepidodendron:devonian_swamp",
+			"imageid12": "lepidodendron:devonian_swamp",
+			"imageid13": "lepidodendron:devonian_swamp",
+			"imageid14": "lepidodendron:devonian_swamp"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_swamp"
+			"biome": "lepidodendron:devonian_swamp",
+			"imageid0": "lepidodendron:devonian_swamp",
+			"imageid1": "lepidodendron:devonian_swamp",
+			"imageid2": "lepidodendron:devonian_swamp",
+			"imageid3": "lepidodendron:devonian_swamp",
+			"imageid4": "lepidodendron:devonian_swamp",
+			"imageid5": "lepidodendron:devonian_swamp",
+			"imageid6": "lepidodendron:devonian_swamp",
+			"imageid7": "lepidodendron:devonian_swamp",
+			"imageid8": "lepidodendron:devonian_swamp",
+			"imageid9": "lepidodendron:devonian_swamp",
+			"imageid10": "lepidodendron:devonian_swamp",
+			"imageid11": "lepidodendron:devonian_swamp",
+			"imageid12": "lepidodendron:devonian_swamp",
+			"imageid13": "lepidodendron:devonian_swamp",
+			"imageid14": "lepidodendron:devonian_swamp"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_swamp"
+			"biome": "lepidodendron:devonian_swamp",
+			"imageid0": "lepidodendron:devonian_swamp",
+			"imageid1": "lepidodendron:devonian_swamp",
+			"imageid2": "lepidodendron:devonian_swamp",
+			"imageid3": "lepidodendron:devonian_swamp",
+			"imageid4": "lepidodendron:devonian_swamp",
+			"imageid5": "lepidodendron:devonian_swamp",
+			"imageid6": "lepidodendron:devonian_swamp",
+			"imageid7": "lepidodendron:devonian_swamp",
+			"imageid8": "lepidodendron:devonian_swamp",
+			"imageid9": "lepidodendron:devonian_swamp",
+			"imageid10": "lepidodendron:devonian_swamp",
+			"imageid11": "lepidodendron:devonian_swamp",
+			"imageid12": "lepidodendron:devonian_swamp",
+			"imageid13": "lepidodendron:devonian_swamp",
+			"imageid14": "lepidodendron:devonian_swamp"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_swamp"
+			"biome": "lepidodendron:devonian_swamp",
+			"imageid0": "lepidodendron:devonian_swamp",
+			"imageid1": "lepidodendron:devonian_swamp",
+			"imageid2": "lepidodendron:devonian_swamp",
+			"imageid3": "lepidodendron:devonian_swamp",
+			"imageid4": "lepidodendron:devonian_swamp",
+			"imageid5": "lepidodendron:devonian_swamp",
+			"imageid6": "lepidodendron:devonian_swamp",
+			"imageid7": "lepidodendron:devonian_swamp",
+			"imageid8": "lepidodendron:devonian_swamp",
+			"imageid9": "lepidodendron:devonian_swamp",
+			"imageid10": "lepidodendron:devonian_swamp",
+			"imageid11": "lepidodendron:devonian_swamp",
+			"imageid12": "lepidodendron:devonian_swamp",
+			"imageid13": "lepidodendron:devonian_swamp",
+			"imageid14": "lepidodendron:devonian_swamp"
 		}
 	]
 }

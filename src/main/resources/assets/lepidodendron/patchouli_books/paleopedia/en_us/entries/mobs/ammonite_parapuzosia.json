@@ -2,7 +2,7 @@
 	"name": "Parapuzosia",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_parapuzosia",
-	"category": "lepidodendron:cretaceouslate_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_parapuzosia",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Floodplain",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_floodplain"
+			"biome": "lepidodendron:jurassic_floodplain",
+			"imageid0": "lepidodendron:jurassic_floodplain",
+			"imageid1": "lepidodendron:jurassic_floodplain",
+			"imageid2": "lepidodendron:jurassic_floodplain",
+			"imageid3": "lepidodendron:jurassic_floodplain",
+			"imageid4": "lepidodendron:jurassic_floodplain",
+			"imageid5": "lepidodendron:jurassic_floodplain",
+			"imageid6": "lepidodendron:jurassic_floodplain",
+			"imageid7": "lepidodendron:jurassic_floodplain",
+			"imageid8": "lepidodendron:jurassic_floodplain",
+			"imageid9": "lepidodendron:jurassic_floodplain",
+			"imageid10": "lepidodendron:jurassic_floodplain",
+			"imageid11": "lepidodendron:jurassic_floodplain",
+			"imageid12": "lepidodendron:jurassic_floodplain",
+			"imageid13": "lepidodendron:jurassic_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_floodplain"
+			"biome": "lepidodendron:jurassic_floodplain",
+			"imageid0": "lepidodendron:jurassic_floodplain",
+			"imageid1": "lepidodendron:jurassic_floodplain",
+			"imageid2": "lepidodendron:jurassic_floodplain",
+			"imageid3": "lepidodendron:jurassic_floodplain",
+			"imageid4": "lepidodendron:jurassic_floodplain",
+			"imageid5": "lepidodendron:jurassic_floodplain",
+			"imageid6": "lepidodendron:jurassic_floodplain",
+			"imageid7": "lepidodendron:jurassic_floodplain",
+			"imageid8": "lepidodendron:jurassic_floodplain",
+			"imageid9": "lepidodendron:jurassic_floodplain",
+			"imageid10": "lepidodendron:jurassic_floodplain",
+			"imageid11": "lepidodendron:jurassic_floodplain",
+			"imageid12": "lepidodendron:jurassic_floodplain",
+			"imageid13": "lepidodendron:jurassic_floodplain",
+			"imageid14": "lepidodendron:jurassic_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_floodplain"
+			"biome": "lepidodendron:jurassic_floodplain",
+			"imageid0": "lepidodendron:jurassic_floodplain",
+			"imageid1": "lepidodendron:jurassic_floodplain",
+			"imageid2": "lepidodendron:jurassic_floodplain",
+			"imageid3": "lepidodendron:jurassic_floodplain",
+			"imageid4": "lepidodendron:jurassic_floodplain",
+			"imageid5": "lepidodendron:jurassic_floodplain",
+			"imageid6": "lepidodendron:jurassic_floodplain",
+			"imageid7": "lepidodendron:jurassic_floodplain",
+			"imageid8": "lepidodendron:jurassic_floodplain",
+			"imageid9": "lepidodendron:jurassic_floodplain",
+			"imageid10": "lepidodendron:jurassic_floodplain",
+			"imageid11": "lepidodendron:jurassic_floodplain",
+			"imageid12": "lepidodendron:jurassic_floodplain",
+			"imageid13": "lepidodendron:jurassic_floodplain",
+			"imageid14": "lepidodendron:jurassic_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_floodplain"
+			"biome": "lepidodendron:jurassic_floodplain",
+			"imageid0": "lepidodendron:jurassic_floodplain",
+			"imageid1": "lepidodendron:jurassic_floodplain",
+			"imageid2": "lepidodendron:jurassic_floodplain",
+			"imageid3": "lepidodendron:jurassic_floodplain",
+			"imageid4": "lepidodendron:jurassic_floodplain",
+			"imageid5": "lepidodendron:jurassic_floodplain",
+			"imageid6": "lepidodendron:jurassic_floodplain",
+			"imageid7": "lepidodendron:jurassic_floodplain",
+			"imageid8": "lepidodendron:jurassic_floodplain",
+			"imageid9": "lepidodendron:jurassic_floodplain",
+			"imageid10": "lepidodendron:jurassic_floodplain",
+			"imageid11": "lepidodendron:jurassic_floodplain",
+			"imageid12": "lepidodendron:jurassic_floodplain",
+			"imageid13": "lepidodendron:jurassic_floodplain",
+			"imageid14": "lepidodendron:jurassic_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_floodplain"
+			"biome": "lepidodendron:jurassic_floodplain",
+			"imageid0": "lepidodendron:jurassic_floodplain",
+			"imageid1": "lepidodendron:jurassic_floodplain",
+			"imageid2": "lepidodendron:jurassic_floodplain",
+			"imageid3": "lepidodendron:jurassic_floodplain",
+			"imageid4": "lepidodendron:jurassic_floodplain",
+			"imageid5": "lepidodendron:jurassic_floodplain",
+			"imageid6": "lepidodendron:jurassic_floodplain",
+			"imageid7": "lepidodendron:jurassic_floodplain",
+			"imageid8": "lepidodendron:jurassic_floodplain",
+			"imageid9": "lepidodendron:jurassic_floodplain",
+			"imageid10": "lepidodendron:jurassic_floodplain",
+			"imageid11": "lepidodendron:jurassic_floodplain",
+			"imageid12": "lepidodendron:jurassic_floodplain",
+			"imageid13": "lepidodendron:jurassic_floodplain",
+			"imageid14": "lepidodendron:jurassic_floodplain"
 		}
 	]
 }

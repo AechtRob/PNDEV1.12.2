@@ -2,7 +2,7 @@
 	"name": "Semionotus",
 	"read_by_default": true,
 	"icon": "lepidodendron:semionotus_raw",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_semionotus",
 	"pages": [
 		{

@@ -1,0 +1,31 @@
+{
+	"name": "Gangtoucunia",
+	"read_by_default": true,
+	"icon": "lepidodendron:gangtoucunia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_gangtoucunia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gangtoucunia",
+			"title": "Gangtoucunia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gangtoucunia.png"],
+			"title": "G. aspera",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gangtoucunia",
+			"type": "text",
+			"text": "Gangtoucunia is a tube worm like animal, known from the Chengjiang lagerstatten, although it is actually a cnidarian. They have hard tube shaped shells surrounding the squishy body. Specimens described in 2022 that preserve soft tissue allowed the classification into Cnidaria to become more certain."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gangtoucunia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

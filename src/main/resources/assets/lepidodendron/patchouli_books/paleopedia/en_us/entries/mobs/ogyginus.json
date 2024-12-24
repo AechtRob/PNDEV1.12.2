@@ -2,7 +2,7 @@
 	"name": "Ogyginus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/ogyginus_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ogyginus",
 	"pages": [
 		{

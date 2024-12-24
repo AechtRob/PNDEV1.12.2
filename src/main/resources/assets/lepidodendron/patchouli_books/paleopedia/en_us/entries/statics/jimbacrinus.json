@@ -1,0 +1,31 @@
+{
+	"name": "Jimbacrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_jimbacrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_jimbacrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crinoid_jimbacrinus",
+			"title": "Jimbacrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Ampelocrinida$(br)>Calceolispongiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Jimbacrinus.png"],
+			"title": "Jimbacrinus bostocki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_jimbacrinus",
+			"type": "text",
+			"text": "Jimbacrinus is an Australian marine crinoid from the Permian period. It lived as a stationary and attached suspension feeder which caught micro organisms from the surroounding water. Jimbacrinus had 5 feeding arms which were lined with feathery pinnules."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crinoid_jimbacrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

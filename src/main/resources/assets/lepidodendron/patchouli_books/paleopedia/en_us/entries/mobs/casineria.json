@@ -2,7 +2,7 @@
 	"name": "Casineria",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/casineria_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_casineria",
 	"pages": [
 		{

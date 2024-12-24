@@ -2,7 +2,7 @@
 	"name": "Flood Basalt",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_floodbasalt"
+			"biome": "lepidodendron:permian_floodbasalt",
+			"imageid0": "lepidodendron:permian_floodbasalt",
+			"imageid1": "lepidodendron:permian_floodbasalt",
+			"imageid2": "lepidodendron:permian_floodbasalt",
+			"imageid3": "lepidodendron:permian_floodbasalt",
+			"imageid4": "lepidodendron:permian_floodbasalt",
+			"imageid5": "lepidodendron:permian_floodbasalt",
+			"imageid6": "lepidodendron:permian_floodbasalt",
+			"imageid7": "lepidodendron:permian_floodbasalt",
+			"imageid8": "lepidodendron:permian_floodbasalt",
+			"imageid9": "lepidodendron:permian_floodbasalt",
+			"imageid10": "lepidodendron:permian_floodbasalt",
+			"imageid11": "lepidodendron:permian_floodbasalt",
+			"imageid12": "lepidodendron:permian_floodbasalt",
+			"imageid13": "lepidodendron:permian_floodbasalt"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_floodbasalt"
+			"biome": "lepidodendron:permian_floodbasalt",
+			"imageid0": "lepidodendron:permian_floodbasalt",
+			"imageid1": "lepidodendron:permian_floodbasalt",
+			"imageid2": "lepidodendron:permian_floodbasalt",
+			"imageid3": "lepidodendron:permian_floodbasalt",
+			"imageid4": "lepidodendron:permian_floodbasalt",
+			"imageid5": "lepidodendron:permian_floodbasalt",
+			"imageid6": "lepidodendron:permian_floodbasalt",
+			"imageid7": "lepidodendron:permian_floodbasalt",
+			"imageid8": "lepidodendron:permian_floodbasalt",
+			"imageid9": "lepidodendron:permian_floodbasalt",
+			"imageid10": "lepidodendron:permian_floodbasalt",
+			"imageid11": "lepidodendron:permian_floodbasalt",
+			"imageid12": "lepidodendron:permian_floodbasalt",
+			"imageid13": "lepidodendron:permian_floodbasalt",
+			"imageid14": "lepidodendron:permian_floodbasalt"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_floodbasalt"
+			"biome": "lepidodendron:permian_floodbasalt",
+			"imageid0": "lepidodendron:permian_floodbasalt",
+			"imageid1": "lepidodendron:permian_floodbasalt",
+			"imageid2": "lepidodendron:permian_floodbasalt",
+			"imageid3": "lepidodendron:permian_floodbasalt",
+			"imageid4": "lepidodendron:permian_floodbasalt",
+			"imageid5": "lepidodendron:permian_floodbasalt",
+			"imageid6": "lepidodendron:permian_floodbasalt",
+			"imageid7": "lepidodendron:permian_floodbasalt",
+			"imageid8": "lepidodendron:permian_floodbasalt",
+			"imageid9": "lepidodendron:permian_floodbasalt",
+			"imageid10": "lepidodendron:permian_floodbasalt",
+			"imageid11": "lepidodendron:permian_floodbasalt",
+			"imageid12": "lepidodendron:permian_floodbasalt",
+			"imageid13": "lepidodendron:permian_floodbasalt",
+			"imageid14": "lepidodendron:permian_floodbasalt"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_floodbasalt"
+			"biome": "lepidodendron:permian_floodbasalt",
+			"imageid0": "lepidodendron:permian_floodbasalt",
+			"imageid1": "lepidodendron:permian_floodbasalt",
+			"imageid2": "lepidodendron:permian_floodbasalt",
+			"imageid3": "lepidodendron:permian_floodbasalt",
+			"imageid4": "lepidodendron:permian_floodbasalt",
+			"imageid5": "lepidodendron:permian_floodbasalt",
+			"imageid6": "lepidodendron:permian_floodbasalt",
+			"imageid7": "lepidodendron:permian_floodbasalt",
+			"imageid8": "lepidodendron:permian_floodbasalt",
+			"imageid9": "lepidodendron:permian_floodbasalt",
+			"imageid10": "lepidodendron:permian_floodbasalt",
+			"imageid11": "lepidodendron:permian_floodbasalt",
+			"imageid12": "lepidodendron:permian_floodbasalt",
+			"imageid13": "lepidodendron:permian_floodbasalt",
+			"imageid14": "lepidodendron:permian_floodbasalt"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_floodbasalt"
+			"biome": "lepidodendron:permian_floodbasalt",
+			"imageid0": "lepidodendron:permian_floodbasalt",
+			"imageid1": "lepidodendron:permian_floodbasalt",
+			"imageid2": "lepidodendron:permian_floodbasalt",
+			"imageid3": "lepidodendron:permian_floodbasalt",
+			"imageid4": "lepidodendron:permian_floodbasalt",
+			"imageid5": "lepidodendron:permian_floodbasalt",
+			"imageid6": "lepidodendron:permian_floodbasalt",
+			"imageid7": "lepidodendron:permian_floodbasalt",
+			"imageid8": "lepidodendron:permian_floodbasalt",
+			"imageid9": "lepidodendron:permian_floodbasalt",
+			"imageid10": "lepidodendron:permian_floodbasalt",
+			"imageid11": "lepidodendron:permian_floodbasalt",
+			"imageid12": "lepidodendron:permian_floodbasalt",
+			"imageid13": "lepidodendron:permian_floodbasalt",
+			"imageid14": "lepidodendron:permian_floodbasalt"
 		}
 	]
 }

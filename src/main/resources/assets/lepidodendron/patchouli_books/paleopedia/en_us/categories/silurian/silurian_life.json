@@ -1,0 +1,7 @@
+{
+    "name": "Silurian Life",
+    "description": "Life of the Silurian",
+    "icon": "paleopedia:textures/category_icon/icon_silurian.png",
+    "parent": "lepidodendron:silurian",
+    "sortnum": 1
+}

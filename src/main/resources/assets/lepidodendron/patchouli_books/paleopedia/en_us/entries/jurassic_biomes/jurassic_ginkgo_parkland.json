@@ -2,7 +2,7 @@
 	"name": "Ginkgo Parkland",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_ginkgo_parkland"
+			"biome": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid0": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid1": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid2": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid3": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid4": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid5": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid6": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid7": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid8": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid9": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid10": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid11": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid12": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid13": "lepidodendron:jurassic_ginkgo_parkland"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_ginkgo_parkland"
+			"biome": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid0": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid1": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid2": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid3": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid4": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid5": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid6": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid7": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid8": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid9": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid10": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid11": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid12": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid13": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid14": "lepidodendron:jurassic_ginkgo_parkland"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_ginkgo_parkland"
+			"biome": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid0": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid1": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid2": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid3": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid4": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid5": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid6": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid7": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid8": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid9": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid10": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid11": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid12": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid13": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid14": "lepidodendron:jurassic_ginkgo_parkland"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_ginkgo_parkland"
+			"biome": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid0": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid1": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid2": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid3": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid4": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid5": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid6": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid7": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid8": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid9": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid10": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid11": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid12": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid13": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid14": "lepidodendron:jurassic_ginkgo_parkland"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_ginkgo_parkland"
+			"biome": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid0": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid1": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid2": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid3": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid4": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid5": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid6": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid7": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid8": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid9": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid10": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid11": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid12": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid13": "lepidodendron:jurassic_ginkgo_parkland",
+			"imageid14": "lepidodendron:jurassic_ginkgo_parkland"
 		}
 	]
 }

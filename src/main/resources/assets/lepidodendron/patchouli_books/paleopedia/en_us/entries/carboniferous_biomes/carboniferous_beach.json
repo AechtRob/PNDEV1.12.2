@@ -2,7 +2,7 @@
 	"name": "Beach",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_beach"
+			"biome": "lepidodendron:carboniferous_beach",
+			"imageid0": "lepidodendron:carboniferous_beach",
+			"imageid1": "lepidodendron:carboniferous_beach",
+			"imageid2": "lepidodendron:carboniferous_beach",
+			"imageid3": "lepidodendron:carboniferous_beach",
+			"imageid4": "lepidodendron:carboniferous_beach",
+			"imageid5": "lepidodendron:carboniferous_beach",
+			"imageid6": "lepidodendron:carboniferous_beach",
+			"imageid7": "lepidodendron:carboniferous_beach",
+			"imageid8": "lepidodendron:carboniferous_beach",
+			"imageid9": "lepidodendron:carboniferous_beach",
+			"imageid10": "lepidodendron:carboniferous_beach",
+			"imageid11": "lepidodendron:carboniferous_beach",
+			"imageid12": "lepidodendron:carboniferous_beach",
+			"imageid13": "lepidodendron:carboniferous_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_beach"
+			"biome": "lepidodendron:carboniferous_beach",
+			"imageid0": "lepidodendron:carboniferous_beach",
+			"imageid1": "lepidodendron:carboniferous_beach",
+			"imageid2": "lepidodendron:carboniferous_beach",
+			"imageid3": "lepidodendron:carboniferous_beach",
+			"imageid4": "lepidodendron:carboniferous_beach",
+			"imageid5": "lepidodendron:carboniferous_beach",
+			"imageid6": "lepidodendron:carboniferous_beach",
+			"imageid7": "lepidodendron:carboniferous_beach",
+			"imageid8": "lepidodendron:carboniferous_beach",
+			"imageid9": "lepidodendron:carboniferous_beach",
+			"imageid10": "lepidodendron:carboniferous_beach",
+			"imageid11": "lepidodendron:carboniferous_beach",
+			"imageid12": "lepidodendron:carboniferous_beach",
+			"imageid13": "lepidodendron:carboniferous_beach",
+			"imageid14": "lepidodendron:carboniferous_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_beach"
+			"biome": "lepidodendron:carboniferous_beach",
+			"imageid0": "lepidodendron:carboniferous_beach",
+			"imageid1": "lepidodendron:carboniferous_beach",
+			"imageid2": "lepidodendron:carboniferous_beach",
+			"imageid3": "lepidodendron:carboniferous_beach",
+			"imageid4": "lepidodendron:carboniferous_beach",
+			"imageid5": "lepidodendron:carboniferous_beach",
+			"imageid6": "lepidodendron:carboniferous_beach",
+			"imageid7": "lepidodendron:carboniferous_beach",
+			"imageid8": "lepidodendron:carboniferous_beach",
+			"imageid9": "lepidodendron:carboniferous_beach",
+			"imageid10": "lepidodendron:carboniferous_beach",
+			"imageid11": "lepidodendron:carboniferous_beach",
+			"imageid12": "lepidodendron:carboniferous_beach",
+			"imageid13": "lepidodendron:carboniferous_beach",
+			"imageid14": "lepidodendron:carboniferous_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_beach"
+			"biome": "lepidodendron:carboniferous_beach",
+			"imageid0": "lepidodendron:carboniferous_beach",
+			"imageid1": "lepidodendron:carboniferous_beach",
+			"imageid2": "lepidodendron:carboniferous_beach",
+			"imageid3": "lepidodendron:carboniferous_beach",
+			"imageid4": "lepidodendron:carboniferous_beach",
+			"imageid5": "lepidodendron:carboniferous_beach",
+			"imageid6": "lepidodendron:carboniferous_beach",
+			"imageid7": "lepidodendron:carboniferous_beach",
+			"imageid8": "lepidodendron:carboniferous_beach",
+			"imageid9": "lepidodendron:carboniferous_beach",
+			"imageid10": "lepidodendron:carboniferous_beach",
+			"imageid11": "lepidodendron:carboniferous_beach",
+			"imageid12": "lepidodendron:carboniferous_beach",
+			"imageid13": "lepidodendron:carboniferous_beach",
+			"imageid14": "lepidodendron:carboniferous_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_beach"
+			"biome": "lepidodendron:carboniferous_beach",
+			"imageid0": "lepidodendron:carboniferous_beach",
+			"imageid1": "lepidodendron:carboniferous_beach",
+			"imageid2": "lepidodendron:carboniferous_beach",
+			"imageid3": "lepidodendron:carboniferous_beach",
+			"imageid4": "lepidodendron:carboniferous_beach",
+			"imageid5": "lepidodendron:carboniferous_beach",
+			"imageid6": "lepidodendron:carboniferous_beach",
+			"imageid7": "lepidodendron:carboniferous_beach",
+			"imageid8": "lepidodendron:carboniferous_beach",
+			"imageid9": "lepidodendron:carboniferous_beach",
+			"imageid10": "lepidodendron:carboniferous_beach",
+			"imageid11": "lepidodendron:carboniferous_beach",
+			"imageid12": "lepidodendron:carboniferous_beach",
+			"imageid13": "lepidodendron:carboniferous_beach",
+			"imageid14": "lepidodendron:carboniferous_beach"
 		}
 	]
 }

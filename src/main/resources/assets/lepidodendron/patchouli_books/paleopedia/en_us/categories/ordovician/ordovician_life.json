@@ -1,0 +1,7 @@
+{
+    "name": "Ordovician Life",
+    "description": "Life of the Ordovician",
+    "icon": "paleopedia:textures/category_icon/icon_ordovician.png",
+    "parent": "lepidodendron:ordovician",
+    "sortnum": 1
+}

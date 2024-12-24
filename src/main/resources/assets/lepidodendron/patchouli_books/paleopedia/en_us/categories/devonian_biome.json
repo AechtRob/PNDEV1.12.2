@@ -1,7 +1,0 @@
-{
-    "name": "Devonian Biomes",
-    "description": "Biomes of the Devonian$(br2)419.2 - 358.9 mya",
-    "icon": "paleopedia:textures/category_icon/icon_devonian.png",
-    "parent": "lepidodendron:devonian",
-    "sortnum": 4
-}

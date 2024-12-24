@@ -1,7 +1,0 @@
-{
-    "name": "Miocene Statics",
-    "description": "Statics of the Miocene",
-    "icon": "paleopedia:textures/category_icon/icon_miocene.png",
-    "parent": "lepidodendron:miocene",
-    "sortnum": 2
-}

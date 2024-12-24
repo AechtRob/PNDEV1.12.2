@@ -2,7 +2,7 @@
 	"name": "Plateau",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_spikes"
+			"biome": "lepidodendron:devonian_spikes",
+			"imageid0": "lepidodendron:devonian_spikes",
+			"imageid1": "lepidodendron:devonian_spikes",
+			"imageid2": "lepidodendron:devonian_spikes",
+			"imageid3": "lepidodendron:devonian_spikes",
+			"imageid4": "lepidodendron:devonian_spikes",
+			"imageid5": "lepidodendron:devonian_spikes",
+			"imageid6": "lepidodendron:devonian_spikes",
+			"imageid7": "lepidodendron:devonian_spikes",
+			"imageid8": "lepidodendron:devonian_spikes",
+			"imageid9": "lepidodendron:devonian_spikes",
+			"imageid10": "lepidodendron:devonian_spikes",
+			"imageid11": "lepidodendron:devonian_spikes",
+			"imageid12": "lepidodendron:devonian_spikes",
+			"imageid13": "lepidodendron:devonian_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_spikes"
+			"biome": "lepidodendron:devonian_spikes",
+			"imageid0": "lepidodendron:devonian_spikes",
+			"imageid1": "lepidodendron:devonian_spikes",
+			"imageid2": "lepidodendron:devonian_spikes",
+			"imageid3": "lepidodendron:devonian_spikes",
+			"imageid4": "lepidodendron:devonian_spikes",
+			"imageid5": "lepidodendron:devonian_spikes",
+			"imageid6": "lepidodendron:devonian_spikes",
+			"imageid7": "lepidodendron:devonian_spikes",
+			"imageid8": "lepidodendron:devonian_spikes",
+			"imageid9": "lepidodendron:devonian_spikes",
+			"imageid10": "lepidodendron:devonian_spikes",
+			"imageid11": "lepidodendron:devonian_spikes",
+			"imageid12": "lepidodendron:devonian_spikes",
+			"imageid13": "lepidodendron:devonian_spikes",
+			"imageid14": "lepidodendron:devonian_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_spikes"
+			"biome": "lepidodendron:devonian_spikes",
+			"imageid0": "lepidodendron:devonian_spikes",
+			"imageid1": "lepidodendron:devonian_spikes",
+			"imageid2": "lepidodendron:devonian_spikes",
+			"imageid3": "lepidodendron:devonian_spikes",
+			"imageid4": "lepidodendron:devonian_spikes",
+			"imageid5": "lepidodendron:devonian_spikes",
+			"imageid6": "lepidodendron:devonian_spikes",
+			"imageid7": "lepidodendron:devonian_spikes",
+			"imageid8": "lepidodendron:devonian_spikes",
+			"imageid9": "lepidodendron:devonian_spikes",
+			"imageid10": "lepidodendron:devonian_spikes",
+			"imageid11": "lepidodendron:devonian_spikes",
+			"imageid12": "lepidodendron:devonian_spikes",
+			"imageid13": "lepidodendron:devonian_spikes",
+			"imageid14": "lepidodendron:devonian_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_spikes"
+			"biome": "lepidodendron:devonian_spikes",
+			"imageid0": "lepidodendron:devonian_spikes",
+			"imageid1": "lepidodendron:devonian_spikes",
+			"imageid2": "lepidodendron:devonian_spikes",
+			"imageid3": "lepidodendron:devonian_spikes",
+			"imageid4": "lepidodendron:devonian_spikes",
+			"imageid5": "lepidodendron:devonian_spikes",
+			"imageid6": "lepidodendron:devonian_spikes",
+			"imageid7": "lepidodendron:devonian_spikes",
+			"imageid8": "lepidodendron:devonian_spikes",
+			"imageid9": "lepidodendron:devonian_spikes",
+			"imageid10": "lepidodendron:devonian_spikes",
+			"imageid11": "lepidodendron:devonian_spikes",
+			"imageid12": "lepidodendron:devonian_spikes",
+			"imageid13": "lepidodendron:devonian_spikes",
+			"imageid14": "lepidodendron:devonian_spikes"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_spikes"
+			"biome": "lepidodendron:devonian_spikes",
+			"imageid0": "lepidodendron:devonian_spikes",
+			"imageid1": "lepidodendron:devonian_spikes",
+			"imageid2": "lepidodendron:devonian_spikes",
+			"imageid3": "lepidodendron:devonian_spikes",
+			"imageid4": "lepidodendron:devonian_spikes",
+			"imageid5": "lepidodendron:devonian_spikes",
+			"imageid6": "lepidodendron:devonian_spikes",
+			"imageid7": "lepidodendron:devonian_spikes",
+			"imageid8": "lepidodendron:devonian_spikes",
+			"imageid9": "lepidodendron:devonian_spikes",
+			"imageid10": "lepidodendron:devonian_spikes",
+			"imageid11": "lepidodendron:devonian_spikes",
+			"imageid12": "lepidodendron:devonian_spikes",
+			"imageid13": "lepidodendron:devonian_spikes",
+			"imageid14": "lepidodendron:devonian_spikes"
 		}
 	]
 }

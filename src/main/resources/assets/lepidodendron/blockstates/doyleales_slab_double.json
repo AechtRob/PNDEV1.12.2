@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:doyleales_slab_double"
+    }
+  }
+}

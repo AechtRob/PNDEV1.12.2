@@ -1,0 +1,31 @@
+{
+	"name": "Echmatocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:echmatocrinus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_echmatocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_echmatocrinus",
+			"title": "Echmatocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Echmatocrinus.png"],
+			"title": "E. brachiatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_echmatocrinus",
+			"type": "text",
+			"text": "Echmatocrinus is a conically shaped animal which resembles a crinoid. It looked like an inverted cone with several tentacles on the top of the animal. It lived a mainly solitary lifestyle though some juveniles were found attached to adults."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_echmatocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

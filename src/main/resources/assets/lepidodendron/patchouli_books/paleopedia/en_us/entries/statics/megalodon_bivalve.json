@@ -1,0 +1,31 @@
+{
+	"name": "Megalodon",
+	"read_by_default": true,
+	"icon": "lepidodendron:bivalve_megalodon",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_bivalve_megalodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve_megalodon",
+			"title": "Megalodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian-Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia$(br)>Megalodontida$(br)>Megalodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Megalodon_bivalve.png"],
+			"title": "Megalodon sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_megalodon",
+			"type": "text",
+			"text": "Megalodon is a bivalve that may have lived from the Devonian to Jurassic periods. It was a species of medium sized saltwater clams which were likely filter feeders that lived on the bottom of the ocean. The genus name Megalodon means 'large tooth.'"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve_megalodon",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Punch/Shears"
+		}
+	]
+}

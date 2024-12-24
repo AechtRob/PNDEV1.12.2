@@ -2,7 +2,7 @@
 	"name": "Platysomus",
 	"read_by_default": true,
 	"icon": "lepidodendron:platysomus_raw",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_platysomus",
 	"pages": [
 		{

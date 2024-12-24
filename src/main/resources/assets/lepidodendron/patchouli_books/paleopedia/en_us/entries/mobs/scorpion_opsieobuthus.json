@@ -2,7 +2,7 @@
 	"name": "Opsieobuthus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/opsieobuthus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_scorpion_opsieobuthus",
 	"pages": [
 		{

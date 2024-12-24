@@ -2,7 +2,7 @@
 	"name": "Microphymaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:platycaraspis_raw",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_platycaraspis",
 	"pages": [
 		{

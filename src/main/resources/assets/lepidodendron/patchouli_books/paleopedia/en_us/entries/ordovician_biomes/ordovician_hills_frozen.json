@@ -2,7 +2,7 @@
 	"name": "Frozen Jagged Wastes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-	"category": "lepidodendron:ordovician_biome",
+	"category": "lepidodendron:ordovician/ordovician_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:ordovician_hills_frozen"
+			"biome": "lepidodendron:ordovician_hills_frozen",
+			"imageid0": "lepidodendron:ordovician_hills_frozen",
+			"imageid1": "lepidodendron:ordovician_hills_frozen",
+			"imageid2": "lepidodendron:ordovician_hills_frozen",
+			"imageid3": "lepidodendron:ordovician_hills_frozen",
+			"imageid4": "lepidodendron:ordovician_hills_frozen",
+			"imageid5": "lepidodendron:ordovician_hills_frozen",
+			"imageid6": "lepidodendron:ordovician_hills_frozen",
+			"imageid7": "lepidodendron:ordovician_hills_frozen",
+			"imageid8": "lepidodendron:ordovician_hills_frozen",
+			"imageid9": "lepidodendron:ordovician_hills_frozen",
+			"imageid10": "lepidodendron:ordovician_hills_frozen",
+			"imageid11": "lepidodendron:ordovician_hills_frozen",
+			"imageid12": "lepidodendron:ordovician_hills_frozen",
+			"imageid13": "lepidodendron:ordovician_hills_frozen"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:ordovician_hills_frozen"
+			"biome": "lepidodendron:ordovician_hills_frozen",
+			"imageid0": "lepidodendron:ordovician_hills_frozen",
+			"imageid1": "lepidodendron:ordovician_hills_frozen",
+			"imageid2": "lepidodendron:ordovician_hills_frozen",
+			"imageid3": "lepidodendron:ordovician_hills_frozen",
+			"imageid4": "lepidodendron:ordovician_hills_frozen",
+			"imageid5": "lepidodendron:ordovician_hills_frozen",
+			"imageid6": "lepidodendron:ordovician_hills_frozen",
+			"imageid7": "lepidodendron:ordovician_hills_frozen",
+			"imageid8": "lepidodendron:ordovician_hills_frozen",
+			"imageid9": "lepidodendron:ordovician_hills_frozen",
+			"imageid10": "lepidodendron:ordovician_hills_frozen",
+			"imageid11": "lepidodendron:ordovician_hills_frozen",
+			"imageid12": "lepidodendron:ordovician_hills_frozen",
+			"imageid13": "lepidodendron:ordovician_hills_frozen",
+			"imageid14": "lepidodendron:ordovician_hills_frozen"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:ordovician_hills_frozen"
+			"biome": "lepidodendron:ordovician_hills_frozen",
+			"imageid0": "lepidodendron:ordovician_hills_frozen",
+			"imageid1": "lepidodendron:ordovician_hills_frozen",
+			"imageid2": "lepidodendron:ordovician_hills_frozen",
+			"imageid3": "lepidodendron:ordovician_hills_frozen",
+			"imageid4": "lepidodendron:ordovician_hills_frozen",
+			"imageid5": "lepidodendron:ordovician_hills_frozen",
+			"imageid6": "lepidodendron:ordovician_hills_frozen",
+			"imageid7": "lepidodendron:ordovician_hills_frozen",
+			"imageid8": "lepidodendron:ordovician_hills_frozen",
+			"imageid9": "lepidodendron:ordovician_hills_frozen",
+			"imageid10": "lepidodendron:ordovician_hills_frozen",
+			"imageid11": "lepidodendron:ordovician_hills_frozen",
+			"imageid12": "lepidodendron:ordovician_hills_frozen",
+			"imageid13": "lepidodendron:ordovician_hills_frozen",
+			"imageid14": "lepidodendron:ordovician_hills_frozen"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:ordovician_hills_frozen"
+			"biome": "lepidodendron:ordovician_hills_frozen",
+			"imageid0": "lepidodendron:ordovician_hills_frozen",
+			"imageid1": "lepidodendron:ordovician_hills_frozen",
+			"imageid2": "lepidodendron:ordovician_hills_frozen",
+			"imageid3": "lepidodendron:ordovician_hills_frozen",
+			"imageid4": "lepidodendron:ordovician_hills_frozen",
+			"imageid5": "lepidodendron:ordovician_hills_frozen",
+			"imageid6": "lepidodendron:ordovician_hills_frozen",
+			"imageid7": "lepidodendron:ordovician_hills_frozen",
+			"imageid8": "lepidodendron:ordovician_hills_frozen",
+			"imageid9": "lepidodendron:ordovician_hills_frozen",
+			"imageid10": "lepidodendron:ordovician_hills_frozen",
+			"imageid11": "lepidodendron:ordovician_hills_frozen",
+			"imageid12": "lepidodendron:ordovician_hills_frozen",
+			"imageid13": "lepidodendron:ordovician_hills_frozen",
+			"imageid14": "lepidodendron:ordovician_hills_frozen"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:ordovician_hills_frozen"
+			"biome": "lepidodendron:ordovician_hills_frozen",
+			"imageid0": "lepidodendron:ordovician_hills_frozen",
+			"imageid1": "lepidodendron:ordovician_hills_frozen",
+			"imageid2": "lepidodendron:ordovician_hills_frozen",
+			"imageid3": "lepidodendron:ordovician_hills_frozen",
+			"imageid4": "lepidodendron:ordovician_hills_frozen",
+			"imageid5": "lepidodendron:ordovician_hills_frozen",
+			"imageid6": "lepidodendron:ordovician_hills_frozen",
+			"imageid7": "lepidodendron:ordovician_hills_frozen",
+			"imageid8": "lepidodendron:ordovician_hills_frozen",
+			"imageid9": "lepidodendron:ordovician_hills_frozen",
+			"imageid10": "lepidodendron:ordovician_hills_frozen",
+			"imageid11": "lepidodendron:ordovician_hills_frozen",
+			"imageid12": "lepidodendron:ordovician_hills_frozen",
+			"imageid13": "lepidodendron:ordovician_hills_frozen",
+			"imageid14": "lepidodendron:ordovician_hills_frozen"
 		}
 	]
 }

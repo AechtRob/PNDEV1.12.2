@@ -2,7 +2,7 @@
 	"name": "Eastmanosteus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/eastmanosteus_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_eastmanosteus",
 	"pages": [
 		{

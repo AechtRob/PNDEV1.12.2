@@ -2,7 +2,7 @@
 	"name": "Lowland Floodplain",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_lowlands_floodplain"
+			"biome": "lepidodendron:permian_lowlands_floodplain",
+			"imageid0": "lepidodendron:permian_lowlands_floodplain",
+			"imageid1": "lepidodendron:permian_lowlands_floodplain",
+			"imageid2": "lepidodendron:permian_lowlands_floodplain",
+			"imageid3": "lepidodendron:permian_lowlands_floodplain",
+			"imageid4": "lepidodendron:permian_lowlands_floodplain",
+			"imageid5": "lepidodendron:permian_lowlands_floodplain",
+			"imageid6": "lepidodendron:permian_lowlands_floodplain",
+			"imageid7": "lepidodendron:permian_lowlands_floodplain",
+			"imageid8": "lepidodendron:permian_lowlands_floodplain",
+			"imageid9": "lepidodendron:permian_lowlands_floodplain",
+			"imageid10": "lepidodendron:permian_lowlands_floodplain",
+			"imageid11": "lepidodendron:permian_lowlands_floodplain",
+			"imageid12": "lepidodendron:permian_lowlands_floodplain",
+			"imageid13": "lepidodendron:permian_lowlands_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_lowlands_floodplain"
+			"biome": "lepidodendron:permian_lowlands_floodplain",
+			"imageid0": "lepidodendron:permian_lowlands_floodplain",
+			"imageid1": "lepidodendron:permian_lowlands_floodplain",
+			"imageid2": "lepidodendron:permian_lowlands_floodplain",
+			"imageid3": "lepidodendron:permian_lowlands_floodplain",
+			"imageid4": "lepidodendron:permian_lowlands_floodplain",
+			"imageid5": "lepidodendron:permian_lowlands_floodplain",
+			"imageid6": "lepidodendron:permian_lowlands_floodplain",
+			"imageid7": "lepidodendron:permian_lowlands_floodplain",
+			"imageid8": "lepidodendron:permian_lowlands_floodplain",
+			"imageid9": "lepidodendron:permian_lowlands_floodplain",
+			"imageid10": "lepidodendron:permian_lowlands_floodplain",
+			"imageid11": "lepidodendron:permian_lowlands_floodplain",
+			"imageid12": "lepidodendron:permian_lowlands_floodplain",
+			"imageid13": "lepidodendron:permian_lowlands_floodplain",
+			"imageid14": "lepidodendron:permian_lowlands_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_lowlands_floodplain"
+			"biome": "lepidodendron:permian_lowlands_floodplain",
+			"imageid0": "lepidodendron:permian_lowlands_floodplain",
+			"imageid1": "lepidodendron:permian_lowlands_floodplain",
+			"imageid2": "lepidodendron:permian_lowlands_floodplain",
+			"imageid3": "lepidodendron:permian_lowlands_floodplain",
+			"imageid4": "lepidodendron:permian_lowlands_floodplain",
+			"imageid5": "lepidodendron:permian_lowlands_floodplain",
+			"imageid6": "lepidodendron:permian_lowlands_floodplain",
+			"imageid7": "lepidodendron:permian_lowlands_floodplain",
+			"imageid8": "lepidodendron:permian_lowlands_floodplain",
+			"imageid9": "lepidodendron:permian_lowlands_floodplain",
+			"imageid10": "lepidodendron:permian_lowlands_floodplain",
+			"imageid11": "lepidodendron:permian_lowlands_floodplain",
+			"imageid12": "lepidodendron:permian_lowlands_floodplain",
+			"imageid13": "lepidodendron:permian_lowlands_floodplain",
+			"imageid14": "lepidodendron:permian_lowlands_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_lowlands_floodplain"
+			"biome": "lepidodendron:permian_lowlands_floodplain",
+			"imageid0": "lepidodendron:permian_lowlands_floodplain",
+			"imageid1": "lepidodendron:permian_lowlands_floodplain",
+			"imageid2": "lepidodendron:permian_lowlands_floodplain",
+			"imageid3": "lepidodendron:permian_lowlands_floodplain",
+			"imageid4": "lepidodendron:permian_lowlands_floodplain",
+			"imageid5": "lepidodendron:permian_lowlands_floodplain",
+			"imageid6": "lepidodendron:permian_lowlands_floodplain",
+			"imageid7": "lepidodendron:permian_lowlands_floodplain",
+			"imageid8": "lepidodendron:permian_lowlands_floodplain",
+			"imageid9": "lepidodendron:permian_lowlands_floodplain",
+			"imageid10": "lepidodendron:permian_lowlands_floodplain",
+			"imageid11": "lepidodendron:permian_lowlands_floodplain",
+			"imageid12": "lepidodendron:permian_lowlands_floodplain",
+			"imageid13": "lepidodendron:permian_lowlands_floodplain",
+			"imageid14": "lepidodendron:permian_lowlands_floodplain"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_lowlands_floodplain"
+			"biome": "lepidodendron:permian_lowlands_floodplain",
+			"imageid0": "lepidodendron:permian_lowlands_floodplain",
+			"imageid1": "lepidodendron:permian_lowlands_floodplain",
+			"imageid2": "lepidodendron:permian_lowlands_floodplain",
+			"imageid3": "lepidodendron:permian_lowlands_floodplain",
+			"imageid4": "lepidodendron:permian_lowlands_floodplain",
+			"imageid5": "lepidodendron:permian_lowlands_floodplain",
+			"imageid6": "lepidodendron:permian_lowlands_floodplain",
+			"imageid7": "lepidodendron:permian_lowlands_floodplain",
+			"imageid8": "lepidodendron:permian_lowlands_floodplain",
+			"imageid9": "lepidodendron:permian_lowlands_floodplain",
+			"imageid10": "lepidodendron:permian_lowlands_floodplain",
+			"imageid11": "lepidodendron:permian_lowlands_floodplain",
+			"imageid12": "lepidodendron:permian_lowlands_floodplain",
+			"imageid13": "lepidodendron:permian_lowlands_floodplain",
+			"imageid14": "lepidodendron:permian_lowlands_floodplain"
 		}
 	]
 }

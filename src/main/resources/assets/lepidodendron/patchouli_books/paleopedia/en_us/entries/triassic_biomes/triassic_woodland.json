@@ -2,7 +2,7 @@
 	"name": "Woodland",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_woodland"
+			"biome": "lepidodendron:triassic_woodland",
+			"imageid0": "lepidodendron:triassic_woodland",
+			"imageid1": "lepidodendron:triassic_woodland",
+			"imageid2": "lepidodendron:triassic_woodland",
+			"imageid3": "lepidodendron:triassic_woodland",
+			"imageid4": "lepidodendron:triassic_woodland",
+			"imageid5": "lepidodendron:triassic_woodland",
+			"imageid6": "lepidodendron:triassic_woodland",
+			"imageid7": "lepidodendron:triassic_woodland",
+			"imageid8": "lepidodendron:triassic_woodland",
+			"imageid9": "lepidodendron:triassic_woodland",
+			"imageid10": "lepidodendron:triassic_woodland",
+			"imageid11": "lepidodendron:triassic_woodland",
+			"imageid12": "lepidodendron:triassic_woodland",
+			"imageid13": "lepidodendron:triassic_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_woodland"
+			"biome": "lepidodendron:triassic_woodland",
+			"imageid0": "lepidodendron:triassic_woodland",
+			"imageid1": "lepidodendron:triassic_woodland",
+			"imageid2": "lepidodendron:triassic_woodland",
+			"imageid3": "lepidodendron:triassic_woodland",
+			"imageid4": "lepidodendron:triassic_woodland",
+			"imageid5": "lepidodendron:triassic_woodland",
+			"imageid6": "lepidodendron:triassic_woodland",
+			"imageid7": "lepidodendron:triassic_woodland",
+			"imageid8": "lepidodendron:triassic_woodland",
+			"imageid9": "lepidodendron:triassic_woodland",
+			"imageid10": "lepidodendron:triassic_woodland",
+			"imageid11": "lepidodendron:triassic_woodland",
+			"imageid12": "lepidodendron:triassic_woodland",
+			"imageid13": "lepidodendron:triassic_woodland",
+			"imageid14": "lepidodendron:triassic_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_woodland"
+			"biome": "lepidodendron:triassic_woodland",
+			"imageid0": "lepidodendron:triassic_woodland",
+			"imageid1": "lepidodendron:triassic_woodland",
+			"imageid2": "lepidodendron:triassic_woodland",
+			"imageid3": "lepidodendron:triassic_woodland",
+			"imageid4": "lepidodendron:triassic_woodland",
+			"imageid5": "lepidodendron:triassic_woodland",
+			"imageid6": "lepidodendron:triassic_woodland",
+			"imageid7": "lepidodendron:triassic_woodland",
+			"imageid8": "lepidodendron:triassic_woodland",
+			"imageid9": "lepidodendron:triassic_woodland",
+			"imageid10": "lepidodendron:triassic_woodland",
+			"imageid11": "lepidodendron:triassic_woodland",
+			"imageid12": "lepidodendron:triassic_woodland",
+			"imageid13": "lepidodendron:triassic_woodland",
+			"imageid14": "lepidodendron:triassic_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_woodland"
+			"biome": "lepidodendron:triassic_woodland",
+			"imageid0": "lepidodendron:triassic_woodland",
+			"imageid1": "lepidodendron:triassic_woodland",
+			"imageid2": "lepidodendron:triassic_woodland",
+			"imageid3": "lepidodendron:triassic_woodland",
+			"imageid4": "lepidodendron:triassic_woodland",
+			"imageid5": "lepidodendron:triassic_woodland",
+			"imageid6": "lepidodendron:triassic_woodland",
+			"imageid7": "lepidodendron:triassic_woodland",
+			"imageid8": "lepidodendron:triassic_woodland",
+			"imageid9": "lepidodendron:triassic_woodland",
+			"imageid10": "lepidodendron:triassic_woodland",
+			"imageid11": "lepidodendron:triassic_woodland",
+			"imageid12": "lepidodendron:triassic_woodland",
+			"imageid13": "lepidodendron:triassic_woodland",
+			"imageid14": "lepidodendron:triassic_woodland"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_woodland"
+			"biome": "lepidodendron:triassic_woodland",
+			"imageid0": "lepidodendron:triassic_woodland",
+			"imageid1": "lepidodendron:triassic_woodland",
+			"imageid2": "lepidodendron:triassic_woodland",
+			"imageid3": "lepidodendron:triassic_woodland",
+			"imageid4": "lepidodendron:triassic_woodland",
+			"imageid5": "lepidodendron:triassic_woodland",
+			"imageid6": "lepidodendron:triassic_woodland",
+			"imageid7": "lepidodendron:triassic_woodland",
+			"imageid8": "lepidodendron:triassic_woodland",
+			"imageid9": "lepidodendron:triassic_woodland",
+			"imageid10": "lepidodendron:triassic_woodland",
+			"imageid11": "lepidodendron:triassic_woodland",
+			"imageid12": "lepidodendron:triassic_woodland",
+			"imageid13": "lepidodendron:triassic_woodland",
+			"imageid14": "lepidodendron:triassic_woodland"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Meioneurites",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/kalligrammatid_meioneurites_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_kalligrammatid_meioneurites",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Mountains",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_mountains"
+			"biome": "lepidodendron:triassic_mountains",
+			"imageid0": "lepidodendron:triassic_mountains",
+			"imageid1": "lepidodendron:triassic_mountains",
+			"imageid2": "lepidodendron:triassic_mountains",
+			"imageid3": "lepidodendron:triassic_mountains",
+			"imageid4": "lepidodendron:triassic_mountains",
+			"imageid5": "lepidodendron:triassic_mountains",
+			"imageid6": "lepidodendron:triassic_mountains",
+			"imageid7": "lepidodendron:triassic_mountains",
+			"imageid8": "lepidodendron:triassic_mountains",
+			"imageid9": "lepidodendron:triassic_mountains",
+			"imageid10": "lepidodendron:triassic_mountains",
+			"imageid11": "lepidodendron:triassic_mountains",
+			"imageid12": "lepidodendron:triassic_mountains",
+			"imageid13": "lepidodendron:triassic_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_mountains"
+			"biome": "lepidodendron:triassic_mountains",
+			"imageid0": "lepidodendron:triassic_mountains",
+			"imageid1": "lepidodendron:triassic_mountains",
+			"imageid2": "lepidodendron:triassic_mountains",
+			"imageid3": "lepidodendron:triassic_mountains",
+			"imageid4": "lepidodendron:triassic_mountains",
+			"imageid5": "lepidodendron:triassic_mountains",
+			"imageid6": "lepidodendron:triassic_mountains",
+			"imageid7": "lepidodendron:triassic_mountains",
+			"imageid8": "lepidodendron:triassic_mountains",
+			"imageid9": "lepidodendron:triassic_mountains",
+			"imageid10": "lepidodendron:triassic_mountains",
+			"imageid11": "lepidodendron:triassic_mountains",
+			"imageid12": "lepidodendron:triassic_mountains",
+			"imageid13": "lepidodendron:triassic_mountains",
+			"imageid14": "lepidodendron:triassic_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_mountains"
+			"biome": "lepidodendron:triassic_mountains",
+			"imageid0": "lepidodendron:triassic_mountains",
+			"imageid1": "lepidodendron:triassic_mountains",
+			"imageid2": "lepidodendron:triassic_mountains",
+			"imageid3": "lepidodendron:triassic_mountains",
+			"imageid4": "lepidodendron:triassic_mountains",
+			"imageid5": "lepidodendron:triassic_mountains",
+			"imageid6": "lepidodendron:triassic_mountains",
+			"imageid7": "lepidodendron:triassic_mountains",
+			"imageid8": "lepidodendron:triassic_mountains",
+			"imageid9": "lepidodendron:triassic_mountains",
+			"imageid10": "lepidodendron:triassic_mountains",
+			"imageid11": "lepidodendron:triassic_mountains",
+			"imageid12": "lepidodendron:triassic_mountains",
+			"imageid13": "lepidodendron:triassic_mountains",
+			"imageid14": "lepidodendron:triassic_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_mountains"
+			"biome": "lepidodendron:triassic_mountains",
+			"imageid0": "lepidodendron:triassic_mountains",
+			"imageid1": "lepidodendron:triassic_mountains",
+			"imageid2": "lepidodendron:triassic_mountains",
+			"imageid3": "lepidodendron:triassic_mountains",
+			"imageid4": "lepidodendron:triassic_mountains",
+			"imageid5": "lepidodendron:triassic_mountains",
+			"imageid6": "lepidodendron:triassic_mountains",
+			"imageid7": "lepidodendron:triassic_mountains",
+			"imageid8": "lepidodendron:triassic_mountains",
+			"imageid9": "lepidodendron:triassic_mountains",
+			"imageid10": "lepidodendron:triassic_mountains",
+			"imageid11": "lepidodendron:triassic_mountains",
+			"imageid12": "lepidodendron:triassic_mountains",
+			"imageid13": "lepidodendron:triassic_mountains",
+			"imageid14": "lepidodendron:triassic_mountains"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_mountains"
+			"biome": "lepidodendron:triassic_mountains",
+			"imageid0": "lepidodendron:triassic_mountains",
+			"imageid1": "lepidodendron:triassic_mountains",
+			"imageid2": "lepidodendron:triassic_mountains",
+			"imageid3": "lepidodendron:triassic_mountains",
+			"imageid4": "lepidodendron:triassic_mountains",
+			"imageid5": "lepidodendron:triassic_mountains",
+			"imageid6": "lepidodendron:triassic_mountains",
+			"imageid7": "lepidodendron:triassic_mountains",
+			"imageid8": "lepidodendron:triassic_mountains",
+			"imageid9": "lepidodendron:triassic_mountains",
+			"imageid10": "lepidodendron:triassic_mountains",
+			"imageid11": "lepidodendron:triassic_mountains",
+			"imageid12": "lepidodendron:triassic_mountains",
+			"imageid13": "lepidodendron:triassic_mountains",
+			"imageid14": "lepidodendron:triassic_mountains"
 		}
 	]
 }

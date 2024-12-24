@@ -2,7 +2,7 @@
 	"name": "Lufengosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/lufengosaurus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_lufengosaurus",
 	"pages": [
 		{

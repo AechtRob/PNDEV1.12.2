@@ -2,7 +2,7 @@
 	"name": "Shallow Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_silurian.png",
-	"category": "lepidodendron:silurian_biome",
+	"category": "lepidodendron:silurian/silurian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:silurian_sea_shore"
+			"biome": "lepidodendron:silurian_sea_shore",
+			"imageid0": "lepidodendron:silurian_sea_shore",
+			"imageid1": "lepidodendron:silurian_sea_shore",
+			"imageid2": "lepidodendron:silurian_sea_shore",
+			"imageid3": "lepidodendron:silurian_sea_shore",
+			"imageid4": "lepidodendron:silurian_sea_shore",
+			"imageid5": "lepidodendron:silurian_sea_shore",
+			"imageid6": "lepidodendron:silurian_sea_shore",
+			"imageid7": "lepidodendron:silurian_sea_shore",
+			"imageid8": "lepidodendron:silurian_sea_shore",
+			"imageid9": "lepidodendron:silurian_sea_shore",
+			"imageid10": "lepidodendron:silurian_sea_shore",
+			"imageid11": "lepidodendron:silurian_sea_shore",
+			"imageid12": "lepidodendron:silurian_sea_shore",
+			"imageid13": "lepidodendron:silurian_sea_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:silurian_sea_shore"
+			"biome": "lepidodendron:silurian_sea_shore",
+			"imageid0": "lepidodendron:silurian_sea_shore",
+			"imageid1": "lepidodendron:silurian_sea_shore",
+			"imageid2": "lepidodendron:silurian_sea_shore",
+			"imageid3": "lepidodendron:silurian_sea_shore",
+			"imageid4": "lepidodendron:silurian_sea_shore",
+			"imageid5": "lepidodendron:silurian_sea_shore",
+			"imageid6": "lepidodendron:silurian_sea_shore",
+			"imageid7": "lepidodendron:silurian_sea_shore",
+			"imageid8": "lepidodendron:silurian_sea_shore",
+			"imageid9": "lepidodendron:silurian_sea_shore",
+			"imageid10": "lepidodendron:silurian_sea_shore",
+			"imageid11": "lepidodendron:silurian_sea_shore",
+			"imageid12": "lepidodendron:silurian_sea_shore",
+			"imageid13": "lepidodendron:silurian_sea_shore",
+			"imageid14": "lepidodendron:silurian_sea_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:silurian_sea_shore"
+			"biome": "lepidodendron:silurian_sea_shore",
+			"imageid0": "lepidodendron:silurian_sea_shore",
+			"imageid1": "lepidodendron:silurian_sea_shore",
+			"imageid2": "lepidodendron:silurian_sea_shore",
+			"imageid3": "lepidodendron:silurian_sea_shore",
+			"imageid4": "lepidodendron:silurian_sea_shore",
+			"imageid5": "lepidodendron:silurian_sea_shore",
+			"imageid6": "lepidodendron:silurian_sea_shore",
+			"imageid7": "lepidodendron:silurian_sea_shore",
+			"imageid8": "lepidodendron:silurian_sea_shore",
+			"imageid9": "lepidodendron:silurian_sea_shore",
+			"imageid10": "lepidodendron:silurian_sea_shore",
+			"imageid11": "lepidodendron:silurian_sea_shore",
+			"imageid12": "lepidodendron:silurian_sea_shore",
+			"imageid13": "lepidodendron:silurian_sea_shore",
+			"imageid14": "lepidodendron:silurian_sea_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:silurian_sea_shore"
+			"biome": "lepidodendron:silurian_sea_shore",
+			"imageid0": "lepidodendron:silurian_sea_shore",
+			"imageid1": "lepidodendron:silurian_sea_shore",
+			"imageid2": "lepidodendron:silurian_sea_shore",
+			"imageid3": "lepidodendron:silurian_sea_shore",
+			"imageid4": "lepidodendron:silurian_sea_shore",
+			"imageid5": "lepidodendron:silurian_sea_shore",
+			"imageid6": "lepidodendron:silurian_sea_shore",
+			"imageid7": "lepidodendron:silurian_sea_shore",
+			"imageid8": "lepidodendron:silurian_sea_shore",
+			"imageid9": "lepidodendron:silurian_sea_shore",
+			"imageid10": "lepidodendron:silurian_sea_shore",
+			"imageid11": "lepidodendron:silurian_sea_shore",
+			"imageid12": "lepidodendron:silurian_sea_shore",
+			"imageid13": "lepidodendron:silurian_sea_shore",
+			"imageid14": "lepidodendron:silurian_sea_shore"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:silurian_sea_shore"
+			"biome": "lepidodendron:silurian_sea_shore",
+			"imageid0": "lepidodendron:silurian_sea_shore",
+			"imageid1": "lepidodendron:silurian_sea_shore",
+			"imageid2": "lepidodendron:silurian_sea_shore",
+			"imageid3": "lepidodendron:silurian_sea_shore",
+			"imageid4": "lepidodendron:silurian_sea_shore",
+			"imageid5": "lepidodendron:silurian_sea_shore",
+			"imageid6": "lepidodendron:silurian_sea_shore",
+			"imageid7": "lepidodendron:silurian_sea_shore",
+			"imageid8": "lepidodendron:silurian_sea_shore",
+			"imageid9": "lepidodendron:silurian_sea_shore",
+			"imageid10": "lepidodendron:silurian_sea_shore",
+			"imageid11": "lepidodendron:silurian_sea_shore",
+			"imageid12": "lepidodendron:silurian_sea_shore",
+			"imageid13": "lepidodendron:silurian_sea_shore",
+			"imageid14": "lepidodendron:silurian_sea_shore"
 		}
 	]
 }

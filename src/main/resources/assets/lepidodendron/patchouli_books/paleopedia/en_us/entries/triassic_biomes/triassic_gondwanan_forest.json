@@ -2,7 +2,7 @@
 	"name": "Cool Temperate Forest",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_gondwanan_forest"
+			"biome": "lepidodendron:triassic_gondwanan_forest",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_gondwanan_forest"
+			"biome": "lepidodendron:triassic_gondwanan_forest",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_gondwanan_forest"
+			"biome": "lepidodendron:triassic_gondwanan_forest",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_gondwanan_forest"
+			"biome": "lepidodendron:triassic_gondwanan_forest",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_gondwanan_forest"
+			"biome": "lepidodendron:triassic_gondwanan_forest",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest"
 		}
 	]
 }

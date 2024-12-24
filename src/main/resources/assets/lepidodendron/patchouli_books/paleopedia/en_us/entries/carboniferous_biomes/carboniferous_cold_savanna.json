@@ -2,7 +2,7 @@
 	"name": "Steppe",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_cold_savanna"
+			"biome": "lepidodendron:carboniferous_cold_savanna",
+			"imageid0": "lepidodendron:carboniferous_cold_savanna",
+			"imageid1": "lepidodendron:carboniferous_cold_savanna",
+			"imageid2": "lepidodendron:carboniferous_cold_savanna",
+			"imageid3": "lepidodendron:carboniferous_cold_savanna",
+			"imageid4": "lepidodendron:carboniferous_cold_savanna",
+			"imageid5": "lepidodendron:carboniferous_cold_savanna",
+			"imageid6": "lepidodendron:carboniferous_cold_savanna",
+			"imageid7": "lepidodendron:carboniferous_cold_savanna",
+			"imageid8": "lepidodendron:carboniferous_cold_savanna",
+			"imageid9": "lepidodendron:carboniferous_cold_savanna",
+			"imageid10": "lepidodendron:carboniferous_cold_savanna",
+			"imageid11": "lepidodendron:carboniferous_cold_savanna",
+			"imageid12": "lepidodendron:carboniferous_cold_savanna",
+			"imageid13": "lepidodendron:carboniferous_cold_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_cold_savanna"
+			"biome": "lepidodendron:carboniferous_cold_savanna",
+			"imageid0": "lepidodendron:carboniferous_cold_savanna",
+			"imageid1": "lepidodendron:carboniferous_cold_savanna",
+			"imageid2": "lepidodendron:carboniferous_cold_savanna",
+			"imageid3": "lepidodendron:carboniferous_cold_savanna",
+			"imageid4": "lepidodendron:carboniferous_cold_savanna",
+			"imageid5": "lepidodendron:carboniferous_cold_savanna",
+			"imageid6": "lepidodendron:carboniferous_cold_savanna",
+			"imageid7": "lepidodendron:carboniferous_cold_savanna",
+			"imageid8": "lepidodendron:carboniferous_cold_savanna",
+			"imageid9": "lepidodendron:carboniferous_cold_savanna",
+			"imageid10": "lepidodendron:carboniferous_cold_savanna",
+			"imageid11": "lepidodendron:carboniferous_cold_savanna",
+			"imageid12": "lepidodendron:carboniferous_cold_savanna",
+			"imageid13": "lepidodendron:carboniferous_cold_savanna",
+			"imageid14": "lepidodendron:carboniferous_cold_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_cold_savanna"
+			"biome": "lepidodendron:carboniferous_cold_savanna",
+			"imageid0": "lepidodendron:carboniferous_cold_savanna",
+			"imageid1": "lepidodendron:carboniferous_cold_savanna",
+			"imageid2": "lepidodendron:carboniferous_cold_savanna",
+			"imageid3": "lepidodendron:carboniferous_cold_savanna",
+			"imageid4": "lepidodendron:carboniferous_cold_savanna",
+			"imageid5": "lepidodendron:carboniferous_cold_savanna",
+			"imageid6": "lepidodendron:carboniferous_cold_savanna",
+			"imageid7": "lepidodendron:carboniferous_cold_savanna",
+			"imageid8": "lepidodendron:carboniferous_cold_savanna",
+			"imageid9": "lepidodendron:carboniferous_cold_savanna",
+			"imageid10": "lepidodendron:carboniferous_cold_savanna",
+			"imageid11": "lepidodendron:carboniferous_cold_savanna",
+			"imageid12": "lepidodendron:carboniferous_cold_savanna",
+			"imageid13": "lepidodendron:carboniferous_cold_savanna",
+			"imageid14": "lepidodendron:carboniferous_cold_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_cold_savanna"
+			"biome": "lepidodendron:carboniferous_cold_savanna",
+			"imageid0": "lepidodendron:carboniferous_cold_savanna",
+			"imageid1": "lepidodendron:carboniferous_cold_savanna",
+			"imageid2": "lepidodendron:carboniferous_cold_savanna",
+			"imageid3": "lepidodendron:carboniferous_cold_savanna",
+			"imageid4": "lepidodendron:carboniferous_cold_savanna",
+			"imageid5": "lepidodendron:carboniferous_cold_savanna",
+			"imageid6": "lepidodendron:carboniferous_cold_savanna",
+			"imageid7": "lepidodendron:carboniferous_cold_savanna",
+			"imageid8": "lepidodendron:carboniferous_cold_savanna",
+			"imageid9": "lepidodendron:carboniferous_cold_savanna",
+			"imageid10": "lepidodendron:carboniferous_cold_savanna",
+			"imageid11": "lepidodendron:carboniferous_cold_savanna",
+			"imageid12": "lepidodendron:carboniferous_cold_savanna",
+			"imageid13": "lepidodendron:carboniferous_cold_savanna",
+			"imageid14": "lepidodendron:carboniferous_cold_savanna"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_cold_savanna"
+			"biome": "lepidodendron:carboniferous_cold_savanna",
+			"imageid0": "lepidodendron:carboniferous_cold_savanna",
+			"imageid1": "lepidodendron:carboniferous_cold_savanna",
+			"imageid2": "lepidodendron:carboniferous_cold_savanna",
+			"imageid3": "lepidodendron:carboniferous_cold_savanna",
+			"imageid4": "lepidodendron:carboniferous_cold_savanna",
+			"imageid5": "lepidodendron:carboniferous_cold_savanna",
+			"imageid6": "lepidodendron:carboniferous_cold_savanna",
+			"imageid7": "lepidodendron:carboniferous_cold_savanna",
+			"imageid8": "lepidodendron:carboniferous_cold_savanna",
+			"imageid9": "lepidodendron:carboniferous_cold_savanna",
+			"imageid10": "lepidodendron:carboniferous_cold_savanna",
+			"imageid11": "lepidodendron:carboniferous_cold_savanna",
+			"imageid12": "lepidodendron:carboniferous_cold_savanna",
+			"imageid13": "lepidodendron:carboniferous_cold_savanna",
+			"imageid14": "lepidodendron:carboniferous_cold_savanna"
 		}
 	]
 }

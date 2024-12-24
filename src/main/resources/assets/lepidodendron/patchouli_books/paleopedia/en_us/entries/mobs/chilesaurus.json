@@ -2,7 +2,7 @@
 	"name": "Chilesaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/chilesaurus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_chilesaurus",
 	"pages": [
 		{

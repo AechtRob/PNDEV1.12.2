@@ -335,6 +335,8 @@ public class EntityPNBoat extends EntityBoat
                 return ItemLiquidambarBoatItem.block;
             case SYNCHYSIDENDRON:
                 return ItemSynchysidendronBoatItem.block;
+            case DOYLEALES:
+                return ItemDoylealesBoatItem.block;
 
         }
     }
@@ -489,6 +491,8 @@ public class EntityPNBoat extends EntityBoat
                 return BlockLiquidambarPlanks.block;
             case SYNCHYSIDENDRON:
                 return BlockSynchysidendronPlanks.block;
+            case DOYLEALES:
+                return BlockDoylealesPlanks.block;
 
         }
     }
@@ -1360,7 +1364,8 @@ public class EntityPNBoat extends EntityBoat
         ARID_PINE(70, "arid_pine"),
         THUJA(71, "arid_pine"),
         LIQUIDAMBAR(71, "liquidambar"),
-        SYNCHYSIDENDRON(72, "synchysidendron")
+        SYNCHYSIDENDRON(72, "synchysidendron"),
+        DOYLEALES(73, "doyleales")
         ;
 
         private final String name;

@@ -1,7 +1,0 @@
-{
-    "name": "Late Cretaceous Statics",
-    "description": "Static Animals of the Late Cretaceous",
-    "icon": "lepidodendron:bivalve_inoceramus_gigantocapulus",
-    "parent": "lepidodendron:cretaceouslate",
-    "sortnum": 2
-}

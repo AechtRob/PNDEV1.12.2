@@ -2,7 +2,7 @@
 	"name": "Carcinosoma",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/carcinosoma_icon.png",
-	"category": "lepidodendron:silurian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_carcinosoma",
 	"pages": [
 		{

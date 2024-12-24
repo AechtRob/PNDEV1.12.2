@@ -98,7 +98,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class LepidodendronEventSubscribers {
-	
+
 	public static ArrayList<Meteor> meteors = new ArrayList();
 	public static ArrayList<Meteor> fragments = new ArrayList();
 	public static ArrayList<Meteor> smoke = new ArrayList();

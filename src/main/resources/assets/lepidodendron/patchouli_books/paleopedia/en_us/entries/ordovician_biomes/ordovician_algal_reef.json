@@ -2,7 +2,7 @@
 	"name": "Algal Reef",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_ordovician.png",
-	"category": "lepidodendron:ordovician_biome",
+	"category": "lepidodendron:ordovician/ordovician_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:ordovician_algal_reef"
+			"biome": "lepidodendron:ordovician_algal_reef",
+			"imageid0": "lepidodendron:ordovician_algal_reef",
+			"imageid1": "lepidodendron:ordovician_algal_reef",
+			"imageid2": "lepidodendron:ordovician_algal_reef",
+			"imageid3": "lepidodendron:ordovician_algal_reef",
+			"imageid4": "lepidodendron:ordovician_algal_reef",
+			"imageid5": "lepidodendron:ordovician_algal_reef",
+			"imageid6": "lepidodendron:ordovician_algal_reef",
+			"imageid7": "lepidodendron:ordovician_algal_reef",
+			"imageid8": "lepidodendron:ordovician_algal_reef",
+			"imageid9": "lepidodendron:ordovician_algal_reef",
+			"imageid10": "lepidodendron:ordovician_algal_reef",
+			"imageid11": "lepidodendron:ordovician_algal_reef",
+			"imageid12": "lepidodendron:ordovician_algal_reef",
+			"imageid13": "lepidodendron:ordovician_algal_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:ordovician_algal_reef"
+			"biome": "lepidodendron:ordovician_algal_reef",
+			"imageid0": "lepidodendron:ordovician_algal_reef",
+			"imageid1": "lepidodendron:ordovician_algal_reef",
+			"imageid2": "lepidodendron:ordovician_algal_reef",
+			"imageid3": "lepidodendron:ordovician_algal_reef",
+			"imageid4": "lepidodendron:ordovician_algal_reef",
+			"imageid5": "lepidodendron:ordovician_algal_reef",
+			"imageid6": "lepidodendron:ordovician_algal_reef",
+			"imageid7": "lepidodendron:ordovician_algal_reef",
+			"imageid8": "lepidodendron:ordovician_algal_reef",
+			"imageid9": "lepidodendron:ordovician_algal_reef",
+			"imageid10": "lepidodendron:ordovician_algal_reef",
+			"imageid11": "lepidodendron:ordovician_algal_reef",
+			"imageid12": "lepidodendron:ordovician_algal_reef",
+			"imageid13": "lepidodendron:ordovician_algal_reef",
+			"imageid14": "lepidodendron:ordovician_algal_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:ordovician_algal_reef"
+			"biome": "lepidodendron:ordovician_algal_reef",
+			"imageid0": "lepidodendron:ordovician_algal_reef",
+			"imageid1": "lepidodendron:ordovician_algal_reef",
+			"imageid2": "lepidodendron:ordovician_algal_reef",
+			"imageid3": "lepidodendron:ordovician_algal_reef",
+			"imageid4": "lepidodendron:ordovician_algal_reef",
+			"imageid5": "lepidodendron:ordovician_algal_reef",
+			"imageid6": "lepidodendron:ordovician_algal_reef",
+			"imageid7": "lepidodendron:ordovician_algal_reef",
+			"imageid8": "lepidodendron:ordovician_algal_reef",
+			"imageid9": "lepidodendron:ordovician_algal_reef",
+			"imageid10": "lepidodendron:ordovician_algal_reef",
+			"imageid11": "lepidodendron:ordovician_algal_reef",
+			"imageid12": "lepidodendron:ordovician_algal_reef",
+			"imageid13": "lepidodendron:ordovician_algal_reef",
+			"imageid14": "lepidodendron:ordovician_algal_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:ordovician_algal_reef"
+			"biome": "lepidodendron:ordovician_algal_reef",
+			"imageid0": "lepidodendron:ordovician_algal_reef",
+			"imageid1": "lepidodendron:ordovician_algal_reef",
+			"imageid2": "lepidodendron:ordovician_algal_reef",
+			"imageid3": "lepidodendron:ordovician_algal_reef",
+			"imageid4": "lepidodendron:ordovician_algal_reef",
+			"imageid5": "lepidodendron:ordovician_algal_reef",
+			"imageid6": "lepidodendron:ordovician_algal_reef",
+			"imageid7": "lepidodendron:ordovician_algal_reef",
+			"imageid8": "lepidodendron:ordovician_algal_reef",
+			"imageid9": "lepidodendron:ordovician_algal_reef",
+			"imageid10": "lepidodendron:ordovician_algal_reef",
+			"imageid11": "lepidodendron:ordovician_algal_reef",
+			"imageid12": "lepidodendron:ordovician_algal_reef",
+			"imageid13": "lepidodendron:ordovician_algal_reef",
+			"imageid14": "lepidodendron:ordovician_algal_reef"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:ordovician_algal_reef"
+			"biome": "lepidodendron:ordovician_algal_reef",
+			"imageid0": "lepidodendron:ordovician_algal_reef",
+			"imageid1": "lepidodendron:ordovician_algal_reef",
+			"imageid2": "lepidodendron:ordovician_algal_reef",
+			"imageid3": "lepidodendron:ordovician_algal_reef",
+			"imageid4": "lepidodendron:ordovician_algal_reef",
+			"imageid5": "lepidodendron:ordovician_algal_reef",
+			"imageid6": "lepidodendron:ordovician_algal_reef",
+			"imageid7": "lepidodendron:ordovician_algal_reef",
+			"imageid8": "lepidodendron:ordovician_algal_reef",
+			"imageid9": "lepidodendron:ordovician_algal_reef",
+			"imageid10": "lepidodendron:ordovician_algal_reef",
+			"imageid11": "lepidodendron:ordovician_algal_reef",
+			"imageid12": "lepidodendron:ordovician_algal_reef",
+			"imageid13": "lepidodendron:ordovician_algal_reef",
+			"imageid14": "lepidodendron:ordovician_algal_reef"
 		}
 	]
 }

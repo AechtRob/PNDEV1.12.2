@@ -2,7 +2,7 @@
 	"name": "Camuropiscis",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/camuropiscis_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_camuropiscis",
 	"pages": [
 		{

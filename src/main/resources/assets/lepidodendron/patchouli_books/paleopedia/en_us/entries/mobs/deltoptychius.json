@@ -2,7 +2,7 @@
 	"name": "Deltoptychius",
 	"read_by_default": true,
 	"icon": "lepidodendron:deltoptychius_raw",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_deltoptychius",
 	"pages": [
 		{

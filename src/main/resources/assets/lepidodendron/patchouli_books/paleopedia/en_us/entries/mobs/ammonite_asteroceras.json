@@ -2,7 +2,7 @@
 	"name": "Asteroceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_asteroceras",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_asteroceras",
 	"pages": [
 		{

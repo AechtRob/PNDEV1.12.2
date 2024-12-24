@@ -2,7 +2,7 @@
 	"name": "Angelina",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/angelina_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_angelina",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Hypersaline Sinkholes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+			"biome": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid0": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid1": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid2": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid3": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid4": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid5": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid6": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid7": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid8": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid9": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid10": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid11": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid12": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid13": "lepidodendron:devonian_hypersaline_sinkhole"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+			"biome": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid0": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid1": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid2": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid3": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid4": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid5": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid6": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid7": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid8": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid9": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid10": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid11": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid12": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid13": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid14": "lepidodendron:devonian_hypersaline_sinkhole"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+			"biome": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid0": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid1": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid2": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid3": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid4": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid5": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid6": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid7": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid8": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid9": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid10": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid11": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid12": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid13": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid14": "lepidodendron:devonian_hypersaline_sinkhole"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+			"biome": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid0": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid1": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid2": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid3": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid4": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid5": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid6": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid7": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid8": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid9": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid10": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid11": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid12": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid13": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid14": "lepidodendron:devonian_hypersaline_sinkhole"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+			"biome": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid0": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid1": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid2": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid3": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid4": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid5": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid6": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid7": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid8": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid9": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid10": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid11": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid12": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid13": "lepidodendron:devonian_hypersaline_sinkhole",
+			"imageid14": "lepidodendron:devonian_hypersaline_sinkhole"
 		}
 	]
 }

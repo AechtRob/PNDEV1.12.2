@@ -2,7 +2,7 @@
 	"name": "Polar Lakes",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
-	"category": "lepidodendron:carboniferous_biome",
+	"category": "lepidodendron:carboniferous/carboniferous_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:carboniferous_polar_lakes"
+			"biome": "lepidodendron:carboniferous_polar_lakes",
+			"imageid0": "lepidodendron:carboniferous_polar_lakes",
+			"imageid1": "lepidodendron:carboniferous_polar_lakes",
+			"imageid2": "lepidodendron:carboniferous_polar_lakes",
+			"imageid3": "lepidodendron:carboniferous_polar_lakes",
+			"imageid4": "lepidodendron:carboniferous_polar_lakes",
+			"imageid5": "lepidodendron:carboniferous_polar_lakes",
+			"imageid6": "lepidodendron:carboniferous_polar_lakes",
+			"imageid7": "lepidodendron:carboniferous_polar_lakes",
+			"imageid8": "lepidodendron:carboniferous_polar_lakes",
+			"imageid9": "lepidodendron:carboniferous_polar_lakes",
+			"imageid10": "lepidodendron:carboniferous_polar_lakes",
+			"imageid11": "lepidodendron:carboniferous_polar_lakes",
+			"imageid12": "lepidodendron:carboniferous_polar_lakes",
+			"imageid13": "lepidodendron:carboniferous_polar_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:carboniferous_polar_lakes"
+			"biome": "lepidodendron:carboniferous_polar_lakes",
+			"imageid0": "lepidodendron:carboniferous_polar_lakes",
+			"imageid1": "lepidodendron:carboniferous_polar_lakes",
+			"imageid2": "lepidodendron:carboniferous_polar_lakes",
+			"imageid3": "lepidodendron:carboniferous_polar_lakes",
+			"imageid4": "lepidodendron:carboniferous_polar_lakes",
+			"imageid5": "lepidodendron:carboniferous_polar_lakes",
+			"imageid6": "lepidodendron:carboniferous_polar_lakes",
+			"imageid7": "lepidodendron:carboniferous_polar_lakes",
+			"imageid8": "lepidodendron:carboniferous_polar_lakes",
+			"imageid9": "lepidodendron:carboniferous_polar_lakes",
+			"imageid10": "lepidodendron:carboniferous_polar_lakes",
+			"imageid11": "lepidodendron:carboniferous_polar_lakes",
+			"imageid12": "lepidodendron:carboniferous_polar_lakes",
+			"imageid13": "lepidodendron:carboniferous_polar_lakes",
+			"imageid14": "lepidodendron:carboniferous_polar_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:carboniferous_polar_lakes"
+			"biome": "lepidodendron:carboniferous_polar_lakes",
+			"imageid0": "lepidodendron:carboniferous_polar_lakes",
+			"imageid1": "lepidodendron:carboniferous_polar_lakes",
+			"imageid2": "lepidodendron:carboniferous_polar_lakes",
+			"imageid3": "lepidodendron:carboniferous_polar_lakes",
+			"imageid4": "lepidodendron:carboniferous_polar_lakes",
+			"imageid5": "lepidodendron:carboniferous_polar_lakes",
+			"imageid6": "lepidodendron:carboniferous_polar_lakes",
+			"imageid7": "lepidodendron:carboniferous_polar_lakes",
+			"imageid8": "lepidodendron:carboniferous_polar_lakes",
+			"imageid9": "lepidodendron:carboniferous_polar_lakes",
+			"imageid10": "lepidodendron:carboniferous_polar_lakes",
+			"imageid11": "lepidodendron:carboniferous_polar_lakes",
+			"imageid12": "lepidodendron:carboniferous_polar_lakes",
+			"imageid13": "lepidodendron:carboniferous_polar_lakes",
+			"imageid14": "lepidodendron:carboniferous_polar_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:carboniferous_polar_lakes"
+			"biome": "lepidodendron:carboniferous_polar_lakes",
+			"imageid0": "lepidodendron:carboniferous_polar_lakes",
+			"imageid1": "lepidodendron:carboniferous_polar_lakes",
+			"imageid2": "lepidodendron:carboniferous_polar_lakes",
+			"imageid3": "lepidodendron:carboniferous_polar_lakes",
+			"imageid4": "lepidodendron:carboniferous_polar_lakes",
+			"imageid5": "lepidodendron:carboniferous_polar_lakes",
+			"imageid6": "lepidodendron:carboniferous_polar_lakes",
+			"imageid7": "lepidodendron:carboniferous_polar_lakes",
+			"imageid8": "lepidodendron:carboniferous_polar_lakes",
+			"imageid9": "lepidodendron:carboniferous_polar_lakes",
+			"imageid10": "lepidodendron:carboniferous_polar_lakes",
+			"imageid11": "lepidodendron:carboniferous_polar_lakes",
+			"imageid12": "lepidodendron:carboniferous_polar_lakes",
+			"imageid13": "lepidodendron:carboniferous_polar_lakes",
+			"imageid14": "lepidodendron:carboniferous_polar_lakes"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:carboniferous_polar_lakes"
+			"biome": "lepidodendron:carboniferous_polar_lakes",
+			"imageid0": "lepidodendron:carboniferous_polar_lakes",
+			"imageid1": "lepidodendron:carboniferous_polar_lakes",
+			"imageid2": "lepidodendron:carboniferous_polar_lakes",
+			"imageid3": "lepidodendron:carboniferous_polar_lakes",
+			"imageid4": "lepidodendron:carboniferous_polar_lakes",
+			"imageid5": "lepidodendron:carboniferous_polar_lakes",
+			"imageid6": "lepidodendron:carboniferous_polar_lakes",
+			"imageid7": "lepidodendron:carboniferous_polar_lakes",
+			"imageid8": "lepidodendron:carboniferous_polar_lakes",
+			"imageid9": "lepidodendron:carboniferous_polar_lakes",
+			"imageid10": "lepidodendron:carboniferous_polar_lakes",
+			"imageid11": "lepidodendron:carboniferous_polar_lakes",
+			"imageid12": "lepidodendron:carboniferous_polar_lakes",
+			"imageid13": "lepidodendron:carboniferous_polar_lakes",
+			"imageid14": "lepidodendron:carboniferous_polar_lakes"
 		}
 	]
 }

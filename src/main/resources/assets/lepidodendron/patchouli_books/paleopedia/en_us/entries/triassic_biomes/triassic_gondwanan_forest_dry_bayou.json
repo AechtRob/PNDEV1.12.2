@@ -2,7 +2,7 @@
 	"name": "Seasonal Bayou",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_triassic.png",
-	"category": "lepidodendron:triassic_biome",
+	"category": "lepidodendron:triassic/triassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
+			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
+			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
+			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
+			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
+			"biome": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid0": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid1": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid2": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid3": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid4": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid5": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid6": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid7": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid8": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid9": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid10": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid11": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid12": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid13": "lepidodendron:triassic_gondwanan_forest_dry_bayou",
+			"imageid14": "lepidodendron:triassic_gondwanan_forest_dry_bayou"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Pseudoangustidontus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/pseudoangustidontus_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_pseudoangustidontus",
 	"pages": [
 		{

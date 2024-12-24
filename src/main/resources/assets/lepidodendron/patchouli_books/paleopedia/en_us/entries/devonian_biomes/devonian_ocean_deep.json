@@ -2,7 +2,7 @@
 	"name": "Ocean",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_devonian.png",
-	"category": "lepidodendron:devonian_biome",
+	"category": "lepidodendron:devonian/devonian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:devonian_ocean_deep"
+			"biome": "lepidodendron:devonian_ocean_deep",
+			"imageid0": "lepidodendron:devonian_ocean_deep",
+			"imageid1": "lepidodendron:devonian_ocean_deep",
+			"imageid2": "lepidodendron:devonian_ocean_deep",
+			"imageid3": "lepidodendron:devonian_ocean_deep",
+			"imageid4": "lepidodendron:devonian_ocean_deep",
+			"imageid5": "lepidodendron:devonian_ocean_deep",
+			"imageid6": "lepidodendron:devonian_ocean_deep",
+			"imageid7": "lepidodendron:devonian_ocean_deep",
+			"imageid8": "lepidodendron:devonian_ocean_deep",
+			"imageid9": "lepidodendron:devonian_ocean_deep",
+			"imageid10": "lepidodendron:devonian_ocean_deep",
+			"imageid11": "lepidodendron:devonian_ocean_deep",
+			"imageid12": "lepidodendron:devonian_ocean_deep",
+			"imageid13": "lepidodendron:devonian_ocean_deep"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:devonian_ocean_deep"
+			"biome": "lepidodendron:devonian_ocean_deep",
+			"imageid0": "lepidodendron:devonian_ocean_deep",
+			"imageid1": "lepidodendron:devonian_ocean_deep",
+			"imageid2": "lepidodendron:devonian_ocean_deep",
+			"imageid3": "lepidodendron:devonian_ocean_deep",
+			"imageid4": "lepidodendron:devonian_ocean_deep",
+			"imageid5": "lepidodendron:devonian_ocean_deep",
+			"imageid6": "lepidodendron:devonian_ocean_deep",
+			"imageid7": "lepidodendron:devonian_ocean_deep",
+			"imageid8": "lepidodendron:devonian_ocean_deep",
+			"imageid9": "lepidodendron:devonian_ocean_deep",
+			"imageid10": "lepidodendron:devonian_ocean_deep",
+			"imageid11": "lepidodendron:devonian_ocean_deep",
+			"imageid12": "lepidodendron:devonian_ocean_deep",
+			"imageid13": "lepidodendron:devonian_ocean_deep",
+			"imageid14": "lepidodendron:devonian_ocean_deep"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:devonian_ocean_deep"
+			"biome": "lepidodendron:devonian_ocean_deep",
+			"imageid0": "lepidodendron:devonian_ocean_deep",
+			"imageid1": "lepidodendron:devonian_ocean_deep",
+			"imageid2": "lepidodendron:devonian_ocean_deep",
+			"imageid3": "lepidodendron:devonian_ocean_deep",
+			"imageid4": "lepidodendron:devonian_ocean_deep",
+			"imageid5": "lepidodendron:devonian_ocean_deep",
+			"imageid6": "lepidodendron:devonian_ocean_deep",
+			"imageid7": "lepidodendron:devonian_ocean_deep",
+			"imageid8": "lepidodendron:devonian_ocean_deep",
+			"imageid9": "lepidodendron:devonian_ocean_deep",
+			"imageid10": "lepidodendron:devonian_ocean_deep",
+			"imageid11": "lepidodendron:devonian_ocean_deep",
+			"imageid12": "lepidodendron:devonian_ocean_deep",
+			"imageid13": "lepidodendron:devonian_ocean_deep",
+			"imageid14": "lepidodendron:devonian_ocean_deep"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:devonian_ocean_deep"
+			"biome": "lepidodendron:devonian_ocean_deep",
+			"imageid0": "lepidodendron:devonian_ocean_deep",
+			"imageid1": "lepidodendron:devonian_ocean_deep",
+			"imageid2": "lepidodendron:devonian_ocean_deep",
+			"imageid3": "lepidodendron:devonian_ocean_deep",
+			"imageid4": "lepidodendron:devonian_ocean_deep",
+			"imageid5": "lepidodendron:devonian_ocean_deep",
+			"imageid6": "lepidodendron:devonian_ocean_deep",
+			"imageid7": "lepidodendron:devonian_ocean_deep",
+			"imageid8": "lepidodendron:devonian_ocean_deep",
+			"imageid9": "lepidodendron:devonian_ocean_deep",
+			"imageid10": "lepidodendron:devonian_ocean_deep",
+			"imageid11": "lepidodendron:devonian_ocean_deep",
+			"imageid12": "lepidodendron:devonian_ocean_deep",
+			"imageid13": "lepidodendron:devonian_ocean_deep",
+			"imageid14": "lepidodendron:devonian_ocean_deep"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:devonian_ocean_deep"
+			"biome": "lepidodendron:devonian_ocean_deep",
+			"imageid0": "lepidodendron:devonian_ocean_deep",
+			"imageid1": "lepidodendron:devonian_ocean_deep",
+			"imageid2": "lepidodendron:devonian_ocean_deep",
+			"imageid3": "lepidodendron:devonian_ocean_deep",
+			"imageid4": "lepidodendron:devonian_ocean_deep",
+			"imageid5": "lepidodendron:devonian_ocean_deep",
+			"imageid6": "lepidodendron:devonian_ocean_deep",
+			"imageid7": "lepidodendron:devonian_ocean_deep",
+			"imageid8": "lepidodendron:devonian_ocean_deep",
+			"imageid9": "lepidodendron:devonian_ocean_deep",
+			"imageid10": "lepidodendron:devonian_ocean_deep",
+			"imageid11": "lepidodendron:devonian_ocean_deep",
+			"imageid12": "lepidodendron:devonian_ocean_deep",
+			"imageid13": "lepidodendron:devonian_ocean_deep",
+			"imageid14": "lepidodendron:devonian_ocean_deep"
 		}
 	]
 }

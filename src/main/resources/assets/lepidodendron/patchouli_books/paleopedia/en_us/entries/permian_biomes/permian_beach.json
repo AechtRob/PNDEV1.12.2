@@ -2,7 +2,7 @@
 	"name": "Beach",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_beach"
+			"biome": "lepidodendron:permian_beach",
+			"imageid0": "lepidodendron:permian_beach",
+			"imageid1": "lepidodendron:permian_beach",
+			"imageid2": "lepidodendron:permian_beach",
+			"imageid3": "lepidodendron:permian_beach",
+			"imageid4": "lepidodendron:permian_beach",
+			"imageid5": "lepidodendron:permian_beach",
+			"imageid6": "lepidodendron:permian_beach",
+			"imageid7": "lepidodendron:permian_beach",
+			"imageid8": "lepidodendron:permian_beach",
+			"imageid9": "lepidodendron:permian_beach",
+			"imageid10": "lepidodendron:permian_beach",
+			"imageid11": "lepidodendron:permian_beach",
+			"imageid12": "lepidodendron:permian_beach",
+			"imageid13": "lepidodendron:permian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_beach"
+			"biome": "lepidodendron:permian_beach",
+			"imageid0": "lepidodendron:permian_beach",
+			"imageid1": "lepidodendron:permian_beach",
+			"imageid2": "lepidodendron:permian_beach",
+			"imageid3": "lepidodendron:permian_beach",
+			"imageid4": "lepidodendron:permian_beach",
+			"imageid5": "lepidodendron:permian_beach",
+			"imageid6": "lepidodendron:permian_beach",
+			"imageid7": "lepidodendron:permian_beach",
+			"imageid8": "lepidodendron:permian_beach",
+			"imageid9": "lepidodendron:permian_beach",
+			"imageid10": "lepidodendron:permian_beach",
+			"imageid11": "lepidodendron:permian_beach",
+			"imageid12": "lepidodendron:permian_beach",
+			"imageid13": "lepidodendron:permian_beach",
+			"imageid14": "lepidodendron:permian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_beach"
+			"biome": "lepidodendron:permian_beach",
+			"imageid0": "lepidodendron:permian_beach",
+			"imageid1": "lepidodendron:permian_beach",
+			"imageid2": "lepidodendron:permian_beach",
+			"imageid3": "lepidodendron:permian_beach",
+			"imageid4": "lepidodendron:permian_beach",
+			"imageid5": "lepidodendron:permian_beach",
+			"imageid6": "lepidodendron:permian_beach",
+			"imageid7": "lepidodendron:permian_beach",
+			"imageid8": "lepidodendron:permian_beach",
+			"imageid9": "lepidodendron:permian_beach",
+			"imageid10": "lepidodendron:permian_beach",
+			"imageid11": "lepidodendron:permian_beach",
+			"imageid12": "lepidodendron:permian_beach",
+			"imageid13": "lepidodendron:permian_beach",
+			"imageid14": "lepidodendron:permian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_beach"
+			"biome": "lepidodendron:permian_beach",
+			"imageid0": "lepidodendron:permian_beach",
+			"imageid1": "lepidodendron:permian_beach",
+			"imageid2": "lepidodendron:permian_beach",
+			"imageid3": "lepidodendron:permian_beach",
+			"imageid4": "lepidodendron:permian_beach",
+			"imageid5": "lepidodendron:permian_beach",
+			"imageid6": "lepidodendron:permian_beach",
+			"imageid7": "lepidodendron:permian_beach",
+			"imageid8": "lepidodendron:permian_beach",
+			"imageid9": "lepidodendron:permian_beach",
+			"imageid10": "lepidodendron:permian_beach",
+			"imageid11": "lepidodendron:permian_beach",
+			"imageid12": "lepidodendron:permian_beach",
+			"imageid13": "lepidodendron:permian_beach",
+			"imageid14": "lepidodendron:permian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_beach"
+			"biome": "lepidodendron:permian_beach",
+			"imageid0": "lepidodendron:permian_beach",
+			"imageid1": "lepidodendron:permian_beach",
+			"imageid2": "lepidodendron:permian_beach",
+			"imageid3": "lepidodendron:permian_beach",
+			"imageid4": "lepidodendron:permian_beach",
+			"imageid5": "lepidodendron:permian_beach",
+			"imageid6": "lepidodendron:permian_beach",
+			"imageid7": "lepidodendron:permian_beach",
+			"imageid8": "lepidodendron:permian_beach",
+			"imageid9": "lepidodendron:permian_beach",
+			"imageid10": "lepidodendron:permian_beach",
+			"imageid11": "lepidodendron:permian_beach",
+			"imageid12": "lepidodendron:permian_beach",
+			"imageid13": "lepidodendron:permian_beach",
+			"imageid14": "lepidodendron:permian_beach"
 		}
 	]
 }

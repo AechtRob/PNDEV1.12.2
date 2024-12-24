@@ -2,7 +2,7 @@
 	"name": "Asteracanthus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/items/asteracanthus_icon.png",
-	"category": "lepidodendron:jurassic_animal",
+	"category": "lepidodendron:mobs",
 	"turnin": "lepidodendron:pf_adv_book_asteracanthus",
 	"pages": [
 		{

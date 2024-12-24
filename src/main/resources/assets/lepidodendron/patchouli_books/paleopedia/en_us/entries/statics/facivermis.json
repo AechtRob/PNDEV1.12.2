@@ -1,0 +1,31 @@
+{
+	"name": "Facivermis",
+	"read_by_default": true,
+	"icon": "lepidodendron:facivermis",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_facivermis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_facivermis",
+			"title": "Facivermis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Panarthropoda$(br)>Luolishaniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/facivermis.png"],
+			"title": "F. yunnanicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_facivermis",
+			"type": "text",
+			"text": "Facivermis, meaning 'touch worm' is a sessile lobopodian from the Lower Cambrian period. It probably lived a lifestyle similar to feather duster worms, anchoring itself to sediment and using its extended hooks in order to catch prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_facivermis",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

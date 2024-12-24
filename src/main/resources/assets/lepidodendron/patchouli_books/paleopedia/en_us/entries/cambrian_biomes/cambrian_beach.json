@@ -2,7 +2,7 @@
 	"name": "Gravels",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_cambrian.png",
-	"category": "lepidodendron:cambrian_biome",
+	"category": "lepidodendron:cambrian/cambrian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:cambrian_beach"
+			"biome": "lepidodendron:cambrian_beach",
+			"imageid0": "lepidodendron:cambrian_beach",
+			"imageid1": "lepidodendron:cambrian_beach",
+			"imageid2": "lepidodendron:cambrian_beach",
+			"imageid3": "lepidodendron:cambrian_beach",
+			"imageid4": "lepidodendron:cambrian_beach",
+			"imageid5": "lepidodendron:cambrian_beach",
+			"imageid6": "lepidodendron:cambrian_beach",
+			"imageid7": "lepidodendron:cambrian_beach",
+			"imageid8": "lepidodendron:cambrian_beach",
+			"imageid9": "lepidodendron:cambrian_beach",
+			"imageid10": "lepidodendron:cambrian_beach",
+			"imageid11": "lepidodendron:cambrian_beach",
+			"imageid12": "lepidodendron:cambrian_beach",
+			"imageid13": "lepidodendron:cambrian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:cambrian_beach"
+			"biome": "lepidodendron:cambrian_beach",
+			"imageid0": "lepidodendron:cambrian_beach",
+			"imageid1": "lepidodendron:cambrian_beach",
+			"imageid2": "lepidodendron:cambrian_beach",
+			"imageid3": "lepidodendron:cambrian_beach",
+			"imageid4": "lepidodendron:cambrian_beach",
+			"imageid5": "lepidodendron:cambrian_beach",
+			"imageid6": "lepidodendron:cambrian_beach",
+			"imageid7": "lepidodendron:cambrian_beach",
+			"imageid8": "lepidodendron:cambrian_beach",
+			"imageid9": "lepidodendron:cambrian_beach",
+			"imageid10": "lepidodendron:cambrian_beach",
+			"imageid11": "lepidodendron:cambrian_beach",
+			"imageid12": "lepidodendron:cambrian_beach",
+			"imageid13": "lepidodendron:cambrian_beach",
+			"imageid14": "lepidodendron:cambrian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:cambrian_beach"
+			"biome": "lepidodendron:cambrian_beach",
+			"imageid0": "lepidodendron:cambrian_beach",
+			"imageid1": "lepidodendron:cambrian_beach",
+			"imageid2": "lepidodendron:cambrian_beach",
+			"imageid3": "lepidodendron:cambrian_beach",
+			"imageid4": "lepidodendron:cambrian_beach",
+			"imageid5": "lepidodendron:cambrian_beach",
+			"imageid6": "lepidodendron:cambrian_beach",
+			"imageid7": "lepidodendron:cambrian_beach",
+			"imageid8": "lepidodendron:cambrian_beach",
+			"imageid9": "lepidodendron:cambrian_beach",
+			"imageid10": "lepidodendron:cambrian_beach",
+			"imageid11": "lepidodendron:cambrian_beach",
+			"imageid12": "lepidodendron:cambrian_beach",
+			"imageid13": "lepidodendron:cambrian_beach",
+			"imageid14": "lepidodendron:cambrian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:cambrian_beach"
+			"biome": "lepidodendron:cambrian_beach",
+			"imageid0": "lepidodendron:cambrian_beach",
+			"imageid1": "lepidodendron:cambrian_beach",
+			"imageid2": "lepidodendron:cambrian_beach",
+			"imageid3": "lepidodendron:cambrian_beach",
+			"imageid4": "lepidodendron:cambrian_beach",
+			"imageid5": "lepidodendron:cambrian_beach",
+			"imageid6": "lepidodendron:cambrian_beach",
+			"imageid7": "lepidodendron:cambrian_beach",
+			"imageid8": "lepidodendron:cambrian_beach",
+			"imageid9": "lepidodendron:cambrian_beach",
+			"imageid10": "lepidodendron:cambrian_beach",
+			"imageid11": "lepidodendron:cambrian_beach",
+			"imageid12": "lepidodendron:cambrian_beach",
+			"imageid13": "lepidodendron:cambrian_beach",
+			"imageid14": "lepidodendron:cambrian_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:cambrian_beach"
+			"biome": "lepidodendron:cambrian_beach",
+			"imageid0": "lepidodendron:cambrian_beach",
+			"imageid1": "lepidodendron:cambrian_beach",
+			"imageid2": "lepidodendron:cambrian_beach",
+			"imageid3": "lepidodendron:cambrian_beach",
+			"imageid4": "lepidodendron:cambrian_beach",
+			"imageid5": "lepidodendron:cambrian_beach",
+			"imageid6": "lepidodendron:cambrian_beach",
+			"imageid7": "lepidodendron:cambrian_beach",
+			"imageid8": "lepidodendron:cambrian_beach",
+			"imageid9": "lepidodendron:cambrian_beach",
+			"imageid10": "lepidodendron:cambrian_beach",
+			"imageid11": "lepidodendron:cambrian_beach",
+			"imageid12": "lepidodendron:cambrian_beach",
+			"imageid13": "lepidodendron:cambrian_beach",
+			"imageid14": "lepidodendron:cambrian_beach"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Volcanic Beach",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_jurassic.png",
-	"category": "lepidodendron:jurassic_biome",
+	"category": "lepidodendron:jurassic/jurassic_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:jurassic_beach_black"
+			"biome": "lepidodendron:jurassic_beach_black",
+			"imageid0": "lepidodendron:jurassic_beach_black",
+			"imageid1": "lepidodendron:jurassic_beach_black",
+			"imageid2": "lepidodendron:jurassic_beach_black",
+			"imageid3": "lepidodendron:jurassic_beach_black",
+			"imageid4": "lepidodendron:jurassic_beach_black",
+			"imageid5": "lepidodendron:jurassic_beach_black",
+			"imageid6": "lepidodendron:jurassic_beach_black",
+			"imageid7": "lepidodendron:jurassic_beach_black",
+			"imageid8": "lepidodendron:jurassic_beach_black",
+			"imageid9": "lepidodendron:jurassic_beach_black",
+			"imageid10": "lepidodendron:jurassic_beach_black",
+			"imageid11": "lepidodendron:jurassic_beach_black",
+			"imageid12": "lepidodendron:jurassic_beach_black",
+			"imageid13": "lepidodendron:jurassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:jurassic_beach_black"
+			"biome": "lepidodendron:jurassic_beach_black",
+			"imageid0": "lepidodendron:jurassic_beach_black",
+			"imageid1": "lepidodendron:jurassic_beach_black",
+			"imageid2": "lepidodendron:jurassic_beach_black",
+			"imageid3": "lepidodendron:jurassic_beach_black",
+			"imageid4": "lepidodendron:jurassic_beach_black",
+			"imageid5": "lepidodendron:jurassic_beach_black",
+			"imageid6": "lepidodendron:jurassic_beach_black",
+			"imageid7": "lepidodendron:jurassic_beach_black",
+			"imageid8": "lepidodendron:jurassic_beach_black",
+			"imageid9": "lepidodendron:jurassic_beach_black",
+			"imageid10": "lepidodendron:jurassic_beach_black",
+			"imageid11": "lepidodendron:jurassic_beach_black",
+			"imageid12": "lepidodendron:jurassic_beach_black",
+			"imageid13": "lepidodendron:jurassic_beach_black",
+			"imageid14": "lepidodendron:jurassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:jurassic_beach_black"
+			"biome": "lepidodendron:jurassic_beach_black",
+			"imageid0": "lepidodendron:jurassic_beach_black",
+			"imageid1": "lepidodendron:jurassic_beach_black",
+			"imageid2": "lepidodendron:jurassic_beach_black",
+			"imageid3": "lepidodendron:jurassic_beach_black",
+			"imageid4": "lepidodendron:jurassic_beach_black",
+			"imageid5": "lepidodendron:jurassic_beach_black",
+			"imageid6": "lepidodendron:jurassic_beach_black",
+			"imageid7": "lepidodendron:jurassic_beach_black",
+			"imageid8": "lepidodendron:jurassic_beach_black",
+			"imageid9": "lepidodendron:jurassic_beach_black",
+			"imageid10": "lepidodendron:jurassic_beach_black",
+			"imageid11": "lepidodendron:jurassic_beach_black",
+			"imageid12": "lepidodendron:jurassic_beach_black",
+			"imageid13": "lepidodendron:jurassic_beach_black",
+			"imageid14": "lepidodendron:jurassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:jurassic_beach_black"
+			"biome": "lepidodendron:jurassic_beach_black",
+			"imageid0": "lepidodendron:jurassic_beach_black",
+			"imageid1": "lepidodendron:jurassic_beach_black",
+			"imageid2": "lepidodendron:jurassic_beach_black",
+			"imageid3": "lepidodendron:jurassic_beach_black",
+			"imageid4": "lepidodendron:jurassic_beach_black",
+			"imageid5": "lepidodendron:jurassic_beach_black",
+			"imageid6": "lepidodendron:jurassic_beach_black",
+			"imageid7": "lepidodendron:jurassic_beach_black",
+			"imageid8": "lepidodendron:jurassic_beach_black",
+			"imageid9": "lepidodendron:jurassic_beach_black",
+			"imageid10": "lepidodendron:jurassic_beach_black",
+			"imageid11": "lepidodendron:jurassic_beach_black",
+			"imageid12": "lepidodendron:jurassic_beach_black",
+			"imageid13": "lepidodendron:jurassic_beach_black",
+			"imageid14": "lepidodendron:jurassic_beach_black"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:jurassic_beach_black"
+			"biome": "lepidodendron:jurassic_beach_black",
+			"imageid0": "lepidodendron:jurassic_beach_black",
+			"imageid1": "lepidodendron:jurassic_beach_black",
+			"imageid2": "lepidodendron:jurassic_beach_black",
+			"imageid3": "lepidodendron:jurassic_beach_black",
+			"imageid4": "lepidodendron:jurassic_beach_black",
+			"imageid5": "lepidodendron:jurassic_beach_black",
+			"imageid6": "lepidodendron:jurassic_beach_black",
+			"imageid7": "lepidodendron:jurassic_beach_black",
+			"imageid8": "lepidodendron:jurassic_beach_black",
+			"imageid9": "lepidodendron:jurassic_beach_black",
+			"imageid10": "lepidodendron:jurassic_beach_black",
+			"imageid11": "lepidodendron:jurassic_beach_black",
+			"imageid12": "lepidodendron:jurassic_beach_black",
+			"imageid13": "lepidodendron:jurassic_beach_black",
+			"imageid14": "lepidodendron:jurassic_beach_black"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Cold Glossopteris Beach",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/category_icon/icon_permian.png",
-	"category": "lepidodendron:permian_biome",
+	"category": "lepidodendron:permian/permian_biome",
 	"pages": [
 		{
 			"type": "lepidodendron:headerlesstext",
@@ -10,23 +10,97 @@
 		},
 		{
 			"type": "lepidodendron:biomespawns1",
-			"biome": "lepidodendron:permian_cold_glossopteris_beach"
+			"biome": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns2",
-			"biome": "lepidodendron:permian_cold_glossopteris_beach"
+			"biome": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns3",
-			"biome": "lepidodendron:permian_cold_glossopteris_beach"
+			"biome": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns4",
-			"biome": "lepidodendron:permian_cold_glossopteris_beach"
+			"biome": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_beach"
 		},
 		{
 			"type": "lepidodendron:biomespawns5",
-			"biome": "lepidodendron:permian_cold_glossopteris_beach"
+			"biome": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid0": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid1": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid2": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid3": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid4": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid5": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid6": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid7": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid8": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid9": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid10": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid11": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid12": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid13": "lepidodendron:permian_cold_glossopteris_beach",
+			"imageid14": "lepidodendron:permian_cold_glossopteris_beach"
 		}
 	]
 }

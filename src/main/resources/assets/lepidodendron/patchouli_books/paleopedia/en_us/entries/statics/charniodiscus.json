@@ -1,0 +1,31 @@
+{
+	"name": "Charniodiscus",
+	"read_by_default": true,
+	"icon": "lepidodendron:charniodiscus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_charniodiscus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_charniodiscus",
+			"title": "Charniodiscus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Arboreomorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/charniodiscus.png"],
+			"title": "Charniodiscus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_charniodiscus",
+			"type": "text",
+			"text": "Charniodiscus is a large Ediacaran frond-like animal. It was probably a filter feeder, anchored to the sea floor and catching nutrients from the water around it."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_charniodiscus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
