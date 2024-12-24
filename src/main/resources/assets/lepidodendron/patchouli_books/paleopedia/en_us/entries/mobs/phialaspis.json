@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_phialaspis",
 			"type": "text",
-			"text": "Phialaspis was a Heterostracan jawless fish that lived during the Silurian to Early Devonian (around 443 - 411 million years ago). Its remains have been found widely across the northern hemisphere, specifically in the northeast USA, northernmost Canada, Svalbard, Scotland, Ukraine, and Severny Island in the high Russian Arctic. Like some other heterostracans, Phialaspis bore a dorsal crest and a pair of wing-like side-crests on its armour"
+			"text": "Phialaspis was a Heterostracan jawless fish that lived during the Silurian to Early Devonian (around 443 - 411 million years ago). Its remains have been found widely across the northern hemisphere, specifically in the northeast USA, northernmost Canada, Svalbard, Scotland, Ukraine, and Severny Island in the high Russian Arctic. Like some other heterostracans, Phialaspis bore a dorsal crest and a pair of wing-like side-crests on its armour,"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_phialaspis",
 			"type": "text",
-			"text": ", perhaps for added stability while swimming.$(br)$(br)$(br)$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "perhaps for added stability while swimming."
 		},
 		{
 			"type": "lepidodendron:diet",
