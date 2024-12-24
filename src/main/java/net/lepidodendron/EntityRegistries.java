@@ -1032,9 +1032,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_liaoceratops", EntityPrehistoricFloraLiaoceratops.class, LepidodendronMod.ENTITY_LIAOCERATOPS, 64,-5669544,-8556442);
         registerEntity("prehistoric_flora_aquilops", EntityPrehistoricFloraAquilops.class, LepidodendronMod.ENTITY_AQUILOPS, 64,-11483804,-6078932);
         registerEntity("prehistoric_flora_albalophosaurus", EntityPrehistoricFloraAlbalophosaurus.class, LepidodendronMod.ENTITY_ALBALOPHOSAURUS, 64,-10796239,-3029571);
-//        registerEntity("prehistoric_flora_psittacosaurus_sibiricus", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SIBIRICUS, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_psittacosaurus_sinensis", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SINENSIS, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_psittacosaurus", EntityPrehistoricFloraPsittacosaurus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS, 64,-12835809,-2640792);
+        registerEntity("prehistoric_flora_psittacosaurus_sibiricus", EntityPrehistoricFloraPsittacosaurus_sibiricus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SIBIRICUS, 64,-12972016,-5211582);
+        registerEntity("prehistoric_flora_psittacosaurus_sinensis", EntityPrehistoricFloraPsittacosaurus_sinensis.class, LepidodendronMod.ENTITY_PSITTACOSAURUS_SINENSIS, 64,-10013142,-11715536);
+        registerEntity("prehistoric_flora_psittacosaurus", EntityPrehistoricFloraPsittacosaurus.class, LepidodendronMod.ENTITY_PSITTACOSAURUS, 64,-14739178,-5211582);
         registerEntity("prehistoric_flora_machimosaurus", EntityPrehistoricFloraMachimosaurus.class, LepidodendronMod.ENTITY_MACHIMOSAURUS, 64,-15132395,-6184819);
         registerEntity("prehistoric_flora_cladocyclus", EntityPrehistoricFloraCladocyclus.class, LepidodendronMod.ENTITY_CLADOCYCLUS, 64,-11775666,-986900);
         registerEntity("prehistoric_flora_dugaldia", EntityPrehistoricFloraDugaldia.class, LepidodendronMod.ENTITY_DUGALDIA, 48,-11250847,-5395017);

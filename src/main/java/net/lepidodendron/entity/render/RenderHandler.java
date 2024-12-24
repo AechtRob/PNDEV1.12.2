@@ -6654,6 +6654,26 @@ public class RenderHandler {
                 return new RenderDimitobelus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPsittacosaurus_sinensis.class, new IRenderFactory<EntityPrehistoricFloraPsittacosaurus_sinensis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPsittacosaurus_sinensis> createRenderFor(RenderManager manager) {
+                return new RenderPsittacosaurus_sinensis(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPsittacosaurus_sibiricus.class, new IRenderFactory<EntityPrehistoricFloraPsittacosaurus_sibiricus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPsittacosaurus_sibiricus> createRenderFor(RenderManager manager) {
+                return new RenderPsittacosaurus_sibiricus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPsittacosaurus.class, new IRenderFactory<EntityPrehistoricFloraPsittacosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPsittacosaurus> createRenderFor(RenderManager manager) {
+                return new RenderPsittacosaurus(manager);
+            }
+        });
+
 
 
 
