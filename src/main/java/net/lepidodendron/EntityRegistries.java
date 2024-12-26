@@ -1074,13 +1074,13 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_hypophylloceras", EntityPrehistoricFloraHypophylloceras.class, LepidodendronMod.ENTITY_HYPOPHYLLOCERAS, 48,-6737101,-15608855);
         registerEntity("prehistoric_flora_hemiaster", EntityPrehistoricFloraHemiaster.class, LepidodendronMod.ENTITY_HEMIASTER, 48,-13684945,-7839088);
 
-//        registerEntity("prehistoric_flora_hyphalosaurus", EntityPrehistoricFloraHyphalosaurus.class, LepidodendronMod.ENTITY_HYPHALOSAURUS, 48,-12835809,-2640792);
+        registerEntity("prehistoric_flora_hyphalosaurus", EntityPrehistoricFloraHyphalosaurus.class, LepidodendronMod.ENTITY_HYPHALOSAURUS, 48,-13682130,-9756140);
 //        registerEntity("prehistoric_flora_cooyoo", EntityPrehistoricFloraCooyoo.class, LepidodendronMod.ENTITY_COOYOO, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_bannykus", EntityPrehistoricFloraBannykus.class, LepidodendronMod.ENTITY_BANNYKUS, 64,-12835809,-2640792);
+        registerEntity("prehistoric_flora_bannykus", EntityPrehistoricFloraBannykus.class, LepidodendronMod.ENTITY_BANNYKUS, 64,-5274552,-14673129);
 //        registerEntity("prehistoric_flora_toxolophosaurus", EntityPrehistoricFloraToxolophosaurus.class, LepidodendronMod.ENTITY_TOXOLOPHOSAURUS, 48,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_tetrapodophis", EntityPrehistoricFloraTetrapodophis.class, LepidodendronMod.ENTITY_TETRAPODOPHIS, 48,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_tietasaura", EntityPrehistoricFloraTietasaura.class, LepidodendronMod.ENTITY_TIETASAURA, 64,-12835809,-2640792);
-//        registerEntity("prehistoric_flora_maiaspondylus", EntityPrehistoricFloraMaiaspondylus.class, LepidodendronMod.ENTITY_MAIASPONDYLUS, 84,-12835809,-2640792);
+        registerEntity("prehistoric_flora_tietasaura", EntityPrehistoricFloraTietasaura.class, LepidodendronMod.ENTITY_TIETASAURA, 64,-12080253,-14541033);
+        registerEntity("prehistoric_flora_maiaspondylus", EntityPrehistoricFloraMaiaspondylus.class, LepidodendronMod.ENTITY_MAIASPONDYLUS, 84,-12761248,-2829100);
 //        registerEntity("prehistoric_flora_moutoniceras", EntityPrehistoricFloraMoutoniceras.class, LepidodendronMod.ENTITY_MOUTONICERAS, 64,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_australiceras", EntityPrehistoricFloraAustraliceras.class, LepidodendronMod.ENTITY_AUSTRALICERAS, 48,-12835809,-2640792);
 //        registerEntity("prehistoric_flora_tropaeum", EntityPrehistoricFloraTropaeum.class, LepidodendronMod.ENTITY_TROPAEUM, 64,-12835809,-2640792);
