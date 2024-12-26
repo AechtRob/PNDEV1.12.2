@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bone_worm_1"},
+      {"model": "lepidodendron:bone_worm_2"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bone_worm_1", "x": 90},
+      {"model": "lepidodendron:bone_worm_2", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bone_worm_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:bone_worm_2", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bone_worm_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:bone_worm_2", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:bone_worm_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:bone_worm_2", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:bone_worm_1"},
+      {"model": "lepidodendron:bone_worm_2"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bone_worm_1", "x": 180},
+      {"model": "lepidodendron:bone_worm_2", "x": 180}
+    ]
+  }
+}

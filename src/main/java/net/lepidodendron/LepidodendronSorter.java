@@ -4998,6 +4998,7 @@ public class LepidodendronSorter {
     public static final int doyleales_slab = 8018;
     public static final int doyleales_stairs = 8019;
     public static final int doyleales_door_item = 8020;
+    public static final int bone_worm = 8021;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

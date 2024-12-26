@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -185,6 +186,17 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 			else {
 				biomeCriteria = false;
 			}
+		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+//			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.
+//					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.IslandWhite) {
+//				biomeCriteria = true;
+//			}
+//			else {
+				biomeCriteria = false;
+//			}
 		}
 		if (!biomeCriteria)
 			return;
