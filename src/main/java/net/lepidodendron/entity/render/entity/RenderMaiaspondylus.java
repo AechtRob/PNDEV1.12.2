@@ -12,7 +12,7 @@ public class RenderMaiaspondylus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/maiaspondylus.png");
 
     public static float getScaler() {
-        return 0.88F;
+        return 0.811F;
     }
 
     public RenderMaiaspondylus(RenderManager mgr) {

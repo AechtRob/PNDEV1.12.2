@@ -12,7 +12,7 @@ public class RenderBannykus extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bannykus.png");
 
     public static float getScaler() {
-        return 0.88F;
+        return 0.627F;
     }
 
     public RenderBannykus(RenderManager mgr) {

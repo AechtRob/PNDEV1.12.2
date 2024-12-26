@@ -126,7 +126,7 @@ public class EntityPrehistoricFloraTietasaura extends EntityPrehistoricFloraLand
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.4F;
+		float speedBase = 0.53F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

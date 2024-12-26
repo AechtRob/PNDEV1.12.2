@@ -43,10 +43,10 @@ public class EntityPrehistoricFloraMaiaspondylus extends EntityPrehistoricFloraA
 
 	public EntityPrehistoricFloraMaiaspondylus(World world) {
 		super(world);
-		setSize(1.2F, 0.99F);
+		setSize(0.8F, 0.65F);
 		minWidth = 0.15F;
-		maxWidth = 1.2F;
-		maxHeight = 0.99F;
+		maxWidth = 0.8F;
+		maxHeight = 0.65F;
 		maxHealthAgeable = 35.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

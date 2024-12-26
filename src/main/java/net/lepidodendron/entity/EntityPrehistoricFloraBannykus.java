@@ -47,10 +47,10 @@ public class EntityPrehistoricFloraBannykus extends EntityPrehistoricFloraLandBa
 
 	public EntityPrehistoricFloraBannykus(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(0.7F, 0.7F);
 		minWidth = 0.20F;
-		maxWidth = 0.9F;
-		maxHeight = 0.9F;
+		maxWidth = 0.7F;
+		maxHeight = 0.7F;
 		maxHealthAgeable = 16;
 		STAND_ANIMATION = Animation.create(92);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
