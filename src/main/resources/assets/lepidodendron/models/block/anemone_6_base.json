@@ -1,7 +1,8 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"1": "lepidodendron:blocks/anemone_6"
+		"1": "lepidodendron:blocks/anemone_6",
+		"particle": "lepidodendron:blocks/anemone_6"
 	},
 	"elements": [
 		{
