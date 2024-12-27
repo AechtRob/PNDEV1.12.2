@@ -16,7 +16,7 @@ public class RenderAlbalophosaurus extends RenderLivingBaseWithBook<EntityPrehis
     }
 
     public static float getScaler() {
-        return 0.35F;
+        return 0.32F;
     }
 
     @Override

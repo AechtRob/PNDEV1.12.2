@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSqualicorax extends RenderLivingBaseWithBook<EntityPrehistoricFloraSqualicorax> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/squalicorax.png");
 
-    public static float getScaler() {return 1f;}
+    public static float getScaler() {return 0.85f;}
     public RenderSqualicorax(RenderManager mgr) {
         super(mgr, new ModelSqualicorax(), 0.0f);
     }
