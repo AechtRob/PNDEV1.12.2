@@ -12,7 +12,7 @@ public class RenderDrepanosaurus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanosaurus.png");
 
     public static float getScaler() {
-        return 0.12f;
+        return 0.15f;
     }
 
     public RenderDrepanosaurus(RenderManager mgr) {
