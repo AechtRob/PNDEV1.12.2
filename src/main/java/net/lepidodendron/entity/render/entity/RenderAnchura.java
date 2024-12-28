@@ -12,7 +12,7 @@ public class RenderAnchura extends RenderLivingBaseWithBook<EntityPrehistoricFlo
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anchura.png");
 
     public static float getScaler() {
-        return 0.25F;
+        return 0.2F;
     }
     public RenderAnchura(RenderManager mgr) {
         super(mgr, new ModelAnchura(), 0.0f);

@@ -6733,6 +6733,31 @@ public class RenderHandler {
                 return new RenderTetrapodophis(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPalaeocambarus.class, new IRenderFactory<EntityPrehistoricFloraPalaeocambarus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPalaeocambarus> createRenderFor(RenderManager manager) {
+                return new RenderPalaeocambarus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraShantungosuchus.class, new IRenderFactory<EntityPrehistoricFloraShantungosuchus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraShantungosuchus> createRenderFor(RenderManager manager) {
+                return new RenderShantungosuchus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMesomyzon.class, new IRenderFactory<EntityPrehistoricFloraMesomyzon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMesomyzon> createRenderFor(RenderManager manager) {
+                return new RenderMesomyzon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIyuku.class, new IRenderFactory<EntityPrehistoricFloraIyuku>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIyuku> createRenderFor(RenderManager manager) {
+                return new RenderIyuku(manager);
+            }
+        });
+        
 
 
 

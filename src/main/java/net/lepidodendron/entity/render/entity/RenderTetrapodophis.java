@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTetrapodophis extends RenderLivingBaseWithBook<EntityPrehistoricFloraTetrapodophis> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tetrapodophis.png");
 
-    public static float getScaler() {return 0.19f;}
+    public static float getScaler() {return 0.13f;}
 
     public RenderTetrapodophis(RenderManager mgr) {
         super(mgr, new ModelTetrapodophis(), 0.5f);

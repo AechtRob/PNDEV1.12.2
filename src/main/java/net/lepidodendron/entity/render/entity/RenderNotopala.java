@@ -12,7 +12,7 @@ public class RenderNotopala extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/notopala.png");
 
     public static float getScaler() {
-        return 0.25F;
+        return 0.2F;
     }
     public RenderNotopala(RenderManager mgr) {
         super(mgr, new ModelNotopala(), 0.0f);

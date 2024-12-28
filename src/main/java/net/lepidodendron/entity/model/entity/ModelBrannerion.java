@@ -366,7 +366,8 @@ public class ModelBrannerion extends ModelBasePalaeopedia {
             this.swing(root, speed*0.8F, 0.2F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.root.rotateAngleZ = (float) Math.toRadians(90);
-                this.root.offsetY = 0.3F;
+                this.root.offsetY = 1.4F;
+                 this.root.offsetX = 1F;
                 this.bob(root, -speed, 5F, false, f2, 1);
             }
         }

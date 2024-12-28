@@ -1,32 +1,38 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.EntityPrehistoricFloraMesomyzon;
 import net.lepidodendron.entity.EntityPrehistoricFloraPriscomyzon;
-import net.lepidodendron.entity.model.entity.ModelPriscomyzon;
+import net.lepidodendron.entity.model.entity.ModelMesomyzon;
 import net.lepidodendron.entity.render.RenderLivingBaseWithBook;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistoricFloraPriscomyzon> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/priscomyzon.png");
+public class RenderMesomyzon extends RenderLivingBaseWithBook<EntityPrehistoricFloraMesomyzon> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mesomyzon.png");
 
-    public static float getScaler() {
-        return 0.7F * 0.2F;
+    public RenderMesomyzon(RenderManager mgr) {
+        super(mgr, new ModelMesomyzon(), 0.0f);
     }
-    public RenderPriscomyzon(RenderManager mgr) {
-        super(mgr, new ModelPriscomyzon(), 0.0f);
+
+    public static float getScaler() {return 0.2F; }
+
+    @Override
+    public ResourceLocation getEntityTexture(EntityPrehistoricFloraMesomyzon entity) {
+        return RenderMesomyzon.TEXTURE;
     }
 
     @Override
-    public ResourceLocation getEntityTexture(EntityPrehistoricFloraPriscomyzon entity) {
-        return RenderPriscomyzon.TEXTURE;
+    protected void preRenderCallback(EntityPrehistoricFloraMesomyzon entity, float f) {
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
     }
 
     @Override
-    protected void applyRotations(EntityPrehistoricFloraPriscomyzon entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
+    protected void applyRotations(EntityPrehistoricFloraMesomyzon entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
-        float getOffset = 0.18F;
+        float getOffset = 0.075F;
 
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:
@@ -56,15 +62,4 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
     }
-
-    @Override
-    protected void preRenderCallback(EntityPrehistoricFloraPriscomyzon entity, float f) {
-        float scale = this.getScaler();
-        if (scale < 0.1f) {
-            scale = 0.1f;
-        }
-        GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = 0;
-    }
-
 }

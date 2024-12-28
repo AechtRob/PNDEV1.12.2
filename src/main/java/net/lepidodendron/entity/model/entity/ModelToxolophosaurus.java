@@ -336,11 +336,12 @@ public class ModelToxolophosaurus extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraToxolophosaurus ee = (EntityPrehistoricFloraToxolophosaurus) entitylivingbaseIn;
 
-        if (ee.getIsFast()) {
-            animRun(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-        }
-        else {
-            animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        if(ee.getIsMoving()) {
+            if (ee.getIsFast()) {
+                animRun(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            } else {
+                animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            }
         }
 
         if (ee.getAnimation() == ee.STAND_ANIMATION) {

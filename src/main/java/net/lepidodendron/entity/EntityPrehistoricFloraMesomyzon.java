@@ -5,15 +5,20 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.DietString;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAquaticSticker;
+import net.lepidodendron.entity.render.entity.RenderPriscomyzon;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -22,7 +27,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBrannerion extends EntityPrehistoricFloraFishBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraMesomyzon extends EntityPrehistoricFloraAquaticSticker implements IAdvancementGranter, ITrappableWater {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -30,24 +35,24 @@ public class EntityPrehistoricFloraBrannerion extends EntityPrehistoricFloraFish
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraBrannerion(World world) {
+	public EntityPrehistoricFloraMesomyzon(World world) {
 		super(world);
-		setSize(0.25F, 0.2F);
+		setSize(0.15F, 0.15F);
 	}
 
 	@Override
 	public boolean canShoal() {
-		return (!(this.getAlarmCooldown() > 0));
+		return false;
 	}
 
 	@Override
 	public int getShoalSize() {
-		return 20;
+		return 15;
 	}
 
 	@Override
 	public int getShoalDist() {
-		return 5;
+		return 4;
 	}
 
 	@Override
@@ -66,7 +71,10 @@ public class EntityPrehistoricFloraBrannerion extends EntityPrehistoricFloraFish
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		if (this.getAttachmentFacing() != EnumFacing.DOWN && this.getAttachmentFacing() != EnumFacing.UP) {
+			return 0;
+		}
+		return 0.232f;
 	}
 
 	@Override
@@ -99,13 +107,6 @@ public class EntityPrehistoricFloraBrannerion extends EntityPrehistoricFloraFish
 		return null;
 	}
 
-	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(2, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraFishBaseAI(this));
-	}
-
 	@Override
 	public String[] getFoodOreDicts() {
 		return ArrayUtils.addAll(DietString.FISHFOOD);
@@ -134,23 +135,23 @@ public class EntityPrehistoricFloraBrannerion extends EntityPrehistoricFloraFish
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getAmbientSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getDeathSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
@@ -168,17 +169,17 @@ public class EntityPrehistoricFloraBrannerion extends EntityPrehistoricFloraFish
 		super.onEntityUpdate();
 	}
 
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {return ModTriggers.CLICK_MESOMYZON;}
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.BRANNERION_LOOT;
+		return LepidodendronMod.MESOMYZON_LOOT;
 	}
 
 	//Rendering taxidermy:
 	//--------------------
-	@Nullable
-	@Override
-	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_BRANNERION;
-	}
+
 }
 

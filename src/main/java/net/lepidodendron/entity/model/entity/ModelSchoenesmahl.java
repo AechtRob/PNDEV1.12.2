@@ -2643,7 +2643,6 @@ public class ModelSchoenesmahl extends ModelBasePalaeopedia {
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animWalk(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraSchoenesmahl entity = (EntityPrehistoricFloraSchoenesmahl) entitylivingbaseIn;
         int animCycle = 20;
@@ -3308,7 +3307,6 @@ public class ModelSchoenesmahl extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0), head.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*345))*-14), head.rotateAngleZ + (float) Math.toRadians(0-Math.sin((Math.PI/180)*((((double)tickAnim/20D))*345+60))*2));
 
     }
-
     public void animRun(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraSchoenesmahl entity = (EntityPrehistoricFloraSchoenesmahl) entitylivingbaseIn;
         int animCycle = 10;

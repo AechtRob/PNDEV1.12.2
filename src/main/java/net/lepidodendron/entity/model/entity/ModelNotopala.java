@@ -80,31 +80,31 @@ public class ModelNotopala extends ModelBasePalaeopedia {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //this.body.render(f5 * 0.2F);
-        shell.render(f5);
+        snail.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.shell.offsetY = -0.5F;
-        this.shell.render(0.01F);
+        this.snail.offsetY = -0.5F;
+        this.snail.render(0.01F);
         resetToDefaultPose();
     }
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.shell.offsetY = -2.0F;
-        this.shell.offsetX = -1.338F;
-        this.shell.rotateAngleY = (float)Math.toRadians(200);
-        this.shell.rotateAngleX = (float)Math.toRadians(8);
-        this.shell.rotateAngleZ = (float)Math.toRadians(-8);
-        this.shell.scaleChildren = true;
+        this.snail.offsetY = -2.0F;
+        this.snail.offsetX = -1.338F;
+        this.snail.rotateAngleY = (float)Math.toRadians(200);
+        this.snail.rotateAngleX = (float)Math.toRadians(8);
+        this.snail.rotateAngleZ = (float)Math.toRadians(-8);
+        this.snail.scaleChildren = true;
         float scaler = 1.63F;
-        this.shell.setScale(scaler, scaler, scaler);
+        this.snail.setScale(scaler, scaler, scaler);
         //Start of pose:
 
         //End of pose, now render the model:
-        this.shell.render(f);
+        this.snail.render(f);
         //Reset rotations, positions and sizing:
-        this.shell.setScale(1.0F, 1.0F, 1.0F);
-        this.shell.scaleChildren = false;
+        this.snail.setScale(1.0F, 1.0F, 1.0F);
+        this.snail.scaleChildren = false;
         resetToDefaultPose();
 
     }

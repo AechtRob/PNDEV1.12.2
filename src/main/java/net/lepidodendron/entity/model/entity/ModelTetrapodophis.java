@@ -388,9 +388,15 @@ public class ModelTetrapodophis extends ModelBasePalaeopedia {
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
                 if (ee.getIsFast()) { //Running
-                    animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
                 } else {
-                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, false);
+                }
+            } else {
+                if (ee.getIsFast()) { //Running
+                    animRunning(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
+                } else {
+                    animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, true);
                 }
             }
         }
@@ -688,10 +694,13 @@ public class ModelTetrapodophis extends ModelBasePalaeopedia {
 
 
     }
-    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraTetrapodophis entity = (EntityPrehistoricFloraTetrapodophis) entitylivingbaseIn;
         int animCycle = 25;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        if (entity.animSpeedAdder() <= 0) {
+            partialTickTime = 0; //If it's static don't increment partial ticks either
+        }
+        double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
@@ -1410,10 +1419,13 @@ public class ModelTetrapodophis extends ModelBasePalaeopedia {
         this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(0), head.rotateAngleY + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*360/0.76+150))*-5), head.rotateAngleZ + (float) Math.toRadians(0));
 
     }
-    public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+    public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, boolean isStatic) {
         EntityPrehistoricFloraTetrapodophis entity = (EntityPrehistoricFloraTetrapodophis) entitylivingbaseIn;
         int animCycle = 10;
-        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        if (entity.animSpeedAdder() <= 0) {
+            partialTickTime = 0; //If it's static don't increment partial ticks either
+        }
+        double tickAnim = (entity.ticksExistedAnimated + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExistedAnimated + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;

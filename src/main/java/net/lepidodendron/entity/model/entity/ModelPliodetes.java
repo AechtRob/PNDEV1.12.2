@@ -287,7 +287,7 @@ public class ModelPliodetes extends ModelBasePalaeopedia {
             this.swing(base, speed*0.8F, 0.2F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.base.rotateAngleZ = (float) Math.toRadians(90);
-                this.base.offsetY = 0.3F;
+                this.base.offsetY = 0.15F;
                 this.bob(base, -speed, 5F, false, f2, 1);
             }
         }
