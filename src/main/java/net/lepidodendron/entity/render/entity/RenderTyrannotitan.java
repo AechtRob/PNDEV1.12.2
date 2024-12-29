@@ -16,7 +16,7 @@ public class RenderTyrannotitan extends RenderLivingBaseWithBook<EntityPrehistor
     }
 
     public static float getScaler() {
-        return 1.115F;
+        return 1F;
     }
 
     @Override
