@@ -293,6 +293,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MESODESCOLEA = new CustomTrigger("pf_book_mesodescolea");
     public static final CustomTrigger CLICK_PSEUDOCTENIS = new CustomTrigger("pf_book_pseudoctenis");
     public static final CustomTrigger CLICK_HERPETOGASTER = new CustomTrigger("pf_book_herpetogaster");
+    public static final CustomTrigger CLICK_BRACHIOSPONGIA = new CustomTrigger("pf_book_brachiospongia");
     public static final CustomTrigger CLICK_HIRONOIA = new CustomTrigger("pf_book_hironoia");
     public static final CustomTrigger CLICK_HYMENAEA = new CustomTrigger("pf_book_hymenaea");
     public static final CustomTrigger CLICK_IBYKA = new CustomTrigger("pf_book_ibyka");
@@ -2007,6 +2008,7 @@ public class ModTriggers
             CLICK_MESODESCOLEA,
             CLICK_PSEUDOCTENIS,
             CLICK_HERPETOGASTER,
+            CLICK_BRACHIOSPONGIA,
             CLICK_HIRONOIA,
             CLICK_HYMENAEA,
             CLICK_IBYKA,
