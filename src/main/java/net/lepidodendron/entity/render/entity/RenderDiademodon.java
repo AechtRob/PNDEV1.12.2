@@ -17,7 +17,7 @@ public class RenderDiademodon extends RenderLivingBaseWithBook<EntityPrehistoric
         super(mgr, new ModelDiademodon(), 0.5f);
     }
     public static float getScaler() {
-        return 0.543F;
+        return 0.5F;
     }
 
     @Override

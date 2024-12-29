@@ -5290,6 +5290,7 @@ public class LepidodendronSorter {
     public static final int shell_australiceras = 5261;
     public static final int shell_tropaeum = 5262;
     public static final int eggs_dimitobelus = 5263;
+    public static final int eggs_tietasaura = 5264;
 
 
 
