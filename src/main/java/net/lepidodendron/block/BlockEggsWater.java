@@ -239,6 +239,12 @@ public class BlockEggsWater extends ElementsLepidodendronMod.ModElement {
 			"lepidodendron:prehistoric_flora_caerorhachis",
 			"lepidodendron:prehistoric_flora_lethiscus",
 			"lepidodendron:prehistoric_flora_apateon",
+			"lepidodendron:prehistoric_flora_ptychodus",
+			"lepidodendron:prehistoric_flora_squalicorax",
+			"lepidodendron:prehistoric_flora_cretoxyrhina",
+			"lepidodendron:prehistoric_flora_onchopristis",
+			"lepidodendron:prehistoric_flora_egertonodus",
+			"lepidodendron:prehistoric_flora_thaiodus",
 			"lepidodendron:prehistoric_flora_microbrachis"
 	};
 
