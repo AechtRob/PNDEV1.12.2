@@ -6757,6 +6757,36 @@ public class RenderHandler {
                 return new RenderIyuku(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMuttaburrasaurus.class, new IRenderFactory<EntityPrehistoricFloraMuttaburrasaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMuttaburrasaurus> createRenderFor(RenderManager manager) {
+                return new RenderMuttaburrasaurus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAlbanerpeton.class, new IRenderFactory<EntityPrehistoricFloraAlbanerpeton>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAlbanerpeton> createRenderFor(RenderManager manager) {
+                return new RenderAlbanerpeton(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAusktribosphenos.class, new IRenderFactory<EntityPrehistoricFloraAusktribosphenos>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAusktribosphenos> createRenderFor(RenderManager manager) {
+                return new RenderAusktribosphenos(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFalcarius.class, new IRenderFactory<EntityPrehistoricFloraFalcarius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraFalcarius> createRenderFor(RenderManager manager) {
+                return new RenderFalcarius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraJinyunpelta.class, new IRenderFactory<EntityPrehistoricFloraJinyunpelta>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraJinyunpelta> createRenderFor(RenderManager manager) {
+                return new RenderJinyunpelta(manager);
+            }
+        });
         
 
 
