@@ -457,17 +457,15 @@ public class ModelTetrameroceras extends ModelBasePalaeopedia {
         this.resetToDefaultPose();
         EntityPrehistoricFloraTetrameroceras ee = (EntityPrehistoricFloraTetrameroceras) entitylivingbaseIn;
 
-        boolean isAtBottom = false;
-        if (ee.getPosition().getY() - 1 > 1) {
-            BlockPos pos = new BlockPos(ee.getPosition().getX(), ee.getPosition().getY() - 1, ee.getPosition().getZ());
-            isAtBottom = ((ee.isInsideOfMaterial(Material.WATER) || ee.isInsideOfMaterial(Material.CORAL))
-                    && ((ee.world.getBlockState(pos)).getMaterial() != Material.WATER)
-                    && ((double)ee.getPosition().getY() + 0.334D) > ee.posY);
-        }
+        if ((!ee.isReallySwimming()) && (ee.getAnimation() != ee.UNSWIM_ANIMATION)) {
+            //Walk pose:
+            if(ee.isInWater()) {
+                animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+            }
 
-        if (ee.getIsMoving() && isAtBottom && ee.isReallyInWater()) { //walking
-            animWalk(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
-        } else if (!isAtBottom && ee.isReallyInWater()){
+
+        } else {
+            //Swimming
             animSwim(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         }
 

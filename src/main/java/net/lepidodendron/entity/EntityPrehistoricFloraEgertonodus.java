@@ -32,18 +32,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraEgertonodus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraAsteracanthus(World world) {
+	public EntityPrehistoricFloraEgertonodus(World world) {
 		super(world);
-		setSize(0.8F, 0.9F);
+		setSize(0.5F, 0.5F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.9F;
+		maxWidth = 0.5F;
+		maxHeight = 0.5F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -228,69 +228,16 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.ASTERACANTHUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.ASTERACANTHUS_LOOT;
+		return LepidodendronMod.EGERTONODUS_LOOT;
 	}
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return -0.56;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.1F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.0F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderAsteracanthus.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAsteracanthus;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderAsteracanthus.getScaler();
-	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_ASTERACANTHUS;
+		return ModTriggers.CLICK_EGERTONODUS;
 	}
 }
 

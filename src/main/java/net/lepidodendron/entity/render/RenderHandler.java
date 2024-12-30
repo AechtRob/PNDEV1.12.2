@@ -6787,6 +6787,24 @@ public class RenderHandler {
                 return new RenderJinyunpelta(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraThaiodus.class, new IRenderFactory<EntityPrehistoricFloraThaiodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraThaiodus> createRenderFor(RenderManager manager) {
+                return new RenderThaiodus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEgertonodus.class, new IRenderFactory<EntityPrehistoricFloraEgertonodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEgertonodus> createRenderFor(RenderManager manager) {
+                return new RenderEgertonodus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeoniscus.class, new IRenderFactory<EntityPrehistoricFloraArchaeoniscus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArchaeoniscus> createRenderFor(RenderManager manager) {
+                return new RenderArchaeoniscus(manager);
+            }
+        });
         
 
 

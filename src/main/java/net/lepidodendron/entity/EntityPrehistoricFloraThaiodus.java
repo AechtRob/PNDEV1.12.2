@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderAsteracanthus;
+import net.lepidodendron.entity.render.entity.RenderHybodus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -19,6 +19,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -29,22 +30,23 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraThaiodus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraAsteracanthus(World world) {
+	public EntityPrehistoricFloraThaiodus(World world) {
 		super(world);
-		setSize(0.8F, 0.9F);
+		setSize(0.7F, 0.35F);
 		minWidth = 0.1F;
-		maxWidth = 0.8F;
-		maxHeight = 0.9F;
-		maxHealthAgeable = 30.0D;
+		maxWidth = 0.7F;
+		maxHeight = 0.35F;
+		maxHealthAgeable = 19.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -65,10 +67,10 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.35;
+		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -93,7 +95,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	@Override
 	public int getAdultAge() {
-		return 96000;
+		return 126000;
 	}
 
 	@Override
@@ -117,11 +119,12 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.1D, 0, true));
 		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		//this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));//		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
-//this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(3, new HuntForDietEntityPrehistoricFloraAgeableBaseAI(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.1F, 1.2F, false));
 //		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 //		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
@@ -134,8 +137,9 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	@Override
 	public String[] getFoodOreDicts() {
-		return DietString.SHELLFISH;
+		return ArrayUtils.addAll(DietString.FISH, DietString.MEAT);
 	}
+
 
 	@Override
 	public boolean isAIDisabled() {
@@ -168,7 +172,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		//this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
 	@Override
@@ -228,69 +232,15 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.ASTERACANTHUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.ASTERACANTHUS_LOOT;
-	}
-
-	//Rendering taxidermy:
-	//--------------------
-	public static double offsetWall(@Nullable String variant) {
-		return -0.56;
-	}
-	public static double upperfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double upperbackverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double upperfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
-	}
-	public static double upperbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.1F;
-	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 1.4;
-	}
-	public static double lowerfrontlineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0.0F;
-	}
-	public static double lowerbacklineoffset(@Nullable String variant) {
-		return 0.4;
-	}
-	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return -0.15F;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ResourceLocation textureDisplay(@Nullable String variant) {
-		return RenderAsteracanthus.TEXTURE;
-	}
-	@SideOnly(Side.CLIENT)
-	public static ModelBase modelDisplay(@Nullable String variant) {
-		return RenderDisplays.modelAsteracanthus;
-	}
-	public static float getScaler(@Nullable String variant) {
-		return RenderAsteracanthus.getScaler();
+		return LepidodendronMod.THAIODUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_ASTERACANTHUS;
+		return ModTriggers.CLICK_THAIODUS;
 	}
+
+
 }
 

@@ -3,15 +3,11 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.entity.ai.AmphibianWander;
-import net.lepidodendron.entity.ai.DietString;
-import net.lepidodendron.entity.ai.EatItemsEntityPrehistoricFloraAgeableBaseAI;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderCeratodus;
+import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.render.entity.RenderPhillipsia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
 import net.lepidodendron.util.CustomTrigger;
@@ -23,7 +19,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -31,7 +26,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, IAdvancementGranter {
+public class EntityPrehistoricFloraArchaeoniscus extends EntityPrehistoricFloraTrilobiteBottomBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -39,32 +34,9 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraNeoceratodus(World world) {
+	public EntityPrehistoricFloraArchaeoniscus(World world) {
 		super(world);
-		setSize(1.0F, 0.3F);
-		minWidth = 0.5F;
-		maxWidth = 1.0F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 8.0D;
-	}
-
-	public static String getHabitat() {
-		return I18n.translateToLocal("helper.pf_aquatic.name");
-	}
-
-	@Override
-	public boolean canJumpOutOfWater() {
-		return false;
-	}
-
-	@Override
-	public boolean dropsEggs() {
-		return true;
-	}
-
-	@Override
-	public boolean laysEggs() {
-		return false;
+		setSize(0.3F, 0.20F);
 	}
 
 	@Override
@@ -72,44 +44,23 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 		return true;
 	}
 
-	public static String getPeriod() {return "Cretaceous - Paleogene - Neogene - Pleistocene";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
-	//@Override
-	//protected float getAISpeedFish() {
-	//	return 0.185f;
-	//}
-
 	@Override
-	protected float getAISpeedSwimmingAmphibian() {
-		if (this.isReallyInWater()) {
-			return 0.185f;
-		}
-		return 0.22F;
-	}
-
-	@Override
-	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterCeratodus;
-		if (i > 16) {i = 16;}
-		if (i < 1) {i = 1;}
-		return i;
-	}
-
-	@Override
-	public int getAdultAge() {
-		return 10000;
-	}
-
-	@Override
-	public boolean isBase() {
+	public boolean dropsEggs() {
 		return true;
 	}
 
 	@Override
 	public int getAnimationTick() {
 		return getAnimationTick();
+	}
+
+	@Override
+	protected float getAISpeedTrilobite() {
+		return 0.11f;
 	}
 
 	@Override
@@ -133,9 +84,10 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
-		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraAgeableBaseAI(this, 1));
+		tasks.addTask(0, new EntityMateAITrilobiteBottomBase(this, 1));
+		tasks.addTask(1, new TrilobiteWanderBottom(this, NO_ANIMATION));
+		tasks.addTask(2, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatItemsEntityPrehistoricFloraTrilobiteBottomBaseAI(this));
 	}
 
 	@Override
@@ -149,8 +101,13 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 	}
 
 	@Override
+	public String getTexture() {
+		return this.getTexture();
+	}
+
+	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override
@@ -161,8 +118,8 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
 	@Override
@@ -191,22 +148,17 @@ public class EntityPrehistoricFloraNeoceratodus extends EntityPrehistoricFloraSw
 		//this.renderYawOffset = this.rotationYaw;
 	}
 
-	@Override
-	public int airTime() {
-		return 10000;
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.NEOCERATODUS_LOOT;
+		return LepidodendronMod.ARCHAEONISCUS_LOOT;
 	}
-	//Rendering taxidermy:
-	//--------------------
 
-
-	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_NEOCERATODUS;
+		return ModTriggers.CLICK_ARCHAEONISCUS;
 	}
 }
