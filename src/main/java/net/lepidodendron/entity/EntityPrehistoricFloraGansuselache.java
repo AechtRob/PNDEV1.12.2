@@ -209,7 +209,7 @@ public class EntityPrehistoricFloraGansuselache extends EntityPrehistoricFloraAg
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
