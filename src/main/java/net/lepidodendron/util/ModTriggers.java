@@ -293,6 +293,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MESODESCOLEA = new CustomTrigger("pf_book_mesodescolea");
     public static final CustomTrigger CLICK_PSEUDOCTENIS = new CustomTrigger("pf_book_pseudoctenis");
     public static final CustomTrigger CLICK_HERPETOGASTER = new CustomTrigger("pf_book_herpetogaster");
+    public static final CustomTrigger CLICK_BRACHIOSPONGIA = new CustomTrigger("pf_book_brachiospongia");
     public static final CustomTrigger CLICK_HIRONOIA = new CustomTrigger("pf_book_hironoia");
     public static final CustomTrigger CLICK_HYMENAEA = new CustomTrigger("pf_book_hymenaea");
     public static final CustomTrigger CLICK_IBYKA = new CustomTrigger("pf_book_ibyka");
@@ -538,6 +539,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SEA_ANEMONE = new CustomTrigger("pf_book_sea_anemone");
     public static final CustomTrigger CLICK_SPHENOPHYLLALES = new CustomTrigger("pf_book_sphenophyllales");
     public static final CustomTrigger CLICK_TABULATA = new CustomTrigger("pf_book_tabulata");
+    public static final CustomTrigger CLICK_BONE_WORM = new CustomTrigger("pf_book_bone_worm");
 
 
 
@@ -2006,6 +2008,7 @@ public class ModTriggers
             CLICK_MESODESCOLEA,
             CLICK_PSEUDOCTENIS,
             CLICK_HERPETOGASTER,
+            CLICK_BRACHIOSPONGIA,
             CLICK_HIRONOIA,
             CLICK_HYMENAEA,
             CLICK_IBYKA,
@@ -2247,6 +2250,7 @@ public class ModTriggers
             CLICK_SEA_ANEMONE,
             CLICK_SPHENOPHYLLALES,
             CLICK_TABULATA,
+            CLICK_BONE_WORM,
 
             
             //ENTITIES:

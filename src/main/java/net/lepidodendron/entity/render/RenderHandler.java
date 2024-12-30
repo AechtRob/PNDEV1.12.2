@@ -6872,6 +6872,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFacivermis.class, new RenderFacivermis());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockOesia.TileEntityCustom.class, new RenderOesia());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGangtoucunia.class, new RenderGangtoucunia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockBrachiospongia.TileEntityCustom.class, new RenderBrachiospongia());
         //General:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSeaPenPink.TileEntityCustom.class, new RenderSeaPenPink());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSeaPenYellow.TileEntityCustom.class, new RenderSeaPenYellow());

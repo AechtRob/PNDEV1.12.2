@@ -2,15 +2,14 @@
 package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockLavaCobble;
-import net.lepidodendron.block.BlockLavaCobbleMolten;
-import net.lepidodendron.block.BlockLavaRock;
-import net.lepidodendron.block.BlockToxicMud;
+import net.lepidodendron.block.BlockBoneWorm;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.minecraft.block.BlockBone;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -22,8 +21,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureVolcanicVentUnderwater extends ElementsLepidodendronMod.ModElement {
-	public StructureVolcanicVentUnderwater(ElementsLepidodendronMod instance) {
+public class StructureBoneWormUnderwater extends ElementsLepidodendronMod.ModElement {
+	public StructureBoneWormUnderwater(ElementsLepidodendronMod instance) {
 		super(instance, 44);
 	}
 
@@ -34,20 +33,22 @@ public class StructureVolcanicVentUnderwater extends ElementsLepidodendronMod.Mo
 		if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")))
 			return;
 
-		if (random.nextInt(6) <= 1) {
+		if (random.nextInt(10) <= 1) {
 			int i = i2 + random.nextInt(16) + 8;
 			int k = k2 + random.nextInt(16) + 8;
 			BlockPos pos = new BlockPos(i, 0, k);
 			pos = ChunkGenSpawner.getTopSolidBlock(pos, world);
-			if (pos.getY() >= 32 + random.nextInt(6)) {
+			if (pos.getY() >= 40 + random.nextInt(6)) {
 				return;
 			}
+			boolean northsouth = false;
 			//Assemble our shape:
 			//Either north-south or east-west:
 			ArrayList<BlockPos> ventPos = new ArrayList<BlockPos>();
-			int ventlength = random.nextInt(10) + 3;
+			int ventlength = random.nextInt(5) + 6;
 			if (random.nextInt(2) == 0) {
 				//N-S
+				northsouth = true;
 				BlockPos tempPos = pos;
 				ventPos.add(pos);
 				boolean diag = true;
@@ -114,44 +115,41 @@ public class StructureVolcanicVentUnderwater extends ElementsLepidodendronMod.Mo
 			}
 			if (!ventPos.isEmpty()) {
 				for (BlockPos bp : ventPos) {
-					world.setBlockState(bp, Blocks.WATER.getDefaultState());
-					IBlockState state = Blocks.MAGMA.getDefaultState();
 					if (world.rand.nextInt(2) == 0) {
-						state = BlockLavaCobbleMolten.block.getDefaultState();
+						if (northsouth) {
+							world.setBlockState(bp.up(), Blocks.BONE_BLOCK.getDefaultState().withProperty(BlockBone.AXIS, EnumFacing.Axis.Z));
+						}
+						else {
+							world.setBlockState(bp.up(), Blocks.BONE_BLOCK.getDefaultState().withProperty(BlockBone.AXIS, EnumFacing.Axis.X));
+						}
+						setBoneWorms(world, bp.up());
 					}
-					world.setBlockState(bp.down(), state);
 				}
 				for (BlockPos bp : ventPos) {
-					placeSulphur(world, bp);
+					if (random.nextInt(8) == 0) {
+						placeBoneUnder(world, bp, northsouth);
+					}
 				}
 			}
 		}
 	}
 
-	public static void placeSulphur(World world, BlockPos pos) {
-		for (int x = -1; x <= 1; x++) {
-			for (int z = -1; z <= 1; z++) {
-				IBlockState state = null;
-				int i = world.rand.nextInt(4);
-				switch (i) {
-					case 0: default:
-						state = BlockLavaRock.block.getDefaultState();
-						break;
-
-					case 1:
-						state = BlockLavaCobble.block.getDefaultState();
-						break;
-
-					case 2:
-						state = BlockToxicMud.block.getDefaultState();
-						break;
-
-					case 3:
-						state = Blocks.OBSIDIAN.getDefaultState();
-						break;
+	public static void placeBoneUnder(World world, BlockPos pos, boolean northsouth) {
+		if (northsouth) {
+			for (int i = -1; i <= 1; i++) {
+				if (!isWaterBlock(world, pos.add(i, 0, 0))
+					&& i != 0) {
+					world.setBlockState(pos.add(i, 0, 0), Blocks.BONE_BLOCK.getDefaultState().withProperty(BlockBone.AXIS, EnumFacing.Axis.Z));
+					setBoneWorms(world, pos.add(i, 0, 0));
 				}
-				if (!isWaterBlock(world, pos.add(x, 0, z))) {
-					world.setBlockState(pos.add(x, 0, z), state);
+			}
+		}
+		else {
+			for (int i = -1; i <= 1; i++) {
+				if (!isWaterBlock(world, pos.add(0, 0, i))
+						&& i != 0) {
+					world.setBlockState(pos.add(0, 0, i), Blocks.BONE_BLOCK.getDefaultState().withProperty(BlockBone.AXIS, EnumFacing.Axis.X));
+					setBoneWorms(world, pos.add(0, 0, i));
 				}
 			}
 		}
@@ -210,6 +208,34 @@ public class StructureVolcanicVentUnderwater extends ElementsLepidodendronMod.Mo
 		return state.getMaterial() == Material.WATER
 			|| state.getBlock() instanceof BlockLiquid
 			|| state.getBlock() instanceof BlockFluidBase;
+	}
+
+	public static void setBoneWorms(World world, BlockPos pos) {
+		if (world.rand.nextInt(6) != 0) {
+			if (BlockBoneWorm.block.canPlaceBlockOnSide(world, pos.up(), EnumFacing.UP)) {
+				world.setBlockState(pos.up(), BlockBoneWorm.block.getDefaultState().withProperty(BlockBoneWorm.BlockCustom.FACING, EnumFacing.UP));
+			}
+			if (world.rand.nextInt(3) == 0) {
+				if (BlockBoneWorm.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+					world.setBlockState(pos.north(), BlockBoneWorm.block.getDefaultState().withProperty(BlockBoneWorm.BlockCustom.FACING, EnumFacing.NORTH));
+				}
+			}
+			if (world.rand.nextInt(3) == 0) {
+				if (BlockBoneWorm.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+					world.setBlockState(pos.south(), BlockBoneWorm.block.getDefaultState().withProperty(BlockBoneWorm.BlockCustom.FACING, EnumFacing.SOUTH));
+				}
+			}
+			if (world.rand.nextInt(3) == 0) {
+				if (BlockBoneWorm.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+					world.setBlockState(pos.east(), BlockBoneWorm.block.getDefaultState().withProperty(BlockBoneWorm.BlockCustom.FACING, EnumFacing.EAST));
+				}
+			}
+			if (world.rand.nextInt(3) == 0) {
+				if (BlockBoneWorm.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+					world.setBlockState(pos.west(), BlockBoneWorm.block.getDefaultState().withProperty(BlockBoneWorm.BlockCustom.FACING, EnumFacing.WEST));
+				}
+			}
+		}
 	}
 	
 }

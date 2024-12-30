@@ -1,7 +1,8 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"1": "lepidodendron:blocks/anemone_2_tentacles_var"
+		"1": "lepidodendron:blocks/anemone_2_tentacles_var",
+		"particle": "lepidodendron:blocks/anemone_2_tentacles_var"
 	},
 	"elements": [
 		{

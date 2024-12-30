@@ -8,11 +8,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.gen.AlgaeGenerator;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -31,6 +30,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -39,6 +42,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
@@ -53,18 +57,28 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:glass_sponge")
+public class BlockBrachiospongia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:brachiospongia")
 	public static final Block block = null;
-	public BlockGlassSponge(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.glass_sponge);
+	public BlockBrachiospongia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.brachiospongia);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("glass_sponge"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("brachiospongia"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentitybrachiospongia");
+		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiospongia", BlockBrachiospongia.block);
+		OreDictionary.registerOre("pndietEncruster", BlockBrachiospongia.block);
+	}
+
+
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
@@ -72,32 +86,37 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:glass_sponge", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockGlassSponge.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:entities/brachiospongia", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockBrachiospongia.LEVEL).build());
 	}
 
 	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:glass_sponge", BlockGlassSponge.block);
-		OreDictionary.registerOre("itemSponge", BlockGlassSponge.block);
-		OreDictionary.registerOre("pndietSponge", BlockGlassSponge.block);
-	}
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
+		boolean dimensionCriteria = false;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
+			dimensionCriteria = true;
+		if ((dimID == LepidodendronConfig.dimOrdovician)
+		) {
+			dimensionCriteria = true;
+		}
+		if (!dimensionCriteria)
+			return;
 
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
-		
-		int weight = LepidodendronConfigPlants.weightGlassSponge;
+		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
+		if (dimID == LepidodendronConfig.dimOrdovician
+		)
+			weight = 100; //Full scale populations in these dims
+
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
 		}
-		
+
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -107,56 +126,113 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
-		if (dimID == LepidodendronConfig.dimPrecambrian
-				|| dimID == LepidodendronConfig.dimCambrian
-				|| dimID == LepidodendronConfig.dimOrdovician
-				|| dimID == LepidodendronConfig.dimSilurian
-				|| dimID == LepidodendronConfig.dimDevonian
-				|| dimID == LepidodendronConfig.dimCarboniferous
-				|| dimID == LepidodendronConfig.dimPermian
-				|| dimID == LepidodendronConfig.dimTriassic){
-			biomeCriteria = false;
-		}
-		if (biome instanceof BiomeJurassic)
-		{
-			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef")) {
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+			) {
 				biomeCriteria = true;
 			}
 			else {
 				biomeCriteria = false;
 			}
 		}
-		if (biome instanceof BiomeCretaceousEarly)
-		{
-			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")) {
-				biomeCriteria = true;
-			}
-			else {
-				biomeCriteria = false;
-			}
-		}
-		
 		if (!biomeCriteria)
 			return;
 
 		int multiplier = 1;
-
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef"))
-		{
-			multiplier = 32;
+		if ((dimID == LepidodendronConfig.dimOrdovician)
+		) {
+			multiplier = 2;
 		}
+		int dimWeight = 1;
+		if ((dimID != LepidodendronConfig.dimOrdovician)) {
+			dimWeight = 2;
+		}
+		int minWaterDepth = 2 * dimWeight;
+		int maxWaterDepth = 25 * dimWeight;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < (int) 3 * multiplier; i++) {
+		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			int i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).getY();
-			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
+			(new WorldGenReed() {
+				@Override
+				public boolean generate(World world, Random random, BlockPos pos) {
+					for (int i = 0; i < 40; ++i) {
+						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (blockpos1.getY() < Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))
+								&& (Functions.isWater(world, blockpos1))
+								&& !world.isAirBlock(blockpos1.north())
+								&& !world.isAirBlock(blockpos1.south())
+								&& !world.isAirBlock(blockpos1.east())
+								&& !world.isAirBlock(blockpos1.west())
+						)
+						{	boolean waterDepthCheckMax = false;
+							boolean waterDepthCheckMin = true;
+							//find air within the right depth
+							int yy = 1;
+							while (yy <= maxWaterDepth + 1 && !waterDepthCheckMax) {
+								if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.AIR)
+										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
+									yy = maxWaterDepth + 1;
+								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
+									waterDepthCheckMax = true;
+								}
+								yy += 1;
+							}
+							//Check that at least enough water is over the position:
+							yy = 1;
+							while (yy <= minWaterDepth && waterDepthCheckMin) {
+								if (world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER) {
+									waterDepthCheckMin = false;
+								}
+								yy += 1;
+							}
+
+							//figure out a position and facing to place this at!
+							//First try regular uprights and then the rotations:
+							EnumFacing enumfacing = EnumFacing.UP;
+							BlockPos pos1 = blockpos1.down();
+							if (waterDepthCheckMin & waterDepthCheckMax) {
+								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
+										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
+										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
+										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
+										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
+										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockBrachiospongia.BlockCustom.FACING, enumfacing), 2);
+									//Assign a rotation at random
+									TileEntity te = world.getTileEntity(pos);
+									if (te != null) {
+										te.getTileData().setInteger("rotation", random.nextInt(4));
+									}
+									world.notifyBlockUpdate(pos, world.getBlockState(blockpos1), world.getBlockState(blockpos1), 3);
+									return true;
+								}
+							}
+						}
+					}
+					return true;
+				}
+			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
+	}
+
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static boolean matchBiome(Biome biome, String[] biomesList) {
@@ -190,9 +266,9 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
     
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_glass_sponge");
-			setSoundType(SoundType.GLASS);
-			setHardness(0.0F);
+			setTranslationKey("pf_brachiospongia");
+			setSoundType(SoundType.PLANT);
+			setHardness(1.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);
 			setLightOpacity(3);
@@ -204,12 +280,7 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_GLASS_SPONGE;
-		}
-
-		@Override
-		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
+			return ModTriggers.CLICK_BRACHIOSPONGIA;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -225,6 +296,40 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 	        return NULL_AABB;
 	    }
 
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
+		}
+
+		@Nullable
+		@Override
+		public TileEntity createTileEntity(World world, IBlockState state) {
+			return new TileEntityCustom();
+		}
+
+		public TileEntityCustom createNewTileEntity(World worldIn, int meta) {
+			return new TileEntityCustom();
+		}
+
+		@Override
+		public boolean hasTileEntity(IBlockState state) {
+			return true;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public EnumBlockRenderType getRenderType(IBlockState state) {
+			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+		}
+
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			world.removeTileEntity(pos);
+			super.breakBlock(world, pos, state);
+		}
+
 		@SideOnly(Side.CLIENT)
 		@Override
     	public BlockRenderLayer getRenderLayer()
@@ -235,25 +340,6 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
-		}
-
-		@Override
-		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
-				case SOUTH :
-				default :
-					return new AxisAlignedBB(0.3D, 0D, 0D, 0.7D, 1.0D, 1.0D);
-				case NORTH :
-					return new AxisAlignedBB(0.3D, 0D, 0D, 0.7D, 1D, 01.0D);
-				case WEST :
-					return new AxisAlignedBB(0D, 0D, 0.3D, 1D, 1D, 0.7D);
-				case EAST :
-					return new AxisAlignedBB(0D, 0D, 0.3D, 1D, 1D, 0.7D);
-				case UP :
-					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
-				case DOWN :
-					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
-			}
 		}
 
 		@Override
@@ -484,7 +570,19 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 			return (blockface && canPlaceBlockAt(worldIn, pos));
 			
 	    }
-		
+
+		@Override
+		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+			super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
+			//Assign a rotation at random
+			Random rand = new Random();
+			TileEntity te = worldIn.getTileEntity(pos);
+			if (te != null) {
+				te.getTileData().setInteger("rotation", rand.nextInt(4));
+			}
+			worldIn.notifyBlockUpdate(pos, state, state, 3);
+		}
+
 		@Override
 	    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
 	    {
@@ -505,9 +603,63 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine Sponge");
-				tooltip.add("Periods: [Ediacaran (?) - Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic -] Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");}
+				tooltip.add("Type: Sponge");
+				tooltip.add("Periods: Ordovician");
+			}
 			super.addInformation(stack, player, tooltip, advanced);
+		}
+
+	}
+
+	public static class TileEntityCustom extends TileEntity {
+
+		private int rotation;
+
+		@Override
+		public SPacketUpdateTileEntity getUpdatePacket() {
+			NBTTagCompound tag = new NBTTagCompound();
+			this.writeToNBT(tag);
+			return new SPacketUpdateTileEntity(pos, 1, tag);
+		}
+
+		@Override
+		public void onDataPacket(NetworkManager netManager, SPacketUpdateTileEntity packet) {
+			readFromNBT(packet.getNbtCompound());
+		}
+
+		@Override
+		public NBTTagCompound getUpdateTag() {
+			return this.writeToNBT(new NBTTagCompound());
+		}
+
+		@Override
+		public void handleUpdateTag(NBTTagCompound tag) {
+			this.readFromNBT(tag);
+		}
+
+		@Override
+		public void readFromNBT(NBTTagCompound compound)
+		{
+			super.readFromNBT(compound);
+			if (compound.hasKey("rotation")) {
+				this.rotation = compound.getInteger("rotation");
+			}
+		}
+
+		@Override
+		public NBTTagCompound writeToNBT(NBTTagCompound compound)
+		{
+			super.writeToNBT(compound);
+			if (this.hasRotation())
+			{
+				compound.setInteger("rotation", this.rotation);
+			}
+			return compound;
+		}
+
+		public boolean hasRotation()
+		{
+			return (this.rotation > -1);
 		}
 
 	}
