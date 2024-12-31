@@ -37,7 +37,7 @@ public class EntityPrehistoricFloraPriscomyzon extends EntityPrehistoricFloraAqu
 
 	public EntityPrehistoricFloraPriscomyzon(World world) {
 		super(world);
-		setSize(0.3F, 0.25F);
+		setSize(0.15F, 0.1F);
 	}
 
 	@Override

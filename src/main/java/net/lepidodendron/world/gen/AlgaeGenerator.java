@@ -13,6 +13,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -51,6 +52,7 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean dimensionCriteria = false;
 		boolean upsideDown = false;
 		boolean algae = (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockBrownAlgae.block || this.algae == BlockGreenCharaAlgae.block || this.algae == BlockGreenCodiumAlgae.block || this.algae == BlockGreenCrustedAlgae.block || this.algae == BlockGreenLeafyAlgae.block || this.algae == BlockGreenSproutingAlgae.block || this.algae == BlockPiledAlgae.block || this.algae == BlockStalkedAlgae.block || this.algae == BlockStalkyBrownAlgae.block);
+		boolean algaeRed = (this.algae == BlockRedAlgaeMat.block || this.algae == BlockRedLeafyAlgae.block || this.algae == BlockRedTuftedAlgae.block);
 		boolean gunk = (this.algae == BlockWaterBottomGunk.block);
 		boolean rugosas = (this.algae == BlockRugosa1.block || this.algae == BlockRugosa2.block || this.algae == BlockRugosa3.block || this.algae == BlockRugosa4.block || this.algae == BlockRugosa5.block);
 		boolean anemones = (this.algae == BlockAnemone1.block || this.algae == BlockAnemone2.block || this.algae == BlockAnemone3.block || this.algae == BlockAnemone4.block || this.algae == BlockAnemone5.block || this.algae == BlockAnemone6.block || this.algae == BlockAnemone7.block || this.algae == BlockAnemone8.block || this.algae == BlockAnemone9.block);
@@ -59,6 +61,7 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean seagrass = (this.algae == BlockSeaGrass.block);
 		boolean mosacaulis = (this.algae == BlockMosacaulis.block);
 		boolean algalfrond = (this.algae == BlockTuanshanzia.block);
+		boolean corals = (this.algae == BlockCoralBamboo.block || this.algae == BlockCoralBlueCrust.block || this.algae == BlockCoralBlueStaghorn.block || this.algae == BlockCoralBrain.block || this.algae == BlockCoralCarnation.block || this.algae == BlockCoralRedTree.block || this.algae == BlockCoralSoftFan.block || this.algae == BlockCoralStonyBlooming.block || this.algae == BlockCoralStonyFractalBranching.block || this.algae == BlockCoralStonyLumpy.block || this.algae == BlockCoralStonyPipeStack.block || this.algae == BlockCoralStonyPuffy.block || this.algae == BlockCoralStonyRoughBranching.block || this.algae == BlockCoralStonySparseBranching.block || this.algae == BlockCoralStonyTubular.block || this.algae == BlockCoralTanStaghorn.block);
 		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
 		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
 		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
@@ -228,6 +231,9 @@ public class AlgaeGenerator extends WorldGenerator
 					if (algae && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
+					if ((algaeRed || anemones || corals || algae) && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 15) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")) {
+						waterDepthCheckMin = false; //anemones, corals and algae only higher up in the deep Early C oceans
+					}
 					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
@@ -259,7 +265,7 @@ public class AlgaeGenerator extends WorldGenerator
 						EnumFacing enumfacing = EnumFacing.UP;
 						BlockPos pos = new BlockPos(j, k - 1, l);
 						if (((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-								|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
+								|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK && worldIn.getBlockState(pos).getBlock() != Blocks.MAGMA)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)

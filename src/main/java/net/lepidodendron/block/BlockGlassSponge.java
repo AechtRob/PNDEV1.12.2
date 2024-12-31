@@ -10,6 +10,7 @@ import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -123,6 +124,16 @@ public class BlockGlassSponge extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_ocean")) {
 				biomeCriteria = true;
 			}
 			else {

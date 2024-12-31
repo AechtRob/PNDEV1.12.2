@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
@@ -20,6 +21,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -185,6 +187,17 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 				biomeCriteria = false;
 			}
 		}
+		if (biome instanceof BiomeCretaceousEarly)
+		{
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+//			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.
+//					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.IslandWhite) {
+//				biomeCriteria = true;
+//			}
+//			else {
+				biomeCriteria = false;
+//			}
+		}
 		if (!biomeCriteria)
 			return;
 
@@ -248,7 +261,7 @@ public class BlockBivalveInoceramusGigantocapulus extends ElementsLepidodendronM
 							BlockPos pos1 = blockpos1.down();
 							if (waterDepthCheckMin & waterDepthCheckMax) {
 								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
-									|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+									|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 									|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 									|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 									|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))

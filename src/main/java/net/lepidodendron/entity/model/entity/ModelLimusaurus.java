@@ -1039,7 +1039,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
 
 
     }
-
     public void animChatter(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 
@@ -1749,7 +1748,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
 
 
     }
-
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 
@@ -1931,7 +1929,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(ThroatPouch, ThroatPouch.rotateAngleX + (float) Math.toRadians(xx), ThroatPouch.rotateAngleY + (float) Math.toRadians(yy), ThroatPouch.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animNest(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 
@@ -2275,7 +2272,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(ToesL, ToesL.rotateAngleX + (float) Math.toRadians(xx), ToesL.rotateAngleY + (float) Math.toRadians(yy), ToesL.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 
@@ -3050,7 +3046,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
         this.ToesL.rotationPointZ = this.ToesL.rotationPointZ + (float)(zz);
 
     }
-
     public void animEat(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
         int animCycle = 50;
@@ -3767,7 +3762,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
 
 
     }
-
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 
@@ -3999,9 +3993,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(LowerArmL, LowerArmL.rotateAngleX + (float) Math.toRadians(xx), LowerArmL.rotateAngleY + (float) Math.toRadians(yy), LowerArmL.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
-
-
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 
@@ -4556,7 +4547,6 @@ public class ModelLimusaurus extends ModelBasePalaeopedia {
         this.setRotateAngle(ToesL, ToesL.rotateAngleX + (float) Math.toRadians(xx), ToesL.rotateAngleY + (float) Math.toRadians(yy), ToesL.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
     EntityPrehistoricFloraLimusaurus entity = (EntityPrehistoricFloraLimusaurus) entitylivingbaseIn;
 

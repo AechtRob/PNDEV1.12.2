@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTribodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraTribodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tribodus.png");
 
-    public static float getScaler() {return 0.35f;}
+    public static float getScaler() {return 0.55f;}
     public RenderTribodus(RenderManager mgr) {
         super(mgr, new ModelTribodus(), 0.0f);
     }

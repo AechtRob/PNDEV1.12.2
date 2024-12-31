@@ -12,7 +12,7 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/priscomyzon.png");
 
     public static float getScaler() {
-        return 0.7F * 0.395F;
+        return 0.7F * 0.2F;
     }
     public RenderPriscomyzon(RenderManager mgr) {
         super(mgr, new ModelPriscomyzon(), 0.0f);
@@ -26,7 +26,7 @@ public class RenderPriscomyzon extends RenderLivingBaseWithBook<EntityPrehistori
     @Override
     protected void applyRotations(EntityPrehistoricFloraPriscomyzon entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
-        float getOffset = 0.2F;
+        float getOffset = 0.18F;
 
         switch (entityLiving.getAttachmentFacing()) {
             case DOWN:

@@ -213,7 +213,7 @@ public class ModelCongophiopsis extends ModelBasePalaeopedia {
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainSwing(fishTail, speed*0.8F, 0.27F, 0, f2, 1);
-            this.walk(Jaw, (float) (speed * 0.75), 0.3F, true, 0, 0, f2, 1);
+            this.walk(Jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
 
             this.walk(PectoralL, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);
             this.swing(PectoralL, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);

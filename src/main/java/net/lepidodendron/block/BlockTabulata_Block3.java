@@ -245,7 +245,7 @@ public class BlockTabulata_Block3 extends ElementsLepidodendronMod.ModElement {
 							BlockPos pos1 = blockpos1.down();
 							if (waterDepthCheckMin & waterDepthCheckMax) {
 								if (((world.getBlockState(pos1).getMaterial() == Material.SAND)
-										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK)
+										|| (world.getBlockState(pos1).getMaterial() == Material.ROCK && world.getBlockState(pos1).getBlock() != Blocks.MAGMA)
 										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {

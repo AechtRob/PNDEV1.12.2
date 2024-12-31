@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:brachiospongia"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:brachiospongia"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:brachiospongia", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:brachiospongia", "y": 180}
+    ],
+  "facing=west": [
+      	{"model": "lepidodendron:brachiospongia", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:brachiospongia"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:brachiospongia", "x": 180}
+    ]
+  }
+}

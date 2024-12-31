@@ -307,7 +307,7 @@ public class CharniaGenerator extends WorldGenerator
 						//figure out a position and facing to place this at!
 						BlockPos pos = new BlockPos(j, k - 1, l);
 						if (((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-								|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
+								|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK && worldIn.getBlockState(pos).getBlock() != Blocks.MAGMA)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
 								|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)

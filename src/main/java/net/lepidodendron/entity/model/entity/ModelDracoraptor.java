@@ -32,7 +32,6 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r4;
     private final AdvancedModelRenderer cube_r5;
     private final AdvancedModelRenderer cube_r6;
-    private final AdvancedModelRenderer Feathers;
     private final AdvancedModelRenderer cube_r7;
     private final AdvancedModelRenderer leftArm;
     private final AdvancedModelRenderer leftArm2;
@@ -46,7 +45,6 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r9;
     private final AdvancedModelRenderer neck;
     private final AdvancedModelRenderer cube_r10;
-    private final AdvancedModelRenderer thoat;
     private final AdvancedModelRenderer cube_r11;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r12;
@@ -179,34 +177,29 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
 
 
         this.cube_r4 = new AdvancedModelRenderer(this);
-        this.cube_r4.setRotationPoint(0.0F, 2.1F, 0.0F);
+        this.cube_r4.setRotationPoint(0.0F, 3.5707F, -4.2109F);
         this.chest.addChild(cube_r4);
-        this.setRotateAngle(cube_r4, -0.2356F, 0.0F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 59, 64, -3.0F, -3.7F, -0.7F, 6, 6, 2, 0.0F, false));
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 57, -3.0F, -3.7F, -3.7F, 6, 6, 3, 0.0F, false));
+        this.setRotateAngle(cube_r4, -1.0734F, 0.0F, 0.0F);
+        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 18, 75, -3.0F, -2.0094F, 0.0333F, 6, 2, 3, 0.005F, false));
 
         this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(0.0F, 3.5427F, -4.2132F);
+        this.cube_r5.setRotationPoint(0.0F, -2.1535F, -2.3852F);
         this.chest.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, -0.5934F, 0.0F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 18, 75, -3.0F, -2.0094F, 0.0333F, 6, 2, 3, 0.005F, false));
+        this.setRotateAngle(cube_r5, -0.1047F, 0.0F, 0.0F);
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 75, -3.0F, -0.0285F, -0.1447F, 6, 2, 3, 0.005F, false));
 
         this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(0.0F, 2.1F, -1.1F);
+        this.cube_r6.setRotationPoint(0.0F, 2.4F, 0.0F);
         this.chest.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, 0.0698F, 0.0F, 0.0F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 0, 18, -2.0F, -2.5F, -2.6F, 4, 5, 4, 0.0F, false));
-
-        this.Feathers = new AdvancedModelRenderer(this);
-        this.Feathers.setRotationPoint(0.0F, -2.3F, -2.6F);
-        this.chest.addChild(Feathers);
-
+        this.setRotateAngle(cube_r6, -0.2793F, 0.0F, 0.0F);
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 59, 64, -3.0F, -3.7F, -0.7F, 6, 6, 2, 0.0F, false));
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 0, 57, -3.0F, -3.7F, -3.7F, 6, 6, 3, 0.0F, false));
 
         this.cube_r7 = new AdvancedModelRenderer(this);
-        this.cube_r7.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.Feathers.addChild(cube_r7);
+        this.cube_r7.setRotationPoint(0.0F, 2.1F, -1.1F);
+        this.chest.addChild(cube_r7);
         this.setRotateAngle(cube_r7, 0.0698F, 0.0F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 75, -3.0F, -0.0285F, -0.1447F, 6, 2, 3, 0.005F, false));
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 0, 18, -2.0F, -2.5F, -2.6F, 4, 5, 4, 0.0F, false));
 
         this.leftArm = new AdvancedModelRenderer(this);
         this.leftArm.setRotationPoint(2.2F, 4.0F, -1.9F);
@@ -272,21 +265,16 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
 
 
         this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(0.0F, -1.0F, -2.6F);
+        this.cube_r10.setRotationPoint(0.0F, 2.6357F, -1.3536F);
         this.neck.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, -0.1745F, 0.0F, 0.0F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 52, 19, -1.0F, -0.1F, 0.0F, 2, 3, 3, -0.007F, false));
-
-        this.thoat = new AdvancedModelRenderer(this);
-        this.thoat.setRotationPoint(0.0F, 2.6357F, -2.4036F);
-        this.neck.addChild(thoat);
-
+        this.setRotateAngle(cube_r10, -0.288F, 0.0F, 0.0F);
+        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 19, 27, -0.5F, -0.5F, -1.5F, 1, 1, 4, -0.007F, false));
 
         this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(0.0F, 0.0F, 1.05F);
-        this.thoat.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, -0.288F, 0.0F, 0.0F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 19, 27, -0.5F, -0.5F, -1.5F, 1, 1, 4, -0.007F, false));
+        this.cube_r11.setRotationPoint(0.0F, -1.0F, -2.6F);
+        this.neck.addChild(cube_r11);
+        this.setRotateAngle(cube_r11, -0.1745F, 0.0F, 0.0F);
+        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 52, 19, -1.0F, -0.1F, 0.0F, 2, 3, 3, -0.007F, false));
 
         this.head = new AdvancedModelRenderer(this);
         this.head.setRotationPoint(0.0F, 0.0F, -2.6F);
@@ -1165,40 +1153,6 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
         }
         this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
 
-
-
-
-        if (tickAnim >= 0 && tickAnim < 25) {
-            xx = 0 + (((tickAnim - 0) / 25) * (12.5-(0)));
-            yy = 0 + (((tickAnim - 0) / 25) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 25) * (0-(0)));
-        }
-        else if (tickAnim >= 25 && tickAnim < 40) {
-            xx = 12.5 + (((tickAnim - 25) / 15) * (0-(12.5)));
-            yy = 0 + (((tickAnim - 25) / 15) * (0-(0)));
-            zz = 0 + (((tickAnim - 25) / 15) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(thoat, thoat.rotateAngleX + (float) Math.toRadians(xx), thoat.rotateAngleY + (float) Math.toRadians(yy), thoat.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-        if (tickAnim >= 0 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 0) / 40) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 40) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 40) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.thoat.rotationPointX = this.thoat.rotationPointX + (float)(xx);
-        this.thoat.rotationPointY = this.thoat.rotationPointY - (float)(yy);
-        this.thoat.rotationPointZ = this.thoat.rotationPointZ + (float)(zz);
 
     }
     public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
@@ -2479,22 +2433,6 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
         this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(xx), neck2.rotateAngleY + (float) Math.toRadians(yy), neck2.rotateAngleZ + (float) Math.toRadians(zz));
 
 
-
-
-        if (tickAnim >= 0 && tickAnim < 40) {
-            xx = 0 + (((tickAnim - 0) / 40) * (0-(0)));
-            yy = 0 + (((tickAnim - 0) / 40) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 40) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(Feathers, Feathers.rotateAngleX + (float) Math.toRadians(xx), Feathers.rotateAngleY + (float) Math.toRadians(yy), Feathers.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
         this.setRotateAngle(tail, tail.rotateAngleX + (float) Math.toRadians(0), tail.rotateAngleY + (float) Math.toRadians(0), tail.rotateAngleZ + (float) Math.toRadians(0));
 
 
@@ -2871,31 +2809,7 @@ public class ModelDracoraptor extends ModelBasePalaeopedia {
         this.setRotateAngle(rightArm, rightArm.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/20D))*206+3.5))*3.5), rightArm.rotateAngleY + (float) Math.toRadians(0), rightArm.rotateAngleZ + (float) Math.toRadians(0));
 
 
-
-        if (tickAnim >= 0 && tickAnim < 30) {
-            xx = 0 + (((tickAnim - 0) / 30) * (10-(0)));
-            yy = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-            zz = 0 + (((tickAnim - 0) / 30) * (0-(0)));
-        }
-        else if (tickAnim >= 30 && tickAnim < 70) {
-            xx = 10 + (((tickAnim - 30) / 40) * (0-(10)));
-            yy = 0 + (((tickAnim - 30) / 40) * (0-(0)));
-            zz = 0 + (((tickAnim - 30) / 40) * (0-(0)));
-        }
-        else {
-            xx = 0;
-            yy = 0;
-            zz = 0;
-        }
-        this.setRotateAngle(thoat, thoat.rotateAngleX + (float) Math.toRadians(xx), thoat.rotateAngleY + (float) Math.toRadians(yy), thoat.rotateAngleZ + (float) Math.toRadians(zz));
-
-
-
         this.setRotateAngle(chest, chest.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*450+3.5))*1), chest.rotateAngleY + (float) Math.toRadians(0), chest.rotateAngleZ + (float) Math.toRadians(0));
-
-
-        this.setRotateAngle(Feathers, Feathers.rotateAngleX + (float) Math.toRadians(0+Math.sin((Math.PI/180)*((((double)tickAnim/20D))*400+3.5))*2), Feathers.rotateAngleY + (float) Math.toRadians(0), Feathers.rotateAngleZ + (float) Math.toRadians(0));
-
 
 
         if (tickAnim >= 0 && tickAnim < 10) {
