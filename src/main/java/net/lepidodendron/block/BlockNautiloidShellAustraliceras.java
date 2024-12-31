@@ -5,15 +5,13 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.util.Functions;
-import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,9 +29,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,33 +38,32 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockNautiloidShellHamulina extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:shell_hamulina")
+public class BlockNautiloidShellAustraliceras extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:shell_australiceras")
 	public static final Block block = null;
-	public BlockNautiloidShellHamulina(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.shell_hamulina);
+	public BlockNautiloidShellAustraliceras(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.shell_australiceras);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_hamulina"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_australiceras"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockNautiloidShellHamulina.TileEntityCustom.class, "lepidodendron:tileentityshell_hamulina");
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hamulina", BlockNautiloidShellHamulina.block);
+		GameRegistry.registerTileEntity(BlockNautiloidShellAustraliceras.TileEntityCustom.class, "lepidodendron:tileentityshell_australiceras");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_australiceras", BlockNautiloidShellAustraliceras.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:shell_hamulina", "inventory"));
+				new ModelResourceLocation("lepidodendron:shell_australiceras", "inventory"));
 	}
 
 	public static class BlockCustom extends BlockPNTaxidermyItem {
@@ -78,7 +72,7 @@ public class BlockNautiloidShellHamulina extends ElementsLepidodendronMod.ModEle
 
 		public BlockCustom() {
 			//super(Material.ROCK);
-			setTranslationKey("pf_shell_hamulina");
+			setTranslationKey("pf_shell_australiceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);
 			setResistance(1.00F);
@@ -101,7 +95,7 @@ public class BlockNautiloidShellHamulina extends ElementsLepidodendronMod.ModEle
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.3D, 0.6D);
+			return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.25D, 0.75D);
 		}
 
 		@Override
@@ -112,11 +106,11 @@ public class BlockNautiloidShellHamulina extends ElementsLepidodendronMod.ModEle
 		@Nullable
 		@Override
 		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new BlockNautiloidShellHamulina.TileEntityCustom();
+			return new BlockNautiloidShellAustraliceras.TileEntityCustom();
 		}
 
-		public BlockNautiloidShellHamulina.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
-			return new BlockNautiloidShellHamulina.TileEntityCustom();
+		public BlockNautiloidShellAustraliceras.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
+			return new BlockNautiloidShellAustraliceras.TileEntityCustom();
 		}
 
 		@Override
@@ -147,8 +141,8 @@ public class BlockNautiloidShellHamulina extends ElementsLepidodendronMod.ModEle
 		}
 
 		@Override
-		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+		protected BlockStateContainer createBlockState() {
+			return new BlockStateContainer(this, new IProperty[]{FACING});
 		}
 
 		@Override
