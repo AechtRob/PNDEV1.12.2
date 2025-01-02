@@ -192,7 +192,7 @@ public class ModelLunaspis extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Lunaspis.render(f5 * 0.3F);
+        this.Lunaspis.render(f5);
     }
     public void renderStaticWall(float f) {
         this.Lunaspis.rotateAngleY = (float) Math.toRadians(180);
@@ -209,7 +209,8 @@ public class ModelLunaspis extends ModelBasePalaeopedia {
         this.setRotateAngle(Body3, 0.2F, -0.2F, 0.0F);
         this.setRotateAngle(Body4, 0.2F, 0.2F, -0.0F);
         this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
-        this.Lunaspis.offsetY = -0.28F;
+        this.Lunaspis.offsetY = -0.2F;
+        this.Lunaspis.offsetX = -0.005F;
         this.Lunaspis.render(0.01F);
         resetToDefaultPose();
 
@@ -240,7 +241,7 @@ public class ModelLunaspis extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Lunaspis.offsetY = 1.05F;
+        this.Lunaspis.offsetY = 0.0F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Tail};
@@ -280,7 +281,7 @@ public class ModelLunaspis extends ModelBasePalaeopedia {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Lunaspis.offsetY = 1.05F;
+                this.Lunaspis.offsetY = 0.05F;
                 this.bob(Lunaspis, -speed, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }

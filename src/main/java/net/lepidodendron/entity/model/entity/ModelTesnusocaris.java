@@ -794,23 +794,79 @@ public class ModelTesnusocaris extends ModelBasePalaeopedia {
         //this.head.render(f5 * 0.25F);
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.head.rotateAngleY = (float) Math.toRadians(90);
-        this.head.offsetX = -0.F;
-        this.head.offsetY = -0F;
-        this.head.offsetZ = 0.0F;
-        this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
-    }
+
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.head.offsetY = -0.30F;
+        this.head.offsetX = 1.2F;
+        this.head.rotateAngleY = (float)Math.toRadians(130);
+        this.head.rotateAngleX = (float)Math.toRadians(0);
+        this.head.rotateAngleZ = (float)Math.toRadians(0);
+        this.head.scaleChildren = true;
+        float scaler = 2.0F;
+        this.head.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body11, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(telson, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.head.render(f);
+        //Reset rotations, positions and sizing:
+        this.head.setScale(1.0F, 1.0F, 1.0F);
+        this.head.scaleChildren = false;
+        resetToDefaultPose();
+    }
 
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(head, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body7, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body8, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body9, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body10, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body11, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(telson, 0.0F, 0.0F, 0.0F);
+        this.head.offsetY = -0.22F;
+        this.head.offsetZ = -0.4F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
+    }
+
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(head, -0.6F, 0.0F, 0.2F);
+        this.setRotateAngle(body, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body2, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body3, 0.05F, 0.1F, 0.0F);
+        this.setRotateAngle(body4, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body6, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(body7, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(body8, 0.05F, -0.1F, 0.0F);
+        this.setRotateAngle(body9, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body10, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(body11, 0.1F, -0.2F, 0.0F);
+        this.setRotateAngle(telson, 0.0F, 0.0F, 0.0F);
+        this.head.offsetZ = -0.05F;
+        this.head.offsetX = -0.015F;
+        this.head.offsetY = -0.18F;
+        this.head.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

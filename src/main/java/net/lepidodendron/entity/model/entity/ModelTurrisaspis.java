@@ -237,7 +237,7 @@ public class ModelTurrisaspis extends ModelBasePalaeopedia {
         this.setRotateAngle(tail, 0.0F, -0.3F, 0.0F);
         this.setRotateAngle(Jaw, 0.0F, 0.0F, 0.0F);
         this.Body.offsetZ = -0.08F;
-        this.Body.offsetX = -0.027F;
+        this.Body.offsetX = -0.015F;
         this.Body.offsetY = 0.2F;
         this.Body.render(0.01F);
         resetToDefaultPose();

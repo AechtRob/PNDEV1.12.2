@@ -286,8 +286,8 @@ public class ModelFallacosteus extends ModelBasePalaeopedia {
         this.setRotateAngle(Tail3, 0.0F, -0.48F, 0.0F);
         this.setRotateAngle(RPelvic, -0.0998F, 0.648F, -0.8189F);
         this.setRotateAngle(LPelvic, -0.1646F, -0.6364F, 0.927F);
-        this.Root.rotateAngleY = (float) Math.toRadians(90);
-        this.Root.offsetY = -0.6F;
+        this.Root.offsetZ = 0.018F;
+        this.Root.offsetY = -0.12F;
         this.Root.render(0.01F);
         resetToDefaultPose();
     }

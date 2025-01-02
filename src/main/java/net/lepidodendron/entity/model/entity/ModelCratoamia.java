@@ -326,6 +326,13 @@ public class ModelCratoamia extends ModelBasePalaeopedia {
         this.setRotateAngle(bodyend, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tailbase, 0.0F, 0.0F, 0.0F);
         this.setRotateAngle(tailend, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(dorsalfinpt1, 0.0F, 0.0F, 0.34F);
+        this.setRotateAngle(dorsalfinpt2, 0.0F, 0.0F, 0.3F);
+        this.setRotateAngle(dorsalfinpt3, 0.0F, 0.0F, 0.2F);
+        this.setRotateAngle(dorsalfinpt4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(dorsalfinpt5, 0.0F, 0.0F, -0.2F);
+        this.setRotateAngle(dorsalfinpt6, 0.0F, 0.0F, -0.3F);
+        this.setRotateAngle(dorsalfinpt7, 0.0F, 0.0F, -0.4F);
         //End of pose, now render the model:
         this.root.render(f);
         //Reset rotations, positions and sizing:

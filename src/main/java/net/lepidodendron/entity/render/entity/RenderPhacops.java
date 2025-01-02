@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPhacops extends RenderLivingBaseWithBook<EntityPrehistoricFloraPhacops> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phacops.png");
     public static float getScaler() {
-        return 0.55F * 0.25F;
+        return 0.25F;
     }
 
     public RenderPhacops(RenderManager mgr) {
@@ -30,7 +30,10 @@ public class RenderPhacops extends RenderLivingBaseWithBook<EntityPrehistoricFlo
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPhacops entity, float f) {
-        float scale = 0.7F;
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

@@ -231,34 +231,46 @@ public class ModelAetheretmon extends ModelBasePalaeopedia {
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -2.0F;
-        this.main.offsetX = -1.338F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
-        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.offsetY = -0.30F;
+        this.main.offsetX = 1.2F;
+        this.main.rotateAngleY = (float)Math.toRadians(130);
+        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:
         this.main.setScale(1.0F, 1.0F, 1.0F);
         this.main.scaleChildren = false;
         resetToDefaultPose();
-
     }
 
     public void renderStaticWall(float f) {
+        this.setRotateAngle(main, 0.0F, 1.58F, 0.0F);
+        this.main.offsetX = -0.03F;
+        this.main.offsetY = -0.22F;
+        this.main.offsetZ = -0.37F;
         this.main.render(0.01F);
-        resetToDefaultPose();
+        this.resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.main.offsetY = -0.14F;
+        this.setRotateAngle(main, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.main.offsetY = -0.09F;
+        this.main.offsetZ = 0.01F;
         this.main.render(0.01F);
-        resetToDefaultPose();
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

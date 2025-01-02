@@ -212,7 +212,7 @@ public class EntityPrehistoricFloraLunaspis extends EntityPrehistoricFloraAgeabl
 		return 0.0;
 	}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
-		return 0.7;
+		return 0.5;
 	}
 	public static double lowerfrontlineoffset(@Nullable String variant) {
 		return 0.0;
@@ -237,4 +237,5 @@ public class EntityPrehistoricFloraLunaspis extends EntityPrehistoricFloraAgeabl
 	public static float getScaler(@Nullable String variant) {
 		return RenderLunaspis.getScaler();
 	}
+	public static float widthSupport(@Nullable String variant) {return 0.038F;}
 }

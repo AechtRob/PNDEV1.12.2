@@ -198,18 +198,44 @@ public class ModelNingxiaplatysomus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.30F;
+        this.body.offsetX = 1.2F;
+        this.body.rotateAngleY = (float)Math.toRadians(130);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 2.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
+        this.setRotateAngle(body, 0.0F, 1.58F, 0.0F);
+        this.body.offsetX = -0.03F;
+        this.body.offsetY = -0.22F;
+        this.body.offsetZ = -0.37F;
         this.body.render(0.01F);
-        resetToDefaultPose();
+        this.resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
-        this.body.offsetY = -0.14F;
+        this.setRotateAngle(body, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2F, 0.0F);
+        this.body.offsetY = -0.09F;
+        this.body.offsetZ = 0.01F;
         this.body.render(0.01F);
-        resetToDefaultPose();
+        this.resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

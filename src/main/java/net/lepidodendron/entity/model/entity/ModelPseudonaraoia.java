@@ -133,16 +133,14 @@ public class ModelPseudonaraoia extends ModelBasePalaeopedia {
 
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.pseudonaraoia.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(pseudonaraoia, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(cephalon, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(pygidium, 0.0F, 0.2F, 0.0F);
+        this.pseudonaraoia.offsetY = 0.06F;
+        this.pseudonaraoia.offsetZ = 0.016F;
+        this.pseudonaraoia.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
