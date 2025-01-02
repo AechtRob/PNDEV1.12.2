@@ -227,16 +227,13 @@ public class ModelNaraoia_spinosa extends ModelBasePalaeopedia {
 
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.body.offsetZ = 0.1F;
-        this.naraoia.render(0.014F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(naraoia, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(pygidium, 0.0F, 0.1F, 0.0F);
+        this.naraoia.offsetY = 0.06F;
+        this.naraoia.offsetZ = 0.016F;
+        this.naraoia.render(0.01F);
+        this.resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

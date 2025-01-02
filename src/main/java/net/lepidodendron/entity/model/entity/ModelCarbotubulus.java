@@ -239,12 +239,13 @@ public class ModelCarbotubulus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-
     public void renderStaticFloor(float f) {
-        this.body.offsetY = 0.55F;
+        this.setRotateAngle(head, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(tail, 0.1F, 0.2F, 0.0F);
+        this.body.offsetY = 0.34F;
         this.body.render(0.01F);
         resetToDefaultPose();
-
     }
 
     @Override
