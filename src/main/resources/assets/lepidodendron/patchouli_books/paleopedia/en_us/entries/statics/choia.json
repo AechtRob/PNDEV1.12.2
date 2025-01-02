@@ -9,13 +9,22 @@
 			"trigger": "lepidodendron:pf_adv_book_choia",
 			"title": "Choiid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$()  Cambrian-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida"
+			"text": "$(l)Temporal Range:$() Cambrian-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/choia.png"],
-			"title": "Choiidae.",
-			"text": ""
+			"type": "multiblock",
+			"name": "Choiidae",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:choia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_choia",
