@@ -108,7 +108,11 @@ public class BlockChoia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (dimID == LepidodendronConfig.dimOrdovician
-				|| dimID == LepidodendronConfig.dimSilurian
+		) {
+			weight = 70; //Adjusted
+		}
+
+		if (dimID == LepidodendronConfig.dimSilurian
 		) {
 			weight = 50; //Adjusted
 		}
@@ -175,7 +179,10 @@ public class BlockChoia extends ElementsLepidodendronMod.ModElement {
 			multiplier = 5;
 		}
 		if ((dimID == LepidodendronConfig.dimOrdovician)
-				|| (dimID == LepidodendronConfig.dimSilurian)
+		) {
+			multiplier = 3;
+		}
+		if ((dimID == LepidodendronConfig.dimSilurian)
 		) {
 			multiplier = 2;
 		}
