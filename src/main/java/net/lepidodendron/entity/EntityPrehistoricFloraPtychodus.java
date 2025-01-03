@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraPtychodus extends EntityPrehistoricFloraAgeab
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 21; //dumbbell type
+		return 21; //cross type
 	}
 
 	@Override

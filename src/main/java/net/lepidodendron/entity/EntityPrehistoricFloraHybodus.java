@@ -5,12 +5,15 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderHybodus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -31,7 +34,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -39,10 +42,10 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 
 	public EntityPrehistoricFloraHybodus(World world) {
 		super(world);
-		setSize(0.82F, 0.99F);
+		setSize(0.82F, 0.5F);
 		minWidth = 0.1F;
 		maxWidth = 0.82F;
-		maxHeight = 0.99F;
+		maxHeight = 0.5F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -233,6 +236,12 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 			return LepidodendronMod.HYBODUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.HYBODUS_LOOT;
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_HYBODUS;
 	}
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;

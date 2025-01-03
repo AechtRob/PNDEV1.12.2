@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHybodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraHybodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hybodus.png");
 
-    public static float getScaler() {return 0.5f;}
+    public static float getScaler() {return 0.8f;}
     public RenderHybodus(RenderManager mgr) {
         super(mgr, new ModelHybodus(), 0.0f);
     }

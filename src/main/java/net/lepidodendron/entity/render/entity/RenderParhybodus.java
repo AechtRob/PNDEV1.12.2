@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderParhybodus extends RenderLivingBaseWithBook<EntityPrehistoricFloraParhybodus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parhybodus.png");
 
-    public static float getScaler() {return 0.3f;}
+    public static float getScaler() {return 0.8f;}
     public RenderParhybodus(RenderManager mgr) {
         super(mgr, new ModelParhybodus(), 0.0f);
     }

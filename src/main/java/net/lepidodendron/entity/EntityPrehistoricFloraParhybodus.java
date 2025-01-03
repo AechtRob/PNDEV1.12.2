@@ -5,12 +5,15 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.render.entity.RenderParhybodus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.entity.util.ITrappableWater;
+import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.EggLayingConditions;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -30,7 +33,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater {
+public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgeableFishBase implements ITrappableWater, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -38,10 +41,10 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraParhybodus(World world) {
 		super(world);
-		setSize(0.6F, 0.6F);
+		setSize(0.6F, 0.4F);
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
-		maxHeight = 0.6F;
+		maxHeight = 0.4F;
 		maxHealthAgeable = 25.0D;
 	}
 
@@ -222,6 +225,8 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 		}
 		return LepidodendronMod.PARHYBODUS_LOOT;
 	}
+
+
 	public static double offsetWall(@Nullable String variant) {
 		return 0.01;
 	}
@@ -271,6 +276,12 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 	}
 	public static float getScaler(@Nullable String variant) {
 		return RenderParhybodus.getScaler();
+	}
+
+	@Nullable
+	@Override
+	public CustomTrigger getModTrigger() {
+		return ModTriggers.CLICK_PARHYBODUS;
 	}
 }
 

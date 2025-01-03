@@ -72,47 +72,6 @@ public class BlockNautiloidShellHamulina extends ElementsLepidodendronMod.ModEle
 				new ModelResourceLocation("lepidodendron:shell_hamulina", "inventory"));
 	}
 
-	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-
-		if (random.nextInt(36) != 0) {
-			return; //shells
-		}
-
-		for (int i = 0; i < 10; i++) {
-			int l6 = chunkX + random.nextInt(16) + 8;
-			int l14 = chunkZ + random.nextInt(16) + 8;
-			Biome biome = world.getBiome(new BlockPos(l6, 0, l14));
-			if (!(
-					biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_shore")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_beach_forested_island")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_island_sandy_white_edge")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_estuary_helper")
-			)
-			) {
-				break;
-			}
-			BlockPos pos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).up();
-			if (world.isAirBlock(pos) && pos.getY() < Functions.getAdjustedSeaLevel(world, pos) + 3
-					&& world.isSideSolid(pos.down(), EnumFacing.UP) 
-					&& world.getBlockState(pos.down()).getMaterial() != Material.ICE
-					&& world.getBlockState(pos.down()).getMaterial() != Material.PACKED_ICE) {
-				world.setBlockState(pos, block.getDefaultState());
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null) {
-					TileEntityCustom te = (TileEntityCustom) tileEntity;
-					//get a random rotation in increments of 15 degrees:
-					int rotation = random.nextInt(24) * 15;
-					te.getTileData().setInteger("rotation", rotation);
-					return;
-				}
-			}
-		}
-	}
-
 	public static class BlockCustom extends BlockPNTaxidermyItem {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
