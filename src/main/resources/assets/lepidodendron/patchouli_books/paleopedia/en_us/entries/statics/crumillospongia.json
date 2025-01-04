@@ -1,0 +1,40 @@
+{
+	"name": "Crumillospongia",
+	"read_by_default": true,
+	"icon": "lepidodendron:crumillospongia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_crumillospongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crumillospongia",
+			"title": "Crumillospongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida$(br)>Hazeliidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Crumillospongia sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:crumillospongia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crumillospongia",
+			"type": "text",
+			"text": "Crumillospongia hails from the middle Cambrian, with fossils found in the Burgess Shale, Canada and Murero Lagerstätte, Spain. It is bag-like sponge with a large opening at its top, and could grow up to 15 cm in overall size. The generic name derives from the Latin words 'crumilla', to mean 'money purse'; and 'spongia', to mean 'sponge."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crumillospongia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

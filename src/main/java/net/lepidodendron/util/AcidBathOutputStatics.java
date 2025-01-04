@@ -184,7 +184,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockXianguangia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSphenoecium.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrumillospongia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChoia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockPalaeodiphasia.block).toString()
 
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
@@ -254,7 +257,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockArchaeoconularia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBrachiospongia.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBrachiospongia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChoia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsOrdovician);
         return resLoc;
@@ -321,7 +325,8 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockConulariidBrown.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockConulariidMagenta.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockSeaPenPink.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockSeaPenYellow.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockChoia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsSilurian);
         return resLoc;

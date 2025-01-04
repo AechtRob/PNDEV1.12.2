@@ -1,6 +1,15 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/pirania"
+    "layer0": "lepidodendron:items/pirania_inventory"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.275,
+        0.275,
+        0.275
+      ]
+    }
   }
 }

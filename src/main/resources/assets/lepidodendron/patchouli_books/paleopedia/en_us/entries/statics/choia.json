@@ -1,0 +1,45 @@
+{
+	"name": "Choiidae",
+	"read_by_default": true,
+	"icon": "lepidodendron:choia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_choia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_choia",
+			"title": "Choiid",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Protomonaxonida"
+		},
+		{
+			"type": "multiblock",
+			"name": "Choiidae",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:choia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_choia",
+			"type": "text",
+			"text": "Choiids hail from the Middle Cambrian into the Lower Silurian, with fossils found in the Burgess Shale, Canada; Maotianshan shales, China; Wheeler Shale, USA and Fezouata formation, Morocco. It is conical shaped sponge with a myriad of spines radiating out, suspended above the seafloor by stalk-like spines, and grew up to 3 cm in diameter."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_choia",
+			"type": "text",
+			"text": "The generic name possibly derives from the Spanish word 'Cholla', which is the nickname of a spikey cactus genus known as 'Cylindropuntia'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_choia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
