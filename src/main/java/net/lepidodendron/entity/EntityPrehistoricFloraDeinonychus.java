@@ -323,19 +323,19 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 			} else {
 				this.setAnimation(RELAX_ANIMATION);
 			}
-			this.standCooldown = 200;
+			this.standCooldown = 1500;
 		}
 		//forces animation to return to base pose by grabbing the last tick and setting it to that.
 		if ((!this.world.isRemote) && this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 200;
+			this.standCooldown = 1500;
 			this.setAnimation(NO_ANIMATION);
 		}
 		if ((!this.world.isRemote) && this.getAnimation() == PREEN_ANIMATION && this.getAnimationTick() == PREEN_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 200;
+			this.standCooldown = 1500;
 			this.setAnimation(NO_ANIMATION);
 		}
 		if ((!this.world.isRemote) && this.getAnimation() == RELAX_ANIMATION && this.getAnimationTick() == RELAX_ANIMATION.getDuration() - 1) {
-			this.standCooldown = 200;
+			this.standCooldown = 1500;
 			this.setAnimation(NO_ANIMATION);
 		}
 
