@@ -28,27 +28,34 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer cube_r4;
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer cube_r5;
-    private final AdvancedModelRenderer lowerjaw;
     private final AdvancedModelRenderer cube_r6;
+    private final AdvancedModelRenderer cube_r7;
+    private final AdvancedModelRenderer lowerjaw;
+    private final AdvancedModelRenderer cube_r8;
+    private final AdvancedModelRenderer cube_r9;
+    private final AdvancedModelRenderer cube_r10;
+    private final AdvancedModelRenderer cube_r11;
+    private final AdvancedModelRenderer cube_r12;
+    private final AdvancedModelRenderer cube_r13;
 
     private ModelAnimator animator;
 
     public ModelAsteracanthus() {
-        this.textureWidth = 128;
-        this.textureHeight = 128;
+        this.textureWidth = 88;
+        this.textureHeight = 64;
 
         this.body = new AdvancedModelRenderer(this);
-        this.body.setRotationPoint(0.0F, 24.3184F, 0.5447F);
-        this.body.cubeList.add(new ModelBox(body, 0, 30, -4.0F, -11.8184F, -12.0447F, 8, 7, 6, 0.0F, false));
+        this.body.setRotationPoint(0.5F, 13.25F, 16.25F);
+        this.body.cubeList.add(new ModelBox(body, 0, 30, -4.5F, -0.75F, -27.75F, 8, 7, 6, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, -11.8184F, -12.0447F);
+        this.cube_r1.setRotationPoint(-0.5F, -0.75F, -27.75F);
         this.body.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.2007F, 0.0F, 0.0F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 38, 10, -3.5F, -0.25F, 0.0F, 7, 2, 6, 0.0F, false));
 
         this.body2 = new AdvancedModelRenderer(this);
-        this.body2.setRotationPoint(0.0F, -9.3184F, -6.5447F);
+        this.body2.setRotationPoint(-0.5F, 1.75F, -22.25F);
         this.body.addChild(body2);
         this.body2.cubeList.add(new ModelBox(body2, 0, 0, -4.5F, -4.0F, 0.0F, 9, 9, 10, 0.0F, false));
         this.body2.cubeList.add(new ModelBox(body2, 28, 41, 0.0F, -8.0F, 1.5F, 0, 4, 7, 0.0F, false));
@@ -124,28 +131,70 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
         this.cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 3, 0.0F, 0.0F, -1.0F, 0, 7, 16, 0.0F, false));
 
         this.head = new AdvancedModelRenderer(this);
-        this.head.setRotationPoint(0.0F, -7.8184F, -12.0447F);
+        this.head.setRotationPoint(-0.5F, 3.25F, -27.75F);
         this.body.addChild(head);
-        this.head.cubeList.add(new ModelBox(head, 54, 1, -3.5F, -0.3F, -5.325F, 7, 1, 1, -0.015F, false));
-        this.head.cubeList.add(new ModelBox(head, 47, 43, -3.5F, -2.25F, -4.5F, 7, 3, 5, 0.0F, false));
+        this.head.cubeList.add(new ModelBox(head, 57, 1, -2.0F, -0.25F, -5.425F, 4, 1, 1, -0.015F, false));
+        this.head.cubeList.add(new ModelBox(head, 50, 43, -2.0F, -2.25F, -4.5F, 4, 3, 5, -0.01F, false));
 
         this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(0.0F, -4.0F, 0.0F);
+        this.cube_r5.setRotationPoint(1.275F, 2.0F, -5.575F);
         this.head.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, 0.384F, 0.0F, 0.0F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 28, 0, -3.5F, -0.15F, -6.575F, 7, 2, 7, -0.01F, false));
+        this.setRotateAngle(cube_r5, 0.0F, 0.3491F, 0.0F);
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 58, 7, -2.5F, -4.25F, 0.5F, 3, 3, 6, 0.0F, true));
+
+        this.cube_r6 = new AdvancedModelRenderer(this);
+        this.cube_r6.setRotationPoint(-1.275F, 2.0F, -5.575F);
+        this.head.addChild(cube_r6);
+        this.setRotateAngle(cube_r6, 0.0F, -0.3491F, 0.0F);
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 58, 7, -0.5F, -4.25F, 0.5F, 3, 3, 6, 0.0F, false));
+
+        this.cube_r7 = new AdvancedModelRenderer(this);
+        this.cube_r7.setRotationPoint(-1.5F, -3.975F, 0.025F);
+        this.head.addChild(cube_r7);
+        this.setRotateAngle(cube_r7, 0.3403F, 0.0F, 0.0F);
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 31, 0, -0.5F, -0.15F, -6.575F, 4, 2, 7, 0.0F, false));
 
         this.lowerjaw = new AdvancedModelRenderer(this);
         this.lowerjaw.setRotationPoint(0.0F, 0.75F, 0.25F);
         this.head.addChild(lowerjaw);
 
 
-        this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.lowerjaw.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, -0.0873F, 0.0F, 0.0F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 66, 36, -2.5F, 1.0F, -5.0F, 5, 1, 5, 0.0F, false));
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 46, 36, -2.5F, 0.0F, -5.0F, 5, 1, 5, 0.0F, false));
+        this.cube_r8 = new AdvancedModelRenderer(this);
+        this.cube_r8.setRotationPoint(1.4F, -2.25F, -4.9F);
+        this.lowerjaw.addChild(cube_r8);
+        this.setRotateAngle(cube_r8, -0.0873F, 0.3927F, -0.0349F);
+        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 64, 25, -3.0F, 0.0F, 3.1F, 3, 2, 3, -0.01F, true));
+
+        this.cube_r9 = new AdvancedModelRenderer(this);
+        this.cube_r9.setRotationPoint(-1.4F, -2.25F, -4.9F);
+        this.lowerjaw.addChild(cube_r9);
+        this.setRotateAngle(cube_r9, -0.0873F, -0.3927F, 0.0349F);
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 64, 25, 0.0F, 0.0F, 3.1F, 3, 2, 3, -0.01F, false));
+
+        this.cube_r10 = new AdvancedModelRenderer(this);
+        this.cube_r10.setRotationPoint(1.5F, -0.425F, -4.9F);
+        this.lowerjaw.addChild(cube_r10);
+        this.setRotateAngle(cube_r10, -0.0873F, 0.3927F, -0.0349F);
+        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 71, 43, -2.0F, 0.0F, 0.0F, 2, 2, 5, -0.01F, true));
+
+        this.cube_r11 = new AdvancedModelRenderer(this);
+        this.cube_r11.setRotationPoint(-1.5F, -0.425F, -4.9F);
+        this.lowerjaw.addChild(cube_r11);
+        this.setRotateAngle(cube_r11, -0.0873F, -0.3927F, 0.0349F);
+        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 71, 43, 0.0F, 0.0F, 0.0F, 2, 2, 5, -0.01F, false));
+
+        this.cube_r12 = new AdvancedModelRenderer(this);
+        this.cube_r12.setRotationPoint(-1.0F, 0.0F, 0.0F);
+        this.lowerjaw.addChild(cube_r12);
+        this.setRotateAngle(cube_r12, -0.0873F, 0.0F, 0.0F);
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 68, 36, -0.5F, 1.0F, -5.0F, 3, 1, 5, 0.0F, false));
+        this.cube_r12.cubeList.add(new ModelBox(cube_r12, 48, 36, -0.5F, 0.0F, -5.0F, 3, 1, 5, 0.0F, false));
+
+        this.cube_r13 = new AdvancedModelRenderer(this);
+        this.cube_r13.setRotationPoint(-0.5F, -0.55F, 3.325F);
+        this.lowerjaw.addChild(cube_r13);
+        this.setRotateAngle(cube_r13, -0.0873F, 0.0F, 0.0F);
+        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 1, 55, -1.5F, -1.0F, -5.2F, 4, 2, 2, -0.02F, false));
 
         updateDefaultPose();
         animator = ModelAnimator.create();
@@ -159,6 +208,23 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
+        //Rotations, positions and sizing:
+        this.body.offsetY = -2.0F;
+        this.body.offsetX = -1.338F;
+        this.body.rotateAngleY = (float)Math.toRadians(200);
+        this.body.rotateAngleX = (float)Math.toRadians(8);
+        this.body.rotateAngleZ = (float)Math.toRadians(-8);
+        this.body.scaleChildren = true;
+        float scaler = 1.63F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
 
     }
 
@@ -264,8 +330,8 @@ public class ModelAsteracanthus extends ModelBasePalaeopedia {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = -0.3F;
-            //this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
+            this.body.offsetY = 0.4F;
+            this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.1F, -0.55, f2, 0.4F * still);
 
