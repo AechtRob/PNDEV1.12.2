@@ -160,7 +160,16 @@ public class ModelAcherontiscus extends ModelBasePalaeopedia {
         this.Root.render(f5);
     }
     public void renderStaticFloor(float f) {
-        this.Root.offsetY = 0.32F;
+        this.setRotateAngle(Root, -0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, -0.1F, -0.2F, 0.05F);
+        this.setRotateAngle(Body2, -0.05F, -0.2F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
+        this.setRotateAngle(Body4, 0.1F, 0.3F, -0.05F);
+        this.setRotateAngle(Body5, 0.2F, 0.4F, -0.1F);
+        this.setRotateAngle(Head, 0.0F, 0.2F, -0.1F);
+        this.Root.offsetZ = -0.05F;
+        this.Root.offsetY = 0.05F;
+        this.Root.offsetX = 0.018F;
         this.Root.render(0.01F);
         resetToDefaultPose();
     }

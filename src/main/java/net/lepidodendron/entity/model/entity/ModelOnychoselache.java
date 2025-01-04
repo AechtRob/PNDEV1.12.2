@@ -267,29 +267,47 @@ public class ModelOnychoselache extends ModelBasePalaeopedia {
 
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.body.offsetY = -0.30F;
+        this.body.offsetX = 1.2F;
+        this.body.rotateAngleY = (float)Math.toRadians(130);
+        this.body.rotateAngleX = (float)Math.toRadians(0);
+        this.body.rotateAngleZ = (float)Math.toRadians(0);
+        this.body.scaleChildren = true;
+        float scaler = 2.0F;
+        this.body.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.body.render(f);
+        //Reset rotations, positions and sizing:
+        this.body.setScale(1.0F, 1.0F, 1.0F);
+        this.body.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void renderStaticWall(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.head.rotateAngleX = (float) Math.toRadians(-15);
-        this.body.rotateAngleX = (float) Math.toRadians(0);
-        this.body2.rotateAngleX = (float) Math.toRadians(-10);
-        this.body3.rotateAngleX = (float) Math.toRadians(5);
-        this.tail.rotateAngleX = (float) Math.toRadians(10);
-        this.jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.2F;
+        this.setRotateAngle(body, 0.0F, 1.59F, 0.0F);
+        this.body.offsetX = -0.03F;
+        this.body.offsetY = -0.22F;
+        this.body.offsetZ = -0.37F;
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(body, 0.0F, 0.0F, 0.2F);
-        this.setRotateAngle(head, 0.0F, 0.1F, 0.0F);
-        this.setRotateAngle(body2, 0.0F, 0.1F, 0.0F);
-        this.setRotateAngle(body3, 0.05F, 0.2F, -0.05F);
-        this.body.offsetZ = -0.05F;
-        this.body.offsetY = -0.05F;
+        this.setRotateAngle(body, -0.2F, 0.0F, -0.1F);
+        this.setRotateAngle(body2, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.3F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.4F, 0.0F);
+        this.setRotateAngle(head, 0.0F, -0.15F, 0.0F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.body.offsetY = -0.1F;
+        this.body.offsetX = 0.001F;
         this.body.render(0.01F);
         this.resetToDefaultPose();
     }

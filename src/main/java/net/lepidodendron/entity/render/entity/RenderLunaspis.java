@@ -12,7 +12,7 @@ public class RenderLunaspis extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lunaspis.png");
 
     public static float getScaler() {
-        return 0.5F;
+        return 0.3F;
     }
     public RenderLunaspis(RenderManager mgr) {
         super(mgr, new ModelLunaspis(), 0.3f);
@@ -30,8 +30,10 @@ public class RenderLunaspis extends RenderLivingBaseWithBook<EntityPrehistoricFl
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLunaspis entity, float f) {
-        float scale = entity.getAgeScale()*getScaler();
-        if (scale < 0.1f) {scale = 0.1f;}
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.3f;
     }

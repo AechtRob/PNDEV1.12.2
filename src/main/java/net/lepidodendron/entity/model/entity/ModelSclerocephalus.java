@@ -435,17 +435,68 @@ public class ModelSclerocephalus extends ModelBasePalaeopedia {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.hip.render(f5);
     }
-    public void renderStaticWall(float f) {
 
+    public void renderStaticWall(float f) {
+        this.neck.offsetZ = -0.1F;
+        this.neck.offsetY = -0.0F;
+        this.neck.offsetX = -0.0F;
+        this.neck.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.2F, 0.0F);
+        this.setRotateAngle(neck, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.2F, 0.0F);
+        this.hip.offsetY = -0.05F;
+        this.hip.render(0.01F);
         resetToDefaultPose();
     }
+
     @Override
     public void renderStaticBook(float f) {
-
+        //Rotations, positions and sizing:
+        this.hip.offsetY = -0.30F;
+        this.hip.offsetX = 1.2F;
+        this.hip.rotateAngleY = (float)Math.toRadians(130);
+        this.hip.rotateAngleX = (float)Math.toRadians(0);
+        this.hip.rotateAngleZ = (float)Math.toRadians(0);
+        this.hip.scaleChildren = true;
+        float scaler = 1.0F;
+        this.hip.setScale(scaler, scaler, scaler);
+        //Start of pose:
+        this.setRotateAngle(hip, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armright3, 0.0F, 0.0F, 0.5F);
+        this.setRotateAngle(armleft1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(armleft3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legright1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legright2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legright3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legleft1, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legleft2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(legleft3, 0.0F, 0.0F, 0.0F);
+        //End of pose, now render the model:
+        this.hip.render(f);
+        //Reset rotations, positions and sizing:
+        this.hip.setScale(1.0F, 1.0F, 1.0F);
+        this.hip.scaleChildren = false;
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
