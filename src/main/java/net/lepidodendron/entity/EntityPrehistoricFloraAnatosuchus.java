@@ -17,6 +17,7 @@ import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
@@ -36,17 +37,17 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
+public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLandBase implements ITrappableLand, IAdvancementGranter {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer tailBuffer;
 
-	public EntityPrehistoricFloraTropidosuchus(World world) {
+	public EntityPrehistoricFloraAnatosuchus(World world) {
 		super(world);
-		setSize(0.6F, 0.32F);
+		setSize(0.3F, 0.32F);
 		minWidth = 0.18F;
-		maxWidth = 0.6F;
+		maxWidth = 0.3F;
 		maxHeight = 0.32F;
 		maxHealthAgeable = 10.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -66,10 +67,10 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 1; //medium
+		return 1; //small
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Terrestrial Archosauriform";}
 
@@ -124,10 +125,19 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.77F;
 		}
-		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION || this.getAnimation() == GRAZE_ANIMATION) {
 			return 0.0F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public int getGrazeLength() {
+		return 170;
+	}
+	@Override
+	public int getGrazeCooldown() {
+		return 2400;
 	}
 
 	@Override
@@ -143,6 +153,11 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	@Override
+	public int getEatLength() {
+		return 20;
 	}
 
 	@Override
@@ -200,19 +215,19 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:archosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:anatosuchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:archosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:anatosuchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:archosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:anatosuchus_death"));
 	}
 
 	@Override
@@ -230,7 +245,83 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		return livingdata;
 	}
+	private boolean isBlockGrazable(IBlockState state) {
+		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.WATER);
+	}
 
+	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
+		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean isGrazing()
+	{
+		if (!this.isPFAdult()) {
+			return false;
+		}
+
+		BlockPos entityPos = Functions.getEntityBlockPos(this);
+
+		boolean test2 = false;
+		boolean test = (this.getPFGrazing() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				//&& !this.getIsMoving()
+				&& this.GRAZE_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(
+						(isBlockGrazable(this.world.getBlockState(entityPos.north().down()))
+								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
+
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.south().down()))
+								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
+
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.east().down()))
+								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
+
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.west().down()))
+								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
+				)
+		);
+		if (test) {
+			//Which one is Grazable?
+			EnumFacing facing = null;
+			if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.down()))) {
+				facing = EnumFacing.NORTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() <= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.down()))) {
+				facing = EnumFacing.SOUTH;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getZ() >= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.down()))) {
+				facing = EnumFacing.EAST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() >= 0.5D) {
+					test2 = true;
+				}
+			}
+			else if (!test2 && isBlockGrazable(this.world.getBlockState(entityPos.down()))) {
+				facing = EnumFacing.WEST;
+				if (Functions.getEntityCentre(this).z - Functions.getEntityBlockPos(this).getX() <= 0.5D) {
+					test2 = true;
+				}
+			}
+			if (facing != null && test && test2) {
+				this.setDrinkingFrom(entityPos.offset(facing).down());
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
+		}
+		return test && test2;
+	}
 	private boolean isDrinkable(World world, BlockPos pos, EnumFacing facing) {
 		if (world.getBlockState(pos.offset(facing)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing)))) {
 			return false;
@@ -340,13 +431,13 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.TROPIDOSUCHUS_LOOT;
+		return LepidodendronMod.ANATOSUCHUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_TROPIDOSUCHUS;
+		return ModTriggers.CLICK_ANATOSUCHUS;
 	}
 	//Rendering taxidermy:
 	//--------------------

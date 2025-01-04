@@ -36,7 +36,7 @@ public class EntityPrehistoricFloraArchaeoniscus extends EntityPrehistoricFloraT
 
 	public EntityPrehistoricFloraArchaeoniscus(World world) {
 		super(world);
-		setSize(0.3F, 0.20F);
+		setSize(0.2F, 0.1F);
 	}
 
 	@Override

@@ -614,7 +614,7 @@ public class ModelProterosuchus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.ATTACK_ANIMATION) {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.LAY_ANIMATION) {
+        else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
             animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim

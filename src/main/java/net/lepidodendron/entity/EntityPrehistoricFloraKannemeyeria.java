@@ -273,16 +273,16 @@ public class EntityPrehistoricFloraKannemeyeria extends EntityPrehistoricFloraLa
 				&& !this.isReallyInWater()
 				&&
 				(
-						(isBlockGrazable(this.world.getBlockState(entityPos.north(3).up(2)))
+						(isBlockGrazable(this.world.getBlockState(entityPos.north().down()))
 								&& isGrazable(this.world, entityPos, EnumFacing.NORTH))
 
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.south(3).up(2)))
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.south().down()))
 								&& isGrazable(this.world, entityPos, EnumFacing.SOUTH))
 
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.east(3).up(2)))
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.east().down()))
 								&& isGrazable(this.world, entityPos, EnumFacing.EAST))
 
-								|| (isBlockGrazable(this.world.getBlockState(entityPos.west(3).up(2)))
+								|| (isBlockGrazable(this.world.getBlockState(entityPos.west().down()))
 								&& isGrazable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);
