@@ -237,6 +237,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DICTYONEMA = new CustomTrigger("pf_book_dictyonema");
     public static final CustomTrigger CLICK_DICTYOPHYLLUM = new CustomTrigger("pf_book_dictyophyllum");
     public static final CustomTrigger CLICK_DINOMISCHUS = new CustomTrigger("pf_book_dinomischus");
+    public static final CustomTrigger CLICK_CHOIA = new CustomTrigger("pf_book_choia");
+    public static final CustomTrigger CLICK_PALAEODIPHASIA = new CustomTrigger("pf_book_palaeodiphasia");
     public static final CustomTrigger CLICK_DIOON = new CustomTrigger("pf_book_dioon");
     public static final CustomTrigger CLICK_EOGINKGOITES = new CustomTrigger("pf_book_eoginkgoites");
     public static final CustomTrigger CLICK_DOLLYPHYTON = new CustomTrigger("pf_book_dollyphyton");
@@ -1952,6 +1954,8 @@ public class ModTriggers
             CLICK_DICTYONEMA,
             CLICK_DICTYOPHYLLUM,
             CLICK_DINOMISCHUS,
+            CLICK_CHOIA,
+            CLICK_PALAEODIPHASIA,
             CLICK_DIOON,
             CLICK_EOGINKGOITES,
             CLICK_DOLLYPHYTON,

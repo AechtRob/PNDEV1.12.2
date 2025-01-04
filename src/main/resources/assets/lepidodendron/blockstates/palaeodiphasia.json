@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:palaeodiphasia"},
+        {"model": "lepidodendron:palaeodiphasia_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:palaeodiphasia_side"},
+      {"model": "lepidodendron:palaeodiphasia_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:palaeodiphasia_side", "y": 90},
+      {"model": "lepidodendron:palaeodiphasia_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:palaeodiphasia_side", "y": 180},
+      {"model": "lepidodendron:palaeodiphasia_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:palaeodiphasia_side", "y": 270},
+      {"model": "lepidodendron:palaeodiphasia_side_var", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:palaeodiphasia"},
+      {"model": "lepidodendron:palaeodiphasia_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:palaeodiphasia", "x": 180},
+      {"model": "lepidodendron:palaeodiphasia_var", "x": 180}
+    ]
+  }
+}

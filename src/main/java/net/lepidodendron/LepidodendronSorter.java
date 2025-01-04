@@ -5000,6 +5000,8 @@ public class LepidodendronSorter {
     public static final int doyleales_door_item = 8020;
     public static final int bone_worm = 8021;
     public static final int brachiospongia = 8022;
+    public static final int choia = 8023;
+    public static final int palaeodiphasia = 8024;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

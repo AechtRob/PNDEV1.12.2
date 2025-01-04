@@ -55,16 +55,16 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:crumillospongia")
+public class BlockPalaeodiphasia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:palaeodiphasia")
 	public static final Block block = null;
-	public BlockCrumillospongia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.crumillospongia);
+	public BlockPalaeodiphasia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.palaeodiphasia);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("crumillospongia"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("palaeodiphasia"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -74,39 +74,26 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:crumillospongia", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockCrumillospongia.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:palaeodiphasia", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockPalaeodiphasia.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:crumillospongia", BlockCrumillospongia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:palaeodiphasia", BlockPalaeodiphasia.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockPalaeodiphasia.block);
 	}
 
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		//whitelist dimensions
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 			dimensionCriteria = true;
-		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimCarboniferous)
-				|| (dimID == LepidodendronConfig.dimPrecambrian)
-				|| (dimID == LepidodendronConfig.dimPermian)
-				|| (dimID == LepidodendronConfig.dimTriassic)
-				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
-				|| (dimID == LepidodendronConfig.dimPaleogene)
-				|| (dimID == LepidodendronConfig.dimNeogene)
-				|| (dimID == LepidodendronConfig.dimPleistocene)
-		) {
-			dimensionCriteria = false;
-		}
-		//it goes into these dimensions
 		if ((dimID == LepidodendronConfig.dimCambrian)
+				
 		) {
 			dimensionCriteria = true;
 		}
@@ -118,13 +105,12 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimCambrian
 		)
-			weight = 100; //Full scale populations in these dims
+			weight = 70; //Full scale populations in these dims
 
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
 		}
 
-		//which biomes does it generate in?
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
@@ -142,10 +128,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeCambrian) {
 			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
-			) {
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary) {
 				biomeCriteria = true;
 			}
 			else {
@@ -160,30 +143,20 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 		) {
 			multiplier = 2;
 		}
-		int dimWeight = 1;
-		if ((dimID != LepidodendronConfig.dimCambrian)) {
-			dimWeight = 2;
-		}
 		int minWaterDepth = 1;
-		int maxWaterDepth = 4 * dimWeight;
-		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - maxWaterDepth;
+		int maxWaterDepth = 10;
+		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < (8 * multiplier); i++) {
+		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - startHeight) + startHeight;
+			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {
-					for (int i = 0; i < 8; ++i) {
+					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (blockpos1.getY() < Functions.getAdjustedSeaLevel(world, blockpos1)
-								&& (Functions.isWater(world, blockpos1))
-								&& !world.isAirBlock(blockpos1.north())
-								&& !world.isAirBlock(blockpos1.south())
-								&& !world.isAirBlock(blockpos1.east())
-								&& !world.isAirBlock(blockpos1.west())
-						) {
+						if (Functions.isWater(world, blockpos1)) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
 							//find air within the right depth
@@ -193,7 +166,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 										&& ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() != Material.WATER))) {
 									yy = maxWaterDepth + 1;
 								} else if ((world.getBlockState(blockpos1.add(0, yy, 0)).getMaterial() == Material.AIR)
-										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, blockpos1.add(0, yy, 0)))) {
+										&& (i11 + yy >= Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)))) {
 									waterDepthCheckMax = true;
 								}
 								yy += 1;
@@ -218,10 +191,10 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 										|| (world.getBlockState(pos1).getMaterial() == Material.CORAL)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
-									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockCrumillospongia.BlockCustom.FACING, enumfacing), 2);
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockPalaeodiphasia.BlockCustom.FACING, enumfacing), 2);
 									return true;
 								} else {
-									for (EnumFacing enumfacing1 : BlockCrumillospongia.BlockCustom.FACING.getAllowedValues()) {
+									for (EnumFacing enumfacing1 : BlockPalaeodiphasia.BlockCustom.FACING.getAllowedValues()) {
 										pos1 = blockpos1;
 
 										if (enumfacing1 == EnumFacing.NORTH) {
@@ -246,7 +219,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 														|| (world.getBlockState(pos1).getMaterial() == Material.IRON)
 														|| (world.getBlockState(pos1).getMaterial() == Material.WOOD))
 												&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, enumfacing1) == BlockFaceShape.SOLID)) {
-											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockCrumillospongia.BlockCustom.FACING, enumfacing1), 2);
+											world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockPalaeodiphasia.BlockCustom.FACING, enumfacing1), 2);
 											return true;
 										}
 									}
@@ -303,7 +276,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_crumillospongia");
+			setTranslationKey("pf_palaeodiphasia");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);
@@ -317,7 +290,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_CRUMILLOSPONGIA;
+			return ModTriggers.CLICK_PALAEODIPHASIA;
 		}
 
 		@Override
@@ -328,6 +301,11 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 				world.spawnEntity(entityToSpawn);
 			}
 			return super.removedByPlayer(state, world, pos, player, willHarvest);
+		}
+
+		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
 		}
 
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -628,7 +606,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Cnidarian");
+				tooltip.add("Type: Sessile cnidarian");
 				tooltip.add("Periods: Cambrian");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
