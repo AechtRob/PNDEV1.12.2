@@ -21,7 +21,7 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimPaleoproterozoicMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimMesoproterozoicMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimCryogenianMobsPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimNeoproterozoicMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimTonianMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranMobsPF);
                 return MobString;
 
@@ -233,6 +233,11 @@ public class EntityLists {
                 if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                         MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimCryogenianMobsPF);
+                    }
+                }
+                else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                        MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimTonianMobsPF);
                     }
                 }
                 else {

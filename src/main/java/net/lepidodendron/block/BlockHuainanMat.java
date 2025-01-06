@@ -1,9 +1,12 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.*;
+import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -19,7 +22,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -30,12 +32,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -43,28 +43,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:tuanshanzia")
+public class BlockHuainanMat extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:huainan_mat")
 	public static final Block block = null;
-	public BlockTuanshanzia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.tuanshanzia);
+	public BlockHuainanMat(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.huainan_mat);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("tuanshanzia"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("huainan_mat"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
-	}
-
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-		OreDictionary.registerOre("itemAlgae", BlockTuanshanzia.block);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:tuanshanzia", BlockHorodyskia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -73,14 +65,21 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:tuanshanzia", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockTuanshanzia.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:huainan_mat", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockHuainanMat.LEVEL).build());
 	}
 
 	@Override
-	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:huainan_mat", BlockHuainanMat.block);
+	}
 
-		int weight = LepidodendronConfigPlants.weightAlgalFrond;
+
+	@Override
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
+		
+		int weight = LepidodendronConfigPlants.weightEdiacaran;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -88,44 +87,41 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
-		if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondBlacklistBiomes))
-				&& (matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)
-				|| dimID == LepidodendronConfig.dimPrecambrian)) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
+			biomeCriteria = true;
+		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
+			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
 				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
-				biomeCriteria = false;
-		}
-
-		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)) && !
-					(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
-					)
-			) {
+			}
+			else {
 				biomeCriteria = false;
 			}
 		}
 
+		if ((dimID == LepidodendronConfig.dimOrdovician
+				|| dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimDevonian)
+				|| (dimID == LepidodendronConfig.dimCarboniferous)
+				|| (dimID == LepidodendronConfig.dimCambrian)
+				|| (dimID == LepidodendronConfig.dimPermian)
+				|| (dimID == LepidodendronConfig.dimTriassic)
+				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| (dimID == LepidodendronConfig.dimCretaceousEarly)
+				|| (dimID == LepidodendronConfig.dimCretaceousLate)
+				|| (dimID == LepidodendronConfig.dimPaleogene)
+				|| (dimID == LepidodendronConfig.dimNeogene)
+				|| (dimID == LepidodendronConfig.dimPleistocene) ) {
+			biomeCriteria = false;
+		}
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
+		int mulitplier = 1;
+		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+			mulitplier = 48;
+		}
 
-		for (int i = 0; i < (int) 10 * multiplier; i++) {
+		for (int i = 0; i < (int) 16 * mulitplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -133,30 +129,17 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static boolean matchBiome(Biome biome, String[] biomesList) {
-    	
-    	//String regName = biome.getRegistryName().toString();
-    	
-        String[] var2 = biomesList;
-        int var3 = biomesList.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            String checkBiome = var2[var4];
-            if (!checkBiome.contains(":")) {
-            	//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
-	            if (checkBiome.equalsIgnoreCase(
-	            	biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
-	            	)) {
-	                return true;
-	            }
-        	}
-        	if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
 		
@@ -164,26 +147,26 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
     
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_tuanshanzia");
+			setTranslationKey("pf_huainan_mat");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);
 			setLightOpacity(3);
 			//this.setTickRandomly(true);
-			setCreativeTab(TabLepidodendronPlants.tab);
+			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));
-		}
-
-		@Nullable
-		@Override
-		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_TUANSHANZIA;
 		}
 
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
+		}
+
+		@Nullable
+		@Override
+		public CustomTrigger getModTrigger() {
+			return ModTriggers.CLICK_HUAINAN_MAT;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -199,40 +182,16 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	        return NULL_AABB;
 	    }
 
-		@Override
-		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			switch ((EnumFacing) state.getValue(BlockDirectional.FACING)) {
-				case SOUTH :
-				default :
-					return new AxisAlignedBB(0.3D, 0D, 0D, 0.7D, 1.0D, 1.0D);
-				case NORTH :
-					return new AxisAlignedBB(0.3D, 0D, 0D, 0.7D, 1D, 01.0D);
-				case WEST :
-					return new AxisAlignedBB(0D, 0D, 0.3D, 1D, 1D, 0.7D);
-				case EAST :
-					return new AxisAlignedBB(0D, 0D, 0.3D, 1D, 1D, 0.7D);
-				case UP :
-					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
-				case DOWN :
-					return new AxisAlignedBB(0.0D, 0D, 0D, 1.0D, 1.0D, 1.0D);
-			}
-		}
-
 		@SideOnly(Side.CLIENT)
 		@Override
-		public BlockRenderLayer getRenderLayer() {
-			if (LepidodendronFogSubscribers.hasShaders()) {
-				return BlockRenderLayer.CUTOUT;
-			}
-			return BlockRenderLayer.TRANSLUCENT;
-		}
-
+    	public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT;
+    }
+		
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-			if (LepidodendronFogSubscribers.hasShaders()) {
-				return layer == BlockRenderLayer.CUTOUT_MIPPED;
-			}
-			return layer == BlockRenderLayer.TRANSLUCENT;
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
 
 		@Override
@@ -471,7 +430,9 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	    }
 
 	    public boolean isWaterBlock(World world, BlockPos pos) {
-			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER
+				|| world.getBlockState(pos).getMaterial() == Material.PACKED_ICE
+			) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;
@@ -480,15 +441,15 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	    	return false;
 	    }
 	    
-	    @SideOnly(Side.CLIENT)
-		@Override
-	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Marine algae-like organism");
-				tooltip.add("Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) [- Neoproterozoic (Tonian - Cryogenian - Ediacaran)]");
-				tooltip.add("Propagation: water");}
-	        super.addInformation(stack, player, tooltip, advanced);
-	    }
+//	    @SideOnly(Side.CLIENT)
+//		@Override
+//	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+//	        if (LepidodendronConfig.showTooltips) {
+//				tooltip.add("Type: Undetermined multicellular organism, possibly microbial");
+//				tooltip.add("Periods: Paleoproterozoic (Statherian) - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran)");
+//			}
+//	        super.addInformation(stack, player, tooltip, advanced);
+//	    }
 
 	}
 }

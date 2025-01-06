@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraHupehsuchus extends EntityPrehistoricFloraAge
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return -1;
 	}
 
 	@Override

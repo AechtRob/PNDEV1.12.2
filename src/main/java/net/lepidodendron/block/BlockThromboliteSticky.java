@@ -24,9 +24,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -50,6 +52,12 @@ public class BlockThromboliteSticky extends ElementsLepidodendronMod.ModElement 
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 			new ModelResourceLocation("lepidodendron:thrombolite_sticky", "inventory"));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:thrombolite", BlockThromboliteSticky.block);
 	}
 
 	public static class BlockCustom extends Block implements IAdvancementGranter {

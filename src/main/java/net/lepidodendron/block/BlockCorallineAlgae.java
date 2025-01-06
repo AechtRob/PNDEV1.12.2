@@ -248,7 +248,7 @@ public class BlockCorallineAlgae extends ElementsLepidodendronMod.ModElement {
 		@Nonnull
 		@Override
 		public List<ItemStack> onSheared(@Nonnull ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(ItemCorallineAlgaeItem.block, (int) (1)));
 		}
 	}
 }

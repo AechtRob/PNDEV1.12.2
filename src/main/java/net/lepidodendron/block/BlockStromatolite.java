@@ -49,9 +49,11 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -77,6 +79,12 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 			new ModelResourceLocation("lepidodendron:stromatolite", "inventory"));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:stromatolite", BlockStromatolite.block);
 	}
 
 	@Override
@@ -515,7 +523,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Microbial formation");
+				tooltip.add("Type: Cyanobacterial formation");
 				tooltip.add("Periods: Archean - Paleoproterozoic - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran) - Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

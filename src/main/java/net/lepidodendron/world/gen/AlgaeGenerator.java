@@ -51,6 +51,8 @@ public class AlgaeGenerator extends WorldGenerator
 		}
 		boolean dimensionCriteria = false;
 		boolean upsideDown = false;
+		boolean eukaryotic = (this.algae == BlockEukaryoticMat.block);
+		boolean huainan = (this.algae == BlockHuainanMat.block);
 		boolean algae = (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockBrownAlgae.block || this.algae == BlockGreenCharaAlgae.block || this.algae == BlockGreenCodiumAlgae.block || this.algae == BlockGreenCrustedAlgae.block || this.algae == BlockGreenLeafyAlgae.block || this.algae == BlockGreenSproutingAlgae.block || this.algae == BlockPiledAlgae.block || this.algae == BlockStalkedAlgae.block || this.algae == BlockStalkyBrownAlgae.block);
 		boolean algaeRed = (this.algae == BlockRedAlgaeMat.block || this.algae == BlockRedLeafyAlgae.block || this.algae == BlockRedTuftedAlgae.block);
 		boolean gunk = (this.algae == BlockWaterBottomGunk.block);
@@ -137,6 +139,14 @@ public class AlgaeGenerator extends WorldGenerator
 				multiplier = 3;
 				upsideDown = true;
 			}
+		}
+
+		if (eukaryotic) {
+			multiplier = 3;
+		}
+
+		if (huainan) {
+			multiplier = 5;
 		}
 
 		if (this.algae == BlockTuanshanzia.block) {
@@ -256,6 +266,9 @@ public class AlgaeGenerator extends WorldGenerator
 					if (algae && (worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
 							|| worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater")
 					)) {
+						waterDepthCheckMin = true;
+					}
+					if (eukaryotic || huainan) {
 						waterDepthCheckMin = true;
 					}
 

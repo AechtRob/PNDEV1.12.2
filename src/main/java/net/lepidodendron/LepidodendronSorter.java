@@ -5004,6 +5004,9 @@ public class LepidodendronSorter {
     public static final int palaeodiphasia = 8024;
     public static final int brachiopod_micromitra = 8025;
     public static final int girvanella = 8026;
+    public static final int eukaryotic_mat = 8027;
+    public static final int huainan_mat = 8028;
+    public static final int otavia = 8029;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

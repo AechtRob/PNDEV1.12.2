@@ -135,7 +135,10 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockVentogyrus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNamapoikia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAusia.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockEukaryoticMat.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockHuainanMat.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockOtavia.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
         return resLoc;

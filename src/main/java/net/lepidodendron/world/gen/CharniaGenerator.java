@@ -91,6 +91,7 @@ public class CharniaGenerator extends WorldGenerator
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_beach")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
 			)

@@ -70,7 +70,7 @@ public class BlockGirvanella extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:girvanella", BlockGirvanella.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:girvanella", BlockGirvanella.block);
 	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {
@@ -375,7 +375,7 @@ public class BlockGirvanella extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Microbial formation");
+				tooltip.add("Type: Cyanobacterial formation");
 				tooltip.add("Periods: Neoproterozoic (Tonian - Cryogenian - Ediacaran) - Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene");
 			}
 			super.addInformation(stack, player, tooltip, advanced);

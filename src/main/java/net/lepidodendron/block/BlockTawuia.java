@@ -96,6 +96,7 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
 					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
 					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
 				biomeCriteria = true;

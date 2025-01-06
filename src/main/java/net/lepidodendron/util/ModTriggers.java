@@ -65,6 +65,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
     public static final CustomTrigger CLICK_ALGAE = new CustomTrigger("pf_book_algae");
+    public static final CustomTrigger CLICK_EUKARYOTIC_MAT = new CustomTrigger("pf_book_eukaryotic_mat");
     public static final CustomTrigger CLICK_KELP = new CustomTrigger("pf_book_kelp");
     public static final CustomTrigger CLICK_ZINGIBEROPSIS = new CustomTrigger("pf_book_zingiberopsis");
     public static final CustomTrigger CLICK_GANSUFRUCTUS = new CustomTrigger("pf_book_gansufructus");
@@ -466,6 +467,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SYCAMORE = new CustomTrigger("pf_book_sycamore");
     public static final CustomTrigger CLICK_CHESTNUT = new CustomTrigger("pf_book_chestnut");
     public static final CustomTrigger CLICK_TAWUIA = new CustomTrigger("pf_book_tawuia");
+    public static final CustomTrigger CLICK_OTAVIA = new CustomTrigger("pf_book_otavia");
+    public static final CustomTrigger CLICK_HUAINAN_MAT = new CustomTrigger("pf_book_huainan_mat");
     public static final CustomTrigger CLICK_TAXODIUM = new CustomTrigger("pf_book_taxodium");
     public static final CustomTrigger CLICK_TELEMACHUS = new CustomTrigger("pf_book_telemachus");
     public static final CustomTrigger CLICK_TEMPSKYA = new CustomTrigger("pf_book_tempskya");
@@ -1782,6 +1785,7 @@ public class ModTriggers
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
             CLICK_ALGAE,
+            CLICK_EUKARYOTIC_MAT,
             CLICK_DAISY,
             CLICK_KELP,
             CLICK_ZINGIBEROPSIS,
@@ -2182,6 +2186,8 @@ public class ModTriggers
             CLICK_SYCAMORE,
             CLICK_CHESTNUT,
             CLICK_TAWUIA,
+            CLICK_OTAVIA,
+            CLICK_HUAINAN_MAT,
             CLICK_TAXODIUM,
             CLICK_TELEMACHUS,
             CLICK_TEMPSKYA,
