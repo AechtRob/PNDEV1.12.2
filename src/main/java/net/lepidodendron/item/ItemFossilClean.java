@@ -1564,6 +1564,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stromatoveris_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stromatolite_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_thrombolite_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_girvanella_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_suminia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_surangephyllum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_swamp_horsetail_item_clean", "inventory"),

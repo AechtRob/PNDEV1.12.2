@@ -92,6 +92,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ARCHAEOPTERIS = new CustomTrigger("pf_book_archaeopteris");
     public static final CustomTrigger CLICK_ARID_HORSETAIL = new CustomTrigger("pf_book_arid_horsetail");
     public static final CustomTrigger CLICK_ARKARUA = new CustomTrigger("pf_book_arkarua");
+    public static final CustomTrigger CLICK_GIRVANELLA = new CustomTrigger("pf_book_girvanella");
     public static final CustomTrigger CLICK_HORODYSKIA = new CustomTrigger("pf_book_horodyskia");
     public static final CustomTrigger CLICK_ARTHROPITYS = new CustomTrigger("pf_book_arthropitys");
     public static final CustomTrigger CLICK_ARTOCARPUS = new CustomTrigger("pf_book_artocarpus");
@@ -1809,6 +1810,7 @@ public class ModTriggers
             CLICK_ARCHAEOPTERIS,
             CLICK_ARID_HORSETAIL,
             CLICK_ARKARUA,
+            CLICK_GIRVANELLA,
             CLICK_HORODYSKIA,
             CLICK_ARTHROPITYS,
             CLICK_ARTOCARPUS,
