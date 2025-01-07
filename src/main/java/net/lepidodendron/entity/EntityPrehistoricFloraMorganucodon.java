@@ -222,8 +222,6 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 			launchAttack();
 		}
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

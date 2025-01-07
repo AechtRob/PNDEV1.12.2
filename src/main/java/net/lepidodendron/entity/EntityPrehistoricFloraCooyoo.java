@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraCooyoo extends EntityPrehistoricFloraAgeableF
 		return true;
 	}
 
-	public static String getPeriod() {return "Early Cretaceous - Late Cretaceous";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 	public static String getSize() {return "L";}
@@ -208,7 +208,7 @@ public class EntityPrehistoricFloraCooyoo extends EntityPrehistoricFloraAgeableF
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CLADOCYCLUS_LOOT;
+		return LepidodendronMod.COOYOO_LOOT;
 	}
 
 	//Rendering taxidermy:
@@ -217,7 +217,7 @@ public class EntityPrehistoricFloraCooyoo extends EntityPrehistoricFloraAgeableF
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_CLADOCYCLUS;
+		return ModTriggers.CLICK_COOYOO;
 	}
 
 

@@ -13,7 +13,7 @@ public class RenderNigersaurus extends RenderLivingBaseWithBook<EntityPrehistori
 
     public static float getScaler() {return 1f;}
     public RenderNigersaurus(RenderManager mgr) {
-        super(mgr, new ModelNigersaurus(), 0.3f);
+        super(mgr, new ModelNigersaurus(), 0.8f);
     }
 
     @Override
