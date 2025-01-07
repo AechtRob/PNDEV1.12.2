@@ -1,5 +1,5 @@
 {
-	"name": "Choiidae",
+	"name": "Choiid",
 	"read_by_default": true,
 	"icon": "lepidodendron:choia",
 	"category": "lepidodendron:statics",
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "Choiidae",
+			"name": "Choiid",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [

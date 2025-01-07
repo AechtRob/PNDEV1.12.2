@@ -1,5 +1,7 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockStromatolite;
+import net.lepidodendron.block.BlockThrombolite;
 import net.lepidodendron.block.BlockToxicMud;
 import net.lepidodendron.util.Functions;
 import net.minecraft.block.material.Material;
@@ -22,6 +24,8 @@ public class WorldGenToxicMud extends WorldGenerator
 
             if ((!worldIn.provider.isNether() || blockpos.getY() < 254)
 				&& worldIn.isAirBlock(blockpos.up())
+                && (worldIn.getBlockState(blockpos.down()).getBlock() != BlockStromatolite.block)
+                && (worldIn.getBlockState(blockpos.down()).getBlock() != BlockThrombolite.block)
             	&& (
             		((worldIn.getBlockState(blockpos)).getMaterial() == Material.GROUND)
             		|| ((worldIn.getBlockState(blockpos)).getMaterial() == Material.GRASS)

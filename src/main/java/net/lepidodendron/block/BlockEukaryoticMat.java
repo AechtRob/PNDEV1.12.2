@@ -101,7 +101,10 @@ public class BlockEukaryoticMat extends ElementsLepidodendronMod.ModElement {
 				multiplier = 2;
 			}
 			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Mesoproterozoic) {
-				multiplier = 12;
+				multiplier = 10;
+			}
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran) {
+				multiplier = 26;
 			}
 		}
 

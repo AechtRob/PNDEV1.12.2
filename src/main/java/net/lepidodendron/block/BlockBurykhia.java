@@ -94,9 +94,7 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (BlockArkarua.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
-						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
 					dimensionCriteria = true;
 				}
 				else {
@@ -113,7 +111,7 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		minWaterDepth = 2;
-		maxWaterDepth = 15;
+		maxWaterDepth = 70;
 		startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < 8; i++) {

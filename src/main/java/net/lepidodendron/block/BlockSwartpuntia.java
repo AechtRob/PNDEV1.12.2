@@ -10,6 +10,7 @@ import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -97,20 +98,8 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			if (BlockArkarua.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
-						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
-					dimensionCriteria = true;
-				}
-				else {
-					dimensionCriteria = false;
-				}
-			}
-			else {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
-					dimensionCriteria = true;
-				}
+			if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)) instanceof BiomePrecambrian) {
+				dimensionCriteria = true;
 			}
 		}
 		if (!dimensionCriteria)
@@ -129,6 +118,13 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 48; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), random.nextInt(4) - random.nextInt(4), random.nextInt(4) - random.nextInt(4));
+						String biomeName = world.getBiome(blockpos1).getRegistryName().toString();
+						if (!(biomeName.equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+								|| biomeName.equalsIgnoreCase("lepidodendron:precambrian_sea")
+								|| biomeName.equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef"))
+						) {
+							continue;
+						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
