@@ -176,7 +176,7 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {
-			multiplier = 24;
+			multiplier = 12;
 		}
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
