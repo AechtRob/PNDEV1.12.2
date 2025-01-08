@@ -12,7 +12,7 @@ public class RenderEzkutuberezi extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ezkutuberezi.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.2F;
     }
     public RenderEzkutuberezi(RenderManager mgr) {
         super(mgr, new ModelEzkutuberezi(), 0.0f);

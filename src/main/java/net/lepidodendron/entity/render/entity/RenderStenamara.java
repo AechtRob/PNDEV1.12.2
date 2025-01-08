@@ -12,7 +12,7 @@ public class RenderStenamara extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/stenamara.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.2F;
     }
     public RenderStenamara(RenderManager mgr) {
         super(mgr, new ModelStenamara(), 0.0f);

@@ -35,9 +35,9 @@ public class EntityPrehistoricFloraCooyoo extends EntityPrehistoricFloraAgeableF
 
 	public EntityPrehistoricFloraCooyoo(World world) {
 		super(world);
-		setSize(0.5F, 0.4F);
+		setSize(0.95F, 0.4F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.95F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 11.0D;
 	}

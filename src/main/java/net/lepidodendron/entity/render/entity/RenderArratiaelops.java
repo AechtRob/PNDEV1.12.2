@@ -12,7 +12,7 @@ public class RenderArratiaelops extends RenderLivingBaseWithBook<EntityPrehistor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arratiaelops.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.55F;
     }
     public RenderArratiaelops(RenderManager mgr) {
         super(mgr, new ModelArratiaelops(), 0.0f);

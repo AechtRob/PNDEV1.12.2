@@ -35,11 +35,11 @@ public class EntityPrehistoricFloraArratiaelops extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraArratiaelops(World world) {
 		super(world);
-		setSize(0.5F, 0.4F);
+		setSize(0.6F, 0.4F);
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.6F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

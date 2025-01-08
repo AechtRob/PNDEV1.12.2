@@ -12,7 +12,7 @@ public class RenderHoyasotes extends RenderLivingBaseWithBook<EntityPrehistoricF
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hoyasotes.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.2F;
     }
     public RenderHoyasotes(RenderManager mgr) {
         super(mgr, new ModelHoyasotes(), 0.0f);

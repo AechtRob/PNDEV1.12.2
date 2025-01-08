@@ -6949,6 +6949,12 @@ public class RenderHandler {
                 return new RenderCooyoo(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiscoserra.class, new IRenderFactory<EntityPrehistoricFloraDiscoserra>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDiscoserra> createRenderFor(RenderManager manager) {
+                return new RenderDiscoserra(manager);
+            }
+        });
         
 
 

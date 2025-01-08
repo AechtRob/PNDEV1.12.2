@@ -12,7 +12,7 @@ public class RenderLanxangichthys extends RenderLivingBaseWithBook<EntityPrehist
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lanxangichthys.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.27F;
     }
     public RenderLanxangichthys(RenderManager mgr) {
         super(mgr, new ModelLanxangichthys(), 0.0f);

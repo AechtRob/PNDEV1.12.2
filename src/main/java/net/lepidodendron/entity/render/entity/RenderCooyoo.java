@@ -12,7 +12,7 @@ public class RenderCooyoo extends RenderLivingBaseWithBook<EntityPrehistoricFlor
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cooyoo.png");
 
     public static float getScaler() {
-        return 0.7F;
+        return 0.8F;
     }
     public RenderCooyoo(RenderManager mgr) {
         super(mgr, new ModelCooyoo(), 0.0f);
