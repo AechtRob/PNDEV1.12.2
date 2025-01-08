@@ -148,14 +148,14 @@ public class ModelDiscoserra extends ModelBasePalaeopedia {
         this.cube_r15.cubeList.add(new ModelBox(cube_r15, 19, 6, -1.5F, -0.075F, -3.15F, 2, 2, 3, -0.001F, false));
 
         this.tail = new AdvancedModelRenderer(this);
-        this.tail.setRotationPoint(-0.44F, 0.687F, 4.4669F);
+        this.tail.setRotationPoint(0.06F, 0.687F, 4.4669F);
         this.main.addChild(tail);
-        this.tail.cubeList.add(new ModelBox(tail, 0, 33, 0.0F, -1.0F, 0.0F, 1, 2, 1, 0.001F, false));
+        this.tail.cubeList.add(new ModelBox(tail, 0, 33, -0.5F, -1.0F, 0.0F, 1, 2, 1, 0.001F, false));
 
         this.tail2 = new AdvancedModelRenderer(this);
         this.tail2.setRotationPoint(0.0F, 0.0F, 1.0F);
         this.tail.addChild(tail2);
-        this.tail2.cubeList.add(new ModelBox(tail2, 9, 22, 0.5F, -2.3F, 0.0F, 0, 4, 3, 0.0F, false));
+        this.tail2.cubeList.add(new ModelBox(tail2, 9, 22, 0.0F, -2.3F, 0.0F, 0, 4, 3, 0.0F, false));
 
         this.backrightfin = new AdvancedModelRenderer(this);
         this.backrightfin.setRotationPoint(-0.94F, 5.637F, 0.2169F);
