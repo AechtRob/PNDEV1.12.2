@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraTeraterpeton extends EntityPrehistoricFloraLa
 		minWidth = 0.12F;
 		maxWidth = 0.9F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 13.0D;
+		maxHealthAgeable = 15.0D;
 		STAND_ANIMATION = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

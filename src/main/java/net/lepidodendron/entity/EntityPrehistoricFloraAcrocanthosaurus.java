@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraAcrocanthosaurus extends EntityPrehistoricFlo
 		minWidth = 0.20F;
 		maxWidth = 2.5F;
 		maxHeight = 3.5F;
-		maxHealthAgeable = 160.0D;
+		maxHealthAgeable = 70.0D;
 		STAND_ANIMATION = Animation.create(210);
 		RELAX_ANIMATION = Animation.create(60);
 		NOISE_ANIMATION = Animation.create(50); //rumble

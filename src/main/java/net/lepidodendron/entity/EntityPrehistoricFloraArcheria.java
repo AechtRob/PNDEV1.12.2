@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraArcheria extends EntityPrehistoricFloraSwimmi
 		minWidth = 0.2F;
 		maxWidth = 0.9F;
 		maxHeight = 0.40F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 13.0D;
 	}
 
 	@Override
