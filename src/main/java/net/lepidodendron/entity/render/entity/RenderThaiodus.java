@@ -12,7 +12,7 @@ public class RenderThaiodus extends RenderLivingBaseWithBook<EntityPrehistoricFl
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thaiodus.png");
 
     public static float getScaler() {
-        return 0.5F;
+        return 0.58F;
     }
     public RenderThaiodus(RenderManager mgr) {
         super(mgr, new ModelThaiodus(), 0.0f);

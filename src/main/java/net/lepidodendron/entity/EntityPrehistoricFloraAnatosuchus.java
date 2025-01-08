@@ -246,7 +246,7 @@ public class EntityPrehistoricFloraAnatosuchus extends EntityPrehistoricFloraLan
 		return livingdata;
 	}
 	private boolean isBlockGrazable(IBlockState state) {
-		return (state.getMaterial() == Material.GROUND || state.getMaterial() == Material.WATER);
+		return (state.getMaterial() == Material.GRASS || state.getMaterial() == Material.WATER);
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {

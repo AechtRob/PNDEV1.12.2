@@ -2851,6 +2851,13 @@ public class LepidodendronMod {
 	public static final int ENTITY_PSITTACOSAURUS_SIBIRICUS = 1157;
 	public static final ResourceLocation PSITTACOSAURUS_SIBIRICUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psittacosaurus_sibiricus"));
 	public static final ResourceLocation PSITTACOSAURUS_SIBIRICUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/psittacosaurus_sibiricus_young"));
+	public static final int ENTITY_DISCOSERRA = 1158;
+	public static final ResourceLocation DISCOSERRA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/discoserra"));
+	public static final int ENTITY_RUGOCONITES = 1159;
+	public static final int ENTITY_LOBODISCUS = 1160;
+	public static final int ENTITY_HALLIDAYA = 1161;
+	public static final int ENTITY_ANFESTA = 1162;
+	public static final int ENTITY_TRIBRACHIDIUM = 1163;
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;

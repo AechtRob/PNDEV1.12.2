@@ -9958,6 +9958,25 @@ item.pf_tessarolax_item.name=Tessarolax
 item.pf_notopala_item.name=Notopala
 item.pf_anchura_item.name=Anchura
 
+advancements.pf_adv_book_rugoconites.description=Unlock the entry for Rugoconites in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_hallidaya.description=Unlock the entry for Hallidaya in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_lobodiscus.description=Unlock the entry for Lobodiscus in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_anfesta.description=Unlock the entry for Anfesta in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_discoserra.description=Unlock the entry for Discoserra in the Palaeopedia to gain extra new pages about it!
+advancements.pf_adv_book_rugoconites.title=Rugoconites
+advancements.pf_adv_book_hallidaya.title=Hallidaya
+advancements.pf_adv_book_lobodiscus.title=Lobodiscus
+advancements.pf_adv_book_anfesta.title=Anfesta
+advancements.pf_adv_book_discoserra.title=Discoserra
+entity.prehistoric_flora_rugoconites.name=Rugoconites
+entity.prehistoric_flora_hallidaya.name=Hallidaya
+entity.prehistoric_flora_lobodiscus.name=Lobodiscus
+entity.prehistoric_flora_anfesta.name=Anfesta
+entity.prehistoric_flora_discoserra.name=Discoserra
+entity.prehistoric_flora_tribrachidium.name=Tribrachidium
+item.pf_discoserra_raw.name=Raw Discoserra
+
+
 
 
 

@@ -359,7 +359,6 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
         this.setRotateAngle(pectoralfinleft, pectoralfinleft.rotateAngleX + (float) Math.toRadians(xx), pectoralfinleft.rotateAngleY + (float) Math.toRadians(yy), pectoralfinleft.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraAcanthodes entity = (EntityPrehistoricFloraAcanthodes) entitylivingbaseIn;
         int animCycle = 10;
@@ -392,8 +391,6 @@ public class ModelAcanthodes extends ModelBasePalaeopedia {
         this.setRotateAngle(pectoralfinleft, pectoralfinleft.rotateAngleX + (float) Math.toRadians(xx), pectoralfinleft.rotateAngleY + (float) Math.toRadians(yy), pectoralfinleft.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
-
-
     public void animAttack(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraAcanthodes entity = (EntityPrehistoricFloraAcanthodes) entitylivingbaseIn;
 

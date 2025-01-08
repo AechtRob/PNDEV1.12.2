@@ -88,6 +88,7 @@ public class ModelSericipterus extends ModelBasePalaeopedia {
 
         this.root = new AdvancedModelRendererExtended(this);
         this.root.setRotationPoint(0.0F, 0.0F, 0.0F);
+        this.root.scaleChildren = true;
 
 
         this.chest = new AdvancedModelRendererExtended(this);

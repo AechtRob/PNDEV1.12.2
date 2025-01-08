@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraFalcarius extends EntityPrehistoricFloraLandC
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
 	public int getEatLength() {

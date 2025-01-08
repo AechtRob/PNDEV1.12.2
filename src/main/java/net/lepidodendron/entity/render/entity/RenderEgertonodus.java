@@ -12,7 +12,7 @@ public class RenderEgertonodus extends RenderLivingBaseWithBook<EntityPrehistori
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/egertonodus.png");
 
     public static float getScaler() {
-        return 0.64F;
+        return 0.58F;
     }
     public RenderEgertonodus(RenderManager mgr) {
         super(mgr, new ModelParhybodus(), 0.0f);

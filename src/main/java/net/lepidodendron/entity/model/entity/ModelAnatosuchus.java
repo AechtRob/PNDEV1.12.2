@@ -616,10 +616,10 @@ public class ModelAnatosuchus extends ModelBasePalaeopedia {
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.DRINK_ANIMATION) { //The noise anim
-            animFish(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        else if (ee.getAnimation() == ee.DRINK_ANIMATION) {
+            animForage(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) { //The noise anim
+        else if (ee.getAnimation() == ee.GRAZE_ANIMATION) {
             animForage(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 

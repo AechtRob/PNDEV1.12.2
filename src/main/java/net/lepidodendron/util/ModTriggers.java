@@ -1718,6 +1718,11 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EOCARCHARIA = new CustomTrigger("pf_book_eocarcharia");
     public static final CustomTrigger CLICK_DEINONYCHUS = new CustomTrigger("pf_book_deinonychus");
     public static final CustomTrigger CLICK_PORONGODENDRON = new CustomTrigger("pf_book_porongodendron");
+    public static final CustomTrigger CLICK_RUGOCONITES = new CustomTrigger("pf_book_rugoconites");
+    public static final CustomTrigger CLICK_HALLIDAYA = new CustomTrigger("pf_book_hallidaya");
+    public static final CustomTrigger CLICK_LOBODISCUS = new CustomTrigger("pf_book_lobodiscus");
+    public static final CustomTrigger CLICK_ANFESTA = new CustomTrigger("pf_book_anfesta");
+    public static final CustomTrigger CLICK_DISCOSERRA = new CustomTrigger("pf_book_discoserra");
 
 
 
@@ -3425,7 +3430,12 @@ public class ModTriggers
             CLICK_ANHANGUERA,
             CLICK_EOCARCHARIA,
             CLICK_DEINONYCHUS,
-            CLICK_PORONGODENDRON
+            CLICK_PORONGODENDRON,
+            CLICK_RUGOCONITES,
+            CLICK_HALLIDAYA,
+            CLICK_LOBODISCUS,
+            CLICK_ANFESTA,
+            CLICK_DISCOSERRA
 
 
 
