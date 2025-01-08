@@ -307,7 +307,7 @@ public class ModelDiscoserra extends ModelBasePalaeopedia {
             this.swing(main, speed*0.8F, 0.2F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
-                this.main.offsetY = -0.1F;
+                this.main.offsetY = 0.3F;
                 this.bob(main, -speed, 5F, false, f2, 1);
             }
         }
