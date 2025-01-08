@@ -137,7 +137,7 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
         double chanceNamapoikia = 1.0;
         if (biome instanceof BiomePrecambrian) {
             BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-            if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
             ) {
                 chanceNamapoikia = 0.0;
             }
@@ -151,7 +151,9 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
         double chanceCloudina = 1.0;
         if (biome instanceof BiomePrecambrian) {
             BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-            if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
             ) {
                 chanceCloudina = 0.0;
             }
@@ -165,7 +167,7 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
         double chanceCorombella = 1.0;
         if (biome instanceof BiomePrecambrian) {
             BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-            if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
             ) {
                 chanceCorombella = 0.0;
             }
@@ -179,7 +181,7 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
         double chanceNamacalathus = 1.0;
         if (biome instanceof BiomePrecambrian) {
             BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-            if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
             ) {
                 chanceNamacalathus = 0.0;
             }

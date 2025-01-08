@@ -219,7 +219,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 					|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
 					|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic
 			) {
-				chanceGirvanella = 0.2;
+				chanceGirvanella = 0.15;
 			}
 		}
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian

@@ -8,6 +8,7 @@ import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -105,10 +106,20 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimPrecambrian)
+				//|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 		) {
 			biomeCriteria = false;
+		}
+
+		if (biome instanceof BiomePrecambrian)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
 
 		if (biome instanceof BiomeOrdovician)
@@ -163,6 +174,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
+		if ((dimID == LepidodendronConfig.dimPrecambrian)
+		) {
+			multiplier = 12;
+		}
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 52;

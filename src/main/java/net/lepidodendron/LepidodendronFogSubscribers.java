@@ -348,7 +348,8 @@ public class LepidodendronFogSubscribers {
 					return fog;
 				}
 			}
-			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:proterozoic_hills")) {
+			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:proterozoic_hills")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:proterozoic_rift")) {
 				r = 156D/255D;
 				g = 228D/255D;
 				b = 184D/255D;

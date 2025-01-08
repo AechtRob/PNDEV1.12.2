@@ -135,7 +135,8 @@ public class AlgaeGenerator extends WorldGenerator
 
 		if (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockRedAlgaeMat.block) {
 			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
 				multiplier = 3;
 				upsideDown = true;
 			}
@@ -260,6 +261,7 @@ public class AlgaeGenerator extends WorldGenerator
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_reef")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_bog")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_creek_bog")))
+							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")))
 							&& gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
 						waterDepthCheckMin = false;
 					}

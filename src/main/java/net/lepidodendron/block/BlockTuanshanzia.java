@@ -106,14 +106,12 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 			if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)) && !
 					(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacarian_sparse_sea")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
 					)
 			) {
 				biomeCriteria = false;
@@ -124,6 +122,9 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
+		if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+			multiplier = 2;
+		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

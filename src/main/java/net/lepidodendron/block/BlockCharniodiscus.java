@@ -97,6 +97,7 @@ public class BlockCharniodiscus extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			String biomeName = world.getBiome(new BlockPos(l6, i11, l14)).getRegistryName().toString();
 			(new CharniaGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
