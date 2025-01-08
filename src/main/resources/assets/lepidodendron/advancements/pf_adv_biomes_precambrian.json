@@ -165,6 +165,36 @@
 			"conditions": {
 				"biome": "lepidodendron:ediacaran_extreme_hills"
 			}
+		},
+		"ediacaran_sparse_sea": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ediacaran_sparse_sea"
+			}
+		},
+		"ediacaran_shallow_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ediacaran_shallow_reef"
+			}
+		},
+		"ediacaran_stromatolite_pavement": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ediacaran_stromatolite_pavement"
+			}
+		},
+		"proterozoic_rift": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:proterozoic_rift"
+			}
+		},
+		"tonian_sea": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:tonian_sea"
+			}
 		}
 	},
 	"requirements": [
@@ -230,6 +260,21 @@
 		],
 		[
 			"ediacaran_extreme_hills"
+		],
+		[
+			"ediacaran_sparse_sea"
+		],
+		[
+			"ediacaran_shallow_reef"
+		],
+		[
+			"ediacaran_stromatolite_pavement"
+		],
+		[
+			"proterozoic_rift"
+		],
+		[
+			"tonian_sea"
 		]
 	]
 }

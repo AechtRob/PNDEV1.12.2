@@ -94,7 +94,7 @@ public class CharniaGenerator extends WorldGenerator
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
+					//|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
@@ -105,6 +105,9 @@ public class CharniaGenerator extends WorldGenerator
 					&& this.charnia == BlockGrypania.block)
 			{
 				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockGrypania.block) {
+				dimensionCriteria = false;
 			}
 
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")

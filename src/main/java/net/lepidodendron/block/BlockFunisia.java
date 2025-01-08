@@ -91,7 +91,12 @@ public class BlockFunisia extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
-		for (int i = 0; i < (int) 12; i++) {
+		double mutiplier = 1;
+		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+		) {
+			mutiplier = 10;
+		}
+		for (int i = 0; i < (int) 12 * mutiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;

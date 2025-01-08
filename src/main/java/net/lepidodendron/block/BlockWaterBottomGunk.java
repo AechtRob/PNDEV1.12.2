@@ -112,14 +112,14 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
+		int multiplier = 1;
+
 		if (biome instanceof BiomePrecambrian)
 		{
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")) {
-				biomeCriteria = true;
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
+				multiplier = 20;
 			}
-			else {
-				biomeCriteria = false;
-			}
+			biomeCriteria = true;
 		}
 
 		if (biome instanceof BiomeOrdovician)
@@ -173,7 +173,6 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {
 			multiplier = 12;
@@ -206,6 +205,14 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			biome = world.getBiome(new BlockPos(l6, i11, l14));
+			if (biome instanceof BiomePrecambrian)
+			{
+				if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench"))) {
+					continue;
+				}
+			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}

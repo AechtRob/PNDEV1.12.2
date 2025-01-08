@@ -125,6 +125,11 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 		if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
 			multiplier = 2;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+		) {
+			multiplier = 3;
+		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

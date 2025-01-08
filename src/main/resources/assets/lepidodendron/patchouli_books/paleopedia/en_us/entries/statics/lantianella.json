@@ -1,0 +1,40 @@
+{
+	"name": "Lantianella",
+	"read_by_default": true,
+	"icon": "lepidodendron:lantianella",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_lantianella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lantianella",
+			"title": "Lantianella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidarian(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "Lantianella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:lantianella",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lantianella",
+			"type": "text",
+			"text": "Lantianella comes from the Lower Ediacaran, with fossils found from Lantian Formation, South China. It is a cone-shaped lifeform, and could grow up to around 5.5 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the place name 'Lantian', near to were the fossils were found."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lantianella",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

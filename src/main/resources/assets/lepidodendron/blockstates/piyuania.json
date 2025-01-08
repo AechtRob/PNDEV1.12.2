@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:piyuania"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:piyuania", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:piyuania", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:piyuania", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:piyuania", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:piyuania"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:piyuania", "x": 180}
+    ]
+  }
+}

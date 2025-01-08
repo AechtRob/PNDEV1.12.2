@@ -61,6 +61,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_APPLE = new CustomTrigger("pf_book_apple");
     public static final CustomTrigger CLICK_LAURUS = new CustomTrigger("pf_book_laurus");
     public static final CustomTrigger CLICK_BISONIA = new CustomTrigger("pf_book_bisonia");
+    public static final CustomTrigger CLICK_BELTANELLIFORMIS = new CustomTrigger("pf_book_beltanelliformis");
     public static final CustomTrigger CLICK_ARAUCARIOXYLON = new CustomTrigger("pf_book_araucarioxylon");
     public static final CustomTrigger CLICK_ANEMONE = new CustomTrigger("pf_book_anemone");
     public static final CustomTrigger CLICK_DAISY = new CustomTrigger("pf_book_daisy");
@@ -241,6 +242,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DINOMISCHUS = new CustomTrigger("pf_book_dinomischus");
     public static final CustomTrigger CLICK_CHOIA = new CustomTrigger("pf_book_choia");
     public static final CustomTrigger CLICK_PALAEODIPHASIA = new CustomTrigger("pf_book_palaeodiphasia");
+    public static final CustomTrigger CLICK_LANTIANELLA = new CustomTrigger("pf_book_lantianella");
+    public static final CustomTrigger CLICK_PIYUANIA = new CustomTrigger("pf_book_piyuania");
+    public static final CustomTrigger CLICK_QIANCHUANIA = new CustomTrigger("pf_book_qianchuania");
     public static final CustomTrigger CLICK_BRACHIOPOD_MICROMITRA = new CustomTrigger("pf_book_brachiopod_micromitra");
     public static final CustomTrigger CLICK_DIOON = new CustomTrigger("pf_book_dioon");
     public static final CustomTrigger CLICK_EOGINKGOITES = new CustomTrigger("pf_book_eoginkgoites");
@@ -1787,6 +1791,7 @@ public class ModTriggers
             CLICK_APPLE,
             CLICK_LAURUS,
             CLICK_BISONIA,
+            CLICK_BELTANELLIFORMIS,
             CLICK_ARAUCARIOXYLON,
             CLICK_ANEMONE,
             CLICK_ALGAE,
@@ -1968,6 +1973,9 @@ public class ModTriggers
             CLICK_DINOMISCHUS,
             CLICK_CHOIA,
             CLICK_PALAEODIPHASIA,
+            CLICK_LANTIANELLA,
+            CLICK_PIYUANIA,
+            CLICK_QIANCHUANIA,
             CLICK_BRACHIOPOD_MICROMITRA,
             CLICK_DIOON,
             CLICK_EOGINKGOITES,

@@ -99,7 +99,7 @@ public class LepidodendronOreHandler {
 			) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
 						new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), 33),
-						105, 170);
+						15, 125);
 				event.setResult(Event.Result.DENY);
 			}
 			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")
@@ -117,7 +117,7 @@ public class LepidodendronOreHandler {
 			) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
 						new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), 33),
-						105, 170);
+						15, 125);
 				event.setResult(Event.Result.DENY);
 			}
 			if (event.getWorld().getBiome(event.getPos()).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_samerica")

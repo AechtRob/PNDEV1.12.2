@@ -704,7 +704,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         && (world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER)
                                                                         && (world.getBlockState(pos1.down()).getMaterial() == Material.WATER)
                                                                         && (world.getBlockState(pos1.down(2)).getMaterial() == Material.WATER)
-                                                                        && (pos1.getY() < (world.getSeaLevel() - 2))
+                                                                        && (pos1.getY() < (Functions.getAdjustedSeaLevel(world, pos1) - 2))
                                                                 ) {
                                                                     posCheck = true;
                                                                 }
@@ -875,7 +875,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     posCheck = true;
                                                                 }
 
-                                                                if (pos1.getY() < world.getSeaLevel() - 8) {
+                                                                if (pos1.getY() < Functions.getAdjustedSeaLevel(world, pos1) - 8) {
                                                                     posCheck = false; //If this is well below sea level then deny it, simples
                                                                 }
 

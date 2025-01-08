@@ -89,7 +89,7 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 					public boolean generate(World world, Random random, BlockPos pos) {
 						for (int i = 0; i < 14; ++i) {
 							BlockPos blockpos1 = pos.add(random.nextInt(6) - random.nextInt(6), 0, random.nextInt(6) - random.nextInt(6));
-							if (!(world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_rift"))
+							if (!(world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench"))
 							) {
 								continue;
 							}

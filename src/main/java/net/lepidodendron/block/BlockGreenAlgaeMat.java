@@ -123,6 +123,7 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic
 				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Archean
 				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Mesoproterozoic
 			) {
 				biomeCriteria = false;
 			}

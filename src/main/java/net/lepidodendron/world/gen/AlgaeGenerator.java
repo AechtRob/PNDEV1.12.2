@@ -168,6 +168,13 @@ public class AlgaeGenerator extends WorldGenerator
 				k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
 			}
 
+			if (this.algae == BlockTuanshanzia.block
+				&& (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")))
+			{
+				k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
+			}
+
 			if (worldIn.isBlockLoaded(new BlockPos(j, k, l))) {
 
 				if (this.algae.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
@@ -263,6 +270,10 @@ public class AlgaeGenerator extends WorldGenerator
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_creek_bog")))
 							&& (!(worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")))
 							&& gunk && (k + (rand.nextInt(3) - 1)) > (Functions.getAdjustedSeaLevel(worldIn, new BlockPos(j, 0, l)) - 22)) {
+						waterDepthCheckMin = false;
+					}
+					if ((worldIn.getBiome(new BlockPos(j, k - 1, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench"))
+							&& gunk && (k + (rand.nextInt(5) - 2)) > 35) {
 						waterDepthCheckMin = false;
 					}
 					if (algae && (worldIn.getBiome(new BlockPos(j, 0, l)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_volcanic_tarns_crater_water")
