@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraTyrannotitan extends EntityPrehistoricFloraLa
 		minWidth = 0.20F;
 		maxWidth = 2.5F;
 		maxHeight = 3.5F;
-		maxHealthAgeable = 160.0D;
+		maxHealthAgeable = 100.0D;
 		STAND_ANIMATION = Animation.create(210);
 		NOISE_ANIMATION = Animation.create(50); //rumble
 		NOISE2_ANIMATION = Animation.create(40); //hiss

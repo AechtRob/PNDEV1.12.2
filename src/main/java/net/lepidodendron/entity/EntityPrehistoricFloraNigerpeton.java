@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraNigerpeton extends EntityPrehistoricFloraSwim
 		minWidth = 0.2F;
 		maxWidth = 0.9F;
 		maxHeight = 0.40F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 15.5D;
 	}
 
 	@Override

@@ -52,11 +52,11 @@ public class EntityPrehistoricFloraDeinonychus extends EntityPrehistoricFloraLan
 	public int ambientSoundTime;
 	public EntityPrehistoricFloraDeinonychus(World world) {
 		super(world);
-		setSize(1.5F, 1.5F);
+		setSize(0.5F, 1.0F);
 		minWidth = 0.20F;
-		maxWidth = 1.5F;
-		maxHeight = 1.5F;
-		maxHealthAgeable = 55.0D;
+		maxWidth = 0.5F;
+		maxHeight = 0.8F;
+		maxHealthAgeable = 20.0D;
 		STAND_ANIMATION = Animation.create(140);//alert
 		NOISE_ANIMATION = Animation.create(15);
 		PREEN_ANIMATION = Animation.create(140);

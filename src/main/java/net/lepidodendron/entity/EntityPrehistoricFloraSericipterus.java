@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraSericipterus extends EntityPrehistoricFloraLa
 		minWidth = 0.10F;
 		maxWidth = 0.85F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 5.0D;
 		ALERT_ANIMATION = Animation.create(40);
 		PREEN_ANIMATION = Animation.create(60);
 		RELAX_ANIMATION = Animation.create(114);

@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderDeinonychus extends RenderLivingBaseWithBook<EntityPrehistoricFloraDeinonychus> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deinonychus.png");
 
-    public static float getScaler() {return 1f;}
+    public static float getScaler() {return 0.57f;}
     public RenderDeinonychus(RenderManager mgr) {
         super(mgr, new ModelDeinonychus(), 0.3f);
     }

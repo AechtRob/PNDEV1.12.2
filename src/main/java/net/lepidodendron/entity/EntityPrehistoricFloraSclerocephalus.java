@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraSclerocephalus extends EntityPrehistoricFlora
 		minWidth = 0.125F;
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 13.0D;
 		LOOK_ANIMATION = Animation.create(100);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

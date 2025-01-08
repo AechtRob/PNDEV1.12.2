@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraPtychodus extends EntityPrehistoricFloraAgeab
 		minWidth = 0.1F;
 		maxWidth = 1.5F;
 		maxHeight = 1.6F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 45.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

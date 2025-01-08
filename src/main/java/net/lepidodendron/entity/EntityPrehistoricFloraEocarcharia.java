@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraEocarcharia extends EntityPrehistoricFloraLan
 		minWidth = 0.20F;
 		maxWidth = 2.5F;
 		maxHeight = 3F;
-		maxHealthAgeable = 80.0D;
+		maxHealthAgeable = 50.0D;
 		STAND_ANIMATION = Animation.create(245);
 		NOISE_ANIMATION = Animation.create(49); //rumble
 		if (FMLCommonHandler.instance().getSide().isClient()) {

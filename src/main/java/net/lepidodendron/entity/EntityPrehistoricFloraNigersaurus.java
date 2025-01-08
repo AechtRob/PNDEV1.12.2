@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 3F;
-		maxHealthAgeable = 250.0D;
+		maxHealthAgeable = 50.0D;
 		TAIL_ANIMATION = Animation.create(155);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
@@ -210,7 +210,7 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.66F;
+			speedBase = speedBase * 1.15F;
 		}
 		return speedBase;
 	}
@@ -275,8 +275,8 @@ public class EntityPrehistoricFloraNigersaurus extends EntityPrehistoricFloraLan
 	}
 
 	private boolean isGrazable(World world, BlockPos pos, EnumFacing facing) {
-		int x = 5;
-		int y = 12;
+		int x = 1;
+		int y = 1;
 		for (int xx = 0; xx < x; xx++) {
 			for (int yy = 0; yy < y; yy++) {
 				if (world.getBlockState(pos.offset(facing, xx).up(yy)).getBlock().causesSuffocation(world.getBlockState(pos.offset(facing, xx).up(yy)))) {
