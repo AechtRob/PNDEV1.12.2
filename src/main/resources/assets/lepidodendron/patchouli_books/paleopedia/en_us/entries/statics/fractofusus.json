@@ -1,0 +1,45 @@
+{
+	"name": "Fractofusus",
+	"read_by_default": true,
+	"icon": "lepidodendron:fractofusus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_fractofusus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fractofusus",
+			"title": "Fractofusus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+		},
+		{
+			"type": "multiblock",
+			"name": "F. misrai",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fractofusus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fractofusus",
+			"type": "text",
+			"text": "Fractofusus misrai comes from the Upper Ediacaran, with fossils found from Newfoundland, Canada. It is a spindled leaf-like lifeform, and could grow up to 20 cm in overall length, and possibly partook in filter feeding from the surrounding water. Unlike most other Petalonamae, Fractofusus laid flat on the seafloor, and also made use of waterborne propagules to spread to new areas and reproduce."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fractofusus",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'fractus', to mean 'broken/fractured'; and 'fusus', to mean 'spindle'. The specific name derives from the surname of Professor Misra, a now retired Indian geologist who was the first person to map out Newfoundland's Mistaken Point formation in 1967, and who also found the first fossils there, which were of Fractofusus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fractofusus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

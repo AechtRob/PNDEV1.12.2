@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:vendoconularia"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_vendoconularia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_vendoconularia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_vendoconularia"
+		}
+	}
+}

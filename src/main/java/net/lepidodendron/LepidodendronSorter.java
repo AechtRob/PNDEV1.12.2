@@ -5011,6 +5011,22 @@ public class LepidodendronSorter {
     public static final int lantianella = 8030;
     public static final int piyuania = 8031;
     public static final int qianchuania = 8032;
+    public static final int eocyathispongia = 8033;
+    public static final int fractofusus = 8034;
+    public static final int vendoconularia = 8035;
+    public static final int fedomia = 8036;
+    public static final int auroralumina = 8040;
+
+    public static final int vaveliksia = 8037;
+
+    public static final int yarnemia = 8038;
+    public static final int calyptrina = 8039;
+    public static final int obamus = 8041;
+    public static final int nilpenia = 8042;
+    public static final int finkoella = 8043;
+    public static final int helicolocellus = 8044;
+    public static final int kuibisia = 8045;
+    public static final int ernietta = 8046;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

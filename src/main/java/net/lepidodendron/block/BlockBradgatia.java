@@ -8,8 +8,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -116,7 +118,14 @@ public class BlockBradgatia extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 24; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						Biome biome = world.getBiome(blockpos1);
-						if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
+						if (blockpos1.getY() > 35 + random.nextInt(3)) {
+							continue;
+						}
+						boolean era = false;
+						if (biome instanceof BiomePrecambrian) {
+							era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+						}
+						if (!era) {
 							continue;
 						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {

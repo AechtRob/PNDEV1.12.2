@@ -1,0 +1,40 @@
+{
+	"name": "Fedomia",
+	"read_by_default": true,
+	"icon": "lepidodendron:fedomia",
+	"category": "lepidodendron:precambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_fedomia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fedomia",
+			"title": "Fedomia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Porifera(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "F. mikhaili",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:fedomia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fedomia",
+			"type": "text",
+			"text": "Fedomia mikhaili hails from the Upper Ediacaran, with fossils found from the White Sea, Russia. It is a possible sponge-like lifeform that could grow up to 10 cm in height. The generic and specific names derive from Mikhail A. Fedonkin, a well known Ediacaran paleontologist."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fedomia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

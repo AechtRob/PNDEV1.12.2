@@ -142,7 +142,21 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBeltanelliformis.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLantianella.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPiyuania.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockQianchuania.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockQianchuania.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockEocyathispongia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockFractofusus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockVendoconularia.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockFedomia.block).toString()//,
+//                ForgeRegistries.BLOCKS.getKey(BlockVaveliksia.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockYarnemia.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockCalyptrina.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockAuroralumina.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockObamus.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockNilpenia.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockFinkoella.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockHelicolocellus.block).toString(),
+//                ForgeRegistries.BLOCKS.getKey(BlockKuibisia.block).toString()
+
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
         return resLoc;

@@ -1,10 +1,12 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraTribrachidium;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 
 public class ModelTribrachidium extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer main;
@@ -88,6 +90,51 @@ public class ModelTribrachidium extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
+
+    }
+
+    @Override
+    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        this.resetToDefaultPose();
+
+        EntityPrehistoricFloraTribrachidium entity = (EntityPrehistoricFloraTribrachidium) entitylivingbaseIn;
+        if (entity.getIsMoving()) {
+            animWalking(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        }
+
+    }
+
+    public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        EntityPrehistoricFloraTribrachidium entity = (EntityPrehistoricFloraTribrachidium) entitylivingbaseIn;
+
+        int animCycle = 40;
+        double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+
+        if (tickAnim >= 0 && tickAnim < 10) {
+            xx = 0D + (((tickAnim - 0D) / 10D) * 5D);
+            yy = 0D + (((tickAnim - 0D) / 10D) * 5D);
+            zz = 0D + (((tickAnim - 0D) / 10D) * 0D);
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 5D + (((tickAnim - 10D) / 10D) * -5D);
+            yy = 5D + (((tickAnim - 10D) / 10D) * 2.5D);
+            zz = 0D + (((tickAnim - 10D) / 10D) * 0D);
+        }
+        else if (tickAnim >= 20 && tickAnim < 30) {
+            xx = 0D + (((tickAnim - 20D) / 10D) * -3D);
+            yy = 7.5D + (((tickAnim - 20D) / 10D) * -2.5D);
+            zz = 0D + (((tickAnim - 20D) / 10D) * 0D);
+        }
+        else if (tickAnim >= 30 && tickAnim < 40) {
+            xx = -3D + (((tickAnim - 30D) / 10D) * 3D);
+            yy = 5D + (((tickAnim - 30D) / 10D) * -5D);
+            zz = 0D + (((tickAnim - 30D) / 10D) * 0D);
+        }
+
+        this.setRotateAngle(main, main.rotateAngleX + (float) Math.toRadians(xx), main.rotateAngleY + (float) Math.toRadians(yy), main.rotateAngleZ + (float) Math.toRadians(zz));
 
     }
 }

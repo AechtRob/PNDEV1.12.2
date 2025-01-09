@@ -1,7 +1,7 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:otavia"}
+      {"model": "lepidodendron:otavia_1"}
     ],
     "facing=north": [
       {"model": "lepidodendron:otavia_1", "x": 90},

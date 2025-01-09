@@ -245,6 +245,20 @@ public class ModTriggers
     public static final CustomTrigger CLICK_LANTIANELLA = new CustomTrigger("pf_book_lantianella");
     public static final CustomTrigger CLICK_PIYUANIA = new CustomTrigger("pf_book_piyuania");
     public static final CustomTrigger CLICK_QIANCHUANIA = new CustomTrigger("pf_book_qianchuania");
+    public static final CustomTrigger CLICK_EOCYATHISPONGIA = new CustomTrigger("pf_book_eocyathispongia");
+    public static final CustomTrigger CLICK_FRACTOFUSUS = new CustomTrigger("pf_book_fractofusus");
+    public static final CustomTrigger CLICK_VENDOCONULARIA = new CustomTrigger("pf_book_vendoconularia");
+    public static final CustomTrigger CLICK_FEDOMIA = new CustomTrigger("pf_book_fedomia");
+    public static final CustomTrigger CLICK_VAVELISKIA = new CustomTrigger("pf_book_vaveliksia");
+    public static final CustomTrigger CLICK_YARNEMIA = new CustomTrigger("pf_book_yarnemia");
+    public static final CustomTrigger CLICK_CALYPTRINA = new CustomTrigger("pf_book_calyptrina");
+    public static final CustomTrigger CLICK_AURORALUMINA = new CustomTrigger("pf_book_auroralumina");
+    public static final CustomTrigger CLICK_OBAMUS = new CustomTrigger("pf_book_obamus");
+    public static final CustomTrigger CLICK_NILPENIA = new CustomTrigger("pf_book_nilpenia");
+    public static final CustomTrigger CLICK_FINKOELLA = new CustomTrigger("pf_book_finkoella");
+    public static final CustomTrigger CLICK_HELICOLOCELLUS = new CustomTrigger("pf_book_helicolocellus");
+    public static final CustomTrigger CLICK_KUIBISIA = new CustomTrigger("pf_book_kuibisia");
+    public static final CustomTrigger CLICK_ERNIETTA = new CustomTrigger("pf_book_ernietta");
     public static final CustomTrigger CLICK_BRACHIOPOD_MICROMITRA = new CustomTrigger("pf_book_brachiopod_micromitra");
     public static final CustomTrigger CLICK_DIOON = new CustomTrigger("pf_book_dioon");
     public static final CustomTrigger CLICK_EOGINKGOITES = new CustomTrigger("pf_book_eoginkgoites");
@@ -1976,6 +1990,20 @@ public class ModTriggers
             CLICK_LANTIANELLA,
             CLICK_PIYUANIA,
             CLICK_QIANCHUANIA,
+            CLICK_EOCYATHISPONGIA,
+            CLICK_FRACTOFUSUS,
+            CLICK_VENDOCONULARIA,
+            CLICK_FEDOMIA,
+            CLICK_VAVELISKIA,
+            CLICK_YARNEMIA,
+            CLICK_CALYPTRINA,
+            CLICK_AURORALUMINA,
+            CLICK_OBAMUS,
+            CLICK_NILPENIA,
+            CLICK_FINKOELLA,
+            CLICK_HELICOLOCELLUS,
+            CLICK_KUIBISIA,
+            CLICK_ERNIETTA,
             CLICK_BRACHIOPOD_MICROMITRA,
             CLICK_DIOON,
             CLICK_EOGINKGOITES,

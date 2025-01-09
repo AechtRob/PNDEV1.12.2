@@ -3,8 +3,10 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -109,6 +111,11 @@ public class CharniaGenerator extends WorldGenerator
 			else if (this.charnia == BlockGrypania.block) {
 				dimensionCriteria = false;
 			}
+			if ((position.getY() < 65 + rand.nextInt(3))
+					&& this.charnia == BlockGrypania.block)
+			{
+				dimensionCriteria = false;
+			}
 
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
@@ -153,41 +160,57 @@ public class CharniaGenerator extends WorldGenerator
 				dimensionCriteria = false;
 			}
 
-			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
-			)
+			if ((position.getY() < 35 + rand.nextInt(3))
 					&& this.charnia == BlockHapsidophyllas.block)
 			{
-				dimensionCriteria = true;
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
 			}
 			else if (this.charnia == BlockHapsidophyllas.block) {
 				dimensionCriteria = false;
 			}
 
-			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
-			)
+			if ((position.getY() < 35 + rand.nextInt(3))
 					&& this.charnia == BlockParviscopa.block)
 			{
-				dimensionCriteria = true;
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
 			}
 			else if (this.charnia == BlockParviscopa.block) {
 				dimensionCriteria = false;
 			}
 
-			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
-			)
+			if ((position.getY() < 35 + rand.nextInt(3))
 					&& this.charnia == BlockPrimocandelabrum1.block)
 			{
-				dimensionCriteria = true;
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
 			}
 			else if (this.charnia == BlockPrimocandelabrum1.block) {
 				dimensionCriteria = false;
 			}
 
-			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
-			)
+			if ((position.getY() < 35 + rand.nextInt(3))
 					&& this.charnia == BlockPrimocandelabrum2.block)
 			{
-				dimensionCriteria = true;
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
 			}
 			else if (this.charnia == BlockPrimocandelabrum2.block) {
 				dimensionCriteria = false;

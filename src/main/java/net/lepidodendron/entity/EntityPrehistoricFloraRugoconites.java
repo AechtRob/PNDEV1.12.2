@@ -65,6 +65,9 @@ public class EntityPrehistoricFloraRugoconites extends EntityPrehistoricFloraSli
 	}
 
 	protected float getAISpeedSlithering() {
+		if (this.rand.nextInt(5) != 0) {
+			return 0;
+		}
 		return 0.03f;
 	}
 

@@ -108,6 +108,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     SeaForests = true;
                 }
 
+                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+                ){
+                    SeaForests = true;
+                }
+
                 if (biome.getRegistryName().toString().startsWith("lepidodendron:")
                         && biome.getRegistryName().toString().indexOf("desert") > 0) {
                     Deserts = true;

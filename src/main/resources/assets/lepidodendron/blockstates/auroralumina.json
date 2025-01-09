@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:auroralumina_1"},
+        {"model": "lepidodendron:auroralumina_2"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:auroralumina_side"},
+      {"model": "lepidodendron:auroralumina_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:auroralumina_side", "y": 90},
+      {"model": "lepidodendron:auroralumina_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:auroralumina_side", "y": 180},
+      {"model": "lepidodendron:auroralumina_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:auroralumina_side", "y": 270},
+      {"model": "lepidodendron:auroralumina_side_var", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:auroralumina_1"},
+      {"model": "lepidodendron:auroralumina_2"},
+    {"model": "lepidodendron:auroralumina_1", "y": 90},
+    {"model": "lepidodendron:auroralumina_2", "y": 90},
+    {"model": "lepidodendron:auroralumina_1", "y": 180},
+    {"model": "lepidodendron:auroralumina_2", "y": 180},
+    {"model": "lepidodendron:auroralumina_1", "y": 270},
+    {"model": "lepidodendron:auroralumina_2", "y": 270}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:auroralumina_1", "x": 180},
+      {"model": "lepidodendron:auroralumina_2", "x": 180},
+      {"model": "lepidodendron:auroralumina_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:auroralumina_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:auroralumina_1", "x": 180, "y": 180},
+      {"model": "lepidodendron:auroralumina_2", "x": 180, "y": 180},
+      {"model": "lepidodendron:auroralumina_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:auroralumina_2", "x": 180, "y": 270}
+    ]
+  }
+}

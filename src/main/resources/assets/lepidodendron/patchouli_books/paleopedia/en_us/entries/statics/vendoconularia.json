@@ -1,0 +1,40 @@
+{
+	"name": "Vendoconularia",
+	"read_by_default": true,
+	"icon": "lepidodendron:vendoconularia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_vendoconularia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vendoconularia",
+			"title": "Vendoconularia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis"
+		},
+		{
+			"type": "multiblock",
+			"name": "V. triradiata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:vendoconularia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vendoconularia",
+			"type": "text",
+			"text": "Vendoconularia triradiata hails from the Upper Ediacaran, with fossils found from the White Sea, Russia. They are Conularrid-like lifeforms that could grow up to 5.5 cm in height. It is believed that the cone would have housed a tentacled organism, and it is also proposed that Vendoconularia represents the earliest Conularrid, but this has been long debated."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vendoconularia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

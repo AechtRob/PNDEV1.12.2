@@ -103,7 +103,7 @@ public class BlockAusia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		minWaterDepth = 2;
-		maxWaterDepth = 15;
+		maxWaterDepth = 35;
 		startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < 18; i++) {

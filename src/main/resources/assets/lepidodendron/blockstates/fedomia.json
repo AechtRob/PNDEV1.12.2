@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:fedomia"},
+        {"model": "lepidodendron:fedomia_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:fedomia_side", "y": 270}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:fedomia_side"}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:fedomia_side", "y": 90}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:fedomia_side", "y": 180}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:fedomia"},
+      {"model": "lepidodendron:fedomia_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:fedomia", "x": 180},
+      {"model": "lepidodendron:fedomia_var", "x": 180}
+    ]
+  }
+}

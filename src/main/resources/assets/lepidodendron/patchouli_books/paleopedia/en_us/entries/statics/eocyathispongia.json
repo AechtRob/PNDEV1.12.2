@@ -1,0 +1,45 @@
+{
+	"name": "Eocyathispongia",
+	"read_by_default": true,
+	"icon": "lepidodendron:eocyathispongia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_eocyathispongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eocyathispongia",
+			"title": "Eocyathispongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Porifera(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "E. qiania",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:eocyathispongia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocyathispongia",
+			"type": "text",
+			"text": "Eocyathispongia qiania comes from the middle Ediacaran, with fossils found from the Doushantuo Formation, South China. In real life Eocyathispongia is millimetric in size and comprised of 3 tubes (1 for the filtering water out, 2 for filtering water in). Recent interpretations assign it as a possible 'proto-sponge', from which the phylum Porifera may have arisen."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocyathispongia",
+			"type": "text",
+			"text": "Its generic name derives from the greek words 'eo', to mean 'dawn'; 'cyathifer', to mean 'cup-shaped' and 'spongia', in relation to the genus being assesed as a sponge."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eocyathispongia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
