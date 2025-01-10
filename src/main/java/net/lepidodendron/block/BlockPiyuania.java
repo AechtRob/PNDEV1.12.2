@@ -76,7 +76,7 @@ public class BlockPiyuania extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:piyuania", BlockPiyuania.block);
-		OreDictionary.registerOre("pndietSponge", BlockPiyuania.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockLantianella.block);
 	}
 
 

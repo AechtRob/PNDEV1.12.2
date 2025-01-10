@@ -1,0 +1,40 @@
+{
+	"name": "Yarnemia",
+	"read_by_default": true,
+	"icon": "lepidodendron:yarnemia",
+	"category": "lepidodendron:precambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_yarnemia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yarnemia",
+			"title": "Yarnemia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Chordata$(br)>Tunicata(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "Y. ascidiformis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:yarnemia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yarnemia",
+			"type": "text",
+			"text": "Yarnemia hails from the Upper Ediacaran, with fossils found in the White Sea, Russia. It is bag-like lifeform with possible affinites with tunicates, and could grow up to 10 cm in overall length. The generic name derives from the place name 'Yarnema', near to where its fossils were found. The specific name derives from the class name 'Ascidiacea'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yarnemia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

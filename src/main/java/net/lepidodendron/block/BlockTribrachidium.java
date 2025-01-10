@@ -53,7 +53,7 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:tribrachidium")
 	public static final Block block = null;
 	public BlockTribrachidium(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.tribrachidium);
+		super(instance, LepidodendronSorter.vaveliksia);
 	}
 
 	@Override
@@ -99,6 +99,8 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 			if (BlockArkarua.isPrecambrianUpdated()) {
 				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
 						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
 						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
 					dimensionCriteria = true;
 				}
@@ -116,10 +118,10 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		minWaterDepth = 2;
-		maxWaterDepth = 15;
+		maxWaterDepth = 80;
 		startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 28; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -128,6 +130,13 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 12; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (!(world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+								|| world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills"))) {
+							continue;
+						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;
@@ -237,7 +246,8 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_TRIBRACHIDIUM;
+
+			return ModTriggers.CLICK_VAVELISKIA;
 		}
 			
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
@@ -514,7 +524,7 @@ public class BlockTribrachidium extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Tri-lateral filter feeder");
+				tooltip.add("Type: Undetermined sessile organism");
 				tooltip.add("Periods: Neoproterozoic (Ediacaran)");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);

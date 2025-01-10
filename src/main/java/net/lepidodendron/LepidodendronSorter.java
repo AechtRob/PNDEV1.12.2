@@ -5015,13 +5015,12 @@ public class LepidodendronSorter {
     public static final int fractofusus = 8034;
     public static final int vendoconularia = 8035;
     public static final int fedomia = 8036;
-    public static final int auroralumina = 8040;
-
     public static final int vaveliksia = 8037;
-
     public static final int yarnemia = 8038;
     public static final int calyptrina = 8039;
+    public static final int auroralumina = 8040;
     public static final int obamus = 8041;
+
     public static final int nilpenia = 8042;
     public static final int finkoella = 8043;
     public static final int helicolocellus = 8044;

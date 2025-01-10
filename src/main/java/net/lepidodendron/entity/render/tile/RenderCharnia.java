@@ -40,6 +40,14 @@ public class RenderCharnia extends TileEntitySpecialRenderer<BlockCharnia.TileEn
         GlStateManager.translate(x + 0.5, y + 2.4, z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+        //----Start PP Page adjustment
+        StackTraceElement[] elements = new Throwable().getStackTrace();
+        String callerClass = elements[5].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            GlStateManager.scale(0.7, 0.7, 0.7);
+            GlStateManager.translate(0,0.9,0);
+        }
+        //----End PP Page adjustment
         modelCharnia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
