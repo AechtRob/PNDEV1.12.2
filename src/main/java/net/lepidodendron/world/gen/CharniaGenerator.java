@@ -71,9 +71,11 @@ public class CharniaGenerator extends WorldGenerator
 			if (BlockArkarua.isPrecambrianUpdated()) {
 				if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
 						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
 						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
 						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
+						|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
 					dimensionCriteria = true;
 				}
 				else if (dimID == LepidodendronConfig.dimPrecambrian) {
@@ -91,16 +93,38 @@ public class CharniaGenerator extends WorldGenerator
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_beach")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+					//|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacarian_shallow_reef")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacarian_sparse_sea")
 			)
 					&& this.charnia == BlockGrypania.block)
 			{
 				dimensionCriteria = true;
 			}
+			else if (this.charnia == BlockGrypania.block) {
+				dimensionCriteria = false;
+			}
+			if ((position.getY() < 65 + rand.nextInt(3))
+					&& this.charnia == BlockGrypania.block)
+			{
+				dimensionCriteria = false;
+			}
 
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacarian_sparse_sea")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
 			)
 					&& this.charnia == BlockTuanshanzia.block)
 			{
@@ -109,6 +133,144 @@ public class CharniaGenerator extends WorldGenerator
 			else if (this.charnia == BlockTuanshanzia.block) {
 				dimensionCriteria = false;
 			}
+
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+			)
+					&& this.charnia == BlockCharnia.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockCharnia.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+			)
+					&& this.charnia == BlockCharniodiscus.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockCharniodiscus.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockHapsidophyllas.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockHapsidophyllas.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockParviscopa.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockParviscopa.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockPrimocandelabrum1.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockPrimocandelabrum1.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockPrimocandelabrum2.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockPrimocandelabrum2.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+			)
+					&& this.charnia == BlockBomakellia.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockBomakellia.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+			)
+					&& this.charnia == BlockArborea.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockArborea.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+			)
+					&& this.charnia == BlockPambikalbae.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockPambikalbae.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+			)
+					&& this.charnia == BlockCoronacollina.block)
+			{
+				dimensionCriteria = true;
+			}
+			else if (this.charnia == BlockCoronacollina.block) {
+				dimensionCriteria = false;
+			}
+
+//			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+//					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+//					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+//					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+//					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+//			)
+//					&& this.charnia == BlockRangea.block)
+//			{
+//				dimensionCriteria = true;
+//			}
+//			else if (this.charnia == BlockRangea.block) {
+//				dimensionCriteria = false;
+//			}
 
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
@@ -174,11 +336,13 @@ public class CharniaGenerator extends WorldGenerator
 					|| this.charnia == BlockBradgatia.block
 					|| this.charnia == BlockCharnia.block
 					|| this.charnia == BlockCharniodiscus.block
+					//|| this.charnia == BlockFrondophyllas.block
+					//|| this.charnia == BlockGigarimaneta.block
 					|| this.charnia == BlockHapsidophyllas.block
+					//|| this.charnia == BlockHylaecullulus.block
 					|| this.charnia == BlockParviscopa.block
 					|| this.charnia == BlockPrimocandelabrum1.block
 					|| this.charnia == BlockPrimocandelabrum2.block
-					|| this.charnia == BlockPteridinium.block
 					)
 				)
 			{
@@ -188,42 +352,22 @@ public class CharniaGenerator extends WorldGenerator
 			else if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
 					|| yTop < 65)
 					&& (this.charnia == BlockPambikalbae.block
-					|| this.charnia == BlockBradgatia.block
+					//|| this.charnia == BlockRangea.block
 					|| this.charnia == BlockCharnia.block
 					|| this.charnia == BlockArborea.block
-					|| this.charnia == BlockCharniodiscus.block
-					|| this.charnia == BlockHapsidophyllas.block
-					|| this.charnia == BlockParviscopa.block
-					|| this.charnia == BlockPrimocandelabrum1.block
-					|| this.charnia == BlockPrimocandelabrum2.block
+					|| this.charnia == BlockBomakellia.block
 					|| this.charnia == BlockPteridinium.block
+					|| this.charnia == BlockCoronacollina.block
 					)
 				)
 			{
 				multiplier = (double)18.0 * edicarandensity;
 			}
-			//Shallow spawns:
-			else if (((!worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest"))
-					&& yTop > 95)
-					&& (this.charnia == BlockFunisia.block
-					|| this.charnia == BlockCoronacollina.block
-					|| this.charnia == BlockBomakellia.block
-					|| this.charnia == BlockPambikalbae.block
-					)
-				)
+			else if (this.charnia == BlockPteridinium.block)
 			{
-				multiplier = (double)22.0 * edicarandensity;
+				multiplier = (double)10.0 * edicarandensity;
 			}
-			else if (((!worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest"))
-					&& yTop > 75)
-					&& (this.charnia == BlockFunisia.block
-					|| this.charnia == BlockCoronacollina.block
-					|| this.charnia == BlockPambikalbae.block
-					)
-				)
-			{
-				multiplier = (double)12.0 * edicarandensity;
-			}
+
 			//Some to be a little deeper
 			else if (BlockArkarua.isPrecambrianUpdated()
 					&& yTop > 65
@@ -234,29 +378,6 @@ public class CharniaGenerator extends WorldGenerator
 				)
 			{
 				multiplier = 4;
-			}
-			//Medium depth but not more common:
-			else if (BlockArkarua.isPrecambrianUpdated()
-					&& yTop > 65
-					&& yTop < 110
-					&& (this.charnia == BlockArborea.block
-					|| this.charnia == BlockCharnia.block
-					|| this.charnia == BlockBradgatia.block
-				)
-				)
-			{
-				multiplier = 1;
-				if (rand.nextInt(8) != 0) {
-					multiplier = 0;
-				}
-			}
-			else {
-				if (BlockArkarua.isPrecambrianUpdated()
-					&& worldIn.getBiome(position) instanceof BiomePrecambrian) {
-					if (((BiomePrecambrian)worldIn.getBiome(position)).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran) {
-						return true;
-					}
-				}
 			}
 		}
 
@@ -271,6 +392,13 @@ public class CharniaGenerator extends WorldGenerator
 				&& this.charnia == BlockGrypania.block)
 		{
 			multiplier = 128;
+		}
+
+		if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")
+		)
+				&& this.charnia == BlockGrypania.block)
+		{
+			multiplier = 56;
 		}
 
 		if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")

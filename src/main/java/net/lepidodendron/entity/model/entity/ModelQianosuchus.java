@@ -300,34 +300,113 @@ public class ModelQianosuchus extends ModelBasePalaeopedia {
         this.main.render(f5);
     }
 
+    public void renderStaticWall(float f) {
+        this.setRotateAngle(neck2, 0.15F, 0.05F, 0.05F);
+        this.setRotateAngle(head, 0.15F, 0.1F, 0.05F);
+        this.setRotateAngle(jaw, 0.3F, 0.0F, 0.0F);
+        this.neck.offsetZ = 0.02F;
+        this.neck.offsetY = -0.01F;
+        this.neck.offsetX = -0.0F;
+        this.neck.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(main, 0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.05F, 0.0F);
+        this.setRotateAngle(neck, 0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(neck2, -0.05F, 0.05F, 0.0F);
+        this.setRotateAngle(head, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(jaw, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, -0.1F, 0.05F, 0.0F);
+        this.setRotateAngle(tail3, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.15F, 0.0F);
+        this.setRotateAngle(tail5, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg2, -0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, -0.05F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, -0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg2, -0.85F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 0.9F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, -0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 0.65F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, 0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.7F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, -0.5F, 0.0F, 0.0F);
+        this.main.offsetY = -0.11F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(main, 0.1F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(neck, 0.1F, 0.2F, 0.0F);
+        this.setRotateAngle(neck2, -0.1F, 0.1F, 0.0F);
+        this.setRotateAngle(head, -0.2F, 0.2F, 0.0F);
+        this.setRotateAngle(jaw, 0.4F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail2, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail3, 0.05F, 0.2F, 0.0F);
+        this.setRotateAngle(tail4, 0.05F, 0.3F, 0.0F);
+        this.setRotateAngle(tail5, 0.05F, 0.4F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.9F, 0.0F, -0.8F);
+        this.setRotateAngle(frontLeftLeg2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, 1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 1.0F, 0.0F, 1.0F);
+        this.setRotateAngle(frontRightLeg2, 0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 1.8F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, 0.7F, -0.35F, -0.4F);
+        this.setRotateAngle(backLeftLeg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.8F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, 1.0F, 0.3F, 0.3F);
+        this.setRotateAngle(backRightLeg2, 0.5F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, 0.9F, 0.0F, 0.0F);
+        this.main.offsetY = -0.11F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+
     @Override
     public void renderStaticBook(float f) {
         //Rotations, positions and sizing:
-        this.main.offsetY = -2.0F;
-        this.main.offsetX = -1.338F;
-        this.main.rotateAngleY = (float)Math.toRadians(200);
-        this.main.rotateAngleX = (float)Math.toRadians(8);
-        this.main.rotateAngleZ = (float)Math.toRadians(-8);
+        this.main.offsetY = -0.30F;
+        this.main.offsetX = 1.2F;
+        this.main.rotateAngleY = (float)Math.toRadians(130);
+        this.main.rotateAngleX = (float)Math.toRadians(0);
+        this.main.rotateAngleZ = (float)Math.toRadians(0);
         this.main.scaleChildren = true;
-        float scaler = 1.63F;
+        float scaler = 2.0F;
         this.main.setScale(scaler, scaler, scaler);
         //Start of pose:
-
+        this.setRotateAngle(main, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontLeftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(frontRightLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backLeftLeg3, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg2, 0.0F, 0.0F, 0.0F);
+        this.setRotateAngle(backRightLeg3, 0.0F, 0.0F, 0.0F);
         //End of pose, now render the model:
         this.main.render(f);
         //Reset rotations, positions and sizing:
         this.main.setScale(1.0F, 1.0F, 1.0F);
         this.main.scaleChildren = false;
-        resetToDefaultPose();
-
-    }
-
-    public void renderStaticFloor(float f) {
-
-        resetToDefaultPose();
-    }
-    public void renderStaticWall(float f) {
-
         resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
@@ -411,10 +490,10 @@ public class ModelQianosuchus extends ModelBasePalaeopedia {
             animAttack(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
-            animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+            animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.MAKE_NEST_ANIMATION) {
-            animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+            animNest(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
         else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
             animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());

@@ -1,0 +1,40 @@
+{
+	"name": "Piyuania",
+	"read_by_default": true,
+	"icon": "lepidodendron:piyuania",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_piyuania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_piyuania",
+			"title": "Piyuania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidarian(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "P. cyathiformis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:piyuania",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_piyuania",
+			"type": "text",
+			"text": "Piyuania cyathiformis comes from the Lower Ediacaran, with fossils found from Lantian Formation, South China. It is a cup-shaped lifeform, and could grow up to around 5 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the placename 'Piyuan', near to were the fossils were found. The specific name derives from the Latin word 'cyathus', to mean 'cup/ladle'; and 'formis', to mean 'shape'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_piyuania",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -164,7 +164,7 @@ public class BlockCrumillospongia extends ElementsLepidodendronMod.ModElement {
 		if ((dimID != LepidodendronConfig.dimCambrian)) {
 			dimWeight = 2;
 		}
-		int minWaterDepth = 1 * dimWeight;
+		int minWaterDepth = 1;
 		int maxWaterDepth = 4 * dimWeight;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX + 16, 0, chunkZ + 16)) - maxWaterDepth;
 

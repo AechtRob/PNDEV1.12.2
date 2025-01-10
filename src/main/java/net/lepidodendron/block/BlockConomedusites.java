@@ -119,23 +119,19 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+			//if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
 				biomeCriteria = true;
-			}
+			//}
 		}
 
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimPrecambrian)
-		) {
-			multiplier = 5;
-		}
-		int dimWeight = 1;
+		int multiplier = 3;
 
-		int minWaterDepth = 10 * dimWeight;
-		int maxWaterDepth = 50 * dimWeight;
+
+		int minWaterDepth = 10;
+		int maxWaterDepth = 150;
 		int startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < (12 * multiplier); i++) {
@@ -147,6 +143,9 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 40; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (!world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
+							continue;
+						}
 						if (blockpos1.getY() < Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))
 							&& (Functions.isWater(world, blockpos1))
 							&& !world.isAirBlock(blockpos1.north())

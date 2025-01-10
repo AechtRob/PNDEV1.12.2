@@ -21,7 +21,7 @@
 		},
 		{
 			"type": "text",
-			"text": "When enchanted, the Bone Wand can rejuvenate plant fossils simply by dropping the fossil sapling on the ground, or placing it in an item frame, and right clicking them with the Wand in hand. Similarly, once a portal frame of the appropriate material is constructed (in the same shape as a Nether portal), simply right clicking it with the enchanted wand will open the portal"
+			"text": "Once a portal frame of the appropriate material is constructed (in the same shape as a Nether portal), right clicking it with the enchanted wand will open the portal"
 		}
 	]
 }

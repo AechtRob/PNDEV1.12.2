@@ -89,6 +89,10 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 					public boolean generate(World world, Random random, BlockPos pos) {
 						for (int i = 0; i < 14; ++i) {
 							BlockPos blockpos1 = pos.add(random.nextInt(6) - random.nextInt(6), 0, random.nextInt(6) - random.nextInt(6));
+							if (blockpos1.getY() > 35 + random.nextInt(3)) {
+								continue;
+							}
+
 							//BlockPos blockpos2 = blockpos1.down();
 							//int j = random.nextInt(3) + 1;
 							//j = Math.min(3, j);

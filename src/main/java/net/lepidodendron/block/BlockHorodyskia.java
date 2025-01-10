@@ -106,6 +106,9 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
 					dimensionCriteria = true;
 				}
+				else if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+					dimensionCriteria = true;
+				}
 				else {
 					dimensionCriteria = false;
 				}
@@ -132,6 +135,9 @@ public class BlockHorodyskia extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 12; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (random.nextInt(3) == 0 && world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+							continue;
+						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;

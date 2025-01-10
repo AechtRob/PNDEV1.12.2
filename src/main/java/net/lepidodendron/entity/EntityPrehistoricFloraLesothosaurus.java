@@ -123,7 +123,7 @@ public class EntityPrehistoricFloraLesothosaurus extends EntityPrehistoricFloraL
 	}
 
 	public float getAISpeedLand() {
-		float speedBase = 0.38F;
+		float speedBase = 0.5F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

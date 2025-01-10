@@ -92,7 +92,14 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
-		for (int i = 0; i < (int) 24; i++) {
+		double multiplier = 1;
+		if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+				|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+		) {
+			multiplier = 4;
+		}
+
+		for (int i = 0; i < (int) 24 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			BlockPos spawnPos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world);

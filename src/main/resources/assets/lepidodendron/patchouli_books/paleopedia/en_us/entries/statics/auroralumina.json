@@ -1,0 +1,45 @@
+{
+	"name": "Auroralumina",
+	"read_by_default": true,
+	"icon": "lepidodendron:auroralumina",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_auroralumina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_auroralumina",
+			"title": "Auroralumina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Medusozoa"
+		},
+		{
+			"type": "multiblock",
+			"name": "A. attenboroughii",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:auroralumina",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_auroralumina",
+			"type": "text",
+			"text": "Auroralumina attenboroughii comes from the Upper Ediacaran, with fossils found from the Charnwood Forest, UK. It is not only currently the earliest known predator on Earth, but also the oldest-crown group Cnidarian, and could grow up to 20 cm in height."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_auroralumina",
+			"type": "text",
+			"text": "The generic name derives from the Latin words 'Aurora', to mean 'dawn'; and 'lumina', to mean 'light'. The specific name derives from the Latinised surname of Sir David Attenborough, who went to school within the region the fossil was found in."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_auroralumina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 		minWidth = 0.20F;
 		maxWidth = 1.5F;
 		maxHeight = 2.5F;
-		maxHealthAgeable = 60.0D;
+		maxHealthAgeable = 50.0D;
 		IDLE1 = Animation.create(160);
 		IDLE2 = Animation.create(30);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -472,15 +472,15 @@ public class EntityPrehistoricFloraMuttaburrasaurus extends EntityPrehistoricFlo
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.CAMPTOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.MUTTABURRASAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.CAMPTOSAURUS_LOOT;
+		return LepidodendronMod.MUTTABURRASAURUS_LOOT;
 	}
 
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {
-		return ModTriggers.CLICK_CAMPTOSAURUS;
+		return ModTriggers.CLICK_MUTTABURRASAURUS;
 	}
 
 

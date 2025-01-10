@@ -1,0 +1,40 @@
+{
+	"name": "Qianchuania",
+	"read_by_default": true,
+	"icon": "lepidodendron:qianchuania",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_qianchuania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_qianchuania",
+			"title": "Qianchuania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Lower Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidarian(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "Q. fusiformis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:qianchuania",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_qianchuania",
+			"type": "text",
+			"text": "Qianchuania fusiformis comes from the Lower Ediacaran, with fossils found from Lantian Formation, South China. It is a spindle-shaped lifeform, and could grow up to around 6 cm in height, and possibly partook in filter feeding from the surrounding water. The generic name derives from the place name 'Qianchuan', near to were the fossils were found. The specific name derives directly from the Latin word 'fusiformis', to mean 'spindle'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_qianchuania",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

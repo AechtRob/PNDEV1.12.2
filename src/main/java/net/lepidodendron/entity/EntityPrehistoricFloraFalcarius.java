@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraFalcarius extends EntityPrehistoricFloraLandC
 		minWidth = 0.20F;
 		maxWidth = 0.95F;
 		maxHeight = 0.95F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 35.0D;
 		STAND_ANIMATION = Animation.create(50);
 		LOOK_ANIMATION = Animation.create(60);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
@@ -105,7 +105,7 @@ public class EntityPrehistoricFloraFalcarius extends EntityPrehistoricFloraLandC
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "Jurassic";}
+	public static String getPeriod() {return "Early Cretaceous";}
 
 	@Override
 	public int getEatLength() {

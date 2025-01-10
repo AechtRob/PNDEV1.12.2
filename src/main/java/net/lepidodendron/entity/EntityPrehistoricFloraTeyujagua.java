@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraTeyujagua extends EntityPrehistoricFloraLandB
 		minWidth = 0.18F;
 		maxWidth = 0.6F;
 		maxHeight = 0.32F;
-		maxHealthAgeable = 14.0D;
+		maxHealthAgeable = 13.0D;
 		STAND_ANIMATION = Animation.create(395);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

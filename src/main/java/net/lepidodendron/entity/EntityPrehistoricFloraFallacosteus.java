@@ -218,7 +218,7 @@ public class EntityPrehistoricFloraFallacosteus extends EntityPrehistoricFloraAg
 	public static double upperbacklineoffsetperpendiular(@Nullable String variant) {
 		return -0.04F;
 	}
-	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 1;}
+	public static double lowerfrontverticallinedepth(@Nullable String variant) {return 0.35;}
 	public static double lowerbackverticallinedepth(@Nullable String variant) {
 		return 0;
 	}
@@ -226,13 +226,13 @@ public class EntityPrehistoricFloraFallacosteus extends EntityPrehistoricFloraAg
 		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular(@Nullable String variant) {
-		return -0F;
+		return 0.0F;
 	}
 	public static double lowerbacklineoffset(@Nullable String variant) {
 		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular(@Nullable String variant) {
-		return 0F;
+		return -0.0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay(@Nullable String variant) {
@@ -245,6 +245,6 @@ public class EntityPrehistoricFloraFallacosteus extends EntityPrehistoricFloraAg
 	public static float getScaler(@Nullable String variant) {
 		return RenderFallacosteus.getScaler();
 	}
-
+	public static float widthSupport(@Nullable String variant) {return 0.032F;}
 }
 

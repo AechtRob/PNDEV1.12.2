@@ -106,11 +106,12 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 			if ((!matchBiome(biome, LepidodendronConfigPlants.genAlgalFrondOverrideBiomes)) && !
 					(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
-							//|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacarian_sparse_sea")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+							|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
 					)
 			) {
 				biomeCriteria = false;
@@ -121,6 +122,14 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
+		if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+			multiplier = 2;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+		) {
+			multiplier = 3;
+		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
@@ -482,7 +491,7 @@ public class BlockTuanshanzia extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine algae-like organism");
-				tooltip.add("Periods: Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) [- Neoproterozoic (Tonian - Cryogenian - Ediacaran)]");
+				tooltip.add("Periods: Mesoproterozoic (Calymmian - Ectasian - Stenian) [- Neoproterozoic (Tonian - Cryogenian - Ediacaran)]");
 				tooltip.add("Propagation: water");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

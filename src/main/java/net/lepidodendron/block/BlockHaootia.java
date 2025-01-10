@@ -8,9 +8,11 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.CustomTrigger;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -34,6 +36,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenReed;
@@ -79,7 +82,6 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("staticdnaPNlepidodendron:haootia", BlockHaootia.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		int weight = LepidodendronConfigPlants.weightEdiacaran;
@@ -99,18 +101,7 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (BlockArkarua.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
-					dimensionCriteria = true;
-				}
-				else {
-					dimensionCriteria = false;
-				}
-			}
-			else {
-				if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
-					dimensionCriteria = true;
-					multiplier = 64;
-				}
+				dimensionCriteria = true;
 			}
 		}
 		if (!dimensionCriteria)
@@ -128,6 +119,17 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 12; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
+						if (blockpos1.getY() > 35 + random.nextInt(3)) {
+							continue;
+						}
+						Biome biome = world.getBiome(blockpos1);
+						boolean era = false;
+						if (biome instanceof BiomePrecambrian) {
+							era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+						}
+						if (!era) {
+							continue;
+						}
 						if (world.getBlockState(blockpos1).getBlock() == Blocks.WATER) {
 							boolean waterDepthCheckMax = false;
 							boolean waterDepthCheckMin = true;

@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraSpinophorosaurus extends EntityPrehistoricFlo
 		minWidth = 0.1F;
 		maxWidth = 2.95F;
 		maxHeight = 4.5F;
-		maxHealthAgeable = 250.0D;
+		maxHealthAgeable = 100.0D;
 		TAIL_ANIMATION = Animation.create(210);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

@@ -1,0 +1,40 @@
+{
+	"name": "Huainan Mat",
+	"read_by_default": true,
+	"icon": "lepidodendron:huainan_mat",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_huainan_mat",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_huainan_mat",
+			"title": "Huainan Mat",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Tonian)$(br2)$(l)Habitat:$() Marine$(br2)>Eukaryota"
+		},
+		{
+			"type": "multiblock",
+			"name": "Huainan Mat",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:huainan_mat",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_huainan_mat",
+			"type": "text",
+			"text": "Huainan Mat is a freely-represented block based on fossils from the Upper Tonian, found in the Liulaobei Formation, North China. It is based on the 'shelly' Huainan Biota, Sinosabellidites, Pararenicola and Protoarenicola, all of which are several mm in size."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_huainan_mat",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

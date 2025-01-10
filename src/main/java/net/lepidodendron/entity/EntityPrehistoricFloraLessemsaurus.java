@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		minWidth = 0.18F;
 		maxWidth = 1.55F;
 		maxHeight = 2.4F;
-		maxHealthAgeable = 100.0D;
+		maxHealthAgeable = 50.0D;
 		NOISE_ANIMATION = Animation.create(35);
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

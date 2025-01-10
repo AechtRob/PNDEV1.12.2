@@ -38,10 +38,12 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -93,12 +95,60 @@ public class BlockSeaPenYellow extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
+		boolean biomeCriteria = false;
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		if (!matchBiome(biome, LepidodendronConfigPlants.genAnemoneBlacklistBiomes)) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.VOID))
+				biomeCriteria = false;
+		}
+		if (matchBiome(biome, LepidodendronConfigPlants.genAnemoneOverrideBiomes))
+			biomeCriteria = true;
+
+		if ((dimID == LepidodendronConfig.dimPrecambrian)
+		) {
+			biomeCriteria = false;
+		}
+
+		if (!biomeCriteria)
+			return;
+
 		for (int i = 0; i < (int) 12; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			(new CharniaGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
+	}
+
+	public static boolean matchBiome(Biome biome, String[] biomesList) {
+
+		//String regName = biome.getRegistryName().toString();
+
+		String[] var2 = biomesList;
+		int var3 = biomesList.length;
+
+		for(int var4 = 0; var4 < var3; ++var4) {
+			String checkBiome = var2[var4];
+			if (!checkBiome.contains(":")) {
+				//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
+				if (checkBiome.equalsIgnoreCase(
+						biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
+				)) {
+					return true;
+				}
+			}
+			if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable, IAdvancementGranter {

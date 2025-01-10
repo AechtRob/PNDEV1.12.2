@@ -242,14 +242,14 @@ public class ModelPhacops extends ModelBasePalaeopedia {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Body.render(f5 * 0.25F);
+        this.Body.render(f5);
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Body, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body2, 0.0F, 0.05F, 0.0F);
         this.setRotateAngle(Body3, 0.0F, 0.1F, 0.0F);
         this.setRotateAngle(Body4, 0.0F, 0.1F, 0.0F);
-        this.Body.offsetY = 0.365F;
+        this.Body.offsetY = 0.04F;
         this.Body.render(0.01F);
         resetToDefaultPose();
     }
@@ -287,7 +287,7 @@ public class ModelPhacops extends ModelBasePalaeopedia {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Body.offsetY = 1.1F;
+        this.Body.offsetY = 0.0F;
 
         AdvancedModelRenderer[] legsL = {this.LegL, this.LegL2, this.LegL3, this.LegL4, this.LegL5, this.LegL6, this.LegL7};
         AdvancedModelRenderer[] legsR = {this.LegR, this.LegR2, this.LegR3, this.LegR4, this.LegR5, this.LegR6, this.LegR7};

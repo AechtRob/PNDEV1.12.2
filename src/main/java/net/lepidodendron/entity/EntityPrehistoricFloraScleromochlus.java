@@ -183,7 +183,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 
 	@Override
 	public int getAdultAge() {
-		return 1;
+		return -1;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {

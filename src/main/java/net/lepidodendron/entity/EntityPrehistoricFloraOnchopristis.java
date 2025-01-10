@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraOnchopristis extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.9F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 25.0D;
+		maxHealthAgeable = 15.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraOnchopristis extends EntityPrehistoricFloraAg
 
 	@Override
 	public int getEggType(@Nullable String variantIn) {
-		return 21; //dumbbell type
+		return 21; //cross type
 	}
 
 	@Override

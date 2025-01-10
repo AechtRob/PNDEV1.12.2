@@ -21,8 +21,14 @@ public class EntityLists {
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimPaleoproterozoicMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimMesoproterozoicMobsPF);
                 MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimCryogenianMobsPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimNeoproterozoicMobsPF);
-                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimTonianMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranSparseSeaMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranTrenchMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranExtremeHillsMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranStromatolitePavementMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranFrondoseMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranShallowSeaMobsPF);
+                MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranShallowReefMobsPF);
                 return MobString;
 
             case 1:
@@ -235,19 +241,50 @@ public class EntityLists {
                         MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimCryogenianMobsPF);
                     }
                 }
+                else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:tonian_sea")) {
+                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                        MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimTonianMobsPF);
+                    }
+                }
                 else {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                         MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimNeoproterozoicMobsPF);
                     }
                 }
             }
-            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
-                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranMobsPF);
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranShallowSeaMobsPF);
+                }
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranShallowReefMobsPF);
+                }
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_stromatolite_pavement")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranStromatolitePavementMobsPF);
+                }
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_sparse_sea")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranSparseSeaMobsPF);
+                }
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranTrenchMobsPF);
+                }
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranExtremeHillsMobsPF);
+                }
+            }
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, SpawnerConfigsPrecambrian.dimEdiacaranFrondoseMobsPF);
                 }
             }
         }

@@ -260,16 +260,16 @@ public class EntityPrehistoricFloraTropidosuchus extends EntityPrehistoricFloraL
 				&& !this.isReallyInWater()
 				&&
 				(
-						(this.world.getBlockState(entityPos.north(2).down()).getMaterial() == Material.WATER
+						(this.world.getBlockState(entityPos.north().down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.NORTH))
 
-								|| (this.world.getBlockState(entityPos.south(2).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.south().down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.SOUTH))
 
-								|| (this.world.getBlockState(entityPos.east(2).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.east().down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.EAST))
 
-								|| (this.world.getBlockState(entityPos.west(2).down()).getMaterial() == Material.WATER
+								|| (this.world.getBlockState(entityPos.west().down()).getMaterial() == Material.WATER
 								&& isDrinkable(this.world, entityPos, EnumFacing.WEST))
 				)
 		);

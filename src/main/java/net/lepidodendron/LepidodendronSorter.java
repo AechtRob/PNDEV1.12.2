@@ -5000,6 +5000,33 @@ public class LepidodendronSorter {
     public static final int doyleales_door_item = 8020;
     public static final int bone_worm = 8021;
     public static final int brachiospongia = 8022;
+    public static final int choia = 8023;
+    public static final int palaeodiphasia = 8024;
+    public static final int brachiopod_micromitra = 8025;
+    public static final int girvanella = 8026;
+    public static final int eukaryotic_mat = 8027;
+    public static final int huainan_mat = 8028;
+    public static final int otavia = 8029;
+    public static final int beltanelliformis = 8029;
+    public static final int lantianella = 8030;
+    public static final int piyuania = 8031;
+    public static final int qianchuania = 8032;
+    public static final int eocyathispongia = 8033;
+    public static final int fractofusus = 8034;
+    public static final int vendoconularia = 8035;
+    public static final int fedomia = 8036;
+    public static final int auroralumina = 8040;
+
+    public static final int vaveliksia = 8037;
+
+    public static final int yarnemia = 8038;
+    public static final int calyptrina = 8039;
+    public static final int obamus = 8041;
+    public static final int nilpenia = 8042;
+    public static final int finkoella = 8043;
+    public static final int helicolocellus = 8044;
+    public static final int kuibisia = 8045;
+    public static final int ernietta = 8046;
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;
@@ -5291,6 +5318,7 @@ public class LepidodendronSorter {
     public static final int shell_tropaeum = 5262;
     public static final int eggs_dimitobelus = 5263;
     public static final int eggs_tietasaura = 5264;
+    public static final int discoserra_raw = 5265;
 
 
 

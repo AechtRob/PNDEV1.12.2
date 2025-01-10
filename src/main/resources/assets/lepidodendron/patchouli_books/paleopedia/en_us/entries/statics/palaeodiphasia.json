@@ -1,0 +1,45 @@
+{
+	"name": "Palaeodiphasia",
+	"read_by_default": true,
+	"icon": "lepidodendron:palaeodiphasia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_palaeodiphasia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodiphasia",
+			"title": "Palaeodiphasia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$()  Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hydrozoa$(br)>Hydroidolina$(br)>Macrocolonia$(br)>Sertulariida"
+		},
+		{
+			"type": "multiblock",
+			"name": "P. simplex",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:palaeodiphasia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodiphasia",
+			"type": "text",
+			"text": "Palaeodiphasia simplex hails from the Upper Cambrian, with fossils found in the Fengshan Formation, North China. It is a branched Hydrozoan and grew up to 1 cm in height. Palaeodiphasia was originally assigned under the genus 'Siberiograptus' as 'S. simplex', which is apart of the subclass Graptolite, until recent further study showed this not to be the case."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodiphasia",
+			"type": "text",
+			"text": "The generic name derives from the Greek word 'Palaeo', to mean 'old'; and the genus name 'diphasia'. The specific name derivces from the Latin word 'simplex', to mean 'simple'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodiphasia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

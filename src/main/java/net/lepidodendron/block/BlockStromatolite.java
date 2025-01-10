@@ -10,20 +10,25 @@ import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.armor.ArmorInit;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -44,11 +49,14 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 
@@ -71,6 +79,12 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 			new ModelResourceLocation("lepidodendron:stromatolite", "inventory"));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:stromatolite", BlockStromatolite.block);
 	}
 
 	@Override
@@ -168,16 +182,82 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		if (biome instanceof BiomeJurassic) {
+			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCretaceousEarly) {
+			BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
+			if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Atlantic
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Pacific
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Southern
+					|| biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_Tethys
+					|| biomeCretaceousEarly.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_inland_sea_australia")) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 
+		double chanceGirvanella = 1.0;
 		double genChance = 0.99;
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) {genChance = 0.65;}
-		if (dimID == LepidodendronConfig.dimCambrian) {genChance = 0.8;}
-		if (dimID == LepidodendronConfig.dimTriassic) {genChance = 0.15;}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_tide_pools")) {genChance = 0.00;}
+		if (biome instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Archean
+					|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
+					|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+					|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic
+			) {
+				chanceGirvanella = 0.15;
+			}
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimDevonian || dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian) {
+			genChance = 0.65;
+			chanceGirvanella = 0.3;
+		}
+		if (dimID == LepidodendronConfig.dimCambrian) {
+			genChance = 0.8;
+			chanceGirvanella = 0.0;
+		}
+		if (dimID == LepidodendronConfig.dimTriassic) {
+			genChance = 0.15;
+			chanceGirvanella = 0.55;
+		}
+		if (dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceousEarly
+				|| dimID == LepidodendronConfig.dimCretaceousLate) {
+			genChance = 0.95;
+			chanceGirvanella = 0.75;
+		}
+		if (dimID == LepidodendronConfig.dimPaleogene) {
+			genChance = 0.95;
+			chanceGirvanella = 0.93;
+		}
+		if (dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene) {
+			genChance = 0.95;
+			chanceGirvanella = 1.0;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_tide_pools")) {
+			genChance = 0.00;
+			chanceGirvanella = 1.0;
+		}
 		
 		if (Math.random() > genChance) {
+			double girvanella = chanceGirvanella;
 			for (int i = 0; i < 10; i++) {
 				int l6 = chunkX + random.nextInt(16) + 8;
 				int i11 = random.nextInt(128);
@@ -218,6 +298,61 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 														&& blockpos1.up(k).getY() == (Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))))
 								) {
 									world.setBlockState(blockpos1.up(k), block.getDefaultState(), 2);
+									if (Math.random() > girvanella) {
+										//Code to generate Girvanella here:
+										PropertyDirection FACING = BlockDirectional.FACING;
+										int yct = -1;
+										while (yct <= 1) {
+											int xct = -3;
+											while (xct <= 3) {
+												int zct = -3;
+												while (zct <= 3) {
+													BlockPos pos1 = blockpos1.up(k).add(xct, yct, zct);
+													//System.err.println("Testing block: " + pos1.getX() + " " + pos1.getY() + " " + pos1.getZ());
+													if ((world.getBlockState(pos1).getBlock() == Blocks.WATER || (world.getBlockState(pos1).getBlock() == Blocks.FLOWING_WATER))
+															&& (world.getBlockState(pos1.up()).getBlock() == Blocks.WATER || (world.getBlockState(pos1.up()).getBlock() == Blocks.FLOWING_WATER))) {
+														//System.err.println("Block is water: " + pos1.getX() + " " + pos1.getY() + " " + pos1.getZ());
+														//figure out a position and facing to place this at!
+														//First try regular uprights and then the rotations:
+														if ((((Math.random() > 0.98) && world.getBlockState(pos1.down()).getBlockFaceShape(world, pos1.down(), EnumFacing.UP) == BlockFaceShape.SOLID)
+																&& (world.getBlockState(pos1.down()).getBlock()) != BlockStromatolite.block)) {
+															Functions.setBlockStateAndCheckForDoublePlant(world,pos1, BlockGirvanella.block.getDefaultState().withProperty(FACING, EnumFacing.UP));
+														} else {
+															for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
+																BlockPos pos2 = pos1;
+																if (enumfacing1 == EnumFacing.NORTH) {
+																	pos2 = pos1.add(0, 0, 1);
+																}
+																if (enumfacing1 == EnumFacing.SOUTH) {
+																	pos2 = pos1.add(0, 0, -1);
+																}
+																if (enumfacing1 == EnumFacing.EAST) {
+																	pos2 = pos1.add(-1, 0, 0);
+																}
+																if (enumfacing1 == EnumFacing.WEST) {
+																	pos2 = pos1.add(1, 0, 0);
+																}
+
+																//System.err.println("Block at " + pos2.getX() + " "  + pos2.getY() + " " + pos2.getZ() + " : " + worldIn.getBlockState(pos2).getBlock());
+
+																if ((Math.random() > 0.98) && enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
+																		((world.getBlockState(pos2).getBlockFaceShape(world, pos2, enumfacing1) == BlockFaceShape.SOLID)
+																				||
+																				(world.getBlockState(pos2).getBlock()) == BlockStromatolite.block)) {
+																	Functions.setBlockStateAndCheckForDoublePlant(world,pos1, BlockGirvanella.block.getDefaultState().withProperty(FACING, enumfacing1), 3);
+																	//System.err.println("Block at " + pos1.getX() + " "  + pos1.getY() + " " + pos1.getZ());
+																	break;
+																}
+															}
+														}
+													}
+													zct += 1;
+												}
+												xct += 1;
+											}
+											yct += 1;
+										}
+									}
 								}
 							}
 						}
@@ -383,6 +518,16 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return 0;
 	    }
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Cyanobacterial formation");
+				tooltip.add("Periods: Archean - Paleoproterozoic - Mesoproterozoic (Calymmian - Ectasian - Stenian) - Neoproterozoic (Tonian - Cryogenian - Ediacaran) - Cambrian - Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Pleistocene - present");
+			}
+			super.addInformation(stack, player, tooltip, advanced);
+		}
 
 	}
 

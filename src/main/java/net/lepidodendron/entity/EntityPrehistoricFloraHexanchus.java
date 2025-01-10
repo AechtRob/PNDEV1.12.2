@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraHexanchus extends EntityPrehistoricFloraAgeab
 		minWidth = 0.2F;
 		maxWidth = 1.5F;
 		maxHeight = 0.9F;
-		maxHealthAgeable = 50.0D;
+		maxHealthAgeable = 20.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}

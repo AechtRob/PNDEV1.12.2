@@ -8,6 +8,7 @@ import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -105,10 +106,20 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimCambrian)
-				|| (dimID == LepidodendronConfig.dimPrecambrian)
+				//|| (dimID == LepidodendronConfig.dimPrecambrian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 		) {
 			biomeCriteria = false;
+		}
+
+		int multiplier = 1;
+
+		if (biome instanceof BiomePrecambrian)
+		{
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
+				multiplier = 30;
+			}
+			biomeCriteria = true;
 		}
 
 		if (biome instanceof BiomeOrdovician)
@@ -162,7 +173,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
+		if ((dimID == LepidodendronConfig.dimPrecambrian)
+		) {
+			multiplier = 12;
+		}
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 52;
@@ -191,6 +205,14 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			biome = world.getBiome(new BlockPos(l6, i11, l14));
+			if (biome instanceof BiomePrecambrian)
+			{
+				if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_shallow_reef")
+						|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench"))) {
+					continue;
+				}
+			}
 			(new AlgaeGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}

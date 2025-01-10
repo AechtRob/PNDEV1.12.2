@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:qianchuania_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:qianchuania", "x": 90},
+      {"model": "lepidodendron:qianchuania_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:qianchuania", "x": 90, "y": 90},
+      {"model": "lepidodendron:qianchuania_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:qianchuania", "x": 90, "y": 180},
+      {"model": "lepidodendron:qianchuania_var", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:qianchuania", "x": 90, "y": 270},
+    {"model": "lepidodendron:qianchuania_var", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:qianchuania"},
+    {"model": "lepidodendron:qianchuania_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:qianchuania", "x": 180},
+      {"model": "lepidodendron:qianchuania_var", "x": 180}
+    ]
+  }
+}

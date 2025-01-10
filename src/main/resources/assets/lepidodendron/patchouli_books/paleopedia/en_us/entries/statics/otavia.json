@@ -1,0 +1,40 @@
+{
+	"name": "Otavia",
+	"read_by_default": true,
+	"icon": "lepidodendron:otavia",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_otavia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_otavia",
+			"title": "Otavia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic$(br2)$(l)Habitat:$() Marine$(br2)>Porifera?"
+		},
+		{
+			"type": "multiblock",
+			"name": "O. antiqua",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:otavia",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otavia",
+			"type": "text",
+			"text": "Otavia antiqua comes from the Neoproterozoic, with fossils found in the Nama Group, Namibia; Liulaobei Formation, North China and Doushantuo Formation, South China. It is a sponge-like lifeform, growing up to 5 mm in overall size. The generic name derives from the place 'Otavi Group', where the fossils were found. The specific name derives from the Latin word 'antÄ«quus', to mean 'ancient."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_otavia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

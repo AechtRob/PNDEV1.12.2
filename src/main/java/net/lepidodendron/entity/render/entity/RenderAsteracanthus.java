@@ -12,7 +12,7 @@ public class RenderAsteracanthus extends RenderLivingBaseWithBook<EntityPrehisto
     public static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/asteracanthus.png");
 
     public static float getScaler() {
-        return 0.8F;
+        return 0.85F;
     }
     public RenderAsteracanthus(RenderManager mgr) {
         super(mgr, new ModelAsteracanthus(), 0.0f);

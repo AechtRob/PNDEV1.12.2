@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:huainan_mat"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:huainan_mat", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:huainan_mat", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:huainan_mat", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:huainan_mat", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:huainan_mat"},
+    {"model": "lepidodendron:huainan_mat", "y": 90 },
+    {"model": "lepidodendron:huainan_mat", "y": 180 },
+    {"model": "lepidodendron:huainan_mat", "y": 270 }
+    ],
+    "facing=down": [
+
+      {"model": "lepidodendron:huainan_mat", "x": 180 },
+      {"model": "lepidodendron:huainan_mat", "x": 180, "y": 90 },
+      {"model": "lepidodendron:huainan_mat", "x": 180, "y": 180 },
+      {"model": "lepidodendron:huainan_mat", "x": 180, "y": 270 }
+    ]
+  }
+}

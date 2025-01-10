@@ -1,0 +1,40 @@
+{
+	"name": "Choiidae",
+	"read_by_default": true,
+	"icon": "lepidodendron:brachiopod_micromitra",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_brachiopod_micromitra",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachiopod_micromitra",
+			"title": "Micromitra",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Paterinata$(br)>Paterinida$(br)>Paterinidae"
+		},
+		{
+			"type": "multiblock",
+			"name": "Micromitra sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:brachiopod_micromitra",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiopod_micromitra",
+			"type": "text",
+			"text": "Micromitra hails from the Middle Cambrian to Upper Cambrian, with fossils found in the Burgess Shale, Canada. It is a semi-circular Brachiopod, that was suspended above the seafloor via a small stalk, and grew up to 1 cm in overall size. The generic name derives from the Greek words 'mikros', to mean 'small'; and 'mitra', to mean 'turban'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiopod_micromitra",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
