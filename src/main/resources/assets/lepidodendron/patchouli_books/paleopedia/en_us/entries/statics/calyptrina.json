@@ -1,0 +1,45 @@
+{
+	"name": "Calyptrina",
+	"read_by_default": true,
+	"icon": "lepidodendron:calyptrina",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_calyptrina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_calyptrina",
+			"title": "Calyptrina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Annelida$(br)>Sabelliditida"
+		},
+		{
+			"type": "multiblock",
+			"name": "C. striata",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:calyptrina",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_calyptrina",
+			"type": "text",
+			"text": "Calyptrina striata comes from the Upper Ediacaran, with its tubular fossils found from the White Sea, Russia. It is a large tubular form, growing up to 10 or more cm in height. A majority of the tube would have been below the mat, with the open end sticking up vertically out of said mat in order for it to filter nutrients from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_calyptrina",
+			"type": "text",
+			"text": "The generic name derives from the Ancient Greek word 'Calyptra', to mean 'Covering/Veiling'. The specific name derives from the Latin word 'striāta', to mean 'furrowed/striated'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_calyptrina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

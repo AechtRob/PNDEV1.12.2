@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/tribrachidium"
+    "layer0": "lepidodendron:items/vaveliksia_inventory"
   }
 }

@@ -76,7 +76,7 @@ public class BlockQianchuania extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:qianchuania", BlockQianchuania.block);
-		OreDictionary.registerOre("pndietSponge", BlockQianchuania.block);
+		OreDictionary.registerOre("pndietCrinoid", BlockLantianella.block);
 	}
 
 
