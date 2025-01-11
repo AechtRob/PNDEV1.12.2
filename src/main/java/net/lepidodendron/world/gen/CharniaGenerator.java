@@ -161,6 +161,20 @@ public class CharniaGenerator extends WorldGenerator
 			}
 
 			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockFrondophyllas.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockFrondophyllas.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
 					&& this.charnia == BlockHapsidophyllas.block)
 			{
 				Biome biome = worldIn.getBiome(position);
@@ -336,7 +350,7 @@ public class CharniaGenerator extends WorldGenerator
 					|| this.charnia == BlockBradgatia.block
 					|| this.charnia == BlockCharnia.block
 					|| this.charnia == BlockCharniodiscus.block
-					//|| this.charnia == BlockFrondophyllas.block
+					|| this.charnia == BlockFrondophyllas.block
 					//|| this.charnia == BlockGigarimaneta.block
 					|| this.charnia == BlockHapsidophyllas.block
 					//|| this.charnia == BlockHylaecullulus.block
@@ -417,6 +431,16 @@ public class CharniaGenerator extends WorldGenerator
 				int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
 				int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
 				int k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
+
+				if (k > 38
+					&& (this.charnia == BlockHapsidophyllas.block
+						|| this.charnia == BlockFrondophyllas.block
+						|| this.charnia == BlockPrimocandelabrum1.block
+						|| this.charnia == BlockPrimocandelabrum2.block
+						|| this.charnia == BlockParviscopa.block)
+				) {
+					continue;
+				}
 
 				if (this.charnia.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 						&& (worldIn.getBlockState(new BlockPos(j, k, l)).getBlock() == Blocks.WATER)) {

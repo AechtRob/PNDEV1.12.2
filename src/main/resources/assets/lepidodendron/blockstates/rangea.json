@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:rangea"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:rangea", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:rangea", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:rangea", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:rangea", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:rangea"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:rangea", "x": 180}
+    ]
+  }
+}

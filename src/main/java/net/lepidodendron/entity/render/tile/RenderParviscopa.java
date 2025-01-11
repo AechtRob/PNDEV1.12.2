@@ -37,11 +37,21 @@ public class RenderParviscopa extends TileEntitySpecialRenderer<BlockParviscopa.
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
         GlStateManager.color(1.0F, 1.0F, 1.0F, alpha);
-        GlStateManager.translate(x + 0.5, y + 0.6, z + 0.5);
-        GlStateManager.scale(0.22,0.22,0.22);
+        GlStateManager.translate(x + 0.5, y + 0.768, z + 0.5);
+        GlStateManager.scale(0.32,0.32,0.32);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+        //----Start PP Page adjustment
+        StackTraceElement[] elements = new Throwable().getStackTrace();
+        String callerClass = elements[5].getClassName();
+        if (callerClass.equalsIgnoreCase("vazkii.patchouli.client.book.page.PageMultiblock")) {
+            GlStateManager.scale(2.8, 2.8, 2.8);
+            GlStateManager.translate(0,-1.4,0);
+        }
+        //----End PP Page adjustment
+        GlStateManager.disableCull();
         modelParviscopa.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.enableCull();
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);

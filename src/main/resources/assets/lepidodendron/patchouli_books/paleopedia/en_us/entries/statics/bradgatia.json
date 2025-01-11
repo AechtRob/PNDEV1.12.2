@@ -12,15 +12,24 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/bradgatia.png"],
-			"title": "B. linfordensis",
-			"text": ""
+			"type": "multiblock",
+			"name": "B. linfordensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:bradgatia",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bradgatia",
 			"type": "text",
-			"text": "Bradgatia is a cabbage looking Ediacaran organism. It grew from about 8-22 cm but was towered over by the Charnia and Charniodiscus which lived in the same areas."
+			"text": "Bradgatia linfordensis hails from the Upper Ediacaran, with fossils found from the Charnwood Forest, UK and Newfoundland, Canada. Bradgatia is a cabbage shaped Petalonamae, with several fronds radiating from the central holdfast, and could grow up to 22 cm in height. The generic name derives from the place name 'Bradgate Park' in Bradgate, near to were it was found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bradgatia",

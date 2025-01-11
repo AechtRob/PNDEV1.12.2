@@ -12,15 +12,29 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Arboreomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/charniodiscus.png"],
-			"title": "Charniodiscus sp.",
-			"text": ""
+			"type": "multiblock",
+			"name": "C. concentricus",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:charniodiscus",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_charniodiscus",
 			"type": "text",
-			"text": "Charniodiscus is a large Ediacaran frond-like animal. It was probably a filter feeder, anchored to the sea floor and catching nutrients from the water around it."
+			"text": "Charniodiscus concentricus comes from the Upper Ediacaran, with fossils found across all Edicaran Avalon, White Sea and Nama Assemblages. It is a leaf-like lifeform, and can be found in from deep to shallow waters, growing up to 22 cm in height, and possibly partook in filter feeding from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_charniodiscus",
+			"type": "text",
+			"text": "Charniodiscus is currently the only known Petalonamae to have the ability to fold all its branches seperately from each other. The generic names derives from the name of 'Charnia', a similar looking Petalonamae, and the Latin word 'discus', to mean 'disc'. The specific name 'concentricus' is a Latin word, referring to the appearance of the holdfast."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_charniodiscus",

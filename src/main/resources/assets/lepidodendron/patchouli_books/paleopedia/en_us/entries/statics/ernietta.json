@@ -1,0 +1,45 @@
+{
+	"name": "Ernietta",
+	"read_by_default": true,
+	"icon": "lepidodendron:ernietta",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_ernietta",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ernietta",
+			"title": "Ernietta",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Erniettomorpha"
+		},
+		{
+			"type": "multiblock",
+			"name": "E. plateauensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:ernietta",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ernietta",
+			"type": "text",
+			"text": "Ernietta plateauensis hails from the Upper Ediacaran, with fossils found from the Nama Group, Namibia. It is a sack-shaped lifeform that could grow up to 12 cm in height, and possibly partook in suspension feeding from the surrounding water. Ernietta would have been partially buried within the substrate, with some having substrate within them."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ernietta",
+			"type": "text",
+			"text": "The delivery of nutrients has been found to be optimised when individuals of Ernietta are clustered in groups, showing possibly the earliest examples commensalism, where organisms act in mutual benefit."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ernietta",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

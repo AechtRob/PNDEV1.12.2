@@ -80,9 +80,8 @@ public class BlockFedomia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("staticdnaPNlepidodendron:fedomia", BlockFedomia.block);
-		OreDictionary.registerOre("pndietCrinoid", BlockFedomia.block);
+		OreDictionary.registerOre("pndietSponge", BlockFedomia.block);
 	}
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {

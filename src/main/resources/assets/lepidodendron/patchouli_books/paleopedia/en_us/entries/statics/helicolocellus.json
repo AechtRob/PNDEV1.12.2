@@ -1,0 +1,45 @@
+{
+	"name": "Helicolocellus",
+	"read_by_default": true,
+	"icon": "lepidodendron:helicolocellus",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_helicolocellus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helicolocellus",
+			"title": "Helicolocellus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Hexactinellida"
+		},
+		{
+			"type": "multiblock",
+			"name": "H. cantori",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:helicolocellus",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helicolocellus",
+			"type": "text",
+			"text": "Helicolocellus cantori hails from the Upper Ediacaran, with fossils found in the Dengying Formation, South China. It is a cone shaped sponge that could go up to 40 cm in height, and its fossils shows that sponges didn't start out with hard mineralised bodies, but instead soft organic bodies, changing out we look at other possible and future Ediacaran sponges."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helicolocellus",
+			"type": "text",
+			"text": "The generic name derives from the Greek Words 'helix', to mean 'helix'; and 'locellus', to mean 'small box'. Its specific name derives from the surname of Georg Cantor, a Mathematician who is known for the Cantor set which describes regular patterning, similar to what is seen in the fossil."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helicolocellus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

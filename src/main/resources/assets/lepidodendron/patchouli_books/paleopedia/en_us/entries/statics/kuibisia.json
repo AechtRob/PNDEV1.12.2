@@ -1,0 +1,40 @@
+{
+	"name": "Kuibisia",
+	"read_by_default": true,
+	"icon": "lepidodendron:kuibisia",
+	"category": "lepidodendron:precambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_kuibisia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kuibisia",
+			"title": "Kuibisia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Medusae$(br)>"
+		},
+		{
+			"type": "multiblock",
+			"name": "K. glabra",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:kuibisia ",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kuibisia",
+			"type": "text",
+			"text": "Kuibisia glabra hails from the Upper Ediacaran, with fossils found in the Nama Group, Namibia. It is a polyp-like lifeform, which could grow up to 10 cm in height, and possibly lived and fed in a similar manner to the Sea Anemones. The generic name derives from the place 'Kuibis quartzite', near to where it was was found. The specific name derives from the Latin word 'Glabra', to mean 'smooth'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kuibisia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

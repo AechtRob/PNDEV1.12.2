@@ -2,7 +2,7 @@
 	"name": "Fedomia",
 	"read_by_default": true,
 	"icon": "lepidodendron:fedomia",
-	"category": "lepidodendron:precambrian_animal",
+	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_fedomia",
 	"pages": [
 		{

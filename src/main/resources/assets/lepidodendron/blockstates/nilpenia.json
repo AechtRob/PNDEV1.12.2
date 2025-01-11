@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:nilpenia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:nilpenia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:nilpenia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:nilpenia", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:nilpenia", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:nilpenia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:nilpenia", "x": 180}
+    ]
+  }
+}

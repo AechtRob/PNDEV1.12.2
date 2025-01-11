@@ -2,7 +2,7 @@
 	"name": "Yarnemia",
 	"read_by_default": true,
 	"icon": "lepidodendron:yarnemia",
-	"category": "lepidodendron:precambrian_animal",
+	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_yarnemia",
 	"pages": [
 		{

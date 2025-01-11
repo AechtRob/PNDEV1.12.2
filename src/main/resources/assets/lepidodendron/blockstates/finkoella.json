@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:finkoella"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:finkoella", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:finkoella", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:finkoella", "x": 90, "y": 180}
+    ],
+  "facing=west": [
+      {"model": "lepidodendron:finkoella", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      {"model": "lepidodendron:finkoella"},
+      {"model": "lepidodendron:finkoella", "y": 90},
+      {"model": "lepidodendron:finkoella", "y": 180},
+      {"model": "lepidodendron:finkoella", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:finkoella", "x": 180},
+      {"model": "lepidodendron:finkoella", "x": 180, "y": 90},
+      {"model": "lepidodendron:finkoella", "x": 180, "y": 180},
+      {"model": "lepidodendron:finkoella", "x": 180, "y": 270}
+    ]
+  }
+}

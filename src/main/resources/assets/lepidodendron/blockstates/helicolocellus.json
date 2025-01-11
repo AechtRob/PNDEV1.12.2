@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:helicolocellus"},
+        {"model": "lepidodendron:helicolocellus_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:helicolocellus_side"},
+      {"model": "lepidodendron:helicolocellus_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:helicolocellus_side", "y": 90},
+      {"model": "lepidodendron:helicolocellus_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:helicolocellus_side", "y": 180},
+      {"model": "lepidodendron:helicolocellus_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:helicolocellus_side", "y": 270},
+      {"model": "lepidodendron:helicolocellus_side_var", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:helicolocellus"},
+      {"model": "lepidodendron:helicolocellus_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:helicolocellus", "x": 180},
+      {"model": "lepidodendron:helicolocellus_var", "x": 180}
+    ]
+  }
+}

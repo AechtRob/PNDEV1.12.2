@@ -159,6 +159,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CECROPSIS = new CustomTrigger("pf_book_cecropsis");
     public static final CustomTrigger CLICK_RHACOPTERIS = new CustomTrigger("pf_book_rhacopteris");
     public static final CustomTrigger CLICK_CHARNIA = new CustomTrigger("pf_book_charnia");
+    public static final CustomTrigger CLICK_FRONDOPHYLLAS = new CustomTrigger("pf_book_frondophyllas");
     public static final CustomTrigger CLICK_TUANSHANZIA = new CustomTrigger("pf_book_tuanshanzia");
     public static final CustomTrigger CLICK_CHARNIODISCUS = new CustomTrigger("pf_book_charniodiscus");
     public static final CustomTrigger CLICK_SEA_PEN = new CustomTrigger("pf_book_sea_pen");
@@ -259,6 +260,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_HELICOLOCELLUS = new CustomTrigger("pf_book_helicolocellus");
     public static final CustomTrigger CLICK_KUIBISIA = new CustomTrigger("pf_book_kuibisia");
     public static final CustomTrigger CLICK_ERNIETTA = new CustomTrigger("pf_book_ernietta");
+    public static final CustomTrigger CLICK_RANGEA = new CustomTrigger("pf_book_rangea");
+    public static final CustomTrigger CLICK_PALAEOPASCICHNID = new CustomTrigger("pf_book_palaeopascichnid");
     public static final CustomTrigger CLICK_BRACHIOPOD_MICROMITRA = new CustomTrigger("pf_book_brachiopod_micromitra");
     public static final CustomTrigger CLICK_DIOON = new CustomTrigger("pf_book_dioon");
     public static final CustomTrigger CLICK_EOGINKGOITES = new CustomTrigger("pf_book_eoginkgoites");
@@ -1902,6 +1905,7 @@ public class ModTriggers
             CLICK_CECROPSIS,
             CLICK_RHACOPTERIS,
             CLICK_CHARNIA,
+            CLICK_FRONDOPHYLLAS,
             CLICK_TUANSHANZIA,
             CLICK_CHARNIODISCUS,
             CLICK_SEA_PEN,
@@ -2004,6 +2008,8 @@ public class ModTriggers
             CLICK_HELICOLOCELLUS,
             CLICK_KUIBISIA,
             CLICK_ERNIETTA,
+            CLICK_RANGEA,
+            CLICK_PALAEOPASCICHNID,
             CLICK_BRACHIOPOD_MICROMITRA,
             CLICK_DIOON,
             CLICK_EOGINKGOITES,

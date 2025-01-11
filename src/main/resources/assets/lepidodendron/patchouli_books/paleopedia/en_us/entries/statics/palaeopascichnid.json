@@ -1,0 +1,40 @@
+{
+	"name": "Palaeopascichnids",
+	"read_by_default": true,
+	"icon": "lepidodendron:palaeopascichnid",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_palaeopascichnid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeopascichnid",
+			"title": "Palaeopascichnids",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>incertae sedis"
+		},
+		{
+			"type": "multiblock",
+			"name": "Palaeopascichnids",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:palaeopascichnid",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeopascichnid",
+			"type": "text",
+			"text": "Palaeopascichnids comes from the Upper Ediacaran, with fossils found across the globe. They are beaded/fan shaped forms with varying numbers of branches, growing up to 15 cm or more in length. It is unknown what they're related to, first appearing before the Gaskiers glaciation and vanishing without a trace at the Ediacaran-Cambrian boundary, but are accepted to be the first macroorganisms to have agglutinated skeletons."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeopascichnid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

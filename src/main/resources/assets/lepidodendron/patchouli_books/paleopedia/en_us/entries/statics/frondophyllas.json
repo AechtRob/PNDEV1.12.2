@@ -1,0 +1,45 @@
+{
+	"name": "Frondophyllas",
+	"read_by_default": true,
+	"icon": "lepidodendron:frondophyllas",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_frondophyllas",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_frondophyllas",
+			"title": "Frondophyllas",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+		},
+		{
+			"type": "multiblock",
+			"name": "F. grandis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:frondophyllas",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_frondophyllas",
+			"type": "text",
+			"text": "Frondophyllas grandis comes from the Upper Ediacaran, with fossils found from Newfoundland, Canada. It is a tree-like lifeform, and could grow up to over 1 m in height, making it possibly the tallest Ediacaran known, and also may have partook in filter feeding from the surrounding water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_frondophyllas",
+			"type": "text",
+			"text": "The generic name derives from the Latin word 'frondis', to mean 'leafy branch'; and the Greek word 'phyllon', to mean 'leaf'. Its specific name derives from the Latin Word 'grandis', to mean 'great/grand'."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_frondophyllas",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

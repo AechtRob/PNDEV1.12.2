@@ -48,7 +48,9 @@ public class RenderCharnia extends TileEntitySpecialRenderer<BlockCharnia.TileEn
             GlStateManager.translate(0,0.9,0);
         }
         //----End PP Page adjustment
+        GlStateManager.disableCull();
         modelCharnia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.enableCull();
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);

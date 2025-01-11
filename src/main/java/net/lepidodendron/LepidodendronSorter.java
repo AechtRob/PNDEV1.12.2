@@ -5020,12 +5020,15 @@ public class LepidodendronSorter {
     public static final int calyptrina = 8039;
     public static final int auroralumina = 8040;
     public static final int obamus = 8041;
-
     public static final int nilpenia = 8042;
     public static final int finkoella = 8043;
     public static final int helicolocellus = 8044;
     public static final int kuibisia = 8045;
-    public static final int ernietta = 8046;
+    public static final int rangea = 8046;
+    public static final int ernietta = 8047;
+    public static final int palaeopascichnid = 8048;
+    public static final int frondophyllas = 8049;
+
 
     public static final int priscomyzon_raw = 4974;
     public static final int pambdelurion_raw = 4975;

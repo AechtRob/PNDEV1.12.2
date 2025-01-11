@@ -1,0 +1,40 @@
+{
+	"name": "Finkoella",
+	"read_by_default": true,
+	"icon": "lepidodendron:finkoella",
+	"category": "lepidodendron:statics",
+	"turnin": "lepidodendron:pf_adv_book_finkoella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_finkoella",
+			"title": "Finkoella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Tunicata$(br)>Ascidiacea(?)"
+		},
+		{
+			"type": "multiblock",
+			"name": "Finkoella sp.",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:finkoella",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_finkoella",
+			"type": "text",
+			"text": "Finkoella comes from the Upper Ediacaran, with fossils found from the Sonia Formation, India and Dneister River, Ukraine. It is a bag-like lifeform with possible affinites with tunicates, and could grow up to 12 cm in overall length. The generic name derives from the name of S.V. Finko, whom it was named in honour of, a known amateur palaeontologist who provided the fossil materials for Finkoella."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_finkoella",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -12,10 +12,34 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/primocandelabrum_blue.png", "paleopedia:textures/primocandelabrum_yellow.png"],
-			"title": "P. hiemaloranum",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. hiemaloranum",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:primocandelabrum_1",
+					"0": "minecraft:air"
+				}
+			}
+		},
+		{
+			"type": "multiblock",
+			"name": "P. hiemaloranum",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:primocandelabrum_2",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_primocandelabrum",

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:frondophyllas",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:frondophyllas",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:frondophyllas",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:frondophyllas",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:frondophyllas",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:frondophyllas",
+      "y": 0
+    }
+  }
+}

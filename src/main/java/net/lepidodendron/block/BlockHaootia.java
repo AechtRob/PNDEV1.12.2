@@ -110,7 +110,7 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 		minWaterDepth = 40;
 		maxWaterDepth = 100;
 
-		for (int i = 0; i < 8 * multiplier; i++) {
+		for (int i = 0; i < 7 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			int i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).getY() + 1;

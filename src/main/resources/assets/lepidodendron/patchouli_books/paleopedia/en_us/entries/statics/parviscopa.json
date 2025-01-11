@@ -12,10 +12,19 @@
 			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
 		},
 		{
-			"type": "image",
-			"images": ["paleopedia:textures/parviscopa.png"],
-			"title": "P. bonavistensis",
-			"text": ""
+			"type": "multiblock",
+			"name": "P. bonavistensis",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[ "1" ],
+					[ "0" ]
+				],
+				"mapping": {
+					"1": "lepidodendron:parviscopa",
+					"0": "minecraft:air"
+				}
+			}
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_parviscopa",
