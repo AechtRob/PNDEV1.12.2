@@ -105,7 +105,7 @@ public class BlockThectardis extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		minWaterDepth = 6;
-		maxWaterDepth = 50;
+		maxWaterDepth = 150;
 		startHeight = Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ)) - maxWaterDepth;
 
 		for (int i = 0; i < 8; i++) {

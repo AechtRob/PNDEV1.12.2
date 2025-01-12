@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:gigarimaneta",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:gigarimaneta",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:gigarimaneta",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:gigarimaneta",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:gigarimaneta",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:gigarimaneta",
+      "y": 0
+    }
+  }
+}

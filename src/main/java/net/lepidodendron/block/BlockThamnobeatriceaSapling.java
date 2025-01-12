@@ -6,7 +6,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.IAdvancementGranter;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.procedure.ProcedureWorldGenThamnobeatricea;
 import net.lepidodendron.util.CustomTrigger;
 import net.lepidodendron.util.ModTriggers;
@@ -86,7 +86,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		public BlockCustom() {
 			super(Material.WATER);
 			setSoundType(SoundType.PLANT);
-			setCreativeTab(TabLepidodendronPlants.tab);
+			setCreativeTab(TabLepidodendronStatic.tab);
 			setHardness(0F);
 			setResistance(0F);
 			setLightOpacity(3);
