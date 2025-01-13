@@ -160,6 +160,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_RHACOPTERIS = new CustomTrigger("pf_book_rhacopteris");
     public static final CustomTrigger CLICK_CHARNIA = new CustomTrigger("pf_book_charnia");
     public static final CustomTrigger CLICK_FRONDOPHYLLAS = new CustomTrigger("pf_book_frondophyllas");
+    public static final CustomTrigger CLICK_HYLAECULLULUS = new CustomTrigger("pf_book_hylaecullulus");
     public static final CustomTrigger CLICK_GIGARIMANETA = new CustomTrigger("pf_book_gigarimaneta");
     public static final CustomTrigger CLICK_TUANSHANZIA = new CustomTrigger("pf_book_tuanshanzia");
     public static final CustomTrigger CLICK_CHARNIODISCUS = new CustomTrigger("pf_book_charniodiscus");
@@ -1907,6 +1908,7 @@ public class ModTriggers
             CLICK_RHACOPTERIS,
             CLICK_CHARNIA,
             CLICK_FRONDOPHYLLAS,
+            CLICK_HYLAECULLULUS,
             CLICK_GIGARIMANETA,
             CLICK_TUANSHANZIA,
             CLICK_CHARNIODISCUS,
@@ -2300,7 +2302,7 @@ public class ModTriggers
             CLICK_FLABELLOPTERIS,
             CLICK_KTALENIA,
             CLICK_TODEA,
-        
+
             //Grouped ones:
             CLICK_BLASTOID,
             CLICK_SPONGE,
@@ -2315,7 +2317,7 @@ public class ModTriggers
             CLICK_TABULATA,
             CLICK_BONE_WORM,
 
-            
+
             //ENTITIES:
             //----------
             CLICK_ACADOARADOXIDES,

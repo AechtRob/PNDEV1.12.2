@@ -7057,6 +7057,7 @@ public class RenderHandler {
             ClientRegistry.bindTileEntitySpecialRenderer(BlockHapsidophyllas.TileEntityCustom.class, new RenderHapsidophyllas());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockFrondophyllas.TileEntityCustom.class, new RenderFrondophyllas());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockGigarimaneta.TileEntityCustom.class, new RenderGigarimaneta());
+            ClientRegistry.bindTileEntitySpecialRenderer(BlockHylaecullulus.TileEntityCustom.class, new RenderHylaecullulus());
             //Cambrian:
             ClientRegistry.bindTileEntitySpecialRenderer(BlockStromatoveris.TileEntityCustom.class, new RenderStromatoveris());
             ClientRegistry.bindTileEntitySpecialRenderer(BlockThaumaptilon.TileEntityCustom.class, new RenderThaumaptilon());

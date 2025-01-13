@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:hylaecullulus",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:hylaecullulus",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:hylaecullulus",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:hylaecullulus",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:hylaecullulus",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:hylaecullulus",
+      "y": 0
+    }
+  }
+}
