@@ -189,6 +189,34 @@ public class CharniaGenerator extends WorldGenerator
 			}
 
 			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockHylaecullulus.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockHylaecullulus.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
+					&& this.charnia == BlockGigarimaneta.block)
+			{
+				Biome biome = worldIn.getBiome(position);
+				boolean era = false;
+				if (biome instanceof BiomePrecambrian) {
+					era = ((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran;
+				}
+				dimensionCriteria = era;
+			}
+			else if (this.charnia == BlockGigarimaneta.block) {
+				dimensionCriteria = false;
+			}
+
+			if ((position.getY() < 35 + rand.nextInt(3))
 					&& this.charnia == BlockParviscopa.block)
 			{
 				Biome biome = worldIn.getBiome(position);
@@ -351,9 +379,9 @@ public class CharniaGenerator extends WorldGenerator
 					|| this.charnia == BlockCharnia.block
 					|| this.charnia == BlockCharniodiscus.block
 					|| this.charnia == BlockFrondophyllas.block
-					//|| this.charnia == BlockGigarimaneta.block
+					|| this.charnia == BlockGigarimaneta.block
 					|| this.charnia == BlockHapsidophyllas.block
-					//|| this.charnia == BlockHylaecullulus.block
+					|| this.charnia == BlockHylaecullulus.block
 					|| this.charnia == BlockParviscopa.block
 					|| this.charnia == BlockPrimocandelabrum1.block
 					|| this.charnia == BlockPrimocandelabrum2.block

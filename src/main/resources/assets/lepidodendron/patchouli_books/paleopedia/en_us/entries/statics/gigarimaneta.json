@@ -2,7 +2,7 @@
 	"name": "Gigarimaneta",
 	"read_by_default": true,
 	"icon": "lepidodendron:gigarimaneta",
-	"category": "lepidodendron:precambrian_animal",
+	"category": "lepidodendron:statics",
 	"turnin": "lepidodendron:pf_adv_book_gigarimaneta",
 	"pages": [
 		{
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "multiblock",
-			"name": "HG. samsoni",
+			"name": "G. samsoni",
 			"enable_visualize": false,
 			"multiblock": {
 				"pattern": [

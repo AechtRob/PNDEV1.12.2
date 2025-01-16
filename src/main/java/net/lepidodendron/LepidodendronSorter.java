@@ -5029,6 +5029,7 @@ public class LepidodendronSorter {
     public static final int palaeopascichnid = 8048;
     public static final int frondophyllas = 8049;
     public static final int gigarimaneta = 8050;
+    public static final int hylaecullulus = 8051;
 
 
     public static final int priscomyzon_raw = 4974;

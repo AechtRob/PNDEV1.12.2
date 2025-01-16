@@ -51,24 +51,24 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockHapsidophyllas extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:hapsidophyllas")
+public class BlockHylaecullulus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:hylaecullulus")
 	public static final Block block = null;
-	public BlockHapsidophyllas(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.hapsidophyllas);
+	public BlockHylaecullulus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.hylaecullulus);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("hapsidophyllas"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("hylaecullulus"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		GameRegistry.registerTileEntity(BlockHapsidophyllas.TileEntityCustom.class, "lepidodendron:tileentityhapsidophyllas");
-		OreDictionary.registerOre("staticdnaPNlepidodendron:hapsidophyllas", BlockHapsidophyllas.block);
+		GameRegistry.registerTileEntity(BlockHylaecullulus.TileEntityCustom.class, "lepidodendron:tileentityhylaecullulus");
+		OreDictionary.registerOre("staticdnaPNlepidodendron:hylaecullulus", BlockHylaecullulus.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -78,8 +78,8 @@ public class BlockHapsidophyllas extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:hapsidophyllas", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockHapsidophyllas.LEVEL).build());
+				new ModelResourceLocation("lepidodendron:hylaecullulus", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockHylaecullulus.LEVEL).build());
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class BlockHapsidophyllas extends ElementsLepidodendronMod.ModElement {
 			return;
 		}
 
-		for (int i = 0; i < (int) 12; i++) {
+		for (int i = 0; i < (int) 7; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(Functions.getAdjustedSeaLevel(world, new BlockPos(chunkX, 0, chunkZ))+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -103,7 +103,7 @@ public class BlockHapsidophyllas extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_hapsidophyllas");
+			setTranslationKey("pf_hylaecullulus");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);
@@ -117,7 +117,7 @@ public class BlockHapsidophyllas extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public CustomTrigger getModTrigger() {
-			return ModTriggers.CLICK_HAPSIDOPHYLLAS;
+			return ModTriggers.CLICK_HYLAECULLULUS;
 		}
 
 		@Override

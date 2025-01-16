@@ -36,6 +36,12 @@ public class LepidodendronRecipeFossils {
 		EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(resourcelocation));
 		if (ee != null) {
 			EntityLiving entity = (EntityLiving) ee.newInstance(worldIn);
+			if (entity == null) {
+				int y= 0;
+			}
+			if (entity.getCreatureAttribute() == null) {
+				int y= 0;
+			}
 			isArthropod = entity.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD;
 			if (entity instanceof EntityPrehistoricFloraAgeableBase) {
 				isArthropod = ((EntityPrehistoricFloraAgeableBase) entity).getPNCreatureAttribute() == EnumCreatureAttributePN.INVERTEBRATE;
