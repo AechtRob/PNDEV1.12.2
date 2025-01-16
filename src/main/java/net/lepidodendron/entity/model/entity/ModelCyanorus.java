@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraTemnoxa;
+import net.lepidodendron.entity.EntityPrehistoricFloraCyanorus;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -70,7 +70,7 @@ public class ModelCyanorus extends ModelBasePalaeopedia {
 
         //this.Body.offsetY = 0.383F;
 
-        EntityPrehistoricFloraTemnoxa ee = (EntityPrehistoricFloraTemnoxa) e;
+        EntityPrehistoricFloraCyanorus ee = (EntityPrehistoricFloraCyanorus) e;
 
         this.main.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.07F) + 1F;

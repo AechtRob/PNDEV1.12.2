@@ -1,7 +1,7 @@
 package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.lepidodendron.entity.EntityPrehistoricFloraTemnoxa;
+import net.lepidodendron.entity.EntityPrehistoricFloraCephalonega;
 import net.lepidodendron.entity.model.ModelBasePalaeopedia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -77,13 +77,13 @@ public class ModelCephalonega extends ModelBasePalaeopedia {
 
         //this.Body.offsetY = 0.383F;
 
-        EntityPrehistoricFloraTemnoxa ee = (EntityPrehistoricFloraTemnoxa) e;
+        EntityPrehistoricFloraCephalonega ee = (EntityPrehistoricFloraCephalonega) e;
 
         this.main.scaleChildren = true;
         this.tail_thing_1.scaleChildren = false;
         this.tail_thing_2.scaleChildren = false;
-        this.swing(tail_thing_1, 0.1F, -0.25F, false, 0, -0.1F, f2, 0.8F);
-        this.swing(tail_thing_2, 0.1F, 0.25F, false, 0, 0.1F, f2, 0.8F);
+        this.swing(tail_thing_1, 0.1F, 0.25F, false, 0, -0.1F, f2, 0.8F);
+        this.swing(tail_thing_2, 0.1F, -0.25F, false, 0, 0.1F, f2, 0.8F);
 
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.07F) + 1F;
         this.main.setScaleZ(scaler * 0.65F);

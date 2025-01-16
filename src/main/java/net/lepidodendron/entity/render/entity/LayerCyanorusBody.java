@@ -23,7 +23,7 @@ public class LayerCyanorusBody implements LayerRenderer<EntityPrehistoricFloraCy
         {
             this.CyanorusRenderer.bindTexture(TEXTURE);
             GlStateManager.pushMatrix();
-            GlStateManager.color(1.0F, 1.0F, 1.0F, 0.6F);
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 0.55F);
             GlStateManager.enableNormalize();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
