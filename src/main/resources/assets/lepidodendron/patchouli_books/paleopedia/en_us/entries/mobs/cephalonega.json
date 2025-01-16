@@ -1,0 +1,52 @@
+{
+	"name": "Cephalonega",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/cephalonega_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_cephalonega",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cephalonega",
+			"title": "Cephalonega",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Proarticulata$(br)>Cephalozoa"
+		},
+		{
+			"type": "entity",
+			"name": "C. stepanovi",
+			"entity": "lepidodendron:prehistoric_flora_cephalonega",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cephalonega",
+			"type": "text",
+			"text": "Cephalonega stepanovi comes from the Upper Ediacaran, with fossils found from the White Sea, Russia. It has a strange morphology for a Proarticulata, with its isomers clumped up ontop of a undivided part of the body, with two tail-like features coming out of the rear-most isomers."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cephalonega",
+			"type": "text",
+			"text": "The generic name derives from the original genus name 'Ongea', named after the region its was found in 'Onega Peninsula'. The specific name derives from the surname of A.V. Stepanov, whom it was named in houour of after he discovered the site in which Cephalonega would be found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_cephalonega"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_cephalonega"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_cephalonega"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_cephalonega"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_cephalonega"
+		}
+	]
+}

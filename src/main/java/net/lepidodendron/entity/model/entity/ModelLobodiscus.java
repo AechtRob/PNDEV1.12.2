@@ -15,40 +15,40 @@ public class ModelLobodiscus extends ModelBasePalaeopedia {
     private final AdvancedModelRenderer bone4;
 
     public ModelLobodiscus() {
-        this.textureWidth = 60;
-        this.textureHeight = 50;
+        textureWidth = 60;
+        textureHeight = 50;
 
-        this.main = new AdvancedModelRenderer(this);
-        this.main.setRotationPoint(0.0F, 24.9F, 0.0F);
-        this.main.cubeList.add(new ModelBox(main, 0, 5, -8.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 17, 4, 7.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 20, 2, -7.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 25, 20, 6.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 14, -2.0F, -1.9F, -8.0F, 4, 1, 16, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 19, 34, -4.0F, -1.9F, -7.0F, 2, 1, 14, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 32, 2.0F, -1.9F, -7.0F, 2, 1, 14, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 29, 0, -6.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
-        this.main.cubeList.add(new ModelBox(main, 0, 0, 4.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
+        main = new AdvancedModelRenderer(this);
+        main.setRotationPoint(0.0F, 24.9F, 0.0F);
+        main.cubeList.add(new ModelBox(main, 0, 5, -8.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 17, 4, 7.0F, -1.9F, -2.0F, 1, 1, 4, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 20, 2, -7.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 25, 20, 6.0F, -1.9F, -4.0F, 1, 1, 8, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 14, -2.0F, -1.9F, -8.0F, 4, 1, 16, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 19, 34, -4.0F, -1.9F, -7.0F, 2, 1, 14, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 32, 2.0F, -1.9F, -7.0F, 2, 1, 14, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 29, 0, -6.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
+        main.cubeList.add(new ModelBox(main, 0, 0, 4.0F, -1.9F, -6.0F, 2, 1, 12, 0.0F, false));
 
-        this.bone2 = new AdvancedModelRenderer(this);
-        this.bone2.setRotationPoint(0.0F, -1.65F, 0.0F);
-        this.main.addChild(bone2);
-        this.bone2.cubeList.add(new ModelBox(bone2, 0, 3, 2.25F, -0.31F, 0.5F, 4, 0, 1, 0.0F, false));
-        this.bone2.cubeList.add(new ModelBox(bone2, 0, 0, -0.75F, -0.31F, 0.5F, 3, 0, 2, 0.0F, false));
+        bone2 = new AdvancedModelRenderer(this);
+        bone2.setRotationPoint(0.0F, -1.65F, 0.0F);
+        main.addChild(bone2);
+        bone2.cubeList.add(new ModelBox(bone2, 0, 3, 2.25F, -0.275F, 0.5F, 4, 0, 1, 0.0F, false));
+        bone2.cubeList.add(new ModelBox(bone2, 0, 0, -0.75F, -0.275F, 0.5F, 3, 0, 2, 0.0F, false));
 
-        this.bone3 = new AdvancedModelRenderer(this);
-        this.bone3.setRotationPoint(0.0F, -1.65F, 0.0F);
-        this.main.addChild(bone3);
-        this.setRotateAngle(bone3, -3.1416F, 1.0472F, -3.1416F);
-        this.bone3.cubeList.add(new ModelBox(bone3, 0, 3, 2.25F, -0.31F, 0.5F, 4, 0, 1, 0.0F, false));
-        this.bone3.cubeList.add(new ModelBox(bone3, 0, 0, -0.75F, -0.31F, 0.5F, 3, 0, 2, 0.0F, false));
+        bone3 = new AdvancedModelRenderer(this);
+        bone3.setRotationPoint(0.0F, -1.65F, 0.0F);
+        main.addChild(bone3);
+        setRotateAngle(bone3, -3.1416F, 1.0472F, -3.1416F);
+        bone3.cubeList.add(new ModelBox(bone3, 0, 3, 2.25F, -0.275F, 0.5F, 4, 0, 1, 0.0F, false));
+        bone3.cubeList.add(new ModelBox(bone3, 0, 0, -0.75F, -0.275F, 0.5F, 3, 0, 2, 0.0F, false));
 
-        this.bone4 = new AdvancedModelRenderer(this);
-        this.bone4.setRotationPoint(-1.7321F, -2.15F, -1.0F);
-        this.main.addChild(bone4);
-        this.setRotateAngle(bone4, -3.1416F, -1.0472F, 3.1416F);
-        this.bone4.cubeList.add(new ModelBox(bone4, 0, 3, 2.25F, 0.19F, -1.5F, 4, 0, 1, 0.0F, false));
-        this.bone4.cubeList.add(new ModelBox(bone4, 0, 0, -0.75F, 0.19F, -1.5F, 3, 0, 2, 0.0F, false));
+        bone4 = new AdvancedModelRenderer(this);
+        bone4.setRotationPoint(-1.7321F, -2.15F, -1.0F);
+        main.addChild(bone4);
+        setRotateAngle(bone4, -3.1416F, -1.0472F, 3.1416F);
+        bone4.cubeList.add(new ModelBox(bone4, 0, 3, 2.25F, 0.225F, -1.5F, 4, 0, 1, 0.0F, false));
+        bone4.cubeList.add(new ModelBox(bone4, 0, 0, -0.75F, 0.225F, -1.5F, 3, 0, 2, 0.0F, false));
 
         updateDefaultPose();
     }
