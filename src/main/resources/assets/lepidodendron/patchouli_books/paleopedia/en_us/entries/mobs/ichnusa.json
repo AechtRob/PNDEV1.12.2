@@ -1,0 +1,47 @@
+{
+	"name": "Ichnusa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ichnusa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ichnusa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ichnusa",
+			"title": "Ichnusa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Incertae sedis"
+		},
+		{
+			"type": "entity",
+			"name": "I. cocozzi",
+			"entity": "lepidodendron:prehistoric_flora_ichnusa",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ichnusa",
+			"type": "text",
+			"text": "Ichnusa cocozzi comes from the Upper Ediacaran, with fossils from the San Vito Formation, Sardinia, Italy. It is current accepted to be a Scyphozoan, with known specimens only growing up to around 3 cm in diameter. It is also the only known described Ediacaran that hails from Italy. The generic name, 'Ichnusa', derives from the Ancient Greek name for Sardinia."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ichnusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ichnusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ichnusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ichnusa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ichnusa"
+		}
+	]
+}

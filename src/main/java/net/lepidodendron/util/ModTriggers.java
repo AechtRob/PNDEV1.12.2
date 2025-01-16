@@ -668,6 +668,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DIADECTES = new CustomTrigger("pf_book_diadectes");
     public static final CustomTrigger CLICK_DIANIA = new CustomTrigger("pf_book_diania");
     public static final CustomTrigger CLICK_DICKINSONIA = new CustomTrigger("pf_book_dickinsonia");
+    public static final CustomTrigger CLICK_TEMNOXA = new CustomTrigger("pf_book_temnoxa");
     public static final CustomTrigger CLICK_ATTENBORITES = new CustomTrigger("pf_book_attenborites");
     public static final CustomTrigger CLICK_DIDYMOGRAPTUS = new CustomTrigger("pf_book_didymograptus");
     public static final CustomTrigger CLICK_DIICTODON = new CustomTrigger("pf_book_diictodon");
@@ -1430,6 +1431,8 @@ public class ModTriggers
 
     public static final CustomTrigger CLICK_NIMBIA = new CustomTrigger("pf_book_nimbia");
     public static final CustomTrigger CLICK_EDIACARIA = new CustomTrigger("pf_book_ediacaria");
+    public static final CustomTrigger CLICK_EOPORPITA = new CustomTrigger("pf_book_eoportpita");
+    public static final CustomTrigger CLICK_ICHNUSA = new CustomTrigger("pf_book_eichnusa");
     public static final CustomTrigger CLICK_CYCLOMEDUSA = new CustomTrigger("pf_book_cyclomedusa");
     public static final CustomTrigger CLICK_BURGESSOMEDUSA = new CustomTrigger("pf_book_burgessomedusa");
     public static final CustomTrigger CLICK_CORDUBIA = new CustomTrigger("pf_book_cordubia");
@@ -2446,6 +2449,7 @@ public class ModTriggers
             CLICK_DIADECTES,
             CLICK_DIANIA,
             CLICK_DICKINSONIA,
+            CLICK_TEMNOXA,
             CLICK_ATTENBORITES,
             CLICK_DIDYMOGRAPTUS,
             CLICK_DIICTODON,
@@ -3167,6 +3171,8 @@ public class ModTriggers
             CLICK_YIQI,
             CLICK_NIMBIA,
             CLICK_EDIACARIA,
+            CLICK_EOPORPITA,
+            CLICK_ICHNUSA,
             CLICK_CYCLOMEDUSA,
             CLICK_BURGESSOMEDUSA,
             CLICK_CORDUBIA,

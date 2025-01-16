@@ -1,0 +1,52 @@
+{
+	"name": "Temnoxa",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/temnoxa_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_temnoxa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_temnoxa",
+			"title": "Temnoxa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>incertae sedis (Arthropoda? Mollusca?)"
+		},
+		{
+			"type": "entity",
+			"name": "P. molluscula",
+			"entity": "lepidodendron:prehistoric_flora_temnoxa",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_temnoxa",
+			"type": "text",
+			"text": "Temnoxa molluscula comes from the Upper Ediacaran, with fossils from the White Sea, Russia. It is a oval lifeform with a large ridge and a seperated 'head', that was able to move around in order to get food, and could grow up to 1 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_temnoxa",
+			"type": "text",
+			"text": "The generic name derives from the place 'Temnoksa River', where it was found. The specific name derives from the Latin word 'molliusculus', to mean 'rather soft'."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_temnoxa"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_temnoxa"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_temnoxa"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_temnoxa"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_temnoxa"
+		}
+	]
+}

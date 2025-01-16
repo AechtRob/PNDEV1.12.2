@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
 public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFloraSwimmingAmphibianBase implements ITrappableWater, ITrappableLand, IAdvancementGranter, IWaterSurfaceEggsAmphibian {
 
 	public BlockPos currentTarget;
+	@SideOnly(Side.CLIENT)
 	public Animation STAND_ANIMATION;//blink animation
 	private int standCooldown;
 	public int ambientSoundTime;
@@ -296,7 +297,6 @@ public class EntityPrehistoricFloraTriadobatrachus extends EntityPrehistoricFlor
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.TRIADOBATRACHUS_LOOT;
 	}
-
 	@Nullable
 	@Override
 	public CustomTrigger getModTrigger() {

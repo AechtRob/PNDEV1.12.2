@@ -1126,6 +1126,9 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_lobodiscus", EntityPrehistoricFloraLobodiscus.class, LepidodendronMod.ENTITY_LOBODISCUS, 48,-14081505,-13547158);
         registerEntity("prehistoric_flora_anfesta", EntityPrehistoricFloraAnfesta.class, LepidodendronMod.ENTITY_ANFESTA, 48,-14081505,-13547158);
         registerEntity("prehistoric_flora_tribrachidiummob", EntityPrehistoricFloraTribrachidium.class, LepidodendronMod.ENTITY_TRIBRACHIDIUM, 48,-14081505,-13547158);
+        registerEntity("prehistoric_flora_temnoxa", EntityPrehistoricFloraTemnoxa.class, LepidodendronMod.ENTITY_TEMNOXA, 48,-5937079,-9958884);
+        registerEntity("prehistoric_flora_eoporpita", EntityPrehistoricFloraEoporpita.class, LepidodendronMod.ENTITY_EOPORPITA, 48,-10183045,-7639740);
+        registerEntity("prehistoric_flora_ichnusa", EntityPrehistoricFloraIchnusa.class, LepidodendronMod.ENTITY_ICHNUSA, 48,-8764825,-5551073);
 
 
 

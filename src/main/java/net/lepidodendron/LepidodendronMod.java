@@ -2858,6 +2858,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_HALLIDAYA = 1161;
 	public static final int ENTITY_ANFESTA = 1162;
 	public static final int ENTITY_TRIBRACHIDIUM = 1163;
+	public static final int ENTITY_TEMNOXA = 1164;
+	public static final int ENTITY_EOPORPITA = 1165;
+	public static final int ENTITY_ICHNUSA = 1166;
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;
