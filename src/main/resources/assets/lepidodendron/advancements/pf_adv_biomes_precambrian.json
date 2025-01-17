@@ -195,6 +195,12 @@
 			"conditions": {
 				"biome": "lepidodendron:tonian_sea"
 			}
+		},
+		"archean_windswept": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:archean_windswept"
+			}
 		}
 	},
 	"requirements": [
@@ -275,6 +281,9 @@
 		],
 		[
 			"tonian_sea"
+		],
+		[
+			"archean_windswept"
 		]
 	]
 }

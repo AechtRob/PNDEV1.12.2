@@ -2865,6 +2865,11 @@ public class LepidodendronMod {
 	public static final int ENTITY_CYANORUS = 1168;
 	public static final int ENTITY_CEPHALONEGA = 1169;
 	public static final int ENTITY_OVATOSCUTUM = 1170;
+	public static final int ENTITY_IKARIA = 1171;
+	public static final int ENTITY_UNCUS = 1172;
+	public static final int ENTITY_QUAESTIO = 1173;
+	public static final int ENTITY_KERETSA = 1174;
+	public static final int ENTITY_KARAKHTIA = 1175;
 
 	public static final int ENTITY_MYRIAPOD = 1015;
 	public static final int GUI_ARCHIVE_SORTER_TOP_ID = 1016;

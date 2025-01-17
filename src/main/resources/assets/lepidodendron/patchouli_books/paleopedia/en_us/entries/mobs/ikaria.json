@@ -1,0 +1,47 @@
+{
+	"name": "Ikaria",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/items/ikaria_icon.png",
+	"category": "lepidodendron:mobs",
+	"turnin": "lepidodendron:pf_adv_book_ikaria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ikaria",
+			"title": "Ikaria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic (Ediacaran)$(br2)>Bilateria"
+		},
+		{
+			"type": "entity",
+			"name": "I. wariootia",
+			"entity": "lepidodendron:prehistoric_flora_ikaria",
+			"rotate": false,
+			"default_rotation": 0
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ikaria",
+			"type": "text",
+			"text": "Ikaria wariootia comes from the Upper Ediacaran, with fossils from the Flinders Ranges, South Australia. Its is currently the oldest known motile Bilaterian, only being 2 million years old than Kimberella, and could grow up to 1 cm in length. The generic name derives from the Adnyamathanha word 'Ikara', to mean 'meeting place'. The specific name derives from the place Warioota Creek, were the fossils were found."
+		},
+		{
+			"type": "lepidodendron:diet",
+			"mob": "lepidodendron:prehistoric_flora_ikaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations1",
+			"mob": "lepidodendron:prehistoric_flora_ikaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations2",
+			"mob": "lepidodendron:prehistoric_flora_ikaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations3",
+			"mob": "lepidodendron:prehistoric_flora_ikaria"
+		},
+		{
+			"type": "lepidodendron:biomelocations4",
+			"mob": "lepidodendron:prehistoric_flora_ikaria"
+		}
+	]
+}

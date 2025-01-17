@@ -7027,6 +7027,36 @@ public class RenderHandler {
                 return new RenderOvatoscutum(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIkaria.class, new IRenderFactory<EntityPrehistoricFloraIkaria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraIkaria> createRenderFor(RenderManager manager) {
+                return new RenderIkaria(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraUncus.class, new IRenderFactory<EntityPrehistoricFloraUncus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraUncus> createRenderFor(RenderManager manager) {
+                return new RenderUncus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraQuaestio.class, new IRenderFactory<EntityPrehistoricFloraQuaestio>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraQuaestio> createRenderFor(RenderManager manager) {
+                return new RenderQuaestio(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKeretsa.class, new IRenderFactory<EntityPrehistoricFloraKeretsa>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKeretsa> createRenderFor(RenderManager manager) {
+                return new RenderKeretsa(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKarakhtia.class, new IRenderFactory<EntityPrehistoricFloraKarakhtia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKarakhtia> createRenderFor(RenderManager manager) {
+                return new RenderKarakhtia(manager);
+            }
+        });
         
 
 
